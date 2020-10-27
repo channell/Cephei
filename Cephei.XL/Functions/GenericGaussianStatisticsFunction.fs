@@ -63,8 +63,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : GenericGaussianStatistics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".Add") 
-                                               [| _GenericGaussianStatistics.source
-                                               ;  _value.source
+
+                                               [| _value.source
                                                ;  _weight.source
                                                |]
                 let hash = Helper.hashFold 
@@ -112,8 +112,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : GenericGaussianStatistics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".AddSequence") 
-                                               [| _GenericGaussianStatistics.source
-                                               ;  _data.source
+
+                                               [| _data.source
                                                ;  _weight.source
                                                |]
                 let hash = Helper.hashFold 
@@ -152,8 +152,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".ErrorEstimate") 
-                                               [| _GenericGaussianStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
@@ -196,8 +196,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : KeyValuePair<double,int>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".ExpectationValue") 
-                                               [| _GenericGaussianStatistics.source
-                                               ;  _f.source
+
+                                               [| _f.source
                                                ;  _inRange.source
                                                |]
                 let hash = Helper.hashFold 
@@ -240,8 +240,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianAverageShortfall") 
-                                               [| _GenericGaussianStatistics.source
-                                               ;  _target.source
+
+                                               [| _target.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
@@ -278,8 +278,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianDownsideDeviation") 
-                                               [| _GenericGaussianStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
@@ -314,8 +314,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianDownsideVariance") 
-                                               [| _GenericGaussianStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
@@ -354,8 +354,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianExpectedShortfall") 
-                                               [| _GenericGaussianStatistics.source
-                                               ;  _percentile.source
+
+                                               [| _percentile.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
@@ -396,8 +396,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianPercentile") 
-                                               [| _GenericGaussianStatistics.source
-                                               ;  _percentile.source
+
+                                               [| _percentile.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
@@ -438,8 +438,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianPotentialUpside") 
-                                               [| _GenericGaussianStatistics.source
-                                               ;  _percentile.source
+
+                                               [| _percentile.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
@@ -480,8 +480,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianRegret") 
-                                               [| _GenericGaussianStatistics.source
-                                               ;  _target.source
+
+                                               [| _target.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
@@ -522,8 +522,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianShortfall") 
-                                               [| _GenericGaussianStatistics.source
-                                               ;  _target.source
+
+                                               [| _target.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
@@ -564,8 +564,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianTopPercentile") 
-                                               [| _GenericGaussianStatistics.source
-                                               ;  _percentile.source
+
+                                               [| _percentile.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
@@ -606,8 +606,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".GaussianValueAtRisk") 
-                                               [| _GenericGaussianStatistics.source
-                                               ;  _percentile.source
+
+                                               [| _percentile.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
@@ -712,8 +712,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".Kurtosis") 
-                                               [| _GenericGaussianStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
@@ -748,8 +748,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".Max") 
-                                               [| _GenericGaussianStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
@@ -784,8 +784,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".Mean") 
-                                               [| _GenericGaussianStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
@@ -820,8 +820,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".Min") 
-                                               [| _GenericGaussianStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
@@ -860,8 +860,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".Percentile") 
-                                               [| _GenericGaussianStatistics.source
-                                               ;  _percent.source
+
+                                               [| _percent.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
@@ -898,8 +898,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : GenericGaussianStatistics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".Reset") 
-                                               [| _GenericGaussianStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
@@ -934,8 +934,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".Samples") 
-                                               [| _GenericGaussianStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
@@ -970,8 +970,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".Skewness") 
-                                               [| _GenericGaussianStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
@@ -1006,8 +1006,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".StandardDeviation") 
-                                               [| _GenericGaussianStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
@@ -1042,8 +1042,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".Variance") 
-                                               [| _GenericGaussianStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]
@@ -1078,8 +1078,8 @@ module GenericGaussianStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericGaussianStatistics.source + ".WeightSum") 
-                                               [| _GenericGaussianStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericGaussianStatistics.cell
                                 |]

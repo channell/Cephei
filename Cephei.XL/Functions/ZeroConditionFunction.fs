@@ -62,8 +62,8 @@ module ZeroConditionFunction =
                 let format (o : ZeroCondition) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZeroCondition.source + ".ApplyTo") 
-                                               [| _ZeroCondition.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 

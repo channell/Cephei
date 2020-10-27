@@ -133,8 +133,8 @@ module DiscreteAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Delta") 
-                                               [| _DiscreteAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
@@ -169,8 +169,8 @@ module DiscreteAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".DeltaForward") 
-                                               [| _DiscreteAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
@@ -205,8 +205,8 @@ module DiscreteAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".DividendRho") 
-                                               [| _DiscreteAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
@@ -241,8 +241,8 @@ module DiscreteAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Elasticity") 
-                                               [| _DiscreteAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
@@ -277,8 +277,8 @@ module DiscreteAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Gamma") 
-                                               [| _DiscreteAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
@@ -313,8 +313,8 @@ module DiscreteAveragingAsianOptionFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".IsExpired") 
-                                               [| _DiscreteAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
@@ -349,8 +349,8 @@ module DiscreteAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".ItmCashProbability") 
-                                               [| _DiscreteAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
@@ -385,8 +385,8 @@ module DiscreteAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Rho") 
-                                               [| _DiscreteAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
@@ -421,8 +421,8 @@ module DiscreteAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".StrikeSensitivity") 
-                                               [| _DiscreteAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
@@ -457,8 +457,8 @@ module DiscreteAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Theta") 
-                                               [| _DiscreteAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
@@ -493,8 +493,8 @@ module DiscreteAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".ThetaPerDay") 
-                                               [| _DiscreteAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
@@ -529,8 +529,8 @@ module DiscreteAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Vega") 
-                                               [| _DiscreteAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
@@ -565,8 +565,8 @@ module DiscreteAveragingAsianOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
                 let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Exercise") 
-                                               [| _DiscreteAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
@@ -601,8 +601,8 @@ module DiscreteAveragingAsianOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
                 let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Payoff") 
-                                               [| _DiscreteAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
@@ -637,8 +637,8 @@ module DiscreteAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".CASH") 
-                                               [| _DiscreteAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
@@ -673,8 +673,8 @@ module DiscreteAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".ErrorEstimate") 
-                                               [| _DiscreteAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
@@ -709,8 +709,8 @@ module DiscreteAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".NPV") 
-                                               [| _DiscreteAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]
@@ -749,8 +749,8 @@ module DiscreteAveragingAsianOptionFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".Result") 
-                                               [| _DiscreteAveragingAsianOption.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
@@ -791,8 +791,8 @@ module DiscreteAveragingAsianOptionFunction =
                 let format (o : DiscreteAveragingAsianOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".SetPricingEngine") 
-                                               [| _DiscreteAveragingAsianOption.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
@@ -829,8 +829,8 @@ module DiscreteAveragingAsianOptionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DiscreteAveragingAsianOption.source + ".ValuationDate") 
-                                               [| _DiscreteAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteAveragingAsianOption.cell
                                 |]

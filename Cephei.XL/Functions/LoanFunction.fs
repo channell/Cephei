@@ -54,8 +54,8 @@ module LoanFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Loan.source + ".IsExpired") 
-                                               [| _Loan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Loan.cell
                                 |]
@@ -139,8 +139,8 @@ module LoanFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Loan.source + ".CASH") 
-                                               [| _Loan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Loan.cell
                                 |]
@@ -175,8 +175,8 @@ module LoanFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Loan.source + ".ErrorEstimate") 
-                                               [| _Loan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Loan.cell
                                 |]
@@ -211,8 +211,8 @@ module LoanFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Loan.source + ".NPV") 
-                                               [| _Loan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Loan.cell
                                 |]
@@ -251,8 +251,8 @@ module LoanFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Loan.source + ".Result") 
-                                               [| _Loan.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Loan.cell
@@ -293,8 +293,8 @@ module LoanFunction =
                 let format (o : Loan) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Loan.source + ".SetPricingEngine") 
-                                               [| _Loan.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Loan.cell
@@ -331,8 +331,8 @@ module LoanFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Loan.source + ".ValuationDate") 
-                                               [| _Loan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Loan.cell
                                 |]

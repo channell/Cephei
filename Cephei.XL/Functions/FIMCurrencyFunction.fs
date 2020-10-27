@@ -85,8 +85,8 @@ module FIMCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FIMCurrency.source + ".Code") 
-                                               [| _FIMCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FIMCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module FIMCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FIMCurrency.source + ".Empty") 
-                                               [| _FIMCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FIMCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module FIMCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FIMCurrency.source + ".Equals") 
-                                               [| _FIMCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FIMCurrency.cell
@@ -199,8 +199,8 @@ module FIMCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FIMCurrency.source + ".Format") 
-                                               [| _FIMCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FIMCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module FIMCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FIMCurrency.source + ".FractionsPerUnit") 
-                                               [| _FIMCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FIMCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module FIMCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FIMCurrency.source + ".FractionSymbol") 
-                                               [| _FIMCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FIMCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module FIMCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FIMCurrency.source + ".Name") 
-                                               [| _FIMCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FIMCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module FIMCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FIMCurrency.source + ".NumericCode") 
-                                               [| _FIMCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FIMCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module FIMCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_FIMCurrency.source + ".Rounding") 
-                                               [| _FIMCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FIMCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module FIMCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FIMCurrency.source + ".Symbol") 
-                                               [| _FIMCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FIMCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module FIMCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FIMCurrency.source + ".ToString") 
-                                               [| _FIMCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FIMCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module FIMCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_FIMCurrency.source + ".TriangulationCurrency") 
-                                               [| _FIMCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FIMCurrency.cell
                                 |]

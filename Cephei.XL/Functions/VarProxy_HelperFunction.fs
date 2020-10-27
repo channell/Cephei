@@ -54,8 +54,8 @@ module VarProxy_HelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LmCorrelationModel>) l
 
                 let source () = Helper.sourceFold (_VarProxy_Helper.source + ".CorrModel_") 
-                                               [| _VarProxy_Helper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _VarProxy_Helper.cell
                                 |]
@@ -94,8 +94,8 @@ module VarProxy_HelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_VarProxy_Helper.source + ".Value") 
-                                               [| _VarProxy_Helper.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VarProxy_Helper.cell
@@ -181,8 +181,8 @@ module VarProxy_HelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LmVolatilityModel>) l
 
                 let source () = Helper.sourceFold (_VarProxy_Helper.source + ".VolaModel_") 
-                                               [| _VarProxy_Helper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _VarProxy_Helper.cell
                                 |]

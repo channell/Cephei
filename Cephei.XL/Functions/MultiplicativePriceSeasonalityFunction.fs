@@ -66,8 +66,8 @@ module MultiplicativePriceSeasonalityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".CorrectYoYRate") 
-                                               [| _MultiplicativePriceSeasonality.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _r.source
                                                ;  _iTS.source
                                                |]
@@ -120,8 +120,8 @@ module MultiplicativePriceSeasonalityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".CorrectZeroRate") 
-                                               [| _MultiplicativePriceSeasonality.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _r.source
                                                ;  _iTS.source
                                                |]
@@ -162,8 +162,8 @@ module MultiplicativePriceSeasonalityFunction =
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".Frequency") 
-                                               [| _MultiplicativePriceSeasonality.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MultiplicativePriceSeasonality.cell
                                 |]
@@ -202,8 +202,8 @@ module MultiplicativePriceSeasonalityFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".IsConsistent") 
-                                               [| _MultiplicativePriceSeasonality.source
-                                               ;  _iTS.source
+
+                                               [| _iTS.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiplicativePriceSeasonality.cell
@@ -320,8 +320,8 @@ module MultiplicativePriceSeasonalityFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".SeasonalityBaseDate") 
-                                               [| _MultiplicativePriceSeasonality.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MultiplicativePriceSeasonality.cell
                                 |]
@@ -360,8 +360,8 @@ module MultiplicativePriceSeasonalityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".SeasonalityFactor") 
-                                               [| _MultiplicativePriceSeasonality.source
-                                               ;  _To.source
+
+                                               [| _To.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiplicativePriceSeasonality.cell
@@ -398,8 +398,8 @@ module MultiplicativePriceSeasonalityFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".SeasonalityFactors") 
-                                               [| _MultiplicativePriceSeasonality.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MultiplicativePriceSeasonality.cell
                                 |]
@@ -446,8 +446,8 @@ module MultiplicativePriceSeasonalityFunction =
                 let format (o : MultiplicativePriceSeasonality) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MultiplicativePriceSeasonality.source + ".Set") 
-                                               [| _MultiplicativePriceSeasonality.source
-                                               ;  _seasonalityBaseDate.source
+
+                                               [| _seasonalityBaseDate.source
                                                ;  _frequency.source
                                                ;  _seasonalityFactors.source
                                                |]

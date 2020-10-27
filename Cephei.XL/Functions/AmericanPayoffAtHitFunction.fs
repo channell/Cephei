@@ -115,8 +115,8 @@ module AmericanPayoffAtHitFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmericanPayoffAtHit.source + ".Delta") 
-                                               [| _AmericanPayoffAtHit.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmericanPayoffAtHit.cell
                                 |]
@@ -151,8 +151,8 @@ module AmericanPayoffAtHitFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmericanPayoffAtHit.source + ".Gamma") 
-                                               [| _AmericanPayoffAtHit.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmericanPayoffAtHit.cell
                                 |]
@@ -191,8 +191,8 @@ module AmericanPayoffAtHitFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmericanPayoffAtHit.source + ".Rho") 
-                                               [| _AmericanPayoffAtHit.source
-                                               ;  _maturity.source
+
+                                               [| _maturity.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmericanPayoffAtHit.cell
@@ -229,8 +229,8 @@ module AmericanPayoffAtHitFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmericanPayoffAtHit.source + ".Value") 
-                                               [| _AmericanPayoffAtHit.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmericanPayoffAtHit.cell
                                 |]

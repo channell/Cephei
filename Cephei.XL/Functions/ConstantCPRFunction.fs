@@ -95,8 +95,8 @@ module ConstantCPRFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConstantCPR.source + ".GetCPR") 
-                                               [| _ConstantCPR.source
-                                               ;  _valDate.source
+
+                                               [| _valDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantCPR.cell
@@ -137,8 +137,8 @@ module ConstantCPRFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConstantCPR.source + ".GetSMM") 
-                                               [| _ConstantCPR.source
-                                               ;  _valDate.source
+
+                                               [| _valDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantCPR.cell

@@ -56,8 +56,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".BaseDate") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -92,8 +92,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Clone") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -128,8 +128,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Data") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -164,8 +164,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Data_") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -200,8 +200,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Dates") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -236,8 +236,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Dates_") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -272,8 +272,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Forwards") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -484,8 +484,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Interpolation_") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -520,8 +520,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Interpolator_") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -556,8 +556,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".MaxDate") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -592,8 +592,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".MaxDate_") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -628,8 +628,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (o : Dictionary<Date,double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Nodes") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -664,8 +664,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Rates") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -700,8 +700,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (o : InterpolatedYoYInflationCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".SetupInterpolation") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -736,8 +736,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Times") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -772,8 +772,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Times_") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -824,8 +824,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".YoyRate") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _instObsLag.source
                                                ;  _forceLinearInterpolation.source
                                                ;  _extrapolate.source
@@ -880,8 +880,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".YoyRate") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _instObsLag.source
                                                ;  _forceLinearInterpolation.source
                                                |]
@@ -930,8 +930,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".YoyRate") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _instObsLag.source
                                                |]
                 let hash = Helper.hashFold 
@@ -974,8 +974,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".YoyRate") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
@@ -1012,8 +1012,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".BaseRate") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -1048,8 +1048,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Frequency") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -1084,8 +1084,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".HasSeasonality") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -1120,8 +1120,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".IndexIsInterpolated") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -1156,8 +1156,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".NominalTermStructure") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -1192,8 +1192,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".ObservationLag") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -1228,8 +1228,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Seasonality>) l
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Seasonality") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -1268,8 +1268,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (o : InterpolatedYoYInflationCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".SetSeasonality") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               ;  _seasonality.source
+
+                                               [| _seasonality.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
@@ -1306,8 +1306,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Calendar") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -1342,8 +1342,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".DayCounter") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -1378,8 +1378,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".MaxTime") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -1414,8 +1414,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".ReferenceDate") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -1450,8 +1450,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".SettlementDays") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -1490,8 +1490,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".TimeFromReference") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               ;  _date.source
+
+                                               [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
@@ -1528,8 +1528,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (o : InterpolatedYoYInflationCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Update") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -1564,8 +1564,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".AllowsExtrapolation") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]
@@ -1604,8 +1604,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (o : InterpolatedYoYInflationCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".DisableExtrapolation") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
@@ -1646,8 +1646,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (o : InterpolatedYoYInflationCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".EnableExtrapolation") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
@@ -1684,8 +1684,8 @@ module InterpolatedYoYInflationCurveFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedYoYInflationCurve.source + ".Extrapolate") 
-                                               [| _InterpolatedYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedYoYInflationCurve.cell
                                 |]

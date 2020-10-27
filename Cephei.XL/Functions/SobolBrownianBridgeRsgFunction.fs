@@ -54,8 +54,8 @@ module SobolBrownianBridgeRsgFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SobolBrownianBridgeRsg.source + ".Dimension") 
-                                               [| _SobolBrownianBridgeRsg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SobolBrownianBridgeRsg.cell
                                 |]
@@ -98,8 +98,8 @@ module SobolBrownianBridgeRsgFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IRNG>) l
 
                 let source () = Helper.sourceFold (_SobolBrownianBridgeRsg.source + ".Factory") 
-                                               [| _SobolBrownianBridgeRsg.source
-                                               ;  _dimensionality.source
+
+                                               [| _dimensionality.source
                                                ;  _seed.source
                                                |]
                 let hash = Helper.hashFold 
@@ -139,8 +139,8 @@ module SobolBrownianBridgeRsgFunction =
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SobolBrownianBridgeRsg.source + ".LastSequence") 
-                                               [| _SobolBrownianBridgeRsg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SobolBrownianBridgeRsg.cell
                                 |]
@@ -177,8 +177,8 @@ module SobolBrownianBridgeRsgFunction =
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SobolBrownianBridgeRsg.source + ".NextSequence") 
-                                               [| _SobolBrownianBridgeRsg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SobolBrownianBridgeRsg.cell
                                 |]

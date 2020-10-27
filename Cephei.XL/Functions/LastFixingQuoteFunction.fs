@@ -54,8 +54,8 @@ module LastFixingQuoteFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LastFixingQuote.source + ".IsValid") 
-                                               [| _LastFixingQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LastFixingQuote.cell
                                 |]
@@ -127,8 +127,8 @@ module LastFixingQuoteFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_LastFixingQuote.source + ".ReferenceDate") 
-                                               [| _LastFixingQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LastFixingQuote.cell
                                 |]
@@ -163,8 +163,8 @@ module LastFixingQuoteFunction =
                 let format (o : LastFixingQuote) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LastFixingQuote.source + ".Update") 
-                                               [| _LastFixingQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LastFixingQuote.cell
                                 |]
@@ -199,8 +199,8 @@ module LastFixingQuoteFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LastFixingQuote.source + ".Value") 
-                                               [| _LastFixingQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LastFixingQuote.cell
                                 |]
@@ -239,8 +239,8 @@ module LastFixingQuoteFunction =
                 let format (o : LastFixingQuote) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LastFixingQuote.source + ".RegisterWith") 
-                                               [| _LastFixingQuote.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LastFixingQuote.cell
@@ -281,8 +281,8 @@ module LastFixingQuoteFunction =
                 let format (o : LastFixingQuote) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LastFixingQuote.source + ".UnregisterWith") 
-                                               [| _LastFixingQuote.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LastFixingQuote.cell

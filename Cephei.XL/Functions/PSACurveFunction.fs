@@ -58,8 +58,8 @@ module PSACurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PSACurve.source + ".GetCPR") 
-                                               [| _PSACurve.source
-                                               ;  _valDate.source
+
+                                               [| _valDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PSACurve.cell
@@ -100,8 +100,8 @@ module PSACurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PSACurve.source + ".GetSMM") 
-                                               [| _PSACurve.source
-                                               ;  _valDate.source
+
+                                               [| _valDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PSACurve.cell

@@ -54,8 +54,8 @@ module LocalVolCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_LocalVolCurve.source + ".Calendar") 
-                                               [| _LocalVolCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]
@@ -90,8 +90,8 @@ module LocalVolCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_LocalVolCurve.source + ".DayCounter") 
-                                               [| _LocalVolCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]
@@ -163,8 +163,8 @@ module LocalVolCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_LocalVolCurve.source + ".MaxDate") 
-                                               [| _LocalVolCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]
@@ -199,8 +199,8 @@ module LocalVolCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LocalVolCurve.source + ".MaxStrike") 
-                                               [| _LocalVolCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]
@@ -235,8 +235,8 @@ module LocalVolCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LocalVolCurve.source + ".MinStrike") 
-                                               [| _LocalVolCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]
@@ -271,8 +271,8 @@ module LocalVolCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_LocalVolCurve.source + ".ReferenceDate") 
-                                               [| _LocalVolCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]
@@ -319,8 +319,8 @@ module LocalVolCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LocalVolCurve.source + ".LocalVol") 
-                                               [| _LocalVolCurve.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _underlyingLevel.source
                                                ;  _extrapolate.source
                                                |]
@@ -373,8 +373,8 @@ module LocalVolCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LocalVolCurve.source + ".LocalVol1") 
-                                               [| _LocalVolCurve.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _underlyingLevel.source
                                                ;  _extrapolate.source
                                                |]
@@ -415,8 +415,8 @@ module LocalVolCurveFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LocalVolCurve.source + ".BusinessDayConvention") 
-                                               [| _LocalVolCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]
@@ -455,8 +455,8 @@ module LocalVolCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_LocalVolCurve.source + ".OptionDateFromTenor") 
-                                               [| _LocalVolCurve.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
@@ -493,8 +493,8 @@ module LocalVolCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LocalVolCurve.source + ".MaxTime") 
-                                               [| _LocalVolCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]
@@ -529,8 +529,8 @@ module LocalVolCurveFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LocalVolCurve.source + ".SettlementDays") 
-                                               [| _LocalVolCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]
@@ -569,8 +569,8 @@ module LocalVolCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LocalVolCurve.source + ".TimeFromReference") 
-                                               [| _LocalVolCurve.source
-                                               ;  _date.source
+
+                                               [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
@@ -607,8 +607,8 @@ module LocalVolCurveFunction =
                 let format (o : LocalVolCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LocalVolCurve.source + ".Update") 
-                                               [| _LocalVolCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]
@@ -643,8 +643,8 @@ module LocalVolCurveFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LocalVolCurve.source + ".AllowsExtrapolation") 
-                                               [| _LocalVolCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]
@@ -683,8 +683,8 @@ module LocalVolCurveFunction =
                 let format (o : LocalVolCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LocalVolCurve.source + ".DisableExtrapolation") 
-                                               [| _LocalVolCurve.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
@@ -725,8 +725,8 @@ module LocalVolCurveFunction =
                 let format (o : LocalVolCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LocalVolCurve.source + ".EnableExtrapolation") 
-                                               [| _LocalVolCurve.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
@@ -763,8 +763,8 @@ module LocalVolCurveFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LocalVolCurve.source + ".Extrapolate") 
-                                               [| _LocalVolCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalVolCurve.cell
                                 |]

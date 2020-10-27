@@ -39,12 +39,19 @@ module Helper =
 
         if typeof<'T>.IsEnum then
             let en = Enum.Parse(typeof<'T>, o.ToString()) :?> 'T
-            { cell = (value en)
-            ; source =  "(value " + typeof<'T>.Name + "." + en.ToString() + ")"
-            }
+            let ty = typeof<'T>
+            if ty.IsNested then
+                { cell = (value en)
+                ; source =  "(value " + ty.DeclaringType.Name + "." + ty.Name + "." + en.ToString() + ")"
+                }
+            else
+                { cell = (value en)
+                ; source =  "(value " + ty.Name + "." + en.ToString() + ")"
+                }
         elif not (o = null) && o :? string then
-            let s = o :?> string
-            let c = Model.cell s
+            let so = o :?> string
+            let c = Model.cell so
+            let s = if so.StartsWith("+") || so.StartsWith("-") then so.Substring(1) else so
             if c.IsSome then 
                 let c = c.Value
                 if c :? ICell<'T> then
@@ -55,17 +62,17 @@ module Helper =
                     if o :? ICell<double> then
                         let cd = c :?> ICell<double>
                         { cell = triv (fun () -> (new Date(int (cd.Value)))) :?> ICell<'T>
-                        ; source =  "(triv (fun () -> new Date(int (" + c.Mnemonic + ".Value))))"
+                        ; source =  "(triv (fun () -> new Date(int (_" + c.Mnemonic + ".Value))))"
                         }
                     elif o :? ICell<DateTime> then
                         let ct = c :?> ICell<DateTime>
                         { cell = triv (fun () -> new Date(int (ct.Value.ToOADate()))) :?> ICell<'T>
-                        ; source =  "(triv (fun () -> new Date(int (" + c.Mnemonic + ".Value.ToOADate())))"
+                        ; source =  "(triv (fun () -> new Date(int (_" + c.Mnemonic + ".Value.ToOADate())))"
                         }
                     elif o :? ICell<int> then
                         let i = c :?> ICell<int>
                         { cell = triv (fun () -> new Date(i.Value)) :?> ICell<'T>
-                        ; source =  "(triv (fun () -> new Date(" + c.Mnemonic + ".Value)))"
+                        ; source =  "(triv (fun () -> new Date(_" + c.Mnemonic + ".Value)))"
                         }
                     else
                         { cell = c :?> ICell<'T>
@@ -75,11 +82,11 @@ module Helper =
                     let d = c :?> ICell<DateTime>
                     if typeof<'T> = typeof<int> then
                         { cell = withMnemonic c.Mnemonic (triv (fun () -> (Convert.ToInt32(d.Value.ToOADate()) :> obj) :?> 'T))
-                        ; source =  "(triv (fun () -> int (" + s + "Value.ToOADate())))"
+                        ; source =  "(triv (fun () -> int (_" + s + ".Value.ToOADate())))"
                         }
                     else
                         { cell = withMnemonic c.Mnemonic (triv (fun () -> ((d.Value.ToOADate()) :> obj) :?> 'T))
-                        ; source =  "(triv (fun () -> " + s + "Value.ToOADate()))"
+                        ; source =  "(triv (fun () -> " + s + ".Value.ToOADate()))"
                         }
                 elif typeof<'T>.IsEnum then
                     let en = Enum.Parse(typeof<'T>, o.ToString()) :?> 'T
@@ -88,16 +95,12 @@ module Helper =
                     }
                 else    // upcast
                     { cell = withMnemonic c.Mnemonic (triv (fun () -> (c.Box :?> 'T)))
-                    ; source = s
+                    ; source = "(triv (fun () -> _" + s + ".Value :> " + typeof<'T>.Name + "))"
                     }
             else
                 { cell = (triv (fun () -> o :?> 'T))
-                ; source =  "(triv (fun () -> " + s + " :?> " + typeof<'T>.Name + "))"
+                ; source =  "(triv (fun () -> _" + s + " :?> " + typeof<'T>.Name + "))"
                 }
-        elif o :? 'T then 
-            { cell = (value (o :?> 'T))
-            ; source =  "(value (" + o.ToString() + " :?> " + typeof<'T>.Name + "))"
-            }
         elif typeof<'T> = typeof<Date> &&  o :? double then
             if o :? double then
                 let d = o :?> double
@@ -113,6 +116,14 @@ module Helper =
                 { cell = triv (fun () -> o :?> 'T)
                 ; source =  "(triv (fun () -> " + o.ToString() + " :?> " + typeof<'T>.Name + "))"
                 }
+        elif typeof<'T> = typeof<bool>  && o :? bool then
+            { cell = (value (o :?> 'T))
+            ; source =  "(value " + o.ToString().ToLower() + ")"
+            }
+        elif o :? 'T then 
+            { cell = (value (o :?> 'T))
+            ; source =  "(value (" + o.ToString() + " :?> " + typeof<'T>.Name + "))"
+            }
         else
             try
                 if typeof<'T> = typeof<int> then 
@@ -146,7 +157,7 @@ module Helper =
                 try
                     defaultValue.ToString()
                 with 
-                | _ -> "(null :> " + typeof<'T>.Name
+                | _ -> "(null :> " + typeof<'T>.Name + ")"
 
             { cell = withMnemonic attribute (value defaultValue)
             ; source =  "(value " + s + ")"
@@ -164,12 +175,11 @@ module Helper =
                 if c:? ICell<'T> then 
                     let c = c :?> ICell<'T>
                     { cell = withMnemonic c.Mnemonic (triv (fun () -> Util.toHandle (c.Value)))
-                    ; source =  "(triv (fun () -> toHandle (" + c.Mnemonic + ")))"
+                    ; source =  "(triv (fun () -> toHandle (_" + c.Mnemonic + ")))"
                     }
                 else
-                    let v = c.Box :?> 'T
-                    { cell = withMnemonic c.Mnemonic (triv (fun () -> Util.toHandle<'T> (v)))
-                    ; source =  "(triv (fun () -> toHandle<" + typeof<'T>.Name + "> (" + c.Mnemonic + ")))"
+                    { cell = withMnemonic c.Mnemonic (triv (fun () -> Util.toHandle<'T> (c.Box :?> 'T)))
+                    ; source =  "(triv (fun () -> toHandle<" + typeof<'T>.Name + "> (_" + c.Mnemonic + ")))"
                     }
             else
                 invalidArg (o.ToString()) ("Invalid " + attribute)
@@ -207,9 +217,10 @@ module Helper =
 
     let kv (k:'k) (v:'v) = new System.Collections.Generic.KeyValuePair<'k,'v>(k,v)
 
-    let sourceFold s (cs : string array) = 
+    let sourceFold (s : string) (cs : string array) = 
+        let s = if s.StartsWith("+") || s.StartsWith("-") then s.Substring(1) else s
         match cs with 
-        | [||]  -> "()"
+        | [||]  -> s + "()"
         | _     -> cs |> Array.fold (fun a y -> a + " " + if y.StartsWith("(") then y elif y.StartsWith("+") then (y.Substring(1)) elif y.StartsWith("-") then (y.Substring(1)) else y) s
 
     let sourceFoldArray (cs : string array) = 

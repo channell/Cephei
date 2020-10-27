@@ -62,8 +62,8 @@ module SimplexFunction =
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Simplex.source + ".Minimize") 
-                                               [| _Simplex.source
-                                               ;  _P.source
+
+                                               [| _P.source
                                                ;  _endCriteria.source
                                                |]
                 let hash = Helper.hashFold 

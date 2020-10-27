@@ -85,8 +85,8 @@ module NOKCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NOKCurrency.source + ".Code") 
-                                               [| _NOKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NOKCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module NOKCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NOKCurrency.source + ".Empty") 
-                                               [| _NOKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NOKCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module NOKCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NOKCurrency.source + ".Equals") 
-                                               [| _NOKCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NOKCurrency.cell
@@ -199,8 +199,8 @@ module NOKCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NOKCurrency.source + ".Format") 
-                                               [| _NOKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NOKCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module NOKCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NOKCurrency.source + ".FractionsPerUnit") 
-                                               [| _NOKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NOKCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module NOKCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NOKCurrency.source + ".FractionSymbol") 
-                                               [| _NOKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NOKCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module NOKCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NOKCurrency.source + ".Name") 
-                                               [| _NOKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NOKCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module NOKCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NOKCurrency.source + ".NumericCode") 
-                                               [| _NOKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NOKCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module NOKCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_NOKCurrency.source + ".Rounding") 
-                                               [| _NOKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NOKCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module NOKCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NOKCurrency.source + ".Symbol") 
-                                               [| _NOKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NOKCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module NOKCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NOKCurrency.source + ".ToString") 
-                                               [| _NOKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NOKCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module NOKCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_NOKCurrency.source + ".TriangulationCurrency") 
-                                               [| _NOKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NOKCurrency.cell
                                 |]

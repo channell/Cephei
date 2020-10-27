@@ -122,8 +122,8 @@ module ConstraintFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Constraint.source + ".Empty") 
-                                               [| _Constraint.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Constraint.cell
                                 |]
@@ -162,8 +162,8 @@ module ConstraintFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_Constraint.source + ".LowerBound") 
-                                               [| _Constraint.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Constraint.cell
@@ -204,8 +204,8 @@ module ConstraintFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Constraint.source + ".Test") 
-                                               [| _Constraint.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Constraint.cell
@@ -254,8 +254,8 @@ module ConstraintFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Constraint.source + ".Update") 
-                                               [| _Constraint.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                ;  _direction.source
                                                ;  _beta.source
                                                |]
@@ -300,8 +300,8 @@ module ConstraintFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_Constraint.source + ".UpperBound") 
-                                               [| _Constraint.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Constraint.cell

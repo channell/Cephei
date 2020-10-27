@@ -66,8 +66,8 @@ module FaceValueAccrualClaimFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FaceValueAccrualClaim.source + ".Amount") 
-                                               [| _FaceValueAccrualClaim.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _notional.source
                                                ;  _recoveryRate.source
                                                |]
@@ -149,8 +149,8 @@ module FaceValueAccrualClaimFunction =
                 let format (o : FaceValueAccrualClaim) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FaceValueAccrualClaim.source + ".RegisterWith") 
-                                               [| _FaceValueAccrualClaim.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FaceValueAccrualClaim.cell
@@ -191,8 +191,8 @@ module FaceValueAccrualClaimFunction =
                 let format (o : FaceValueAccrualClaim) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FaceValueAccrualClaim.source + ".UnregisterWith") 
-                                               [| _FaceValueAccrualClaim.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FaceValueAccrualClaim.cell
@@ -229,8 +229,8 @@ module FaceValueAccrualClaimFunction =
                 let format (o : FaceValueAccrualClaim) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FaceValueAccrualClaim.source + ".Update") 
-                                               [| _FaceValueAccrualClaim.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FaceValueAccrualClaim.cell
                                 |]

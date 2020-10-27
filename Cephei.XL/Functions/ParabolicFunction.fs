@@ -103,8 +103,8 @@ module ParabolicFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_Parabolic.source + ".ACoefficients") 
-                                               [| _Parabolic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Parabolic.cell
                                 |]
@@ -139,8 +139,8 @@ module ParabolicFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_Parabolic.source + ".BCoefficients") 
-                                               [| _Parabolic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Parabolic.cell
                                 |]
@@ -175,8 +175,8 @@ module ParabolicFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_Parabolic.source + ".CCoefficients") 
-                                               [| _Parabolic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Parabolic.cell
                                 |]
@@ -219,8 +219,8 @@ module ParabolicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Parabolic.source + ".Derivative") 
-                                               [| _Parabolic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -259,8 +259,8 @@ module ParabolicFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Parabolic.source + ".Empty") 
-                                               [| _Parabolic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Parabolic.cell
                                 |]
@@ -303,8 +303,8 @@ module ParabolicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Parabolic.source + ".Primitive") 
-                                               [| _Parabolic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -351,8 +351,8 @@ module ParabolicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Parabolic.source + ".SecondDerivative") 
-                                               [| _Parabolic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -391,8 +391,8 @@ module ParabolicFunction =
                 let format (o : Parabolic) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Parabolic.source + ".Update") 
-                                               [| _Parabolic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Parabolic.cell
                                 |]
@@ -435,8 +435,8 @@ module ParabolicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Parabolic.source + ".Value1") 
-                                               [| _Parabolic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -479,8 +479,8 @@ module ParabolicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Parabolic.source + ".Value") 
-                                               [| _Parabolic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Parabolic.cell
@@ -517,8 +517,8 @@ module ParabolicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Parabolic.source + ".XMax") 
-                                               [| _Parabolic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Parabolic.cell
                                 |]
@@ -553,8 +553,8 @@ module ParabolicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Parabolic.source + ".XMin") 
-                                               [| _Parabolic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Parabolic.cell
                                 |]
@@ -589,8 +589,8 @@ module ParabolicFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Parabolic.source + ".AllowsExtrapolation") 
-                                               [| _Parabolic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Parabolic.cell
                                 |]
@@ -629,8 +629,8 @@ module ParabolicFunction =
                 let format (o : Parabolic) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Parabolic.source + ".DisableExtrapolation") 
-                                               [| _Parabolic.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Parabolic.cell
@@ -671,8 +671,8 @@ module ParabolicFunction =
                 let format (o : Parabolic) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Parabolic.source + ".EnableExtrapolation") 
-                                               [| _Parabolic.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Parabolic.cell
@@ -709,8 +709,8 @@ module ParabolicFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Parabolic.source + ".Extrapolate") 
-                                               [| _Parabolic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Parabolic.cell
                                 |]

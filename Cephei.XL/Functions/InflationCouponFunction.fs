@@ -58,8 +58,8 @@ module InflationCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".AccruedAmount") 
-                                               [| _InflationCoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
@@ -96,8 +96,8 @@ module InflationCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".Amount") 
-                                               [| _InflationCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
                                 |]
@@ -132,8 +132,8 @@ module InflationCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".DayCounter") 
-                                               [| _InflationCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
                                 |]
@@ -168,8 +168,8 @@ module InflationCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".FixingDate") 
-                                               [| _InflationCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
                                 |]
@@ -204,8 +204,8 @@ module InflationCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".FixingDays") 
-                                               [| _InflationCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
                                 |]
@@ -240,8 +240,8 @@ module InflationCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InflationIndex>) l
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".Index") 
-                                               [| _InflationCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
                                 |]
@@ -276,8 +276,8 @@ module InflationCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".IndexFixing") 
-                                               [| _InflationCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
                                 |]
@@ -409,8 +409,8 @@ module InflationCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".ObservationLag") 
-                                               [| _InflationCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
                                 |]
@@ -449,8 +449,8 @@ module InflationCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".Price") 
-                                               [| _InflationCoupon.source
-                                               ;  _discountingCurve.source
+
+                                               [| _discountingCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
@@ -487,8 +487,8 @@ module InflationCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InflationCouponPricer>) l
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".Pricer") 
-                                               [| _InflationCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
                                 |]
@@ -523,8 +523,8 @@ module InflationCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".Rate") 
-                                               [| _InflationCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
                                 |]
@@ -563,8 +563,8 @@ module InflationCouponFunction =
                 let format (o : InflationCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".SetPricer") 
-                                               [| _InflationCoupon.source
-                                               ;  _pricer.source
+
+                                               [| _pricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
@@ -601,8 +601,8 @@ module InflationCouponFunction =
                 let format (o : InflationCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".Update") 
-                                               [| _InflationCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
                                 |]
@@ -637,8 +637,8 @@ module InflationCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".AccrualDays") 
-                                               [| _InflationCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
                                 |]
@@ -673,8 +673,8 @@ module InflationCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".AccrualEndDate") 
-                                               [| _InflationCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
                                 |]
@@ -709,8 +709,8 @@ module InflationCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".AccrualPeriod") 
-                                               [| _InflationCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
                                 |]
@@ -745,8 +745,8 @@ module InflationCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".AccrualStartDate") 
-                                               [| _InflationCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
                                 |]
@@ -785,8 +785,8 @@ module InflationCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".AccruedDays") 
-                                               [| _InflationCoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
@@ -827,8 +827,8 @@ module InflationCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".AccruedPeriod") 
-                                               [| _InflationCoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
@@ -865,8 +865,8 @@ module InflationCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".Date") 
-                                               [| _InflationCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
                                 |]
@@ -901,8 +901,8 @@ module InflationCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".ExCouponDate") 
-                                               [| _InflationCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
                                 |]
@@ -937,8 +937,8 @@ module InflationCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".Nominal") 
-                                               [| _InflationCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
                                 |]
@@ -973,8 +973,8 @@ module InflationCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".ReferencePeriodEnd") 
-                                               [| _InflationCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
                                 |]
@@ -1009,8 +1009,8 @@ module InflationCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".ReferencePeriodStart") 
-                                               [| _InflationCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
                                 |]
@@ -1049,8 +1049,8 @@ module InflationCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".CompareTo") 
-                                               [| _InflationCoupon.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
@@ -1091,8 +1091,8 @@ module InflationCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".Equals") 
-                                               [| _InflationCoupon.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
@@ -1137,8 +1137,8 @@ module InflationCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".HasOccurred") 
-                                               [| _InflationCoupon.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                ;  _includeRefDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1181,8 +1181,8 @@ module InflationCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".TradingExCoupon") 
-                                               [| _InflationCoupon.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
@@ -1223,8 +1223,8 @@ module InflationCouponFunction =
                 let format (o : InflationCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".Accept") 
-                                               [| _InflationCoupon.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
@@ -1265,8 +1265,8 @@ module InflationCouponFunction =
                 let format (o : InflationCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".RegisterWith") 
-                                               [| _InflationCoupon.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell
@@ -1307,8 +1307,8 @@ module InflationCouponFunction =
                 let format (o : InflationCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InflationCoupon.source + ".UnregisterWith") 
-                                               [| _InflationCoupon.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InflationCoupon.cell

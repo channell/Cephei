@@ -159,8 +159,8 @@ module RateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_RateHelper.source + ".EarliestDate") 
-                                               [| _RateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
                                 |]
@@ -195,8 +195,8 @@ module RateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RateHelper.source + ".ImpliedQuote") 
-                                               [| _RateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
                                 |]
@@ -231,8 +231,8 @@ module RateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_RateHelper.source + ".LatestDate") 
-                                               [| _RateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
                                 |]
@@ -267,8 +267,8 @@ module RateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_RateHelper.source + ".LatestRelevantDate") 
-                                               [| _RateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
                                 |]
@@ -303,8 +303,8 @@ module RateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_RateHelper.source + ".MaturityDate") 
-                                               [| _RateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
                                 |]
@@ -339,8 +339,8 @@ module RateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_RateHelper.source + ".PillarDate") 
-                                               [| _RateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
                                 |]
@@ -375,8 +375,8 @@ module RateHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
                 let source () = Helper.sourceFold (_RateHelper.source + ".Quote") 
-                                               [| _RateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
                                 |]
@@ -411,8 +411,8 @@ module RateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RateHelper.source + ".QuoteError") 
-                                               [| _RateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
                                 |]
@@ -447,8 +447,8 @@ module RateHelperFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RateHelper.source + ".QuoteIsValid") 
-                                               [| _RateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
                                 |]
@@ -483,8 +483,8 @@ module RateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RateHelper.source + ".QuoteValue") 
-                                               [| _RateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
                                 |]
@@ -523,8 +523,8 @@ module RateHelperFunction =
                 let format (o : RateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RateHelper.source + ".RegisterWith") 
-                                               [| _RateHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
@@ -565,8 +565,8 @@ module RateHelperFunction =
                 let format (o : RateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RateHelper.source + ".SetTermStructure") 
-                                               [| _RateHelper.source
-                                               ;  _ts.source
+
+                                               [| _ts.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
@@ -607,8 +607,8 @@ module RateHelperFunction =
                 let format (o : RateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RateHelper.source + ".UnregisterWith") 
-                                               [| _RateHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
@@ -645,8 +645,8 @@ module RateHelperFunction =
                 let format (o : RateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RateHelper.source + ".Update") 
-                                               [| _RateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RateHelper.cell
                                 |]

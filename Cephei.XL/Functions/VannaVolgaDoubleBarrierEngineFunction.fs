@@ -64,8 +64,8 @@ module VannaVolgaDoubleBarrierEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IPricingEngine>) l
 
                 let source () = Helper.sourceFold (_VannaVolgaDoubleBarrierEngine.source + ".GetOriginalEngine") 
-                                               [| _VannaVolgaDoubleBarrierEngine.source
-                                               ;  _Process.source
+
+                                               [| _Process.source
                                                ;  _series.source
                                                |]
                 let hash = Helper.hashFold 
@@ -212,8 +212,8 @@ module VannaVolgaDoubleBarrierEngineFunction =
                 let format (o : VannaVolgaDoubleBarrierEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_VannaVolgaDoubleBarrierEngine.source + ".RegisterWith") 
-                                               [| _VannaVolgaDoubleBarrierEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VannaVolgaDoubleBarrierEngine.cell
@@ -250,8 +250,8 @@ module VannaVolgaDoubleBarrierEngineFunction =
                 let format (o : VannaVolgaDoubleBarrierEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_VannaVolgaDoubleBarrierEngine.source + ".Reset") 
-                                               [| _VannaVolgaDoubleBarrierEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _VannaVolgaDoubleBarrierEngine.cell
                                 |]
@@ -290,8 +290,8 @@ module VannaVolgaDoubleBarrierEngineFunction =
                 let format (o : VannaVolgaDoubleBarrierEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_VannaVolgaDoubleBarrierEngine.source + ".UnregisterWith") 
-                                               [| _VannaVolgaDoubleBarrierEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VannaVolgaDoubleBarrierEngine.cell
@@ -328,8 +328,8 @@ module VannaVolgaDoubleBarrierEngineFunction =
                 let format (o : VannaVolgaDoubleBarrierEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_VannaVolgaDoubleBarrierEngine.source + ".Update") 
-                                               [| _VannaVolgaDoubleBarrierEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _VannaVolgaDoubleBarrierEngine.cell
                                 |]

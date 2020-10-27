@@ -58,8 +58,8 @@ module GaussHyperbolicPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussHyperbolicPolynomial.source + ".Alpha") 
-                                               [| _GaussHyperbolicPolynomial.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussHyperbolicPolynomial.cell
@@ -100,8 +100,8 @@ module GaussHyperbolicPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussHyperbolicPolynomial.source + ".Beta") 
-                                               [| _GaussHyperbolicPolynomial.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussHyperbolicPolynomial.cell
@@ -138,8 +138,8 @@ module GaussHyperbolicPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussHyperbolicPolynomial.source + ".Mu_0") 
-                                               [| _GaussHyperbolicPolynomial.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussHyperbolicPolynomial.cell
                                 |]
@@ -178,8 +178,8 @@ module GaussHyperbolicPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussHyperbolicPolynomial.source + ".W") 
-                                               [| _GaussHyperbolicPolynomial.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussHyperbolicPolynomial.cell
@@ -224,8 +224,8 @@ module GaussHyperbolicPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussHyperbolicPolynomial.source + ".Value") 
-                                               [| _GaussHyperbolicPolynomial.source
-                                               ;  _n.source
+
+                                               [| _n.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -272,8 +272,8 @@ module GaussHyperbolicPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussHyperbolicPolynomial.source + ".WeightedValue") 
-                                               [| _GaussHyperbolicPolynomial.source
-                                               ;  _n.source
+
+                                               [| _n.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 

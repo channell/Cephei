@@ -97,8 +97,8 @@ module AssetOrNothingPayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AssetOrNothingPayoff.source + ".Name") 
-                                               [| _AssetOrNothingPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetOrNothingPayoff.cell
                                 |]
@@ -137,8 +137,8 @@ module AssetOrNothingPayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AssetOrNothingPayoff.source + ".Value") 
-                                               [| _AssetOrNothingPayoff.source
-                                               ;  _price.source
+
+                                               [| _price.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AssetOrNothingPayoff.cell
@@ -175,8 +175,8 @@ module AssetOrNothingPayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AssetOrNothingPayoff.source + ".Description") 
-                                               [| _AssetOrNothingPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetOrNothingPayoff.cell
                                 |]
@@ -211,8 +211,8 @@ module AssetOrNothingPayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AssetOrNothingPayoff.source + ".Strike") 
-                                               [| _AssetOrNothingPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetOrNothingPayoff.cell
                                 |]
@@ -247,8 +247,8 @@ module AssetOrNothingPayoffFunction =
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AssetOrNothingPayoff.source + ".OptionType") 
-                                               [| _AssetOrNothingPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetOrNothingPayoff.cell
                                 |]
@@ -287,8 +287,8 @@ module AssetOrNothingPayoffFunction =
                 let format (o : AssetOrNothingPayoff) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AssetOrNothingPayoff.source + ".Accept") 
-                                               [| _AssetOrNothingPayoff.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AssetOrNothingPayoff.cell

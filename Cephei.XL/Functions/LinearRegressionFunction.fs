@@ -54,8 +54,8 @@ module LinearRegressionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_LinearRegression.source + ".Coefficients") 
-                                               [| _LinearRegression.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LinearRegression.cell
                                 |]
@@ -176,8 +176,8 @@ module LinearRegressionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_LinearRegression.source + ".Residuals") 
-                                               [| _LinearRegression.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LinearRegression.cell
                                 |]
@@ -212,8 +212,8 @@ module LinearRegressionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_LinearRegression.source + ".StandardErrors") 
-                                               [| _LinearRegression.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LinearRegression.cell
                                 |]

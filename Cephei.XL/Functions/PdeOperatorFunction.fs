@@ -154,8 +154,8 @@ module PdeOperatorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
                 let source () = Helper.sourceFold (_PdeOperator.source + ".Add") 
-                                               [| _PdeOperator.source
-                                               ;  _A.source
+
+                                               [| _A.source
                                                ;  _B.source
                                                |]
                 let hash = Helper.hashFold 
@@ -198,8 +198,8 @@ module PdeOperatorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_PdeOperator.source + ".ApplyTo") 
-                                               [| _PdeOperator.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PdeOperator.cell
@@ -236,8 +236,8 @@ module PdeOperatorFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PdeOperator.source + ".Clone") 
-                                               [| _PdeOperator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PdeOperator.cell
                                 |]
@@ -272,8 +272,8 @@ module PdeOperatorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_PdeOperator.source + ".Diagonal") 
-                                               [| _PdeOperator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PdeOperator.cell
                                 |]
@@ -312,8 +312,8 @@ module PdeOperatorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
                 let source () = Helper.sourceFold (_PdeOperator.source + ".Identity") 
-                                               [| _PdeOperator.source
-                                               ;  _size.source
+
+                                               [| _size.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PdeOperator.cell
@@ -350,8 +350,8 @@ module PdeOperatorFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PdeOperator.source + ".IsTimeDependent") 
-                                               [| _PdeOperator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PdeOperator.cell
                                 |]
@@ -386,8 +386,8 @@ module PdeOperatorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_PdeOperator.source + ".LowerDiagonal") 
-                                               [| _PdeOperator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PdeOperator.cell
                                 |]
@@ -430,8 +430,8 @@ module PdeOperatorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
                 let source () = Helper.sourceFold (_PdeOperator.source + ".Multiply") 
-                                               [| _PdeOperator.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                ;  _o.source
                                                |]
                 let hash = Helper.hashFold 
@@ -478,8 +478,8 @@ module PdeOperatorFunction =
                 let format (o : PdeOperator) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PdeOperator.source + ".SetFirstRow") 
-                                               [| _PdeOperator.source
-                                               ;  _valB.source
+
+                                               [| _valB.source
                                                ;  _valC.source
                                                |]
                 let hash = Helper.hashFold 
@@ -526,8 +526,8 @@ module PdeOperatorFunction =
                 let format (o : PdeOperator) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PdeOperator.source + ".SetLastRow") 
-                                               [| _PdeOperator.source
-                                               ;  _valA.source
+
+                                               [| _valA.source
                                                ;  _valB.source
                                                |]
                 let hash = Helper.hashFold 
@@ -582,8 +582,8 @@ module PdeOperatorFunction =
                 let format (o : PdeOperator) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PdeOperator.source + ".SetMidRow") 
-                                               [| _PdeOperator.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _valA.source
                                                ;  _valB.source
                                                ;  _valC.source
@@ -638,8 +638,8 @@ module PdeOperatorFunction =
                 let format (o : PdeOperator) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PdeOperator.source + ".SetMidRows") 
-                                               [| _PdeOperator.source
-                                               ;  _valA.source
+
+                                               [| _valA.source
                                                ;  _valB.source
                                                ;  _valC.source
                                                |]
@@ -684,8 +684,8 @@ module PdeOperatorFunction =
                 let format (o : PdeOperator) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PdeOperator.source + ".SetTime") 
-                                               [| _PdeOperator.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PdeOperator.cell
@@ -722,8 +722,8 @@ module PdeOperatorFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PdeOperator.source + ".Size") 
-                                               [| _PdeOperator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PdeOperator.cell
                                 |]
@@ -762,8 +762,8 @@ module PdeOperatorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_PdeOperator.source + ".SolveFor") 
-                                               [| _PdeOperator.source
-                                               ;  _rhs.source
+
+                                               [| _rhs.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PdeOperator.cell
@@ -808,8 +808,8 @@ module PdeOperatorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_PdeOperator.source + ".SOR") 
-                                               [| _PdeOperator.source
-                                               ;  _rhs.source
+
+                                               [| _rhs.source
                                                ;  _tol.source
                                                |]
                 let hash = Helper.hashFold 
@@ -856,8 +856,8 @@ module PdeOperatorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IOperator>) l
 
                 let source () = Helper.sourceFold (_PdeOperator.source + ".Subtract") 
-                                               [| _PdeOperator.source
-                                               ;  _A.source
+
+                                               [| _A.source
                                                ;  _B.source
                                                |]
                 let hash = Helper.hashFold 
@@ -896,8 +896,8 @@ module PdeOperatorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_PdeOperator.source + ".UpperDiagonal") 
-                                               [| _PdeOperator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PdeOperator.cell
                                 |]

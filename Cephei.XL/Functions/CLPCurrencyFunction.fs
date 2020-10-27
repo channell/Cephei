@@ -85,8 +85,8 @@ module CLPCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CLPCurrency.source + ".Code") 
-                                               [| _CLPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CLPCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module CLPCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CLPCurrency.source + ".Empty") 
-                                               [| _CLPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CLPCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module CLPCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CLPCurrency.source + ".Equals") 
-                                               [| _CLPCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CLPCurrency.cell
@@ -199,8 +199,8 @@ module CLPCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CLPCurrency.source + ".Format") 
-                                               [| _CLPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CLPCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module CLPCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CLPCurrency.source + ".FractionsPerUnit") 
-                                               [| _CLPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CLPCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module CLPCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CLPCurrency.source + ".FractionSymbol") 
-                                               [| _CLPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CLPCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module CLPCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CLPCurrency.source + ".Name") 
-                                               [| _CLPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CLPCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module CLPCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CLPCurrency.source + ".NumericCode") 
-                                               [| _CLPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CLPCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module CLPCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_CLPCurrency.source + ".Rounding") 
-                                               [| _CLPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CLPCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module CLPCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CLPCurrency.source + ".Symbol") 
-                                               [| _CLPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CLPCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module CLPCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CLPCurrency.source + ".ToString") 
-                                               [| _CLPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CLPCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module CLPCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_CLPCurrency.source + ".TriangulationCurrency") 
-                                               [| _CLPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CLPCurrency.cell
                                 |]

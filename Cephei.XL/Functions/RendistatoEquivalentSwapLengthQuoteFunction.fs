@@ -54,8 +54,8 @@ module RendistatoEquivalentSwapLengthQuoteFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RendistatoEquivalentSwapLengthQuote.source + ".IsValid") 
-                                               [| _RendistatoEquivalentSwapLengthQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RendistatoEquivalentSwapLengthQuote.cell
                                 |]
@@ -127,8 +127,8 @@ module RendistatoEquivalentSwapLengthQuoteFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RendistatoEquivalentSwapLengthQuote.source + ".Value") 
-                                               [| _RendistatoEquivalentSwapLengthQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RendistatoEquivalentSwapLengthQuote.cell
                                 |]
@@ -167,8 +167,8 @@ module RendistatoEquivalentSwapLengthQuoteFunction =
                 let format (o : RendistatoEquivalentSwapLengthQuote) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RendistatoEquivalentSwapLengthQuote.source + ".RegisterWith") 
-                                               [| _RendistatoEquivalentSwapLengthQuote.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoEquivalentSwapLengthQuote.cell
@@ -209,8 +209,8 @@ module RendistatoEquivalentSwapLengthQuoteFunction =
                 let format (o : RendistatoEquivalentSwapLengthQuote) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RendistatoEquivalentSwapLengthQuote.source + ".UnregisterWith") 
-                                               [| _RendistatoEquivalentSwapLengthQuote.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoEquivalentSwapLengthQuote.cell

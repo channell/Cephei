@@ -159,8 +159,8 @@ module AnalyticHestonHullWhiteEngineFunction =
                 let format (o : AnalyticHestonHullWhiteEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticHestonHullWhiteEngine.source + ".Update") 
-                                               [| _AnalyticHestonHullWhiteEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AnalyticHestonHullWhiteEngine.cell
                                 |]
@@ -195,8 +195,8 @@ module AnalyticHestonHullWhiteEngineFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AnalyticHestonHullWhiteEngine.source + ".NumberOfEvaluations") 
-                                               [| _AnalyticHestonHullWhiteEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AnalyticHestonHullWhiteEngine.cell
                                 |]
@@ -236,8 +236,8 @@ module AnalyticHestonHullWhiteEngineFunction =
                 let format (o : AnalyticHestonHullWhiteEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticHestonHullWhiteEngine.source + ".SetModel") 
-                                               [| _AnalyticHestonHullWhiteEngine.source
-                                               ;  _model.source
+
+                                               [| _model.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticHestonHullWhiteEngine.cell
@@ -278,8 +278,8 @@ module AnalyticHestonHullWhiteEngineFunction =
                 let format (o : AnalyticHestonHullWhiteEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticHestonHullWhiteEngine.source + ".RegisterWith") 
-                                               [| _AnalyticHestonHullWhiteEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticHestonHullWhiteEngine.cell
@@ -316,8 +316,8 @@ module AnalyticHestonHullWhiteEngineFunction =
                 let format (o : AnalyticHestonHullWhiteEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticHestonHullWhiteEngine.source + ".Reset") 
-                                               [| _AnalyticHestonHullWhiteEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AnalyticHestonHullWhiteEngine.cell
                                 |]
@@ -356,8 +356,8 @@ module AnalyticHestonHullWhiteEngineFunction =
                 let format (o : AnalyticHestonHullWhiteEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticHestonHullWhiteEngine.source + ".UnregisterWith") 
-                                               [| _AnalyticHestonHullWhiteEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticHestonHullWhiteEngine.cell

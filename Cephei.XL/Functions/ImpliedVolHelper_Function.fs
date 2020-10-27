@@ -58,8 +58,8 @@ module ImpliedVolHelper_Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ImpliedVolHelper_.source + ".Derivative") 
-                                               [| _ImpliedVolHelper_.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ImpliedVolHelper_.cell
@@ -161,8 +161,8 @@ module ImpliedVolHelper_Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ImpliedVolHelper_.source + ".Value") 
-                                               [| _ImpliedVolHelper_.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ImpliedVolHelper_.cell

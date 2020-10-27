@@ -97,8 +97,8 @@ module AmortizingPaymentFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmortizingPayment.source + ".Amount") 
-                                               [| _AmortizingPayment.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmortizingPayment.cell
                                 |]
@@ -133,8 +133,8 @@ module AmortizingPaymentFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_AmortizingPayment.source + ".Date") 
-                                               [| _AmortizingPayment.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmortizingPayment.cell
                                 |]
@@ -173,8 +173,8 @@ module AmortizingPaymentFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmortizingPayment.source + ".CompareTo") 
-                                               [| _AmortizingPayment.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmortizingPayment.cell
@@ -215,8 +215,8 @@ module AmortizingPaymentFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AmortizingPayment.source + ".Equals") 
-                                               [| _AmortizingPayment.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmortizingPayment.cell
@@ -253,8 +253,8 @@ module AmortizingPaymentFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_AmortizingPayment.source + ".ExCouponDate") 
-                                               [| _AmortizingPayment.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmortizingPayment.cell
                                 |]
@@ -297,8 +297,8 @@ module AmortizingPaymentFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AmortizingPayment.source + ".HasOccurred") 
-                                               [| _AmortizingPayment.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                ;  _includeRefDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -341,8 +341,8 @@ module AmortizingPaymentFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AmortizingPayment.source + ".TradingExCoupon") 
-                                               [| _AmortizingPayment.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmortizingPayment.cell
@@ -383,8 +383,8 @@ module AmortizingPaymentFunction =
                 let format (o : AmortizingPayment) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AmortizingPayment.source + ".Accept") 
-                                               [| _AmortizingPayment.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmortizingPayment.cell
@@ -425,8 +425,8 @@ module AmortizingPaymentFunction =
                 let format (o : AmortizingPayment) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AmortizingPayment.source + ".RegisterWith") 
-                                               [| _AmortizingPayment.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmortizingPayment.cell
@@ -467,8 +467,8 @@ module AmortizingPaymentFunction =
                 let format (o : AmortizingPayment) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AmortizingPayment.source + ".UnregisterWith") 
-                                               [| _AmortizingPayment.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmortizingPayment.cell

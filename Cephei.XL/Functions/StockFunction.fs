@@ -54,8 +54,8 @@ module StockFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Stock.source + ".IsExpired") 
-                                               [| _Stock.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Stock.cell
                                 |]
@@ -139,8 +139,8 @@ module StockFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Stock.source + ".CASH") 
-                                               [| _Stock.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Stock.cell
                                 |]
@@ -175,8 +175,8 @@ module StockFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Stock.source + ".ErrorEstimate") 
-                                               [| _Stock.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Stock.cell
                                 |]
@@ -211,8 +211,8 @@ module StockFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Stock.source + ".NPV") 
-                                               [| _Stock.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Stock.cell
                                 |]
@@ -251,8 +251,8 @@ module StockFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Stock.source + ".Result") 
-                                               [| _Stock.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Stock.cell
@@ -293,8 +293,8 @@ module StockFunction =
                 let format (o : Stock) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Stock.source + ".SetPricingEngine") 
-                                               [| _Stock.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Stock.cell
@@ -331,8 +331,8 @@ module StockFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Stock.source + ".ValuationDate") 
-                                               [| _Stock.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Stock.cell
                                 |]

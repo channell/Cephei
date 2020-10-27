@@ -62,8 +62,8 @@ module CompositeInstrumentFunction =
                 let format (o : CompositeInstrument) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CompositeInstrument.source + ".Add") 
-                                               [| _CompositeInstrument.source
-                                               ;  _instrument.source
+
+                                               [| _instrument.source
                                                ;  _multiplier.source
                                                |]
                 let hash = Helper.hashFold 
@@ -103,8 +103,8 @@ module CompositeInstrumentFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CompositeInstrument.source + ".IsExpired") 
-                                               [| _CompositeInstrument.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CompositeInstrument.cell
                                 |]
@@ -147,8 +147,8 @@ module CompositeInstrumentFunction =
                 let format (o : CompositeInstrument) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CompositeInstrument.source + ".Subtract") 
-                                               [| _CompositeInstrument.source
-                                               ;  _instrument.source
+
+                                               [| _instrument.source
                                                ;  _multiplier.source
                                                |]
                 let hash = Helper.hashFold 
@@ -187,8 +187,8 @@ module CompositeInstrumentFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CompositeInstrument.source + ".CASH") 
-                                               [| _CompositeInstrument.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CompositeInstrument.cell
                                 |]
@@ -223,8 +223,8 @@ module CompositeInstrumentFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CompositeInstrument.source + ".ErrorEstimate") 
-                                               [| _CompositeInstrument.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CompositeInstrument.cell
                                 |]
@@ -259,8 +259,8 @@ module CompositeInstrumentFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CompositeInstrument.source + ".NPV") 
-                                               [| _CompositeInstrument.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CompositeInstrument.cell
                                 |]
@@ -299,8 +299,8 @@ module CompositeInstrumentFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CompositeInstrument.source + ".Result") 
-                                               [| _CompositeInstrument.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CompositeInstrument.cell
@@ -341,8 +341,8 @@ module CompositeInstrumentFunction =
                 let format (o : CompositeInstrument) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CompositeInstrument.source + ".SetPricingEngine") 
-                                               [| _CompositeInstrument.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CompositeInstrument.cell
@@ -379,8 +379,8 @@ module CompositeInstrumentFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CompositeInstrument.source + ".ValuationDate") 
-                                               [| _CompositeInstrument.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CompositeInstrument.cell
                                 |]

@@ -62,8 +62,8 @@ module TreeLatticeFunction =
                 let format (o : TreeLattice) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TreeLattice.source + ".Initialize") 
-                                               [| _TreeLattice.source
-                                               ;  _asset.source
+
+                                               [| _asset.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -110,8 +110,8 @@ module TreeLatticeFunction =
                 let format (o : TreeLattice) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TreeLattice.source + ".PartialRollback") 
-                                               [| _TreeLattice.source
-                                               ;  _asset.source
+
+                                               [| _asset.source
                                                ;  _To.source
                                                |]
                 let hash = Helper.hashFold 
@@ -154,8 +154,8 @@ module TreeLatticeFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TreeLattice.source + ".PresentValue") 
-                                               [| _TreeLattice.source
-                                               ;  _asset.source
+
+                                               [| _asset.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TreeLattice.cell
@@ -200,8 +200,8 @@ module TreeLatticeFunction =
                 let format (o : TreeLattice) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TreeLattice.source + ".Rollback") 
-                                               [| _TreeLattice.source
-                                               ;  _asset.source
+
+                                               [| _asset.source
                                                ;  _To.source
                                                |]
                 let hash = Helper.hashFold 
@@ -244,8 +244,8 @@ module TreeLatticeFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_TreeLattice.source + ".StatePrices") 
-                                               [| _TreeLattice.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TreeLattice.cell
@@ -294,8 +294,8 @@ module TreeLatticeFunction =
                 let format (o : TreeLattice) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TreeLattice.source + ".Stepback") 
-                                               [| _TreeLattice.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _values.source
                                                ;  _newValues.source
                                                |]
@@ -383,8 +383,8 @@ module TreeLatticeFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_TreeLattice.source + ".Grid") 
-                                               [| _TreeLattice.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TreeLattice.cell
@@ -421,8 +421,8 @@ module TreeLatticeFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TimeGrid>) l
 
                 let source () = Helper.sourceFold (_TreeLattice.source + ".TimeGrid") 
-                                               [| _TreeLattice.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TreeLattice.cell
                                 |]

@@ -298,8 +298,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".MaxDate") 
-                                               [| _ConstantOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConstantOptionletVolatility.cell
                                 |]
@@ -334,8 +334,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".MaxStrike") 
-                                               [| _ConstantOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConstantOptionletVolatility.cell
                                 |]
@@ -370,8 +370,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".MinStrike") 
-                                               [| _ConstantOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConstantOptionletVolatility.cell
                                 |]
@@ -418,8 +418,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".BlackVariance") 
-                                               [| _ConstantOptionletVolatility.source
-                                               ;  _optionTime.source
+
+                                               [| _optionTime.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
                                                |]
@@ -472,8 +472,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".BlackVariance2") 
-                                               [| _ConstantOptionletVolatility.source
-                                               ;  _optionTenor.source
+
+                                               [| _optionTenor.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
                                                |]
@@ -526,8 +526,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".BlackVariance1") 
-                                               [| _ConstantOptionletVolatility.source
-                                               ;  _optionDate.source
+
+                                               [| _optionDate.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
                                                |]
@@ -568,8 +568,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".Displacement") 
-                                               [| _ConstantOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConstantOptionletVolatility.cell
                                 |]
@@ -612,8 +612,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SmileSection>) l
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".SmileSection") 
-                                               [| _ConstantOptionletVolatility.source
-                                               ;  _optionTime.source
+
+                                               [| _optionTime.source
                                                ;  _extr.source
                                                |]
                 let hash = Helper.hashFold 
@@ -660,8 +660,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SmileSection>) l
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".SmileSection2") 
-                                               [| _ConstantOptionletVolatility.source
-                                               ;  _optionDate.source
+
+                                               [| _optionDate.source
                                                ;  _extr.source
                                                |]
                 let hash = Helper.hashFold 
@@ -708,8 +708,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SmileSection>) l
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".SmileSection1") 
-                                               [| _ConstantOptionletVolatility.source
-                                               ;  _optionTenor.source
+
+                                               [| _optionTenor.source
                                                ;  _extr.source
                                                |]
                 let hash = Helper.hashFold 
@@ -760,8 +760,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".Volatility2") 
-                                               [| _ConstantOptionletVolatility.source
-                                               ;  _optionTime.source
+
+                                               [| _optionTime.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
                                                |]
@@ -814,8 +814,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".Volatility1") 
-                                               [| _ConstantOptionletVolatility.source
-                                               ;  _optionDate.source
+
+                                               [| _optionDate.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
                                                |]
@@ -868,8 +868,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".Volatility") 
-                                               [| _ConstantOptionletVolatility.source
-                                               ;  _optionTenor.source
+
+                                               [| _optionTenor.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
                                                |]
@@ -910,8 +910,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".VolatilityType") 
-                                               [| _ConstantOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConstantOptionletVolatility.cell
                                 |]
@@ -946,8 +946,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".BusinessDayConvention") 
-                                               [| _ConstantOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConstantOptionletVolatility.cell
                                 |]
@@ -986,8 +986,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".OptionDateFromTenor") 
-                                               [| _ConstantOptionletVolatility.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantOptionletVolatility.cell
@@ -1024,8 +1024,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".Calendar") 
-                                               [| _ConstantOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConstantOptionletVolatility.cell
                                 |]
@@ -1060,8 +1060,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".DayCounter") 
-                                               [| _ConstantOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConstantOptionletVolatility.cell
                                 |]
@@ -1096,8 +1096,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".MaxTime") 
-                                               [| _ConstantOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConstantOptionletVolatility.cell
                                 |]
@@ -1132,8 +1132,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".ReferenceDate") 
-                                               [| _ConstantOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConstantOptionletVolatility.cell
                                 |]
@@ -1168,8 +1168,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".SettlementDays") 
-                                               [| _ConstantOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConstantOptionletVolatility.cell
                                 |]
@@ -1208,8 +1208,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".TimeFromReference") 
-                                               [| _ConstantOptionletVolatility.source
-                                               ;  _date.source
+
+                                               [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantOptionletVolatility.cell
@@ -1246,8 +1246,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (o : ConstantOptionletVolatility) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".Update") 
-                                               [| _ConstantOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConstantOptionletVolatility.cell
                                 |]
@@ -1282,8 +1282,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".AllowsExtrapolation") 
-                                               [| _ConstantOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConstantOptionletVolatility.cell
                                 |]
@@ -1322,8 +1322,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (o : ConstantOptionletVolatility) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".DisableExtrapolation") 
-                                               [| _ConstantOptionletVolatility.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantOptionletVolatility.cell
@@ -1364,8 +1364,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (o : ConstantOptionletVolatility) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".EnableExtrapolation") 
-                                               [| _ConstantOptionletVolatility.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantOptionletVolatility.cell
@@ -1402,8 +1402,8 @@ module ConstantOptionletVolatilityFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConstantOptionletVolatility.source + ".Extrapolate") 
-                                               [| _ConstantOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConstantOptionletVolatility.cell
                                 |]

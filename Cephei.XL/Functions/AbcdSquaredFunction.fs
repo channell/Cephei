@@ -125,8 +125,8 @@ module AbcdSquaredFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AbcdSquared.source + ".Value") 
-                                               [| _AbcdSquared.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdSquared.cell

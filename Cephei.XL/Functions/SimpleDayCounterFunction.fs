@@ -93,8 +93,8 @@ module SimpleDayCounterFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SimpleDayCounter.source + ".DayCount") 
-                                               [| _SimpleDayCounter.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                |]
                 let hash = Helper.hashFold 
@@ -133,8 +133,8 @@ module SimpleDayCounterFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_SimpleDayCounter.source + ".DayCounter") 
-                                               [| _SimpleDayCounter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SimpleDayCounter.cell
                                 |]
@@ -169,8 +169,8 @@ module SimpleDayCounterFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SimpleDayCounter.source + ".Empty") 
-                                               [| _SimpleDayCounter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SimpleDayCounter.cell
                                 |]
@@ -209,8 +209,8 @@ module SimpleDayCounterFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SimpleDayCounter.source + ".Equals") 
-                                               [| _SimpleDayCounter.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimpleDayCounter.cell
@@ -247,8 +247,8 @@ module SimpleDayCounterFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SimpleDayCounter.source + ".Name") 
-                                               [| _SimpleDayCounter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SimpleDayCounter.cell
                                 |]
@@ -283,8 +283,8 @@ module SimpleDayCounterFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SimpleDayCounter.source + ".ToString") 
-                                               [| _SimpleDayCounter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SimpleDayCounter.cell
                                 |]
@@ -335,8 +335,8 @@ module SimpleDayCounterFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SimpleDayCounter.source + ".YearFraction") 
-                                               [| _SimpleDayCounter.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _refPeriodStart.source
                                                ;  _refPeriodEnd.source
@@ -387,8 +387,8 @@ module SimpleDayCounterFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SimpleDayCounter.source + ".YearFraction1") 
-                                               [| _SimpleDayCounter.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                |]
                 let hash = Helper.hashFold 

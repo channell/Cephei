@@ -85,8 +85,8 @@ module PKRCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PKRCurrency.source + ".Code") 
-                                               [| _PKRCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PKRCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module PKRCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PKRCurrency.source + ".Empty") 
-                                               [| _PKRCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PKRCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module PKRCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PKRCurrency.source + ".Equals") 
-                                               [| _PKRCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PKRCurrency.cell
@@ -199,8 +199,8 @@ module PKRCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PKRCurrency.source + ".Format") 
-                                               [| _PKRCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PKRCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module PKRCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PKRCurrency.source + ".FractionsPerUnit") 
-                                               [| _PKRCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PKRCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module PKRCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PKRCurrency.source + ".FractionSymbol") 
-                                               [| _PKRCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PKRCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module PKRCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PKRCurrency.source + ".Name") 
-                                               [| _PKRCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PKRCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module PKRCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PKRCurrency.source + ".NumericCode") 
-                                               [| _PKRCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PKRCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module PKRCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_PKRCurrency.source + ".Rounding") 
-                                               [| _PKRCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PKRCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module PKRCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PKRCurrency.source + ".Symbol") 
-                                               [| _PKRCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PKRCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module PKRCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PKRCurrency.source + ".ToString") 
-                                               [| _PKRCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PKRCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module PKRCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_PKRCurrency.source + ".TriangulationCurrency") 
-                                               [| _PKRCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PKRCurrency.cell
                                 |]

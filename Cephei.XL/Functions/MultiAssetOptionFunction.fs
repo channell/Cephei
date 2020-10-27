@@ -54,8 +54,8 @@ module MultiAssetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MultiAssetOption.source + ".Delta") 
-                                               [| _MultiAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
@@ -90,8 +90,8 @@ module MultiAssetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MultiAssetOption.source + ".DividendRho") 
-                                               [| _MultiAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
@@ -126,8 +126,8 @@ module MultiAssetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MultiAssetOption.source + ".Gamma") 
-                                               [| _MultiAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
@@ -162,8 +162,8 @@ module MultiAssetOptionFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MultiAssetOption.source + ".IsExpired") 
-                                               [| _MultiAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
@@ -253,8 +253,8 @@ module MultiAssetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MultiAssetOption.source + ".Rho") 
-                                               [| _MultiAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
@@ -289,8 +289,8 @@ module MultiAssetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MultiAssetOption.source + ".Theta") 
-                                               [| _MultiAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
@@ -325,8 +325,8 @@ module MultiAssetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MultiAssetOption.source + ".Vega") 
-                                               [| _MultiAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
@@ -361,8 +361,8 @@ module MultiAssetOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
                 let source () = Helper.sourceFold (_MultiAssetOption.source + ".Exercise") 
-                                               [| _MultiAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
@@ -397,8 +397,8 @@ module MultiAssetOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
                 let source () = Helper.sourceFold (_MultiAssetOption.source + ".Payoff") 
-                                               [| _MultiAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
@@ -433,8 +433,8 @@ module MultiAssetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MultiAssetOption.source + ".CASH") 
-                                               [| _MultiAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
@@ -469,8 +469,8 @@ module MultiAssetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MultiAssetOption.source + ".ErrorEstimate") 
-                                               [| _MultiAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
@@ -505,8 +505,8 @@ module MultiAssetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MultiAssetOption.source + ".NPV") 
-                                               [| _MultiAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]
@@ -545,8 +545,8 @@ module MultiAssetOptionFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MultiAssetOption.source + ".Result") 
-                                               [| _MultiAssetOption.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
@@ -587,8 +587,8 @@ module MultiAssetOptionFunction =
                 let format (o : MultiAssetOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MultiAssetOption.source + ".SetPricingEngine") 
-                                               [| _MultiAssetOption.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
@@ -625,8 +625,8 @@ module MultiAssetOptionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_MultiAssetOption.source + ".ValuationDate") 
-                                               [| _MultiAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MultiAssetOption.cell
                                 |]

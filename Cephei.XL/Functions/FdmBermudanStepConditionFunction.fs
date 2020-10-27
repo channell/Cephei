@@ -62,8 +62,8 @@ module FdmBermudanStepConditionFunction =
                 let format (o : FdmBermudanStepCondition) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FdmBermudanStepCondition.source + ".ApplyTo") 
-                                               [| _FdmBermudanStepCondition.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -102,8 +102,8 @@ module FdmBermudanStepConditionFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_FdmBermudanStepCondition.source + ".ExerciseTimes") 
-                                               [| _FdmBermudanStepCondition.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmBermudanStepCondition.cell
                                 |]

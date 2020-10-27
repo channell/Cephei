@@ -66,6 +66,11 @@ namespace Cephei.Cell.Generic
         /// by earlier events that have been scheduled later than more recent evens
         /// </summary>
         private DateTime _epoch;
+
+        /// <summary>
+        /// epoch of the last change event
+        /// </summary>
+        private DateTime _eventEpoch;
         /// <summary>
 		/// if it has not been linked then need to gather dependencies.  True when
 		/// calculation cells are first created, and reset if on of the boolean values it
@@ -192,7 +197,7 @@ namespace Cephei.Cell.Generic
                 _spinLock.Enter(ref taken);
                 if (taken)
                 {
-                    if (_state == (int)CellState.Clean && session == null)
+                    if (_state == (int)CellState.Clean && session == null || (_epoch > epoch && session == null))
                         return _value;      // don't recalculate for read
                     SetState(CellState.Calculating);
                     _spinLock.Exit(true);
@@ -507,6 +512,7 @@ namespace Cephei.Cell.Generic
         public virtual void OnChange(CellEvent eventType, ICellEvent root,  ICellEvent sender,  DateTime epoch, ISession session)
         {
             if (_disposd && root != this && eventType != CellEvent.Delete) sender.OnChange(CellEvent.Delete, this, this, epoch, session);
+            if (epoch < _eventEpoch && session == null) return; else _eventEpoch = epoch;
             switch (eventType)
             {
                 case CellEvent.Calculate:

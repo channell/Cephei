@@ -63,8 +63,8 @@ module SobolBrownianGeneratorFactoryFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IBrownianGenerator>) l
 
                 let source () = Helper.sourceFold (_SobolBrownianGeneratorFactory.source + ".Create") 
-                                               [| _SobolBrownianGeneratorFactory.source
-                                               ;  _factors.source
+
+                                               [| _factors.source
                                                ;  _steps.source
                                                |]
                 let hash = Helper.hashFold 

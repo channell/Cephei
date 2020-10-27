@@ -96,8 +96,8 @@ module SequenceStatisticsFunction =
                 let format (o : SequenceStatistics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".Add") 
-                                               [| _SequenceStatistics.source
-                                               ;  _Begin.source
+
+                                               [| _Begin.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
@@ -144,8 +144,8 @@ module SequenceStatisticsFunction =
                 let format (o : SequenceStatistics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".Add") 
-                                               [| _SequenceStatistics.source
-                                               ;  _Begin.source
+
+                                               [| _Begin.source
                                                ;  _weight.source
                                                |]
                 let hash = Helper.hashFold 
@@ -189,8 +189,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".AverageShortfall") 
-                                               [| _SequenceStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
@@ -227,8 +227,8 @@ module SequenceStatisticsFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".Correlation") 
-                                               [| _SequenceStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
                                 |]
@@ -263,8 +263,8 @@ module SequenceStatisticsFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".Covariance") 
-                                               [| _SequenceStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
                                 |]
@@ -299,8 +299,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".DownsideDeviation") 
-                                               [| _SequenceStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
                                 |]
@@ -335,8 +335,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".DownsideVariance") 
-                                               [| _SequenceStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
                                 |]
@@ -371,8 +371,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".ErrorEstimate") 
-                                               [| _SequenceStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
                                 |]
@@ -411,8 +411,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".ExpectedShortfall") 
-                                               [| _SequenceStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
@@ -453,8 +453,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".GaussianAverageShortfall") 
-                                               [| _SequenceStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
@@ -495,8 +495,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".GaussianExpectedShortfall") 
-                                               [| _SequenceStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
@@ -537,8 +537,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".GaussianPercentile") 
-                                               [| _SequenceStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
@@ -579,8 +579,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".GaussianPotentialUpside") 
-                                               [| _SequenceStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
@@ -621,8 +621,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".GaussianShortfall") 
-                                               [| _SequenceStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
@@ -663,8 +663,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".GaussianValueAtRisk") 
-                                               [| _SequenceStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
@@ -701,8 +701,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".Kurtosis") 
-                                               [| _SequenceStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
                                 |]
@@ -737,8 +737,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".Max") 
-                                               [| _SequenceStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
                                 |]
@@ -773,8 +773,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".Mean") 
-                                               [| _SequenceStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
                                 |]
@@ -809,8 +809,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".Min") 
-                                               [| _SequenceStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
                                 |]
@@ -849,8 +849,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".Percentile") 
-                                               [| _SequenceStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
@@ -891,8 +891,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".PotentialUpside") 
-                                               [| _SequenceStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
@@ -933,8 +933,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".Regret") 
-                                               [| _SequenceStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
@@ -975,8 +975,8 @@ module SequenceStatisticsFunction =
                 let format (o : SequenceStatistics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".Reset") 
-                                               [| _SequenceStatistics.source
-                                               ;  _dimension.source
+
+                                               [| _dimension.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
@@ -1013,8 +1013,8 @@ module SequenceStatisticsFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".Samples") 
-                                               [| _SequenceStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
                                 |]
@@ -1049,8 +1049,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".SemiDeviation") 
-                                               [| _SequenceStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
                                 |]
@@ -1085,8 +1085,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".SemiVariance") 
-                                               [| _SequenceStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
                                 |]
@@ -1125,8 +1125,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".Shortfall") 
-                                               [| _SequenceStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
@@ -1163,8 +1163,8 @@ module SequenceStatisticsFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".Size") 
-                                               [| _SequenceStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
                                 |]
@@ -1199,8 +1199,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".Skewness") 
-                                               [| _SequenceStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
                                 |]
@@ -1235,8 +1235,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".StandardDeviation") 
-                                               [| _SequenceStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
                                 |]
@@ -1275,8 +1275,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".ValueAtRisk") 
-                                               [| _SequenceStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
@@ -1313,8 +1313,8 @@ module SequenceStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".Variance") 
-                                               [| _SequenceStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
                                 |]
@@ -1349,8 +1349,8 @@ module SequenceStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SequenceStatistics.source + ".WeightSum") 
-                                               [| _SequenceStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SequenceStatistics.cell
                                 |]

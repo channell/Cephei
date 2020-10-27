@@ -70,8 +70,8 @@ module LeisenReimerFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LeisenReimer>) l
 
                 let source () = Helper.sourceFold (_LeisenReimer.source + ".Factory") 
-                                               [| _LeisenReimer.source
-                                               ;  _Process.source
+
+                                               [| _Process.source
                                                ;  _End.source
                                                ;  _steps.source
                                                ;  _strike.source
@@ -212,8 +212,8 @@ module LeisenReimerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LeisenReimer.source + ".Probability") 
-                                               [| _LeisenReimer.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _j.source
                                                ;  _branch.source
                                                |]
@@ -262,8 +262,8 @@ module LeisenReimerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LeisenReimer.source + ".Underlying") 
-                                               [| _LeisenReimer.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _index.source
                                                |]
                 let hash = Helper.hashFold 
@@ -314,8 +314,8 @@ module LeisenReimerFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LeisenReimer.source + ".Descendant") 
-                                               [| _LeisenReimer.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _index.source
                                                ;  _branch.source
                                                |]
@@ -360,8 +360,8 @@ module LeisenReimerFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LeisenReimer.source + ".Size") 
-                                               [| _LeisenReimer.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LeisenReimer.cell
@@ -398,8 +398,8 @@ module LeisenReimerFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LeisenReimer.source + ".Columns") 
-                                               [| _LeisenReimer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LeisenReimer.cell
                                 |]

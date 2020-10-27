@@ -214,8 +214,8 @@ module BachelierSwaptionEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_BachelierSwaptionEngine.source + ".TermStructure") 
-                                               [| _BachelierSwaptionEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BachelierSwaptionEngine.cell
                                 |]
@@ -250,8 +250,8 @@ module BachelierSwaptionEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<SwaptionVolatilityStructure>>) l
 
                 let source () = Helper.sourceFold (_BachelierSwaptionEngine.source + ".Volatility") 
-                                               [| _BachelierSwaptionEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BachelierSwaptionEngine.cell
                                 |]

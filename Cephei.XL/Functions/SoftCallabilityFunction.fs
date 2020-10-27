@@ -103,8 +103,8 @@ module SoftCallabilityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SoftCallability.source + ".Trigger") 
-                                               [| _SoftCallability.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SoftCallability.cell
                                 |]
@@ -139,8 +139,8 @@ module SoftCallabilityFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_SoftCallability.source + ".Date") 
-                                               [| _SoftCallability.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SoftCallability.cell
                                 |]
@@ -175,8 +175,8 @@ module SoftCallabilityFunction =
                 let format (o : Callability.Price) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SoftCallability.source + ".Price") 
-                                               [| _SoftCallability.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SoftCallability.cell
                                 |]
@@ -211,8 +211,8 @@ module SoftCallabilityFunction =
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SoftCallability.source + ".TYPE") 
-                                               [| _SoftCallability.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SoftCallability.cell
                                 |]
@@ -251,8 +251,8 @@ module SoftCallabilityFunction =
                 let format (o : SoftCallability) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SoftCallability.source + ".Accept") 
-                                               [| _SoftCallability.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SoftCallability.cell
@@ -297,8 +297,8 @@ module SoftCallabilityFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SoftCallability.source + ".HasOccurred") 
-                                               [| _SoftCallability.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _includeRefDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -341,8 +341,8 @@ module SoftCallabilityFunction =
                 let format (o : SoftCallability) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SoftCallability.source + ".RegisterWith") 
-                                               [| _SoftCallability.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SoftCallability.cell
@@ -383,8 +383,8 @@ module SoftCallabilityFunction =
                 let format (o : SoftCallability) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SoftCallability.source + ".UnregisterWith") 
-                                               [| _SoftCallability.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SoftCallability.cell

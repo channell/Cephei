@@ -107,8 +107,8 @@ module EuropeanHestonPathPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EuropeanHestonPathPricer.source + ".Value") 
-                                               [| _EuropeanHestonPathPricer.source
-                                               ;  _multiPath.source
+
+                                               [| _multiPath.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanHestonPathPricer.cell

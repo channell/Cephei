@@ -62,8 +62,8 @@ module NullConditionFunction =
                 let format (o : NullCondition) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NullCondition.source + ".ApplyTo") 
-                                               [| _NullCondition.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 

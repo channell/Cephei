@@ -238,20 +238,20 @@ namespace Cephei.Cell
             if (p.Length > 0)
                 return new CellFast<T>(func, p);
             else
-                return new Cell<T>(func);
+                return new CellFast<T>(func, new ICell[0]);
         }
-		/// <summary>
-		/// Create a fast cell with a mnemonic
-		/// </summary>
-		/// <param name="func"></param>
-		/// <param name="mnemonic"></param>
+        /// <summary>
+        /// Create a fast cell with a mnemonic
+        /// </summary>
+        /// <param name="func"></param>
+        /// <param name="mnemonic"></param>
         public static Generic.ICell<T> CreateFast<T>(FSharpFunc<Unit, T> func, string mnemonic)
         {
             var profile = Profile(func);
             if (profile.Length > 0)
                 return new CellFast<T>(func, profile, mnemonic);
             else
-                return new Cell<T>(func, mnemonic);
+                return new CellFast<T>(func, new ICell[0], mnemonic);
         }
 		/// <summary>
 		/// Create a cell value where it is known at define-time that all the dependants
@@ -358,14 +358,17 @@ namespace Cephei.Cell
             {
                 var o = f.GetValue(func);
                 fd.Add(f.Name, o);
-                if (o is ICell c && (!(c is Model) || c is ICellModel))
+                if (o is ICell c)
                 {
-                    l.AddLast(c);
-                    if (c is ITrivial t)
+                    if (c is ICellModel m && m.Cell != null)
+                        l.AddLast(m.Cell);
+                    else if (c is ITrivial t)
                     {
                         foreach (var x in ProfileObject(t.GetFunction()))
                             l.AddLast(x);
                     }
+                    else if (!(c is Model))
+                        l.AddLast(c);
                 }
             }
 
@@ -390,12 +393,14 @@ namespace Cephei.Cell
                                     fd.Add(fi.Name, p);
                                     if (p is ICell c)
                                     {
-                                        if (p is ITrivial t)
+                                        if (c is ICellModel m && m.Cell != null)
+                                            l.AddLast(m.Cell);
+                                        else if (p is ITrivial t)
                                         {
                                             foreach (var x in ProfileObject(t.GetFunction()))
                                                 l.AddLast(x);
                                         }
-                                        else
+                                        else if (!(c is Model))
                                             l.AddLast(c);
                                     }
                                 }

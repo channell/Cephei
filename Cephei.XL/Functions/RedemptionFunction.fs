@@ -97,8 +97,8 @@ module RedemptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Redemption.source + ".Amount") 
-                                               [| _Redemption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Redemption.cell
                                 |]
@@ -133,8 +133,8 @@ module RedemptionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Redemption.source + ".Date") 
-                                               [| _Redemption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Redemption.cell
                                 |]
@@ -173,8 +173,8 @@ module RedemptionFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Redemption.source + ".CompareTo") 
-                                               [| _Redemption.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Redemption.cell
@@ -215,8 +215,8 @@ module RedemptionFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Redemption.source + ".Equals") 
-                                               [| _Redemption.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Redemption.cell
@@ -253,8 +253,8 @@ module RedemptionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Redemption.source + ".ExCouponDate") 
-                                               [| _Redemption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Redemption.cell
                                 |]
@@ -297,8 +297,8 @@ module RedemptionFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Redemption.source + ".HasOccurred") 
-                                               [| _Redemption.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                ;  _includeRefDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -341,8 +341,8 @@ module RedemptionFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Redemption.source + ".TradingExCoupon") 
-                                               [| _Redemption.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Redemption.cell
@@ -383,8 +383,8 @@ module RedemptionFunction =
                 let format (o : Redemption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Redemption.source + ".Accept") 
-                                               [| _Redemption.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Redemption.cell
@@ -425,8 +425,8 @@ module RedemptionFunction =
                 let format (o : Redemption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Redemption.source + ".RegisterWith") 
-                                               [| _Redemption.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Redemption.cell
@@ -467,8 +467,8 @@ module RedemptionFunction =
                 let format (o : Redemption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Redemption.source + ".UnregisterWith") 
-                                               [| _Redemption.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Redemption.cell

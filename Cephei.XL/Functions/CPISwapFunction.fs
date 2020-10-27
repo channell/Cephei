@@ -54,8 +54,8 @@ module CPISwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".BaseCPI") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -90,8 +90,8 @@ module CPISwapFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".CpiLeg") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -277,8 +277,8 @@ module CPISwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".FairRate") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -313,8 +313,8 @@ module CPISwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".FairSpread") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -349,8 +349,8 @@ module CPISwapFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".FixedDayCount") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -385,8 +385,8 @@ module CPISwapFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZeroInflationIndex>) l
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".FixedIndex") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -421,8 +421,8 @@ module CPISwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".FixedLegNPV") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -457,8 +457,8 @@ module CPISwapFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".FixedPaymentRoll") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -493,8 +493,8 @@ module CPISwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".FixedRate") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -529,8 +529,8 @@ module CPISwapFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".FixedSchedule") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -565,8 +565,8 @@ module CPISwapFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".FixingDays") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -601,8 +601,8 @@ module CPISwapFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".FloatDayCount") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -637,8 +637,8 @@ module CPISwapFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".FloatIndex") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -673,8 +673,8 @@ module CPISwapFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".FloatLeg") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -709,8 +709,8 @@ module CPISwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".FloatLegNPV") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -745,8 +745,8 @@ module CPISwapFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".FloatPaymentRoll") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -781,8 +781,8 @@ module CPISwapFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".FloatSchedule") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -817,8 +817,8 @@ module CPISwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".InflationNominal") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -853,8 +853,8 @@ module CPISwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".Nominal") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -889,8 +889,8 @@ module CPISwapFunction =
                 let format (o : InterpolationType) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".ObservationInterpolation") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -925,8 +925,8 @@ module CPISwapFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".ObservationLag") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -961,8 +961,8 @@ module CPISwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".Spread") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -997,8 +997,8 @@ module CPISwapFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".SubtractInflationNominal") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -1033,8 +1033,8 @@ module CPISwapFunction =
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".TYPE") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -1073,8 +1073,8 @@ module CPISwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".EndDiscounts") 
-                                               [| _CPISwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
@@ -1112,8 +1112,8 @@ module CPISwapFunction =
                 let format (o : SwapEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".Engine") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -1149,8 +1149,8 @@ module CPISwapFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".IsExpired") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -1189,8 +1189,8 @@ module CPISwapFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".Leg") 
-                                               [| _CPISwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
@@ -1231,8 +1231,8 @@ module CPISwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".LegBPS") 
-                                               [| _CPISwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
@@ -1273,8 +1273,8 @@ module CPISwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".LegNPV") 
-                                               [| _CPISwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
@@ -1311,8 +1311,8 @@ module CPISwapFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".MaturityDate") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -1347,8 +1347,8 @@ module CPISwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".NpvDateDiscount") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -1387,8 +1387,8 @@ module CPISwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".Payer") 
-                                               [| _CPISwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
@@ -1425,8 +1425,8 @@ module CPISwapFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".StartDate") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -1465,8 +1465,8 @@ module CPISwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".StartDiscounts") 
-                                               [| _CPISwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
@@ -1503,8 +1503,8 @@ module CPISwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".CASH") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -1539,8 +1539,8 @@ module CPISwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".ErrorEstimate") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -1575,8 +1575,8 @@ module CPISwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".NPV") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]
@@ -1615,8 +1615,8 @@ module CPISwapFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".Result") 
-                                               [| _CPISwap.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
@@ -1657,8 +1657,8 @@ module CPISwapFunction =
                 let format (o : CPISwap) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".SetPricingEngine") 
-                                               [| _CPISwap.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
@@ -1695,8 +1695,8 @@ module CPISwapFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CPISwap.source + ".ValuationDate") 
-                                               [| _CPISwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPISwap.cell
                                 |]

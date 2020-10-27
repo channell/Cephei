@@ -158,8 +158,8 @@ module CrankNicolsonSchemeFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IMixedScheme>) l
 
                 let source () = Helper.sourceFold (_CrankNicolsonScheme.source + ".Factory") 
-                                               [| _CrankNicolsonScheme.source
-                                               ;  _L.source
+
+                                               [| _L.source
                                                ;  _bcs.source
                                                ;  _additionalInputs.source
                                                |]
@@ -200,8 +200,8 @@ module CrankNicolsonSchemeFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CrankNicolsonScheme.source + ".NumberOfIterations") 
-                                               [| _CrankNicolsonScheme.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CrankNicolsonScheme.cell
                                 |]
@@ -240,8 +240,8 @@ module CrankNicolsonSchemeFunction =
                 let format (o : CrankNicolsonScheme) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CrankNicolsonScheme.source + ".SetStep") 
-                                               [| _CrankNicolsonScheme.source
-                                               ;  _dt.source
+
+                                               [| _dt.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CrankNicolsonScheme.cell
@@ -290,8 +290,8 @@ module CrankNicolsonSchemeFunction =
                 let format (o : CrankNicolsonScheme) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CrankNicolsonScheme.source + ".Step") 
-                                               [| _CrankNicolsonScheme.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                ;  _t.source
                                                ;  _theta.source
                                                |]

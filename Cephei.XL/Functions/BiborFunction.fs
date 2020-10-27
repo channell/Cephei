@@ -97,8 +97,8 @@ module BiborFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bibor.source + ".BusinessDayConvention") 
-                                               [| _Bibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
@@ -137,8 +137,8 @@ module BiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
                 let source () = Helper.sourceFold (_Bibor.source + ".Clone") 
-                                               [| _Bibor.source
-                                               ;  _forwarding.source
+
+                                               [| _forwarding.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
@@ -175,8 +175,8 @@ module BiborFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bibor.source + ".EndOfMonth") 
-                                               [| _Bibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
@@ -223,8 +223,8 @@ module BiborFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Bibor.source + ".ForecastFixing1") 
-                                               [| _Bibor.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _t.source
                                                |]
@@ -269,8 +269,8 @@ module BiborFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Bibor.source + ".ForecastFixing") 
-                                               [| _Bibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
@@ -307,8 +307,8 @@ module BiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_Bibor.source + ".ForwardingTermStructure") 
-                                               [| _Bibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
@@ -347,8 +347,8 @@ module BiborFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Bibor.source + ".MaturityDate") 
-                                               [| _Bibor.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
@@ -385,8 +385,8 @@ module BiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_Bibor.source + ".Currency") 
-                                               [| _Bibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
@@ -421,8 +421,8 @@ module BiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_Bibor.source + ".DayCounter") 
-                                               [| _Bibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
@@ -457,8 +457,8 @@ module BiborFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bibor.source + ".FamilyName") 
-                                               [| _Bibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
@@ -501,8 +501,8 @@ module BiborFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Bibor.source + ".Fixing") 
-                                               [| _Bibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -541,8 +541,8 @@ module BiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_Bibor.source + ".FixingCalendar") 
-                                               [| _Bibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
@@ -581,8 +581,8 @@ module BiborFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Bibor.source + ".FixingDate") 
-                                               [| _Bibor.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
@@ -619,8 +619,8 @@ module BiborFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Bibor.source + ".FixingDays") 
-                                               [| _Bibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
@@ -659,8 +659,8 @@ module BiborFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bibor.source + ".IsValidFixingDate") 
-                                               [| _Bibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
@@ -697,8 +697,8 @@ module BiborFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bibor.source + ".Name") 
-                                               [| _Bibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
@@ -737,8 +737,8 @@ module BiborFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bibor.source + ".PastFixing") 
-                                               [| _Bibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
@@ -775,8 +775,8 @@ module BiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_Bibor.source + ".Tenor") 
-                                               [| _Bibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
@@ -811,8 +811,8 @@ module BiborFunction =
                 let format (o : Bibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bibor.source + ".Update") 
-                                               [| _Bibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
@@ -851,8 +851,8 @@ module BiborFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Bibor.source + ".ValueDate") 
-                                               [| _Bibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
@@ -901,8 +901,8 @@ module BiborFunction =
                 let format (o : Bibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bibor.source + ".AddFixing") 
-                                               [| _Bibor.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -955,8 +955,8 @@ module BiborFunction =
                 let format (o : Bibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bibor.source + ".AddFixings") 
-                                               [| _Bibor.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -1005,8 +1005,8 @@ module BiborFunction =
                 let format (o : Bibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bibor.source + ".AddFixings1") 
-                                               [| _Bibor.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1045,8 +1045,8 @@ module BiborFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bibor.source + ".AllowsNativeFixings") 
-                                               [| _Bibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
@@ -1081,8 +1081,8 @@ module BiborFunction =
                 let format (o : Bibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bibor.source + ".ClearFixings") 
-                                               [| _Bibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
@@ -1121,8 +1121,8 @@ module BiborFunction =
                 let format (o : Bibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bibor.source + ".RegisterWith") 
-                                               [| _Bibor.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
@@ -1159,8 +1159,8 @@ module BiborFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bibor.source + ".TimeSeries") 
-                                               [| _Bibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell
                                 |]
@@ -1199,8 +1199,8 @@ module BiborFunction =
                 let format (o : Bibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bibor.source + ".UnregisterWith") 
-                                               [| _Bibor.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bibor.cell

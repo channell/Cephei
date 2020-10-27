@@ -115,8 +115,8 @@ module RangeAccrualPricerByBgmFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualPricerByBgm.source + ".SwapletPrice") 
-                                               [| _RangeAccrualPricerByBgm.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualPricerByBgm.cell
                                 |]
@@ -155,8 +155,8 @@ module RangeAccrualPricerByBgmFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualPricerByBgm.source + ".CapletPrice") 
-                                               [| _RangeAccrualPricerByBgm.source
-                                               ;  _effectiveCap.source
+
+                                               [| _effectiveCap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualPricerByBgm.cell
@@ -197,8 +197,8 @@ module RangeAccrualPricerByBgmFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualPricerByBgm.source + ".CapletRate") 
-                                               [| _RangeAccrualPricerByBgm.source
-                                               ;  _effectiveCap.source
+
+                                               [| _effectiveCap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualPricerByBgm.cell
@@ -239,8 +239,8 @@ module RangeAccrualPricerByBgmFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualPricerByBgm.source + ".FloorletPrice") 
-                                               [| _RangeAccrualPricerByBgm.source
-                                               ;  _effectiveFloor.source
+
+                                               [| _effectiveFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualPricerByBgm.cell
@@ -281,8 +281,8 @@ module RangeAccrualPricerByBgmFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualPricerByBgm.source + ".FloorletRate") 
-                                               [| _RangeAccrualPricerByBgm.source
-                                               ;  _effectiveFloor.source
+
+                                               [| _effectiveFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualPricerByBgm.cell
@@ -323,8 +323,8 @@ module RangeAccrualPricerByBgmFunction =
                 let format (o : RangeAccrualPricerByBgm) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualPricerByBgm.source + ".Initialize") 
-                                               [| _RangeAccrualPricerByBgm.source
-                                               ;  _coupon.source
+
+                                               [| _coupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualPricerByBgm.cell
@@ -361,8 +361,8 @@ module RangeAccrualPricerByBgmFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualPricerByBgm.source + ".SwapletRate") 
-                                               [| _RangeAccrualPricerByBgm.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualPricerByBgm.cell
                                 |]
@@ -401,8 +401,8 @@ module RangeAccrualPricerByBgmFunction =
                 let format (o : RangeAccrualPricerByBgm) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualPricerByBgm.source + ".RegisterWith") 
-                                               [| _RangeAccrualPricerByBgm.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualPricerByBgm.cell
@@ -443,8 +443,8 @@ module RangeAccrualPricerByBgmFunction =
                 let format (o : RangeAccrualPricerByBgm) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualPricerByBgm.source + ".UnregisterWith") 
-                                               [| _RangeAccrualPricerByBgm.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualPricerByBgm.cell
@@ -481,8 +481,8 @@ module RangeAccrualPricerByBgmFunction =
                 let format (o : RangeAccrualPricerByBgm) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualPricerByBgm.source + ".Update") 
-                                               [| _RangeAccrualPricerByBgm.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualPricerByBgm.cell
                                 |]

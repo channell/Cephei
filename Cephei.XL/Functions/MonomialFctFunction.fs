@@ -95,8 +95,8 @@ module MonomialFctFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MonomialFct.source + ".Value") 
-                                               [| _MonomialFct.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MonomialFct.cell

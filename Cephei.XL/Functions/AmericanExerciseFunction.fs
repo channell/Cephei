@@ -146,8 +146,8 @@ module AmericanExerciseFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AmericanExercise.source + ".PayoffAtExpiry") 
-                                               [| _AmericanExercise.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmericanExercise.cell
                                 |]
@@ -186,8 +186,8 @@ module AmericanExerciseFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_AmericanExercise.source + ".Date") 
-                                               [| _AmericanExercise.source
-                                               ;  _index.source
+
+                                               [| _index.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmericanExercise.cell
@@ -224,8 +224,8 @@ module AmericanExerciseFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_AmericanExercise.source + ".Dates") 
-                                               [| _AmericanExercise.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmericanExercise.cell
                                 |]
@@ -260,8 +260,8 @@ module AmericanExerciseFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_AmericanExercise.source + ".LastDate") 
-                                               [| _AmericanExercise.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmericanExercise.cell
                                 |]
@@ -296,8 +296,8 @@ module AmericanExerciseFunction =
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AmericanExercise.source + ".TYPE") 
-                                               [| _AmericanExercise.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmericanExercise.cell
                                 |]

@@ -58,8 +58,8 @@ module GaussHermitePolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussHermitePolynomial.source + ".Alpha") 
-                                               [| _GaussHermitePolynomial.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussHermitePolynomial.cell
@@ -100,8 +100,8 @@ module GaussHermitePolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussHermitePolynomial.source + ".Beta") 
-                                               [| _GaussHermitePolynomial.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussHermitePolynomial.cell
@@ -206,8 +206,8 @@ module GaussHermitePolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussHermitePolynomial.source + ".Mu_0") 
-                                               [| _GaussHermitePolynomial.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussHermitePolynomial.cell
                                 |]
@@ -246,8 +246,8 @@ module GaussHermitePolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussHermitePolynomial.source + ".W") 
-                                               [| _GaussHermitePolynomial.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussHermitePolynomial.cell
@@ -292,8 +292,8 @@ module GaussHermitePolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussHermitePolynomial.source + ".Value") 
-                                               [| _GaussHermitePolynomial.source
-                                               ;  _n.source
+
+                                               [| _n.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -340,8 +340,8 @@ module GaussHermitePolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussHermitePolynomial.source + ".WeightedValue") 
-                                               [| _GaussHermitePolynomial.source
-                                               ;  _n.source
+
+                                               [| _n.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 

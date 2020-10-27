@@ -54,8 +54,8 @@ module OptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
                 let source () = Helper.sourceFold (_Option.source + ".Exercise") 
-                                               [| _Option.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Option.cell
                                 |]
@@ -145,8 +145,8 @@ module OptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
                 let source () = Helper.sourceFold (_Option.source + ".Payoff") 
-                                               [| _Option.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Option.cell
                                 |]
@@ -181,8 +181,8 @@ module OptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Option.source + ".CASH") 
-                                               [| _Option.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Option.cell
                                 |]
@@ -217,8 +217,8 @@ module OptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Option.source + ".ErrorEstimate") 
-                                               [| _Option.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Option.cell
                                 |]
@@ -253,8 +253,8 @@ module OptionFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Option.source + ".IsExpired") 
-                                               [| _Option.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Option.cell
                                 |]
@@ -289,8 +289,8 @@ module OptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Option.source + ".NPV") 
-                                               [| _Option.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Option.cell
                                 |]
@@ -329,8 +329,8 @@ module OptionFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Option.source + ".Result") 
-                                               [| _Option.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Option.cell
@@ -371,8 +371,8 @@ module OptionFunction =
                 let format (o : Option) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Option.source + ".SetPricingEngine") 
-                                               [| _Option.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Option.cell
@@ -409,8 +409,8 @@ module OptionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Option.source + ".ValuationDate") 
-                                               [| _Option.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Option.cell
                                 |]

@@ -54,8 +54,8 @@ module RandomSequenceGeneratorFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RandomSequenceGenerator.source + ".Dimension") 
-                                               [| _RandomSequenceGenerator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RandomSequenceGenerator.cell
                                 |]
@@ -98,8 +98,8 @@ module RandomSequenceGeneratorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IRNG>) l
 
                 let source () = Helper.sourceFold (_RandomSequenceGenerator.source + ".Factory") 
-                                               [| _RandomSequenceGenerator.source
-                                               ;  _dimensionality.source
+
+                                               [| _dimensionality.source
                                                ;  _seed.source
                                                |]
                 let hash = Helper.hashFold 
@@ -138,8 +138,8 @@ module RandomSequenceGeneratorFunction =
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_RandomSequenceGenerator.source + ".LastSequence") 
-                                               [| _RandomSequenceGenerator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RandomSequenceGenerator.cell
                                 |]
@@ -174,8 +174,8 @@ module RandomSequenceGeneratorFunction =
                 let format (i : Generic.List<ulong>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_RandomSequenceGenerator.source + ".NextInt32Sequence") 
-                                               [| _RandomSequenceGenerator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RandomSequenceGenerator.cell
                                 |]
@@ -210,8 +210,8 @@ module RandomSequenceGeneratorFunction =
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_RandomSequenceGenerator.source + ".NextSequence") 
-                                               [| _RandomSequenceGenerator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RandomSequenceGenerator.cell
                                 |]

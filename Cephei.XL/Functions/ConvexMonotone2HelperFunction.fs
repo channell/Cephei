@@ -127,8 +127,8 @@ module ConvexMonotone2HelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvexMonotone2Helper.source + ".FNext") 
-                                               [| _ConvexMonotone2Helper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotone2Helper.cell
                                 |]
@@ -167,8 +167,8 @@ module ConvexMonotone2HelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvexMonotone2Helper.source + ".Primitive") 
-                                               [| _ConvexMonotone2Helper.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotone2Helper.cell
@@ -209,8 +209,8 @@ module ConvexMonotone2HelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvexMonotone2Helper.source + ".Value") 
-                                               [| _ConvexMonotone2Helper.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotone2Helper.cell

@@ -99,8 +99,8 @@ module Actual360Function =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Actual360.source + ".DayCount") 
-                                               [| _Actual360.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                |]
                 let hash = Helper.hashFold 
@@ -139,8 +139,8 @@ module Actual360Function =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_Actual360.source + ".DayCounter") 
-                                               [| _Actual360.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Actual360.cell
                                 |]
@@ -175,8 +175,8 @@ module Actual360Function =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Actual360.source + ".Empty") 
-                                               [| _Actual360.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Actual360.cell
                                 |]
@@ -215,8 +215,8 @@ module Actual360Function =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Actual360.source + ".Equals") 
-                                               [| _Actual360.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Actual360.cell
@@ -253,8 +253,8 @@ module Actual360Function =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Actual360.source + ".Name") 
-                                               [| _Actual360.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Actual360.cell
                                 |]
@@ -289,8 +289,8 @@ module Actual360Function =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Actual360.source + ".ToString") 
-                                               [| _Actual360.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Actual360.cell
                                 |]
@@ -341,8 +341,8 @@ module Actual360Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Actual360.source + ".YearFraction") 
-                                               [| _Actual360.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _refPeriodStart.source
                                                ;  _refPeriodEnd.source
@@ -393,8 +393,8 @@ module Actual360Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Actual360.source + ".YearFraction") 
-                                               [| _Actual360.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                |]
                 let hash = Helper.hashFold 

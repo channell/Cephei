@@ -95,8 +95,8 @@ module GaussGegenbauerPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussGegenbauerPolynomial.source + ".Alpha") 
-                                               [| _GaussGegenbauerPolynomial.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussGegenbauerPolynomial.cell
@@ -137,8 +137,8 @@ module GaussGegenbauerPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussGegenbauerPolynomial.source + ".Beta") 
-                                               [| _GaussGegenbauerPolynomial.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussGegenbauerPolynomial.cell
@@ -175,8 +175,8 @@ module GaussGegenbauerPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussGegenbauerPolynomial.source + ".Mu_0") 
-                                               [| _GaussGegenbauerPolynomial.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussGegenbauerPolynomial.cell
                                 |]
@@ -215,8 +215,8 @@ module GaussGegenbauerPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussGegenbauerPolynomial.source + ".W") 
-                                               [| _GaussGegenbauerPolynomial.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussGegenbauerPolynomial.cell
@@ -261,8 +261,8 @@ module GaussGegenbauerPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussGegenbauerPolynomial.source + ".Value") 
-                                               [| _GaussGegenbauerPolynomial.source
-                                               ;  _n.source
+
+                                               [| _n.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -309,8 +309,8 @@ module GaussGegenbauerPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussGegenbauerPolynomial.source + ".WeightedValue") 
-                                               [| _GaussGegenbauerPolynomial.source
-                                               ;  _n.source
+
+                                               [| _n.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 

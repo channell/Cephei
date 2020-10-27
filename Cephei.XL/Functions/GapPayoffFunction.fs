@@ -54,8 +54,8 @@ module GapPayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GapPayoff.source + ".Description") 
-                                               [| _GapPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GapPayoff.cell
                                 |]
@@ -139,8 +139,8 @@ module GapPayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GapPayoff.source + ".Name") 
-                                               [| _GapPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GapPayoff.cell
                                 |]
@@ -175,8 +175,8 @@ module GapPayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GapPayoff.source + ".SecondStrike") 
-                                               [| _GapPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GapPayoff.cell
                                 |]
@@ -215,8 +215,8 @@ module GapPayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GapPayoff.source + ".Value") 
-                                               [| _GapPayoff.source
-                                               ;  _price.source
+
+                                               [| _price.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GapPayoff.cell
@@ -253,8 +253,8 @@ module GapPayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GapPayoff.source + ".Strike") 
-                                               [| _GapPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GapPayoff.cell
                                 |]
@@ -289,8 +289,8 @@ module GapPayoffFunction =
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GapPayoff.source + ".OptionType") 
-                                               [| _GapPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GapPayoff.cell
                                 |]
@@ -329,8 +329,8 @@ module GapPayoffFunction =
                 let format (o : GapPayoff) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GapPayoff.source + ".Accept") 
-                                               [| _GapPayoff.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GapPayoff.cell

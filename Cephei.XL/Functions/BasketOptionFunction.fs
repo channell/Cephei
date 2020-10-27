@@ -109,8 +109,8 @@ module BasketOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BasketOption.source + ".Delta") 
-                                               [| _BasketOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
@@ -145,8 +145,8 @@ module BasketOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BasketOption.source + ".DividendRho") 
-                                               [| _BasketOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
@@ -181,8 +181,8 @@ module BasketOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BasketOption.source + ".Gamma") 
-                                               [| _BasketOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
@@ -217,8 +217,8 @@ module BasketOptionFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BasketOption.source + ".IsExpired") 
-                                               [| _BasketOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
@@ -253,8 +253,8 @@ module BasketOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BasketOption.source + ".Rho") 
-                                               [| _BasketOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
@@ -289,8 +289,8 @@ module BasketOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BasketOption.source + ".Theta") 
-                                               [| _BasketOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
@@ -325,8 +325,8 @@ module BasketOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BasketOption.source + ".Vega") 
-                                               [| _BasketOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
@@ -361,8 +361,8 @@ module BasketOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
                 let source () = Helper.sourceFold (_BasketOption.source + ".Exercise") 
-                                               [| _BasketOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
@@ -397,8 +397,8 @@ module BasketOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
                 let source () = Helper.sourceFold (_BasketOption.source + ".Payoff") 
-                                               [| _BasketOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
@@ -433,8 +433,8 @@ module BasketOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BasketOption.source + ".CASH") 
-                                               [| _BasketOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
@@ -469,8 +469,8 @@ module BasketOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BasketOption.source + ".ErrorEstimate") 
-                                               [| _BasketOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
@@ -505,8 +505,8 @@ module BasketOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BasketOption.source + ".NPV") 
-                                               [| _BasketOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]
@@ -545,8 +545,8 @@ module BasketOptionFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BasketOption.source + ".Result") 
-                                               [| _BasketOption.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
@@ -587,8 +587,8 @@ module BasketOptionFunction =
                 let format (o : BasketOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BasketOption.source + ".SetPricingEngine") 
-                                               [| _BasketOption.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
@@ -625,8 +625,8 @@ module BasketOptionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BasketOption.source + ".ValuationDate") 
-                                               [| _BasketOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasketOption.cell
                                 |]

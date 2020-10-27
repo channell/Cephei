@@ -54,8 +54,8 @@ module CompositeZeroYieldStructureFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_CompositeZeroYieldStructure.source + ".Calendar") 
-                                               [| _CompositeZeroYieldStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CompositeZeroYieldStructure.cell
                                 |]
@@ -151,8 +151,8 @@ module CompositeZeroYieldStructureFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_CompositeZeroYieldStructure.source + ".DayCounter") 
-                                               [| _CompositeZeroYieldStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CompositeZeroYieldStructure.cell
                                 |]
@@ -187,8 +187,8 @@ module CompositeZeroYieldStructureFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CompositeZeroYieldStructure.source + ".MaxDate") 
-                                               [| _CompositeZeroYieldStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CompositeZeroYieldStructure.cell
                                 |]
@@ -223,8 +223,8 @@ module CompositeZeroYieldStructureFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CompositeZeroYieldStructure.source + ".MaxTime") 
-                                               [| _CompositeZeroYieldStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CompositeZeroYieldStructure.cell
                                 |]
@@ -259,8 +259,8 @@ module CompositeZeroYieldStructureFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CompositeZeroYieldStructure.source + ".ReferenceDate") 
-                                               [| _CompositeZeroYieldStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CompositeZeroYieldStructure.cell
                                 |]
@@ -295,8 +295,8 @@ module CompositeZeroYieldStructureFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CompositeZeroYieldStructure.source + ".SettlementDays") 
-                                               [| _CompositeZeroYieldStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CompositeZeroYieldStructure.cell
                                 |]
@@ -331,8 +331,8 @@ module CompositeZeroYieldStructureFunction =
                 let format (o : CompositeZeroYieldStructure) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CompositeZeroYieldStructure.source + ".Update") 
-                                               [| _CompositeZeroYieldStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CompositeZeroYieldStructure.cell
                                 |]

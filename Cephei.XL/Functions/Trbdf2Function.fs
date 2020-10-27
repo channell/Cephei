@@ -58,8 +58,8 @@ module Trbdf2Function =
                 let format (o : Trbdf2) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Trbdf2.source + ".SetStep") 
-                                               [| _Trbdf2.source
-                                               ;  _dt.source
+
+                                               [| _dt.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Trbdf2.cell
@@ -108,8 +108,8 @@ module Trbdf2Function =
                 let format (o : Trbdf2) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Trbdf2.source + ".Step") 
-                                               [| _Trbdf2.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                ;  _t.source
                                                ;  _theta.source
                                                |]

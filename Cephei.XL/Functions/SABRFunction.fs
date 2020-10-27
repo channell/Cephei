@@ -66,8 +66,8 @@ module SABRFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
                 let source () = Helper.sourceFold (_SABR.source + ".Interpolate") 
-                                               [| _SABR.source
-                                               ;  _xBegin.source
+
+                                               [| _xBegin.source
                                                ;  _xEnd.source
                                                ;  _yBegin.source
                                                |]

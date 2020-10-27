@@ -146,8 +146,8 @@ module EqualProbabilitiesBinomialTreeFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EqualProbabilitiesBinomialTree.source + ".Probability") 
-                                               [| _EqualProbabilitiesBinomialTree.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _y.source
                                                ;  _z.source
                                                |]
@@ -196,8 +196,8 @@ module EqualProbabilitiesBinomialTreeFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EqualProbabilitiesBinomialTree.source + ".Underlying") 
-                                               [| _EqualProbabilitiesBinomialTree.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _index.source
                                                |]
                 let hash = Helper.hashFold 
@@ -248,8 +248,8 @@ module EqualProbabilitiesBinomialTreeFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EqualProbabilitiesBinomialTree.source + ".Descendant") 
-                                               [| _EqualProbabilitiesBinomialTree.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _index.source
                                                ;  _branch.source
                                                |]
@@ -294,8 +294,8 @@ module EqualProbabilitiesBinomialTreeFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EqualProbabilitiesBinomialTree.source + ".Size") 
-                                               [| _EqualProbabilitiesBinomialTree.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EqualProbabilitiesBinomialTree.cell
@@ -332,8 +332,8 @@ module EqualProbabilitiesBinomialTreeFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EqualProbabilitiesBinomialTree.source + ".Columns") 
-                                               [| _EqualProbabilitiesBinomialTree.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EqualProbabilitiesBinomialTree.cell
                                 |]

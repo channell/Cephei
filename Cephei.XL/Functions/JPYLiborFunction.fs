@@ -138,8 +138,8 @@ module JPYLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".Clone") 
-                                               [| _JPYLibor.source
-                                               ;  _h.source
+
+                                               [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
@@ -180,8 +180,8 @@ module JPYLiborFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".MaturityDate") 
-                                               [| _JPYLibor.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
@@ -222,8 +222,8 @@ module JPYLiborFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".ValueDate") 
-                                               [| _JPYLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
@@ -260,8 +260,8 @@ module JPYLiborFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".BusinessDayConvention") 
-                                               [| _JPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
@@ -296,8 +296,8 @@ module JPYLiborFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".EndOfMonth") 
-                                               [| _JPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
@@ -344,8 +344,8 @@ module JPYLiborFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".ForecastFixing1") 
-                                               [| _JPYLibor.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _t.source
                                                |]
@@ -390,8 +390,8 @@ module JPYLiborFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".ForecastFixing") 
-                                               [| _JPYLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
@@ -428,8 +428,8 @@ module JPYLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".ForwardingTermStructure") 
-                                               [| _JPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
@@ -464,8 +464,8 @@ module JPYLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".Currency") 
-                                               [| _JPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
@@ -500,8 +500,8 @@ module JPYLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".DayCounter") 
-                                               [| _JPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
@@ -536,8 +536,8 @@ module JPYLiborFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".FamilyName") 
-                                               [| _JPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
@@ -580,8 +580,8 @@ module JPYLiborFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".Fixing") 
-                                               [| _JPYLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -620,8 +620,8 @@ module JPYLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".FixingCalendar") 
-                                               [| _JPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
@@ -660,8 +660,8 @@ module JPYLiborFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".FixingDate") 
-                                               [| _JPYLibor.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
@@ -698,8 +698,8 @@ module JPYLiborFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".FixingDays") 
-                                               [| _JPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
@@ -738,8 +738,8 @@ module JPYLiborFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".IsValidFixingDate") 
-                                               [| _JPYLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
@@ -776,8 +776,8 @@ module JPYLiborFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".Name") 
-                                               [| _JPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
@@ -816,8 +816,8 @@ module JPYLiborFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".PastFixing") 
-                                               [| _JPYLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
@@ -854,8 +854,8 @@ module JPYLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".Tenor") 
-                                               [| _JPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
@@ -890,8 +890,8 @@ module JPYLiborFunction =
                 let format (o : JPYLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".Update") 
-                                               [| _JPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
@@ -938,8 +938,8 @@ module JPYLiborFunction =
                 let format (o : JPYLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".AddFixing") 
-                                               [| _JPYLibor.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -992,8 +992,8 @@ module JPYLiborFunction =
                 let format (o : JPYLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".AddFixings") 
-                                               [| _JPYLibor.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -1042,8 +1042,8 @@ module JPYLiborFunction =
                 let format (o : JPYLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".AddFixings1") 
-                                               [| _JPYLibor.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1082,8 +1082,8 @@ module JPYLiborFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".AllowsNativeFixings") 
-                                               [| _JPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
@@ -1118,8 +1118,8 @@ module JPYLiborFunction =
                 let format (o : JPYLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".ClearFixings") 
-                                               [| _JPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
@@ -1158,8 +1158,8 @@ module JPYLiborFunction =
                 let format (o : JPYLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".RegisterWith") 
-                                               [| _JPYLibor.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
@@ -1196,8 +1196,8 @@ module JPYLiborFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".TimeSeries") 
-                                               [| _JPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell
                                 |]
@@ -1236,8 +1236,8 @@ module JPYLiborFunction =
                 let format (o : JPYLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JPYLibor.source + ".UnregisterWith") 
-                                               [| _JPYLibor.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYLibor.cell

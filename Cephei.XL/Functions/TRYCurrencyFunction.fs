@@ -85,8 +85,8 @@ module TRYCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TRYCurrency.source + ".Code") 
-                                               [| _TRYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TRYCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module TRYCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TRYCurrency.source + ".Empty") 
-                                               [| _TRYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TRYCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module TRYCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TRYCurrency.source + ".Equals") 
-                                               [| _TRYCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TRYCurrency.cell
@@ -199,8 +199,8 @@ module TRYCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TRYCurrency.source + ".Format") 
-                                               [| _TRYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TRYCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module TRYCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TRYCurrency.source + ".FractionsPerUnit") 
-                                               [| _TRYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TRYCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module TRYCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TRYCurrency.source + ".FractionSymbol") 
-                                               [| _TRYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TRYCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module TRYCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TRYCurrency.source + ".Name") 
-                                               [| _TRYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TRYCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module TRYCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TRYCurrency.source + ".NumericCode") 
-                                               [| _TRYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TRYCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module TRYCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_TRYCurrency.source + ".Rounding") 
-                                               [| _TRYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TRYCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module TRYCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TRYCurrency.source + ".Symbol") 
-                                               [| _TRYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TRYCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module TRYCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TRYCurrency.source + ".ToString") 
-                                               [| _TRYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TRYCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module TRYCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_TRYCurrency.source + ".TriangulationCurrency") 
-                                               [| _TRYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TRYCurrency.cell
                                 |]

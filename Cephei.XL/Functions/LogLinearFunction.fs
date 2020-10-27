@@ -54,8 +54,8 @@ module LogLinearFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LogLinear.source + ".GLOBAL") 
-                                               [| _LogLinear.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LogLinear.cell
                                 |]
@@ -102,8 +102,8 @@ module LogLinearFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
                 let source () = Helper.sourceFold (_LogLinear.source + ".Interpolate") 
-                                               [| _LogLinear.source
-                                               ;  _xBegin.source
+
+                                               [| _xBegin.source
                                                ;  _size.source
                                                ;  _yBegin.source
                                                |]
@@ -144,8 +144,8 @@ module LogLinearFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LogLinear.source + ".RequiredPoints") 
-                                               [| _LogLinear.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LogLinear.cell
                                 |]

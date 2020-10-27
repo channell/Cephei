@@ -134,8 +134,8 @@ module ConvexMonotoneFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvexMonotone.source + ".DataSizeAdjustment") 
-                                               [| _ConvexMonotone.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotone.cell
                                 |]
@@ -170,8 +170,8 @@ module ConvexMonotoneFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConvexMonotone.source + ".GLOBAL") 
-                                               [| _ConvexMonotone.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotone.cell
                                 |]
@@ -218,8 +218,8 @@ module ConvexMonotoneFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
                 let source () = Helper.sourceFold (_ConvexMonotone.source + ".Interpolate") 
-                                               [| _ConvexMonotone.source
-                                               ;  _xBegin.source
+
+                                               [| _xBegin.source
                                                ;  _size.source
                                                ;  _yBegin.source
                                                |]
@@ -284,8 +284,8 @@ module ConvexMonotoneFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
                 let source () = Helper.sourceFold (_ConvexMonotone.source + ".LocalInterpolate") 
-                                               [| _ConvexMonotone.source
-                                               ;  _xBegin.source
+
+                                               [| _xBegin.source
                                                ;  _size.source
                                                ;  _yBegin.source
                                                ;  _localisation.source
@@ -332,8 +332,8 @@ module ConvexMonotoneFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvexMonotone.source + ".RequiredPoints") 
-                                               [| _ConvexMonotone.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotone.cell
                                 |]

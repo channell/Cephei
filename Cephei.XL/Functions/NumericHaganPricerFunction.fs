@@ -66,8 +66,8 @@ module NumericHaganPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NumericHaganPricer.source + ".Integrate") 
-                                               [| _NumericHaganPricer.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                ;  _b.source
                                                ;  _integrand.source
                                                |]
@@ -190,8 +190,8 @@ module NumericHaganPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NumericHaganPricer.source + ".RefineIntegration") 
-                                               [| _NumericHaganPricer.source
-                                               ;  _integralValue.source
+
+                                               [| _integralValue.source
                                                ;  _integrand.source
                                                |]
                 let hash = Helper.hashFold 
@@ -234,8 +234,8 @@ module NumericHaganPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NumericHaganPricer.source + ".ResetUpperLimit") 
-                                               [| _NumericHaganPricer.source
-                                               ;  _stdDeviationsForUpperLimit.source
+
+                                               [| _stdDeviationsForUpperLimit.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NumericHaganPricer.cell
@@ -272,8 +272,8 @@ module NumericHaganPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NumericHaganPricer.source + ".StdDeviations") 
-                                               [| _NumericHaganPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NumericHaganPricer.cell
                                 |]
@@ -308,8 +308,8 @@ module NumericHaganPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NumericHaganPricer.source + ".SwapletPrice") 
-                                               [| _NumericHaganPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NumericHaganPricer.cell
                                 |]
@@ -344,8 +344,8 @@ module NumericHaganPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NumericHaganPricer.source + ".UpperLimit") 
-                                               [| _NumericHaganPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NumericHaganPricer.cell
                                 |]
@@ -384,8 +384,8 @@ module NumericHaganPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NumericHaganPricer.source + ".CapletPrice") 
-                                               [| _NumericHaganPricer.source
-                                               ;  _effectiveCap.source
+
+                                               [| _effectiveCap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NumericHaganPricer.cell
@@ -426,8 +426,8 @@ module NumericHaganPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NumericHaganPricer.source + ".CapletRate") 
-                                               [| _NumericHaganPricer.source
-                                               ;  _effectiveCap.source
+
+                                               [| _effectiveCap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NumericHaganPricer.cell
@@ -468,8 +468,8 @@ module NumericHaganPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NumericHaganPricer.source + ".FloorletPrice") 
-                                               [| _NumericHaganPricer.source
-                                               ;  _effectiveFloor.source
+
+                                               [| _effectiveFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NumericHaganPricer.cell
@@ -510,8 +510,8 @@ module NumericHaganPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NumericHaganPricer.source + ".FloorletRate") 
-                                               [| _NumericHaganPricer.source
-                                               ;  _effectiveFloor.source
+
+                                               [| _effectiveFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NumericHaganPricer.cell
@@ -552,8 +552,8 @@ module NumericHaganPricerFunction =
                 let format (o : NumericHaganPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NumericHaganPricer.source + ".Initialize") 
-                                               [| _NumericHaganPricer.source
-                                               ;  _coupon.source
+
+                                               [| _coupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NumericHaganPricer.cell
@@ -590,8 +590,8 @@ module NumericHaganPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NumericHaganPricer.source + ".MeanReversion") 
-                                               [| _NumericHaganPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NumericHaganPricer.cell
                                 |]
@@ -630,8 +630,8 @@ module NumericHaganPricerFunction =
                 let format (o : NumericHaganPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NumericHaganPricer.source + ".SetMeanReversion") 
-                                               [| _NumericHaganPricer.source
-                                               ;  _meanReversion.source
+
+                                               [| _meanReversion.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NumericHaganPricer.cell
@@ -668,8 +668,8 @@ module NumericHaganPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NumericHaganPricer.source + ".SwapletRate") 
-                                               [| _NumericHaganPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NumericHaganPricer.cell
                                 |]
@@ -708,8 +708,8 @@ module NumericHaganPricerFunction =
                 let format (o : NumericHaganPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NumericHaganPricer.source + ".SetSwaptionVolatility") 
-                                               [| _NumericHaganPricer.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NumericHaganPricer.cell
@@ -746,8 +746,8 @@ module NumericHaganPricerFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<SwaptionVolatilityStructure>>) l
 
                 let source () = Helper.sourceFold (_NumericHaganPricer.source + ".SwaptionVolatility") 
-                                               [| _NumericHaganPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NumericHaganPricer.cell
                                 |]
@@ -786,8 +786,8 @@ module NumericHaganPricerFunction =
                 let format (o : NumericHaganPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NumericHaganPricer.source + ".RegisterWith") 
-                                               [| _NumericHaganPricer.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NumericHaganPricer.cell
@@ -828,8 +828,8 @@ module NumericHaganPricerFunction =
                 let format (o : NumericHaganPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NumericHaganPricer.source + ".UnregisterWith") 
-                                               [| _NumericHaganPricer.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NumericHaganPricer.cell
@@ -866,8 +866,8 @@ module NumericHaganPricerFunction =
                 let format (o : NumericHaganPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NumericHaganPricer.source + ".Update") 
-                                               [| _NumericHaganPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NumericHaganPricer.cell
                                 |]

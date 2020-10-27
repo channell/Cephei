@@ -103,8 +103,8 @@ module BiCGStabResultFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BiCGStabResult.source + ".Error") 
-                                               [| _BiCGStabResult.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BiCGStabResult.cell
                                 |]
@@ -139,8 +139,8 @@ module BiCGStabResultFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BiCGStabResult.source + ".Iterations") 
-                                               [| _BiCGStabResult.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BiCGStabResult.cell
                                 |]
@@ -175,8 +175,8 @@ module BiCGStabResultFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_BiCGStabResult.source + ".X") 
-                                               [| _BiCGStabResult.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BiCGStabResult.cell
                                 |]

@@ -54,8 +54,8 @@ module SobolRsgFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SobolRsg.source + ".Dimension") 
-                                               [| _SobolRsg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SobolRsg.cell
                                 |]
@@ -98,8 +98,8 @@ module SobolRsgFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IRNG>) l
 
                 let source () = Helper.sourceFold (_SobolRsg.source + ".Factory") 
-                                               [| _SobolRsg.source
-                                               ;  _dimensionality.source
+
+                                               [| _dimensionality.source
                                                ;  _seed.source
                                                |]
                 let hash = Helper.hashFold 
@@ -139,8 +139,8 @@ module SobolRsgFunction =
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SobolRsg.source + ".LastSequence") 
-                                               [| _SobolRsg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SobolRsg.cell
                                 |]
@@ -176,8 +176,8 @@ module SobolRsgFunction =
                 let format (i : Generic.List<uint64>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SobolRsg.source + ".NextInt32Sequence") 
-                                               [| _SobolRsg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SobolRsg.cell
                                 |]
@@ -213,8 +213,8 @@ module SobolRsgFunction =
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SobolRsg.source + ".NextSequence") 
-                                               [| _SobolRsg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SobolRsg.cell
                                 |]
@@ -254,8 +254,8 @@ module SobolRsgFunction =
                 let format (o : SobolRsg) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SobolRsg.source + ".SkipTo") 
-                                               [| _SobolRsg.source
-                                               ;  _skip.source
+
+                                               [| _skip.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SobolRsg.cell

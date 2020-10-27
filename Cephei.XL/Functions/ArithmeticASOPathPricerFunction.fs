@@ -205,8 +205,8 @@ module ArithmeticASOPathPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ArithmeticASOPathPricer.source + ".Value") 
-                                               [| _ArithmeticASOPathPricer.source
-                                               ;  _path.source
+
+                                               [| _path.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ArithmeticASOPathPricer.cell

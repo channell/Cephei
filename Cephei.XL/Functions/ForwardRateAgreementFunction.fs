@@ -55,8 +55,8 @@ module ForwardRateAgreementFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
                 let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".ForwardRate") 
-                                               [| _ForwardRateAgreement.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardRateAgreement.cell
                                 |]
@@ -176,8 +176,8 @@ module ForwardRateAgreementFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".IsExpired") 
-                                               [| _ForwardRateAgreement.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardRateAgreement.cell
                                 |]
@@ -212,8 +212,8 @@ module ForwardRateAgreementFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".SettlementDate") 
-                                               [| _ForwardRateAgreement.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardRateAgreement.cell
                                 |]
@@ -252,8 +252,8 @@ module ForwardRateAgreementFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".SpotIncome") 
-                                               [| _ForwardRateAgreement.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardRateAgreement.cell
@@ -290,8 +290,8 @@ module ForwardRateAgreementFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".SpotValue") 
-                                               [| _ForwardRateAgreement.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardRateAgreement.cell
                                 |]
@@ -326,8 +326,8 @@ module ForwardRateAgreementFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".ForwardValue") 
-                                               [| _ForwardRateAgreement.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardRateAgreement.cell
                                 |]
@@ -382,8 +382,8 @@ module ForwardRateAgreementFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
                 let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".ImpliedYield") 
-                                               [| _ForwardRateAgreement.source
-                                               ;  _underlyingSpotValue.source
+
+                                               [| _underlyingSpotValue.source
                                                ;  _forwardValue.source
                                                ;  _settlementDate.source
                                                ;  _compoundingConvention.source
@@ -428,8 +428,8 @@ module ForwardRateAgreementFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".CASH") 
-                                               [| _ForwardRateAgreement.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardRateAgreement.cell
                                 |]
@@ -464,8 +464,8 @@ module ForwardRateAgreementFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".ErrorEstimate") 
-                                               [| _ForwardRateAgreement.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardRateAgreement.cell
                                 |]
@@ -500,8 +500,8 @@ module ForwardRateAgreementFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".NPV") 
-                                               [| _ForwardRateAgreement.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardRateAgreement.cell
                                 |]
@@ -540,8 +540,8 @@ module ForwardRateAgreementFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".Result") 
-                                               [| _ForwardRateAgreement.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardRateAgreement.cell
@@ -582,8 +582,8 @@ module ForwardRateAgreementFunction =
                 let format (o : ForwardRateAgreement) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".SetPricingEngine") 
-                                               [| _ForwardRateAgreement.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardRateAgreement.cell
@@ -620,8 +620,8 @@ module ForwardRateAgreementFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ForwardRateAgreement.source + ".ValuationDate") 
-                                               [| _ForwardRateAgreement.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardRateAgreement.cell
                                 |]

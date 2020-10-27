@@ -127,8 +127,8 @@ module FdHullWhiteSwaptionEngineFunction =
                 let format (o : FdHullWhiteSwaptionEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FdHullWhiteSwaptionEngine.source + ".SetModel") 
-                                               [| _FdHullWhiteSwaptionEngine.source
-                                               ;  _model.source
+
+                                               [| _model.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdHullWhiteSwaptionEngine.cell
@@ -169,8 +169,8 @@ module FdHullWhiteSwaptionEngineFunction =
                 let format (o : FdHullWhiteSwaptionEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FdHullWhiteSwaptionEngine.source + ".RegisterWith") 
-                                               [| _FdHullWhiteSwaptionEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdHullWhiteSwaptionEngine.cell
@@ -207,8 +207,8 @@ module FdHullWhiteSwaptionEngineFunction =
                 let format (o : FdHullWhiteSwaptionEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FdHullWhiteSwaptionEngine.source + ".Reset") 
-                                               [| _FdHullWhiteSwaptionEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdHullWhiteSwaptionEngine.cell
                                 |]
@@ -247,8 +247,8 @@ module FdHullWhiteSwaptionEngineFunction =
                 let format (o : FdHullWhiteSwaptionEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FdHullWhiteSwaptionEngine.source + ".UnregisterWith") 
-                                               [| _FdHullWhiteSwaptionEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdHullWhiteSwaptionEngine.cell
@@ -285,8 +285,8 @@ module FdHullWhiteSwaptionEngineFunction =
                 let format (o : FdHullWhiteSwaptionEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FdHullWhiteSwaptionEngine.source + ".Update") 
-                                               [| _FdHullWhiteSwaptionEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdHullWhiteSwaptionEngine.cell
                                 |]

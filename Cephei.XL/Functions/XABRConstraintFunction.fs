@@ -67,8 +67,8 @@ module XABRConstraintFunction =
                 let format (o : XABRConstraint) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_XABRConstraint.source + ".Config") 
-                                               [| _XABRConstraint.source
-                                               ;  _costFunction.source
+
+                                               [| _costFunction.source
                                                ;  _coeff.source
                                                ;  _forward.source
                                                |]
@@ -178,8 +178,8 @@ module XABRConstraintFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_XABRConstraint.source + ".Empty") 
-                                               [| _XABRConstraint.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _XABRConstraint.cell
                                 |]
@@ -218,8 +218,8 @@ module XABRConstraintFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_XABRConstraint.source + ".LowerBound") 
-                                               [| _XABRConstraint.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _XABRConstraint.cell
@@ -260,8 +260,8 @@ module XABRConstraintFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_XABRConstraint.source + ".Test") 
-                                               [| _XABRConstraint.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _XABRConstraint.cell
@@ -310,8 +310,8 @@ module XABRConstraintFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_XABRConstraint.source + ".Update") 
-                                               [| _XABRConstraint.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                ;  _direction.source
                                                ;  _beta.source
                                                |]
@@ -356,8 +356,8 @@ module XABRConstraintFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_XABRConstraint.source + ".UpperBound") 
-                                               [| _XABRConstraint.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _XABRConstraint.cell

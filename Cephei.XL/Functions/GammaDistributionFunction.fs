@@ -95,8 +95,8 @@ module GammaDistributionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GammaDistribution.source + ".Value") 
-                                               [| _GammaDistribution.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GammaDistribution.cell

@@ -101,8 +101,8 @@ module FdmMesherIntegralFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FdmMesherIntegral.source + ".Integrate") 
-                                               [| _FdmMesherIntegral.source
-                                               ;  _f.source
+
+                                               [| _f.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmMesherIntegral.cell

@@ -85,8 +85,8 @@ module FranceRegionFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FranceRegion.source + ".Code") 
-                                               [| _FranceRegion.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FranceRegion.cell
                                 |]
@@ -125,8 +125,8 @@ module FranceRegionFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FranceRegion.source + ".Equals") 
-                                               [| _FranceRegion.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FranceRegion.cell
@@ -163,8 +163,8 @@ module FranceRegionFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FranceRegion.source + ".Name") 
-                                               [| _FranceRegion.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FranceRegion.cell
                                 |]

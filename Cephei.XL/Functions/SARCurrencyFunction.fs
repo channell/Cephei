@@ -85,8 +85,8 @@ module SARCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SARCurrency.source + ".Code") 
-                                               [| _SARCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SARCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module SARCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SARCurrency.source + ".Empty") 
-                                               [| _SARCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SARCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module SARCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SARCurrency.source + ".Equals") 
-                                               [| _SARCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SARCurrency.cell
@@ -199,8 +199,8 @@ module SARCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SARCurrency.source + ".Format") 
-                                               [| _SARCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SARCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module SARCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SARCurrency.source + ".FractionsPerUnit") 
-                                               [| _SARCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SARCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module SARCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SARCurrency.source + ".FractionSymbol") 
-                                               [| _SARCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SARCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module SARCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SARCurrency.source + ".Name") 
-                                               [| _SARCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SARCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module SARCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SARCurrency.source + ".NumericCode") 
-                                               [| _SARCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SARCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module SARCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_SARCurrency.source + ".Rounding") 
-                                               [| _SARCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SARCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module SARCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SARCurrency.source + ".Symbol") 
-                                               [| _SARCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SARCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module SARCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SARCurrency.source + ".ToString") 
-                                               [| _SARCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SARCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module SARCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_SARCurrency.source + ".TriangulationCurrency") 
-                                               [| _SARCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SARCurrency.cell
                                 |]

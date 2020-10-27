@@ -140,8 +140,8 @@ module CrankNicolsonFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IMixedScheme>) l
 
                 let source () = Helper.sourceFold (_CrankNicolson.source + ".Factory") 
-                                               [| _CrankNicolson.source
-                                               ;  _L.source
+
+                                               [| _L.source
                                                ;  _bcs.source
                                                ;  _additionalFields.source
                                                |]
@@ -186,8 +186,8 @@ module CrankNicolsonFunction =
                 let format (o : CrankNicolson) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CrankNicolson.source + ".SetStep") 
-                                               [| _CrankNicolson.source
-                                               ;  _dt.source
+
+                                               [| _dt.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CrankNicolson.cell
@@ -236,8 +236,8 @@ module CrankNicolsonFunction =
                 let format (o : CrankNicolson) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CrankNicolson.source + ".Step") 
-                                               [| _CrankNicolson.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                ;  _t.source
                                                ;  _theta.source
                                                |]

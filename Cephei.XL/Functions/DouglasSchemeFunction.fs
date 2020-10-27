@@ -146,8 +146,8 @@ module DouglasSchemeFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IMixedScheme>) l
 
                 let source () = Helper.sourceFold (_DouglasScheme.source + ".Factory") 
-                                               [| _DouglasScheme.source
-                                               ;  _L.source
+
+                                               [| _L.source
                                                ;  _bcs.source
                                                ;  _additionalInputs.source
                                                |]
@@ -192,8 +192,8 @@ module DouglasSchemeFunction =
                 let format (o : DouglasScheme) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DouglasScheme.source + ".SetStep") 
-                                               [| _DouglasScheme.source
-                                               ;  _dt.source
+
+                                               [| _dt.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DouglasScheme.cell
@@ -242,8 +242,8 @@ module DouglasSchemeFunction =
                 let format (o : DouglasScheme) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DouglasScheme.source + ".Step") 
-                                               [| _DouglasScheme.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                ;  _t.source
                                                ;  _theta.source
                                                |]

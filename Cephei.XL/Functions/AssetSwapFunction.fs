@@ -248,8 +248,8 @@ module AssetSwapFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Bond>) l
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".Bond") 
-                                               [| _AssetSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
                                 |]
@@ -284,8 +284,8 @@ module AssetSwapFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".BondLeg") 
-                                               [| _AssetSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
                                 |]
@@ -320,8 +320,8 @@ module AssetSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".CleanPrice") 
-                                               [| _AssetSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
                                 |]
@@ -356,8 +356,8 @@ module AssetSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".FairCleanPrice") 
-                                               [| _AssetSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
                                 |]
@@ -392,8 +392,8 @@ module AssetSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".FairNonParRepayment") 
-                                               [| _AssetSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
                                 |]
@@ -428,8 +428,8 @@ module AssetSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".FairSpread") 
-                                               [| _AssetSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
                                 |]
@@ -464,8 +464,8 @@ module AssetSwapFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".FloatingLeg") 
-                                               [| _AssetSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
                                 |]
@@ -500,8 +500,8 @@ module AssetSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".FloatingLegBPS") 
-                                               [| _AssetSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
                                 |]
@@ -536,8 +536,8 @@ module AssetSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".FloatingLegNPV") 
-                                               [| _AssetSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
                                 |]
@@ -572,8 +572,8 @@ module AssetSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".NonParRepayment") 
-                                               [| _AssetSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
                                 |]
@@ -608,8 +608,8 @@ module AssetSwapFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".ParSwap") 
-                                               [| _AssetSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
                                 |]
@@ -644,8 +644,8 @@ module AssetSwapFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".PayBondCoupon") 
-                                               [| _AssetSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
                                 |]
@@ -680,8 +680,8 @@ module AssetSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".Spread") 
-                                               [| _AssetSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
                                 |]
@@ -720,8 +720,8 @@ module AssetSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".EndDiscounts") 
-                                               [| _AssetSwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
@@ -759,8 +759,8 @@ module AssetSwapFunction =
                 let format (o : SwapEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".Engine") 
-                                               [| _AssetSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
                                 |]
@@ -796,8 +796,8 @@ module AssetSwapFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".IsExpired") 
-                                               [| _AssetSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
                                 |]
@@ -836,8 +836,8 @@ module AssetSwapFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".Leg") 
-                                               [| _AssetSwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
@@ -878,8 +878,8 @@ module AssetSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".LegBPS") 
-                                               [| _AssetSwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
@@ -920,8 +920,8 @@ module AssetSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".LegNPV") 
-                                               [| _AssetSwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
@@ -958,8 +958,8 @@ module AssetSwapFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".MaturityDate") 
-                                               [| _AssetSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
                                 |]
@@ -994,8 +994,8 @@ module AssetSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".NpvDateDiscount") 
-                                               [| _AssetSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
                                 |]
@@ -1034,8 +1034,8 @@ module AssetSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".Payer") 
-                                               [| _AssetSwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
@@ -1072,8 +1072,8 @@ module AssetSwapFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".StartDate") 
-                                               [| _AssetSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
                                 |]
@@ -1112,8 +1112,8 @@ module AssetSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".StartDiscounts") 
-                                               [| _AssetSwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
@@ -1150,8 +1150,8 @@ module AssetSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".CASH") 
-                                               [| _AssetSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
                                 |]
@@ -1186,8 +1186,8 @@ module AssetSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".ErrorEstimate") 
-                                               [| _AssetSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
                                 |]
@@ -1222,8 +1222,8 @@ module AssetSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".NPV") 
-                                               [| _AssetSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
                                 |]
@@ -1262,8 +1262,8 @@ module AssetSwapFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".Result") 
-                                               [| _AssetSwap.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
@@ -1304,8 +1304,8 @@ module AssetSwapFunction =
                 let format (o : AssetSwap) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".SetPricingEngine") 
-                                               [| _AssetSwap.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
@@ -1342,8 +1342,8 @@ module AssetSwapFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".ValuationDate") 
-                                               [| _AssetSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AssetSwap.cell
                                 |]

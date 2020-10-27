@@ -163,8 +163,8 @@ module FDEuropeanEngineFunction =
                 let format (o : FDEuropeanEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FDEuropeanEngine.source + ".RegisterWith") 
-                                               [| _FDEuropeanEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDEuropeanEngine.cell
@@ -201,8 +201,8 @@ module FDEuropeanEngineFunction =
                 let format (o : FDEuropeanEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FDEuropeanEngine.source + ".Reset") 
-                                               [| _FDEuropeanEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDEuropeanEngine.cell
                                 |]
@@ -241,8 +241,8 @@ module FDEuropeanEngineFunction =
                 let format (o : FDEuropeanEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FDEuropeanEngine.source + ".UnregisterWith") 
-                                               [| _FDEuropeanEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDEuropeanEngine.cell
@@ -279,8 +279,8 @@ module FDEuropeanEngineFunction =
                 let format (o : FDEuropeanEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FDEuropeanEngine.source + ".Update") 
-                                               [| _FDEuropeanEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDEuropeanEngine.cell
                                 |]
@@ -315,8 +315,8 @@ module FDEuropeanEngineFunction =
                 let format (o : FDEuropeanEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FDEuropeanEngine.source + ".EnsureStrikeInGrid") 
-                                               [| _FDEuropeanEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDEuropeanEngine.cell
                                 |]
@@ -367,8 +367,8 @@ module FDEuropeanEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDVanillaEngine>) l
 
                 let source () = Helper.sourceFold (_FDEuropeanEngine.source + ".Factory") 
-                                               [| _FDEuropeanEngine.source
-                                               ;  _Process.source
+
+                                               [| _Process.source
                                                ;  _timeSteps.source
                                                ;  _gridPoints.source
                                                ;  _timeDependent.source
@@ -411,8 +411,8 @@ module FDEuropeanEngineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FDEuropeanEngine.source + ".GetResidualTime") 
-                                               [| _FDEuropeanEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDEuropeanEngine.cell
                                 |]
@@ -447,8 +447,8 @@ module FDEuropeanEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_FDEuropeanEngine.source + ".Grid") 
-                                               [| _FDEuropeanEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDEuropeanEngine.cell
                                 |]
@@ -483,8 +483,8 @@ module FDEuropeanEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 
                 let source () = Helper.sourceFold (_FDEuropeanEngine.source + ".IntrinsicValues_") 
-                                               [| _FDEuropeanEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDEuropeanEngine.cell
                                 |]

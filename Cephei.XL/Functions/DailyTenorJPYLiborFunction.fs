@@ -134,8 +134,8 @@ module DailyTenorJPYLiborFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".BusinessDayConvention") 
-                                               [| _DailyTenorJPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorJPYLibor.cell
                                 |]
@@ -174,8 +174,8 @@ module DailyTenorJPYLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".Clone") 
-                                               [| _DailyTenorJPYLibor.source
-                                               ;  _forwarding.source
+
+                                               [| _forwarding.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorJPYLibor.cell
@@ -212,8 +212,8 @@ module DailyTenorJPYLiborFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".EndOfMonth") 
-                                               [| _DailyTenorJPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorJPYLibor.cell
                                 |]
@@ -260,8 +260,8 @@ module DailyTenorJPYLiborFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".ForecastFixing") 
-                                               [| _DailyTenorJPYLibor.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _t.source
                                                |]
@@ -306,8 +306,8 @@ module DailyTenorJPYLiborFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".ForecastFixing") 
-                                               [| _DailyTenorJPYLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorJPYLibor.cell
@@ -344,8 +344,8 @@ module DailyTenorJPYLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".ForwardingTermStructure") 
-                                               [| _DailyTenorJPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorJPYLibor.cell
                                 |]
@@ -384,8 +384,8 @@ module DailyTenorJPYLiborFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".MaturityDate") 
-                                               [| _DailyTenorJPYLibor.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorJPYLibor.cell
@@ -422,8 +422,8 @@ module DailyTenorJPYLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".Currency") 
-                                               [| _DailyTenorJPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorJPYLibor.cell
                                 |]
@@ -458,8 +458,8 @@ module DailyTenorJPYLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".DayCounter") 
-                                               [| _DailyTenorJPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorJPYLibor.cell
                                 |]
@@ -494,8 +494,8 @@ module DailyTenorJPYLiborFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".FamilyName") 
-                                               [| _DailyTenorJPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorJPYLibor.cell
                                 |]
@@ -538,8 +538,8 @@ module DailyTenorJPYLiborFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".Fixing") 
-                                               [| _DailyTenorJPYLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -578,8 +578,8 @@ module DailyTenorJPYLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".FixingCalendar") 
-                                               [| _DailyTenorJPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorJPYLibor.cell
                                 |]
@@ -618,8 +618,8 @@ module DailyTenorJPYLiborFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".FixingDate") 
-                                               [| _DailyTenorJPYLibor.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorJPYLibor.cell
@@ -656,8 +656,8 @@ module DailyTenorJPYLiborFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".FixingDays") 
-                                               [| _DailyTenorJPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorJPYLibor.cell
                                 |]
@@ -696,8 +696,8 @@ module DailyTenorJPYLiborFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".IsValidFixingDate") 
-                                               [| _DailyTenorJPYLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorJPYLibor.cell
@@ -734,8 +734,8 @@ module DailyTenorJPYLiborFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".Name") 
-                                               [| _DailyTenorJPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorJPYLibor.cell
                                 |]
@@ -774,8 +774,8 @@ module DailyTenorJPYLiborFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".PastFixing") 
-                                               [| _DailyTenorJPYLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorJPYLibor.cell
@@ -812,8 +812,8 @@ module DailyTenorJPYLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".Tenor") 
-                                               [| _DailyTenorJPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorJPYLibor.cell
                                 |]
@@ -848,8 +848,8 @@ module DailyTenorJPYLiborFunction =
                 let format (o : DailyTenorJPYLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".Update") 
-                                               [| _DailyTenorJPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorJPYLibor.cell
                                 |]
@@ -888,8 +888,8 @@ module DailyTenorJPYLiborFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".ValueDate") 
-                                               [| _DailyTenorJPYLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorJPYLibor.cell
@@ -938,8 +938,8 @@ module DailyTenorJPYLiborFunction =
                 let format (o : DailyTenorJPYLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".AddFixing") 
-                                               [| _DailyTenorJPYLibor.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -992,8 +992,8 @@ module DailyTenorJPYLiborFunction =
                 let format (o : DailyTenorJPYLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".AddFixings") 
-                                               [| _DailyTenorJPYLibor.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -1042,8 +1042,8 @@ module DailyTenorJPYLiborFunction =
                 let format (o : DailyTenorJPYLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".AddFixings") 
-                                               [| _DailyTenorJPYLibor.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1082,8 +1082,8 @@ module DailyTenorJPYLiborFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".AllowsNativeFixings") 
-                                               [| _DailyTenorJPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorJPYLibor.cell
                                 |]
@@ -1118,8 +1118,8 @@ module DailyTenorJPYLiborFunction =
                 let format (o : DailyTenorJPYLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".ClearFixings") 
-                                               [| _DailyTenorJPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorJPYLibor.cell
                                 |]
@@ -1158,8 +1158,8 @@ module DailyTenorJPYLiborFunction =
                 let format (o : DailyTenorJPYLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".RegisterWith") 
-                                               [| _DailyTenorJPYLibor.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorJPYLibor.cell
@@ -1196,8 +1196,8 @@ module DailyTenorJPYLiborFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".TimeSeries") 
-                                               [| _DailyTenorJPYLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorJPYLibor.cell
                                 |]
@@ -1236,8 +1236,8 @@ module DailyTenorJPYLiborFunction =
                 let format (o : DailyTenorJPYLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorJPYLibor.source + ".UnregisterWith") 
-                                               [| _DailyTenorJPYLibor.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorJPYLibor.cell

@@ -107,8 +107,8 @@ module DiscretizedSwaptionFunction =
                 let format (o : DiscretizedSwaption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedSwaption.source + ".Reset") 
-                                               [| _DiscretizedSwaption.source
-                                               ;  _size.source
+
+                                               [| _size.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedSwaption.cell
@@ -153,8 +153,8 @@ module DiscretizedSwaptionFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedSwaption.source + ".WithinNextWeek") 
-                                               [| _DiscretizedSwaption.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                |]
                 let hash = Helper.hashFold 
@@ -201,8 +201,8 @@ module DiscretizedSwaptionFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedSwaption.source + ".WithinPreviousWeek") 
-                                               [| _DiscretizedSwaption.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                |]
                 let hash = Helper.hashFold 
@@ -241,8 +241,8 @@ module DiscretizedSwaptionFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscretizedSwaption.source + ".MandatoryTimes") 
-                                               [| _DiscretizedSwaption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedSwaption.cell
                                 |]
@@ -277,8 +277,8 @@ module DiscretizedSwaptionFunction =
                 let format (o : DiscretizedSwaption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedSwaption.source + ".AdjustValues") 
-                                               [| _DiscretizedSwaption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedSwaption.cell
                                 |]
@@ -321,8 +321,8 @@ module DiscretizedSwaptionFunction =
                 let format (o : DiscretizedSwaption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedSwaption.source + ".Initialize") 
-                                               [| _DiscretizedSwaption.source
-                                               ;  _Method.source
+
+                                               [| _Method.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -361,8 +361,8 @@ module DiscretizedSwaptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
 
                 let source () = Helper.sourceFold (_DiscretizedSwaption.source + ".METHOD") 
-                                               [| _DiscretizedSwaption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedSwaption.cell
                                 |]
@@ -401,8 +401,8 @@ module DiscretizedSwaptionFunction =
                 let format (o : DiscretizedSwaption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedSwaption.source + ".PartialRollback") 
-                                               [| _DiscretizedSwaption.source
-                                               ;  _To.source
+
+                                               [| _To.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedSwaption.cell
@@ -439,8 +439,8 @@ module DiscretizedSwaptionFunction =
                 let format (o : DiscretizedSwaption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedSwaption.source + ".PostAdjustValues") 
-                                               [| _DiscretizedSwaption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedSwaption.cell
                                 |]
@@ -475,8 +475,8 @@ module DiscretizedSwaptionFunction =
                 let format (o : DiscretizedSwaption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedSwaption.source + ".PreAdjustValues") 
-                                               [| _DiscretizedSwaption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedSwaption.cell
                                 |]
@@ -511,8 +511,8 @@ module DiscretizedSwaptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedSwaption.source + ".PresentValue") 
-                                               [| _DiscretizedSwaption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedSwaption.cell
                                 |]
@@ -551,8 +551,8 @@ module DiscretizedSwaptionFunction =
                 let format (o : DiscretizedSwaption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedSwaption.source + ".Rollback") 
-                                               [| _DiscretizedSwaption.source
-                                               ;  _To.source
+
+                                               [| _To.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedSwaption.cell
@@ -593,8 +593,8 @@ module DiscretizedSwaptionFunction =
                 let format (o : DiscretizedSwaption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedSwaption.source + ".SetTime") 
-                                               [| _DiscretizedSwaption.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedSwaption.cell
@@ -635,8 +635,8 @@ module DiscretizedSwaptionFunction =
                 let format (o : DiscretizedSwaption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedSwaption.source + ".SetValues") 
-                                               [| _DiscretizedSwaption.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedSwaption.cell
@@ -673,8 +673,8 @@ module DiscretizedSwaptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedSwaption.source + ".Time") 
-                                               [| _DiscretizedSwaption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedSwaption.cell
                                 |]
@@ -709,8 +709,8 @@ module DiscretizedSwaptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_DiscretizedSwaption.source + ".Values") 
-                                               [| _DiscretizedSwaption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedSwaption.cell
                                 |]

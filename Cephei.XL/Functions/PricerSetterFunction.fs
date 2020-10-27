@@ -95,8 +95,8 @@ module PricerSetterFunction =
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PricerSetter.source + ".Visit8") 
-                                               [| _PricerSetter.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PricerSetter.cell
@@ -137,8 +137,8 @@ module PricerSetterFunction =
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PricerSetter.source + ".Visit3") 
-                                               [| _PricerSetter.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PricerSetter.cell
@@ -179,8 +179,8 @@ module PricerSetterFunction =
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PricerSetter.source + ".Visit4") 
-                                               [| _PricerSetter.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PricerSetter.cell
@@ -221,8 +221,8 @@ module PricerSetterFunction =
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PricerSetter.source + ".Visit") 
-                                               [| _PricerSetter.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PricerSetter.cell
@@ -263,8 +263,8 @@ module PricerSetterFunction =
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PricerSetter.source + ".Visit7") 
-                                               [| _PricerSetter.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PricerSetter.cell
@@ -305,8 +305,8 @@ module PricerSetterFunction =
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PricerSetter.source + ".Visit9") 
-                                               [| _PricerSetter.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PricerSetter.cell
@@ -347,8 +347,8 @@ module PricerSetterFunction =
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PricerSetter.source + ".Visit10") 
-                                               [| _PricerSetter.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PricerSetter.cell
@@ -389,8 +389,8 @@ module PricerSetterFunction =
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PricerSetter.source + ".Visit2") 
-                                               [| _PricerSetter.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PricerSetter.cell
@@ -431,8 +431,8 @@ module PricerSetterFunction =
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PricerSetter.source + ".Visit5") 
-                                               [| _PricerSetter.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PricerSetter.cell
@@ -473,8 +473,8 @@ module PricerSetterFunction =
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PricerSetter.source + ".Visit11") 
-                                               [| _PricerSetter.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PricerSetter.cell
@@ -515,8 +515,8 @@ module PricerSetterFunction =
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PricerSetter.source + ".Visit1") 
-                                               [| _PricerSetter.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PricerSetter.cell
@@ -557,8 +557,8 @@ module PricerSetterFunction =
                 let format (o : PricerSetter) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PricerSetter.source + ".Visit6") 
-                                               [| _PricerSetter.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PricerSetter.cell

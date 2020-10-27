@@ -58,8 +58,8 @@ module AverageBasketPayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AverageBasketPayoff.source + ".Accumulate") 
-                                               [| _AverageBasketPayoff.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBasketPayoff.cell
@@ -182,8 +182,8 @@ module AverageBasketPayoffFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
                 let source () = Helper.sourceFold (_AverageBasketPayoff.source + ".BasePayoff") 
-                                               [| _AverageBasketPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBasketPayoff.cell
                                 |]
@@ -218,8 +218,8 @@ module AverageBasketPayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AverageBasketPayoff.source + ".Description") 
-                                               [| _AverageBasketPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBasketPayoff.cell
                                 |]
@@ -254,8 +254,8 @@ module AverageBasketPayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AverageBasketPayoff.source + ".Name") 
-                                               [| _AverageBasketPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBasketPayoff.cell
                                 |]
@@ -294,8 +294,8 @@ module AverageBasketPayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AverageBasketPayoff.source + ".Value1") 
-                                               [| _AverageBasketPayoff.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBasketPayoff.cell
@@ -336,8 +336,8 @@ module AverageBasketPayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AverageBasketPayoff.source + ".Value") 
-                                               [| _AverageBasketPayoff.source
-                                               ;  _price.source
+
+                                               [| _price.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBasketPayoff.cell
@@ -378,8 +378,8 @@ module AverageBasketPayoffFunction =
                 let format (o : AverageBasketPayoff) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AverageBasketPayoff.source + ".Accept") 
-                                               [| _AverageBasketPayoff.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBasketPayoff.cell

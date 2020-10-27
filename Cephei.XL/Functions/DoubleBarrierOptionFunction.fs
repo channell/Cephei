@@ -157,8 +157,8 @@ module DoubleBarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DoubleBarrierOption.source + ".ImpliedVolatility") 
-                                               [| _DoubleBarrierOption.source
-                                               ;  _targetValue.source
+
+                                               [| _targetValue.source
                                                ;  _Process.source
                                                ;  _accuracy.source
                                                ;  _maxEvaluations.source
@@ -205,8 +205,8 @@ module DoubleBarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DoubleBarrierOption.source + ".Delta") 
-                                               [| _DoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DoubleBarrierOption.cell
                                 |]
@@ -241,8 +241,8 @@ module DoubleBarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DoubleBarrierOption.source + ".DeltaForward") 
-                                               [| _DoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DoubleBarrierOption.cell
                                 |]
@@ -277,8 +277,8 @@ module DoubleBarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DoubleBarrierOption.source + ".DividendRho") 
-                                               [| _DoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DoubleBarrierOption.cell
                                 |]
@@ -313,8 +313,8 @@ module DoubleBarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DoubleBarrierOption.source + ".Elasticity") 
-                                               [| _DoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DoubleBarrierOption.cell
                                 |]
@@ -349,8 +349,8 @@ module DoubleBarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DoubleBarrierOption.source + ".Gamma") 
-                                               [| _DoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DoubleBarrierOption.cell
                                 |]
@@ -385,8 +385,8 @@ module DoubleBarrierOptionFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DoubleBarrierOption.source + ".IsExpired") 
-                                               [| _DoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DoubleBarrierOption.cell
                                 |]
@@ -421,8 +421,8 @@ module DoubleBarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DoubleBarrierOption.source + ".ItmCashProbability") 
-                                               [| _DoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DoubleBarrierOption.cell
                                 |]
@@ -457,8 +457,8 @@ module DoubleBarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DoubleBarrierOption.source + ".Rho") 
-                                               [| _DoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DoubleBarrierOption.cell
                                 |]
@@ -493,8 +493,8 @@ module DoubleBarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DoubleBarrierOption.source + ".StrikeSensitivity") 
-                                               [| _DoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DoubleBarrierOption.cell
                                 |]
@@ -529,8 +529,8 @@ module DoubleBarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DoubleBarrierOption.source + ".Theta") 
-                                               [| _DoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DoubleBarrierOption.cell
                                 |]
@@ -565,8 +565,8 @@ module DoubleBarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DoubleBarrierOption.source + ".ThetaPerDay") 
-                                               [| _DoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DoubleBarrierOption.cell
                                 |]
@@ -601,8 +601,8 @@ module DoubleBarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DoubleBarrierOption.source + ".Vega") 
-                                               [| _DoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DoubleBarrierOption.cell
                                 |]
@@ -637,8 +637,8 @@ module DoubleBarrierOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
                 let source () = Helper.sourceFold (_DoubleBarrierOption.source + ".Exercise") 
-                                               [| _DoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DoubleBarrierOption.cell
                                 |]
@@ -673,8 +673,8 @@ module DoubleBarrierOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
                 let source () = Helper.sourceFold (_DoubleBarrierOption.source + ".Payoff") 
-                                               [| _DoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DoubleBarrierOption.cell
                                 |]
@@ -709,8 +709,8 @@ module DoubleBarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DoubleBarrierOption.source + ".CASH") 
-                                               [| _DoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DoubleBarrierOption.cell
                                 |]
@@ -745,8 +745,8 @@ module DoubleBarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DoubleBarrierOption.source + ".ErrorEstimate") 
-                                               [| _DoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DoubleBarrierOption.cell
                                 |]
@@ -781,8 +781,8 @@ module DoubleBarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DoubleBarrierOption.source + ".NPV") 
-                                               [| _DoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DoubleBarrierOption.cell
                                 |]
@@ -821,8 +821,8 @@ module DoubleBarrierOptionFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DoubleBarrierOption.source + ".Result") 
-                                               [| _DoubleBarrierOption.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DoubleBarrierOption.cell
@@ -863,8 +863,8 @@ module DoubleBarrierOptionFunction =
                 let format (o : DoubleBarrierOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DoubleBarrierOption.source + ".SetPricingEngine") 
-                                               [| _DoubleBarrierOption.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DoubleBarrierOption.cell
@@ -901,8 +901,8 @@ module DoubleBarrierOptionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DoubleBarrierOption.source + ".ValuationDate") 
-                                               [| _DoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DoubleBarrierOption.cell
                                 |]

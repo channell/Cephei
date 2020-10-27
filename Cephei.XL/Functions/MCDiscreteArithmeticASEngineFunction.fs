@@ -132,8 +132,8 @@ module MCDiscreteArithmeticASEngineFunction =
                 let format (o : MCDiscreteArithmeticASEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteArithmeticASEngine.source + ".RegisterWith") 
-                                               [| _MCDiscreteArithmeticASEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteArithmeticASEngine.cell
@@ -170,8 +170,8 @@ module MCDiscreteArithmeticASEngineFunction =
                 let format (o : MCDiscreteArithmeticASEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteArithmeticASEngine.source + ".Reset") 
-                                               [| _MCDiscreteArithmeticASEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteArithmeticASEngine.cell
                                 |]
@@ -210,8 +210,8 @@ module MCDiscreteArithmeticASEngineFunction =
                 let format (o : MCDiscreteArithmeticASEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteArithmeticASEngine.source + ".UnregisterWith") 
-                                               [| _MCDiscreteArithmeticASEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteArithmeticASEngine.cell
@@ -248,8 +248,8 @@ module MCDiscreteArithmeticASEngineFunction =
                 let format (o : MCDiscreteArithmeticASEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteArithmeticASEngine.source + ".Update") 
-                                               [| _MCDiscreteArithmeticASEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteArithmeticASEngine.cell
                                 |]
@@ -284,8 +284,8 @@ module MCDiscreteArithmeticASEngineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteArithmeticASEngine.source + ".ErrorEstimate") 
-                                               [| _MCDiscreteArithmeticASEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteArithmeticASEngine.cell
                                 |]
@@ -320,8 +320,8 @@ module MCDiscreteArithmeticASEngineFunction =
                 let format (o : S) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteArithmeticASEngine.source + ".SampleAccumulator") 
-                                               [| _MCDiscreteArithmeticASEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteArithmeticASEngine.cell
                                 |]
@@ -368,8 +368,8 @@ module MCDiscreteArithmeticASEngineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteArithmeticASEngine.source + ".Value") 
-                                               [| _MCDiscreteArithmeticASEngine.source
-                                               ;  _tolerance.source
+
+                                               [| _tolerance.source
                                                ;  _maxSamples.source
                                                ;  _minSamples.source
                                                |]
@@ -414,8 +414,8 @@ module MCDiscreteArithmeticASEngineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteArithmeticASEngine.source + ".ValueWithSamples") 
-                                               [| _MCDiscreteArithmeticASEngine.source
-                                               ;  _samples.source
+
+                                               [| _samples.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteArithmeticASEngine.cell

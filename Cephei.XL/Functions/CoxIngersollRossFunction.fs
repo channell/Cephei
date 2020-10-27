@@ -125,8 +125,8 @@ module CoxIngersollRossFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".DiscountBondOption") 
-                                               [| _CoxIngersollRoss.source
-                                               ;  _Type.source
+
+                                               [| _Type.source
                                                ;  _strike.source
                                                ;  _maturity.source
                                                ;  _bondMaturity.source
@@ -169,8 +169,8 @@ module CoxIngersollRossFunction =
                 let format (o : OneFactorModel.ShortRateDynamics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".Dynamics") 
-                                               [| _CoxIngersollRoss.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CoxIngersollRoss.cell
                                 |]
@@ -209,8 +209,8 @@ module CoxIngersollRossFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
 
                 let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".Tree") 
-                                               [| _CoxIngersollRoss.source
-                                               ;  _grid.source
+
+                                               [| _grid.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CoxIngersollRoss.cell
@@ -251,8 +251,8 @@ module CoxIngersollRossFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".Discount") 
-                                               [| _CoxIngersollRoss.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CoxIngersollRoss.cell
@@ -301,8 +301,8 @@ module CoxIngersollRossFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".DiscountBond1") 
-                                               [| _CoxIngersollRoss.source
-                                               ;  _now.source
+
+                                               [| _now.source
                                                ;  _maturity.source
                                                ;  _rate.source
                                                |]
@@ -355,8 +355,8 @@ module CoxIngersollRossFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".DiscountBond") 
-                                               [| _CoxIngersollRoss.source
-                                               ;  _now.source
+
+                                               [| _now.source
                                                ;  _maturity.source
                                                ;  _factors.source
                                                |]
@@ -421,8 +421,8 @@ module CoxIngersollRossFunction =
                 let format (o : CoxIngersollRoss) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".Calibrate") 
-                                               [| _CoxIngersollRoss.source
-                                               ;  _instruments.source
+
+                                               [| _instruments.source
                                                ;  _Method.source
                                                ;  _endCriteria.source
                                                ;  _additionalConstraint.source
@@ -469,8 +469,8 @@ module CoxIngersollRossFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
                 let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".CONSTRAINT") 
-                                               [| _CoxIngersollRoss.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CoxIngersollRoss.cell
                                 |]
@@ -505,8 +505,8 @@ module CoxIngersollRossFunction =
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".EndCriteria") 
-                                               [| _CoxIngersollRoss.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CoxIngersollRoss.cell
                                 |]
@@ -541,8 +541,8 @@ module CoxIngersollRossFunction =
                 let format (o : CoxIngersollRoss) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".NotifyObservers") 
-                                               [| _CoxIngersollRoss.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CoxIngersollRoss.cell
                                 |]
@@ -577,8 +577,8 @@ module CoxIngersollRossFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".Parameters") 
-                                               [| _CoxIngersollRoss.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CoxIngersollRoss.cell
                                 |]
@@ -617,8 +617,8 @@ module CoxIngersollRossFunction =
                 let format (o : CoxIngersollRoss) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".RegisterWith") 
-                                               [| _CoxIngersollRoss.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CoxIngersollRoss.cell
@@ -659,8 +659,8 @@ module CoxIngersollRossFunction =
                 let format (o : CoxIngersollRoss) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".SetParams") 
-                                               [| _CoxIngersollRoss.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CoxIngersollRoss.cell
@@ -701,8 +701,8 @@ module CoxIngersollRossFunction =
                 let format (o : CoxIngersollRoss) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".UnregisterWith") 
-                                               [| _CoxIngersollRoss.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CoxIngersollRoss.cell
@@ -739,8 +739,8 @@ module CoxIngersollRossFunction =
                 let format (o : CoxIngersollRoss) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".Update") 
-                                               [| _CoxIngersollRoss.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CoxIngersollRoss.cell
                                 |]
@@ -783,8 +783,8 @@ module CoxIngersollRossFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CoxIngersollRoss.source + ".Value") 
-                                               [| _CoxIngersollRoss.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                ;  _instruments.source
                                                |]
                 let hash = Helper.hashFold 

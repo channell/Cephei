@@ -103,8 +103,8 @@ module DiscretizedVanillaOptionFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscretizedVanillaOption.source + ".MandatoryTimes") 
-                                               [| _DiscretizedVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedVanillaOption.cell
                                 |]
@@ -143,8 +143,8 @@ module DiscretizedVanillaOptionFunction =
                 let format (o : DiscretizedVanillaOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedVanillaOption.source + ".Reset") 
-                                               [| _DiscretizedVanillaOption.source
-                                               ;  _size.source
+
+                                               [| _size.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedVanillaOption.cell
@@ -181,8 +181,8 @@ module DiscretizedVanillaOptionFunction =
                 let format (o : DiscretizedVanillaOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedVanillaOption.source + ".AdjustValues") 
-                                               [| _DiscretizedVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedVanillaOption.cell
                                 |]
@@ -225,8 +225,8 @@ module DiscretizedVanillaOptionFunction =
                 let format (o : DiscretizedVanillaOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedVanillaOption.source + ".Initialize") 
-                                               [| _DiscretizedVanillaOption.source
-                                               ;  _Method.source
+
+                                               [| _Method.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -265,8 +265,8 @@ module DiscretizedVanillaOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
 
                 let source () = Helper.sourceFold (_DiscretizedVanillaOption.source + ".METHOD") 
-                                               [| _DiscretizedVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedVanillaOption.cell
                                 |]
@@ -305,8 +305,8 @@ module DiscretizedVanillaOptionFunction =
                 let format (o : DiscretizedVanillaOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedVanillaOption.source + ".PartialRollback") 
-                                               [| _DiscretizedVanillaOption.source
-                                               ;  _To.source
+
+                                               [| _To.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedVanillaOption.cell
@@ -343,8 +343,8 @@ module DiscretizedVanillaOptionFunction =
                 let format (o : DiscretizedVanillaOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedVanillaOption.source + ".PostAdjustValues") 
-                                               [| _DiscretizedVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedVanillaOption.cell
                                 |]
@@ -379,8 +379,8 @@ module DiscretizedVanillaOptionFunction =
                 let format (o : DiscretizedVanillaOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedVanillaOption.source + ".PreAdjustValues") 
-                                               [| _DiscretizedVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedVanillaOption.cell
                                 |]
@@ -415,8 +415,8 @@ module DiscretizedVanillaOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedVanillaOption.source + ".PresentValue") 
-                                               [| _DiscretizedVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedVanillaOption.cell
                                 |]
@@ -455,8 +455,8 @@ module DiscretizedVanillaOptionFunction =
                 let format (o : DiscretizedVanillaOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedVanillaOption.source + ".Rollback") 
-                                               [| _DiscretizedVanillaOption.source
-                                               ;  _To.source
+
+                                               [| _To.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedVanillaOption.cell
@@ -497,8 +497,8 @@ module DiscretizedVanillaOptionFunction =
                 let format (o : DiscretizedVanillaOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedVanillaOption.source + ".SetTime") 
-                                               [| _DiscretizedVanillaOption.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedVanillaOption.cell
@@ -539,8 +539,8 @@ module DiscretizedVanillaOptionFunction =
                 let format (o : DiscretizedVanillaOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedVanillaOption.source + ".SetValues") 
-                                               [| _DiscretizedVanillaOption.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedVanillaOption.cell
@@ -577,8 +577,8 @@ module DiscretizedVanillaOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedVanillaOption.source + ".Time") 
-                                               [| _DiscretizedVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedVanillaOption.cell
                                 |]
@@ -613,8 +613,8 @@ module DiscretizedVanillaOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_DiscretizedVanillaOption.source + ".Values") 
-                                               [| _DiscretizedVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedVanillaOption.cell
                                 |]

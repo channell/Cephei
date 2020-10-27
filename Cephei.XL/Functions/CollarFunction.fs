@@ -119,8 +119,8 @@ module CollarFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Collar.source + ".AtmRate") 
-                                               [| _Collar.source
-                                               ;  _discountCurve.source
+
+                                               [| _discountCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Collar.cell
@@ -157,8 +157,8 @@ module CollarFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_Collar.source + ".CapRates") 
-                                               [| _Collar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Collar.cell
                                 |]
@@ -193,8 +193,8 @@ module CollarFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_Collar.source + ".FloatingLeg") 
-                                               [| _Collar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Collar.cell
                                 |]
@@ -229,8 +229,8 @@ module CollarFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_Collar.source + ".FloorRates") 
-                                               [| _Collar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Collar.cell
                                 |]
@@ -265,8 +265,8 @@ module CollarFunction =
                 let format (o : CapFloorType) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Collar.source + ".GetType") 
-                                               [| _Collar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Collar.cell
                                 |]
@@ -337,8 +337,8 @@ module CollarFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Collar.source + ".ImpliedVolatility") 
-                                               [| _Collar.source
-                                               ;  _targetValue.source
+
+                                               [| _targetValue.source
                                                ;  _discountCurve.source
                                                ;  _guess.source
                                                ;  _accuracy.source
@@ -411,8 +411,8 @@ module CollarFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Collar.source + ".ImpliedVolatility") 
-                                               [| _Collar.source
-                                               ;  _targetValue.source
+
+                                               [| _targetValue.source
                                                ;  _discountCurve.source
                                                ;  _guess.source
                                                ;  _accuracy.source
@@ -457,8 +457,8 @@ module CollarFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Collar.source + ".IsExpired") 
-                                               [| _Collar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Collar.cell
                                 |]
@@ -493,8 +493,8 @@ module CollarFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCoupon>) l
 
                 let source () = Helper.sourceFold (_Collar.source + ".LastFloatingRateCoupon") 
-                                               [| _Collar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Collar.cell
                                 |]
@@ -529,8 +529,8 @@ module CollarFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Collar.source + ".MaturityDate") 
-                                               [| _Collar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Collar.cell
                                 |]
@@ -569,8 +569,8 @@ module CollarFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloor>) l
 
                 let source () = Helper.sourceFold (_Collar.source + ".Optionlet") 
-                                               [| _Collar.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Collar.cell
@@ -607,8 +607,8 @@ module CollarFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Collar.source + ".StartDate") 
-                                               [| _Collar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Collar.cell
                                 |]
@@ -643,8 +643,8 @@ module CollarFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Collar.source + ".CASH") 
-                                               [| _Collar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Collar.cell
                                 |]
@@ -679,8 +679,8 @@ module CollarFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Collar.source + ".ErrorEstimate") 
-                                               [| _Collar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Collar.cell
                                 |]
@@ -715,8 +715,8 @@ module CollarFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Collar.source + ".NPV") 
-                                               [| _Collar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Collar.cell
                                 |]
@@ -755,8 +755,8 @@ module CollarFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Collar.source + ".Result") 
-                                               [| _Collar.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Collar.cell
@@ -797,8 +797,8 @@ module CollarFunction =
                 let format (o : Collar) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Collar.source + ".SetPricingEngine") 
-                                               [| _Collar.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Collar.cell
@@ -835,8 +835,8 @@ module CollarFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Collar.source + ".ValuationDate") 
-                                               [| _Collar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Collar.cell
                                 |]

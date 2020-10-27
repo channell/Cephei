@@ -54,8 +54,8 @@ module BackwardFlatFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BackwardFlat.source + ".GLOBAL") 
-                                               [| _BackwardFlat.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BackwardFlat.cell
                                 |]
@@ -102,8 +102,8 @@ module BackwardFlatFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
                 let source () = Helper.sourceFold (_BackwardFlat.source + ".Interpolate") 
-                                               [| _BackwardFlat.source
-                                               ;  _xBegin.source
+
+                                               [| _xBegin.source
                                                ;  _size.source
                                                ;  _yBegin.source
                                                |]
@@ -144,8 +144,8 @@ module BackwardFlatFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BackwardFlat.source + ".RequiredPoints") 
-                                               [| _BackwardFlat.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BackwardFlat.cell
                                 |]

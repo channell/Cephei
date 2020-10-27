@@ -54,8 +54,8 @@ module MultiPathFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MultiPath.source + ".AssetNumber") 
-                                               [| _MultiPath.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MultiPath.cell
                                 |]
@@ -90,8 +90,8 @@ module MultiPathFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MultiPath.source + ".Clone") 
-                                               [| _MultiPath.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MultiPath.cell
                                 |]
@@ -126,8 +126,8 @@ module MultiPathFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MultiPath.source + ".Length") 
-                                               [| _MultiPath.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MultiPath.cell
                                 |]
@@ -273,8 +273,8 @@ module MultiPathFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MultiPath.source + ".PathSize") 
-                                               [| _MultiPath.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MultiPath.cell
                                 |]
@@ -313,8 +313,8 @@ module MultiPathFunction =
                 let format (o : Path) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MultiPath.source + ".This") 
-                                               [| _MultiPath.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MultiPath.cell

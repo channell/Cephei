@@ -165,8 +165,8 @@ module BrownianBridgeFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BrownianBridge.source + ".Size") 
-                                               [| _BrownianBridge.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BrownianBridge.cell
                                 |]
@@ -201,8 +201,8 @@ module BrownianBridgeFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_BrownianBridge.source + ".Times") 
-                                               [| _BrownianBridge.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BrownianBridge.cell
                                 |]
@@ -245,8 +245,8 @@ module BrownianBridgeFunction =
                 let format (o : BrownianBridge) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BrownianBridge.source + ".Transform") 
-                                               [| _BrownianBridge.source
-                                               ;  _Begin.source
+
+                                               [| _Begin.source
                                                ;  _output.source
                                                |]
                 let hash = Helper.hashFold 

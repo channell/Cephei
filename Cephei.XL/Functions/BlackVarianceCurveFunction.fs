@@ -115,8 +115,8 @@ module BlackVarianceCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_BlackVarianceCurve.source + ".DayCounter") 
-                                               [| _BlackVarianceCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackVarianceCurve.cell
                                 |]
@@ -151,8 +151,8 @@ module BlackVarianceCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BlackVarianceCurve.source + ".MaxDate") 
-                                               [| _BlackVarianceCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackVarianceCurve.cell
                                 |]
@@ -187,8 +187,8 @@ module BlackVarianceCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackVarianceCurve.source + ".MaxStrike") 
-                                               [| _BlackVarianceCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackVarianceCurve.cell
                                 |]
@@ -223,8 +223,8 @@ module BlackVarianceCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackVarianceCurve.source + ".MinStrike") 
-                                               [| _BlackVarianceCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackVarianceCurve.cell
                                 |]
@@ -260,8 +260,8 @@ module BlackVarianceCurveFunction =
                 let format (o : BlackVarianceCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BlackVarianceCurve.source + ".SetInterpolation") 
-                                               [| _BlackVarianceCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackVarianceCurve.cell
                                 |]
@@ -302,8 +302,8 @@ module BlackVarianceCurveFunction =
                 let format (o : BlackVarianceCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BlackVarianceCurve.source + ".SetInterpolation") 
-                                               [| _BlackVarianceCurve.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackVarianceCurve.cell

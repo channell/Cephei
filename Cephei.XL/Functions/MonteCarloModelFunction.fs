@@ -58,8 +58,8 @@ module MonteCarloModelFunction =
                 let format (o : MonteCarloModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MonteCarloModel.source + ".AddSamples") 
-                                               [| _MonteCarloModel.source
-                                               ;  _samples.source
+
+                                               [| _samples.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MonteCarloModel.cell
@@ -169,8 +169,8 @@ module MonteCarloModelFunction =
                 let format (o : S) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MonteCarloModel.source + ".SampleAccumulator") 
-                                               [| _MonteCarloModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MonteCarloModel.cell
                                 |]

@@ -54,8 +54,8 @@ module SimpleCashFlowFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SimpleCashFlow.source + ".Amount") 
-                                               [| _SimpleCashFlow.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SimpleCashFlow.cell
                                 |]
@@ -90,8 +90,8 @@ module SimpleCashFlowFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_SimpleCashFlow.source + ".Date") 
-                                               [| _SimpleCashFlow.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SimpleCashFlow.cell
                                 |]
@@ -173,8 +173,8 @@ module SimpleCashFlowFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SimpleCashFlow.source + ".CompareTo") 
-                                               [| _SimpleCashFlow.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimpleCashFlow.cell
@@ -215,8 +215,8 @@ module SimpleCashFlowFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SimpleCashFlow.source + ".Equals") 
-                                               [| _SimpleCashFlow.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimpleCashFlow.cell
@@ -253,8 +253,8 @@ module SimpleCashFlowFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_SimpleCashFlow.source + ".ExCouponDate") 
-                                               [| _SimpleCashFlow.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SimpleCashFlow.cell
                                 |]
@@ -297,8 +297,8 @@ module SimpleCashFlowFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SimpleCashFlow.source + ".HasOccurred") 
-                                               [| _SimpleCashFlow.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                ;  _includeRefDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -341,8 +341,8 @@ module SimpleCashFlowFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SimpleCashFlow.source + ".TradingExCoupon") 
-                                               [| _SimpleCashFlow.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimpleCashFlow.cell
@@ -383,8 +383,8 @@ module SimpleCashFlowFunction =
                 let format (o : SimpleCashFlow) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SimpleCashFlow.source + ".Accept") 
-                                               [| _SimpleCashFlow.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimpleCashFlow.cell
@@ -425,8 +425,8 @@ module SimpleCashFlowFunction =
                 let format (o : SimpleCashFlow) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SimpleCashFlow.source + ".RegisterWith") 
-                                               [| _SimpleCashFlow.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimpleCashFlow.cell
@@ -467,8 +467,8 @@ module SimpleCashFlowFunction =
                 let format (o : SimpleCashFlow) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SimpleCashFlow.source + ".UnregisterWith") 
-                                               [| _SimpleCashFlow.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimpleCashFlow.cell

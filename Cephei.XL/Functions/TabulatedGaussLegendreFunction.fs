@@ -54,8 +54,8 @@ module TabulatedGaussLegendreFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TabulatedGaussLegendre.source + ".Order") 
-                                               [| _TabulatedGaussLegendre.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TabulatedGaussLegendre.cell
                                 |]
@@ -94,8 +94,8 @@ module TabulatedGaussLegendreFunction =
                 let format (o : TabulatedGaussLegendre) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TabulatedGaussLegendre.source + ".Order") 
-                                               [| _TabulatedGaussLegendre.source
-                                               ;  _order.source
+
+                                               [| _order.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TabulatedGaussLegendre.cell
@@ -173,8 +173,8 @@ module TabulatedGaussLegendreFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TabulatedGaussLegendre.source + ".Value") 
-                                               [| _TabulatedGaussLegendre.source
-                                               ;  _f.source
+
+                                               [| _f.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TabulatedGaussLegendre.cell

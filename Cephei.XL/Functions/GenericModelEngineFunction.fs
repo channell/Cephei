@@ -166,8 +166,8 @@ module GenericModelEngineFunction =
                 let format (o : GenericModelEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GenericModelEngine.source + ".SetModel") 
-                                               [| _GenericModelEngine.source
-                                               ;  _model.source
+
+                                               [| _model.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericModelEngine.cell
@@ -209,8 +209,8 @@ module GenericModelEngineFunction =
                 let format (o : GenericModelEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GenericModelEngine.source + ".RegisterWith") 
-                                               [| _GenericModelEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericModelEngine.cell
@@ -247,8 +247,8 @@ module GenericModelEngineFunction =
                 let format (o : GenericModelEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GenericModelEngine.source + ".Reset") 
-                                               [| _GenericModelEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericModelEngine.cell
                                 |]
@@ -287,8 +287,8 @@ module GenericModelEngineFunction =
                 let format (o : GenericModelEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GenericModelEngine.source + ".UnregisterWith") 
-                                               [| _GenericModelEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericModelEngine.cell
@@ -325,8 +325,8 @@ module GenericModelEngineFunction =
                 let format (o : GenericModelEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GenericModelEngine.source + ".Update") 
-                                               [| _GenericModelEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericModelEngine.cell
                                 |]

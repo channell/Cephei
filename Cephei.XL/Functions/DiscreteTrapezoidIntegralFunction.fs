@@ -62,8 +62,8 @@ module DiscreteTrapezoidIntegralFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteTrapezoidIntegral.source + ".Value") 
-                                               [| _DiscreteTrapezoidIntegral.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _f.source
                                                |]
                 let hash = Helper.hashFold 

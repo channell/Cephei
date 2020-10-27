@@ -206,8 +206,8 @@ module ConvexMonotoneInterpolationFunction =
                 let format (o : System.Collections.Generic.Dictionary<double,ISectionHelper>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".GetExistingHelpers") 
-                                               [| _ConvexMonotoneInterpolation.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotoneInterpolation.cell
                                 |]
@@ -250,8 +250,8 @@ module ConvexMonotoneInterpolationFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".Derivative") 
-                                               [| _ConvexMonotoneInterpolation.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -290,8 +290,8 @@ module ConvexMonotoneInterpolationFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".Empty") 
-                                               [| _ConvexMonotoneInterpolation.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotoneInterpolation.cell
                                 |]
@@ -334,8 +334,8 @@ module ConvexMonotoneInterpolationFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".Primitive") 
-                                               [| _ConvexMonotoneInterpolation.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -382,8 +382,8 @@ module ConvexMonotoneInterpolationFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".SecondDerivative") 
-                                               [| _ConvexMonotoneInterpolation.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -422,8 +422,8 @@ module ConvexMonotoneInterpolationFunction =
                 let format (o : ConvexMonotoneInterpolation) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".Update") 
-                                               [| _ConvexMonotoneInterpolation.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotoneInterpolation.cell
                                 |]
@@ -466,8 +466,8 @@ module ConvexMonotoneInterpolationFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".Value1") 
-                                               [| _ConvexMonotoneInterpolation.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -510,8 +510,8 @@ module ConvexMonotoneInterpolationFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".Value") 
-                                               [| _ConvexMonotoneInterpolation.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotoneInterpolation.cell
@@ -548,8 +548,8 @@ module ConvexMonotoneInterpolationFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".XMax") 
-                                               [| _ConvexMonotoneInterpolation.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotoneInterpolation.cell
                                 |]
@@ -584,8 +584,8 @@ module ConvexMonotoneInterpolationFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".XMin") 
-                                               [| _ConvexMonotoneInterpolation.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotoneInterpolation.cell
                                 |]
@@ -620,8 +620,8 @@ module ConvexMonotoneInterpolationFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".AllowsExtrapolation") 
-                                               [| _ConvexMonotoneInterpolation.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotoneInterpolation.cell
                                 |]
@@ -660,8 +660,8 @@ module ConvexMonotoneInterpolationFunction =
                 let format (o : ConvexMonotoneInterpolation) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".DisableExtrapolation") 
-                                               [| _ConvexMonotoneInterpolation.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotoneInterpolation.cell
@@ -702,8 +702,8 @@ module ConvexMonotoneInterpolationFunction =
                 let format (o : ConvexMonotoneInterpolation) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".EnableExtrapolation") 
-                                               [| _ConvexMonotoneInterpolation.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotoneInterpolation.cell
@@ -740,8 +740,8 @@ module ConvexMonotoneInterpolationFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConvexMonotoneInterpolation.source + ".Extrapolate") 
-                                               [| _ConvexMonotoneInterpolation.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotoneInterpolation.cell
                                 |]

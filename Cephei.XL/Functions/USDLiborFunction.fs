@@ -138,8 +138,8 @@ module USDLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".Clone") 
-                                               [| _USDLibor.source
-                                               ;  _h.source
+
+                                               [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _USDLibor.cell
@@ -180,8 +180,8 @@ module USDLiborFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".MaturityDate") 
-                                               [| _USDLibor.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _USDLibor.cell
@@ -222,8 +222,8 @@ module USDLiborFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".ValueDate") 
-                                               [| _USDLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _USDLibor.cell
@@ -260,8 +260,8 @@ module USDLiborFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".BusinessDayConvention") 
-                                               [| _USDLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _USDLibor.cell
                                 |]
@@ -296,8 +296,8 @@ module USDLiborFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".EndOfMonth") 
-                                               [| _USDLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _USDLibor.cell
                                 |]
@@ -344,8 +344,8 @@ module USDLiborFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".ForecastFixing1") 
-                                               [| _USDLibor.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _t.source
                                                |]
@@ -390,8 +390,8 @@ module USDLiborFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".ForecastFixing") 
-                                               [| _USDLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _USDLibor.cell
@@ -428,8 +428,8 @@ module USDLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".ForwardingTermStructure") 
-                                               [| _USDLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _USDLibor.cell
                                 |]
@@ -464,8 +464,8 @@ module USDLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".Currency") 
-                                               [| _USDLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _USDLibor.cell
                                 |]
@@ -500,8 +500,8 @@ module USDLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".DayCounter") 
-                                               [| _USDLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _USDLibor.cell
                                 |]
@@ -536,8 +536,8 @@ module USDLiborFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".FamilyName") 
-                                               [| _USDLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _USDLibor.cell
                                 |]
@@ -580,8 +580,8 @@ module USDLiborFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".Fixing") 
-                                               [| _USDLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -620,8 +620,8 @@ module USDLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".FixingCalendar") 
-                                               [| _USDLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _USDLibor.cell
                                 |]
@@ -660,8 +660,8 @@ module USDLiborFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".FixingDate") 
-                                               [| _USDLibor.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _USDLibor.cell
@@ -698,8 +698,8 @@ module USDLiborFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".FixingDays") 
-                                               [| _USDLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _USDLibor.cell
                                 |]
@@ -738,8 +738,8 @@ module USDLiborFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".IsValidFixingDate") 
-                                               [| _USDLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _USDLibor.cell
@@ -776,8 +776,8 @@ module USDLiborFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".Name") 
-                                               [| _USDLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _USDLibor.cell
                                 |]
@@ -816,8 +816,8 @@ module USDLiborFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".PastFixing") 
-                                               [| _USDLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _USDLibor.cell
@@ -854,8 +854,8 @@ module USDLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".Tenor") 
-                                               [| _USDLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _USDLibor.cell
                                 |]
@@ -890,8 +890,8 @@ module USDLiborFunction =
                 let format (o : USDLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".Update") 
-                                               [| _USDLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _USDLibor.cell
                                 |]
@@ -938,8 +938,8 @@ module USDLiborFunction =
                 let format (o : USDLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".AddFixing") 
-                                               [| _USDLibor.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -992,8 +992,8 @@ module USDLiborFunction =
                 let format (o : USDLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".AddFixings") 
-                                               [| _USDLibor.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -1042,8 +1042,8 @@ module USDLiborFunction =
                 let format (o : USDLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".AddFixings1") 
-                                               [| _USDLibor.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1082,8 +1082,8 @@ module USDLiborFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".AllowsNativeFixings") 
-                                               [| _USDLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _USDLibor.cell
                                 |]
@@ -1118,8 +1118,8 @@ module USDLiborFunction =
                 let format (o : USDLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".ClearFixings") 
-                                               [| _USDLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _USDLibor.cell
                                 |]
@@ -1158,8 +1158,8 @@ module USDLiborFunction =
                 let format (o : USDLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".RegisterWith") 
-                                               [| _USDLibor.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _USDLibor.cell
@@ -1196,8 +1196,8 @@ module USDLiborFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".TimeSeries") 
-                                               [| _USDLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _USDLibor.cell
                                 |]
@@ -1236,8 +1236,8 @@ module USDLiborFunction =
                 let format (o : USDLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_USDLibor.source + ".UnregisterWith") 
-                                               [| _USDLibor.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _USDLibor.cell

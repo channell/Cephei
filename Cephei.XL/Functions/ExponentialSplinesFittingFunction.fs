@@ -54,8 +54,8 @@ module ExponentialSplinesFittingFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FittedBondDiscountCurve.FittingMethod>) l
 
                 let source () = Helper.sourceFold (_ExponentialSplinesFitting.source + ".Clone") 
-                                               [| _ExponentialSplinesFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ExponentialSplinesFitting.cell
                                 |]
@@ -139,8 +139,8 @@ module ExponentialSplinesFittingFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ExponentialSplinesFitting.source + ".Size") 
-                                               [| _ExponentialSplinesFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ExponentialSplinesFitting.cell
                                 |]
@@ -175,8 +175,8 @@ module ExponentialSplinesFittingFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ExponentialSplinesFitting.source + ".ConstrainAtZero") 
-                                               [| _ExponentialSplinesFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ExponentialSplinesFitting.cell
                                 |]
@@ -219,8 +219,8 @@ module ExponentialSplinesFittingFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ExponentialSplinesFitting.source + ".Discount") 
-                                               [| _ExponentialSplinesFitting.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -259,8 +259,8 @@ module ExponentialSplinesFittingFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ExponentialSplinesFitting.source + ".MinimumCostValue") 
-                                               [| _ExponentialSplinesFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ExponentialSplinesFitting.cell
                                 |]
@@ -295,8 +295,8 @@ module ExponentialSplinesFittingFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ExponentialSplinesFitting.source + ".NumberOfIterations") 
-                                               [| _ExponentialSplinesFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ExponentialSplinesFitting.cell
                                 |]
@@ -331,8 +331,8 @@ module ExponentialSplinesFittingFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OptimizationMethod>) l
 
                 let source () = Helper.sourceFold (_ExponentialSplinesFitting.source + ".OptimizationMethod") 
-                                               [| _ExponentialSplinesFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ExponentialSplinesFitting.cell
                                 |]
@@ -367,8 +367,8 @@ module ExponentialSplinesFittingFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_ExponentialSplinesFitting.source + ".Solution") 
-                                               [| _ExponentialSplinesFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ExponentialSplinesFitting.cell
                                 |]
@@ -403,8 +403,8 @@ module ExponentialSplinesFittingFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_ExponentialSplinesFitting.source + ".Weights") 
-                                               [| _ExponentialSplinesFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ExponentialSplinesFitting.cell
                                 |]

@@ -101,8 +101,8 @@ module BinomialDistributionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BinomialDistribution.source + ".Value") 
-                                               [| _BinomialDistribution.source
-                                               ;  _k.source
+
+                                               [| _k.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BinomialDistribution.cell

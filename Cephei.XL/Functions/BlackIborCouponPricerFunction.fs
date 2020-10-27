@@ -107,8 +107,8 @@ module BlackIborCouponPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackIborCouponPricer.source + ".CapletPrice") 
-                                               [| _BlackIborCouponPricer.source
-                                               ;  _effectiveCap.source
+
+                                               [| _effectiveCap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackIborCouponPricer.cell
@@ -149,8 +149,8 @@ module BlackIborCouponPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackIborCouponPricer.source + ".CapletRate") 
-                                               [| _BlackIborCouponPricer.source
-                                               ;  _effectiveCap.source
+
+                                               [| _effectiveCap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackIborCouponPricer.cell
@@ -191,8 +191,8 @@ module BlackIborCouponPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackIborCouponPricer.source + ".FloorletPrice") 
-                                               [| _BlackIborCouponPricer.source
-                                               ;  _effectiveFloor.source
+
+                                               [| _effectiveFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackIborCouponPricer.cell
@@ -233,8 +233,8 @@ module BlackIborCouponPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackIborCouponPricer.source + ".FloorletRate") 
-                                               [| _BlackIborCouponPricer.source
-                                               ;  _effectiveFloor.source
+
+                                               [| _effectiveFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackIborCouponPricer.cell
@@ -275,8 +275,8 @@ module BlackIborCouponPricerFunction =
                 let format (o : BlackIborCouponPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BlackIborCouponPricer.source + ".Initialize") 
-                                               [| _BlackIborCouponPricer.source
-                                               ;  _coupon.source
+
+                                               [| _coupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackIborCouponPricer.cell
@@ -313,8 +313,8 @@ module BlackIborCouponPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackIborCouponPricer.source + ".SwapletPrice") 
-                                               [| _BlackIborCouponPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackIborCouponPricer.cell
                                 |]
@@ -349,8 +349,8 @@ module BlackIborCouponPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackIborCouponPricer.source + ".SwapletRate") 
-                                               [| _BlackIborCouponPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackIborCouponPricer.cell
                                 |]
@@ -385,8 +385,8 @@ module BlackIborCouponPricerFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<OptionletVolatilityStructure>>) l
 
                 let source () = Helper.sourceFold (_BlackIborCouponPricer.source + ".CapletVolatility") 
-                                               [| _BlackIborCouponPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackIborCouponPricer.cell
                                 |]
@@ -425,8 +425,8 @@ module BlackIborCouponPricerFunction =
                 let format (o : BlackIborCouponPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BlackIborCouponPricer.source + ".SetCapletVolatility") 
-                                               [| _BlackIborCouponPricer.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackIborCouponPricer.cell
@@ -467,8 +467,8 @@ module BlackIborCouponPricerFunction =
                 let format (o : BlackIborCouponPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BlackIborCouponPricer.source + ".RegisterWith") 
-                                               [| _BlackIborCouponPricer.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackIborCouponPricer.cell
@@ -509,8 +509,8 @@ module BlackIborCouponPricerFunction =
                 let format (o : BlackIborCouponPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BlackIborCouponPricer.source + ".UnregisterWith") 
-                                               [| _BlackIborCouponPricer.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackIborCouponPricer.cell
@@ -547,8 +547,8 @@ module BlackIborCouponPricerFunction =
                 let format (o : BlackIborCouponPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BlackIborCouponPricer.source + ".Update") 
-                                               [| _BlackIborCouponPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackIborCouponPricer.cell
                                 |]

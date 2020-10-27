@@ -70,8 +70,8 @@ module TrigeorgisFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Trigeorgis>) l
 
                 let source () = Helper.sourceFold (_Trigeorgis.source + ".Factory") 
-                                               [| _Trigeorgis.source
-                                               ;  _Process.source
+
+                                               [| _Process.source
                                                ;  _End.source
                                                ;  _steps.source
                                                ;  _strike.source
@@ -212,8 +212,8 @@ module TrigeorgisFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Trigeorgis.source + ".Probability") 
-                                               [| _Trigeorgis.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _y.source
                                                ;  _branch.source
                                                |]
@@ -262,8 +262,8 @@ module TrigeorgisFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Trigeorgis.source + ".Underlying") 
-                                               [| _Trigeorgis.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _index.source
                                                |]
                 let hash = Helper.hashFold 
@@ -314,8 +314,8 @@ module TrigeorgisFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Trigeorgis.source + ".Descendant") 
-                                               [| _Trigeorgis.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _index.source
                                                ;  _branch.source
                                                |]
@@ -360,8 +360,8 @@ module TrigeorgisFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Trigeorgis.source + ".Size") 
-                                               [| _Trigeorgis.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Trigeorgis.cell
@@ -398,8 +398,8 @@ module TrigeorgisFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Trigeorgis.source + ".Columns") 
-                                               [| _Trigeorgis.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Trigeorgis.cell
                                 |]

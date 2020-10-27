@@ -54,8 +54,8 @@ module FuturesRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FuturesRateHelper.source + ".ConvexityAdjustment") 
-                                               [| _FuturesRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]
@@ -516,8 +516,8 @@ module FuturesRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FuturesRateHelper.source + ".ImpliedQuote") 
-                                               [| _FuturesRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]
@@ -552,8 +552,8 @@ module FuturesRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FuturesRateHelper.source + ".EarliestDate") 
-                                               [| _FuturesRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]
@@ -588,8 +588,8 @@ module FuturesRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FuturesRateHelper.source + ".LatestDate") 
-                                               [| _FuturesRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]
@@ -624,8 +624,8 @@ module FuturesRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FuturesRateHelper.source + ".LatestRelevantDate") 
-                                               [| _FuturesRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]
@@ -660,8 +660,8 @@ module FuturesRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FuturesRateHelper.source + ".MaturityDate") 
-                                               [| _FuturesRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]
@@ -696,8 +696,8 @@ module FuturesRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FuturesRateHelper.source + ".PillarDate") 
-                                               [| _FuturesRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]
@@ -732,8 +732,8 @@ module FuturesRateHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
                 let source () = Helper.sourceFold (_FuturesRateHelper.source + ".Quote") 
-                                               [| _FuturesRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]
@@ -768,8 +768,8 @@ module FuturesRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FuturesRateHelper.source + ".QuoteError") 
-                                               [| _FuturesRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]
@@ -804,8 +804,8 @@ module FuturesRateHelperFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FuturesRateHelper.source + ".QuoteIsValid") 
-                                               [| _FuturesRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]
@@ -840,8 +840,8 @@ module FuturesRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FuturesRateHelper.source + ".QuoteValue") 
-                                               [| _FuturesRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]
@@ -880,8 +880,8 @@ module FuturesRateHelperFunction =
                 let format (o : FuturesRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FuturesRateHelper.source + ".RegisterWith") 
-                                               [| _FuturesRateHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
@@ -923,8 +923,8 @@ module FuturesRateHelperFunction =
                 let format (o : FuturesRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FuturesRateHelper.source + ".SetTermStructure") 
-                                               [| _FuturesRateHelper.source
-                                               ;  _ts.source
+
+                                               [| _ts.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
@@ -966,8 +966,8 @@ module FuturesRateHelperFunction =
                 let format (o : FuturesRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FuturesRateHelper.source + ".UnregisterWith") 
-                                               [| _FuturesRateHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
@@ -1004,8 +1004,8 @@ module FuturesRateHelperFunction =
                 let format (o : FuturesRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FuturesRateHelper.source + ".Update") 
-                                               [| _FuturesRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FuturesRateHelper.cell
                                 |]

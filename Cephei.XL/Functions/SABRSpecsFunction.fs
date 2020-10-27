@@ -74,8 +74,8 @@ module SABRSpecsFunction =
                 let format (o : SABRSpecs) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SABRSpecs.source + ".DefaultValues") 
-                                               [| _SABRSpecs.source
-                                               ;  _param.source
+
+                                               [| _param.source
                                                ;  _b.source
                                                ;  _forward.source
                                                ;  _expiryTime.source
@@ -120,8 +120,8 @@ module SABRSpecsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SABRSpecs.source + ".DilationFactor") 
-                                               [| _SABRSpecs.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SABRSpecs.cell
                                 |]
@@ -156,8 +156,8 @@ module SABRSpecsFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SABRSpecs.source + ".Dimension") 
-                                               [| _SABRSpecs.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SABRSpecs.cell
                                 |]
@@ -208,8 +208,8 @@ module SABRSpecsFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_SABRSpecs.source + ".Direct") 
-                                               [| _SABRSpecs.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _b.source
                                                ;  _c.source
                                                ;  _d.source
@@ -252,8 +252,8 @@ module SABRSpecsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SABRSpecs.source + ".Eps1") 
-                                               [| _SABRSpecs.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SABRSpecs.cell
                                 |]
@@ -288,8 +288,8 @@ module SABRSpecsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SABRSpecs.source + ".Eps2") 
-                                               [| _SABRSpecs.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SABRSpecs.cell
                                 |]
@@ -348,8 +348,8 @@ module SABRSpecsFunction =
                 let format (o : SABRSpecs) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SABRSpecs.source + ".Guess") 
-                                               [| _SABRSpecs.source
-                                               ;  _values.source
+
+                                               [| _values.source
                                                ;  _paramIsFixed.source
                                                ;  _forward.source
                                                ;  _expiryTime.source
@@ -412,8 +412,8 @@ module SABRSpecsFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IWrapper>) l
 
                 let source () = Helper.sourceFold (_SABRSpecs.source + ".Instance") 
-                                               [| _SABRSpecs.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _forward.source
                                                ;  _param.source
                                                ;  _addParams.source
@@ -472,8 +472,8 @@ module SABRSpecsFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_SABRSpecs.source + ".Inverse") 
-                                               [| _SABRSpecs.source
-                                               ;  _y.source
+
+                                               [| _y.source
                                                ;  _b.source
                                                ;  _c.source
                                                ;  _d.source
@@ -532,8 +532,8 @@ module SABRSpecsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SABRSpecs.source + ".Weight") 
-                                               [| _SABRSpecs.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _forward.source
                                                ;  _stdDev.source
                                                ;  _addParams.source

@@ -55,8 +55,8 @@ module InterpolatedForwardCurveFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Clone") 
-                                               [| _InterpolatedForwardCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
@@ -91,8 +91,8 @@ module InterpolatedForwardCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Data") 
-                                               [| _InterpolatedForwardCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
@@ -127,8 +127,8 @@ module InterpolatedForwardCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Data_") 
-                                               [| _InterpolatedForwardCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
@@ -163,8 +163,8 @@ module InterpolatedForwardCurveFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Dates") 
-                                               [| _InterpolatedForwardCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
@@ -199,8 +199,8 @@ module InterpolatedForwardCurveFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Dates_") 
-                                               [| _InterpolatedForwardCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
@@ -235,8 +235,8 @@ module InterpolatedForwardCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Forwards") 
-                                               [| _InterpolatedForwardCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
@@ -710,8 +710,8 @@ module InterpolatedForwardCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
                 let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Interpolation_") 
-                                               [| _InterpolatedForwardCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
@@ -746,8 +746,8 @@ module InterpolatedForwardCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
 
                 let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Interpolator_") 
-                                               [| _InterpolatedForwardCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
@@ -782,8 +782,8 @@ module InterpolatedForwardCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".MaxDate") 
-                                               [| _InterpolatedForwardCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
@@ -818,8 +818,8 @@ module InterpolatedForwardCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".MaxDate_") 
-                                               [| _InterpolatedForwardCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
@@ -854,8 +854,8 @@ module InterpolatedForwardCurveFunction =
                 let format (o : Dictionary<Date,double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Nodes") 
-                                               [| _InterpolatedForwardCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
@@ -890,8 +890,8 @@ module InterpolatedForwardCurveFunction =
                 let format (o : InterpolatedForwardCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".SetupInterpolation") 
-                                               [| _InterpolatedForwardCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
@@ -926,8 +926,8 @@ module InterpolatedForwardCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Times") 
-                                               [| _InterpolatedForwardCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]
@@ -962,8 +962,8 @@ module InterpolatedForwardCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedForwardCurve.source + ".Times_") 
-                                               [| _InterpolatedForwardCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedForwardCurve.cell
                                 |]

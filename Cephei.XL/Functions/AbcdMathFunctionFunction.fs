@@ -54,8 +54,8 @@ module AbcdMathFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AbcdMathFunction.source + ".A") 
-                                               [| _AbcdMathFunction.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AbcdMathFunction.cell
                                 |]
@@ -182,8 +182,8 @@ module AbcdMathFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AbcdMathFunction.source + ".B") 
-                                               [| _AbcdMathFunction.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AbcdMathFunction.cell
                                 |]
@@ -218,8 +218,8 @@ module AbcdMathFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AbcdMathFunction.source + ".C") 
-                                               [| _AbcdMathFunction.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AbcdMathFunction.cell
                                 |]
@@ -254,8 +254,8 @@ module AbcdMathFunctionFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_AbcdMathFunction.source + ".Coefficients") 
-                                               [| _AbcdMathFunction.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AbcdMathFunction.cell
                                 |]
@@ -290,8 +290,8 @@ module AbcdMathFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AbcdMathFunction.source + ".D") 
-                                               [| _AbcdMathFunction.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AbcdMathFunction.cell
                                 |]
@@ -334,8 +334,8 @@ module AbcdMathFunctionFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_AbcdMathFunction.source + ".DefiniteDerivativeCoefficients") 
-                                               [| _AbcdMathFunction.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _t2.source
                                                |]
                 let hash = Helper.hashFold 
@@ -382,8 +382,8 @@ module AbcdMathFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AbcdMathFunction.source + ".DefiniteIntegral") 
-                                               [| _AbcdMathFunction.source
-                                               ;  _t1.source
+
+                                               [| _t1.source
                                                ;  _t2.source
                                                |]
                 let hash = Helper.hashFold 
@@ -430,8 +430,8 @@ module AbcdMathFunctionFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_AbcdMathFunction.source + ".DefiniteIntegralCoefficients") 
-                                               [| _AbcdMathFunction.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _t2.source
                                                |]
                 let hash = Helper.hashFold 
@@ -474,8 +474,8 @@ module AbcdMathFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AbcdMathFunction.source + ".Derivative") 
-                                               [| _AbcdMathFunction.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdMathFunction.cell
@@ -512,8 +512,8 @@ module AbcdMathFunctionFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_AbcdMathFunction.source + ".DerivativeCoefficients") 
-                                               [| _AbcdMathFunction.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AbcdMathFunction.cell
                                 |]
@@ -548,8 +548,8 @@ module AbcdMathFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AbcdMathFunction.source + ".LongTermValue") 
-                                               [| _AbcdMathFunction.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AbcdMathFunction.cell
                                 |]
@@ -584,8 +584,8 @@ module AbcdMathFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AbcdMathFunction.source + ".MaximumLocation") 
-                                               [| _AbcdMathFunction.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AbcdMathFunction.cell
                                 |]
@@ -620,8 +620,8 @@ module AbcdMathFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AbcdMathFunction.source + ".MaximumValue") 
-                                               [| _AbcdMathFunction.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AbcdMathFunction.cell
                                 |]
@@ -660,8 +660,8 @@ module AbcdMathFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AbcdMathFunction.source + ".Primitive") 
-                                               [| _AbcdMathFunction.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdMathFunction.cell
@@ -702,8 +702,8 @@ module AbcdMathFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AbcdMathFunction.source + ".Value") 
-                                               [| _AbcdMathFunction.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AbcdMathFunction.cell

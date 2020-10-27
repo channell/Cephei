@@ -85,8 +85,8 @@ module Black76SpecFunction =
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Black76Spec.source + ".TYPE") 
-                                               [| _Black76Spec.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Black76Spec.cell
                                 |]
@@ -145,8 +145,8 @@ module Black76SpecFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Black76Spec.source + ".Value") 
-                                               [| _Black76Spec.source
-                                               ;  _Type.source
+
+                                               [| _Type.source
                                                ;  _strike.source
                                                ;  _atmForward.source
                                                ;  _stdDev.source
@@ -217,8 +217,8 @@ module Black76SpecFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Black76Spec.source + ".Vega") 
-                                               [| _Black76Spec.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _atmForward.source
                                                ;  _stdDev.source
                                                ;  _exerciseTime.source

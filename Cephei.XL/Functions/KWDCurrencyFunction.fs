@@ -85,8 +85,8 @@ module KWDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KWDCurrency.source + ".Code") 
-                                               [| _KWDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KWDCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module KWDCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KWDCurrency.source + ".Empty") 
-                                               [| _KWDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KWDCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module KWDCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KWDCurrency.source + ".Equals") 
-                                               [| _KWDCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KWDCurrency.cell
@@ -199,8 +199,8 @@ module KWDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KWDCurrency.source + ".Format") 
-                                               [| _KWDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KWDCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module KWDCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_KWDCurrency.source + ".FractionsPerUnit") 
-                                               [| _KWDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KWDCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module KWDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KWDCurrency.source + ".FractionSymbol") 
-                                               [| _KWDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KWDCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module KWDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KWDCurrency.source + ".Name") 
-                                               [| _KWDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KWDCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module KWDCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_KWDCurrency.source + ".NumericCode") 
-                                               [| _KWDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KWDCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module KWDCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_KWDCurrency.source + ".Rounding") 
-                                               [| _KWDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KWDCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module KWDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KWDCurrency.source + ".Symbol") 
-                                               [| _KWDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KWDCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module KWDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KWDCurrency.source + ".ToString") 
-                                               [| _KWDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KWDCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module KWDCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_KWDCurrency.source + ".TriangulationCurrency") 
-                                               [| _KWDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KWDCurrency.cell
                                 |]

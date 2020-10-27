@@ -97,8 +97,8 @@ module DerivedQuoteFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DerivedQuote.source + ".IsValid") 
-                                               [| _DerivedQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DerivedQuote.cell
                                 |]
@@ -133,8 +133,8 @@ module DerivedQuoteFunction =
                 let format (o : DerivedQuote) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DerivedQuote.source + ".Update") 
-                                               [| _DerivedQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DerivedQuote.cell
                                 |]
@@ -169,8 +169,8 @@ module DerivedQuoteFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DerivedQuote.source + ".Value") 
-                                               [| _DerivedQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DerivedQuote.cell
                                 |]
@@ -209,8 +209,8 @@ module DerivedQuoteFunction =
                 let format (o : DerivedQuote) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DerivedQuote.source + ".RegisterWith") 
-                                               [| _DerivedQuote.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DerivedQuote.cell
@@ -251,8 +251,8 @@ module DerivedQuoteFunction =
                 let format (o : DerivedQuote) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DerivedQuote.source + ".UnregisterWith") 
-                                               [| _DerivedQuote.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DerivedQuote.cell

@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "ELThCiDfGPJm7B+gXp8lHbg4bs37YFrSdzEkYvK9frcgP8L6ncooF0EZgzV/CGexav6UqJrbBHwFSkcqvsWbMg==",
+  "dgSpecHash": "7b4Hr+Y6TIK/p3uzBE+pXMZ+GbHxtEUjUoICq0t1GP6nhkVerLXjWgkQXysTDnLZs43KDIa4nkpypFPQkIyfjA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL.Samples\\Cephei.QL.Samples.fsproj",
+  "projectFilePath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL.Samples\\Cephei.QL.Samples.fsproj",
   "expectedPackageFiles": [
-    "C:\\Users\\steve\\.nuget\\packages\\cephei.ql\\3.0.0\\cephei.ql.3.0.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\fsharp.core\\4.7.2\\fsharp.core.4.7.2.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\ilgpu\\0.9.1\\ilgpu.0.9.1.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512",
@@ -14,7 +13,8 @@
     "C:\\Users\\steve\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.reflection.metadata\\1.8.0\\system.reflection.metadata.1.8.0.nupkg.sha512",
-    "C:\\Users\\steve\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.7.1\\system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512"
+    "C:\\Users\\steve\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.7.1\\system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\cephei.ql\\3.0.0\\cephei.ql.3.0.0.nupkg.sha512"
   ],
   "logs": []
 }

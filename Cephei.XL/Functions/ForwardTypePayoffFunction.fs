@@ -54,8 +54,8 @@ module ForwardTypePayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ForwardTypePayoff.source + ".Description") 
-                                               [| _ForwardTypePayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardTypePayoff.cell
                                 |]
@@ -90,8 +90,8 @@ module ForwardTypePayoffFunction =
                 let format (o : Position.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ForwardTypePayoff.source + ".ForwardType") 
-                                               [| _ForwardTypePayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardTypePayoff.cell
                                 |]
@@ -169,8 +169,8 @@ module ForwardTypePayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ForwardTypePayoff.source + ".Name") 
-                                               [| _ForwardTypePayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardTypePayoff.cell
                                 |]
@@ -205,8 +205,8 @@ module ForwardTypePayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardTypePayoff.source + ".Strike") 
-                                               [| _ForwardTypePayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardTypePayoff.cell
                                 |]
@@ -245,8 +245,8 @@ module ForwardTypePayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardTypePayoff.source + ".Value") 
-                                               [| _ForwardTypePayoff.source
-                                               ;  _price.source
+
+                                               [| _price.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardTypePayoff.cell
@@ -287,8 +287,8 @@ module ForwardTypePayoffFunction =
                 let format (o : ForwardTypePayoff) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ForwardTypePayoff.source + ".Accept") 
-                                               [| _ForwardTypePayoff.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardTypePayoff.cell

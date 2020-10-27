@@ -115,8 +115,8 @@ module CliquetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CliquetOption.source + ".Delta") 
-                                               [| _CliquetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
@@ -151,8 +151,8 @@ module CliquetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CliquetOption.source + ".DeltaForward") 
-                                               [| _CliquetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
@@ -187,8 +187,8 @@ module CliquetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CliquetOption.source + ".DividendRho") 
-                                               [| _CliquetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
@@ -223,8 +223,8 @@ module CliquetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CliquetOption.source + ".Elasticity") 
-                                               [| _CliquetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
@@ -259,8 +259,8 @@ module CliquetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CliquetOption.source + ".Gamma") 
-                                               [| _CliquetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
@@ -295,8 +295,8 @@ module CliquetOptionFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CliquetOption.source + ".IsExpired") 
-                                               [| _CliquetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
@@ -331,8 +331,8 @@ module CliquetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CliquetOption.source + ".ItmCashProbability") 
-                                               [| _CliquetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
@@ -367,8 +367,8 @@ module CliquetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CliquetOption.source + ".Rho") 
-                                               [| _CliquetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
@@ -403,8 +403,8 @@ module CliquetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CliquetOption.source + ".StrikeSensitivity") 
-                                               [| _CliquetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
@@ -439,8 +439,8 @@ module CliquetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CliquetOption.source + ".Theta") 
-                                               [| _CliquetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
@@ -475,8 +475,8 @@ module CliquetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CliquetOption.source + ".ThetaPerDay") 
-                                               [| _CliquetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
@@ -511,8 +511,8 @@ module CliquetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CliquetOption.source + ".Vega") 
-                                               [| _CliquetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
@@ -547,8 +547,8 @@ module CliquetOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
                 let source () = Helper.sourceFold (_CliquetOption.source + ".Exercise") 
-                                               [| _CliquetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
@@ -583,8 +583,8 @@ module CliquetOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
                 let source () = Helper.sourceFold (_CliquetOption.source + ".Payoff") 
-                                               [| _CliquetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
@@ -619,8 +619,8 @@ module CliquetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CliquetOption.source + ".CASH") 
-                                               [| _CliquetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
@@ -655,8 +655,8 @@ module CliquetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CliquetOption.source + ".ErrorEstimate") 
-                                               [| _CliquetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
@@ -691,8 +691,8 @@ module CliquetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CliquetOption.source + ".NPV") 
-                                               [| _CliquetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]
@@ -731,8 +731,8 @@ module CliquetOptionFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CliquetOption.source + ".Result") 
-                                               [| _CliquetOption.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
@@ -773,8 +773,8 @@ module CliquetOptionFunction =
                 let format (o : CliquetOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CliquetOption.source + ".SetPricingEngine") 
-                                               [| _CliquetOption.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
@@ -811,8 +811,8 @@ module CliquetOptionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CliquetOption.source + ".ValuationDate") 
-                                               [| _CliquetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CliquetOption.cell
                                 |]

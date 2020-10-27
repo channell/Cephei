@@ -58,8 +58,8 @@ module GaussLaguerrePolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussLaguerrePolynomial.source + ".Alpha") 
-                                               [| _GaussLaguerrePolynomial.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussLaguerrePolynomial.cell
@@ -100,8 +100,8 @@ module GaussLaguerrePolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussLaguerrePolynomial.source + ".Beta") 
-                                               [| _GaussLaguerrePolynomial.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussLaguerrePolynomial.cell
@@ -206,8 +206,8 @@ module GaussLaguerrePolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussLaguerrePolynomial.source + ".Mu_0") 
-                                               [| _GaussLaguerrePolynomial.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussLaguerrePolynomial.cell
                                 |]
@@ -246,8 +246,8 @@ module GaussLaguerrePolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussLaguerrePolynomial.source + ".W") 
-                                               [| _GaussLaguerrePolynomial.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussLaguerrePolynomial.cell
@@ -292,8 +292,8 @@ module GaussLaguerrePolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussLaguerrePolynomial.source + ".Value") 
-                                               [| _GaussLaguerrePolynomial.source
-                                               ;  _n.source
+
+                                               [| _n.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -340,8 +340,8 @@ module GaussLaguerrePolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussLaguerrePolynomial.source + ".WeightedValue") 
-                                               [| _GaussLaguerrePolynomial.source
-                                               ;  _n.source
+
+                                               [| _n.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 

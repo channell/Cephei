@@ -145,8 +145,8 @@ module AverageBMACouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".ConvexityAdjustment") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -181,8 +181,8 @@ module AverageBMACouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".FixingDate") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -217,8 +217,8 @@ module AverageBMACouponFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".FixingDates") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -253,8 +253,8 @@ module AverageBMACouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".IndexFixing") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -289,8 +289,8 @@ module AverageBMACouponFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".IndexFixings") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -329,8 +329,8 @@ module AverageBMACouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".AccruedAmount") 
-                                               [| _AverageBMACoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
@@ -367,8 +367,8 @@ module AverageBMACouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".AdjustedFixing") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -403,8 +403,8 @@ module AverageBMACouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Amount") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -439,8 +439,8 @@ module AverageBMACouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".DayCounter") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -523,8 +523,8 @@ module AverageBMACouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Factory") 
-                                               [| _AverageBMACoupon.source
-                                               ;  _nominal.source
+
+                                               [| _nominal.source
                                                ;  _paymentDate.source
                                                ;  _startDate.source
                                                ;  _endDate.source
@@ -583,8 +583,8 @@ module AverageBMACouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".FixingDays") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -619,8 +619,8 @@ module AverageBMACouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Gearing") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -655,8 +655,8 @@ module AverageBMACouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Index") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -691,8 +691,8 @@ module AverageBMACouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".IsInArrears") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -731,8 +731,8 @@ module AverageBMACouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Price") 
-                                               [| _AverageBMACoupon.source
-                                               ;  _yts.source
+
+                                               [| _yts.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
@@ -769,8 +769,8 @@ module AverageBMACouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Pricer") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -805,8 +805,8 @@ module AverageBMACouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Rate") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -845,8 +845,8 @@ module AverageBMACouponFunction =
                 let format (o : AverageBMACoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".SetPricer") 
-                                               [| _AverageBMACoupon.source
-                                               ;  _pricer.source
+
+                                               [| _pricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
@@ -883,8 +883,8 @@ module AverageBMACouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Spread") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -919,8 +919,8 @@ module AverageBMACouponFunction =
                 let format (o : AverageBMACoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Update") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -955,8 +955,8 @@ module AverageBMACouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".AccrualDays") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -991,8 +991,8 @@ module AverageBMACouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".AccrualEndDate") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -1027,8 +1027,8 @@ module AverageBMACouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".AccrualPeriod") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -1063,8 +1063,8 @@ module AverageBMACouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".AccrualStartDate") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -1103,8 +1103,8 @@ module AverageBMACouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".AccruedDays") 
-                                               [| _AverageBMACoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
@@ -1145,8 +1145,8 @@ module AverageBMACouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".AccruedPeriod") 
-                                               [| _AverageBMACoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
@@ -1183,8 +1183,8 @@ module AverageBMACouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Date") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -1219,8 +1219,8 @@ module AverageBMACouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".ExCouponDate") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -1255,8 +1255,8 @@ module AverageBMACouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Nominal") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -1291,8 +1291,8 @@ module AverageBMACouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".ReferencePeriodEnd") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -1327,8 +1327,8 @@ module AverageBMACouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".ReferencePeriodStart") 
-                                               [| _AverageBMACoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
                                 |]
@@ -1367,8 +1367,8 @@ module AverageBMACouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".CompareTo") 
-                                               [| _AverageBMACoupon.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
@@ -1409,8 +1409,8 @@ module AverageBMACouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Equals") 
-                                               [| _AverageBMACoupon.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
@@ -1455,8 +1455,8 @@ module AverageBMACouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".HasOccurred") 
-                                               [| _AverageBMACoupon.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                ;  _includeRefDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1499,8 +1499,8 @@ module AverageBMACouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".TradingExCoupon") 
-                                               [| _AverageBMACoupon.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
@@ -1541,8 +1541,8 @@ module AverageBMACouponFunction =
                 let format (o : AverageBMACoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".Accept") 
-                                               [| _AverageBMACoupon.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
@@ -1583,8 +1583,8 @@ module AverageBMACouponFunction =
                 let format (o : AverageBMACoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".RegisterWith") 
-                                               [| _AverageBMACoupon.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell
@@ -1625,8 +1625,8 @@ module AverageBMACouponFunction =
                 let format (o : AverageBMACoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".UnregisterWith") 
-                                               [| _AverageBMACoupon.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AverageBMACoupon.cell

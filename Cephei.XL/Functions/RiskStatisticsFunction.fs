@@ -58,8 +58,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".GaussianAverageShortfall") 
-                                               [| _RiskStatistics.source
-                                               ;  _value.source
+
+                                               [| _value.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
@@ -96,8 +96,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".GaussianDownsideVariance") 
-                                               [| _RiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
@@ -136,8 +136,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".GaussianExpectedShortfall") 
-                                               [| _RiskStatistics.source
-                                               ;  _value.source
+
+                                               [| _value.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
@@ -178,8 +178,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".GaussianPercentile") 
-                                               [| _RiskStatistics.source
-                                               ;  _value.source
+
+                                               [| _value.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
@@ -220,8 +220,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".GaussianPotentialUpside") 
-                                               [| _RiskStatistics.source
-                                               ;  _value.source
+
+                                               [| _value.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
@@ -262,8 +262,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".GaussianRegret") 
-                                               [| _RiskStatistics.source
-                                               ;  _value.source
+
+                                               [| _value.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
@@ -304,8 +304,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".GaussianShortfall") 
-                                               [| _RiskStatistics.source
-                                               ;  _value.source
+
+                                               [| _value.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
@@ -346,8 +346,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".GaussianValueAtRisk") 
-                                               [| _RiskStatistics.source
-                                               ;  _value.source
+
+                                               [| _value.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
@@ -393,8 +393,8 @@ module RiskStatisticsFunction =
                 let format (o : RiskStatistics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".Add") 
-                                               [| _RiskStatistics.source
-                                               ;  _value.source
+
+                                               [| _value.source
                                                ;  _weight.source
                                                |]
                 let hash = Helper.hashFold 
@@ -442,8 +442,8 @@ module RiskStatisticsFunction =
                 let format (o : RiskStatistics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".AddSequence") 
-                                               [| _RiskStatistics.source
-                                               ;  _data.source
+
+                                               [| _data.source
                                                ;  _weight.source
                                                |]
                 let hash = Helper.hashFold 
@@ -486,8 +486,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".AverageShortfall") 
-                                               [| _RiskStatistics.source
-                                               ;  _target.source
+
+                                               [| _target.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
@@ -524,8 +524,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".DownsideDeviation") 
-                                               [| _RiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
@@ -560,8 +560,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".DownsideVariance") 
-                                               [| _RiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
@@ -596,8 +596,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".ErrorEstimate") 
-                                               [| _RiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
@@ -640,8 +640,8 @@ module RiskStatisticsFunction =
                 let format (o : Generic.KeyValuePair<double,int>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".ExpectationValue") 
-                                               [| _RiskStatistics.source
-                                               ;  _f.source
+
+                                               [| _f.source
                                                ;  _inRange.source
                                                |]
                 let hash = Helper.hashFold 
@@ -684,8 +684,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".ExpectedShortfall") 
-                                               [| _RiskStatistics.source
-                                               ;  _centile.source
+
+                                               [| _centile.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
@@ -722,8 +722,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".Kurtosis") 
-                                               [| _RiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
@@ -758,8 +758,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".Max") 
-                                               [| _RiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
@@ -794,8 +794,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".Mean") 
-                                               [| _RiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
@@ -830,8 +830,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".Min") 
-                                               [| _RiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
@@ -870,8 +870,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".Percentile") 
-                                               [| _RiskStatistics.source
-                                               ;  _percent.source
+
+                                               [| _percent.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
@@ -912,8 +912,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".PotentialUpside") 
-                                               [| _RiskStatistics.source
-                                               ;  _centile.source
+
+                                               [| _centile.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
@@ -954,8 +954,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".Regret") 
-                                               [| _RiskStatistics.source
-                                               ;  _target.source
+
+                                               [| _target.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
@@ -992,8 +992,8 @@ module RiskStatisticsFunction =
                 let format (o : RiskStatistics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".Reset") 
-                                               [| _RiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
@@ -1028,8 +1028,8 @@ module RiskStatisticsFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".Samples") 
-                                               [| _RiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
@@ -1064,8 +1064,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".SemiDeviation") 
-                                               [| _RiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
@@ -1100,8 +1100,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".SemiVariance") 
-                                               [| _RiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
@@ -1140,8 +1140,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".Shortfall") 
-                                               [| _RiskStatistics.source
-                                               ;  _target.source
+
+                                               [| _target.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
@@ -1178,8 +1178,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".Skewness") 
-                                               [| _RiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
@@ -1214,8 +1214,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".StandardDeviation") 
-                                               [| _RiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
@@ -1254,8 +1254,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".ValueAtRisk") 
-                                               [| _RiskStatistics.source
-                                               ;  _centile.source
+
+                                               [| _centile.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
@@ -1292,8 +1292,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".Variance") 
-                                               [| _RiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]
@@ -1328,8 +1328,8 @@ module RiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RiskStatistics.source + ".WeightSum") 
-                                               [| _RiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RiskStatistics.cell
                                 |]

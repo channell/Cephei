@@ -85,8 +85,8 @@ module BRLCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BRLCurrency.source + ".Code") 
-                                               [| _BRLCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BRLCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module BRLCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BRLCurrency.source + ".Empty") 
-                                               [| _BRLCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BRLCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module BRLCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BRLCurrency.source + ".Equals") 
-                                               [| _BRLCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BRLCurrency.cell
@@ -199,8 +199,8 @@ module BRLCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BRLCurrency.source + ".Format") 
-                                               [| _BRLCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BRLCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module BRLCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BRLCurrency.source + ".FractionsPerUnit") 
-                                               [| _BRLCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BRLCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module BRLCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BRLCurrency.source + ".FractionSymbol") 
-                                               [| _BRLCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BRLCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module BRLCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BRLCurrency.source + ".Name") 
-                                               [| _BRLCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BRLCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module BRLCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BRLCurrency.source + ".NumericCode") 
-                                               [| _BRLCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BRLCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module BRLCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_BRLCurrency.source + ".Rounding") 
-                                               [| _BRLCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BRLCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module BRLCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BRLCurrency.source + ".Symbol") 
-                                               [| _BRLCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BRLCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module BRLCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BRLCurrency.source + ".ToString") 
-                                               [| _BRLCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BRLCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module BRLCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_BRLCurrency.source + ".TriangulationCurrency") 
-                                               [| _BRLCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BRLCurrency.cell
                                 |]

@@ -138,8 +138,8 @@ module MixedSchemeFunction =
                 let format (o : MixedScheme) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MixedScheme.source + ".SetStep") 
-                                               [| _MixedScheme.source
-                                               ;  _dt.source
+
+                                               [| _dt.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MixedScheme.cell
@@ -188,8 +188,8 @@ module MixedSchemeFunction =
                 let format (o : MixedScheme) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MixedScheme.source + ".Step") 
-                                               [| _MixedScheme.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                ;  _t.source
                                                ;  _theta.source
                                                |]

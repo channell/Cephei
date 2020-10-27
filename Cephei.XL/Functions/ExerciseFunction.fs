@@ -58,8 +58,8 @@ module ExerciseFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Exercise.source + ".Date") 
-                                               [| _Exercise.source
-                                               ;  _index.source
+
+                                               [| _index.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Exercise.cell
@@ -96,8 +96,8 @@ module ExerciseFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_Exercise.source + ".Dates") 
-                                               [| _Exercise.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Exercise.cell
                                 |]
@@ -169,8 +169,8 @@ module ExerciseFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Exercise.source + ".LastDate") 
-                                               [| _Exercise.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Exercise.cell
                                 |]
@@ -205,8 +205,8 @@ module ExerciseFunction =
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Exercise.source + ".TYPE") 
-                                               [| _Exercise.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Exercise.cell
                                 |]

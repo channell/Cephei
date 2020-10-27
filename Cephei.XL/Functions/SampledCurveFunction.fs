@@ -54,8 +54,8 @@ module SampledCurveFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SampledCurve.source + ".Clone") 
-                                               [| _SampledCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
                                 |]
@@ -90,8 +90,8 @@ module SampledCurveFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SampledCurve.source + ".Empty") 
-                                               [| _SampledCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
                                 |]
@@ -126,8 +126,8 @@ module SampledCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SampledCurve.source + ".FirstDerivativeAtCenter") 
-                                               [| _SampledCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
                                 |]
@@ -162,8 +162,8 @@ module SampledCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_SampledCurve.source + ".Grid") 
-                                               [| _SampledCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
                                 |]
@@ -202,8 +202,8 @@ module SampledCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SampledCurve.source + ".GridValue") 
-                                               [| _SampledCurve.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
@@ -248,8 +248,8 @@ module SampledCurveFunction =
                 let format (o : SampledCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SampledCurve.source + ".Regrid") 
-                                               [| _SampledCurve.source
-                                               ;  _new_grid.source
+
+                                               [| _new_grid.source
                                                ;  _func.source
                                                |]
                 let hash = Helper.hashFold 
@@ -292,8 +292,8 @@ module SampledCurveFunction =
                 let format (o : SampledCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SampledCurve.source + ".Regrid1") 
-                                               [| _SampledCurve.source
-                                               ;  _new_grid.source
+
+                                               [| _new_grid.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
@@ -338,8 +338,8 @@ module SampledCurveFunction =
                 let format (o : SampledCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SampledCurve.source + ".RegridLogGrid") 
-                                               [| _SampledCurve.source
-                                               ;  _min.source
+
+                                               [| _min.source
                                                ;  _max.source
                                                |]
                 let hash = Helper.hashFold 
@@ -382,8 +382,8 @@ module SampledCurveFunction =
                 let format (o : SampledCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SampledCurve.source + ".Sample") 
-                                               [| _SampledCurve.source
-                                               ;  _f.source
+
+                                               [| _f.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
@@ -498,8 +498,8 @@ module SampledCurveFunction =
                 let format (o : SampledCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SampledCurve.source + ".ScaleGrid") 
-                                               [| _SampledCurve.source
-                                               ;  _s.source
+
+                                               [| _s.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
@@ -536,8 +536,8 @@ module SampledCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SampledCurve.source + ".SecondDerivativeAtCenter") 
-                                               [| _SampledCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
                                 |]
@@ -576,8 +576,8 @@ module SampledCurveFunction =
                 let format (o : SampledCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SampledCurve.source + ".SetGrid") 
-                                               [| _SampledCurve.source
-                                               ;  _g.source
+
+                                               [| _g.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
@@ -622,8 +622,8 @@ module SampledCurveFunction =
                 let format (o : SampledCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SampledCurve.source + ".SetLogGrid") 
-                                               [| _SampledCurve.source
-                                               ;  _min.source
+
+                                               [| _min.source
                                                ;  _max.source
                                                |]
                 let hash = Helper.hashFold 
@@ -670,8 +670,8 @@ module SampledCurveFunction =
                 let format (o : SampledCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SampledCurve.source + ".SetValue") 
-                                               [| _SampledCurve.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _v.source
                                                |]
                 let hash = Helper.hashFold 
@@ -714,8 +714,8 @@ module SampledCurveFunction =
                 let format (o : SampledCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SampledCurve.source + ".SetValues") 
-                                               [| _SampledCurve.source
-                                               ;  _g.source
+
+                                               [| _g.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
@@ -756,8 +756,8 @@ module SampledCurveFunction =
                 let format (o : SampledCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SampledCurve.source + ".ShiftGrid") 
-                                               [| _SampledCurve.source
-                                               ;  _s.source
+
+                                               [| _s.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
@@ -794,8 +794,8 @@ module SampledCurveFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SampledCurve.source + ".Size") 
-                                               [| _SampledCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
                                 |]
@@ -834,8 +834,8 @@ module SampledCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 
                 let source () = Helper.sourceFold (_SampledCurve.source + ".Transform") 
-                                               [| _SampledCurve.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
@@ -876,8 +876,8 @@ module SampledCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 
                 let source () = Helper.sourceFold (_SampledCurve.source + ".TransformGrid") 
-                                               [| _SampledCurve.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
@@ -918,8 +918,8 @@ module SampledCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SampledCurve.source + ".Value") 
-                                               [| _SampledCurve.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
@@ -956,8 +956,8 @@ module SampledCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SampledCurve.source + ".ValueAtCenter") 
-                                               [| _SampledCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
                                 |]
@@ -992,8 +992,8 @@ module SampledCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_SampledCurve.source + ".Values") 
-                                               [| _SampledCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SampledCurve.cell
                                 |]

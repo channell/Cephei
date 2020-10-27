@@ -58,8 +58,8 @@ module ScheduleFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Schedule.source + ".At") 
-                                               [| _Schedule.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
@@ -96,8 +96,8 @@ module ScheduleFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Schedule.source + ".BusinessDayConvention") 
-                                               [| _Schedule.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
@@ -132,8 +132,8 @@ module ScheduleFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_Schedule.source + ".Calendar") 
-                                               [| _Schedule.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
@@ -168,8 +168,8 @@ module ScheduleFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Schedule.source + ".Count") 
-                                               [| _Schedule.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
@@ -208,8 +208,8 @@ module ScheduleFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Schedule.source + ".Date") 
-                                               [| _Schedule.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
@@ -246,8 +246,8 @@ module ScheduleFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_Schedule.source + ".Dates") 
-                                               [| _Schedule.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
@@ -282,8 +282,8 @@ module ScheduleFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Schedule.source + ".Empty") 
-                                               [| _Schedule.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
@@ -318,8 +318,8 @@ module ScheduleFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Schedule.source + ".EndDate") 
-                                               [| _Schedule.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
@@ -354,8 +354,8 @@ module ScheduleFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Schedule.source + ".EndOfMonth") 
-                                               [| _Schedule.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
@@ -390,8 +390,8 @@ module ScheduleFunction =
                 let format (i : Generic.IList<bool>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_Schedule.source + ".IsRegular") 
-                                               [| _Schedule.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
@@ -430,8 +430,8 @@ module ScheduleFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Schedule.source + ".IsRegular1") 
-                                               [| _Schedule.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
@@ -472,8 +472,8 @@ module ScheduleFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Schedule.source + ".NextDate") 
-                                               [| _Schedule.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
@@ -514,8 +514,8 @@ module ScheduleFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Schedule.source + ".PreviousDate") 
-                                               [| _Schedule.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
@@ -552,8 +552,8 @@ module ScheduleFunction =
                 let format (o : DateGeneration.Rule) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Schedule.source + ".Rule") 
-                                               [| _Schedule.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
@@ -789,8 +789,8 @@ module ScheduleFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Schedule.source + ".Size") 
-                                               [| _Schedule.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
@@ -825,8 +825,8 @@ module ScheduleFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Schedule.source + ".StartDate") 
-                                               [| _Schedule.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
@@ -861,8 +861,8 @@ module ScheduleFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_Schedule.source + ".Tenor") 
-                                               [| _Schedule.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
@@ -897,8 +897,8 @@ module ScheduleFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Schedule.source + ".TerminationDateBusinessDayConvention") 
-                                               [| _Schedule.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
                                 |]
@@ -937,8 +937,8 @@ module ScheduleFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Schedule.source + ".This") 
-                                               [| _Schedule.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell
@@ -979,8 +979,8 @@ module ScheduleFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
 
                 let source () = Helper.sourceFold (_Schedule.source + ".Until") 
-                                               [| _Schedule.source
-                                               ;  _truncationDate.source
+
+                                               [| _truncationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Schedule.cell

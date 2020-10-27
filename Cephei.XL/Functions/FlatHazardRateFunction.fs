@@ -262,8 +262,8 @@ module FlatHazardRateFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FlatHazardRate.source + ".MaxDate") 
-                                               [| _FlatHazardRate.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FlatHazardRate.cell
                                 |]

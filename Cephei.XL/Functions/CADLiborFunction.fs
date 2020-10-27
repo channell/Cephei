@@ -138,8 +138,8 @@ module CADLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".Clone") 
-                                               [| _CADLibor.source
-                                               ;  _h.source
+
+                                               [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADLibor.cell
@@ -180,8 +180,8 @@ module CADLiborFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".MaturityDate") 
-                                               [| _CADLibor.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADLibor.cell
@@ -222,8 +222,8 @@ module CADLiborFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".ValueDate") 
-                                               [| _CADLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADLibor.cell
@@ -260,8 +260,8 @@ module CADLiborFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".BusinessDayConvention") 
-                                               [| _CADLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADLibor.cell
                                 |]
@@ -296,8 +296,8 @@ module CADLiborFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".EndOfMonth") 
-                                               [| _CADLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADLibor.cell
                                 |]
@@ -344,8 +344,8 @@ module CADLiborFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".ForecastFixing1") 
-                                               [| _CADLibor.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _t.source
                                                |]
@@ -390,8 +390,8 @@ module CADLiborFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".ForecastFixing") 
-                                               [| _CADLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADLibor.cell
@@ -428,8 +428,8 @@ module CADLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".ForwardingTermStructure") 
-                                               [| _CADLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADLibor.cell
                                 |]
@@ -464,8 +464,8 @@ module CADLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".Currency") 
-                                               [| _CADLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADLibor.cell
                                 |]
@@ -500,8 +500,8 @@ module CADLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".DayCounter") 
-                                               [| _CADLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADLibor.cell
                                 |]
@@ -536,8 +536,8 @@ module CADLiborFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".FamilyName") 
-                                               [| _CADLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADLibor.cell
                                 |]
@@ -580,8 +580,8 @@ module CADLiborFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".Fixing") 
-                                               [| _CADLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -620,8 +620,8 @@ module CADLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".FixingCalendar") 
-                                               [| _CADLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADLibor.cell
                                 |]
@@ -660,8 +660,8 @@ module CADLiborFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".FixingDate") 
-                                               [| _CADLibor.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADLibor.cell
@@ -698,8 +698,8 @@ module CADLiborFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".FixingDays") 
-                                               [| _CADLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADLibor.cell
                                 |]
@@ -738,8 +738,8 @@ module CADLiborFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".IsValidFixingDate") 
-                                               [| _CADLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADLibor.cell
@@ -776,8 +776,8 @@ module CADLiborFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".Name") 
-                                               [| _CADLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADLibor.cell
                                 |]
@@ -816,8 +816,8 @@ module CADLiborFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".PastFixing") 
-                                               [| _CADLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADLibor.cell
@@ -854,8 +854,8 @@ module CADLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".Tenor") 
-                                               [| _CADLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADLibor.cell
                                 |]
@@ -890,8 +890,8 @@ module CADLiborFunction =
                 let format (o : CADLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".Update") 
-                                               [| _CADLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADLibor.cell
                                 |]
@@ -938,8 +938,8 @@ module CADLiborFunction =
                 let format (o : CADLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".AddFixing") 
-                                               [| _CADLibor.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -992,8 +992,8 @@ module CADLiborFunction =
                 let format (o : CADLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".AddFixings") 
-                                               [| _CADLibor.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -1042,8 +1042,8 @@ module CADLiborFunction =
                 let format (o : CADLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".AddFixings1") 
-                                               [| _CADLibor.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1082,8 +1082,8 @@ module CADLiborFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".AllowsNativeFixings") 
-                                               [| _CADLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADLibor.cell
                                 |]
@@ -1118,8 +1118,8 @@ module CADLiborFunction =
                 let format (o : CADLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".ClearFixings") 
-                                               [| _CADLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADLibor.cell
                                 |]
@@ -1158,8 +1158,8 @@ module CADLiborFunction =
                 let format (o : CADLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".RegisterWith") 
-                                               [| _CADLibor.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADLibor.cell
@@ -1196,8 +1196,8 @@ module CADLiborFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".TimeSeries") 
-                                               [| _CADLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADLibor.cell
                                 |]
@@ -1236,8 +1236,8 @@ module CADLiborFunction =
                 let format (o : CADLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CADLibor.source + ".UnregisterWith") 
-                                               [| _CADLibor.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADLibor.cell

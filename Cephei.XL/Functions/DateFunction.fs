@@ -58,8 +58,8 @@ module DateFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Date.source + ".CompareTo") 
-                                               [| _Date.source
-                                               ;  _obj.source
+
+                                               [| _obj.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
@@ -396,8 +396,8 @@ module DateFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Date.source + ".Day") 
-                                               [| _Date.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
@@ -432,8 +432,8 @@ module DateFunction =
                 let format (o : DayOfWeek) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Date.source + ".DayOfWeek") 
-                                               [| _Date.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
@@ -468,8 +468,8 @@ module DateFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Date.source + ".DayOfYear") 
-                                               [| _Date.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
@@ -508,8 +508,8 @@ module DateFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Date.source + ".Equals") 
-                                               [| _Date.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
@@ -546,8 +546,8 @@ module DateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Date.source + ".FractionOfDay") 
-                                               [| _Date.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
@@ -582,8 +582,8 @@ module DateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Date.source + ".FractionOfSecond") 
-                                               [| _Date.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
@@ -618,8 +618,8 @@ module DateFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Date.source + ".Hours") 
-                                               [| _Date.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
@@ -654,8 +654,8 @@ module DateFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Date.source + ".Milliseconds") 
-                                               [| _Date.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
@@ -690,8 +690,8 @@ module DateFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Date.source + ".Minutes") 
-                                               [| _Date.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
@@ -726,8 +726,8 @@ module DateFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Date.source + ".Month") 
-                                               [| _Date.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
@@ -763,8 +763,8 @@ module DateFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Date.source + ".Seconds") 
-                                               [| _Date.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
@@ -799,8 +799,8 @@ module DateFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Date.source + ".SerialNumber") 
-                                               [| _Date.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
@@ -835,8 +835,8 @@ module DateFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Date.source + ".ToLongDateString") 
-                                               [| _Date.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
@@ -871,8 +871,8 @@ module DateFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Date.source + ".ToShortDateString") 
-                                               [| _Date.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
@@ -915,8 +915,8 @@ module DateFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Date.source + ".ToString2") 
-                                               [| _Date.source
-                                               ;  _format.source
+
+                                               [| _format.source
                                                ;  _provider.source
                                                |]
                 let hash = Helper.hashFold 
@@ -959,8 +959,8 @@ module DateFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Date.source + ".ToString3") 
-                                               [| _Date.source
-                                               ;  _format.source
+
+                                               [| _format.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
@@ -1002,8 +1002,8 @@ module DateFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Date.source + ".ToString1") 
-                                               [| _Date.source
-                                               ;  _provider.source
+
+                                               [| _provider.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
@@ -1040,8 +1040,8 @@ module DateFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Date.source + ".ToString") 
-                                               [| _Date.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
@@ -1076,8 +1076,8 @@ module DateFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Date.source + ".Weekday") 
-                                               [| _Date.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]
@@ -1113,8 +1113,8 @@ module DateFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Date.source + ".Year") 
-                                               [| _Date.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Date.cell
                                 |]

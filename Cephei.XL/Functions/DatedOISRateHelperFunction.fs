@@ -109,8 +109,8 @@ module DatedOISRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DatedOISRateHelper.source + ".ImpliedQuote") 
-                                               [| _DatedOISRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DatedOISRateHelper.cell
                                 |]
@@ -149,8 +149,8 @@ module DatedOISRateHelperFunction =
                 let format (o : DatedOISRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DatedOISRateHelper.source + ".SetTermStructure") 
-                                               [| _DatedOISRateHelper.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DatedOISRateHelper.cell
@@ -187,8 +187,8 @@ module DatedOISRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DatedOISRateHelper.source + ".EarliestDate") 
-                                               [| _DatedOISRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DatedOISRateHelper.cell
                                 |]
@@ -223,8 +223,8 @@ module DatedOISRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DatedOISRateHelper.source + ".LatestDate") 
-                                               [| _DatedOISRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DatedOISRateHelper.cell
                                 |]
@@ -259,8 +259,8 @@ module DatedOISRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DatedOISRateHelper.source + ".LatestRelevantDate") 
-                                               [| _DatedOISRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DatedOISRateHelper.cell
                                 |]
@@ -295,8 +295,8 @@ module DatedOISRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DatedOISRateHelper.source + ".MaturityDate") 
-                                               [| _DatedOISRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DatedOISRateHelper.cell
                                 |]
@@ -331,8 +331,8 @@ module DatedOISRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DatedOISRateHelper.source + ".PillarDate") 
-                                               [| _DatedOISRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DatedOISRateHelper.cell
                                 |]
@@ -367,8 +367,8 @@ module DatedOISRateHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
                 let source () = Helper.sourceFold (_DatedOISRateHelper.source + ".Quote") 
-                                               [| _DatedOISRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DatedOISRateHelper.cell
                                 |]
@@ -403,8 +403,8 @@ module DatedOISRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DatedOISRateHelper.source + ".QuoteError") 
-                                               [| _DatedOISRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DatedOISRateHelper.cell
                                 |]
@@ -439,8 +439,8 @@ module DatedOISRateHelperFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DatedOISRateHelper.source + ".QuoteIsValid") 
-                                               [| _DatedOISRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DatedOISRateHelper.cell
                                 |]
@@ -475,8 +475,8 @@ module DatedOISRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DatedOISRateHelper.source + ".QuoteValue") 
-                                               [| _DatedOISRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DatedOISRateHelper.cell
                                 |]
@@ -515,8 +515,8 @@ module DatedOISRateHelperFunction =
                 let format (o : DatedOISRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DatedOISRateHelper.source + ".RegisterWith") 
-                                               [| _DatedOISRateHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DatedOISRateHelper.cell
@@ -557,8 +557,8 @@ module DatedOISRateHelperFunction =
                 let format (o : DatedOISRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DatedOISRateHelper.source + ".UnregisterWith") 
-                                               [| _DatedOISRateHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DatedOISRateHelper.cell
@@ -595,8 +595,8 @@ module DatedOISRateHelperFunction =
                 let format (o : DatedOISRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DatedOISRateHelper.source + ".Update") 
-                                               [| _DatedOISRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DatedOISRateHelper.cell
                                 |]

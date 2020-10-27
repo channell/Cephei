@@ -6,4 +6,4 @@ C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\Debug\netstandard2.1\Cephei.
 C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\Debug\netstandard2.1\Cephei.Cell.csproj.CoreCompileInputs.cache
 C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\Debug\netstandard2.1\Cephei.Cell.dll
 C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\Debug\netstandard2.1\Cephei.Cell.pdb
-C:\Users\steve\Source\Repos\Cephei2\Cephei.Cell\obj\Debug\netstandard2.1\Cephei.Cell.csprojAssemblyReference.cache
+C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\Debug\netstandard2.1\Cephei.Cell.csprojAssemblyReference.cache

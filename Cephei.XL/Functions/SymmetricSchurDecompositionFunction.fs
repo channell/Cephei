@@ -54,8 +54,8 @@ module SymmetricSchurDecompositionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_SymmetricSchurDecomposition.source + ".Eigenvalues") 
-                                               [| _SymmetricSchurDecomposition.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SymmetricSchurDecomposition.cell
                                 |]
@@ -90,8 +90,8 @@ module SymmetricSchurDecompositionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
                 let source () = Helper.sourceFold (_SymmetricSchurDecomposition.source + ".Eigenvectors") 
-                                               [| _SymmetricSchurDecomposition.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SymmetricSchurDecomposition.cell
                                 |]

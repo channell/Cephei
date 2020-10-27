@@ -214,8 +214,8 @@ module BlackCapFloorEngineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackCapFloorEngine.source + ".Displacement") 
-                                               [| _BlackCapFloorEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackCapFloorEngine.cell
                                 |]
@@ -250,8 +250,8 @@ module BlackCapFloorEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_BlackCapFloorEngine.source + ".TermStructure") 
-                                               [| _BlackCapFloorEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackCapFloorEngine.cell
                                 |]
@@ -286,8 +286,8 @@ module BlackCapFloorEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<OptionletVolatilityStructure>>) l
 
                 let source () = Helper.sourceFold (_BlackCapFloorEngine.source + ".Volatility") 
-                                               [| _BlackCapFloorEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackCapFloorEngine.cell
                                 |]

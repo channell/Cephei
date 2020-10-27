@@ -54,8 +54,8 @@ module BondHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Bond>) l
 
                 let source () = Helper.sourceFold (_BondHelper.source + ".Bond") 
-                                               [| _BondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BondHelper.cell
                                 |]
@@ -139,8 +139,8 @@ module BondHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BondHelper.source + ".ImpliedQuote") 
-                                               [| _BondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BondHelper.cell
                                 |]
@@ -179,8 +179,8 @@ module BondHelperFunction =
                 let format (o : BondHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BondHelper.source + ".SetTermStructure") 
-                                               [| _BondHelper.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BondHelper.cell
@@ -217,8 +217,8 @@ module BondHelperFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BondHelper.source + ".UseCleanPrice") 
-                                               [| _BondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BondHelper.cell
                                 |]
@@ -253,8 +253,8 @@ module BondHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BondHelper.source + ".EarliestDate") 
-                                               [| _BondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BondHelper.cell
                                 |]
@@ -289,8 +289,8 @@ module BondHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BondHelper.source + ".LatestDate") 
-                                               [| _BondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BondHelper.cell
                                 |]
@@ -325,8 +325,8 @@ module BondHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BondHelper.source + ".LatestRelevantDate") 
-                                               [| _BondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BondHelper.cell
                                 |]
@@ -361,8 +361,8 @@ module BondHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BondHelper.source + ".MaturityDate") 
-                                               [| _BondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BondHelper.cell
                                 |]
@@ -397,8 +397,8 @@ module BondHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BondHelper.source + ".PillarDate") 
-                                               [| _BondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BondHelper.cell
                                 |]
@@ -433,8 +433,8 @@ module BondHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
                 let source () = Helper.sourceFold (_BondHelper.source + ".Quote") 
-                                               [| _BondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BondHelper.cell
                                 |]
@@ -469,8 +469,8 @@ module BondHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BondHelper.source + ".QuoteError") 
-                                               [| _BondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BondHelper.cell
                                 |]
@@ -505,8 +505,8 @@ module BondHelperFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BondHelper.source + ".QuoteIsValid") 
-                                               [| _BondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BondHelper.cell
                                 |]
@@ -541,8 +541,8 @@ module BondHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BondHelper.source + ".QuoteValue") 
-                                               [| _BondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BondHelper.cell
                                 |]
@@ -581,8 +581,8 @@ module BondHelperFunction =
                 let format (o : BondHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BondHelper.source + ".RegisterWith") 
-                                               [| _BondHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BondHelper.cell
@@ -623,8 +623,8 @@ module BondHelperFunction =
                 let format (o : BondHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BondHelper.source + ".UnregisterWith") 
-                                               [| _BondHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BondHelper.cell
@@ -661,8 +661,8 @@ module BondHelperFunction =
                 let format (o : BondHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BondHelper.source + ".Update") 
-                                               [| _BondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BondHelper.cell
                                 |]

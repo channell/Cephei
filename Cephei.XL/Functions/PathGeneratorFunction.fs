@@ -54,8 +54,8 @@ module PathGeneratorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Sample<IPath>>) l
 
                 let source () = Helper.sourceFold (_PathGenerator.source + ".Antithetic") 
-                                               [| _PathGenerator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PathGenerator.cell
                                 |]
@@ -90,8 +90,8 @@ module PathGeneratorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Sample<IPath>>) l
 
                 let source () = Helper.sourceFold (_PathGenerator.source + ".Next") 
-                                               [| _PathGenerator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PathGenerator.cell
                                 |]

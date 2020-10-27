@@ -54,8 +54,8 @@ module GenericPseudoRandomFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericPseudoRandom.source + ".AllowsErrorEstimate") 
-                                               [| _GenericPseudoRandom.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericPseudoRandom.cell
                                 |]
@@ -98,8 +98,8 @@ module GenericPseudoRandomFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IRNG>) l
 
                 let source () = Helper.sourceFold (_GenericPseudoRandom.source + ".Make_sequence_generator") 
-                                               [| _GenericPseudoRandom.source
-                                               ;  _dimension.source
+
+                                               [| _dimension.source
                                                ;  _seed.source
                                                |]
                 let hash = Helper.hashFold 

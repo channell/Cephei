@@ -54,8 +54,8 @@ module CurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Currency.source + ".Code") 
-                                               [| _Currency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Currency.cell
                                 |]
@@ -285,8 +285,8 @@ module CurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Currency.source + ".Empty") 
-                                               [| _Currency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Currency.cell
                                 |]
@@ -325,8 +325,8 @@ module CurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Currency.source + ".Equals") 
-                                               [| _Currency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Currency.cell
@@ -363,8 +363,8 @@ module CurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Currency.source + ".Format") 
-                                               [| _Currency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Currency.cell
                                 |]
@@ -399,8 +399,8 @@ module CurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Currency.source + ".FractionsPerUnit") 
-                                               [| _Currency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Currency.cell
                                 |]
@@ -435,8 +435,8 @@ module CurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Currency.source + ".FractionSymbol") 
-                                               [| _Currency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Currency.cell
                                 |]
@@ -471,8 +471,8 @@ module CurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Currency.source + ".Name") 
-                                               [| _Currency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Currency.cell
                                 |]
@@ -507,8 +507,8 @@ module CurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Currency.source + ".NumericCode") 
-                                               [| _Currency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Currency.cell
                                 |]
@@ -543,8 +543,8 @@ module CurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_Currency.source + ".Rounding") 
-                                               [| _Currency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Currency.cell
                                 |]
@@ -579,8 +579,8 @@ module CurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Currency.source + ".Symbol") 
-                                               [| _Currency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Currency.cell
                                 |]
@@ -615,8 +615,8 @@ module CurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Currency.source + ".ToString") 
-                                               [| _Currency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Currency.cell
                                 |]
@@ -651,8 +651,8 @@ module CurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_Currency.source + ".TriangulationCurrency") 
-                                               [| _Currency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Currency.cell
                                 |]

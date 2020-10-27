@@ -129,8 +129,8 @@ module FdmBackwardSolverFunction =
                 let format (o : FdmBackwardSolver) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FdmBackwardSolver.source + ".Rollback") 
-                                               [| _FdmBackwardSolver.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                ;  _from.source
                                                ;  _To.source
                                                ;  _steps.source

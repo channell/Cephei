@@ -54,8 +54,8 @@ module SimpleQuoteFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SimpleQuote.source + ".IsValid") 
-                                               [| _SimpleQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SimpleQuote.cell
                                 |]
@@ -90,8 +90,8 @@ module SimpleQuoteFunction =
                 let format (o : SimpleQuote) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SimpleQuote.source + ".Reset") 
-                                               [| _SimpleQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SimpleQuote.cell
                                 |]
@@ -130,8 +130,8 @@ module SimpleQuoteFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SimpleQuote.source + ".SetValue") 
-                                               [| _SimpleQuote.source
-                                               ;  _value.source
+
+                                               [| _value.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimpleQuote.cell
@@ -236,8 +236,8 @@ module SimpleQuoteFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SimpleQuote.source + ".Value") 
-                                               [| _SimpleQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SimpleQuote.cell
                                 |]
@@ -276,8 +276,8 @@ module SimpleQuoteFunction =
                 let format (o : SimpleQuote) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SimpleQuote.source + ".RegisterWith") 
-                                               [| _SimpleQuote.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimpleQuote.cell
@@ -318,8 +318,8 @@ module SimpleQuoteFunction =
                 let format (o : SimpleQuote) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SimpleQuote.source + ".UnregisterWith") 
-                                               [| _SimpleQuote.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimpleQuote.cell

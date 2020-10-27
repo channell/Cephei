@@ -85,8 +85,8 @@ module PEHCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PEHCurrency.source + ".Code") 
-                                               [| _PEHCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PEHCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module PEHCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PEHCurrency.source + ".Empty") 
-                                               [| _PEHCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PEHCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module PEHCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PEHCurrency.source + ".Equals") 
-                                               [| _PEHCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PEHCurrency.cell
@@ -199,8 +199,8 @@ module PEHCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PEHCurrency.source + ".Format") 
-                                               [| _PEHCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PEHCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module PEHCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PEHCurrency.source + ".FractionsPerUnit") 
-                                               [| _PEHCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PEHCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module PEHCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PEHCurrency.source + ".FractionSymbol") 
-                                               [| _PEHCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PEHCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module PEHCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PEHCurrency.source + ".Name") 
-                                               [| _PEHCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PEHCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module PEHCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PEHCurrency.source + ".NumericCode") 
-                                               [| _PEHCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PEHCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module PEHCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_PEHCurrency.source + ".Rounding") 
-                                               [| _PEHCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PEHCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module PEHCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PEHCurrency.source + ".Symbol") 
-                                               [| _PEHCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PEHCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module PEHCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PEHCurrency.source + ".ToString") 
-                                               [| _PEHCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PEHCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module PEHCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_PEHCurrency.source + ".TriangulationCurrency") 
-                                               [| _PEHCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PEHCurrency.cell
                                 |]

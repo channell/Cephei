@@ -58,8 +58,8 @@ module RelinkableHandleFunction =
                 let format (o : RelinkableHandle) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RelinkableHandle.source + ".LinkTo") 
-                                               [| _RelinkableHandle.source
-                                               ;  _h.source
+
+                                               [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RelinkableHandle.cell
@@ -104,8 +104,8 @@ module RelinkableHandleFunction =
                 let format (o : RelinkableHandle) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RelinkableHandle.source + ".LinkTo") 
-                                               [| _RelinkableHandle.source
-                                               ;  _h.source
+
+                                               [| _h.source
                                                ;  _registerAsObserver.source
                                                |]
                 let hash = Helper.hashFold 
@@ -255,8 +255,8 @@ module RelinkableHandleFunction =
                 let format (o : T) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RelinkableHandle.source + ".CurrentLink") 
-                                               [| _RelinkableHandle.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RelinkableHandle.cell
                                 |]
@@ -291,8 +291,8 @@ module RelinkableHandleFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RelinkableHandle.source + ".Empty") 
-                                               [| _RelinkableHandle.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RelinkableHandle.cell
                                 |]
@@ -331,8 +331,8 @@ module RelinkableHandleFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RelinkableHandle.source + ".Equals") 
-                                               [| _RelinkableHandle.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RelinkableHandle.cell
@@ -369,8 +369,8 @@ module RelinkableHandleFunction =
                 let format (o : T) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RelinkableHandle.source + ".Link") 
-                                               [| _RelinkableHandle.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RelinkableHandle.cell
                                 |]
@@ -409,8 +409,8 @@ module RelinkableHandleFunction =
                 let format (o : RelinkableHandle) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RelinkableHandle.source + ".RegisterWith") 
-                                               [| _RelinkableHandle.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RelinkableHandle.cell
@@ -451,8 +451,8 @@ module RelinkableHandleFunction =
                 let format (o : RelinkableHandle) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RelinkableHandle.source + ".UnregisterWith") 
-                                               [| _RelinkableHandle.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RelinkableHandle.cell

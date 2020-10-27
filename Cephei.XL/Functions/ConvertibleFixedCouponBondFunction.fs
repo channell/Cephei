@@ -163,8 +163,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (o : CallabilitySchedule) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Callability") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
@@ -199,8 +199,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".ConversionRatio") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
@@ -235,8 +235,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".CreditSpread") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
@@ -271,8 +271,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (o : DividendSchedule) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Dividends") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
@@ -311,8 +311,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".AccruedAmount") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
@@ -349,8 +349,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Calendar") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
@@ -385,8 +385,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Cashflows") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
@@ -421,8 +421,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".CleanPrice") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
@@ -477,8 +477,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".CleanPrice1") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               ;  _Yield.source
+
+                                               [| _Yield.source
                                                ;  _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -543,8 +543,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".DirtyPrice1") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               ;  _Yield.source
+
+                                               [| _Yield.source
                                                ;  _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -589,8 +589,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".DirtyPrice") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
@@ -625,8 +625,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".IsExpired") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
@@ -661,8 +661,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".IssueDate") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
@@ -701,8 +701,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".IsTradable") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
@@ -739,8 +739,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".MaturityDate") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
@@ -779,8 +779,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".NextCashFlowDate") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
@@ -821,8 +821,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".NextCouponRate") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
@@ -863,8 +863,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Notional") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
@@ -901,8 +901,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Notionals") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
@@ -941,8 +941,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".PreviousCashFlowDate") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
@@ -983,8 +983,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".PreviousCouponRate") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
@@ -1021,8 +1021,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Redemption") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
@@ -1057,8 +1057,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Redemptions") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
@@ -1097,8 +1097,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".SettlementDate") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               ;  _date.source
+
+                                               [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
@@ -1135,8 +1135,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".SettlementDays") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
@@ -1175,8 +1175,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".SettlementValue") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               ;  _cleanPrice.source
+
+                                               [| _cleanPrice.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
@@ -1213,8 +1213,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".SettlementValue1") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
@@ -1249,8 +1249,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".StartDate") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
@@ -1313,8 +1313,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Yield1") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               ;  _cleanPrice.source
+
+                                               [| _cleanPrice.source
                                                ;  _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -1383,8 +1383,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Yield") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               ;  _dc.source
+
+                                               [| _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
                                                ;  _accuracy.source
@@ -1429,8 +1429,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".CASH") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
@@ -1465,8 +1465,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".ErrorEstimate") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
@@ -1501,8 +1501,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".NPV") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]
@@ -1541,8 +1541,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".Result") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
@@ -1583,8 +1583,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (o : ConvertibleFixedCouponBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".SetPricingEngine") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
@@ -1621,8 +1621,8 @@ module ConvertibleFixedCouponBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ConvertibleFixedCouponBond.source + ".ValuationDate") 
-                                               [| _ConvertibleFixedCouponBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvertibleFixedCouponBond.cell
                                 |]

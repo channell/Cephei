@@ -54,8 +54,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Alpha") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
@@ -90,8 +90,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".AtmLevel") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
@@ -126,8 +126,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Beta") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
@@ -162,8 +162,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".EndCriteria") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
@@ -198,8 +198,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".MaxError") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
@@ -234,8 +234,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".MaxStrike") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
@@ -270,8 +270,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".MinStrike") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
@@ -306,8 +306,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Nu") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
@@ -342,8 +342,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Rho") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
@@ -378,8 +378,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".RmsError") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
@@ -705,8 +705,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (o : SabrInterpolatedSmileSection) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Update") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
@@ -741,8 +741,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".DayCounter") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
@@ -789,8 +789,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Density") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _discount.source
                                                ;  _gap.source
                                                |]
@@ -847,8 +847,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".DigitalOptionPrice") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _Type.source
                                                ;  _discount.source
                                                ;  _gap.source
@@ -891,8 +891,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".ExerciseDate") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
@@ -927,8 +927,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".ExerciseTime") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
@@ -975,8 +975,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".OptionPrice") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _Type.source
                                                ;  _discount.source
                                                |]
@@ -1017,8 +1017,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".ReferenceDate") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
@@ -1053,8 +1053,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Shift") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]
@@ -1093,8 +1093,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Variance") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
@@ -1139,8 +1139,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Vega") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _discount.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1191,8 +1191,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Volatility") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _volatilityType.source
                                                ;  _shift.source
                                                |]
@@ -1237,8 +1237,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".Volatility1") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
@@ -1275,8 +1275,8 @@ module SabrInterpolatedSmileSectionFunction =
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SabrInterpolatedSmileSection.source + ".VolatilityType") 
-                                               [| _SabrInterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SabrInterpolatedSmileSection.cell
                                 |]

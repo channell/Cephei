@@ -54,8 +54,8 @@ module RendistatoCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RendistatoCalculator.source + ".Duration") 
-                                               [| _RendistatoCalculator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
@@ -90,8 +90,8 @@ module RendistatoCalculatorFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_RendistatoCalculator.source + ".Durations") 
-                                               [| _RendistatoCalculator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
@@ -126,8 +126,8 @@ module RendistatoCalculatorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VanillaSwap>) l
 
                 let source () = Helper.sourceFold (_RendistatoCalculator.source + ".EquivalentSwap") 
-                                               [| _RendistatoCalculator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
@@ -162,8 +162,8 @@ module RendistatoCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RendistatoCalculator.source + ".EquivalentSwapDuration") 
-                                               [| _RendistatoCalculator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
@@ -198,8 +198,8 @@ module RendistatoCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RendistatoCalculator.source + ".EquivalentSwapLength") 
-                                               [| _RendistatoCalculator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
@@ -234,8 +234,8 @@ module RendistatoCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RendistatoCalculator.source + ".EquivalentSwapRate") 
-                                               [| _RendistatoCalculator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
@@ -270,8 +270,8 @@ module RendistatoCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RendistatoCalculator.source + ".EquivalentSwapSpread") 
-                                               [| _RendistatoCalculator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
@@ -306,8 +306,8 @@ module RendistatoCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RendistatoCalculator.source + ".EquivalentSwapYield") 
-                                               [| _RendistatoCalculator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
@@ -391,8 +391,8 @@ module RendistatoCalculatorFunction =
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_RendistatoCalculator.source + ".SwapDurations") 
-                                               [| _RendistatoCalculator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
@@ -427,8 +427,8 @@ module RendistatoCalculatorFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_RendistatoCalculator.source + ".SwapLengths") 
-                                               [| _RendistatoCalculator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
@@ -463,8 +463,8 @@ module RendistatoCalculatorFunction =
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_RendistatoCalculator.source + ".SwapRates") 
-                                               [| _RendistatoCalculator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
@@ -499,8 +499,8 @@ module RendistatoCalculatorFunction =
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_RendistatoCalculator.source + ".SwapYields") 
-                                               [| _RendistatoCalculator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
@@ -535,8 +535,8 @@ module RendistatoCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RendistatoCalculator.source + ".Yield") 
-                                               [| _RendistatoCalculator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]
@@ -571,8 +571,8 @@ module RendistatoCalculatorFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_RendistatoCalculator.source + ".Yields") 
-                                               [| _RendistatoCalculator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RendistatoCalculator.cell
                                 |]

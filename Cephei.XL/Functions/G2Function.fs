@@ -58,8 +58,8 @@ module G2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_G2.source + ".Discount") 
-                                               [| _G2.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _G2.cell
@@ -112,8 +112,8 @@ module G2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_G2.source + ".DiscountBond1") 
-                                               [| _G2.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _T2.source
                                                ;  _x.source
                                                ;  _y.source
@@ -168,8 +168,8 @@ module G2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_G2.source + ".DiscountBond") 
-                                               [| _G2.source
-                                               ;  _now.source
+
+                                               [| _now.source
                                                ;  _maturity.source
                                                ;  _factors.source
                                                |]
@@ -226,8 +226,8 @@ module G2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_G2.source + ".DiscountBondOption") 
-                                               [| _G2.source
-                                               ;  _Type.source
+
+                                               [| _Type.source
                                                ;  _strike.source
                                                ;  _maturity.source
                                                ;  _bondMaturity.source
@@ -270,8 +270,8 @@ module G2Function =
                 let format (o : OneFactorModel.ShortRateDynamics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_G2.source + ".Dynamics") 
-                                               [| _G2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _G2.cell
                                 |]
@@ -634,8 +634,8 @@ module G2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_G2.source + ".Swaption") 
-                                               [| _G2.source
-                                               ;  _arguments.source
+
+                                               [| _arguments.source
                                                ;  _fixedRate.source
                                                ;  _range.source
                                                ;  _intervals.source
@@ -678,8 +678,8 @@ module G2Function =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_G2.source + ".TermStructure") 
-                                               [| _G2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _G2.cell
                                 |]
@@ -714,8 +714,8 @@ module G2Function =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_G2.source + ".TermStructure_") 
-                                               [| _G2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _G2.cell
                                 |]
@@ -754,8 +754,8 @@ module G2Function =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
 
                 let source () = Helper.sourceFold (_G2.source + ".Tree") 
-                                               [| _G2.source
-                                               ;  _grid.source
+
+                                               [| _grid.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _G2.cell
@@ -816,8 +816,8 @@ module G2Function =
                 let format (o : G2) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_G2.source + ".Calibrate") 
-                                               [| _G2.source
-                                               ;  _instruments.source
+
+                                               [| _instruments.source
                                                ;  _Method.source
                                                ;  _endCriteria.source
                                                ;  _additionalConstraint.source
@@ -864,8 +864,8 @@ module G2Function =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
                 let source () = Helper.sourceFold (_G2.source + ".CONSTRAINT") 
-                                               [| _G2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _G2.cell
                                 |]
@@ -900,8 +900,8 @@ module G2Function =
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_G2.source + ".EndCriteria") 
-                                               [| _G2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _G2.cell
                                 |]
@@ -936,8 +936,8 @@ module G2Function =
                 let format (o : G2) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_G2.source + ".NotifyObservers") 
-                                               [| _G2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _G2.cell
                                 |]
@@ -972,8 +972,8 @@ module G2Function =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_G2.source + ".Parameters") 
-                                               [| _G2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _G2.cell
                                 |]
@@ -1012,8 +1012,8 @@ module G2Function =
                 let format (o : G2) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_G2.source + ".RegisterWith") 
-                                               [| _G2.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _G2.cell
@@ -1054,8 +1054,8 @@ module G2Function =
                 let format (o : G2) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_G2.source + ".SetParams") 
-                                               [| _G2.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _G2.cell
@@ -1096,8 +1096,8 @@ module G2Function =
                 let format (o : G2) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_G2.source + ".UnregisterWith") 
-                                               [| _G2.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _G2.cell
@@ -1134,8 +1134,8 @@ module G2Function =
                 let format (o : G2) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_G2.source + ".Update") 
-                                               [| _G2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _G2.cell
                                 |]
@@ -1178,8 +1178,8 @@ module G2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_G2.source + ".Value") 
-                                               [| _G2.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                ;  _instruments.source
                                                |]
                 let hash = Helper.hashFold 

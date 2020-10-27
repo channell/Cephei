@@ -101,8 +101,8 @@ module MoroInverseCumulativeNormalFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MoroInverseCumulativeNormal.source + ".Value") 
-                                               [| _MoroInverseCumulativeNormal.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MoroInverseCumulativeNormal.cell

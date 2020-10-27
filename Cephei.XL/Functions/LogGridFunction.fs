@@ -58,8 +58,8 @@ module LogGridFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LogGrid.source + ".LogGrid") 
-                                               [| _LogGrid.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LogGrid.cell
@@ -133,8 +133,8 @@ module LogGridFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_LogGrid.source + ".LogGridArray") 
-                                               [| _LogGrid.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LogGrid.cell
                                 |]
@@ -173,8 +173,8 @@ module LogGridFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LogGrid.source + ".Dx") 
-                                               [| _LogGrid.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LogGrid.cell
@@ -211,8 +211,8 @@ module LogGridFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_LogGrid.source + ".DxArray") 
-                                               [| _LogGrid.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LogGrid.cell
                                 |]
@@ -251,8 +251,8 @@ module LogGridFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LogGrid.source + ".Dxm") 
-                                               [| _LogGrid.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LogGrid.cell
@@ -289,8 +289,8 @@ module LogGridFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_LogGrid.source + ".DxmArray") 
-                                               [| _LogGrid.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LogGrid.cell
                                 |]
@@ -329,8 +329,8 @@ module LogGridFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LogGrid.source + ".Dxp") 
-                                               [| _LogGrid.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LogGrid.cell
@@ -367,8 +367,8 @@ module LogGridFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_LogGrid.source + ".DxpArray") 
-                                               [| _LogGrid.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LogGrid.cell
                                 |]
@@ -407,8 +407,8 @@ module LogGridFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LogGrid.source + ".Grid") 
-                                               [| _LogGrid.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LogGrid.cell
@@ -445,8 +445,8 @@ module LogGridFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_LogGrid.source + ".GridArray") 
-                                               [| _LogGrid.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LogGrid.cell
                                 |]
@@ -481,8 +481,8 @@ module LogGridFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LogGrid.source + ".Size") 
-                                               [| _LogGrid.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LogGrid.cell
                                 |]
@@ -521,8 +521,8 @@ module LogGridFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LogGrid.source + ".TransformedGrid") 
-                                               [| _LogGrid.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LogGrid.cell
@@ -559,8 +559,8 @@ module LogGridFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_LogGrid.source + ".TransformedGridArray") 
-                                               [| _LogGrid.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LogGrid.cell
                                 |]

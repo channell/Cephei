@@ -85,8 +85,8 @@ module WeekendsOnlyFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_WeekendsOnly.source + ".AddedHolidays") 
-                                               [| _WeekendsOnly.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _WeekendsOnly.cell
                                 |]
@@ -125,8 +125,8 @@ module WeekendsOnlyFunction =
                 let format (o : WeekendsOnly) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_WeekendsOnly.source + ".AddHoliday") 
-                                               [| _WeekendsOnly.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _WeekendsOnly.cell
@@ -171,8 +171,8 @@ module WeekendsOnlyFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_WeekendsOnly.source + ".Adjust") 
-                                               [| _WeekendsOnly.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _c.source
                                                |]
                 let hash = Helper.hashFold 
@@ -231,8 +231,8 @@ module WeekendsOnlyFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_WeekendsOnly.source + ".Advance1") 
-                                               [| _WeekendsOnly.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _n.source
                                                ;  _unit.source
                                                ;  _c.source
@@ -293,8 +293,8 @@ module WeekendsOnlyFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_WeekendsOnly.source + ".Advance") 
-                                               [| _WeekendsOnly.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _p.source
                                                ;  _c.source
                                                ;  _endOfMonth.source
@@ -353,8 +353,8 @@ module WeekendsOnlyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_WeekendsOnly.source + ".BusinessDaysBetween") 
-                                               [| _WeekendsOnly.source
-                                               ;  _from.source
+
+                                               [| _from.source
                                                ;  _To.source
                                                ;  _includeFirst.source
                                                ;  _includeLast.source
@@ -397,8 +397,8 @@ module WeekendsOnlyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_WeekendsOnly.source + ".Calendar") 
-                                               [| _WeekendsOnly.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _WeekendsOnly.cell
                                 |]
@@ -433,8 +433,8 @@ module WeekendsOnlyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_WeekendsOnly.source + ".Empty") 
-                                               [| _WeekendsOnly.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _WeekendsOnly.cell
                                 |]
@@ -473,8 +473,8 @@ module WeekendsOnlyFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_WeekendsOnly.source + ".EndOfMonth") 
-                                               [| _WeekendsOnly.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _WeekendsOnly.cell
@@ -515,8 +515,8 @@ module WeekendsOnlyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_WeekendsOnly.source + ".Equals") 
-                                               [| _WeekendsOnly.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _WeekendsOnly.cell
@@ -557,8 +557,8 @@ module WeekendsOnlyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_WeekendsOnly.source + ".IsBusinessDay") 
-                                               [| _WeekendsOnly.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _WeekendsOnly.cell
@@ -599,8 +599,8 @@ module WeekendsOnlyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_WeekendsOnly.source + ".IsEndOfMonth") 
-                                               [| _WeekendsOnly.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _WeekendsOnly.cell
@@ -641,8 +641,8 @@ module WeekendsOnlyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_WeekendsOnly.source + ".IsHoliday") 
-                                               [| _WeekendsOnly.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _WeekendsOnly.cell
@@ -683,8 +683,8 @@ module WeekendsOnlyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_WeekendsOnly.source + ".IsWeekend") 
-                                               [| _WeekendsOnly.source
-                                               ;  _w.source
+
+                                               [| _w.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _WeekendsOnly.cell
@@ -723,8 +723,8 @@ module WeekendsOnlyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_WeekendsOnly.source + ".Name") 
-                                               [| _WeekendsOnly.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _WeekendsOnly.cell
                                 |]
@@ -759,8 +759,8 @@ module WeekendsOnlyFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_WeekendsOnly.source + ".RemovedHolidays") 
-                                               [| _WeekendsOnly.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _WeekendsOnly.cell
                                 |]
@@ -799,8 +799,8 @@ module WeekendsOnlyFunction =
                 let format (o : WeekendsOnly) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_WeekendsOnly.source + ".RemoveHoliday") 
-                                               [| _WeekendsOnly.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _WeekendsOnly.cell

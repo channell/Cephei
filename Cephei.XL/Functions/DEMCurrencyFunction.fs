@@ -85,8 +85,8 @@ module DEMCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DEMCurrency.source + ".Code") 
-                                               [| _DEMCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DEMCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module DEMCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DEMCurrency.source + ".Empty") 
-                                               [| _DEMCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DEMCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module DEMCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DEMCurrency.source + ".Equals") 
-                                               [| _DEMCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DEMCurrency.cell
@@ -199,8 +199,8 @@ module DEMCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DEMCurrency.source + ".Format") 
-                                               [| _DEMCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DEMCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module DEMCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DEMCurrency.source + ".FractionsPerUnit") 
-                                               [| _DEMCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DEMCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module DEMCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DEMCurrency.source + ".FractionSymbol") 
-                                               [| _DEMCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DEMCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module DEMCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DEMCurrency.source + ".Name") 
-                                               [| _DEMCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DEMCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module DEMCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DEMCurrency.source + ".NumericCode") 
-                                               [| _DEMCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DEMCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module DEMCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_DEMCurrency.source + ".Rounding") 
-                                               [| _DEMCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DEMCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module DEMCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DEMCurrency.source + ".Symbol") 
-                                               [| _DEMCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DEMCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module DEMCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DEMCurrency.source + ".ToString") 
-                                               [| _DEMCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DEMCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module DEMCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_DEMCurrency.source + ".TriangulationCurrency") 
-                                               [| _DEMCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DEMCurrency.cell
                                 |]

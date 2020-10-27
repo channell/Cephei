@@ -138,8 +138,8 @@ module VannaVolgaBarrierEngineFunction =
                 let format (o : VannaVolgaBarrierEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_VannaVolgaBarrierEngine.source + ".RegisterWith") 
-                                               [| _VannaVolgaBarrierEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VannaVolgaBarrierEngine.cell
@@ -176,8 +176,8 @@ module VannaVolgaBarrierEngineFunction =
                 let format (o : VannaVolgaBarrierEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_VannaVolgaBarrierEngine.source + ".Reset") 
-                                               [| _VannaVolgaBarrierEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _VannaVolgaBarrierEngine.cell
                                 |]
@@ -216,8 +216,8 @@ module VannaVolgaBarrierEngineFunction =
                 let format (o : VannaVolgaBarrierEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_VannaVolgaBarrierEngine.source + ".UnregisterWith") 
-                                               [| _VannaVolgaBarrierEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VannaVolgaBarrierEngine.cell
@@ -254,8 +254,8 @@ module VannaVolgaBarrierEngineFunction =
                 let format (o : VannaVolgaBarrierEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_VannaVolgaBarrierEngine.source + ".Update") 
-                                               [| _VannaVolgaBarrierEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _VannaVolgaBarrierEngine.cell
                                 |]

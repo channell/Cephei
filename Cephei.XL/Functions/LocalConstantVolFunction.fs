@@ -54,8 +54,8 @@ module LocalConstantVolFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_LocalConstantVol.source + ".DayCounter") 
-                                               [| _LocalConstantVol.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]
@@ -298,8 +298,8 @@ module LocalConstantVolFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_LocalConstantVol.source + ".MaxDate") 
-                                               [| _LocalConstantVol.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]
@@ -334,8 +334,8 @@ module LocalConstantVolFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LocalConstantVol.source + ".MaxStrike") 
-                                               [| _LocalConstantVol.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]
@@ -370,8 +370,8 @@ module LocalConstantVolFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LocalConstantVol.source + ".MinStrike") 
-                                               [| _LocalConstantVol.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]
@@ -418,8 +418,8 @@ module LocalConstantVolFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LocalConstantVol.source + ".LocalVol") 
-                                               [| _LocalConstantVol.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _underlyingLevel.source
                                                ;  _extrapolate.source
                                                |]
@@ -472,8 +472,8 @@ module LocalConstantVolFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LocalConstantVol.source + ".LocalVol1") 
-                                               [| _LocalConstantVol.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _underlyingLevel.source
                                                ;  _extrapolate.source
                                                |]
@@ -514,8 +514,8 @@ module LocalConstantVolFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LocalConstantVol.source + ".BusinessDayConvention") 
-                                               [| _LocalConstantVol.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]
@@ -554,8 +554,8 @@ module LocalConstantVolFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_LocalConstantVol.source + ".OptionDateFromTenor") 
-                                               [| _LocalConstantVol.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
@@ -592,8 +592,8 @@ module LocalConstantVolFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_LocalConstantVol.source + ".Calendar") 
-                                               [| _LocalConstantVol.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]
@@ -628,8 +628,8 @@ module LocalConstantVolFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LocalConstantVol.source + ".MaxTime") 
-                                               [| _LocalConstantVol.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]
@@ -664,8 +664,8 @@ module LocalConstantVolFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_LocalConstantVol.source + ".ReferenceDate") 
-                                               [| _LocalConstantVol.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]
@@ -700,8 +700,8 @@ module LocalConstantVolFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LocalConstantVol.source + ".SettlementDays") 
-                                               [| _LocalConstantVol.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]
@@ -740,8 +740,8 @@ module LocalConstantVolFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LocalConstantVol.source + ".TimeFromReference") 
-                                               [| _LocalConstantVol.source
-                                               ;  _date.source
+
+                                               [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
@@ -778,8 +778,8 @@ module LocalConstantVolFunction =
                 let format (o : LocalConstantVol) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LocalConstantVol.source + ".Update") 
-                                               [| _LocalConstantVol.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]
@@ -814,8 +814,8 @@ module LocalConstantVolFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LocalConstantVol.source + ".AllowsExtrapolation") 
-                                               [| _LocalConstantVol.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]
@@ -854,8 +854,8 @@ module LocalConstantVolFunction =
                 let format (o : LocalConstantVol) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LocalConstantVol.source + ".DisableExtrapolation") 
-                                               [| _LocalConstantVol.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
@@ -896,8 +896,8 @@ module LocalConstantVolFunction =
                 let format (o : LocalConstantVol) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LocalConstantVol.source + ".EnableExtrapolation") 
-                                               [| _LocalConstantVol.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
@@ -934,8 +934,8 @@ module LocalConstantVolFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LocalConstantVol.source + ".Extrapolate") 
-                                               [| _LocalConstantVol.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LocalConstantVol.cell
                                 |]

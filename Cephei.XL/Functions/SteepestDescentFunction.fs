@@ -99,8 +99,8 @@ module SteepestDescentFunction =
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SteepestDescent.source + ".Minimize") 
-                                               [| _SteepestDescent.source
-                                               ;  _P.source
+
+                                               [| _P.source
                                                ;  _endCriteria.source
                                                |]
                 let hash = Helper.hashFold 

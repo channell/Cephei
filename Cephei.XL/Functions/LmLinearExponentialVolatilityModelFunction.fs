@@ -70,8 +70,8 @@ module LmLinearExponentialVolatilityModelFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LmLinearExponentialVolatilityModel.source + ".IntegratedVariance") 
-                                               [| _LmLinearExponentialVolatilityModel.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _j.source
                                                ;  _u.source
                                                ;  _x.source
@@ -187,8 +187,8 @@ module LmLinearExponentialVolatilityModelFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LmLinearExponentialVolatilityModel.source + ".Volatility") 
-                                               [| _LmLinearExponentialVolatilityModel.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                ;  _x.source
                                                |]
@@ -237,8 +237,8 @@ module LmLinearExponentialVolatilityModelFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_LmLinearExponentialVolatilityModel.source + ".Volatility1") 
-                                               [| _LmLinearExponentialVolatilityModel.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -277,8 +277,8 @@ module LmLinearExponentialVolatilityModelFunction =
                 let format (i : Generic.List<ICell<Parameter>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_LmLinearExponentialVolatilityModel.source + ".Parameters") 
-                                               [| _LmLinearExponentialVolatilityModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LmLinearExponentialVolatilityModel.cell
                                 |]
@@ -317,8 +317,8 @@ module LmLinearExponentialVolatilityModelFunction =
                 let format (o : LmLinearExponentialVolatilityModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LmLinearExponentialVolatilityModel.source + ".SetParams") 
-                                               [| _LmLinearExponentialVolatilityModel.source
-                                               ;  _arguments.source
+
+                                               [| _arguments.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LmLinearExponentialVolatilityModel.cell
@@ -355,8 +355,8 @@ module LmLinearExponentialVolatilityModelFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LmLinearExponentialVolatilityModel.source + ".Size") 
-                                               [| _LmLinearExponentialVolatilityModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LmLinearExponentialVolatilityModel.cell
                                 |]

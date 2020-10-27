@@ -134,8 +134,8 @@ module ShiborFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Shibor.source + ".BusinessDayConvention") 
-                                               [| _Shibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Shibor.cell
                                 |]
@@ -174,8 +174,8 @@ module ShiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
                 let source () = Helper.sourceFold (_Shibor.source + ".Clone") 
-                                               [| _Shibor.source
-                                               ;  _forwarding.source
+
+                                               [| _forwarding.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Shibor.cell
@@ -212,8 +212,8 @@ module ShiborFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Shibor.source + ".EndOfMonth") 
-                                               [| _Shibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Shibor.cell
                                 |]
@@ -260,8 +260,8 @@ module ShiborFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Shibor.source + ".ForecastFixing") 
-                                               [| _Shibor.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _t.source
                                                |]
@@ -306,8 +306,8 @@ module ShiborFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Shibor.source + ".ForecastFixing") 
-                                               [| _Shibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Shibor.cell
@@ -344,8 +344,8 @@ module ShiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_Shibor.source + ".ForwardingTermStructure") 
-                                               [| _Shibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Shibor.cell
                                 |]
@@ -384,8 +384,8 @@ module ShiborFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Shibor.source + ".MaturityDate") 
-                                               [| _Shibor.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Shibor.cell
@@ -422,8 +422,8 @@ module ShiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_Shibor.source + ".Currency") 
-                                               [| _Shibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Shibor.cell
                                 |]
@@ -458,8 +458,8 @@ module ShiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_Shibor.source + ".DayCounter") 
-                                               [| _Shibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Shibor.cell
                                 |]
@@ -494,8 +494,8 @@ module ShiborFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Shibor.source + ".FamilyName") 
-                                               [| _Shibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Shibor.cell
                                 |]
@@ -538,8 +538,8 @@ module ShiborFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Shibor.source + ".Fixing") 
-                                               [| _Shibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -578,8 +578,8 @@ module ShiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_Shibor.source + ".FixingCalendar") 
-                                               [| _Shibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Shibor.cell
                                 |]
@@ -618,8 +618,8 @@ module ShiborFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Shibor.source + ".FixingDate") 
-                                               [| _Shibor.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Shibor.cell
@@ -656,8 +656,8 @@ module ShiborFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Shibor.source + ".FixingDays") 
-                                               [| _Shibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Shibor.cell
                                 |]
@@ -696,8 +696,8 @@ module ShiborFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Shibor.source + ".IsValidFixingDate") 
-                                               [| _Shibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Shibor.cell
@@ -734,8 +734,8 @@ module ShiborFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Shibor.source + ".Name") 
-                                               [| _Shibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Shibor.cell
                                 |]
@@ -774,8 +774,8 @@ module ShiborFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Shibor.source + ".PastFixing") 
-                                               [| _Shibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Shibor.cell
@@ -812,8 +812,8 @@ module ShiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_Shibor.source + ".Tenor") 
-                                               [| _Shibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Shibor.cell
                                 |]
@@ -848,8 +848,8 @@ module ShiborFunction =
                 let format (o : Shibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Shibor.source + ".Update") 
-                                               [| _Shibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Shibor.cell
                                 |]
@@ -888,8 +888,8 @@ module ShiborFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Shibor.source + ".ValueDate") 
-                                               [| _Shibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Shibor.cell
@@ -938,8 +938,8 @@ module ShiborFunction =
                 let format (o : Shibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Shibor.source + ".AddFixing") 
-                                               [| _Shibor.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -992,8 +992,8 @@ module ShiborFunction =
                 let format (o : Shibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Shibor.source + ".AddFixings") 
-                                               [| _Shibor.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -1042,8 +1042,8 @@ module ShiborFunction =
                 let format (o : Shibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Shibor.source + ".AddFixings1") 
-                                               [| _Shibor.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1082,8 +1082,8 @@ module ShiborFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Shibor.source + ".AllowsNativeFixings") 
-                                               [| _Shibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Shibor.cell
                                 |]
@@ -1118,8 +1118,8 @@ module ShiborFunction =
                 let format (o : Shibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Shibor.source + ".ClearFixings") 
-                                               [| _Shibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Shibor.cell
                                 |]
@@ -1158,8 +1158,8 @@ module ShiborFunction =
                 let format (o : Shibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Shibor.source + ".RegisterWith") 
-                                               [| _Shibor.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Shibor.cell
@@ -1196,8 +1196,8 @@ module ShiborFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Shibor.source + ".TimeSeries") 
-                                               [| _Shibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Shibor.cell
                                 |]
@@ -1236,8 +1236,8 @@ module ShiborFunction =
                 let format (o : Shibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Shibor.source + ".UnregisterWith") 
-                                               [| _Shibor.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Shibor.cell

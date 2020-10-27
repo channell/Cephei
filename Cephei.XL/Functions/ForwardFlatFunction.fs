@@ -54,8 +54,8 @@ module ForwardFlatFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ForwardFlat.source + ".GLOBAL") 
-                                               [| _ForwardFlat.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardFlat.cell
                                 |]
@@ -102,8 +102,8 @@ module ForwardFlatFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
                 let source () = Helper.sourceFold (_ForwardFlat.source + ".Interpolate") 
-                                               [| _ForwardFlat.source
-                                               ;  _xBegin.source
+
+                                               [| _xBegin.source
                                                ;  _size.source
                                                ;  _yBegin.source
                                                |]
@@ -144,8 +144,8 @@ module ForwardFlatFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardFlat.source + ".RequiredPoints") 
-                                               [| _ForwardFlat.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardFlat.cell
                                 |]

@@ -58,8 +58,8 @@ module LinearTsrPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LinearTsrPricer.source + ".CapletPrice") 
-                                               [| _LinearTsrPricer.source
-                                               ;  _effectiveCap.source
+
+                                               [| _effectiveCap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LinearTsrPricer.cell
@@ -100,8 +100,8 @@ module LinearTsrPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LinearTsrPricer.source + ".CapletRate") 
-                                               [| _LinearTsrPricer.source
-                                               ;  _effectiveCap.source
+
+                                               [| _effectiveCap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LinearTsrPricer.cell
@@ -142,8 +142,8 @@ module LinearTsrPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LinearTsrPricer.source + ".FloorletPrice") 
-                                               [| _LinearTsrPricer.source
-                                               ;  _effectiveFloor.source
+
+                                               [| _effectiveFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LinearTsrPricer.cell
@@ -184,8 +184,8 @@ module LinearTsrPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LinearTsrPricer.source + ".FloorletRate") 
-                                               [| _LinearTsrPricer.source
-                                               ;  _effectiveFloor.source
+
+                                               [| _effectiveFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LinearTsrPricer.cell
@@ -226,8 +226,8 @@ module LinearTsrPricerFunction =
                 let format (o : LinearTsrPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LinearTsrPricer.source + ".Initialize") 
-                                               [| _LinearTsrPricer.source
-                                               ;  _coupon.source
+
+                                               [| _coupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LinearTsrPricer.cell
@@ -325,8 +325,8 @@ module LinearTsrPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LinearTsrPricer.source + ".MeanReversion") 
-                                               [| _LinearTsrPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LinearTsrPricer.cell
                                 |]
@@ -365,8 +365,8 @@ module LinearTsrPricerFunction =
                 let format (o : LinearTsrPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LinearTsrPricer.source + ".SetMeanReversion") 
-                                               [| _LinearTsrPricer.source
-                                               ;  _meanReversion.source
+
+                                               [| _meanReversion.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LinearTsrPricer.cell
@@ -403,8 +403,8 @@ module LinearTsrPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LinearTsrPricer.source + ".SwapletPrice") 
-                                               [| _LinearTsrPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LinearTsrPricer.cell
                                 |]
@@ -439,8 +439,8 @@ module LinearTsrPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LinearTsrPricer.source + ".SwapletRate") 
-                                               [| _LinearTsrPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LinearTsrPricer.cell
                                 |]
@@ -479,8 +479,8 @@ module LinearTsrPricerFunction =
                 let format (o : LinearTsrPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LinearTsrPricer.source + ".SetSwaptionVolatility") 
-                                               [| _LinearTsrPricer.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LinearTsrPricer.cell
@@ -517,8 +517,8 @@ module LinearTsrPricerFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<SwaptionVolatilityStructure>>) l
 
                 let source () = Helper.sourceFold (_LinearTsrPricer.source + ".SwaptionVolatility") 
-                                               [| _LinearTsrPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LinearTsrPricer.cell
                                 |]
@@ -557,8 +557,8 @@ module LinearTsrPricerFunction =
                 let format (o : LinearTsrPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LinearTsrPricer.source + ".RegisterWith") 
-                                               [| _LinearTsrPricer.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LinearTsrPricer.cell
@@ -599,8 +599,8 @@ module LinearTsrPricerFunction =
                 let format (o : LinearTsrPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LinearTsrPricer.source + ".UnregisterWith") 
-                                               [| _LinearTsrPricer.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LinearTsrPricer.cell
@@ -637,8 +637,8 @@ module LinearTsrPricerFunction =
                 let format (o : LinearTsrPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LinearTsrPricer.source + ".Update") 
-                                               [| _LinearTsrPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LinearTsrPricer.cell
                                 |]

@@ -70,8 +70,8 @@ module HullWhiteFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HullWhite.source + ".DiscountBondOption") 
-                                               [| _HullWhite.source
-                                               ;  _Type.source
+
+                                               [| _Type.source
                                                ;  _strike.source
                                                ;  _maturity.source
                                                ;  _bondMaturity.source
@@ -114,8 +114,8 @@ module HullWhiteFunction =
                 let format (o : OneFactorModel.ShortRateDynamics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HullWhite.source + ".Dynamics") 
-                                               [| _HullWhite.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HullWhite.cell
                                 |]
@@ -279,8 +279,8 @@ module HullWhiteFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_HullWhite.source + ".TermStructure") 
-                                               [| _HullWhite.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HullWhite.cell
                                 |]
@@ -315,8 +315,8 @@ module HullWhiteFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_HullWhite.source + ".TermStructure_") 
-                                               [| _HullWhite.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HullWhite.cell
                                 |]
@@ -355,8 +355,8 @@ module HullWhiteFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
 
                 let source () = Helper.sourceFold (_HullWhite.source + ".Tree") 
-                                               [| _HullWhite.source
-                                               ;  _grid.source
+
+                                               [| _grid.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HullWhite.cell
@@ -393,8 +393,8 @@ module HullWhiteFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HullWhite.source + ".A") 
-                                               [| _HullWhite.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HullWhite.cell
                                 |]
@@ -429,8 +429,8 @@ module HullWhiteFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HullWhite.source + ".B") 
-                                               [| _HullWhite.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HullWhite.cell
                                 |]
@@ -465,8 +465,8 @@ module HullWhiteFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HullWhite.source + ".Lambda") 
-                                               [| _HullWhite.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HullWhite.cell
                                 |]
@@ -501,8 +501,8 @@ module HullWhiteFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HullWhite.source + ".Sigma") 
-                                               [| _HullWhite.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HullWhite.cell
                                 |]
@@ -541,8 +541,8 @@ module HullWhiteFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HullWhite.source + ".Discount") 
-                                               [| _HullWhite.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HullWhite.cell
@@ -591,8 +591,8 @@ module HullWhiteFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HullWhite.source + ".DiscountBond1") 
-                                               [| _HullWhite.source
-                                               ;  _now.source
+
+                                               [| _now.source
                                                ;  _maturity.source
                                                ;  _rate.source
                                                |]
@@ -645,8 +645,8 @@ module HullWhiteFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HullWhite.source + ".DiscountBond") 
-                                               [| _HullWhite.source
-                                               ;  _now.source
+
+                                               [| _now.source
                                                ;  _maturity.source
                                                ;  _factors.source
                                                |]
@@ -711,8 +711,8 @@ module HullWhiteFunction =
                 let format (o : HullWhite) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HullWhite.source + ".Calibrate") 
-                                               [| _HullWhite.source
-                                               ;  _instruments.source
+
+                                               [| _instruments.source
                                                ;  _Method.source
                                                ;  _endCriteria.source
                                                ;  _additionalConstraint.source
@@ -759,8 +759,8 @@ module HullWhiteFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
                 let source () = Helper.sourceFold (_HullWhite.source + ".CONSTRAINT") 
-                                               [| _HullWhite.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HullWhite.cell
                                 |]
@@ -795,8 +795,8 @@ module HullWhiteFunction =
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HullWhite.source + ".EndCriteria") 
-                                               [| _HullWhite.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HullWhite.cell
                                 |]
@@ -831,8 +831,8 @@ module HullWhiteFunction =
                 let format (o : HullWhite) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HullWhite.source + ".NotifyObservers") 
-                                               [| _HullWhite.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HullWhite.cell
                                 |]
@@ -867,8 +867,8 @@ module HullWhiteFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_HullWhite.source + ".Parameters") 
-                                               [| _HullWhite.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HullWhite.cell
                                 |]
@@ -907,8 +907,8 @@ module HullWhiteFunction =
                 let format (o : HullWhite) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HullWhite.source + ".RegisterWith") 
-                                               [| _HullWhite.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HullWhite.cell
@@ -949,8 +949,8 @@ module HullWhiteFunction =
                 let format (o : HullWhite) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HullWhite.source + ".SetParams") 
-                                               [| _HullWhite.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HullWhite.cell
@@ -991,8 +991,8 @@ module HullWhiteFunction =
                 let format (o : HullWhite) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HullWhite.source + ".UnregisterWith") 
-                                               [| _HullWhite.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HullWhite.cell
@@ -1029,8 +1029,8 @@ module HullWhiteFunction =
                 let format (o : HullWhite) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HullWhite.source + ".Update") 
-                                               [| _HullWhite.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HullWhite.cell
                                 |]
@@ -1073,8 +1073,8 @@ module HullWhiteFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HullWhite.source + ".Value") 
-                                               [| _HullWhite.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                ;  _instruments.source
                                                |]
                 let hash = Helper.hashFold 

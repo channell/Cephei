@@ -54,8 +54,8 @@ module RoundingFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Rounding.source + ".Digit") 
-                                               [| _Rounding.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Rounding.cell
                                 |]
@@ -90,8 +90,8 @@ module RoundingFunction =
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Rounding.source + ".GetType") 
-                                               [| _Rounding.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Rounding.cell
                                 |]
@@ -126,8 +126,8 @@ module RoundingFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Rounding.source + ".Precision") 
-                                               [| _Rounding.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Rounding.cell
                                 |]
@@ -166,8 +166,8 @@ module RoundingFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Rounding.source + ".Round") 
-                                               [| _Rounding.source
-                                               ;  _value.source
+
+                                               [| _value.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Rounding.cell

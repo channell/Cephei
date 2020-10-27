@@ -54,8 +54,8 @@ module PercentageStrikePayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PercentageStrikePayoff.source + ".Name") 
-                                               [| _PercentageStrikePayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PercentageStrikePayoff.cell
                                 |]
@@ -137,8 +137,8 @@ module PercentageStrikePayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PercentageStrikePayoff.source + ".Value") 
-                                               [| _PercentageStrikePayoff.source
-                                               ;  _price.source
+
+                                               [| _price.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PercentageStrikePayoff.cell
@@ -175,8 +175,8 @@ module PercentageStrikePayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PercentageStrikePayoff.source + ".Description") 
-                                               [| _PercentageStrikePayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PercentageStrikePayoff.cell
                                 |]
@@ -211,8 +211,8 @@ module PercentageStrikePayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PercentageStrikePayoff.source + ".Strike") 
-                                               [| _PercentageStrikePayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PercentageStrikePayoff.cell
                                 |]
@@ -247,8 +247,8 @@ module PercentageStrikePayoffFunction =
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PercentageStrikePayoff.source + ".OptionType") 
-                                               [| _PercentageStrikePayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PercentageStrikePayoff.cell
                                 |]
@@ -287,8 +287,8 @@ module PercentageStrikePayoffFunction =
                 let format (o : PercentageStrikePayoff) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PercentageStrikePayoff.source + ".Accept") 
-                                               [| _PercentageStrikePayoff.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PercentageStrikePayoff.cell

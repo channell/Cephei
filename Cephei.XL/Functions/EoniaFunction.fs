@@ -126,8 +126,8 @@ module EoniaFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightIndex>) l
 
                 let source () = Helper.sourceFold (_Eonia.source + ".Clone") 
-                                               [| _Eonia.source
-                                               ;  _h.source
+
+                                               [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
@@ -164,8 +164,8 @@ module EoniaFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Eonia.source + ".BusinessDayConvention") 
-                                               [| _Eonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
@@ -200,8 +200,8 @@ module EoniaFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Eonia.source + ".EndOfMonth") 
-                                               [| _Eonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
@@ -248,8 +248,8 @@ module EoniaFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Eonia.source + ".ForecastFixing1") 
-                                               [| _Eonia.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _t.source
                                                |]
@@ -294,8 +294,8 @@ module EoniaFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Eonia.source + ".ForecastFixing") 
-                                               [| _Eonia.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
@@ -332,8 +332,8 @@ module EoniaFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_Eonia.source + ".ForwardingTermStructure") 
-                                               [| _Eonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
@@ -372,8 +372,8 @@ module EoniaFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Eonia.source + ".MaturityDate") 
-                                               [| _Eonia.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
@@ -410,8 +410,8 @@ module EoniaFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_Eonia.source + ".Currency") 
-                                               [| _Eonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
@@ -446,8 +446,8 @@ module EoniaFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_Eonia.source + ".DayCounter") 
-                                               [| _Eonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
@@ -482,8 +482,8 @@ module EoniaFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Eonia.source + ".FamilyName") 
-                                               [| _Eonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
@@ -526,8 +526,8 @@ module EoniaFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Eonia.source + ".Fixing") 
-                                               [| _Eonia.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -566,8 +566,8 @@ module EoniaFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_Eonia.source + ".FixingCalendar") 
-                                               [| _Eonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
@@ -606,8 +606,8 @@ module EoniaFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Eonia.source + ".FixingDate") 
-                                               [| _Eonia.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
@@ -644,8 +644,8 @@ module EoniaFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Eonia.source + ".FixingDays") 
-                                               [| _Eonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
@@ -684,8 +684,8 @@ module EoniaFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Eonia.source + ".IsValidFixingDate") 
-                                               [| _Eonia.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
@@ -722,8 +722,8 @@ module EoniaFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Eonia.source + ".Name") 
-                                               [| _Eonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
@@ -762,8 +762,8 @@ module EoniaFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Eonia.source + ".PastFixing") 
-                                               [| _Eonia.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
@@ -800,8 +800,8 @@ module EoniaFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_Eonia.source + ".Tenor") 
-                                               [| _Eonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
@@ -836,8 +836,8 @@ module EoniaFunction =
                 let format (o : Eonia) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Eonia.source + ".Update") 
-                                               [| _Eonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
@@ -876,8 +876,8 @@ module EoniaFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Eonia.source + ".ValueDate") 
-                                               [| _Eonia.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
@@ -926,8 +926,8 @@ module EoniaFunction =
                 let format (o : Eonia) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Eonia.source + ".AddFixing") 
-                                               [| _Eonia.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -980,8 +980,8 @@ module EoniaFunction =
                 let format (o : Eonia) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Eonia.source + ".AddFixings") 
-                                               [| _Eonia.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -1030,8 +1030,8 @@ module EoniaFunction =
                 let format (o : Eonia) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Eonia.source + ".AddFixings1") 
-                                               [| _Eonia.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1070,8 +1070,8 @@ module EoniaFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Eonia.source + ".AllowsNativeFixings") 
-                                               [| _Eonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
@@ -1106,8 +1106,8 @@ module EoniaFunction =
                 let format (o : Eonia) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Eonia.source + ".ClearFixings") 
-                                               [| _Eonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
@@ -1146,8 +1146,8 @@ module EoniaFunction =
                 let format (o : Eonia) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Eonia.source + ".RegisterWith") 
-                                               [| _Eonia.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
@@ -1184,8 +1184,8 @@ module EoniaFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Eonia.source + ".TimeSeries") 
-                                               [| _Eonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell
                                 |]
@@ -1224,8 +1224,8 @@ module EoniaFunction =
                 let format (o : Eonia) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Eonia.source + ".UnregisterWith") 
-                                               [| _Eonia.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Eonia.cell

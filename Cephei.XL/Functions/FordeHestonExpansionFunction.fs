@@ -129,8 +129,8 @@ module FordeHestonExpansionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FordeHestonExpansion.source + ".ImpliedVolatility") 
-                                               [| _FordeHestonExpansion.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _forward.source
                                                |]
                 let hash = Helper.hashFold 

@@ -58,8 +58,8 @@ module TermStructureConsistentModelFunction =
                 let format (o : TermStructureConsistentModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TermStructureConsistentModel.source + ".RegisterWith") 
-                                               [| _TermStructureConsistentModel.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TermStructureConsistentModel.cell
@@ -96,8 +96,8 @@ module TermStructureConsistentModelFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_TermStructureConsistentModel.source + ".TermStructure") 
-                                               [| _TermStructureConsistentModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TermStructureConsistentModel.cell
                                 |]
@@ -173,8 +173,8 @@ module TermStructureConsistentModelFunction =
                 let format (o : TermStructureConsistentModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TermStructureConsistentModel.source + ".UnregisterWith") 
-                                               [| _TermStructureConsistentModel.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TermStructureConsistentModel.cell

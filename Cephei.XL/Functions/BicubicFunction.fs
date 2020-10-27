@@ -74,8 +74,8 @@ module BicubicFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation2D>) l
 
                 let source () = Helper.sourceFold (_Bicubic.source + ".Interpolate") 
-                                               [| _Bicubic.source
-                                               ;  _xBegin.source
+
+                                               [| _xBegin.source
                                                ;  _size.source
                                                ;  _yBegin.source
                                                ;  _ySize.source

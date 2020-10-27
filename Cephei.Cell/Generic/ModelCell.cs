@@ -12,11 +12,12 @@ namespace Cephei.Cell.Generic
     public class Model<T> : Model , ICell<T>, ICellModel
     {
         private ICell<T> _cell;
-        
+
         public void Bind (ICell<T> cell)
         {
             _cell = cell;
             Bind();
+            _cell.Parent = this;
         }
 
         public override IEnumerable<ICellEvent> Dependants
@@ -97,9 +98,15 @@ namespace Cephei.Cell.Generic
             {
                 Parent = model.Parent;
                 if (source is ICellModel sm)
+                {
                     _cell.Merge(sm.Cell, model);
+                    _cell.Parent = this;
+                }
                 else
+                {
                     _cell.Merge(source, model);
+                    _cell.Parent = this;
+                }
             }
                 // handle update of current while this cell is being constructed
             if (Parent is Model mod)
@@ -121,8 +128,11 @@ namespace Cephei.Cell.Generic
         }
         public override void OnChange(CellEvent eventType, ICellEvent root,  ICellEvent sender,  DateTime epoch, ISession session)
         {
+            if (epoch <= _eventEpoch && session == null) return; else _eventEpoch = epoch;
             if (root != this)
-                _cell.OnChange(eventType, this,  this, epoch, session);
+                _cell.OnChange(eventType, root,  this, epoch, session);
+            if (Parent != null)
+                Parent.OnChange(eventType, root, this, epoch, session);
         }
     }
 }

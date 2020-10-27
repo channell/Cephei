@@ -71,8 +71,8 @@ module FDStepConditionEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDVanillaEngine>) l
 
                 let source () = Helper.sourceFold (_FDStepConditionEngine.source + ".Factory") 
-                                               [| _FDStepConditionEngine.source
-                                               ;  _Process.source
+
+                                               [| _Process.source
                                                ;  _timeSteps.source
                                                ;  _gridPoints.source
                                                ;  _timeDependent.source
@@ -205,8 +205,8 @@ module FDStepConditionEngineFunction =
                 let format (o : FDStepConditionEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FDStepConditionEngine.source + ".SetStepCondition") 
-                                               [| _FDStepConditionEngine.source
-                                               ;  _impl.source
+
+                                               [| _impl.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDStepConditionEngine.cell
@@ -243,8 +243,8 @@ module FDStepConditionEngineFunction =
                 let format (o : FDStepConditionEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FDStepConditionEngine.source + ".EnsureStrikeInGrid") 
-                                               [| _FDStepConditionEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDStepConditionEngine.cell
                                 |]
@@ -279,8 +279,8 @@ module FDStepConditionEngineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FDStepConditionEngine.source + ".GetResidualTime") 
-                                               [| _FDStepConditionEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDStepConditionEngine.cell
                                 |]
@@ -315,8 +315,8 @@ module FDStepConditionEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_FDStepConditionEngine.source + ".Grid") 
-                                               [| _FDStepConditionEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDStepConditionEngine.cell
                                 |]
@@ -351,8 +351,8 @@ module FDStepConditionEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 
                 let source () = Helper.sourceFold (_FDStepConditionEngine.source + ".IntrinsicValues_") 
-                                               [| _FDStepConditionEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDStepConditionEngine.cell
                                 |]

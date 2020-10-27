@@ -232,8 +232,8 @@ module BlackSwaptionEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_BlackSwaptionEngine.source + ".TermStructure") 
-                                               [| _BlackSwaptionEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackSwaptionEngine.cell
                                 |]
@@ -268,8 +268,8 @@ module BlackSwaptionEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<SwaptionVolatilityStructure>>) l
 
                 let source () = Helper.sourceFold (_BlackSwaptionEngine.source + ".Volatility") 
-                                               [| _BlackSwaptionEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackSwaptionEngine.cell
                                 |]

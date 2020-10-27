@@ -142,8 +142,8 @@ module ConstantDefaultIntensityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConstantDefaultIntensity.source + ".DefaultRecovery") 
-                                               [| _ConstantDefaultIntensity.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _s.source
                                                |]
                 let hash = Helper.hashFold 
@@ -190,8 +190,8 @@ module ConstantDefaultIntensityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConstantDefaultIntensity.source + ".HazardRate") 
-                                               [| _ConstantDefaultIntensity.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _s.source
                                                |]
                 let hash = Helper.hashFold 

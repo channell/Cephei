@@ -151,8 +151,8 @@ module AbcdFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Abcd.source + ".GLOBAL") 
-                                               [| _Abcd.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Abcd.cell
                                 |]
@@ -199,8 +199,8 @@ module AbcdFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
                 let source () = Helper.sourceFold (_Abcd.source + ".Interpolate") 
-                                               [| _Abcd.source
-                                               ;  _xBegin.source
+
+                                               [| _xBegin.source
                                                ;  _size.source
                                                ;  _yBegin.source
                                                |]

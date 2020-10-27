@@ -62,8 +62,8 @@ module StepConditionSetFunction =
                 let format (o : StepConditionSet) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_StepConditionSet.source + ".ApplyTo") 
-                                               [| _StepConditionSet.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 

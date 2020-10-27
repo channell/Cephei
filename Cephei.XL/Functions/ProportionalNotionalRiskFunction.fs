@@ -111,8 +111,8 @@ module ProportionalNotionalRiskFunction =
                 let format (o : ProportionalNotionalRisk) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ProportionalNotionalRisk.source + ".UpdatePath") 
-                                               [| _ProportionalNotionalRisk.source
-                                               ;  _events.source
+
+                                               [| _events.source
                                                ;  _path.source
                                                |]
                 let hash = Helper.hashFold 

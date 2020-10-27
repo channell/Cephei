@@ -62,8 +62,8 @@ module FdmAmericanStepConditionFunction =
                 let format (o : FdmAmericanStepCondition) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FdmAmericanStepCondition.source + ".ApplyTo") 
-                                               [| _FdmAmericanStepCondition.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 

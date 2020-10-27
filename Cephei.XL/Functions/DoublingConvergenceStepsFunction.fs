@@ -54,8 +54,8 @@ module DoublingConvergenceStepsFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DoublingConvergenceSteps.source + ".InitialSamples") 
-                                               [| _DoublingConvergenceSteps.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DoublingConvergenceSteps.cell
                                 |]
@@ -94,8 +94,8 @@ module DoublingConvergenceStepsFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DoublingConvergenceSteps.source + ".NextSamples") 
-                                               [| _DoublingConvergenceSteps.source
-                                               ;  _current.source
+
+                                               [| _current.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DoublingConvergenceSteps.cell

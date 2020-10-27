@@ -114,8 +114,8 @@ module BiCGStabFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_BiCGStab.source + ".MatrixMult") 
-                                               [| _BiCGStab.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BiCGStab.cell
@@ -161,8 +161,8 @@ module BiCGStabFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BiCGStabResult>) l
 
                 let source () = Helper.sourceFold (_BiCGStab.source + ".Solve") 
-                                               [| _BiCGStab.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                ;  _x0.source
                                                |]
                 let hash = Helper.hashFold 

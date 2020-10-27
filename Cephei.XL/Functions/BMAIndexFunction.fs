@@ -99,8 +99,8 @@ module BMAIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".FixingSchedule") 
-                                               [| _BMAIndex.source
-                                               ;  _start.source
+
+                                               [| _start.source
                                                ;  _End.source
                                                |]
                 let hash = Helper.hashFold 
@@ -143,8 +143,8 @@ module BMAIndexFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".ForecastFixing") 
-                                               [| _BMAIndex.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
@@ -181,8 +181,8 @@ module BMAIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".ForwardingTermStructure") 
-                                               [| _BMAIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
@@ -221,8 +221,8 @@ module BMAIndexFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".IsValidFixingDate") 
-                                               [| _BMAIndex.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
@@ -263,8 +263,8 @@ module BMAIndexFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".MaturityDate") 
-                                               [| _BMAIndex.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
@@ -301,8 +301,8 @@ module BMAIndexFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".Name") 
-                                               [| _BMAIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
@@ -337,8 +337,8 @@ module BMAIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".Currency") 
-                                               [| _BMAIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
@@ -373,8 +373,8 @@ module BMAIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".DayCounter") 
-                                               [| _BMAIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
@@ -409,8 +409,8 @@ module BMAIndexFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".FamilyName") 
-                                               [| _BMAIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
@@ -453,8 +453,8 @@ module BMAIndexFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".Fixing") 
-                                               [| _BMAIndex.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -493,8 +493,8 @@ module BMAIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".FixingCalendar") 
-                                               [| _BMAIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
@@ -533,8 +533,8 @@ module BMAIndexFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".FixingDate") 
-                                               [| _BMAIndex.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
@@ -571,8 +571,8 @@ module BMAIndexFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".FixingDays") 
-                                               [| _BMAIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
@@ -611,8 +611,8 @@ module BMAIndexFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".PastFixing") 
-                                               [| _BMAIndex.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
@@ -649,8 +649,8 @@ module BMAIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".Tenor") 
-                                               [| _BMAIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
@@ -685,8 +685,8 @@ module BMAIndexFunction =
                 let format (o : BMAIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".Update") 
-                                               [| _BMAIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
@@ -725,8 +725,8 @@ module BMAIndexFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".ValueDate") 
-                                               [| _BMAIndex.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
@@ -775,8 +775,8 @@ module BMAIndexFunction =
                 let format (o : BMAIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".AddFixing") 
-                                               [| _BMAIndex.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -829,8 +829,8 @@ module BMAIndexFunction =
                 let format (o : BMAIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".AddFixings") 
-                                               [| _BMAIndex.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -879,8 +879,8 @@ module BMAIndexFunction =
                 let format (o : BMAIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".AddFixings") 
-                                               [| _BMAIndex.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -919,8 +919,8 @@ module BMAIndexFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".AllowsNativeFixings") 
-                                               [| _BMAIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
@@ -955,8 +955,8 @@ module BMAIndexFunction =
                 let format (o : BMAIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".ClearFixings") 
-                                               [| _BMAIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
@@ -995,8 +995,8 @@ module BMAIndexFunction =
                 let format (o : BMAIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".RegisterWith") 
-                                               [| _BMAIndex.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
@@ -1033,8 +1033,8 @@ module BMAIndexFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".TimeSeries") 
-                                               [| _BMAIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell
                                 |]
@@ -1073,8 +1073,8 @@ module BMAIndexFunction =
                 let format (o : BMAIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BMAIndex.source + ".UnregisterWith") 
-                                               [| _BMAIndex.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMAIndex.cell

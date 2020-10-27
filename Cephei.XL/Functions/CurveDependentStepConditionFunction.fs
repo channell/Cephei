@@ -62,8 +62,8 @@ module CurveDependentStepConditionFunction =
                 let format (o : CurveDependentStepCondition) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CurveDependentStepCondition.source + ".ApplyTo") 
-                                               [| _CurveDependentStepCondition.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 

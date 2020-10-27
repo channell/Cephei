@@ -54,8 +54,8 @@ module CreditDefaultSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".AccrualRebateNPV") 
-                                               [| _CreditDefaultSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
                                 |]
@@ -106,8 +106,8 @@ module CreditDefaultSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".ConventionalSpread") 
-                                               [| _CreditDefaultSwap.source
-                                               ;  _conventionalRecovery.source
+
+                                               [| _conventionalRecovery.source
                                                ;  _discountCurve.source
                                                ;  _dayCounter.source
                                                ;  _model.source
@@ -150,8 +150,8 @@ module CreditDefaultSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".CouponLegBPS") 
-                                               [| _CreditDefaultSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
                                 |]
@@ -186,8 +186,8 @@ module CreditDefaultSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".CouponLegNPV") 
-                                               [| _CreditDefaultSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
                                 |]
@@ -222,8 +222,8 @@ module CreditDefaultSwapFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".Coupons") 
-                                               [| _CreditDefaultSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
                                 |]
@@ -500,8 +500,8 @@ module CreditDefaultSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".DefaultLegNPV") 
-                                               [| _CreditDefaultSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
                                 |]
@@ -536,8 +536,8 @@ module CreditDefaultSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".FairSpread") 
-                                               [| _CreditDefaultSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
                                 |]
@@ -574,8 +574,8 @@ module CreditDefaultSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".FairUpfront") 
-                                               [| _CreditDefaultSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
                                 |]
@@ -634,8 +634,8 @@ module CreditDefaultSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".ImpliedHazardRate") 
-                                               [| _CreditDefaultSwap.source
-                                               ;  _targetNPV.source
+
+                                               [| _targetNPV.source
                                                ;  _discountCurve.source
                                                ;  _dayCounter.source
                                                ;  _recoveryRate.source
@@ -682,8 +682,8 @@ module CreditDefaultSwapFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".IsExpired") 
-                                               [| _CreditDefaultSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
                                 |]
@@ -718,8 +718,8 @@ module CreditDefaultSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".Notional") 
-                                               [| _CreditDefaultSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
                                 |]
@@ -754,8 +754,8 @@ module CreditDefaultSwapFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".PaysAtDefaultTime") 
-                                               [| _CreditDefaultSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
                                 |]
@@ -790,8 +790,8 @@ module CreditDefaultSwapFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".ProtectionEndDate") 
-                                               [| _CreditDefaultSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
                                 |]
@@ -826,8 +826,8 @@ module CreditDefaultSwapFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".ProtectionStartDate") 
-                                               [| _CreditDefaultSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
                                 |]
@@ -862,8 +862,8 @@ module CreditDefaultSwapFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".RebatesAccrual") 
-                                               [| _CreditDefaultSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
                                 |]
@@ -898,8 +898,8 @@ module CreditDefaultSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".RunningSpread") 
-                                               [| _CreditDefaultSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
                                 |]
@@ -934,8 +934,8 @@ module CreditDefaultSwapFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".SettlesAccrual") 
-                                               [| _CreditDefaultSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
                                 |]
@@ -970,8 +970,8 @@ module CreditDefaultSwapFunction =
                 let format (o : Protection.Side) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".Side") 
-                                               [| _CreditDefaultSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
                                 |]
@@ -1006,8 +1006,8 @@ module CreditDefaultSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".Upfront") 
-                                               [| _CreditDefaultSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
                                 |]
@@ -1042,8 +1042,8 @@ module CreditDefaultSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".UpfrontBPS") 
-                                               [| _CreditDefaultSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
                                 |]
@@ -1078,8 +1078,8 @@ module CreditDefaultSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".UpfrontNPV") 
-                                               [| _CreditDefaultSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
                                 |]
@@ -1114,8 +1114,8 @@ module CreditDefaultSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".CASH") 
-                                               [| _CreditDefaultSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
                                 |]
@@ -1150,8 +1150,8 @@ module CreditDefaultSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".ErrorEstimate") 
-                                               [| _CreditDefaultSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
                                 |]
@@ -1186,8 +1186,8 @@ module CreditDefaultSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".NPV") 
-                                               [| _CreditDefaultSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
                                 |]
@@ -1226,8 +1226,8 @@ module CreditDefaultSwapFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".Result") 
-                                               [| _CreditDefaultSwap.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
@@ -1268,8 +1268,8 @@ module CreditDefaultSwapFunction =
                 let format (o : CreditDefaultSwap) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".SetPricingEngine") 
-                                               [| _CreditDefaultSwap.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
@@ -1306,8 +1306,8 @@ module CreditDefaultSwapFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".ValuationDate") 
-                                               [| _CreditDefaultSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CreditDefaultSwap.cell
                                 |]

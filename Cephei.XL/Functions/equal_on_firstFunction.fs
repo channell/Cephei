@@ -63,8 +63,8 @@ module equal_on_firstFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_equal_on_first.source + ".Equals") 
-                                               [| _equal_on_first.source
-                                               ;  _p1.source
+
+                                               [| _p1.source
                                                ;  _p2.source
                                                |]
                 let hash = Helper.hashFold 

@@ -95,8 +95,8 @@ module NzocrFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightIndex>) l
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".Clone") 
-                                               [| _Nzocr.source
-                                               ;  _h.source
+
+                                               [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
@@ -133,8 +133,8 @@ module NzocrFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".BusinessDayConvention") 
-                                               [| _Nzocr.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
@@ -169,8 +169,8 @@ module NzocrFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".EndOfMonth") 
-                                               [| _Nzocr.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
@@ -217,8 +217,8 @@ module NzocrFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".ForecastFixing1") 
-                                               [| _Nzocr.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _t.source
                                                |]
@@ -263,8 +263,8 @@ module NzocrFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".ForecastFixing") 
-                                               [| _Nzocr.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
@@ -301,8 +301,8 @@ module NzocrFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".ForwardingTermStructure") 
-                                               [| _Nzocr.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
@@ -341,8 +341,8 @@ module NzocrFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".MaturityDate") 
-                                               [| _Nzocr.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
@@ -379,8 +379,8 @@ module NzocrFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".Currency") 
-                                               [| _Nzocr.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
@@ -415,8 +415,8 @@ module NzocrFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".DayCounter") 
-                                               [| _Nzocr.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
@@ -451,8 +451,8 @@ module NzocrFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".FamilyName") 
-                                               [| _Nzocr.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
@@ -495,8 +495,8 @@ module NzocrFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".Fixing") 
-                                               [| _Nzocr.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -535,8 +535,8 @@ module NzocrFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".FixingCalendar") 
-                                               [| _Nzocr.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
@@ -575,8 +575,8 @@ module NzocrFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".FixingDate") 
-                                               [| _Nzocr.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
@@ -613,8 +613,8 @@ module NzocrFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".FixingDays") 
-                                               [| _Nzocr.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
@@ -653,8 +653,8 @@ module NzocrFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".IsValidFixingDate") 
-                                               [| _Nzocr.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
@@ -691,8 +691,8 @@ module NzocrFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".Name") 
-                                               [| _Nzocr.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
@@ -731,8 +731,8 @@ module NzocrFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".PastFixing") 
-                                               [| _Nzocr.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
@@ -769,8 +769,8 @@ module NzocrFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".Tenor") 
-                                               [| _Nzocr.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
@@ -805,8 +805,8 @@ module NzocrFunction =
                 let format (o : Nzocr) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".Update") 
-                                               [| _Nzocr.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
@@ -845,8 +845,8 @@ module NzocrFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".ValueDate") 
-                                               [| _Nzocr.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
@@ -895,8 +895,8 @@ module NzocrFunction =
                 let format (o : Nzocr) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".AddFixing") 
-                                               [| _Nzocr.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -949,8 +949,8 @@ module NzocrFunction =
                 let format (o : Nzocr) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".AddFixings") 
-                                               [| _Nzocr.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -999,8 +999,8 @@ module NzocrFunction =
                 let format (o : Nzocr) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".AddFixings1") 
-                                               [| _Nzocr.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1039,8 +1039,8 @@ module NzocrFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".AllowsNativeFixings") 
-                                               [| _Nzocr.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
@@ -1075,8 +1075,8 @@ module NzocrFunction =
                 let format (o : Nzocr) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".ClearFixings") 
-                                               [| _Nzocr.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
@@ -1115,8 +1115,8 @@ module NzocrFunction =
                 let format (o : Nzocr) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".RegisterWith") 
-                                               [| _Nzocr.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
@@ -1153,8 +1153,8 @@ module NzocrFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".TimeSeries") 
-                                               [| _Nzocr.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell
                                 |]
@@ -1193,8 +1193,8 @@ module NzocrFunction =
                 let format (o : Nzocr) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Nzocr.source + ".UnregisterWith") 
-                                               [| _Nzocr.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Nzocr.cell

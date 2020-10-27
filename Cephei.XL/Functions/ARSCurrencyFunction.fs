@@ -85,8 +85,8 @@ module ARSCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ARSCurrency.source + ".Code") 
-                                               [| _ARSCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ARSCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module ARSCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ARSCurrency.source + ".Empty") 
-                                               [| _ARSCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ARSCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module ARSCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ARSCurrency.source + ".Equals") 
-                                               [| _ARSCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ARSCurrency.cell
@@ -199,8 +199,8 @@ module ARSCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ARSCurrency.source + ".Format") 
-                                               [| _ARSCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ARSCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module ARSCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ARSCurrency.source + ".FractionsPerUnit") 
-                                               [| _ARSCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ARSCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module ARSCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ARSCurrency.source + ".FractionSymbol") 
-                                               [| _ARSCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ARSCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module ARSCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ARSCurrency.source + ".Name") 
-                                               [| _ARSCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ARSCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module ARSCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ARSCurrency.source + ".NumericCode") 
-                                               [| _ARSCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ARSCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module ARSCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_ARSCurrency.source + ".Rounding") 
-                                               [| _ARSCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ARSCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module ARSCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ARSCurrency.source + ".Symbol") 
-                                               [| _ARSCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ARSCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module ARSCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ARSCurrency.source + ".ToString") 
-                                               [| _ARSCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ARSCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module ARSCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_ARSCurrency.source + ".TriangulationCurrency") 
-                                               [| _ARSCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ARSCurrency.cell
                                 |]

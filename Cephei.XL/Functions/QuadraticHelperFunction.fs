@@ -54,8 +54,8 @@ module QuadraticHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_QuadraticHelper.source + ".FNext") 
-                                               [| _QuadraticHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _QuadraticHelper.cell
                                 |]
@@ -94,8 +94,8 @@ module QuadraticHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_QuadraticHelper.source + ".Primitive") 
-                                               [| _QuadraticHelper.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _QuadraticHelper.cell
@@ -203,8 +203,8 @@ module QuadraticHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_QuadraticHelper.source + ".Value") 
-                                               [| _QuadraticHelper.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _QuadraticHelper.cell

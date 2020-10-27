@@ -54,8 +54,8 @@ module InstrumentFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Instrument.source + ".CASH") 
-                                               [| _Instrument.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Instrument.cell
                                 |]
@@ -90,8 +90,8 @@ module InstrumentFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Instrument.source + ".ErrorEstimate") 
-                                               [| _Instrument.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Instrument.cell
                                 |]
@@ -126,8 +126,8 @@ module InstrumentFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Instrument.source + ".IsExpired") 
-                                               [| _Instrument.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Instrument.cell
                                 |]
@@ -162,8 +162,8 @@ module InstrumentFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Instrument.source + ".NPV") 
-                                               [| _Instrument.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Instrument.cell
                                 |]
@@ -202,8 +202,8 @@ module InstrumentFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Instrument.source + ".Result") 
-                                               [| _Instrument.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Instrument.cell
@@ -244,8 +244,8 @@ module InstrumentFunction =
                 let format (o : Instrument) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Instrument.source + ".SetPricingEngine") 
-                                               [| _Instrument.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Instrument.cell
@@ -282,8 +282,8 @@ module InstrumentFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Instrument.source + ".ValuationDate") 
-                                               [| _Instrument.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Instrument.cell
                                 |]

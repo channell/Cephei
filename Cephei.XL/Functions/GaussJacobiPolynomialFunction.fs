@@ -58,8 +58,8 @@ module GaussJacobiPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussJacobiPolynomial.source + ".Alpha") 
-                                               [| _GaussJacobiPolynomial.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussJacobiPolynomial.cell
@@ -100,8 +100,8 @@ module GaussJacobiPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussJacobiPolynomial.source + ".Beta") 
-                                               [| _GaussJacobiPolynomial.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussJacobiPolynomial.cell
@@ -181,8 +181,8 @@ module GaussJacobiPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussJacobiPolynomial.source + ".Mu_0") 
-                                               [| _GaussJacobiPolynomial.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussJacobiPolynomial.cell
                                 |]
@@ -221,8 +221,8 @@ module GaussJacobiPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussJacobiPolynomial.source + ".W") 
-                                               [| _GaussJacobiPolynomial.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussJacobiPolynomial.cell
@@ -267,8 +267,8 @@ module GaussJacobiPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussJacobiPolynomial.source + ".Value") 
-                                               [| _GaussJacobiPolynomial.source
-                                               ;  _n.source
+
+                                               [| _n.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -315,8 +315,8 @@ module GaussJacobiPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussJacobiPolynomial.source + ".WeightedValue") 
-                                               [| _GaussJacobiPolynomial.source
-                                               ;  _n.source
+
+                                               [| _n.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 

@@ -58,8 +58,8 @@ module FdmBlackScholesSolverFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FdmBlackScholesSolver.source + ".DeltaAt") 
-                                               [| _FdmBlackScholesSolver.source
-                                               ;  _s.source
+
+                                               [| _s.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmBlackScholesSolver.cell
@@ -173,8 +173,8 @@ module FdmBlackScholesSolverFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FdmBlackScholesSolver.source + ".GammaAt") 
-                                               [| _FdmBlackScholesSolver.source
-                                               ;  _s.source
+
+                                               [| _s.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmBlackScholesSolver.cell
@@ -215,8 +215,8 @@ module FdmBlackScholesSolverFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FdmBlackScholesSolver.source + ".ThetaAt") 
-                                               [| _FdmBlackScholesSolver.source
-                                               ;  _s.source
+
+                                               [| _s.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmBlackScholesSolver.cell
@@ -257,8 +257,8 @@ module FdmBlackScholesSolverFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FdmBlackScholesSolver.source + ".ValueAt") 
-                                               [| _FdmBlackScholesSolver.source
-                                               ;  _s.source
+
+                                               [| _s.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmBlackScholesSolver.cell

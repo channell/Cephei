@@ -66,8 +66,8 @@ module FaceValueClaimFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FaceValueClaim.source + ".Amount") 
-                                               [| _FaceValueClaim.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _notional.source
                                                ;  _recoveryRate.source
                                                |]
@@ -112,8 +112,8 @@ module FaceValueClaimFunction =
                 let format (o : FaceValueClaim) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FaceValueClaim.source + ".RegisterWith") 
-                                               [| _FaceValueClaim.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FaceValueClaim.cell
@@ -154,8 +154,8 @@ module FaceValueClaimFunction =
                 let format (o : FaceValueClaim) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FaceValueClaim.source + ".UnregisterWith") 
-                                               [| _FaceValueClaim.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FaceValueClaim.cell
@@ -192,8 +192,8 @@ module FaceValueClaimFunction =
                 let format (o : FaceValueClaim) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FaceValueClaim.source + ".Update") 
-                                               [| _FaceValueClaim.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FaceValueClaim.cell
                                 |]

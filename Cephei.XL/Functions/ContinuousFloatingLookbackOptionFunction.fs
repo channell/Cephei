@@ -115,8 +115,8 @@ module ContinuousFloatingLookbackOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Delta") 
-                                               [| _ContinuousFloatingLookbackOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
@@ -151,8 +151,8 @@ module ContinuousFloatingLookbackOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".DeltaForward") 
-                                               [| _ContinuousFloatingLookbackOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
@@ -187,8 +187,8 @@ module ContinuousFloatingLookbackOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".DividendRho") 
-                                               [| _ContinuousFloatingLookbackOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
@@ -223,8 +223,8 @@ module ContinuousFloatingLookbackOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Elasticity") 
-                                               [| _ContinuousFloatingLookbackOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
@@ -259,8 +259,8 @@ module ContinuousFloatingLookbackOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Gamma") 
-                                               [| _ContinuousFloatingLookbackOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
@@ -295,8 +295,8 @@ module ContinuousFloatingLookbackOptionFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".IsExpired") 
-                                               [| _ContinuousFloatingLookbackOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
@@ -331,8 +331,8 @@ module ContinuousFloatingLookbackOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".ItmCashProbability") 
-                                               [| _ContinuousFloatingLookbackOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
@@ -367,8 +367,8 @@ module ContinuousFloatingLookbackOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Rho") 
-                                               [| _ContinuousFloatingLookbackOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
@@ -403,8 +403,8 @@ module ContinuousFloatingLookbackOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".StrikeSensitivity") 
-                                               [| _ContinuousFloatingLookbackOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
@@ -439,8 +439,8 @@ module ContinuousFloatingLookbackOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Theta") 
-                                               [| _ContinuousFloatingLookbackOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
@@ -475,8 +475,8 @@ module ContinuousFloatingLookbackOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".ThetaPerDay") 
-                                               [| _ContinuousFloatingLookbackOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
@@ -511,8 +511,8 @@ module ContinuousFloatingLookbackOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Vega") 
-                                               [| _ContinuousFloatingLookbackOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
@@ -547,8 +547,8 @@ module ContinuousFloatingLookbackOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
                 let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Exercise") 
-                                               [| _ContinuousFloatingLookbackOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
@@ -583,8 +583,8 @@ module ContinuousFloatingLookbackOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
                 let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Payoff") 
-                                               [| _ContinuousFloatingLookbackOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
@@ -619,8 +619,8 @@ module ContinuousFloatingLookbackOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".CASH") 
-                                               [| _ContinuousFloatingLookbackOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
@@ -655,8 +655,8 @@ module ContinuousFloatingLookbackOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".ErrorEstimate") 
-                                               [| _ContinuousFloatingLookbackOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
@@ -691,8 +691,8 @@ module ContinuousFloatingLookbackOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".NPV") 
-                                               [| _ContinuousFloatingLookbackOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]
@@ -731,8 +731,8 @@ module ContinuousFloatingLookbackOptionFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".Result") 
-                                               [| _ContinuousFloatingLookbackOption.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
@@ -773,8 +773,8 @@ module ContinuousFloatingLookbackOptionFunction =
                 let format (o : ContinuousFloatingLookbackOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".SetPricingEngine") 
-                                               [| _ContinuousFloatingLookbackOption.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
@@ -811,8 +811,8 @@ module ContinuousFloatingLookbackOptionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ContinuousFloatingLookbackOption.source + ".ValuationDate") 
-                                               [| _ContinuousFloatingLookbackOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousFloatingLookbackOption.cell
                                 |]

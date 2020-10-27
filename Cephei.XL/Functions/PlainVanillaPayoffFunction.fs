@@ -54,8 +54,8 @@ module PlainVanillaPayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PlainVanillaPayoff.source + ".Name") 
-                                               [| _PlainVanillaPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PlainVanillaPayoff.cell
                                 |]
@@ -137,8 +137,8 @@ module PlainVanillaPayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PlainVanillaPayoff.source + ".Value") 
-                                               [| _PlainVanillaPayoff.source
-                                               ;  _price.source
+
+                                               [| _price.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PlainVanillaPayoff.cell
@@ -175,8 +175,8 @@ module PlainVanillaPayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PlainVanillaPayoff.source + ".Description") 
-                                               [| _PlainVanillaPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PlainVanillaPayoff.cell
                                 |]
@@ -211,8 +211,8 @@ module PlainVanillaPayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PlainVanillaPayoff.source + ".Strike") 
-                                               [| _PlainVanillaPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PlainVanillaPayoff.cell
                                 |]
@@ -247,8 +247,8 @@ module PlainVanillaPayoffFunction =
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PlainVanillaPayoff.source + ".OptionType") 
-                                               [| _PlainVanillaPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PlainVanillaPayoff.cell
                                 |]
@@ -287,8 +287,8 @@ module PlainVanillaPayoffFunction =
                 let format (o : PlainVanillaPayoff) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PlainVanillaPayoff.source + ".Accept") 
-                                               [| _PlainVanillaPayoff.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PlainVanillaPayoff.cell

@@ -93,8 +93,8 @@ module OneDayCounterFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OneDayCounter.source + ".DayCount") 
-                                               [| _OneDayCounter.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                |]
                 let hash = Helper.hashFold 
@@ -133,8 +133,8 @@ module OneDayCounterFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_OneDayCounter.source + ".DayCounter") 
-                                               [| _OneDayCounter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OneDayCounter.cell
                                 |]
@@ -169,8 +169,8 @@ module OneDayCounterFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OneDayCounter.source + ".Empty") 
-                                               [| _OneDayCounter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OneDayCounter.cell
                                 |]
@@ -209,8 +209,8 @@ module OneDayCounterFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OneDayCounter.source + ".Equals") 
-                                               [| _OneDayCounter.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneDayCounter.cell
@@ -247,8 +247,8 @@ module OneDayCounterFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OneDayCounter.source + ".Name") 
-                                               [| _OneDayCounter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OneDayCounter.cell
                                 |]
@@ -283,8 +283,8 @@ module OneDayCounterFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OneDayCounter.source + ".ToString") 
-                                               [| _OneDayCounter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OneDayCounter.cell
                                 |]
@@ -335,8 +335,8 @@ module OneDayCounterFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OneDayCounter.source + ".YearFraction") 
-                                               [| _OneDayCounter.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _refPeriodStart.source
                                                ;  _refPeriodEnd.source
@@ -387,8 +387,8 @@ module OneDayCounterFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OneDayCounter.source + ".YearFraction1") 
-                                               [| _OneDayCounter.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                |]
                 let hash = Helper.hashFold 

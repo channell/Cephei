@@ -54,8 +54,8 @@ module SwapRateHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_SwapRateHelper.source + ".ForwardStart") 
-                                               [| _SwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwapRateHelper.cell
                                 |]
@@ -90,8 +90,8 @@ module SwapRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwapRateHelper.source + ".ImpliedQuote") 
-                                               [| _SwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwapRateHelper.cell
                                 |]
@@ -130,8 +130,8 @@ module SwapRateHelperFunction =
                 let format (o : SwapRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SwapRateHelper.source + ".SetTermStructure") 
-                                               [| _SwapRateHelper.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwapRateHelper.cell
@@ -168,8 +168,8 @@ module SwapRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwapRateHelper.source + ".Spread") 
-                                               [| _SwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwapRateHelper.cell
                                 |]
@@ -204,8 +204,8 @@ module SwapRateHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VanillaSwap>) l
 
                 let source () = Helper.sourceFold (_SwapRateHelper.source + ".Swap") 
-                                               [| _SwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwapRateHelper.cell
                                 |]
@@ -604,8 +604,8 @@ module SwapRateHelperFunction =
                 let format (o : SwapRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SwapRateHelper.source + ".Update") 
-                                               [| _SwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwapRateHelper.cell
                                 |]
@@ -640,8 +640,8 @@ module SwapRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_SwapRateHelper.source + ".EarliestDate") 
-                                               [| _SwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwapRateHelper.cell
                                 |]
@@ -676,8 +676,8 @@ module SwapRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_SwapRateHelper.source + ".LatestDate") 
-                                               [| _SwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwapRateHelper.cell
                                 |]
@@ -712,8 +712,8 @@ module SwapRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_SwapRateHelper.source + ".LatestRelevantDate") 
-                                               [| _SwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwapRateHelper.cell
                                 |]
@@ -748,8 +748,8 @@ module SwapRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_SwapRateHelper.source + ".MaturityDate") 
-                                               [| _SwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwapRateHelper.cell
                                 |]
@@ -784,8 +784,8 @@ module SwapRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_SwapRateHelper.source + ".PillarDate") 
-                                               [| _SwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwapRateHelper.cell
                                 |]
@@ -820,8 +820,8 @@ module SwapRateHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
                 let source () = Helper.sourceFold (_SwapRateHelper.source + ".Quote") 
-                                               [| _SwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwapRateHelper.cell
                                 |]
@@ -856,8 +856,8 @@ module SwapRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwapRateHelper.source + ".QuoteError") 
-                                               [| _SwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwapRateHelper.cell
                                 |]
@@ -892,8 +892,8 @@ module SwapRateHelperFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SwapRateHelper.source + ".QuoteIsValid") 
-                                               [| _SwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwapRateHelper.cell
                                 |]
@@ -928,8 +928,8 @@ module SwapRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwapRateHelper.source + ".QuoteValue") 
-                                               [| _SwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwapRateHelper.cell
                                 |]
@@ -968,8 +968,8 @@ module SwapRateHelperFunction =
                 let format (o : SwapRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SwapRateHelper.source + ".RegisterWith") 
-                                               [| _SwapRateHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwapRateHelper.cell
@@ -1010,8 +1010,8 @@ module SwapRateHelperFunction =
                 let format (o : SwapRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SwapRateHelper.source + ".UnregisterWith") 
-                                               [| _SwapRateHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwapRateHelper.cell

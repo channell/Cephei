@@ -153,8 +153,8 @@ module TreeCallableFixedRateBondEngineFunction =
                 let format (o : TreeCallableFixedRateBondEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TreeCallableFixedRateBondEngine.source + ".Update") 
-                                               [| _TreeCallableFixedRateBondEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TreeCallableFixedRateBondEngine.cell
                                 |]
@@ -194,8 +194,8 @@ module TreeCallableFixedRateBondEngineFunction =
                 let format (o : TreeCallableFixedRateBondEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TreeCallableFixedRateBondEngine.source + ".SetModel") 
-                                               [| _TreeCallableFixedRateBondEngine.source
-                                               ;  _model.source
+
+                                               [| _model.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TreeCallableFixedRateBondEngine.cell
@@ -237,8 +237,8 @@ module TreeCallableFixedRateBondEngineFunction =
                 let format (o : TreeCallableFixedRateBondEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TreeCallableFixedRateBondEngine.source + ".RegisterWith") 
-                                               [| _TreeCallableFixedRateBondEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TreeCallableFixedRateBondEngine.cell
@@ -275,8 +275,8 @@ module TreeCallableFixedRateBondEngineFunction =
                 let format (o : TreeCallableFixedRateBondEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TreeCallableFixedRateBondEngine.source + ".Reset") 
-                                               [| _TreeCallableFixedRateBondEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TreeCallableFixedRateBondEngine.cell
                                 |]
@@ -315,8 +315,8 @@ module TreeCallableFixedRateBondEngineFunction =
                 let format (o : TreeCallableFixedRateBondEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TreeCallableFixedRateBondEngine.source + ".UnregisterWith") 
-                                               [| _TreeCallableFixedRateBondEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TreeCallableFixedRateBondEngine.cell

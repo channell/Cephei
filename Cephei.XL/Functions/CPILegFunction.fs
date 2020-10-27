@@ -109,8 +109,8 @@ module CPILegFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_CPILeg.source + ".Value") 
-                                               [| _CPILeg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPILeg.cell
                                 |]
@@ -149,8 +149,8 @@ module CPILegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
 
                 let source () = Helper.sourceFold (_CPILeg.source + ".WithCaps1") 
-                                               [| _CPILeg.source
-                                               ;  _cap.source
+
+                                               [| _cap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPILeg.cell
@@ -191,8 +191,8 @@ module CPILegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
 
                 let source () = Helper.sourceFold (_CPILeg.source + ".WithCaps") 
-                                               [| _CPILeg.source
-                                               ;  _cap.source
+
+                                               [| _cap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPILeg.cell
@@ -245,8 +245,8 @@ module CPILegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
 
                 let source () = Helper.sourceFold (_CPILeg.source + ".WithExCouponPeriod") 
-                                               [| _CPILeg.source
-                                               ;  _period.source
+
+                                               [| _period.source
                                                ;  _cal.source
                                                ;  _convention.source
                                                ;  _endOfMonth.source
@@ -293,8 +293,8 @@ module CPILegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
 
                 let source () = Helper.sourceFold (_CPILeg.source + ".WithFixedRates1") 
-                                               [| _CPILeg.source
-                                               ;  _fixedRates.source
+
+                                               [| _fixedRates.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPILeg.cell
@@ -335,8 +335,8 @@ module CPILegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
 
                 let source () = Helper.sourceFold (_CPILeg.source + ".WithFixedRates") 
-                                               [| _CPILeg.source
-                                               ;  _fixedRate.source
+
+                                               [| _fixedRate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPILeg.cell
@@ -377,8 +377,8 @@ module CPILegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
 
                 let source () = Helper.sourceFold (_CPILeg.source + ".WithFixingDays") 
-                                               [| _CPILeg.source
-                                               ;  _fixingDays.source
+
+                                               [| _fixingDays.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPILeg.cell
@@ -419,8 +419,8 @@ module CPILegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
 
                 let source () = Helper.sourceFold (_CPILeg.source + ".WithFixingDays1") 
-                                               [| _CPILeg.source
-                                               ;  _fixingDays.source
+
+                                               [| _fixingDays.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPILeg.cell
@@ -461,8 +461,8 @@ module CPILegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
 
                 let source () = Helper.sourceFold (_CPILeg.source + ".WithFloors") 
-                                               [| _CPILeg.source
-                                               ;  _floors.source
+
+                                               [| _floors.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPILeg.cell
@@ -503,8 +503,8 @@ module CPILegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
 
                 let source () = Helper.sourceFold (_CPILeg.source + ".WithFloors1") 
-                                               [| _CPILeg.source
-                                               ;  _floors.source
+
+                                               [| _floors.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPILeg.cell
@@ -545,8 +545,8 @@ module CPILegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
 
                 let source () = Helper.sourceFold (_CPILeg.source + ".WithObservationInterpolation") 
-                                               [| _CPILeg.source
-                                               ;  _interp.source
+
+                                               [| _interp.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPILeg.cell
@@ -587,8 +587,8 @@ module CPILegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
 
                 let source () = Helper.sourceFold (_CPILeg.source + ".WithPaymentCalendar") 
-                                               [| _CPILeg.source
-                                               ;  _cal.source
+
+                                               [| _cal.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPILeg.cell
@@ -629,8 +629,8 @@ module CPILegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
 
                 let source () = Helper.sourceFold (_CPILeg.source + ".WithPaymentDayCounter") 
-                                               [| _CPILeg.source
-                                               ;  _dayCounter.source
+
+                                               [| _dayCounter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPILeg.cell
@@ -671,8 +671,8 @@ module CPILegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
 
                 let source () = Helper.sourceFold (_CPILeg.source + ".WithSpreads") 
-                                               [| _CPILeg.source
-                                               ;  _spreads.source
+
+                                               [| _spreads.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPILeg.cell
@@ -713,8 +713,8 @@ module CPILegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
 
                 let source () = Helper.sourceFold (_CPILeg.source + ".WithSpreads1") 
-                                               [| _CPILeg.source
-                                               ;  _spread.source
+
+                                               [| _spread.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPILeg.cell
@@ -755,8 +755,8 @@ module CPILegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPILegBase>) l
 
                 let source () = Helper.sourceFold (_CPILeg.source + ".WithSubtractInflationNominal") 
-                                               [| _CPILeg.source
-                                               ;  _growthOnly.source
+
+                                               [| _growthOnly.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPILeg.cell
@@ -797,8 +797,8 @@ module CPILegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
                 let source () = Helper.sourceFold (_CPILeg.source + ".WithNotionals1") 
-                                               [| _CPILeg.source
-                                               ;  _notionals.source
+
+                                               [| _notionals.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPILeg.cell
@@ -839,8 +839,8 @@ module CPILegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
                 let source () = Helper.sourceFold (_CPILeg.source + ".WithNotionals") 
-                                               [| _CPILeg.source
-                                               ;  _notional.source
+
+                                               [| _notional.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPILeg.cell
@@ -881,8 +881,8 @@ module CPILegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
                 let source () = Helper.sourceFold (_CPILeg.source + ".WithPaymentAdjustment") 
-                                               [| _CPILeg.source
-                                               ;  _convention.source
+
+                                               [| _convention.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPILeg.cell

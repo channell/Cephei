@@ -119,8 +119,8 @@ module PenaltyFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PenaltyFunction.source + ".Value") 
-                                               [| _PenaltyFunction.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PenaltyFunction.cell
@@ -161,8 +161,8 @@ module PenaltyFunctionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_PenaltyFunction.source + ".Values") 
-                                               [| _PenaltyFunction.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PenaltyFunction.cell
@@ -199,8 +199,8 @@ module PenaltyFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PenaltyFunction.source + ".FiniteDifferenceEpsilon") 
-                                               [| _PenaltyFunction.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PenaltyFunction.cell
                                 |]
@@ -243,8 +243,8 @@ module PenaltyFunctionFunction =
                 let format (o : PenaltyFunction) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PenaltyFunction.source + ".Gradient") 
-                                               [| _PenaltyFunction.source
-                                               ;  _grad.source
+
+                                               [| _grad.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -291,8 +291,8 @@ module PenaltyFunctionFunction =
                 let format (o : PenaltyFunction) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PenaltyFunction.source + ".Jacobian") 
-                                               [| _PenaltyFunction.source
-                                               ;  _jac.source
+
+                                               [| _jac.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -339,8 +339,8 @@ module PenaltyFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PenaltyFunction.source + ".ValueAndGradient") 
-                                               [| _PenaltyFunction.source
-                                               ;  _grad.source
+
+                                               [| _grad.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -387,8 +387,8 @@ module PenaltyFunctionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_PenaltyFunction.source + ".ValuesAndJacobian") 
-                                               [| _PenaltyFunction.source
-                                               ;  _jac.source
+
+                                               [| _jac.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 

@@ -54,8 +54,8 @@ module QuantoTermStructureFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_QuantoTermStructure.source + ".Calendar") 
-                                               [| _QuantoTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _QuantoTermStructure.cell
                                 |]
@@ -90,8 +90,8 @@ module QuantoTermStructureFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_QuantoTermStructure.source + ".DayCounter") 
-                                               [| _QuantoTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _QuantoTermStructure.cell
                                 |]
@@ -126,8 +126,8 @@ module QuantoTermStructureFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_QuantoTermStructure.source + ".MaxDate") 
-                                               [| _QuantoTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _QuantoTermStructure.cell
                                 |]
@@ -241,8 +241,8 @@ module QuantoTermStructureFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_QuantoTermStructure.source + ".ReferenceDate") 
-                                               [| _QuantoTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _QuantoTermStructure.cell
                                 |]
@@ -277,8 +277,8 @@ module QuantoTermStructureFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_QuantoTermStructure.source + ".SettlementDays") 
-                                               [| _QuantoTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _QuantoTermStructure.cell
                                 |]

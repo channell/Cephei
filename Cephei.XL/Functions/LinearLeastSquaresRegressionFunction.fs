@@ -55,8 +55,8 @@ module LinearLeastSquaresRegressionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_LinearLeastSquaresRegression.source + ".Coefficients") 
-                                               [| _LinearLeastSquaresRegression.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LinearLeastSquaresRegression.cell
                                 |]
@@ -93,8 +93,8 @@ module LinearLeastSquaresRegressionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_LinearLeastSquaresRegression.source + ".Error") 
-                                               [| _LinearLeastSquaresRegression.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LinearLeastSquaresRegression.cell
                                 |]
@@ -180,8 +180,8 @@ module LinearLeastSquaresRegressionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_LinearLeastSquaresRegression.source + ".Residuals") 
-                                               [| _LinearLeastSquaresRegression.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LinearLeastSquaresRegression.cell
                                 |]
@@ -218,8 +218,8 @@ module LinearLeastSquaresRegressionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_LinearLeastSquaresRegression.source + ".StandardErrors") 
-                                               [| _LinearLeastSquaresRegression.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LinearLeastSquaresRegression.cell
                                 |]

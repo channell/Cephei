@@ -101,8 +101,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".InArrears1") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _flag.source
+
+                                               [| _flag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
@@ -139,8 +139,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".InArrears") 
-                                               [| _DigitalIborLeg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
                                 |]
@@ -175,8 +175,8 @@ module DigitalIborLegFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".Value") 
-                                               [| _DigitalIborLeg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
                                 |]
@@ -215,8 +215,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithCallATM") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _flag.source
+
+                                               [| _flag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
@@ -253,8 +253,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithCallATM1") 
-                                               [| _DigitalIborLeg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
                                 |]
@@ -293,8 +293,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithCallPayoffs1") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _payoff.source
+
+                                               [| _payoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
@@ -335,8 +335,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithCallPayoffs") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _payoffs.source
+
+                                               [| _payoffs.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
@@ -377,8 +377,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithCallStrikes1") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
@@ -419,8 +419,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithCallStrikes") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _strikes.source
+
+                                               [| _strikes.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
@@ -461,8 +461,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithFixingDays") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _fixingDays.source
+
+                                               [| _fixingDays.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
@@ -503,8 +503,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithFixingDays1") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _fixingDays.source
+
+                                               [| _fixingDays.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
@@ -545,8 +545,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithGearings") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _gearings.source
+
+                                               [| _gearings.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
@@ -587,8 +587,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithGearings1") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _gearing.source
+
+                                               [| _gearing.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
@@ -629,8 +629,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithLongCallOption") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _Type.source
+
+                                               [| _Type.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
@@ -671,8 +671,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithLongPutOption") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _Type.source
+
+                                               [| _Type.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
@@ -713,8 +713,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithNotionals") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _notionals.source
+
+                                               [| _notionals.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
@@ -755,8 +755,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithNotionals1") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _notional.source
+
+                                               [| _notional.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
@@ -797,8 +797,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithPaymentAdjustment") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _convention.source
+
+                                               [| _convention.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
@@ -839,8 +839,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithPaymentDayCounter") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _dayCounter.source
+
+                                               [| _dayCounter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
@@ -881,8 +881,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithPutATM") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _flag.source
+
+                                               [| _flag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
@@ -919,8 +919,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithPutATM1") 
-                                               [| _DigitalIborLeg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
                                 |]
@@ -959,8 +959,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithPutPayoffs") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _payoffs.source
+
+                                               [| _payoffs.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
@@ -1001,8 +1001,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithPutPayoffs1") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _payoff.source
+
+                                               [| _payoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
@@ -1043,8 +1043,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithPutStrikes1") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _strikes.source
+
+                                               [| _strikes.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
@@ -1085,8 +1085,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithPutStrikes") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
@@ -1127,8 +1127,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithReplication1") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _replication.source
+
+                                               [| _replication.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
@@ -1165,8 +1165,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithReplication") 
-                                               [| _DigitalIborLeg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
                                 |]
@@ -1205,8 +1205,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithSpreads") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _spreads.source
+
+                                               [| _spreads.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell
@@ -1247,8 +1247,8 @@ module DigitalIborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalIborLeg.source + ".WithSpreads1") 
-                                               [| _DigitalIborLeg.source
-                                               ;  _spread.source
+
+                                               [| _spread.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborLeg.cell

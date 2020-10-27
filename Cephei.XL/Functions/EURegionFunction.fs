@@ -85,8 +85,8 @@ module EURegionFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EURegion.source + ".Code") 
-                                               [| _EURegion.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EURegion.cell
                                 |]
@@ -125,8 +125,8 @@ module EURegionFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EURegion.source + ".Equals") 
-                                               [| _EURegion.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EURegion.cell
@@ -163,8 +163,8 @@ module EURegionFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EURegion.source + ".Name") 
-                                               [| _EURegion.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EURegion.cell
                                 |]

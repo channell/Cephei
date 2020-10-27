@@ -134,8 +134,8 @@ module JibarFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Jibar.source + ".BusinessDayConvention") 
-                                               [| _Jibar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Jibar.cell
                                 |]
@@ -174,8 +174,8 @@ module JibarFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
                 let source () = Helper.sourceFold (_Jibar.source + ".Clone") 
-                                               [| _Jibar.source
-                                               ;  _forwarding.source
+
+                                               [| _forwarding.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Jibar.cell
@@ -212,8 +212,8 @@ module JibarFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Jibar.source + ".EndOfMonth") 
-                                               [| _Jibar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Jibar.cell
                                 |]
@@ -260,8 +260,8 @@ module JibarFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Jibar.source + ".ForecastFixing1") 
-                                               [| _Jibar.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _t.source
                                                |]
@@ -306,8 +306,8 @@ module JibarFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Jibar.source + ".ForecastFixing") 
-                                               [| _Jibar.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Jibar.cell
@@ -344,8 +344,8 @@ module JibarFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_Jibar.source + ".ForwardingTermStructure") 
-                                               [| _Jibar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Jibar.cell
                                 |]
@@ -384,8 +384,8 @@ module JibarFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Jibar.source + ".MaturityDate") 
-                                               [| _Jibar.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Jibar.cell
@@ -422,8 +422,8 @@ module JibarFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_Jibar.source + ".Currency") 
-                                               [| _Jibar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Jibar.cell
                                 |]
@@ -458,8 +458,8 @@ module JibarFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_Jibar.source + ".DayCounter") 
-                                               [| _Jibar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Jibar.cell
                                 |]
@@ -494,8 +494,8 @@ module JibarFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Jibar.source + ".FamilyName") 
-                                               [| _Jibar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Jibar.cell
                                 |]
@@ -538,8 +538,8 @@ module JibarFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Jibar.source + ".Fixing") 
-                                               [| _Jibar.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -578,8 +578,8 @@ module JibarFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_Jibar.source + ".FixingCalendar") 
-                                               [| _Jibar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Jibar.cell
                                 |]
@@ -618,8 +618,8 @@ module JibarFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Jibar.source + ".FixingDate") 
-                                               [| _Jibar.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Jibar.cell
@@ -656,8 +656,8 @@ module JibarFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Jibar.source + ".FixingDays") 
-                                               [| _Jibar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Jibar.cell
                                 |]
@@ -696,8 +696,8 @@ module JibarFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Jibar.source + ".IsValidFixingDate") 
-                                               [| _Jibar.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Jibar.cell
@@ -734,8 +734,8 @@ module JibarFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Jibar.source + ".Name") 
-                                               [| _Jibar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Jibar.cell
                                 |]
@@ -774,8 +774,8 @@ module JibarFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Jibar.source + ".PastFixing") 
-                                               [| _Jibar.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Jibar.cell
@@ -812,8 +812,8 @@ module JibarFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_Jibar.source + ".Tenor") 
-                                               [| _Jibar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Jibar.cell
                                 |]
@@ -848,8 +848,8 @@ module JibarFunction =
                 let format (o : Jibar) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Jibar.source + ".Update") 
-                                               [| _Jibar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Jibar.cell
                                 |]
@@ -888,8 +888,8 @@ module JibarFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Jibar.source + ".ValueDate") 
-                                               [| _Jibar.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Jibar.cell
@@ -938,8 +938,8 @@ module JibarFunction =
                 let format (o : Jibar) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Jibar.source + ".AddFixing") 
-                                               [| _Jibar.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -992,8 +992,8 @@ module JibarFunction =
                 let format (o : Jibar) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Jibar.source + ".AddFixings") 
-                                               [| _Jibar.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -1042,8 +1042,8 @@ module JibarFunction =
                 let format (o : Jibar) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Jibar.source + ".AddFixings1") 
-                                               [| _Jibar.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1082,8 +1082,8 @@ module JibarFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Jibar.source + ".AllowsNativeFixings") 
-                                               [| _Jibar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Jibar.cell
                                 |]
@@ -1118,8 +1118,8 @@ module JibarFunction =
                 let format (o : Jibar) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Jibar.source + ".ClearFixings") 
-                                               [| _Jibar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Jibar.cell
                                 |]
@@ -1158,8 +1158,8 @@ module JibarFunction =
                 let format (o : Jibar) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Jibar.source + ".RegisterWith") 
-                                               [| _Jibar.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Jibar.cell
@@ -1196,8 +1196,8 @@ module JibarFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Jibar.source + ".TimeSeries") 
-                                               [| _Jibar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Jibar.cell
                                 |]
@@ -1236,8 +1236,8 @@ module JibarFunction =
                 let format (o : Jibar) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Jibar.source + ".UnregisterWith") 
-                                               [| _Jibar.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Jibar.cell

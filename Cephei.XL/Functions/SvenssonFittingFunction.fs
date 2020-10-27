@@ -54,8 +54,8 @@ module SvenssonFittingFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FittedBondDiscountCurve.FittingMethod>) l
 
                 let source () = Helper.sourceFold (_SvenssonFitting.source + ".Clone") 
-                                               [| _SvenssonFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SvenssonFitting.cell
                                 |]
@@ -90,8 +90,8 @@ module SvenssonFittingFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SvenssonFitting.source + ".Size") 
-                                               [| _SvenssonFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SvenssonFitting.cell
                                 |]
@@ -169,8 +169,8 @@ module SvenssonFittingFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SvenssonFitting.source + ".ConstrainAtZero") 
-                                               [| _SvenssonFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SvenssonFitting.cell
                                 |]
@@ -213,8 +213,8 @@ module SvenssonFittingFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SvenssonFitting.source + ".Discount") 
-                                               [| _SvenssonFitting.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -253,8 +253,8 @@ module SvenssonFittingFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SvenssonFitting.source + ".MinimumCostValue") 
-                                               [| _SvenssonFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SvenssonFitting.cell
                                 |]
@@ -289,8 +289,8 @@ module SvenssonFittingFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SvenssonFitting.source + ".NumberOfIterations") 
-                                               [| _SvenssonFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SvenssonFitting.cell
                                 |]
@@ -325,8 +325,8 @@ module SvenssonFittingFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OptimizationMethod>) l
 
                 let source () = Helper.sourceFold (_SvenssonFitting.source + ".OptimizationMethod") 
-                                               [| _SvenssonFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SvenssonFitting.cell
                                 |]
@@ -361,8 +361,8 @@ module SvenssonFittingFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_SvenssonFitting.source + ".Solution") 
-                                               [| _SvenssonFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SvenssonFitting.cell
                                 |]
@@ -397,8 +397,8 @@ module SvenssonFittingFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_SvenssonFitting.source + ".Weights") 
-                                               [| _SvenssonFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SvenssonFitting.cell
                                 |]

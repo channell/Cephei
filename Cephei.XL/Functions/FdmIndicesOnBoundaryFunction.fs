@@ -103,8 +103,8 @@ module FdmIndicesOnBoundaryFunction =
                 let format (i : Generic.List<int>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_FdmIndicesOnBoundary.source + ".GetIndices") 
-                                               [| _FdmIndicesOnBoundary.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmIndicesOnBoundary.cell
                                 |]

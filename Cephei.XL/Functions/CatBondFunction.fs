@@ -121,8 +121,8 @@ module CatBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".ExhaustionProbability") 
-                                               [| _CatBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
@@ -157,8 +157,8 @@ module CatBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".ExpectedLoss") 
-                                               [| _CatBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
@@ -193,8 +193,8 @@ module CatBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".LossProbability") 
-                                               [| _CatBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
@@ -233,8 +233,8 @@ module CatBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".AccruedAmount") 
-                                               [| _CatBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
@@ -271,8 +271,8 @@ module CatBondFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_CatBond.source + ".Calendar") 
-                                               [| _CatBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
@@ -307,8 +307,8 @@ module CatBondFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_CatBond.source + ".Cashflows") 
-                                               [| _CatBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
@@ -343,8 +343,8 @@ module CatBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".CleanPrice") 
-                                               [| _CatBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
@@ -399,8 +399,8 @@ module CatBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".CleanPrice1") 
-                                               [| _CatBond.source
-                                               ;  _Yield.source
+
+                                               [| _Yield.source
                                                ;  _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -465,8 +465,8 @@ module CatBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".DirtyPrice") 
-                                               [| _CatBond.source
-                                               ;  _Yield.source
+
+                                               [| _Yield.source
                                                ;  _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -511,8 +511,8 @@ module CatBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".DirtyPrice") 
-                                               [| _CatBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
@@ -547,8 +547,8 @@ module CatBondFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".IsExpired") 
-                                               [| _CatBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
@@ -583,8 +583,8 @@ module CatBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".IssueDate") 
-                                               [| _CatBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
@@ -623,8 +623,8 @@ module CatBondFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".IsTradable") 
-                                               [| _CatBond.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
@@ -661,8 +661,8 @@ module CatBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".MaturityDate") 
-                                               [| _CatBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
@@ -701,8 +701,8 @@ module CatBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".NextCashFlowDate") 
-                                               [| _CatBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
@@ -743,8 +743,8 @@ module CatBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".NextCouponRate") 
-                                               [| _CatBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
@@ -785,8 +785,8 @@ module CatBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".Notional") 
-                                               [| _CatBond.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
@@ -823,8 +823,8 @@ module CatBondFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_CatBond.source + ".Notionals") 
-                                               [| _CatBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
@@ -863,8 +863,8 @@ module CatBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".PreviousCashFlowDate") 
-                                               [| _CatBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
@@ -905,8 +905,8 @@ module CatBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".PreviousCouponRate") 
-                                               [| _CatBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
@@ -943,8 +943,8 @@ module CatBondFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
                 let source () = Helper.sourceFold (_CatBond.source + ".Redemption") 
-                                               [| _CatBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
@@ -979,8 +979,8 @@ module CatBondFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_CatBond.source + ".Redemptions") 
-                                               [| _CatBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
@@ -1019,8 +1019,8 @@ module CatBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".SettlementDate") 
-                                               [| _CatBond.source
-                                               ;  _date.source
+
+                                               [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
@@ -1057,8 +1057,8 @@ module CatBondFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".SettlementDays") 
-                                               [| _CatBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
@@ -1097,8 +1097,8 @@ module CatBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".SettlementValue") 
-                                               [| _CatBond.source
-                                               ;  _cleanPrice.source
+
+                                               [| _cleanPrice.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
@@ -1135,8 +1135,8 @@ module CatBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".SettlementValue1") 
-                                               [| _CatBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
@@ -1171,8 +1171,8 @@ module CatBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".StartDate") 
-                                               [| _CatBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
@@ -1235,8 +1235,8 @@ module CatBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".Yield1") 
-                                               [| _CatBond.source
-                                               ;  _cleanPrice.source
+
+                                               [| _cleanPrice.source
                                                ;  _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -1305,8 +1305,8 @@ module CatBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".Yield") 
-                                               [| _CatBond.source
-                                               ;  _dc.source
+
+                                               [| _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
                                                ;  _accuracy.source
@@ -1351,8 +1351,8 @@ module CatBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".CASH") 
-                                               [| _CatBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
@@ -1387,8 +1387,8 @@ module CatBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".ErrorEstimate") 
-                                               [| _CatBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
@@ -1423,8 +1423,8 @@ module CatBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".NPV") 
-                                               [| _CatBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]
@@ -1463,8 +1463,8 @@ module CatBondFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".Result") 
-                                               [| _CatBond.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
@@ -1505,8 +1505,8 @@ module CatBondFunction =
                 let format (o : CatBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".SetPricingEngine") 
-                                               [| _CatBond.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
@@ -1543,8 +1543,8 @@ module CatBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CatBond.source + ".ValuationDate") 
-                                               [| _CatBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CatBond.cell
                                 |]

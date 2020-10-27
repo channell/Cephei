@@ -132,8 +132,8 @@ module InverseCumulativeNormalFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InverseCumulativeNormal.source + ".Value") 
-                                               [| _InverseCumulativeNormal.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InverseCumulativeNormal.cell

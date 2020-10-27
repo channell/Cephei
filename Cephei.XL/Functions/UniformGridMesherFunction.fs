@@ -62,8 +62,8 @@ module UniformGridMesherFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_UniformGridMesher.source + ".Dminus") 
-                                               [| _UniformGridMesher.source
-                                               ;  _iter.source
+
+                                               [| _iter.source
                                                ;  _direction.source
                                                |]
                 let hash = Helper.hashFold 
@@ -110,8 +110,8 @@ module UniformGridMesherFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_UniformGridMesher.source + ".Dplus") 
-                                               [| _UniformGridMesher.source
-                                               ;  _iter.source
+
+                                               [| _iter.source
                                                ;  _direction.source
                                                |]
                 let hash = Helper.hashFold 
@@ -158,8 +158,8 @@ module UniformGridMesherFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_UniformGridMesher.source + ".Location") 
-                                               [| _UniformGridMesher.source
-                                               ;  _iter.source
+
+                                               [| _iter.source
                                                ;  _direction.source
                                                |]
                 let hash = Helper.hashFold 
@@ -202,8 +202,8 @@ module UniformGridMesherFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_UniformGridMesher.source + ".Locations") 
-                                               [| _UniformGridMesher.source
-                                               ;  _direction.source
+
+                                               [| _direction.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _UniformGridMesher.cell
@@ -283,8 +283,8 @@ module UniformGridMesherFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmLinearOpLayout>) l
 
                 let source () = Helper.sourceFold (_UniformGridMesher.source + ".Layout") 
-                                               [| _UniformGridMesher.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _UniformGridMesher.cell
                                 |]

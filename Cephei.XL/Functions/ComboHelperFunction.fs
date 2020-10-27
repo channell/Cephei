@@ -103,8 +103,8 @@ module ComboHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ComboHelper.source + ".FNext") 
-                                               [| _ComboHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ComboHelper.cell
                                 |]
@@ -143,8 +143,8 @@ module ComboHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ComboHelper.source + ".Primitive") 
-                                               [| _ComboHelper.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ComboHelper.cell
@@ -185,8 +185,8 @@ module ComboHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ComboHelper.source + ".Value") 
-                                               [| _ComboHelper.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ComboHelper.cell

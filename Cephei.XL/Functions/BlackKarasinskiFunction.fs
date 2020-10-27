@@ -140,8 +140,8 @@ module BlackKarasinskiFunction =
                 let format (o : OneFactorModel.ShortRateDynamics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BlackKarasinski.source + ".Dynamics") 
-                                               [| _BlackKarasinski.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackKarasinski.cell
                                 |]
@@ -176,8 +176,8 @@ module BlackKarasinskiFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_BlackKarasinski.source + ".TermStructure") 
-                                               [| _BlackKarasinski.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackKarasinski.cell
                                 |]
@@ -212,8 +212,8 @@ module BlackKarasinskiFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_BlackKarasinski.source + ".TermStructure_") 
-                                               [| _BlackKarasinski.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackKarasinski.cell
                                 |]
@@ -252,8 +252,8 @@ module BlackKarasinskiFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
 
                 let source () = Helper.sourceFold (_BlackKarasinski.source + ".Tree") 
-                                               [| _BlackKarasinski.source
-                                               ;  _grid.source
+
+                                               [| _grid.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackKarasinski.cell
@@ -314,8 +314,8 @@ module BlackKarasinskiFunction =
                 let format (o : BlackKarasinski) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BlackKarasinski.source + ".Calibrate") 
-                                               [| _BlackKarasinski.source
-                                               ;  _instruments.source
+
+                                               [| _instruments.source
                                                ;  _Method.source
                                                ;  _endCriteria.source
                                                ;  _additionalConstraint.source
@@ -362,8 +362,8 @@ module BlackKarasinskiFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
                 let source () = Helper.sourceFold (_BlackKarasinski.source + ".CONSTRAINT") 
-                                               [| _BlackKarasinski.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackKarasinski.cell
                                 |]
@@ -398,8 +398,8 @@ module BlackKarasinskiFunction =
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BlackKarasinski.source + ".EndCriteria") 
-                                               [| _BlackKarasinski.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackKarasinski.cell
                                 |]
@@ -434,8 +434,8 @@ module BlackKarasinskiFunction =
                 let format (o : BlackKarasinski) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BlackKarasinski.source + ".NotifyObservers") 
-                                               [| _BlackKarasinski.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackKarasinski.cell
                                 |]
@@ -470,8 +470,8 @@ module BlackKarasinskiFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_BlackKarasinski.source + ".Parameters") 
-                                               [| _BlackKarasinski.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackKarasinski.cell
                                 |]
@@ -510,8 +510,8 @@ module BlackKarasinskiFunction =
                 let format (o : BlackKarasinski) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BlackKarasinski.source + ".RegisterWith") 
-                                               [| _BlackKarasinski.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackKarasinski.cell
@@ -552,8 +552,8 @@ module BlackKarasinskiFunction =
                 let format (o : BlackKarasinski) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BlackKarasinski.source + ".SetParams") 
-                                               [| _BlackKarasinski.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackKarasinski.cell
@@ -594,8 +594,8 @@ module BlackKarasinskiFunction =
                 let format (o : BlackKarasinski) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BlackKarasinski.source + ".UnregisterWith") 
-                                               [| _BlackKarasinski.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackKarasinski.cell
@@ -632,8 +632,8 @@ module BlackKarasinskiFunction =
                 let format (o : BlackKarasinski) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BlackKarasinski.source + ".Update") 
-                                               [| _BlackKarasinski.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackKarasinski.cell
                                 |]
@@ -676,8 +676,8 @@ module BlackKarasinskiFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackKarasinski.source + ".Value") 
-                                               [| _BlackKarasinski.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                ;  _instruments.source
                                                |]
                 let hash = Helper.hashFold 

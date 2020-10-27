@@ -54,8 +54,8 @@ module ZeroSpreadedTermStructureFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_ZeroSpreadedTermStructure.source + ".Calendar") 
-                                               [| _ZeroSpreadedTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroSpreadedTermStructure.cell
                                 |]
@@ -90,8 +90,8 @@ module ZeroSpreadedTermStructureFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_ZeroSpreadedTermStructure.source + ".DayCounter") 
-                                               [| _ZeroSpreadedTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroSpreadedTermStructure.cell
                                 |]
@@ -126,8 +126,8 @@ module ZeroSpreadedTermStructureFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ZeroSpreadedTermStructure.source + ".MaxDate") 
-                                               [| _ZeroSpreadedTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroSpreadedTermStructure.cell
                                 |]
@@ -162,8 +162,8 @@ module ZeroSpreadedTermStructureFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ZeroSpreadedTermStructure.source + ".MaxTime") 
-                                               [| _ZeroSpreadedTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroSpreadedTermStructure.cell
                                 |]
@@ -198,8 +198,8 @@ module ZeroSpreadedTermStructureFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ZeroSpreadedTermStructure.source + ".ReferenceDate") 
-                                               [| _ZeroSpreadedTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroSpreadedTermStructure.cell
                                 |]
@@ -234,8 +234,8 @@ module ZeroSpreadedTermStructureFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ZeroSpreadedTermStructure.source + ".SettlementDays") 
-                                               [| _ZeroSpreadedTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroSpreadedTermStructure.cell
                                 |]

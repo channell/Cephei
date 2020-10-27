@@ -146,8 +146,8 @@ module BasisSwapHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BasisSwapHelper.source + ".ImpliedQuote") 
-                                               [| _BasisSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasisSwapHelper.cell
                                 |]
@@ -186,8 +186,8 @@ module BasisSwapHelperFunction =
                 let format (o : BasisSwapHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BasisSwapHelper.source + ".SetTermStructure") 
-                                               [| _BasisSwapHelper.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BasisSwapHelper.cell
@@ -225,8 +225,8 @@ module BasisSwapHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BasisSwap>) l
 
                 let source () = Helper.sourceFold (_BasisSwapHelper.source + ".Swap") 
-                                               [| _BasisSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasisSwapHelper.cell
                                 |]
@@ -261,8 +261,8 @@ module BasisSwapHelperFunction =
                 let format (o : BasisSwapHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BasisSwapHelper.source + ".Update") 
-                                               [| _BasisSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasisSwapHelper.cell
                                 |]
@@ -297,8 +297,8 @@ module BasisSwapHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BasisSwapHelper.source + ".EarliestDate") 
-                                               [| _BasisSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasisSwapHelper.cell
                                 |]
@@ -333,8 +333,8 @@ module BasisSwapHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BasisSwapHelper.source + ".LatestDate") 
-                                               [| _BasisSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasisSwapHelper.cell
                                 |]
@@ -369,8 +369,8 @@ module BasisSwapHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BasisSwapHelper.source + ".LatestRelevantDate") 
-                                               [| _BasisSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasisSwapHelper.cell
                                 |]
@@ -405,8 +405,8 @@ module BasisSwapHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BasisSwapHelper.source + ".MaturityDate") 
-                                               [| _BasisSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasisSwapHelper.cell
                                 |]
@@ -441,8 +441,8 @@ module BasisSwapHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BasisSwapHelper.source + ".PillarDate") 
-                                               [| _BasisSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasisSwapHelper.cell
                                 |]
@@ -477,8 +477,8 @@ module BasisSwapHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
                 let source () = Helper.sourceFold (_BasisSwapHelper.source + ".Quote") 
-                                               [| _BasisSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasisSwapHelper.cell
                                 |]
@@ -513,8 +513,8 @@ module BasisSwapHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BasisSwapHelper.source + ".QuoteError") 
-                                               [| _BasisSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasisSwapHelper.cell
                                 |]
@@ -549,8 +549,8 @@ module BasisSwapHelperFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BasisSwapHelper.source + ".QuoteIsValid") 
-                                               [| _BasisSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasisSwapHelper.cell
                                 |]
@@ -585,8 +585,8 @@ module BasisSwapHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BasisSwapHelper.source + ".QuoteValue") 
-                                               [| _BasisSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BasisSwapHelper.cell
                                 |]
@@ -625,8 +625,8 @@ module BasisSwapHelperFunction =
                 let format (o : BasisSwapHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BasisSwapHelper.source + ".RegisterWith") 
-                                               [| _BasisSwapHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BasisSwapHelper.cell
@@ -667,8 +667,8 @@ module BasisSwapHelperFunction =
                 let format (o : BasisSwapHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BasisSwapHelper.source + ".UnregisterWith") 
-                                               [| _BasisSwapHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BasisSwapHelper.cell

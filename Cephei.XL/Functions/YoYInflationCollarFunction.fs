@@ -119,8 +119,8 @@ module YoYInflationCollarFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCollar.source + ".AtmRate") 
-                                               [| _YoYInflationCollar.source
-                                               ;  _discountCurve.source
+
+                                               [| _discountCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
@@ -157,8 +157,8 @@ module YoYInflationCollarFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_YoYInflationCollar.source + ".CapRates") 
-                                               [| _YoYInflationCollar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]
@@ -193,8 +193,8 @@ module YoYInflationCollarFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_YoYInflationCollar.source + ".FloorRates") 
-                                               [| _YoYInflationCollar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]
@@ -257,8 +257,8 @@ module YoYInflationCollarFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCollar.source + ".ImpliedVolatility") 
-                                               [| _YoYInflationCollar.source
-                                               ;  _price.source
+
+                                               [| _price.source
                                                ;  _yoyCurve.source
                                                ;  _guess.source
                                                ;  _accuracy.source
@@ -307,8 +307,8 @@ module YoYInflationCollarFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCollar.source + ".IsExpired") 
-                                               [| _YoYInflationCollar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]
@@ -343,8 +343,8 @@ module YoYInflationCollarFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationCoupon>) l
 
                 let source () = Helper.sourceFold (_YoYInflationCollar.source + ".LastYoYInflationCoupon") 
-                                               [| _YoYInflationCollar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]
@@ -379,8 +379,8 @@ module YoYInflationCollarFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCollar.source + ".MaturityDate") 
-                                               [| _YoYInflationCollar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]
@@ -419,8 +419,8 @@ module YoYInflationCollarFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationCapFloor>) l
 
                 let source () = Helper.sourceFold (_YoYInflationCollar.source + ".Optionlet") 
-                                               [| _YoYInflationCollar.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
@@ -457,8 +457,8 @@ module YoYInflationCollarFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCollar.source + ".StartDate") 
-                                               [| _YoYInflationCollar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]
@@ -493,8 +493,8 @@ module YoYInflationCollarFunction =
                 let format (o : CapFloorType) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCollar.source + ".TYPE") 
-                                               [| _YoYInflationCollar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]
@@ -529,8 +529,8 @@ module YoYInflationCollarFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_YoYInflationCollar.source + ".YoyLeg") 
-                                               [| _YoYInflationCollar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]
@@ -565,8 +565,8 @@ module YoYInflationCollarFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCollar.source + ".CASH") 
-                                               [| _YoYInflationCollar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]
@@ -601,8 +601,8 @@ module YoYInflationCollarFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCollar.source + ".ErrorEstimate") 
-                                               [| _YoYInflationCollar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]
@@ -637,8 +637,8 @@ module YoYInflationCollarFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCollar.source + ".NPV") 
-                                               [| _YoYInflationCollar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]
@@ -677,8 +677,8 @@ module YoYInflationCollarFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCollar.source + ".Result") 
-                                               [| _YoYInflationCollar.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
@@ -719,8 +719,8 @@ module YoYInflationCollarFunction =
                 let format (o : YoYInflationCollar) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCollar.source + ".SetPricingEngine") 
-                                               [| _YoYInflationCollar.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
@@ -757,8 +757,8 @@ module YoYInflationCollarFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCollar.source + ".ValuationDate") 
-                                               [| _YoYInflationCollar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCollar.cell
                                 |]

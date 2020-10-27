@@ -54,8 +54,8 @@ module FxSwapRateHelperFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FxSwapRateHelper.source + ".BusinessDayConvention") 
-                                               [| _FxSwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FxSwapRateHelper.cell
                                 |]
@@ -90,8 +90,8 @@ module FxSwapRateHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_FxSwapRateHelper.source + ".Calendar") 
-                                               [| _FxSwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FxSwapRateHelper.cell
                                 |]
@@ -126,8 +126,8 @@ module FxSwapRateHelperFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FxSwapRateHelper.source + ".EndOfMonth") 
-                                               [| _FxSwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FxSwapRateHelper.cell
                                 |]
@@ -162,8 +162,8 @@ module FxSwapRateHelperFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FxSwapRateHelper.source + ".FixingDays") 
-                                               [| _FxSwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FxSwapRateHelper.cell
                                 |]
@@ -283,8 +283,8 @@ module FxSwapRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FxSwapRateHelper.source + ".ImpliedQuote") 
-                                               [| _FxSwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FxSwapRateHelper.cell
                                 |]
@@ -319,8 +319,8 @@ module FxSwapRateHelperFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FxSwapRateHelper.source + ".IsFxBaseCurrencyCollateralCurrency") 
-                                               [| _FxSwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FxSwapRateHelper.cell
                                 |]
@@ -359,8 +359,8 @@ module FxSwapRateHelperFunction =
                 let format (o : FxSwapRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FxSwapRateHelper.source + ".SetTermStructure") 
-                                               [| _FxSwapRateHelper.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FxSwapRateHelper.cell
@@ -397,8 +397,8 @@ module FxSwapRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FxSwapRateHelper.source + ".Spot") 
-                                               [| _FxSwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FxSwapRateHelper.cell
                                 |]
@@ -433,8 +433,8 @@ module FxSwapRateHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_FxSwapRateHelper.source + ".Tenor") 
-                                               [| _FxSwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FxSwapRateHelper.cell
                                 |]
@@ -469,8 +469,8 @@ module FxSwapRateHelperFunction =
                 let format (o : FxSwapRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FxSwapRateHelper.source + ".Update") 
-                                               [| _FxSwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FxSwapRateHelper.cell
                                 |]
@@ -505,8 +505,8 @@ module FxSwapRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FxSwapRateHelper.source + ".EarliestDate") 
-                                               [| _FxSwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FxSwapRateHelper.cell
                                 |]
@@ -541,8 +541,8 @@ module FxSwapRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FxSwapRateHelper.source + ".LatestDate") 
-                                               [| _FxSwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FxSwapRateHelper.cell
                                 |]
@@ -577,8 +577,8 @@ module FxSwapRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FxSwapRateHelper.source + ".LatestRelevantDate") 
-                                               [| _FxSwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FxSwapRateHelper.cell
                                 |]
@@ -613,8 +613,8 @@ module FxSwapRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FxSwapRateHelper.source + ".MaturityDate") 
-                                               [| _FxSwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FxSwapRateHelper.cell
                                 |]
@@ -649,8 +649,8 @@ module FxSwapRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FxSwapRateHelper.source + ".PillarDate") 
-                                               [| _FxSwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FxSwapRateHelper.cell
                                 |]
@@ -685,8 +685,8 @@ module FxSwapRateHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
                 let source () = Helper.sourceFold (_FxSwapRateHelper.source + ".Quote") 
-                                               [| _FxSwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FxSwapRateHelper.cell
                                 |]
@@ -721,8 +721,8 @@ module FxSwapRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FxSwapRateHelper.source + ".QuoteError") 
-                                               [| _FxSwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FxSwapRateHelper.cell
                                 |]
@@ -757,8 +757,8 @@ module FxSwapRateHelperFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FxSwapRateHelper.source + ".QuoteIsValid") 
-                                               [| _FxSwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FxSwapRateHelper.cell
                                 |]
@@ -793,8 +793,8 @@ module FxSwapRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FxSwapRateHelper.source + ".QuoteValue") 
-                                               [| _FxSwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FxSwapRateHelper.cell
                                 |]
@@ -833,8 +833,8 @@ module FxSwapRateHelperFunction =
                 let format (o : FxSwapRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FxSwapRateHelper.source + ".RegisterWith") 
-                                               [| _FxSwapRateHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FxSwapRateHelper.cell
@@ -875,8 +875,8 @@ module FxSwapRateHelperFunction =
                 let format (o : FxSwapRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FxSwapRateHelper.source + ".UnregisterWith") 
-                                               [| _FxSwapRateHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FxSwapRateHelper.cell

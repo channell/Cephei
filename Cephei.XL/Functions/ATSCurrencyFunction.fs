@@ -85,8 +85,8 @@ module ATSCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ATSCurrency.source + ".Code") 
-                                               [| _ATSCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ATSCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module ATSCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ATSCurrency.source + ".Empty") 
-                                               [| _ATSCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ATSCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module ATSCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ATSCurrency.source + ".Equals") 
-                                               [| _ATSCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ATSCurrency.cell
@@ -199,8 +199,8 @@ module ATSCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ATSCurrency.source + ".Format") 
-                                               [| _ATSCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ATSCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module ATSCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ATSCurrency.source + ".FractionsPerUnit") 
-                                               [| _ATSCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ATSCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module ATSCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ATSCurrency.source + ".FractionSymbol") 
-                                               [| _ATSCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ATSCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module ATSCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ATSCurrency.source + ".Name") 
-                                               [| _ATSCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ATSCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module ATSCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ATSCurrency.source + ".NumericCode") 
-                                               [| _ATSCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ATSCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module ATSCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_ATSCurrency.source + ".Rounding") 
-                                               [| _ATSCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ATSCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module ATSCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ATSCurrency.source + ".Symbol") 
-                                               [| _ATSCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ATSCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module ATSCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ATSCurrency.source + ".ToString") 
-                                               [| _ATSCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ATSCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module ATSCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_ATSCurrency.source + ".TriangulationCurrency") 
-                                               [| _ATSCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ATSCurrency.cell
                                 |]

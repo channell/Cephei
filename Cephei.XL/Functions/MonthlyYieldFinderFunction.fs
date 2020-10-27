@@ -107,8 +107,8 @@ module MonthlyYieldFinderFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MonthlyYieldFinder.source + ".Value") 
-                                               [| _MonthlyYieldFinder.source
-                                               ;  _Yield.source
+
+                                               [| _Yield.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MonthlyYieldFinder.cell
@@ -149,8 +149,8 @@ module MonthlyYieldFinderFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MonthlyYieldFinder.source + ".Derivative") 
-                                               [| _MonthlyYieldFinder.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MonthlyYieldFinder.cell

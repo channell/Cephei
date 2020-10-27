@@ -54,8 +54,8 @@ module FloatingLoanFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_FloatingLoan.source + ".FloatingLeg") 
-                                               [| _FloatingLoan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingLoan.cell
                                 |]
@@ -181,8 +181,8 @@ module FloatingLoanFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_FloatingLoan.source + ".PrincipalLeg") 
-                                               [| _FloatingLoan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingLoan.cell
                                 |]
@@ -217,8 +217,8 @@ module FloatingLoanFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatingLoan.source + ".IsExpired") 
-                                               [| _FloatingLoan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingLoan.cell
                                 |]
@@ -253,8 +253,8 @@ module FloatingLoanFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatingLoan.source + ".CASH") 
-                                               [| _FloatingLoan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingLoan.cell
                                 |]
@@ -289,8 +289,8 @@ module FloatingLoanFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatingLoan.source + ".ErrorEstimate") 
-                                               [| _FloatingLoan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingLoan.cell
                                 |]
@@ -325,8 +325,8 @@ module FloatingLoanFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatingLoan.source + ".NPV") 
-                                               [| _FloatingLoan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingLoan.cell
                                 |]
@@ -365,8 +365,8 @@ module FloatingLoanFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatingLoan.source + ".Result") 
-                                               [| _FloatingLoan.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatingLoan.cell
@@ -407,8 +407,8 @@ module FloatingLoanFunction =
                 let format (o : FloatingLoan) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatingLoan.source + ".SetPricingEngine") 
-                                               [| _FloatingLoan.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatingLoan.cell
@@ -445,8 +445,8 @@ module FloatingLoanFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FloatingLoan.source + ".ValuationDate") 
-                                               [| _FloatingLoan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingLoan.cell
                                 |]

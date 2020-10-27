@@ -74,8 +74,8 @@ module MidPointFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MidPoint.source + ".Integrate") 
-                                               [| _MidPoint.source
-                                               ;  _f.source
+
+                                               [| _f.source
                                                ;  _a.source
                                                ;  _b.source
                                                ;  _I.source
@@ -120,8 +120,8 @@ module MidPointFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MidPoint.source + ".NbEvalutions") 
-                                               [| _MidPoint.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MidPoint.cell
                                 |]

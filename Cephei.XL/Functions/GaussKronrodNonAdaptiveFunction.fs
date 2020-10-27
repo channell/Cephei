@@ -103,8 +103,8 @@ module GaussKronrodNonAdaptiveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussKronrodNonAdaptive.source + ".RelativeAccuracy") 
-                                               [| _GaussKronrodNonAdaptive.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussKronrodNonAdaptive.cell
                                 |]
@@ -139,8 +139,8 @@ module GaussKronrodNonAdaptiveFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GaussKronrodNonAdaptive.source + ".AbsoluteAccuracy") 
-                                               [| _GaussKronrodNonAdaptive.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussKronrodNonAdaptive.cell
                                 |]
@@ -175,8 +175,8 @@ module GaussKronrodNonAdaptiveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussKronrodNonAdaptive.source + ".AbsoluteError") 
-                                               [| _GaussKronrodNonAdaptive.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussKronrodNonAdaptive.cell
                                 |]
@@ -211,8 +211,8 @@ module GaussKronrodNonAdaptiveFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GaussKronrodNonAdaptive.source + ".IntegrationSuccess") 
-                                               [| _GaussKronrodNonAdaptive.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussKronrodNonAdaptive.cell
                                 |]
@@ -247,8 +247,8 @@ module GaussKronrodNonAdaptiveFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussKronrodNonAdaptive.source + ".MaxEvaluations") 
-                                               [| _GaussKronrodNonAdaptive.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussKronrodNonAdaptive.cell
                                 |]
@@ -283,8 +283,8 @@ module GaussKronrodNonAdaptiveFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussKronrodNonAdaptive.source + ".NumberOfEvaluations") 
-                                               [| _GaussKronrodNonAdaptive.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussKronrodNonAdaptive.cell
                                 |]
@@ -323,8 +323,8 @@ module GaussKronrodNonAdaptiveFunction =
                 let format (o : GaussKronrodNonAdaptive) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GaussKronrodNonAdaptive.source + ".SetAbsoluteAccuracy") 
-                                               [| _GaussKronrodNonAdaptive.source
-                                               ;  _accuracy.source
+
+                                               [| _accuracy.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussKronrodNonAdaptive.cell
@@ -365,8 +365,8 @@ module GaussKronrodNonAdaptiveFunction =
                 let format (o : GaussKronrodNonAdaptive) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GaussKronrodNonAdaptive.source + ".SetMaxEvaluations") 
-                                               [| _GaussKronrodNonAdaptive.source
-                                               ;  _maxEvaluations.source
+
+                                               [| _maxEvaluations.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussKronrodNonAdaptive.cell
@@ -415,8 +415,8 @@ module GaussKronrodNonAdaptiveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussKronrodNonAdaptive.source + ".Value") 
-                                               [| _GaussKronrodNonAdaptive.source
-                                               ;  _f.source
+
+                                               [| _f.source
                                                ;  _a.source
                                                ;  _b.source
                                                |]

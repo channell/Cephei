@@ -54,8 +54,8 @@ module StrikedTypePayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_StrikedTypePayoff.source + ".Description") 
-                                               [| _StrikedTypePayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StrikedTypePayoff.cell
                                 |]
@@ -90,8 +90,8 @@ module StrikedTypePayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StrikedTypePayoff.source + ".Strike") 
-                                               [| _StrikedTypePayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StrikedTypePayoff.cell
                                 |]
@@ -206,8 +206,8 @@ module StrikedTypePayoffFunction =
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_StrikedTypePayoff.source + ".OptionType") 
-                                               [| _StrikedTypePayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StrikedTypePayoff.cell
                                 |]
@@ -246,8 +246,8 @@ module StrikedTypePayoffFunction =
                 let format (o : StrikedTypePayoff) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_StrikedTypePayoff.source + ".Accept") 
-                                               [| _StrikedTypePayoff.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StrikedTypePayoff.cell
@@ -284,8 +284,8 @@ module StrikedTypePayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_StrikedTypePayoff.source + ".Name") 
-                                               [| _StrikedTypePayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StrikedTypePayoff.cell
                                 |]
@@ -324,8 +324,8 @@ module StrikedTypePayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StrikedTypePayoff.source + ".Value") 
-                                               [| _StrikedTypePayoff.source
-                                               ;  _price.source
+
+                                               [| _price.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StrikedTypePayoff.cell

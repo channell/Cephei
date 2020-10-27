@@ -58,8 +58,8 @@ module OvernightIndexedCouponPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".CapletPrice") 
-                                               [| _OvernightIndexedCouponPricer.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedCouponPricer.cell
@@ -100,8 +100,8 @@ module OvernightIndexedCouponPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".CapletRate") 
-                                               [| _OvernightIndexedCouponPricer.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedCouponPricer.cell
@@ -142,8 +142,8 @@ module OvernightIndexedCouponPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".FloorletPrice") 
-                                               [| _OvernightIndexedCouponPricer.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedCouponPricer.cell
@@ -184,8 +184,8 @@ module OvernightIndexedCouponPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".FloorletRate") 
-                                               [| _OvernightIndexedCouponPricer.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedCouponPricer.cell
@@ -226,8 +226,8 @@ module OvernightIndexedCouponPricerFunction =
                 let format (o : OvernightIndexedCouponPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".Initialize") 
-                                               [| _OvernightIndexedCouponPricer.source
-                                               ;  _coupon.source
+
+                                               [| _coupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedCouponPricer.cell
@@ -264,8 +264,8 @@ module OvernightIndexedCouponPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".SwapletPrice") 
-                                               [| _OvernightIndexedCouponPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedCouponPricer.cell
                                 |]
@@ -300,8 +300,8 @@ module OvernightIndexedCouponPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".SwapletRate") 
-                                               [| _OvernightIndexedCouponPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedCouponPricer.cell
                                 |]
@@ -340,8 +340,8 @@ module OvernightIndexedCouponPricerFunction =
                 let format (o : OvernightIndexedCouponPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".RegisterWith") 
-                                               [| _OvernightIndexedCouponPricer.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedCouponPricer.cell
@@ -382,8 +382,8 @@ module OvernightIndexedCouponPricerFunction =
                 let format (o : OvernightIndexedCouponPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".UnregisterWith") 
-                                               [| _OvernightIndexedCouponPricer.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedCouponPricer.cell
@@ -420,8 +420,8 @@ module OvernightIndexedCouponPricerFunction =
                 let format (o : OvernightIndexedCouponPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedCouponPricer.source + ".Update") 
-                                               [| _OvernightIndexedCouponPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedCouponPricer.cell
                                 |]

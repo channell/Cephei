@@ -93,8 +93,8 @@ module Actual365FixedFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Actual365Fixed.source + ".DayCount") 
-                                               [| _Actual365Fixed.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                |]
                 let hash = Helper.hashFold 
@@ -133,8 +133,8 @@ module Actual365FixedFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_Actual365Fixed.source + ".DayCounter") 
-                                               [| _Actual365Fixed.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Actual365Fixed.cell
                                 |]
@@ -169,8 +169,8 @@ module Actual365FixedFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Actual365Fixed.source + ".Empty") 
-                                               [| _Actual365Fixed.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Actual365Fixed.cell
                                 |]
@@ -209,8 +209,8 @@ module Actual365FixedFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Actual365Fixed.source + ".Equals") 
-                                               [| _Actual365Fixed.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Actual365Fixed.cell
@@ -247,8 +247,8 @@ module Actual365FixedFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Actual365Fixed.source + ".Name") 
-                                               [| _Actual365Fixed.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Actual365Fixed.cell
                                 |]
@@ -283,8 +283,8 @@ module Actual365FixedFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Actual365Fixed.source + ".ToString") 
-                                               [| _Actual365Fixed.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Actual365Fixed.cell
                                 |]
@@ -335,8 +335,8 @@ module Actual365FixedFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Actual365Fixed.source + ".YearFraction") 
-                                               [| _Actual365Fixed.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _refPeriodStart.source
                                                ;  _refPeriodEnd.source
@@ -387,8 +387,8 @@ module Actual365FixedFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Actual365Fixed.source + ".YearFraction") 
-                                               [| _Actual365Fixed.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                |]
                 let hash = Helper.hashFold 

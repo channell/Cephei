@@ -54,8 +54,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".FairRate") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -90,8 +90,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".FairSpread") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -126,8 +126,8 @@ module OvernightIndexedSwapFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".FixedDayCount") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -162,8 +162,8 @@ module OvernightIndexedSwapFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".FixedLeg") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -198,8 +198,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".FixedLegBPS") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -234,8 +234,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".FixedLegNPV") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -270,8 +270,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".FixedNominal") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -306,8 +306,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".FixedPaymentFrequency") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -342,8 +342,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".FixedRate") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -560,8 +560,8 @@ module OvernightIndexedSwapFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".OvernightLeg") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -596,8 +596,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".OvernightLegBPS") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -632,8 +632,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".OvernightLegNPV") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -668,8 +668,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".OvernightNominal") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -704,8 +704,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".OvernightPaymentFrequency") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -740,8 +740,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".Spread") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -776,8 +776,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".TYPE") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -816,8 +816,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".EndDiscounts") 
-                                               [| _OvernightIndexedSwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
@@ -855,8 +855,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : SwapEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".Engine") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -892,8 +892,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".IsExpired") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -932,8 +932,8 @@ module OvernightIndexedSwapFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".Leg") 
-                                               [| _OvernightIndexedSwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
@@ -974,8 +974,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".LegBPS") 
-                                               [| _OvernightIndexedSwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
@@ -1016,8 +1016,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".LegNPV") 
-                                               [| _OvernightIndexedSwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
@@ -1054,8 +1054,8 @@ module OvernightIndexedSwapFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".MaturityDate") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -1090,8 +1090,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".NpvDateDiscount") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -1130,8 +1130,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".Payer") 
-                                               [| _OvernightIndexedSwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
@@ -1168,8 +1168,8 @@ module OvernightIndexedSwapFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".StartDate") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -1208,8 +1208,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".StartDiscounts") 
-                                               [| _OvernightIndexedSwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
@@ -1246,8 +1246,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".CASH") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -1282,8 +1282,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".ErrorEstimate") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -1318,8 +1318,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".NPV") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]
@@ -1358,8 +1358,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".Result") 
-                                               [| _OvernightIndexedSwap.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
@@ -1400,8 +1400,8 @@ module OvernightIndexedSwapFunction =
                 let format (o : OvernightIndexedSwap) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".SetPricingEngine") 
-                                               [| _OvernightIndexedSwap.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
@@ -1438,8 +1438,8 @@ module OvernightIndexedSwapFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwap.source + ".ValuationDate") 
-                                               [| _OvernightIndexedSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwap.cell
                                 |]

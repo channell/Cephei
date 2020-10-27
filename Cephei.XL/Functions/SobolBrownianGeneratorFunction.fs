@@ -54,8 +54,8 @@ module SobolBrownianGeneratorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SobolBrownianGenerator.source + ".NextPath") 
-                                               [| _SobolBrownianGenerator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SobolBrownianGenerator.cell
                                 |]
@@ -94,8 +94,8 @@ module SobolBrownianGeneratorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SobolBrownianGenerator.source + ".NextStep") 
-                                               [| _SobolBrownianGenerator.source
-                                               ;  _output.source
+
+                                               [| _output.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SobolBrownianGenerator.cell
@@ -132,8 +132,8 @@ module SobolBrownianGeneratorFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SobolBrownianGenerator.source + ".NumberOfFactors") 
-                                               [| _SobolBrownianGenerator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SobolBrownianGenerator.cell
                                 |]
@@ -168,8 +168,8 @@ module SobolBrownianGeneratorFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SobolBrownianGenerator.source + ".NumberOfSteps") 
-                                               [| _SobolBrownianGenerator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SobolBrownianGenerator.cell
                                 |]
@@ -204,8 +204,8 @@ module SobolBrownianGeneratorFunction =
                 let format (i : Generic.List<Generic.List<int>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SobolBrownianGenerator.source + ".OrderedIndices") 
-                                               [| _SobolBrownianGenerator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SobolBrownianGenerator.cell
                                 |]
@@ -305,8 +305,8 @@ module SobolBrownianGeneratorFunction =
                 let format (i : Generic.List<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SobolBrownianGenerator.source + ".Transform") 
-                                               [| _SobolBrownianGenerator.source
-                                               ;  _variates.source
+
+                                               [| _variates.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SobolBrownianGenerator.cell

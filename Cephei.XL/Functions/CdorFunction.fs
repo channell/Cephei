@@ -134,8 +134,8 @@ module CdorFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Cdor.source + ".BusinessDayConvention") 
-                                               [| _Cdor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Cdor.cell
                                 |]
@@ -174,8 +174,8 @@ module CdorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
                 let source () = Helper.sourceFold (_Cdor.source + ".Clone") 
-                                               [| _Cdor.source
-                                               ;  _forwarding.source
+
+                                               [| _forwarding.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Cdor.cell
@@ -212,8 +212,8 @@ module CdorFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Cdor.source + ".EndOfMonth") 
-                                               [| _Cdor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Cdor.cell
                                 |]
@@ -260,8 +260,8 @@ module CdorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Cdor.source + ".ForecastFixing1") 
-                                               [| _Cdor.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _t.source
                                                |]
@@ -306,8 +306,8 @@ module CdorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Cdor.source + ".ForecastFixing") 
-                                               [| _Cdor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Cdor.cell
@@ -344,8 +344,8 @@ module CdorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_Cdor.source + ".ForwardingTermStructure") 
-                                               [| _Cdor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Cdor.cell
                                 |]
@@ -384,8 +384,8 @@ module CdorFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Cdor.source + ".MaturityDate") 
-                                               [| _Cdor.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Cdor.cell
@@ -422,8 +422,8 @@ module CdorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_Cdor.source + ".Currency") 
-                                               [| _Cdor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Cdor.cell
                                 |]
@@ -458,8 +458,8 @@ module CdorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_Cdor.source + ".DayCounter") 
-                                               [| _Cdor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Cdor.cell
                                 |]
@@ -494,8 +494,8 @@ module CdorFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Cdor.source + ".FamilyName") 
-                                               [| _Cdor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Cdor.cell
                                 |]
@@ -538,8 +538,8 @@ module CdorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Cdor.source + ".Fixing") 
-                                               [| _Cdor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -578,8 +578,8 @@ module CdorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_Cdor.source + ".FixingCalendar") 
-                                               [| _Cdor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Cdor.cell
                                 |]
@@ -618,8 +618,8 @@ module CdorFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Cdor.source + ".FixingDate") 
-                                               [| _Cdor.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Cdor.cell
@@ -656,8 +656,8 @@ module CdorFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Cdor.source + ".FixingDays") 
-                                               [| _Cdor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Cdor.cell
                                 |]
@@ -696,8 +696,8 @@ module CdorFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Cdor.source + ".IsValidFixingDate") 
-                                               [| _Cdor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Cdor.cell
@@ -734,8 +734,8 @@ module CdorFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Cdor.source + ".Name") 
-                                               [| _Cdor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Cdor.cell
                                 |]
@@ -774,8 +774,8 @@ module CdorFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Cdor.source + ".PastFixing") 
-                                               [| _Cdor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Cdor.cell
@@ -812,8 +812,8 @@ module CdorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_Cdor.source + ".Tenor") 
-                                               [| _Cdor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Cdor.cell
                                 |]
@@ -848,8 +848,8 @@ module CdorFunction =
                 let format (o : Cdor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Cdor.source + ".Update") 
-                                               [| _Cdor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Cdor.cell
                                 |]
@@ -888,8 +888,8 @@ module CdorFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Cdor.source + ".ValueDate") 
-                                               [| _Cdor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Cdor.cell
@@ -938,8 +938,8 @@ module CdorFunction =
                 let format (o : Cdor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Cdor.source + ".AddFixing") 
-                                               [| _Cdor.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -992,8 +992,8 @@ module CdorFunction =
                 let format (o : Cdor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Cdor.source + ".AddFixings") 
-                                               [| _Cdor.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -1042,8 +1042,8 @@ module CdorFunction =
                 let format (o : Cdor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Cdor.source + ".AddFixings1") 
-                                               [| _Cdor.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1082,8 +1082,8 @@ module CdorFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Cdor.source + ".AllowsNativeFixings") 
-                                               [| _Cdor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Cdor.cell
                                 |]
@@ -1118,8 +1118,8 @@ module CdorFunction =
                 let format (o : Cdor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Cdor.source + ".ClearFixings") 
-                                               [| _Cdor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Cdor.cell
                                 |]
@@ -1158,8 +1158,8 @@ module CdorFunction =
                 let format (o : Cdor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Cdor.source + ".RegisterWith") 
-                                               [| _Cdor.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Cdor.cell
@@ -1196,8 +1196,8 @@ module CdorFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Cdor.source + ".TimeSeries") 
-                                               [| _Cdor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Cdor.cell
                                 |]
@@ -1236,8 +1236,8 @@ module CdorFunction =
                 let format (o : Cdor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Cdor.source + ".UnregisterWith") 
-                                               [| _Cdor.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Cdor.cell

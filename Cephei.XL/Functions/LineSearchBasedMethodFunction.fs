@@ -99,8 +99,8 @@ module LineSearchBasedMethodFunction =
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LineSearchBasedMethod.source + ".Minimize") 
-                                               [| _LineSearchBasedMethod.source
-                                               ;  _P.source
+
+                                               [| _P.source
                                                ;  _endCriteria.source
                                                |]
                 let hash = Helper.hashFold 

@@ -101,8 +101,8 @@ module NonCentralCumulativeChiSquareDistributionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NonCentralCumulativeChiSquareDistribution.source + ".Value") 
-                                               [| _NonCentralCumulativeChiSquareDistribution.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NonCentralCumulativeChiSquareDistribution.cell

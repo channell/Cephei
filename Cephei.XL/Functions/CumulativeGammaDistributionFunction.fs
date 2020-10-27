@@ -95,8 +95,8 @@ module CumulativeGammaDistributionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CumulativeGammaDistribution.source + ".Value") 
-                                               [| _CumulativeGammaDistribution.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CumulativeGammaDistribution.cell

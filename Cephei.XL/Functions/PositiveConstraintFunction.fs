@@ -85,8 +85,8 @@ module PositiveConstraintFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PositiveConstraint.source + ".Empty") 
-                                               [| _PositiveConstraint.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PositiveConstraint.cell
                                 |]
@@ -125,8 +125,8 @@ module PositiveConstraintFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_PositiveConstraint.source + ".LowerBound") 
-                                               [| _PositiveConstraint.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PositiveConstraint.cell
@@ -167,8 +167,8 @@ module PositiveConstraintFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PositiveConstraint.source + ".Test") 
-                                               [| _PositiveConstraint.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PositiveConstraint.cell
@@ -217,8 +217,8 @@ module PositiveConstraintFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PositiveConstraint.source + ".Update") 
-                                               [| _PositiveConstraint.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                ;  _direction.source
                                                ;  _beta.source
                                                |]
@@ -263,8 +263,8 @@ module PositiveConstraintFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_PositiveConstraint.source + ".UpperBound") 
-                                               [| _PositiveConstraint.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PositiveConstraint.cell

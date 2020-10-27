@@ -54,8 +54,8 @@ module AbcdCoeffHolderFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".A_") 
-                                               [| _AbcdCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]
@@ -169,8 +169,8 @@ module AbcdCoeffHolderFunction =
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".AbcdEndCriteria_") 
-                                               [| _AbcdCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]
@@ -205,8 +205,8 @@ module AbcdCoeffHolderFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".AIsFixed_") 
-                                               [| _AbcdCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]
@@ -241,8 +241,8 @@ module AbcdCoeffHolderFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".B_") 
-                                               [| _AbcdCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]
@@ -277,8 +277,8 @@ module AbcdCoeffHolderFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".BIsFixed_") 
-                                               [| _AbcdCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]
@@ -313,8 +313,8 @@ module AbcdCoeffHolderFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".C_") 
-                                               [| _AbcdCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]
@@ -349,8 +349,8 @@ module AbcdCoeffHolderFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".CIsFixed_") 
-                                               [| _AbcdCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]
@@ -385,8 +385,8 @@ module AbcdCoeffHolderFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".D_") 
-                                               [| _AbcdCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]
@@ -421,8 +421,8 @@ module AbcdCoeffHolderFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".DIsFixed_") 
-                                               [| _AbcdCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]
@@ -457,8 +457,8 @@ module AbcdCoeffHolderFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".Error_") 
-                                               [| _AbcdCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]
@@ -493,8 +493,8 @@ module AbcdCoeffHolderFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".K_") 
-                                               [| _AbcdCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]
@@ -529,8 +529,8 @@ module AbcdCoeffHolderFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AbcdCoeffHolder.source + ".MaxError_") 
-                                               [| _AbcdCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AbcdCoeffHolder.cell
                                 |]

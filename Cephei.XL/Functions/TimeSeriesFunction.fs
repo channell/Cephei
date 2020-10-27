@@ -62,8 +62,8 @@ module TimeSeriesFunction =
                 let format (o : TimeSeries) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TimeSeries.source + ".Add") 
-                                               [| _TimeSeries.source
-                                               ;  _key.source
+
+                                               [| _key.source
                                                ;  _value.source
                                                |]
                 let hash = Helper.hashFold 
@@ -106,8 +106,8 @@ module TimeSeriesFunction =
                 let format (o : TimeSeries) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TimeSeries.source + ".Add") 
-                                               [| _TimeSeries.source
-                                               ;  _item.source
+
+                                               [| _item.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TimeSeries.cell
@@ -144,8 +144,8 @@ module TimeSeriesFunction =
                 let format (o : TimeSeries) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TimeSeries.source + ".Clear") 
-                                               [| _TimeSeries.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TimeSeries.cell
                                 |]
@@ -184,8 +184,8 @@ module TimeSeriesFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TimeSeries.source + ".Contains") 
-                                               [| _TimeSeries.source
-                                               ;  _item.source
+
+                                               [| _item.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TimeSeries.cell
@@ -226,8 +226,8 @@ module TimeSeriesFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TimeSeries.source + ".ContainsKey") 
-                                               [| _TimeSeries.source
-                                               ;  _key.source
+
+                                               [| _key.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TimeSeries.cell
@@ -272,8 +272,8 @@ module TimeSeriesFunction =
                 let format (o : TimeSeries) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TimeSeries.source + ".CopyTo") 
-                                               [| _TimeSeries.source
-                                               ;  _array.source
+
+                                               [| _array.source
                                                ;  _arrayIndex.source
                                                |]
                 let hash = Helper.hashFold 
@@ -312,8 +312,8 @@ module TimeSeriesFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TimeSeries.source + ".Count") 
-                                               [| _TimeSeries.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TimeSeries.cell
                                 |]
@@ -348,8 +348,8 @@ module TimeSeriesFunction =
                 let format (o : IEnumerator<Generic.KeyValuePair<Date,T>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TimeSeries.source + ".GetEnumerator") 
-                                               [| _TimeSeries.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TimeSeries.cell
                                 |]
@@ -384,8 +384,8 @@ module TimeSeriesFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TimeSeries.source + ".IsReadOnly") 
-                                               [| _TimeSeries.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TimeSeries.cell
                                 |]
@@ -420,8 +420,8 @@ module TimeSeriesFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ICollection<Date>>) l
 
                 let source () = Helper.sourceFold (_TimeSeries.source + ".Keys") 
-                                               [| _TimeSeries.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TimeSeries.cell
                                 |]
@@ -460,8 +460,8 @@ module TimeSeriesFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TimeSeries.source + ".Remove") 
-                                               [| _TimeSeries.source
-                                               ;  _item.source
+
+                                               [| _item.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TimeSeries.cell
@@ -502,8 +502,8 @@ module TimeSeriesFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TimeSeries.source + ".Remove") 
-                                               [| _TimeSeries.source
-                                               ;  _key.source
+
+                                               [| _key.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TimeSeries.cell
@@ -544,8 +544,8 @@ module TimeSeriesFunction =
                 let format (o : T) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TimeSeries.source + ".This") 
-                                               [| _TimeSeries.source
-                                               ;  _key.source
+
+                                               [| _key.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TimeSeries.cell
@@ -658,8 +658,8 @@ module TimeSeriesFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TimeSeries.source + ".TryGetValue") 
-                                               [| _TimeSeries.source
-                                               ;  _key.source
+
+                                               [| _key.source
                                                ;  _value.source
                                                |]
                 let hash = Helper.hashFold 
@@ -698,8 +698,8 @@ module TimeSeriesFunction =
                 let format (o : ICollection<T>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TimeSeries.source + ".Values") 
-                                               [| _TimeSeries.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TimeSeries.cell
                                 |]

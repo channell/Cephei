@@ -54,8 +54,8 @@ module CPICashFlowFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPICashFlow.source + ".Amount") 
-                                               [| _CPICashFlow.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
                                 |]
@@ -90,8 +90,8 @@ module CPICashFlowFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CPICashFlow.source + ".BaseDate") 
-                                               [| _CPICashFlow.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
                                 |]
@@ -126,8 +126,8 @@ module CPICashFlowFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPICashFlow.source + ".BaseFixing") 
-                                               [| _CPICashFlow.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
                                 |]
@@ -247,8 +247,8 @@ module CPICashFlowFunction =
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPICashFlow.source + ".Frequency") 
-                                               [| _CPICashFlow.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
                                 |]
@@ -283,8 +283,8 @@ module CPICashFlowFunction =
                 let format (o : InterpolationType) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPICashFlow.source + ".Interpolation") 
-                                               [| _CPICashFlow.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
                                 |]
@@ -319,8 +319,8 @@ module CPICashFlowFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CPICashFlow.source + ".Date") 
-                                               [| _CPICashFlow.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
                                 |]
@@ -355,8 +355,8 @@ module CPICashFlowFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CPICashFlow.source + ".FixingDate") 
-                                               [| _CPICashFlow.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
                                 |]
@@ -391,8 +391,8 @@ module CPICashFlowFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPICashFlow.source + ".GrowthOnly") 
-                                               [| _CPICashFlow.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
                                 |]
@@ -427,8 +427,8 @@ module CPICashFlowFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Index>) l
 
                 let source () = Helper.sourceFold (_CPICashFlow.source + ".Index") 
-                                               [| _CPICashFlow.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
                                 |]
@@ -463,8 +463,8 @@ module CPICashFlowFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPICashFlow.source + ".Notional") 
-                                               [| _CPICashFlow.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
                                 |]
@@ -503,8 +503,8 @@ module CPICashFlowFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPICashFlow.source + ".CompareTo") 
-                                               [| _CPICashFlow.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
@@ -545,8 +545,8 @@ module CPICashFlowFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPICashFlow.source + ".Equals") 
-                                               [| _CPICashFlow.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
@@ -583,8 +583,8 @@ module CPICashFlowFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CPICashFlow.source + ".ExCouponDate") 
-                                               [| _CPICashFlow.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
                                 |]
@@ -627,8 +627,8 @@ module CPICashFlowFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPICashFlow.source + ".HasOccurred") 
-                                               [| _CPICashFlow.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                ;  _includeRefDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -671,8 +671,8 @@ module CPICashFlowFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPICashFlow.source + ".TradingExCoupon") 
-                                               [| _CPICashFlow.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
@@ -713,8 +713,8 @@ module CPICashFlowFunction =
                 let format (o : CPICashFlow) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPICashFlow.source + ".Accept") 
-                                               [| _CPICashFlow.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
@@ -755,8 +755,8 @@ module CPICashFlowFunction =
                 let format (o : CPICashFlow) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPICashFlow.source + ".RegisterWith") 
-                                               [| _CPICashFlow.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell
@@ -797,8 +797,8 @@ module CPICashFlowFunction =
                 let format (o : CPICashFlow) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPICashFlow.source + ".UnregisterWith") 
-                                               [| _CPICashFlow.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICashFlow.cell

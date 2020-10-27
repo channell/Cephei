@@ -85,8 +85,8 @@ module CADCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CADCurrency.source + ".Code") 
-                                               [| _CADCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module CADCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CADCurrency.source + ".Empty") 
-                                               [| _CADCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module CADCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CADCurrency.source + ".Equals") 
-                                               [| _CADCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CADCurrency.cell
@@ -199,8 +199,8 @@ module CADCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CADCurrency.source + ".Format") 
-                                               [| _CADCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module CADCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CADCurrency.source + ".FractionsPerUnit") 
-                                               [| _CADCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module CADCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CADCurrency.source + ".FractionSymbol") 
-                                               [| _CADCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module CADCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CADCurrency.source + ".Name") 
-                                               [| _CADCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module CADCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CADCurrency.source + ".NumericCode") 
-                                               [| _CADCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module CADCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_CADCurrency.source + ".Rounding") 
-                                               [| _CADCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module CADCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CADCurrency.source + ".Symbol") 
-                                               [| _CADCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module CADCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CADCurrency.source + ".ToString") 
-                                               [| _CADCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module CADCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_CADCurrency.source + ".TriangulationCurrency") 
-                                               [| _CADCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CADCurrency.cell
                                 |]

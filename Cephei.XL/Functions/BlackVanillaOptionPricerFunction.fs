@@ -121,8 +121,8 @@ module BlackVanillaOptionPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackVanillaOptionPricer.source + ".Value") 
-                                               [| _BlackVanillaOptionPricer.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _optionType.source
                                                ;  _deflator.source
                                                |]

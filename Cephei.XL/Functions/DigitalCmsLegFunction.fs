@@ -101,8 +101,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".InArrears1") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _flag.source
+
+                                               [| _flag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
@@ -139,8 +139,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".InArrears") 
-                                               [| _DigitalCmsLeg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
                                 |]
@@ -175,8 +175,8 @@ module DigitalCmsLegFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".Value") 
-                                               [| _DigitalCmsLeg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
                                 |]
@@ -211,8 +211,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithCallATM") 
-                                               [| _DigitalCmsLeg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
                                 |]
@@ -251,8 +251,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithCallATM1") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _flag.source
+
+                                               [| _flag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
@@ -293,8 +293,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithCallPayoffs1") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _payoffs.source
+
+                                               [| _payoffs.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
@@ -335,8 +335,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithCallPayoffs") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _payoff.source
+
+                                               [| _payoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
@@ -377,8 +377,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithCallStrikes1") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _strikes.source
+
+                                               [| _strikes.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
@@ -419,8 +419,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithCallStrikes") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
@@ -461,8 +461,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithFixingDays1") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _fixingDays.source
+
+                                               [| _fixingDays.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
@@ -503,8 +503,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithFixingDays") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _fixingDays.source
+
+                                               [| _fixingDays.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
@@ -545,8 +545,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithGearings") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _gearings.source
+
+                                               [| _gearings.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
@@ -587,8 +587,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithGearings1") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _gearing.source
+
+                                               [| _gearing.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
@@ -629,8 +629,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithLongCallOption") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _Type.source
+
+                                               [| _Type.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
@@ -671,8 +671,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithLongPutOption") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _Type.source
+
+                                               [| _Type.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
@@ -713,8 +713,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithNotionals1") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _notionals.source
+
+                                               [| _notionals.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
@@ -755,8 +755,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithNotionals") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _notional.source
+
+                                               [| _notional.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
@@ -797,8 +797,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPaymentAdjustment") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _convention.source
+
+                                               [| _convention.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
@@ -839,8 +839,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPaymentDayCounter") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _dayCounter.source
+
+                                               [| _dayCounter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
@@ -881,8 +881,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPutATM") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _flag.source
+
+                                               [| _flag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
@@ -919,8 +919,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPutATM1") 
-                                               [| _DigitalCmsLeg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
                                 |]
@@ -959,8 +959,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPutPayoffs") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _payoffs.source
+
+                                               [| _payoffs.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
@@ -1001,8 +1001,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPutPayoffs1") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _payoff.source
+
+                                               [| _payoff.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
@@ -1043,8 +1043,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPutStrikes") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _strikes.source
+
+                                               [| _strikes.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
@@ -1085,8 +1085,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithPutStrikes1") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
@@ -1127,8 +1127,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithReplication") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _replication.source
+
+                                               [| _replication.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
@@ -1165,8 +1165,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithReplication1") 
-                                               [| _DigitalCmsLeg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
                                 |]
@@ -1205,8 +1205,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithSpreads1") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _spreads.source
+
+                                               [| _spreads.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell
@@ -1247,8 +1247,8 @@ module DigitalCmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalCmsLeg>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".WithSpreads") 
-                                               [| _DigitalCmsLeg.source
-                                               ;  _spread.source
+
+                                               [| _spread.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsLeg.cell

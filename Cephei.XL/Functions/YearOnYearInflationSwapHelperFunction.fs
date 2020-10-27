@@ -54,8 +54,8 @@ module YearOnYearInflationSwapHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".ImpliedQuote") 
-                                               [| _YearOnYearInflationSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
                                 |]
@@ -94,8 +94,8 @@ module YearOnYearInflationSwapHelperFunction =
                 let format (o : YearOnYearInflationSwapHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".SetTermStructure") 
-                                               [| _YearOnYearInflationSwapHelper.source
-                                               ;  _y.source
+
+                                               [| _y.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
@@ -205,8 +205,8 @@ module YearOnYearInflationSwapHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".EarliestDate") 
-                                               [| _YearOnYearInflationSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
                                 |]
@@ -241,8 +241,8 @@ module YearOnYearInflationSwapHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".LatestDate") 
-                                               [| _YearOnYearInflationSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
                                 |]
@@ -277,8 +277,8 @@ module YearOnYearInflationSwapHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".LatestRelevantDate") 
-                                               [| _YearOnYearInflationSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
                                 |]
@@ -313,8 +313,8 @@ module YearOnYearInflationSwapHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".MaturityDate") 
-                                               [| _YearOnYearInflationSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
                                 |]
@@ -349,8 +349,8 @@ module YearOnYearInflationSwapHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".PillarDate") 
-                                               [| _YearOnYearInflationSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
                                 |]
@@ -385,8 +385,8 @@ module YearOnYearInflationSwapHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
                 let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".Quote") 
-                                               [| _YearOnYearInflationSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
                                 |]
@@ -421,8 +421,8 @@ module YearOnYearInflationSwapHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".QuoteError") 
-                                               [| _YearOnYearInflationSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
                                 |]
@@ -457,8 +457,8 @@ module YearOnYearInflationSwapHelperFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".QuoteIsValid") 
-                                               [| _YearOnYearInflationSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
                                 |]
@@ -493,8 +493,8 @@ module YearOnYearInflationSwapHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".QuoteValue") 
-                                               [| _YearOnYearInflationSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
                                 |]
@@ -533,8 +533,8 @@ module YearOnYearInflationSwapHelperFunction =
                 let format (o : YearOnYearInflationSwapHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".RegisterWith") 
-                                               [| _YearOnYearInflationSwapHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
@@ -575,8 +575,8 @@ module YearOnYearInflationSwapHelperFunction =
                 let format (o : YearOnYearInflationSwapHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".UnregisterWith") 
-                                               [| _YearOnYearInflationSwapHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
@@ -613,8 +613,8 @@ module YearOnYearInflationSwapHelperFunction =
                 let format (o : YearOnYearInflationSwapHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YearOnYearInflationSwapHelper.source + ".Update") 
-                                               [| _YearOnYearInflationSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YearOnYearInflationSwapHelper.cell
                                 |]

@@ -54,8 +54,8 @@ module SpreadFittingMethodFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FittedBondDiscountCurve.FittingMethod>) l
 
                 let source () = Helper.sourceFold (_SpreadFittingMethod.source + ".Clone") 
-                                               [| _SpreadFittingMethod.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadFittingMethod.cell
                                 |]
@@ -90,8 +90,8 @@ module SpreadFittingMethodFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadFittingMethod.source + ".Size") 
-                                               [| _SpreadFittingMethod.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadFittingMethod.cell
                                 |]
@@ -169,8 +169,8 @@ module SpreadFittingMethodFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SpreadFittingMethod.source + ".ConstrainAtZero") 
-                                               [| _SpreadFittingMethod.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadFittingMethod.cell
                                 |]
@@ -213,8 +213,8 @@ module SpreadFittingMethodFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadFittingMethod.source + ".Discount") 
-                                               [| _SpreadFittingMethod.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -253,8 +253,8 @@ module SpreadFittingMethodFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadFittingMethod.source + ".MinimumCostValue") 
-                                               [| _SpreadFittingMethod.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadFittingMethod.cell
                                 |]
@@ -289,8 +289,8 @@ module SpreadFittingMethodFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadFittingMethod.source + ".NumberOfIterations") 
-                                               [| _SpreadFittingMethod.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadFittingMethod.cell
                                 |]
@@ -325,8 +325,8 @@ module SpreadFittingMethodFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OptimizationMethod>) l
 
                 let source () = Helper.sourceFold (_SpreadFittingMethod.source + ".OptimizationMethod") 
-                                               [| _SpreadFittingMethod.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadFittingMethod.cell
                                 |]
@@ -361,8 +361,8 @@ module SpreadFittingMethodFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_SpreadFittingMethod.source + ".Solution") 
-                                               [| _SpreadFittingMethod.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadFittingMethod.cell
                                 |]
@@ -397,8 +397,8 @@ module SpreadFittingMethodFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_SpreadFittingMethod.source + ".Weights") 
-                                               [| _SpreadFittingMethod.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadFittingMethod.cell
                                 |]

@@ -62,8 +62,8 @@ module NotionalPathFunction =
                 let format (o : NotionalPath) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NotionalPath.source + ".AddReduction") 
-                                               [| _NotionalPath.source
-                                               ;  _date.source
+
+                                               [| _date.source
                                                ;  _newRate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -102,8 +102,8 @@ module NotionalPathFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NotionalPath.source + ".Loss") 
-                                               [| _NotionalPath.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NotionalPath.cell
                                 |]
@@ -173,8 +173,8 @@ module NotionalPathFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NotionalPath.source + ".NotionalRate") 
-                                               [| _NotionalPath.source
-                                               ;  _date.source
+
+                                               [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NotionalPath.cell
@@ -211,8 +211,8 @@ module NotionalPathFunction =
                 let format (o : NotionalPath) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NotionalPath.source + ".Reset") 
-                                               [| _NotionalPath.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NotionalPath.cell
                                 |]

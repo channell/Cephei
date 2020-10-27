@@ -62,8 +62,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : GenericRiskStatistics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".Add") 
-                                               [| _GenericRiskStatistics.source
-                                               ;  _value.source
+
+                                               [| _value.source
                                                ;  _weight.source
                                                |]
                 let hash = Helper.hashFold 
@@ -110,8 +110,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : GenericRiskStatistics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".AddSequence") 
-                                               [| _GenericRiskStatistics.source
-                                               ;  _data.source
+
+                                               [| _data.source
                                                ;  _weight.source
                                                |]
                 let hash = Helper.hashFold 
@@ -154,8 +154,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".AverageShortfall") 
-                                               [| _GenericRiskStatistics.source
-                                               ;  _target.source
+
+                                               [| _target.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericRiskStatistics.cell
@@ -192,8 +192,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".DownsideDeviation") 
-                                               [| _GenericRiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericRiskStatistics.cell
                                 |]
@@ -228,8 +228,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".DownsideVariance") 
-                                               [| _GenericRiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericRiskStatistics.cell
                                 |]
@@ -264,8 +264,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".ErrorEstimate") 
-                                               [| _GenericRiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericRiskStatistics.cell
                                 |]
@@ -308,8 +308,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : KeyValuePair<double,int>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".ExpectationValue") 
-                                               [| _GenericRiskStatistics.source
-                                               ;  _f.source
+
+                                               [| _f.source
                                                ;  _inRange.source
                                                |]
                 let hash = Helper.hashFold 
@@ -352,8 +352,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".ExpectedShortfall") 
-                                               [| _GenericRiskStatistics.source
-                                               ;  _centile.source
+
+                                               [| _centile.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericRiskStatistics.cell
@@ -390,8 +390,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".Kurtosis") 
-                                               [| _GenericRiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericRiskStatistics.cell
                                 |]
@@ -426,8 +426,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".Max") 
-                                               [| _GenericRiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericRiskStatistics.cell
                                 |]
@@ -462,8 +462,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".Mean") 
-                                               [| _GenericRiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericRiskStatistics.cell
                                 |]
@@ -498,8 +498,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".Min") 
-                                               [| _GenericRiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericRiskStatistics.cell
                                 |]
@@ -538,8 +538,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".Percentile") 
-                                               [| _GenericRiskStatistics.source
-                                               ;  _percent.source
+
+                                               [| _percent.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericRiskStatistics.cell
@@ -580,8 +580,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".PotentialUpside") 
-                                               [| _GenericRiskStatistics.source
-                                               ;  _centile.source
+
+                                               [| _centile.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericRiskStatistics.cell
@@ -622,8 +622,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".Regret") 
-                                               [| _GenericRiskStatistics.source
-                                               ;  _target.source
+
+                                               [| _target.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericRiskStatistics.cell
@@ -660,8 +660,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : GenericRiskStatistics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".Reset") 
-                                               [| _GenericRiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericRiskStatistics.cell
                                 |]
@@ -696,8 +696,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".Samples") 
-                                               [| _GenericRiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericRiskStatistics.cell
                                 |]
@@ -732,8 +732,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".SemiDeviation") 
-                                               [| _GenericRiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericRiskStatistics.cell
                                 |]
@@ -768,8 +768,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".SemiVariance") 
-                                               [| _GenericRiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericRiskStatistics.cell
                                 |]
@@ -808,8 +808,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".Shortfall") 
-                                               [| _GenericRiskStatistics.source
-                                               ;  _target.source
+
+                                               [| _target.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericRiskStatistics.cell
@@ -846,8 +846,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".Skewness") 
-                                               [| _GenericRiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericRiskStatistics.cell
                                 |]
@@ -882,8 +882,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".StandardDeviation") 
-                                               [| _GenericRiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericRiskStatistics.cell
                                 |]
@@ -922,8 +922,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".ValueAtRisk") 
-                                               [| _GenericRiskStatistics.source
-                                               ;  _centile.source
+
+                                               [| _centile.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GenericRiskStatistics.cell
@@ -960,8 +960,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".Variance") 
-                                               [| _GenericRiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericRiskStatistics.cell
                                 |]
@@ -996,8 +996,8 @@ module GenericRiskStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericRiskStatistics.source + ".WeightSum") 
-                                               [| _GenericRiskStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericRiskStatistics.cell
                                 |]

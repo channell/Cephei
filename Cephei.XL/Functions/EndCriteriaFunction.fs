@@ -62,8 +62,8 @@ module EndCriteriaFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EndCriteria.source + ".CheckMaxIterations") 
-                                               [| _EndCriteria.source
-                                               ;  _iteration.source
+
+                                               [| _iteration.source
                                                ;  _ecType.source
                                                |]
                 let hash = Helper.hashFold 
@@ -114,8 +114,8 @@ module EndCriteriaFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EndCriteria.source + ".CheckStationaryFunctionAccuracy") 
-                                               [| _EndCriteria.source
-                                               ;  _f.source
+
+                                               [| _f.source
                                                ;  _positiveOptimization.source
                                                ;  _ecType.source
                                                |]
@@ -172,8 +172,8 @@ module EndCriteriaFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EndCriteria.source + ".CheckStationaryFunctionValue") 
-                                               [| _EndCriteria.source
-                                               ;  _fxOld.source
+
+                                               [| _fxOld.source
                                                ;  _fxNew.source
                                                ;  _statStateIterations.source
                                                ;  _ecType.source
@@ -232,8 +232,8 @@ module EndCriteriaFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EndCriteria.source + ".CheckStationaryPoint") 
-                                               [| _EndCriteria.source
-                                               ;  _xOld.source
+
+                                               [| _xOld.source
                                                ;  _xNew.source
                                                ;  _statStateIterations.source
                                                ;  _ecType.source
@@ -284,8 +284,8 @@ module EndCriteriaFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EndCriteria.source + ".CheckZeroGradientNorm") 
-                                               [| _EndCriteria.source
-                                               ;  _gradientNorm.source
+
+                                               [| _gradientNorm.source
                                                ;  _ecType.source
                                                |]
                 let hash = Helper.hashFold 
@@ -385,8 +385,8 @@ module EndCriteriaFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EndCriteria.source + ".FunctionEpsilon") 
-                                               [| _EndCriteria.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EndCriteria.cell
                                 |]
@@ -421,8 +421,8 @@ module EndCriteriaFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EndCriteria.source + ".GradientNormEpsilon") 
-                                               [| _EndCriteria.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EndCriteria.cell
                                 |]
@@ -457,8 +457,8 @@ module EndCriteriaFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EndCriteria.source + ".MaxIterations") 
-                                               [| _EndCriteria.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EndCriteria.cell
                                 |]
@@ -493,8 +493,8 @@ module EndCriteriaFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EndCriteria.source + ".MaxStationaryStateIterations") 
-                                               [| _EndCriteria.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EndCriteria.cell
                                 |]
@@ -529,8 +529,8 @@ module EndCriteriaFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EndCriteria.source + ".RootEpsilon") 
-                                               [| _EndCriteria.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EndCriteria.cell
                                 |]
@@ -597,8 +597,8 @@ module EndCriteriaFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EndCriteria.source + ".Value") 
-                                               [| _EndCriteria.source
-                                               ;  _iteration.source
+
+                                               [| _iteration.source
                                                ;  _statStateIterations.source
                                                ;  _positiveOptimization.source
                                                ;  _fold.source

@@ -54,8 +54,8 @@ module ForwardSpreadedTermStructureFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_ForwardSpreadedTermStructure.source + ".Calendar") 
-                                               [| _ForwardSpreadedTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardSpreadedTermStructure.cell
                                 |]
@@ -90,8 +90,8 @@ module ForwardSpreadedTermStructureFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_ForwardSpreadedTermStructure.source + ".DayCounter") 
-                                               [| _ForwardSpreadedTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardSpreadedTermStructure.cell
                                 |]
@@ -169,8 +169,8 @@ module ForwardSpreadedTermStructureFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ForwardSpreadedTermStructure.source + ".MaxDate") 
-                                               [| _ForwardSpreadedTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardSpreadedTermStructure.cell
                                 |]
@@ -205,8 +205,8 @@ module ForwardSpreadedTermStructureFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardSpreadedTermStructure.source + ".MaxTime") 
-                                               [| _ForwardSpreadedTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardSpreadedTermStructure.cell
                                 |]
@@ -241,8 +241,8 @@ module ForwardSpreadedTermStructureFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ForwardSpreadedTermStructure.source + ".ReferenceDate") 
-                                               [| _ForwardSpreadedTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardSpreadedTermStructure.cell
                                 |]
@@ -277,8 +277,8 @@ module ForwardSpreadedTermStructureFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardSpreadedTermStructure.source + ".SettlementDays") 
-                                               [| _ForwardSpreadedTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardSpreadedTermStructure.cell
                                 |]

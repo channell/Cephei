@@ -24,6 +24,7 @@ namespace Cephei.Cell.Generic
         private T _value;
         private Exception _lastException = null;
         private DateTime _epoch;
+        private DateTime _eventEpoch;
         private bool _disposd = false;
 
         // number of pending calculations
@@ -84,7 +85,7 @@ namespace Cephei.Cell.Generic
                 _spinLock.Enter(ref taken);
                 if (taken)
                 {
-                    if (_state == (int)CellState.Clean)
+                    if (_state == (int)CellState.Clean && session == null || (_epoch > epoch && session == null))
                         return _value;      // don't recalculate for read
                     SetState(CellState.Calculating);
                     _spinLock.Exit(true);
@@ -311,6 +312,7 @@ namespace Cephei.Cell.Generic
         public virtual void OnChange(CellEvent eventType, ICellEvent root,  ICellEvent sender,  DateTime epoch, ISession session)
         {
             if (_disposd && root != this && eventType != CellEvent.Delete) sender.OnChange(CellEvent.Delete, this, this, epoch, session);
+            if (epoch < _eventEpoch && session == null) return; else _eventEpoch = epoch;
             switch (eventType)
             {
                 case CellEvent.Calculate:

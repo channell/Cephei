@@ -54,8 +54,8 @@ module ParameterFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
                 let source () = Helper.sourceFold (_Parameter.source + ".CONSTRAINT") 
-                                               [| _Parameter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Parameter.cell
                                 |]
@@ -90,8 +90,8 @@ module ParameterFunction =
                 let format (o : Parameter.Impl) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Parameter.source + ".Implementation") 
-                                               [| _Parameter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Parameter.cell
                                 |]
@@ -157,8 +157,8 @@ module ParameterFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_Parameter.source + ".Parameters") 
-                                               [| _Parameter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Parameter.cell
                                 |]
@@ -201,8 +201,8 @@ module ParameterFunction =
                 let format (o : Parameter) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Parameter.source + ".SetParam") 
-                                               [| _Parameter.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -241,8 +241,8 @@ module ParameterFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Parameter.source + ".Size") 
-                                               [| _Parameter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Parameter.cell
                                 |]
@@ -281,8 +281,8 @@ module ParameterFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Parameter.source + ".TestParams") 
-                                               [| _Parameter.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Parameter.cell
@@ -323,8 +323,8 @@ module ParameterFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Parameter.source + ".Value") 
-                                               [| _Parameter.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Parameter.cell

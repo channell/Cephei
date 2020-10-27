@@ -18,6 +18,8 @@ using Serilog;
 using Serilog.Events;
 using Serilog.Sinks.ApplicationInsights.Sinks.ApplicationInsights.Formatters;
 using Cephei.Cell;
+using System.IO;
+using QLNet;
 
 namespace Cephei.XL
 {
@@ -55,6 +57,7 @@ namespace Cephei.XL
             
             _email = UserPrincipal.Current.EmailAddress;
             var version = Assembly.GetExecutingAssembly().GetName().Version;
+            LoadModels();
 
             Log.Information("OPEN {1} {0}", _email, version);
         }
@@ -83,6 +86,38 @@ namespace Cephei.XL
                 {
                     var m = String.Format("CALC {0}", t.Name);
                     Log.Information(m);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Load user models
+        /// </summary>
+        private void LoadModels ()
+        {
+            var dir = ExcelDnaUtil.XllPath;
+            dir = dir.Substring(0, dir.LastIndexOf('\\'));
+            foreach (var f in Directory.EnumerateFiles(dir))
+            {
+                if (f.ToLower().EndsWith("model.dll"))
+                {
+                    var methods = new System.Collections.Generic.List<MethodInfo>();
+                    var ass = Assembly.LoadFile(f);
+                    foreach (var ty in ass.GetTypes())
+                    {
+                        foreach (var me in ty.GetMethods())
+                        {
+                            foreach (var att in me.GetCustomAttributes())
+                            {
+                                if (att.GetType().Name == "ExcelFunction")
+                                {
+                                    methods.Add(me);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    ExcelIntegration.RegisterMethods(methods);
                 }
             }
         }

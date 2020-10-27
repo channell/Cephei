@@ -125,8 +125,8 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackDeltaPremiumAdjustedMaxStrikeClass.source + ".Value") 
-                                               [| _BlackDeltaPremiumAdjustedMaxStrikeClass.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackDeltaPremiumAdjustedMaxStrikeClass.cell
@@ -167,8 +167,8 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackDeltaPremiumAdjustedMaxStrikeClass.source + ".Derivative") 
-                                               [| _BlackDeltaPremiumAdjustedMaxStrikeClass.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackDeltaPremiumAdjustedMaxStrikeClass.cell

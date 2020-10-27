@@ -74,8 +74,8 @@ module BackwardflatLinearFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation2D>) l
 
                 let source () = Helper.sourceFold (_BackwardflatLinear.source + ".Interpolate") 
-                                               [| _BackwardflatLinear.source
-                                               ;  _xBegin.source
+
+                                               [| _xBegin.source
                                                ;  _xEnd.source
                                                ;  _yBegin.source
                                                ;  _yEnd.source

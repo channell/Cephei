@@ -58,8 +58,8 @@ module SpreadBasketPayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadBasketPayoff.source + ".Accumulate") 
-                                               [| _SpreadBasketPayoff.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadBasketPayoff.cell
@@ -133,8 +133,8 @@ module SpreadBasketPayoffFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
                 let source () = Helper.sourceFold (_SpreadBasketPayoff.source + ".BasePayoff") 
-                                               [| _SpreadBasketPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadBasketPayoff.cell
                                 |]
@@ -169,8 +169,8 @@ module SpreadBasketPayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SpreadBasketPayoff.source + ".Description") 
-                                               [| _SpreadBasketPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadBasketPayoff.cell
                                 |]
@@ -205,8 +205,8 @@ module SpreadBasketPayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SpreadBasketPayoff.source + ".Name") 
-                                               [| _SpreadBasketPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadBasketPayoff.cell
                                 |]
@@ -245,8 +245,8 @@ module SpreadBasketPayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadBasketPayoff.source + ".Value1") 
-                                               [| _SpreadBasketPayoff.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadBasketPayoff.cell
@@ -287,8 +287,8 @@ module SpreadBasketPayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadBasketPayoff.source + ".Value") 
-                                               [| _SpreadBasketPayoff.source
-                                               ;  _price.source
+
+                                               [| _price.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadBasketPayoff.cell
@@ -329,8 +329,8 @@ module SpreadBasketPayoffFunction =
                 let format (o : SpreadBasketPayoff) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SpreadBasketPayoff.source + ".Accept") 
-                                               [| _SpreadBasketPayoff.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadBasketPayoff.cell

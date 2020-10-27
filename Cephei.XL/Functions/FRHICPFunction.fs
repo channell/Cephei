@@ -138,8 +138,8 @@ module FRHICPFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZeroInflationIndex>) l
 
                 let source () = Helper.sourceFold (_FRHICP.source + ".Clone") 
-                                               [| _FRHICP.source
-                                               ;  _h.source
+
+                                               [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
@@ -184,8 +184,8 @@ module FRHICPFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FRHICP.source + ".Fixing") 
-                                               [| _FRHICP.source
-                                               ;  _aFixingDate.source
+
+                                               [| _aFixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -224,8 +224,8 @@ module FRHICPFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<ZeroInflationTermStructure>>) l
 
                 let source () = Helper.sourceFold (_FRHICP.source + ".ZeroInflationTermStructure") 
-                                               [| _FRHICP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
@@ -272,8 +272,8 @@ module FRHICPFunction =
                 let format (o : FRHICP) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FRHICP.source + ".AddFixing") 
-                                               [| _FRHICP.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _fixing.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -315,8 +315,8 @@ module FRHICPFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_FRHICP.source + ".AvailabilityLag") 
-                                               [| _FRHICP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
@@ -351,8 +351,8 @@ module FRHICPFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_FRHICP.source + ".Currency") 
-                                               [| _FRHICP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
@@ -387,8 +387,8 @@ module FRHICPFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FRHICP.source + ".FamilyName") 
-                                               [| _FRHICP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
@@ -423,8 +423,8 @@ module FRHICPFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_FRHICP.source + ".FixingCalendar") 
-                                               [| _FRHICP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
@@ -459,8 +459,8 @@ module FRHICPFunction =
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FRHICP.source + ".Frequency") 
-                                               [| _FRHICP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
@@ -495,8 +495,8 @@ module FRHICPFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FRHICP.source + ".Interpolated") 
-                                               [| _FRHICP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
@@ -535,8 +535,8 @@ module FRHICPFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FRHICP.source + ".IsValidFixingDate") 
-                                               [| _FRHICP.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
@@ -573,8 +573,8 @@ module FRHICPFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FRHICP.source + ".Name") 
-                                               [| _FRHICP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
@@ -609,8 +609,8 @@ module FRHICPFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
 
                 let source () = Helper.sourceFold (_FRHICP.source + ".Region") 
-                                               [| _FRHICP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
@@ -645,8 +645,8 @@ module FRHICPFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FRHICP.source + ".Revised") 
-                                               [| _FRHICP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
@@ -681,8 +681,8 @@ module FRHICPFunction =
                 let format (o : FRHICP) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FRHICP.source + ".Update") 
-                                               [| _FRHICP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
@@ -729,8 +729,8 @@ module FRHICPFunction =
                 let format (o : FRHICP) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FRHICP.source + ".AddFixings") 
-                                               [| _FRHICP.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -779,8 +779,8 @@ module FRHICPFunction =
                 let format (o : FRHICP) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FRHICP.source + ".AddFixings1") 
-                                               [| _FRHICP.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -819,8 +819,8 @@ module FRHICPFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FRHICP.source + ".AllowsNativeFixings") 
-                                               [| _FRHICP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
@@ -855,8 +855,8 @@ module FRHICPFunction =
                 let format (o : FRHICP) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FRHICP.source + ".ClearFixings") 
-                                               [| _FRHICP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
@@ -895,8 +895,8 @@ module FRHICPFunction =
                 let format (o : FRHICP) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FRHICP.source + ".RegisterWith") 
-                                               [| _FRHICP.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
@@ -933,8 +933,8 @@ module FRHICPFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FRHICP.source + ".TimeSeries") 
-                                               [| _FRHICP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell
                                 |]
@@ -973,8 +973,8 @@ module FRHICPFunction =
                 let format (o : FRHICP) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FRHICP.source + ".UnregisterWith") 
-                                               [| _FRHICP.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FRHICP.cell

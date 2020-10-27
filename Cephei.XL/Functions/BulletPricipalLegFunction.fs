@@ -91,8 +91,8 @@ module BulletPricipalLegFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_BulletPricipalLeg.source + ".Value") 
-                                               [| _BulletPricipalLeg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BulletPricipalLeg.cell
                                 |]
@@ -131,8 +131,8 @@ module BulletPricipalLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
 
                 let source () = Helper.sourceFold (_BulletPricipalLeg.source + ".WithNotionals") 
-                                               [| _BulletPricipalLeg.source
-                                               ;  _notionals.source
+
+                                               [| _notionals.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BulletPricipalLeg.cell
@@ -173,8 +173,8 @@ module BulletPricipalLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
 
                 let source () = Helper.sourceFold (_BulletPricipalLeg.source + ".WithNotionals1") 
-                                               [| _BulletPricipalLeg.source
-                                               ;  _notional.source
+
+                                               [| _notional.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BulletPricipalLeg.cell
@@ -215,8 +215,8 @@ module BulletPricipalLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
 
                 let source () = Helper.sourceFold (_BulletPricipalLeg.source + ".WithPaymentAdjustment") 
-                                               [| _BulletPricipalLeg.source
-                                               ;  _convention.source
+
+                                               [| _convention.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BulletPricipalLeg.cell
@@ -257,8 +257,8 @@ module BulletPricipalLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
 
                 let source () = Helper.sourceFold (_BulletPricipalLeg.source + ".WithPaymentDayCounter") 
-                                               [| _BulletPricipalLeg.source
-                                               ;  _dayCounter.source
+
+                                               [| _dayCounter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BulletPricipalLeg.cell
@@ -299,8 +299,8 @@ module BulletPricipalLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
 
                 let source () = Helper.sourceFold (_BulletPricipalLeg.source + ".WithSign") 
-                                               [| _BulletPricipalLeg.source
-                                               ;  _sign.source
+
+                                               [| _sign.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BulletPricipalLeg.cell

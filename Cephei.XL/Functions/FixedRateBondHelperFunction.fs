@@ -54,8 +54,8 @@ module FixedRateBondHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateBond>) l
 
                 let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".FixedRateBond") 
-                                               [| _FixedRateBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
@@ -211,8 +211,8 @@ module FixedRateBondHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Bond>) l
 
                 let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".Bond") 
-                                               [| _FixedRateBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
@@ -247,8 +247,8 @@ module FixedRateBondHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".ImpliedQuote") 
-                                               [| _FixedRateBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
@@ -287,8 +287,8 @@ module FixedRateBondHelperFunction =
                 let format (o : FixedRateBondHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".SetTermStructure") 
-                                               [| _FixedRateBondHelper.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
@@ -325,8 +325,8 @@ module FixedRateBondHelperFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".UseCleanPrice") 
-                                               [| _FixedRateBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
@@ -361,8 +361,8 @@ module FixedRateBondHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".EarliestDate") 
-                                               [| _FixedRateBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
@@ -397,8 +397,8 @@ module FixedRateBondHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".LatestDate") 
-                                               [| _FixedRateBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
@@ -433,8 +433,8 @@ module FixedRateBondHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".LatestRelevantDate") 
-                                               [| _FixedRateBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
@@ -469,8 +469,8 @@ module FixedRateBondHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".MaturityDate") 
-                                               [| _FixedRateBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
@@ -505,8 +505,8 @@ module FixedRateBondHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".PillarDate") 
-                                               [| _FixedRateBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
@@ -541,8 +541,8 @@ module FixedRateBondHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
                 let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".Quote") 
-                                               [| _FixedRateBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
@@ -577,8 +577,8 @@ module FixedRateBondHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".QuoteError") 
-                                               [| _FixedRateBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
@@ -613,8 +613,8 @@ module FixedRateBondHelperFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".QuoteIsValid") 
-                                               [| _FixedRateBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
@@ -649,8 +649,8 @@ module FixedRateBondHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".QuoteValue") 
-                                               [| _FixedRateBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]
@@ -689,8 +689,8 @@ module FixedRateBondHelperFunction =
                 let format (o : FixedRateBondHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".RegisterWith") 
-                                               [| _FixedRateBondHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
@@ -731,8 +731,8 @@ module FixedRateBondHelperFunction =
                 let format (o : FixedRateBondHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".UnregisterWith") 
-                                               [| _FixedRateBondHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
@@ -769,8 +769,8 @@ module FixedRateBondHelperFunction =
                 let format (o : FixedRateBondHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FixedRateBondHelper.source + ".Update") 
-                                               [| _FixedRateBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedRateBondHelper.cell
                                 |]

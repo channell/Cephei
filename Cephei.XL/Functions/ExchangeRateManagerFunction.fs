@@ -63,8 +63,8 @@ module ExchangeRateManagerFunction =
                 let format (o : ExchangeRateManager) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ExchangeRateManager.source + ".Add") 
-                                               [| _ExchangeRateManager.source
-                                               ;  _rate.source
+
+                                               [| _rate.source
                                                ;  _startDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -109,8 +109,8 @@ module ExchangeRateManagerFunction =
                 let format (o : ExchangeRateManager) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ExchangeRateManager.source + ".Add") 
-                                               [| _ExchangeRateManager.source
-                                               ;  _rate.source
+
+                                               [| _rate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ExchangeRateManager.cell
@@ -148,8 +148,8 @@ module ExchangeRateManagerFunction =
                 let format (o : ExchangeRateManager) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ExchangeRateManager.source + ".Clear") 
-                                               [| _ExchangeRateManager.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ExchangeRateManager.cell
                                 |]
@@ -200,8 +200,8 @@ module ExchangeRateManagerFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ExchangeRate>) l
 
                 let source () = Helper.sourceFold (_ExchangeRateManager.source + ".Lookup") 
-                                               [| _ExchangeRateManager.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _target.source
                                                ;  _date.source
                                                ;  _Type.source
@@ -256,8 +256,8 @@ module ExchangeRateManagerFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ExchangeRate>) l
 
                 let source () = Helper.sourceFold (_ExchangeRateManager.source + ".Lookup") 
-                                               [| _ExchangeRateManager.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _target.source
                                                ;  _date.source
                                                |]
@@ -306,8 +306,8 @@ module ExchangeRateManagerFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ExchangeRate>) l
 
                 let source () = Helper.sourceFold (_ExchangeRateManager.source + ".Lookup") 
-                                               [| _ExchangeRateManager.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _target.source
                                                |]
                 let hash = Helper.hashFold 

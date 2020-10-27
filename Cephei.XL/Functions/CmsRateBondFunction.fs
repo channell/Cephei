@@ -185,8 +185,8 @@ module CmsRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".AccruedAmount") 
-                                               [| _CmsRateBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
@@ -223,8 +223,8 @@ module CmsRateBondFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".Calendar") 
-                                               [| _CmsRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
                                 |]
@@ -259,8 +259,8 @@ module CmsRateBondFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".Cashflows") 
-                                               [| _CmsRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
                                 |]
@@ -295,8 +295,8 @@ module CmsRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".CleanPrice") 
-                                               [| _CmsRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
                                 |]
@@ -351,8 +351,8 @@ module CmsRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".CleanPrice1") 
-                                               [| _CmsRateBond.source
-                                               ;  _Yield.source
+
+                                               [| _Yield.source
                                                ;  _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -417,8 +417,8 @@ module CmsRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".DirtyPrice") 
-                                               [| _CmsRateBond.source
-                                               ;  _Yield.source
+
+                                               [| _Yield.source
                                                ;  _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -463,8 +463,8 @@ module CmsRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".DirtyPrice") 
-                                               [| _CmsRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
                                 |]
@@ -499,8 +499,8 @@ module CmsRateBondFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".IsExpired") 
-                                               [| _CmsRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
                                 |]
@@ -535,8 +535,8 @@ module CmsRateBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".IssueDate") 
-                                               [| _CmsRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
                                 |]
@@ -575,8 +575,8 @@ module CmsRateBondFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".IsTradable") 
-                                               [| _CmsRateBond.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
@@ -613,8 +613,8 @@ module CmsRateBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".MaturityDate") 
-                                               [| _CmsRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
                                 |]
@@ -653,8 +653,8 @@ module CmsRateBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".NextCashFlowDate") 
-                                               [| _CmsRateBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
@@ -695,8 +695,8 @@ module CmsRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".NextCouponRate") 
-                                               [| _CmsRateBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
@@ -737,8 +737,8 @@ module CmsRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".Notional") 
-                                               [| _CmsRateBond.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
@@ -775,8 +775,8 @@ module CmsRateBondFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".Notionals") 
-                                               [| _CmsRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
                                 |]
@@ -815,8 +815,8 @@ module CmsRateBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".PreviousCashFlowDate") 
-                                               [| _CmsRateBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
@@ -857,8 +857,8 @@ module CmsRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".PreviousCouponRate") 
-                                               [| _CmsRateBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
@@ -895,8 +895,8 @@ module CmsRateBondFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".Redemption") 
-                                               [| _CmsRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
                                 |]
@@ -931,8 +931,8 @@ module CmsRateBondFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".Redemptions") 
-                                               [| _CmsRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
                                 |]
@@ -971,8 +971,8 @@ module CmsRateBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".SettlementDate") 
-                                               [| _CmsRateBond.source
-                                               ;  _date.source
+
+                                               [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
@@ -1009,8 +1009,8 @@ module CmsRateBondFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".SettlementDays") 
-                                               [| _CmsRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
                                 |]
@@ -1049,8 +1049,8 @@ module CmsRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".SettlementValue") 
-                                               [| _CmsRateBond.source
-                                               ;  _cleanPrice.source
+
+                                               [| _cleanPrice.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
@@ -1087,8 +1087,8 @@ module CmsRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".SettlementValue1") 
-                                               [| _CmsRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
                                 |]
@@ -1123,8 +1123,8 @@ module CmsRateBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".StartDate") 
-                                               [| _CmsRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
                                 |]
@@ -1187,8 +1187,8 @@ module CmsRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".Yield1") 
-                                               [| _CmsRateBond.source
-                                               ;  _cleanPrice.source
+
+                                               [| _cleanPrice.source
                                                ;  _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -1257,8 +1257,8 @@ module CmsRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".Yield") 
-                                               [| _CmsRateBond.source
-                                               ;  _dc.source
+
+                                               [| _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
                                                ;  _accuracy.source
@@ -1303,8 +1303,8 @@ module CmsRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".CASH") 
-                                               [| _CmsRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
                                 |]
@@ -1339,8 +1339,8 @@ module CmsRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".ErrorEstimate") 
-                                               [| _CmsRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
                                 |]
@@ -1375,8 +1375,8 @@ module CmsRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".NPV") 
-                                               [| _CmsRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
                                 |]
@@ -1415,8 +1415,8 @@ module CmsRateBondFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".Result") 
-                                               [| _CmsRateBond.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
@@ -1457,8 +1457,8 @@ module CmsRateBondFunction =
                 let format (o : CmsRateBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".SetPricingEngine") 
-                                               [| _CmsRateBond.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
@@ -1495,8 +1495,8 @@ module CmsRateBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".ValuationDate") 
-                                               [| _CmsRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsRateBond.cell
                                 |]

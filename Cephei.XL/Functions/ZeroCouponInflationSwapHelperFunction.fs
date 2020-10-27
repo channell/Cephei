@@ -54,8 +54,8 @@ module ZeroCouponInflationSwapHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ZeroCouponInflationSwapHelper.source + ".ImpliedQuote") 
-                                               [| _ZeroCouponInflationSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroCouponInflationSwapHelper.cell
                                 |]
@@ -94,8 +94,8 @@ module ZeroCouponInflationSwapHelperFunction =
                 let format (o : ZeroCouponInflationSwapHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZeroCouponInflationSwapHelper.source + ".SetTermStructure") 
-                                               [| _ZeroCouponInflationSwapHelper.source
-                                               ;  _z.source
+
+                                               [| _z.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZeroCouponInflationSwapHelper.cell
@@ -205,8 +205,8 @@ module ZeroCouponInflationSwapHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ZeroCouponInflationSwapHelper.source + ".EarliestDate") 
-                                               [| _ZeroCouponInflationSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroCouponInflationSwapHelper.cell
                                 |]
@@ -241,8 +241,8 @@ module ZeroCouponInflationSwapHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ZeroCouponInflationSwapHelper.source + ".LatestDate") 
-                                               [| _ZeroCouponInflationSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroCouponInflationSwapHelper.cell
                                 |]
@@ -277,8 +277,8 @@ module ZeroCouponInflationSwapHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ZeroCouponInflationSwapHelper.source + ".LatestRelevantDate") 
-                                               [| _ZeroCouponInflationSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroCouponInflationSwapHelper.cell
                                 |]
@@ -313,8 +313,8 @@ module ZeroCouponInflationSwapHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ZeroCouponInflationSwapHelper.source + ".MaturityDate") 
-                                               [| _ZeroCouponInflationSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroCouponInflationSwapHelper.cell
                                 |]
@@ -349,8 +349,8 @@ module ZeroCouponInflationSwapHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ZeroCouponInflationSwapHelper.source + ".PillarDate") 
-                                               [| _ZeroCouponInflationSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroCouponInflationSwapHelper.cell
                                 |]
@@ -385,8 +385,8 @@ module ZeroCouponInflationSwapHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
                 let source () = Helper.sourceFold (_ZeroCouponInflationSwapHelper.source + ".Quote") 
-                                               [| _ZeroCouponInflationSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroCouponInflationSwapHelper.cell
                                 |]
@@ -421,8 +421,8 @@ module ZeroCouponInflationSwapHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ZeroCouponInflationSwapHelper.source + ".QuoteError") 
-                                               [| _ZeroCouponInflationSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroCouponInflationSwapHelper.cell
                                 |]
@@ -457,8 +457,8 @@ module ZeroCouponInflationSwapHelperFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZeroCouponInflationSwapHelper.source + ".QuoteIsValid") 
-                                               [| _ZeroCouponInflationSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroCouponInflationSwapHelper.cell
                                 |]
@@ -493,8 +493,8 @@ module ZeroCouponInflationSwapHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ZeroCouponInflationSwapHelper.source + ".QuoteValue") 
-                                               [| _ZeroCouponInflationSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroCouponInflationSwapHelper.cell
                                 |]
@@ -533,8 +533,8 @@ module ZeroCouponInflationSwapHelperFunction =
                 let format (o : ZeroCouponInflationSwapHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZeroCouponInflationSwapHelper.source + ".RegisterWith") 
-                                               [| _ZeroCouponInflationSwapHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZeroCouponInflationSwapHelper.cell
@@ -575,8 +575,8 @@ module ZeroCouponInflationSwapHelperFunction =
                 let format (o : ZeroCouponInflationSwapHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZeroCouponInflationSwapHelper.source + ".UnregisterWith") 
-                                               [| _ZeroCouponInflationSwapHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZeroCouponInflationSwapHelper.cell
@@ -613,8 +613,8 @@ module ZeroCouponInflationSwapHelperFunction =
                 let format (o : ZeroCouponInflationSwapHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZeroCouponInflationSwapHelper.source + ".Update") 
-                                               [| _ZeroCouponInflationSwapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroCouponInflationSwapHelper.cell
                                 |]

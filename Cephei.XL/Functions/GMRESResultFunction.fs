@@ -54,8 +54,8 @@ module GMRESResultFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_GMRESResult.source + ".Errors") 
-                                               [| _GMRESResult.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GMRESResult.cell
                                 |]
@@ -133,8 +133,8 @@ module GMRESResultFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_GMRESResult.source + ".X") 
-                                               [| _GMRESResult.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GMRESResult.cell
                                 |]

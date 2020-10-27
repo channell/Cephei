@@ -162,8 +162,8 @@ module AUCPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZeroInflationIndex>) l
 
                 let source () = Helper.sourceFold (_AUCPI.source + ".Clone") 
-                                               [| _AUCPI.source
-                                               ;  _h.source
+
+                                               [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AUCPI.cell
@@ -208,8 +208,8 @@ module AUCPIFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AUCPI.source + ".Fixing") 
-                                               [| _AUCPI.source
-                                               ;  _aFixingDate.source
+
+                                               [| _aFixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -248,8 +248,8 @@ module AUCPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<ZeroInflationTermStructure>>) l
 
                 let source () = Helper.sourceFold (_AUCPI.source + ".ZeroInflationTermStructure") 
-                                               [| _AUCPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AUCPI.cell
                                 |]
@@ -296,8 +296,8 @@ module AUCPIFunction =
                 let format (o : AUCPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AUCPI.source + ".AddFixing") 
-                                               [| _AUCPI.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _fixing.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -339,8 +339,8 @@ module AUCPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_AUCPI.source + ".AvailabilityLag") 
-                                               [| _AUCPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AUCPI.cell
                                 |]
@@ -375,8 +375,8 @@ module AUCPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_AUCPI.source + ".Currency") 
-                                               [| _AUCPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AUCPI.cell
                                 |]
@@ -411,8 +411,8 @@ module AUCPIFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AUCPI.source + ".FamilyName") 
-                                               [| _AUCPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AUCPI.cell
                                 |]
@@ -447,8 +447,8 @@ module AUCPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_AUCPI.source + ".FixingCalendar") 
-                                               [| _AUCPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AUCPI.cell
                                 |]
@@ -483,8 +483,8 @@ module AUCPIFunction =
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AUCPI.source + ".Frequency") 
-                                               [| _AUCPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AUCPI.cell
                                 |]
@@ -519,8 +519,8 @@ module AUCPIFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AUCPI.source + ".Interpolated") 
-                                               [| _AUCPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AUCPI.cell
                                 |]
@@ -559,8 +559,8 @@ module AUCPIFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AUCPI.source + ".IsValidFixingDate") 
-                                               [| _AUCPI.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AUCPI.cell
@@ -597,8 +597,8 @@ module AUCPIFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AUCPI.source + ".Name") 
-                                               [| _AUCPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AUCPI.cell
                                 |]
@@ -633,8 +633,8 @@ module AUCPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
 
                 let source () = Helper.sourceFold (_AUCPI.source + ".Region") 
-                                               [| _AUCPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AUCPI.cell
                                 |]
@@ -669,8 +669,8 @@ module AUCPIFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AUCPI.source + ".Revised") 
-                                               [| _AUCPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AUCPI.cell
                                 |]
@@ -705,8 +705,8 @@ module AUCPIFunction =
                 let format (o : AUCPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AUCPI.source + ".Update") 
-                                               [| _AUCPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AUCPI.cell
                                 |]
@@ -753,8 +753,8 @@ module AUCPIFunction =
                 let format (o : AUCPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AUCPI.source + ".AddFixings") 
-                                               [| _AUCPI.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -803,8 +803,8 @@ module AUCPIFunction =
                 let format (o : AUCPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AUCPI.source + ".AddFixings") 
-                                               [| _AUCPI.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -843,8 +843,8 @@ module AUCPIFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AUCPI.source + ".AllowsNativeFixings") 
-                                               [| _AUCPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AUCPI.cell
                                 |]
@@ -879,8 +879,8 @@ module AUCPIFunction =
                 let format (o : AUCPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AUCPI.source + ".ClearFixings") 
-                                               [| _AUCPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AUCPI.cell
                                 |]
@@ -919,8 +919,8 @@ module AUCPIFunction =
                 let format (o : AUCPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AUCPI.source + ".RegisterWith") 
-                                               [| _AUCPI.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AUCPI.cell
@@ -957,8 +957,8 @@ module AUCPIFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AUCPI.source + ".TimeSeries") 
-                                               [| _AUCPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AUCPI.cell
                                 |]
@@ -997,8 +997,8 @@ module AUCPIFunction =
                 let format (o : AUCPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AUCPI.source + ".UnregisterWith") 
-                                               [| _AUCPI.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AUCPI.cell

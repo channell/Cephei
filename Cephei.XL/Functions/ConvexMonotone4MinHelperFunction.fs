@@ -131,8 +131,8 @@ module ConvexMonotone4MinHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvexMonotone4MinHelper.source + ".Primitive") 
-                                               [| _ConvexMonotone4MinHelper.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotone4MinHelper.cell
@@ -173,8 +173,8 @@ module ConvexMonotone4MinHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvexMonotone4MinHelper.source + ".Value") 
-                                               [| _ConvexMonotone4MinHelper.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotone4MinHelper.cell
@@ -211,8 +211,8 @@ module ConvexMonotone4MinHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConvexMonotone4MinHelper.source + ".FNext") 
-                                               [| _ConvexMonotone4MinHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConvexMonotone4MinHelper.cell
                                 |]

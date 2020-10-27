@@ -85,8 +85,8 @@ module PTECurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PTECurrency.source + ".Code") 
-                                               [| _PTECurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PTECurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module PTECurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PTECurrency.source + ".Empty") 
-                                               [| _PTECurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PTECurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module PTECurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PTECurrency.source + ".Equals") 
-                                               [| _PTECurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PTECurrency.cell
@@ -199,8 +199,8 @@ module PTECurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PTECurrency.source + ".Format") 
-                                               [| _PTECurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PTECurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module PTECurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PTECurrency.source + ".FractionsPerUnit") 
-                                               [| _PTECurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PTECurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module PTECurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PTECurrency.source + ".FractionSymbol") 
-                                               [| _PTECurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PTECurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module PTECurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PTECurrency.source + ".Name") 
-                                               [| _PTECurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PTECurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module PTECurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PTECurrency.source + ".NumericCode") 
-                                               [| _PTECurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PTECurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module PTECurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_PTECurrency.source + ".Rounding") 
-                                               [| _PTECurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PTECurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module PTECurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PTECurrency.source + ".Symbol") 
-                                               [| _PTECurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PTECurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module PTECurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PTECurrency.source + ".ToString") 
-                                               [| _PTECurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PTECurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module PTECurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_PTECurrency.source + ".TriangulationCurrency") 
-                                               [| _PTECurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PTECurrency.cell
                                 |]

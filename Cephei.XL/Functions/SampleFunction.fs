@@ -97,8 +97,8 @@ module SampleFunction =
                 let format (o : T) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Sample.source + ".Value") 
-                                               [| _Sample.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Sample.cell
                                 |]
@@ -133,8 +133,8 @@ module SampleFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Sample.source + ".Weight") 
-                                               [| _Sample.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Sample.cell
                                 |]

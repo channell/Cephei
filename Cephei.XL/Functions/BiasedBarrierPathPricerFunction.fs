@@ -125,8 +125,8 @@ module BiasedBarrierPathPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BiasedBarrierPathPricer.source + ".Value") 
-                                               [| _BiasedBarrierPathPricer.source
-                                               ;  _path.source
+
+                                               [| _path.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BiasedBarrierPathPricer.cell

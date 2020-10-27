@@ -85,8 +85,8 @@ module RONCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RONCurrency.source + ".Code") 
-                                               [| _RONCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RONCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module RONCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RONCurrency.source + ".Empty") 
-                                               [| _RONCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RONCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module RONCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RONCurrency.source + ".Equals") 
-                                               [| _RONCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RONCurrency.cell
@@ -199,8 +199,8 @@ module RONCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RONCurrency.source + ".Format") 
-                                               [| _RONCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RONCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module RONCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RONCurrency.source + ".FractionsPerUnit") 
-                                               [| _RONCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RONCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module RONCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RONCurrency.source + ".FractionSymbol") 
-                                               [| _RONCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RONCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module RONCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RONCurrency.source + ".Name") 
-                                               [| _RONCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RONCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module RONCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RONCurrency.source + ".NumericCode") 
-                                               [| _RONCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RONCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module RONCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_RONCurrency.source + ".Rounding") 
-                                               [| _RONCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RONCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module RONCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RONCurrency.source + ".Symbol") 
-                                               [| _RONCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RONCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module RONCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RONCurrency.source + ".ToString") 
-                                               [| _RONCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RONCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module RONCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_RONCurrency.source + ".TriangulationCurrency") 
-                                               [| _RONCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RONCurrency.cell
                                 |]

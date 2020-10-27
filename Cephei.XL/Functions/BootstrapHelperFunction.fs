@@ -159,8 +159,8 @@ module BootstrapHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BootstrapHelper.source + ".EarliestDate") 
-                                               [| _BootstrapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
                                 |]
@@ -195,8 +195,8 @@ module BootstrapHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BootstrapHelper.source + ".ImpliedQuote") 
-                                               [| _BootstrapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
                                 |]
@@ -231,8 +231,8 @@ module BootstrapHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BootstrapHelper.source + ".LatestDate") 
-                                               [| _BootstrapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
                                 |]
@@ -267,8 +267,8 @@ module BootstrapHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BootstrapHelper.source + ".LatestRelevantDate") 
-                                               [| _BootstrapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
                                 |]
@@ -303,8 +303,8 @@ module BootstrapHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BootstrapHelper.source + ".MaturityDate") 
-                                               [| _BootstrapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
                                 |]
@@ -339,8 +339,8 @@ module BootstrapHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BootstrapHelper.source + ".PillarDate") 
-                                               [| _BootstrapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
                                 |]
@@ -375,8 +375,8 @@ module BootstrapHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
                 let source () = Helper.sourceFold (_BootstrapHelper.source + ".Quote") 
-                                               [| _BootstrapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
                                 |]
@@ -411,8 +411,8 @@ module BootstrapHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BootstrapHelper.source + ".QuoteError") 
-                                               [| _BootstrapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
                                 |]
@@ -447,8 +447,8 @@ module BootstrapHelperFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BootstrapHelper.source + ".QuoteIsValid") 
-                                               [| _BootstrapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
                                 |]
@@ -483,8 +483,8 @@ module BootstrapHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BootstrapHelper.source + ".QuoteValue") 
-                                               [| _BootstrapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
                                 |]
@@ -523,8 +523,8 @@ module BootstrapHelperFunction =
                 let format (o : BootstrapHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BootstrapHelper.source + ".RegisterWith") 
-                                               [| _BootstrapHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
@@ -565,8 +565,8 @@ module BootstrapHelperFunction =
                 let format (o : BootstrapHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BootstrapHelper.source + ".SetTermStructure") 
-                                               [| _BootstrapHelper.source
-                                               ;  _ts.source
+
+                                               [| _ts.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
@@ -607,8 +607,8 @@ module BootstrapHelperFunction =
                 let format (o : BootstrapHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BootstrapHelper.source + ".UnregisterWith") 
-                                               [| _BootstrapHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
@@ -645,8 +645,8 @@ module BootstrapHelperFunction =
                 let format (o : BootstrapHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BootstrapHelper.source + ".Update") 
-                                               [| _BootstrapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BootstrapHelper.cell
                                 |]

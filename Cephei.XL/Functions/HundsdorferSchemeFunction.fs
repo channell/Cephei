@@ -66,8 +66,8 @@ module HundsdorferSchemeFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IMixedScheme>) l
 
                 let source () = Helper.sourceFold (_HundsdorferScheme.source + ".Factory") 
-                                               [| _HundsdorferScheme.source
-                                               ;  _L.source
+
+                                               [| _L.source
                                                ;  _bcs.source
                                                ;  _additionalInputs.source
                                                |]
@@ -198,8 +198,8 @@ module HundsdorferSchemeFunction =
                 let format (o : HundsdorferScheme) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HundsdorferScheme.source + ".SetStep") 
-                                               [| _HundsdorferScheme.source
-                                               ;  _dt.source
+
+                                               [| _dt.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HundsdorferScheme.cell
@@ -248,8 +248,8 @@ module HundsdorferSchemeFunction =
                 let format (o : HundsdorferScheme) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HundsdorferScheme.source + ".Step") 
-                                               [| _HundsdorferScheme.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                ;  _t.source
                                                ;  _theta.source
                                                |]

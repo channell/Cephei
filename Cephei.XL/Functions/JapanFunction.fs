@@ -109,8 +109,8 @@ module JapanFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_Japan.source + ".AddedHolidays") 
-                                               [| _Japan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Japan.cell
                                 |]
@@ -149,8 +149,8 @@ module JapanFunction =
                 let format (o : Japan) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Japan.source + ".AddHoliday") 
-                                               [| _Japan.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Japan.cell
@@ -195,8 +195,8 @@ module JapanFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Japan.source + ".Adjust") 
-                                               [| _Japan.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _c.source
                                                |]
                 let hash = Helper.hashFold 
@@ -255,8 +255,8 @@ module JapanFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Japan.source + ".Advance1") 
-                                               [| _Japan.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _n.source
                                                ;  _unit.source
                                                ;  _c.source
@@ -317,8 +317,8 @@ module JapanFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Japan.source + ".Advance") 
-                                               [| _Japan.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _p.source
                                                ;  _c.source
                                                ;  _endOfMonth.source
@@ -377,8 +377,8 @@ module JapanFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Japan.source + ".BusinessDaysBetween") 
-                                               [| _Japan.source
-                                               ;  _from.source
+
+                                               [| _from.source
                                                ;  _To.source
                                                ;  _includeFirst.source
                                                ;  _includeLast.source
@@ -421,8 +421,8 @@ module JapanFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_Japan.source + ".Calendar") 
-                                               [| _Japan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Japan.cell
                                 |]
@@ -457,8 +457,8 @@ module JapanFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Japan.source + ".Empty") 
-                                               [| _Japan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Japan.cell
                                 |]
@@ -497,8 +497,8 @@ module JapanFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Japan.source + ".EndOfMonth") 
-                                               [| _Japan.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Japan.cell
@@ -539,8 +539,8 @@ module JapanFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Japan.source + ".Equals") 
-                                               [| _Japan.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Japan.cell
@@ -581,8 +581,8 @@ module JapanFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Japan.source + ".IsBusinessDay") 
-                                               [| _Japan.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Japan.cell
@@ -623,8 +623,8 @@ module JapanFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Japan.source + ".IsEndOfMonth") 
-                                               [| _Japan.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Japan.cell
@@ -665,8 +665,8 @@ module JapanFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Japan.source + ".IsHoliday") 
-                                               [| _Japan.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Japan.cell
@@ -707,8 +707,8 @@ module JapanFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Japan.source + ".IsWeekend") 
-                                               [| _Japan.source
-                                               ;  _w.source
+
+                                               [| _w.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Japan.cell
@@ -747,8 +747,8 @@ module JapanFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Japan.source + ".Name") 
-                                               [| _Japan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Japan.cell
                                 |]
@@ -783,8 +783,8 @@ module JapanFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_Japan.source + ".RemovedHolidays") 
-                                               [| _Japan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Japan.cell
                                 |]
@@ -823,8 +823,8 @@ module JapanFunction =
                 let format (o : Japan) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Japan.source + ".RemoveHoliday") 
-                                               [| _Japan.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Japan.cell

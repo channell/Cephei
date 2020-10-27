@@ -91,8 +91,8 @@ module HestonModelFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HestonModel.source + ".Kappa") 
-                                               [| _HestonModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HestonModel.cell
                                 |]
@@ -127,8 +127,8 @@ module HestonModelFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<HestonProcess>) l
 
                 let source () = Helper.sourceFold (_HestonModel.source + ".PROCESS") 
-                                               [| _HestonModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HestonModel.cell
                                 |]
@@ -163,8 +163,8 @@ module HestonModelFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HestonModel.source + ".Rho") 
-                                               [| _HestonModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HestonModel.cell
                                 |]
@@ -199,8 +199,8 @@ module HestonModelFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HestonModel.source + ".Sigma") 
-                                               [| _HestonModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HestonModel.cell
                                 |]
@@ -235,8 +235,8 @@ module HestonModelFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HestonModel.source + ".Theta") 
-                                               [| _HestonModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HestonModel.cell
                                 |]
@@ -271,8 +271,8 @@ module HestonModelFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HestonModel.source + ".V0") 
-                                               [| _HestonModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HestonModel.cell
                                 |]
@@ -331,8 +331,8 @@ module HestonModelFunction =
                 let format (o : HestonModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HestonModel.source + ".Calibrate") 
-                                               [| _HestonModel.source
-                                               ;  _instruments.source
+
+                                               [| _instruments.source
                                                ;  _Method.source
                                                ;  _endCriteria.source
                                                ;  _additionalConstraint.source
@@ -379,8 +379,8 @@ module HestonModelFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
                 let source () = Helper.sourceFold (_HestonModel.source + ".CONSTRAINT") 
-                                               [| _HestonModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HestonModel.cell
                                 |]
@@ -415,8 +415,8 @@ module HestonModelFunction =
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HestonModel.source + ".EndCriteria") 
-                                               [| _HestonModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HestonModel.cell
                                 |]
@@ -451,8 +451,8 @@ module HestonModelFunction =
                 let format (o : HestonModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HestonModel.source + ".NotifyObservers") 
-                                               [| _HestonModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HestonModel.cell
                                 |]
@@ -487,8 +487,8 @@ module HestonModelFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_HestonModel.source + ".Parameters") 
-                                               [| _HestonModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HestonModel.cell
                                 |]
@@ -527,8 +527,8 @@ module HestonModelFunction =
                 let format (o : HestonModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HestonModel.source + ".RegisterWith") 
-                                               [| _HestonModel.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HestonModel.cell
@@ -569,8 +569,8 @@ module HestonModelFunction =
                 let format (o : HestonModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HestonModel.source + ".SetParams") 
-                                               [| _HestonModel.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HestonModel.cell
@@ -611,8 +611,8 @@ module HestonModelFunction =
                 let format (o : HestonModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HestonModel.source + ".UnregisterWith") 
-                                               [| _HestonModel.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HestonModel.cell
@@ -649,8 +649,8 @@ module HestonModelFunction =
                 let format (o : HestonModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HestonModel.source + ".Update") 
-                                               [| _HestonModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HestonModel.cell
                                 |]
@@ -693,8 +693,8 @@ module HestonModelFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HestonModel.source + ".Value") 
-                                               [| _HestonModel.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                ;  _instruments.source
                                                |]
                 let hash = Helper.hashFold 

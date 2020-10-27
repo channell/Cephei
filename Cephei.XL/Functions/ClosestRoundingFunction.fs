@@ -134,8 +134,8 @@ module ClosestRoundingFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ClosestRounding.source + ".Digit") 
-                                               [| _ClosestRounding.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ClosestRounding.cell
                                 |]
@@ -170,8 +170,8 @@ module ClosestRoundingFunction =
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ClosestRounding.source + ".GetType") 
-                                               [| _ClosestRounding.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ClosestRounding.cell
                                 |]
@@ -206,8 +206,8 @@ module ClosestRoundingFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ClosestRounding.source + ".Precision") 
-                                               [| _ClosestRounding.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ClosestRounding.cell
                                 |]
@@ -246,8 +246,8 @@ module ClosestRoundingFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ClosestRounding.source + ".Round") 
-                                               [| _ClosestRounding.source
-                                               ;  _value.source
+
+                                               [| _value.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ClosestRounding.cell

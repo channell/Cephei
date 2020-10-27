@@ -54,8 +54,8 @@ module TqrEigenDecompositionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_TqrEigenDecomposition.source + ".Eigenvalues") 
-                                               [| _TqrEigenDecomposition.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TqrEigenDecomposition.cell
                                 |]
@@ -90,8 +90,8 @@ module TqrEigenDecompositionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
                 let source () = Helper.sourceFold (_TqrEigenDecomposition.source + ".Eigenvectors") 
-                                               [| _TqrEigenDecomposition.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TqrEigenDecomposition.cell
                                 |]
@@ -126,8 +126,8 @@ module TqrEigenDecompositionFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TqrEigenDecomposition.source + ".Iterations") 
-                                               [| _TqrEigenDecomposition.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TqrEigenDecomposition.cell
                                 |]

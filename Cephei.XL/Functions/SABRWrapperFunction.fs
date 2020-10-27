@@ -113,8 +113,8 @@ module SABRWrapperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SABRWrapper.source + ".Volatility") 
-                                               [| _SABRWrapper.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SABRWrapper.cell

@@ -62,8 +62,8 @@ module PdeBSMFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PdeBSM.source + ".Diffusion") 
-                                               [| _PdeBSM.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -110,8 +110,8 @@ module PdeBSMFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PdeBSM.source + ".Discount") 
-                                               [| _PdeBSM.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -158,8 +158,8 @@ module PdeBSMFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PdeBSM.source + ".Drift") 
-                                               [| _PdeBSM.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -202,8 +202,8 @@ module PdeBSMFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PdeSecondOrderParabolic>) l
 
                 let source () = Helper.sourceFold (_PdeBSM.source + ".Factory") 
-                                               [| _PdeBSM.source
-                                               ;  _Process.source
+
+                                               [| _Process.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PdeBSM.cell
@@ -320,8 +320,8 @@ module PdeBSMFunction =
                 let format (o : PdeBSM) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PdeBSM.source + ".GenerateOperator") 
-                                               [| _PdeBSM.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _tg.source
                                                ;  _L.source
                                                |]

@@ -70,8 +70,8 @@ module LmConstWrapperVolatilityModelFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LmConstWrapperVolatilityModel.source + ".IntegratedVariance") 
-                                               [| _LmConstWrapperVolatilityModel.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _j.source
                                                ;  _u.source
                                                ;  _x.source
@@ -163,8 +163,8 @@ module LmConstWrapperVolatilityModelFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LmConstWrapperVolatilityModel.source + ".Volatility") 
-                                               [| _LmConstWrapperVolatilityModel.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                ;  _x.source
                                                |]
@@ -213,8 +213,8 @@ module LmConstWrapperVolatilityModelFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_LmConstWrapperVolatilityModel.source + ".Volatility1") 
-                                               [| _LmConstWrapperVolatilityModel.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -253,8 +253,8 @@ module LmConstWrapperVolatilityModelFunction =
                 let format (i : Generic.List<ICell<Parameter>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_LmConstWrapperVolatilityModel.source + ".Parameters") 
-                                               [| _LmConstWrapperVolatilityModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LmConstWrapperVolatilityModel.cell
                                 |]
@@ -293,8 +293,8 @@ module LmConstWrapperVolatilityModelFunction =
                 let format (o : LmConstWrapperVolatilityModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LmConstWrapperVolatilityModel.source + ".SetParams") 
-                                               [| _LmConstWrapperVolatilityModel.source
-                                               ;  _arguments.source
+
+                                               [| _arguments.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LmConstWrapperVolatilityModel.cell
@@ -331,8 +331,8 @@ module LmConstWrapperVolatilityModelFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LmConstWrapperVolatilityModel.source + ".Size") 
-                                               [| _LmConstWrapperVolatilityModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LmConstWrapperVolatilityModel.cell
                                 |]

@@ -58,8 +58,8 @@ module MinBasketPayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MinBasketPayoff.source + ".Accumulate") 
-                                               [| _MinBasketPayoff.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MinBasketPayoff.cell
@@ -133,8 +133,8 @@ module MinBasketPayoffFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
                 let source () = Helper.sourceFold (_MinBasketPayoff.source + ".BasePayoff") 
-                                               [| _MinBasketPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MinBasketPayoff.cell
                                 |]
@@ -169,8 +169,8 @@ module MinBasketPayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MinBasketPayoff.source + ".Description") 
-                                               [| _MinBasketPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MinBasketPayoff.cell
                                 |]
@@ -205,8 +205,8 @@ module MinBasketPayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MinBasketPayoff.source + ".Name") 
-                                               [| _MinBasketPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MinBasketPayoff.cell
                                 |]
@@ -245,8 +245,8 @@ module MinBasketPayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MinBasketPayoff.source + ".Value1") 
-                                               [| _MinBasketPayoff.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MinBasketPayoff.cell
@@ -287,8 +287,8 @@ module MinBasketPayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MinBasketPayoff.source + ".Value") 
-                                               [| _MinBasketPayoff.source
-                                               ;  _price.source
+
+                                               [| _price.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MinBasketPayoff.cell
@@ -329,8 +329,8 @@ module MinBasketPayoffFunction =
                 let format (o : MinBasketPayoff) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MinBasketPayoff.source + ".Accept") 
-                                               [| _MinBasketPayoff.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MinBasketPayoff.cell

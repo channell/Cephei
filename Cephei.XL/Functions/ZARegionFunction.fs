@@ -85,8 +85,8 @@ module ZARegionFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZARegion.source + ".Code") 
-                                               [| _ZARegion.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZARegion.cell
                                 |]
@@ -125,8 +125,8 @@ module ZARegionFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZARegion.source + ".Equals") 
-                                               [| _ZARegion.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZARegion.cell
@@ -163,8 +163,8 @@ module ZARegionFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZARegion.source + ".Name") 
-                                               [| _ZARegion.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZARegion.cell
                                 |]

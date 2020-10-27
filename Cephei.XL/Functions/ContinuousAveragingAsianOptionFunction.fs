@@ -115,8 +115,8 @@ module ContinuousAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Delta") 
-                                               [| _ContinuousAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
@@ -151,8 +151,8 @@ module ContinuousAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".DeltaForward") 
-                                               [| _ContinuousAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
@@ -187,8 +187,8 @@ module ContinuousAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".DividendRho") 
-                                               [| _ContinuousAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
@@ -223,8 +223,8 @@ module ContinuousAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Elasticity") 
-                                               [| _ContinuousAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
@@ -259,8 +259,8 @@ module ContinuousAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Gamma") 
-                                               [| _ContinuousAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
@@ -295,8 +295,8 @@ module ContinuousAveragingAsianOptionFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".IsExpired") 
-                                               [| _ContinuousAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
@@ -331,8 +331,8 @@ module ContinuousAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".ItmCashProbability") 
-                                               [| _ContinuousAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
@@ -367,8 +367,8 @@ module ContinuousAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Rho") 
-                                               [| _ContinuousAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
@@ -403,8 +403,8 @@ module ContinuousAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".StrikeSensitivity") 
-                                               [| _ContinuousAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
@@ -439,8 +439,8 @@ module ContinuousAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Theta") 
-                                               [| _ContinuousAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
@@ -475,8 +475,8 @@ module ContinuousAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".ThetaPerDay") 
-                                               [| _ContinuousAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
@@ -511,8 +511,8 @@ module ContinuousAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Vega") 
-                                               [| _ContinuousAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
@@ -547,8 +547,8 @@ module ContinuousAveragingAsianOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
                 let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Exercise") 
-                                               [| _ContinuousAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
@@ -583,8 +583,8 @@ module ContinuousAveragingAsianOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
                 let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Payoff") 
-                                               [| _ContinuousAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
@@ -619,8 +619,8 @@ module ContinuousAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".CASH") 
-                                               [| _ContinuousAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
@@ -655,8 +655,8 @@ module ContinuousAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".ErrorEstimate") 
-                                               [| _ContinuousAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
@@ -691,8 +691,8 @@ module ContinuousAveragingAsianOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".NPV") 
-                                               [| _ContinuousAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]
@@ -731,8 +731,8 @@ module ContinuousAveragingAsianOptionFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".Result") 
-                                               [| _ContinuousAveragingAsianOption.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
@@ -773,8 +773,8 @@ module ContinuousAveragingAsianOptionFunction =
                 let format (o : ContinuousAveragingAsianOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".SetPricingEngine") 
-                                               [| _ContinuousAveragingAsianOption.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
@@ -811,8 +811,8 @@ module ContinuousAveragingAsianOptionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ContinuousAveragingAsianOption.source + ".ValuationDate") 
-                                               [| _ContinuousAveragingAsianOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ContinuousAveragingAsianOption.cell
                                 |]

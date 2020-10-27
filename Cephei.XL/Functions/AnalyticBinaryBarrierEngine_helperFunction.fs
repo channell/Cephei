@@ -121,8 +121,8 @@ module AnalyticBinaryBarrierEngine_helperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AnalyticBinaryBarrierEngine_helper.source + ".PayoffAtExpiry") 
-                                               [| _AnalyticBinaryBarrierEngine_helper.source
-                                               ;  _spot.source
+
+                                               [| _spot.source
                                                ;  _variance.source
                                                ;  _discount.source
                                                |]

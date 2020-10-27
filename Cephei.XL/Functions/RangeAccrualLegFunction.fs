@@ -54,8 +54,8 @@ module RangeAccrualLegFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_RangeAccrualLeg.source + ".Leg") 
-                                               [| _RangeAccrualLeg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualLeg.cell
                                 |]
@@ -137,8 +137,8 @@ module RangeAccrualLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RangeAccrualLeg>) l
 
                 let source () = Helper.sourceFold (_RangeAccrualLeg.source + ".WithFixingDays") 
-                                               [| _RangeAccrualLeg.source
-                                               ;  _fixingDays.source
+
+                                               [| _fixingDays.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualLeg.cell
@@ -179,8 +179,8 @@ module RangeAccrualLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RangeAccrualLeg>) l
 
                 let source () = Helper.sourceFold (_RangeAccrualLeg.source + ".WithFixingDays1") 
-                                               [| _RangeAccrualLeg.source
-                                               ;  _fixingDays.source
+
+                                               [| _fixingDays.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualLeg.cell
@@ -221,8 +221,8 @@ module RangeAccrualLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RangeAccrualLeg>) l
 
                 let source () = Helper.sourceFold (_RangeAccrualLeg.source + ".WithGearings") 
-                                               [| _RangeAccrualLeg.source
-                                               ;  _gearings.source
+
+                                               [| _gearings.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualLeg.cell
@@ -263,8 +263,8 @@ module RangeAccrualLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RangeAccrualLeg>) l
 
                 let source () = Helper.sourceFold (_RangeAccrualLeg.source + ".WithGearings1") 
-                                               [| _RangeAccrualLeg.source
-                                               ;  _gearing.source
+
+                                               [| _gearing.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualLeg.cell
@@ -305,8 +305,8 @@ module RangeAccrualLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RangeAccrualLeg>) l
 
                 let source () = Helper.sourceFold (_RangeAccrualLeg.source + ".WithLowerTriggers") 
-                                               [| _RangeAccrualLeg.source
-                                               ;  _triggers.source
+
+                                               [| _triggers.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualLeg.cell
@@ -347,8 +347,8 @@ module RangeAccrualLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RangeAccrualLeg>) l
 
                 let source () = Helper.sourceFold (_RangeAccrualLeg.source + ".WithLowerTriggers1") 
-                                               [| _RangeAccrualLeg.source
-                                               ;  _trigger.source
+
+                                               [| _trigger.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualLeg.cell
@@ -389,8 +389,8 @@ module RangeAccrualLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RangeAccrualLeg>) l
 
                 let source () = Helper.sourceFold (_RangeAccrualLeg.source + ".WithNotionals1") 
-                                               [| _RangeAccrualLeg.source
-                                               ;  _notionals.source
+
+                                               [| _notionals.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualLeg.cell
@@ -431,8 +431,8 @@ module RangeAccrualLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RangeAccrualLeg>) l
 
                 let source () = Helper.sourceFold (_RangeAccrualLeg.source + ".WithNotionals") 
-                                               [| _RangeAccrualLeg.source
-                                               ;  _notional.source
+
+                                               [| _notional.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualLeg.cell
@@ -473,8 +473,8 @@ module RangeAccrualLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RangeAccrualLeg>) l
 
                 let source () = Helper.sourceFold (_RangeAccrualLeg.source + ".WithObservationConvention") 
-                                               [| _RangeAccrualLeg.source
-                                               ;  _convention.source
+
+                                               [| _convention.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualLeg.cell
@@ -515,8 +515,8 @@ module RangeAccrualLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RangeAccrualLeg>) l
 
                 let source () = Helper.sourceFold (_RangeAccrualLeg.source + ".WithObservationTenor") 
-                                               [| _RangeAccrualLeg.source
-                                               ;  _tenor.source
+
+                                               [| _tenor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualLeg.cell
@@ -557,8 +557,8 @@ module RangeAccrualLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RangeAccrualLeg>) l
 
                 let source () = Helper.sourceFold (_RangeAccrualLeg.source + ".WithPaymentAdjustment") 
-                                               [| _RangeAccrualLeg.source
-                                               ;  _convention.source
+
+                                               [| _convention.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualLeg.cell
@@ -599,8 +599,8 @@ module RangeAccrualLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RangeAccrualLeg>) l
 
                 let source () = Helper.sourceFold (_RangeAccrualLeg.source + ".WithPaymentDayCounter") 
-                                               [| _RangeAccrualLeg.source
-                                               ;  _dayCounter.source
+
+                                               [| _dayCounter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualLeg.cell
@@ -641,8 +641,8 @@ module RangeAccrualLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RangeAccrualLeg>) l
 
                 let source () = Helper.sourceFold (_RangeAccrualLeg.source + ".WithSpreads") 
-                                               [| _RangeAccrualLeg.source
-                                               ;  _spreads.source
+
+                                               [| _spreads.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualLeg.cell
@@ -683,8 +683,8 @@ module RangeAccrualLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RangeAccrualLeg>) l
 
                 let source () = Helper.sourceFold (_RangeAccrualLeg.source + ".WithSpreads1") 
-                                               [| _RangeAccrualLeg.source
-                                               ;  _spread.source
+
+                                               [| _spread.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualLeg.cell
@@ -725,8 +725,8 @@ module RangeAccrualLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RangeAccrualLeg>) l
 
                 let source () = Helper.sourceFold (_RangeAccrualLeg.source + ".WithUpperTriggers") 
-                                               [| _RangeAccrualLeg.source
-                                               ;  _triggers.source
+
+                                               [| _triggers.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualLeg.cell
@@ -767,8 +767,8 @@ module RangeAccrualLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RangeAccrualLeg>) l
 
                 let source () = Helper.sourceFold (_RangeAccrualLeg.source + ".WithUpperTriggers") 
-                                               [| _RangeAccrualLeg.source
-                                               ;  _trigger.source
+
+                                               [| _trigger.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualLeg.cell

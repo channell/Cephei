@@ -154,8 +154,8 @@ module MCBarrierEngineFunction =
                 let format (o : MCBarrierEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MCBarrierEngine.source + ".RegisterWith") 
-                                               [| _MCBarrierEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCBarrierEngine.cell
@@ -192,8 +192,8 @@ module MCBarrierEngineFunction =
                 let format (o : MCBarrierEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MCBarrierEngine.source + ".Reset") 
-                                               [| _MCBarrierEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MCBarrierEngine.cell
                                 |]
@@ -232,8 +232,8 @@ module MCBarrierEngineFunction =
                 let format (o : MCBarrierEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MCBarrierEngine.source + ".UnregisterWith") 
-                                               [| _MCBarrierEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCBarrierEngine.cell
@@ -270,8 +270,8 @@ module MCBarrierEngineFunction =
                 let format (o : MCBarrierEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MCBarrierEngine.source + ".Update") 
-                                               [| _MCBarrierEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MCBarrierEngine.cell
                                 |]
@@ -306,8 +306,8 @@ module MCBarrierEngineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MCBarrierEngine.source + ".ErrorEstimate") 
-                                               [| _MCBarrierEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MCBarrierEngine.cell
                                 |]
@@ -342,8 +342,8 @@ module MCBarrierEngineFunction =
                 let format (o : S) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MCBarrierEngine.source + ".SampleAccumulator") 
-                                               [| _MCBarrierEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MCBarrierEngine.cell
                                 |]
@@ -390,8 +390,8 @@ module MCBarrierEngineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MCBarrierEngine.source + ".Value") 
-                                               [| _MCBarrierEngine.source
-                                               ;  _tolerance.source
+
+                                               [| _tolerance.source
                                                ;  _maxSamples.source
                                                ;  _minSamples.source
                                                |]
@@ -436,8 +436,8 @@ module MCBarrierEngineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MCBarrierEngine.source + ".ValueWithSamples") 
-                                               [| _MCBarrierEngine.source
-                                               ;  _samples.source
+
+                                               [| _samples.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCBarrierEngine.cell

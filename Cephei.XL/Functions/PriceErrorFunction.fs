@@ -107,8 +107,8 @@ module PriceErrorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PriceError.source + ".Value") 
-                                               [| _PriceError.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PriceError.cell
@@ -149,8 +149,8 @@ module PriceErrorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PriceError.source + ".Derivative") 
-                                               [| _PriceError.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PriceError.cell

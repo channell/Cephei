@@ -91,8 +91,8 @@ module Bkbm3MFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".BusinessDayConvention") 
-                                               [| _Bkbm3M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bkbm3M.cell
                                 |]
@@ -131,8 +131,8 @@ module Bkbm3MFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".Clone") 
-                                               [| _Bkbm3M.source
-                                               ;  _forwarding.source
+
+                                               [| _forwarding.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bkbm3M.cell
@@ -169,8 +169,8 @@ module Bkbm3MFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".EndOfMonth") 
-                                               [| _Bkbm3M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bkbm3M.cell
                                 |]
@@ -217,8 +217,8 @@ module Bkbm3MFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".ForecastFixing1") 
-                                               [| _Bkbm3M.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _t.source
                                                |]
@@ -263,8 +263,8 @@ module Bkbm3MFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".ForecastFixing") 
-                                               [| _Bkbm3M.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bkbm3M.cell
@@ -301,8 +301,8 @@ module Bkbm3MFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".ForwardingTermStructure") 
-                                               [| _Bkbm3M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bkbm3M.cell
                                 |]
@@ -341,8 +341,8 @@ module Bkbm3MFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".MaturityDate") 
-                                               [| _Bkbm3M.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bkbm3M.cell
@@ -379,8 +379,8 @@ module Bkbm3MFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".Currency") 
-                                               [| _Bkbm3M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bkbm3M.cell
                                 |]
@@ -415,8 +415,8 @@ module Bkbm3MFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".DayCounter") 
-                                               [| _Bkbm3M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bkbm3M.cell
                                 |]
@@ -451,8 +451,8 @@ module Bkbm3MFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".FamilyName") 
-                                               [| _Bkbm3M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bkbm3M.cell
                                 |]
@@ -495,8 +495,8 @@ module Bkbm3MFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".Fixing") 
-                                               [| _Bkbm3M.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -535,8 +535,8 @@ module Bkbm3MFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".FixingCalendar") 
-                                               [| _Bkbm3M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bkbm3M.cell
                                 |]
@@ -575,8 +575,8 @@ module Bkbm3MFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".FixingDate") 
-                                               [| _Bkbm3M.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bkbm3M.cell
@@ -613,8 +613,8 @@ module Bkbm3MFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".FixingDays") 
-                                               [| _Bkbm3M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bkbm3M.cell
                                 |]
@@ -653,8 +653,8 @@ module Bkbm3MFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".IsValidFixingDate") 
-                                               [| _Bkbm3M.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bkbm3M.cell
@@ -691,8 +691,8 @@ module Bkbm3MFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".Name") 
-                                               [| _Bkbm3M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bkbm3M.cell
                                 |]
@@ -731,8 +731,8 @@ module Bkbm3MFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".PastFixing") 
-                                               [| _Bkbm3M.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bkbm3M.cell
@@ -769,8 +769,8 @@ module Bkbm3MFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".Tenor") 
-                                               [| _Bkbm3M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bkbm3M.cell
                                 |]
@@ -805,8 +805,8 @@ module Bkbm3MFunction =
                 let format (o : Bkbm3M) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".Update") 
-                                               [| _Bkbm3M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bkbm3M.cell
                                 |]
@@ -845,8 +845,8 @@ module Bkbm3MFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".ValueDate") 
-                                               [| _Bkbm3M.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bkbm3M.cell
@@ -895,8 +895,8 @@ module Bkbm3MFunction =
                 let format (o : Bkbm3M) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".AddFixing") 
-                                               [| _Bkbm3M.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -949,8 +949,8 @@ module Bkbm3MFunction =
                 let format (o : Bkbm3M) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".AddFixings") 
-                                               [| _Bkbm3M.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -999,8 +999,8 @@ module Bkbm3MFunction =
                 let format (o : Bkbm3M) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".AddFixings") 
-                                               [| _Bkbm3M.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1039,8 +1039,8 @@ module Bkbm3MFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".AllowsNativeFixings") 
-                                               [| _Bkbm3M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bkbm3M.cell
                                 |]
@@ -1075,8 +1075,8 @@ module Bkbm3MFunction =
                 let format (o : Bkbm3M) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".ClearFixings") 
-                                               [| _Bkbm3M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bkbm3M.cell
                                 |]
@@ -1115,8 +1115,8 @@ module Bkbm3MFunction =
                 let format (o : Bkbm3M) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".RegisterWith") 
-                                               [| _Bkbm3M.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bkbm3M.cell
@@ -1153,8 +1153,8 @@ module Bkbm3MFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".TimeSeries") 
-                                               [| _Bkbm3M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Bkbm3M.cell
                                 |]
@@ -1193,8 +1193,8 @@ module Bkbm3MFunction =
                 let format (o : Bkbm3M) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Bkbm3M.source + ".UnregisterWith") 
-                                               [| _Bkbm3M.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Bkbm3M.cell

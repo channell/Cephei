@@ -40,6 +40,7 @@ namespace Cephei.Cell.Generic
         private T _value;
         private Exception _lastException = null;
         private DateTime _epoch;
+        private DateTime _eventEpoch;
         private bool _disposd = false;
 
         // number of pending calculations
@@ -100,7 +101,7 @@ namespace Cephei.Cell.Generic
                 _spinLock.Enter(ref taken);
                 if (taken)
                 {
-                    if (_state == (int)CellState.Clean && session == null)
+                    if (_state == (int)CellState.Clean && session == null || (_epoch > epoch && session == null))
                         return _value;      // don't recalculate for read
                     SetState(CellState.Calculating);
                     _spinLock.Exit(true);
@@ -283,21 +284,31 @@ namespace Cephei.Cell.Generic
                     ICellEvent[] r = null;
                     while (taken == false)
                     {
-                        _spinLock.Enter(ref taken);
-                        if (taken)
+                        try
                         {
-                            var l = Change.GetInvocationList();
-                            r = new ICellEvent[l.Length];
-                            for (int c = 0; c < l.Length; ++c)
+                            _spinLock.Enter(ref taken);
+                            if (taken)
                             {
-                                r[c] = l[c].Target as ICellEvent;
+                                var l = Change.GetInvocationList();
+                                r = new ICellEvent[l.Length];
+                                for (int c = 0; c < l.Length; ++c)
+                                {
+                                    r[c] = l[c].Target as ICellEvent;
+                                }
                             }
+                            else
+                                Thread.Sleep(100);
                         }
-                        else
-                            Thread.Sleep(100);
+                        catch
+                        {
+                            return new ICellEvent[0];
+                        }
+                        finally
+                        {
+                            if (taken) _spinLock.Exit();
+                        }
 
                     }
-                    if (taken) _spinLock.Exit();
                     return r;
                 }
                 else
@@ -349,6 +360,7 @@ namespace Cephei.Cell.Generic
         public virtual void OnChange(CellEvent eventType, ICellEvent root,  ICellEvent sender,  DateTime epoch, ISession session)
         {
             if (_disposd && root != this && eventType != CellEvent.Delete) sender.OnChange(CellEvent.Delete, this, this, epoch, session);
+            if (epoch < _eventEpoch && session == null) return; else _eventEpoch = epoch;
             switch (eventType)
             {
                 case CellEvent.Calculate:

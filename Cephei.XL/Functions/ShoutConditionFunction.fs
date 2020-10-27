@@ -62,8 +62,8 @@ module ShoutConditionFunction =
                 let format (o : ShoutCondition) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ShoutCondition.source + ".ApplyTo") 
-                                               [| _ShoutCondition.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 

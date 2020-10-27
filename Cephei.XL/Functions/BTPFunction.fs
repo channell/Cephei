@@ -58,8 +58,8 @@ module BTPFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".AccruedAmount") 
-                                               [| _BTP.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
@@ -252,8 +252,8 @@ module BTPFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".Yield") 
-                                               [| _BTP.source
-                                               ;  _cleanPrice.source
+
+                                               [| _cleanPrice.source
                                                ;  _settlementDate.source
                                                ;  _accuracy.source
                                                ;  _maxEvaluations.source
@@ -296,8 +296,8 @@ module BTPFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_BTP.source + ".DayCounter") 
-                                               [| _BTP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
                                 |]
@@ -332,8 +332,8 @@ module BTPFunction =
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".Frequency") 
-                                               [| _BTP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
                                 |]
@@ -368,8 +368,8 @@ module BTPFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_BTP.source + ".Calendar") 
-                                               [| _BTP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
                                 |]
@@ -404,8 +404,8 @@ module BTPFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_BTP.source + ".Cashflows") 
-                                               [| _BTP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
                                 |]
@@ -440,8 +440,8 @@ module BTPFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".CleanPrice") 
-                                               [| _BTP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
                                 |]
@@ -496,8 +496,8 @@ module BTPFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".CleanPrice1") 
-                                               [| _BTP.source
-                                               ;  _Yield.source
+
+                                               [| _Yield.source
                                                ;  _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -562,8 +562,8 @@ module BTPFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".DirtyPrice1") 
-                                               [| _BTP.source
-                                               ;  _Yield.source
+
+                                               [| _Yield.source
                                                ;  _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -608,8 +608,8 @@ module BTPFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".DirtyPrice") 
-                                               [| _BTP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
                                 |]
@@ -644,8 +644,8 @@ module BTPFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".IsExpired") 
-                                               [| _BTP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
                                 |]
@@ -680,8 +680,8 @@ module BTPFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".IssueDate") 
-                                               [| _BTP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
                                 |]
@@ -720,8 +720,8 @@ module BTPFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".IsTradable") 
-                                               [| _BTP.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
@@ -758,8 +758,8 @@ module BTPFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".MaturityDate") 
-                                               [| _BTP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
                                 |]
@@ -798,8 +798,8 @@ module BTPFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".NextCashFlowDate") 
-                                               [| _BTP.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
@@ -840,8 +840,8 @@ module BTPFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".NextCouponRate") 
-                                               [| _BTP.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
@@ -882,8 +882,8 @@ module BTPFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".Notional") 
-                                               [| _BTP.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
@@ -920,8 +920,8 @@ module BTPFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_BTP.source + ".Notionals") 
-                                               [| _BTP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
                                 |]
@@ -960,8 +960,8 @@ module BTPFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".PreviousCashFlowDate") 
-                                               [| _BTP.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
@@ -1002,8 +1002,8 @@ module BTPFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".PreviousCouponRate") 
-                                               [| _BTP.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
@@ -1040,8 +1040,8 @@ module BTPFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
                 let source () = Helper.sourceFold (_BTP.source + ".Redemption") 
-                                               [| _BTP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
                                 |]
@@ -1076,8 +1076,8 @@ module BTPFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_BTP.source + ".Redemptions") 
-                                               [| _BTP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
                                 |]
@@ -1116,8 +1116,8 @@ module BTPFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".SettlementDate") 
-                                               [| _BTP.source
-                                               ;  _date.source
+
+                                               [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
@@ -1154,8 +1154,8 @@ module BTPFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".SettlementDays") 
-                                               [| _BTP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
                                 |]
@@ -1194,8 +1194,8 @@ module BTPFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".SettlementValue") 
-                                               [| _BTP.source
-                                               ;  _cleanPrice.source
+
+                                               [| _cleanPrice.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
@@ -1232,8 +1232,8 @@ module BTPFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".SettlementValue1") 
-                                               [| _BTP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
                                 |]
@@ -1268,8 +1268,8 @@ module BTPFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".StartDate") 
-                                               [| _BTP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
                                 |]
@@ -1304,8 +1304,8 @@ module BTPFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".CASH") 
-                                               [| _BTP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
                                 |]
@@ -1340,8 +1340,8 @@ module BTPFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".ErrorEstimate") 
-                                               [| _BTP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
                                 |]
@@ -1376,8 +1376,8 @@ module BTPFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".NPV") 
-                                               [| _BTP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
                                 |]
@@ -1416,8 +1416,8 @@ module BTPFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".Result") 
-                                               [| _BTP.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
@@ -1458,8 +1458,8 @@ module BTPFunction =
                 let format (o : BTP) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".SetPricingEngine") 
-                                               [| _BTP.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
@@ -1496,8 +1496,8 @@ module BTPFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BTP.source + ".ValuationDate") 
-                                               [| _BTP.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BTP.cell
                                 |]

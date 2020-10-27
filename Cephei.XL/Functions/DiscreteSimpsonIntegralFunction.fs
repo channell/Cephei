@@ -62,8 +62,8 @@ module DiscreteSimpsonIntegralFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteSimpsonIntegral.source + ".Value") 
-                                               [| _DiscreteSimpsonIntegral.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _f.source
                                                |]
                 let hash = Helper.hashFold 

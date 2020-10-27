@@ -105,8 +105,8 @@ module GenericTimeSetterFunction =
                 let format (o : GenericTimeSetter) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GenericTimeSetter.source + ".SetTime") 
-                                               [| _GenericTimeSetter.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _L.source
                                                |]
                 let hash = Helper.hashFold 

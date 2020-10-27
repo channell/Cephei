@@ -62,8 +62,8 @@ module FdmDividendHandlerFunction =
                 let format (o : FdmDividendHandler) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FdmDividendHandler.source + ".ApplyTo") 
-                                               [| _FdmDividendHandler.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -102,8 +102,8 @@ module FdmDividendHandlerFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_FdmDividendHandler.source + ".DividendDates") 
-                                               [| _FdmDividendHandler.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmDividendHandler.cell
                                 |]
@@ -138,8 +138,8 @@ module FdmDividendHandlerFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_FdmDividendHandler.source + ".Dividends") 
-                                               [| _FdmDividendHandler.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmDividendHandler.cell
                                 |]
@@ -174,8 +174,8 @@ module FdmDividendHandlerFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_FdmDividendHandler.source + ".DividendTimes") 
-                                               [| _FdmDividendHandler.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmDividendHandler.cell
                                 |]

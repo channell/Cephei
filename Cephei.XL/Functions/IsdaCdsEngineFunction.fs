@@ -128,8 +128,8 @@ module IsdaCdsEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<DefaultProbabilityTermStructure>>) l
 
                 let source () = Helper.sourceFold (_IsdaCdsEngine.source + ".IsdaCreditCurve") 
-                                               [| _IsdaCdsEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IsdaCdsEngine.cell
                                 |]
@@ -164,8 +164,8 @@ module IsdaCdsEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_IsdaCdsEngine.source + ".IsdaRateCurve") 
-                                               [| _IsdaCdsEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IsdaCdsEngine.cell
                                 |]

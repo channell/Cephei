@@ -141,8 +141,8 @@ module AnalyticCapFloorEngineFunction =
                 let format (o : AnalyticCapFloorEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticCapFloorEngine.source + ".SetModel") 
-                                               [| _AnalyticCapFloorEngine.source
-                                               ;  _model.source
+
+                                               [| _model.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticCapFloorEngine.cell
@@ -183,8 +183,8 @@ module AnalyticCapFloorEngineFunction =
                 let format (o : AnalyticCapFloorEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticCapFloorEngine.source + ".RegisterWith") 
-                                               [| _AnalyticCapFloorEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticCapFloorEngine.cell
@@ -221,8 +221,8 @@ module AnalyticCapFloorEngineFunction =
                 let format (o : AnalyticCapFloorEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticCapFloorEngine.source + ".Reset") 
-                                               [| _AnalyticCapFloorEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AnalyticCapFloorEngine.cell
                                 |]
@@ -261,8 +261,8 @@ module AnalyticCapFloorEngineFunction =
                 let format (o : AnalyticCapFloorEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticCapFloorEngine.source + ".UnregisterWith") 
-                                               [| _AnalyticCapFloorEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticCapFloorEngine.cell
@@ -299,8 +299,8 @@ module AnalyticCapFloorEngineFunction =
                 let format (o : AnalyticCapFloorEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticCapFloorEngine.source + ".Update") 
-                                               [| _AnalyticCapFloorEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AnalyticCapFloorEngine.cell
                                 |]

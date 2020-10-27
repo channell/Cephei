@@ -54,8 +54,8 @@ module CPIBondHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPIBond>) l
 
                 let source () = Helper.sourceFold (_CPIBondHelper.source + ".CpiBond") 
-                                               [| _CPIBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBondHelper.cell
                                 |]
@@ -235,8 +235,8 @@ module CPIBondHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Bond>) l
 
                 let source () = Helper.sourceFold (_CPIBondHelper.source + ".Bond") 
-                                               [| _CPIBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBondHelper.cell
                                 |]
@@ -271,8 +271,8 @@ module CPIBondHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPIBondHelper.source + ".ImpliedQuote") 
-                                               [| _CPIBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBondHelper.cell
                                 |]
@@ -311,8 +311,8 @@ module CPIBondHelperFunction =
                 let format (o : CPIBondHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPIBondHelper.source + ".SetTermStructure") 
-                                               [| _CPIBondHelper.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPIBondHelper.cell
@@ -349,8 +349,8 @@ module CPIBondHelperFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPIBondHelper.source + ".UseCleanPrice") 
-                                               [| _CPIBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBondHelper.cell
                                 |]
@@ -385,8 +385,8 @@ module CPIBondHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CPIBondHelper.source + ".EarliestDate") 
-                                               [| _CPIBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBondHelper.cell
                                 |]
@@ -421,8 +421,8 @@ module CPIBondHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CPIBondHelper.source + ".LatestDate") 
-                                               [| _CPIBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBondHelper.cell
                                 |]
@@ -457,8 +457,8 @@ module CPIBondHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CPIBondHelper.source + ".LatestRelevantDate") 
-                                               [| _CPIBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBondHelper.cell
                                 |]
@@ -493,8 +493,8 @@ module CPIBondHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CPIBondHelper.source + ".MaturityDate") 
-                                               [| _CPIBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBondHelper.cell
                                 |]
@@ -529,8 +529,8 @@ module CPIBondHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CPIBondHelper.source + ".PillarDate") 
-                                               [| _CPIBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBondHelper.cell
                                 |]
@@ -565,8 +565,8 @@ module CPIBondHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
                 let source () = Helper.sourceFold (_CPIBondHelper.source + ".Quote") 
-                                               [| _CPIBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBondHelper.cell
                                 |]
@@ -601,8 +601,8 @@ module CPIBondHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPIBondHelper.source + ".QuoteError") 
-                                               [| _CPIBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBondHelper.cell
                                 |]
@@ -637,8 +637,8 @@ module CPIBondHelperFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPIBondHelper.source + ".QuoteIsValid") 
-                                               [| _CPIBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBondHelper.cell
                                 |]
@@ -673,8 +673,8 @@ module CPIBondHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPIBondHelper.source + ".QuoteValue") 
-                                               [| _CPIBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBondHelper.cell
                                 |]
@@ -713,8 +713,8 @@ module CPIBondHelperFunction =
                 let format (o : CPIBondHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPIBondHelper.source + ".RegisterWith") 
-                                               [| _CPIBondHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPIBondHelper.cell
@@ -755,8 +755,8 @@ module CPIBondHelperFunction =
                 let format (o : CPIBondHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPIBondHelper.source + ".UnregisterWith") 
-                                               [| _CPIBondHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPIBondHelper.cell
@@ -793,8 +793,8 @@ module CPIBondHelperFunction =
                 let format (o : CPIBondHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPIBondHelper.source + ".Update") 
-                                               [| _CPIBondHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBondHelper.cell
                                 |]

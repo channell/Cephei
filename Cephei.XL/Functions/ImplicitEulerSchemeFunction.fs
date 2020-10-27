@@ -66,8 +66,8 @@ module ImplicitEulerSchemeFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IMixedScheme>) l
 
                 let source () = Helper.sourceFold (_ImplicitEulerScheme.source + ".Factory") 
-                                               [| _ImplicitEulerScheme.source
-                                               ;  _L.source
+
+                                               [| _L.source
                                                ;  _bcs.source
                                                ;  _additionalFields.source
                                                |]
@@ -194,8 +194,8 @@ module ImplicitEulerSchemeFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ImplicitEulerScheme.source + ".NumberOfIterations") 
-                                               [| _ImplicitEulerScheme.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ImplicitEulerScheme.cell
                                 |]
@@ -234,8 +234,8 @@ module ImplicitEulerSchemeFunction =
                 let format (o : ImplicitEulerScheme) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ImplicitEulerScheme.source + ".SetStep") 
-                                               [| _ImplicitEulerScheme.source
-                                               ;  _dt.source
+
+                                               [| _dt.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ImplicitEulerScheme.cell
@@ -284,8 +284,8 @@ module ImplicitEulerSchemeFunction =
                 let format (o : ImplicitEulerScheme) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ImplicitEulerScheme.source + ".Step") 
-                                               [| _ImplicitEulerScheme.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                ;  _t.source
                                                ;  _theta.source
                                                |]

@@ -115,8 +115,8 @@ module ForwardPerformanceVanillaEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IPricingEngine>) l
 
                 let source () = Helper.sourceFold (_ForwardPerformanceVanillaEngine.source + ".GetOriginalEngine") 
-                                               [| _ForwardPerformanceVanillaEngine.source
-                                               ;  _Process.source
+
+                                               [| _Process.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardPerformanceVanillaEngine.cell
@@ -158,8 +158,8 @@ module ForwardPerformanceVanillaEngineFunction =
                 let format (o : ForwardPerformanceVanillaEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ForwardPerformanceVanillaEngine.source + ".RegisterWith") 
-                                               [| _ForwardPerformanceVanillaEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardPerformanceVanillaEngine.cell
@@ -196,8 +196,8 @@ module ForwardPerformanceVanillaEngineFunction =
                 let format (o : ForwardPerformanceVanillaEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ForwardPerformanceVanillaEngine.source + ".Reset") 
-                                               [| _ForwardPerformanceVanillaEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardPerformanceVanillaEngine.cell
                                 |]
@@ -236,8 +236,8 @@ module ForwardPerformanceVanillaEngineFunction =
                 let format (o : ForwardPerformanceVanillaEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ForwardPerformanceVanillaEngine.source + ".UnregisterWith") 
-                                               [| _ForwardPerformanceVanillaEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardPerformanceVanillaEngine.cell
@@ -274,8 +274,8 @@ module ForwardPerformanceVanillaEngineFunction =
                 let format (o : ForwardPerformanceVanillaEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ForwardPerformanceVanillaEngine.source + ".Update") 
-                                               [| _ForwardPerformanceVanillaEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardPerformanceVanillaEngine.cell
                                 |]

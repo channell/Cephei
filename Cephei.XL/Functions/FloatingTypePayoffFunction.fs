@@ -91,8 +91,8 @@ module FloatingTypePayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatingTypePayoff.source + ".Name") 
-                                               [| _FloatingTypePayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingTypePayoff.cell
                                 |]
@@ -131,8 +131,8 @@ module FloatingTypePayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatingTypePayoff.source + ".Value") 
-                                               [| _FloatingTypePayoff.source
-                                               ;  _k.source
+
+                                               [| _k.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatingTypePayoff.cell
@@ -169,8 +169,8 @@ module FloatingTypePayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatingTypePayoff.source + ".Description") 
-                                               [| _FloatingTypePayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingTypePayoff.cell
                                 |]
@@ -205,8 +205,8 @@ module FloatingTypePayoffFunction =
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatingTypePayoff.source + ".OptionType") 
-                                               [| _FloatingTypePayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingTypePayoff.cell
                                 |]
@@ -245,8 +245,8 @@ module FloatingTypePayoffFunction =
                 let format (o : FloatingTypePayoff) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatingTypePayoff.source + ".Accept") 
-                                               [| _FloatingTypePayoff.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatingTypePayoff.cell

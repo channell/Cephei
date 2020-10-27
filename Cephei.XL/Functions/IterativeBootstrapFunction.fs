@@ -89,8 +89,8 @@ module IterativeBootstrapFunction =
                 let format (o : IterativeBootstrap) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IterativeBootstrap.source + ".Setup") 
-                                               [| _IterativeBootstrap.source
-                                               ;  _ts.source
+
+                                               [| _ts.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IterativeBootstrap.cell

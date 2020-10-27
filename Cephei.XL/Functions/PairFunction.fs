@@ -54,8 +54,8 @@ module PairFunction =
                 let format (o : TFirst) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Pair.source + ".First") 
-                                               [| _Pair.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Pair.cell
                                 |]
@@ -164,8 +164,8 @@ module PairFunction =
                 let format (o : TSecond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Pair.source + ".Second") 
-                                               [| _Pair.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Pair.cell
                                 |]
@@ -208,8 +208,8 @@ module PairFunction =
                 let format (o : Pair) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Pair.source + ".Set") 
-                                               [| _Pair.source
-                                               ;  _first.source
+
+                                               [| _first.source
                                                ;  _second.source
                                                |]
                 let hash = Helper.hashFold 

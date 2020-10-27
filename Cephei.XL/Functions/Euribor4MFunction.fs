@@ -122,8 +122,8 @@ module Euribor4MFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".BusinessDayConvention") 
-                                               [| _Euribor4M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Euribor4M.cell
                                 |]
@@ -162,8 +162,8 @@ module Euribor4MFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".Clone") 
-                                               [| _Euribor4M.source
-                                               ;  _forwarding.source
+
+                                               [| _forwarding.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Euribor4M.cell
@@ -200,8 +200,8 @@ module Euribor4MFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".EndOfMonth") 
-                                               [| _Euribor4M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Euribor4M.cell
                                 |]
@@ -248,8 +248,8 @@ module Euribor4MFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".ForecastFixing1") 
-                                               [| _Euribor4M.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _t.source
                                                |]
@@ -294,8 +294,8 @@ module Euribor4MFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".ForecastFixing") 
-                                               [| _Euribor4M.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Euribor4M.cell
@@ -332,8 +332,8 @@ module Euribor4MFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".ForwardingTermStructure") 
-                                               [| _Euribor4M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Euribor4M.cell
                                 |]
@@ -372,8 +372,8 @@ module Euribor4MFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".MaturityDate") 
-                                               [| _Euribor4M.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Euribor4M.cell
@@ -410,8 +410,8 @@ module Euribor4MFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".Currency") 
-                                               [| _Euribor4M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Euribor4M.cell
                                 |]
@@ -446,8 +446,8 @@ module Euribor4MFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".DayCounter") 
-                                               [| _Euribor4M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Euribor4M.cell
                                 |]
@@ -482,8 +482,8 @@ module Euribor4MFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".FamilyName") 
-                                               [| _Euribor4M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Euribor4M.cell
                                 |]
@@ -526,8 +526,8 @@ module Euribor4MFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".Fixing") 
-                                               [| _Euribor4M.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -566,8 +566,8 @@ module Euribor4MFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".FixingCalendar") 
-                                               [| _Euribor4M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Euribor4M.cell
                                 |]
@@ -606,8 +606,8 @@ module Euribor4MFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".FixingDate") 
-                                               [| _Euribor4M.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Euribor4M.cell
@@ -644,8 +644,8 @@ module Euribor4MFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".FixingDays") 
-                                               [| _Euribor4M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Euribor4M.cell
                                 |]
@@ -684,8 +684,8 @@ module Euribor4MFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".IsValidFixingDate") 
-                                               [| _Euribor4M.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Euribor4M.cell
@@ -722,8 +722,8 @@ module Euribor4MFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".Name") 
-                                               [| _Euribor4M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Euribor4M.cell
                                 |]
@@ -762,8 +762,8 @@ module Euribor4MFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".PastFixing") 
-                                               [| _Euribor4M.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Euribor4M.cell
@@ -800,8 +800,8 @@ module Euribor4MFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".Tenor") 
-                                               [| _Euribor4M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Euribor4M.cell
                                 |]
@@ -836,8 +836,8 @@ module Euribor4MFunction =
                 let format (o : Euribor4M) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".Update") 
-                                               [| _Euribor4M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Euribor4M.cell
                                 |]
@@ -876,8 +876,8 @@ module Euribor4MFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".ValueDate") 
-                                               [| _Euribor4M.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Euribor4M.cell
@@ -926,8 +926,8 @@ module Euribor4MFunction =
                 let format (o : Euribor4M) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".AddFixing") 
-                                               [| _Euribor4M.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -980,8 +980,8 @@ module Euribor4MFunction =
                 let format (o : Euribor4M) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".AddFixings") 
-                                               [| _Euribor4M.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -1030,8 +1030,8 @@ module Euribor4MFunction =
                 let format (o : Euribor4M) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".AddFixings1") 
-                                               [| _Euribor4M.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1070,8 +1070,8 @@ module Euribor4MFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".AllowsNativeFixings") 
-                                               [| _Euribor4M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Euribor4M.cell
                                 |]
@@ -1106,8 +1106,8 @@ module Euribor4MFunction =
                 let format (o : Euribor4M) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".ClearFixings") 
-                                               [| _Euribor4M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Euribor4M.cell
                                 |]
@@ -1146,8 +1146,8 @@ module Euribor4MFunction =
                 let format (o : Euribor4M) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".RegisterWith") 
-                                               [| _Euribor4M.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Euribor4M.cell
@@ -1184,8 +1184,8 @@ module Euribor4MFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".TimeSeries") 
-                                               [| _Euribor4M.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Euribor4M.cell
                                 |]
@@ -1224,8 +1224,8 @@ module Euribor4MFunction =
                 let format (o : Euribor4M) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Euribor4M.source + ".UnregisterWith") 
-                                               [| _Euribor4M.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Euribor4M.cell

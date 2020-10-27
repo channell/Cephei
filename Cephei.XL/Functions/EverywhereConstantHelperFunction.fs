@@ -103,8 +103,8 @@ module EverywhereConstantHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EverywhereConstantHelper.source + ".FNext") 
-                                               [| _EverywhereConstantHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EverywhereConstantHelper.cell
                                 |]
@@ -143,8 +143,8 @@ module EverywhereConstantHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EverywhereConstantHelper.source + ".Primitive") 
-                                               [| _EverywhereConstantHelper.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EverywhereConstantHelper.cell
@@ -185,8 +185,8 @@ module EverywhereConstantHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EverywhereConstantHelper.source + ".Value") 
-                                               [| _EverywhereConstantHelper.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EverywhereConstantHelper.cell

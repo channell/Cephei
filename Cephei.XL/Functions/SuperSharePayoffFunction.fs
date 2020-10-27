@@ -54,8 +54,8 @@ module SuperSharePayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SuperSharePayoff.source + ".CashPayoff") 
-                                               [| _SuperSharePayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SuperSharePayoff.cell
                                 |]
@@ -90,8 +90,8 @@ module SuperSharePayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SuperSharePayoff.source + ".Description") 
-                                               [| _SuperSharePayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SuperSharePayoff.cell
                                 |]
@@ -126,8 +126,8 @@ module SuperSharePayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SuperSharePayoff.source + ".Name") 
-                                               [| _SuperSharePayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SuperSharePayoff.cell
                                 |]
@@ -162,8 +162,8 @@ module SuperSharePayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SuperSharePayoff.source + ".SecondStrike") 
-                                               [| _SuperSharePayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SuperSharePayoff.cell
                                 |]
@@ -251,8 +251,8 @@ module SuperSharePayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SuperSharePayoff.source + ".Value") 
-                                               [| _SuperSharePayoff.source
-                                               ;  _price.source
+
+                                               [| _price.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SuperSharePayoff.cell
@@ -289,8 +289,8 @@ module SuperSharePayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SuperSharePayoff.source + ".Strike") 
-                                               [| _SuperSharePayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SuperSharePayoff.cell
                                 |]
@@ -325,8 +325,8 @@ module SuperSharePayoffFunction =
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SuperSharePayoff.source + ".OptionType") 
-                                               [| _SuperSharePayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SuperSharePayoff.cell
                                 |]
@@ -365,8 +365,8 @@ module SuperSharePayoffFunction =
                 let format (o : SuperSharePayoff) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SuperSharePayoff.source + ".Accept") 
-                                               [| _SuperSharePayoff.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SuperSharePayoff.cell

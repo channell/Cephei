@@ -97,8 +97,8 @@ module GaussLaguerreIntegrationFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussLaguerreIntegration.source + ".Order") 
-                                               [| _GaussLaguerreIntegration.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussLaguerreIntegration.cell
                                 |]
@@ -137,8 +137,8 @@ module GaussLaguerreIntegrationFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussLaguerreIntegration.source + ".Value") 
-                                               [| _GaussLaguerreIntegration.source
-                                               ;  _f.source
+
+                                               [| _f.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussLaguerreIntegration.cell
@@ -175,8 +175,8 @@ module GaussLaguerreIntegrationFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_GaussLaguerreIntegration.source + ".Weights") 
-                                               [| _GaussLaguerreIntegration.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussLaguerreIntegration.cell
                                 |]
@@ -211,8 +211,8 @@ module GaussLaguerreIntegrationFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_GaussLaguerreIntegration.source + ".X") 
-                                               [| _GaussLaguerreIntegration.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussLaguerreIntegration.cell
                                 |]

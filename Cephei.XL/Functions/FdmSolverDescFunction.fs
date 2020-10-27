@@ -54,8 +54,8 @@ module FdmSolverDescFunction =
                 let format (o : FdmBoundaryConditionSet) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FdmSolverDesc.source + ".BcSet") 
-                                               [| _FdmSolverDesc.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmSolverDesc.cell
                                 |]
@@ -90,8 +90,8 @@ module FdmSolverDescFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmInnerValueCalculator>) l
 
                 let source () = Helper.sourceFold (_FdmSolverDesc.source + ".Calculator") 
-                                               [| _FdmSolverDesc.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmSolverDesc.cell
                                 |]
@@ -126,8 +126,8 @@ module FdmSolverDescFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmStepConditionComposite>) l
 
                 let source () = Helper.sourceFold (_FdmSolverDesc.source + ".Condition") 
-                                               [| _FdmSolverDesc.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmSolverDesc.cell
                                 |]
@@ -162,8 +162,8 @@ module FdmSolverDescFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FdmSolverDesc.source + ".DampingSteps") 
-                                               [| _FdmSolverDesc.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmSolverDesc.cell
                                 |]
@@ -198,8 +198,8 @@ module FdmSolverDescFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FdmSolverDesc.source + ".Maturity") 
-                                               [| _FdmSolverDesc.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmSolverDesc.cell
                                 |]
@@ -234,8 +234,8 @@ module FdmSolverDescFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmMesher>) l
 
                 let source () = Helper.sourceFold (_FdmSolverDesc.source + ".Mesher") 
-                                               [| _FdmSolverDesc.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmSolverDesc.cell
                                 |]
@@ -270,8 +270,8 @@ module FdmSolverDescFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FdmSolverDesc.source + ".TimeSteps") 
-                                               [| _FdmSolverDesc.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmSolverDesc.cell
                                 |]

@@ -54,8 +54,8 @@ module NonLinearLeastSquareFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NonLinearLeastSquare.source + ".ExitFlag") 
-                                               [| _NonLinearLeastSquare.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NonLinearLeastSquare.cell
                                 |]
@@ -90,8 +90,8 @@ module NonLinearLeastSquareFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NonLinearLeastSquare.source + ".LastValue") 
-                                               [| _NonLinearLeastSquare.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NonLinearLeastSquare.cell
                                 |]
@@ -314,8 +314,8 @@ module NonLinearLeastSquareFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_NonLinearLeastSquare.source + ".Perform") 
-                                               [| _NonLinearLeastSquare.source
-                                               ;  _lsProblem.source
+
+                                               [| _lsProblem.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NonLinearLeastSquare.cell
@@ -352,8 +352,8 @@ module NonLinearLeastSquareFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NonLinearLeastSquare.source + ".ResidualNorm") 
-                                               [| _NonLinearLeastSquare.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NonLinearLeastSquare.cell
                                 |]
@@ -392,8 +392,8 @@ module NonLinearLeastSquareFunction =
                 let format (o : NonLinearLeastSquare) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NonLinearLeastSquare.source + ".SetInitialValue") 
-                                               [| _NonLinearLeastSquare.source
-                                               ;  _initialValue.source
+
+                                               [| _initialValue.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NonLinearLeastSquare.cell

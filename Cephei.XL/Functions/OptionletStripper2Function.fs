@@ -54,8 +54,8 @@ module OptionletStripper2Function =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_OptionletStripper2.source + ".AtmCapFloorPrices") 
-                                               [| _OptionletStripper2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
@@ -90,8 +90,8 @@ module OptionletStripper2Function =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_OptionletStripper2.source + ".AtmCapFloorStrikes") 
-                                               [| _OptionletStripper2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
@@ -169,8 +169,8 @@ module OptionletStripper2Function =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_OptionletStripper2.source + ".SpreadsVol") 
-                                               [| _OptionletStripper2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
@@ -205,8 +205,8 @@ module OptionletStripper2Function =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_OptionletStripper2.source + ".AtmOptionletRates") 
-                                               [| _OptionletStripper2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
@@ -241,8 +241,8 @@ module OptionletStripper2Function =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OptionletStripper2.source + ".BusinessDayConvention") 
-                                               [| _OptionletStripper2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
@@ -277,8 +277,8 @@ module OptionletStripper2Function =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_OptionletStripper2.source + ".Calendar") 
-                                               [| _OptionletStripper2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
@@ -313,8 +313,8 @@ module OptionletStripper2Function =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_OptionletStripper2.source + ".DayCounter") 
-                                               [| _OptionletStripper2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
@@ -349,8 +349,8 @@ module OptionletStripper2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OptionletStripper2.source + ".Displacement") 
-                                               [| _OptionletStripper2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
@@ -385,8 +385,8 @@ module OptionletStripper2Function =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
                 let source () = Helper.sourceFold (_OptionletStripper2.source + ".IborIndex") 
-                                               [| _OptionletStripper2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
@@ -421,8 +421,8 @@ module OptionletStripper2Function =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_OptionletStripper2.source + ".OptionletAccrualPeriods") 
-                                               [| _OptionletStripper2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
@@ -457,8 +457,8 @@ module OptionletStripper2Function =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_OptionletStripper2.source + ".OptionletFixingDates") 
-                                               [| _OptionletStripper2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
@@ -493,8 +493,8 @@ module OptionletStripper2Function =
                 let format (i : Generic.List<ICell<Period>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_OptionletStripper2.source + ".OptionletFixingTenors") 
-                                               [| _OptionletStripper2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
@@ -529,8 +529,8 @@ module OptionletStripper2Function =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_OptionletStripper2.source + ".OptionletFixingTimes") 
-                                               [| _OptionletStripper2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
@@ -565,8 +565,8 @@ module OptionletStripper2Function =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OptionletStripper2.source + ".OptionletMaturities") 
-                                               [| _OptionletStripper2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
@@ -601,8 +601,8 @@ module OptionletStripper2Function =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_OptionletStripper2.source + ".OptionletPaymentDates") 
-                                               [| _OptionletStripper2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
@@ -641,8 +641,8 @@ module OptionletStripper2Function =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_OptionletStripper2.source + ".OptionletStrikes") 
-                                               [| _OptionletStripper2.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
@@ -683,8 +683,8 @@ module OptionletStripper2Function =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_OptionletStripper2.source + ".OptionletVolatilities") 
-                                               [| _OptionletStripper2.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
@@ -721,8 +721,8 @@ module OptionletStripper2Function =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OptionletStripper2.source + ".SettlementDays") 
-                                               [| _OptionletStripper2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
@@ -757,8 +757,8 @@ module OptionletStripper2Function =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloorTermVolSurface>) l
 
                 let source () = Helper.sourceFold (_OptionletStripper2.source + ".TermVolSurface") 
-                                               [| _OptionletStripper2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]
@@ -793,8 +793,8 @@ module OptionletStripper2Function =
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OptionletStripper2.source + ".VolatilityType") 
-                                               [| _OptionletStripper2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OptionletStripper2.cell
                                 |]

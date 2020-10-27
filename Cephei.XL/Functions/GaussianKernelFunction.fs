@@ -58,8 +58,8 @@ module GaussianKernelFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussianKernel.source + ".Derivative") 
-                                               [| _GaussianKernel.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussianKernel.cell
@@ -143,8 +143,8 @@ module GaussianKernelFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussianKernel.source + ".Primitive") 
-                                               [| _GaussianKernel.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussianKernel.cell
@@ -185,8 +185,8 @@ module GaussianKernelFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussianKernel.source + ".Value") 
-                                               [| _GaussianKernel.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussianKernel.cell

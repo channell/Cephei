@@ -19,7 +19,7 @@ namespace Cephei.Gen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
+    #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class Enums : EnumsBase
     {
@@ -33,7 +33,7 @@ namespace Cephei.Gen
                     "phei.XL\r\n\r\nopen ExcelDna.Integration\r\nopen Cephei.Cell\r\nopen Cephei.QL\r\nopen Sys" +
                     "tem\r\nopen QLNet\r\nopen Cephei.XL.Helper\r\n\r\nmodule ENumFunctions = \r\n\r\n");
             
-            #line 23 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
+            #line 23 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
 
 	foreach (var e in Package.GetEnums())
 	{
@@ -45,7 +45,7 @@ namespace Cephei.Gen
             #line hidden
             this.Write("    [<ExcelFunction(Name=\"_");
             
-            #line 29 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
+            #line 29 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(name));
             
             #line default
@@ -53,7 +53,7 @@ namespace Cephei.Gen
             this.Write("\", Description=\"\",Category=\"Cephei\", IsThreadSafe = false, IsExceptionSafe=true)>" +
                     "]\r\n    let ");
             
-            #line 30 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
+            #line 30 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(name));
             
             #line default
@@ -62,7 +62,7 @@ namespace Cephei.Gen
                     "\")>] \r\n         mnemonic : string)\r\n        ([<ExcelArgument(Name=\"vlaue\",Descri" +
                     "ption = \"value of the ");
             
-            #line 33 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
+            #line 33 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(name));
             
             #line default
@@ -70,42 +70,42 @@ namespace Cephei.Gen
             this.Write("\")>] \r\n         value: string)\r\n        =\r\n\r\n        if not (Model.IsInFunctionWi" +
                     "zard()) then\r\n\r\n            try\r\n\r\n                let _");
             
-            #line 41 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
+            #line 41 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(name));
             
             #line default
             #line hidden
             this.Write(" : ");
             
-            #line 41 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
+            #line 41 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ename));
             
             #line default
             #line hidden
             this.Write(" =  Enum.Parse(typeof<");
             
-            #line 41 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
+            #line 41 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ename));
             
             #line default
             #line hidden
             this.Write(">, value) :?> ");
             
-            #line 41 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
+            #line 41 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ename));
             
             #line default
             #line hidden
             this.Write("\r\n\r\n                let builder (current : ICell) = Util.value _");
             
-            #line 43 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
+            #line 43 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(name));
             
             #line default
             #line hidden
             this.Write(" :> ICell\r\n                let format (i : ");
             
-            #line 44 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
+            #line 44 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ename));
             
             #line default
@@ -118,14 +118,14 @@ namespace Cephei.Gen
                     ; subscriber = Helper.subscriber format
                     ; source =  (fun () -> ""value "" + _");
             
-            #line 50 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
+            #line 50 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(name));
             
             #line default
             #line hidden
             this.Write(".ToString())\r\n                    ; hash = _");
             
-            #line 51 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
+            #line 51 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(name));
             
             #line default
@@ -133,7 +133,7 @@ namespace Cephei.Gen
             this.Write(".GetHashCode()\r\n                    } :?> string\r\n            with\r\n            |" +
                     " _ as e ->  \"#\" + e.Message\r\n        else\r\n            \"<WIZ>\"\r\n");
             
-            #line 57 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
+            #line 57 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
 
 	}
 
@@ -144,7 +144,7 @@ namespace Cephei.Gen
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 61 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
+        #line 61 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
 
 		public Enums
 			( Package Package
@@ -157,7 +157,7 @@ namespace Cephei.Gen
         #line default
         #line hidden
         
-        #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
+        #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
 
 private global::Cephei.Gen.NetModel.Package _PackageField;
 

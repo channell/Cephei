@@ -70,8 +70,8 @@ module JarrowRuddFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<JarrowRudd>) l
 
                 let source () = Helper.sourceFold (_JarrowRudd.source + ".Factory") 
-                                               [| _JarrowRudd.source
-                                               ;  _Process.source
+
+                                               [| _Process.source
                                                ;  _End.source
                                                ;  _steps.source
                                                ;  _strike.source
@@ -212,8 +212,8 @@ module JarrowRuddFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_JarrowRudd.source + ".Probability") 
-                                               [| _JarrowRudd.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _y.source
                                                ;  _z.source
                                                |]
@@ -262,8 +262,8 @@ module JarrowRuddFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_JarrowRudd.source + ".Underlying") 
-                                               [| _JarrowRudd.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _index.source
                                                |]
                 let hash = Helper.hashFold 
@@ -314,8 +314,8 @@ module JarrowRuddFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_JarrowRudd.source + ".Descendant") 
-                                               [| _JarrowRudd.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _index.source
                                                ;  _branch.source
                                                |]
@@ -360,8 +360,8 @@ module JarrowRuddFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_JarrowRudd.source + ".Size") 
-                                               [| _JarrowRudd.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JarrowRudd.cell
@@ -398,8 +398,8 @@ module JarrowRuddFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_JarrowRudd.source + ".Columns") 
-                                               [| _JarrowRudd.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JarrowRudd.cell
                                 |]

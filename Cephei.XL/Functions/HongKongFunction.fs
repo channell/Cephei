@@ -106,8 +106,8 @@ module HongKongFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_HongKong.source + ".AddedHolidays") 
-                                               [| _HongKong.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HongKong.cell
                                 |]
@@ -146,8 +146,8 @@ module HongKongFunction =
                 let format (o : HongKong) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HongKong.source + ".AddHoliday") 
-                                               [| _HongKong.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HongKong.cell
@@ -192,8 +192,8 @@ module HongKongFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_HongKong.source + ".Adjust") 
-                                               [| _HongKong.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _c.source
                                                |]
                 let hash = Helper.hashFold 
@@ -252,8 +252,8 @@ module HongKongFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_HongKong.source + ".Advance1") 
-                                               [| _HongKong.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _n.source
                                                ;  _unit.source
                                                ;  _c.source
@@ -314,8 +314,8 @@ module HongKongFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_HongKong.source + ".Advance") 
-                                               [| _HongKong.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _p.source
                                                ;  _c.source
                                                ;  _endOfMonth.source
@@ -374,8 +374,8 @@ module HongKongFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HongKong.source + ".BusinessDaysBetween") 
-                                               [| _HongKong.source
-                                               ;  _from.source
+
+                                               [| _from.source
                                                ;  _To.source
                                                ;  _includeFirst.source
                                                ;  _includeLast.source
@@ -418,8 +418,8 @@ module HongKongFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_HongKong.source + ".Calendar") 
-                                               [| _HongKong.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HongKong.cell
                                 |]
@@ -454,8 +454,8 @@ module HongKongFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HongKong.source + ".Empty") 
-                                               [| _HongKong.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HongKong.cell
                                 |]
@@ -494,8 +494,8 @@ module HongKongFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_HongKong.source + ".EndOfMonth") 
-                                               [| _HongKong.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HongKong.cell
@@ -536,8 +536,8 @@ module HongKongFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HongKong.source + ".Equals") 
-                                               [| _HongKong.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HongKong.cell
@@ -578,8 +578,8 @@ module HongKongFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HongKong.source + ".IsBusinessDay") 
-                                               [| _HongKong.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HongKong.cell
@@ -620,8 +620,8 @@ module HongKongFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HongKong.source + ".IsEndOfMonth") 
-                                               [| _HongKong.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HongKong.cell
@@ -662,8 +662,8 @@ module HongKongFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HongKong.source + ".IsHoliday") 
-                                               [| _HongKong.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HongKong.cell
@@ -704,8 +704,8 @@ module HongKongFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HongKong.source + ".IsWeekend") 
-                                               [| _HongKong.source
-                                               ;  _w.source
+
+                                               [| _w.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HongKong.cell
@@ -744,8 +744,8 @@ module HongKongFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HongKong.source + ".Name") 
-                                               [| _HongKong.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HongKong.cell
                                 |]
@@ -780,8 +780,8 @@ module HongKongFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_HongKong.source + ".RemovedHolidays") 
-                                               [| _HongKong.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HongKong.cell
                                 |]
@@ -820,8 +820,8 @@ module HongKongFunction =
                 let format (o : HongKong) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HongKong.source + ".RemoveHoliday") 
-                                               [| _HongKong.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HongKong.cell

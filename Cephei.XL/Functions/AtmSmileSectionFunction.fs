@@ -54,8 +54,8 @@ module AtmSmileSectionFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AtmSmileSection.source + ".AtmLevel") 
-                                               [| _AtmSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AtmSmileSection.cell
                                 |]
@@ -133,8 +133,8 @@ module AtmSmileSectionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_AtmSmileSection.source + ".DayCounter") 
-                                               [| _AtmSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AtmSmileSection.cell
                                 |]
@@ -169,8 +169,8 @@ module AtmSmileSectionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_AtmSmileSection.source + ".ExerciseDate") 
-                                               [| _AtmSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AtmSmileSection.cell
                                 |]
@@ -205,8 +205,8 @@ module AtmSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AtmSmileSection.source + ".ExerciseTime") 
-                                               [| _AtmSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AtmSmileSection.cell
                                 |]
@@ -241,8 +241,8 @@ module AtmSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AtmSmileSection.source + ".MaxStrike") 
-                                               [| _AtmSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AtmSmileSection.cell
                                 |]
@@ -277,8 +277,8 @@ module AtmSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AtmSmileSection.source + ".MinStrike") 
-                                               [| _AtmSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AtmSmileSection.cell
                                 |]
@@ -313,8 +313,8 @@ module AtmSmileSectionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_AtmSmileSection.source + ".ReferenceDate") 
-                                               [| _AtmSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AtmSmileSection.cell
                                 |]
@@ -349,8 +349,8 @@ module AtmSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AtmSmileSection.source + ".Shift") 
-                                               [| _AtmSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AtmSmileSection.cell
                                 |]
@@ -385,8 +385,8 @@ module AtmSmileSectionFunction =
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AtmSmileSection.source + ".VolatilityType") 
-                                               [| _AtmSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AtmSmileSection.cell
                                 |]
@@ -433,8 +433,8 @@ module AtmSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AtmSmileSection.source + ".Density") 
-                                               [| _AtmSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _discount.source
                                                ;  _gap.source
                                                |]
@@ -491,8 +491,8 @@ module AtmSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AtmSmileSection.source + ".DigitalOptionPrice") 
-                                               [| _AtmSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _Type.source
                                                ;  _discount.source
                                                ;  _gap.source
@@ -547,8 +547,8 @@ module AtmSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AtmSmileSection.source + ".OptionPrice") 
-                                               [| _AtmSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _Type.source
                                                ;  _discount.source
                                                |]
@@ -589,8 +589,8 @@ module AtmSmileSectionFunction =
                 let format (o : AtmSmileSection) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AtmSmileSection.source + ".Update") 
-                                               [| _AtmSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AtmSmileSection.cell
                                 |]
@@ -629,8 +629,8 @@ module AtmSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AtmSmileSection.source + ".Variance") 
-                                               [| _AtmSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AtmSmileSection.cell
@@ -675,8 +675,8 @@ module AtmSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AtmSmileSection.source + ".Vega") 
-                                               [| _AtmSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _discount.source
                                                |]
                 let hash = Helper.hashFold 
@@ -727,8 +727,8 @@ module AtmSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AtmSmileSection.source + ".Volatility") 
-                                               [| _AtmSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _volatilityType.source
                                                ;  _shift.source
                                                |]
@@ -773,8 +773,8 @@ module AtmSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AtmSmileSection.source + ".Volatility1") 
-                                               [| _AtmSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AtmSmileSection.cell

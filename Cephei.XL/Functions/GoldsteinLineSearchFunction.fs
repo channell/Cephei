@@ -125,8 +125,8 @@ module GoldsteinLineSearchFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GoldsteinLineSearch.source + ".Value") 
-                                               [| _GoldsteinLineSearch.source
-                                               ;  _P.source
+
+                                               [| _P.source
                                                ;  _ecType.source
                                                ;  _endCriteria.source
                                                ;  _t_ini.source
@@ -169,8 +169,8 @@ module GoldsteinLineSearchFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GoldsteinLineSearch.source + ".LastFunctionValue") 
-                                               [| _GoldsteinLineSearch.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GoldsteinLineSearch.cell
                                 |]
@@ -205,8 +205,8 @@ module GoldsteinLineSearchFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_GoldsteinLineSearch.source + ".LastGradient") 
-                                               [| _GoldsteinLineSearch.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GoldsteinLineSearch.cell
                                 |]
@@ -241,8 +241,8 @@ module GoldsteinLineSearchFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GoldsteinLineSearch.source + ".LastGradientNorm2") 
-                                               [| _GoldsteinLineSearch.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GoldsteinLineSearch.cell
                                 |]
@@ -277,8 +277,8 @@ module GoldsteinLineSearchFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_GoldsteinLineSearch.source + ".LastX") 
-                                               [| _GoldsteinLineSearch.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GoldsteinLineSearch.cell
                                 |]
@@ -313,8 +313,8 @@ module GoldsteinLineSearchFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_GoldsteinLineSearch.source + ".SearchDirection") 
-                                               [| _GoldsteinLineSearch.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GoldsteinLineSearch.cell
                                 |]
@@ -349,8 +349,8 @@ module GoldsteinLineSearchFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GoldsteinLineSearch.source + ".Succeed") 
-                                               [| _GoldsteinLineSearch.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GoldsteinLineSearch.cell
                                 |]
@@ -401,8 +401,8 @@ module GoldsteinLineSearchFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GoldsteinLineSearch.source + ".Update") 
-                                               [| _GoldsteinLineSearch.source
-                                               ;  _data.source
+
+                                               [| _data.source
                                                ;  _direction.source
                                                ;  _beta.source
                                                ;  _Constraint.source

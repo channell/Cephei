@@ -103,8 +103,8 @@ module DiscretizedCallableFixedRateBondFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscretizedCallableFixedRateBond.source + ".MandatoryTimes") 
-                                               [| _DiscretizedCallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedCallableFixedRateBond.cell
                                 |]
@@ -143,8 +143,8 @@ module DiscretizedCallableFixedRateBondFunction =
                 let format (o : DiscretizedCallableFixedRateBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedCallableFixedRateBond.source + ".Reset") 
-                                               [| _DiscretizedCallableFixedRateBond.source
-                                               ;  _size.source
+
+                                               [| _size.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedCallableFixedRateBond.cell
@@ -181,8 +181,8 @@ module DiscretizedCallableFixedRateBondFunction =
                 let format (o : DiscretizedCallableFixedRateBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedCallableFixedRateBond.source + ".AdjustValues") 
-                                               [| _DiscretizedCallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedCallableFixedRateBond.cell
                                 |]
@@ -225,8 +225,8 @@ module DiscretizedCallableFixedRateBondFunction =
                 let format (o : DiscretizedCallableFixedRateBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedCallableFixedRateBond.source + ".Initialize") 
-                                               [| _DiscretizedCallableFixedRateBond.source
-                                               ;  _Method.source
+
+                                               [| _Method.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -265,8 +265,8 @@ module DiscretizedCallableFixedRateBondFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
 
                 let source () = Helper.sourceFold (_DiscretizedCallableFixedRateBond.source + ".METHOD") 
-                                               [| _DiscretizedCallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedCallableFixedRateBond.cell
                                 |]
@@ -305,8 +305,8 @@ module DiscretizedCallableFixedRateBondFunction =
                 let format (o : DiscretizedCallableFixedRateBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedCallableFixedRateBond.source + ".PartialRollback") 
-                                               [| _DiscretizedCallableFixedRateBond.source
-                                               ;  _To.source
+
+                                               [| _To.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedCallableFixedRateBond.cell
@@ -343,8 +343,8 @@ module DiscretizedCallableFixedRateBondFunction =
                 let format (o : DiscretizedCallableFixedRateBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedCallableFixedRateBond.source + ".PostAdjustValues") 
-                                               [| _DiscretizedCallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedCallableFixedRateBond.cell
                                 |]
@@ -379,8 +379,8 @@ module DiscretizedCallableFixedRateBondFunction =
                 let format (o : DiscretizedCallableFixedRateBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedCallableFixedRateBond.source + ".PreAdjustValues") 
-                                               [| _DiscretizedCallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedCallableFixedRateBond.cell
                                 |]
@@ -415,8 +415,8 @@ module DiscretizedCallableFixedRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedCallableFixedRateBond.source + ".PresentValue") 
-                                               [| _DiscretizedCallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedCallableFixedRateBond.cell
                                 |]
@@ -455,8 +455,8 @@ module DiscretizedCallableFixedRateBondFunction =
                 let format (o : DiscretizedCallableFixedRateBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedCallableFixedRateBond.source + ".Rollback") 
-                                               [| _DiscretizedCallableFixedRateBond.source
-                                               ;  _To.source
+
+                                               [| _To.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedCallableFixedRateBond.cell
@@ -497,8 +497,8 @@ module DiscretizedCallableFixedRateBondFunction =
                 let format (o : DiscretizedCallableFixedRateBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedCallableFixedRateBond.source + ".SetTime") 
-                                               [| _DiscretizedCallableFixedRateBond.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedCallableFixedRateBond.cell
@@ -539,8 +539,8 @@ module DiscretizedCallableFixedRateBondFunction =
                 let format (o : DiscretizedCallableFixedRateBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedCallableFixedRateBond.source + ".SetValues") 
-                                               [| _DiscretizedCallableFixedRateBond.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedCallableFixedRateBond.cell
@@ -577,8 +577,8 @@ module DiscretizedCallableFixedRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedCallableFixedRateBond.source + ".Time") 
-                                               [| _DiscretizedCallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedCallableFixedRateBond.cell
                                 |]
@@ -613,8 +613,8 @@ module DiscretizedCallableFixedRateBondFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_DiscretizedCallableFixedRateBond.source + ".Values") 
-                                               [| _DiscretizedCallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedCallableFixedRateBond.cell
                                 |]

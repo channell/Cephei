@@ -92,8 +92,8 @@ module InterpolatingCPICapFloorEngineFunction =
                 let format (o : String) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatingCPICapFloorEngine.source + ".Name") 
-                                               [| _InterpolatingCPICapFloorEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatingCPICapFloorEngine.cell
                                 |]

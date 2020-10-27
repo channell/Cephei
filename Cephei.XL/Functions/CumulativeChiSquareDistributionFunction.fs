@@ -95,8 +95,8 @@ module CumulativeChiSquareDistributionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CumulativeChiSquareDistribution.source + ".Value") 
-                                               [| _CumulativeChiSquareDistribution.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CumulativeChiSquareDistribution.cell

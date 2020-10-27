@@ -58,8 +58,8 @@ module MersenneTwisterUniformRngFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IRNGTraits>) l
 
                 let source () = Helper.sourceFold (_MersenneTwisterUniformRng.source + ".Factory") 
-                                               [| _MersenneTwisterUniformRng.source
-                                               ;  _seed.source
+
+                                               [| _seed.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MersenneTwisterUniformRng.cell
@@ -201,8 +201,8 @@ module MersenneTwisterUniformRngFunction =
                 let format (o : Sample<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MersenneTwisterUniformRng.source + ".Next") 
-                                               [| _MersenneTwisterUniformRng.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MersenneTwisterUniformRng.cell
                                 |]
@@ -237,8 +237,8 @@ module MersenneTwisterUniformRngFunction =
                 let format (o : uint64) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MersenneTwisterUniformRng.source + ".NextInt32") 
-                                               [| _MersenneTwisterUniformRng.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MersenneTwisterUniformRng.cell
                                 |]
@@ -273,8 +273,8 @@ module MersenneTwisterUniformRngFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MersenneTwisterUniformRng.source + ".NextReal") 
-                                               [| _MersenneTwisterUniformRng.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MersenneTwisterUniformRng.cell
                                 |]

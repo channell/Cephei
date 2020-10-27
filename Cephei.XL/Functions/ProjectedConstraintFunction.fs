@@ -146,8 +146,8 @@ module ProjectedConstraintFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ProjectedConstraint.source + ".Empty") 
-                                               [| _ProjectedConstraint.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ProjectedConstraint.cell
                                 |]
@@ -186,8 +186,8 @@ module ProjectedConstraintFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_ProjectedConstraint.source + ".LowerBound") 
-                                               [| _ProjectedConstraint.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ProjectedConstraint.cell
@@ -228,8 +228,8 @@ module ProjectedConstraintFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ProjectedConstraint.source + ".Test") 
-                                               [| _ProjectedConstraint.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ProjectedConstraint.cell
@@ -278,8 +278,8 @@ module ProjectedConstraintFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ProjectedConstraint.source + ".Update") 
-                                               [| _ProjectedConstraint.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                ;  _direction.source
                                                ;  _beta.source
                                                |]
@@ -324,8 +324,8 @@ module ProjectedConstraintFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_ProjectedConstraint.source + ".UpperBound") 
-                                               [| _ProjectedConstraint.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ProjectedConstraint.cell

@@ -99,8 +99,8 @@ module TaiwanFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_Taiwan.source + ".AddedHolidays") 
-                                               [| _Taiwan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Taiwan.cell
                                 |]
@@ -139,8 +139,8 @@ module TaiwanFunction =
                 let format (o : Taiwan) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Taiwan.source + ".AddHoliday") 
-                                               [| _Taiwan.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Taiwan.cell
@@ -185,8 +185,8 @@ module TaiwanFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Taiwan.source + ".Adjust") 
-                                               [| _Taiwan.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _c.source
                                                |]
                 let hash = Helper.hashFold 
@@ -245,8 +245,8 @@ module TaiwanFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Taiwan.source + ".Advance1") 
-                                               [| _Taiwan.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _n.source
                                                ;  _unit.source
                                                ;  _c.source
@@ -307,8 +307,8 @@ module TaiwanFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Taiwan.source + ".Advance") 
-                                               [| _Taiwan.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _p.source
                                                ;  _c.source
                                                ;  _endOfMonth.source
@@ -367,8 +367,8 @@ module TaiwanFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Taiwan.source + ".BusinessDaysBetween") 
-                                               [| _Taiwan.source
-                                               ;  _from.source
+
+                                               [| _from.source
                                                ;  _To.source
                                                ;  _includeFirst.source
                                                ;  _includeLast.source
@@ -411,8 +411,8 @@ module TaiwanFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_Taiwan.source + ".Calendar") 
-                                               [| _Taiwan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Taiwan.cell
                                 |]
@@ -447,8 +447,8 @@ module TaiwanFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Taiwan.source + ".Empty") 
-                                               [| _Taiwan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Taiwan.cell
                                 |]
@@ -487,8 +487,8 @@ module TaiwanFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Taiwan.source + ".EndOfMonth") 
-                                               [| _Taiwan.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Taiwan.cell
@@ -529,8 +529,8 @@ module TaiwanFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Taiwan.source + ".Equals") 
-                                               [| _Taiwan.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Taiwan.cell
@@ -571,8 +571,8 @@ module TaiwanFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Taiwan.source + ".IsBusinessDay") 
-                                               [| _Taiwan.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Taiwan.cell
@@ -613,8 +613,8 @@ module TaiwanFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Taiwan.source + ".IsEndOfMonth") 
-                                               [| _Taiwan.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Taiwan.cell
@@ -655,8 +655,8 @@ module TaiwanFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Taiwan.source + ".IsHoliday") 
-                                               [| _Taiwan.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Taiwan.cell
@@ -697,8 +697,8 @@ module TaiwanFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Taiwan.source + ".IsWeekend") 
-                                               [| _Taiwan.source
-                                               ;  _w.source
+
+                                               [| _w.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Taiwan.cell
@@ -737,8 +737,8 @@ module TaiwanFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Taiwan.source + ".Name") 
-                                               [| _Taiwan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Taiwan.cell
                                 |]
@@ -773,8 +773,8 @@ module TaiwanFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_Taiwan.source + ".RemovedHolidays") 
-                                               [| _Taiwan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Taiwan.cell
                                 |]
@@ -813,8 +813,8 @@ module TaiwanFunction =
                 let format (o : Taiwan) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Taiwan.source + ".RemoveHoliday") 
-                                               [| _Taiwan.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Taiwan.cell

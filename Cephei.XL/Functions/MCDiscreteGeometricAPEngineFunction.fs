@@ -144,8 +144,8 @@ module MCDiscreteGeometricAPEngineFunction =
                 let format (o : MCDiscreteGeometricAPEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteGeometricAPEngine.source + ".RegisterWith") 
-                                               [| _MCDiscreteGeometricAPEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteGeometricAPEngine.cell
@@ -182,8 +182,8 @@ module MCDiscreteGeometricAPEngineFunction =
                 let format (o : MCDiscreteGeometricAPEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteGeometricAPEngine.source + ".Reset") 
-                                               [| _MCDiscreteGeometricAPEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteGeometricAPEngine.cell
                                 |]
@@ -222,8 +222,8 @@ module MCDiscreteGeometricAPEngineFunction =
                 let format (o : MCDiscreteGeometricAPEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteGeometricAPEngine.source + ".UnregisterWith") 
-                                               [| _MCDiscreteGeometricAPEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteGeometricAPEngine.cell
@@ -260,8 +260,8 @@ module MCDiscreteGeometricAPEngineFunction =
                 let format (o : MCDiscreteGeometricAPEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteGeometricAPEngine.source + ".Update") 
-                                               [| _MCDiscreteGeometricAPEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteGeometricAPEngine.cell
                                 |]
@@ -296,8 +296,8 @@ module MCDiscreteGeometricAPEngineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteGeometricAPEngine.source + ".ErrorEstimate") 
-                                               [| _MCDiscreteGeometricAPEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteGeometricAPEngine.cell
                                 |]
@@ -332,8 +332,8 @@ module MCDiscreteGeometricAPEngineFunction =
                 let format (o : S) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteGeometricAPEngine.source + ".SampleAccumulator") 
-                                               [| _MCDiscreteGeometricAPEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteGeometricAPEngine.cell
                                 |]
@@ -380,8 +380,8 @@ module MCDiscreteGeometricAPEngineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteGeometricAPEngine.source + ".Value") 
-                                               [| _MCDiscreteGeometricAPEngine.source
-                                               ;  _tolerance.source
+
+                                               [| _tolerance.source
                                                ;  _maxSamples.source
                                                ;  _minSamples.source
                                                |]
@@ -426,8 +426,8 @@ module MCDiscreteGeometricAPEngineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteGeometricAPEngine.source + ".ValueWithSamples") 
-                                               [| _MCDiscreteGeometricAPEngine.source
-                                               ;  _samples.source
+
+                                               [| _samples.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteGeometricAPEngine.cell

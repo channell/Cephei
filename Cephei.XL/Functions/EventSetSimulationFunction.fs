@@ -119,8 +119,8 @@ module EventSetSimulationFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EventSetSimulation.source + ".NextPath") 
-                                               [| _EventSetSimulation.source
-                                               ;  _path.source
+
+                                               [| _path.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EventSetSimulation.cell

@@ -63,8 +63,8 @@ module DiscrepancyStatisticsFunction =
                 let format (o : DiscrepancyStatistics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Add") 
-                                               [| _DiscrepancyStatistics.source
-                                               ;  _Begin.source
+
+                                               [| _Begin.source
                                                ;  _weight.source
                                                |]
                 let hash = Helper.hashFold 
@@ -108,8 +108,8 @@ module DiscrepancyStatisticsFunction =
                 let format (o : DiscrepancyStatistics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Add") 
-                                               [| _DiscrepancyStatistics.source
-                                               ;  _Begin.source
+
+                                               [| _Begin.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
@@ -146,8 +146,8 @@ module DiscrepancyStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Discrepancy") 
-                                               [| _DiscrepancyStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
@@ -223,8 +223,8 @@ module DiscrepancyStatisticsFunction =
                 let format (o : DiscrepancyStatistics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Reset") 
-                                               [| _DiscrepancyStatistics.source
-                                               ;  _dimension.source
+
+                                               [| _dimension.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
@@ -265,8 +265,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".AverageShortfall") 
-                                               [| _DiscrepancyStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
@@ -303,8 +303,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Correlation") 
-                                               [| _DiscrepancyStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
@@ -339,8 +339,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Covariance") 
-                                               [| _DiscrepancyStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
@@ -375,8 +375,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".DownsideDeviation") 
-                                               [| _DiscrepancyStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
@@ -411,8 +411,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".DownsideVariance") 
-                                               [| _DiscrepancyStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
@@ -447,8 +447,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".ErrorEstimate") 
-                                               [| _DiscrepancyStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
@@ -487,8 +487,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".ExpectedShortfall") 
-                                               [| _DiscrepancyStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
@@ -529,8 +529,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".GaussianAverageShortfall") 
-                                               [| _DiscrepancyStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
@@ -571,8 +571,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".GaussianExpectedShortfall") 
-                                               [| _DiscrepancyStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
@@ -613,8 +613,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".GaussianPercentile") 
-                                               [| _DiscrepancyStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
@@ -655,8 +655,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".GaussianPotentialUpside") 
-                                               [| _DiscrepancyStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
@@ -697,8 +697,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".GaussianShortfall") 
-                                               [| _DiscrepancyStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
@@ -739,8 +739,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".GaussianValueAtRisk") 
-                                               [| _DiscrepancyStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
@@ -777,8 +777,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Kurtosis") 
-                                               [| _DiscrepancyStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
@@ -813,8 +813,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Max") 
-                                               [| _DiscrepancyStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
@@ -849,8 +849,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Mean") 
-                                               [| _DiscrepancyStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
@@ -885,8 +885,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Min") 
-                                               [| _DiscrepancyStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
@@ -925,8 +925,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Percentile") 
-                                               [| _DiscrepancyStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
@@ -967,8 +967,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".PotentialUpside") 
-                                               [| _DiscrepancyStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
@@ -1009,8 +1009,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Regret") 
-                                               [| _DiscrepancyStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
@@ -1047,8 +1047,8 @@ module DiscrepancyStatisticsFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Samples") 
-                                               [| _DiscrepancyStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
@@ -1083,8 +1083,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".SemiDeviation") 
-                                               [| _DiscrepancyStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
@@ -1119,8 +1119,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".SemiVariance") 
-                                               [| _DiscrepancyStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
@@ -1159,8 +1159,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Shortfall") 
-                                               [| _DiscrepancyStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
@@ -1197,8 +1197,8 @@ module DiscrepancyStatisticsFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Size") 
-                                               [| _DiscrepancyStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
@@ -1233,8 +1233,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Skewness") 
-                                               [| _DiscrepancyStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
@@ -1269,8 +1269,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".StandardDeviation") 
-                                               [| _DiscrepancyStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
@@ -1309,8 +1309,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".ValueAtRisk") 
-                                               [| _DiscrepancyStatistics.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
@@ -1347,8 +1347,8 @@ module DiscrepancyStatisticsFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".Variance") 
-                                               [| _DiscrepancyStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]
@@ -1383,8 +1383,8 @@ module DiscrepancyStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscrepancyStatistics.source + ".WeightSum") 
-                                               [| _DiscrepancyStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscrepancyStatistics.cell
                                 |]

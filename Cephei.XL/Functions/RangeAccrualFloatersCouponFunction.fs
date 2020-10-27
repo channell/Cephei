@@ -54,8 +54,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".EndTime") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -90,8 +90,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".LowerTrigger") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -126,8 +126,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ObservationDates") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -162,8 +162,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ObservationsNo") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -198,8 +198,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ObservationsSchedule") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -234,8 +234,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ObservationTimes") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -274,8 +274,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".PriceWithoutOptionality") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               ;  _discountCurve.source
+
+                                               [| _discountCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
@@ -427,8 +427,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".StartTime") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -463,8 +463,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".UpperTrigger") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -503,8 +503,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AccruedAmount") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
@@ -541,8 +541,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AdjustedFixing") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -577,8 +577,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Amount") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -613,8 +613,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ConvexityAdjustment") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -649,8 +649,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".DayCounter") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -733,8 +733,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Factory") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               ;  _nominal.source
+
+                                               [| _nominal.source
                                                ;  _paymentDate.source
                                                ;  _startDate.source
                                                ;  _endDate.source
@@ -793,8 +793,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".FixingDate") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -829,8 +829,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".FixingDays") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -865,8 +865,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Gearing") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -901,8 +901,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Index") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -937,8 +937,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".IndexFixing") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -973,8 +973,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".IsInArrears") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -1013,8 +1013,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Price") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               ;  _yts.source
+
+                                               [| _yts.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
@@ -1051,8 +1051,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Pricer") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -1087,8 +1087,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Rate") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -1127,8 +1127,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : RangeAccrualFloatersCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".SetPricer") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               ;  _pricer.source
+
+                                               [| _pricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
@@ -1165,8 +1165,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Spread") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -1201,8 +1201,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : RangeAccrualFloatersCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Update") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -1237,8 +1237,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AccrualDays") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -1273,8 +1273,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AccrualEndDate") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -1309,8 +1309,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AccrualPeriod") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -1345,8 +1345,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AccrualStartDate") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -1385,8 +1385,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AccruedDays") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
@@ -1427,8 +1427,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".AccruedPeriod") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
@@ -1465,8 +1465,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Date") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -1501,8 +1501,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ExCouponDate") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -1537,8 +1537,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Nominal") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -1573,8 +1573,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ReferencePeriodEnd") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -1609,8 +1609,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ReferencePeriodStart") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
                                 |]
@@ -1649,8 +1649,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".CompareTo") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
@@ -1691,8 +1691,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Equals") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
@@ -1737,8 +1737,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".HasOccurred") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                ;  _includeRefDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1781,8 +1781,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".TradingExCoupon") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
@@ -1823,8 +1823,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : RangeAccrualFloatersCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".Accept") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
@@ -1865,8 +1865,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : RangeAccrualFloatersCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".RegisterWith") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell
@@ -1907,8 +1907,8 @@ module RangeAccrualFloatersCouponFunction =
                 let format (o : RangeAccrualFloatersCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".UnregisterWith") 
-                                               [| _RangeAccrualFloatersCoupon.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RangeAccrualFloatersCoupon.cell

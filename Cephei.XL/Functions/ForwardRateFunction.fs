@@ -62,8 +62,8 @@ module ForwardRateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardRate.source + ".DiscountImpl") 
-                                               [| _ForwardRate.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -110,8 +110,8 @@ module ForwardRateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardRate.source + ".ForwardImpl") 
-                                               [| _ForwardRate.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -166,8 +166,8 @@ module ForwardRateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardRate.source + ".Guess") 
-                                               [| _ForwardRate.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _f.source
@@ -214,8 +214,8 @@ module ForwardRateFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ForwardRate.source + ".InitialDate") 
-                                               [| _ForwardRate.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardRate.cell
@@ -256,8 +256,8 @@ module ForwardRateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardRate.source + ".InitialValue") 
-                                               [| _ForwardRate.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardRate.cell
@@ -294,8 +294,8 @@ module ForwardRateFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardRate.source + ".MaxIterations") 
-                                               [| _ForwardRate.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardRate.cell
                                 |]
@@ -346,8 +346,8 @@ module ForwardRateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardRate.source + ".MaxValueAfter") 
-                                               [| _ForwardRate.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _f.source
@@ -406,8 +406,8 @@ module ForwardRateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardRate.source + ".MinValueAfter") 
-                                               [| _ForwardRate.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _f.source
@@ -462,8 +462,8 @@ module ForwardRateFunction =
                 let format (o : ForwardRate) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ForwardRate.source + ".UpdateGuess") 
-                                               [| _ForwardRate.source
-                                               ;  _data.source
+
+                                               [| _data.source
                                                ;  _forward.source
                                                ;  _i.source
                                                |]
@@ -512,8 +512,8 @@ module ForwardRateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardRate.source + ".ZeroYieldImpl") 
-                                               [| _ForwardRate.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 

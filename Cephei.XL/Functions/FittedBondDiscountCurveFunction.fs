@@ -231,8 +231,8 @@ module FittedBondDiscountCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".MaxDate") 
-                                               [| _FittedBondDiscountCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]
@@ -267,8 +267,8 @@ module FittedBondDiscountCurveFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".NumberOfBonds") 
-                                               [| _FittedBondDiscountCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]
@@ -311,8 +311,8 @@ module FittedBondDiscountCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".Discount") 
-                                               [| _FittedBondDiscountCurve.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _extrapolate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -359,8 +359,8 @@ module FittedBondDiscountCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".Discount1") 
-                                               [| _FittedBondDiscountCurve.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _extrapolate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -423,8 +423,8 @@ module FittedBondDiscountCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
                 let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".ForwardRate") 
-                                               [| _FittedBondDiscountCurve.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _p.source
                                                ;  _dayCounter.source
                                                ;  _comp.source
@@ -495,8 +495,8 @@ module FittedBondDiscountCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
                 let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".ForwardRate1") 
-                                               [| _FittedBondDiscountCurve.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _dayCounter.source
                                                ;  _comp.source
@@ -563,8 +563,8 @@ module FittedBondDiscountCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
                 let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".ForwardRate2") 
-                                               [| _FittedBondDiscountCurve.source
-                                               ;  _t1.source
+
+                                               [| _t1.source
                                                ;  _t2.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -609,8 +609,8 @@ module FittedBondDiscountCurveFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".JumpDates") 
-                                               [| _FittedBondDiscountCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]
@@ -645,8 +645,8 @@ module FittedBondDiscountCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".JumpTimes") 
-                                               [| _FittedBondDiscountCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]
@@ -681,8 +681,8 @@ module FittedBondDiscountCurveFunction =
                 let format (o : FittedBondDiscountCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".Update") 
-                                               [| _FittedBondDiscountCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]
@@ -737,8 +737,8 @@ module FittedBondDiscountCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
                 let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".ZeroRate1") 
-                                               [| _FittedBondDiscountCurve.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _dayCounter.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -799,8 +799,8 @@ module FittedBondDiscountCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
                 let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".ZeroRate") 
-                                               [| _FittedBondDiscountCurve.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _comp.source
                                                ;  _freq.source
                                                ;  _extrapolate.source
@@ -843,8 +843,8 @@ module FittedBondDiscountCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".Calendar") 
-                                               [| _FittedBondDiscountCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]
@@ -879,8 +879,8 @@ module FittedBondDiscountCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".DayCounter") 
-                                               [| _FittedBondDiscountCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]
@@ -915,8 +915,8 @@ module FittedBondDiscountCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".MaxTime") 
-                                               [| _FittedBondDiscountCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]
@@ -951,8 +951,8 @@ module FittedBondDiscountCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".ReferenceDate") 
-                                               [| _FittedBondDiscountCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]
@@ -987,8 +987,8 @@ module FittedBondDiscountCurveFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".SettlementDays") 
-                                               [| _FittedBondDiscountCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]
@@ -1027,8 +1027,8 @@ module FittedBondDiscountCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".TimeFromReference") 
-                                               [| _FittedBondDiscountCurve.source
-                                               ;  _date.source
+
+                                               [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
@@ -1065,8 +1065,8 @@ module FittedBondDiscountCurveFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".AllowsExtrapolation") 
-                                               [| _FittedBondDiscountCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]
@@ -1105,8 +1105,8 @@ module FittedBondDiscountCurveFunction =
                 let format (o : FittedBondDiscountCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".DisableExtrapolation") 
-                                               [| _FittedBondDiscountCurve.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
@@ -1147,8 +1147,8 @@ module FittedBondDiscountCurveFunction =
                 let format (o : FittedBondDiscountCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".EnableExtrapolation") 
-                                               [| _FittedBondDiscountCurve.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
@@ -1185,8 +1185,8 @@ module FittedBondDiscountCurveFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".Extrapolate") 
-                                               [| _FittedBondDiscountCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FittedBondDiscountCurve.cell
                                 |]

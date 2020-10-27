@@ -54,8 +54,8 @@ module HaltonRsgFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HaltonRsg.source + ".Dimension") 
-                                               [| _HaltonRsg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HaltonRsg.cell
                                 |]
@@ -98,8 +98,8 @@ module HaltonRsgFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IRNG>) l
 
                 let source () = Helper.sourceFold (_HaltonRsg.source + ".Factory") 
-                                               [| _HaltonRsg.source
-                                               ;  _dimensionality.source
+
+                                               [| _dimensionality.source
                                                ;  _seed.source
                                                |]
                 let hash = Helper.hashFold 
@@ -194,8 +194,8 @@ module HaltonRsgFunction =
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.value.ToArray()) l)
 
                 let source () = Helper.sourceFold (_HaltonRsg.source + ".LastSequence") 
-                                               [| _HaltonRsg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HaltonRsg.cell
                                 |]
@@ -232,8 +232,8 @@ module HaltonRsgFunction =
                 let format (i : Sample<Generic.List<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_HaltonRsg.source + ".NextSequence") 
-                                               [| _HaltonRsg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HaltonRsg.cell
                                 |]

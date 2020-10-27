@@ -109,8 +109,8 @@ module GaussLobattoIntegralFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GaussLobattoIntegral.source + ".AbsoluteAccuracy") 
-                                               [| _GaussLobattoIntegral.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussLobattoIntegral.cell
                                 |]
@@ -145,8 +145,8 @@ module GaussLobattoIntegralFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussLobattoIntegral.source + ".AbsoluteError") 
-                                               [| _GaussLobattoIntegral.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussLobattoIntegral.cell
                                 |]
@@ -181,8 +181,8 @@ module GaussLobattoIntegralFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GaussLobattoIntegral.source + ".IntegrationSuccess") 
-                                               [| _GaussLobattoIntegral.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussLobattoIntegral.cell
                                 |]
@@ -217,8 +217,8 @@ module GaussLobattoIntegralFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussLobattoIntegral.source + ".MaxEvaluations") 
-                                               [| _GaussLobattoIntegral.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussLobattoIntegral.cell
                                 |]
@@ -253,8 +253,8 @@ module GaussLobattoIntegralFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussLobattoIntegral.source + ".NumberOfEvaluations") 
-                                               [| _GaussLobattoIntegral.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussLobattoIntegral.cell
                                 |]
@@ -293,8 +293,8 @@ module GaussLobattoIntegralFunction =
                 let format (o : GaussLobattoIntegral) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GaussLobattoIntegral.source + ".SetAbsoluteAccuracy") 
-                                               [| _GaussLobattoIntegral.source
-                                               ;  _accuracy.source
+
+                                               [| _accuracy.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussLobattoIntegral.cell
@@ -335,8 +335,8 @@ module GaussLobattoIntegralFunction =
                 let format (o : GaussLobattoIntegral) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GaussLobattoIntegral.source + ".SetMaxEvaluations") 
-                                               [| _GaussLobattoIntegral.source
-                                               ;  _maxEvaluations.source
+
+                                               [| _maxEvaluations.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussLobattoIntegral.cell
@@ -385,8 +385,8 @@ module GaussLobattoIntegralFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussLobattoIntegral.source + ".Value") 
-                                               [| _GaussLobattoIntegral.source
-                                               ;  _f.source
+
+                                               [| _f.source
                                                ;  _a.source
                                                ;  _b.source
                                                |]

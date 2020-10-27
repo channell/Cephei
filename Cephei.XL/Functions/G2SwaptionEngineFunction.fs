@@ -109,8 +109,8 @@ module G2SwaptionEngineFunction =
                 let format (o : G2SwaptionEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_G2SwaptionEngine.source + ".SetModel") 
-                                               [| _G2SwaptionEngine.source
-                                               ;  _model.source
+
+                                               [| _model.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _G2SwaptionEngine.cell
@@ -152,8 +152,8 @@ module G2SwaptionEngineFunction =
                 let format (o : G2SwaptionEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_G2SwaptionEngine.source + ".RegisterWith") 
-                                               [| _G2SwaptionEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _G2SwaptionEngine.cell
@@ -190,8 +190,8 @@ module G2SwaptionEngineFunction =
                 let format (o : G2SwaptionEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_G2SwaptionEngine.source + ".Reset") 
-                                               [| _G2SwaptionEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _G2SwaptionEngine.cell
                                 |]
@@ -230,8 +230,8 @@ module G2SwaptionEngineFunction =
                 let format (o : G2SwaptionEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_G2SwaptionEngine.source + ".UnregisterWith") 
-                                               [| _G2SwaptionEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _G2SwaptionEngine.cell
@@ -268,8 +268,8 @@ module G2SwaptionEngineFunction =
                 let format (o : G2SwaptionEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_G2SwaptionEngine.source + ".Update") 
-                                               [| _G2SwaptionEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _G2SwaptionEngine.cell
                                 |]

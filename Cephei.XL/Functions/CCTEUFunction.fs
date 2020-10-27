@@ -58,8 +58,8 @@ module CCTEUFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".AccruedAmount") 
-                                               [| _CCTEU.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
@@ -169,8 +169,8 @@ module CCTEUFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".Calendar") 
-                                               [| _CCTEU.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
                                 |]
@@ -205,8 +205,8 @@ module CCTEUFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".Cashflows") 
-                                               [| _CCTEU.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
                                 |]
@@ -241,8 +241,8 @@ module CCTEUFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".CleanPrice") 
-                                               [| _CCTEU.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
                                 |]
@@ -297,8 +297,8 @@ module CCTEUFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".CleanPrice1") 
-                                               [| _CCTEU.source
-                                               ;  _Yield.source
+
+                                               [| _Yield.source
                                                ;  _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -363,8 +363,8 @@ module CCTEUFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".DirtyPrice1") 
-                                               [| _CCTEU.source
-                                               ;  _Yield.source
+
+                                               [| _Yield.source
                                                ;  _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -409,8 +409,8 @@ module CCTEUFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".DirtyPrice") 
-                                               [| _CCTEU.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
                                 |]
@@ -445,8 +445,8 @@ module CCTEUFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".IsExpired") 
-                                               [| _CCTEU.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
                                 |]
@@ -481,8 +481,8 @@ module CCTEUFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".IssueDate") 
-                                               [| _CCTEU.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
                                 |]
@@ -521,8 +521,8 @@ module CCTEUFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".IsTradable") 
-                                               [| _CCTEU.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
@@ -559,8 +559,8 @@ module CCTEUFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".MaturityDate") 
-                                               [| _CCTEU.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
                                 |]
@@ -599,8 +599,8 @@ module CCTEUFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".NextCashFlowDate") 
-                                               [| _CCTEU.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
@@ -641,8 +641,8 @@ module CCTEUFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".NextCouponRate") 
-                                               [| _CCTEU.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
@@ -683,8 +683,8 @@ module CCTEUFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".Notional") 
-                                               [| _CCTEU.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
@@ -721,8 +721,8 @@ module CCTEUFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".Notionals") 
-                                               [| _CCTEU.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
                                 |]
@@ -761,8 +761,8 @@ module CCTEUFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".PreviousCashFlowDate") 
-                                               [| _CCTEU.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
@@ -803,8 +803,8 @@ module CCTEUFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".PreviousCouponRate") 
-                                               [| _CCTEU.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
@@ -841,8 +841,8 @@ module CCTEUFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".Redemption") 
-                                               [| _CCTEU.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
                                 |]
@@ -877,8 +877,8 @@ module CCTEUFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".Redemptions") 
-                                               [| _CCTEU.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
                                 |]
@@ -917,8 +917,8 @@ module CCTEUFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".SettlementDate") 
-                                               [| _CCTEU.source
-                                               ;  _date.source
+
+                                               [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
@@ -955,8 +955,8 @@ module CCTEUFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".SettlementDays") 
-                                               [| _CCTEU.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
                                 |]
@@ -995,8 +995,8 @@ module CCTEUFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".SettlementValue") 
-                                               [| _CCTEU.source
-                                               ;  _cleanPrice.source
+
+                                               [| _cleanPrice.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
@@ -1033,8 +1033,8 @@ module CCTEUFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".SettlementValue1") 
-                                               [| _CCTEU.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
                                 |]
@@ -1069,8 +1069,8 @@ module CCTEUFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".StartDate") 
-                                               [| _CCTEU.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
                                 |]
@@ -1133,8 +1133,8 @@ module CCTEUFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".Yield1") 
-                                               [| _CCTEU.source
-                                               ;  _cleanPrice.source
+
+                                               [| _cleanPrice.source
                                                ;  _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -1203,8 +1203,8 @@ module CCTEUFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".Yield") 
-                                               [| _CCTEU.source
-                                               ;  _dc.source
+
+                                               [| _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
                                                ;  _accuracy.source
@@ -1249,8 +1249,8 @@ module CCTEUFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".CASH") 
-                                               [| _CCTEU.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
                                 |]
@@ -1285,8 +1285,8 @@ module CCTEUFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".ErrorEstimate") 
-                                               [| _CCTEU.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
                                 |]
@@ -1321,8 +1321,8 @@ module CCTEUFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".NPV") 
-                                               [| _CCTEU.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
                                 |]
@@ -1361,8 +1361,8 @@ module CCTEUFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".Result") 
-                                               [| _CCTEU.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
@@ -1403,8 +1403,8 @@ module CCTEUFunction =
                 let format (o : CCTEU) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".SetPricingEngine") 
-                                               [| _CCTEU.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
@@ -1441,8 +1441,8 @@ module CCTEUFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CCTEU.source + ".ValuationDate") 
-                                               [| _CCTEU.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CCTEU.cell
                                 |]

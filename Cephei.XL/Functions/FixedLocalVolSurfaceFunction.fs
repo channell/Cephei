@@ -273,8 +273,8 @@ module FixedLocalVolSurfaceFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FixedLocalVolSurface.source + ".MaxDate") 
-                                               [| _FixedLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedLocalVolSurface.cell
                                 |]
@@ -309,8 +309,8 @@ module FixedLocalVolSurfaceFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FixedLocalVolSurface.source + ".MaxStrike") 
-                                               [| _FixedLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedLocalVolSurface.cell
                                 |]
@@ -345,8 +345,8 @@ module FixedLocalVolSurfaceFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FixedLocalVolSurface.source + ".MaxTime") 
-                                               [| _FixedLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedLocalVolSurface.cell
                                 |]
@@ -381,8 +381,8 @@ module FixedLocalVolSurfaceFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FixedLocalVolSurface.source + ".MinStrike") 
-                                               [| _FixedLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedLocalVolSurface.cell
                                 |]
@@ -422,8 +422,8 @@ module FixedLocalVolSurfaceFunction =
                 let format (o : FixedLocalVolSurface) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FixedLocalVolSurface.source + ".SetInterpolation") 
-                                               [| _FixedLocalVolSurface.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedLocalVolSurface.cell
@@ -473,8 +473,8 @@ module FixedLocalVolSurfaceFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FixedLocalVolSurface.source + ".LocalVol") 
-                                               [| _FixedLocalVolSurface.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _underlyingLevel.source
                                                ;  _extrapolate.source
                                                |]
@@ -527,8 +527,8 @@ module FixedLocalVolSurfaceFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FixedLocalVolSurface.source + ".LocalVol1") 
-                                               [| _FixedLocalVolSurface.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _underlyingLevel.source
                                                ;  _extrapolate.source
                                                |]
@@ -569,8 +569,8 @@ module FixedLocalVolSurfaceFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FixedLocalVolSurface.source + ".BusinessDayConvention") 
-                                               [| _FixedLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedLocalVolSurface.cell
                                 |]
@@ -609,8 +609,8 @@ module FixedLocalVolSurfaceFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FixedLocalVolSurface.source + ".OptionDateFromTenor") 
-                                               [| _FixedLocalVolSurface.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedLocalVolSurface.cell
@@ -647,8 +647,8 @@ module FixedLocalVolSurfaceFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_FixedLocalVolSurface.source + ".Calendar") 
-                                               [| _FixedLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedLocalVolSurface.cell
                                 |]
@@ -683,8 +683,8 @@ module FixedLocalVolSurfaceFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_FixedLocalVolSurface.source + ".DayCounter") 
-                                               [| _FixedLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedLocalVolSurface.cell
                                 |]
@@ -719,8 +719,8 @@ module FixedLocalVolSurfaceFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FixedLocalVolSurface.source + ".ReferenceDate") 
-                                               [| _FixedLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedLocalVolSurface.cell
                                 |]
@@ -755,8 +755,8 @@ module FixedLocalVolSurfaceFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FixedLocalVolSurface.source + ".SettlementDays") 
-                                               [| _FixedLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedLocalVolSurface.cell
                                 |]
@@ -795,8 +795,8 @@ module FixedLocalVolSurfaceFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FixedLocalVolSurface.source + ".TimeFromReference") 
-                                               [| _FixedLocalVolSurface.source
-                                               ;  _date.source
+
+                                               [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedLocalVolSurface.cell
@@ -833,8 +833,8 @@ module FixedLocalVolSurfaceFunction =
                 let format (o : FixedLocalVolSurface) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FixedLocalVolSurface.source + ".Update") 
-                                               [| _FixedLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedLocalVolSurface.cell
                                 |]
@@ -869,8 +869,8 @@ module FixedLocalVolSurfaceFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FixedLocalVolSurface.source + ".AllowsExtrapolation") 
-                                               [| _FixedLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedLocalVolSurface.cell
                                 |]
@@ -909,8 +909,8 @@ module FixedLocalVolSurfaceFunction =
                 let format (o : FixedLocalVolSurface) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FixedLocalVolSurface.source + ".DisableExtrapolation") 
-                                               [| _FixedLocalVolSurface.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedLocalVolSurface.cell
@@ -951,8 +951,8 @@ module FixedLocalVolSurfaceFunction =
                 let format (o : FixedLocalVolSurface) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FixedLocalVolSurface.source + ".EnableExtrapolation") 
-                                               [| _FixedLocalVolSurface.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedLocalVolSurface.cell
@@ -989,8 +989,8 @@ module FixedLocalVolSurfaceFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FixedLocalVolSurface.source + ".Extrapolate") 
-                                               [| _FixedLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedLocalVolSurface.cell
                                 |]

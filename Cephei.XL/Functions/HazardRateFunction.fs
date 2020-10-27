@@ -62,8 +62,8 @@ module HazardRateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HazardRate.source + ".DiscountImpl") 
-                                               [| _HazardRate.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -110,8 +110,8 @@ module HazardRateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HazardRate.source + ".ForwardImpl") 
-                                               [| _HazardRate.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -166,8 +166,8 @@ module HazardRateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HazardRate.source + ".Guess") 
-                                               [| _HazardRate.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _f.source
@@ -214,8 +214,8 @@ module HazardRateFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_HazardRate.source + ".InitialDate") 
-                                               [| _HazardRate.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HazardRate.cell
@@ -256,8 +256,8 @@ module HazardRateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HazardRate.source + ".InitialValue") 
-                                               [| _HazardRate.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HazardRate.cell
@@ -294,8 +294,8 @@ module HazardRateFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HazardRate.source + ".MaxIterations") 
-                                               [| _HazardRate.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HazardRate.cell
                                 |]
@@ -346,8 +346,8 @@ module HazardRateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HazardRate.source + ".MaxValueAfter") 
-                                               [| _HazardRate.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _f.source
@@ -406,8 +406,8 @@ module HazardRateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HazardRate.source + ".MinValueAfter") 
-                                               [| _HazardRate.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _f.source
@@ -462,8 +462,8 @@ module HazardRateFunction =
                 let format (o : HazardRate) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HazardRate.source + ".UpdateGuess") 
-                                               [| _HazardRate.source
-                                               ;  _data.source
+
+                                               [| _data.source
                                                ;  _rate.source
                                                ;  _i.source
                                                |]
@@ -512,8 +512,8 @@ module HazardRateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HazardRate.source + ".ZeroYieldImpl") 
-                                               [| _HazardRate.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 

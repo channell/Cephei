@@ -85,8 +85,8 @@ module TWDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TWDCurrency.source + ".Code") 
-                                               [| _TWDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TWDCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module TWDCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TWDCurrency.source + ".Empty") 
-                                               [| _TWDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TWDCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module TWDCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TWDCurrency.source + ".Equals") 
-                                               [| _TWDCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TWDCurrency.cell
@@ -199,8 +199,8 @@ module TWDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TWDCurrency.source + ".Format") 
-                                               [| _TWDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TWDCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module TWDCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TWDCurrency.source + ".FractionsPerUnit") 
-                                               [| _TWDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TWDCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module TWDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TWDCurrency.source + ".FractionSymbol") 
-                                               [| _TWDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TWDCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module TWDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TWDCurrency.source + ".Name") 
-                                               [| _TWDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TWDCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module TWDCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TWDCurrency.source + ".NumericCode") 
-                                               [| _TWDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TWDCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module TWDCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_TWDCurrency.source + ".Rounding") 
-                                               [| _TWDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TWDCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module TWDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TWDCurrency.source + ".Symbol") 
-                                               [| _TWDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TWDCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module TWDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TWDCurrency.source + ".ToString") 
-                                               [| _TWDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TWDCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module TWDCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_TWDCurrency.source + ".TriangulationCurrency") 
-                                               [| _TWDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TWDCurrency.cell
                                 |]

@@ -85,8 +85,8 @@ module EEKCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EEKCurrency.source + ".Code") 
-                                               [| _EEKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EEKCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module EEKCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EEKCurrency.source + ".Empty") 
-                                               [| _EEKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EEKCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module EEKCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EEKCurrency.source + ".Equals") 
-                                               [| _EEKCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EEKCurrency.cell
@@ -199,8 +199,8 @@ module EEKCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EEKCurrency.source + ".Format") 
-                                               [| _EEKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EEKCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module EEKCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EEKCurrency.source + ".FractionsPerUnit") 
-                                               [| _EEKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EEKCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module EEKCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EEKCurrency.source + ".FractionSymbol") 
-                                               [| _EEKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EEKCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module EEKCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EEKCurrency.source + ".Name") 
-                                               [| _EEKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EEKCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module EEKCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EEKCurrency.source + ".NumericCode") 
-                                               [| _EEKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EEKCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module EEKCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_EEKCurrency.source + ".Rounding") 
-                                               [| _EEKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EEKCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module EEKCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EEKCurrency.source + ".Symbol") 
-                                               [| _EEKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EEKCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module EEKCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EEKCurrency.source + ".ToString") 
-                                               [| _EEKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EEKCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module EEKCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_EEKCurrency.source + ".TriangulationCurrency") 
-                                               [| _EEKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EEKCurrency.cell
                                 |]

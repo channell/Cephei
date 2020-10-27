@@ -54,8 +54,8 @@ module NelsonSiegelFittingFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FittedBondDiscountCurve.FittingMethod>) l
 
                 let source () = Helper.sourceFold (_NelsonSiegelFitting.source + ".Clone") 
-                                               [| _NelsonSiegelFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NelsonSiegelFitting.cell
                                 |]
@@ -133,8 +133,8 @@ module NelsonSiegelFittingFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NelsonSiegelFitting.source + ".Size") 
-                                               [| _NelsonSiegelFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NelsonSiegelFitting.cell
                                 |]
@@ -169,8 +169,8 @@ module NelsonSiegelFittingFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NelsonSiegelFitting.source + ".ConstrainAtZero") 
-                                               [| _NelsonSiegelFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NelsonSiegelFitting.cell
                                 |]
@@ -213,8 +213,8 @@ module NelsonSiegelFittingFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NelsonSiegelFitting.source + ".Discount") 
-                                               [| _NelsonSiegelFitting.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -253,8 +253,8 @@ module NelsonSiegelFittingFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NelsonSiegelFitting.source + ".MinimumCostValue") 
-                                               [| _NelsonSiegelFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NelsonSiegelFitting.cell
                                 |]
@@ -289,8 +289,8 @@ module NelsonSiegelFittingFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NelsonSiegelFitting.source + ".NumberOfIterations") 
-                                               [| _NelsonSiegelFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NelsonSiegelFitting.cell
                                 |]
@@ -325,8 +325,8 @@ module NelsonSiegelFittingFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OptimizationMethod>) l
 
                 let source () = Helper.sourceFold (_NelsonSiegelFitting.source + ".OptimizationMethod") 
-                                               [| _NelsonSiegelFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NelsonSiegelFitting.cell
                                 |]
@@ -361,8 +361,8 @@ module NelsonSiegelFittingFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_NelsonSiegelFitting.source + ".Solution") 
-                                               [| _NelsonSiegelFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NelsonSiegelFitting.cell
                                 |]
@@ -397,8 +397,8 @@ module NelsonSiegelFittingFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_NelsonSiegelFitting.source + ".Weights") 
-                                               [| _NelsonSiegelFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NelsonSiegelFitting.cell
                                 |]

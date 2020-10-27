@@ -123,8 +123,8 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AnalyticDoubleBarrierBinaryEngineHelper.source + ".PayoffAtExpiry") 
-                                               [| _AnalyticDoubleBarrierBinaryEngineHelper.source
-                                               ;  _spot.source
+
+                                               [| _spot.source
                                                ;  _variance.source
                                                ;  _barrierType.source
                                                ;  _maxIteration.source
@@ -189,8 +189,8 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AnalyticDoubleBarrierBinaryEngineHelper.source + ".PayoffKIKO") 
-                                               [| _AnalyticDoubleBarrierBinaryEngineHelper.source
-                                               ;  _spot.source
+
+                                               [| _spot.source
                                                ;  _variance.source
                                                ;  _barrierType.source
                                                ;  _maxIteration.source

@@ -135,8 +135,8 @@ module RussiaFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_Russia.source + ".AddedHolidays") 
-                                               [| _Russia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Russia.cell
                                 |]
@@ -175,8 +175,8 @@ module RussiaFunction =
                 let format (o : Russia) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Russia.source + ".AddHoliday") 
-                                               [| _Russia.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Russia.cell
@@ -221,8 +221,8 @@ module RussiaFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Russia.source + ".Adjust") 
-                                               [| _Russia.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _c.source
                                                |]
                 let hash = Helper.hashFold 
@@ -281,8 +281,8 @@ module RussiaFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Russia.source + ".Advance1") 
-                                               [| _Russia.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _n.source
                                                ;  _unit.source
                                                ;  _c.source
@@ -343,8 +343,8 @@ module RussiaFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Russia.source + ".Advance") 
-                                               [| _Russia.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _p.source
                                                ;  _c.source
                                                ;  _endOfMonth.source
@@ -403,8 +403,8 @@ module RussiaFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Russia.source + ".BusinessDaysBetween") 
-                                               [| _Russia.source
-                                               ;  _from.source
+
+                                               [| _from.source
                                                ;  _To.source
                                                ;  _includeFirst.source
                                                ;  _includeLast.source
@@ -447,8 +447,8 @@ module RussiaFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_Russia.source + ".Calendar") 
-                                               [| _Russia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Russia.cell
                                 |]
@@ -483,8 +483,8 @@ module RussiaFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Russia.source + ".Empty") 
-                                               [| _Russia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Russia.cell
                                 |]
@@ -523,8 +523,8 @@ module RussiaFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Russia.source + ".EndOfMonth") 
-                                               [| _Russia.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Russia.cell
@@ -565,8 +565,8 @@ module RussiaFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Russia.source + ".Equals") 
-                                               [| _Russia.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Russia.cell
@@ -607,8 +607,8 @@ module RussiaFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Russia.source + ".IsBusinessDay") 
-                                               [| _Russia.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Russia.cell
@@ -649,8 +649,8 @@ module RussiaFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Russia.source + ".IsEndOfMonth") 
-                                               [| _Russia.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Russia.cell
@@ -691,8 +691,8 @@ module RussiaFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Russia.source + ".IsHoliday") 
-                                               [| _Russia.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Russia.cell
@@ -733,8 +733,8 @@ module RussiaFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Russia.source + ".IsWeekend") 
-                                               [| _Russia.source
-                                               ;  _w.source
+
+                                               [| _w.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Russia.cell
@@ -773,8 +773,8 @@ module RussiaFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Russia.source + ".Name") 
-                                               [| _Russia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Russia.cell
                                 |]
@@ -809,8 +809,8 @@ module RussiaFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_Russia.source + ".RemovedHolidays") 
-                                               [| _Russia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Russia.cell
                                 |]
@@ -849,8 +849,8 @@ module RussiaFunction =
                 let format (o : Russia) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Russia.source + ".RemoveHoliday") 
-                                               [| _Russia.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Russia.cell

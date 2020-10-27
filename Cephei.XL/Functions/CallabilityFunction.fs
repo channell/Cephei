@@ -103,8 +103,8 @@ module CallabilityFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Callability.source + ".Date") 
-                                               [| _Callability.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Callability.cell
                                 |]
@@ -139,8 +139,8 @@ module CallabilityFunction =
                 let format (o : Callability.Price) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Callability.source + ".Price") 
-                                               [| _Callability.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Callability.cell
                                 |]
@@ -175,8 +175,8 @@ module CallabilityFunction =
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Callability.source + ".TYPE") 
-                                               [| _Callability.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Callability.cell
                                 |]
@@ -215,8 +215,8 @@ module CallabilityFunction =
                 let format (o : Callability) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Callability.source + ".Accept") 
-                                               [| _Callability.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Callability.cell
@@ -261,8 +261,8 @@ module CallabilityFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Callability.source + ".HasOccurred") 
-                                               [| _Callability.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _includeRefDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -305,8 +305,8 @@ module CallabilityFunction =
                 let format (o : Callability) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Callability.source + ".RegisterWith") 
-                                               [| _Callability.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Callability.cell
@@ -347,8 +347,8 @@ module CallabilityFunction =
                 let format (o : Callability) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Callability.source + ".UnregisterWith") 
-                                               [| _Callability.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Callability.cell

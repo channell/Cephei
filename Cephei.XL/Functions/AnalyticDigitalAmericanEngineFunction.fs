@@ -92,8 +92,8 @@ module AnalyticDigitalAmericanEngineFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticDigitalAmericanEngine.source + ".Knock_in") 
-                                               [| _AnalyticDigitalAmericanEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AnalyticDigitalAmericanEngine.cell
                                 |]

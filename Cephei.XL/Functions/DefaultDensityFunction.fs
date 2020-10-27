@@ -62,8 +62,8 @@ module DefaultDensityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DefaultDensity.source + ".DiscountImpl") 
-                                               [| _DefaultDensity.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -110,8 +110,8 @@ module DefaultDensityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DefaultDensity.source + ".ForwardImpl") 
-                                               [| _DefaultDensity.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -166,8 +166,8 @@ module DefaultDensityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DefaultDensity.source + ".Guess") 
-                                               [| _DefaultDensity.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _f.source
@@ -214,8 +214,8 @@ module DefaultDensityFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DefaultDensity.source + ".InitialDate") 
-                                               [| _DefaultDensity.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DefaultDensity.cell
@@ -256,8 +256,8 @@ module DefaultDensityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DefaultDensity.source + ".InitialValue") 
-                                               [| _DefaultDensity.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DefaultDensity.cell
@@ -294,8 +294,8 @@ module DefaultDensityFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DefaultDensity.source + ".MaxIterations") 
-                                               [| _DefaultDensity.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DefaultDensity.cell
                                 |]
@@ -346,8 +346,8 @@ module DefaultDensityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DefaultDensity.source + ".MaxValueAfter") 
-                                               [| _DefaultDensity.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _f.source
@@ -406,8 +406,8 @@ module DefaultDensityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DefaultDensity.source + ".MinValueAfter") 
-                                               [| _DefaultDensity.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _f.source
@@ -462,8 +462,8 @@ module DefaultDensityFunction =
                 let format (o : DefaultDensity) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DefaultDensity.source + ".UpdateGuess") 
-                                               [| _DefaultDensity.source
-                                               ;  _data.source
+
+                                               [| _data.source
                                                ;  _density.source
                                                ;  _i.source
                                                |]
@@ -512,8 +512,8 @@ module DefaultDensityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DefaultDensity.source + ".ZeroYieldImpl") 
-                                               [| _DefaultDensity.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 

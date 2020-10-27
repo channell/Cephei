@@ -62,8 +62,8 @@ module TsiveriotisFernandesLatticeFunction =
                 let format (o : TsiveriotisFernandesLattice) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TsiveriotisFernandesLattice.source + ".PartialRollback") 
-                                               [| _TsiveriotisFernandesLattice.source
-                                               ;  _asset.source
+
+                                               [| _asset.source
                                                ;  _To.source
                                                |]
                 let hash = Helper.hashFold 
@@ -110,8 +110,8 @@ module TsiveriotisFernandesLatticeFunction =
                 let format (o : TsiveriotisFernandesLattice) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TsiveriotisFernandesLattice.source + ".Rollback") 
-                                               [| _TsiveriotisFernandesLattice.source
-                                               ;  _asset.source
+
+                                               [| _asset.source
                                                ;  _To.source
                                                |]
                 let hash = Helper.hashFold 
@@ -178,8 +178,8 @@ module TsiveriotisFernandesLatticeFunction =
                 let format (o : TsiveriotisFernandesLattice) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TsiveriotisFernandesLattice.source + ".Stepback") 
-                                               [| _TsiveriotisFernandesLattice.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _values.source
                                                ;  _conversionProbability.source
                                                ;  _spreadAdjustedRate.source

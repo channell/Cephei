@@ -58,8 +58,8 @@ module NoOffsetFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_NoOffset.source + ".PaymentDate") 
-                                               [| _NoOffset.source
-                                               ;  _eventDate.source
+
+                                               [| _eventDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NoOffset.cell

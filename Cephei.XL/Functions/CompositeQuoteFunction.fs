@@ -103,8 +103,8 @@ module CompositeQuoteFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CompositeQuote.source + ".IsValid") 
-                                               [| _CompositeQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CompositeQuote.cell
                                 |]
@@ -139,8 +139,8 @@ module CompositeQuoteFunction =
                 let format (o : CompositeQuote) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CompositeQuote.source + ".Update") 
-                                               [| _CompositeQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CompositeQuote.cell
                                 |]
@@ -175,8 +175,8 @@ module CompositeQuoteFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CompositeQuote.source + ".Value") 
-                                               [| _CompositeQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CompositeQuote.cell
                                 |]
@@ -211,8 +211,8 @@ module CompositeQuoteFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CompositeQuote.source + ".Value1") 
-                                               [| _CompositeQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CompositeQuote.cell
                                 |]
@@ -247,8 +247,8 @@ module CompositeQuoteFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CompositeQuote.source + ".Value2") 
-                                               [| _CompositeQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CompositeQuote.cell
                                 |]
@@ -287,8 +287,8 @@ module CompositeQuoteFunction =
                 let format (o : CompositeQuote) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CompositeQuote.source + ".RegisterWith") 
-                                               [| _CompositeQuote.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CompositeQuote.cell
@@ -329,8 +329,8 @@ module CompositeQuoteFunction =
                 let format (o : CompositeQuote) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CompositeQuote.source + ".UnregisterWith") 
-                                               [| _CompositeQuote.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CompositeQuote.cell

@@ -21,9 +21,21 @@ namespace Cephei.Cell
                          IObservable<KeyValuePair<string, int>>,
                          IObservable<KeyValuePair<string, Decimal>>
     {
-
+        protected ICell _Parent;
+        protected DateTime _eventEpoch;
         #region ICell
-        public ICell Parent { get; set; }
+        public ICell Parent 
+        {
+            get
+            {
+                return _Parent;
+            }
+            set
+            {
+                _Parent = value;
+            }
+        }
+
 
         public virtual IEnumerable<ICellEvent> Dependants
         {
@@ -55,6 +67,7 @@ namespace Cephei.Cell
 
         public virtual void OnChange(CellEvent eventType, ICellEvent root,  ICellEvent sender,  DateTime epoch, ISession session)
         {
+            if (epoch <= _eventEpoch && session == null) return; else _eventEpoch = epoch;
             RaiseChange(eventType, root, this, epoch, session);
         }
         #endregion

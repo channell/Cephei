@@ -58,8 +58,8 @@ module InterestRateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterestRate.source + ".CompoundFactor") 
-                                               [| _InterestRate.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterestRate.cell
@@ -112,8 +112,8 @@ module InterestRateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterestRate.source + ".CompoundFactor") 
-                                               [| _InterestRate.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _refStart.source
                                                ;  _refEnd.source
@@ -156,8 +156,8 @@ module InterestRateFunction =
                 let format (o : Compounding) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterestRate.source + ".Compounding") 
-                                               [| _InterestRate.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterestRate.cell
                                 |]
@@ -192,8 +192,8 @@ module InterestRateFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_InterestRate.source + ".DayCounter") 
-                                               [| _InterestRate.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterestRate.cell
                                 |]
@@ -244,8 +244,8 @@ module InterestRateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterestRate.source + ".DiscountFactor") 
-                                               [| _InterestRate.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _refStart.source
                                                ;  _refEnd.source
@@ -292,8 +292,8 @@ module InterestRateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterestRate.source + ".DiscountFactor1") 
-                                               [| _InterestRate.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterestRate.cell
@@ -358,8 +358,8 @@ module InterestRateFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
                 let source () = Helper.sourceFold (_InterestRate.source + ".EquivalentRate") 
-                                               [| _InterestRate.source
-                                               ;  _resultDC.source
+
+                                               [| _resultDC.source
                                                ;  _comp.source
                                                ;  _freq.source
                                                ;  _d1.source
@@ -420,8 +420,8 @@ module InterestRateFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
                 let source () = Helper.sourceFold (_InterestRate.source + ".EquivalentRate") 
-                                               [| _InterestRate.source
-                                               ;  _comp.source
+
+                                               [| _comp.source
                                                ;  _freq.source
                                                ;  _t.source
                                                |]
@@ -462,8 +462,8 @@ module InterestRateFunction =
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterestRate.source + ".Frequency") 
-                                               [| _InterestRate.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterestRate.cell
                                 |]
@@ -584,8 +584,8 @@ module InterestRateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterestRate.source + ".Rate") 
-                                               [| _InterestRate.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterestRate.cell
                                 |]
@@ -620,8 +620,8 @@ module InterestRateFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterestRate.source + ".ToString") 
-                                               [| _InterestRate.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterestRate.cell
                                 |]
@@ -656,8 +656,8 @@ module InterestRateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterestRate.source + ".Value") 
-                                               [| _InterestRate.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterestRate.cell
                                 |]

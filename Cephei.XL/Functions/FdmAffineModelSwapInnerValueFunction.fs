@@ -62,8 +62,8 @@ module FdmAffineModelSwapInnerValueFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FdmAffineModelSwapInnerValue.source + ".AvgInnerValue") 
-                                               [| _FdmAffineModelSwapInnerValue.source
-                                               ;  _iter.source
+
+                                               [| _iter.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -181,8 +181,8 @@ module FdmAffineModelSwapInnerValueFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_FdmAffineModelSwapInnerValue.source + ".GetState") 
-                                               [| _FdmAffineModelSwapInnerValue.source
-                                               ;  _model.source
+
+                                               [| _model.source
                                                ;  _t.source
                                                ;  _iter.source
                                                |]
@@ -231,8 +231,8 @@ module FdmAffineModelSwapInnerValueFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FdmAffineModelSwapInnerValue.source + ".InnerValue") 
-                                               [| _FdmAffineModelSwapInnerValue.source
-                                               ;  _iter.source
+
+                                               [| _iter.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 

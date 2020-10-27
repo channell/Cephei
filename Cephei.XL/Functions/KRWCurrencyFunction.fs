@@ -85,8 +85,8 @@ module KRWCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KRWCurrency.source + ".Code") 
-                                               [| _KRWCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KRWCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module KRWCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KRWCurrency.source + ".Empty") 
-                                               [| _KRWCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KRWCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module KRWCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KRWCurrency.source + ".Equals") 
-                                               [| _KRWCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KRWCurrency.cell
@@ -199,8 +199,8 @@ module KRWCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KRWCurrency.source + ".Format") 
-                                               [| _KRWCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KRWCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module KRWCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_KRWCurrency.source + ".FractionsPerUnit") 
-                                               [| _KRWCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KRWCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module KRWCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KRWCurrency.source + ".FractionSymbol") 
-                                               [| _KRWCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KRWCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module KRWCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KRWCurrency.source + ".Name") 
-                                               [| _KRWCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KRWCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module KRWCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_KRWCurrency.source + ".NumericCode") 
-                                               [| _KRWCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KRWCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module KRWCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_KRWCurrency.source + ".Rounding") 
-                                               [| _KRWCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KRWCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module KRWCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KRWCurrency.source + ".Symbol") 
-                                               [| _KRWCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KRWCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module KRWCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KRWCurrency.source + ".ToString") 
-                                               [| _KRWCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KRWCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module KRWCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_KRWCurrency.source + ".TriangulationCurrency") 
-                                               [| _KRWCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KRWCurrency.cell
                                 |]

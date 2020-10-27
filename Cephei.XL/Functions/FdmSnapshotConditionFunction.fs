@@ -62,8 +62,8 @@ module FdmSnapshotConditionFunction =
                 let format (o : FdmSnapshotCondition) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FdmSnapshotCondition.source + ".ApplyTo") 
-                                               [| _FdmSnapshotCondition.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -139,8 +139,8 @@ module FdmSnapshotConditionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FdmSnapshotCondition.source + ".GetTime") 
-                                               [| _FdmSnapshotCondition.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmSnapshotCondition.cell
                                 |]
@@ -175,8 +175,8 @@ module FdmSnapshotConditionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_FdmSnapshotCondition.source + ".GetValues") 
-                                               [| _FdmSnapshotCondition.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmSnapshotCondition.cell
                                 |]

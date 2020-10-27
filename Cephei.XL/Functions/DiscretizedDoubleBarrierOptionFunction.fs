@@ -62,8 +62,8 @@ module DiscretizedDoubleBarrierOptionFunction =
                 let format (o : DiscretizedDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".CheckBarrier") 
-                                               [| _DiscretizedDoubleBarrierOption.source
-                                               ;  _optvalues.source
+
+                                               [| _optvalues.source
                                                ;  _grid.source
                                                |]
                 let hash = Helper.hashFold 
@@ -151,8 +151,8 @@ module DiscretizedDoubleBarrierOptionFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".MandatoryTimes") 
-                                               [| _DiscretizedDoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDoubleBarrierOption.cell
                                 |]
@@ -191,8 +191,8 @@ module DiscretizedDoubleBarrierOptionFunction =
                 let format (o : DiscretizedDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".Reset") 
-                                               [| _DiscretizedDoubleBarrierOption.source
-                                               ;  _size.source
+
+                                               [| _size.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDoubleBarrierOption.cell
@@ -229,8 +229,8 @@ module DiscretizedDoubleBarrierOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".Vanilla") 
-                                               [| _DiscretizedDoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDoubleBarrierOption.cell
                                 |]
@@ -265,8 +265,8 @@ module DiscretizedDoubleBarrierOptionFunction =
                 let format (o : DiscretizedDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".AdjustValues") 
-                                               [| _DiscretizedDoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDoubleBarrierOption.cell
                                 |]
@@ -309,8 +309,8 @@ module DiscretizedDoubleBarrierOptionFunction =
                 let format (o : DiscretizedDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".Initialize") 
-                                               [| _DiscretizedDoubleBarrierOption.source
-                                               ;  _Method.source
+
+                                               [| _Method.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -349,8 +349,8 @@ module DiscretizedDoubleBarrierOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
 
                 let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".METHOD") 
-                                               [| _DiscretizedDoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDoubleBarrierOption.cell
                                 |]
@@ -389,8 +389,8 @@ module DiscretizedDoubleBarrierOptionFunction =
                 let format (o : DiscretizedDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".PartialRollback") 
-                                               [| _DiscretizedDoubleBarrierOption.source
-                                               ;  _To.source
+
+                                               [| _To.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDoubleBarrierOption.cell
@@ -427,8 +427,8 @@ module DiscretizedDoubleBarrierOptionFunction =
                 let format (o : DiscretizedDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".PostAdjustValues") 
-                                               [| _DiscretizedDoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDoubleBarrierOption.cell
                                 |]
@@ -463,8 +463,8 @@ module DiscretizedDoubleBarrierOptionFunction =
                 let format (o : DiscretizedDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".PreAdjustValues") 
-                                               [| _DiscretizedDoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDoubleBarrierOption.cell
                                 |]
@@ -499,8 +499,8 @@ module DiscretizedDoubleBarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".PresentValue") 
-                                               [| _DiscretizedDoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDoubleBarrierOption.cell
                                 |]
@@ -539,8 +539,8 @@ module DiscretizedDoubleBarrierOptionFunction =
                 let format (o : DiscretizedDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".Rollback") 
-                                               [| _DiscretizedDoubleBarrierOption.source
-                                               ;  _To.source
+
+                                               [| _To.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDoubleBarrierOption.cell
@@ -581,8 +581,8 @@ module DiscretizedDoubleBarrierOptionFunction =
                 let format (o : DiscretizedDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".SetTime") 
-                                               [| _DiscretizedDoubleBarrierOption.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDoubleBarrierOption.cell
@@ -623,8 +623,8 @@ module DiscretizedDoubleBarrierOptionFunction =
                 let format (o : DiscretizedDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".SetValues") 
-                                               [| _DiscretizedDoubleBarrierOption.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDoubleBarrierOption.cell
@@ -661,8 +661,8 @@ module DiscretizedDoubleBarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".Time") 
-                                               [| _DiscretizedDoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDoubleBarrierOption.cell
                                 |]
@@ -697,8 +697,8 @@ module DiscretizedDoubleBarrierOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_DiscretizedDoubleBarrierOption.source + ".Values") 
-                                               [| _DiscretizedDoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDoubleBarrierOption.cell
                                 |]

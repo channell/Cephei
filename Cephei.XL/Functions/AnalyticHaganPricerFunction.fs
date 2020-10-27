@@ -103,8 +103,8 @@ module AnalyticHaganPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AnalyticHaganPricer.source + ".SwapletPrice") 
-                                               [| _AnalyticHaganPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AnalyticHaganPricer.cell
                                 |]
@@ -143,8 +143,8 @@ module AnalyticHaganPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AnalyticHaganPricer.source + ".CapletPrice") 
-                                               [| _AnalyticHaganPricer.source
-                                               ;  _effectiveCap.source
+
+                                               [| _effectiveCap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticHaganPricer.cell
@@ -185,8 +185,8 @@ module AnalyticHaganPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AnalyticHaganPricer.source + ".CapletRate") 
-                                               [| _AnalyticHaganPricer.source
-                                               ;  _effectiveCap.source
+
+                                               [| _effectiveCap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticHaganPricer.cell
@@ -227,8 +227,8 @@ module AnalyticHaganPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AnalyticHaganPricer.source + ".FloorletPrice") 
-                                               [| _AnalyticHaganPricer.source
-                                               ;  _effectiveFloor.source
+
+                                               [| _effectiveFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticHaganPricer.cell
@@ -269,8 +269,8 @@ module AnalyticHaganPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AnalyticHaganPricer.source + ".FloorletRate") 
-                                               [| _AnalyticHaganPricer.source
-                                               ;  _effectiveFloor.source
+
+                                               [| _effectiveFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticHaganPricer.cell
@@ -311,8 +311,8 @@ module AnalyticHaganPricerFunction =
                 let format (o : AnalyticHaganPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticHaganPricer.source + ".Initialize") 
-                                               [| _AnalyticHaganPricer.source
-                                               ;  _coupon.source
+
+                                               [| _coupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticHaganPricer.cell
@@ -349,8 +349,8 @@ module AnalyticHaganPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AnalyticHaganPricer.source + ".MeanReversion") 
-                                               [| _AnalyticHaganPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AnalyticHaganPricer.cell
                                 |]
@@ -389,8 +389,8 @@ module AnalyticHaganPricerFunction =
                 let format (o : AnalyticHaganPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticHaganPricer.source + ".SetMeanReversion") 
-                                               [| _AnalyticHaganPricer.source
-                                               ;  _meanReversion.source
+
+                                               [| _meanReversion.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticHaganPricer.cell
@@ -427,8 +427,8 @@ module AnalyticHaganPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AnalyticHaganPricer.source + ".SwapletRate") 
-                                               [| _AnalyticHaganPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AnalyticHaganPricer.cell
                                 |]
@@ -467,8 +467,8 @@ module AnalyticHaganPricerFunction =
                 let format (o : AnalyticHaganPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticHaganPricer.source + ".SetSwaptionVolatility") 
-                                               [| _AnalyticHaganPricer.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticHaganPricer.cell
@@ -505,8 +505,8 @@ module AnalyticHaganPricerFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<SwaptionVolatilityStructure>>) l
 
                 let source () = Helper.sourceFold (_AnalyticHaganPricer.source + ".SwaptionVolatility") 
-                                               [| _AnalyticHaganPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AnalyticHaganPricer.cell
                                 |]
@@ -545,8 +545,8 @@ module AnalyticHaganPricerFunction =
                 let format (o : AnalyticHaganPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticHaganPricer.source + ".RegisterWith") 
-                                               [| _AnalyticHaganPricer.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticHaganPricer.cell
@@ -587,8 +587,8 @@ module AnalyticHaganPricerFunction =
                 let format (o : AnalyticHaganPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticHaganPricer.source + ".UnregisterWith") 
-                                               [| _AnalyticHaganPricer.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticHaganPricer.cell
@@ -625,8 +625,8 @@ module AnalyticHaganPricerFunction =
                 let format (o : AnalyticHaganPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticHaganPricer.source + ".Update") 
-                                               [| _AnalyticHaganPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AnalyticHaganPricer.cell
                                 |]

@@ -101,8 +101,8 @@ module KerkhofSeasonalityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_KerkhofSeasonality.source + ".SeasonalityFactor") 
-                                               [| _KerkhofSeasonality.source
-                                               ;  _To.source
+
+                                               [| _To.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KerkhofSeasonality.cell
@@ -151,8 +151,8 @@ module KerkhofSeasonalityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_KerkhofSeasonality.source + ".CorrectYoYRate") 
-                                               [| _KerkhofSeasonality.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _r.source
                                                ;  _iTS.source
                                                |]
@@ -205,8 +205,8 @@ module KerkhofSeasonalityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_KerkhofSeasonality.source + ".CorrectZeroRate") 
-                                               [| _KerkhofSeasonality.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _r.source
                                                ;  _iTS.source
                                                |]
@@ -247,8 +247,8 @@ module KerkhofSeasonalityFunction =
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KerkhofSeasonality.source + ".Frequency") 
-                                               [| _KerkhofSeasonality.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KerkhofSeasonality.cell
                                 |]
@@ -287,8 +287,8 @@ module KerkhofSeasonalityFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KerkhofSeasonality.source + ".IsConsistent") 
-                                               [| _KerkhofSeasonality.source
-                                               ;  _iTS.source
+
+                                               [| _iTS.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KerkhofSeasonality.cell
@@ -325,8 +325,8 @@ module KerkhofSeasonalityFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_KerkhofSeasonality.source + ".SeasonalityBaseDate") 
-                                               [| _KerkhofSeasonality.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KerkhofSeasonality.cell
                                 |]
@@ -361,8 +361,8 @@ module KerkhofSeasonalityFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_KerkhofSeasonality.source + ".SeasonalityFactors") 
-                                               [| _KerkhofSeasonality.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KerkhofSeasonality.cell
                                 |]
@@ -409,8 +409,8 @@ module KerkhofSeasonalityFunction =
                 let format (o : KerkhofSeasonality) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KerkhofSeasonality.source + ".Set") 
-                                               [| _KerkhofSeasonality.source
-                                               ;  _seasonalityBaseDate.source
+
+                                               [| _seasonalityBaseDate.source
                                                ;  _frequency.source
                                                ;  _seasonalityFactors.source
                                                |]

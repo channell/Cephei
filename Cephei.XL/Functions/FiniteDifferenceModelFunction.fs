@@ -54,8 +54,8 @@ module FiniteDifferenceModelFunction =
                 let format (o : Evolver) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FiniteDifferenceModel.source + ".Evolver") 
-                                               [| _FiniteDifferenceModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FiniteDifferenceModel.cell
                                 |]
@@ -245,8 +245,8 @@ module FiniteDifferenceModelFunction =
                 let format (o : FiniteDifferenceModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FiniteDifferenceModel.source + ".Rollback") 
-                                               [| _FiniteDifferenceModel.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                ;  _from.source
                                                ;  _To.source
                                                ;  _steps.source
@@ -307,8 +307,8 @@ module FiniteDifferenceModelFunction =
                 let format (o : FiniteDifferenceModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FiniteDifferenceModel.source + ".Rollback") 
-                                               [| _FiniteDifferenceModel.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                ;  _from.source
                                                ;  _To.source
                                                ;  _steps.source

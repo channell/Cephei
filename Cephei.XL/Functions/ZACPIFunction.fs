@@ -138,8 +138,8 @@ module ZACPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZeroInflationIndex>) l
 
                 let source () = Helper.sourceFold (_ZACPI.source + ".Clone") 
-                                               [| _ZACPI.source
-                                               ;  _h.source
+
+                                               [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
@@ -184,8 +184,8 @@ module ZACPIFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ZACPI.source + ".Fixing") 
-                                               [| _ZACPI.source
-                                               ;  _aFixingDate.source
+
+                                               [| _aFixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -224,8 +224,8 @@ module ZACPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<ZeroInflationTermStructure>>) l
 
                 let source () = Helper.sourceFold (_ZACPI.source + ".ZeroInflationTermStructure") 
-                                               [| _ZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
@@ -272,8 +272,8 @@ module ZACPIFunction =
                 let format (o : ZACPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZACPI.source + ".AddFixing") 
-                                               [| _ZACPI.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _fixing.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -315,8 +315,8 @@ module ZACPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_ZACPI.source + ".AvailabilityLag") 
-                                               [| _ZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
@@ -351,8 +351,8 @@ module ZACPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_ZACPI.source + ".Currency") 
-                                               [| _ZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
@@ -387,8 +387,8 @@ module ZACPIFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZACPI.source + ".FamilyName") 
-                                               [| _ZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
@@ -423,8 +423,8 @@ module ZACPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_ZACPI.source + ".FixingCalendar") 
-                                               [| _ZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
@@ -459,8 +459,8 @@ module ZACPIFunction =
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZACPI.source + ".Frequency") 
-                                               [| _ZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
@@ -495,8 +495,8 @@ module ZACPIFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZACPI.source + ".Interpolated") 
-                                               [| _ZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
@@ -535,8 +535,8 @@ module ZACPIFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZACPI.source + ".IsValidFixingDate") 
-                                               [| _ZACPI.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
@@ -573,8 +573,8 @@ module ZACPIFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZACPI.source + ".Name") 
-                                               [| _ZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
@@ -609,8 +609,8 @@ module ZACPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
 
                 let source () = Helper.sourceFold (_ZACPI.source + ".Region") 
-                                               [| _ZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
@@ -645,8 +645,8 @@ module ZACPIFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZACPI.source + ".Revised") 
-                                               [| _ZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
@@ -681,8 +681,8 @@ module ZACPIFunction =
                 let format (o : ZACPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZACPI.source + ".Update") 
-                                               [| _ZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
@@ -729,8 +729,8 @@ module ZACPIFunction =
                 let format (o : ZACPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZACPI.source + ".AddFixings") 
-                                               [| _ZACPI.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -779,8 +779,8 @@ module ZACPIFunction =
                 let format (o : ZACPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZACPI.source + ".AddFixings1") 
-                                               [| _ZACPI.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -819,8 +819,8 @@ module ZACPIFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZACPI.source + ".AllowsNativeFixings") 
-                                               [| _ZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
@@ -855,8 +855,8 @@ module ZACPIFunction =
                 let format (o : ZACPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZACPI.source + ".ClearFixings") 
-                                               [| _ZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
@@ -895,8 +895,8 @@ module ZACPIFunction =
                 let format (o : ZACPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZACPI.source + ".RegisterWith") 
-                                               [| _ZACPI.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
@@ -933,8 +933,8 @@ module ZACPIFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZACPI.source + ".TimeSeries") 
-                                               [| _ZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell
                                 |]
@@ -973,8 +973,8 @@ module ZACPIFunction =
                 let format (o : ZACPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZACPI.source + ".UnregisterWith") 
-                                               [| _ZACPI.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZACPI.cell

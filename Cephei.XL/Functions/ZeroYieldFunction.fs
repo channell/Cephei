@@ -62,8 +62,8 @@ module ZeroYieldFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ZeroYield.source + ".DiscountImpl") 
-                                               [| _ZeroYield.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -110,8 +110,8 @@ module ZeroYieldFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ZeroYield.source + ".ForwardImpl") 
-                                               [| _ZeroYield.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -166,8 +166,8 @@ module ZeroYieldFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ZeroYield.source + ".Guess") 
-                                               [| _ZeroYield.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _f.source
@@ -214,8 +214,8 @@ module ZeroYieldFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ZeroYield.source + ".InitialDate") 
-                                               [| _ZeroYield.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZeroYield.cell
@@ -256,8 +256,8 @@ module ZeroYieldFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ZeroYield.source + ".InitialValue") 
-                                               [| _ZeroYield.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZeroYield.cell
@@ -294,8 +294,8 @@ module ZeroYieldFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ZeroYield.source + ".MaxIterations") 
-                                               [| _ZeroYield.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroYield.cell
                                 |]
@@ -346,8 +346,8 @@ module ZeroYieldFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ZeroYield.source + ".MaxValueAfter") 
-                                               [| _ZeroYield.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _f.source
@@ -406,8 +406,8 @@ module ZeroYieldFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ZeroYield.source + ".MinValueAfter") 
-                                               [| _ZeroYield.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _f.source
@@ -462,8 +462,8 @@ module ZeroYieldFunction =
                 let format (o : ZeroYield) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZeroYield.source + ".UpdateGuess") 
-                                               [| _ZeroYield.source
-                                               ;  _data.source
+
+                                               [| _data.source
                                                ;  _rate.source
                                                ;  _i.source
                                                |]
@@ -512,8 +512,8 @@ module ZeroYieldFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ZeroYield.source + ".ZeroYieldImpl") 
-                                               [| _ZeroYield.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 

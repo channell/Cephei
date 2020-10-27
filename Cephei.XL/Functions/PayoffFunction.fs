@@ -58,8 +58,8 @@ module PayoffFunction =
                 let format (o : Payoff) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Payoff.source + ".Accept") 
-                                               [| _Payoff.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Payoff.cell
@@ -96,8 +96,8 @@ module PayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Payoff.source + ".Description") 
-                                               [| _Payoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Payoff.cell
                                 |]
@@ -132,8 +132,8 @@ module PayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Payoff.source + ".Name") 
-                                               [| _Payoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Payoff.cell
                                 |]
@@ -172,8 +172,8 @@ module PayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Payoff.source + ".Value") 
-                                               [| _Payoff.source
-                                               ;  _price.source
+
+                                               [| _price.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Payoff.cell

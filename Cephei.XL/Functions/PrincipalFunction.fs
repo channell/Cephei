@@ -54,8 +54,8 @@ module PrincipalFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Principal.source + ".AccrualEndDate") 
-                                               [| _Principal.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
                                 |]
@@ -90,8 +90,8 @@ module PrincipalFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Principal.source + ".AccrualStartDate") 
-                                               [| _Principal.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
                                 |]
@@ -126,8 +126,8 @@ module PrincipalFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Principal.source + ".Amount") 
-                                               [| _Principal.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
                                 |]
@@ -162,8 +162,8 @@ module PrincipalFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Principal.source + ".Date") 
-                                               [| _Principal.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
                                 |]
@@ -198,8 +198,8 @@ module PrincipalFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_Principal.source + ".DayCounter") 
-                                               [| _Principal.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
                                 |]
@@ -234,8 +234,8 @@ module PrincipalFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Principal.source + ".Nominal") 
-                                               [| _Principal.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
                                 |]
@@ -380,8 +380,8 @@ module PrincipalFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Principal.source + ".RefPeriodEnd") 
-                                               [| _Principal.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
                                 |]
@@ -416,8 +416,8 @@ module PrincipalFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Principal.source + ".RefPeriodStart") 
-                                               [| _Principal.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
                                 |]
@@ -456,8 +456,8 @@ module PrincipalFunction =
                 let format (o : Principal) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Principal.source + ".SetAmount") 
-                                               [| _Principal.source
-                                               ;  _amount.source
+
+                                               [| _amount.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
@@ -498,8 +498,8 @@ module PrincipalFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Principal.source + ".CompareTo") 
-                                               [| _Principal.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
@@ -540,8 +540,8 @@ module PrincipalFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Principal.source + ".Equals") 
-                                               [| _Principal.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
@@ -578,8 +578,8 @@ module PrincipalFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Principal.source + ".ExCouponDate") 
-                                               [| _Principal.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
                                 |]
@@ -622,8 +622,8 @@ module PrincipalFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Principal.source + ".HasOccurred") 
-                                               [| _Principal.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                ;  _includeRefDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -666,8 +666,8 @@ module PrincipalFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Principal.source + ".TradingExCoupon") 
-                                               [| _Principal.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
@@ -708,8 +708,8 @@ module PrincipalFunction =
                 let format (o : Principal) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Principal.source + ".Accept") 
-                                               [| _Principal.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
@@ -750,8 +750,8 @@ module PrincipalFunction =
                 let format (o : Principal) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Principal.source + ".RegisterWith") 
-                                               [| _Principal.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell
@@ -792,8 +792,8 @@ module PrincipalFunction =
                 let format (o : Principal) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Principal.source + ".UnregisterWith") 
-                                               [| _Principal.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Principal.cell

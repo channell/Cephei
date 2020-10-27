@@ -54,8 +54,8 @@ module LogCubicFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LogCubic.source + ".GLOBAL") 
-                                               [| _LogCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LogCubic.cell
                                 |]
@@ -102,8 +102,8 @@ module LogCubicFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
                 let source () = Helper.sourceFold (_LogCubic.source + ".Interpolate") 
-                                               [| _LogCubic.source
-                                               ;  _xBegin.source
+
+                                               [| _xBegin.source
                                                ;  _size.source
                                                ;  _yBegin.source
                                                |]
@@ -242,8 +242,8 @@ module LogCubicFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LogCubic.source + ".RequiredPoints") 
-                                               [| _LogCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LogCubic.cell
                                 |]

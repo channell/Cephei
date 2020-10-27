@@ -216,8 +216,8 @@ module DigitalCmsCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".Factory") 
-                                               [| _DigitalCmsCoupon.source
-                                               ;  _underlying.source
+
+                                               [| _underlying.source
                                                ;  _callStrike.source
                                                ;  _callPosition.source
                                                ;  _isCallATMIncluded.source
@@ -272,8 +272,8 @@ module DigitalCmsCouponFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".CallDigitalPayoff") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -308,8 +308,8 @@ module DigitalCmsCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".CallOptionRate") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -344,8 +344,8 @@ module DigitalCmsCouponFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".CallStrike") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -380,8 +380,8 @@ module DigitalCmsCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".ConvexityAdjustment") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -416,8 +416,8 @@ module DigitalCmsCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".HasCall") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -452,8 +452,8 @@ module DigitalCmsCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".HasCollar") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -488,8 +488,8 @@ module DigitalCmsCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".HasPut") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -524,8 +524,8 @@ module DigitalCmsCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".IsLongCall") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -560,8 +560,8 @@ module DigitalCmsCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".IsLongPut") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -596,8 +596,8 @@ module DigitalCmsCouponFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".PutDigitalPayoff") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -632,8 +632,8 @@ module DigitalCmsCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".PutOptionRate") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -668,8 +668,8 @@ module DigitalCmsCouponFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".PutStrike") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -704,8 +704,8 @@ module DigitalCmsCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".Rate") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -744,8 +744,8 @@ module DigitalCmsCouponFunction =
                 let format (o : DigitalCmsCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".SetPricer") 
-                                               [| _DigitalCmsCoupon.source
-                                               ;  _pricer.source
+
+                                               [| _pricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
@@ -782,8 +782,8 @@ module DigitalCmsCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCoupon>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".Underlying") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -822,8 +822,8 @@ module DigitalCmsCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".AccruedAmount") 
-                                               [| _DigitalCmsCoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
@@ -860,8 +860,8 @@ module DigitalCmsCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".AdjustedFixing") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -896,8 +896,8 @@ module DigitalCmsCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".Amount") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -932,8 +932,8 @@ module DigitalCmsCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".DayCounter") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -968,8 +968,8 @@ module DigitalCmsCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".FixingDate") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -1004,8 +1004,8 @@ module DigitalCmsCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".FixingDays") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -1040,8 +1040,8 @@ module DigitalCmsCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".Gearing") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -1076,8 +1076,8 @@ module DigitalCmsCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".Index") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -1112,8 +1112,8 @@ module DigitalCmsCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".IndexFixing") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -1148,8 +1148,8 @@ module DigitalCmsCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".IsInArrears") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -1188,8 +1188,8 @@ module DigitalCmsCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".Price") 
-                                               [| _DigitalCmsCoupon.source
-                                               ;  _yts.source
+
+                                               [| _yts.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
@@ -1226,8 +1226,8 @@ module DigitalCmsCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".Pricer") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -1262,8 +1262,8 @@ module DigitalCmsCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".Spread") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -1298,8 +1298,8 @@ module DigitalCmsCouponFunction =
                 let format (o : DigitalCmsCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".Update") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -1334,8 +1334,8 @@ module DigitalCmsCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".AccrualDays") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -1370,8 +1370,8 @@ module DigitalCmsCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".AccrualEndDate") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -1406,8 +1406,8 @@ module DigitalCmsCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".AccrualPeriod") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -1442,8 +1442,8 @@ module DigitalCmsCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".AccrualStartDate") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -1482,8 +1482,8 @@ module DigitalCmsCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".AccruedDays") 
-                                               [| _DigitalCmsCoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
@@ -1524,8 +1524,8 @@ module DigitalCmsCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".AccruedPeriod") 
-                                               [| _DigitalCmsCoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
@@ -1562,8 +1562,8 @@ module DigitalCmsCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".Date") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -1598,8 +1598,8 @@ module DigitalCmsCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".ExCouponDate") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -1634,8 +1634,8 @@ module DigitalCmsCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".Nominal") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -1670,8 +1670,8 @@ module DigitalCmsCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".ReferencePeriodEnd") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -1706,8 +1706,8 @@ module DigitalCmsCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".ReferencePeriodStart") 
-                                               [| _DigitalCmsCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
                                 |]
@@ -1746,8 +1746,8 @@ module DigitalCmsCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".CompareTo") 
-                                               [| _DigitalCmsCoupon.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
@@ -1788,8 +1788,8 @@ module DigitalCmsCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".Equals") 
-                                               [| _DigitalCmsCoupon.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
@@ -1834,8 +1834,8 @@ module DigitalCmsCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".HasOccurred") 
-                                               [| _DigitalCmsCoupon.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                ;  _includeRefDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1878,8 +1878,8 @@ module DigitalCmsCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".TradingExCoupon") 
-                                               [| _DigitalCmsCoupon.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
@@ -1920,8 +1920,8 @@ module DigitalCmsCouponFunction =
                 let format (o : DigitalCmsCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".Accept") 
-                                               [| _DigitalCmsCoupon.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
@@ -1962,8 +1962,8 @@ module DigitalCmsCouponFunction =
                 let format (o : DigitalCmsCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".RegisterWith") 
-                                               [| _DigitalCmsCoupon.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell
@@ -2004,8 +2004,8 @@ module DigitalCmsCouponFunction =
                 let format (o : DigitalCmsCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalCmsCoupon.source + ".UnregisterWith") 
-                                               [| _DigitalCmsCoupon.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalCmsCoupon.cell

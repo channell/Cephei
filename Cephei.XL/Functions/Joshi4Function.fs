@@ -70,8 +70,8 @@ module Joshi4Function =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Joshi4>) l
 
                 let source () = Helper.sourceFold (_Joshi4.source + ".Factory") 
-                                               [| _Joshi4.source
-                                               ;  _Process.source
+
+                                               [| _Process.source
                                                ;  _End.source
                                                ;  _steps.source
                                                ;  _strike.source
@@ -212,8 +212,8 @@ module Joshi4Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Joshi4.source + ".Probability") 
-                                               [| _Joshi4.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _y.source
                                                ;  _branch.source
                                                |]
@@ -262,8 +262,8 @@ module Joshi4Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Joshi4.source + ".Underlying") 
-                                               [| _Joshi4.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _index.source
                                                |]
                 let hash = Helper.hashFold 
@@ -314,8 +314,8 @@ module Joshi4Function =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Joshi4.source + ".Descendant") 
-                                               [| _Joshi4.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _index.source
                                                ;  _branch.source
                                                |]
@@ -360,8 +360,8 @@ module Joshi4Function =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Joshi4.source + ".Size") 
-                                               [| _Joshi4.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Joshi4.cell
@@ -398,8 +398,8 @@ module Joshi4Function =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Joshi4.source + ".Columns") 
-                                               [| _Joshi4.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Joshi4.cell
                                 |]

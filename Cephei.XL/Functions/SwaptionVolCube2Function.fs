@@ -137,8 +137,8 @@ module SwaptionVolCube2Function =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".VolSpreads") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
@@ -183,8 +183,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".AtmStrike") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionTenor.source
+
+                                               [| _optionTenor.source
                                                ;  _swapTenor.source
                                                |]
                 let hash = Helper.hashFold 
@@ -231,8 +231,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".AtmStrike") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionDate.source
+
+                                               [| _optionDate.source
                                                ;  _swapTenor.source
                                                |]
                 let hash = Helper.hashFold 
@@ -271,8 +271,8 @@ module SwaptionVolCube2Function =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<SwaptionVolatilityStructure>>) l
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".AtmVol") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -307,8 +307,8 @@ module SwaptionVolCube2Function =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".Calendar") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -343,8 +343,8 @@ module SwaptionVolCube2Function =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".DayCounter") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -379,8 +379,8 @@ module SwaptionVolCube2Function =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".MaxDate") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -415,8 +415,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".MaxStrike") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -451,8 +451,8 @@ module SwaptionVolCube2Function =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".MaxSwapTenor") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -487,8 +487,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".MaxTime") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -523,8 +523,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".MinStrike") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -559,8 +559,8 @@ module SwaptionVolCube2Function =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".ReferenceDate") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -595,8 +595,8 @@ module SwaptionVolCube2Function =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".SettlementDays") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -631,8 +631,8 @@ module SwaptionVolCube2Function =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".ShortSwapIndexBase") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -667,8 +667,8 @@ module SwaptionVolCube2Function =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".StrikeSpreads") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -703,8 +703,8 @@ module SwaptionVolCube2Function =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".SwapIndexBase") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -739,8 +739,8 @@ module SwaptionVolCube2Function =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".VegaWeightedSmileFit") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -775,8 +775,8 @@ module SwaptionVolCube2Function =
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".VolatilityType") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -815,8 +815,8 @@ module SwaptionVolCube2Function =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".OptionDateFromTime") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionTime.source
+
+                                               [| _optionTime.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
@@ -853,8 +853,8 @@ module SwaptionVolCube2Function =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".OptionDates") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -889,8 +889,8 @@ module SwaptionVolCube2Function =
                 let format (i : Generic.List<ICell<Period>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".OptionTenors") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -925,8 +925,8 @@ module SwaptionVolCube2Function =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".OptionTimes") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -961,8 +961,8 @@ module SwaptionVolCube2Function =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".SwapLengths") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -997,8 +997,8 @@ module SwaptionVolCube2Function =
                 let format (i : Generic.List<ICell<Period>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".SwapTenors") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -1033,8 +1033,8 @@ module SwaptionVolCube2Function =
                 let format (o : SwaptionVolCube2) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".Update") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -1085,8 +1085,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".BlackVariance") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionTime.source
+
+                                               [| _optionTime.source
                                                ;  _swapLength.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
@@ -1145,8 +1145,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".BlackVariance") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionDate.source
+
+                                               [| _optionDate.source
                                                ;  _swapLength.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
@@ -1205,8 +1205,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".BlackVariance") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionTenor.source
+
+                                               [| _optionTenor.source
                                                ;  _swapLength.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
@@ -1265,8 +1265,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".BlackVariance") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionTime.source
+
+                                               [| _optionTime.source
                                                ;  _swapTenor.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
@@ -1325,8 +1325,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".BlackVariance") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionDate.source
+
+                                               [| _optionDate.source
                                                ;  _swapTenor.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
@@ -1385,8 +1385,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".BlackVariance") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionTenor.source
+
+                                               [| _optionTenor.source
                                                ;  _swapTenor.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
@@ -1429,8 +1429,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".MaxSwapLength") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -1477,8 +1477,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".Shift") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionTime.source
+
+                                               [| _optionTime.source
                                                ;  _swapTenor.source
                                                ;  _extrapolate.source
                                                |]
@@ -1531,8 +1531,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".Shift") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionDate.source
+
+                                               [| _optionDate.source
                                                ;  _swapTenor.source
                                                ;  _extrapolate.source
                                                |]
@@ -1585,8 +1585,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".Shift") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionDate.source
+
+                                               [| _optionDate.source
                                                ;  _swapLength.source
                                                ;  _extrapolate.source
                                                |]
@@ -1639,8 +1639,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".Shift") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionTime.source
+
+                                               [| _optionTime.source
                                                ;  _swapLength.source
                                                ;  _extrapolate.source
                                                |]
@@ -1693,8 +1693,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".Shift") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionTenor.source
+
+                                               [| _optionTenor.source
                                                ;  _swapTenor.source
                                                ;  _extrapolate.source
                                                |]
@@ -1747,8 +1747,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".Shift") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionTenor.source
+
+                                               [| _optionTenor.source
                                                ;  _swapLength.source
                                                ;  _extrapolate.source
                                                |]
@@ -1801,8 +1801,8 @@ module SwaptionVolCube2Function =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SmileSection>) l
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".SmileSection") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionTenor.source
+
+                                               [| _optionTenor.source
                                                ;  _swapTenor.source
                                                ;  _extr.source
                                                |]
@@ -1855,8 +1855,8 @@ module SwaptionVolCube2Function =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SmileSection>) l
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".SmileSection") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionTime.source
+
+                                               [| _optionTime.source
                                                ;  _swapLength.source
                                                ;  _extr.source
                                                |]
@@ -1909,8 +1909,8 @@ module SwaptionVolCube2Function =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SmileSection>) l
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".SmileSection") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionDate.source
+
+                                               [| _optionDate.source
                                                ;  _swapTenor.source
                                                ;  _extr.source
                                                |]
@@ -1959,8 +1959,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".SwapLength") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _start.source
+
+                                               [| _start.source
                                                ;  _End.source
                                                |]
                 let hash = Helper.hashFold 
@@ -2003,8 +2003,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".SwapLength") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _swapTenor.source
+
+                                               [| _swapTenor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
@@ -2057,8 +2057,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".Volatility") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionDate.source
+
+                                               [| _optionDate.source
                                                ;  _swapTenor.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
@@ -2117,8 +2117,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".Volatility") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionDate.source
+
+                                               [| _optionDate.source
                                                ;  _swapLength.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
@@ -2177,8 +2177,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".Volatility") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionTenor.source
+
+                                               [| _optionTenor.source
                                                ;  _swapTenor.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
@@ -2237,8 +2237,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".Volatility") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionTenor.source
+
+                                               [| _optionTenor.source
                                                ;  _swapLength.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
@@ -2297,8 +2297,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".Volatility") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionTime.source
+
+                                               [| _optionTime.source
                                                ;  _swapLength.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
@@ -2357,8 +2357,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".Volatility") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _optionTime.source
+
+                                               [| _optionTime.source
                                                ;  _swapTenor.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
@@ -2401,8 +2401,8 @@ module SwaptionVolCube2Function =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".BusinessDayConvention") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -2441,8 +2441,8 @@ module SwaptionVolCube2Function =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".OptionDateFromTenor") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
@@ -2483,8 +2483,8 @@ module SwaptionVolCube2Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".TimeFromReference") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _date.source
+
+                                               [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
@@ -2521,8 +2521,8 @@ module SwaptionVolCube2Function =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".AllowsExtrapolation") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]
@@ -2561,8 +2561,8 @@ module SwaptionVolCube2Function =
                 let format (o : SwaptionVolCube2) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".DisableExtrapolation") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
@@ -2603,8 +2603,8 @@ module SwaptionVolCube2Function =
                 let format (o : SwaptionVolCube2) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".EnableExtrapolation") 
-                                               [| _SwaptionVolCube2.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
@@ -2641,8 +2641,8 @@ module SwaptionVolCube2Function =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SwaptionVolCube2.source + ".Extrapolate") 
-                                               [| _SwaptionVolCube2.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionVolCube2.cell
                                 |]

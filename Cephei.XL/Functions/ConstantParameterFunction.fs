@@ -134,8 +134,8 @@ module ConstantParameterFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
                 let source () = Helper.sourceFold (_ConstantParameter.source + ".CONSTRAINT") 
-                                               [| _ConstantParameter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConstantParameter.cell
                                 |]
@@ -171,8 +171,8 @@ module ConstantParameterFunction =
                 let format (o : Impl) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConstantParameter.source + ".Implementation") 
-                                               [| _ConstantParameter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConstantParameter.cell
                                 |]
@@ -208,8 +208,8 @@ module ConstantParameterFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_ConstantParameter.source + ".Parameters") 
-                                               [| _ConstantParameter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConstantParameter.cell
                                 |]
@@ -252,8 +252,8 @@ module ConstantParameterFunction =
                 let format (o : ConstantParameter) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConstantParameter.source + ".SetParam") 
-                                               [| _ConstantParameter.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -292,8 +292,8 @@ module ConstantParameterFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConstantParameter.source + ".Size") 
-                                               [| _ConstantParameter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConstantParameter.cell
                                 |]
@@ -332,8 +332,8 @@ module ConstantParameterFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ConstantParameter.source + ".TestParams") 
-                                               [| _ConstantParameter.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantParameter.cell
@@ -374,8 +374,8 @@ module ConstantParameterFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConstantParameter.source + ".Value") 
-                                               [| _ConstantParameter.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantParameter.cell

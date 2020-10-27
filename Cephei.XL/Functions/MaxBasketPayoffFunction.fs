@@ -58,8 +58,8 @@ module MaxBasketPayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MaxBasketPayoff.source + ".Accumulate") 
-                                               [| _MaxBasketPayoff.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MaxBasketPayoff.cell
@@ -133,8 +133,8 @@ module MaxBasketPayoffFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
                 let source () = Helper.sourceFold (_MaxBasketPayoff.source + ".BasePayoff") 
-                                               [| _MaxBasketPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MaxBasketPayoff.cell
                                 |]
@@ -169,8 +169,8 @@ module MaxBasketPayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MaxBasketPayoff.source + ".Description") 
-                                               [| _MaxBasketPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MaxBasketPayoff.cell
                                 |]
@@ -205,8 +205,8 @@ module MaxBasketPayoffFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MaxBasketPayoff.source + ".Name") 
-                                               [| _MaxBasketPayoff.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MaxBasketPayoff.cell
                                 |]
@@ -245,8 +245,8 @@ module MaxBasketPayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MaxBasketPayoff.source + ".Value1") 
-                                               [| _MaxBasketPayoff.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MaxBasketPayoff.cell
@@ -287,8 +287,8 @@ module MaxBasketPayoffFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MaxBasketPayoff.source + ".Value") 
-                                               [| _MaxBasketPayoff.source
-                                               ;  _price.source
+
+                                               [| _price.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MaxBasketPayoff.cell
@@ -329,8 +329,8 @@ module MaxBasketPayoffFunction =
                 let format (o : MaxBasketPayoff) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MaxBasketPayoff.source + ".Accept") 
-                                               [| _MaxBasketPayoff.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MaxBasketPayoff.cell

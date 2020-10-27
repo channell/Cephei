@@ -58,8 +58,8 @@ module NormalDistributionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NormalDistribution.source + ".Derivative") 
-                                               [| _NormalDistribution.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NormalDistribution.cell
@@ -174,8 +174,8 @@ module NormalDistributionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NormalDistribution.source + ".Value") 
-                                               [| _NormalDistribution.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NormalDistribution.cell

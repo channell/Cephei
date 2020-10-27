@@ -58,8 +58,8 @@ module PeriodFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Period.source + ".CompareTo") 
-                                               [| _Period.source
-                                               ;  _obj.source
+
+                                               [| _obj.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Period.cell
@@ -100,8 +100,8 @@ module PeriodFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Period.source + ".Equals") 
-                                               [| _Period.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Period.cell
@@ -138,8 +138,8 @@ module PeriodFunction =
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Period.source + ".Frequency") 
-                                               [| _Period.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Period.cell
                                 |]
@@ -174,8 +174,8 @@ module PeriodFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Period.source + ".Length") 
-                                               [| _Period.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Period.cell
                                 |]
@@ -210,8 +210,8 @@ module PeriodFunction =
                 let format (o : Period) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Period.source + ".Normalize") 
-                                               [| _Period.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Period.cell
                                 |]
@@ -394,8 +394,8 @@ module PeriodFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Period.source + ".ToShortString") 
-                                               [| _Period.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Period.cell
                                 |]
@@ -430,8 +430,8 @@ module PeriodFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Period.source + ".ToString") 
-                                               [| _Period.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Period.cell
                                 |]
@@ -466,8 +466,8 @@ module PeriodFunction =
                 let format (o : TimeUnit) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Period.source + ".Units") 
-                                               [| _Period.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Period.cell
                                 |]

@@ -97,8 +97,8 @@ module DigitalReplicationFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalReplication.source + ".Gap") 
-                                               [| _DigitalReplication.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalReplication.cell
                                 |]
@@ -133,8 +133,8 @@ module DigitalReplicationFunction =
                 let format (o : Replication.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalReplication.source + ".ReplicationType") 
-                                               [| _DigitalReplication.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalReplication.cell
                                 |]

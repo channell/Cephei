@@ -97,8 +97,8 @@ module CouponConversionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CouponConversion.source + ".Date") 
-                                               [| _CouponConversion.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CouponConversion.cell
                                 |]
@@ -133,8 +133,8 @@ module CouponConversionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CouponConversion.source + ".Rate") 
-                                               [| _CouponConversion.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CouponConversion.cell
                                 |]
@@ -169,8 +169,8 @@ module CouponConversionFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CouponConversion.source + ".ToString") 
-                                               [| _CouponConversion.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CouponConversion.cell
                                 |]

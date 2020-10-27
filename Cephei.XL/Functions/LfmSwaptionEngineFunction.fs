@@ -103,8 +103,8 @@ module LfmSwaptionEngineFunction =
                 let format (o : LfmSwaptionEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LfmSwaptionEngine.source + ".SetModel") 
-                                               [| _LfmSwaptionEngine.source
-                                               ;  _model.source
+
+                                               [| _model.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LfmSwaptionEngine.cell
@@ -145,8 +145,8 @@ module LfmSwaptionEngineFunction =
                 let format (o : LfmSwaptionEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LfmSwaptionEngine.source + ".RegisterWith") 
-                                               [| _LfmSwaptionEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LfmSwaptionEngine.cell
@@ -183,8 +183,8 @@ module LfmSwaptionEngineFunction =
                 let format (o : LfmSwaptionEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LfmSwaptionEngine.source + ".Reset") 
-                                               [| _LfmSwaptionEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LfmSwaptionEngine.cell
                                 |]
@@ -223,8 +223,8 @@ module LfmSwaptionEngineFunction =
                 let format (o : LfmSwaptionEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LfmSwaptionEngine.source + ".UnregisterWith") 
-                                               [| _LfmSwaptionEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LfmSwaptionEngine.cell
@@ -261,8 +261,8 @@ module LfmSwaptionEngineFunction =
                 let format (o : LfmSwaptionEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LfmSwaptionEngine.source + ".Update") 
-                                               [| _LfmSwaptionEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LfmSwaptionEngine.cell
                                 |]

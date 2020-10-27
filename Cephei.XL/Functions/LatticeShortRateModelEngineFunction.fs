@@ -140,8 +140,8 @@ module LatticeShortRateModelEngineFunction =
                 let format (o : LatticeShortRateModelEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LatticeShortRateModelEngine.source + ".Update") 
-                                               [| _LatticeShortRateModelEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LatticeShortRateModelEngine.cell
                                 |]
@@ -180,8 +180,8 @@ module LatticeShortRateModelEngineFunction =
                 let format (o : LatticeShortRateModelEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LatticeShortRateModelEngine.source + ".SetModel") 
-                                               [| _LatticeShortRateModelEngine.source
-                                               ;  _model.source
+
+                                               [| _model.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LatticeShortRateModelEngine.cell
@@ -223,8 +223,8 @@ module LatticeShortRateModelEngineFunction =
                 let format (o : LatticeShortRateModelEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LatticeShortRateModelEngine.source + ".RegisterWith") 
-                                               [| _LatticeShortRateModelEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LatticeShortRateModelEngine.cell
@@ -261,8 +261,8 @@ module LatticeShortRateModelEngineFunction =
                 let format (o : LatticeShortRateModelEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LatticeShortRateModelEngine.source + ".Reset") 
-                                               [| _LatticeShortRateModelEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LatticeShortRateModelEngine.cell
                                 |]
@@ -301,8 +301,8 @@ module LatticeShortRateModelEngineFunction =
                 let format (o : LatticeShortRateModelEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LatticeShortRateModelEngine.source + ".UnregisterWith") 
-                                               [| _LatticeShortRateModelEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LatticeShortRateModelEngine.cell

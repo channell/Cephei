@@ -63,8 +63,8 @@ module StatsHolderFunction =
                 let format (o : StatsHolder) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_StatsHolder.source + ".Add") 
-                                               [| _StatsHolder.source
-                                               ;  _value.source
+
+                                               [| _value.source
                                                ;  _weight.source
                                                |]
                 let hash = Helper.hashFold 
@@ -112,8 +112,8 @@ module StatsHolderFunction =
                 let format (o : StatsHolder) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_StatsHolder.source + ".AddSequence") 
-                                               [| _StatsHolder.source
-                                               ;  _data.source
+
+                                               [| _data.source
                                                ;  _weight.source
                                                |]
                 let hash = Helper.hashFold 
@@ -152,8 +152,8 @@ module StatsHolderFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StatsHolder.source + ".ErrorEstimate") 
-                                               [| _StatsHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StatsHolder.cell
                                 |]
@@ -196,8 +196,8 @@ module StatsHolderFunction =
                 let format (o : Generic.KeyValuePair<double,int>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_StatsHolder.source + ".ExpectationValue") 
-                                               [| _StatsHolder.source
-                                               ;  _f.source
+
+                                               [| _f.source
                                                ;  _inRange.source
                                                |]
                 let hash = Helper.hashFold 
@@ -236,8 +236,8 @@ module StatsHolderFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StatsHolder.source + ".Kurtosis") 
-                                               [| _StatsHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StatsHolder.cell
                                 |]
@@ -272,8 +272,8 @@ module StatsHolderFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StatsHolder.source + ".Max") 
-                                               [| _StatsHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StatsHolder.cell
                                 |]
@@ -308,8 +308,8 @@ module StatsHolderFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StatsHolder.source + ".Mean") 
-                                               [| _StatsHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StatsHolder.cell
                                 |]
@@ -344,8 +344,8 @@ module StatsHolderFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StatsHolder.source + ".Min") 
-                                               [| _StatsHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StatsHolder.cell
                                 |]
@@ -384,8 +384,8 @@ module StatsHolderFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StatsHolder.source + ".Percentile") 
-                                               [| _StatsHolder.source
-                                               ;  _percent.source
+
+                                               [| _percent.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StatsHolder.cell
@@ -422,8 +422,8 @@ module StatsHolderFunction =
                 let format (o : StatsHolder) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_StatsHolder.source + ".Reset") 
-                                               [| _StatsHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StatsHolder.cell
                                 |]
@@ -458,8 +458,8 @@ module StatsHolderFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StatsHolder.source + ".Samples") 
-                                               [| _StatsHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StatsHolder.cell
                                 |]
@@ -494,8 +494,8 @@ module StatsHolderFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StatsHolder.source + ".Skewness") 
-                                               [| _StatsHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StatsHolder.cell
                                 |]
@@ -530,8 +530,8 @@ module StatsHolderFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StatsHolder.source + ".StandardDeviation") 
-                                               [| _StatsHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StatsHolder.cell
                                 |]
@@ -640,8 +640,8 @@ module StatsHolderFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StatsHolder.source + ".Variance") 
-                                               [| _StatsHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StatsHolder.cell
                                 |]
@@ -676,8 +676,8 @@ module StatsHolderFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StatsHolder.source + ".WeightSum") 
-                                               [| _StatsHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StatsHolder.cell
                                 |]

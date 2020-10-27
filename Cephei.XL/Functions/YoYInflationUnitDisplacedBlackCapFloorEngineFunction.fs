@@ -98,8 +98,8 @@ module YoYInflationUnitDisplacedBlackCapFloorEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationIndex>) l
 
                 let source () = Helper.sourceFold (_YoYInflationUnitDisplacedBlackCapFloorEngine.source + ".Index") 
-                                               [| _YoYInflationUnitDisplacedBlackCapFloorEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationUnitDisplacedBlackCapFloorEngine.cell
                                 |]
@@ -138,8 +138,8 @@ module YoYInflationUnitDisplacedBlackCapFloorEngineFunction =
                 let format (o : YoYInflationUnitDisplacedBlackCapFloorEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationUnitDisplacedBlackCapFloorEngine.source + ".SetVolatility") 
-                                               [| _YoYInflationUnitDisplacedBlackCapFloorEngine.source
-                                               ;  _vol.source
+
+                                               [| _vol.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationUnitDisplacedBlackCapFloorEngine.cell
@@ -176,8 +176,8 @@ module YoYInflationUnitDisplacedBlackCapFloorEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYOptionletVolatilitySurface>>) l
 
                 let source () = Helper.sourceFold (_YoYInflationUnitDisplacedBlackCapFloorEngine.source + ".Volatility") 
-                                               [| _YoYInflationUnitDisplacedBlackCapFloorEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationUnitDisplacedBlackCapFloorEngine.cell
                                 |]

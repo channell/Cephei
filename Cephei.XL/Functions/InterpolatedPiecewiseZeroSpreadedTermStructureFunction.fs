@@ -54,8 +54,8 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_InterpolatedPiecewiseZeroSpreadedTermStructure.source + ".Calendar") 
-                                               [| _InterpolatedPiecewiseZeroSpreadedTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedPiecewiseZeroSpreadedTermStructure.cell
                                 |]
@@ -90,8 +90,8 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_InterpolatedPiecewiseZeroSpreadedTermStructure.source + ".DayCounter") 
-                                               [| _InterpolatedPiecewiseZeroSpreadedTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedPiecewiseZeroSpreadedTermStructure.cell
                                 |]
@@ -199,8 +199,8 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedPiecewiseZeroSpreadedTermStructure.source + ".MaxDate") 
-                                               [| _InterpolatedPiecewiseZeroSpreadedTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedPiecewiseZeroSpreadedTermStructure.cell
                                 |]
@@ -235,8 +235,8 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedPiecewiseZeroSpreadedTermStructure.source + ".ReferenceDate") 
-                                               [| _InterpolatedPiecewiseZeroSpreadedTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedPiecewiseZeroSpreadedTermStructure.cell
                                 |]
@@ -271,8 +271,8 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedPiecewiseZeroSpreadedTermStructure.source + ".SettlementDays") 
-                                               [| _InterpolatedPiecewiseZeroSpreadedTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedPiecewiseZeroSpreadedTermStructure.cell
                                 |]

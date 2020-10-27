@@ -54,8 +54,8 @@ module CPIBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".BaseCPI") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]
@@ -235,8 +235,8 @@ module CPIBondFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZeroInflationIndex>) l
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".CpiIndex") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]
@@ -271,8 +271,8 @@ module CPIBondFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".DayCounter") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]
@@ -307,8 +307,8 @@ module CPIBondFunction =
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".Frequency") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]
@@ -343,8 +343,8 @@ module CPIBondFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".GrowthOnly") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]
@@ -379,8 +379,8 @@ module CPIBondFunction =
                 let format (o : InterpolationType) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".ObservationInterpolation") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]
@@ -415,8 +415,8 @@ module CPIBondFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".ObservationLag") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]
@@ -455,8 +455,8 @@ module CPIBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".AccruedAmount") 
-                                               [| _CPIBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
@@ -493,8 +493,8 @@ module CPIBondFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".Calendar") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]
@@ -529,8 +529,8 @@ module CPIBondFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".Cashflows") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]
@@ -565,8 +565,8 @@ module CPIBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".CleanPrice") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]
@@ -621,8 +621,8 @@ module CPIBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".CleanPrice1") 
-                                               [| _CPIBond.source
-                                               ;  _Yield.source
+
+                                               [| _Yield.source
                                                ;  _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -687,8 +687,8 @@ module CPIBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".DirtyPrice1") 
-                                               [| _CPIBond.source
-                                               ;  _Yield.source
+
+                                               [| _Yield.source
                                                ;  _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -733,8 +733,8 @@ module CPIBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".DirtyPrice") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]
@@ -769,8 +769,8 @@ module CPIBondFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".IsExpired") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]
@@ -805,8 +805,8 @@ module CPIBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".IssueDate") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]
@@ -845,8 +845,8 @@ module CPIBondFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".IsTradable") 
-                                               [| _CPIBond.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
@@ -883,8 +883,8 @@ module CPIBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".MaturityDate") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]
@@ -923,8 +923,8 @@ module CPIBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".NextCashFlowDate") 
-                                               [| _CPIBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
@@ -965,8 +965,8 @@ module CPIBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".NextCouponRate") 
-                                               [| _CPIBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
@@ -1007,8 +1007,8 @@ module CPIBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".Notional") 
-                                               [| _CPIBond.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
@@ -1045,8 +1045,8 @@ module CPIBondFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".Notionals") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]
@@ -1085,8 +1085,8 @@ module CPIBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".PreviousCashFlowDate") 
-                                               [| _CPIBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
@@ -1127,8 +1127,8 @@ module CPIBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".PreviousCouponRate") 
-                                               [| _CPIBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
@@ -1165,8 +1165,8 @@ module CPIBondFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".Redemption") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]
@@ -1201,8 +1201,8 @@ module CPIBondFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".Redemptions") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]
@@ -1241,8 +1241,8 @@ module CPIBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".SettlementDate") 
-                                               [| _CPIBond.source
-                                               ;  _date.source
+
+                                               [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
@@ -1279,8 +1279,8 @@ module CPIBondFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".SettlementDays") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]
@@ -1319,8 +1319,8 @@ module CPIBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".SettlementValue") 
-                                               [| _CPIBond.source
-                                               ;  _cleanPrice.source
+
+                                               [| _cleanPrice.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
@@ -1357,8 +1357,8 @@ module CPIBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".SettlementValue1") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]
@@ -1393,8 +1393,8 @@ module CPIBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".StartDate") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]
@@ -1457,8 +1457,8 @@ module CPIBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".Yield1") 
-                                               [| _CPIBond.source
-                                               ;  _cleanPrice.source
+
+                                               [| _cleanPrice.source
                                                ;  _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -1527,8 +1527,8 @@ module CPIBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".Yield") 
-                                               [| _CPIBond.source
-                                               ;  _dc.source
+
+                                               [| _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
                                                ;  _accuracy.source
@@ -1573,8 +1573,8 @@ module CPIBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".CASH") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]
@@ -1609,8 +1609,8 @@ module CPIBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".ErrorEstimate") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]
@@ -1645,8 +1645,8 @@ module CPIBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".NPV") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]
@@ -1685,8 +1685,8 @@ module CPIBondFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".Result") 
-                                               [| _CPIBond.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
@@ -1727,8 +1727,8 @@ module CPIBondFunction =
                 let format (o : CPIBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".SetPricingEngine") 
-                                               [| _CPIBond.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
@@ -1765,8 +1765,8 @@ module CPIBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CPIBond.source + ".ValuationDate") 
-                                               [| _CPIBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPIBond.cell
                                 |]

@@ -89,8 +89,8 @@ module GaussChebyshevPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussChebyshevPolynomial.source + ".Alpha") 
-                                               [| _GaussChebyshevPolynomial.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussChebyshevPolynomial.cell
@@ -131,8 +131,8 @@ module GaussChebyshevPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussChebyshevPolynomial.source + ".Beta") 
-                                               [| _GaussChebyshevPolynomial.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussChebyshevPolynomial.cell
@@ -169,8 +169,8 @@ module GaussChebyshevPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussChebyshevPolynomial.source + ".Mu_0") 
-                                               [| _GaussChebyshevPolynomial.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussChebyshevPolynomial.cell
                                 |]
@@ -209,8 +209,8 @@ module GaussChebyshevPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussChebyshevPolynomial.source + ".W") 
-                                               [| _GaussChebyshevPolynomial.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussChebyshevPolynomial.cell
@@ -255,8 +255,8 @@ module GaussChebyshevPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussChebyshevPolynomial.source + ".Value") 
-                                               [| _GaussChebyshevPolynomial.source
-                                               ;  _n.source
+
+                                               [| _n.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -303,8 +303,8 @@ module GaussChebyshevPolynomialFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussChebyshevPolynomial.source + ".WeightedValue") 
-                                               [| _GaussChebyshevPolynomial.source
-                                               ;  _n.source
+
+                                               [| _n.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 

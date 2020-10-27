@@ -138,8 +138,8 @@ module UKRPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZeroInflationIndex>) l
 
                 let source () = Helper.sourceFold (_UKRPI.source + ".Clone") 
-                                               [| _UKRPI.source
-                                               ;  _h.source
+
+                                               [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _UKRPI.cell
@@ -184,8 +184,8 @@ module UKRPIFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_UKRPI.source + ".Fixing") 
-                                               [| _UKRPI.source
-                                               ;  _aFixingDate.source
+
+                                               [| _aFixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -224,8 +224,8 @@ module UKRPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<ZeroInflationTermStructure>>) l
 
                 let source () = Helper.sourceFold (_UKRPI.source + ".ZeroInflationTermStructure") 
-                                               [| _UKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _UKRPI.cell
                                 |]
@@ -272,8 +272,8 @@ module UKRPIFunction =
                 let format (o : UKRPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_UKRPI.source + ".AddFixing") 
-                                               [| _UKRPI.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _fixing.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -315,8 +315,8 @@ module UKRPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_UKRPI.source + ".AvailabilityLag") 
-                                               [| _UKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _UKRPI.cell
                                 |]
@@ -351,8 +351,8 @@ module UKRPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_UKRPI.source + ".Currency") 
-                                               [| _UKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _UKRPI.cell
                                 |]
@@ -387,8 +387,8 @@ module UKRPIFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_UKRPI.source + ".FamilyName") 
-                                               [| _UKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _UKRPI.cell
                                 |]
@@ -423,8 +423,8 @@ module UKRPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_UKRPI.source + ".FixingCalendar") 
-                                               [| _UKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _UKRPI.cell
                                 |]
@@ -459,8 +459,8 @@ module UKRPIFunction =
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_UKRPI.source + ".Frequency") 
-                                               [| _UKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _UKRPI.cell
                                 |]
@@ -495,8 +495,8 @@ module UKRPIFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_UKRPI.source + ".Interpolated") 
-                                               [| _UKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _UKRPI.cell
                                 |]
@@ -535,8 +535,8 @@ module UKRPIFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_UKRPI.source + ".IsValidFixingDate") 
-                                               [| _UKRPI.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _UKRPI.cell
@@ -573,8 +573,8 @@ module UKRPIFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_UKRPI.source + ".Name") 
-                                               [| _UKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _UKRPI.cell
                                 |]
@@ -609,8 +609,8 @@ module UKRPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
 
                 let source () = Helper.sourceFold (_UKRPI.source + ".Region") 
-                                               [| _UKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _UKRPI.cell
                                 |]
@@ -645,8 +645,8 @@ module UKRPIFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_UKRPI.source + ".Revised") 
-                                               [| _UKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _UKRPI.cell
                                 |]
@@ -681,8 +681,8 @@ module UKRPIFunction =
                 let format (o : UKRPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_UKRPI.source + ".Update") 
-                                               [| _UKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _UKRPI.cell
                                 |]
@@ -729,8 +729,8 @@ module UKRPIFunction =
                 let format (o : UKRPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_UKRPI.source + ".AddFixings") 
-                                               [| _UKRPI.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -779,8 +779,8 @@ module UKRPIFunction =
                 let format (o : UKRPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_UKRPI.source + ".AddFixings1") 
-                                               [| _UKRPI.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -819,8 +819,8 @@ module UKRPIFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_UKRPI.source + ".AllowsNativeFixings") 
-                                               [| _UKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _UKRPI.cell
                                 |]
@@ -855,8 +855,8 @@ module UKRPIFunction =
                 let format (o : UKRPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_UKRPI.source + ".ClearFixings") 
-                                               [| _UKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _UKRPI.cell
                                 |]
@@ -895,8 +895,8 @@ module UKRPIFunction =
                 let format (o : UKRPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_UKRPI.source + ".RegisterWith") 
-                                               [| _UKRPI.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _UKRPI.cell
@@ -933,8 +933,8 @@ module UKRPIFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_UKRPI.source + ".TimeSeries") 
-                                               [| _UKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _UKRPI.cell
                                 |]
@@ -973,8 +973,8 @@ module UKRPIFunction =
                 let format (o : UKRPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_UKRPI.source + ".UnregisterWith") 
-                                               [| _UKRPI.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _UKRPI.cell

@@ -140,8 +140,8 @@ module JamshidianSwaptionEngineFunction =
                 let format (o : JamshidianSwaptionEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JamshidianSwaptionEngine.source + ".SetModel") 
-                                               [| _JamshidianSwaptionEngine.source
-                                               ;  _model.source
+
+                                               [| _model.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JamshidianSwaptionEngine.cell
@@ -182,8 +182,8 @@ module JamshidianSwaptionEngineFunction =
                 let format (o : JamshidianSwaptionEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JamshidianSwaptionEngine.source + ".RegisterWith") 
-                                               [| _JamshidianSwaptionEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JamshidianSwaptionEngine.cell
@@ -220,8 +220,8 @@ module JamshidianSwaptionEngineFunction =
                 let format (o : JamshidianSwaptionEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JamshidianSwaptionEngine.source + ".Reset") 
-                                               [| _JamshidianSwaptionEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JamshidianSwaptionEngine.cell
                                 |]
@@ -260,8 +260,8 @@ module JamshidianSwaptionEngineFunction =
                 let format (o : JamshidianSwaptionEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JamshidianSwaptionEngine.source + ".UnregisterWith") 
-                                               [| _JamshidianSwaptionEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JamshidianSwaptionEngine.cell
@@ -298,8 +298,8 @@ module JamshidianSwaptionEngineFunction =
                 let format (o : JamshidianSwaptionEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JamshidianSwaptionEngine.source + ".Update") 
-                                               [| _JamshidianSwaptionEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JamshidianSwaptionEngine.cell
                                 |]

@@ -101,8 +101,8 @@ module CumulativeBinomialDistributionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CumulativeBinomialDistribution.source + ".Value") 
-                                               [| _CumulativeBinomialDistribution.source
-                                               ;  _k.source
+
+                                               [| _k.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CumulativeBinomialDistribution.cell

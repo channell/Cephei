@@ -103,8 +103,8 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscretizedDermanKaniDoubleBarrierOption.source + ".MandatoryTimes") 
-                                               [| _DiscretizedDermanKaniDoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDermanKaniDoubleBarrierOption.cell
                                 |]
@@ -143,8 +143,8 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
                 let format (o : DiscretizedDermanKaniDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDermanKaniDoubleBarrierOption.source + ".Reset") 
-                                               [| _DiscretizedDermanKaniDoubleBarrierOption.source
-                                               ;  _size.source
+
+                                               [| _size.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDermanKaniDoubleBarrierOption.cell
@@ -181,8 +181,8 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
                 let format (o : DiscretizedDermanKaniDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDermanKaniDoubleBarrierOption.source + ".AdjustValues") 
-                                               [| _DiscretizedDermanKaniDoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDermanKaniDoubleBarrierOption.cell
                                 |]
@@ -225,8 +225,8 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
                 let format (o : DiscretizedDermanKaniDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDermanKaniDoubleBarrierOption.source + ".Initialize") 
-                                               [| _DiscretizedDermanKaniDoubleBarrierOption.source
-                                               ;  _Method.source
+
+                                               [| _Method.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -265,8 +265,8 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
 
                 let source () = Helper.sourceFold (_DiscretizedDermanKaniDoubleBarrierOption.source + ".METHOD") 
-                                               [| _DiscretizedDermanKaniDoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDermanKaniDoubleBarrierOption.cell
                                 |]
@@ -305,8 +305,8 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
                 let format (o : DiscretizedDermanKaniDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDermanKaniDoubleBarrierOption.source + ".PartialRollback") 
-                                               [| _DiscretizedDermanKaniDoubleBarrierOption.source
-                                               ;  _To.source
+
+                                               [| _To.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDermanKaniDoubleBarrierOption.cell
@@ -343,8 +343,8 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
                 let format (o : DiscretizedDermanKaniDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDermanKaniDoubleBarrierOption.source + ".PostAdjustValues") 
-                                               [| _DiscretizedDermanKaniDoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDermanKaniDoubleBarrierOption.cell
                                 |]
@@ -379,8 +379,8 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
                 let format (o : DiscretizedDermanKaniDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDermanKaniDoubleBarrierOption.source + ".PreAdjustValues") 
-                                               [| _DiscretizedDermanKaniDoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDermanKaniDoubleBarrierOption.cell
                                 |]
@@ -415,8 +415,8 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDermanKaniDoubleBarrierOption.source + ".PresentValue") 
-                                               [| _DiscretizedDermanKaniDoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDermanKaniDoubleBarrierOption.cell
                                 |]
@@ -455,8 +455,8 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
                 let format (o : DiscretizedDermanKaniDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDermanKaniDoubleBarrierOption.source + ".Rollback") 
-                                               [| _DiscretizedDermanKaniDoubleBarrierOption.source
-                                               ;  _To.source
+
+                                               [| _To.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDermanKaniDoubleBarrierOption.cell
@@ -497,8 +497,8 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
                 let format (o : DiscretizedDermanKaniDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDermanKaniDoubleBarrierOption.source + ".SetTime") 
-                                               [| _DiscretizedDermanKaniDoubleBarrierOption.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDermanKaniDoubleBarrierOption.cell
@@ -539,8 +539,8 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
                 let format (o : DiscretizedDermanKaniDoubleBarrierOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDermanKaniDoubleBarrierOption.source + ".SetValues") 
-                                               [| _DiscretizedDermanKaniDoubleBarrierOption.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDermanKaniDoubleBarrierOption.cell
@@ -577,8 +577,8 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDermanKaniDoubleBarrierOption.source + ".Time") 
-                                               [| _DiscretizedDermanKaniDoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDermanKaniDoubleBarrierOption.cell
                                 |]
@@ -613,8 +613,8 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_DiscretizedDermanKaniDoubleBarrierOption.source + ".Values") 
-                                               [| _DiscretizedDermanKaniDoubleBarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDermanKaniDoubleBarrierOption.cell
                                 |]

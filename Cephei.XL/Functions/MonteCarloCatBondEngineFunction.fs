@@ -55,8 +55,8 @@ module MonteCarloCatBondEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_MonteCarloCatBondEngine.source + ".DiscountCurve") 
-                                               [| _MonteCarloCatBondEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MonteCarloCatBondEngine.cell
                                 |]

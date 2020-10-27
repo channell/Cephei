@@ -662,8 +662,8 @@ module FraRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FraRateHelper.source + ".ImpliedQuote") 
-                                               [| _FraRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FraRateHelper.cell
                                 |]
@@ -702,8 +702,8 @@ module FraRateHelperFunction =
                 let format (o : FraRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FraRateHelper.source + ".SetTermStructure") 
-                                               [| _FraRateHelper.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FraRateHelper.cell
@@ -740,8 +740,8 @@ module FraRateHelperFunction =
                 let format (o : FraRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FraRateHelper.source + ".Update") 
-                                               [| _FraRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FraRateHelper.cell
                                 |]
@@ -776,8 +776,8 @@ module FraRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FraRateHelper.source + ".EarliestDate") 
-                                               [| _FraRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FraRateHelper.cell
                                 |]
@@ -812,8 +812,8 @@ module FraRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FraRateHelper.source + ".LatestDate") 
-                                               [| _FraRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FraRateHelper.cell
                                 |]
@@ -848,8 +848,8 @@ module FraRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FraRateHelper.source + ".LatestRelevantDate") 
-                                               [| _FraRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FraRateHelper.cell
                                 |]
@@ -884,8 +884,8 @@ module FraRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FraRateHelper.source + ".MaturityDate") 
-                                               [| _FraRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FraRateHelper.cell
                                 |]
@@ -920,8 +920,8 @@ module FraRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FraRateHelper.source + ".PillarDate") 
-                                               [| _FraRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FraRateHelper.cell
                                 |]
@@ -956,8 +956,8 @@ module FraRateHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
                 let source () = Helper.sourceFold (_FraRateHelper.source + ".Quote") 
-                                               [| _FraRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FraRateHelper.cell
                                 |]
@@ -992,8 +992,8 @@ module FraRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FraRateHelper.source + ".QuoteError") 
-                                               [| _FraRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FraRateHelper.cell
                                 |]
@@ -1028,8 +1028,8 @@ module FraRateHelperFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FraRateHelper.source + ".QuoteIsValid") 
-                                               [| _FraRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FraRateHelper.cell
                                 |]
@@ -1064,8 +1064,8 @@ module FraRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FraRateHelper.source + ".QuoteValue") 
-                                               [| _FraRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FraRateHelper.cell
                                 |]
@@ -1104,8 +1104,8 @@ module FraRateHelperFunction =
                 let format (o : FraRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FraRateHelper.source + ".RegisterWith") 
-                                               [| _FraRateHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FraRateHelper.cell
@@ -1146,8 +1146,8 @@ module FraRateHelperFunction =
                 let format (o : FraRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FraRateHelper.source + ".UnregisterWith") 
-                                               [| _FraRateHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FraRateHelper.cell

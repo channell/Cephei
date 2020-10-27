@@ -85,8 +85,8 @@ module CNYCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CNYCurrency.source + ".Code") 
-                                               [| _CNYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CNYCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module CNYCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CNYCurrency.source + ".Empty") 
-                                               [| _CNYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CNYCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module CNYCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CNYCurrency.source + ".Equals") 
-                                               [| _CNYCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CNYCurrency.cell
@@ -199,8 +199,8 @@ module CNYCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CNYCurrency.source + ".Format") 
-                                               [| _CNYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CNYCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module CNYCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CNYCurrency.source + ".FractionsPerUnit") 
-                                               [| _CNYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CNYCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module CNYCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CNYCurrency.source + ".FractionSymbol") 
-                                               [| _CNYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CNYCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module CNYCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CNYCurrency.source + ".Name") 
-                                               [| _CNYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CNYCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module CNYCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CNYCurrency.source + ".NumericCode") 
-                                               [| _CNYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CNYCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module CNYCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_CNYCurrency.source + ".Rounding") 
-                                               [| _CNYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CNYCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module CNYCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CNYCurrency.source + ".Symbol") 
-                                               [| _CNYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CNYCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module CNYCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CNYCurrency.source + ".ToString") 
-                                               [| _CNYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CNYCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module CNYCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_CNYCurrency.source + ".TriangulationCurrency") 
-                                               [| _CNYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CNYCurrency.cell
                                 |]

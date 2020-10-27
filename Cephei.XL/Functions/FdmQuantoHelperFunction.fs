@@ -54,8 +54,8 @@ module FdmQuantoHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FdmQuantoHelper.source + ".EquityFxCorrelation") 
-                                               [| _FdmQuantoHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmQuantoHelper.cell
                                 |]
@@ -90,8 +90,8 @@ module FdmQuantoHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FdmQuantoHelper.source + ".ExchRateATMlevel") 
-                                               [| _FdmQuantoHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmQuantoHelper.cell
                                 |]
@@ -187,8 +187,8 @@ module FdmQuantoHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YieldTermStructure>) l
 
                 let source () = Helper.sourceFold (_FdmQuantoHelper.source + ".ForeignTermStructure") 
-                                               [| _FdmQuantoHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmQuantoHelper.cell
                                 |]
@@ -223,8 +223,8 @@ module FdmQuantoHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackVolTermStructure>) l
 
                 let source () = Helper.sourceFold (_FdmQuantoHelper.source + ".FxVolatilityTermStructure") 
-                                               [| _FdmQuantoHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmQuantoHelper.cell
                                 |]
@@ -271,8 +271,8 @@ module FdmQuantoHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_FdmQuantoHelper.source + ".QuantoAdjustment1") 
-                                               [| _FdmQuantoHelper.source
-                                               ;  _equityVol.source
+
+                                               [| _equityVol.source
                                                ;  _t1.source
                                                ;  _t2.source
                                                |]
@@ -325,8 +325,8 @@ module FdmQuantoHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FdmQuantoHelper.source + ".QuantoAdjustment") 
-                                               [| _FdmQuantoHelper.source
-                                               ;  _equityVol.source
+
+                                               [| _equityVol.source
                                                ;  _t1.source
                                                ;  _t2.source
                                                |]
@@ -371,8 +371,8 @@ module FdmQuantoHelperFunction =
                 let format (o : FdmQuantoHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FdmQuantoHelper.source + ".RegisterWith") 
-                                               [| _FdmQuantoHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmQuantoHelper.cell
@@ -409,8 +409,8 @@ module FdmQuantoHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YieldTermStructure>) l
 
                 let source () = Helper.sourceFold (_FdmQuantoHelper.source + ".RiskFreeTermStructure") 
-                                               [| _FdmQuantoHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmQuantoHelper.cell
                                 |]
@@ -449,8 +449,8 @@ module FdmQuantoHelperFunction =
                 let format (o : FdmQuantoHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FdmQuantoHelper.source + ".UnregisterWith") 
-                                               [| _FdmQuantoHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmQuantoHelper.cell
@@ -487,8 +487,8 @@ module FdmQuantoHelperFunction =
                 let format (o : FdmQuantoHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FdmQuantoHelper.source + ".Update") 
-                                               [| _FdmQuantoHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmQuantoHelper.cell
                                 |]

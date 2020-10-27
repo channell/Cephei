@@ -97,8 +97,8 @@ module PiecewiseConstantParameterFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
                 let source () = Helper.sourceFold (_PiecewiseConstantParameter.source + ".CONSTRAINT") 
-                                               [| _PiecewiseConstantParameter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseConstantParameter.cell
                                 |]
@@ -134,8 +134,8 @@ module PiecewiseConstantParameterFunction =
                 let format (o : Parameter.Impl) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseConstantParameter.source + ".Implementation") 
-                                               [| _PiecewiseConstantParameter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseConstantParameter.cell
                                 |]
@@ -171,8 +171,8 @@ module PiecewiseConstantParameterFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_PiecewiseConstantParameter.source + ".Parameters") 
-                                               [| _PiecewiseConstantParameter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseConstantParameter.cell
                                 |]
@@ -215,8 +215,8 @@ module PiecewiseConstantParameterFunction =
                 let format (o : PiecewiseConstantParameter) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseConstantParameter.source + ".SetParam") 
-                                               [| _PiecewiseConstantParameter.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -255,8 +255,8 @@ module PiecewiseConstantParameterFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseConstantParameter.source + ".Size") 
-                                               [| _PiecewiseConstantParameter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseConstantParameter.cell
                                 |]
@@ -295,8 +295,8 @@ module PiecewiseConstantParameterFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseConstantParameter.source + ".TestParams") 
-                                               [| _PiecewiseConstantParameter.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseConstantParameter.cell
@@ -337,8 +337,8 @@ module PiecewiseConstantParameterFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseConstantParameter.source + ".Value") 
-                                               [| _PiecewiseConstantParameter.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseConstantParameter.cell

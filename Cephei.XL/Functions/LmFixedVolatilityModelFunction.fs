@@ -109,8 +109,8 @@ module LmFixedVolatilityModelFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LmFixedVolatilityModel.source + ".Volatility") 
-                                               [| _LmFixedVolatilityModel.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                ;  _x.source
                                                |]
@@ -159,8 +159,8 @@ module LmFixedVolatilityModelFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_LmFixedVolatilityModel.source + ".Volatility1") 
-                                               [| _LmFixedVolatilityModel.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -215,8 +215,8 @@ module LmFixedVolatilityModelFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LmFixedVolatilityModel.source + ".IntegratedVariance") 
-                                               [| _LmFixedVolatilityModel.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _j.source
                                                ;  _u.source
                                                ;  _x.source
@@ -259,8 +259,8 @@ module LmFixedVolatilityModelFunction =
                 let format (i : Generic.List<ICell<Parameter>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_LmFixedVolatilityModel.source + ".Parameters") 
-                                               [| _LmFixedVolatilityModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LmFixedVolatilityModel.cell
                                 |]
@@ -299,8 +299,8 @@ module LmFixedVolatilityModelFunction =
                 let format (o : LmFixedVolatilityModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LmFixedVolatilityModel.source + ".SetParams") 
-                                               [| _LmFixedVolatilityModel.source
-                                               ;  _arguments.source
+
+                                               [| _arguments.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LmFixedVolatilityModel.cell
@@ -337,8 +337,8 @@ module LmFixedVolatilityModelFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LmFixedVolatilityModel.source + ".Size") 
-                                               [| _LmFixedVolatilityModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LmFixedVolatilityModel.cell
                                 |]

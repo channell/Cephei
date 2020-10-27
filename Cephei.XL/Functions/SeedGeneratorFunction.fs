@@ -54,8 +54,8 @@ module SeedGeneratorFunction =
                 let format (o : ulong) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SeedGenerator.source + ".Get") 
-                                               [| _SeedGenerator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SeedGenerator.cell
                                 |]

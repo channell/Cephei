@@ -156,8 +156,8 @@ module AdditiveEQPBinomialTreeFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AdditiveEQPBinomialTree>) l
 
                 let source () = Helper.sourceFold (_AdditiveEQPBinomialTree.source + ".Factory") 
-                                               [| _AdditiveEQPBinomialTree.source
-                                               ;  _Process.source
+
+                                               [| _Process.source
                                                ;  _End.source
                                                ;  _steps.source
                                                ;  _strike.source
@@ -212,8 +212,8 @@ module AdditiveEQPBinomialTreeFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AdditiveEQPBinomialTree.source + ".Probability") 
-                                               [| _AdditiveEQPBinomialTree.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _y.source
                                                ;  _z.source
                                                |]
@@ -262,8 +262,8 @@ module AdditiveEQPBinomialTreeFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AdditiveEQPBinomialTree.source + ".Underlying") 
-                                               [| _AdditiveEQPBinomialTree.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _index.source
                                                |]
                 let hash = Helper.hashFold 
@@ -314,8 +314,8 @@ module AdditiveEQPBinomialTreeFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AdditiveEQPBinomialTree.source + ".Descendant") 
-                                               [| _AdditiveEQPBinomialTree.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _index.source
                                                ;  _branch.source
                                                |]
@@ -360,8 +360,8 @@ module AdditiveEQPBinomialTreeFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AdditiveEQPBinomialTree.source + ".Size") 
-                                               [| _AdditiveEQPBinomialTree.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AdditiveEQPBinomialTree.cell
@@ -398,8 +398,8 @@ module AdditiveEQPBinomialTreeFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AdditiveEQPBinomialTree.source + ".Columns") 
-                                               [| _AdditiveEQPBinomialTree.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AdditiveEQPBinomialTree.cell
                                 |]

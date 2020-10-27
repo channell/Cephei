@@ -152,8 +152,8 @@ module AnalyticPTDHestonEngineFunction =
                 let format (o : AnalyticPTDHestonEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticPTDHestonEngine.source + ".SetModel") 
-                                               [| _AnalyticPTDHestonEngine.source
-                                               ;  _model.source
+
+                                               [| _model.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticPTDHestonEngine.cell
@@ -194,8 +194,8 @@ module AnalyticPTDHestonEngineFunction =
                 let format (o : AnalyticPTDHestonEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticPTDHestonEngine.source + ".RegisterWith") 
-                                               [| _AnalyticPTDHestonEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticPTDHestonEngine.cell
@@ -232,8 +232,8 @@ module AnalyticPTDHestonEngineFunction =
                 let format (o : AnalyticPTDHestonEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticPTDHestonEngine.source + ".Reset") 
-                                               [| _AnalyticPTDHestonEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AnalyticPTDHestonEngine.cell
                                 |]
@@ -272,8 +272,8 @@ module AnalyticPTDHestonEngineFunction =
                 let format (o : AnalyticPTDHestonEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticPTDHestonEngine.source + ".UnregisterWith") 
-                                               [| _AnalyticPTDHestonEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticPTDHestonEngine.cell
@@ -310,8 +310,8 @@ module AnalyticPTDHestonEngineFunction =
                 let format (o : AnalyticPTDHestonEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticPTDHestonEngine.source + ".Update") 
-                                               [| _AnalyticPTDHestonEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AnalyticPTDHestonEngine.cell
                                 |]

@@ -195,8 +195,8 @@ module BachelierCapFloorEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_BachelierCapFloorEngine.source + ".TermStructure") 
-                                               [| _BachelierCapFloorEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BachelierCapFloorEngine.cell
                                 |]
@@ -231,8 +231,8 @@ module BachelierCapFloorEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<OptionletVolatilityStructure>>) l
 
                 let source () = Helper.sourceFold (_BachelierCapFloorEngine.source + ".Volatility") 
-                                               [| _BachelierCapFloorEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BachelierCapFloorEngine.cell
                                 |]

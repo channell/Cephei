@@ -286,8 +286,8 @@ module DepositRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DepositRateHelper.source + ".ImpliedQuote") 
-                                               [| _DepositRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
                                 |]
@@ -326,8 +326,8 @@ module DepositRateHelperFunction =
                 let format (o : DepositRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DepositRateHelper.source + ".SetTermStructure") 
-                                               [| _DepositRateHelper.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
@@ -364,8 +364,8 @@ module DepositRateHelperFunction =
                 let format (o : DepositRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DepositRateHelper.source + ".Update") 
-                                               [| _DepositRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
                                 |]
@@ -400,8 +400,8 @@ module DepositRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DepositRateHelper.source + ".EarliestDate") 
-                                               [| _DepositRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
                                 |]
@@ -436,8 +436,8 @@ module DepositRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DepositRateHelper.source + ".LatestDate") 
-                                               [| _DepositRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
                                 |]
@@ -472,8 +472,8 @@ module DepositRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DepositRateHelper.source + ".LatestRelevantDate") 
-                                               [| _DepositRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
                                 |]
@@ -508,8 +508,8 @@ module DepositRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DepositRateHelper.source + ".MaturityDate") 
-                                               [| _DepositRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
                                 |]
@@ -544,8 +544,8 @@ module DepositRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DepositRateHelper.source + ".PillarDate") 
-                                               [| _DepositRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
                                 |]
@@ -580,8 +580,8 @@ module DepositRateHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
                 let source () = Helper.sourceFold (_DepositRateHelper.source + ".Quote") 
-                                               [| _DepositRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
                                 |]
@@ -616,8 +616,8 @@ module DepositRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DepositRateHelper.source + ".QuoteError") 
-                                               [| _DepositRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
                                 |]
@@ -652,8 +652,8 @@ module DepositRateHelperFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DepositRateHelper.source + ".QuoteIsValid") 
-                                               [| _DepositRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
                                 |]
@@ -688,8 +688,8 @@ module DepositRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DepositRateHelper.source + ".QuoteValue") 
-                                               [| _DepositRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
                                 |]
@@ -728,8 +728,8 @@ module DepositRateHelperFunction =
                 let format (o : DepositRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DepositRateHelper.source + ".RegisterWith") 
-                                               [| _DepositRateHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell
@@ -770,8 +770,8 @@ module DepositRateHelperFunction =
                 let format (o : DepositRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DepositRateHelper.source + ".UnregisterWith") 
-                                               [| _DepositRateHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DepositRateHelper.cell

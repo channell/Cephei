@@ -109,8 +109,8 @@ module SpreadOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadOption.source + ".Delta") 
-                                               [| _SpreadOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
@@ -145,8 +145,8 @@ module SpreadOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadOption.source + ".DividendRho") 
-                                               [| _SpreadOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
@@ -181,8 +181,8 @@ module SpreadOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadOption.source + ".Gamma") 
-                                               [| _SpreadOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
@@ -217,8 +217,8 @@ module SpreadOptionFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SpreadOption.source + ".IsExpired") 
-                                               [| _SpreadOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
@@ -253,8 +253,8 @@ module SpreadOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadOption.source + ".Rho") 
-                                               [| _SpreadOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
@@ -289,8 +289,8 @@ module SpreadOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadOption.source + ".Theta") 
-                                               [| _SpreadOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
@@ -325,8 +325,8 @@ module SpreadOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadOption.source + ".Vega") 
-                                               [| _SpreadOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
@@ -361,8 +361,8 @@ module SpreadOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
                 let source () = Helper.sourceFold (_SpreadOption.source + ".Exercise") 
-                                               [| _SpreadOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
@@ -397,8 +397,8 @@ module SpreadOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
                 let source () = Helper.sourceFold (_SpreadOption.source + ".Payoff") 
-                                               [| _SpreadOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
@@ -433,8 +433,8 @@ module SpreadOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadOption.source + ".CASH") 
-                                               [| _SpreadOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
@@ -469,8 +469,8 @@ module SpreadOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadOption.source + ".ErrorEstimate") 
-                                               [| _SpreadOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
@@ -505,8 +505,8 @@ module SpreadOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadOption.source + ".NPV") 
-                                               [| _SpreadOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]
@@ -545,8 +545,8 @@ module SpreadOptionFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SpreadOption.source + ".Result") 
-                                               [| _SpreadOption.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
@@ -587,8 +587,8 @@ module SpreadOptionFunction =
                 let format (o : SpreadOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SpreadOption.source + ".SetPricingEngine") 
-                                               [| _SpreadOption.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
@@ -625,8 +625,8 @@ module SpreadOptionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_SpreadOption.source + ".ValuationDate") 
-                                               [| _SpreadOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadOption.cell
                                 |]

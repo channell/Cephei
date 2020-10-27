@@ -97,8 +97,8 @@ module CmsLegFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_CmsLeg.source + ".Value") 
-                                               [| _CmsLeg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsLeg.cell
                                 |]
@@ -137,8 +137,8 @@ module CmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_CmsLeg.source + ".InArrears1") 
-                                               [| _CmsLeg.source
-                                               ;  _flag.source
+
+                                               [| _flag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsLeg.cell
@@ -175,8 +175,8 @@ module CmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_CmsLeg.source + ".InArrears") 
-                                               [| _CmsLeg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsLeg.cell
                                 |]
@@ -215,8 +215,8 @@ module CmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_CmsLeg.source + ".WithCaps") 
-                                               [| _CmsLeg.source
-                                               ;  _caps.source
+
+                                               [| _caps.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsLeg.cell
@@ -257,8 +257,8 @@ module CmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_CmsLeg.source + ".WithCaps1") 
-                                               [| _CmsLeg.source
-                                               ;  _cap.source
+
+                                               [| _cap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsLeg.cell
@@ -299,8 +299,8 @@ module CmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_CmsLeg.source + ".WithFixingDays1") 
-                                               [| _CmsLeg.source
-                                               ;  _fixingDays.source
+
+                                               [| _fixingDays.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsLeg.cell
@@ -341,8 +341,8 @@ module CmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_CmsLeg.source + ".WithFixingDays") 
-                                               [| _CmsLeg.source
-                                               ;  _fixingDays.source
+
+                                               [| _fixingDays.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsLeg.cell
@@ -383,8 +383,8 @@ module CmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_CmsLeg.source + ".WithFloors1") 
-                                               [| _CmsLeg.source
-                                               ;  _floors.source
+
+                                               [| _floors.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsLeg.cell
@@ -425,8 +425,8 @@ module CmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_CmsLeg.source + ".WithFloors") 
-                                               [| _CmsLeg.source
-                                               ;  _floor.source
+
+                                               [| _floor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsLeg.cell
@@ -467,8 +467,8 @@ module CmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_CmsLeg.source + ".WithGearings") 
-                                               [| _CmsLeg.source
-                                               ;  _gearing.source
+
+                                               [| _gearing.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsLeg.cell
@@ -509,8 +509,8 @@ module CmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_CmsLeg.source + ".WithGearings1") 
-                                               [| _CmsLeg.source
-                                               ;  _gearings.source
+
+                                               [| _gearings.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsLeg.cell
@@ -551,8 +551,8 @@ module CmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_CmsLeg.source + ".WithPaymentDayCounter") 
-                                               [| _CmsLeg.source
-                                               ;  _dayCounter.source
+
+                                               [| _dayCounter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsLeg.cell
@@ -593,8 +593,8 @@ module CmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_CmsLeg.source + ".WithSpreads1") 
-                                               [| _CmsLeg.source
-                                               ;  _spreads.source
+
+                                               [| _spreads.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsLeg.cell
@@ -635,8 +635,8 @@ module CmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_CmsLeg.source + ".WithSpreads") 
-                                               [| _CmsLeg.source
-                                               ;  _spread.source
+
+                                               [| _spread.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsLeg.cell
@@ -677,8 +677,8 @@ module CmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_CmsLeg.source + ".WithZeroPayments1") 
-                                               [| _CmsLeg.source
-                                               ;  _flag.source
+
+                                               [| _flag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsLeg.cell
@@ -715,8 +715,8 @@ module CmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_CmsLeg.source + ".WithZeroPayments") 
-                                               [| _CmsLeg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsLeg.cell
                                 |]
@@ -755,8 +755,8 @@ module CmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
                 let source () = Helper.sourceFold (_CmsLeg.source + ".WithNotionals1") 
-                                               [| _CmsLeg.source
-                                               ;  _notionals.source
+
+                                               [| _notionals.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsLeg.cell
@@ -797,8 +797,8 @@ module CmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
                 let source () = Helper.sourceFold (_CmsLeg.source + ".WithNotionals1") 
-                                               [| _CmsLeg.source
-                                               ;  _notional.source
+
+                                               [| _notional.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsLeg.cell
@@ -839,8 +839,8 @@ module CmsLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
                 let source () = Helper.sourceFold (_CmsLeg.source + ".WithPaymentAdjustment") 
-                                               [| _CmsLeg.source
-                                               ;  _convention.source
+
+                                               [| _convention.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsLeg.cell

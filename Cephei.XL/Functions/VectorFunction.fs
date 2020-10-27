@@ -54,8 +54,8 @@ module VectorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_Vector.source + ".Clone") 
-                                               [| _Vector.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Vector.cell
                                 |]
@@ -90,8 +90,8 @@ module VectorFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Vector.source + ".Empty") 
-                                               [| _Vector.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Vector.cell
                                 |]
@@ -130,8 +130,8 @@ module VectorFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Vector.source + ".Equals") 
-                                               [| _Vector.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Vector.cell
@@ -172,8 +172,8 @@ module VectorFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Vector.source + ".Equals1") 
-                                               [| _Vector.source
-                                               ;  _other.source
+
+                                               [| _other.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Vector.cell
@@ -210,8 +210,8 @@ module VectorFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Vector.source + ".Size") 
-                                               [| _Vector.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Vector.cell
                                 |]
@@ -254,8 +254,8 @@ module VectorFunction =
                 let format (o : Vector) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Vector.source + ".Swap") 
-                                               [| _Vector.source
-                                               ;  _i1.source
+
+                                               [| _i1.source
                                                ;  _i2.source
                                                |]
                 let hash = Helper.hashFold 

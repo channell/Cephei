@@ -58,8 +58,8 @@ module ProjectedCostFunctionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_ProjectedCostFunction.source + ".INCLUDE") 
-                                               [| _ProjectedCostFunction.source
-                                               ;  _projectedParameters.source
+
+                                               [| _projectedParameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ProjectedCostFunction.cell
@@ -100,8 +100,8 @@ module ProjectedCostFunctionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_ProjectedCostFunction.source + ".Project") 
-                                               [| _ProjectedCostFunction.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ProjectedCostFunction.cell
@@ -191,8 +191,8 @@ module ProjectedCostFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ProjectedCostFunction.source + ".Value") 
-                                               [| _ProjectedCostFunction.source
-                                               ;  _freeParameters.source
+
+                                               [| _freeParameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ProjectedCostFunction.cell
@@ -233,8 +233,8 @@ module ProjectedCostFunctionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_ProjectedCostFunction.source + ".Values") 
-                                               [| _ProjectedCostFunction.source
-                                               ;  _freeParameters.source
+
+                                               [| _freeParameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ProjectedCostFunction.cell
@@ -271,8 +271,8 @@ module ProjectedCostFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ProjectedCostFunction.source + ".FiniteDifferenceEpsilon") 
-                                               [| _ProjectedCostFunction.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ProjectedCostFunction.cell
                                 |]
@@ -315,8 +315,8 @@ module ProjectedCostFunctionFunction =
                 let format (o : ProjectedCostFunction) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ProjectedCostFunction.source + ".Gradient") 
-                                               [| _ProjectedCostFunction.source
-                                               ;  _grad.source
+
+                                               [| _grad.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -363,8 +363,8 @@ module ProjectedCostFunctionFunction =
                 let format (o : ProjectedCostFunction) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ProjectedCostFunction.source + ".Jacobian") 
-                                               [| _ProjectedCostFunction.source
-                                               ;  _jac.source
+
+                                               [| _jac.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -411,8 +411,8 @@ module ProjectedCostFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ProjectedCostFunction.source + ".ValueAndGradient") 
-                                               [| _ProjectedCostFunction.source
-                                               ;  _grad.source
+
+                                               [| _grad.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -459,8 +459,8 @@ module ProjectedCostFunctionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_ProjectedCostFunction.source + ".ValuesAndJacobian") 
-                                               [| _ProjectedCostFunction.source
-                                               ;  _jac.source
+
+                                               [| _jac.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 

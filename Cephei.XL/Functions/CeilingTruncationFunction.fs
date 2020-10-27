@@ -136,8 +136,8 @@ module CeilingTruncationFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CeilingTruncation.source + ".Digit") 
-                                               [| _CeilingTruncation.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CeilingTruncation.cell
                                 |]
@@ -172,8 +172,8 @@ module CeilingTruncationFunction =
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CeilingTruncation.source + ".GetType") 
-                                               [| _CeilingTruncation.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CeilingTruncation.cell
                                 |]
@@ -208,8 +208,8 @@ module CeilingTruncationFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CeilingTruncation.source + ".Precision") 
-                                               [| _CeilingTruncation.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CeilingTruncation.cell
                                 |]
@@ -248,8 +248,8 @@ module CeilingTruncationFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CeilingTruncation.source + ".Round") 
-                                               [| _CeilingTruncation.source
-                                               ;  _value.source
+
+                                               [| _value.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CeilingTruncation.cell

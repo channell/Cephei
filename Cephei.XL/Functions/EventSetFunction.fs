@@ -111,8 +111,8 @@ module EventSetFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CatSimulation>) l
 
                 let source () = Helper.sourceFold (_EventSet.source + ".NewSimulation") 
-                                               [| _EventSet.source
-                                               ;  _start.source
+
+                                               [| _start.source
                                                ;  _End.source
                                                |]
                 let hash = Helper.hashFold 

@@ -58,8 +58,8 @@ module pair_doubleFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_pair_double.source + ".CompareTo") 
-                                               [| _pair_double.source
-                                               ;  _other.source
+
+                                               [| _other.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _pair_double.cell
@@ -139,8 +139,8 @@ module pair_doubleFunction =
                 let format (o : double) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_pair_double.source + ".First") 
-                                               [| _pair_double.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _pair_double.cell
                                 |]
@@ -175,8 +175,8 @@ module pair_doubleFunction =
                 let format (o : double) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_pair_double.source + ".Second") 
-                                               [| _pair_double.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _pair_double.cell
                                 |]
@@ -219,8 +219,8 @@ module pair_doubleFunction =
                 let format (o : pair_double) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_pair_double.source + ".Set") 
-                                               [| _pair_double.source
-                                               ;  _first.source
+
+                                               [| _first.source
                                                ;  _second.source
                                                |]
                 let hash = Helper.hashFold 

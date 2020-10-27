@@ -151,8 +151,8 @@ module BarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BarrierOption.source + ".ImpliedVolatility") 
-                                               [| _BarrierOption.source
-                                               ;  _targetValue.source
+
+                                               [| _targetValue.source
                                                ;  _Process.source
                                                ;  _accuracy.source
                                                ;  _maxEvaluations.source
@@ -199,8 +199,8 @@ module BarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BarrierOption.source + ".Delta") 
-                                               [| _BarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BarrierOption.cell
                                 |]
@@ -235,8 +235,8 @@ module BarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BarrierOption.source + ".DeltaForward") 
-                                               [| _BarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BarrierOption.cell
                                 |]
@@ -271,8 +271,8 @@ module BarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BarrierOption.source + ".DividendRho") 
-                                               [| _BarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BarrierOption.cell
                                 |]
@@ -307,8 +307,8 @@ module BarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BarrierOption.source + ".Elasticity") 
-                                               [| _BarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BarrierOption.cell
                                 |]
@@ -343,8 +343,8 @@ module BarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BarrierOption.source + ".Gamma") 
-                                               [| _BarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BarrierOption.cell
                                 |]
@@ -379,8 +379,8 @@ module BarrierOptionFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BarrierOption.source + ".IsExpired") 
-                                               [| _BarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BarrierOption.cell
                                 |]
@@ -415,8 +415,8 @@ module BarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BarrierOption.source + ".ItmCashProbability") 
-                                               [| _BarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BarrierOption.cell
                                 |]
@@ -451,8 +451,8 @@ module BarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BarrierOption.source + ".Rho") 
-                                               [| _BarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BarrierOption.cell
                                 |]
@@ -487,8 +487,8 @@ module BarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BarrierOption.source + ".StrikeSensitivity") 
-                                               [| _BarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BarrierOption.cell
                                 |]
@@ -523,8 +523,8 @@ module BarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BarrierOption.source + ".Theta") 
-                                               [| _BarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BarrierOption.cell
                                 |]
@@ -559,8 +559,8 @@ module BarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BarrierOption.source + ".ThetaPerDay") 
-                                               [| _BarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BarrierOption.cell
                                 |]
@@ -595,8 +595,8 @@ module BarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BarrierOption.source + ".Vega") 
-                                               [| _BarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BarrierOption.cell
                                 |]
@@ -631,8 +631,8 @@ module BarrierOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
                 let source () = Helper.sourceFold (_BarrierOption.source + ".Exercise") 
-                                               [| _BarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BarrierOption.cell
                                 |]
@@ -667,8 +667,8 @@ module BarrierOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
                 let source () = Helper.sourceFold (_BarrierOption.source + ".Payoff") 
-                                               [| _BarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BarrierOption.cell
                                 |]
@@ -703,8 +703,8 @@ module BarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BarrierOption.source + ".CASH") 
-                                               [| _BarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BarrierOption.cell
                                 |]
@@ -739,8 +739,8 @@ module BarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BarrierOption.source + ".ErrorEstimate") 
-                                               [| _BarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BarrierOption.cell
                                 |]
@@ -775,8 +775,8 @@ module BarrierOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BarrierOption.source + ".NPV") 
-                                               [| _BarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BarrierOption.cell
                                 |]
@@ -815,8 +815,8 @@ module BarrierOptionFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BarrierOption.source + ".Result") 
-                                               [| _BarrierOption.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BarrierOption.cell
@@ -857,8 +857,8 @@ module BarrierOptionFunction =
                 let format (o : BarrierOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BarrierOption.source + ".SetPricingEngine") 
-                                               [| _BarrierOption.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BarrierOption.cell
@@ -895,8 +895,8 @@ module BarrierOptionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BarrierOption.source + ".ValuationDate") 
-                                               [| _BarrierOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BarrierOption.cell
                                 |]

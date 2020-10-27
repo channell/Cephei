@@ -133,8 +133,8 @@ module EuropeanOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EuropeanOption.source + ".ImpliedVolatility") 
-                                               [| _EuropeanOption.source
-                                               ;  _targetValue.source
+
+                                               [| _targetValue.source
                                                ;  _Process.source
                                                ;  _accuracy.source
                                                ;  _maxEvaluations.source
@@ -181,8 +181,8 @@ module EuropeanOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EuropeanOption.source + ".Delta") 
-                                               [| _EuropeanOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
@@ -217,8 +217,8 @@ module EuropeanOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EuropeanOption.source + ".DeltaForward") 
-                                               [| _EuropeanOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
@@ -253,8 +253,8 @@ module EuropeanOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EuropeanOption.source + ".DividendRho") 
-                                               [| _EuropeanOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
@@ -289,8 +289,8 @@ module EuropeanOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EuropeanOption.source + ".Elasticity") 
-                                               [| _EuropeanOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
@@ -325,8 +325,8 @@ module EuropeanOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EuropeanOption.source + ".Gamma") 
-                                               [| _EuropeanOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
@@ -361,8 +361,8 @@ module EuropeanOptionFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EuropeanOption.source + ".IsExpired") 
-                                               [| _EuropeanOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
@@ -397,8 +397,8 @@ module EuropeanOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EuropeanOption.source + ".ItmCashProbability") 
-                                               [| _EuropeanOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
@@ -433,8 +433,8 @@ module EuropeanOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EuropeanOption.source + ".Rho") 
-                                               [| _EuropeanOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
@@ -469,8 +469,8 @@ module EuropeanOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EuropeanOption.source + ".StrikeSensitivity") 
-                                               [| _EuropeanOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
@@ -505,8 +505,8 @@ module EuropeanOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EuropeanOption.source + ".Theta") 
-                                               [| _EuropeanOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
@@ -541,8 +541,8 @@ module EuropeanOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EuropeanOption.source + ".ThetaPerDay") 
-                                               [| _EuropeanOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
@@ -577,8 +577,8 @@ module EuropeanOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EuropeanOption.source + ".Vega") 
-                                               [| _EuropeanOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
@@ -613,8 +613,8 @@ module EuropeanOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
                 let source () = Helper.sourceFold (_EuropeanOption.source + ".Exercise") 
-                                               [| _EuropeanOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
@@ -649,8 +649,8 @@ module EuropeanOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
                 let source () = Helper.sourceFold (_EuropeanOption.source + ".Payoff") 
-                                               [| _EuropeanOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
@@ -685,8 +685,8 @@ module EuropeanOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EuropeanOption.source + ".CASH") 
-                                               [| _EuropeanOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
@@ -721,8 +721,8 @@ module EuropeanOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EuropeanOption.source + ".ErrorEstimate") 
-                                               [| _EuropeanOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
@@ -757,8 +757,8 @@ module EuropeanOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EuropeanOption.source + ".NPV") 
-                                               [| _EuropeanOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]
@@ -797,8 +797,8 @@ module EuropeanOptionFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EuropeanOption.source + ".Result") 
-                                               [| _EuropeanOption.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
@@ -839,8 +839,8 @@ module EuropeanOptionFunction =
                 let format (o : EuropeanOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EuropeanOption.source + ".SetPricingEngine") 
-                                               [| _EuropeanOption.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
@@ -877,8 +877,8 @@ module EuropeanOptionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_EuropeanOption.source + ".ValuationDate") 
-                                               [| _EuropeanOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EuropeanOption.cell
                                 |]

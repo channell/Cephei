@@ -54,8 +54,8 @@ module InterpolatedZeroCurveFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedZeroCurve.source + ".Clone") 
-                                               [| _InterpolatedZeroCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroCurve.cell
                                 |]
@@ -90,8 +90,8 @@ module InterpolatedZeroCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedZeroCurve.source + ".Data") 
-                                               [| _InterpolatedZeroCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroCurve.cell
                                 |]
@@ -126,8 +126,8 @@ module InterpolatedZeroCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedZeroCurve.source + ".Data_") 
-                                               [| _InterpolatedZeroCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroCurve.cell
                                 |]
@@ -162,8 +162,8 @@ module InterpolatedZeroCurveFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_InterpolatedZeroCurve.source + ".Dates") 
-                                               [| _InterpolatedZeroCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroCurve.cell
                                 |]
@@ -198,8 +198,8 @@ module InterpolatedZeroCurveFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_InterpolatedZeroCurve.source + ".Dates_") 
-                                               [| _InterpolatedZeroCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroCurve.cell
                                 |]
@@ -648,8 +648,8 @@ module InterpolatedZeroCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
                 let source () = Helper.sourceFold (_InterpolatedZeroCurve.source + ".Interpolation_") 
-                                               [| _InterpolatedZeroCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroCurve.cell
                                 |]
@@ -684,8 +684,8 @@ module InterpolatedZeroCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
 
                 let source () = Helper.sourceFold (_InterpolatedZeroCurve.source + ".Interpolator_") 
-                                               [| _InterpolatedZeroCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroCurve.cell
                                 |]
@@ -720,8 +720,8 @@ module InterpolatedZeroCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedZeroCurve.source + ".MaxDate") 
-                                               [| _InterpolatedZeroCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroCurve.cell
                                 |]
@@ -756,8 +756,8 @@ module InterpolatedZeroCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedZeroCurve.source + ".MaxDate_") 
-                                               [| _InterpolatedZeroCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroCurve.cell
                                 |]
@@ -792,8 +792,8 @@ module InterpolatedZeroCurveFunction =
                 let format (o : Dictionary<Date,double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedZeroCurve.source + ".Nodes") 
-                                               [| _InterpolatedZeroCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroCurve.cell
                                 |]
@@ -828,8 +828,8 @@ module InterpolatedZeroCurveFunction =
                 let format (o : InterpolatedZeroCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedZeroCurve.source + ".SetupInterpolation") 
-                                               [| _InterpolatedZeroCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroCurve.cell
                                 |]
@@ -864,8 +864,8 @@ module InterpolatedZeroCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedZeroCurve.source + ".Times") 
-                                               [| _InterpolatedZeroCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroCurve.cell
                                 |]
@@ -900,8 +900,8 @@ module InterpolatedZeroCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedZeroCurve.source + ".Times_") 
-                                               [| _InterpolatedZeroCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroCurve.cell
                                 |]
@@ -936,8 +936,8 @@ module InterpolatedZeroCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedZeroCurve.source + ".ZeroRates") 
-                                               [| _InterpolatedZeroCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedZeroCurve.cell
                                 |]

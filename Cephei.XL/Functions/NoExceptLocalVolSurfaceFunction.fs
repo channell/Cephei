@@ -176,8 +176,8 @@ module NoExceptLocalVolSurfaceFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_NoExceptLocalVolSurface.source + ".DayCounter") 
-                                               [| _NoExceptLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NoExceptLocalVolSurface.cell
                                 |]
@@ -212,8 +212,8 @@ module NoExceptLocalVolSurfaceFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_NoExceptLocalVolSurface.source + ".MaxDate") 
-                                               [| _NoExceptLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NoExceptLocalVolSurface.cell
                                 |]
@@ -248,8 +248,8 @@ module NoExceptLocalVolSurfaceFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NoExceptLocalVolSurface.source + ".MaxStrike") 
-                                               [| _NoExceptLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NoExceptLocalVolSurface.cell
                                 |]
@@ -284,8 +284,8 @@ module NoExceptLocalVolSurfaceFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NoExceptLocalVolSurface.source + ".MinStrike") 
-                                               [| _NoExceptLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NoExceptLocalVolSurface.cell
                                 |]
@@ -320,8 +320,8 @@ module NoExceptLocalVolSurfaceFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_NoExceptLocalVolSurface.source + ".ReferenceDate") 
-                                               [| _NoExceptLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NoExceptLocalVolSurface.cell
                                 |]
@@ -368,8 +368,8 @@ module NoExceptLocalVolSurfaceFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NoExceptLocalVolSurface.source + ".LocalVol") 
-                                               [| _NoExceptLocalVolSurface.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _underlyingLevel.source
                                                ;  _extrapolate.source
                                                |]
@@ -422,8 +422,8 @@ module NoExceptLocalVolSurfaceFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NoExceptLocalVolSurface.source + ".LocalVol1") 
-                                               [| _NoExceptLocalVolSurface.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _underlyingLevel.source
                                                ;  _extrapolate.source
                                                |]
@@ -464,8 +464,8 @@ module NoExceptLocalVolSurfaceFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NoExceptLocalVolSurface.source + ".BusinessDayConvention") 
-                                               [| _NoExceptLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NoExceptLocalVolSurface.cell
                                 |]
@@ -504,8 +504,8 @@ module NoExceptLocalVolSurfaceFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_NoExceptLocalVolSurface.source + ".OptionDateFromTenor") 
-                                               [| _NoExceptLocalVolSurface.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NoExceptLocalVolSurface.cell
@@ -542,8 +542,8 @@ module NoExceptLocalVolSurfaceFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_NoExceptLocalVolSurface.source + ".Calendar") 
-                                               [| _NoExceptLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NoExceptLocalVolSurface.cell
                                 |]
@@ -578,8 +578,8 @@ module NoExceptLocalVolSurfaceFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NoExceptLocalVolSurface.source + ".MaxTime") 
-                                               [| _NoExceptLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NoExceptLocalVolSurface.cell
                                 |]
@@ -614,8 +614,8 @@ module NoExceptLocalVolSurfaceFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NoExceptLocalVolSurface.source + ".SettlementDays") 
-                                               [| _NoExceptLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NoExceptLocalVolSurface.cell
                                 |]
@@ -654,8 +654,8 @@ module NoExceptLocalVolSurfaceFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NoExceptLocalVolSurface.source + ".TimeFromReference") 
-                                               [| _NoExceptLocalVolSurface.source
-                                               ;  _date.source
+
+                                               [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NoExceptLocalVolSurface.cell
@@ -692,8 +692,8 @@ module NoExceptLocalVolSurfaceFunction =
                 let format (o : NoExceptLocalVolSurface) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NoExceptLocalVolSurface.source + ".Update") 
-                                               [| _NoExceptLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NoExceptLocalVolSurface.cell
                                 |]
@@ -728,8 +728,8 @@ module NoExceptLocalVolSurfaceFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NoExceptLocalVolSurface.source + ".AllowsExtrapolation") 
-                                               [| _NoExceptLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NoExceptLocalVolSurface.cell
                                 |]
@@ -768,8 +768,8 @@ module NoExceptLocalVolSurfaceFunction =
                 let format (o : NoExceptLocalVolSurface) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NoExceptLocalVolSurface.source + ".DisableExtrapolation") 
-                                               [| _NoExceptLocalVolSurface.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NoExceptLocalVolSurface.cell
@@ -810,8 +810,8 @@ module NoExceptLocalVolSurfaceFunction =
                 let format (o : NoExceptLocalVolSurface) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NoExceptLocalVolSurface.source + ".EnableExtrapolation") 
-                                               [| _NoExceptLocalVolSurface.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NoExceptLocalVolSurface.cell
@@ -848,8 +848,8 @@ module NoExceptLocalVolSurfaceFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NoExceptLocalVolSurface.source + ".Extrapolate") 
-                                               [| _NoExceptLocalVolSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NoExceptLocalVolSurface.cell
                                 |]

@@ -153,8 +153,8 @@ module TreeVanillaSwapEngineFunction =
                 let format (o : TreeVanillaSwapEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TreeVanillaSwapEngine.source + ".Update") 
-                                               [| _TreeVanillaSwapEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TreeVanillaSwapEngine.cell
                                 |]
@@ -194,8 +194,8 @@ module TreeVanillaSwapEngineFunction =
                 let format (o : TreeVanillaSwapEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TreeVanillaSwapEngine.source + ".SetModel") 
-                                               [| _TreeVanillaSwapEngine.source
-                                               ;  _model.source
+
+                                               [| _model.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TreeVanillaSwapEngine.cell
@@ -237,8 +237,8 @@ module TreeVanillaSwapEngineFunction =
                 let format (o : TreeVanillaSwapEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TreeVanillaSwapEngine.source + ".RegisterWith") 
-                                               [| _TreeVanillaSwapEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TreeVanillaSwapEngine.cell
@@ -275,8 +275,8 @@ module TreeVanillaSwapEngineFunction =
                 let format (o : TreeVanillaSwapEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TreeVanillaSwapEngine.source + ".Reset") 
-                                               [| _TreeVanillaSwapEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TreeVanillaSwapEngine.cell
                                 |]
@@ -315,8 +315,8 @@ module TreeVanillaSwapEngineFunction =
                 let format (o : TreeVanillaSwapEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TreeVanillaSwapEngine.source + ".UnregisterWith") 
-                                               [| _TreeVanillaSwapEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TreeVanillaSwapEngine.cell

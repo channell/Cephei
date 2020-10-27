@@ -54,8 +54,8 @@ module FlatSmileSectionFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FlatSmileSection.source + ".AtmLevel") 
-                                               [| _FlatSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FlatSmileSection.cell
                                 |]
@@ -230,8 +230,8 @@ module FlatSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FlatSmileSection.source + ".MaxStrike") 
-                                               [| _FlatSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FlatSmileSection.cell
                                 |]
@@ -266,8 +266,8 @@ module FlatSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FlatSmileSection.source + ".MinStrike") 
-                                               [| _FlatSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FlatSmileSection.cell
                                 |]
@@ -302,8 +302,8 @@ module FlatSmileSectionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_FlatSmileSection.source + ".DayCounter") 
-                                               [| _FlatSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FlatSmileSection.cell
                                 |]
@@ -350,8 +350,8 @@ module FlatSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FlatSmileSection.source + ".Density") 
-                                               [| _FlatSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _discount.source
                                                ;  _gap.source
                                                |]
@@ -408,8 +408,8 @@ module FlatSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FlatSmileSection.source + ".DigitalOptionPrice") 
-                                               [| _FlatSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _Type.source
                                                ;  _discount.source
                                                ;  _gap.source
@@ -452,8 +452,8 @@ module FlatSmileSectionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FlatSmileSection.source + ".ExerciseDate") 
-                                               [| _FlatSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FlatSmileSection.cell
                                 |]
@@ -488,8 +488,8 @@ module FlatSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FlatSmileSection.source + ".ExerciseTime") 
-                                               [| _FlatSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FlatSmileSection.cell
                                 |]
@@ -536,8 +536,8 @@ module FlatSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FlatSmileSection.source + ".OptionPrice") 
-                                               [| _FlatSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _Type.source
                                                ;  _discount.source
                                                |]
@@ -578,8 +578,8 @@ module FlatSmileSectionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FlatSmileSection.source + ".ReferenceDate") 
-                                               [| _FlatSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FlatSmileSection.cell
                                 |]
@@ -614,8 +614,8 @@ module FlatSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FlatSmileSection.source + ".Shift") 
-                                               [| _FlatSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FlatSmileSection.cell
                                 |]
@@ -650,8 +650,8 @@ module FlatSmileSectionFunction =
                 let format (o : FlatSmileSection) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FlatSmileSection.source + ".Update") 
-                                               [| _FlatSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FlatSmileSection.cell
                                 |]
@@ -690,8 +690,8 @@ module FlatSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FlatSmileSection.source + ".Variance") 
-                                               [| _FlatSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatSmileSection.cell
@@ -736,8 +736,8 @@ module FlatSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FlatSmileSection.source + ".Vega") 
-                                               [| _FlatSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _discount.source
                                                |]
                 let hash = Helper.hashFold 
@@ -788,8 +788,8 @@ module FlatSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FlatSmileSection.source + ".Volatility") 
-                                               [| _FlatSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _volatilityType.source
                                                ;  _shift.source
                                                |]
@@ -834,8 +834,8 @@ module FlatSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FlatSmileSection.source + ".Volatility1") 
-                                               [| _FlatSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatSmileSection.cell
@@ -872,8 +872,8 @@ module FlatSmileSectionFunction =
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FlatSmileSection.source + ".VolatilityType") 
-                                               [| _FlatSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FlatSmileSection.cell
                                 |]

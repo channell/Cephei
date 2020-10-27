@@ -107,8 +107,8 @@ module HestonHullWhitePathPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HestonHullWhitePathPricer.source + ".Value") 
-                                               [| _HestonHullWhitePathPricer.source
-                                               ;  _path.source
+
+                                               [| _path.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HestonHullWhitePathPricer.cell

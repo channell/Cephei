@@ -103,8 +103,8 @@ module KrugerCubicFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_KrugerCubic.source + ".ACoefficients") 
-                                               [| _KrugerCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KrugerCubic.cell
                                 |]
@@ -139,8 +139,8 @@ module KrugerCubicFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_KrugerCubic.source + ".BCoefficients") 
-                                               [| _KrugerCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KrugerCubic.cell
                                 |]
@@ -175,8 +175,8 @@ module KrugerCubicFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_KrugerCubic.source + ".CCoefficients") 
-                                               [| _KrugerCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KrugerCubic.cell
                                 |]
@@ -219,8 +219,8 @@ module KrugerCubicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_KrugerCubic.source + ".Derivative") 
-                                               [| _KrugerCubic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -259,8 +259,8 @@ module KrugerCubicFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KrugerCubic.source + ".Empty") 
-                                               [| _KrugerCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KrugerCubic.cell
                                 |]
@@ -303,8 +303,8 @@ module KrugerCubicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_KrugerCubic.source + ".Primitive") 
-                                               [| _KrugerCubic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -351,8 +351,8 @@ module KrugerCubicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_KrugerCubic.source + ".SecondDerivative") 
-                                               [| _KrugerCubic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -391,8 +391,8 @@ module KrugerCubicFunction =
                 let format (o : KrugerCubic) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KrugerCubic.source + ".Update") 
-                                               [| _KrugerCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KrugerCubic.cell
                                 |]
@@ -435,8 +435,8 @@ module KrugerCubicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_KrugerCubic.source + ".Value1") 
-                                               [| _KrugerCubic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -479,8 +479,8 @@ module KrugerCubicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_KrugerCubic.source + ".Value") 
-                                               [| _KrugerCubic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KrugerCubic.cell
@@ -517,8 +517,8 @@ module KrugerCubicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_KrugerCubic.source + ".XMax") 
-                                               [| _KrugerCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KrugerCubic.cell
                                 |]
@@ -553,8 +553,8 @@ module KrugerCubicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_KrugerCubic.source + ".XMin") 
-                                               [| _KrugerCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KrugerCubic.cell
                                 |]
@@ -589,8 +589,8 @@ module KrugerCubicFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KrugerCubic.source + ".AllowsExtrapolation") 
-                                               [| _KrugerCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KrugerCubic.cell
                                 |]
@@ -629,8 +629,8 @@ module KrugerCubicFunction =
                 let format (o : KrugerCubic) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KrugerCubic.source + ".DisableExtrapolation") 
-                                               [| _KrugerCubic.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KrugerCubic.cell
@@ -671,8 +671,8 @@ module KrugerCubicFunction =
                 let format (o : KrugerCubic) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KrugerCubic.source + ".EnableExtrapolation") 
-                                               [| _KrugerCubic.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _KrugerCubic.cell
@@ -709,8 +709,8 @@ module KrugerCubicFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_KrugerCubic.source + ".Extrapolate") 
-                                               [| _KrugerCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _KrugerCubic.cell
                                 |]

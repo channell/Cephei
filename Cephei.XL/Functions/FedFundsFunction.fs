@@ -95,8 +95,8 @@ module FedFundsFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightIndex>) l
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".Clone") 
-                                               [| _FedFunds.source
-                                               ;  _h.source
+
+                                               [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
@@ -133,8 +133,8 @@ module FedFundsFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".BusinessDayConvention") 
-                                               [| _FedFunds.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
@@ -169,8 +169,8 @@ module FedFundsFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".EndOfMonth") 
-                                               [| _FedFunds.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
@@ -217,8 +217,8 @@ module FedFundsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".ForecastFixing") 
-                                               [| _FedFunds.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _t.source
                                                |]
@@ -263,8 +263,8 @@ module FedFundsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".ForecastFixing") 
-                                               [| _FedFunds.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
@@ -301,8 +301,8 @@ module FedFundsFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".ForwardingTermStructure") 
-                                               [| _FedFunds.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
@@ -341,8 +341,8 @@ module FedFundsFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".MaturityDate") 
-                                               [| _FedFunds.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
@@ -379,8 +379,8 @@ module FedFundsFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".Currency") 
-                                               [| _FedFunds.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
@@ -415,8 +415,8 @@ module FedFundsFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".DayCounter") 
-                                               [| _FedFunds.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
@@ -451,8 +451,8 @@ module FedFundsFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".FamilyName") 
-                                               [| _FedFunds.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
@@ -495,8 +495,8 @@ module FedFundsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".Fixing") 
-                                               [| _FedFunds.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -535,8 +535,8 @@ module FedFundsFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".FixingCalendar") 
-                                               [| _FedFunds.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
@@ -575,8 +575,8 @@ module FedFundsFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".FixingDate") 
-                                               [| _FedFunds.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
@@ -613,8 +613,8 @@ module FedFundsFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".FixingDays") 
-                                               [| _FedFunds.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
@@ -653,8 +653,8 @@ module FedFundsFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".IsValidFixingDate") 
-                                               [| _FedFunds.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
@@ -691,8 +691,8 @@ module FedFundsFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".Name") 
-                                               [| _FedFunds.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
@@ -731,8 +731,8 @@ module FedFundsFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".PastFixing") 
-                                               [| _FedFunds.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
@@ -769,8 +769,8 @@ module FedFundsFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".Tenor") 
-                                               [| _FedFunds.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
@@ -805,8 +805,8 @@ module FedFundsFunction =
                 let format (o : FedFunds) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".Update") 
-                                               [| _FedFunds.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
@@ -845,8 +845,8 @@ module FedFundsFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".ValueDate") 
-                                               [| _FedFunds.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
@@ -895,8 +895,8 @@ module FedFundsFunction =
                 let format (o : FedFunds) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".AddFixing") 
-                                               [| _FedFunds.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -949,8 +949,8 @@ module FedFundsFunction =
                 let format (o : FedFunds) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".AddFixings") 
-                                               [| _FedFunds.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -999,8 +999,8 @@ module FedFundsFunction =
                 let format (o : FedFunds) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".AddFixings1") 
-                                               [| _FedFunds.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1039,8 +1039,8 @@ module FedFundsFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".AllowsNativeFixings") 
-                                               [| _FedFunds.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
@@ -1075,8 +1075,8 @@ module FedFundsFunction =
                 let format (o : FedFunds) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".ClearFixings") 
-                                               [| _FedFunds.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
@@ -1115,8 +1115,8 @@ module FedFundsFunction =
                 let format (o : FedFunds) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".RegisterWith") 
-                                               [| _FedFunds.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
@@ -1153,8 +1153,8 @@ module FedFundsFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".TimeSeries") 
-                                               [| _FedFunds.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell
                                 |]
@@ -1193,8 +1193,8 @@ module FedFundsFunction =
                 let format (o : FedFunds) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FedFunds.source + ".UnregisterWith") 
-                                               [| _FedFunds.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FedFunds.cell

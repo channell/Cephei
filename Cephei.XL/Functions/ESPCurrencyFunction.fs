@@ -85,8 +85,8 @@ module ESPCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ESPCurrency.source + ".Code") 
-                                               [| _ESPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ESPCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module ESPCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ESPCurrency.source + ".Empty") 
-                                               [| _ESPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ESPCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module ESPCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ESPCurrency.source + ".Equals") 
-                                               [| _ESPCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ESPCurrency.cell
@@ -199,8 +199,8 @@ module ESPCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ESPCurrency.source + ".Format") 
-                                               [| _ESPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ESPCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module ESPCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ESPCurrency.source + ".FractionsPerUnit") 
-                                               [| _ESPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ESPCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module ESPCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ESPCurrency.source + ".FractionSymbol") 
-                                               [| _ESPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ESPCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module ESPCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ESPCurrency.source + ".Name") 
-                                               [| _ESPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ESPCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module ESPCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ESPCurrency.source + ".NumericCode") 
-                                               [| _ESPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ESPCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module ESPCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_ESPCurrency.source + ".Rounding") 
-                                               [| _ESPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ESPCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module ESPCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ESPCurrency.source + ".Symbol") 
-                                               [| _ESPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ESPCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module ESPCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ESPCurrency.source + ".ToString") 
-                                               [| _ESPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ESPCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module ESPCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_ESPCurrency.source + ".TriangulationCurrency") 
-                                               [| _ESPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ESPCurrency.cell
                                 |]

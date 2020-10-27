@@ -103,8 +103,8 @@ module MonotonicParabolicFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_MonotonicParabolic.source + ".ACoefficients") 
-                                               [| _MonotonicParabolic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MonotonicParabolic.cell
                                 |]
@@ -139,8 +139,8 @@ module MonotonicParabolicFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_MonotonicParabolic.source + ".BCoefficients") 
-                                               [| _MonotonicParabolic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MonotonicParabolic.cell
                                 |]
@@ -175,8 +175,8 @@ module MonotonicParabolicFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_MonotonicParabolic.source + ".CCoefficients") 
-                                               [| _MonotonicParabolic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MonotonicParabolic.cell
                                 |]
@@ -219,8 +219,8 @@ module MonotonicParabolicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MonotonicParabolic.source + ".Derivative") 
-                                               [| _MonotonicParabolic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -259,8 +259,8 @@ module MonotonicParabolicFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MonotonicParabolic.source + ".Empty") 
-                                               [| _MonotonicParabolic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MonotonicParabolic.cell
                                 |]
@@ -303,8 +303,8 @@ module MonotonicParabolicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MonotonicParabolic.source + ".Primitive") 
-                                               [| _MonotonicParabolic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -351,8 +351,8 @@ module MonotonicParabolicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MonotonicParabolic.source + ".SecondDerivative") 
-                                               [| _MonotonicParabolic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -391,8 +391,8 @@ module MonotonicParabolicFunction =
                 let format (o : MonotonicParabolic) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MonotonicParabolic.source + ".Update") 
-                                               [| _MonotonicParabolic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MonotonicParabolic.cell
                                 |]
@@ -435,8 +435,8 @@ module MonotonicParabolicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MonotonicParabolic.source + ".Value1") 
-                                               [| _MonotonicParabolic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -479,8 +479,8 @@ module MonotonicParabolicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MonotonicParabolic.source + ".Value") 
-                                               [| _MonotonicParabolic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MonotonicParabolic.cell
@@ -517,8 +517,8 @@ module MonotonicParabolicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MonotonicParabolic.source + ".XMax") 
-                                               [| _MonotonicParabolic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MonotonicParabolic.cell
                                 |]
@@ -553,8 +553,8 @@ module MonotonicParabolicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MonotonicParabolic.source + ".XMin") 
-                                               [| _MonotonicParabolic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MonotonicParabolic.cell
                                 |]
@@ -589,8 +589,8 @@ module MonotonicParabolicFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MonotonicParabolic.source + ".AllowsExtrapolation") 
-                                               [| _MonotonicParabolic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MonotonicParabolic.cell
                                 |]
@@ -629,8 +629,8 @@ module MonotonicParabolicFunction =
                 let format (o : MonotonicParabolic) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MonotonicParabolic.source + ".DisableExtrapolation") 
-                                               [| _MonotonicParabolic.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MonotonicParabolic.cell
@@ -671,8 +671,8 @@ module MonotonicParabolicFunction =
                 let format (o : MonotonicParabolic) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MonotonicParabolic.source + ".EnableExtrapolation") 
-                                               [| _MonotonicParabolic.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MonotonicParabolic.cell
@@ -709,8 +709,8 @@ module MonotonicParabolicFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MonotonicParabolic.source + ".Extrapolate") 
-                                               [| _MonotonicParabolic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MonotonicParabolic.cell
                                 |]

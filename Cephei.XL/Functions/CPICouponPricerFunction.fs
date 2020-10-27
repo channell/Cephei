@@ -58,8 +58,8 @@ module CPICouponPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPICouponPricer.source + ".CapletPrice") 
-                                               [| _CPICouponPricer.source
-                                               ;  _effectiveCap.source
+
+                                               [| _effectiveCap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICouponPricer.cell
@@ -100,8 +100,8 @@ module CPICouponPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPICouponPricer.source + ".CapletRate") 
-                                               [| _CPICouponPricer.source
-                                               ;  _effectiveCap.source
+
+                                               [| _effectiveCap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICouponPricer.cell
@@ -138,8 +138,8 @@ module CPICouponPricerFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<CPIVolatilitySurface>>) l
 
                 let source () = Helper.sourceFold (_CPICouponPricer.source + ".CapletVolatility") 
-                                               [| _CPICouponPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICouponPricer.cell
                                 |]
@@ -215,8 +215,8 @@ module CPICouponPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPICouponPricer.source + ".FloorletPrice") 
-                                               [| _CPICouponPricer.source
-                                               ;  _effectiveFloor.source
+
+                                               [| _effectiveFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICouponPricer.cell
@@ -257,8 +257,8 @@ module CPICouponPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPICouponPricer.source + ".FloorletRate") 
-                                               [| _CPICouponPricer.source
-                                               ;  _effectiveFloor.source
+
+                                               [| _effectiveFloor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICouponPricer.cell
@@ -299,8 +299,8 @@ module CPICouponPricerFunction =
                 let format (o : CPICouponPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPICouponPricer.source + ".Initialize") 
-                                               [| _CPICouponPricer.source
-                                               ;  _coupon.source
+
+                                               [| _coupon.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICouponPricer.cell
@@ -341,8 +341,8 @@ module CPICouponPricerFunction =
                 let format (o : CPICouponPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPICouponPricer.source + ".SetCapletVolatility") 
-                                               [| _CPICouponPricer.source
-                                               ;  _capletVol.source
+
+                                               [| _capletVol.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICouponPricer.cell
@@ -379,8 +379,8 @@ module CPICouponPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPICouponPricer.source + ".SwapletPrice") 
-                                               [| _CPICouponPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICouponPricer.cell
                                 |]
@@ -415,8 +415,8 @@ module CPICouponPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPICouponPricer.source + ".SwapletRate") 
-                                               [| _CPICouponPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICouponPricer.cell
                                 |]
@@ -455,8 +455,8 @@ module CPICouponPricerFunction =
                 let format (o : CPICouponPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPICouponPricer.source + ".RegisterWith") 
-                                               [| _CPICouponPricer.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICouponPricer.cell
@@ -497,8 +497,8 @@ module CPICouponPricerFunction =
                 let format (o : CPICouponPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPICouponPricer.source + ".UnregisterWith") 
-                                               [| _CPICouponPricer.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICouponPricer.cell
@@ -535,8 +535,8 @@ module CPICouponPricerFunction =
                 let format (o : CPICouponPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPICouponPricer.source + ".Update") 
-                                               [| _CPICouponPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICouponPricer.cell
                                 |]

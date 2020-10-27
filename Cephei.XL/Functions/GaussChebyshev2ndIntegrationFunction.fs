@@ -91,8 +91,8 @@ module GaussChebyshev2ndIntegrationFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussChebyshev2ndIntegration.source + ".Order") 
-                                               [| _GaussChebyshev2ndIntegration.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussChebyshev2ndIntegration.cell
                                 |]
@@ -131,8 +131,8 @@ module GaussChebyshev2ndIntegrationFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussChebyshev2ndIntegration.source + ".Value") 
-                                               [| _GaussChebyshev2ndIntegration.source
-                                               ;  _f.source
+
+                                               [| _f.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussChebyshev2ndIntegration.cell
@@ -169,8 +169,8 @@ module GaussChebyshev2ndIntegrationFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_GaussChebyshev2ndIntegration.source + ".Weights") 
-                                               [| _GaussChebyshev2ndIntegration.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussChebyshev2ndIntegration.cell
                                 |]
@@ -205,8 +205,8 @@ module GaussChebyshev2ndIntegrationFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_GaussChebyshev2ndIntegration.source + ".X") 
-                                               [| _GaussChebyshev2ndIntegration.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussChebyshev2ndIntegration.cell
                                 |]

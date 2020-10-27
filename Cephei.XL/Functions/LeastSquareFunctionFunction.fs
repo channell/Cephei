@@ -62,8 +62,8 @@ module LeastSquareFunctionFunction =
                 let format (o : LeastSquareFunction) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LeastSquareFunction.source + ".Gradient") 
-                                               [| _LeastSquareFunction.source
-                                               ;  _grad_f.source
+
+                                               [| _grad_f.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -143,8 +143,8 @@ module LeastSquareFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LeastSquareFunction.source + ".Value") 
-                                               [| _LeastSquareFunction.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LeastSquareFunction.cell
@@ -189,8 +189,8 @@ module LeastSquareFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LeastSquareFunction.source + ".ValueAndGradient") 
-                                               [| _LeastSquareFunction.source
-                                               ;  _grad_f.source
+
+                                               [| _grad_f.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -233,8 +233,8 @@ module LeastSquareFunctionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_LeastSquareFunction.source + ".Values") 
-                                               [| _LeastSquareFunction.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LeastSquareFunction.cell
@@ -271,8 +271,8 @@ module LeastSquareFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LeastSquareFunction.source + ".FiniteDifferenceEpsilon") 
-                                               [| _LeastSquareFunction.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LeastSquareFunction.cell
                                 |]
@@ -315,8 +315,8 @@ module LeastSquareFunctionFunction =
                 let format (o : LeastSquareFunction) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LeastSquareFunction.source + ".Jacobian") 
-                                               [| _LeastSquareFunction.source
-                                               ;  _jac.source
+
+                                               [| _jac.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -363,8 +363,8 @@ module LeastSquareFunctionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_LeastSquareFunction.source + ".ValuesAndJacobian") 
-                                               [| _LeastSquareFunction.source
-                                               ;  _jac.source
+
+                                               [| _jac.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 

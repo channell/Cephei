@@ -113,8 +113,8 @@ module SVIWrapperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SVIWrapper.source + ".Volatility") 
-                                               [| _SVIWrapper.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SVIWrapper.cell

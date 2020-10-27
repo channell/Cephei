@@ -85,8 +85,8 @@ module MTLCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MTLCurrency.source + ".Code") 
-                                               [| _MTLCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MTLCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module MTLCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MTLCurrency.source + ".Empty") 
-                                               [| _MTLCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MTLCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module MTLCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MTLCurrency.source + ".Equals") 
-                                               [| _MTLCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MTLCurrency.cell
@@ -199,8 +199,8 @@ module MTLCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MTLCurrency.source + ".Format") 
-                                               [| _MTLCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MTLCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module MTLCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MTLCurrency.source + ".FractionsPerUnit") 
-                                               [| _MTLCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MTLCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module MTLCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MTLCurrency.source + ".FractionSymbol") 
-                                               [| _MTLCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MTLCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module MTLCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MTLCurrency.source + ".Name") 
-                                               [| _MTLCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MTLCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module MTLCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MTLCurrency.source + ".NumericCode") 
-                                               [| _MTLCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MTLCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module MTLCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_MTLCurrency.source + ".Rounding") 
-                                               [| _MTLCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MTLCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module MTLCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MTLCurrency.source + ".Symbol") 
-                                               [| _MTLCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MTLCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module MTLCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MTLCurrency.source + ".ToString") 
-                                               [| _MTLCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MTLCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module MTLCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_MTLCurrency.source + ".TriangulationCurrency") 
-                                               [| _MTLCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MTLCurrency.cell
                                 |]

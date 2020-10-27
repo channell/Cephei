@@ -63,8 +63,8 @@ module IncrementalStatisticsFunction =
                 let format (o : IncrementalStatistics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IncrementalStatistics.source + ".Add") 
-                                               [| _IncrementalStatistics.source
-                                               ;  _value.source
+
+                                               [| _value.source
                                                ;  _weight.source
                                                |]
                 let hash = Helper.hashFold 
@@ -108,8 +108,8 @@ module IncrementalStatisticsFunction =
                 let format (o : IncrementalStatistics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IncrementalStatistics.source + ".Add") 
-                                               [| _IncrementalStatistics.source
-                                               ;  _value.source
+
+                                               [| _value.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
@@ -150,8 +150,8 @@ module IncrementalStatisticsFunction =
                 let format (o : IncrementalStatistics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IncrementalStatistics.source + ".AddSequence") 
-                                               [| _IncrementalStatistics.source
-                                               ;  _list.source
+
+                                               [| _list.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
@@ -196,8 +196,8 @@ module IncrementalStatisticsFunction =
                 let format (o : IncrementalStatistics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IncrementalStatistics.source + ".AddSequence1") 
-                                               [| _IncrementalStatistics.source
-                                               ;  _data.source
+
+                                               [| _data.source
                                                ;  _weight.source
                                                |]
                 let hash = Helper.hashFold 
@@ -236,8 +236,8 @@ module IncrementalStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_IncrementalStatistics.source + ".DownsideDeviation") 
-                                               [| _IncrementalStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
@@ -272,8 +272,8 @@ module IncrementalStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_IncrementalStatistics.source + ".DownsideVariance") 
-                                               [| _IncrementalStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
@@ -308,8 +308,8 @@ module IncrementalStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_IncrementalStatistics.source + ".ErrorEstimate") 
-                                               [| _IncrementalStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
@@ -352,8 +352,8 @@ module IncrementalStatisticsFunction =
                 let format (o : Generic.KeyValuePair<double,int>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IncrementalStatistics.source + ".ExpectationValue") 
-                                               [| _IncrementalStatistics.source
-                                               ;  _f.source
+
+                                               [| _f.source
                                                ;  _inRange.source
                                                |]
                 let hash = Helper.hashFold 
@@ -423,8 +423,8 @@ module IncrementalStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_IncrementalStatistics.source + ".Kurtosis") 
-                                               [| _IncrementalStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
@@ -459,8 +459,8 @@ module IncrementalStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_IncrementalStatistics.source + ".Max") 
-                                               [| _IncrementalStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
@@ -495,8 +495,8 @@ module IncrementalStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_IncrementalStatistics.source + ".Mean") 
-                                               [| _IncrementalStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
@@ -531,8 +531,8 @@ module IncrementalStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_IncrementalStatistics.source + ".Min") 
-                                               [| _IncrementalStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
@@ -571,8 +571,8 @@ module IncrementalStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_IncrementalStatistics.source + ".Percentile") 
-                                               [| _IncrementalStatistics.source
-                                               ;  _percent.source
+
+                                               [| _percent.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
@@ -609,8 +609,8 @@ module IncrementalStatisticsFunction =
                 let format (o : IncrementalStatistics) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IncrementalStatistics.source + ".Reset") 
-                                               [| _IncrementalStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
@@ -645,8 +645,8 @@ module IncrementalStatisticsFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_IncrementalStatistics.source + ".Samples") 
-                                               [| _IncrementalStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
@@ -681,8 +681,8 @@ module IncrementalStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_IncrementalStatistics.source + ".Skewness") 
-                                               [| _IncrementalStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
@@ -717,8 +717,8 @@ module IncrementalStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_IncrementalStatistics.source + ".StandardDeviation") 
-                                               [| _IncrementalStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
@@ -753,8 +753,8 @@ module IncrementalStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_IncrementalStatistics.source + ".Variance") 
-                                               [| _IncrementalStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]
@@ -789,8 +789,8 @@ module IncrementalStatisticsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_IncrementalStatistics.source + ".WeightSum") 
-                                               [| _IncrementalStatistics.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IncrementalStatistics.cell
                                 |]

@@ -54,8 +54,8 @@ module yoyInflationLegFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_yoyInflationLeg.source + ".Value") 
-                                               [| _yoyInflationLeg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _yoyInflationLeg.cell
                                 |]
@@ -149,8 +149,8 @@ module yoyInflationLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
 
                 let source () = Helper.sourceFold (_yoyInflationLeg.source + ".WithCaps") 
-                                               [| _yoyInflationLeg.source
-                                               ;  _cap.source
+
+                                               [| _cap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _yoyInflationLeg.cell
@@ -191,8 +191,8 @@ module yoyInflationLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
 
                 let source () = Helper.sourceFold (_yoyInflationLeg.source + ".WithCaps1") 
-                                               [| _yoyInflationLeg.source
-                                               ;  _caps.source
+
+                                               [| _caps.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _yoyInflationLeg.cell
@@ -233,8 +233,8 @@ module yoyInflationLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
 
                 let source () = Helper.sourceFold (_yoyInflationLeg.source + ".WithFixingDays1") 
-                                               [| _yoyInflationLeg.source
-                                               ;  _fixingDays.source
+
+                                               [| _fixingDays.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _yoyInflationLeg.cell
@@ -275,8 +275,8 @@ module yoyInflationLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
 
                 let source () = Helper.sourceFold (_yoyInflationLeg.source + ".WithFixingDays") 
-                                               [| _yoyInflationLeg.source
-                                               ;  _fixingDays.source
+
+                                               [| _fixingDays.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _yoyInflationLeg.cell
@@ -317,8 +317,8 @@ module yoyInflationLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
 
                 let source () = Helper.sourceFold (_yoyInflationLeg.source + ".WithFloors1") 
-                                               [| _yoyInflationLeg.source
-                                               ;  _floors.source
+
+                                               [| _floors.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _yoyInflationLeg.cell
@@ -359,8 +359,8 @@ module yoyInflationLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
 
                 let source () = Helper.sourceFold (_yoyInflationLeg.source + ".WithFloors") 
-                                               [| _yoyInflationLeg.source
-                                               ;  _floor.source
+
+                                               [| _floor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _yoyInflationLeg.cell
@@ -401,8 +401,8 @@ module yoyInflationLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
 
                 let source () = Helper.sourceFold (_yoyInflationLeg.source + ".WithGearings") 
-                                               [| _yoyInflationLeg.source
-                                               ;  _gearings.source
+
+                                               [| _gearings.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _yoyInflationLeg.cell
@@ -443,8 +443,8 @@ module yoyInflationLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
 
                 let source () = Helper.sourceFold (_yoyInflationLeg.source + ".WithGearings1") 
-                                               [| _yoyInflationLeg.source
-                                               ;  _gearing.source
+
+                                               [| _gearing.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _yoyInflationLeg.cell
@@ -485,8 +485,8 @@ module yoyInflationLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
 
                 let source () = Helper.sourceFold (_yoyInflationLeg.source + ".WithPaymentDayCounter") 
-                                               [| _yoyInflationLeg.source
-                                               ;  _dayCounter.source
+
+                                               [| _dayCounter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _yoyInflationLeg.cell
@@ -527,8 +527,8 @@ module yoyInflationLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
 
                 let source () = Helper.sourceFold (_yoyInflationLeg.source + ".WithSpreads") 
-                                               [| _yoyInflationLeg.source
-                                               ;  _spread.source
+
+                                               [| _spread.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _yoyInflationLeg.cell
@@ -569,8 +569,8 @@ module yoyInflationLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<yoyInflationLegBase>) l
 
                 let source () = Helper.sourceFold (_yoyInflationLeg.source + ".WithSpreads1") 
-                                               [| _yoyInflationLeg.source
-                                               ;  _spreads.source
+
+                                               [| _spreads.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _yoyInflationLeg.cell
@@ -611,8 +611,8 @@ module yoyInflationLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
                 let source () = Helper.sourceFold (_yoyInflationLeg.source + ".WithNotionals1") 
-                                               [| _yoyInflationLeg.source
-                                               ;  _notionals.source
+
+                                               [| _notionals.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _yoyInflationLeg.cell
@@ -653,8 +653,8 @@ module yoyInflationLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
                 let source () = Helper.sourceFold (_yoyInflationLeg.source + ".WithNotionals") 
-                                               [| _yoyInflationLeg.source
-                                               ;  _notional.source
+
+                                               [| _notional.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _yoyInflationLeg.cell
@@ -695,8 +695,8 @@ module yoyInflationLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
                 let source () = Helper.sourceFold (_yoyInflationLeg.source + ".WithPaymentAdjustment") 
-                                               [| _yoyInflationLeg.source
-                                               ;  _convention.source
+
+                                               [| _convention.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _yoyInflationLeg.cell

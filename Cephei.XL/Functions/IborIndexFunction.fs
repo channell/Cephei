@@ -54,8 +54,8 @@ module IborIndexFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".BusinessDayConvention") 
-                                               [| _IborIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IborIndex.cell
                                 |]
@@ -94,8 +94,8 @@ module IborIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".Clone") 
-                                               [| _IborIndex.source
-                                               ;  _forwarding.source
+
+                                               [| _forwarding.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborIndex.cell
@@ -132,8 +132,8 @@ module IborIndexFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".EndOfMonth") 
-                                               [| _IborIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IborIndex.cell
                                 |]
@@ -180,8 +180,8 @@ module IborIndexFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".ForecastFixing1") 
-                                               [| _IborIndex.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _t.source
                                                |]
@@ -226,8 +226,8 @@ module IborIndexFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".ForecastFixing") 
-                                               [| _IborIndex.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborIndex.cell
@@ -264,8 +264,8 @@ module IborIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".ForwardingTermStructure") 
-                                               [| _IborIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IborIndex.cell
                                 |]
@@ -420,8 +420,8 @@ module IborIndexFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".MaturityDate") 
-                                               [| _IborIndex.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborIndex.cell
@@ -458,8 +458,8 @@ module IborIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".Currency") 
-                                               [| _IborIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IborIndex.cell
                                 |]
@@ -494,8 +494,8 @@ module IborIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".DayCounter") 
-                                               [| _IborIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IborIndex.cell
                                 |]
@@ -530,8 +530,8 @@ module IborIndexFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".FamilyName") 
-                                               [| _IborIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IborIndex.cell
                                 |]
@@ -574,8 +574,8 @@ module IborIndexFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".Fixing") 
-                                               [| _IborIndex.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -614,8 +614,8 @@ module IborIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".FixingCalendar") 
-                                               [| _IborIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IborIndex.cell
                                 |]
@@ -654,8 +654,8 @@ module IborIndexFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".FixingDate") 
-                                               [| _IborIndex.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborIndex.cell
@@ -692,8 +692,8 @@ module IborIndexFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".FixingDays") 
-                                               [| _IborIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IborIndex.cell
                                 |]
@@ -732,8 +732,8 @@ module IborIndexFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".IsValidFixingDate") 
-                                               [| _IborIndex.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborIndex.cell
@@ -770,8 +770,8 @@ module IborIndexFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".Name") 
-                                               [| _IborIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IborIndex.cell
                                 |]
@@ -810,8 +810,8 @@ module IborIndexFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".PastFixing") 
-                                               [| _IborIndex.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborIndex.cell
@@ -848,8 +848,8 @@ module IborIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".Tenor") 
-                                               [| _IborIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IborIndex.cell
                                 |]
@@ -884,8 +884,8 @@ module IborIndexFunction =
                 let format (o : IborIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".Update") 
-                                               [| _IborIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IborIndex.cell
                                 |]
@@ -924,8 +924,8 @@ module IborIndexFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".ValueDate") 
-                                               [| _IborIndex.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborIndex.cell
@@ -974,8 +974,8 @@ module IborIndexFunction =
                 let format (o : IborIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".AddFixing") 
-                                               [| _IborIndex.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -1028,8 +1028,8 @@ module IborIndexFunction =
                 let format (o : IborIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".AddFixings") 
-                                               [| _IborIndex.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -1078,8 +1078,8 @@ module IborIndexFunction =
                 let format (o : IborIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".AddFixings1") 
-                                               [| _IborIndex.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1118,8 +1118,8 @@ module IborIndexFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".AllowsNativeFixings") 
-                                               [| _IborIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IborIndex.cell
                                 |]
@@ -1154,8 +1154,8 @@ module IborIndexFunction =
                 let format (o : IborIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".ClearFixings") 
-                                               [| _IborIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IborIndex.cell
                                 |]
@@ -1194,8 +1194,8 @@ module IborIndexFunction =
                 let format (o : IborIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".RegisterWith") 
-                                               [| _IborIndex.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborIndex.cell
@@ -1232,8 +1232,8 @@ module IborIndexFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".TimeSeries") 
-                                               [| _IborIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IborIndex.cell
                                 |]
@@ -1272,8 +1272,8 @@ module IborIndexFunction =
                 let format (o : IborIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IborIndex.source + ".UnregisterWith") 
-                                               [| _IborIndex.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborIndex.cell

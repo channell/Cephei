@@ -97,8 +97,8 @@ module SimpsonIntegralFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SimpsonIntegral.source + ".AbsoluteAccuracy") 
-                                               [| _SimpsonIntegral.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SimpsonIntegral.cell
                                 |]
@@ -133,8 +133,8 @@ module SimpsonIntegralFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SimpsonIntegral.source + ".AbsoluteError") 
-                                               [| _SimpsonIntegral.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SimpsonIntegral.cell
                                 |]
@@ -169,8 +169,8 @@ module SimpsonIntegralFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SimpsonIntegral.source + ".IntegrationSuccess") 
-                                               [| _SimpsonIntegral.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SimpsonIntegral.cell
                                 |]
@@ -205,8 +205,8 @@ module SimpsonIntegralFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SimpsonIntegral.source + ".MaxEvaluations") 
-                                               [| _SimpsonIntegral.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SimpsonIntegral.cell
                                 |]
@@ -241,8 +241,8 @@ module SimpsonIntegralFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SimpsonIntegral.source + ".NumberOfEvaluations") 
-                                               [| _SimpsonIntegral.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SimpsonIntegral.cell
                                 |]
@@ -281,8 +281,8 @@ module SimpsonIntegralFunction =
                 let format (o : SimpsonIntegral) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SimpsonIntegral.source + ".SetAbsoluteAccuracy") 
-                                               [| _SimpsonIntegral.source
-                                               ;  _accuracy.source
+
+                                               [| _accuracy.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimpsonIntegral.cell
@@ -323,8 +323,8 @@ module SimpsonIntegralFunction =
                 let format (o : SimpsonIntegral) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SimpsonIntegral.source + ".SetMaxEvaluations") 
-                                               [| _SimpsonIntegral.source
-                                               ;  _maxEvaluations.source
+
+                                               [| _maxEvaluations.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SimpsonIntegral.cell
@@ -373,8 +373,8 @@ module SimpsonIntegralFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SimpsonIntegral.source + ".Value") 
-                                               [| _SimpsonIntegral.source
-                                               ;  _f.source
+
+                                               [| _f.source
                                                ;  _a.source
                                                ;  _b.source
                                                |]

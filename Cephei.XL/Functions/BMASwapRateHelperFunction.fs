@@ -139,8 +139,8 @@ module BMASwapRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BMASwapRateHelper.source + ".ImpliedQuote") 
-                                               [| _BMASwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BMASwapRateHelper.cell
                                 |]
@@ -179,8 +179,8 @@ module BMASwapRateHelperFunction =
                 let format (o : BMASwapRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BMASwapRateHelper.source + ".SetTermStructure") 
-                                               [| _BMASwapRateHelper.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwapRateHelper.cell
@@ -217,8 +217,8 @@ module BMASwapRateHelperFunction =
                 let format (o : BMASwapRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BMASwapRateHelper.source + ".Update") 
-                                               [| _BMASwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BMASwapRateHelper.cell
                                 |]
@@ -253,8 +253,8 @@ module BMASwapRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BMASwapRateHelper.source + ".EarliestDate") 
-                                               [| _BMASwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BMASwapRateHelper.cell
                                 |]
@@ -289,8 +289,8 @@ module BMASwapRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BMASwapRateHelper.source + ".LatestDate") 
-                                               [| _BMASwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BMASwapRateHelper.cell
                                 |]
@@ -325,8 +325,8 @@ module BMASwapRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BMASwapRateHelper.source + ".LatestRelevantDate") 
-                                               [| _BMASwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BMASwapRateHelper.cell
                                 |]
@@ -361,8 +361,8 @@ module BMASwapRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BMASwapRateHelper.source + ".MaturityDate") 
-                                               [| _BMASwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BMASwapRateHelper.cell
                                 |]
@@ -397,8 +397,8 @@ module BMASwapRateHelperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BMASwapRateHelper.source + ".PillarDate") 
-                                               [| _BMASwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BMASwapRateHelper.cell
                                 |]
@@ -433,8 +433,8 @@ module BMASwapRateHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
                 let source () = Helper.sourceFold (_BMASwapRateHelper.source + ".Quote") 
-                                               [| _BMASwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BMASwapRateHelper.cell
                                 |]
@@ -469,8 +469,8 @@ module BMASwapRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BMASwapRateHelper.source + ".QuoteError") 
-                                               [| _BMASwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BMASwapRateHelper.cell
                                 |]
@@ -505,8 +505,8 @@ module BMASwapRateHelperFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BMASwapRateHelper.source + ".QuoteIsValid") 
-                                               [| _BMASwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BMASwapRateHelper.cell
                                 |]
@@ -541,8 +541,8 @@ module BMASwapRateHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BMASwapRateHelper.source + ".QuoteValue") 
-                                               [| _BMASwapRateHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BMASwapRateHelper.cell
                                 |]
@@ -581,8 +581,8 @@ module BMASwapRateHelperFunction =
                 let format (o : BMASwapRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BMASwapRateHelper.source + ".RegisterWith") 
-                                               [| _BMASwapRateHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwapRateHelper.cell
@@ -623,8 +623,8 @@ module BMASwapRateHelperFunction =
                 let format (o : BMASwapRateHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BMASwapRateHelper.source + ".UnregisterWith") 
-                                               [| _BMASwapRateHelper.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BMASwapRateHelper.cell

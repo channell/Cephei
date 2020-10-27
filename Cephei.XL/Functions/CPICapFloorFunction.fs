@@ -175,8 +175,8 @@ module CPICapFloorFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CPICapFloor.source + ".FixingDate") 
-                                               [| _CPICapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]
@@ -211,8 +211,8 @@ module CPICapFloorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<ZeroInflationIndex>>) l
 
                 let source () = Helper.sourceFold (_CPICapFloor.source + ".InflationIndex") 
-                                               [| _CPICapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]
@@ -247,8 +247,8 @@ module CPICapFloorFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPICapFloor.source + ".IsExpired") 
-                                               [| _CPICapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]
@@ -283,8 +283,8 @@ module CPICapFloorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPICapFloor.source + ".Nominal") 
-                                               [| _CPICapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]
@@ -319,8 +319,8 @@ module CPICapFloorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_CPICapFloor.source + ".ObservationLag") 
-                                               [| _CPICapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]
@@ -355,8 +355,8 @@ module CPICapFloorFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CPICapFloor.source + ".PayDate") 
-                                               [| _CPICapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]
@@ -391,8 +391,8 @@ module CPICapFloorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPICapFloor.source + ".Strike") 
-                                               [| _CPICapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]
@@ -427,8 +427,8 @@ module CPICapFloorFunction =
                 let format (o : Option.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPICapFloor.source + ".TYPE") 
-                                               [| _CPICapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]
@@ -463,8 +463,8 @@ module CPICapFloorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPICapFloor.source + ".CASH") 
-                                               [| _CPICapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]
@@ -499,8 +499,8 @@ module CPICapFloorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPICapFloor.source + ".ErrorEstimate") 
-                                               [| _CPICapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]
@@ -535,8 +535,8 @@ module CPICapFloorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CPICapFloor.source + ".NPV") 
-                                               [| _CPICapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]
@@ -575,8 +575,8 @@ module CPICapFloorFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPICapFloor.source + ".Result") 
-                                               [| _CPICapFloor.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
@@ -617,8 +617,8 @@ module CPICapFloorFunction =
                 let format (o : CPICapFloor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CPICapFloor.source + ".SetPricingEngine") 
-                                               [| _CPICapFloor.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
@@ -655,8 +655,8 @@ module CPICapFloorFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CPICapFloor.source + ".ValuationDate") 
-                                               [| _CPICapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CPICapFloor.cell
                                 |]

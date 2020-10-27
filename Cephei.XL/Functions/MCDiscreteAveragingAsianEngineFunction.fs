@@ -144,8 +144,8 @@ module MCDiscreteAveragingAsianEngineFunction =
                 let format (o : MCDiscreteAveragingAsianEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".RegisterWith") 
-                                               [| _MCDiscreteAveragingAsianEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteAveragingAsianEngine.cell
@@ -182,8 +182,8 @@ module MCDiscreteAveragingAsianEngineFunction =
                 let format (o : MCDiscreteAveragingAsianEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".Reset") 
-                                               [| _MCDiscreteAveragingAsianEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteAveragingAsianEngine.cell
                                 |]
@@ -222,8 +222,8 @@ module MCDiscreteAveragingAsianEngineFunction =
                 let format (o : MCDiscreteAveragingAsianEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".UnregisterWith") 
-                                               [| _MCDiscreteAveragingAsianEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteAveragingAsianEngine.cell
@@ -260,8 +260,8 @@ module MCDiscreteAveragingAsianEngineFunction =
                 let format (o : MCDiscreteAveragingAsianEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".Update") 
-                                               [| _MCDiscreteAveragingAsianEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteAveragingAsianEngine.cell
                                 |]
@@ -296,8 +296,8 @@ module MCDiscreteAveragingAsianEngineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".ErrorEstimate") 
-                                               [| _MCDiscreteAveragingAsianEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteAveragingAsianEngine.cell
                                 |]
@@ -332,8 +332,8 @@ module MCDiscreteAveragingAsianEngineFunction =
                 let format (o : S) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".SampleAccumulator") 
-                                               [| _MCDiscreteAveragingAsianEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteAveragingAsianEngine.cell
                                 |]
@@ -380,8 +380,8 @@ module MCDiscreteAveragingAsianEngineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".Value") 
-                                               [| _MCDiscreteAveragingAsianEngine.source
-                                               ;  _tolerance.source
+
+                                               [| _tolerance.source
                                                ;  _maxSamples.source
                                                ;  _minSamples.source
                                                |]
@@ -426,8 +426,8 @@ module MCDiscreteAveragingAsianEngineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MCDiscreteAveragingAsianEngine.source + ".ValueWithSamples") 
-                                               [| _MCDiscreteAveragingAsianEngine.source
-                                               ;  _samples.source
+
+                                               [| _samples.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MCDiscreteAveragingAsianEngine.cell

@@ -55,8 +55,8 @@ module DiscountingBondEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_DiscountingBondEngine.source + ".DiscountCurve") 
-                                               [| _DiscountingBondEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscountingBondEngine.cell
                                 |]

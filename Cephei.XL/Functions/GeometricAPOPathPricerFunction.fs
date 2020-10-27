@@ -223,8 +223,8 @@ module GeometricAPOPathPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GeometricAPOPathPricer.source + ".Value") 
-                                               [| _GeometricAPOPathPricer.source
-                                               ;  _path.source
+
+                                               [| _path.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GeometricAPOPathPricer.cell

@@ -114,8 +114,8 @@ module FDBermudanEngineFunction =
                 let format (o : FDBermudanEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FDBermudanEngine.source + ".RegisterWith") 
-                                               [| _FDBermudanEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDBermudanEngine.cell
@@ -152,8 +152,8 @@ module FDBermudanEngineFunction =
                 let format (o : FDBermudanEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FDBermudanEngine.source + ".Reset") 
-                                               [| _FDBermudanEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDBermudanEngine.cell
                                 |]
@@ -192,8 +192,8 @@ module FDBermudanEngineFunction =
                 let format (o : FDBermudanEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FDBermudanEngine.source + ".UnregisterWith") 
-                                               [| _FDBermudanEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDBermudanEngine.cell
@@ -230,8 +230,8 @@ module FDBermudanEngineFunction =
                 let format (o : FDBermudanEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FDBermudanEngine.source + ".Update") 
-                                               [| _FDBermudanEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDBermudanEngine.cell
                                 |]
@@ -270,8 +270,8 @@ module FDBermudanEngineFunction =
                 let format (o : FDBermudanEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FDBermudanEngine.source + ".SetStepCondition") 
-                                               [| _FDBermudanEngine.source
-                                               ;  _impl.source
+
+                                               [| _impl.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDBermudanEngine.cell
@@ -308,8 +308,8 @@ module FDBermudanEngineFunction =
                 let format (o : FDBermudanEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FDBermudanEngine.source + ".EnsureStrikeInGrid") 
-                                               [| _FDBermudanEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDBermudanEngine.cell
                                 |]
@@ -360,8 +360,8 @@ module FDBermudanEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDVanillaEngine>) l
 
                 let source () = Helper.sourceFold (_FDBermudanEngine.source + ".Factory") 
-                                               [| _FDBermudanEngine.source
-                                               ;  _Process.source
+
+                                               [| _Process.source
                                                ;  _timeSteps.source
                                                ;  _gridPoints.source
                                                ;  _timeDependent.source
@@ -404,8 +404,8 @@ module FDBermudanEngineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FDBermudanEngine.source + ".GetResidualTime") 
-                                               [| _FDBermudanEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDBermudanEngine.cell
                                 |]
@@ -440,8 +440,8 @@ module FDBermudanEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_FDBermudanEngine.source + ".Grid") 
-                                               [| _FDBermudanEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDBermudanEngine.cell
                                 |]
@@ -476,8 +476,8 @@ module FDBermudanEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 
                 let source () = Helper.sourceFold (_FDBermudanEngine.source + ".IntrinsicValues_") 
-                                               [| _FDBermudanEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDBermudanEngine.cell
                                 |]

@@ -54,8 +54,8 @@ module DifferentialEvolutionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DifferentialEvolution.Configuration>) l
 
                 let source () = Helper.sourceFold (_DifferentialEvolution.source + ".Configuration") 
-                                               [| _DifferentialEvolution.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DifferentialEvolution.cell
                                 |]
@@ -135,8 +135,8 @@ module DifferentialEvolutionFunction =
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DifferentialEvolution.source + ".Minimize") 
-                                               [| _DifferentialEvolution.source
-                                               ;  _P.source
+
+                                               [| _P.source
                                                ;  _endCriteria.source
                                                |]
                 let hash = Helper.hashFold 

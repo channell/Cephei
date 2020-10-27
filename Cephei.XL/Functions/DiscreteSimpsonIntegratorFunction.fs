@@ -91,8 +91,8 @@ module DiscreteSimpsonIntegratorFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".AbsoluteAccuracy") 
-                                               [| _DiscreteSimpsonIntegrator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteSimpsonIntegrator.cell
                                 |]
@@ -127,8 +127,8 @@ module DiscreteSimpsonIntegratorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".AbsoluteError") 
-                                               [| _DiscreteSimpsonIntegrator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteSimpsonIntegrator.cell
                                 |]
@@ -163,8 +163,8 @@ module DiscreteSimpsonIntegratorFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".IntegrationSuccess") 
-                                               [| _DiscreteSimpsonIntegrator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteSimpsonIntegrator.cell
                                 |]
@@ -199,8 +199,8 @@ module DiscreteSimpsonIntegratorFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".MaxEvaluations") 
-                                               [| _DiscreteSimpsonIntegrator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteSimpsonIntegrator.cell
                                 |]
@@ -235,8 +235,8 @@ module DiscreteSimpsonIntegratorFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".NumberOfEvaluations") 
-                                               [| _DiscreteSimpsonIntegrator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteSimpsonIntegrator.cell
                                 |]
@@ -275,8 +275,8 @@ module DiscreteSimpsonIntegratorFunction =
                 let format (o : DiscreteSimpsonIntegrator) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".SetAbsoluteAccuracy") 
-                                               [| _DiscreteSimpsonIntegrator.source
-                                               ;  _accuracy.source
+
+                                               [| _accuracy.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteSimpsonIntegrator.cell
@@ -317,8 +317,8 @@ module DiscreteSimpsonIntegratorFunction =
                 let format (o : DiscreteSimpsonIntegrator) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".SetMaxEvaluations") 
-                                               [| _DiscreteSimpsonIntegrator.source
-                                               ;  _maxEvaluations.source
+
+                                               [| _maxEvaluations.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteSimpsonIntegrator.cell
@@ -367,8 +367,8 @@ module DiscreteSimpsonIntegratorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteSimpsonIntegrator.source + ".Value") 
-                                               [| _DiscreteSimpsonIntegrator.source
-                                               ;  _f.source
+
+                                               [| _f.source
                                                ;  _a.source
                                                ;  _b.source
                                                |]

@@ -54,8 +54,8 @@ module WeakEventSourceFunction =
                 let format (o : WeakEventSource) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_WeakEventSource.source + ".Clear") 
-                                               [| _WeakEventSource.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _WeakEventSource.cell
                                 |]
@@ -90,8 +90,8 @@ module WeakEventSourceFunction =
                 let format (o : WeakEventSource) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_WeakEventSource.source + ".Raise") 
-                                               [| _WeakEventSource.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _WeakEventSource.cell
                                 |]
@@ -130,8 +130,8 @@ module WeakEventSourceFunction =
                 let format (o : WeakEventSource) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_WeakEventSource.source + ".Subscribe") 
-                                               [| _WeakEventSource.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _WeakEventSource.cell
@@ -172,8 +172,8 @@ module WeakEventSourceFunction =
                 let format (o : WeakEventSource) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_WeakEventSource.source + ".Unsubscribe") 
-                                               [| _WeakEventSource.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _WeakEventSource.cell

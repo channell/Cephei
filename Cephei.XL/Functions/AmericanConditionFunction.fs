@@ -142,8 +142,8 @@ module AmericanConditionFunction =
                 let format (o : AmericanCondition) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AmericanCondition.source + ".ApplyTo") 
-                                               [| _AmericanCondition.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 

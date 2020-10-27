@@ -134,8 +134,8 @@ module UpRoundingFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_UpRounding.source + ".Digit") 
-                                               [| _UpRounding.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _UpRounding.cell
                                 |]
@@ -170,8 +170,8 @@ module UpRoundingFunction =
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_UpRounding.source + ".GetType") 
-                                               [| _UpRounding.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _UpRounding.cell
                                 |]
@@ -206,8 +206,8 @@ module UpRoundingFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_UpRounding.source + ".Precision") 
-                                               [| _UpRounding.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _UpRounding.cell
                                 |]
@@ -246,8 +246,8 @@ module UpRoundingFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_UpRounding.source + ".Round") 
-                                               [| _UpRounding.source
-                                               ;  _value.source
+
+                                               [| _value.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _UpRounding.cell

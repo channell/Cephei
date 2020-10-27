@@ -58,8 +58,8 @@ module CapHelperFunction =
                 let format (o : CapHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CapHelper.source + ".AddTimesTo") 
-                                               [| _CapHelper.source
-                                               ;  _times.source
+
+                                               [| _times.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapHelper.cell
@@ -100,8 +100,8 @@ module CapHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CapHelper.source + ".BlackPrice") 
-                                               [| _CapHelper.source
-                                               ;  _sigma.source
+
+                                               [| _sigma.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapHelper.cell
@@ -229,8 +229,8 @@ module CapHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CapHelper.source + ".ModelValue") 
-                                               [| _CapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CapHelper.cell
                                 |]
@@ -265,8 +265,8 @@ module CapHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CapHelper.source + ".CalibrationError") 
-                                               [| _CapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CapHelper.cell
                                 |]
@@ -321,8 +321,8 @@ module CapHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CapHelper.source + ".ImpliedVolatility") 
-                                               [| _CapHelper.source
-                                               ;  _targetValue.source
+
+                                               [| _targetValue.source
                                                ;  _accuracy.source
                                                ;  _maxEvaluations.source
                                                ;  _minVol.source
@@ -367,8 +367,8 @@ module CapHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CapHelper.source + ".MarketValue") 
-                                               [| _CapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CapHelper.cell
                                 |]
@@ -407,8 +407,8 @@ module CapHelperFunction =
                 let format (o : CapHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CapHelper.source + ".SetPricingEngine") 
-                                               [| _CapHelper.source
-                                               ;  _engine.source
+
+                                               [| _engine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CapHelper.cell
@@ -445,8 +445,8 @@ module CapHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
                 let source () = Helper.sourceFold (_CapHelper.source + ".Volatility") 
-                                               [| _CapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CapHelper.cell
                                 |]
@@ -481,8 +481,8 @@ module CapHelperFunction =
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CapHelper.source + ".VolatilityType") 
-                                               [| _CapHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CapHelper.cell
                                 |]

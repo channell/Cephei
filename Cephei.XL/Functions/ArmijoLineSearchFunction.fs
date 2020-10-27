@@ -230,8 +230,8 @@ module ArmijoLineSearchFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ArmijoLineSearch.source + ".Value") 
-                                               [| _ArmijoLineSearch.source
-                                               ;  _P.source
+
+                                               [| _P.source
                                                ;  _ecType.source
                                                ;  _endCriteria.source
                                                ;  _t_ini.source
@@ -274,8 +274,8 @@ module ArmijoLineSearchFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ArmijoLineSearch.source + ".LastFunctionValue") 
-                                               [| _ArmijoLineSearch.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ArmijoLineSearch.cell
                                 |]
@@ -310,8 +310,8 @@ module ArmijoLineSearchFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_ArmijoLineSearch.source + ".LastGradient") 
-                                               [| _ArmijoLineSearch.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ArmijoLineSearch.cell
                                 |]
@@ -346,8 +346,8 @@ module ArmijoLineSearchFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ArmijoLineSearch.source + ".LastGradientNorm2") 
-                                               [| _ArmijoLineSearch.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ArmijoLineSearch.cell
                                 |]
@@ -382,8 +382,8 @@ module ArmijoLineSearchFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_ArmijoLineSearch.source + ".LastX") 
-                                               [| _ArmijoLineSearch.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ArmijoLineSearch.cell
                                 |]
@@ -418,8 +418,8 @@ module ArmijoLineSearchFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_ArmijoLineSearch.source + ".SearchDirection") 
-                                               [| _ArmijoLineSearch.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ArmijoLineSearch.cell
                                 |]
@@ -454,8 +454,8 @@ module ArmijoLineSearchFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ArmijoLineSearch.source + ".Succeed") 
-                                               [| _ArmijoLineSearch.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ArmijoLineSearch.cell
                                 |]
@@ -506,8 +506,8 @@ module ArmijoLineSearchFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ArmijoLineSearch.source + ".Update") 
-                                               [| _ArmijoLineSearch.source
-                                               ;  _data.source
+
+                                               [| _data.source
                                                ;  _direction.source
                                                ;  _beta.source
                                                ;  _Constraint.source

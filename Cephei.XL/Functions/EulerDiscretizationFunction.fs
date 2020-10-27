@@ -70,8 +70,8 @@ module EulerDiscretizationFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
                 let source () = Helper.sourceFold (_EulerDiscretization.source + ".Covariance") 
-                                               [| _EulerDiscretization.source
-                                               ;  _Process.source
+
+                                               [| _Process.source
                                                ;  _t0.source
                                                ;  _x0.source
                                                ;  _dt.source
@@ -130,8 +130,8 @@ module EulerDiscretizationFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EulerDiscretization.source + ".Diffusion") 
-                                               [| _EulerDiscretization.source
-                                               ;  _Process.source
+
+                                               [| _Process.source
                                                ;  _t0.source
                                                ;  _x0.source
                                                ;  _dt.source
@@ -190,8 +190,8 @@ module EulerDiscretizationFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
                 let source () = Helper.sourceFold (_EulerDiscretization.source + ".Diffusion1") 
-                                               [| _EulerDiscretization.source
-                                               ;  _Process.source
+
+                                               [| _Process.source
                                                ;  _t0.source
                                                ;  _x0.source
                                                ;  _dt.source
@@ -250,8 +250,8 @@ module EulerDiscretizationFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_EulerDiscretization.source + ".Drift1") 
-                                               [| _EulerDiscretization.source
-                                               ;  _Process.source
+
+                                               [| _Process.source
                                                ;  _t0.source
                                                ;  _x0.source
                                                ;  _dt.source
@@ -310,8 +310,8 @@ module EulerDiscretizationFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EulerDiscretization.source + ".Drift") 
-                                               [| _EulerDiscretization.source
-                                               ;  _Process.source
+
+                                               [| _Process.source
                                                ;  _t0.source
                                                ;  _x0.source
                                                ;  _dt.source
@@ -370,8 +370,8 @@ module EulerDiscretizationFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EulerDiscretization.source + ".Variance") 
-                                               [| _EulerDiscretization.source
-                                               ;  _Process.source
+
+                                               [| _Process.source
                                                ;  _t0.source
                                                ;  _x0.source
                                                ;  _dt.source

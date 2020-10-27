@@ -85,8 +85,8 @@ module BYRCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BYRCurrency.source + ".Code") 
-                                               [| _BYRCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BYRCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module BYRCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BYRCurrency.source + ".Empty") 
-                                               [| _BYRCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BYRCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module BYRCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BYRCurrency.source + ".Equals") 
-                                               [| _BYRCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BYRCurrency.cell
@@ -199,8 +199,8 @@ module BYRCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BYRCurrency.source + ".Format") 
-                                               [| _BYRCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BYRCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module BYRCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BYRCurrency.source + ".FractionsPerUnit") 
-                                               [| _BYRCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BYRCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module BYRCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BYRCurrency.source + ".FractionSymbol") 
-                                               [| _BYRCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BYRCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module BYRCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BYRCurrency.source + ".Name") 
-                                               [| _BYRCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BYRCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module BYRCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BYRCurrency.source + ".NumericCode") 
-                                               [| _BYRCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BYRCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module BYRCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_BYRCurrency.source + ".Rounding") 
-                                               [| _BYRCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BYRCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module BYRCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BYRCurrency.source + ".Symbol") 
-                                               [| _BYRCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BYRCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module BYRCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BYRCurrency.source + ".ToString") 
-                                               [| _BYRCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BYRCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module BYRCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_BYRCurrency.source + ".TriangulationCurrency") 
-                                               [| _BYRCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BYRCurrency.cell
                                 |]

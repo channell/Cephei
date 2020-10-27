@@ -62,8 +62,8 @@ module ZeroInflationTraitsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationTraits.source + ".DiscountImpl") 
-                                               [| _ZeroInflationTraits.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -110,8 +110,8 @@ module ZeroInflationTraitsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationTraits.source + ".ForwardImpl") 
-                                               [| _ZeroInflationTraits.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -166,8 +166,8 @@ module ZeroInflationTraitsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationTraits.source + ".Guess") 
-                                               [| _ZeroInflationTraits.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _f.source
@@ -214,8 +214,8 @@ module ZeroInflationTraitsFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationTraits.source + ".InitialDate") 
-                                               [| _ZeroInflationTraits.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZeroInflationTraits.cell
@@ -256,8 +256,8 @@ module ZeroInflationTraitsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationTraits.source + ".InitialValue") 
-                                               [| _ZeroInflationTraits.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZeroInflationTraits.cell
@@ -294,8 +294,8 @@ module ZeroInflationTraitsFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationTraits.source + ".MaxIterations") 
-                                               [| _ZeroInflationTraits.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroInflationTraits.cell
                                 |]
@@ -346,8 +346,8 @@ module ZeroInflationTraitsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationTraits.source + ".MaxValueAfter") 
-                                               [| _ZeroInflationTraits.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _f.source
@@ -406,8 +406,8 @@ module ZeroInflationTraitsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationTraits.source + ".MinValueAfter") 
-                                               [| _ZeroInflationTraits.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _f.source
@@ -462,8 +462,8 @@ module ZeroInflationTraitsFunction =
                 let format (o : ZeroInflationTraits) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationTraits.source + ".UpdateGuess") 
-                                               [| _ZeroInflationTraits.source
-                                               ;  _data.source
+
+                                               [| _data.source
                                                ;  _discount.source
                                                ;  _i.source
                                                |]
@@ -512,8 +512,8 @@ module ZeroInflationTraitsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationTraits.source + ".ZeroYieldImpl") 
-                                               [| _ZeroInflationTraits.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 

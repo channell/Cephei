@@ -134,8 +134,8 @@ module BermudanExerciseFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BermudanExercise.source + ".PayoffAtExpiry") 
-                                               [| _BermudanExercise.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BermudanExercise.cell
                                 |]
@@ -174,8 +174,8 @@ module BermudanExerciseFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BermudanExercise.source + ".Date") 
-                                               [| _BermudanExercise.source
-                                               ;  _index.source
+
+                                               [| _index.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BermudanExercise.cell
@@ -212,8 +212,8 @@ module BermudanExerciseFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_BermudanExercise.source + ".Dates") 
-                                               [| _BermudanExercise.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BermudanExercise.cell
                                 |]
@@ -248,8 +248,8 @@ module BermudanExerciseFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BermudanExercise.source + ".LastDate") 
-                                               [| _BermudanExercise.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BermudanExercise.cell
                                 |]
@@ -284,8 +284,8 @@ module BermudanExerciseFunction =
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BermudanExercise.source + ".TYPE") 
-                                               [| _BermudanExercise.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BermudanExercise.cell
                                 |]

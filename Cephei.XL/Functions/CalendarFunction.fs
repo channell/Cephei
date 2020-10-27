@@ -54,8 +54,8 @@ module CalendarFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_Calendar.source + ".AddedHolidays") 
-                                               [| _Calendar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Calendar.cell
                                 |]
@@ -94,8 +94,8 @@ module CalendarFunction =
                 let format (o : Calendar) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Calendar.source + ".AddHoliday") 
-                                               [| _Calendar.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Calendar.cell
@@ -140,8 +140,8 @@ module CalendarFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Calendar.source + ".Adjust") 
-                                               [| _Calendar.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _c.source
                                                |]
                 let hash = Helper.hashFold 
@@ -200,8 +200,8 @@ module CalendarFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Calendar.source + ".Advance1") 
-                                               [| _Calendar.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _n.source
                                                ;  _unit.source
                                                ;  _c.source
@@ -262,8 +262,8 @@ module CalendarFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Calendar.source + ".Advance") 
-                                               [| _Calendar.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _p.source
                                                ;  _c.source
                                                ;  _endOfMonth.source
@@ -322,8 +322,8 @@ module CalendarFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Calendar.source + ".BusinessDaysBetween") 
-                                               [| _Calendar.source
-                                               ;  _from.source
+
+                                               [| _from.source
                                                ;  _To.source
                                                ;  _includeFirst.source
                                                ;  _includeLast.source
@@ -366,8 +366,8 @@ module CalendarFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_Calendar.source + ".Calendar") 
-                                               [| _Calendar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Calendar.cell
                                 |]
@@ -470,8 +470,8 @@ module CalendarFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Calendar.source + ".Empty") 
-                                               [| _Calendar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Calendar.cell
                                 |]
@@ -510,8 +510,8 @@ module CalendarFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Calendar.source + ".EndOfMonth") 
-                                               [| _Calendar.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Calendar.cell
@@ -552,8 +552,8 @@ module CalendarFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Calendar.source + ".Equals") 
-                                               [| _Calendar.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Calendar.cell
@@ -594,8 +594,8 @@ module CalendarFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Calendar.source + ".IsBusinessDay") 
-                                               [| _Calendar.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Calendar.cell
@@ -636,8 +636,8 @@ module CalendarFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Calendar.source + ".IsEndOfMonth") 
-                                               [| _Calendar.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Calendar.cell
@@ -678,8 +678,8 @@ module CalendarFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Calendar.source + ".IsHoliday") 
-                                               [| _Calendar.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Calendar.cell
@@ -720,8 +720,8 @@ module CalendarFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Calendar.source + ".IsWeekend") 
-                                               [| _Calendar.source
-                                               ;  _w.source
+
+                                               [| _w.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Calendar.cell
@@ -760,8 +760,8 @@ module CalendarFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Calendar.source + ".Name") 
-                                               [| _Calendar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Calendar.cell
                                 |]
@@ -796,8 +796,8 @@ module CalendarFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_Calendar.source + ".RemovedHolidays") 
-                                               [| _Calendar.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Calendar.cell
                                 |]
@@ -836,8 +836,8 @@ module CalendarFunction =
                 let format (o : Calendar) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Calendar.source + ".RemoveHoliday") 
-                                               [| _Calendar.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Calendar.cell

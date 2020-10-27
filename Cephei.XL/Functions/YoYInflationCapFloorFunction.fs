@@ -58,8 +58,8 @@ module YoYInflationCapFloorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCapFloor.source + ".AtmRate") 
-                                               [| _YoYInflationCapFloor.source
-                                               ;  _discountCurve.source
+
+                                               [| _discountCurve.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCapFloor.cell
@@ -96,8 +96,8 @@ module YoYInflationCapFloorFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_YoYInflationCapFloor.source + ".CapRates") 
-                                               [| _YoYInflationCapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCapFloor.cell
                                 |]
@@ -132,8 +132,8 @@ module YoYInflationCapFloorFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_YoYInflationCapFloor.source + ".FloorRates") 
-                                               [| _YoYInflationCapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCapFloor.cell
                                 |]
@@ -196,8 +196,8 @@ module YoYInflationCapFloorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCapFloor.source + ".ImpliedVolatility") 
-                                               [| _YoYInflationCapFloor.source
-                                               ;  _price.source
+
+                                               [| _price.source
                                                ;  _yoyCurve.source
                                                ;  _guess.source
                                                ;  _accuracy.source
@@ -246,8 +246,8 @@ module YoYInflationCapFloorFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCapFloor.source + ".IsExpired") 
-                                               [| _YoYInflationCapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCapFloor.cell
                                 |]
@@ -282,8 +282,8 @@ module YoYInflationCapFloorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationCoupon>) l
 
                 let source () = Helper.sourceFold (_YoYInflationCapFloor.source + ".LastYoYInflationCoupon") 
-                                               [| _YoYInflationCapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCapFloor.cell
                                 |]
@@ -318,8 +318,8 @@ module YoYInflationCapFloorFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCapFloor.source + ".MaturityDate") 
-                                               [| _YoYInflationCapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCapFloor.cell
                                 |]
@@ -358,8 +358,8 @@ module YoYInflationCapFloorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationCapFloor>) l
 
                 let source () = Helper.sourceFold (_YoYInflationCapFloor.source + ".Optionlet") 
-                                               [| _YoYInflationCapFloor.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCapFloor.cell
@@ -396,8 +396,8 @@ module YoYInflationCapFloorFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCapFloor.source + ".StartDate") 
-                                               [| _YoYInflationCapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCapFloor.cell
                                 |]
@@ -432,8 +432,8 @@ module YoYInflationCapFloorFunction =
                 let format (o : CapFloorType) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCapFloor.source + ".TYPE") 
-                                               [| _YoYInflationCapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCapFloor.cell
                                 |]
@@ -596,8 +596,8 @@ module YoYInflationCapFloorFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_YoYInflationCapFloor.source + ".YoyLeg") 
-                                               [| _YoYInflationCapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCapFloor.cell
                                 |]
@@ -632,8 +632,8 @@ module YoYInflationCapFloorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCapFloor.source + ".CASH") 
-                                               [| _YoYInflationCapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCapFloor.cell
                                 |]
@@ -668,8 +668,8 @@ module YoYInflationCapFloorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCapFloor.source + ".ErrorEstimate") 
-                                               [| _YoYInflationCapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCapFloor.cell
                                 |]
@@ -704,8 +704,8 @@ module YoYInflationCapFloorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCapFloor.source + ".NPV") 
-                                               [| _YoYInflationCapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCapFloor.cell
                                 |]
@@ -744,8 +744,8 @@ module YoYInflationCapFloorFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCapFloor.source + ".Result") 
-                                               [| _YoYInflationCapFloor.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCapFloor.cell
@@ -786,8 +786,8 @@ module YoYInflationCapFloorFunction =
                 let format (o : YoYInflationCapFloor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCapFloor.source + ".SetPricingEngine") 
-                                               [| _YoYInflationCapFloor.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCapFloor.cell
@@ -824,8 +824,8 @@ module YoYInflationCapFloorFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCapFloor.source + ".ValuationDate") 
-                                               [| _YoYInflationCapFloor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCapFloor.cell
                                 |]

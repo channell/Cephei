@@ -116,13 +116,14 @@ module public  Model =
             cell.Mnemonic <- sub.mnemonic
             if (not (current = null)) && cell.GetType() = current.GetType() then
                 current.Merge(cell, _state.Value.Model)
+                _state.Value.Source.[sub.mnemonic] <- sub.source()
 
             elif not (current = cell) then 
                 _state.Value.Model.[sub.mnemonic] <- cell
                 _state.Value.Source.[sub.mnemonic] <- sub.source()
                 _state.Value.Subscriber.[sub.mnemonic] <- sub.subscriber
                 if not (current = null) then current.Dispose() 
-
+            cell.Parent <- _state.Value.Model;
 
     // Register a functor to create a cell if requried
     let specify (spec : spec) : obj =
@@ -190,11 +191,11 @@ module public  Model =
             cell.Dependants
             |> Seq.filter (fun i -> i :? ICell)
             |> Seq.map (fun i -> i :?> ICell)
-            //|> Seq.fold (fun a y -> [y.Mnemonic + "/" + y.GetType().ToString() + "/" + y.GetHashCode().ToString()] @ (deps y) @ a) []
             |> Seq.fold (fun a y -> [y.Mnemonic + "/" + y.GetType().ToString() + "/" + y.GetHashCode().ToString()] @ a) []
 
         let depens = 
             _state.Value.Model
+            |> Seq.map (fun i -> if i.Value :? ICellModel then new KeyValuePair<string, ICell>(i.Key, (i.Value :?> ICellModel).Cell) else i)
             |> Seq.map (fun i -> (i.Key + "/" + i.Value.GetType().ToString() + "/" + i.Value.GetHashCode().ToString() , (deps i.Value)))
             |> Seq.toList
 
@@ -226,6 +227,7 @@ module public  Model =
                 Seq.fold (fun a (y,x) -> a + 1 + (depth y)) 0
 
             model |>
+            Seq.map (fun i -> if i.Value :? ICellModel then new KeyValuePair<string, ICell>(i.Key, (i.Value :?> ICellModel).Cell) else i) |>
             Seq.map (fun i -> (i.Value, depth i.Value)) |>
             Seq.toArray |>
             Array.sortBy (fun (c,d) -> d ) |>
@@ -268,7 +270,7 @@ module public  Model =
                 cells |>
                 Array.filter (fun (c,s) -> c.Mnemonic.StartsWith("+")) |>
                 Array.map (fun (c,s) -> sprintf "%s : ICell<%s>\n" (strip c.Mnemonic) (typeString c.Box)) |>
-                Array.fold (fun (s,d) y -> (s + "    " + d + y,",")) ("", "(") 
+                Array.fold (fun (s,d) y -> (s + "    " + d + y,", ")) ("", "( ") 
                 )
 
         let functions =
@@ -376,7 +378,7 @@ open System
 open System.Collections
 
 type {0} 
-{1}) as this =
+{1}    ) as this =
     inherit Model ()
 {2}
     do this.Bind ()

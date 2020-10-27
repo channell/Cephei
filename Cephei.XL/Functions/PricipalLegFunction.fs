@@ -97,8 +97,8 @@ module PricipalLegFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_PricipalLeg.source + ".Value") 
-                                               [| _PricipalLeg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PricipalLeg.cell
                                 |]
@@ -137,8 +137,8 @@ module PricipalLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
 
                 let source () = Helper.sourceFold (_PricipalLeg.source + ".WithNotionals") 
-                                               [| _PricipalLeg.source
-                                               ;  _notionals.source
+
+                                               [| _notionals.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PricipalLeg.cell
@@ -179,8 +179,8 @@ module PricipalLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
 
                 let source () = Helper.sourceFold (_PricipalLeg.source + ".WithNotionals1") 
-                                               [| _PricipalLeg.source
-                                               ;  _notional.source
+
+                                               [| _notional.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PricipalLeg.cell
@@ -221,8 +221,8 @@ module PricipalLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
 
                 let source () = Helper.sourceFold (_PricipalLeg.source + ".WithPaymentAdjustment") 
-                                               [| _PricipalLeg.source
-                                               ;  _convention.source
+
+                                               [| _convention.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PricipalLeg.cell
@@ -263,8 +263,8 @@ module PricipalLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
 
                 let source () = Helper.sourceFold (_PricipalLeg.source + ".WithPaymentDayCounter") 
-                                               [| _PricipalLeg.source
-                                               ;  _dayCounter.source
+
+                                               [| _dayCounter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PricipalLeg.cell
@@ -305,8 +305,8 @@ module PricipalLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PrincipalLegBase>) l
 
                 let source () = Helper.sourceFold (_PricipalLeg.source + ".WithSign") 
-                                               [| _PricipalLeg.source
-                                               ;  _sign.source
+
+                                               [| _sign.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PricipalLeg.cell

@@ -66,8 +66,8 @@ module ModifiedCraigSneydSchemeFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IMixedScheme>) l
 
                 let source () = Helper.sourceFold (_ModifiedCraigSneydScheme.source + ".Factory") 
-                                               [| _ModifiedCraigSneydScheme.source
-                                               ;  _L.source
+
+                                               [| _L.source
                                                ;  _bcs.source
                                                ;  _additionalInputs.source
                                                |]
@@ -198,8 +198,8 @@ module ModifiedCraigSneydSchemeFunction =
                 let format (o : ModifiedCraigSneydScheme) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ModifiedCraigSneydScheme.source + ".SetStep") 
-                                               [| _ModifiedCraigSneydScheme.source
-                                               ;  _dt.source
+
+                                               [| _dt.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ModifiedCraigSneydScheme.cell
@@ -248,8 +248,8 @@ module ModifiedCraigSneydSchemeFunction =
                 let format (o : ModifiedCraigSneydScheme) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ModifiedCraigSneydScheme.source + ".Step") 
-                                               [| _ModifiedCraigSneydScheme.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                ;  _t.source
                                                ;  _theta.source
                                                |]

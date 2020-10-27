@@ -144,8 +144,8 @@ module FDConditionEngineTemplateFunction =
                 let format (o : FDConditionEngineTemplate) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FDConditionEngineTemplate.source + ".SetStepCondition") 
-                                               [| _FDConditionEngineTemplate.source
-                                               ;  _impl.source
+
+                                               [| _impl.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FDConditionEngineTemplate.cell
@@ -183,8 +183,8 @@ module FDConditionEngineTemplateFunction =
                 let format (o : FDConditionEngineTemplate) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FDConditionEngineTemplate.source + ".EnsureStrikeInGrid") 
-                                               [| _FDConditionEngineTemplate.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDConditionEngineTemplate.cell
                                 |]
@@ -235,8 +235,8 @@ module FDConditionEngineTemplateFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDVanillaEngine>) l
 
                 let source () = Helper.sourceFold (_FDConditionEngineTemplate.source + ".Factory") 
-                                               [| _FDConditionEngineTemplate.source
-                                               ;  _Process.source
+
+                                               [| _Process.source
                                                ;  _timeSteps.source
                                                ;  _gridPoints.source
                                                ;  _timeDependent.source
@@ -279,8 +279,8 @@ module FDConditionEngineTemplateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FDConditionEngineTemplate.source + ".GetResidualTime") 
-                                               [| _FDConditionEngineTemplate.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDConditionEngineTemplate.cell
                                 |]
@@ -315,8 +315,8 @@ module FDConditionEngineTemplateFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_FDConditionEngineTemplate.source + ".Grid") 
-                                               [| _FDConditionEngineTemplate.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDConditionEngineTemplate.cell
                                 |]
@@ -351,8 +351,8 @@ module FDConditionEngineTemplateFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 
                 let source () = Helper.sourceFold (_FDConditionEngineTemplate.source + ".IntrinsicValues_") 
-                                               [| _FDConditionEngineTemplate.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDConditionEngineTemplate.cell
                                 |]

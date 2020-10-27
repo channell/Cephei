@@ -121,8 +121,8 @@ module PiecewiseZeroSpreadedTermStructureFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_PiecewiseZeroSpreadedTermStructure.source + ".Calendar") 
-                                               [| _PiecewiseZeroSpreadedTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroSpreadedTermStructure.cell
                                 |]
@@ -157,8 +157,8 @@ module PiecewiseZeroSpreadedTermStructureFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_PiecewiseZeroSpreadedTermStructure.source + ".DayCounter") 
-                                               [| _PiecewiseZeroSpreadedTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroSpreadedTermStructure.cell
                                 |]
@@ -193,8 +193,8 @@ module PiecewiseZeroSpreadedTermStructureFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseZeroSpreadedTermStructure.source + ".MaxDate") 
-                                               [| _PiecewiseZeroSpreadedTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroSpreadedTermStructure.cell
                                 |]
@@ -229,8 +229,8 @@ module PiecewiseZeroSpreadedTermStructureFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseZeroSpreadedTermStructure.source + ".ReferenceDate") 
-                                               [| _PiecewiseZeroSpreadedTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroSpreadedTermStructure.cell
                                 |]
@@ -265,8 +265,8 @@ module PiecewiseZeroSpreadedTermStructureFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseZeroSpreadedTermStructure.source + ".SettlementDays") 
-                                               [| _PiecewiseZeroSpreadedTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseZeroSpreadedTermStructure.cell
                                 |]

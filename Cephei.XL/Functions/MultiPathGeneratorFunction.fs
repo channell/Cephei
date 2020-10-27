@@ -54,8 +54,8 @@ module MultiPathGeneratorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Sample<IPath>>) l
 
                 let source () = Helper.sourceFold (_MultiPathGenerator.source + ".Antithetic") 
-                                               [| _MultiPathGenerator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MultiPathGenerator.cell
                                 |]
@@ -145,8 +145,8 @@ module MultiPathGeneratorFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Sample<IPath>>) l
 
                 let source () = Helper.sourceFold (_MultiPathGenerator.source + ".Next") 
-                                               [| _MultiPathGenerator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MultiPathGenerator.cell
                                 |]

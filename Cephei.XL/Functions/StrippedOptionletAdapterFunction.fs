@@ -54,8 +54,8 @@ module StrippedOptionletAdapterFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".Displacement") 
-                                               [| _StrippedOptionletAdapter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StrippedOptionletAdapter.cell
                                 |]
@@ -90,8 +90,8 @@ module StrippedOptionletAdapterFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".MaxDate") 
-                                               [| _StrippedOptionletAdapter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StrippedOptionletAdapter.cell
                                 |]
@@ -126,8 +126,8 @@ module StrippedOptionletAdapterFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".MaxStrike") 
-                                               [| _StrippedOptionletAdapter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StrippedOptionletAdapter.cell
                                 |]
@@ -162,8 +162,8 @@ module StrippedOptionletAdapterFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".MinStrike") 
-                                               [| _StrippedOptionletAdapter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StrippedOptionletAdapter.cell
                                 |]
@@ -235,8 +235,8 @@ module StrippedOptionletAdapterFunction =
                 let format (o : StrippedOptionletAdapter) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".Update") 
-                                               [| _StrippedOptionletAdapter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StrippedOptionletAdapter.cell
                                 |]
@@ -271,8 +271,8 @@ module StrippedOptionletAdapterFunction =
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".VolatilityType") 
-                                               [| _StrippedOptionletAdapter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StrippedOptionletAdapter.cell
                                 |]
@@ -319,8 +319,8 @@ module StrippedOptionletAdapterFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".BlackVariance") 
-                                               [| _StrippedOptionletAdapter.source
-                                               ;  _optionTime.source
+
+                                               [| _optionTime.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
                                                |]
@@ -373,8 +373,8 @@ module StrippedOptionletAdapterFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".BlackVariance2") 
-                                               [| _StrippedOptionletAdapter.source
-                                               ;  _optionTenor.source
+
+                                               [| _optionTenor.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
                                                |]
@@ -427,8 +427,8 @@ module StrippedOptionletAdapterFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".BlackVariance1") 
-                                               [| _StrippedOptionletAdapter.source
-                                               ;  _optionDate.source
+
+                                               [| _optionDate.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
                                                |]
@@ -477,8 +477,8 @@ module StrippedOptionletAdapterFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SmileSection>) l
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".SmileSection") 
-                                               [| _StrippedOptionletAdapter.source
-                                               ;  _optionTime.source
+
+                                               [| _optionTime.source
                                                ;  _extr.source
                                                |]
                 let hash = Helper.hashFold 
@@ -525,8 +525,8 @@ module StrippedOptionletAdapterFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SmileSection>) l
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".SmileSection2") 
-                                               [| _StrippedOptionletAdapter.source
-                                               ;  _optionDate.source
+
+                                               [| _optionDate.source
                                                ;  _extr.source
                                                |]
                 let hash = Helper.hashFold 
@@ -573,8 +573,8 @@ module StrippedOptionletAdapterFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SmileSection>) l
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".SmileSection1") 
-                                               [| _StrippedOptionletAdapter.source
-                                               ;  _optionTenor.source
+
+                                               [| _optionTenor.source
                                                ;  _extr.source
                                                |]
                 let hash = Helper.hashFold 
@@ -625,8 +625,8 @@ module StrippedOptionletAdapterFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".Volatility2") 
-                                               [| _StrippedOptionletAdapter.source
-                                               ;  _optionTime.source
+
+                                               [| _optionTime.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
                                                |]
@@ -679,8 +679,8 @@ module StrippedOptionletAdapterFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".Volatility1") 
-                                               [| _StrippedOptionletAdapter.source
-                                               ;  _optionDate.source
+
+                                               [| _optionDate.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
                                                |]
@@ -733,8 +733,8 @@ module StrippedOptionletAdapterFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".Volatility") 
-                                               [| _StrippedOptionletAdapter.source
-                                               ;  _optionTenor.source
+
+                                               [| _optionTenor.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
                                                |]
@@ -775,8 +775,8 @@ module StrippedOptionletAdapterFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".BusinessDayConvention") 
-                                               [| _StrippedOptionletAdapter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StrippedOptionletAdapter.cell
                                 |]
@@ -815,8 +815,8 @@ module StrippedOptionletAdapterFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".OptionDateFromTenor") 
-                                               [| _StrippedOptionletAdapter.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StrippedOptionletAdapter.cell
@@ -853,8 +853,8 @@ module StrippedOptionletAdapterFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".Calendar") 
-                                               [| _StrippedOptionletAdapter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StrippedOptionletAdapter.cell
                                 |]
@@ -889,8 +889,8 @@ module StrippedOptionletAdapterFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".DayCounter") 
-                                               [| _StrippedOptionletAdapter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StrippedOptionletAdapter.cell
                                 |]
@@ -925,8 +925,8 @@ module StrippedOptionletAdapterFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".MaxTime") 
-                                               [| _StrippedOptionletAdapter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StrippedOptionletAdapter.cell
                                 |]
@@ -961,8 +961,8 @@ module StrippedOptionletAdapterFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".ReferenceDate") 
-                                               [| _StrippedOptionletAdapter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StrippedOptionletAdapter.cell
                                 |]
@@ -997,8 +997,8 @@ module StrippedOptionletAdapterFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".SettlementDays") 
-                                               [| _StrippedOptionletAdapter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StrippedOptionletAdapter.cell
                                 |]
@@ -1037,8 +1037,8 @@ module StrippedOptionletAdapterFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".TimeFromReference") 
-                                               [| _StrippedOptionletAdapter.source
-                                               ;  _date.source
+
+                                               [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StrippedOptionletAdapter.cell
@@ -1075,8 +1075,8 @@ module StrippedOptionletAdapterFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".AllowsExtrapolation") 
-                                               [| _StrippedOptionletAdapter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StrippedOptionletAdapter.cell
                                 |]
@@ -1115,8 +1115,8 @@ module StrippedOptionletAdapterFunction =
                 let format (o : StrippedOptionletAdapter) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".DisableExtrapolation") 
-                                               [| _StrippedOptionletAdapter.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StrippedOptionletAdapter.cell
@@ -1157,8 +1157,8 @@ module StrippedOptionletAdapterFunction =
                 let format (o : StrippedOptionletAdapter) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".EnableExtrapolation") 
-                                               [| _StrippedOptionletAdapter.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _StrippedOptionletAdapter.cell
@@ -1195,8 +1195,8 @@ module StrippedOptionletAdapterFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_StrippedOptionletAdapter.source + ".Extrapolate") 
-                                               [| _StrippedOptionletAdapter.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _StrippedOptionletAdapter.cell
                                 |]

@@ -139,8 +139,8 @@ module CommercialPaperFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_CommercialPaper.source + ".FixedLeg") 
-                                               [| _CommercialPaper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CommercialPaper.cell
                                 |]
@@ -175,8 +175,8 @@ module CommercialPaperFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_CommercialPaper.source + ".PrincipalLeg") 
-                                               [| _CommercialPaper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CommercialPaper.cell
                                 |]
@@ -211,8 +211,8 @@ module CommercialPaperFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CommercialPaper.source + ".IsExpired") 
-                                               [| _CommercialPaper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CommercialPaper.cell
                                 |]
@@ -247,8 +247,8 @@ module CommercialPaperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CommercialPaper.source + ".CASH") 
-                                               [| _CommercialPaper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CommercialPaper.cell
                                 |]
@@ -283,8 +283,8 @@ module CommercialPaperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CommercialPaper.source + ".ErrorEstimate") 
-                                               [| _CommercialPaper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CommercialPaper.cell
                                 |]
@@ -319,8 +319,8 @@ module CommercialPaperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CommercialPaper.source + ".NPV") 
-                                               [| _CommercialPaper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CommercialPaper.cell
                                 |]
@@ -359,8 +359,8 @@ module CommercialPaperFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CommercialPaper.source + ".Result") 
-                                               [| _CommercialPaper.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CommercialPaper.cell
@@ -401,8 +401,8 @@ module CommercialPaperFunction =
                 let format (o : CommercialPaper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CommercialPaper.source + ".SetPricingEngine") 
-                                               [| _CommercialPaper.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CommercialPaper.cell
@@ -439,8 +439,8 @@ module CommercialPaperFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CommercialPaper.source + ".ValuationDate") 
-                                               [| _CommercialPaper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CommercialPaper.cell
                                 |]

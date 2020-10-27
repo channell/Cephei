@@ -54,8 +54,8 @@ module CappedFlooredCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".Cap") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -170,8 +170,8 @@ module CappedFlooredCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".ConvexityAdjustment") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -206,8 +206,8 @@ module CappedFlooredCouponFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".EffectiveCap") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -242,8 +242,8 @@ module CappedFlooredCouponFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".EffectiveFloor") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -334,8 +334,8 @@ module CappedFlooredCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".Factory") 
-                                               [| _CappedFlooredCoupon.source
-                                               ;  _nominal.source
+
+                                               [| _nominal.source
                                                ;  _paymentDate.source
                                                ;  _startDate.source
                                                ;  _endDate.source
@@ -398,8 +398,8 @@ module CappedFlooredCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".Floor") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -434,8 +434,8 @@ module CappedFlooredCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".IsCapped") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -470,8 +470,8 @@ module CappedFlooredCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".IsFloored") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -506,8 +506,8 @@ module CappedFlooredCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".Rate") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -546,8 +546,8 @@ module CappedFlooredCouponFunction =
                 let format (o : CappedFlooredCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".SetPricer") 
-                                               [| _CappedFlooredCoupon.source
-                                               ;  _pricer.source
+
+                                               [| _pricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
@@ -588,8 +588,8 @@ module CappedFlooredCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".AccruedAmount") 
-                                               [| _CappedFlooredCoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
@@ -626,8 +626,8 @@ module CappedFlooredCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".AdjustedFixing") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -662,8 +662,8 @@ module CappedFlooredCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".Amount") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -698,8 +698,8 @@ module CappedFlooredCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".DayCounter") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -734,8 +734,8 @@ module CappedFlooredCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".FixingDate") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -770,8 +770,8 @@ module CappedFlooredCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".FixingDays") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -806,8 +806,8 @@ module CappedFlooredCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".Gearing") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -842,8 +842,8 @@ module CappedFlooredCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".Index") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -878,8 +878,8 @@ module CappedFlooredCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".IndexFixing") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -914,8 +914,8 @@ module CappedFlooredCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".IsInArrears") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -954,8 +954,8 @@ module CappedFlooredCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".Price") 
-                                               [| _CappedFlooredCoupon.source
-                                               ;  _yts.source
+
+                                               [| _yts.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
@@ -992,8 +992,8 @@ module CappedFlooredCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".Pricer") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -1028,8 +1028,8 @@ module CappedFlooredCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".Spread") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -1064,8 +1064,8 @@ module CappedFlooredCouponFunction =
                 let format (o : CappedFlooredCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".Update") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -1100,8 +1100,8 @@ module CappedFlooredCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".AccrualDays") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -1136,8 +1136,8 @@ module CappedFlooredCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".AccrualEndDate") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -1172,8 +1172,8 @@ module CappedFlooredCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".AccrualPeriod") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -1208,8 +1208,8 @@ module CappedFlooredCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".AccrualStartDate") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -1248,8 +1248,8 @@ module CappedFlooredCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".AccruedDays") 
-                                               [| _CappedFlooredCoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
@@ -1290,8 +1290,8 @@ module CappedFlooredCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".AccruedPeriod") 
-                                               [| _CappedFlooredCoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
@@ -1328,8 +1328,8 @@ module CappedFlooredCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".Date") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -1364,8 +1364,8 @@ module CappedFlooredCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".ExCouponDate") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -1400,8 +1400,8 @@ module CappedFlooredCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".Nominal") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -1436,8 +1436,8 @@ module CappedFlooredCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".ReferencePeriodEnd") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -1472,8 +1472,8 @@ module CappedFlooredCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".ReferencePeriodStart") 
-                                               [| _CappedFlooredCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
                                 |]
@@ -1512,8 +1512,8 @@ module CappedFlooredCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".CompareTo") 
-                                               [| _CappedFlooredCoupon.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
@@ -1554,8 +1554,8 @@ module CappedFlooredCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".Equals") 
-                                               [| _CappedFlooredCoupon.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
@@ -1600,8 +1600,8 @@ module CappedFlooredCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".HasOccurred") 
-                                               [| _CappedFlooredCoupon.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                ;  _includeRefDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1644,8 +1644,8 @@ module CappedFlooredCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".TradingExCoupon") 
-                                               [| _CappedFlooredCoupon.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
@@ -1686,8 +1686,8 @@ module CappedFlooredCouponFunction =
                 let format (o : CappedFlooredCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".Accept") 
-                                               [| _CappedFlooredCoupon.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
@@ -1728,8 +1728,8 @@ module CappedFlooredCouponFunction =
                 let format (o : CappedFlooredCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".RegisterWith") 
-                                               [| _CappedFlooredCoupon.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell
@@ -1770,8 +1770,8 @@ module CappedFlooredCouponFunction =
                 let format (o : CappedFlooredCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CappedFlooredCoupon.source + ".UnregisterWith") 
-                                               [| _CappedFlooredCoupon.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CappedFlooredCoupon.cell

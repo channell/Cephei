@@ -99,8 +99,8 @@ module BivariateCumulativeNormalDistributionWe04DPFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BivariateCumulativeNormalDistributionWe04DP.source + ".Value") 
-                                               [| _BivariateCumulativeNormalDistributionWe04DP.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _y.source
                                                |]
                 let hash = Helper.hashFold 

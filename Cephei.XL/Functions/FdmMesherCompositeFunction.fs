@@ -62,8 +62,8 @@ module FdmMesherCompositeFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FdmMesherComposite.source + ".Dminus") 
-                                               [| _FdmMesherComposite.source
-                                               ;  _iter.source
+
+                                               [| _iter.source
                                                ;  _direction.source
                                                |]
                 let hash = Helper.hashFold 
@@ -110,8 +110,8 @@ module FdmMesherCompositeFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FdmMesherComposite.source + ".Dplus") 
-                                               [| _FdmMesherComposite.source
-                                               ;  _iter.source
+
+                                               [| _iter.source
                                                ;  _direction.source
                                                |]
                 let hash = Helper.hashFold 
@@ -414,8 +414,8 @@ module FdmMesherCompositeFunction =
                 let format (i : Generic.List<ICell<Fdm1dMesher>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_FdmMesherComposite.source + ".GetFdm1dMeshers") 
-                                               [| _FdmMesherComposite.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmMesherComposite.cell
                                 |]
@@ -458,8 +458,8 @@ module FdmMesherCompositeFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FdmMesherComposite.source + ".Location") 
-                                               [| _FdmMesherComposite.source
-                                               ;  _iter.source
+
+                                               [| _iter.source
                                                ;  _direction.source
                                                |]
                 let hash = Helper.hashFold 
@@ -502,8 +502,8 @@ module FdmMesherCompositeFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_FdmMesherComposite.source + ".Locations") 
-                                               [| _FdmMesherComposite.source
-                                               ;  _direction.source
+
+                                               [| _direction.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmMesherComposite.cell
@@ -540,8 +540,8 @@ module FdmMesherCompositeFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmLinearOpLayout>) l
 
                 let source () = Helper.sourceFold (_FdmMesherComposite.source + ".Layout") 
-                                               [| _FdmMesherComposite.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmMesherComposite.cell
                                 |]

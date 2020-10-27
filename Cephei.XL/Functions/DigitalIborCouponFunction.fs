@@ -216,8 +216,8 @@ module DigitalIborCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".Factory") 
-                                               [| _DigitalIborCoupon.source
-                                               ;  _underlying.source
+
+                                               [| _underlying.source
                                                ;  _callStrike.source
                                                ;  _callPosition.source
                                                ;  _isCallATMIncluded.source
@@ -272,8 +272,8 @@ module DigitalIborCouponFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".CallDigitalPayoff") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -308,8 +308,8 @@ module DigitalIborCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".CallOptionRate") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -344,8 +344,8 @@ module DigitalIborCouponFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".CallStrike") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -380,8 +380,8 @@ module DigitalIborCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".ConvexityAdjustment") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -416,8 +416,8 @@ module DigitalIborCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".HasCall") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -452,8 +452,8 @@ module DigitalIborCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".HasCollar") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -488,8 +488,8 @@ module DigitalIborCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".HasPut") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -524,8 +524,8 @@ module DigitalIborCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".IsLongCall") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -560,8 +560,8 @@ module DigitalIborCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".IsLongPut") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -596,8 +596,8 @@ module DigitalIborCouponFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".PutDigitalPayoff") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -632,8 +632,8 @@ module DigitalIborCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".PutOptionRate") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -668,8 +668,8 @@ module DigitalIborCouponFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".PutStrike") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -704,8 +704,8 @@ module DigitalIborCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".Rate") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -744,8 +744,8 @@ module DigitalIborCouponFunction =
                 let format (o : DigitalIborCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".SetPricer") 
-                                               [| _DigitalIborCoupon.source
-                                               ;  _pricer.source
+
+                                               [| _pricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
@@ -782,8 +782,8 @@ module DigitalIborCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCoupon>) l
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".Underlying") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -822,8 +822,8 @@ module DigitalIborCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".AccruedAmount") 
-                                               [| _DigitalIborCoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
@@ -860,8 +860,8 @@ module DigitalIborCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".AdjustedFixing") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -896,8 +896,8 @@ module DigitalIborCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".Amount") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -932,8 +932,8 @@ module DigitalIborCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".DayCounter") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -968,8 +968,8 @@ module DigitalIborCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".FixingDate") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -1004,8 +1004,8 @@ module DigitalIborCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".FixingDays") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -1040,8 +1040,8 @@ module DigitalIborCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".Gearing") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -1076,8 +1076,8 @@ module DigitalIborCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".Index") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -1112,8 +1112,8 @@ module DigitalIborCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".IndexFixing") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -1148,8 +1148,8 @@ module DigitalIborCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".IsInArrears") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -1188,8 +1188,8 @@ module DigitalIborCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".Price") 
-                                               [| _DigitalIborCoupon.source
-                                               ;  _yts.source
+
+                                               [| _yts.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
@@ -1226,8 +1226,8 @@ module DigitalIborCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".Pricer") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -1262,8 +1262,8 @@ module DigitalIborCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".Spread") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -1298,8 +1298,8 @@ module DigitalIborCouponFunction =
                 let format (o : DigitalIborCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".Update") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -1334,8 +1334,8 @@ module DigitalIborCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".AccrualDays") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -1370,8 +1370,8 @@ module DigitalIborCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".AccrualEndDate") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -1406,8 +1406,8 @@ module DigitalIborCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".AccrualPeriod") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -1442,8 +1442,8 @@ module DigitalIborCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".AccrualStartDate") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -1482,8 +1482,8 @@ module DigitalIborCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".AccruedDays") 
-                                               [| _DigitalIborCoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
@@ -1524,8 +1524,8 @@ module DigitalIborCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".AccruedPeriod") 
-                                               [| _DigitalIborCoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
@@ -1562,8 +1562,8 @@ module DigitalIborCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".Date") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -1598,8 +1598,8 @@ module DigitalIborCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".ExCouponDate") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -1634,8 +1634,8 @@ module DigitalIborCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".Nominal") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -1670,8 +1670,8 @@ module DigitalIborCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".ReferencePeriodEnd") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -1706,8 +1706,8 @@ module DigitalIborCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".ReferencePeriodStart") 
-                                               [| _DigitalIborCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
                                 |]
@@ -1746,8 +1746,8 @@ module DigitalIborCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".CompareTo") 
-                                               [| _DigitalIborCoupon.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
@@ -1788,8 +1788,8 @@ module DigitalIborCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".Equals") 
-                                               [| _DigitalIborCoupon.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
@@ -1834,8 +1834,8 @@ module DigitalIborCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".HasOccurred") 
-                                               [| _DigitalIborCoupon.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                ;  _includeRefDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1878,8 +1878,8 @@ module DigitalIborCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".TradingExCoupon") 
-                                               [| _DigitalIborCoupon.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
@@ -1920,8 +1920,8 @@ module DigitalIborCouponFunction =
                 let format (o : DigitalIborCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".Accept") 
-                                               [| _DigitalIborCoupon.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
@@ -1962,8 +1962,8 @@ module DigitalIborCouponFunction =
                 let format (o : DigitalIborCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".RegisterWith") 
-                                               [| _DigitalIborCoupon.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell
@@ -2004,8 +2004,8 @@ module DigitalIborCouponFunction =
                 let format (o : DigitalIborCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalIborCoupon.source + ".UnregisterWith") 
-                                               [| _DigitalIborCoupon.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DigitalIborCoupon.cell

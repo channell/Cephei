@@ -97,8 +97,8 @@ module IborLegFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_IborLeg.source + ".Value") 
-                                               [| _IborLeg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IborLeg.cell
                                 |]
@@ -137,8 +137,8 @@ module IborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_IborLeg.source + ".InArrears1") 
-                                               [| _IborLeg.source
-                                               ;  _flag.source
+
+                                               [| _flag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborLeg.cell
@@ -175,8 +175,8 @@ module IborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_IborLeg.source + ".InArrears") 
-                                               [| _IborLeg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IborLeg.cell
                                 |]
@@ -215,8 +215,8 @@ module IborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_IborLeg.source + ".WithCaps") 
-                                               [| _IborLeg.source
-                                               ;  _caps.source
+
+                                               [| _caps.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborLeg.cell
@@ -257,8 +257,8 @@ module IborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_IborLeg.source + ".WithCaps1") 
-                                               [| _IborLeg.source
-                                               ;  _cap.source
+
+                                               [| _cap.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborLeg.cell
@@ -299,8 +299,8 @@ module IborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_IborLeg.source + ".WithFixingDays1") 
-                                               [| _IborLeg.source
-                                               ;  _fixingDays.source
+
+                                               [| _fixingDays.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborLeg.cell
@@ -341,8 +341,8 @@ module IborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_IborLeg.source + ".WithFixingDays") 
-                                               [| _IborLeg.source
-                                               ;  _fixingDays.source
+
+                                               [| _fixingDays.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborLeg.cell
@@ -383,8 +383,8 @@ module IborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_IborLeg.source + ".WithFloors1") 
-                                               [| _IborLeg.source
-                                               ;  _floors.source
+
+                                               [| _floors.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborLeg.cell
@@ -425,8 +425,8 @@ module IborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_IborLeg.source + ".WithFloors") 
-                                               [| _IborLeg.source
-                                               ;  _floor.source
+
+                                               [| _floor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborLeg.cell
@@ -467,8 +467,8 @@ module IborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_IborLeg.source + ".WithGearings") 
-                                               [| _IborLeg.source
-                                               ;  _gearing.source
+
+                                               [| _gearing.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborLeg.cell
@@ -509,8 +509,8 @@ module IborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_IborLeg.source + ".WithGearings1") 
-                                               [| _IborLeg.source
-                                               ;  _gearings.source
+
+                                               [| _gearings.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborLeg.cell
@@ -551,8 +551,8 @@ module IborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_IborLeg.source + ".WithPaymentDayCounter") 
-                                               [| _IborLeg.source
-                                               ;  _dayCounter.source
+
+                                               [| _dayCounter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborLeg.cell
@@ -593,8 +593,8 @@ module IborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_IborLeg.source + ".WithSpreads1") 
-                                               [| _IborLeg.source
-                                               ;  _spreads.source
+
+                                               [| _spreads.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborLeg.cell
@@ -635,8 +635,8 @@ module IborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_IborLeg.source + ".WithSpreads") 
-                                               [| _IborLeg.source
-                                               ;  _spread.source
+
+                                               [| _spread.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborLeg.cell
@@ -677,8 +677,8 @@ module IborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_IborLeg.source + ".WithZeroPayments1") 
-                                               [| _IborLeg.source
-                                               ;  _flag.source
+
+                                               [| _flag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborLeg.cell
@@ -715,8 +715,8 @@ module IborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingLegBase>) l
 
                 let source () = Helper.sourceFold (_IborLeg.source + ".WithZeroPayments") 
-                                               [| _IborLeg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IborLeg.cell
                                 |]
@@ -755,8 +755,8 @@ module IborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
                 let source () = Helper.sourceFold (_IborLeg.source + ".WithNotionals1") 
-                                               [| _IborLeg.source
-                                               ;  _notionals.source
+
+                                               [| _notionals.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborLeg.cell
@@ -797,8 +797,8 @@ module IborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
                 let source () = Helper.sourceFold (_IborLeg.source + ".WithNotional") 
-                                               [| _IborLeg.source
-                                               ;  _notional.source
+
+                                               [| _notional.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborLeg.cell
@@ -839,8 +839,8 @@ module IborLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
                 let source () = Helper.sourceFold (_IborLeg.source + ".WithPaymentAdjustment") 
-                                               [| _IborLeg.source
-                                               ;  _convention.source
+
+                                               [| _convention.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IborLeg.cell

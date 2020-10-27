@@ -74,8 +74,8 @@ module BilinearFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation2D>) l
 
                 let source () = Helper.sourceFold (_Bilinear.source + ".Interpolate") 
-                                               [| _Bilinear.source
-                                               ;  _xBegin.source
+
+                                               [| _xBegin.source
                                                ;  _xSize.source
                                                ;  _yBegin.source
                                                ;  _ySize.source

@@ -54,8 +54,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Accuracy_") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -90,8 +90,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".BaseDate") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -126,8 +126,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Clone") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -162,8 +162,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Data") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -198,8 +198,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Data_") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -234,8 +234,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Dates") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -270,8 +270,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Dates_") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -314,8 +314,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".DiscountImpl") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -362,8 +362,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".ForwardImpl") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -402,8 +402,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Forwards") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -454,8 +454,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Guess") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _first.source
@@ -502,8 +502,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".InitialDate") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
@@ -540,8 +540,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".InitialDate1") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -576,8 +576,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".InitialValue1") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -616,8 +616,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".InitialValue") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
@@ -654,8 +654,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (i : Generic.List<ICell<BootstrapHelper<YoYInflationTermStructure>>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Instruments_") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -690,8 +690,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Interpolation_") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -726,8 +726,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Interpolator_") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -762,8 +762,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".MaxDate") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -798,8 +798,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".MaxDate_") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -834,8 +834,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".MaxIterations") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -886,8 +886,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".MaxValueAfter") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _first.source
@@ -946,8 +946,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".MinValueAfter") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _first.source
@@ -990,8 +990,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Moving_") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -1026,8 +1026,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : Generic.Dictionary<Date,double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Nodes") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -1318,8 +1318,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Rates") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -1358,8 +1358,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : PiecewiseYoYInflationCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".RegisterWith") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               ;  _helper.source
+
+                                               [| _helper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
@@ -1400,8 +1400,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : PiecewiseYoYInflationCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".SetTermStructure") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               ;  _helper.source
+
+                                               [| _helper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
@@ -1438,8 +1438,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : PiecewiseYoYInflationCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".SetupInterpolation") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -1474,8 +1474,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Times") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -1510,8 +1510,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Times_") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -1546,8 +1546,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ITraits<YoYInflationTermStructure>>) l
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Traits_") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -1594,8 +1594,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : PiecewiseYoYInflationCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".UpdateGuess") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               ;  _data.source
+
+                                               [| _data.source
                                                ;  _discount.source
                                                ;  _i.source
                                                |]
@@ -1644,8 +1644,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".ZeroYieldImpl") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1700,8 +1700,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".YoyRate1") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _instObsLag.source
                                                ;  _forceLinearInterpolation.source
                                                ;  _extrapolate.source
@@ -1756,8 +1756,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".YoyRate3") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _instObsLag.source
                                                ;  _forceLinearInterpolation.source
                                                |]
@@ -1806,8 +1806,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".YoyRate2") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _instObsLag.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1850,8 +1850,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".YoyRate") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
@@ -1888,8 +1888,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".BaseRate") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -1924,8 +1924,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Frequency") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -1960,8 +1960,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".HasSeasonality") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -1996,8 +1996,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".IndexIsInterpolated") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -2032,8 +2032,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".NominalTermStructure") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -2068,8 +2068,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".ObservationLag") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -2104,8 +2104,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Seasonality>) l
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Seasonality") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -2144,8 +2144,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : PiecewiseYoYInflationCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".SetSeasonality") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               ;  _seasonality.source
+
+                                               [| _seasonality.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
@@ -2182,8 +2182,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Calendar") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -2218,8 +2218,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".DayCounter") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -2254,8 +2254,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".MaxTime") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -2290,8 +2290,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".ReferenceDate") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -2326,8 +2326,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".SettlementDays") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -2366,8 +2366,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".TimeFromReference") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               ;  _date.source
+
+                                               [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
@@ -2404,8 +2404,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : PiecewiseYoYInflationCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Update") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -2440,8 +2440,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".AllowsExtrapolation") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]
@@ -2480,8 +2480,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : PiecewiseYoYInflationCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".DisableExtrapolation") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
@@ -2522,8 +2522,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : PiecewiseYoYInflationCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".EnableExtrapolation") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
@@ -2560,8 +2560,8 @@ module PiecewiseYoYInflationCurveFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Extrapolate") 
-                                               [| _PiecewiseYoYInflationCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYoYInflationCurve.cell
                                 |]

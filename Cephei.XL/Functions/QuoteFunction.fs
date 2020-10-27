@@ -54,8 +54,8 @@ module QuoteFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Quote.source + ".IsValid") 
-                                               [| _Quote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Quote.cell
                                 |]
@@ -94,8 +94,8 @@ module QuoteFunction =
                 let format (o : Quote) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Quote.source + ".RegisterWith") 
-                                               [| _Quote.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Quote.cell
@@ -136,8 +136,8 @@ module QuoteFunction =
                 let format (o : Quote) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Quote.source + ".UnregisterWith") 
-                                               [| _Quote.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Quote.cell
@@ -174,8 +174,8 @@ module QuoteFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Quote.source + ".Value") 
-                                               [| _Quote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Quote.cell
                                 |]

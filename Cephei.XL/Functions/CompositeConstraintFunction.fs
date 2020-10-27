@@ -97,8 +97,8 @@ module CompositeConstraintFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CompositeConstraint.source + ".Empty") 
-                                               [| _CompositeConstraint.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CompositeConstraint.cell
                                 |]
@@ -137,8 +137,8 @@ module CompositeConstraintFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_CompositeConstraint.source + ".LowerBound") 
-                                               [| _CompositeConstraint.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CompositeConstraint.cell
@@ -179,8 +179,8 @@ module CompositeConstraintFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CompositeConstraint.source + ".Test") 
-                                               [| _CompositeConstraint.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CompositeConstraint.cell
@@ -229,8 +229,8 @@ module CompositeConstraintFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CompositeConstraint.source + ".Update") 
-                                               [| _CompositeConstraint.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                ;  _direction.source
                                                ;  _beta.source
                                                |]
@@ -275,8 +275,8 @@ module CompositeConstraintFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_CompositeConstraint.source + ".UpperBound") 
-                                               [| _CompositeConstraint.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CompositeConstraint.cell

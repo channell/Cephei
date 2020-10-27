@@ -103,8 +103,8 @@ module CubicNaturalSplineFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_CubicNaturalSpline.source + ".ACoefficients") 
-                                               [| _CubicNaturalSpline.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CubicNaturalSpline.cell
                                 |]
@@ -139,8 +139,8 @@ module CubicNaturalSplineFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_CubicNaturalSpline.source + ".BCoefficients") 
-                                               [| _CubicNaturalSpline.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CubicNaturalSpline.cell
                                 |]
@@ -175,8 +175,8 @@ module CubicNaturalSplineFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_CubicNaturalSpline.source + ".CCoefficients") 
-                                               [| _CubicNaturalSpline.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CubicNaturalSpline.cell
                                 |]
@@ -219,8 +219,8 @@ module CubicNaturalSplineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CubicNaturalSpline.source + ".Derivative") 
-                                               [| _CubicNaturalSpline.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -259,8 +259,8 @@ module CubicNaturalSplineFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CubicNaturalSpline.source + ".Empty") 
-                                               [| _CubicNaturalSpline.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CubicNaturalSpline.cell
                                 |]
@@ -303,8 +303,8 @@ module CubicNaturalSplineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CubicNaturalSpline.source + ".Primitive") 
-                                               [| _CubicNaturalSpline.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -351,8 +351,8 @@ module CubicNaturalSplineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CubicNaturalSpline.source + ".SecondDerivative") 
-                                               [| _CubicNaturalSpline.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -391,8 +391,8 @@ module CubicNaturalSplineFunction =
                 let format (o : CubicNaturalSpline) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CubicNaturalSpline.source + ".Update") 
-                                               [| _CubicNaturalSpline.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CubicNaturalSpline.cell
                                 |]
@@ -435,8 +435,8 @@ module CubicNaturalSplineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CubicNaturalSpline.source + ".Value1") 
-                                               [| _CubicNaturalSpline.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -479,8 +479,8 @@ module CubicNaturalSplineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CubicNaturalSpline.source + ".Value") 
-                                               [| _CubicNaturalSpline.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicNaturalSpline.cell
@@ -517,8 +517,8 @@ module CubicNaturalSplineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CubicNaturalSpline.source + ".XMax") 
-                                               [| _CubicNaturalSpline.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CubicNaturalSpline.cell
                                 |]
@@ -553,8 +553,8 @@ module CubicNaturalSplineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CubicNaturalSpline.source + ".XMin") 
-                                               [| _CubicNaturalSpline.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CubicNaturalSpline.cell
                                 |]
@@ -589,8 +589,8 @@ module CubicNaturalSplineFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CubicNaturalSpline.source + ".AllowsExtrapolation") 
-                                               [| _CubicNaturalSpline.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CubicNaturalSpline.cell
                                 |]
@@ -629,8 +629,8 @@ module CubicNaturalSplineFunction =
                 let format (o : CubicNaturalSpline) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CubicNaturalSpline.source + ".DisableExtrapolation") 
-                                               [| _CubicNaturalSpline.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicNaturalSpline.cell
@@ -671,8 +671,8 @@ module CubicNaturalSplineFunction =
                 let format (o : CubicNaturalSpline) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CubicNaturalSpline.source + ".EnableExtrapolation") 
-                                               [| _CubicNaturalSpline.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CubicNaturalSpline.cell
@@ -709,8 +709,8 @@ module CubicNaturalSplineFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CubicNaturalSpline.source + ".Extrapolate") 
-                                               [| _CubicNaturalSpline.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CubicNaturalSpline.cell
                                 |]

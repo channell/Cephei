@@ -103,8 +103,8 @@ module GaussJacobiIntegrationFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussJacobiIntegration.source + ".Order") 
-                                               [| _GaussJacobiIntegration.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussJacobiIntegration.cell
                                 |]
@@ -143,8 +143,8 @@ module GaussJacobiIntegrationFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussJacobiIntegration.source + ".Value") 
-                                               [| _GaussJacobiIntegration.source
-                                               ;  _f.source
+
+                                               [| _f.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussJacobiIntegration.cell
@@ -181,8 +181,8 @@ module GaussJacobiIntegrationFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_GaussJacobiIntegration.source + ".Weights") 
-                                               [| _GaussJacobiIntegration.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussJacobiIntegration.cell
                                 |]
@@ -217,8 +217,8 @@ module GaussJacobiIntegrationFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_GaussJacobiIntegration.source + ".X") 
-                                               [| _GaussJacobiIntegration.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussJacobiIntegration.cell
                                 |]

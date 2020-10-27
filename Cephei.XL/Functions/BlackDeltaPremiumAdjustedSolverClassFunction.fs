@@ -131,8 +131,8 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackDeltaPremiumAdjustedSolverClass.source + ".Value") 
-                                               [| _BlackDeltaPremiumAdjustedSolverClass.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackDeltaPremiumAdjustedSolverClass.cell
@@ -173,8 +173,8 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackDeltaPremiumAdjustedSolverClass.source + ".Derivative") 
-                                               [| _BlackDeltaPremiumAdjustedSolverClass.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackDeltaPremiumAdjustedSolverClass.cell

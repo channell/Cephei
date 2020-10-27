@@ -95,8 +95,8 @@ module SoniaFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightIndex>) l
 
                 let source () = Helper.sourceFold (_Sonia.source + ".Clone") 
-                                               [| _Sonia.source
-                                               ;  _h.source
+
+                                               [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Sonia.cell
@@ -133,8 +133,8 @@ module SoniaFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Sonia.source + ".BusinessDayConvention") 
-                                               [| _Sonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Sonia.cell
                                 |]
@@ -169,8 +169,8 @@ module SoniaFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Sonia.source + ".EndOfMonth") 
-                                               [| _Sonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Sonia.cell
                                 |]
@@ -217,8 +217,8 @@ module SoniaFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Sonia.source + ".ForecastFixing1") 
-                                               [| _Sonia.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _t.source
                                                |]
@@ -263,8 +263,8 @@ module SoniaFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Sonia.source + ".ForecastFixing") 
-                                               [| _Sonia.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Sonia.cell
@@ -301,8 +301,8 @@ module SoniaFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_Sonia.source + ".ForwardingTermStructure") 
-                                               [| _Sonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Sonia.cell
                                 |]
@@ -341,8 +341,8 @@ module SoniaFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Sonia.source + ".MaturityDate") 
-                                               [| _Sonia.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Sonia.cell
@@ -379,8 +379,8 @@ module SoniaFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_Sonia.source + ".Currency") 
-                                               [| _Sonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Sonia.cell
                                 |]
@@ -415,8 +415,8 @@ module SoniaFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_Sonia.source + ".DayCounter") 
-                                               [| _Sonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Sonia.cell
                                 |]
@@ -451,8 +451,8 @@ module SoniaFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Sonia.source + ".FamilyName") 
-                                               [| _Sonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Sonia.cell
                                 |]
@@ -495,8 +495,8 @@ module SoniaFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Sonia.source + ".Fixing") 
-                                               [| _Sonia.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -535,8 +535,8 @@ module SoniaFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_Sonia.source + ".FixingCalendar") 
-                                               [| _Sonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Sonia.cell
                                 |]
@@ -575,8 +575,8 @@ module SoniaFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Sonia.source + ".FixingDate") 
-                                               [| _Sonia.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Sonia.cell
@@ -613,8 +613,8 @@ module SoniaFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Sonia.source + ".FixingDays") 
-                                               [| _Sonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Sonia.cell
                                 |]
@@ -653,8 +653,8 @@ module SoniaFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Sonia.source + ".IsValidFixingDate") 
-                                               [| _Sonia.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Sonia.cell
@@ -691,8 +691,8 @@ module SoniaFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Sonia.source + ".Name") 
-                                               [| _Sonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Sonia.cell
                                 |]
@@ -731,8 +731,8 @@ module SoniaFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Sonia.source + ".PastFixing") 
-                                               [| _Sonia.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Sonia.cell
@@ -769,8 +769,8 @@ module SoniaFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_Sonia.source + ".Tenor") 
-                                               [| _Sonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Sonia.cell
                                 |]
@@ -805,8 +805,8 @@ module SoniaFunction =
                 let format (o : Sonia) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Sonia.source + ".Update") 
-                                               [| _Sonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Sonia.cell
                                 |]
@@ -845,8 +845,8 @@ module SoniaFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Sonia.source + ".ValueDate") 
-                                               [| _Sonia.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Sonia.cell
@@ -895,8 +895,8 @@ module SoniaFunction =
                 let format (o : Sonia) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Sonia.source + ".AddFixing") 
-                                               [| _Sonia.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -949,8 +949,8 @@ module SoniaFunction =
                 let format (o : Sonia) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Sonia.source + ".AddFixings") 
-                                               [| _Sonia.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -999,8 +999,8 @@ module SoniaFunction =
                 let format (o : Sonia) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Sonia.source + ".AddFixings1") 
-                                               [| _Sonia.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1039,8 +1039,8 @@ module SoniaFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Sonia.source + ".AllowsNativeFixings") 
-                                               [| _Sonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Sonia.cell
                                 |]
@@ -1075,8 +1075,8 @@ module SoniaFunction =
                 let format (o : Sonia) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Sonia.source + ".ClearFixings") 
-                                               [| _Sonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Sonia.cell
                                 |]
@@ -1115,8 +1115,8 @@ module SoniaFunction =
                 let format (o : Sonia) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Sonia.source + ".RegisterWith") 
-                                               [| _Sonia.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Sonia.cell
@@ -1153,8 +1153,8 @@ module SoniaFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Sonia.source + ".TimeSeries") 
-                                               [| _Sonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Sonia.cell
                                 |]
@@ -1193,8 +1193,8 @@ module SoniaFunction =
                 let format (o : Sonia) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Sonia.source + ".UnregisterWith") 
-                                               [| _Sonia.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Sonia.cell

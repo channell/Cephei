@@ -107,8 +107,8 @@ module AnalyticBSMHullWhiteEngineFunction =
                 let format (o : AnalyticBSMHullWhiteEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticBSMHullWhiteEngine.source + ".SetModel") 
-                                               [| _AnalyticBSMHullWhiteEngine.source
-                                               ;  _model.source
+
+                                               [| _model.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticBSMHullWhiteEngine.cell
@@ -149,8 +149,8 @@ module AnalyticBSMHullWhiteEngineFunction =
                 let format (o : AnalyticBSMHullWhiteEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticBSMHullWhiteEngine.source + ".RegisterWith") 
-                                               [| _AnalyticBSMHullWhiteEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticBSMHullWhiteEngine.cell
@@ -187,8 +187,8 @@ module AnalyticBSMHullWhiteEngineFunction =
                 let format (o : AnalyticBSMHullWhiteEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticBSMHullWhiteEngine.source + ".Reset") 
-                                               [| _AnalyticBSMHullWhiteEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AnalyticBSMHullWhiteEngine.cell
                                 |]
@@ -227,8 +227,8 @@ module AnalyticBSMHullWhiteEngineFunction =
                 let format (o : AnalyticBSMHullWhiteEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticBSMHullWhiteEngine.source + ".UnregisterWith") 
-                                               [| _AnalyticBSMHullWhiteEngine.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AnalyticBSMHullWhiteEngine.cell
@@ -265,8 +265,8 @@ module AnalyticBSMHullWhiteEngineFunction =
                 let format (o : AnalyticBSMHullWhiteEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AnalyticBSMHullWhiteEngine.source + ".Update") 
-                                               [| _AnalyticBSMHullWhiteEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AnalyticBSMHullWhiteEngine.cell
                                 |]

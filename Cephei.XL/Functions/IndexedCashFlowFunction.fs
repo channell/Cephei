@@ -54,8 +54,8 @@ module IndexedCashFlowFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_IndexedCashFlow.source + ".Amount") 
-                                               [| _IndexedCashFlow.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IndexedCashFlow.cell
                                 |]
@@ -90,8 +90,8 @@ module IndexedCashFlowFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_IndexedCashFlow.source + ".BaseDate") 
-                                               [| _IndexedCashFlow.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IndexedCashFlow.cell
                                 |]
@@ -126,8 +126,8 @@ module IndexedCashFlowFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_IndexedCashFlow.source + ".Date") 
-                                               [| _IndexedCashFlow.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IndexedCashFlow.cell
                                 |]
@@ -162,8 +162,8 @@ module IndexedCashFlowFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_IndexedCashFlow.source + ".FixingDate") 
-                                               [| _IndexedCashFlow.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IndexedCashFlow.cell
                                 |]
@@ -198,8 +198,8 @@ module IndexedCashFlowFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IndexedCashFlow.source + ".GrowthOnly") 
-                                               [| _IndexedCashFlow.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IndexedCashFlow.cell
                                 |]
@@ -234,8 +234,8 @@ module IndexedCashFlowFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Index>) l
 
                 let source () = Helper.sourceFold (_IndexedCashFlow.source + ".Index") 
-                                               [| _IndexedCashFlow.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IndexedCashFlow.cell
                                 |]
@@ -337,8 +337,8 @@ module IndexedCashFlowFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_IndexedCashFlow.source + ".Notional") 
-                                               [| _IndexedCashFlow.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IndexedCashFlow.cell
                                 |]
@@ -377,8 +377,8 @@ module IndexedCashFlowFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_IndexedCashFlow.source + ".CompareTo") 
-                                               [| _IndexedCashFlow.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IndexedCashFlow.cell
@@ -419,8 +419,8 @@ module IndexedCashFlowFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IndexedCashFlow.source + ".Equals") 
-                                               [| _IndexedCashFlow.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IndexedCashFlow.cell
@@ -457,8 +457,8 @@ module IndexedCashFlowFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_IndexedCashFlow.source + ".ExCouponDate") 
-                                               [| _IndexedCashFlow.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IndexedCashFlow.cell
                                 |]
@@ -501,8 +501,8 @@ module IndexedCashFlowFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IndexedCashFlow.source + ".HasOccurred") 
-                                               [| _IndexedCashFlow.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                ;  _includeRefDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -545,8 +545,8 @@ module IndexedCashFlowFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IndexedCashFlow.source + ".TradingExCoupon") 
-                                               [| _IndexedCashFlow.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IndexedCashFlow.cell
@@ -587,8 +587,8 @@ module IndexedCashFlowFunction =
                 let format (o : IndexedCashFlow) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IndexedCashFlow.source + ".Accept") 
-                                               [| _IndexedCashFlow.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IndexedCashFlow.cell
@@ -629,8 +629,8 @@ module IndexedCashFlowFunction =
                 let format (o : IndexedCashFlow) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IndexedCashFlow.source + ".RegisterWith") 
-                                               [| _IndexedCashFlow.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IndexedCashFlow.cell
@@ -671,8 +671,8 @@ module IndexedCashFlowFunction =
                 let format (o : IndexedCashFlow) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IndexedCashFlow.source + ".UnregisterWith") 
-                                               [| _IndexedCashFlow.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IndexedCashFlow.cell

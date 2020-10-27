@@ -91,8 +91,8 @@ module SegmentIntegralFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SegmentIntegral.source + ".AbsoluteAccuracy") 
-                                               [| _SegmentIntegral.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SegmentIntegral.cell
                                 |]
@@ -127,8 +127,8 @@ module SegmentIntegralFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SegmentIntegral.source + ".AbsoluteError") 
-                                               [| _SegmentIntegral.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SegmentIntegral.cell
                                 |]
@@ -163,8 +163,8 @@ module SegmentIntegralFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SegmentIntegral.source + ".IntegrationSuccess") 
-                                               [| _SegmentIntegral.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SegmentIntegral.cell
                                 |]
@@ -199,8 +199,8 @@ module SegmentIntegralFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SegmentIntegral.source + ".MaxEvaluations") 
-                                               [| _SegmentIntegral.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SegmentIntegral.cell
                                 |]
@@ -235,8 +235,8 @@ module SegmentIntegralFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SegmentIntegral.source + ".NumberOfEvaluations") 
-                                               [| _SegmentIntegral.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SegmentIntegral.cell
                                 |]
@@ -275,8 +275,8 @@ module SegmentIntegralFunction =
                 let format (o : SegmentIntegral) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SegmentIntegral.source + ".SetAbsoluteAccuracy") 
-                                               [| _SegmentIntegral.source
-                                               ;  _accuracy.source
+
+                                               [| _accuracy.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SegmentIntegral.cell
@@ -317,8 +317,8 @@ module SegmentIntegralFunction =
                 let format (o : SegmentIntegral) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SegmentIntegral.source + ".SetMaxEvaluations") 
-                                               [| _SegmentIntegral.source
-                                               ;  _maxEvaluations.source
+
+                                               [| _maxEvaluations.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SegmentIntegral.cell
@@ -367,8 +367,8 @@ module SegmentIntegralFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SegmentIntegral.source + ".Value") 
-                                               [| _SegmentIntegral.source
-                                               ;  _f.source
+
+                                               [| _f.source
                                                ;  _a.source
                                                ;  _b.source
                                                |]

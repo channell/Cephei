@@ -54,8 +54,8 @@ module SimplePolynomialFittingFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FittedBondDiscountCurve.FittingMethod>) l
 
                 let source () = Helper.sourceFold (_SimplePolynomialFitting.source + ".Clone") 
-                                               [| _SimplePolynomialFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SimplePolynomialFitting.cell
                                 |]
@@ -145,8 +145,8 @@ module SimplePolynomialFittingFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SimplePolynomialFitting.source + ".Size") 
-                                               [| _SimplePolynomialFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SimplePolynomialFitting.cell
                                 |]
@@ -181,8 +181,8 @@ module SimplePolynomialFittingFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SimplePolynomialFitting.source + ".ConstrainAtZero") 
-                                               [| _SimplePolynomialFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SimplePolynomialFitting.cell
                                 |]
@@ -225,8 +225,8 @@ module SimplePolynomialFittingFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SimplePolynomialFitting.source + ".Discount") 
-                                               [| _SimplePolynomialFitting.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -265,8 +265,8 @@ module SimplePolynomialFittingFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SimplePolynomialFitting.source + ".MinimumCostValue") 
-                                               [| _SimplePolynomialFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SimplePolynomialFitting.cell
                                 |]
@@ -301,8 +301,8 @@ module SimplePolynomialFittingFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SimplePolynomialFitting.source + ".NumberOfIterations") 
-                                               [| _SimplePolynomialFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SimplePolynomialFitting.cell
                                 |]
@@ -337,8 +337,8 @@ module SimplePolynomialFittingFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OptimizationMethod>) l
 
                 let source () = Helper.sourceFold (_SimplePolynomialFitting.source + ".OptimizationMethod") 
-                                               [| _SimplePolynomialFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SimplePolynomialFitting.cell
                                 |]
@@ -373,8 +373,8 @@ module SimplePolynomialFittingFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_SimplePolynomialFitting.source + ".Solution") 
-                                               [| _SimplePolynomialFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SimplePolynomialFitting.cell
                                 |]
@@ -409,8 +409,8 @@ module SimplePolynomialFittingFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_SimplePolynomialFitting.source + ".Weights") 
-                                               [| _SimplePolynomialFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SimplePolynomialFitting.cell
                                 |]

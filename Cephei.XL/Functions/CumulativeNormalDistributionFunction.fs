@@ -132,8 +132,8 @@ module CumulativeNormalDistributionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CumulativeNormalDistribution.source + ".Derivative") 
-                                               [| _CumulativeNormalDistribution.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CumulativeNormalDistribution.cell
@@ -174,8 +174,8 @@ module CumulativeNormalDistributionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CumulativeNormalDistribution.source + ".Value") 
-                                               [| _CumulativeNormalDistribution.source
-                                               ;  _z.source
+
+                                               [| _z.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CumulativeNormalDistribution.cell

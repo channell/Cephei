@@ -58,8 +58,8 @@ module FixedDividendFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FixedDividend.source + ".Amount1") 
-                                               [| _FixedDividend.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedDividend.cell
@@ -96,8 +96,8 @@ module FixedDividendFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FixedDividend.source + ".Amount") 
-                                               [| _FixedDividend.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedDividend.cell
                                 |]
@@ -175,8 +175,8 @@ module FixedDividendFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FixedDividend.source + ".Date") 
-                                               [| _FixedDividend.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedDividend.cell
                                 |]
@@ -215,8 +215,8 @@ module FixedDividendFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FixedDividend.source + ".CompareTo") 
-                                               [| _FixedDividend.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedDividend.cell
@@ -257,8 +257,8 @@ module FixedDividendFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FixedDividend.source + ".Equals") 
-                                               [| _FixedDividend.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedDividend.cell
@@ -295,8 +295,8 @@ module FixedDividendFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FixedDividend.source + ".ExCouponDate") 
-                                               [| _FixedDividend.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedDividend.cell
                                 |]
@@ -339,8 +339,8 @@ module FixedDividendFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FixedDividend.source + ".HasOccurred") 
-                                               [| _FixedDividend.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                ;  _includeRefDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -383,8 +383,8 @@ module FixedDividendFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FixedDividend.source + ".TradingExCoupon") 
-                                               [| _FixedDividend.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedDividend.cell
@@ -425,8 +425,8 @@ module FixedDividendFunction =
                 let format (o : FixedDividend) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FixedDividend.source + ".Accept") 
-                                               [| _FixedDividend.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedDividend.cell
@@ -467,8 +467,8 @@ module FixedDividendFunction =
                 let format (o : FixedDividend) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FixedDividend.source + ".RegisterWith") 
-                                               [| _FixedDividend.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedDividend.cell
@@ -509,8 +509,8 @@ module FixedDividendFunction =
                 let format (o : FixedDividend) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FixedDividend.source + ".UnregisterWith") 
-                                               [| _FixedDividend.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedDividend.cell

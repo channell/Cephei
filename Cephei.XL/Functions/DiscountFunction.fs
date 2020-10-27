@@ -62,8 +62,8 @@ module DiscountFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Discount.source + ".DiscountImpl") 
-                                               [| _Discount.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -110,8 +110,8 @@ module DiscountFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Discount.source + ".ForwardImpl") 
-                                               [| _Discount.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -166,8 +166,8 @@ module DiscountFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Discount.source + ".Guess") 
-                                               [| _Discount.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _f.source
@@ -214,8 +214,8 @@ module DiscountFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Discount.source + ".InitialDate") 
-                                               [| _Discount.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Discount.cell
@@ -256,8 +256,8 @@ module DiscountFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Discount.source + ".InitialValue") 
-                                               [| _Discount.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Discount.cell
@@ -294,8 +294,8 @@ module DiscountFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Discount.source + ".MaxIterations") 
-                                               [| _Discount.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Discount.cell
                                 |]
@@ -346,8 +346,8 @@ module DiscountFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Discount.source + ".MaxValueAfter") 
-                                               [| _Discount.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _f.source
@@ -406,8 +406,8 @@ module DiscountFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Discount.source + ".MinValueAfter") 
-                                               [| _Discount.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _f.source
@@ -462,8 +462,8 @@ module DiscountFunction =
                 let format (o : Discount) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Discount.source + ".UpdateGuess") 
-                                               [| _Discount.source
-                                               ;  _data.source
+
+                                               [| _data.source
                                                ;  _discount.source
                                                ;  _i.source
                                                |]
@@ -512,8 +512,8 @@ module DiscountFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Discount.source + ".ZeroYieldImpl") 
-                                               [| _Discount.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 

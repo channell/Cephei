@@ -70,8 +70,8 @@ module TianFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Tian>) l
 
                 let source () = Helper.sourceFold (_Tian.source + ".Factory") 
-                                               [| _Tian.source
-                                               ;  _Process.source
+
+                                               [| _Process.source
                                                ;  _End.source
                                                ;  _steps.source
                                                ;  _strike.source
@@ -126,8 +126,8 @@ module TianFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Tian.source + ".Probability") 
-                                               [| _Tian.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _j.source
                                                ;  _branch.source
                                                |]
@@ -262,8 +262,8 @@ module TianFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Tian.source + ".Underlying") 
-                                               [| _Tian.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _index.source
                                                |]
                 let hash = Helper.hashFold 
@@ -314,8 +314,8 @@ module TianFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Tian.source + ".Descendant") 
-                                               [| _Tian.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _index.source
                                                ;  _branch.source
                                                |]
@@ -360,8 +360,8 @@ module TianFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Tian.source + ".Size") 
-                                               [| _Tian.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Tian.cell
@@ -398,8 +398,8 @@ module TianFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Tian.source + ".Columns") 
-                                               [| _Tian.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Tian.cell
                                 |]

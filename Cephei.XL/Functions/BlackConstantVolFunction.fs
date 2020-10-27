@@ -274,8 +274,8 @@ module BlackConstantVolFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BlackConstantVol.source + ".MaxDate") 
-                                               [| _BlackConstantVol.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackConstantVol.cell
                                 |]
@@ -310,8 +310,8 @@ module BlackConstantVolFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackConstantVol.source + ".MaxStrike") 
-                                               [| _BlackConstantVol.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackConstantVol.cell
                                 |]
@@ -346,8 +346,8 @@ module BlackConstantVolFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackConstantVol.source + ".MinStrike") 
-                                               [| _BlackConstantVol.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackConstantVol.cell
                                 |]

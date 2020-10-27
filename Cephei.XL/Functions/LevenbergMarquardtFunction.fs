@@ -71,8 +71,8 @@ module LevenbergMarquardtFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_LevenbergMarquardt.source + ".Fcn") 
-                                               [| _LevenbergMarquardt.source
-                                               ;  _m.source
+
+                                               [| _m.source
                                                ;  _n.source
                                                ;  _x.source
                                                ;  _iflag.source
@@ -115,8 +115,8 @@ module LevenbergMarquardtFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LevenbergMarquardt.source + ".GetInfo") 
-                                               [| _LevenbergMarquardt.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LevenbergMarquardt.cell
                                 |]
@@ -167,8 +167,8 @@ module LevenbergMarquardtFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
                 let source () = Helper.sourceFold (_LevenbergMarquardt.source + ".JacFcn") 
-                                               [| _LevenbergMarquardt.source
-                                               ;  _m.source
+
+                                               [| _m.source
                                                ;  _n.source
                                                ;  _x.source
                                                ;  _iflag.source
@@ -305,8 +305,8 @@ module LevenbergMarquardtFunction =
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LevenbergMarquardt.source + ".Minimize") 
-                                               [| _LevenbergMarquardt.source
-                                               ;  _P.source
+
+                                               [| _P.source
                                                ;  _endCriteria.source
                                                |]
                 let hash = Helper.hashFold 

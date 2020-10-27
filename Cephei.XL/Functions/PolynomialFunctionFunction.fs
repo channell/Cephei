@@ -54,8 +54,8 @@ module PolynomialFunctionFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_PolynomialFunction.source + ".Coefficients") 
-                                               [| _PolynomialFunction.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PolynomialFunction.cell
                                 |]
@@ -98,8 +98,8 @@ module PolynomialFunctionFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_PolynomialFunction.source + ".DefiniteDerivativeCoefficients") 
-                                               [| _PolynomialFunction.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _t2.source
                                                |]
                 let hash = Helper.hashFold 
@@ -146,8 +146,8 @@ module PolynomialFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PolynomialFunction.source + ".DefiniteIntegral") 
-                                               [| _PolynomialFunction.source
-                                               ;  _t1.source
+
+                                               [| _t1.source
                                                ;  _t2.source
                                                |]
                 let hash = Helper.hashFold 
@@ -194,8 +194,8 @@ module PolynomialFunctionFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_PolynomialFunction.source + ".DefiniteIntegralCoefficients") 
-                                               [| _PolynomialFunction.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _t2.source
                                                |]
                 let hash = Helper.hashFold 
@@ -238,8 +238,8 @@ module PolynomialFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PolynomialFunction.source + ".Derivative") 
-                                               [| _PolynomialFunction.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PolynomialFunction.cell
@@ -276,8 +276,8 @@ module PolynomialFunctionFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_PolynomialFunction.source + ".DerivativeCoefficients") 
-                                               [| _PolynomialFunction.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PolynomialFunction.cell
                                 |]
@@ -312,8 +312,8 @@ module PolynomialFunctionFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PolynomialFunction.source + ".Order") 
-                                               [| _PolynomialFunction.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PolynomialFunction.cell
                                 |]
@@ -389,8 +389,8 @@ module PolynomialFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PolynomialFunction.source + ".Primitive") 
-                                               [| _PolynomialFunction.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PolynomialFunction.cell
@@ -427,8 +427,8 @@ module PolynomialFunctionFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_PolynomialFunction.source + ".PrimitiveCoefficients") 
-                                               [| _PolynomialFunction.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PolynomialFunction.cell
                                 |]
@@ -467,8 +467,8 @@ module PolynomialFunctionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PolynomialFunction.source + ".Value") 
-                                               [| _PolynomialFunction.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PolynomialFunction.cell

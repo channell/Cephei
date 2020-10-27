@@ -91,8 +91,8 @@ module GaussHyperbolicIntegrationFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussHyperbolicIntegration.source + ".Order") 
-                                               [| _GaussHyperbolicIntegration.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussHyperbolicIntegration.cell
                                 |]
@@ -131,8 +131,8 @@ module GaussHyperbolicIntegrationFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussHyperbolicIntegration.source + ".Value") 
-                                               [| _GaussHyperbolicIntegration.source
-                                               ;  _f.source
+
+                                               [| _f.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussHyperbolicIntegration.cell
@@ -169,8 +169,8 @@ module GaussHyperbolicIntegrationFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_GaussHyperbolicIntegration.source + ".Weights") 
-                                               [| _GaussHyperbolicIntegration.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussHyperbolicIntegration.cell
                                 |]
@@ -205,8 +205,8 @@ module GaussHyperbolicIntegrationFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_GaussHyperbolicIntegration.source + ".X") 
-                                               [| _GaussHyperbolicIntegration.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussHyperbolicIntegration.cell
                                 |]

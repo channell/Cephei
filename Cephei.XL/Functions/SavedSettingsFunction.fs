@@ -54,8 +54,8 @@ module SavedSettingsFunction =
                 let format (o : SavedSettings) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SavedSettings.source + ".Dispose") 
-                                               [| _SavedSettings.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SavedSettings.cell
                                 |]

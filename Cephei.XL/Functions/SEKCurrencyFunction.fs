@@ -85,8 +85,8 @@ module SEKCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SEKCurrency.source + ".Code") 
-                                               [| _SEKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SEKCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module SEKCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SEKCurrency.source + ".Empty") 
-                                               [| _SEKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SEKCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module SEKCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SEKCurrency.source + ".Equals") 
-                                               [| _SEKCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SEKCurrency.cell
@@ -199,8 +199,8 @@ module SEKCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SEKCurrency.source + ".Format") 
-                                               [| _SEKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SEKCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module SEKCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SEKCurrency.source + ".FractionsPerUnit") 
-                                               [| _SEKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SEKCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module SEKCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SEKCurrency.source + ".FractionSymbol") 
-                                               [| _SEKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SEKCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module SEKCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SEKCurrency.source + ".Name") 
-                                               [| _SEKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SEKCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module SEKCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SEKCurrency.source + ".NumericCode") 
-                                               [| _SEKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SEKCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module SEKCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_SEKCurrency.source + ".Rounding") 
-                                               [| _SEKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SEKCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module SEKCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SEKCurrency.source + ".Symbol") 
-                                               [| _SEKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SEKCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module SEKCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SEKCurrency.source + ".ToString") 
-                                               [| _SEKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SEKCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module SEKCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_SEKCurrency.source + ".TriangulationCurrency") 
-                                               [| _SEKCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SEKCurrency.cell
                                 |]

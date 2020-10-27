@@ -95,8 +95,8 @@ module EuropeanExerciseFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_EuropeanExercise.source + ".Date") 
-                                               [| _EuropeanExercise.source
-                                               ;  _index.source
+
+                                               [| _index.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanExercise.cell
@@ -133,8 +133,8 @@ module EuropeanExerciseFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_EuropeanExercise.source + ".Dates") 
-                                               [| _EuropeanExercise.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EuropeanExercise.cell
                                 |]
@@ -169,8 +169,8 @@ module EuropeanExerciseFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_EuropeanExercise.source + ".LastDate") 
-                                               [| _EuropeanExercise.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EuropeanExercise.cell
                                 |]
@@ -205,8 +205,8 @@ module EuropeanExerciseFunction =
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EuropeanExercise.source + ".TYPE") 
-                                               [| _EuropeanExercise.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EuropeanExercise.cell
                                 |]

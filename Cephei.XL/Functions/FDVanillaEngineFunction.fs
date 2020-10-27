@@ -55,8 +55,8 @@ module FDVanillaEngineFunction =
                 let format (o : FDVanillaEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FDVanillaEngine.source + ".EnsureStrikeInGrid") 
-                                               [| _FDVanillaEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDVanillaEngine.cell
                                 |]
@@ -107,8 +107,8 @@ module FDVanillaEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDVanillaEngine>) l
 
                 let source () = Helper.sourceFold (_FDVanillaEngine.source + ".Factory") 
-                                               [| _FDVanillaEngine.source
-                                               ;  _Process.source
+
+                                               [| _Process.source
                                                ;  _timeSteps.source
                                                ;  _gridPoints.source
                                                ;  _timeDependent.source
@@ -237,8 +237,8 @@ module FDVanillaEngineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FDVanillaEngine.source + ".GetResidualTime") 
-                                               [| _FDVanillaEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDVanillaEngine.cell
                                 |]
@@ -273,8 +273,8 @@ module FDVanillaEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_FDVanillaEngine.source + ".Grid") 
-                                               [| _FDVanillaEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDVanillaEngine.cell
                                 |]
@@ -309,8 +309,8 @@ module FDVanillaEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SampledCurve>) l
 
                 let source () = Helper.sourceFold (_FDVanillaEngine.source + ".IntrinsicValues_") 
-                                               [| _FDVanillaEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FDVanillaEngine.cell
                                 |]

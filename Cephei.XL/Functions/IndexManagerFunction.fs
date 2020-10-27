@@ -54,8 +54,8 @@ module IndexManagerFunction =
                 let format (o : IndexManager) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IndexManager.source + ".ClearHistories") 
-                                               [| _IndexManager.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IndexManager.cell
                                 |]
@@ -94,8 +94,8 @@ module IndexManagerFunction =
                 let format (o : IndexManager) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IndexManager.source + ".ClearHistory") 
-                                               [| _IndexManager.source
-                                               ;  _name.source
+
+                                               [| _name.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IndexManager.cell
@@ -136,8 +136,8 @@ module IndexManagerFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IndexManager.source + ".GetHistory") 
-                                               [| _IndexManager.source
-                                               ;  _name.source
+
+                                               [| _name.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IndexManager.cell
@@ -178,8 +178,8 @@ module IndexManagerFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IndexManager.source + ".HasHistory") 
-                                               [| _IndexManager.source
-                                               ;  _name.source
+
+                                               [| _name.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IndexManager.cell
@@ -216,8 +216,8 @@ module IndexManagerFunction =
                 let format (i : Generic.List<string>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_IndexManager.source + ".Histories") 
-                                               [| _IndexManager.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _IndexManager.cell
                                 |]
@@ -256,8 +256,8 @@ module IndexManagerFunction =
                 let format (o : ObservableValue<TimeSeries<Nullable<double>>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IndexManager.source + ".Notifier") 
-                                               [| _IndexManager.source
-                                               ;  _name.source
+
+                                               [| _name.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _IndexManager.cell
@@ -302,8 +302,8 @@ module IndexManagerFunction =
                 let format (o : IndexManager) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IndexManager.source + ".SetHistory") 
-                                               [| _IndexManager.source
-                                               ;  _name.source
+
+                                               [| _name.source
                                                ;  _history.source
                                                |]
                 let hash = Helper.hashFold 
@@ -350,8 +350,8 @@ module IndexManagerFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_IndexManager.source + ".TryGetHistory") 
-                                               [| _IndexManager.source
-                                               ;  _name.source
+
+                                               [| _name.source
                                                ;  _history.source
                                                |]
                 let hash = Helper.hashFold 

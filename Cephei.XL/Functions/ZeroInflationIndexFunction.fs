@@ -58,8 +58,8 @@ module ZeroInflationIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZeroInflationIndex>) l
 
                 let source () = Helper.sourceFold (_ZeroInflationIndex.source + ".Clone") 
-                                               [| _ZeroInflationIndex.source
-                                               ;  _h.source
+
+                                               [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZeroInflationIndex.cell
@@ -104,8 +104,8 @@ module ZeroInflationIndexFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationIndex.source + ".Fixing") 
-                                               [| _ZeroInflationIndex.source
-                                               ;  _aFixingDate.source
+
+                                               [| _aFixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -223,8 +223,8 @@ module ZeroInflationIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<ZeroInflationTermStructure>>) l
 
                 let source () = Helper.sourceFold (_ZeroInflationIndex.source + ".ZeroInflationTermStructure") 
-                                               [| _ZeroInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroInflationIndex.cell
                                 |]
@@ -271,8 +271,8 @@ module ZeroInflationIndexFunction =
                 let format (o : ZeroInflationIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationIndex.source + ".AddFixing") 
-                                               [| _ZeroInflationIndex.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _fixing.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -314,8 +314,8 @@ module ZeroInflationIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_ZeroInflationIndex.source + ".AvailabilityLag") 
-                                               [| _ZeroInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroInflationIndex.cell
                                 |]
@@ -350,8 +350,8 @@ module ZeroInflationIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_ZeroInflationIndex.source + ".Currency") 
-                                               [| _ZeroInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroInflationIndex.cell
                                 |]
@@ -386,8 +386,8 @@ module ZeroInflationIndexFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationIndex.source + ".FamilyName") 
-                                               [| _ZeroInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroInflationIndex.cell
                                 |]
@@ -422,8 +422,8 @@ module ZeroInflationIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_ZeroInflationIndex.source + ".FixingCalendar") 
-                                               [| _ZeroInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroInflationIndex.cell
                                 |]
@@ -458,8 +458,8 @@ module ZeroInflationIndexFunction =
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationIndex.source + ".Frequency") 
-                                               [| _ZeroInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroInflationIndex.cell
                                 |]
@@ -494,8 +494,8 @@ module ZeroInflationIndexFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationIndex.source + ".Interpolated") 
-                                               [| _ZeroInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroInflationIndex.cell
                                 |]
@@ -534,8 +534,8 @@ module ZeroInflationIndexFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationIndex.source + ".IsValidFixingDate") 
-                                               [| _ZeroInflationIndex.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZeroInflationIndex.cell
@@ -572,8 +572,8 @@ module ZeroInflationIndexFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationIndex.source + ".Name") 
-                                               [| _ZeroInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroInflationIndex.cell
                                 |]
@@ -608,8 +608,8 @@ module ZeroInflationIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
 
                 let source () = Helper.sourceFold (_ZeroInflationIndex.source + ".Region") 
-                                               [| _ZeroInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroInflationIndex.cell
                                 |]
@@ -644,8 +644,8 @@ module ZeroInflationIndexFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationIndex.source + ".Revised") 
-                                               [| _ZeroInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroInflationIndex.cell
                                 |]
@@ -680,8 +680,8 @@ module ZeroInflationIndexFunction =
                 let format (o : ZeroInflationIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationIndex.source + ".Update") 
-                                               [| _ZeroInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroInflationIndex.cell
                                 |]
@@ -728,8 +728,8 @@ module ZeroInflationIndexFunction =
                 let format (o : ZeroInflationIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationIndex.source + ".AddFixings") 
-                                               [| _ZeroInflationIndex.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -778,8 +778,8 @@ module ZeroInflationIndexFunction =
                 let format (o : ZeroInflationIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationIndex.source + ".AddFixings1") 
-                                               [| _ZeroInflationIndex.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -818,8 +818,8 @@ module ZeroInflationIndexFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationIndex.source + ".AllowsNativeFixings") 
-                                               [| _ZeroInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroInflationIndex.cell
                                 |]
@@ -854,8 +854,8 @@ module ZeroInflationIndexFunction =
                 let format (o : ZeroInflationIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationIndex.source + ".ClearFixings") 
-                                               [| _ZeroInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroInflationIndex.cell
                                 |]
@@ -894,8 +894,8 @@ module ZeroInflationIndexFunction =
                 let format (o : ZeroInflationIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationIndex.source + ".RegisterWith") 
-                                               [| _ZeroInflationIndex.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZeroInflationIndex.cell
@@ -932,8 +932,8 @@ module ZeroInflationIndexFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationIndex.source + ".TimeSeries") 
-                                               [| _ZeroInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ZeroInflationIndex.cell
                                 |]
@@ -972,8 +972,8 @@ module ZeroInflationIndexFunction =
                 let format (o : ZeroInflationIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ZeroInflationIndex.source + ".UnregisterWith") 
-                                               [| _ZeroInflationIndex.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ZeroInflationIndex.cell

@@ -103,8 +103,8 @@ module HarmonicCubicFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_HarmonicCubic.source + ".ACoefficients") 
-                                               [| _HarmonicCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HarmonicCubic.cell
                                 |]
@@ -139,8 +139,8 @@ module HarmonicCubicFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_HarmonicCubic.source + ".BCoefficients") 
-                                               [| _HarmonicCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HarmonicCubic.cell
                                 |]
@@ -175,8 +175,8 @@ module HarmonicCubicFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_HarmonicCubic.source + ".CCoefficients") 
-                                               [| _HarmonicCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HarmonicCubic.cell
                                 |]
@@ -219,8 +219,8 @@ module HarmonicCubicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HarmonicCubic.source + ".Derivative") 
-                                               [| _HarmonicCubic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -259,8 +259,8 @@ module HarmonicCubicFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HarmonicCubic.source + ".Empty") 
-                                               [| _HarmonicCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HarmonicCubic.cell
                                 |]
@@ -303,8 +303,8 @@ module HarmonicCubicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HarmonicCubic.source + ".Primitive") 
-                                               [| _HarmonicCubic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -351,8 +351,8 @@ module HarmonicCubicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HarmonicCubic.source + ".SecondDerivative") 
-                                               [| _HarmonicCubic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -391,8 +391,8 @@ module HarmonicCubicFunction =
                 let format (o : HarmonicCubic) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HarmonicCubic.source + ".Update") 
-                                               [| _HarmonicCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HarmonicCubic.cell
                                 |]
@@ -435,8 +435,8 @@ module HarmonicCubicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HarmonicCubic.source + ".Value1") 
-                                               [| _HarmonicCubic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -479,8 +479,8 @@ module HarmonicCubicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HarmonicCubic.source + ".Value") 
-                                               [| _HarmonicCubic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HarmonicCubic.cell
@@ -517,8 +517,8 @@ module HarmonicCubicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HarmonicCubic.source + ".XMax") 
-                                               [| _HarmonicCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HarmonicCubic.cell
                                 |]
@@ -553,8 +553,8 @@ module HarmonicCubicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_HarmonicCubic.source + ".XMin") 
-                                               [| _HarmonicCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HarmonicCubic.cell
                                 |]
@@ -589,8 +589,8 @@ module HarmonicCubicFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HarmonicCubic.source + ".AllowsExtrapolation") 
-                                               [| _HarmonicCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HarmonicCubic.cell
                                 |]
@@ -629,8 +629,8 @@ module HarmonicCubicFunction =
                 let format (o : HarmonicCubic) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HarmonicCubic.source + ".DisableExtrapolation") 
-                                               [| _HarmonicCubic.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HarmonicCubic.cell
@@ -671,8 +671,8 @@ module HarmonicCubicFunction =
                 let format (o : HarmonicCubic) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HarmonicCubic.source + ".EnableExtrapolation") 
-                                               [| _HarmonicCubic.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _HarmonicCubic.cell
@@ -709,8 +709,8 @@ module HarmonicCubicFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_HarmonicCubic.source + ".Extrapolate") 
-                                               [| _HarmonicCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _HarmonicCubic.cell
                                 |]

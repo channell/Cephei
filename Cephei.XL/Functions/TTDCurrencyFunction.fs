@@ -85,8 +85,8 @@ module TTDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TTDCurrency.source + ".Code") 
-                                               [| _TTDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TTDCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module TTDCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TTDCurrency.source + ".Empty") 
-                                               [| _TTDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TTDCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module TTDCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TTDCurrency.source + ".Equals") 
-                                               [| _TTDCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TTDCurrency.cell
@@ -199,8 +199,8 @@ module TTDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TTDCurrency.source + ".Format") 
-                                               [| _TTDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TTDCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module TTDCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TTDCurrency.source + ".FractionsPerUnit") 
-                                               [| _TTDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TTDCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module TTDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TTDCurrency.source + ".FractionSymbol") 
-                                               [| _TTDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TTDCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module TTDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TTDCurrency.source + ".Name") 
-                                               [| _TTDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TTDCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module TTDCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TTDCurrency.source + ".NumericCode") 
-                                               [| _TTDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TTDCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module TTDCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_TTDCurrency.source + ".Rounding") 
-                                               [| _TTDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TTDCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module TTDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TTDCurrency.source + ".Symbol") 
-                                               [| _TTDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TTDCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module TTDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TTDCurrency.source + ".ToString") 
-                                               [| _TTDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TTDCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module TTDCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_TTDCurrency.source + ".TriangulationCurrency") 
-                                               [| _TTDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TTDCurrency.cell
                                 |]

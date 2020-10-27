@@ -85,8 +85,8 @@ module NLGCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NLGCurrency.source + ".Code") 
-                                               [| _NLGCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NLGCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module NLGCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NLGCurrency.source + ".Empty") 
-                                               [| _NLGCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NLGCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module NLGCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NLGCurrency.source + ".Equals") 
-                                               [| _NLGCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NLGCurrency.cell
@@ -199,8 +199,8 @@ module NLGCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NLGCurrency.source + ".Format") 
-                                               [| _NLGCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NLGCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module NLGCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NLGCurrency.source + ".FractionsPerUnit") 
-                                               [| _NLGCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NLGCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module NLGCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NLGCurrency.source + ".FractionSymbol") 
-                                               [| _NLGCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NLGCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module NLGCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NLGCurrency.source + ".Name") 
-                                               [| _NLGCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NLGCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module NLGCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NLGCurrency.source + ".NumericCode") 
-                                               [| _NLGCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NLGCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module NLGCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_NLGCurrency.source + ".Rounding") 
-                                               [| _NLGCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NLGCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module NLGCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NLGCurrency.source + ".Symbol") 
-                                               [| _NLGCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NLGCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module NLGCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NLGCurrency.source + ".ToString") 
-                                               [| _NLGCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NLGCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module NLGCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_NLGCurrency.source + ".TriangulationCurrency") 
-                                               [| _NLGCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NLGCurrency.cell
                                 |]

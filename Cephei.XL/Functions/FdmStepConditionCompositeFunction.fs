@@ -62,8 +62,8 @@ module FdmStepConditionCompositeFunction =
                 let format (o : FdmStepConditionComposite) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FdmStepConditionComposite.source + ".ApplyTo") 
-                                               [| _FdmStepConditionComposite.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -102,8 +102,8 @@ module FdmStepConditionCompositeFunction =
                 let format (i : Generic.List<ICell<IStepCondition<Vector>>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_FdmStepConditionComposite.source + ".Conditions") 
-                                               [| _FdmStepConditionComposite.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmStepConditionComposite.cell
                                 |]
@@ -212,8 +212,8 @@ module FdmStepConditionCompositeFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_FdmStepConditionComposite.source + ".StoppingTimes") 
-                                               [| _FdmStepConditionComposite.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmStepConditionComposite.cell
                                 |]

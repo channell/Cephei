@@ -107,8 +107,8 @@ module EuropeanPathPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EuropeanPathPricer.source + ".Value") 
-                                               [| _EuropeanPathPricer.source
-                                               ;  _path.source
+
+                                               [| _path.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EuropeanPathPricer.cell

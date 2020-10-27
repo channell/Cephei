@@ -54,8 +54,8 @@ module BlackCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackCalculator.source + ".Alpha") 
-                                               [| _BlackCalculator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackCalculator.cell
                                 |]
@@ -90,8 +90,8 @@ module BlackCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackCalculator.source + ".Beta") 
-                                               [| _BlackCalculator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackCalculator.cell
                                 |]
@@ -185,8 +185,8 @@ module BlackCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackCalculator.source + ".Delta") 
-                                               [| _BlackCalculator.source
-                                               ;  _spot.source
+
+                                               [| _spot.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackCalculator.cell
@@ -223,8 +223,8 @@ module BlackCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackCalculator.source + ".DeltaForward") 
-                                               [| _BlackCalculator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackCalculator.cell
                                 |]
@@ -263,8 +263,8 @@ module BlackCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackCalculator.source + ".DividendRho") 
-                                               [| _BlackCalculator.source
-                                               ;  _maturity.source
+
+                                               [| _maturity.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackCalculator.cell
@@ -305,8 +305,8 @@ module BlackCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackCalculator.source + ".Elasticity") 
-                                               [| _BlackCalculator.source
-                                               ;  _spot.source
+
+                                               [| _spot.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackCalculator.cell
@@ -343,8 +343,8 @@ module BlackCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackCalculator.source + ".ElasticityForward") 
-                                               [| _BlackCalculator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackCalculator.cell
                                 |]
@@ -383,8 +383,8 @@ module BlackCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackCalculator.source + ".Gamma") 
-                                               [| _BlackCalculator.source
-                                               ;  _spot.source
+
+                                               [| _spot.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackCalculator.cell
@@ -421,8 +421,8 @@ module BlackCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackCalculator.source + ".GammaForward") 
-                                               [| _BlackCalculator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackCalculator.cell
                                 |]
@@ -457,8 +457,8 @@ module BlackCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackCalculator.source + ".ItmAssetProbability") 
-                                               [| _BlackCalculator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackCalculator.cell
                                 |]
@@ -493,8 +493,8 @@ module BlackCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackCalculator.source + ".ItmCashProbability") 
-                                               [| _BlackCalculator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackCalculator.cell
                                 |]
@@ -533,8 +533,8 @@ module BlackCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackCalculator.source + ".Rho") 
-                                               [| _BlackCalculator.source
-                                               ;  _maturity.source
+
+                                               [| _maturity.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackCalculator.cell
@@ -571,8 +571,8 @@ module BlackCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackCalculator.source + ".StrikeSensitivity") 
-                                               [| _BlackCalculator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackCalculator.cell
                                 |]
@@ -615,8 +615,8 @@ module BlackCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackCalculator.source + ".Theta") 
-                                               [| _BlackCalculator.source
-                                               ;  _spot.source
+
+                                               [| _spot.source
                                                ;  _maturity.source
                                                |]
                 let hash = Helper.hashFold 
@@ -663,8 +663,8 @@ module BlackCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackCalculator.source + ".ThetaPerDay") 
-                                               [| _BlackCalculator.source
-                                               ;  _spot.source
+
+                                               [| _spot.source
                                                ;  _maturity.source
                                                |]
                 let hash = Helper.hashFold 
@@ -703,8 +703,8 @@ module BlackCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackCalculator.source + ".Value") 
-                                               [| _BlackCalculator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackCalculator.cell
                                 |]
@@ -743,8 +743,8 @@ module BlackCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackCalculator.source + ".Vega") 
-                                               [| _BlackCalculator.source
-                                               ;  _maturity.source
+
+                                               [| _maturity.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackCalculator.cell

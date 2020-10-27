@@ -66,8 +66,8 @@ module MethodOfLinesSchemeFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IMixedScheme>) l
 
                 let source () = Helper.sourceFold (_MethodOfLinesScheme.source + ".Factory") 
-                                               [| _MethodOfLinesScheme.source
-                                               ;  _L.source
+
+                                               [| _L.source
                                                ;  _bcs.source
                                                ;  _additionalInputs.source
                                                |]
@@ -198,8 +198,8 @@ module MethodOfLinesSchemeFunction =
                 let format (o : MethodOfLinesScheme) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MethodOfLinesScheme.source + ".SetStep") 
-                                               [| _MethodOfLinesScheme.source
-                                               ;  _dt.source
+
+                                               [| _dt.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MethodOfLinesScheme.cell
@@ -248,8 +248,8 @@ module MethodOfLinesSchemeFunction =
                 let format (o : MethodOfLinesScheme) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MethodOfLinesScheme.source + ".Step") 
-                                               [| _MethodOfLinesScheme.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                ;  _t.source
                                                ;  _theta.source
                                                |]

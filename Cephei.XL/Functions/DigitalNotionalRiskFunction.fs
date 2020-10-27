@@ -105,8 +105,8 @@ module DigitalNotionalRiskFunction =
                 let format (o : DigitalNotionalRisk) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DigitalNotionalRisk.source + ".UpdatePath") 
-                                               [| _DigitalNotionalRisk.source
-                                               ;  _events.source
+
+                                               [| _events.source
                                                ;  _path.source
                                                |]
                 let hash = Helper.hashFold 

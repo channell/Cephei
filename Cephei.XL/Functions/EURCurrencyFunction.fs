@@ -85,8 +85,8 @@ module EURCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EURCurrency.source + ".Code") 
-                                               [| _EURCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EURCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module EURCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EURCurrency.source + ".Empty") 
-                                               [| _EURCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EURCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module EURCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EURCurrency.source + ".Equals") 
-                                               [| _EURCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EURCurrency.cell
@@ -199,8 +199,8 @@ module EURCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EURCurrency.source + ".Format") 
-                                               [| _EURCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EURCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module EURCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EURCurrency.source + ".FractionsPerUnit") 
-                                               [| _EURCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EURCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module EURCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EURCurrency.source + ".FractionSymbol") 
-                                               [| _EURCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EURCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module EURCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EURCurrency.source + ".Name") 
-                                               [| _EURCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EURCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module EURCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_EURCurrency.source + ".NumericCode") 
-                                               [| _EURCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EURCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module EURCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_EURCurrency.source + ".Rounding") 
-                                               [| _EURCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EURCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module EURCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EURCurrency.source + ".Symbol") 
-                                               [| _EURCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EURCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module EURCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EURCurrency.source + ".ToString") 
-                                               [| _EURCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EURCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module EURCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_EURCurrency.source + ".TriangulationCurrency") 
-                                               [| _EURCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EURCurrency.cell
                                 |]

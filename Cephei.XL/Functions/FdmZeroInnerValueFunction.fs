@@ -62,8 +62,8 @@ module FdmZeroInnerValueFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FdmZeroInnerValue.source + ".AvgInnerValue") 
-                                               [| _FdmZeroInnerValue.source
-                                               ;  _iter.source
+
+                                               [| _iter.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -110,8 +110,8 @@ module FdmZeroInnerValueFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FdmZeroInnerValue.source + ".InnerValue") 
-                                               [| _FdmZeroInnerValue.source
-                                               ;  _iter.source
+
+                                               [| _iter.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 

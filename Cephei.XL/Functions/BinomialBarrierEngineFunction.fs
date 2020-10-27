@@ -129,8 +129,8 @@ module BinomialBarrierEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DiscretizedAsset>) l
 
                 let source () = Helper.sourceFold (_BinomialBarrierEngine.source + ".getAsset") 
-                                               [| _BinomialBarrierEngine.source
-                                               ;  _args.source
+
+                                               [| _args.source
                                                ;  _Process.source
                                                ;  _grid.source
                                                |]
@@ -189,8 +189,8 @@ module BinomialBarrierEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ITree>) l
 
                 let source () = Helper.sourceFold (_BinomialBarrierEngine.source + ".getTree") 
-                                               [| _BinomialBarrierEngine.source
-                                               ;  _Process.source
+
+                                               [| _Process.source
                                                ;  _End.source
                                                ;  _steps.source
                                                ;  _strike.source

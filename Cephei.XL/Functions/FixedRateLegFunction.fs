@@ -91,8 +91,8 @@ module FixedRateLegFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_FixedRateLeg.source + ".Value") 
-                                               [| _FixedRateLeg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedRateLeg.cell
                                 |]
@@ -143,8 +143,8 @@ module FixedRateLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
                 let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates3") 
-                                               [| _FixedRateLeg.source
-                                               ;  _couponRates.source
+
+                                               [| _couponRates.source
                                                ;  _paymentDayCounter.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -195,8 +195,8 @@ module FixedRateLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
                 let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates6") 
-                                               [| _FixedRateLeg.source
-                                               ;  _couponRate.source
+
+                                               [| _couponRate.source
                                                ;  _paymentDayCounter.source
                                                |]
                 let hash = Helper.hashFold 
@@ -247,8 +247,8 @@ module FixedRateLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
                 let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates1") 
-                                               [| _FixedRateLeg.source
-                                               ;  _couponRate.source
+
+                                               [| _couponRate.source
                                                ;  _paymentDayCounter.source
                                                ;  _comp.source
                                                |]
@@ -305,8 +305,8 @@ module FixedRateLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
                 let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates") 
-                                               [| _FixedRateLeg.source
-                                               ;  _couponRate.source
+
+                                               [| _couponRate.source
                                                ;  _paymentDayCounter.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -361,8 +361,8 @@ module FixedRateLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
                 let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates7") 
-                                               [| _FixedRateLeg.source
-                                               ;  _couponRates.source
+
+                                               [| _couponRates.source
                                                ;  _paymentDayCounter.source
                                                ;  _comp.source
                                                |]
@@ -407,8 +407,8 @@ module FixedRateLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
                 let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates5") 
-                                               [| _FixedRateLeg.source
-                                               ;  _couponRate.source
+
+                                               [| _couponRate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateLeg.cell
@@ -449,8 +449,8 @@ module FixedRateLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
                 let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates4") 
-                                               [| _FixedRateLeg.source
-                                               ;  _couponRates.source
+
+                                               [| _couponRates.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateLeg.cell
@@ -495,8 +495,8 @@ module FixedRateLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
                 let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithCouponRates2") 
-                                               [| _FixedRateLeg.source
-                                               ;  _couponRates.source
+
+                                               [| _couponRates.source
                                                ;  _paymentDayCounter.source
                                                |]
                 let hash = Helper.hashFold 
@@ -551,8 +551,8 @@ module FixedRateLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
                 let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithExCouponPeriod") 
-                                               [| _FixedRateLeg.source
-                                               ;  _period.source
+
+                                               [| _period.source
                                                ;  _cal.source
                                                ;  _convention.source
                                                ;  _endOfMonth.source
@@ -599,8 +599,8 @@ module FixedRateLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
                 let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithFirstPeriodDayCounter") 
-                                               [| _FixedRateLeg.source
-                                               ;  _dayCounter.source
+
+                                               [| _dayCounter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateLeg.cell
@@ -641,8 +641,8 @@ module FixedRateLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
                 let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithLastPeriodDayCounter") 
-                                               [| _FixedRateLeg.source
-                                               ;  _dayCounter.source
+
+                                               [| _dayCounter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateLeg.cell
@@ -683,8 +683,8 @@ module FixedRateLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FixedRateLeg>) l
 
                 let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithPaymentCalendar") 
-                                               [| _FixedRateLeg.source
-                                               ;  _cal.source
+
+                                               [| _cal.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateLeg.cell
@@ -725,8 +725,8 @@ module FixedRateLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
                 let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithNotionals1") 
-                                               [| _FixedRateLeg.source
-                                               ;  _notionals.source
+
+                                               [| _notionals.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateLeg.cell
@@ -767,8 +767,8 @@ module FixedRateLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
                 let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithNotionals") 
-                                               [| _FixedRateLeg.source
-                                               ;  _notional.source
+
+                                               [| _notional.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateLeg.cell
@@ -809,8 +809,8 @@ module FixedRateLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<RateLegBase>) l
 
                 let source () = Helper.sourceFold (_FixedRateLeg.source + ".WithPaymentAdjustment") 
-                                               [| _FixedRateLeg.source
-                                               ;  _convention.source
+
+                                               [| _convention.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedRateLeg.cell

@@ -138,8 +138,8 @@ module YYZACPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationIndex>) l
 
                 let source () = Helper.sourceFold (_YYZACPI.source + ".Clone") 
-                                               [| _YYZACPI.source
-                                               ;  _h.source
+
+                                               [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYZACPI.cell
@@ -184,8 +184,8 @@ module YYZACPIFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YYZACPI.source + ".Fixing") 
-                                               [| _YYZACPI.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -224,8 +224,8 @@ module YYZACPIFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYZACPI.source + ".Ratio") 
-                                               [| _YYZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYZACPI.cell
                                 |]
@@ -260,8 +260,8 @@ module YYZACPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYInflationTermStructure>>) l
 
                 let source () = Helper.sourceFold (_YYZACPI.source + ".YoyInflationTermStructure") 
-                                               [| _YYZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYZACPI.cell
                                 |]
@@ -308,8 +308,8 @@ module YYZACPIFunction =
                 let format (o : YYZACPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYZACPI.source + ".AddFixing") 
-                                               [| _YYZACPI.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _fixing.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -351,8 +351,8 @@ module YYZACPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_YYZACPI.source + ".AvailabilityLag") 
-                                               [| _YYZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYZACPI.cell
                                 |]
@@ -387,8 +387,8 @@ module YYZACPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_YYZACPI.source + ".Currency") 
-                                               [| _YYZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYZACPI.cell
                                 |]
@@ -423,8 +423,8 @@ module YYZACPIFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYZACPI.source + ".FamilyName") 
-                                               [| _YYZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYZACPI.cell
                                 |]
@@ -459,8 +459,8 @@ module YYZACPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_YYZACPI.source + ".FixingCalendar") 
-                                               [| _YYZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYZACPI.cell
                                 |]
@@ -495,8 +495,8 @@ module YYZACPIFunction =
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYZACPI.source + ".Frequency") 
-                                               [| _YYZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYZACPI.cell
                                 |]
@@ -531,8 +531,8 @@ module YYZACPIFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYZACPI.source + ".Interpolated") 
-                                               [| _YYZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYZACPI.cell
                                 |]
@@ -571,8 +571,8 @@ module YYZACPIFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYZACPI.source + ".IsValidFixingDate") 
-                                               [| _YYZACPI.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYZACPI.cell
@@ -609,8 +609,8 @@ module YYZACPIFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYZACPI.source + ".Name") 
-                                               [| _YYZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYZACPI.cell
                                 |]
@@ -645,8 +645,8 @@ module YYZACPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
 
                 let source () = Helper.sourceFold (_YYZACPI.source + ".Region") 
-                                               [| _YYZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYZACPI.cell
                                 |]
@@ -681,8 +681,8 @@ module YYZACPIFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYZACPI.source + ".Revised") 
-                                               [| _YYZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYZACPI.cell
                                 |]
@@ -717,8 +717,8 @@ module YYZACPIFunction =
                 let format (o : YYZACPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYZACPI.source + ".Update") 
-                                               [| _YYZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYZACPI.cell
                                 |]
@@ -765,8 +765,8 @@ module YYZACPIFunction =
                 let format (o : YYZACPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYZACPI.source + ".AddFixings") 
-                                               [| _YYZACPI.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -815,8 +815,8 @@ module YYZACPIFunction =
                 let format (o : YYZACPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYZACPI.source + ".AddFixings1") 
-                                               [| _YYZACPI.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -855,8 +855,8 @@ module YYZACPIFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYZACPI.source + ".AllowsNativeFixings") 
-                                               [| _YYZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYZACPI.cell
                                 |]
@@ -891,8 +891,8 @@ module YYZACPIFunction =
                 let format (o : YYZACPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYZACPI.source + ".ClearFixings") 
-                                               [| _YYZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYZACPI.cell
                                 |]
@@ -931,8 +931,8 @@ module YYZACPIFunction =
                 let format (o : YYZACPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYZACPI.source + ".RegisterWith") 
-                                               [| _YYZACPI.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYZACPI.cell
@@ -969,8 +969,8 @@ module YYZACPIFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYZACPI.source + ".TimeSeries") 
-                                               [| _YYZACPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYZACPI.cell
                                 |]
@@ -1009,8 +1009,8 @@ module YYZACPIFunction =
                 let format (o : YYZACPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYZACPI.source + ".UnregisterWith") 
-                                               [| _YYZACPI.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYZACPI.cell

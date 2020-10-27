@@ -750,8 +750,8 @@ module FlatForwardFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FlatForward.source + ".MaxDate") 
-                                               [| _FlatForward.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
                                 |]
@@ -794,8 +794,8 @@ module FlatForwardFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FlatForward.source + ".Discount") 
-                                               [| _FlatForward.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _extrapolate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -842,8 +842,8 @@ module FlatForwardFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FlatForward.source + ".Discount1") 
-                                               [| _FlatForward.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _extrapolate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -906,8 +906,8 @@ module FlatForwardFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
                 let source () = Helper.sourceFold (_FlatForward.source + ".ForwardRate") 
-                                               [| _FlatForward.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _p.source
                                                ;  _dayCounter.source
                                                ;  _comp.source
@@ -978,8 +978,8 @@ module FlatForwardFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
                 let source () = Helper.sourceFold (_FlatForward.source + ".ForwardRate1") 
-                                               [| _FlatForward.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _dayCounter.source
                                                ;  _comp.source
@@ -1046,8 +1046,8 @@ module FlatForwardFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
                 let source () = Helper.sourceFold (_FlatForward.source + ".ForwardRate2") 
-                                               [| _FlatForward.source
-                                               ;  _t1.source
+
+                                               [| _t1.source
                                                ;  _t2.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -1092,8 +1092,8 @@ module FlatForwardFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_FlatForward.source + ".JumpDates") 
-                                               [| _FlatForward.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
                                 |]
@@ -1128,8 +1128,8 @@ module FlatForwardFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_FlatForward.source + ".JumpTimes") 
-                                               [| _FlatForward.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
                                 |]
@@ -1164,8 +1164,8 @@ module FlatForwardFunction =
                 let format (o : FlatForward) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FlatForward.source + ".Update") 
-                                               [| _FlatForward.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
                                 |]
@@ -1220,8 +1220,8 @@ module FlatForwardFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
                 let source () = Helper.sourceFold (_FlatForward.source + ".ZeroRate1") 
-                                               [| _FlatForward.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _dayCounter.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -1282,8 +1282,8 @@ module FlatForwardFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
                 let source () = Helper.sourceFold (_FlatForward.source + ".ZeroRate") 
-                                               [| _FlatForward.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _comp.source
                                                ;  _freq.source
                                                ;  _extrapolate.source
@@ -1326,8 +1326,8 @@ module FlatForwardFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_FlatForward.source + ".Calendar") 
-                                               [| _FlatForward.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
                                 |]
@@ -1362,8 +1362,8 @@ module FlatForwardFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_FlatForward.source + ".DayCounter") 
-                                               [| _FlatForward.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
                                 |]
@@ -1398,8 +1398,8 @@ module FlatForwardFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FlatForward.source + ".MaxTime") 
-                                               [| _FlatForward.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
                                 |]
@@ -1434,8 +1434,8 @@ module FlatForwardFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FlatForward.source + ".ReferenceDate") 
-                                               [| _FlatForward.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
                                 |]
@@ -1470,8 +1470,8 @@ module FlatForwardFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FlatForward.source + ".SettlementDays") 
-                                               [| _FlatForward.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
                                 |]
@@ -1510,8 +1510,8 @@ module FlatForwardFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FlatForward.source + ".TimeFromReference") 
-                                               [| _FlatForward.source
-                                               ;  _date.source
+
+                                               [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
@@ -1548,8 +1548,8 @@ module FlatForwardFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FlatForward.source + ".AllowsExtrapolation") 
-                                               [| _FlatForward.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
                                 |]
@@ -1588,8 +1588,8 @@ module FlatForwardFunction =
                 let format (o : FlatForward) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FlatForward.source + ".DisableExtrapolation") 
-                                               [| _FlatForward.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
@@ -1630,8 +1630,8 @@ module FlatForwardFunction =
                 let format (o : FlatForward) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FlatForward.source + ".EnableExtrapolation") 
-                                               [| _FlatForward.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
@@ -1668,8 +1668,8 @@ module FlatForwardFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FlatForward.source + ".Extrapolate") 
-                                               [| _FlatForward.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FlatForward.cell
                                 |]

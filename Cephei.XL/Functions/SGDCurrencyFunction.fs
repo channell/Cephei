@@ -85,8 +85,8 @@ module SGDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SGDCurrency.source + ".Code") 
-                                               [| _SGDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SGDCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module SGDCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SGDCurrency.source + ".Empty") 
-                                               [| _SGDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SGDCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module SGDCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SGDCurrency.source + ".Equals") 
-                                               [| _SGDCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SGDCurrency.cell
@@ -199,8 +199,8 @@ module SGDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SGDCurrency.source + ".Format") 
-                                               [| _SGDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SGDCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module SGDCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SGDCurrency.source + ".FractionsPerUnit") 
-                                               [| _SGDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SGDCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module SGDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SGDCurrency.source + ".FractionSymbol") 
-                                               [| _SGDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SGDCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module SGDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SGDCurrency.source + ".Name") 
-                                               [| _SGDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SGDCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module SGDCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SGDCurrency.source + ".NumericCode") 
-                                               [| _SGDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SGDCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module SGDCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_SGDCurrency.source + ".Rounding") 
-                                               [| _SGDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SGDCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module SGDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SGDCurrency.source + ".Symbol") 
-                                               [| _SGDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SGDCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module SGDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SGDCurrency.source + ".ToString") 
-                                               [| _SGDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SGDCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module SGDCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_SGDCurrency.source + ".TriangulationCurrency") 
-                                               [| _SGDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SGDCurrency.cell
                                 |]

@@ -140,8 +140,8 @@ module ExplicitEulerSchemeFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IMixedScheme>) l
 
                 let source () = Helper.sourceFold (_ExplicitEulerScheme.source + ".Factory") 
-                                               [| _ExplicitEulerScheme.source
-                                               ;  _L.source
+
+                                               [| _L.source
                                                ;  _bcs.source
                                                ;  _additionalInputs.source
                                                |]
@@ -186,8 +186,8 @@ module ExplicitEulerSchemeFunction =
                 let format (o : ExplicitEulerScheme) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ExplicitEulerScheme.source + ".SetStep") 
-                                               [| _ExplicitEulerScheme.source
-                                               ;  _dt.source
+
+                                               [| _dt.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ExplicitEulerScheme.cell
@@ -236,8 +236,8 @@ module ExplicitEulerSchemeFunction =
                 let format (o : ExplicitEulerScheme) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ExplicitEulerScheme.source + ".Step") 
-                                               [| _ExplicitEulerScheme.source
-                                               ;  _a.source
+
+                                               [| _a.source
                                                ;  _t.source
                                                ;  _theta.source
                                                |]

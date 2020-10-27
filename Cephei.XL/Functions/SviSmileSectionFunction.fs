@@ -54,8 +54,8 @@ module SviSmileSectionFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SviSmileSection.source + ".AtmLevel") 
-                                               [| _SviSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SviSmileSection.cell
                                 |]
@@ -90,8 +90,8 @@ module SviSmileSectionFunction =
                 let format (o : SviSmileSection) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SviSmileSection.source + ".Init") 
-                                               [| _SviSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SviSmileSection.cell
                                 |]
@@ -126,8 +126,8 @@ module SviSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SviSmileSection.source + ".MaxStrike") 
-                                               [| _SviSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SviSmileSection.cell
                                 |]
@@ -162,8 +162,8 @@ module SviSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SviSmileSection.source + ".MinStrike") 
-                                               [| _SviSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SviSmileSection.cell
                                 |]
@@ -302,8 +302,8 @@ module SviSmileSectionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_SviSmileSection.source + ".DayCounter") 
-                                               [| _SviSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SviSmileSection.cell
                                 |]
@@ -350,8 +350,8 @@ module SviSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SviSmileSection.source + ".Density") 
-                                               [| _SviSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _discount.source
                                                ;  _gap.source
                                                |]
@@ -408,8 +408,8 @@ module SviSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SviSmileSection.source + ".DigitalOptionPrice") 
-                                               [| _SviSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _Type.source
                                                ;  _discount.source
                                                ;  _gap.source
@@ -452,8 +452,8 @@ module SviSmileSectionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_SviSmileSection.source + ".ExerciseDate") 
-                                               [| _SviSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SviSmileSection.cell
                                 |]
@@ -488,8 +488,8 @@ module SviSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SviSmileSection.source + ".ExerciseTime") 
-                                               [| _SviSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SviSmileSection.cell
                                 |]
@@ -536,8 +536,8 @@ module SviSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SviSmileSection.source + ".OptionPrice") 
-                                               [| _SviSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _Type.source
                                                ;  _discount.source
                                                |]
@@ -578,8 +578,8 @@ module SviSmileSectionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_SviSmileSection.source + ".ReferenceDate") 
-                                               [| _SviSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SviSmileSection.cell
                                 |]
@@ -614,8 +614,8 @@ module SviSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SviSmileSection.source + ".Shift") 
-                                               [| _SviSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SviSmileSection.cell
                                 |]
@@ -650,8 +650,8 @@ module SviSmileSectionFunction =
                 let format (o : SviSmileSection) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SviSmileSection.source + ".Update") 
-                                               [| _SviSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SviSmileSection.cell
                                 |]
@@ -690,8 +690,8 @@ module SviSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SviSmileSection.source + ".Variance") 
-                                               [| _SviSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SviSmileSection.cell
@@ -736,8 +736,8 @@ module SviSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SviSmileSection.source + ".Vega") 
-                                               [| _SviSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _discount.source
                                                |]
                 let hash = Helper.hashFold 
@@ -788,8 +788,8 @@ module SviSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SviSmileSection.source + ".Volatility") 
-                                               [| _SviSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _volatilityType.source
                                                ;  _shift.source
                                                |]
@@ -834,8 +834,8 @@ module SviSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SviSmileSection.source + ".Volatility1") 
-                                               [| _SviSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SviSmileSection.cell
@@ -872,8 +872,8 @@ module SviSmileSectionFunction =
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SviSmileSection.source + ".VolatilityType") 
-                                               [| _SviSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SviSmileSection.cell
                                 |]

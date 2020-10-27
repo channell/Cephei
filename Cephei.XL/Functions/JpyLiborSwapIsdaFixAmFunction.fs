@@ -138,8 +138,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Clone") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               ;  _tenor.source
+
+                                               [| _tenor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
@@ -184,8 +184,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Clone1") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               ;  _forwarding.source
+
+                                               [| _forwarding.source
                                                ;  _discounting.source
                                                |]
                 let hash = Helper.hashFold 
@@ -228,8 +228,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Clone2") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               ;  _forwarding.source
+
+                                               [| _forwarding.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
@@ -266,8 +266,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".DiscountingTermStructure") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
@@ -302,8 +302,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".ExogenousDiscount") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
@@ -338,8 +338,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".FixedLegConvention") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
@@ -374,8 +374,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".FixedLegTenor") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
@@ -414,8 +414,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".ForecastFixing") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
@@ -452,8 +452,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".ForwardingTermStructure") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
@@ -488,8 +488,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".IborIndex") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
@@ -528,8 +528,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".MaturityDate") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
@@ -570,8 +570,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VanillaSwap>) l
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".UnderlyingSwap") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
@@ -608,8 +608,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Currency") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
@@ -644,8 +644,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".DayCounter") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
@@ -680,8 +680,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".FamilyName") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
@@ -724,8 +724,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Fixing") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -764,8 +764,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".FixingCalendar") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
@@ -804,8 +804,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".FixingDate") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
@@ -842,8 +842,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".FixingDays") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
@@ -882,8 +882,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".IsValidFixingDate") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
@@ -920,8 +920,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Name") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
@@ -960,8 +960,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".PastFixing") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
@@ -998,8 +998,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Tenor") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
@@ -1034,8 +1034,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (o : JpyLiborSwapIsdaFixAm) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".Update") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
@@ -1074,8 +1074,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".ValueDate") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
@@ -1124,8 +1124,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (o : JpyLiborSwapIsdaFixAm) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".AddFixing") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -1178,8 +1178,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (o : JpyLiborSwapIsdaFixAm) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".AddFixings") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -1228,8 +1228,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (o : JpyLiborSwapIsdaFixAm) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".AddFixings1") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1268,8 +1268,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".AllowsNativeFixings") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
@@ -1304,8 +1304,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (o : JpyLiborSwapIsdaFixAm) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".ClearFixings") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
@@ -1344,8 +1344,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (o : JpyLiborSwapIsdaFixAm) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".RegisterWith") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
@@ -1382,8 +1382,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".TimeSeries") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell
                                 |]
@@ -1422,8 +1422,8 @@ module JpyLiborSwapIsdaFixAmFunction =
                 let format (o : JpyLiborSwapIsdaFixAm) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JpyLiborSwapIsdaFixAm.source + ".UnregisterWith") 
-                                               [| _JpyLiborSwapIsdaFixAm.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JpyLiborSwapIsdaFixAm.cell

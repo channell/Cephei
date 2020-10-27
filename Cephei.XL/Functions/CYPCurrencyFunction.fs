@@ -85,8 +85,8 @@ module CYPCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CYPCurrency.source + ".Code") 
-                                               [| _CYPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CYPCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module CYPCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CYPCurrency.source + ".Empty") 
-                                               [| _CYPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CYPCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module CYPCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CYPCurrency.source + ".Equals") 
-                                               [| _CYPCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CYPCurrency.cell
@@ -199,8 +199,8 @@ module CYPCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CYPCurrency.source + ".Format") 
-                                               [| _CYPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CYPCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module CYPCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CYPCurrency.source + ".FractionsPerUnit") 
-                                               [| _CYPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CYPCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module CYPCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CYPCurrency.source + ".FractionSymbol") 
-                                               [| _CYPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CYPCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module CYPCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CYPCurrency.source + ".Name") 
-                                               [| _CYPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CYPCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module CYPCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CYPCurrency.source + ".NumericCode") 
-                                               [| _CYPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CYPCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module CYPCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_CYPCurrency.source + ".Rounding") 
-                                               [| _CYPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CYPCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module CYPCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CYPCurrency.source + ".Symbol") 
-                                               [| _CYPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CYPCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module CYPCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CYPCurrency.source + ".ToString") 
-                                               [| _CYPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CYPCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module CYPCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_CYPCurrency.source + ".TriangulationCurrency") 
-                                               [| _CYPCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CYPCurrency.cell
                                 |]

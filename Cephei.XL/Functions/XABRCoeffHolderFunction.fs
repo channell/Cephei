@@ -54,8 +54,8 @@ module XABRCoeffHolderFunction =
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".AddParams_") 
-                                               [| _XABRCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]
@@ -90,8 +90,8 @@ module XABRCoeffHolderFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".Error_") 
-                                               [| _XABRCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]
@@ -126,8 +126,8 @@ module XABRCoeffHolderFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".Forward_") 
-                                               [| _XABRCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]
@@ -162,8 +162,8 @@ module XABRCoeffHolderFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".MaxError_") 
-                                               [| _XABRCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]
@@ -198,8 +198,8 @@ module XABRCoeffHolderFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IModel>) l
 
                 let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".Model_") 
-                                               [| _XABRCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]
@@ -234,8 +234,8 @@ module XABRCoeffHolderFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IWrapper>) l
 
                 let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".ModelInstance_") 
-                                               [| _XABRCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]
@@ -270,8 +270,8 @@ module XABRCoeffHolderFunction =
                 let format (i : Generic.List<bool>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".ParamIsFixed_") 
-                                               [| _XABRCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]
@@ -306,8 +306,8 @@ module XABRCoeffHolderFunction =
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".Params_") 
-                                               [| _XABRCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]
@@ -342,8 +342,8 @@ module XABRCoeffHolderFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".T_") 
-                                               [| _XABRCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]
@@ -378,8 +378,8 @@ module XABRCoeffHolderFunction =
                 let format (o : XABRCoeffHolder) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".UpdateModelInstance") 
-                                               [| _XABRCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]
@@ -414,8 +414,8 @@ module XABRCoeffHolderFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".Weights_") 
-                                               [| _XABRCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]
@@ -511,8 +511,8 @@ module XABRCoeffHolderFunction =
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_XABRCoeffHolder.source + ".XABREndCriteria_") 
-                                               [| _XABRCoeffHolder.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _XABRCoeffHolder.cell
                                 |]

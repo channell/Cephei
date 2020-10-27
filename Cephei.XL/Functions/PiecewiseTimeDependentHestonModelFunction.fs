@@ -54,8 +54,8 @@ module PiecewiseTimeDependentHestonModelFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_PiecewiseTimeDependentHestonModel.source + ".DividendYield") 
-                                               [| _PiecewiseTimeDependentHestonModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseTimeDependentHestonModel.cell
                                 |]
@@ -94,8 +94,8 @@ module PiecewiseTimeDependentHestonModelFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseTimeDependentHestonModel.source + ".Kappa") 
-                                               [| _PiecewiseTimeDependentHestonModel.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseTimeDependentHestonModel.cell
@@ -221,8 +221,8 @@ module PiecewiseTimeDependentHestonModelFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseTimeDependentHestonModel.source + ".Rho") 
-                                               [| _PiecewiseTimeDependentHestonModel.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseTimeDependentHestonModel.cell
@@ -259,8 +259,8 @@ module PiecewiseTimeDependentHestonModelFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_PiecewiseTimeDependentHestonModel.source + ".RiskFreeRate") 
-                                               [| _PiecewiseTimeDependentHestonModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseTimeDependentHestonModel.cell
                                 |]
@@ -295,8 +295,8 @@ module PiecewiseTimeDependentHestonModelFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseTimeDependentHestonModel.source + ".S0") 
-                                               [| _PiecewiseTimeDependentHestonModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseTimeDependentHestonModel.cell
                                 |]
@@ -335,8 +335,8 @@ module PiecewiseTimeDependentHestonModelFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseTimeDependentHestonModel.source + ".Sigma") 
-                                               [| _PiecewiseTimeDependentHestonModel.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseTimeDependentHestonModel.cell
@@ -377,8 +377,8 @@ module PiecewiseTimeDependentHestonModelFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseTimeDependentHestonModel.source + ".Theta") 
-                                               [| _PiecewiseTimeDependentHestonModel.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseTimeDependentHestonModel.cell
@@ -415,8 +415,8 @@ module PiecewiseTimeDependentHestonModelFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TimeGrid>) l
 
                 let source () = Helper.sourceFold (_PiecewiseTimeDependentHestonModel.source + ".TimeGrid") 
-                                               [| _PiecewiseTimeDependentHestonModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseTimeDependentHestonModel.cell
                                 |]
@@ -451,8 +451,8 @@ module PiecewiseTimeDependentHestonModelFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseTimeDependentHestonModel.source + ".V0") 
-                                               [| _PiecewiseTimeDependentHestonModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseTimeDependentHestonModel.cell
                                 |]
@@ -511,8 +511,8 @@ module PiecewiseTimeDependentHestonModelFunction =
                 let format (o : PiecewiseTimeDependentHestonModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseTimeDependentHestonModel.source + ".Calibrate") 
-                                               [| _PiecewiseTimeDependentHestonModel.source
-                                               ;  _instruments.source
+
+                                               [| _instruments.source
                                                ;  _Method.source
                                                ;  _endCriteria.source
                                                ;  _additionalConstraint.source
@@ -559,8 +559,8 @@ module PiecewiseTimeDependentHestonModelFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
                 let source () = Helper.sourceFold (_PiecewiseTimeDependentHestonModel.source + ".CONSTRAINT") 
-                                               [| _PiecewiseTimeDependentHestonModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseTimeDependentHestonModel.cell
                                 |]
@@ -595,8 +595,8 @@ module PiecewiseTimeDependentHestonModelFunction =
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseTimeDependentHestonModel.source + ".EndCriteria") 
-                                               [| _PiecewiseTimeDependentHestonModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseTimeDependentHestonModel.cell
                                 |]
@@ -631,8 +631,8 @@ module PiecewiseTimeDependentHestonModelFunction =
                 let format (o : PiecewiseTimeDependentHestonModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseTimeDependentHestonModel.source + ".NotifyObservers") 
-                                               [| _PiecewiseTimeDependentHestonModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseTimeDependentHestonModel.cell
                                 |]
@@ -667,8 +667,8 @@ module PiecewiseTimeDependentHestonModelFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_PiecewiseTimeDependentHestonModel.source + ".Parameters") 
-                                               [| _PiecewiseTimeDependentHestonModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseTimeDependentHestonModel.cell
                                 |]
@@ -707,8 +707,8 @@ module PiecewiseTimeDependentHestonModelFunction =
                 let format (o : PiecewiseTimeDependentHestonModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseTimeDependentHestonModel.source + ".RegisterWith") 
-                                               [| _PiecewiseTimeDependentHestonModel.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseTimeDependentHestonModel.cell
@@ -749,8 +749,8 @@ module PiecewiseTimeDependentHestonModelFunction =
                 let format (o : PiecewiseTimeDependentHestonModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseTimeDependentHestonModel.source + ".SetParams") 
-                                               [| _PiecewiseTimeDependentHestonModel.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseTimeDependentHestonModel.cell
@@ -791,8 +791,8 @@ module PiecewiseTimeDependentHestonModelFunction =
                 let format (o : PiecewiseTimeDependentHestonModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseTimeDependentHestonModel.source + ".UnregisterWith") 
-                                               [| _PiecewiseTimeDependentHestonModel.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseTimeDependentHestonModel.cell
@@ -829,8 +829,8 @@ module PiecewiseTimeDependentHestonModelFunction =
                 let format (o : PiecewiseTimeDependentHestonModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseTimeDependentHestonModel.source + ".Update") 
-                                               [| _PiecewiseTimeDependentHestonModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseTimeDependentHestonModel.cell
                                 |]
@@ -873,8 +873,8 @@ module PiecewiseTimeDependentHestonModelFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseTimeDependentHestonModel.source + ".Value") 
-                                               [| _PiecewiseTimeDependentHestonModel.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                ;  _instruments.source
                                                |]
                 let hash = Helper.hashFold 

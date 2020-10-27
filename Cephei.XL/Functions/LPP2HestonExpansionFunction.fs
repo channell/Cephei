@@ -62,8 +62,8 @@ module LPP2HestonExpansionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LPP2HestonExpansion.source + ".ImpliedVolatility") 
-                                               [| _LPP2HestonExpansion.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _forward.source
                                                |]
                 let hash = Helper.hashFold 

@@ -54,8 +54,8 @@ module ProblemFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
                 let source () = Helper.sourceFold (_Problem.source + ".CONSTRAINT") 
-                                               [| _Problem.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Problem.cell
                                 |]
@@ -90,8 +90,8 @@ module ProblemFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CostFunction>) l
 
                 let source () = Helper.sourceFold (_Problem.source + ".CostFunction") 
-                                               [| _Problem.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Problem.cell
                                 |]
@@ -126,8 +126,8 @@ module ProblemFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_Problem.source + ".CurrentValue") 
-                                               [| _Problem.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Problem.cell
                                 |]
@@ -162,8 +162,8 @@ module ProblemFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Problem.source + ".FunctionEvaluation") 
-                                               [| _Problem.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Problem.cell
                                 |]
@@ -198,8 +198,8 @@ module ProblemFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Problem.source + ".FunctionValue") 
-                                               [| _Problem.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Problem.cell
                                 |]
@@ -242,8 +242,8 @@ module ProblemFunction =
                 let format (o : Problem) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Problem.source + ".Gradient") 
-                                               [| _Problem.source
-                                               ;  _grad_f.source
+
+                                               [| _grad_f.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -282,8 +282,8 @@ module ProblemFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Problem.source + ".GradientEvaluation") 
-                                               [| _Problem.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Problem.cell
                                 |]
@@ -318,8 +318,8 @@ module ProblemFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Problem.source + ".GradientNormValue") 
-                                               [| _Problem.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Problem.cell
                                 |]
@@ -403,8 +403,8 @@ module ProblemFunction =
                 let format (o : Problem) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Problem.source + ".Reset") 
-                                               [| _Problem.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Problem.cell
                                 |]
@@ -443,8 +443,8 @@ module ProblemFunction =
                 let format (o : Problem) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Problem.source + ".SetCurrentValue") 
-                                               [| _Problem.source
-                                               ;  _currentValue.source
+
+                                               [| _currentValue.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Problem.cell
@@ -485,8 +485,8 @@ module ProblemFunction =
                 let format (o : Problem) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Problem.source + ".SetFunctionValue") 
-                                               [| _Problem.source
-                                               ;  _functionValue.source
+
+                                               [| _functionValue.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Problem.cell
@@ -527,8 +527,8 @@ module ProblemFunction =
                 let format (o : Problem) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Problem.source + ".SetGradientNormValue") 
-                                               [| _Problem.source
-                                               ;  _squaredNorm.source
+
+                                               [| _squaredNorm.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Problem.cell
@@ -569,8 +569,8 @@ module ProblemFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Problem.source + ".Value") 
-                                               [| _Problem.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Problem.cell
@@ -615,8 +615,8 @@ module ProblemFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Problem.source + ".ValueAndGradient") 
-                                               [| _Problem.source
-                                               ;  _grad_f.source
+
+                                               [| _grad_f.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 
@@ -659,8 +659,8 @@ module ProblemFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_Problem.source + ".Values") 
-                                               [| _Problem.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Problem.cell

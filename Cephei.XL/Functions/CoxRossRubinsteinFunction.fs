@@ -156,8 +156,8 @@ module CoxRossRubinsteinFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CoxRossRubinstein>) l
 
                 let source () = Helper.sourceFold (_CoxRossRubinstein.source + ".Factory") 
-                                               [| _CoxRossRubinstein.source
-                                               ;  _Process.source
+
+                                               [| _Process.source
                                                ;  _End.source
                                                ;  _steps.source
                                                ;  _strike.source
@@ -212,8 +212,8 @@ module CoxRossRubinsteinFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CoxRossRubinstein.source + ".Probability") 
-                                               [| _CoxRossRubinstein.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _y.source
                                                ;  _branch.source
                                                |]
@@ -262,8 +262,8 @@ module CoxRossRubinsteinFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CoxRossRubinstein.source + ".Underlying") 
-                                               [| _CoxRossRubinstein.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _index.source
                                                |]
                 let hash = Helper.hashFold 
@@ -314,8 +314,8 @@ module CoxRossRubinsteinFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CoxRossRubinstein.source + ".Descendant") 
-                                               [| _CoxRossRubinstein.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _index.source
                                                ;  _branch.source
                                                |]
@@ -360,8 +360,8 @@ module CoxRossRubinsteinFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CoxRossRubinstein.source + ".Size") 
-                                               [| _CoxRossRubinstein.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CoxRossRubinstein.cell
@@ -398,8 +398,8 @@ module CoxRossRubinsteinFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CoxRossRubinstein.source + ".Columns") 
-                                               [| _CoxRossRubinstein.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CoxRossRubinstein.cell
                                 |]

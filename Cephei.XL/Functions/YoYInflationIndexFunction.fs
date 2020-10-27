@@ -58,8 +58,8 @@ module YoYInflationIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationIndex>) l
 
                 let source () = Helper.sourceFold (_YoYInflationIndex.source + ".Clone") 
-                                               [| _YoYInflationIndex.source
-                                               ;  _h.source
+
+                                               [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
@@ -104,8 +104,8 @@ module YoYInflationIndexFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationIndex.source + ".Fixing") 
-                                               [| _YoYInflationIndex.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -144,8 +144,8 @@ module YoYInflationIndexFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationIndex.source + ".Ratio") 
-                                               [| _YoYInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
@@ -265,8 +265,8 @@ module YoYInflationIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYInflationTermStructure>>) l
 
                 let source () = Helper.sourceFold (_YoYInflationIndex.source + ".YoyInflationTermStructure") 
-                                               [| _YoYInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
@@ -313,8 +313,8 @@ module YoYInflationIndexFunction =
                 let format (o : YoYInflationIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationIndex.source + ".AddFixing") 
-                                               [| _YoYInflationIndex.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _fixing.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -356,8 +356,8 @@ module YoYInflationIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_YoYInflationIndex.source + ".AvailabilityLag") 
-                                               [| _YoYInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
@@ -392,8 +392,8 @@ module YoYInflationIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_YoYInflationIndex.source + ".Currency") 
-                                               [| _YoYInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
@@ -428,8 +428,8 @@ module YoYInflationIndexFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationIndex.source + ".FamilyName") 
-                                               [| _YoYInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
@@ -464,8 +464,8 @@ module YoYInflationIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_YoYInflationIndex.source + ".FixingCalendar") 
-                                               [| _YoYInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
@@ -500,8 +500,8 @@ module YoYInflationIndexFunction =
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationIndex.source + ".Frequency") 
-                                               [| _YoYInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
@@ -536,8 +536,8 @@ module YoYInflationIndexFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationIndex.source + ".Interpolated") 
-                                               [| _YoYInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
@@ -576,8 +576,8 @@ module YoYInflationIndexFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationIndex.source + ".IsValidFixingDate") 
-                                               [| _YoYInflationIndex.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
@@ -614,8 +614,8 @@ module YoYInflationIndexFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationIndex.source + ".Name") 
-                                               [| _YoYInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
@@ -650,8 +650,8 @@ module YoYInflationIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
 
                 let source () = Helper.sourceFold (_YoYInflationIndex.source + ".Region") 
-                                               [| _YoYInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
@@ -686,8 +686,8 @@ module YoYInflationIndexFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationIndex.source + ".Revised") 
-                                               [| _YoYInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
@@ -722,8 +722,8 @@ module YoYInflationIndexFunction =
                 let format (o : YoYInflationIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationIndex.source + ".Update") 
-                                               [| _YoYInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
@@ -770,8 +770,8 @@ module YoYInflationIndexFunction =
                 let format (o : YoYInflationIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationIndex.source + ".AddFixings") 
-                                               [| _YoYInflationIndex.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -820,8 +820,8 @@ module YoYInflationIndexFunction =
                 let format (o : YoYInflationIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationIndex.source + ".AddFixings1") 
-                                               [| _YoYInflationIndex.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -860,8 +860,8 @@ module YoYInflationIndexFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationIndex.source + ".AllowsNativeFixings") 
-                                               [| _YoYInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
@@ -896,8 +896,8 @@ module YoYInflationIndexFunction =
                 let format (o : YoYInflationIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationIndex.source + ".ClearFixings") 
-                                               [| _YoYInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
@@ -936,8 +936,8 @@ module YoYInflationIndexFunction =
                 let format (o : YoYInflationIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationIndex.source + ".RegisterWith") 
-                                               [| _YoYInflationIndex.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
@@ -974,8 +974,8 @@ module YoYInflationIndexFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationIndex.source + ".TimeSeries") 
-                                               [| _YoYInflationIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell
                                 |]
@@ -1014,8 +1014,8 @@ module YoYInflationIndexFunction =
                 let format (o : YoYInflationIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationIndex.source + ".UnregisterWith") 
-                                               [| _YoYInflationIndex.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationIndex.cell

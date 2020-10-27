@@ -58,8 +58,8 @@ module ImpliedVolTermStructureFunction =
                 let format (o : ImpliedVolTermStructure) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ImpliedVolTermStructure.source + ".Accept") 
-                                               [| _ImpliedVolTermStructure.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ImpliedVolTermStructure.cell
@@ -96,8 +96,8 @@ module ImpliedVolTermStructureFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_ImpliedVolTermStructure.source + ".DayCounter") 
-                                               [| _ImpliedVolTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ImpliedVolTermStructure.cell
                                 |]
@@ -175,8 +175,8 @@ module ImpliedVolTermStructureFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ImpliedVolTermStructure.source + ".MaxDate") 
-                                               [| _ImpliedVolTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ImpliedVolTermStructure.cell
                                 |]
@@ -211,8 +211,8 @@ module ImpliedVolTermStructureFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ImpliedVolTermStructure.source + ".MaxStrike") 
-                                               [| _ImpliedVolTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ImpliedVolTermStructure.cell
                                 |]
@@ -247,8 +247,8 @@ module ImpliedVolTermStructureFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ImpliedVolTermStructure.source + ".MinStrike") 
-                                               [| _ImpliedVolTermStructure.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ImpliedVolTermStructure.cell
                                 |]

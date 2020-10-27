@@ -151,8 +151,8 @@ module CallableFixedRateBondFunction =
                 let format (o : CallabilitySchedule) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".Callability") 
-                                               [| _CallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
                                 |]
@@ -211,8 +211,8 @@ module CallableFixedRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".CleanPriceOAS") 
-                                               [| _CallableFixedRateBond.source
-                                               ;  _oas.source
+
+                                               [| _oas.source
                                                ;  _engineTS.source
                                                ;  _dayCounter.source
                                                ;  _compounding.source
@@ -283,8 +283,8 @@ module CallableFixedRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".EffectiveConvexity") 
-                                               [| _CallableFixedRateBond.source
-                                               ;  _oas.source
+
+                                               [| _oas.source
                                                ;  _engineTS.source
                                                ;  _dayCounter.source
                                                ;  _compounding.source
@@ -355,8 +355,8 @@ module CallableFixedRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".EffectiveDuration") 
-                                               [| _CallableFixedRateBond.source
-                                               ;  _oas.source
+
+                                               [| _oas.source
                                                ;  _engineTS.source
                                                ;  _dayCounter.source
                                                ;  _compounding.source
@@ -427,8 +427,8 @@ module CallableFixedRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".ImpliedVolatility") 
-                                               [| _CallableFixedRateBond.source
-                                               ;  _targetValue.source
+
+                                               [| _targetValue.source
                                                ;  _discountCurve.source
                                                ;  _accuracy.source
                                                ;  _maxEvaluations.source
@@ -511,8 +511,8 @@ module CallableFixedRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".OAS") 
-                                               [| _CallableFixedRateBond.source
-                                               ;  _cleanPrice.source
+
+                                               [| _cleanPrice.source
                                                ;  _engineTS.source
                                                ;  _dayCounter.source
                                                ;  _compounding.source
@@ -569,8 +569,8 @@ module CallableFixedRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".AccruedAmount") 
-                                               [| _CallableFixedRateBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
@@ -607,8 +607,8 @@ module CallableFixedRateBondFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".Calendar") 
-                                               [| _CallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
                                 |]
@@ -643,8 +643,8 @@ module CallableFixedRateBondFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".Cashflows") 
-                                               [| _CallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
                                 |]
@@ -679,8 +679,8 @@ module CallableFixedRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".CleanPrice") 
-                                               [| _CallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
                                 |]
@@ -735,8 +735,8 @@ module CallableFixedRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".CleanPrice1") 
-                                               [| _CallableFixedRateBond.source
-                                               ;  _Yield.source
+
+                                               [| _Yield.source
                                                ;  _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -801,8 +801,8 @@ module CallableFixedRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".DirtyPrice1") 
-                                               [| _CallableFixedRateBond.source
-                                               ;  _Yield.source
+
+                                               [| _Yield.source
                                                ;  _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -847,8 +847,8 @@ module CallableFixedRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".DirtyPrice") 
-                                               [| _CallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
                                 |]
@@ -883,8 +883,8 @@ module CallableFixedRateBondFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".IsExpired") 
-                                               [| _CallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
                                 |]
@@ -919,8 +919,8 @@ module CallableFixedRateBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".IssueDate") 
-                                               [| _CallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
                                 |]
@@ -959,8 +959,8 @@ module CallableFixedRateBondFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".IsTradable") 
-                                               [| _CallableFixedRateBond.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
@@ -997,8 +997,8 @@ module CallableFixedRateBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".MaturityDate") 
-                                               [| _CallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
                                 |]
@@ -1037,8 +1037,8 @@ module CallableFixedRateBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".NextCashFlowDate") 
-                                               [| _CallableFixedRateBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
@@ -1079,8 +1079,8 @@ module CallableFixedRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".NextCouponRate") 
-                                               [| _CallableFixedRateBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
@@ -1121,8 +1121,8 @@ module CallableFixedRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".Notional") 
-                                               [| _CallableFixedRateBond.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
@@ -1159,8 +1159,8 @@ module CallableFixedRateBondFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".Notionals") 
-                                               [| _CallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
                                 |]
@@ -1199,8 +1199,8 @@ module CallableFixedRateBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".PreviousCashFlowDate") 
-                                               [| _CallableFixedRateBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
@@ -1241,8 +1241,8 @@ module CallableFixedRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".PreviousCouponRate") 
-                                               [| _CallableFixedRateBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
@@ -1279,8 +1279,8 @@ module CallableFixedRateBondFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".Redemption") 
-                                               [| _CallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
                                 |]
@@ -1315,8 +1315,8 @@ module CallableFixedRateBondFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".Redemptions") 
-                                               [| _CallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
                                 |]
@@ -1355,8 +1355,8 @@ module CallableFixedRateBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".SettlementDate") 
-                                               [| _CallableFixedRateBond.source
-                                               ;  _date.source
+
+                                               [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
@@ -1393,8 +1393,8 @@ module CallableFixedRateBondFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".SettlementDays") 
-                                               [| _CallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
                                 |]
@@ -1433,8 +1433,8 @@ module CallableFixedRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".SettlementValue") 
-                                               [| _CallableFixedRateBond.source
-                                               ;  _cleanPrice.source
+
+                                               [| _cleanPrice.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
@@ -1471,8 +1471,8 @@ module CallableFixedRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".SettlementValue1") 
-                                               [| _CallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
                                 |]
@@ -1507,8 +1507,8 @@ module CallableFixedRateBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".StartDate") 
-                                               [| _CallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
                                 |]
@@ -1571,8 +1571,8 @@ module CallableFixedRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".Yield1") 
-                                               [| _CallableFixedRateBond.source
-                                               ;  _cleanPrice.source
+
+                                               [| _cleanPrice.source
                                                ;  _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -1641,8 +1641,8 @@ module CallableFixedRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".Yield") 
-                                               [| _CallableFixedRateBond.source
-                                               ;  _dc.source
+
+                                               [| _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
                                                ;  _accuracy.source
@@ -1687,8 +1687,8 @@ module CallableFixedRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".CASH") 
-                                               [| _CallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
                                 |]
@@ -1723,8 +1723,8 @@ module CallableFixedRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".ErrorEstimate") 
-                                               [| _CallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
                                 |]
@@ -1759,8 +1759,8 @@ module CallableFixedRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".NPV") 
-                                               [| _CallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
                                 |]
@@ -1799,8 +1799,8 @@ module CallableFixedRateBondFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".Result") 
-                                               [| _CallableFixedRateBond.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
@@ -1841,8 +1841,8 @@ module CallableFixedRateBondFunction =
                 let format (o : CallableFixedRateBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".SetPricingEngine") 
-                                               [| _CallableFixedRateBond.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
@@ -1879,8 +1879,8 @@ module CallableFixedRateBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".ValuationDate") 
-                                               [| _CallableFixedRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CallableFixedRateBond.cell
                                 |]

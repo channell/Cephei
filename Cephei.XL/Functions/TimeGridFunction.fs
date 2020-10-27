@@ -58,8 +58,8 @@ module TimeGridFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TimeGrid.source + ".ClosestIndex") 
-                                               [| _TimeGrid.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TimeGrid.cell
@@ -100,8 +100,8 @@ module TimeGridFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TimeGrid.source + ".ClosestTime") 
-                                               [| _TimeGrid.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TimeGrid.cell
@@ -142,8 +142,8 @@ module TimeGridFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TimeGrid.source + ".Dt") 
-                                               [| _TimeGrid.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TimeGrid.cell
@@ -180,8 +180,8 @@ module TimeGridFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TimeGrid.source + ".Empty") 
-                                               [| _TimeGrid.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TimeGrid.cell
                                 |]
@@ -216,8 +216,8 @@ module TimeGridFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TimeGrid.source + ".First") 
-                                               [| _TimeGrid.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TimeGrid.cell
                                 |]
@@ -256,8 +256,8 @@ module TimeGridFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TimeGrid.source + ".Index") 
-                                               [| _TimeGrid.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TimeGrid.cell
@@ -294,8 +294,8 @@ module TimeGridFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TimeGrid.source + ".Last") 
-                                               [| _TimeGrid.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TimeGrid.cell
                                 |]
@@ -330,8 +330,8 @@ module TimeGridFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_TimeGrid.source + ".MandatoryTimes") 
-                                               [| _TimeGrid.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TimeGrid.cell
                                 |]
@@ -366,8 +366,8 @@ module TimeGridFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TimeGrid.source + ".Size") 
-                                               [| _TimeGrid.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TimeGrid.cell
                                 |]
@@ -406,8 +406,8 @@ module TimeGridFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TimeGrid.source + ".This") 
-                                               [| _TimeGrid.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TimeGrid.cell
@@ -616,8 +616,8 @@ module TimeGridFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_TimeGrid.source + ".Times") 
-                                               [| _TimeGrid.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TimeGrid.cell
                                 |]

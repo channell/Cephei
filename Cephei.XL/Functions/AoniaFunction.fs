@@ -95,8 +95,8 @@ module AoniaFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightIndex>) l
 
                 let source () = Helper.sourceFold (_Aonia.source + ".Clone") 
-                                               [| _Aonia.source
-                                               ;  _h.source
+
+                                               [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
@@ -133,8 +133,8 @@ module AoniaFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Aonia.source + ".BusinessDayConvention") 
-                                               [| _Aonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
@@ -169,8 +169,8 @@ module AoniaFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Aonia.source + ".EndOfMonth") 
-                                               [| _Aonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
@@ -217,8 +217,8 @@ module AoniaFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Aonia.source + ".ForecastFixing1") 
-                                               [| _Aonia.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _t.source
                                                |]
@@ -264,8 +264,8 @@ module AoniaFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Aonia.source + ".ForecastFixing") 
-                                               [| _Aonia.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
@@ -303,8 +303,8 @@ module AoniaFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_Aonia.source + ".ForwardingTermStructure") 
-                                               [| _Aonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
@@ -343,8 +343,8 @@ module AoniaFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Aonia.source + ".MaturityDate") 
-                                               [| _Aonia.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
@@ -381,8 +381,8 @@ module AoniaFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_Aonia.source + ".Currency") 
-                                               [| _Aonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
@@ -417,8 +417,8 @@ module AoniaFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_Aonia.source + ".DayCounter") 
-                                               [| _Aonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
@@ -453,8 +453,8 @@ module AoniaFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Aonia.source + ".FamilyName") 
-                                               [| _Aonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
@@ -497,8 +497,8 @@ module AoniaFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Aonia.source + ".Fixing") 
-                                               [| _Aonia.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -537,8 +537,8 @@ module AoniaFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_Aonia.source + ".FixingCalendar") 
-                                               [| _Aonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
@@ -577,8 +577,8 @@ module AoniaFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Aonia.source + ".FixingDate") 
-                                               [| _Aonia.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
@@ -615,8 +615,8 @@ module AoniaFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Aonia.source + ".FixingDays") 
-                                               [| _Aonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
@@ -655,8 +655,8 @@ module AoniaFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Aonia.source + ".IsValidFixingDate") 
-                                               [| _Aonia.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
@@ -693,8 +693,8 @@ module AoniaFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Aonia.source + ".Name") 
-                                               [| _Aonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
@@ -733,8 +733,8 @@ module AoniaFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Aonia.source + ".PastFixing") 
-                                               [| _Aonia.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
@@ -771,8 +771,8 @@ module AoniaFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_Aonia.source + ".Tenor") 
-                                               [| _Aonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
@@ -807,8 +807,8 @@ module AoniaFunction =
                 let format (o : Aonia) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Aonia.source + ".Update") 
-                                               [| _Aonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
@@ -847,8 +847,8 @@ module AoniaFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Aonia.source + ".ValueDate") 
-                                               [| _Aonia.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
@@ -897,8 +897,8 @@ module AoniaFunction =
                 let format (o : Aonia) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Aonia.source + ".AddFixing") 
-                                               [| _Aonia.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -951,8 +951,8 @@ module AoniaFunction =
                 let format (o : Aonia) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Aonia.source + ".AddFixings") 
-                                               [| _Aonia.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -1001,8 +1001,8 @@ module AoniaFunction =
                 let format (o : Aonia) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Aonia.source + ".AddFixings1") 
-                                               [| _Aonia.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1041,8 +1041,8 @@ module AoniaFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Aonia.source + ".AllowsNativeFixings") 
-                                               [| _Aonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
@@ -1077,8 +1077,8 @@ module AoniaFunction =
                 let format (o : Aonia) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Aonia.source + ".ClearFixings") 
-                                               [| _Aonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
@@ -1117,8 +1117,8 @@ module AoniaFunction =
                 let format (o : Aonia) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Aonia.source + ".RegisterWith") 
-                                               [| _Aonia.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
@@ -1155,8 +1155,8 @@ module AoniaFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Aonia.source + ".TimeSeries") 
-                                               [| _Aonia.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell
                                 |]
@@ -1195,8 +1195,8 @@ module AoniaFunction =
                 let format (o : Aonia) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Aonia.source + ".UnregisterWith") 
-                                               [| _Aonia.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Aonia.cell

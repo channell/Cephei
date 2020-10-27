@@ -54,8 +54,8 @@ module MoneyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_Money.source + ".Currency") 
-                                               [| _Money.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Money.cell
                                 |]
@@ -94,8 +94,8 @@ module MoneyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Money.source + ".Equals") 
-                                               [| _Money.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Money.cell
@@ -249,8 +249,8 @@ module MoneyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Money>) l
 
                 let source () = Helper.sourceFold (_Money.source + ".Rounded") 
-                                               [| _Money.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Money.cell
                                 |]
@@ -285,8 +285,8 @@ module MoneyFunction =
                 let format (o : String) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Money.source + ".ToString") 
-                                               [| _Money.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Money.cell
                                 |]
@@ -321,8 +321,8 @@ module MoneyFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Money.source + ".Value") 
-                                               [| _Money.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Money.cell
                                 |]

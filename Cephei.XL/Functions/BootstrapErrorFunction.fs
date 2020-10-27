@@ -107,8 +107,8 @@ module BootstrapErrorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BootstrapError.source + ".Value") 
-                                               [| _BootstrapError.source
-                                               ;  _guess.source
+
+                                               [| _guess.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BootstrapError.cell
@@ -149,8 +149,8 @@ module BootstrapErrorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BootstrapError.source + ".Derivative") 
-                                               [| _BootstrapError.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BootstrapError.cell

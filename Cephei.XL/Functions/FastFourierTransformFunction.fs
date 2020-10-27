@@ -107,8 +107,8 @@ module FastFourierTransformFunction =
                 let format (o : FastFourierTransform) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FastFourierTransform.source + ".Inverse_transform") 
-                                               [| _FastFourierTransform.source
-                                               ;  _input.source
+
+                                               [| _input.source
                                                ;  _inputBeg.source
                                                ;  _inputEnd.source
                                                ;  _output.source
@@ -151,8 +151,8 @@ module FastFourierTransformFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FastFourierTransform.source + ".Output_size") 
-                                               [| _FastFourierTransform.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FastFourierTransform.cell
                                 |]
@@ -203,8 +203,8 @@ module FastFourierTransformFunction =
                 let format (o : FastFourierTransform) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FastFourierTransform.source + ".Transform") 
-                                               [| _FastFourierTransform.source
-                                               ;  _input.source
+
+                                               [| _input.source
                                                ;  _inputBeg.source
                                                ;  _inputEnd.source
                                                ;  _output.source

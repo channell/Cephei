@@ -144,7 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <Content Include="Cephei.XL-AddIn.dna">
+    <Content Include="Cephei.XL.dna">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="ILMergeConfig.json" />

@@ -54,8 +54,8 @@ module OneAssetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OneAssetOption.source + ".Delta") 
-                                               [| _OneAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
@@ -90,8 +90,8 @@ module OneAssetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OneAssetOption.source + ".DeltaForward") 
-                                               [| _OneAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
@@ -126,8 +126,8 @@ module OneAssetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OneAssetOption.source + ".DividendRho") 
-                                               [| _OneAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
@@ -162,8 +162,8 @@ module OneAssetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OneAssetOption.source + ".Elasticity") 
-                                               [| _OneAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
@@ -198,8 +198,8 @@ module OneAssetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OneAssetOption.source + ".Gamma") 
-                                               [| _OneAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
@@ -234,8 +234,8 @@ module OneAssetOptionFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OneAssetOption.source + ".IsExpired") 
-                                               [| _OneAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
@@ -270,8 +270,8 @@ module OneAssetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OneAssetOption.source + ".ItmCashProbability") 
-                                               [| _OneAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
@@ -361,8 +361,8 @@ module OneAssetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OneAssetOption.source + ".Rho") 
-                                               [| _OneAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
@@ -397,8 +397,8 @@ module OneAssetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OneAssetOption.source + ".StrikeSensitivity") 
-                                               [| _OneAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
@@ -433,8 +433,8 @@ module OneAssetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OneAssetOption.source + ".Theta") 
-                                               [| _OneAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
@@ -469,8 +469,8 @@ module OneAssetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OneAssetOption.source + ".ThetaPerDay") 
-                                               [| _OneAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
@@ -505,8 +505,8 @@ module OneAssetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OneAssetOption.source + ".Vega") 
-                                               [| _OneAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
@@ -541,8 +541,8 @@ module OneAssetOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
                 let source () = Helper.sourceFold (_OneAssetOption.source + ".Exercise") 
-                                               [| _OneAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
@@ -577,8 +577,8 @@ module OneAssetOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
                 let source () = Helper.sourceFold (_OneAssetOption.source + ".Payoff") 
-                                               [| _OneAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
@@ -613,8 +613,8 @@ module OneAssetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OneAssetOption.source + ".CASH") 
-                                               [| _OneAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
@@ -649,8 +649,8 @@ module OneAssetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OneAssetOption.source + ".ErrorEstimate") 
-                                               [| _OneAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
@@ -685,8 +685,8 @@ module OneAssetOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OneAssetOption.source + ".NPV") 
-                                               [| _OneAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]
@@ -725,8 +725,8 @@ module OneAssetOptionFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OneAssetOption.source + ".Result") 
-                                               [| _OneAssetOption.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
@@ -767,8 +767,8 @@ module OneAssetOptionFunction =
                 let format (o : OneAssetOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OneAssetOption.source + ".SetPricingEngine") 
-                                               [| _OneAssetOption.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
@@ -805,8 +805,8 @@ module OneAssetOptionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_OneAssetOption.source + ".ValuationDate") 
-                                               [| _OneAssetOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OneAssetOption.cell
                                 |]

@@ -91,8 +91,8 @@ module InverseCumulativeRngFunction =
                 let format (o : Sample<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InverseCumulativeRng.source + ".Next") 
-                                               [| _InverseCumulativeRng.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InverseCumulativeRng.cell
                                 |]

@@ -126,8 +126,8 @@ module InverseCumulativePoissonFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InverseCumulativePoisson.source + ".Value") 
-                                               [| _InverseCumulativePoisson.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InverseCumulativePoisson.cell

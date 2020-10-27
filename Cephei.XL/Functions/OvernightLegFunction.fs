@@ -97,8 +97,8 @@ module OvernightLegFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_OvernightLeg.source + ".Value") 
-                                               [| _OvernightLeg.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightLeg.cell
                                 |]
@@ -137,8 +137,8 @@ module OvernightLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
 
                 let source () = Helper.sourceFold (_OvernightLeg.source + ".WithGearings") 
-                                               [| _OvernightLeg.source
-                                               ;  _gearings.source
+
+                                               [| _gearings.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightLeg.cell
@@ -179,8 +179,8 @@ module OvernightLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
 
                 let source () = Helper.sourceFold (_OvernightLeg.source + ".WithGearings1") 
-                                               [| _OvernightLeg.source
-                                               ;  _gearing.source
+
+                                               [| _gearing.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightLeg.cell
@@ -221,8 +221,8 @@ module OvernightLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
 
                 let source () = Helper.sourceFold (_OvernightLeg.source + ".WithNotionals") 
-                                               [| _OvernightLeg.source
-                                               ;  _notionals.source
+
+                                               [| _notionals.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightLeg.cell
@@ -263,8 +263,8 @@ module OvernightLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
 
                 let source () = Helper.sourceFold (_OvernightLeg.source + ".WithNotionals1") 
-                                               [| _OvernightLeg.source
-                                               ;  _notional.source
+
+                                               [| _notional.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightLeg.cell
@@ -305,8 +305,8 @@ module OvernightLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
 
                 let source () = Helper.sourceFold (_OvernightLeg.source + ".WithPaymentAdjustment") 
-                                               [| _OvernightLeg.source
-                                               ;  _convention.source
+
+                                               [| _convention.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightLeg.cell
@@ -347,8 +347,8 @@ module OvernightLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
 
                 let source () = Helper.sourceFold (_OvernightLeg.source + ".WithPaymentDayCounter") 
-                                               [| _OvernightLeg.source
-                                               ;  _dayCounter.source
+
+                                               [| _dayCounter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightLeg.cell
@@ -389,8 +389,8 @@ module OvernightLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
 
                 let source () = Helper.sourceFold (_OvernightLeg.source + ".WithSpreads1") 
-                                               [| _OvernightLeg.source
-                                               ;  _spreads.source
+
+                                               [| _spreads.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightLeg.cell
@@ -431,8 +431,8 @@ module OvernightLegFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightLeg>) l
 
                 let source () = Helper.sourceFold (_OvernightLeg.source + ".WithSpreads") 
-                                               [| _OvernightLeg.source
-                                               ;  _spread.source
+
+                                               [| _spread.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightLeg.cell

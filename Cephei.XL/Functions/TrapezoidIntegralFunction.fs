@@ -97,8 +97,8 @@ module TrapezoidIntegralFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TrapezoidIntegral.source + ".AbsoluteAccuracy") 
-                                               [| _TrapezoidIntegral.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TrapezoidIntegral.cell
                                 |]
@@ -133,8 +133,8 @@ module TrapezoidIntegralFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TrapezoidIntegral.source + ".AbsoluteError") 
-                                               [| _TrapezoidIntegral.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TrapezoidIntegral.cell
                                 |]
@@ -169,8 +169,8 @@ module TrapezoidIntegralFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TrapezoidIntegral.source + ".IntegrationSuccess") 
-                                               [| _TrapezoidIntegral.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TrapezoidIntegral.cell
                                 |]
@@ -205,8 +205,8 @@ module TrapezoidIntegralFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TrapezoidIntegral.source + ".MaxEvaluations") 
-                                               [| _TrapezoidIntegral.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TrapezoidIntegral.cell
                                 |]
@@ -241,8 +241,8 @@ module TrapezoidIntegralFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TrapezoidIntegral.source + ".NumberOfEvaluations") 
-                                               [| _TrapezoidIntegral.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TrapezoidIntegral.cell
                                 |]
@@ -281,8 +281,8 @@ module TrapezoidIntegralFunction =
                 let format (o : TrapezoidIntegral) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TrapezoidIntegral.source + ".SetAbsoluteAccuracy") 
-                                               [| _TrapezoidIntegral.source
-                                               ;  _accuracy.source
+
+                                               [| _accuracy.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TrapezoidIntegral.cell
@@ -323,8 +323,8 @@ module TrapezoidIntegralFunction =
                 let format (o : TrapezoidIntegral) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_TrapezoidIntegral.source + ".SetMaxEvaluations") 
-                                               [| _TrapezoidIntegral.source
-                                               ;  _maxEvaluations.source
+
+                                               [| _maxEvaluations.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TrapezoidIntegral.cell
@@ -373,8 +373,8 @@ module TrapezoidIntegralFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TrapezoidIntegral.source + ".Value") 
-                                               [| _TrapezoidIntegral.source
-                                               ;  _f.source
+
+                                               [| _f.source
                                                ;  _a.source
                                                ;  _b.source
                                                |]

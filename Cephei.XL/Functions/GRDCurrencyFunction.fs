@@ -85,8 +85,8 @@ module GRDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GRDCurrency.source + ".Code") 
-                                               [| _GRDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GRDCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module GRDCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GRDCurrency.source + ".Empty") 
-                                               [| _GRDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GRDCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module GRDCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GRDCurrency.source + ".Equals") 
-                                               [| _GRDCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GRDCurrency.cell
@@ -199,8 +199,8 @@ module GRDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GRDCurrency.source + ".Format") 
-                                               [| _GRDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GRDCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module GRDCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GRDCurrency.source + ".FractionsPerUnit") 
-                                               [| _GRDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GRDCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module GRDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GRDCurrency.source + ".FractionSymbol") 
-                                               [| _GRDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GRDCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module GRDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GRDCurrency.source + ".Name") 
-                                               [| _GRDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GRDCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module GRDCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GRDCurrency.source + ".NumericCode") 
-                                               [| _GRDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GRDCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module GRDCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_GRDCurrency.source + ".Rounding") 
-                                               [| _GRDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GRDCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module GRDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GRDCurrency.source + ".Symbol") 
-                                               [| _GRDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GRDCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module GRDCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GRDCurrency.source + ".ToString") 
-                                               [| _GRDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GRDCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module GRDCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_GRDCurrency.source + ".TriangulationCurrency") 
-                                               [| _GRDCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GRDCurrency.cell
                                 |]

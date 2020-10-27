@@ -54,8 +54,8 @@ module MixedLinearCubicFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MixedLinearCubic.source + ".GLOBAL") 
-                                               [| _MixedLinearCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MixedLinearCubic.cell
                                 |]
@@ -102,8 +102,8 @@ module MixedLinearCubicFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
                 let source () = Helper.sourceFold (_MixedLinearCubic.source + ".Interpolate") 
-                                               [| _MixedLinearCubic.source
-                                               ;  _xBegin.source
+
+                                               [| _xBegin.source
                                                ;  _xEnd.source
                                                ;  _yBegin.source
                                                |]
@@ -223,8 +223,8 @@ module MixedLinearCubicFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MixedLinearCubic.source + ".RequiredPoints") 
-                                               [| _MixedLinearCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MixedLinearCubic.cell
                                 |]

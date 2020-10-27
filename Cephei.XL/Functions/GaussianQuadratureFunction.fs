@@ -97,8 +97,8 @@ module GaussianQuadratureFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussianQuadrature.source + ".Order") 
-                                               [| _GaussianQuadrature.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussianQuadrature.cell
                                 |]
@@ -137,8 +137,8 @@ module GaussianQuadratureFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GaussianQuadrature.source + ".Value") 
-                                               [| _GaussianQuadrature.source
-                                               ;  _f.source
+
+                                               [| _f.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GaussianQuadrature.cell
@@ -175,8 +175,8 @@ module GaussianQuadratureFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_GaussianQuadrature.source + ".Weights") 
-                                               [| _GaussianQuadrature.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussianQuadrature.cell
                                 |]
@@ -211,8 +211,8 @@ module GaussianQuadratureFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_GaussianQuadrature.source + ".X") 
-                                               [| _GaussianQuadrature.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GaussianQuadrature.cell
                                 |]

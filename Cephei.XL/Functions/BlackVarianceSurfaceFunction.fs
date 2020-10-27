@@ -164,8 +164,8 @@ module BlackVarianceSurfaceFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_BlackVarianceSurface.source + ".Dates") 
-                                               [| _BlackVarianceSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackVarianceSurface.cell
                                 |]
@@ -200,8 +200,8 @@ module BlackVarianceSurfaceFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_BlackVarianceSurface.source + ".DayCounter") 
-                                               [| _BlackVarianceSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackVarianceSurface.cell
                                 |]
@@ -236,8 +236,8 @@ module BlackVarianceSurfaceFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_BlackVarianceSurface.source + ".MaxDate") 
-                                               [| _BlackVarianceSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackVarianceSurface.cell
                                 |]
@@ -272,8 +272,8 @@ module BlackVarianceSurfaceFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackVarianceSurface.source + ".MaxStrike") 
-                                               [| _BlackVarianceSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackVarianceSurface.cell
                                 |]
@@ -308,8 +308,8 @@ module BlackVarianceSurfaceFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackVarianceSurface.source + ".MinStrike") 
-                                               [| _BlackVarianceSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackVarianceSurface.cell
                                 |]
@@ -349,8 +349,8 @@ module BlackVarianceSurfaceFunction =
                 let format (o : BlackVarianceSurface) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BlackVarianceSurface.source + ".SetInterpolation") 
-                                               [| _BlackVarianceSurface.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackVarianceSurface.cell
@@ -389,8 +389,8 @@ module BlackVarianceSurfaceFunction =
                 let format (o : BlackVarianceSurface) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BlackVarianceSurface.source + ".SetInterpolation") 
-                                               [| _BlackVarianceSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackVarianceSurface.cell
                                 |]
@@ -426,8 +426,8 @@ module BlackVarianceSurfaceFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_BlackVarianceSurface.source + ".Strikes") 
-                                               [| _BlackVarianceSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackVarianceSurface.cell
                                 |]
@@ -462,8 +462,8 @@ module BlackVarianceSurfaceFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_BlackVarianceSurface.source + ".Times") 
-                                               [| _BlackVarianceSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackVarianceSurface.cell
                                 |]
@@ -498,8 +498,8 @@ module BlackVarianceSurfaceFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
                 let source () = Helper.sourceFold (_BlackVarianceSurface.source + ".Variances") 
-                                               [| _BlackVarianceSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackVarianceSurface.cell
                                 |]
@@ -534,8 +534,8 @@ module BlackVarianceSurfaceFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Matrix>) l
 
                 let source () = Helper.sourceFold (_BlackVarianceSurface.source + ".Volatilities") 
-                                               [| _BlackVarianceSurface.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BlackVarianceSurface.cell
                                 |]

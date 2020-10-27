@@ -62,8 +62,8 @@ module CubicBSplinesFittingFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CubicBSplinesFitting.source + ".BasisFunction") 
-                                               [| _CubicBSplinesFitting.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -102,8 +102,8 @@ module CubicBSplinesFittingFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FittedBondDiscountCurve.FittingMethod>) l
 
                 let source () = Helper.sourceFold (_CubicBSplinesFitting.source + ".Clone") 
-                                               [| _CubicBSplinesFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CubicBSplinesFitting.cell
                                 |]
@@ -193,8 +193,8 @@ module CubicBSplinesFittingFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CubicBSplinesFitting.source + ".Size") 
-                                               [| _CubicBSplinesFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CubicBSplinesFitting.cell
                                 |]
@@ -229,8 +229,8 @@ module CubicBSplinesFittingFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CubicBSplinesFitting.source + ".ConstrainAtZero") 
-                                               [| _CubicBSplinesFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CubicBSplinesFitting.cell
                                 |]
@@ -273,8 +273,8 @@ module CubicBSplinesFittingFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CubicBSplinesFitting.source + ".Discount") 
-                                               [| _CubicBSplinesFitting.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -313,8 +313,8 @@ module CubicBSplinesFittingFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CubicBSplinesFitting.source + ".MinimumCostValue") 
-                                               [| _CubicBSplinesFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CubicBSplinesFitting.cell
                                 |]
@@ -349,8 +349,8 @@ module CubicBSplinesFittingFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CubicBSplinesFitting.source + ".NumberOfIterations") 
-                                               [| _CubicBSplinesFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CubicBSplinesFitting.cell
                                 |]
@@ -385,8 +385,8 @@ module CubicBSplinesFittingFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OptimizationMethod>) l
 
                 let source () = Helper.sourceFold (_CubicBSplinesFitting.source + ".OptimizationMethod") 
-                                               [| _CubicBSplinesFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CubicBSplinesFitting.cell
                                 |]
@@ -421,8 +421,8 @@ module CubicBSplinesFittingFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_CubicBSplinesFitting.source + ".Solution") 
-                                               [| _CubicBSplinesFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CubicBSplinesFitting.cell
                                 |]
@@ -457,8 +457,8 @@ module CubicBSplinesFittingFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_CubicBSplinesFitting.source + ".Weights") 
-                                               [| _CubicBSplinesFitting.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CubicBSplinesFitting.cell
                                 |]

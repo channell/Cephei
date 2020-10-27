@@ -85,8 +85,8 @@ module JPYCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JPYCurrency.source + ".Code") 
-                                               [| _JPYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module JPYCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JPYCurrency.source + ".Empty") 
-                                               [| _JPYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module JPYCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JPYCurrency.source + ".Equals") 
-                                               [| _JPYCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _JPYCurrency.cell
@@ -199,8 +199,8 @@ module JPYCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JPYCurrency.source + ".Format") 
-                                               [| _JPYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module JPYCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_JPYCurrency.source + ".FractionsPerUnit") 
-                                               [| _JPYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module JPYCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JPYCurrency.source + ".FractionSymbol") 
-                                               [| _JPYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module JPYCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JPYCurrency.source + ".Name") 
-                                               [| _JPYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module JPYCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_JPYCurrency.source + ".NumericCode") 
-                                               [| _JPYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module JPYCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_JPYCurrency.source + ".Rounding") 
-                                               [| _JPYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module JPYCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JPYCurrency.source + ".Symbol") 
-                                               [| _JPYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module JPYCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_JPYCurrency.source + ".ToString") 
-                                               [| _JPYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module JPYCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_JPYCurrency.source + ".TriangulationCurrency") 
-                                               [| _JPYCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _JPYCurrency.cell
                                 |]

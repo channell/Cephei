@@ -121,8 +121,8 @@ module CashFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_Cash.source + ".PrincipalLeg") 
-                                               [| _Cash.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Cash.cell
                                 |]
@@ -157,8 +157,8 @@ module CashFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Cash.source + ".IsExpired") 
-                                               [| _Cash.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Cash.cell
                                 |]
@@ -193,8 +193,8 @@ module CashFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Cash.source + ".CASH") 
-                                               [| _Cash.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Cash.cell
                                 |]
@@ -229,8 +229,8 @@ module CashFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Cash.source + ".ErrorEstimate") 
-                                               [| _Cash.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Cash.cell
                                 |]
@@ -265,8 +265,8 @@ module CashFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Cash.source + ".NPV") 
-                                               [| _Cash.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Cash.cell
                                 |]
@@ -305,8 +305,8 @@ module CashFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Cash.source + ".Result") 
-                                               [| _Cash.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Cash.cell
@@ -347,8 +347,8 @@ module CashFunction =
                 let format (o : Cash) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Cash.source + ".SetPricingEngine") 
-                                               [| _Cash.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Cash.cell
@@ -385,8 +385,8 @@ module CashFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_Cash.source + ".ValuationDate") 
-                                               [| _Cash.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Cash.cell
                                 |]

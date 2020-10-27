@@ -138,8 +138,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".Clone") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               ;  _tenor.source
+
+                                               [| _tenor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
@@ -184,8 +184,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".Clone1") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               ;  _forwarding.source
+
+                                               [| _forwarding.source
                                                ;  _discounting.source
                                                |]
                 let hash = Helper.hashFold 
@@ -228,8 +228,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".Clone2") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               ;  _forwarding.source
+
+                                               [| _forwarding.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
@@ -266,8 +266,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".DiscountingTermStructure") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
                                 |]
@@ -302,8 +302,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".ExogenousDiscount") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
                                 |]
@@ -338,8 +338,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".FixedLegConvention") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
                                 |]
@@ -374,8 +374,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".FixedLegTenor") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
                                 |]
@@ -414,8 +414,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".ForecastFixing") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
@@ -452,8 +452,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".ForwardingTermStructure") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
                                 |]
@@ -488,8 +488,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".IborIndex") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
                                 |]
@@ -528,8 +528,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".MaturityDate") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
@@ -570,8 +570,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VanillaSwap>) l
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".UnderlyingSwap") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
@@ -608,8 +608,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".Currency") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
                                 |]
@@ -644,8 +644,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".DayCounter") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
                                 |]
@@ -680,8 +680,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".FamilyName") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
                                 |]
@@ -724,8 +724,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".Fixing") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -764,8 +764,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".FixingCalendar") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
                                 |]
@@ -804,8 +804,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".FixingDate") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
@@ -842,8 +842,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".FixingDays") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
                                 |]
@@ -882,8 +882,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".IsValidFixingDate") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
@@ -920,8 +920,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".Name") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
                                 |]
@@ -960,8 +960,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".PastFixing") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
@@ -998,8 +998,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".Tenor") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
                                 |]
@@ -1034,8 +1034,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (o : GbpLiborSwapIsdaFix) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".Update") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
                                 |]
@@ -1074,8 +1074,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".ValueDate") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
@@ -1124,8 +1124,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (o : GbpLiborSwapIsdaFix) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".AddFixing") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -1178,8 +1178,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (o : GbpLiborSwapIsdaFix) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".AddFixings") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -1228,8 +1228,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (o : GbpLiborSwapIsdaFix) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".AddFixings1") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1268,8 +1268,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".AllowsNativeFixings") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
                                 |]
@@ -1304,8 +1304,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (o : GbpLiborSwapIsdaFix) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".ClearFixings") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
                                 |]
@@ -1344,8 +1344,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (o : GbpLiborSwapIsdaFix) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".RegisterWith") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
@@ -1382,8 +1382,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".TimeSeries") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell
                                 |]
@@ -1422,8 +1422,8 @@ module GbpLiborSwapIsdaFixFunction =
                 let format (o : GbpLiborSwapIsdaFix) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_GbpLiborSwapIsdaFix.source + ".UnregisterWith") 
-                                               [| _GbpLiborSwapIsdaFix.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GbpLiborSwapIsdaFix.cell

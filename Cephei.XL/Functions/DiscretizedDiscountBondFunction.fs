@@ -54,8 +54,8 @@ module DiscretizedDiscountBondFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_DiscretizedDiscountBond.source + ".MandatoryTimes") 
-                                               [| _DiscretizedDiscountBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDiscountBond.cell
                                 |]
@@ -94,8 +94,8 @@ module DiscretizedDiscountBondFunction =
                 let format (o : DiscretizedDiscountBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDiscountBond.source + ".Reset") 
-                                               [| _DiscretizedDiscountBond.source
-                                               ;  _size.source
+
+                                               [| _size.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDiscountBond.cell
@@ -132,8 +132,8 @@ module DiscretizedDiscountBondFunction =
                 let format (o : DiscretizedDiscountBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDiscountBond.source + ".AdjustValues") 
-                                               [| _DiscretizedDiscountBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDiscountBond.cell
                                 |]
@@ -176,8 +176,8 @@ module DiscretizedDiscountBondFunction =
                 let format (o : DiscretizedDiscountBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDiscountBond.source + ".Initialize") 
-                                               [| _DiscretizedDiscountBond.source
-                                               ;  _Method.source
+
+                                               [| _Method.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -216,8 +216,8 @@ module DiscretizedDiscountBondFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Lattice>) l
 
                 let source () = Helper.sourceFold (_DiscretizedDiscountBond.source + ".METHOD") 
-                                               [| _DiscretizedDiscountBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDiscountBond.cell
                                 |]
@@ -256,8 +256,8 @@ module DiscretizedDiscountBondFunction =
                 let format (o : DiscretizedDiscountBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDiscountBond.source + ".PartialRollback") 
-                                               [| _DiscretizedDiscountBond.source
-                                               ;  _To.source
+
+                                               [| _To.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDiscountBond.cell
@@ -294,8 +294,8 @@ module DiscretizedDiscountBondFunction =
                 let format (o : DiscretizedDiscountBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDiscountBond.source + ".PostAdjustValues") 
-                                               [| _DiscretizedDiscountBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDiscountBond.cell
                                 |]
@@ -330,8 +330,8 @@ module DiscretizedDiscountBondFunction =
                 let format (o : DiscretizedDiscountBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDiscountBond.source + ".PreAdjustValues") 
-                                               [| _DiscretizedDiscountBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDiscountBond.cell
                                 |]
@@ -366,8 +366,8 @@ module DiscretizedDiscountBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDiscountBond.source + ".PresentValue") 
-                                               [| _DiscretizedDiscountBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDiscountBond.cell
                                 |]
@@ -406,8 +406,8 @@ module DiscretizedDiscountBondFunction =
                 let format (o : DiscretizedDiscountBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDiscountBond.source + ".Rollback") 
-                                               [| _DiscretizedDiscountBond.source
-                                               ;  _To.source
+
+                                               [| _To.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDiscountBond.cell
@@ -448,8 +448,8 @@ module DiscretizedDiscountBondFunction =
                 let format (o : DiscretizedDiscountBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDiscountBond.source + ".SetTime") 
-                                               [| _DiscretizedDiscountBond.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDiscountBond.cell
@@ -490,8 +490,8 @@ module DiscretizedDiscountBondFunction =
                 let format (o : DiscretizedDiscountBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDiscountBond.source + ".SetValues") 
-                                               [| _DiscretizedDiscountBond.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDiscountBond.cell
@@ -528,8 +528,8 @@ module DiscretizedDiscountBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscretizedDiscountBond.source + ".Time") 
-                                               [| _DiscretizedDiscountBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDiscountBond.cell
                                 |]
@@ -564,8 +564,8 @@ module DiscretizedDiscountBondFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_DiscretizedDiscountBond.source + ".Values") 
-                                               [| _DiscretizedDiscountBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscretizedDiscountBond.cell
                                 |]

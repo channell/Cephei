@@ -66,8 +66,8 @@ module SeasonalityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Seasonality.source + ".CorrectYoYRate") 
-                                               [| _Seasonality.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _r.source
                                                ;  _iTS.source
                                                |]
@@ -120,8 +120,8 @@ module SeasonalityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Seasonality.source + ".CorrectZeroRate") 
-                                               [| _Seasonality.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _r.source
                                                ;  _iTS.source
                                                |]
@@ -166,8 +166,8 @@ module SeasonalityFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_Seasonality.source + ".IsConsistent") 
-                                               [| _Seasonality.source
-                                               ;  _iTS.source
+
+                                               [| _iTS.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Seasonality.cell

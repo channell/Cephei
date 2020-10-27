@@ -54,8 +54,8 @@ module GenericLowDiscrepancyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_GenericLowDiscrepancy.source + ".AllowsErrorEstimate") 
-                                               [| _GenericLowDiscrepancy.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _GenericLowDiscrepancy.cell
                                 |]
@@ -98,8 +98,8 @@ module GenericLowDiscrepancyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IRNG>) l
 
                 let source () = Helper.sourceFold (_GenericLowDiscrepancy.source + ".Make_sequence_generator") 
-                                               [| _GenericLowDiscrepancy.source
-                                               ;  _dimension.source
+
+                                               [| _dimension.source
                                                ;  _seed.source
                                                |]
                 let hash = Helper.hashFold 

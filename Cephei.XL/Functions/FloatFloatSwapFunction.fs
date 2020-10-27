@@ -54,8 +54,8 @@ module FloatFloatSwapFunction =
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".CappedRate1") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -90,8 +90,8 @@ module FloatFloatSwapFunction =
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".CappedRate2") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -126,8 +126,8 @@ module FloatFloatSwapFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".DayCount1") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -162,8 +162,8 @@ module FloatFloatSwapFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".DayCount2") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -536,8 +536,8 @@ module FloatFloatSwapFunction =
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".FlooredRate1") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -572,8 +572,8 @@ module FloatFloatSwapFunction =
                 let format (i : Generic.List<Nullable<double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".FlooredRate2") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -608,8 +608,8 @@ module FloatFloatSwapFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".Gearing1") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -644,8 +644,8 @@ module FloatFloatSwapFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".Gearing2") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -680,8 +680,8 @@ module FloatFloatSwapFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".Index1") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -716,8 +716,8 @@ module FloatFloatSwapFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".Index2") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -752,8 +752,8 @@ module FloatFloatSwapFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".Leg1") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -788,8 +788,8 @@ module FloatFloatSwapFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".Leg2") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -824,8 +824,8 @@ module FloatFloatSwapFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".Nominal1") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -860,8 +860,8 @@ module FloatFloatSwapFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".Nominal2") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -896,8 +896,8 @@ module FloatFloatSwapFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".PaymentConvention1") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -932,8 +932,8 @@ module FloatFloatSwapFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".PaymentConvention2") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -968,8 +968,8 @@ module FloatFloatSwapFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".Schedule1") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -1004,8 +1004,8 @@ module FloatFloatSwapFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".Schedule2") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -1040,8 +1040,8 @@ module FloatFloatSwapFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".Spread1") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -1076,8 +1076,8 @@ module FloatFloatSwapFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".Spread2") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -1112,8 +1112,8 @@ module FloatFloatSwapFunction =
                 let format (o : VanillaSwap.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".TYPE") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -1152,8 +1152,8 @@ module FloatFloatSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".EndDiscounts") 
-                                               [| _FloatFloatSwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
@@ -1191,8 +1191,8 @@ module FloatFloatSwapFunction =
                 let format (o : SwapEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".Engine") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -1228,8 +1228,8 @@ module FloatFloatSwapFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".IsExpired") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -1268,8 +1268,8 @@ module FloatFloatSwapFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".Leg") 
-                                               [| _FloatFloatSwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
@@ -1310,8 +1310,8 @@ module FloatFloatSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".LegBPS") 
-                                               [| _FloatFloatSwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
@@ -1352,8 +1352,8 @@ module FloatFloatSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".LegNPV") 
-                                               [| _FloatFloatSwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
@@ -1390,8 +1390,8 @@ module FloatFloatSwapFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".MaturityDate") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -1426,8 +1426,8 @@ module FloatFloatSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".NpvDateDiscount") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -1466,8 +1466,8 @@ module FloatFloatSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".Payer") 
-                                               [| _FloatFloatSwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
@@ -1504,8 +1504,8 @@ module FloatFloatSwapFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".StartDate") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -1544,8 +1544,8 @@ module FloatFloatSwapFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".StartDiscounts") 
-                                               [| _FloatFloatSwap.source
-                                               ;  _j.source
+
+                                               [| _j.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
@@ -1582,8 +1582,8 @@ module FloatFloatSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".CASH") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -1618,8 +1618,8 @@ module FloatFloatSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".ErrorEstimate") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -1654,8 +1654,8 @@ module FloatFloatSwapFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".NPV") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]
@@ -1694,8 +1694,8 @@ module FloatFloatSwapFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".Result") 
-                                               [| _FloatFloatSwap.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
@@ -1736,8 +1736,8 @@ module FloatFloatSwapFunction =
                 let format (o : FloatFloatSwap) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".SetPricingEngine") 
-                                               [| _FloatFloatSwap.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
@@ -1774,8 +1774,8 @@ module FloatFloatSwapFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FloatFloatSwap.source + ".ValuationDate") 
-                                               [| _FloatFloatSwap.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatFloatSwap.cell
                                 |]

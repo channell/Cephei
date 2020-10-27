@@ -121,8 +121,8 @@ module ForwardVanillaOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardVanillaOption.source + ".Delta") 
-                                               [| _ForwardVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardVanillaOption.cell
                                 |]
@@ -157,8 +157,8 @@ module ForwardVanillaOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardVanillaOption.source + ".DeltaForward") 
-                                               [| _ForwardVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardVanillaOption.cell
                                 |]
@@ -193,8 +193,8 @@ module ForwardVanillaOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardVanillaOption.source + ".DividendRho") 
-                                               [| _ForwardVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardVanillaOption.cell
                                 |]
@@ -229,8 +229,8 @@ module ForwardVanillaOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardVanillaOption.source + ".Elasticity") 
-                                               [| _ForwardVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardVanillaOption.cell
                                 |]
@@ -265,8 +265,8 @@ module ForwardVanillaOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardVanillaOption.source + ".Gamma") 
-                                               [| _ForwardVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardVanillaOption.cell
                                 |]
@@ -301,8 +301,8 @@ module ForwardVanillaOptionFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ForwardVanillaOption.source + ".IsExpired") 
-                                               [| _ForwardVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardVanillaOption.cell
                                 |]
@@ -337,8 +337,8 @@ module ForwardVanillaOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardVanillaOption.source + ".ItmCashProbability") 
-                                               [| _ForwardVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardVanillaOption.cell
                                 |]
@@ -373,8 +373,8 @@ module ForwardVanillaOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardVanillaOption.source + ".Rho") 
-                                               [| _ForwardVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardVanillaOption.cell
                                 |]
@@ -409,8 +409,8 @@ module ForwardVanillaOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardVanillaOption.source + ".StrikeSensitivity") 
-                                               [| _ForwardVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardVanillaOption.cell
                                 |]
@@ -445,8 +445,8 @@ module ForwardVanillaOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardVanillaOption.source + ".Theta") 
-                                               [| _ForwardVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardVanillaOption.cell
                                 |]
@@ -481,8 +481,8 @@ module ForwardVanillaOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardVanillaOption.source + ".ThetaPerDay") 
-                                               [| _ForwardVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardVanillaOption.cell
                                 |]
@@ -517,8 +517,8 @@ module ForwardVanillaOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardVanillaOption.source + ".Vega") 
-                                               [| _ForwardVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardVanillaOption.cell
                                 |]
@@ -553,8 +553,8 @@ module ForwardVanillaOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Exercise>) l
 
                 let source () = Helper.sourceFold (_ForwardVanillaOption.source + ".Exercise") 
-                                               [| _ForwardVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardVanillaOption.cell
                                 |]
@@ -589,8 +589,8 @@ module ForwardVanillaOptionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Payoff>) l
 
                 let source () = Helper.sourceFold (_ForwardVanillaOption.source + ".Payoff") 
-                                               [| _ForwardVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardVanillaOption.cell
                                 |]
@@ -625,8 +625,8 @@ module ForwardVanillaOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardVanillaOption.source + ".CASH") 
-                                               [| _ForwardVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardVanillaOption.cell
                                 |]
@@ -661,8 +661,8 @@ module ForwardVanillaOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardVanillaOption.source + ".ErrorEstimate") 
-                                               [| _ForwardVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardVanillaOption.cell
                                 |]
@@ -697,8 +697,8 @@ module ForwardVanillaOptionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ForwardVanillaOption.source + ".NPV") 
-                                               [| _ForwardVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardVanillaOption.cell
                                 |]
@@ -737,8 +737,8 @@ module ForwardVanillaOptionFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ForwardVanillaOption.source + ".Result") 
-                                               [| _ForwardVanillaOption.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardVanillaOption.cell
@@ -779,8 +779,8 @@ module ForwardVanillaOptionFunction =
                 let format (o : ForwardVanillaOption) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ForwardVanillaOption.source + ".SetPricingEngine") 
-                                               [| _ForwardVanillaOption.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ForwardVanillaOption.cell
@@ -817,8 +817,8 @@ module ForwardVanillaOptionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_ForwardVanillaOption.source + ".ValuationDate") 
-                                               [| _ForwardVanillaOption.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ForwardVanillaOption.cell
                                 |]

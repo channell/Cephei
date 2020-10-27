@@ -58,8 +58,8 @@ module SwaptionHelperFunction =
                 let format (o : SwaptionHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SwaptionHelper.source + ".AddTimesTo") 
-                                               [| _SwaptionHelper.source
-                                               ;  _times.source
+
+                                               [| _times.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwaptionHelper.cell
@@ -100,8 +100,8 @@ module SwaptionHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionHelper.source + ".BlackPrice") 
-                                               [| _SwaptionHelper.source
-                                               ;  _sigma.source
+
+                                               [| _sigma.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwaptionHelper.cell
@@ -138,8 +138,8 @@ module SwaptionHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionHelper.source + ".ModelValue") 
-                                               [| _SwaptionHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionHelper.cell
                                 |]
@@ -174,8 +174,8 @@ module SwaptionHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Swaption>) l
 
                 let source () = Helper.sourceFold (_SwaptionHelper.source + ".Swaption") 
-                                               [| _SwaptionHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionHelper.cell
                                 |]
@@ -573,8 +573,8 @@ module SwaptionHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VanillaSwap>) l
 
                 let source () = Helper.sourceFold (_SwaptionHelper.source + ".UnderlyingSwap") 
-                                               [| _SwaptionHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionHelper.cell
                                 |]
@@ -609,8 +609,8 @@ module SwaptionHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionHelper.source + ".CalibrationError") 
-                                               [| _SwaptionHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionHelper.cell
                                 |]
@@ -665,8 +665,8 @@ module SwaptionHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionHelper.source + ".ImpliedVolatility") 
-                                               [| _SwaptionHelper.source
-                                               ;  _targetValue.source
+
+                                               [| _targetValue.source
                                                ;  _accuracy.source
                                                ;  _maxEvaluations.source
                                                ;  _minVol.source
@@ -711,8 +711,8 @@ module SwaptionHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SwaptionHelper.source + ".MarketValue") 
-                                               [| _SwaptionHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionHelper.cell
                                 |]
@@ -751,8 +751,8 @@ module SwaptionHelperFunction =
                 let format (o : SwaptionHelper) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SwaptionHelper.source + ".SetPricingEngine") 
-                                               [| _SwaptionHelper.source
-                                               ;  _engine.source
+
+                                               [| _engine.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SwaptionHelper.cell
@@ -789,8 +789,8 @@ module SwaptionHelperFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<Quote>>) l
 
                 let source () = Helper.sourceFold (_SwaptionHelper.source + ".Volatility") 
-                                               [| _SwaptionHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionHelper.cell
                                 |]
@@ -825,8 +825,8 @@ module SwaptionHelperFunction =
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SwaptionHelper.source + ".VolatilityType") 
-                                               [| _SwaptionHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SwaptionHelper.cell
                                 |]

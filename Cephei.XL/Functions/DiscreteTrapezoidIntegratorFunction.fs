@@ -91,8 +91,8 @@ module DiscreteTrapezoidIntegratorFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".AbsoluteAccuracy") 
-                                               [| _DiscreteTrapezoidIntegrator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteTrapezoidIntegrator.cell
                                 |]
@@ -127,8 +127,8 @@ module DiscreteTrapezoidIntegratorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".AbsoluteError") 
-                                               [| _DiscreteTrapezoidIntegrator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteTrapezoidIntegrator.cell
                                 |]
@@ -163,8 +163,8 @@ module DiscreteTrapezoidIntegratorFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".IntegrationSuccess") 
-                                               [| _DiscreteTrapezoidIntegrator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteTrapezoidIntegrator.cell
                                 |]
@@ -199,8 +199,8 @@ module DiscreteTrapezoidIntegratorFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".MaxEvaluations") 
-                                               [| _DiscreteTrapezoidIntegrator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteTrapezoidIntegrator.cell
                                 |]
@@ -235,8 +235,8 @@ module DiscreteTrapezoidIntegratorFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".NumberOfEvaluations") 
-                                               [| _DiscreteTrapezoidIntegrator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DiscreteTrapezoidIntegrator.cell
                                 |]
@@ -275,8 +275,8 @@ module DiscreteTrapezoidIntegratorFunction =
                 let format (o : DiscreteTrapezoidIntegrator) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".SetAbsoluteAccuracy") 
-                                               [| _DiscreteTrapezoidIntegrator.source
-                                               ;  _accuracy.source
+
+                                               [| _accuracy.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteTrapezoidIntegrator.cell
@@ -317,8 +317,8 @@ module DiscreteTrapezoidIntegratorFunction =
                 let format (o : DiscreteTrapezoidIntegrator) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".SetMaxEvaluations") 
-                                               [| _DiscreteTrapezoidIntegrator.source
-                                               ;  _maxEvaluations.source
+
+                                               [| _maxEvaluations.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DiscreteTrapezoidIntegrator.cell
@@ -367,8 +367,8 @@ module DiscreteTrapezoidIntegratorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DiscreteTrapezoidIntegrator.source + ".Value") 
-                                               [| _DiscreteTrapezoidIntegrator.source
-                                               ;  _f.source
+
+                                               [| _f.source
                                                ;  _a.source
                                                ;  _b.source
                                                |]

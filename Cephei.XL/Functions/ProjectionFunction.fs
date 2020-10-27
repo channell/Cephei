@@ -58,8 +58,8 @@ module ProjectionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_Projection.source + ".INCLUDE") 
-                                               [| _Projection.source
-                                               ;  _projectedParameters.source
+
+                                               [| _projectedParameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Projection.cell
@@ -100,8 +100,8 @@ module ProjectionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_Projection.source + ".Project") 
-                                               [| _Projection.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Projection.cell

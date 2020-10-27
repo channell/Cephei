@@ -58,8 +58,8 @@ module BlackDeltaCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackDeltaCalculator.source + ".AtmStrike") 
-                                               [| _BlackDeltaCalculator.source
-                                               ;  _atmT.source
+
+                                               [| _atmT.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackDeltaCalculator.cell
@@ -167,8 +167,8 @@ module BlackDeltaCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackDeltaCalculator.source + ".CumD1") 
-                                               [| _BlackDeltaCalculator.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackDeltaCalculator.cell
@@ -209,8 +209,8 @@ module BlackDeltaCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackDeltaCalculator.source + ".CumD2") 
-                                               [| _BlackDeltaCalculator.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackDeltaCalculator.cell
@@ -251,8 +251,8 @@ module BlackDeltaCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackDeltaCalculator.source + ".DeltaFromStrike") 
-                                               [| _BlackDeltaCalculator.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackDeltaCalculator.cell
@@ -293,8 +293,8 @@ module BlackDeltaCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackDeltaCalculator.source + ".ND1") 
-                                               [| _BlackDeltaCalculator.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackDeltaCalculator.cell
@@ -335,8 +335,8 @@ module BlackDeltaCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackDeltaCalculator.source + ".ND2") 
-                                               [| _BlackDeltaCalculator.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackDeltaCalculator.cell
@@ -377,8 +377,8 @@ module BlackDeltaCalculatorFunction =
                 let format (o : BlackDeltaCalculator) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BlackDeltaCalculator.source + ".SetDeltaType") 
-                                               [| _BlackDeltaCalculator.source
-                                               ;  _dt.source
+
+                                               [| _dt.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackDeltaCalculator.cell
@@ -419,8 +419,8 @@ module BlackDeltaCalculatorFunction =
                 let format (o : BlackDeltaCalculator) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BlackDeltaCalculator.source + ".SetOptionType") 
-                                               [| _BlackDeltaCalculator.source
-                                               ;  _ot.source
+
+                                               [| _ot.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackDeltaCalculator.cell
@@ -461,8 +461,8 @@ module BlackDeltaCalculatorFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BlackDeltaCalculator.source + ".StrikeFromDelta") 
-                                               [| _BlackDeltaCalculator.source
-                                               ;  _delta.source
+
+                                               [| _delta.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _BlackDeltaCalculator.cell

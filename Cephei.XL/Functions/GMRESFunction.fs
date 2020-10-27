@@ -116,8 +116,8 @@ module GMRESFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_GMRES.source + ".MatrixMult") 
-                                               [| _GMRES.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _GMRES.cell
@@ -163,8 +163,8 @@ module GMRESFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GMRESResult>) l
 
                 let source () = Helper.sourceFold (_GMRES.source + ".Solve") 
-                                               [| _GMRES.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                ;  _x0.source
                                                |]
                 let hash = Helper.hashFold 
@@ -215,8 +215,8 @@ module GMRESFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<GMRESResult>) l
 
                 let source () = Helper.sourceFold (_GMRES.source + ".SolveWithRestart") 
-                                               [| _GMRES.source
-                                               ;  _restart.source
+
+                                               [| _restart.source
                                                ;  _b.source
                                                ;  _x0.source
                                                |]

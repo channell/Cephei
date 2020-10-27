@@ -134,8 +134,8 @@ module DownRoundingFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DownRounding.source + ".Digit") 
-                                               [| _DownRounding.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DownRounding.cell
                                 |]
@@ -170,8 +170,8 @@ module DownRoundingFunction =
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DownRounding.source + ".GetType") 
-                                               [| _DownRounding.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DownRounding.cell
                                 |]
@@ -206,8 +206,8 @@ module DownRoundingFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DownRounding.source + ".Precision") 
-                                               [| _DownRounding.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DownRounding.cell
                                 |]
@@ -246,8 +246,8 @@ module DownRoundingFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DownRounding.source + ".Round") 
-                                               [| _DownRounding.source
-                                               ;  _value.source
+
+                                               [| _value.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DownRounding.cell

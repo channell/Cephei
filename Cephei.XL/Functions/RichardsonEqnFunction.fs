@@ -119,8 +119,8 @@ module RichardsonEqnFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RichardsonEqn.source + ".Value") 
-                                               [| _RichardsonEqn.source
-                                               ;  _k.source
+
+                                               [| _k.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RichardsonEqn.cell
@@ -161,8 +161,8 @@ module RichardsonEqnFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RichardsonEqn.source + ".Derivative") 
-                                               [| _RichardsonEqn.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RichardsonEqn.cell

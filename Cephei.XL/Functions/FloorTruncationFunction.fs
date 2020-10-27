@@ -134,8 +134,8 @@ module FloorTruncationFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloorTruncation.source + ".Digit") 
-                                               [| _FloorTruncation.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloorTruncation.cell
                                 |]
@@ -170,8 +170,8 @@ module FloorTruncationFunction =
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloorTruncation.source + ".GetType") 
-                                               [| _FloorTruncation.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloorTruncation.cell
                                 |]
@@ -206,8 +206,8 @@ module FloorTruncationFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloorTruncation.source + ".Precision") 
-                                               [| _FloorTruncation.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloorTruncation.cell
                                 |]
@@ -246,8 +246,8 @@ module FloorTruncationFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloorTruncation.source + ".Round") 
-                                               [| _FloorTruncation.source
-                                               ;  _value.source
+
+                                               [| _value.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloorTruncation.cell

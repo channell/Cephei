@@ -111,8 +111,8 @@ module BSplineFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BSpline.source + ".Value") 
-                                               [| _BSpline.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _x.source
                                                |]
                 let hash = Helper.hashFold 

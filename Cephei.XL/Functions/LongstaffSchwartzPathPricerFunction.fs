@@ -54,8 +54,8 @@ module LongstaffSchwartzPathPricerFunction =
                 let format (o : LongstaffSchwartzPathPricer) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LongstaffSchwartzPathPricer.source + ".Calibrate") 
-                                               [| _LongstaffSchwartzPathPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _LongstaffSchwartzPathPricer.cell
                                 |]
@@ -143,8 +143,8 @@ module LongstaffSchwartzPathPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_LongstaffSchwartzPathPricer.source + ".Value") 
-                                               [| _LongstaffSchwartzPathPricer.source
-                                               ;  _path.source
+
+                                               [| _path.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LongstaffSchwartzPathPricer.cell

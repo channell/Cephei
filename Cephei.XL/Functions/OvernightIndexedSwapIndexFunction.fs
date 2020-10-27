@@ -54,8 +54,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightIndex>) l
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".OvernightIndex") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
                                 |]
@@ -155,8 +155,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<OvernightIndexedSwap>) l
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".UnderlyingSwap") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
@@ -197,8 +197,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".Clone") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               ;  _tenor.source
+
+                                               [| _tenor.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
@@ -243,8 +243,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".Clone1") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               ;  _forwarding.source
+
+                                               [| _forwarding.source
                                                ;  _discounting.source
                                                |]
                 let hash = Helper.hashFold 
@@ -287,8 +287,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapIndex>) l
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".Clone") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               ;  _forwarding.source
+
+                                               [| _forwarding.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
@@ -325,8 +325,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".DiscountingTermStructure") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
                                 |]
@@ -361,8 +361,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".ExogenousDiscount") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
                                 |]
@@ -397,8 +397,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".FixedLegConvention") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
                                 |]
@@ -433,8 +433,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".FixedLegTenor") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
                                 |]
@@ -473,8 +473,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".ForecastFixing") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
@@ -511,8 +511,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".ForwardingTermStructure") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
                                 |]
@@ -547,8 +547,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".IborIndex") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
                                 |]
@@ -587,8 +587,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".MaturityDate") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
@@ -625,8 +625,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".Currency") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
                                 |]
@@ -661,8 +661,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".DayCounter") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
                                 |]
@@ -697,8 +697,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".FamilyName") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
                                 |]
@@ -741,8 +741,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".Fixing") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -781,8 +781,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".FixingCalendar") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
                                 |]
@@ -821,8 +821,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".FixingDate") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
@@ -859,8 +859,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".FixingDays") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
                                 |]
@@ -899,8 +899,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".IsValidFixingDate") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
@@ -937,8 +937,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".Name") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
                                 |]
@@ -977,8 +977,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".PastFixing") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
@@ -1015,8 +1015,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".Tenor") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
                                 |]
@@ -1051,8 +1051,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (o : OvernightIndexedSwapIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".Update") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
                                 |]
@@ -1091,8 +1091,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".ValueDate") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
@@ -1141,8 +1141,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (o : OvernightIndexedSwapIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".AddFixing") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -1195,8 +1195,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (o : OvernightIndexedSwapIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".AddFixings") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -1245,8 +1245,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (o : OvernightIndexedSwapIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".AddFixings1") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1285,8 +1285,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".AllowsNativeFixings") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
                                 |]
@@ -1321,8 +1321,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (o : OvernightIndexedSwapIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".ClearFixings") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
                                 |]
@@ -1361,8 +1361,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (o : OvernightIndexedSwapIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".RegisterWith") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
@@ -1399,8 +1399,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".TimeSeries") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell
                                 |]
@@ -1439,8 +1439,8 @@ module OvernightIndexedSwapIndexFunction =
                 let format (o : OvernightIndexedSwapIndex) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_OvernightIndexedSwapIndex.source + ".UnregisterWith") 
-                                               [| _OvernightIndexedSwapIndex.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _OvernightIndexedSwapIndex.cell

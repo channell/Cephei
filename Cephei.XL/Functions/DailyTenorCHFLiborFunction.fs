@@ -97,8 +97,8 @@ module DailyTenorCHFLiborFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".BusinessDayConvention") 
-                                               [| _DailyTenorCHFLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorCHFLibor.cell
                                 |]
@@ -137,8 +137,8 @@ module DailyTenorCHFLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborIndex>) l
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".Clone") 
-                                               [| _DailyTenorCHFLibor.source
-                                               ;  _forwarding.source
+
+                                               [| _forwarding.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorCHFLibor.cell
@@ -175,8 +175,8 @@ module DailyTenorCHFLiborFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".EndOfMonth") 
-                                               [| _DailyTenorCHFLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorCHFLibor.cell
                                 |]
@@ -223,8 +223,8 @@ module DailyTenorCHFLiborFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".ForecastFixing1") 
-                                               [| _DailyTenorCHFLibor.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _t.source
                                                |]
@@ -269,8 +269,8 @@ module DailyTenorCHFLiborFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".ForecastFixing") 
-                                               [| _DailyTenorCHFLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorCHFLibor.cell
@@ -307,8 +307,8 @@ module DailyTenorCHFLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".ForwardingTermStructure") 
-                                               [| _DailyTenorCHFLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorCHFLibor.cell
                                 |]
@@ -347,8 +347,8 @@ module DailyTenorCHFLiborFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".MaturityDate") 
-                                               [| _DailyTenorCHFLibor.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorCHFLibor.cell
@@ -385,8 +385,8 @@ module DailyTenorCHFLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".Currency") 
-                                               [| _DailyTenorCHFLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorCHFLibor.cell
                                 |]
@@ -421,8 +421,8 @@ module DailyTenorCHFLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".DayCounter") 
-                                               [| _DailyTenorCHFLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorCHFLibor.cell
                                 |]
@@ -457,8 +457,8 @@ module DailyTenorCHFLiborFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".FamilyName") 
-                                               [| _DailyTenorCHFLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorCHFLibor.cell
                                 |]
@@ -501,8 +501,8 @@ module DailyTenorCHFLiborFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".Fixing") 
-                                               [| _DailyTenorCHFLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -541,8 +541,8 @@ module DailyTenorCHFLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".FixingCalendar") 
-                                               [| _DailyTenorCHFLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorCHFLibor.cell
                                 |]
@@ -581,8 +581,8 @@ module DailyTenorCHFLiborFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".FixingDate") 
-                                               [| _DailyTenorCHFLibor.source
-                                               ;  _valueDate.source
+
+                                               [| _valueDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorCHFLibor.cell
@@ -619,8 +619,8 @@ module DailyTenorCHFLiborFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".FixingDays") 
-                                               [| _DailyTenorCHFLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorCHFLibor.cell
                                 |]
@@ -659,8 +659,8 @@ module DailyTenorCHFLiborFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".IsValidFixingDate") 
-                                               [| _DailyTenorCHFLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorCHFLibor.cell
@@ -697,8 +697,8 @@ module DailyTenorCHFLiborFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".Name") 
-                                               [| _DailyTenorCHFLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorCHFLibor.cell
                                 |]
@@ -737,8 +737,8 @@ module DailyTenorCHFLiborFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".PastFixing") 
-                                               [| _DailyTenorCHFLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorCHFLibor.cell
@@ -775,8 +775,8 @@ module DailyTenorCHFLiborFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".Tenor") 
-                                               [| _DailyTenorCHFLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorCHFLibor.cell
                                 |]
@@ -811,8 +811,8 @@ module DailyTenorCHFLiborFunction =
                 let format (o : DailyTenorCHFLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".Update") 
-                                               [| _DailyTenorCHFLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorCHFLibor.cell
                                 |]
@@ -851,8 +851,8 @@ module DailyTenorCHFLiborFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".ValueDate") 
-                                               [| _DailyTenorCHFLibor.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorCHFLibor.cell
@@ -901,8 +901,8 @@ module DailyTenorCHFLiborFunction =
                 let format (o : DailyTenorCHFLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".AddFixing") 
-                                               [| _DailyTenorCHFLibor.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -955,8 +955,8 @@ module DailyTenorCHFLiborFunction =
                 let format (o : DailyTenorCHFLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".AddFixings") 
-                                               [| _DailyTenorCHFLibor.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -1005,8 +1005,8 @@ module DailyTenorCHFLiborFunction =
                 let format (o : DailyTenorCHFLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".AddFixings1") 
-                                               [| _DailyTenorCHFLibor.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1045,8 +1045,8 @@ module DailyTenorCHFLiborFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".AllowsNativeFixings") 
-                                               [| _DailyTenorCHFLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorCHFLibor.cell
                                 |]
@@ -1081,8 +1081,8 @@ module DailyTenorCHFLiborFunction =
                 let format (o : DailyTenorCHFLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".ClearFixings") 
-                                               [| _DailyTenorCHFLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorCHFLibor.cell
                                 |]
@@ -1121,8 +1121,8 @@ module DailyTenorCHFLiborFunction =
                 let format (o : DailyTenorCHFLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".RegisterWith") 
-                                               [| _DailyTenorCHFLibor.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorCHFLibor.cell
@@ -1159,8 +1159,8 @@ module DailyTenorCHFLiborFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".TimeSeries") 
-                                               [| _DailyTenorCHFLibor.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorCHFLibor.cell
                                 |]
@@ -1199,8 +1199,8 @@ module DailyTenorCHFLiborFunction =
                 let format (o : DailyTenorCHFLibor) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DailyTenorCHFLibor.source + ".UnregisterWith") 
-                                               [| _DailyTenorCHFLibor.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DailyTenorCHFLibor.cell

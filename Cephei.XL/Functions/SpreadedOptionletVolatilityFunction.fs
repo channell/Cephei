@@ -54,8 +54,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (o : BusinessDayConvention) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".BusinessDayConvention") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
@@ -90,8 +90,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".Calendar") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
@@ -126,8 +126,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".DayCounter") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
@@ -162,8 +162,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".MaxDate") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
@@ -198,8 +198,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".MaxStrike") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
@@ -234,8 +234,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".MaxTime") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
@@ -270,8 +270,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".MinStrike") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
@@ -306,8 +306,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".ReferenceDate") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
@@ -342,8 +342,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".SettlementDays") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
@@ -433,8 +433,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".BlackVariance") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               ;  _optionTime.source
+
+                                               [| _optionTime.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
                                                |]
@@ -487,8 +487,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".BlackVariance2") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               ;  _optionTenor.source
+
+                                               [| _optionTenor.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
                                                |]
@@ -541,8 +541,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".BlackVariance1") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               ;  _optionDate.source
+
+                                               [| _optionDate.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
                                                |]
@@ -583,8 +583,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".Displacement") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
@@ -627,8 +627,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SmileSection>) l
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".SmileSection") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               ;  _optionTime.source
+
+                                               [| _optionTime.source
                                                ;  _extr.source
                                                |]
                 let hash = Helper.hashFold 
@@ -675,8 +675,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SmileSection>) l
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".SmileSection2") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               ;  _optionDate.source
+
+                                               [| _optionDate.source
                                                ;  _extr.source
                                                |]
                 let hash = Helper.hashFold 
@@ -723,8 +723,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SmileSection>) l
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".SmileSection1") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               ;  _optionTenor.source
+
+                                               [| _optionTenor.source
                                                ;  _extr.source
                                                |]
                 let hash = Helper.hashFold 
@@ -775,8 +775,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".Volatility2") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               ;  _optionTime.source
+
+                                               [| _optionTime.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
                                                |]
@@ -829,8 +829,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".Volatility1") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               ;  _optionDate.source
+
+                                               [| _optionDate.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
                                                |]
@@ -883,8 +883,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".Volatility") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               ;  _optionTenor.source
+
+                                               [| _optionTenor.source
                                                ;  _strike.source
                                                ;  _extrapolate.source
                                                |]
@@ -925,8 +925,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".VolatilityType") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
@@ -965,8 +965,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".OptionDateFromTenor") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
@@ -1007,8 +1007,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".TimeFromReference") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               ;  _date.source
+
+                                               [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
@@ -1045,8 +1045,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (o : SpreadedOptionletVolatility) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".Update") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
@@ -1081,8 +1081,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".AllowsExtrapolation") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]
@@ -1121,8 +1121,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (o : SpreadedOptionletVolatility) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".DisableExtrapolation") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
@@ -1163,8 +1163,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (o : SpreadedOptionletVolatility) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".EnableExtrapolation") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
@@ -1201,8 +1201,8 @@ module SpreadedOptionletVolatilityFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SpreadedOptionletVolatility.source + ".Extrapolate") 
-                                               [| _SpreadedOptionletVolatility.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedOptionletVolatility.cell
                                 |]

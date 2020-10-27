@@ -123,8 +123,8 @@ module MixedLinearKrugerCubicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MixedLinearKrugerCubic.source + ".Derivative") 
-                                               [| _MixedLinearKrugerCubic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -163,8 +163,8 @@ module MixedLinearKrugerCubicFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MixedLinearKrugerCubic.source + ".Empty") 
-                                               [| _MixedLinearKrugerCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MixedLinearKrugerCubic.cell
                                 |]
@@ -207,8 +207,8 @@ module MixedLinearKrugerCubicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MixedLinearKrugerCubic.source + ".Primitive") 
-                                               [| _MixedLinearKrugerCubic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -255,8 +255,8 @@ module MixedLinearKrugerCubicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MixedLinearKrugerCubic.source + ".SecondDerivative") 
-                                               [| _MixedLinearKrugerCubic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -295,8 +295,8 @@ module MixedLinearKrugerCubicFunction =
                 let format (o : MixedLinearKrugerCubic) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MixedLinearKrugerCubic.source + ".Update") 
-                                               [| _MixedLinearKrugerCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MixedLinearKrugerCubic.cell
                                 |]
@@ -339,8 +339,8 @@ module MixedLinearKrugerCubicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MixedLinearKrugerCubic.source + ".Value1") 
-                                               [| _MixedLinearKrugerCubic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _allowExtrapolation.source
                                                |]
                 let hash = Helper.hashFold 
@@ -383,8 +383,8 @@ module MixedLinearKrugerCubicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MixedLinearKrugerCubic.source + ".Value") 
-                                               [| _MixedLinearKrugerCubic.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MixedLinearKrugerCubic.cell
@@ -421,8 +421,8 @@ module MixedLinearKrugerCubicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MixedLinearKrugerCubic.source + ".XMax") 
-                                               [| _MixedLinearKrugerCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MixedLinearKrugerCubic.cell
                                 |]
@@ -457,8 +457,8 @@ module MixedLinearKrugerCubicFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_MixedLinearKrugerCubic.source + ".XMin") 
-                                               [| _MixedLinearKrugerCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MixedLinearKrugerCubic.cell
                                 |]
@@ -493,8 +493,8 @@ module MixedLinearKrugerCubicFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MixedLinearKrugerCubic.source + ".AllowsExtrapolation") 
-                                               [| _MixedLinearKrugerCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MixedLinearKrugerCubic.cell
                                 |]
@@ -533,8 +533,8 @@ module MixedLinearKrugerCubicFunction =
                 let format (o : MixedLinearKrugerCubic) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MixedLinearKrugerCubic.source + ".DisableExtrapolation") 
-                                               [| _MixedLinearKrugerCubic.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MixedLinearKrugerCubic.cell
@@ -575,8 +575,8 @@ module MixedLinearKrugerCubicFunction =
                 let format (o : MixedLinearKrugerCubic) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MixedLinearKrugerCubic.source + ".EnableExtrapolation") 
-                                               [| _MixedLinearKrugerCubic.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _MixedLinearKrugerCubic.cell
@@ -613,8 +613,8 @@ module MixedLinearKrugerCubicFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_MixedLinearKrugerCubic.source + ".Extrapolate") 
-                                               [| _MixedLinearKrugerCubic.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _MixedLinearKrugerCubic.cell
                                 |]

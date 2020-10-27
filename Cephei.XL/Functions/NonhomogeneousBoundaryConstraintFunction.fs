@@ -97,8 +97,8 @@ module NonhomogeneousBoundaryConstraintFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NonhomogeneousBoundaryConstraint.source + ".Empty") 
-                                               [| _NonhomogeneousBoundaryConstraint.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NonhomogeneousBoundaryConstraint.cell
                                 |]
@@ -137,8 +137,8 @@ module NonhomogeneousBoundaryConstraintFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_NonhomogeneousBoundaryConstraint.source + ".LowerBound") 
-                                               [| _NonhomogeneousBoundaryConstraint.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NonhomogeneousBoundaryConstraint.cell
@@ -179,8 +179,8 @@ module NonhomogeneousBoundaryConstraintFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NonhomogeneousBoundaryConstraint.source + ".Test") 
-                                               [| _NonhomogeneousBoundaryConstraint.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NonhomogeneousBoundaryConstraint.cell
@@ -229,8 +229,8 @@ module NonhomogeneousBoundaryConstraintFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NonhomogeneousBoundaryConstraint.source + ".Update") 
-                                               [| _NonhomogeneousBoundaryConstraint.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                ;  _direction.source
                                                ;  _beta.source
                                                |]
@@ -275,8 +275,8 @@ module NonhomogeneousBoundaryConstraintFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_NonhomogeneousBoundaryConstraint.source + ".UpperBound") 
-                                               [| _NonhomogeneousBoundaryConstraint.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NonhomogeneousBoundaryConstraint.cell

@@ -55,8 +55,8 @@ module YoYInflationCapFloorEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationIndex>) l
 
                 let source () = Helper.sourceFold (_YoYInflationCapFloorEngine.source + ".Index") 
-                                               [| _YoYInflationCapFloorEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCapFloorEngine.cell
                                 |]
@@ -95,8 +95,8 @@ module YoYInflationCapFloorEngineFunction =
                 let format (o : YoYInflationCapFloorEngine) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationCapFloorEngine.source + ".SetVolatility") 
-                                               [| _YoYInflationCapFloorEngine.source
-                                               ;  _vol.source
+
+                                               [| _vol.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCapFloorEngine.cell
@@ -133,8 +133,8 @@ module YoYInflationCapFloorEngineFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYOptionletVolatilitySurface>>) l
 
                 let source () = Helper.sourceFold (_YoYInflationCapFloorEngine.source + ".Volatility") 
-                                               [| _YoYInflationCapFloorEngine.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationCapFloorEngine.cell
                                 |]

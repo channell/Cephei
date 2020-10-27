@@ -164,8 +164,8 @@ module NumericalDifferentiationFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_NumericalDifferentiation.source + ".Offsets") 
-                                               [| _NumericalDifferentiation.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NumericalDifferentiation.cell
                                 |]
@@ -204,8 +204,8 @@ module NumericalDifferentiationFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NumericalDifferentiation.source + ".Value") 
-                                               [| _NumericalDifferentiation.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NumericalDifferentiation.cell
@@ -242,8 +242,8 @@ module NumericalDifferentiationFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_NumericalDifferentiation.source + ".Weights") 
-                                               [| _NumericalDifferentiation.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NumericalDifferentiation.cell
                                 |]

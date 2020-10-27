@@ -74,8 +74,8 @@ module DefaultFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Default.source + ".Integrate") 
-                                               [| _Default.source
-                                               ;  _f.source
+
+                                               [| _f.source
                                                ;  _a.source
                                                ;  _b.source
                                                ;  _I.source
@@ -120,8 +120,8 @@ module DefaultFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Default.source + ".NbEvalutions") 
-                                               [| _Default.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Default.cell
                                 |]

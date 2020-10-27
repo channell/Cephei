@@ -62,8 +62,8 @@ module FdmLogInnerValueFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FdmLogInnerValue.source + ".AvgInnerValue") 
-                                               [| _FdmLogInnerValue.source
-                                               ;  _iter.source
+
+                                               [| _iter.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -159,8 +159,8 @@ module FdmLogInnerValueFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FdmLogInnerValue.source + ".InnerValue") 
-                                               [| _FdmLogInnerValue.source
-                                               ;  _iter.source
+
+                                               [| _iter.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 

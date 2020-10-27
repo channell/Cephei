@@ -54,8 +54,8 @@ module TreeFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_Tree.source + ".Columns") 
-                                               [| _Tree.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _Tree.cell
                                 |]

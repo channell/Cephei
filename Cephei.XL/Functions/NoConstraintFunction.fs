@@ -85,8 +85,8 @@ module NoConstraintFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NoConstraint.source + ".Empty") 
-                                               [| _NoConstraint.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _NoConstraint.cell
                                 |]
@@ -125,8 +125,8 @@ module NoConstraintFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_NoConstraint.source + ".LowerBound") 
-                                               [| _NoConstraint.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NoConstraint.cell
@@ -167,8 +167,8 @@ module NoConstraintFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_NoConstraint.source + ".Test") 
-                                               [| _NoConstraint.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NoConstraint.cell
@@ -217,8 +217,8 @@ module NoConstraintFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NoConstraint.source + ".Update") 
-                                               [| _NoConstraint.source
-                                               ;  _p.source
+
+                                               [| _p.source
                                                ;  _direction.source
                                                ;  _beta.source
                                                |]
@@ -263,8 +263,8 @@ module NoConstraintFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_NoConstraint.source + ".UpperBound") 
-                                               [| _NoConstraint.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _NoConstraint.cell

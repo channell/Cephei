@@ -54,8 +54,8 @@ module SpreadedSmileSectionFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SpreadedSmileSection.source + ".AtmLevel") 
-                                               [| _SpreadedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedSmileSection.cell
                                 |]
@@ -90,8 +90,8 @@ module SpreadedSmileSectionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_SpreadedSmileSection.source + ".DayCounter") 
-                                               [| _SpreadedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedSmileSection.cell
                                 |]
@@ -126,8 +126,8 @@ module SpreadedSmileSectionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_SpreadedSmileSection.source + ".ExerciseDate") 
-                                               [| _SpreadedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedSmileSection.cell
                                 |]
@@ -162,8 +162,8 @@ module SpreadedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadedSmileSection.source + ".ExerciseTime") 
-                                               [| _SpreadedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedSmileSection.cell
                                 |]
@@ -198,8 +198,8 @@ module SpreadedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadedSmileSection.source + ".MaxStrike") 
-                                               [| _SpreadedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedSmileSection.cell
                                 |]
@@ -234,8 +234,8 @@ module SpreadedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadedSmileSection.source + ".MinStrike") 
-                                               [| _SpreadedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedSmileSection.cell
                                 |]
@@ -270,8 +270,8 @@ module SpreadedSmileSectionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_SpreadedSmileSection.source + ".ReferenceDate") 
-                                               [| _SpreadedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedSmileSection.cell
                                 |]
@@ -306,8 +306,8 @@ module SpreadedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadedSmileSection.source + ".Shift") 
-                                               [| _SpreadedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedSmileSection.cell
                                 |]
@@ -385,8 +385,8 @@ module SpreadedSmileSectionFunction =
                 let format (o : SpreadedSmileSection) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SpreadedSmileSection.source + ".Update") 
-                                               [| _SpreadedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedSmileSection.cell
                                 |]
@@ -421,8 +421,8 @@ module SpreadedSmileSectionFunction =
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SpreadedSmileSection.source + ".VolatilityType") 
-                                               [| _SpreadedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SpreadedSmileSection.cell
                                 |]
@@ -469,8 +469,8 @@ module SpreadedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadedSmileSection.source + ".Density") 
-                                               [| _SpreadedSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _discount.source
                                                ;  _gap.source
                                                |]
@@ -527,8 +527,8 @@ module SpreadedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadedSmileSection.source + ".DigitalOptionPrice") 
-                                               [| _SpreadedSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _Type.source
                                                ;  _discount.source
                                                ;  _gap.source
@@ -583,8 +583,8 @@ module SpreadedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadedSmileSection.source + ".OptionPrice") 
-                                               [| _SpreadedSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _Type.source
                                                ;  _discount.source
                                                |]
@@ -629,8 +629,8 @@ module SpreadedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadedSmileSection.source + ".Variance") 
-                                               [| _SpreadedSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadedSmileSection.cell
@@ -675,8 +675,8 @@ module SpreadedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadedSmileSection.source + ".Vega") 
-                                               [| _SpreadedSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _discount.source
                                                |]
                 let hash = Helper.hashFold 
@@ -727,8 +727,8 @@ module SpreadedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadedSmileSection.source + ".Volatility") 
-                                               [| _SpreadedSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _volatilityType.source
                                                ;  _shift.source
                                                |]
@@ -773,8 +773,8 @@ module SpreadedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SpreadedSmileSection.source + ".Volatility1") 
-                                               [| _SpreadedSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _SpreadedSmileSection.cell

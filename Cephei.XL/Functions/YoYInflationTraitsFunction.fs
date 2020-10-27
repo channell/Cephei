@@ -62,8 +62,8 @@ module YoYInflationTraitsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationTraits.source + ".DiscountImpl") 
-                                               [| _YoYInflationTraits.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -110,8 +110,8 @@ module YoYInflationTraitsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationTraits.source + ".ForwardImpl") 
-                                               [| _YoYInflationTraits.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -166,8 +166,8 @@ module YoYInflationTraitsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationTraits.source + ".Guess") 
-                                               [| _YoYInflationTraits.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _f.source
@@ -214,8 +214,8 @@ module YoYInflationTraitsFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationTraits.source + ".InitialDate") 
-                                               [| _YoYInflationTraits.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationTraits.cell
@@ -256,8 +256,8 @@ module YoYInflationTraitsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationTraits.source + ".InitialValue") 
-                                               [| _YoYInflationTraits.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationTraits.cell
@@ -294,8 +294,8 @@ module YoYInflationTraitsFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationTraits.source + ".MaxIterations") 
-                                               [| _YoYInflationTraits.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YoYInflationTraits.cell
                                 |]
@@ -346,8 +346,8 @@ module YoYInflationTraitsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationTraits.source + ".MaxValueAfter") 
-                                               [| _YoYInflationTraits.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _f.source
@@ -406,8 +406,8 @@ module YoYInflationTraitsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationTraits.source + ".MinValueAfter") 
-                                               [| _YoYInflationTraits.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _f.source
@@ -462,8 +462,8 @@ module YoYInflationTraitsFunction =
                 let format (o : YoYInflationTraits) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationTraits.source + ".UpdateGuess") 
-                                               [| _YoYInflationTraits.source
-                                               ;  _data.source
+
+                                               [| _data.source
                                                ;  _discount.source
                                                ;  _i.source
                                                |]
@@ -512,8 +512,8 @@ module YoYInflationTraitsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YoYInflationTraits.source + ".ZeroYieldImpl") 
-                                               [| _YoYInflationTraits.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 

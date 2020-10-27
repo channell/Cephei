@@ -132,8 +132,8 @@ module ExplicitEulerFunction =
                 let format (o : ExplicitEuler) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ExplicitEuler.source + ".SetStep") 
-                                               [| _ExplicitEuler.source
-                                               ;  _dt.source
+
+                                               [| _dt.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ExplicitEuler.cell
@@ -182,8 +182,8 @@ module ExplicitEulerFunction =
                 let format (o : ExplicitEuler) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ExplicitEuler.source + ".Step") 
-                                               [| _ExplicitEuler.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                ;  _t.source
                                                ;  _theta.source
                                                |]

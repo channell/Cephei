@@ -188,8 +188,8 @@ module CmsSpreadCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapSpreadIndex>) l
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".SwapSpreadIndex") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -228,8 +228,8 @@ module CmsSpreadCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".AccruedAmount") 
-                                               [| _CmsSpreadCoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
@@ -266,8 +266,8 @@ module CmsSpreadCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".AdjustedFixing") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -302,8 +302,8 @@ module CmsSpreadCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".Amount") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -338,8 +338,8 @@ module CmsSpreadCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".ConvexityAdjustment") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -374,8 +374,8 @@ module CmsSpreadCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".DayCounter") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -458,8 +458,8 @@ module CmsSpreadCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".Factory") 
-                                               [| _CmsSpreadCoupon.source
-                                               ;  _nominal.source
+
+                                               [| _nominal.source
                                                ;  _paymentDate.source
                                                ;  _startDate.source
                                                ;  _endDate.source
@@ -518,8 +518,8 @@ module CmsSpreadCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".FixingDate") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -554,8 +554,8 @@ module CmsSpreadCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".FixingDays") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -590,8 +590,8 @@ module CmsSpreadCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".Gearing") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -626,8 +626,8 @@ module CmsSpreadCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".Index") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -662,8 +662,8 @@ module CmsSpreadCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".IndexFixing") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -698,8 +698,8 @@ module CmsSpreadCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".IsInArrears") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -738,8 +738,8 @@ module CmsSpreadCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".Price") 
-                                               [| _CmsSpreadCoupon.source
-                                               ;  _yts.source
+
+                                               [| _yts.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
@@ -776,8 +776,8 @@ module CmsSpreadCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".Pricer") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -812,8 +812,8 @@ module CmsSpreadCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".Rate") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -852,8 +852,8 @@ module CmsSpreadCouponFunction =
                 let format (o : CmsSpreadCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".SetPricer") 
-                                               [| _CmsSpreadCoupon.source
-                                               ;  _pricer.source
+
+                                               [| _pricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
@@ -890,8 +890,8 @@ module CmsSpreadCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".Spread") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -926,8 +926,8 @@ module CmsSpreadCouponFunction =
                 let format (o : CmsSpreadCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".Update") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -962,8 +962,8 @@ module CmsSpreadCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".AccrualDays") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -998,8 +998,8 @@ module CmsSpreadCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".AccrualEndDate") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -1034,8 +1034,8 @@ module CmsSpreadCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".AccrualPeriod") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -1070,8 +1070,8 @@ module CmsSpreadCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".AccrualStartDate") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -1110,8 +1110,8 @@ module CmsSpreadCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".AccruedDays") 
-                                               [| _CmsSpreadCoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
@@ -1152,8 +1152,8 @@ module CmsSpreadCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".AccruedPeriod") 
-                                               [| _CmsSpreadCoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
@@ -1190,8 +1190,8 @@ module CmsSpreadCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".Date") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -1226,8 +1226,8 @@ module CmsSpreadCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".ExCouponDate") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -1262,8 +1262,8 @@ module CmsSpreadCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".Nominal") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -1298,8 +1298,8 @@ module CmsSpreadCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".ReferencePeriodEnd") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -1334,8 +1334,8 @@ module CmsSpreadCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".ReferencePeriodStart") 
-                                               [| _CmsSpreadCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
                                 |]
@@ -1374,8 +1374,8 @@ module CmsSpreadCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".CompareTo") 
-                                               [| _CmsSpreadCoupon.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
@@ -1416,8 +1416,8 @@ module CmsSpreadCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".Equals") 
-                                               [| _CmsSpreadCoupon.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
@@ -1462,8 +1462,8 @@ module CmsSpreadCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".HasOccurred") 
-                                               [| _CmsSpreadCoupon.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                ;  _includeRefDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1506,8 +1506,8 @@ module CmsSpreadCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".TradingExCoupon") 
-                                               [| _CmsSpreadCoupon.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
@@ -1548,8 +1548,8 @@ module CmsSpreadCouponFunction =
                 let format (o : CmsSpreadCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".Accept") 
-                                               [| _CmsSpreadCoupon.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
@@ -1590,8 +1590,8 @@ module CmsSpreadCouponFunction =
                 let format (o : CmsSpreadCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".RegisterWith") 
-                                               [| _CmsSpreadCoupon.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell
@@ -1632,8 +1632,8 @@ module CmsSpreadCouponFunction =
                 let format (o : CmsSpreadCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CmsSpreadCoupon.source + ".UnregisterWith") 
-                                               [| _CmsSpreadCoupon.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CmsSpreadCoupon.cell

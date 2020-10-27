@@ -95,8 +95,8 @@ module ChiSquareDistributionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ChiSquareDistribution.source + ".Value") 
-                                               [| _ChiSquareDistribution.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ChiSquareDistribution.cell

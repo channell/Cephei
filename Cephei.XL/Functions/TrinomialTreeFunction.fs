@@ -66,8 +66,8 @@ module TrinomialTreeFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TrinomialTree.source + ".Descendant") 
-                                               [| _TrinomialTree.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _index.source
                                                ;  _branch.source
                                                |]
@@ -112,8 +112,8 @@ module TrinomialTreeFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TrinomialTree.source + ".Dx") 
-                                               [| _TrinomialTree.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TrinomialTree.cell
@@ -162,8 +162,8 @@ module TrinomialTreeFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TrinomialTree.source + ".Probability") 
-                                               [| _TrinomialTree.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _index.source
                                                ;  _branch.source
                                                |]
@@ -208,8 +208,8 @@ module TrinomialTreeFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TrinomialTree.source + ".Size") 
-                                               [| _TrinomialTree.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _TrinomialTree.cell
@@ -246,8 +246,8 @@ module TrinomialTreeFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TimeGrid>) l
 
                 let source () = Helper.sourceFold (_TrinomialTree.source + ".TimeGrid") 
-                                               [| _TrinomialTree.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TrinomialTree.cell
                                 |]
@@ -382,8 +382,8 @@ module TrinomialTreeFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TrinomialTree.source + ".Underlying") 
-                                               [| _TrinomialTree.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _index.source
                                                |]
                 let hash = Helper.hashFold 
@@ -422,8 +422,8 @@ module TrinomialTreeFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_TrinomialTree.source + ".Columns") 
-                                               [| _TrinomialTree.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _TrinomialTree.cell
                                 |]

@@ -54,8 +54,8 @@ module FixedLoanFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_FixedLoan.source + ".FixedLeg") 
-                                               [| _FixedLoan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedLoan.cell
                                 |]
@@ -175,8 +175,8 @@ module FixedLoanFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_FixedLoan.source + ".PrincipalLeg") 
-                                               [| _FixedLoan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedLoan.cell
                                 |]
@@ -211,8 +211,8 @@ module FixedLoanFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FixedLoan.source + ".IsExpired") 
-                                               [| _FixedLoan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedLoan.cell
                                 |]
@@ -247,8 +247,8 @@ module FixedLoanFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FixedLoan.source + ".CASH") 
-                                               [| _FixedLoan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedLoan.cell
                                 |]
@@ -283,8 +283,8 @@ module FixedLoanFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FixedLoan.source + ".ErrorEstimate") 
-                                               [| _FixedLoan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedLoan.cell
                                 |]
@@ -319,8 +319,8 @@ module FixedLoanFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FixedLoan.source + ".NPV") 
-                                               [| _FixedLoan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedLoan.cell
                                 |]
@@ -359,8 +359,8 @@ module FixedLoanFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FixedLoan.source + ".Result") 
-                                               [| _FixedLoan.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedLoan.cell
@@ -401,8 +401,8 @@ module FixedLoanFunction =
                 let format (o : FixedLoan) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FixedLoan.source + ".SetPricingEngine") 
-                                               [| _FixedLoan.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FixedLoan.cell
@@ -439,8 +439,8 @@ module FixedLoanFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FixedLoan.source + ".ValuationDate") 
-                                               [| _FixedLoan.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FixedLoan.cell
                                 |]

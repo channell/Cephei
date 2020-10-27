@@ -58,8 +58,8 @@ module FractionalDividendFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FractionalDividend.source + ".Amount1") 
-                                               [| _FractionalDividend.source
-                                               ;  _underlying.source
+
+                                               [| _underlying.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FractionalDividend.cell
@@ -96,8 +96,8 @@ module FractionalDividendFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FractionalDividend.source + ".Amount") 
-                                               [| _FractionalDividend.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FractionalDividend.cell
                                 |]
@@ -224,8 +224,8 @@ module FractionalDividendFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FractionalDividend.source + ".Nominal") 
-                                               [| _FractionalDividend.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FractionalDividend.cell
                                 |]
@@ -260,8 +260,8 @@ module FractionalDividendFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FractionalDividend.source + ".Rate") 
-                                               [| _FractionalDividend.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FractionalDividend.cell
                                 |]
@@ -296,8 +296,8 @@ module FractionalDividendFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FractionalDividend.source + ".Date") 
-                                               [| _FractionalDividend.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FractionalDividend.cell
                                 |]
@@ -336,8 +336,8 @@ module FractionalDividendFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FractionalDividend.source + ".CompareTo") 
-                                               [| _FractionalDividend.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FractionalDividend.cell
@@ -378,8 +378,8 @@ module FractionalDividendFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FractionalDividend.source + ".Equals") 
-                                               [| _FractionalDividend.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FractionalDividend.cell
@@ -416,8 +416,8 @@ module FractionalDividendFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FractionalDividend.source + ".ExCouponDate") 
-                                               [| _FractionalDividend.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FractionalDividend.cell
                                 |]
@@ -460,8 +460,8 @@ module FractionalDividendFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FractionalDividend.source + ".HasOccurred") 
-                                               [| _FractionalDividend.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                ;  _includeRefDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -504,8 +504,8 @@ module FractionalDividendFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FractionalDividend.source + ".TradingExCoupon") 
-                                               [| _FractionalDividend.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FractionalDividend.cell
@@ -546,8 +546,8 @@ module FractionalDividendFunction =
                 let format (o : FractionalDividend) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FractionalDividend.source + ".Accept") 
-                                               [| _FractionalDividend.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FractionalDividend.cell
@@ -588,8 +588,8 @@ module FractionalDividendFunction =
                 let format (o : FractionalDividend) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FractionalDividend.source + ".RegisterWith") 
-                                               [| _FractionalDividend.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FractionalDividend.cell
@@ -630,8 +630,8 @@ module FractionalDividendFunction =
                 let format (o : FractionalDividend) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FractionalDividend.source + ".UnregisterWith") 
-                                               [| _FractionalDividend.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FractionalDividend.cell

@@ -121,8 +121,8 @@ module AmericanPayoffAtExpiryFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmericanPayoffAtExpiry.source + ".Value") 
-                                               [| _AmericanPayoffAtExpiry.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmericanPayoffAtExpiry.cell
                                 |]

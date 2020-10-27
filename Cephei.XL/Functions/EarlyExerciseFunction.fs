@@ -97,8 +97,8 @@ module EarlyExerciseFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EarlyExercise.source + ".PayoffAtExpiry") 
-                                               [| _EarlyExercise.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EarlyExercise.cell
                                 |]
@@ -137,8 +137,8 @@ module EarlyExerciseFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_EarlyExercise.source + ".Date") 
-                                               [| _EarlyExercise.source
-                                               ;  _index.source
+
+                                               [| _index.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _EarlyExercise.cell
@@ -175,8 +175,8 @@ module EarlyExerciseFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_EarlyExercise.source + ".Dates") 
-                                               [| _EarlyExercise.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EarlyExercise.cell
                                 |]
@@ -211,8 +211,8 @@ module EarlyExerciseFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_EarlyExercise.source + ".LastDate") 
-                                               [| _EarlyExercise.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EarlyExercise.cell
                                 |]
@@ -247,8 +247,8 @@ module EarlyExerciseFunction =
                 let format (o : Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_EarlyExercise.source + ".TYPE") 
-                                               [| _EarlyExercise.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _EarlyExercise.cell
                                 |]

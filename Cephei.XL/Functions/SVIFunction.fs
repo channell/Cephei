@@ -66,8 +66,8 @@ module SVIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
                 let source () = Helper.sourceFold (_SVI.source + ".Interpolate") 
-                                               [| _SVI.source
-                                               ;  _xBegin.source
+
+                                               [| _xBegin.source
                                                ;  _xEnd.source
                                                ;  _yBegin.source
                                                |]

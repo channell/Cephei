@@ -54,8 +54,8 @@ module FdmLinearOpIteratorFunction =
                 let format (i : Generic.List<int>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_FdmLinearOpIterator.source + ".Coordinates") 
-                                               [| _FdmLinearOpIterator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmLinearOpIterator.cell
                                 |]
@@ -94,8 +94,8 @@ module FdmLinearOpIteratorFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FdmLinearOpIterator.source + ".Equals") 
-                                               [| _FdmLinearOpIterator.source
-                                               ;  _obj.source
+
+                                               [| _obj.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmLinearOpIterator.cell
@@ -292,8 +292,8 @@ module FdmLinearOpIteratorFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FdmLinearOpIterator.source + ".Index") 
-                                               [| _FdmLinearOpIterator.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FdmLinearOpIterator.cell
                                 |]
@@ -332,8 +332,8 @@ module FdmLinearOpIteratorFunction =
                 let format (o : FdmLinearOpIterator) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FdmLinearOpIterator.source + ".Swap") 
-                                               [| _FdmLinearOpIterator.source
-                                               ;  _iter.source
+
+                                               [| _iter.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FdmLinearOpIterator.cell

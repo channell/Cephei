@@ -85,8 +85,8 @@ module BachelierSpecFunction =
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_BachelierSpec.source + ".TYPE") 
-                                               [| _BachelierSpec.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _BachelierSpec.cell
                                 |]
@@ -145,8 +145,8 @@ module BachelierSpecFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BachelierSpec.source + ".Value") 
-                                               [| _BachelierSpec.source
-                                               ;  _Type.source
+
+                                               [| _Type.source
                                                ;  _strike.source
                                                ;  _atmForward.source
                                                ;  _stdDev.source
@@ -217,8 +217,8 @@ module BachelierSpecFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_BachelierSpec.source + ".Vega") 
-                                               [| _BachelierSpec.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _atmForward.source
                                                ;  _stdDev.source
                                                ;  _exerciseTime.source

@@ -62,8 +62,8 @@ module NegativePowerDefaultIntensityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NegativePowerDefaultIntensity.source + ".DefaultRecovery") 
-                                               [| _NegativePowerDefaultIntensity.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _s.source
                                                |]
                 let hash = Helper.hashFold 
@@ -110,8 +110,8 @@ module NegativePowerDefaultIntensityFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_NegativePowerDefaultIntensity.source + ".HazardRate") 
-                                               [| _NegativePowerDefaultIntensity.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _s.source
                                                |]
                 let hash = Helper.hashFold 

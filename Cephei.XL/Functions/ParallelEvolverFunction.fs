@@ -66,8 +66,8 @@ module ParallelEvolverFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IMixedScheme>) l
 
                 let source () = Helper.sourceFold (_ParallelEvolver.source + ".Factory") 
-                                               [| _ParallelEvolver.source
-                                               ;  _L.source
+
+                                               [| _L.source
                                                ;  _bcs.source
                                                ;  _additionalFields.source
                                                |]
@@ -186,8 +186,8 @@ module ParallelEvolverFunction =
                 let format (o : ParallelEvolver) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ParallelEvolver.source + ".SetStep") 
-                                               [| _ParallelEvolver.source
-                                               ;  _dt.source
+
+                                               [| _dt.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ParallelEvolver.cell
@@ -236,8 +236,8 @@ module ParallelEvolverFunction =
                 let format (o : ParallelEvolver) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ParallelEvolver.source + ".Step") 
-                                               [| _ParallelEvolver.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                ;  _t.source
                                                ;  _theta.source
                                                |]

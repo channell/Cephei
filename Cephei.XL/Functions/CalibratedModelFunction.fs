@@ -78,8 +78,8 @@ module CalibratedModelFunction =
                 let format (o : CalibratedModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CalibratedModel.source + ".Calibrate") 
-                                               [| _CalibratedModel.source
-                                               ;  _instruments.source
+
+                                               [| _instruments.source
                                                ;  _Method.source
                                                ;  _endCriteria.source
                                                ;  _additionalConstraint.source
@@ -163,8 +163,8 @@ module CalibratedModelFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Constraint>) l
 
                 let source () = Helper.sourceFold (_CalibratedModel.source + ".CONSTRAINT") 
-                                               [| _CalibratedModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CalibratedModel.cell
                                 |]
@@ -199,8 +199,8 @@ module CalibratedModelFunction =
                 let format (o : EndCriteria.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CalibratedModel.source + ".EndCriteria") 
-                                               [| _CalibratedModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CalibratedModel.cell
                                 |]
@@ -235,8 +235,8 @@ module CalibratedModelFunction =
                 let format (o : CalibratedModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CalibratedModel.source + ".NotifyObservers") 
-                                               [| _CalibratedModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CalibratedModel.cell
                                 |]
@@ -271,8 +271,8 @@ module CalibratedModelFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_CalibratedModel.source + ".Parameters") 
-                                               [| _CalibratedModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CalibratedModel.cell
                                 |]
@@ -311,8 +311,8 @@ module CalibratedModelFunction =
                 let format (o : CalibratedModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CalibratedModel.source + ".RegisterWith") 
-                                               [| _CalibratedModel.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CalibratedModel.cell
@@ -353,8 +353,8 @@ module CalibratedModelFunction =
                 let format (o : CalibratedModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CalibratedModel.source + ".SetParams") 
-                                               [| _CalibratedModel.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CalibratedModel.cell
@@ -395,8 +395,8 @@ module CalibratedModelFunction =
                 let format (o : CalibratedModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CalibratedModel.source + ".UnregisterWith") 
-                                               [| _CalibratedModel.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _CalibratedModel.cell
@@ -433,8 +433,8 @@ module CalibratedModelFunction =
                 let format (o : CalibratedModel) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_CalibratedModel.source + ".Update") 
-                                               [| _CalibratedModel.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _CalibratedModel.cell
                                 |]
@@ -477,8 +477,8 @@ module CalibratedModelFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_CalibratedModel.source + ".Value") 
-                                               [| _CalibratedModel.source
-                                               ;  _parameters.source
+
+                                               [| _parameters.source
                                                ;  _instruments.source
                                                |]
                 let hash = Helper.hashFold 

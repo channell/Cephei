@@ -115,8 +115,8 @@ module ConstantGradHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConstantGradHelper.source + ".FNext") 
-                                               [| _ConstantGradHelper.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ConstantGradHelper.cell
                                 |]
@@ -155,8 +155,8 @@ module ConstantGradHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConstantGradHelper.source + ".Primitive") 
-                                               [| _ConstantGradHelper.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantGradHelper.cell
@@ -197,8 +197,8 @@ module ConstantGradHelperFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ConstantGradHelper.source + ".Value") 
-                                               [| _ConstantGradHelper.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ConstantGradHelper.cell

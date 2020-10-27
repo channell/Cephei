@@ -179,8 +179,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".AccruedAmount") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
@@ -217,8 +217,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".Calendar") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
                                 |]
@@ -253,8 +253,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".Cashflows") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
                                 |]
@@ -289,8 +289,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".CleanPrice") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
                                 |]
@@ -345,8 +345,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".CleanPrice1") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               ;  _Yield.source
+
+                                               [| _Yield.source
                                                ;  _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -411,8 +411,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".DirtyPrice") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               ;  _Yield.source
+
+                                               [| _Yield.source
                                                ;  _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -457,8 +457,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".DirtyPrice") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
                                 |]
@@ -493,8 +493,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".IsExpired") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
                                 |]
@@ -529,8 +529,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".IssueDate") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
                                 |]
@@ -569,8 +569,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".IsTradable") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
@@ -607,8 +607,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".MaturityDate") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
                                 |]
@@ -647,8 +647,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".NextCashFlowDate") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
@@ -689,8 +689,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".NextCouponRate") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
@@ -731,8 +731,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".Notional") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
@@ -769,8 +769,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".Notionals") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
                                 |]
@@ -809,8 +809,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".PreviousCashFlowDate") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
@@ -851,8 +851,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".PreviousCouponRate") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               ;  _settlement.source
+
+                                               [| _settlement.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
@@ -889,8 +889,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".Redemption") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
                                 |]
@@ -925,8 +925,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".Redemptions") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
                                 |]
@@ -965,8 +965,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".SettlementDate") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               ;  _date.source
+
+                                               [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
@@ -1003,8 +1003,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".SettlementDays") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
                                 |]
@@ -1043,8 +1043,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".SettlementValue") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               ;  _cleanPrice.source
+
+                                               [| _cleanPrice.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
@@ -1081,8 +1081,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".SettlementValue1") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
                                 |]
@@ -1117,8 +1117,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".StartDate") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
                                 |]
@@ -1181,8 +1181,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".Yield1") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               ;  _cleanPrice.source
+
+                                               [| _cleanPrice.source
                                                ;  _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -1251,8 +1251,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".Yield") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               ;  _dc.source
+
+                                               [| _dc.source
                                                ;  _comp.source
                                                ;  _freq.source
                                                ;  _accuracy.source
@@ -1297,8 +1297,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".CASH") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
                                 |]
@@ -1333,8 +1333,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".ErrorEstimate") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
                                 |]
@@ -1369,8 +1369,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".NPV") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
                                 |]
@@ -1409,8 +1409,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".Result") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               ;  _tag.source
+
+                                               [| _tag.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
@@ -1451,8 +1451,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (o : AmortizingFloatingRateBond) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".SetPricingEngine") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               ;  _e.source
+
+                                               [| _e.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
@@ -1489,8 +1489,8 @@ module AmortizingFloatingRateBondFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_AmortizingFloatingRateBond.source + ".ValuationDate") 
-                                               [| _AmortizingFloatingRateBond.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmortizingFloatingRateBond.cell
                                 |]

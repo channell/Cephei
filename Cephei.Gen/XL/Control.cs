@@ -18,7 +18,7 @@ namespace Cephei.Gen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Control.tt"
+    #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Control.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class Control : ControlBase
     {
@@ -29,7 +29,7 @@ namespace Cephei.Gen
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Control.tt"
+            #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Control.tt"
 /*
 Name:           Control.tt
 Author:         Stephen Channell
@@ -41,7 +41,7 @@ Description:    Control the generation of XL intefaces
             this.Write(" \r\n");
             this.Write("\r\n");
             
-            #line 17 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Control.tt"
+            #line 17 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Control.tt"
  go (); 
             
             #line default
@@ -49,7 +49,7 @@ Description:    Control the generation of XL intefaces
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 18 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Control.tt"
+        #line 18 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Control.tt"
 
  
 void go () 
@@ -106,7 +106,7 @@ void Output (string filename, string Mnemonic, string typecode, int msgno)
         #line default
         #line hidden
         
-        #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Control.tt"
+        #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Control.tt"
 
 private string _RootPackageNameField;
 

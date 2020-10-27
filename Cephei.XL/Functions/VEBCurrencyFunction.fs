@@ -85,8 +85,8 @@ module VEBCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_VEBCurrency.source + ".Code") 
-                                               [| _VEBCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _VEBCurrency.cell
                                 |]
@@ -121,8 +121,8 @@ module VEBCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_VEBCurrency.source + ".Empty") 
-                                               [| _VEBCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _VEBCurrency.cell
                                 |]
@@ -161,8 +161,8 @@ module VEBCurrencyFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_VEBCurrency.source + ".Equals") 
-                                               [| _VEBCurrency.source
-                                               ;  _o.source
+
+                                               [| _o.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _VEBCurrency.cell
@@ -199,8 +199,8 @@ module VEBCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_VEBCurrency.source + ".Format") 
-                                               [| _VEBCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _VEBCurrency.cell
                                 |]
@@ -235,8 +235,8 @@ module VEBCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_VEBCurrency.source + ".FractionsPerUnit") 
-                                               [| _VEBCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _VEBCurrency.cell
                                 |]
@@ -271,8 +271,8 @@ module VEBCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_VEBCurrency.source + ".FractionSymbol") 
-                                               [| _VEBCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _VEBCurrency.cell
                                 |]
@@ -307,8 +307,8 @@ module VEBCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_VEBCurrency.source + ".Name") 
-                                               [| _VEBCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _VEBCurrency.cell
                                 |]
@@ -343,8 +343,8 @@ module VEBCurrencyFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_VEBCurrency.source + ".NumericCode") 
-                                               [| _VEBCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _VEBCurrency.cell
                                 |]
@@ -379,8 +379,8 @@ module VEBCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Rounding>) l
 
                 let source () = Helper.sourceFold (_VEBCurrency.source + ".Rounding") 
-                                               [| _VEBCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _VEBCurrency.cell
                                 |]
@@ -415,8 +415,8 @@ module VEBCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_VEBCurrency.source + ".Symbol") 
-                                               [| _VEBCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _VEBCurrency.cell
                                 |]
@@ -451,8 +451,8 @@ module VEBCurrencyFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_VEBCurrency.source + ".ToString") 
-                                               [| _VEBCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _VEBCurrency.cell
                                 |]
@@ -487,8 +487,8 @@ module VEBCurrencyFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_VEBCurrency.source + ".TriangulationCurrency") 
-                                               [| _VEBCurrency.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _VEBCurrency.cell
                                 |]

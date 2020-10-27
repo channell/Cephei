@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "1eFfw1cRSi0Il6u13BHgwWY/kvePORlFOVlbvKsdFatn2HnH8XZN8Oe02jNvCf4h6Vm5njTe+PBUQMgTSACxag==",
+  "dgSpecHash": "SGxcV82krUDBJADGXvV9YDrxXE6WiQJRYlGLlkr/J20/m/ewXYRQshzle4fdPiUOX4TFfgULaG71Sqh83U7q4g==",
   "success": true,
   "projectFilePath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL.Test\\Cephei.QL.Test.fsproj",
   "expectedPackageFiles": [
-    "C:\\Users\\steve\\.nuget\\packages\\cephei.ql\\3.0.0\\cephei.ql.3.0.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\fsharp.core\\4.7.2\\fsharp.core.4.7.2.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\ilgpu\\0.9.1\\ilgpu.0.9.1.nupkg.sha512",
@@ -98,7 +97,8 @@
     "C:\\Users\\steve\\.nuget\\packages\\system.threading.tasks.extensions\\4.3.0\\system.threading.tasks.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\steve\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\steve\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\cephei.ql\\3.0.0\\cephei.ql.3.0.0.nupkg.sha512"
   ],
   "logs": []
 }

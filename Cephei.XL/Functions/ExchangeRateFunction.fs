@@ -58,8 +58,8 @@ module ExchangeRateFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Money>) l
 
                 let source () = Helper.sourceFold (_ExchangeRate.source + ".Exchange") 
-                                               [| _ExchangeRate.source
-                                               ;  _amount.source
+
+                                               [| _amount.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _ExchangeRate.cell
@@ -176,8 +176,8 @@ module ExchangeRateFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ExchangeRate.source + ".HasValue") 
-                                               [| _ExchangeRate.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ExchangeRate.cell
                                 |]
@@ -212,8 +212,8 @@ module ExchangeRateFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_ExchangeRate.source + ".Rate") 
-                                               [| _ExchangeRate.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ExchangeRate.cell
                                 |]
@@ -248,8 +248,8 @@ module ExchangeRateFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_ExchangeRate.source + ".Source") 
-                                               [| _ExchangeRate.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ExchangeRate.cell
                                 |]
@@ -284,8 +284,8 @@ module ExchangeRateFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_ExchangeRate.source + ".Target") 
-                                               [| _ExchangeRate.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ExchangeRate.cell
                                 |]
@@ -320,8 +320,8 @@ module ExchangeRateFunction =
                 let format (o : ExchangeRate.Type) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_ExchangeRate.source + ".TYPE") 
-                                               [| _ExchangeRate.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _ExchangeRate.cell
                                 |]

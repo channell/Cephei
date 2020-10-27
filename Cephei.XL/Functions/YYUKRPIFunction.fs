@@ -138,8 +138,8 @@ module YYUKRPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationIndex>) l
 
                 let source () = Helper.sourceFold (_YYUKRPI.source + ".Clone") 
-                                               [| _YYUKRPI.source
-                                               ;  _h.source
+
+                                               [| _h.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPI.cell
@@ -184,8 +184,8 @@ module YYUKRPIFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_YYUKRPI.source + ".Fixing") 
-                                               [| _YYUKRPI.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _forecastTodaysFixing.source
                                                |]
                 let hash = Helper.hashFold 
@@ -224,8 +224,8 @@ module YYUKRPIFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYUKRPI.source + ".Ratio") 
-                                               [| _YYUKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPI.cell
                                 |]
@@ -260,8 +260,8 @@ module YYUKRPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Handle<YoYInflationTermStructure>>) l
 
                 let source () = Helper.sourceFold (_YYUKRPI.source + ".YoyInflationTermStructure") 
-                                               [| _YYUKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPI.cell
                                 |]
@@ -308,8 +308,8 @@ module YYUKRPIFunction =
                 let format (o : YYUKRPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYUKRPI.source + ".AddFixing") 
-                                               [| _YYUKRPI.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                ;  _fixing.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -351,8 +351,8 @@ module YYUKRPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Period>) l
 
                 let source () = Helper.sourceFold (_YYUKRPI.source + ".AvailabilityLag") 
-                                               [| _YYUKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPI.cell
                                 |]
@@ -387,8 +387,8 @@ module YYUKRPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Currency>) l
 
                 let source () = Helper.sourceFold (_YYUKRPI.source + ".Currency") 
-                                               [| _YYUKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPI.cell
                                 |]
@@ -423,8 +423,8 @@ module YYUKRPIFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYUKRPI.source + ".FamilyName") 
-                                               [| _YYUKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPI.cell
                                 |]
@@ -459,8 +459,8 @@ module YYUKRPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_YYUKRPI.source + ".FixingCalendar") 
-                                               [| _YYUKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPI.cell
                                 |]
@@ -495,8 +495,8 @@ module YYUKRPIFunction =
                 let format (o : Frequency) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYUKRPI.source + ".Frequency") 
-                                               [| _YYUKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPI.cell
                                 |]
@@ -531,8 +531,8 @@ module YYUKRPIFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYUKRPI.source + ".Interpolated") 
-                                               [| _YYUKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPI.cell
                                 |]
@@ -571,8 +571,8 @@ module YYUKRPIFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYUKRPI.source + ".IsValidFixingDate") 
-                                               [| _YYUKRPI.source
-                                               ;  _fixingDate.source
+
+                                               [| _fixingDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPI.cell
@@ -609,8 +609,8 @@ module YYUKRPIFunction =
                 let format (o : string) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYUKRPI.source + ".Name") 
-                                               [| _YYUKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPI.cell
                                 |]
@@ -645,8 +645,8 @@ module YYUKRPIFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Region>) l
 
                 let source () = Helper.sourceFold (_YYUKRPI.source + ".Region") 
-                                               [| _YYUKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPI.cell
                                 |]
@@ -681,8 +681,8 @@ module YYUKRPIFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYUKRPI.source + ".Revised") 
-                                               [| _YYUKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPI.cell
                                 |]
@@ -717,8 +717,8 @@ module YYUKRPIFunction =
                 let format (o : YYUKRPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYUKRPI.source + ".Update") 
-                                               [| _YYUKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPI.cell
                                 |]
@@ -765,8 +765,8 @@ module YYUKRPIFunction =
                 let format (o : YYUKRPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYUKRPI.source + ".AddFixings") 
-                                               [| _YYUKRPI.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _v.source
                                                ;  _forceOverwrite.source
                                                |]
@@ -815,8 +815,8 @@ module YYUKRPIFunction =
                 let format (o : YYUKRPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYUKRPI.source + ".AddFixings1") 
-                                               [| _YYUKRPI.source
-                                               ;  _source.source
+
+                                               [| _source.source
                                                ;  _forceOverwrite.source
                                                |]
                 let hash = Helper.hashFold 
@@ -855,8 +855,8 @@ module YYUKRPIFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYUKRPI.source + ".AllowsNativeFixings") 
-                                               [| _YYUKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPI.cell
                                 |]
@@ -891,8 +891,8 @@ module YYUKRPIFunction =
                 let format (o : YYUKRPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYUKRPI.source + ".ClearFixings") 
-                                               [| _YYUKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPI.cell
                                 |]
@@ -931,8 +931,8 @@ module YYUKRPIFunction =
                 let format (o : YYUKRPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYUKRPI.source + ".RegisterWith") 
-                                               [| _YYUKRPI.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPI.cell
@@ -969,8 +969,8 @@ module YYUKRPIFunction =
                 let format (o : TimeSeries<Nullable<double>>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYUKRPI.source + ".TimeSeries") 
-                                               [| _YYUKRPI.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPI.cell
                                 |]
@@ -1009,8 +1009,8 @@ module YYUKRPIFunction =
                 let format (o : YYUKRPI) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_YYUKRPI.source + ".UnregisterWith") 
-                                               [| _YYUKRPI.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _YYUKRPI.cell

@@ -133,8 +133,8 @@ module LocalBootstrapFunction =
                 let format (o : LocalBootstrap) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_LocalBootstrap.source + ".Setup") 
-                                               [| _LocalBootstrap.source
-                                               ;  _ts.source
+
+                                               [| _ts.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _LocalBootstrap.cell

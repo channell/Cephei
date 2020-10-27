@@ -54,8 +54,8 @@ module RendistatoBasketFunction =
                 let format (i : Generic.List<ICell<BTP>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_RendistatoBasket.source + ".Btps") 
-                                               [| _RendistatoBasket.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RendistatoBasket.cell
                                 |]
@@ -90,8 +90,8 @@ module RendistatoBasketFunction =
                 let format (i : Generic.List<ICell<Handle<Quote>>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_RendistatoBasket.source + ".CleanPriceQuotes") 
-                                               [| _RendistatoBasket.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RendistatoBasket.cell
                                 |]
@@ -126,8 +126,8 @@ module RendistatoBasketFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RendistatoBasket.source + ".Outstanding") 
-                                               [| _RendistatoBasket.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RendistatoBasket.cell
                                 |]
@@ -162,8 +162,8 @@ module RendistatoBasketFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_RendistatoBasket.source + ".Outstandings") 
-                                               [| _RendistatoBasket.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RendistatoBasket.cell
                                 |]
@@ -202,8 +202,8 @@ module RendistatoBasketFunction =
                 let format (o : RendistatoBasket) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RendistatoBasket.source + ".RegisterWith") 
-                                               [| _RendistatoBasket.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoBasket.cell
@@ -289,8 +289,8 @@ module RendistatoBasketFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_RendistatoBasket.source + ".Size") 
-                                               [| _RendistatoBasket.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RendistatoBasket.cell
                                 |]
@@ -329,8 +329,8 @@ module RendistatoBasketFunction =
                 let format (o : RendistatoBasket) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RendistatoBasket.source + ".UnregisterWith") 
-                                               [| _RendistatoBasket.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _RendistatoBasket.cell
@@ -367,8 +367,8 @@ module RendistatoBasketFunction =
                 let format (o : RendistatoBasket) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_RendistatoBasket.source + ".Update") 
-                                               [| _RendistatoBasket.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RendistatoBasket.cell
                                 |]
@@ -403,8 +403,8 @@ module RendistatoBasketFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_RendistatoBasket.source + ".Weights") 
-                                               [| _RendistatoBasket.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _RendistatoBasket.cell
                                 |]

@@ -107,8 +107,8 @@ module eqn3Function =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_eqn3.source + ".Value") 
-                                               [| _eqn3.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _eqn3.cell

@@ -54,8 +54,8 @@ module simple_eventFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_simple_event.source + ".Date") 
-                                               [| _simple_event.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _simple_event.cell
                                 |]
@@ -131,8 +131,8 @@ module simple_eventFunction =
                 let format (o : simple_event) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_simple_event.source + ".Accept") 
-                                               [| _simple_event.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _simple_event.cell
@@ -177,8 +177,8 @@ module simple_eventFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_simple_event.source + ".HasOccurred") 
-                                               [| _simple_event.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _includeRefDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -221,8 +221,8 @@ module simple_eventFunction =
                 let format (o : simple_event) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_simple_event.source + ".RegisterWith") 
-                                               [| _simple_event.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _simple_event.cell
@@ -263,8 +263,8 @@ module simple_eventFunction =
                 let format (o : simple_event) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_simple_event.source + ".UnregisterWith") 
-                                               [| _simple_event.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _simple_event.cell

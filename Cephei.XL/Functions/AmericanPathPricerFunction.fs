@@ -103,8 +103,8 @@ module AmericanPathPricerFunction =
                 let format (i : Generic.List<Func<double,double>>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_AmericanPathPricer.source + ".BasisSystem") 
-                                               [| _AmericanPathPricer.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _AmericanPathPricer.cell
                                 |]
@@ -147,8 +147,8 @@ module AmericanPathPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmericanPathPricer.source + ".State") 
-                                               [| _AmericanPathPricer.source
-                                               ;  _path.source
+
+                                               [| _path.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -195,8 +195,8 @@ module AmericanPathPricerFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_AmericanPathPricer.source + ".Value") 
-                                               [| _AmericanPathPricer.source
-                                               ;  _path.source
+
+                                               [| _path.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 

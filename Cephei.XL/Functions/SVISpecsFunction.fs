@@ -74,8 +74,8 @@ module SVISpecsFunction =
                 let format (o : SVISpecs) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SVISpecs.source + ".DefaultValues") 
-                                               [| _SVISpecs.source
-                                               ;  _param.source
+
+                                               [| _param.source
                                                ;  _paramIsFixed.source
                                                ;  _forward.source
                                                ;  _expiryTime.source
@@ -120,8 +120,8 @@ module SVISpecsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SVISpecs.source + ".DilationFactor") 
-                                               [| _SVISpecs.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SVISpecs.cell
                                 |]
@@ -156,8 +156,8 @@ module SVISpecsFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SVISpecs.source + ".Dimension") 
-                                               [| _SVISpecs.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SVISpecs.cell
                                 |]
@@ -208,8 +208,8 @@ module SVISpecsFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_SVISpecs.source + ".Direct") 
-                                               [| _SVISpecs.source
-                                               ;  _x.source
+
+                                               [| _x.source
                                                ;  _paramIsFixed.source
                                                ;  _param.source
                                                ;  _forward.source
@@ -252,8 +252,8 @@ module SVISpecsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SVISpecs.source + ".Eps1") 
-                                               [| _SVISpecs.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SVISpecs.cell
                                 |]
@@ -288,8 +288,8 @@ module SVISpecsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SVISpecs.source + ".Eps2") 
-                                               [| _SVISpecs.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SVISpecs.cell
                                 |]
@@ -348,8 +348,8 @@ module SVISpecsFunction =
                 let format (o : SVISpecs) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_SVISpecs.source + ".Guess") 
-                                               [| _SVISpecs.source
-                                               ;  _values.source
+
+                                               [| _values.source
                                                ;  _paramIsFixed.source
                                                ;  _forward.source
                                                ;  _expiryTime.source
@@ -412,8 +412,8 @@ module SVISpecsFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IWrapper>) l
 
                 let source () = Helper.sourceFold (_SVISpecs.source + ".Instance") 
-                                               [| _SVISpecs.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _forward.source
                                                ;  _param.source
                                                ;  _addParams.source
@@ -472,8 +472,8 @@ module SVISpecsFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Vector>) l
 
                 let source () = Helper.sourceFold (_SVISpecs.source + ".Inverse") 
-                                               [| _SVISpecs.source
-                                               ;  _y.source
+
+                                               [| _y.source
                                                ;  _b.source
                                                ;  _c.source
                                                ;  _d.source
@@ -516,8 +516,8 @@ module SVISpecsFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SVIWrapper>) l
 
                 let source () = Helper.sourceFold (_SVISpecs.source + ".ModelInstance_") 
-                                               [| _SVISpecs.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _SVISpecs.cell
                                 |]
@@ -568,8 +568,8 @@ module SVISpecsFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_SVISpecs.source + ".Weight") 
-                                               [| _SVISpecs.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _forward.source
                                                ;  _stdDev.source
                                                ;  _addParams.source

@@ -54,8 +54,8 @@ module DeltaVolQuoteFunction =
                 let format (o : DeltaVolQuote.AtmType) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DeltaVolQuote.source + ".AtmType") 
-                                               [| _DeltaVolQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DeltaVolQuote.cell
                                 |]
@@ -90,8 +90,8 @@ module DeltaVolQuoteFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DeltaVolQuote.source + ".Delta") 
-                                               [| _DeltaVolQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DeltaVolQuote.cell
                                 |]
@@ -127,8 +127,8 @@ module DeltaVolQuoteFunction =
                 let format (o : DeltaType) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DeltaVolQuote.source + ".DeltaType") 
-                                               [| _DeltaVolQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DeltaVolQuote.cell
                                 |]
@@ -274,8 +274,8 @@ module DeltaVolQuoteFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DeltaVolQuote.source + ".IsValid") 
-                                               [| _DeltaVolQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DeltaVolQuote.cell
                                 |]
@@ -310,8 +310,8 @@ module DeltaVolQuoteFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DeltaVolQuote.source + ".Maturity") 
-                                               [| _DeltaVolQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DeltaVolQuote.cell
                                 |]
@@ -346,8 +346,8 @@ module DeltaVolQuoteFunction =
                 let format (o : DeltaVolQuote) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DeltaVolQuote.source + ".Update") 
-                                               [| _DeltaVolQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DeltaVolQuote.cell
                                 |]
@@ -382,8 +382,8 @@ module DeltaVolQuoteFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_DeltaVolQuote.source + ".Value") 
-                                               [| _DeltaVolQuote.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _DeltaVolQuote.cell
                                 |]
@@ -422,8 +422,8 @@ module DeltaVolQuoteFunction =
                 let format (o : DeltaVolQuote) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DeltaVolQuote.source + ".RegisterWith") 
-                                               [| _DeltaVolQuote.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DeltaVolQuote.cell
@@ -464,8 +464,8 @@ module DeltaVolQuoteFunction =
                 let format (o : DeltaVolQuote) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_DeltaVolQuote.source + ".UnregisterWith") 
-                                               [| _DeltaVolQuote.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _DeltaVolQuote.cell

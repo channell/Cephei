@@ -54,8 +54,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".Accuracy_") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -90,8 +90,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".Clone") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -126,8 +126,8 @@ module PiecewiseYieldCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".Data") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -162,8 +162,8 @@ module PiecewiseYieldCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".Data_") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -198,8 +198,8 @@ module PiecewiseYieldCurveFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".Dates") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -234,8 +234,8 @@ module PiecewiseYieldCurveFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".Dates_") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -278,8 +278,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".DiscountImpl") 
-                                               [| _PiecewiseYieldCurve.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -326,8 +326,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".ForwardImpl") 
-                                               [| _PiecewiseYieldCurve.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -382,8 +382,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".Guess") 
-                                               [| _PiecewiseYieldCurve.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _first.source
@@ -426,8 +426,8 @@ module PiecewiseYieldCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".InitialDate1") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -466,8 +466,8 @@ module PiecewiseYieldCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".InitialDate") 
-                                               [| _PiecewiseYieldCurve.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
@@ -508,8 +508,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".InitialValue1") 
-                                               [| _PiecewiseYieldCurve.source
-                                               ;  _c.source
+
+                                               [| _c.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
@@ -546,8 +546,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".InitialValue") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -582,8 +582,8 @@ module PiecewiseYieldCurveFunction =
                 let format (i : Generic.List<ICell<BootstrapHelper<YieldTermStructure>>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".Instruments_") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -618,8 +618,8 @@ module PiecewiseYieldCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".Interpolation_") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -654,8 +654,8 @@ module PiecewiseYieldCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".Interpolator_") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -690,8 +690,8 @@ module PiecewiseYieldCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".MaxDate") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -726,8 +726,8 @@ module PiecewiseYieldCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".MaxDate_") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -762,8 +762,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".MaxIterations") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -814,8 +814,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".MaxValueAfter") 
-                                               [| _PiecewiseYieldCurve.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _first.source
@@ -874,8 +874,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".MinValueAfter") 
-                                               [| _PiecewiseYieldCurve.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _c.source
                                                ;  _validData.source
                                                ;  _first.source
@@ -918,8 +918,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".Moving_") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -954,8 +954,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : Generic.Dictionary<Date,double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".Nodes") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -1147,8 +1147,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : PiecewiseYieldCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".RegisterWith") 
-                                               [| _PiecewiseYieldCurve.source
-                                               ;  _helper.source
+
+                                               [| _helper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
@@ -1189,8 +1189,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : PiecewiseYieldCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".SetTermStructure") 
-                                               [| _PiecewiseYieldCurve.source
-                                               ;  _helper.source
+
+                                               [| _helper.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
@@ -1227,8 +1227,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : PiecewiseYieldCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".SetupInterpolation") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -1263,8 +1263,8 @@ module PiecewiseYieldCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".Times") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -1299,8 +1299,8 @@ module PiecewiseYieldCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".Times_") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -1335,8 +1335,8 @@ module PiecewiseYieldCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ITraits<YieldTermStructure>>) l
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".Traits_") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -1383,8 +1383,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : PiecewiseYieldCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".UpdateGuess") 
-                                               [| _PiecewiseYieldCurve.source
-                                               ;  _data.source
+
+                                               [| _data.source
                                                ;  _discount.source
                                                ;  _i.source
                                                |]
@@ -1433,8 +1433,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".ZeroYieldImpl") 
-                                               [| _PiecewiseYieldCurve.source
-                                               ;  _i.source
+
+                                               [| _i.source
                                                ;  _t.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1481,8 +1481,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".Discount") 
-                                               [| _PiecewiseYieldCurve.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _extrapolate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1529,8 +1529,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".Discount1") 
-                                               [| _PiecewiseYieldCurve.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _extrapolate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1593,8 +1593,8 @@ module PiecewiseYieldCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".ForwardRate") 
-                                               [| _PiecewiseYieldCurve.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _p.source
                                                ;  _dayCounter.source
                                                ;  _comp.source
@@ -1665,8 +1665,8 @@ module PiecewiseYieldCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".ForwardRate1") 
-                                               [| _PiecewiseYieldCurve.source
-                                               ;  _d1.source
+
+                                               [| _d1.source
                                                ;  _d2.source
                                                ;  _dayCounter.source
                                                ;  _comp.source
@@ -1733,8 +1733,8 @@ module PiecewiseYieldCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".ForwardRate2") 
-                                               [| _PiecewiseYieldCurve.source
-                                               ;  _t1.source
+
+                                               [| _t1.source
                                                ;  _t2.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -1779,8 +1779,8 @@ module PiecewiseYieldCurveFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".JumpDates") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -1815,8 +1815,8 @@ module PiecewiseYieldCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".JumpTimes") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -1851,8 +1851,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : PiecewiseYieldCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".Update") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -1907,8 +1907,8 @@ module PiecewiseYieldCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".ZeroRate1") 
-                                               [| _PiecewiseYieldCurve.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                ;  _dayCounter.source
                                                ;  _comp.source
                                                ;  _freq.source
@@ -1969,8 +1969,8 @@ module PiecewiseYieldCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRate>) l
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".ZeroRate") 
-                                               [| _PiecewiseYieldCurve.source
-                                               ;  _t.source
+
+                                               [| _t.source
                                                ;  _comp.source
                                                ;  _freq.source
                                                ;  _extrapolate.source
@@ -2013,8 +2013,8 @@ module PiecewiseYieldCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Calendar>) l
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".Calendar") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -2049,8 +2049,8 @@ module PiecewiseYieldCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".DayCounter") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -2085,8 +2085,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".MaxTime") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -2121,8 +2121,8 @@ module PiecewiseYieldCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".ReferenceDate") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -2157,8 +2157,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".SettlementDays") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -2197,8 +2197,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".TimeFromReference") 
-                                               [| _PiecewiseYieldCurve.source
-                                               ;  _date.source
+
+                                               [| _date.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
@@ -2235,8 +2235,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".AllowsExtrapolation") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]
@@ -2275,8 +2275,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : PiecewiseYieldCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".DisableExtrapolation") 
-                                               [| _PiecewiseYieldCurve.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
@@ -2317,8 +2317,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : PiecewiseYieldCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".EnableExtrapolation") 
-                                               [| _PiecewiseYieldCurve.source
-                                               ;  _b.source
+
+                                               [| _b.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
@@ -2355,8 +2355,8 @@ module PiecewiseYieldCurveFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".Extrapolate") 
-                                               [| _PiecewiseYieldCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _PiecewiseYieldCurve.cell
                                 |]

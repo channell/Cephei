@@ -58,8 +58,8 @@ module FloatingRateCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".AccruedAmount") 
-                                               [| _FloatingRateCoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
@@ -96,8 +96,8 @@ module FloatingRateCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".AdjustedFixing") 
-                                               [| _FloatingRateCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
                                 |]
@@ -132,8 +132,8 @@ module FloatingRateCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".Amount") 
-                                               [| _FloatingRateCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
                                 |]
@@ -168,8 +168,8 @@ module FloatingRateCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".ConvexityAdjustment") 
-                                               [| _FloatingRateCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
                                 |]
@@ -204,8 +204,8 @@ module FloatingRateCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".DayCounter") 
-                                               [| _FloatingRateCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
                                 |]
@@ -288,8 +288,8 @@ module FloatingRateCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CashFlow>) l
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".Factory") 
-                                               [| _FloatingRateCoupon.source
-                                               ;  _nominal.source
+
+                                               [| _nominal.source
                                                ;  _paymentDate.source
                                                ;  _startDate.source
                                                ;  _endDate.source
@@ -348,8 +348,8 @@ module FloatingRateCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".FixingDate") 
-                                               [| _FloatingRateCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
                                 |]
@@ -384,8 +384,8 @@ module FloatingRateCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".FixingDays") 
-                                               [| _FloatingRateCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
                                 |]
@@ -554,8 +554,8 @@ module FloatingRateCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".Gearing") 
-                                               [| _FloatingRateCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
                                 |]
@@ -590,8 +590,8 @@ module FloatingRateCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterestRateIndex>) l
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".Index") 
-                                               [| _FloatingRateCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
                                 |]
@@ -626,8 +626,8 @@ module FloatingRateCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".IndexFixing") 
-                                               [| _FloatingRateCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
                                 |]
@@ -662,8 +662,8 @@ module FloatingRateCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".IsInArrears") 
-                                               [| _FloatingRateCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
                                 |]
@@ -702,8 +702,8 @@ module FloatingRateCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".Price") 
-                                               [| _FloatingRateCoupon.source
-                                               ;  _yts.source
+
+                                               [| _yts.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
@@ -740,8 +740,8 @@ module FloatingRateCouponFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateCouponPricer>) l
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".Pricer") 
-                                               [| _FloatingRateCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
                                 |]
@@ -776,8 +776,8 @@ module FloatingRateCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".Rate") 
-                                               [| _FloatingRateCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
                                 |]
@@ -816,8 +816,8 @@ module FloatingRateCouponFunction =
                 let format (o : FloatingRateCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".SetPricer") 
-                                               [| _FloatingRateCoupon.source
-                                               ;  _pricer.source
+
+                                               [| _pricer.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
@@ -854,8 +854,8 @@ module FloatingRateCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".Spread") 
-                                               [| _FloatingRateCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
                                 |]
@@ -890,8 +890,8 @@ module FloatingRateCouponFunction =
                 let format (o : FloatingRateCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".Update") 
-                                               [| _FloatingRateCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
                                 |]
@@ -926,8 +926,8 @@ module FloatingRateCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".AccrualDays") 
-                                               [| _FloatingRateCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
                                 |]
@@ -962,8 +962,8 @@ module FloatingRateCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".AccrualEndDate") 
-                                               [| _FloatingRateCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
                                 |]
@@ -998,8 +998,8 @@ module FloatingRateCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".AccrualPeriod") 
-                                               [| _FloatingRateCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
                                 |]
@@ -1034,8 +1034,8 @@ module FloatingRateCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".AccrualStartDate") 
-                                               [| _FloatingRateCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
                                 |]
@@ -1074,8 +1074,8 @@ module FloatingRateCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".AccruedDays") 
-                                               [| _FloatingRateCoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
@@ -1116,8 +1116,8 @@ module FloatingRateCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".AccruedPeriod") 
-                                               [| _FloatingRateCoupon.source
-                                               ;  _d.source
+
+                                               [| _d.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
@@ -1154,8 +1154,8 @@ module FloatingRateCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".Date") 
-                                               [| _FloatingRateCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
                                 |]
@@ -1190,8 +1190,8 @@ module FloatingRateCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".ExCouponDate") 
-                                               [| _FloatingRateCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
                                 |]
@@ -1226,8 +1226,8 @@ module FloatingRateCouponFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".Nominal") 
-                                               [| _FloatingRateCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
                                 |]
@@ -1262,8 +1262,8 @@ module FloatingRateCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".ReferencePeriodEnd") 
-                                               [| _FloatingRateCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
                                 |]
@@ -1298,8 +1298,8 @@ module FloatingRateCouponFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".ReferencePeriodStart") 
-                                               [| _FloatingRateCoupon.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
                                 |]
@@ -1338,8 +1338,8 @@ module FloatingRateCouponFunction =
                 let format (o : int) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".CompareTo") 
-                                               [| _FloatingRateCoupon.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
@@ -1380,8 +1380,8 @@ module FloatingRateCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".Equals") 
-                                               [| _FloatingRateCoupon.source
-                                               ;  _cf.source
+
+                                               [| _cf.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
@@ -1426,8 +1426,8 @@ module FloatingRateCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".HasOccurred") 
-                                               [| _FloatingRateCoupon.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                ;  _includeRefDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1470,8 +1470,8 @@ module FloatingRateCouponFunction =
                 let format (o : bool) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".TradingExCoupon") 
-                                               [| _FloatingRateCoupon.source
-                                               ;  _refDate.source
+
+                                               [| _refDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
@@ -1512,8 +1512,8 @@ module FloatingRateCouponFunction =
                 let format (o : FloatingRateCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".Accept") 
-                                               [| _FloatingRateCoupon.source
-                                               ;  _v.source
+
+                                               [| _v.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
@@ -1554,8 +1554,8 @@ module FloatingRateCouponFunction =
                 let format (o : FloatingRateCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".RegisterWith") 
-                                               [| _FloatingRateCoupon.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell
@@ -1596,8 +1596,8 @@ module FloatingRateCouponFunction =
                 let format (o : FloatingRateCoupon) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_FloatingRateCoupon.source + ".UnregisterWith") 
-                                               [| _FloatingRateCoupon.source
-                                               ;  _handler.source
+
+                                               [| _handler.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _FloatingRateCoupon.cell

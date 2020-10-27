@@ -54,8 +54,8 @@ module InterpolatedSmileSectionFunction =
                 let format (o : Nullable<double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".AtmLevel") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]
@@ -90,8 +90,8 @@ module InterpolatedSmileSectionFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".Clone") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]
@@ -126,8 +126,8 @@ module InterpolatedSmileSectionFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".Data") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]
@@ -162,8 +162,8 @@ module InterpolatedSmileSectionFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".Data_") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]
@@ -198,8 +198,8 @@ module InterpolatedSmileSectionFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".Dates") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]
@@ -234,8 +234,8 @@ module InterpolatedSmileSectionFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".Dates_") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]
@@ -270,8 +270,8 @@ module InterpolatedSmileSectionFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".Discounts") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]
@@ -628,8 +628,8 @@ module InterpolatedSmileSectionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".Interpolation_") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]
@@ -664,8 +664,8 @@ module InterpolatedSmileSectionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".Interpolator_") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]
@@ -700,8 +700,8 @@ module InterpolatedSmileSectionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".MaxDate") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]
@@ -736,8 +736,8 @@ module InterpolatedSmileSectionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".MaxDate_") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]
@@ -772,8 +772,8 @@ module InterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".MaxStrike") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]
@@ -808,8 +808,8 @@ module InterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".MinStrike") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]
@@ -844,8 +844,8 @@ module InterpolatedSmileSectionFunction =
                 let format (o : Dictionary<Date,double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".Nodes") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]
@@ -880,8 +880,8 @@ module InterpolatedSmileSectionFunction =
                 let format (o : InterpolatedSmileSection) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".SetupInterpolation") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]
@@ -916,8 +916,8 @@ module InterpolatedSmileSectionFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".Times") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]
@@ -952,8 +952,8 @@ module InterpolatedSmileSectionFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".Times_") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]
@@ -988,8 +988,8 @@ module InterpolatedSmileSectionFunction =
                 let format (o : InterpolatedSmileSection) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".Update") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]
@@ -1024,8 +1024,8 @@ module InterpolatedSmileSectionFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DayCounter>) l
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".DayCounter") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]
@@ -1072,8 +1072,8 @@ module InterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".Density") 
-                                               [| _InterpolatedSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _discount.source
                                                ;  _gap.source
                                                |]
@@ -1130,8 +1130,8 @@ module InterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".DigitalOptionPrice") 
-                                               [| _InterpolatedSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _Type.source
                                                ;  _discount.source
                                                ;  _gap.source
@@ -1174,8 +1174,8 @@ module InterpolatedSmileSectionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".ExerciseDate") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]
@@ -1210,8 +1210,8 @@ module InterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".ExerciseTime") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]
@@ -1258,8 +1258,8 @@ module InterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".OptionPrice") 
-                                               [| _InterpolatedSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _Type.source
                                                ;  _discount.source
                                                |]
@@ -1300,8 +1300,8 @@ module InterpolatedSmileSectionFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".ReferenceDate") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]
@@ -1336,8 +1336,8 @@ module InterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".Shift") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]
@@ -1376,8 +1376,8 @@ module InterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".Variance") 
-                                               [| _InterpolatedSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
@@ -1422,8 +1422,8 @@ module InterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".Vega") 
-                                               [| _InterpolatedSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _discount.source
                                                |]
                 let hash = Helper.hashFold 
@@ -1474,8 +1474,8 @@ module InterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".Volatility") 
-                                               [| _InterpolatedSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                ;  _volatilityType.source
                                                ;  _shift.source
                                                |]
@@ -1520,8 +1520,8 @@ module InterpolatedSmileSectionFunction =
                 let format (o : double) (l:string) = o :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".Volatility") 
-                                               [| _InterpolatedSmileSection.source
-                                               ;  _strike.source
+
+                                               [| _strike.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
@@ -1558,8 +1558,8 @@ module InterpolatedSmileSectionFunction =
                 let format (o : VolatilityType) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".VolatilityType") 
-                                               [| _InterpolatedSmileSection.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedSmileSection.cell
                                 |]

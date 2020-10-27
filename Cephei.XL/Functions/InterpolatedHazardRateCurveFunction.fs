@@ -54,8 +54,8 @@ module InterpolatedHazardRateCurveFunction =
                 let format (o : obj) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Clone") 
-                                               [| _InterpolatedHazardRateCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
@@ -90,8 +90,8 @@ module InterpolatedHazardRateCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Data") 
-                                               [| _InterpolatedHazardRateCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
@@ -126,8 +126,8 @@ module InterpolatedHazardRateCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Data_") 
-                                               [| _InterpolatedHazardRateCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
@@ -162,8 +162,8 @@ module InterpolatedHazardRateCurveFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Dates") 
-                                               [| _InterpolatedHazardRateCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
@@ -198,8 +198,8 @@ module InterpolatedHazardRateCurveFunction =
                 let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Dates_") 
-                                               [| _InterpolatedHazardRateCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
@@ -234,8 +234,8 @@ module InterpolatedHazardRateCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Discounts") 
-                                               [| _InterpolatedHazardRateCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
@@ -270,8 +270,8 @@ module InterpolatedHazardRateCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".HazardRates") 
-                                               [| _InterpolatedHazardRateCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
@@ -495,8 +495,8 @@ module InterpolatedHazardRateCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Interpolation>) l
 
                 let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Interpolation_") 
-                                               [| _InterpolatedHazardRateCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
@@ -531,8 +531,8 @@ module InterpolatedHazardRateCurveFunction =
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IInterpolationFactory>) l
 
                 let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Interpolator_") 
-                                               [| _InterpolatedHazardRateCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
@@ -567,8 +567,8 @@ module InterpolatedHazardRateCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".MaxDate") 
-                                               [| _InterpolatedHazardRateCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
@@ -603,8 +603,8 @@ module InterpolatedHazardRateCurveFunction =
                 let format (d : Date) (l:string) = d.serialNumber() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".MaxDate_") 
-                                               [| _InterpolatedHazardRateCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
@@ -639,8 +639,8 @@ module InterpolatedHazardRateCurveFunction =
                 let format (o : Dictionary<Date,double>) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Nodes") 
-                                               [| _InterpolatedHazardRateCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
@@ -675,8 +675,8 @@ module InterpolatedHazardRateCurveFunction =
                 let format (o : InterpolatedHazardRateCurve) (l:string) = o.ToString() :> obj
 
                 let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".SetupInterpolation") 
-                                               [| _InterpolatedHazardRateCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
@@ -711,8 +711,8 @@ module InterpolatedHazardRateCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Times") 
-                                               [| _InterpolatedHazardRateCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
@@ -747,8 +747,8 @@ module InterpolatedHazardRateCurveFunction =
                 let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
                 let source () = Helper.sourceFold (_InterpolatedHazardRateCurve.source + ".Times_") 
-                                               [| _InterpolatedHazardRateCurve.source
-                                               |]
+
+                                               [||]
                 let hash = Helper.hashFold 
                                 [| _InterpolatedHazardRateCurve.cell
                                 |]
