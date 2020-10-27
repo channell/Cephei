@@ -39,7 +39,7 @@ module NullEffectiveDateExceptionFunction =
     *)
     [<ExcelFunction(Name="_NullEffectiveDateException", Description="Create a NullEffectiveDateException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullEffectiveDateException_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "NullEffectiveDateException")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="message",Description = "string")>] 
          message : obj)
@@ -82,7 +82,7 @@ module NullEffectiveDateExceptionFunction =
     *)
     [<ExcelFunction(Name="_NullEffectiveDateException1", Description="Create a NullEffectiveDateException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullEffectiveDateException_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "NullEffectiveDateException")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="message",Description = "string")>] 
          message : obj)
@@ -119,7 +119,7 @@ module NullEffectiveDateExceptionFunction =
     *)
     [<ExcelFunction(Name="_NullEffectiveDateException", Description="Create a NullEffectiveDateException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullEffectiveDateException_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "NullEffectiveDateException")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module NullEffectiveDateExceptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NullEffectiveDateException_Range", Description="Create a range of NullEffectiveDateException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullEffectiveDateException_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

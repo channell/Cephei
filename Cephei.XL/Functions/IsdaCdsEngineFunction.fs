@@ -40,7 +40,7 @@ module IsdaCdsEngineFunction =
     *)
     [<ExcelFunction(Name="_IsdaCdsEngine", Description="Create a IsdaCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IsdaCdsEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "IsdaCdsEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="probability",Description = "DefaultProbabilityTermStructure")>] 
          probability : obj)
@@ -50,11 +50,11 @@ module IsdaCdsEngineFunction =
          discountCurve : obj)
         ([<ExcelArgument(Name="includeSettlementDateFlows",Description = "bool")>] 
          includeSettlementDateFlows : obj)
-        ([<ExcelArgument(Name="numericalFix",Description = "IsdaCdsEngine")>] 
+        ([<ExcelArgument(Name="numericalFix",Description = "IsdaCdsEngine.NumericalFix: None, Taylor or empty")>] 
          numericalFix : obj)
-        ([<ExcelArgument(Name="accrualBias",Description = "IsdaCdsEngine")>] 
+        ([<ExcelArgument(Name="accrualBias",Description = "IsdaCdsEngine.AccrualBias: HalfDayBias, NoBias or empty")>] 
          accrualBias : obj)
-        ([<ExcelArgument(Name="forwardsInCouponPeriod",Description = "IsdaCdsEngine")>] 
+        ([<ExcelArgument(Name="forwardsInCouponPeriod",Description = "IsdaCdsEngine.ForwardsInCouponPeriod: Flat, Piecewise or empty")>] 
          forwardsInCouponPeriod : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -113,7 +113,7 @@ module IsdaCdsEngineFunction =
     *)
     [<ExcelFunction(Name="_IsdaCdsEngine_isdaCreditCurve", Description="Create a IsdaCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IsdaCdsEngine_isdaCreditCurve
-        ([<ExcelArgument(Name="Mnemonic",Description = "DefaultProbabilityTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IsdaCdsEngine",Description = "IsdaCdsEngine")>] 
          isdacdsengine : obj)
@@ -149,7 +149,7 @@ module IsdaCdsEngineFunction =
     *)
     [<ExcelFunction(Name="_IsdaCdsEngine_isdaRateCurve", Description="Create a IsdaCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IsdaCdsEngine_isdaRateCurve
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IsdaCdsEngine",Description = "IsdaCdsEngine")>] 
          isdacdsengine : obj)
@@ -182,9 +182,9 @@ module IsdaCdsEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_IsdaCdsEngine_Range", Description="Create a range of IsdaCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IsdaCdsEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

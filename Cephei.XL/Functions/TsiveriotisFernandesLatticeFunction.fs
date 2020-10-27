@@ -39,7 +39,7 @@ module TsiveriotisFernandesLatticeFunction =
     *)
     [<ExcelFunction(Name="_TsiveriotisFernandesLattice_partialRollback", Description="Create a TsiveriotisFernandesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TsiveriotisFernandesLattice_partialRollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "TsiveriotisFernandesLattice")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="TsiveriotisFernandesLattice",Description = "TsiveriotisFernandesLattice")>] 
          tsiveriotisfernandeslattice : obj)
@@ -87,7 +87,7 @@ module TsiveriotisFernandesLatticeFunction =
     *)
     [<ExcelFunction(Name="_TsiveriotisFernandesLattice_rollback", Description="Create a TsiveriotisFernandesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TsiveriotisFernandesLattice_rollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "TsiveriotisFernandesLattice")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="TsiveriotisFernandesLattice",Description = "TsiveriotisFernandesLattice")>] 
          tsiveriotisfernandeslattice : obj)
@@ -135,7 +135,7 @@ module TsiveriotisFernandesLatticeFunction =
     *)
     [<ExcelFunction(Name="_TsiveriotisFernandesLattice_stepback", Description="Create a TsiveriotisFernandesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TsiveriotisFernandesLattice_stepback
-        ([<ExcelArgument(Name="Mnemonic",Description = "TsiveriotisFernandesLattice")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="TsiveriotisFernandesLattice",Description = "TsiveriotisFernandesLattice")>] 
          tsiveriotisfernandeslattice : obj)
@@ -213,7 +213,7 @@ module TsiveriotisFernandesLatticeFunction =
     *)
     [<ExcelFunction(Name="_TsiveriotisFernandesLattice", Description="Create a TsiveriotisFernandesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TsiveriotisFernandesLattice_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "TsiveriotisFernandesLattice")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tree",Description = "'T")>] 
          tree : obj)
@@ -283,9 +283,9 @@ module TsiveriotisFernandesLatticeFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_TsiveriotisFernandesLattice_Range", Description="Create a range of TsiveriotisFernandesLattice",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TsiveriotisFernandesLattice_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

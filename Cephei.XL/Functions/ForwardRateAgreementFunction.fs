@@ -40,7 +40,7 @@ module ForwardRateAgreementFunction =
     *)
     [<ExcelFunction(Name="_ForwardRateAgreement_forwardRate", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_forwardRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardRateAgreement",Description = "ForwardRateAgreement")>] 
          forwardrateagreement : obj)
@@ -76,7 +76,7 @@ module ForwardRateAgreementFunction =
     *)
     [<ExcelFunction(Name="_ForwardRateAgreement", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ForwardRateAgreement")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="valueDate",Description = "Date")>] 
          valueDate : obj)
@@ -161,7 +161,7 @@ module ForwardRateAgreementFunction =
     *)
     [<ExcelFunction(Name="_ForwardRateAgreement_isExpired", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardRateAgreement",Description = "ForwardRateAgreement")>] 
          forwardrateagreement : obj)
@@ -197,7 +197,7 @@ module ForwardRateAgreementFunction =
     *)
     [<ExcelFunction(Name="_ForwardRateAgreement_settlementDate", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_settlementDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardRateAgreement",Description = "ForwardRateAgreement")>] 
          forwardrateagreement : obj)
@@ -233,7 +233,7 @@ module ForwardRateAgreementFunction =
     *)
     [<ExcelFunction(Name="_ForwardRateAgreement_spotIncome", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_spotIncome
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardRateAgreement",Description = "ForwardRateAgreement")>] 
          forwardrateagreement : obj)
@@ -275,7 +275,7 @@ module ForwardRateAgreementFunction =
     *)
     [<ExcelFunction(Name="_ForwardRateAgreement_spotValue", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_spotValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardRateAgreement",Description = "ForwardRateAgreement")>] 
          forwardrateagreement : obj)
@@ -311,7 +311,7 @@ module ForwardRateAgreementFunction =
     *)
     [<ExcelFunction(Name="_ForwardRateAgreement_forwardValue", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_forwardValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardRateAgreement",Description = "ForwardRateAgreement")>] 
          forwardrateagreement : obj)
@@ -347,7 +347,7 @@ module ForwardRateAgreementFunction =
     *)
     [<ExcelFunction(Name="_ForwardRateAgreement_impliedYield", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_impliedYield
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardRateAgreement",Description = "ForwardRateAgreement")>] 
          forwardrateagreement : obj)
@@ -413,7 +413,7 @@ module ForwardRateAgreementFunction =
     *)
     [<ExcelFunction(Name="_ForwardRateAgreement_CASH", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardRateAgreement",Description = "ForwardRateAgreement")>] 
          forwardrateagreement : obj)
@@ -449,7 +449,7 @@ module ForwardRateAgreementFunction =
     *)
     [<ExcelFunction(Name="_ForwardRateAgreement_errorEstimate", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardRateAgreement",Description = "ForwardRateAgreement")>] 
          forwardrateagreement : obj)
@@ -485,7 +485,7 @@ module ForwardRateAgreementFunction =
     *)
     [<ExcelFunction(Name="_ForwardRateAgreement_NPV", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardRateAgreement",Description = "ForwardRateAgreement")>] 
          forwardrateagreement : obj)
@@ -521,7 +521,7 @@ module ForwardRateAgreementFunction =
     *)
     [<ExcelFunction(Name="_ForwardRateAgreement_result", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardRateAgreement",Description = "ForwardRateAgreement")>] 
          forwardrateagreement : obj)
@@ -563,7 +563,7 @@ module ForwardRateAgreementFunction =
     *)
     [<ExcelFunction(Name="_ForwardRateAgreement_setPricingEngine", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardRateAgreement",Description = "ForwardRateAgreement")>] 
          forwardrateagreement : obj)
@@ -605,7 +605,7 @@ module ForwardRateAgreementFunction =
     *)
     [<ExcelFunction(Name="_ForwardRateAgreement_valuationDate", Description="Create a ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardRateAgreement",Description = "ForwardRateAgreement")>] 
          forwardrateagreement : obj)
@@ -638,9 +638,9 @@ module ForwardRateAgreementFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ForwardRateAgreement_Range", Description="Create a range of ForwardRateAgreement",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRateAgreement_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

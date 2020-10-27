@@ -39,7 +39,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_factory", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -55,17 +55,17 @@ module IborCouponFunction =
          fixingDays : obj)
         ([<ExcelArgument(Name="index",Description = "InterestRateIndex")>] 
          index : obj)
-        ([<ExcelArgument(Name="gearing",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="gearing",Description = "double or empty")>] 
          gearing : obj)
-        ([<ExcelArgument(Name="spread",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="spread",Description = "double or empty")>] 
          spread : obj)
-        ([<ExcelArgument(Name="refPeriodStart",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="refPeriodStart",Description = "Date or empty")>] 
          refPeriodStart : obj)
-        ([<ExcelArgument(Name="refPeriodEnd",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="refPeriodEnd",Description = "Date or empty")>] 
          refPeriodEnd : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter or empty")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="isInArrears",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="isInArrears",Description = "bool or empty")>] 
          isInArrears : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,7 +147,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="paymentDate",Description = "Date")>] 
          paymentDate : obj)
@@ -161,17 +161,17 @@ module IborCouponFunction =
          fixingDays : obj)
         ([<ExcelArgument(Name="iborIndex",Description = "IborIndex")>] 
          iborIndex : obj)
-        ([<ExcelArgument(Name="gearing",Description = "IborCoupon")>] 
+        ([<ExcelArgument(Name="gearing",Description = "double or empty")>] 
          gearing : obj)
-        ([<ExcelArgument(Name="spread",Description = "IborCoupon")>] 
+        ([<ExcelArgument(Name="spread",Description = "double or empty")>] 
          spread : obj)
-        ([<ExcelArgument(Name="refPeriodStart",Description = "IborCoupon")>] 
+        ([<ExcelArgument(Name="refPeriodStart",Description = "Date or empty")>] 
          refPeriodStart : obj)
-        ([<ExcelArgument(Name="refPeriodEnd",Description = "IborCoupon")>] 
+        ([<ExcelArgument(Name="refPeriodEnd",Description = "Date or empty")>] 
          refPeriodEnd : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "IborCoupon")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter or empty")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="isInArrears",Description = "IborCoupon")>] 
+        ([<ExcelArgument(Name="isInArrears",Description = "bool or empty")>] 
          isInArrears : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,7 +250,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon1", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -281,7 +281,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_iborIndex", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_iborIndex
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -317,7 +317,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_indexFixing", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_indexFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -353,7 +353,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_accruedAmount", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_accruedAmount
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -395,7 +395,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_adjustedFixing", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_adjustedFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -431,7 +431,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_amount", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_amount
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -467,7 +467,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_convexityAdjustment", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_convexityAdjustment
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -503,7 +503,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_dayCounter", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -539,7 +539,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_fixingDate", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -575,7 +575,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_fixingDays", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -611,7 +611,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_gearing", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_gearing
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -647,7 +647,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_index", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_index
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -683,7 +683,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_isInArrears", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_isInArrears
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -719,7 +719,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_price", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_price
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -761,7 +761,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_pricer", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_pricer
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -797,7 +797,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_rate", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_rate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -833,7 +833,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_setPricer", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_setPricer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -875,7 +875,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_spread", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_spread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -911,7 +911,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_update", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -947,7 +947,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_accrualDays", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_accrualDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -983,7 +983,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_accrualEndDate", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_accrualEndDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -1019,7 +1019,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_accrualPeriod", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_accrualPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -1055,7 +1055,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_accrualStartDate", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_accrualStartDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -1091,7 +1091,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_accruedDays", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_accruedDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -1133,7 +1133,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_accruedPeriod", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_accruedPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -1175,7 +1175,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_date", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -1211,7 +1211,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_exCouponDate", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_exCouponDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -1247,7 +1247,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_nominal", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_nominal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -1283,7 +1283,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_referencePeriodEnd", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_referencePeriodEnd
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -1319,7 +1319,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_referencePeriodStart", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_referencePeriodStart
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -1355,7 +1355,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_CompareTo", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_CompareTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -1397,7 +1397,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_Equals", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -1439,7 +1439,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_hasOccurred", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -1487,7 +1487,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_tradingExCoupon", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_tradingExCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -1529,7 +1529,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_accept", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -1571,7 +1571,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_registerWith", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -1613,7 +1613,7 @@ module IborCouponFunction =
     *)
     [<ExcelFunction(Name="_IborCoupon_unregisterWith", Description="Create a IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborCoupon",Description = "IborCoupon")>] 
          iborcoupon : obj)
@@ -1652,9 +1652,9 @@ module IborCouponFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_IborCoupon_Range", Description="Create a range of IborCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborCoupon_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

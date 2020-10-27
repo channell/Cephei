@@ -39,7 +39,7 @@ module FdmStepConditionCompositeFunction =
     *)
     [<ExcelFunction(Name="_FdmStepConditionComposite_applyTo", Description="Create a FdmStepConditionComposite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmStepConditionComposite_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmStepConditionComposite",Description = "FdmStepConditionComposite")>] 
          fdmstepconditioncomposite : obj)
@@ -87,7 +87,7 @@ module FdmStepConditionCompositeFunction =
     *)
     [<ExcelFunction(Name="_FdmStepConditionComposite_conditions", Description="Create a FdmStepConditionComposite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmStepConditionComposite_conditions
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmStepConditionComposite",Description = "FdmStepConditionComposite")>] 
          fdmstepconditioncomposite : obj)
@@ -123,11 +123,11 @@ module FdmStepConditionCompositeFunction =
     *)
     [<ExcelFunction(Name="_FdmStepConditionComposite1", Description="Create a FdmStepConditionComposite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmStepConditionComposite_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmStepConditionComposite")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="stoppingTimes",Description = "double")>] 
+        ([<ExcelArgument(Name="stoppingTimes",Description = "double range")>] 
          stoppingTimes : obj)
-        ([<ExcelArgument(Name="conditions",Description = "Vector")>] 
+        ([<ExcelArgument(Name="conditions",Description = "Vector range")>] 
          conditions : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -166,7 +166,7 @@ module FdmStepConditionCompositeFunction =
     *)
     [<ExcelFunction(Name="_FdmStepConditionComposite", Description="Create a FdmStepConditionComposite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmStepConditionComposite_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmStepConditionComposite")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -197,7 +197,7 @@ module FdmStepConditionCompositeFunction =
     *)
     [<ExcelFunction(Name="_FdmStepConditionComposite_stoppingTimes", Description="Create a FdmStepConditionComposite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmStepConditionComposite_stoppingTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmStepConditionComposite",Description = "FdmStepConditionComposite")>] 
          fdmstepconditioncomposite : obj)
@@ -230,9 +230,9 @@ module FdmStepConditionCompositeFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmStepConditionComposite_Range", Description="Create a range of FdmStepConditionComposite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmStepConditionComposite_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

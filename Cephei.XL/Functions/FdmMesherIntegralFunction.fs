@@ -39,7 +39,7 @@ module FdmMesherIntegralFunction =
     *)
     [<ExcelFunction(Name="_FdmMesherIntegral", Description="Create a FdmMesherIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmMesherIntegral_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmMesherIntegral")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="mesher",Description = "FdmMesherComposite")>] 
          mesher : obj)
@@ -82,7 +82,7 @@ module FdmMesherIntegralFunction =
     *)
     [<ExcelFunction(Name="_FdmMesherIntegral_integrate", Description="Create a FdmMesherIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmMesherIntegral_integrate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmMesherIntegral",Description = "FdmMesherIntegral")>] 
          fdmmesherintegral : obj)
@@ -121,9 +121,9 @@ module FdmMesherIntegralFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmMesherIntegral_Range", Description="Create a range of FdmMesherIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmMesherIntegral_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

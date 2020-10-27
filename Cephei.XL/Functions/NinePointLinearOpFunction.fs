@@ -40,7 +40,7 @@ module NinePointLinearOpFunction =
     (*!! duplicate Add function 
     [<ExcelFunction(Name="_NinePointLinearOp_add", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
@@ -89,7 +89,7 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_apply", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
@@ -131,7 +131,7 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_applyTo", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
@@ -173,7 +173,7 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_Clone", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
@@ -209,7 +209,7 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_identity", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_identity
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
@@ -251,7 +251,7 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_isTimeDependent", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_isTimeDependent
-        ([<ExcelArgument(Name="Mnemonic",Description = "NinePointLinearOp")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
@@ -287,7 +287,7 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_mult", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_mult
-        ([<ExcelArgument(Name="Mnemonic",Description = "NinePointLinearOp")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
@@ -329,7 +329,7 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_multiply", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_multiply
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
@@ -377,7 +377,7 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "NinePointLinearOp")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="m",Description = "NinePointLinearOp")>] 
          m : obj)
@@ -414,7 +414,7 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp1", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "NinePointLinearOp")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="d0",Description = "int")>] 
          d0 : obj)
@@ -463,7 +463,7 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_setTime", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
@@ -505,7 +505,7 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_size", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
@@ -541,7 +541,7 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_solveFor", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_solveFor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
@@ -583,7 +583,7 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_subtract", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_subtract
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
@@ -631,7 +631,7 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_swap", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_swap
-        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
@@ -673,7 +673,7 @@ module NinePointLinearOpFunction =
     *)
     [<ExcelFunction(Name="_NinePointLinearOp_toMatrix", Description="Create a NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_toMatrix
-        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NinePointLinearOp",Description = "NinePointLinearOp")>] 
          ninepointlinearop : obj)
@@ -706,9 +706,9 @@ module NinePointLinearOpFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NinePointLinearOp_Range", Description="Create a range of NinePointLinearOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NinePointLinearOp_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

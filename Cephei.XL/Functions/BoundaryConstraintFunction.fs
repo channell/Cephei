@@ -39,7 +39,7 @@ module BoundaryConstraintFunction =
     *)
     [<ExcelFunction(Name="_BoundaryConstraint", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConstraint_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BoundaryConstraint")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="low",Description = "double")>] 
          low : obj)
@@ -82,7 +82,7 @@ module BoundaryConstraintFunction =
     *)
     [<ExcelFunction(Name="_BoundaryConstraint_empty", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConstraint_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BoundaryConstraint",Description = "BoundaryConstraint")>] 
          boundaryconstraint : obj)
@@ -118,7 +118,7 @@ module BoundaryConstraintFunction =
     *)
     [<ExcelFunction(Name="_BoundaryConstraint_lowerBound", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConstraint_lowerBound
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BoundaryConstraint",Description = "BoundaryConstraint")>] 
          boundaryconstraint : obj)
@@ -160,7 +160,7 @@ module BoundaryConstraintFunction =
     *)
     [<ExcelFunction(Name="_BoundaryConstraint_test", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConstraint_test
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BoundaryConstraint",Description = "BoundaryConstraint")>] 
          boundaryconstraint : obj)
@@ -202,7 +202,7 @@ module BoundaryConstraintFunction =
     *)
     [<ExcelFunction(Name="_BoundaryConstraint_update", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConstraint_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BoundaryConstraint",Description = "BoundaryConstraint")>] 
          boundaryconstraint : obj)
@@ -256,7 +256,7 @@ module BoundaryConstraintFunction =
     *)
     [<ExcelFunction(Name="_BoundaryConstraint_upperBound", Description="Create a BoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConstraint_upperBound
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BoundaryConstraint",Description = "BoundaryConstraint")>] 
          boundaryconstraint : obj)
@@ -295,9 +295,9 @@ module BoundaryConstraintFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BoundaryConstraint_Range", Description="Create a range of BoundaryConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BoundaryConstraint_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

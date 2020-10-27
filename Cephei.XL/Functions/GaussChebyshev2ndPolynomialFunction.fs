@@ -39,7 +39,7 @@ module GaussChebyshev2ndPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussChebyshev2ndPolynomial", Description="Create a GaussChebyshev2ndPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshev2ndPolynomial_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "GaussChebyshev2ndPolynomial")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module GaussChebyshev2ndPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussChebyshev2ndPolynomial_alpha", Description="Create a GaussChebyshev2ndPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshev2ndPolynomial_alpha
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussChebyshev2ndPolynomial",Description = "GaussChebyshev2ndPolynomial")>] 
          gausschebyshev2ndpolynomial : obj)
@@ -112,7 +112,7 @@ module GaussChebyshev2ndPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussChebyshev2ndPolynomial_beta", Description="Create a GaussChebyshev2ndPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshev2ndPolynomial_beta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussChebyshev2ndPolynomial",Description = "GaussChebyshev2ndPolynomial")>] 
          gausschebyshev2ndpolynomial : obj)
@@ -154,7 +154,7 @@ module GaussChebyshev2ndPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussChebyshev2ndPolynomial_mu_0", Description="Create a GaussChebyshev2ndPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshev2ndPolynomial_mu_0
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussChebyshev2ndPolynomial",Description = "GaussChebyshev2ndPolynomial")>] 
          gausschebyshev2ndpolynomial : obj)
@@ -190,7 +190,7 @@ module GaussChebyshev2ndPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussChebyshev2ndPolynomial_w", Description="Create a GaussChebyshev2ndPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshev2ndPolynomial_w
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussChebyshev2ndPolynomial",Description = "GaussChebyshev2ndPolynomial")>] 
          gausschebyshev2ndpolynomial : obj)
@@ -232,7 +232,7 @@ module GaussChebyshev2ndPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussChebyshev2ndPolynomial_value", Description="Create a GaussChebyshev2ndPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshev2ndPolynomial_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussChebyshev2ndPolynomial",Description = "GaussChebyshev2ndPolynomial")>] 
          gausschebyshev2ndpolynomial : obj)
@@ -280,7 +280,7 @@ module GaussChebyshev2ndPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussChebyshev2ndPolynomial_weightedValue", Description="Create a GaussChebyshev2ndPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshev2ndPolynomial_weightedValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussChebyshev2ndPolynomial",Description = "GaussChebyshev2ndPolynomial")>] 
          gausschebyshev2ndpolynomial : obj)
@@ -325,9 +325,9 @@ module GaussChebyshev2ndPolynomialFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GaussChebyshev2ndPolynomial_Range", Description="Create a range of GaussChebyshev2ndPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussChebyshev2ndPolynomial_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

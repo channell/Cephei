@@ -39,7 +39,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor1", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "SEKLibor")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
@@ -82,7 +82,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SEKLibor")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
@@ -119,7 +119,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_clone", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -161,7 +161,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_maturityDate", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -203,7 +203,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_valueDate", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -245,7 +245,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_businessDayConvention", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -281,7 +281,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_endOfMonth", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -317,7 +317,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_forecastFixing1", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -371,7 +371,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_forecastFixing", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -413,7 +413,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_forwardingTermStructure", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -449,7 +449,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_currency", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -485,7 +485,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_dayCounter", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -521,7 +521,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_familyName", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -557,7 +557,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_fixing", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -605,7 +605,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_fixingCalendar", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -641,7 +641,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_fixingDate", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -683,7 +683,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_fixingDays", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -719,7 +719,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_isValidFixingDate", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -761,7 +761,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_name", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -797,7 +797,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_pastFixing", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -839,7 +839,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_tenor", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -875,7 +875,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_update", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -911,7 +911,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_addFixing", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -965,13 +965,13 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_addFixings", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -1019,7 +1019,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_addFixings1", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -1067,7 +1067,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_allowsNativeFixings", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -1103,7 +1103,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_clearFixings", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -1139,7 +1139,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_registerWith", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -1181,7 +1181,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_timeSeries", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -1217,7 +1217,7 @@ module SEKLiborFunction =
     *)
     [<ExcelFunction(Name="_SEKLibor_unregisterWith", Description="Create a SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SEKLibor",Description = "SEKLibor")>] 
          seklibor : obj)
@@ -1256,9 +1256,9 @@ module SEKLiborFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SEKLibor_Range", Description="Create a range of SEKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SEKLibor_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

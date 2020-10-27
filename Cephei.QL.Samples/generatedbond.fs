@@ -119,7 +119,7 @@ module BondSimpleFunction =
 
     [<ExcelFunction(Name="__BondSimple", Description="Create a BondSimple",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BondSimple_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="__coupons",Description = "reference to coupons")>]
         coupons : obj)
@@ -180,7 +180,7 @@ module BondSimpleFunction =
 
     [<ExcelFunction(Name="__BondSimple_calendar", Description="Create a QLNet.TARGET",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          calendar : obj)
@@ -208,7 +208,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_Today", Description="Create a System.DateTime",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          Today : obj)
@@ -236,7 +236,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_clock", Description="Create a QLNet.Date",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          clock : obj)
@@ -264,7 +264,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_priceday", Description="Create a QLNet.Date",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          priceday : obj)
@@ -292,7 +292,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_dayCount", Description="Create a QLNet.ActualActual",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          dayCount : obj)
@@ -320,7 +320,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_FreqS", Description="Create a QLNet.Period",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          FreqS : obj)
@@ -348,7 +348,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_exCoupon", Description="Create a QLNet.Period",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          exCoupon : obj)
@@ -376,7 +376,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_+coupons", Description="Create a System.Collections.Generic.List`1[System.Double]",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          +coupons : obj)
@@ -404,7 +404,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_settlement", Description="Create a System.Int32",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          settlement : obj)
@@ -432,7 +432,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_+Yield1", Description="Create a QLNet.SimpleQuote",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          +Yield1 : obj)
@@ -460,7 +460,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_FlatYield1", Description="Create a QLNet.FlatForward",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          FlatYield1 : obj)
@@ -488,7 +488,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_EngineFlatYield1", Description="Create a QLNet.DiscountingBondEngine",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          EngineFlatYield1 : obj)
@@ -516,7 +516,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_Mat3", Description="Create a QLNet.Date",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          Mat3 : obj)
@@ -544,7 +544,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_+Yield2", Description="Create a QLNet.SimpleQuote",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          +Yield2 : obj)
@@ -572,7 +572,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_Mat1", Description="Create a QLNet.Date",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          Mat1 : obj)
@@ -600,7 +600,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_Mat2", Description="Create a QLNet.Date",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          Mat2 : obj)
@@ -628,7 +628,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_FlatYield2", Description="Create a QLNet.FlatForward",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          FlatYield2 : obj)
@@ -656,7 +656,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_Fac2", Description="Create a System.Double",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          Fac2 : obj)
@@ -684,7 +684,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_Mat1FreqS", Description="Create a QLNet.Schedule",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          Mat1FreqS : obj)
@@ -712,7 +712,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_EngineFlatYield2", Description="Create a QLNet.DiscountingBondEngine",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          EngineFlatYield2 : obj)
@@ -740,7 +740,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_Mat3FreqS", Description="Create a QLNet.Schedule",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          Mat3FreqS : obj)
@@ -768,7 +768,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_Fac1", Description="Create a System.Double",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          Fac1 : obj)
@@ -796,7 +796,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_Mat2FreqS", Description="Create a QLNet.Schedule",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          Mat2FreqS : obj)
@@ -824,7 +824,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_FreqA", Description="Create a QLNet.Period",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          FreqA : obj)
@@ -852,7 +852,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_Fac3", Description="Create a System.Double",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          Fac3 : obj)
@@ -880,7 +880,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_Mat4", Description="Create a QLNet.Date",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          Mat4 : obj)
@@ -908,7 +908,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_+Yield4", Description="Create a QLNet.SimpleQuote",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          +Yield4 : obj)
@@ -936,7 +936,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_+Yield3", Description="Create a QLNet.SimpleQuote",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          +Yield3 : obj)
@@ -964,7 +964,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_Mat5", Description="Create a QLNet.Date",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          Mat5 : obj)
@@ -992,7 +992,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_FlatYield3", Description="Create a QLNet.FlatForward",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          FlatYield3 : obj)
@@ -1020,7 +1020,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_FlatYield4", Description="Create a QLNet.FlatForward",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          FlatYield4 : obj)
@@ -1048,7 +1048,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_clean1", Description="Create a System.Double",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          clean1 : obj)
@@ -1076,7 +1076,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_EngineFlatYield4", Description="Create a QLNet.DiscountingBondEngine",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          EngineFlatYield4 : obj)
@@ -1104,7 +1104,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_Mat4FreqS", Description="Create a QLNet.Schedule",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          Mat4FreqS : obj)
@@ -1132,7 +1132,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_Mat5FreqS", Description="Create a QLNet.Schedule",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          Mat5FreqS : obj)
@@ -1160,7 +1160,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_Mat2FreqA", Description="Create a QLNet.Schedule",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          Mat2FreqA : obj)
@@ -1188,7 +1188,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_Mat3FreqA", Description="Create a QLNet.Schedule",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          Mat3FreqA : obj)
@@ -1216,7 +1216,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_Mat5FreqA", Description="Create a QLNet.Schedule",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          Mat5FreqA : obj)
@@ -1244,7 +1244,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_clean3", Description="Create a System.Double",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          clean3 : obj)
@@ -1272,7 +1272,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_Mat1FreqA", Description="Create a QLNet.Schedule",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          Mat1FreqA : obj)
@@ -1300,7 +1300,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_Mat4FreqA", Description="Create a QLNet.Schedule",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          Mat4FreqA : obj)
@@ -1328,7 +1328,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_EngineFlatYield3", Description="Create a QLNet.DiscountingBondEngine",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          EngineFlatYield3 : obj)
@@ -1356,7 +1356,7 @@ module BondSimpleFunction =
                             
     [<ExcelFunction(Name="__BondSimple_clean2", Description="Create a System.Double",Category="Cephei Models", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Period_ToShortString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BondSimple",Description = "Reference to BondSimple")>] 
          clean2 : obj)

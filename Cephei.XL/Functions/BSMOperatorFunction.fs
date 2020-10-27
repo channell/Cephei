@@ -39,7 +39,7 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator1", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "BSMOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="grid",Description = "Vector")>] 
          grid : obj)
@@ -88,7 +88,7 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator2", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "BSMOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,7 +119,7 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BSMOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
@@ -181,7 +181,7 @@ module BSMOperatorFunction =
     (*!! name clash with Dictionary Add method 
     [<ExcelFunction(Name="_BSMOperator_add", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
@@ -230,7 +230,7 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_applyTo", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
@@ -272,7 +272,7 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_Clone", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
@@ -308,7 +308,7 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_diagonal", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_diagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
@@ -344,7 +344,7 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_identity", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_identity
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
@@ -386,7 +386,7 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_isTimeDependent", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_isTimeDependent
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
@@ -422,7 +422,7 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_lowerDiagonal", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_lowerDiagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
@@ -458,7 +458,7 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_multiply", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_multiply
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
@@ -506,7 +506,7 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_setFirstRow", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_setFirstRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
@@ -554,7 +554,7 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_setLastRow", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_setLastRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
@@ -602,7 +602,7 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_setMidRow", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_setMidRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
@@ -662,7 +662,7 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_setMidRows", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_setMidRows
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
@@ -716,7 +716,7 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_setTime", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
@@ -758,7 +758,7 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_size", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
@@ -794,7 +794,7 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_solveFor", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_solveFor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
@@ -836,7 +836,7 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_SOR", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_SOR
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
@@ -884,7 +884,7 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_subtract", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_subtract
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
@@ -932,7 +932,7 @@ module BSMOperatorFunction =
     *)
     [<ExcelFunction(Name="_BSMOperator_upperDiagonal", Description="Create a BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_upperDiagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BSMOperator",Description = "BSMOperator")>] 
          bsmoperator : obj)
@@ -965,9 +965,9 @@ module BSMOperatorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BSMOperator_Range", Description="Create a range of BSMOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSMOperator_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

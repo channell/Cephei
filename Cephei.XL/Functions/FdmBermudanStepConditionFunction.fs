@@ -39,7 +39,7 @@ module FdmBermudanStepConditionFunction =
     *)
     [<ExcelFunction(Name="_FdmBermudanStepCondition_applyTo", Description="Create a FdmBermudanStepCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBermudanStepCondition_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmBermudanStepCondition")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBermudanStepCondition",Description = "FdmBermudanStepCondition")>] 
          fdmbermudanstepcondition : obj)
@@ -87,7 +87,7 @@ module FdmBermudanStepConditionFunction =
     *)
     [<ExcelFunction(Name="_FdmBermudanStepCondition_exerciseTimes", Description="Create a FdmBermudanStepCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBermudanStepCondition_exerciseTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmBermudanStepCondition")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBermudanStepCondition",Description = "FdmBermudanStepCondition")>] 
          fdmbermudanstepcondition : obj)
@@ -123,9 +123,9 @@ module FdmBermudanStepConditionFunction =
     *)
     [<ExcelFunction(Name="_FdmBermudanStepCondition", Description="Create a FdmBermudanStepCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBermudanStepCondition_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmBermudanStepCondition")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="exerciseDates",Description = "Date")>] 
+        ([<ExcelArgument(Name="exerciseDate ranges",Description = "Date range")>] 
          exerciseDates : obj)
         ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
@@ -181,9 +181,9 @@ module FdmBermudanStepConditionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmBermudanStepCondition_Range", Description="Create a range of FdmBermudanStepCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBermudanStepCondition_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

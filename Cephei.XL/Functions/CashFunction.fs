@@ -39,7 +39,7 @@ module CashFunction =
     *)
     [<ExcelFunction(Name="_Cash", Description="Create a Cash",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cash_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Cash")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Type",Description = "Loan.Type: Deposit, Loan")>] 
          Type : obj)
@@ -106,7 +106,7 @@ module CashFunction =
     *)
     [<ExcelFunction(Name="_Cash_principalLeg", Description="Create a Cash",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cash_principalLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cash",Description = "Cash")>] 
          cash : obj)
@@ -142,7 +142,7 @@ module CashFunction =
     *)
     [<ExcelFunction(Name="_Cash_isExpired", Description="Create a Cash",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cash_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cash",Description = "Cash")>] 
          cash : obj)
@@ -178,7 +178,7 @@ module CashFunction =
     *)
     [<ExcelFunction(Name="_Cash_CASH", Description="Create a Cash",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cash_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cash",Description = "Cash")>] 
          cash : obj)
@@ -214,7 +214,7 @@ module CashFunction =
     *)
     [<ExcelFunction(Name="_Cash_errorEstimate", Description="Create a Cash",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cash_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cash",Description = "Cash")>] 
          cash : obj)
@@ -250,7 +250,7 @@ module CashFunction =
     *)
     [<ExcelFunction(Name="_Cash_NPV", Description="Create a Cash",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cash_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cash",Description = "Cash")>] 
          cash : obj)
@@ -286,7 +286,7 @@ module CashFunction =
     *)
     [<ExcelFunction(Name="_Cash_result", Description="Create a Cash",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cash_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cash",Description = "Cash")>] 
          cash : obj)
@@ -328,7 +328,7 @@ module CashFunction =
     *)
     [<ExcelFunction(Name="_Cash_setPricingEngine", Description="Create a Cash",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cash_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cash",Description = "Cash")>] 
          cash : obj)
@@ -370,7 +370,7 @@ module CashFunction =
     *)
     [<ExcelFunction(Name="_Cash_valuationDate", Description="Create a Cash",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cash_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cash",Description = "Cash")>] 
          cash : obj)
@@ -403,9 +403,9 @@ module CashFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Cash_Range", Description="Create a range of Cash",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cash_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

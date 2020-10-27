@@ -46,7 +46,7 @@ module CounterpartyAdjSwapEngineFunction =
     *)
     [<ExcelFunction(Name="_CounterpartyAdjSwapEngine", Description="Create a CounterpartyAdjSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CounterpartyAdjSwapEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "CounterpartyAdjSwapEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
@@ -58,7 +58,7 @@ module CounterpartyAdjSwapEngineFunction =
          ctptyRecoveryRate : obj)
         ([<ExcelArgument(Name="invstDTS",Description = "DefaultProbabilityTermStructure")>] 
          invstDTS : obj)
-        ([<ExcelArgument(Name="invstRecoveryRate",Description = "CounterpartyAdjSwapEngine")>] 
+        ([<ExcelArgument(Name="invstRecoveryRate",Description = "double or empty")>] 
          invstRecoveryRate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,7 +119,7 @@ module CounterpartyAdjSwapEngineFunction =
     *)
     [<ExcelFunction(Name="_CounterpartyAdjSwapEngine1", Description="Create a CounterpartyAdjSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CounterpartyAdjSwapEngine_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "CounterpartyAdjSwapEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
@@ -131,7 +131,7 @@ module CounterpartyAdjSwapEngineFunction =
          ctptyRecoveryRate : obj)
         ([<ExcelArgument(Name="invstDTS",Description = "DefaultProbabilityTermStructure")>] 
          invstDTS : obj)
-        ([<ExcelArgument(Name="invstRecoveryRate",Description = "CounterpartyAdjSwapEngine")>] 
+        ([<ExcelArgument(Name="invstRecoveryRate",Description = "double or empty")>] 
          invstRecoveryRate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -192,7 +192,7 @@ module CounterpartyAdjSwapEngineFunction =
     *)
     [<ExcelFunction(Name="_CounterpartyAdjSwapEngine2", Description="Create a CounterpartyAdjSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CounterpartyAdjSwapEngine_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "CounterpartyAdjSwapEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
@@ -204,7 +204,7 @@ module CounterpartyAdjSwapEngineFunction =
          ctptyRecoveryRate : obj)
         ([<ExcelArgument(Name="invstDTS",Description = "DefaultProbabilityTermStructure")>] 
          invstDTS : obj)
-        ([<ExcelArgument(Name="invstRecoveryRate",Description = "CounterpartyAdjSwapEngine")>] 
+        ([<ExcelArgument(Name="invstRecoveryRate",Description = "double or empty")>] 
          invstRecoveryRate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -256,9 +256,9 @@ module CounterpartyAdjSwapEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CounterpartyAdjSwapEngine_Range", Description="Create a range of CounterpartyAdjSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CounterpartyAdjSwapEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -40,7 +40,7 @@ module MidPointCdsEngineFunction =
     *)
     [<ExcelFunction(Name="_MidPointCdsEngine", Description="Create a MidPointCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MidPointCdsEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "MidPointCdsEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="probability",Description = "DefaultProbabilityTermStructure")>] 
          probability : obj)
@@ -92,9 +92,9 @@ module MidPointCdsEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MidPointCdsEngine_Range", Description="Create a range of MidPointCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MidPointCdsEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

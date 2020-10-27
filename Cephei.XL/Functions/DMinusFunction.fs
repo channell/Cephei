@@ -39,7 +39,7 @@ module DMinusFunction =
     *)
     [<ExcelFunction(Name="_DMinus", Description="Create a DMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DMinus_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "DMinus")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="gridPoints",Description = "int")>] 
          gridPoints : obj)
@@ -83,7 +83,7 @@ module DMinusFunction =
     (*!! duplicate Add function
     [<ExcelFunction(Name="_DMinus_add", Description="Create a DMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DMinus_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DMinus",Description = "DMinus")>] 
          dminus : obj)
@@ -132,7 +132,7 @@ module DMinusFunction =
     *)
     [<ExcelFunction(Name="_DMinus_applyTo", Description="Create a DMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DMinus_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DMinus",Description = "DMinus")>] 
          dminus : obj)
@@ -174,7 +174,7 @@ module DMinusFunction =
     *)
     [<ExcelFunction(Name="_DMinus_Clone", Description="Create a DMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DMinus_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DMinus",Description = "DMinus")>] 
          dminus : obj)
@@ -210,7 +210,7 @@ module DMinusFunction =
     *)
     [<ExcelFunction(Name="_DMinus_diagonal", Description="Create a DMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DMinus_diagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DMinus",Description = "DMinus")>] 
          dminus : obj)
@@ -246,7 +246,7 @@ module DMinusFunction =
     *)
     [<ExcelFunction(Name="_DMinus_identity", Description="Create a DMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DMinus_identity
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DMinus",Description = "DMinus")>] 
          dminus : obj)
@@ -288,7 +288,7 @@ module DMinusFunction =
     *)
     [<ExcelFunction(Name="_DMinus_isTimeDependent", Description="Create a DMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DMinus_isTimeDependent
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DMinus",Description = "DMinus")>] 
          dminus : obj)
@@ -324,7 +324,7 @@ module DMinusFunction =
     *)
     [<ExcelFunction(Name="_DMinus_lowerDiagonal", Description="Create a DMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DMinus_lowerDiagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DMinus",Description = "DMinus")>] 
          dminus : obj)
@@ -360,7 +360,7 @@ module DMinusFunction =
     *)
     [<ExcelFunction(Name="_DMinus_multiply", Description="Create a DMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DMinus_multiply
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DMinus",Description = "DMinus")>] 
          dminus : obj)
@@ -408,7 +408,7 @@ module DMinusFunction =
     *)
     [<ExcelFunction(Name="_DMinus_setFirstRow", Description="Create a DMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DMinus_setFirstRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DMinus",Description = "DMinus")>] 
          dminus : obj)
@@ -456,7 +456,7 @@ module DMinusFunction =
     *)
     [<ExcelFunction(Name="_DMinus_setLastRow", Description="Create a DMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DMinus_setLastRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DMinus",Description = "DMinus")>] 
          dminus : obj)
@@ -504,7 +504,7 @@ module DMinusFunction =
     *)
     [<ExcelFunction(Name="_DMinus_setMidRow", Description="Create a DMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DMinus_setMidRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DMinus",Description = "DMinus")>] 
          dminus : obj)
@@ -564,7 +564,7 @@ module DMinusFunction =
     *)
     [<ExcelFunction(Name="_DMinus_setMidRows", Description="Create a DMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DMinus_setMidRows
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DMinus",Description = "DMinus")>] 
          dminus : obj)
@@ -618,7 +618,7 @@ module DMinusFunction =
     *)
     [<ExcelFunction(Name="_DMinus_setTime", Description="Create a DMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DMinus_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DMinus",Description = "DMinus")>] 
          dminus : obj)
@@ -660,7 +660,7 @@ module DMinusFunction =
     *)
     [<ExcelFunction(Name="_DMinus_size", Description="Create a DMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DMinus_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DMinus",Description = "DMinus")>] 
          dminus : obj)
@@ -696,7 +696,7 @@ module DMinusFunction =
     *)
     [<ExcelFunction(Name="_DMinus_solveFor", Description="Create a DMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DMinus_solveFor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DMinus",Description = "DMinus")>] 
          dminus : obj)
@@ -738,7 +738,7 @@ module DMinusFunction =
     *)
     [<ExcelFunction(Name="_DMinus_SOR", Description="Create a DMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DMinus_SOR
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DMinus",Description = "DMinus")>] 
          dminus : obj)
@@ -786,7 +786,7 @@ module DMinusFunction =
     *)
     [<ExcelFunction(Name="_DMinus_subtract", Description="Create a DMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DMinus_subtract
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DMinus",Description = "DMinus")>] 
          dminus : obj)
@@ -834,7 +834,7 @@ module DMinusFunction =
     *)
     [<ExcelFunction(Name="_DMinus_upperDiagonal", Description="Create a DMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DMinus_upperDiagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DMinus",Description = "DMinus")>] 
          dminus : obj)
@@ -867,9 +867,9 @@ module DMinusFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DMinus_Range", Description="Create a range of DMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DMinus_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

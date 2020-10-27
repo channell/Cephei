@@ -39,7 +39,7 @@ module CumulativeNormalDistributionFunction =
     *)
     [<ExcelFunction(Name="_CumulativeNormalDistribution1", Description="Create a CumulativeNormalDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeNormalDistribution_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "CumulativeNormalDistribution")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="average",Description = "double")>] 
          average : obj)
@@ -82,7 +82,7 @@ module CumulativeNormalDistributionFunction =
     *)
     [<ExcelFunction(Name="_CumulativeNormalDistribution", Description="Create a CumulativeNormalDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeNormalDistribution_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "CumulativeNormalDistribution")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -113,7 +113,7 @@ module CumulativeNormalDistributionFunction =
     *)
     [<ExcelFunction(Name="_CumulativeNormalDistribution_derivative", Description="Create a CumulativeNormalDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeNormalDistribution_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CumulativeNormalDistribution",Description = "CumulativeNormalDistribution")>] 
          cumulativenormaldistribution : obj)
@@ -155,7 +155,7 @@ module CumulativeNormalDistributionFunction =
     *)
     [<ExcelFunction(Name="_CumulativeNormalDistribution_value", Description="Create a CumulativeNormalDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeNormalDistribution_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CumulativeNormalDistribution",Description = "CumulativeNormalDistribution")>] 
          cumulativenormaldistribution : obj)
@@ -194,9 +194,9 @@ module CumulativeNormalDistributionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CumulativeNormalDistribution_Range", Description="Create a range of CumulativeNormalDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeNormalDistribution_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

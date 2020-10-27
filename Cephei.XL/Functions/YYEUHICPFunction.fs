@@ -39,7 +39,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP1", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "YYEUHICP")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="interpolated",Description = "bool")>] 
          interpolated : obj)
@@ -82,7 +82,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "YYEUHICP")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="interpolated",Description = "bool")>] 
          interpolated : obj)
@@ -119,7 +119,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP_clone", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYEUHICP",Description = "YYEUHICP")>] 
          yyeuhicp : obj)
@@ -161,7 +161,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP_fixing", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYEUHICP",Description = "YYEUHICP")>] 
          yyeuhicp : obj)
@@ -209,7 +209,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP_ratio", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_ratio
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYEUHICP",Description = "YYEUHICP")>] 
          yyeuhicp : obj)
@@ -245,7 +245,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP_yoyInflationTermStructure", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_yoyInflationTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYEUHICP",Description = "YYEUHICP")>] 
          yyeuhicp : obj)
@@ -281,7 +281,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP_addFixing", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYEUHICP",Description = "YYEUHICP")>] 
          yyeuhicp : obj)
@@ -336,7 +336,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP_availabilityLag", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_availabilityLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYEUHICP",Description = "YYEUHICP")>] 
          yyeuhicp : obj)
@@ -372,7 +372,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP_currency", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYEUHICP",Description = "YYEUHICP")>] 
          yyeuhicp : obj)
@@ -408,7 +408,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP_familyName", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYEUHICP",Description = "YYEUHICP")>] 
          yyeuhicp : obj)
@@ -444,7 +444,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP_fixingCalendar", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYEUHICP",Description = "YYEUHICP")>] 
          yyeuhicp : obj)
@@ -480,7 +480,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP_frequency", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYEUHICP",Description = "YYEUHICP")>] 
          yyeuhicp : obj)
@@ -516,7 +516,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP_interpolated", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_interpolated
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYEUHICP",Description = "YYEUHICP")>] 
          yyeuhicp : obj)
@@ -552,7 +552,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP_isValidFixingDate", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYEUHICP",Description = "YYEUHICP")>] 
          yyeuhicp : obj)
@@ -594,7 +594,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP_name", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYEUHICP",Description = "YYEUHICP")>] 
          yyeuhicp : obj)
@@ -630,7 +630,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP_region", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_region
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYEUHICP",Description = "YYEUHICP")>] 
          yyeuhicp : obj)
@@ -666,7 +666,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP_revised", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_revised
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYEUHICP",Description = "YYEUHICP")>] 
          yyeuhicp : obj)
@@ -702,7 +702,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP_update", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYEUHICP",Description = "YYEUHICP")>] 
          yyeuhicp : obj)
@@ -738,13 +738,13 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP_addFixings", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYEUHICP",Description = "YYEUHICP")>] 
          yyeuhicp : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -792,7 +792,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP_addFixings1", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYEUHICP",Description = "YYEUHICP")>] 
          yyeuhicp : obj)
@@ -840,7 +840,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP_allowsNativeFixings", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYEUHICP",Description = "YYEUHICP")>] 
          yyeuhicp : obj)
@@ -876,7 +876,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP_clearFixings", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYEUHICP",Description = "YYEUHICP")>] 
          yyeuhicp : obj)
@@ -912,7 +912,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP_registerWith", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYEUHICP",Description = "YYEUHICP")>] 
          yyeuhicp : obj)
@@ -954,7 +954,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP_timeSeries", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYEUHICP",Description = "YYEUHICP")>] 
          yyeuhicp : obj)
@@ -990,7 +990,7 @@ module YYEUHICPFunction =
     *)
     [<ExcelFunction(Name="_YYEUHICP_unregisterWith", Description="Create a YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYEUHICP",Description = "YYEUHICP")>] 
          yyeuhicp : obj)
@@ -1029,9 +1029,9 @@ module YYEUHICPFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_YYEUHICP_Range", Description="Create a range of YYEUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYEUHICP_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

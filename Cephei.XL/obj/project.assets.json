@@ -231,6 +231,26 @@
           "bin/placeholder/Cephei.QLNetHelper.dll": {}
         }
       },
+      "Cephei.XLM/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "Cephei.Cell": "3.0.3",
+          "Cephei.QL": "3.0.0",
+          "Cephei.QLNetHelper": "1.0.0",
+          "ExcelDna.Integration": "1.1.0",
+          "FSharp.Core": "4.7.2",
+          "ILGPU": "0.9.1",
+          "QLNetCephei": "1.11.4",
+          "System.Collections.Immutable": "1.7.1"
+        },
+        "compile": {
+          "bin/placeholder/Cephei.XLM.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Cephei.XLM.dll": {}
+        }
+      },
       "QLNetCephei/1.11.4": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.8",
@@ -600,6 +620,11 @@
       "path": "../Cephei.QLNetHelper/Cephei.QLNetHelper.csproj",
       "msbuildProject": "../Cephei.QLNetHelper/Cephei.QLNetHelper.csproj"
     },
+    "Cephei.XLM/1.0.0": {
+      "type": "project",
+      "path": "Cephei.XLM.fsproj",
+      "msbuildProject": "Cephei.XLM.fsproj"
+    },
     "QLNetCephei/1.11.4": {
       "type": "project",
       "path": "../../amaggiulli/QLNet/src/QLNet/QLNet.csproj",
@@ -611,6 +636,7 @@
       "Cephei.Cell >= 3.0.3",
       "Cephei.QL >= 3.0.0",
       "Cephei.QLNetHelper >= 1.0.0",
+      "Cephei.XLM >= 1.0.0",
       "ExcelDna.Integration >= 1.1.0",
       "FSharp.Core >= 4.7.2",
       "ILGPU >= 0.9.1",
@@ -625,9 +651,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XLM.fsproj",
-      "projectName": "Cephei.XLM",
-      "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XLM.fsproj",
+      "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XL1.fsproj",
+      "projectName": "Cephei.XL1",
+      "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XL1.fsproj",
       "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\obj\\",
       "projectStyle": "PackageReference",
@@ -661,6 +687,9 @@
             },
             "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj": {
               "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL\\Cephei.QL.fsproj"
+            },
+            "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XLM.fsproj": {
+              "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XLM.fsproj"
             }
           }
         }

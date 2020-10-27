@@ -39,7 +39,7 @@ module LPP3HestonExpansionFunction =
     *)
     [<ExcelFunction(Name="_LPP3HestonExpansion_impliedVolatility", Description="Create a LPP3HestonExpansion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LPP3HestonExpansion_impliedVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "LPP3HestonExpansion")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LPP3HestonExpansion",Description = "LPP3HestonExpansion")>] 
          lpp3hestonexpansion : obj)
@@ -87,7 +87,7 @@ module LPP3HestonExpansionFunction =
     *)
     [<ExcelFunction(Name="_LPP3HestonExpansion", Description="Create a LPP3HestonExpansion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LPP3HestonExpansion_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "LPP3HestonExpansion")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="kappa",Description = "double")>] 
          kappa : obj)
@@ -151,9 +151,9 @@ module LPP3HestonExpansionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LPP3HestonExpansion_Range", Description="Create a range of LPP3HestonExpansion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LPP3HestonExpansion_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

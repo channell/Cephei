@@ -39,13 +39,13 @@ module BSplineFunction =
     *)
     [<ExcelFunction(Name="_BSpline", Description="Create a BSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSpline_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BSpline")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="p",Description = "int")>] 
          p : obj)
         ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="knots",Description = "double")>] 
+        ([<ExcelArgument(Name="knots",Description = "double range")>] 
          knots : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,7 +88,7 @@ module BSplineFunction =
     *)
     [<ExcelFunction(Name="_BSpline_value", Description="Create a BSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSpline_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BSpline",Description = "BSpline")>] 
          bspline : obj)
@@ -133,9 +133,9 @@ module BSplineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BSpline_Range", Description="Create a range of BSpline",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BSpline_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

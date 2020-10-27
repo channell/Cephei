@@ -39,13 +39,13 @@ module PenaltyFunctionFunction =
     *)
     [<ExcelFunction(Name="_PenaltyFunction", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PenaltyFunction_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "PenaltyFunction")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="curve",Description = "'T")>] 
          curve : obj)
         ([<ExcelArgument(Name="initialIndex",Description = "int")>] 
          initialIndex : obj)
-        ([<ExcelArgument(Name="rateHelpers",Description = "'U")>] 
+        ([<ExcelArgument(Name="rateHelpers",Description = "'U range")>] 
          rateHelpers : obj)
         ([<ExcelArgument(Name="start",Description = "int")>] 
          start : obj)
@@ -100,7 +100,7 @@ module PenaltyFunctionFunction =
     *)
     [<ExcelFunction(Name="_PenaltyFunction_value", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PenaltyFunction_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PenaltyFunction",Description = "PenaltyFunction")>] 
          penaltyfunction : obj)
@@ -142,7 +142,7 @@ module PenaltyFunctionFunction =
     *)
     [<ExcelFunction(Name="_PenaltyFunction_values", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PenaltyFunction_values
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PenaltyFunction",Description = "PenaltyFunction")>] 
          penaltyfunction : obj)
@@ -184,7 +184,7 @@ module PenaltyFunctionFunction =
     *)
     [<ExcelFunction(Name="_PenaltyFunction_finiteDifferenceEpsilon", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PenaltyFunction_finiteDifferenceEpsilon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PenaltyFunction",Description = "PenaltyFunction")>] 
          penaltyfunction : obj)
@@ -220,7 +220,7 @@ module PenaltyFunctionFunction =
     *)
     [<ExcelFunction(Name="_PenaltyFunction_gradient", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PenaltyFunction_gradient
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PenaltyFunction",Description = "PenaltyFunction")>] 
          penaltyfunction : obj)
@@ -268,7 +268,7 @@ module PenaltyFunctionFunction =
     *)
     [<ExcelFunction(Name="_PenaltyFunction_jacobian", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PenaltyFunction_jacobian
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PenaltyFunction",Description = "PenaltyFunction")>] 
          penaltyfunction : obj)
@@ -316,7 +316,7 @@ module PenaltyFunctionFunction =
     *)
     [<ExcelFunction(Name="_PenaltyFunction_valueAndGradient", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PenaltyFunction_valueAndGradient
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PenaltyFunction",Description = "PenaltyFunction")>] 
          penaltyfunction : obj)
@@ -364,7 +364,7 @@ module PenaltyFunctionFunction =
     *)
     [<ExcelFunction(Name="_PenaltyFunction_valuesAndJacobian", Description="Create a PenaltyFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PenaltyFunction_valuesAndJacobian
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PenaltyFunction",Description = "PenaltyFunction")>] 
          penaltyfunction : obj)
@@ -409,9 +409,9 @@ module PenaltyFunctionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PenaltyFunction_Range", Description="Create a range of PenaltyFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PenaltyFunction_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

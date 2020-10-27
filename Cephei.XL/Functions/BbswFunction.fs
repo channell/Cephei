@@ -39,7 +39,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Bbsw")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
@@ -82,7 +82,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_businessDayConvention", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -118,7 +118,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_clone", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -160,7 +160,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_endOfMonth", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -196,7 +196,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_forecastFixing1", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -250,7 +250,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_forecastFixing", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -292,7 +292,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_forwardingTermStructure", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -328,7 +328,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_maturityDate", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -370,7 +370,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_currency", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -406,7 +406,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_dayCounter", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -442,7 +442,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_familyName", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -478,7 +478,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_fixing", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -526,7 +526,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_fixingCalendar", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -562,7 +562,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_fixingDate", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -604,7 +604,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_fixingDays", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -640,7 +640,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_isValidFixingDate", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -682,7 +682,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_name", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -718,7 +718,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_pastFixing", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -760,7 +760,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_tenor", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -796,7 +796,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_update", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -832,7 +832,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_valueDate", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -874,7 +874,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_addFixing", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -928,13 +928,13 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_addFixings", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -982,7 +982,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_addFixings1", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -1030,7 +1030,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_allowsNativeFixings", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -1066,7 +1066,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_clearFixings", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -1102,7 +1102,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_registerWith", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -1144,7 +1144,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_timeSeries", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -1180,7 +1180,7 @@ module BbswFunction =
     *)
     [<ExcelFunction(Name="_Bbsw_unregisterWith", Description="Create a Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bbsw",Description = "Bbsw")>] 
          bbsw : obj)
@@ -1219,9 +1219,9 @@ module BbswFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Bbsw_Range", Description="Create a range of Bbsw",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bbsw_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

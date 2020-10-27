@@ -39,7 +39,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_atmLevel", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_atmLevel
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -75,7 +75,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_Clone", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -111,7 +111,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_data", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_data
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -147,7 +147,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_data_", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_data_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -183,7 +183,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_dates", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_dates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -219,7 +219,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_dates_", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_dates_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -255,7 +255,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_discounts", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_discounts
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -291,23 +291,23 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="timeToExpiry",Description = "double")>] 
          timeToExpiry : obj)
-        ([<ExcelArgument(Name="strikes",Description = "double")>] 
+        ([<ExcelArgument(Name="strikes",Description = "double range")>] 
          strikes : obj)
-        ([<ExcelArgument(Name="stdDevHandles",Description = "Quote")>] 
+        ([<ExcelArgument(Name="stdDevHandles",Description = "Quote range")>] 
          stdDevHandles : obj)
         ([<ExcelArgument(Name="atmLevel",Description = "Quote")>] 
          atmLevel : obj)
-        ([<ExcelArgument(Name="interpolator",Description = "InterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="interpolator",Description = "'Interpolator or empty")>] 
          interpolator : obj)
-        ([<ExcelArgument(Name="dc",Description = "InterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter or empty")>] 
          dc : obj)
         ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
-        ([<ExcelArgument(Name="shift",Description = "InterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="shift",Description = "double or empty")>] 
          shift : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -370,23 +370,23 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection1", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="timeToExpiry",Description = "double")>] 
          timeToExpiry : obj)
-        ([<ExcelArgument(Name="strikes",Description = "double")>] 
+        ([<ExcelArgument(Name="strikes",Description = "double range")>] 
          strikes : obj)
-        ([<ExcelArgument(Name="stdDevs",Description = "double")>] 
+        ([<ExcelArgument(Name="stdDevs",Description = "double range")>] 
          stdDevs : obj)
         ([<ExcelArgument(Name="atmLevel",Description = "double")>] 
          atmLevel : obj)
-        ([<ExcelArgument(Name="interpolator",Description = "InterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="interpolator",Description = "'Interpolator or empty")>] 
          interpolator : obj)
-        ([<ExcelArgument(Name="dc",Description = "InterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter or empty")>] 
          dc : obj)
         ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
-        ([<ExcelArgument(Name="shift",Description = "InterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="shift",Description = "double or empty")>] 
          shift : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -449,25 +449,25 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection2", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="strikes",Description = "double")>] 
+        ([<ExcelArgument(Name="strikes",Description = "double range")>] 
          strikes : obj)
-        ([<ExcelArgument(Name="stdDevHandles",Description = "Quote")>] 
+        ([<ExcelArgument(Name="stdDevHandles",Description = "Quote range")>] 
          stdDevHandles : obj)
         ([<ExcelArgument(Name="atmLevel",Description = "Quote")>] 
          atmLevel : obj)
-        ([<ExcelArgument(Name="dc",Description = "InterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter or empty")>] 
          dc : obj)
-        ([<ExcelArgument(Name="interpolator",Description = "InterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="interpolator",Description = "'Interpolator or empty")>] 
          interpolator : obj)
-        ([<ExcelArgument(Name="referenceDate",Description = "InterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date or empty")>] 
          referenceDate : obj)
         ([<ExcelArgument(Name="Type",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          Type : obj)
-        ([<ExcelArgument(Name="shift",Description = "InterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="shift",Description = "double or empty")>] 
          shift : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -534,23 +534,23 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection3", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="d",Description = "Date")>] 
          d : obj)
-        ([<ExcelArgument(Name="strikes",Description = "double")>] 
+        ([<ExcelArgument(Name="strikes",Description = "double range")>] 
          strikes : obj)
-        ([<ExcelArgument(Name="stdDevs",Description = "double")>] 
+        ([<ExcelArgument(Name="stdDevs",Description = "double range")>] 
          stdDevs : obj)
         ([<ExcelArgument(Name="atmLevel",Description = "double")>] 
          atmLevel : obj)
-        ([<ExcelArgument(Name="dc",Description = "InterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter or empty")>] 
          dc : obj)
-        ([<ExcelArgument(Name="interpolator",Description = "InterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="interpolator",Description = "'Interpolator or empty")>] 
          interpolator : obj)
-        ([<ExcelArgument(Name="referenceDate",Description = "InterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date or empty")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="shift",Description = "InterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="shift",Description = "double or empty")>] 
          shift : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -613,7 +613,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_interpolation_", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_interpolation_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -649,7 +649,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_interpolator_", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_interpolator_
-        ([<ExcelArgument(Name="Mnemonic",Description = "IInterpolationFactory")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -685,7 +685,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_maxDate", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -721,7 +721,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_maxDate_", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_maxDate_
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -757,7 +757,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_maxStrike", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -793,7 +793,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_minStrike", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -829,7 +829,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_nodes", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_nodes
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -865,7 +865,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_setupInterpolation", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_setupInterpolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -901,7 +901,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_times", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_times
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -937,7 +937,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_times_", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_times_
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -973,7 +973,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_update", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -1009,7 +1009,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_dayCounter", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -1045,7 +1045,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_density", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_density
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -1099,7 +1099,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_digitalOptionPrice", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_digitalOptionPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -1159,7 +1159,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_exerciseDate", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_exerciseDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -1195,7 +1195,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_exerciseTime", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_exerciseTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -1231,7 +1231,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_optionPrice", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_optionPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -1285,7 +1285,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_referenceDate", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -1321,7 +1321,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_shift", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_shift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -1357,7 +1357,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_variance", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -1399,7 +1399,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_vega", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -1447,7 +1447,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_volatility", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -1455,7 +1455,7 @@ module InterpolatedSmileSectionFunction =
          strike : obj)
         ([<ExcelArgument(Name="volatilityType",Description = "VolatilityType: ShiftedLognormal, Normal")>] 
          volatilityType : obj)
-        ([<ExcelArgument(Name="shift",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="shift",Description = "double or empty")>] 
          shift : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1501,7 +1501,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_volatility", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -1543,7 +1543,7 @@ module InterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedSmileSection_volatilityType", Description="Create a InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_volatilityType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedSmileSection",Description = "InterpolatedSmileSection")>] 
          interpolatedsmilesection : obj)
@@ -1576,9 +1576,9 @@ module InterpolatedSmileSectionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InterpolatedSmileSection_Range", Description="Create a range of InterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedSmileSection_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

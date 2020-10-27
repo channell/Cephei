@@ -39,7 +39,7 @@ module OptionletStripperFunction =
     *)
     [<ExcelFunction(Name="_OptionletStripper_atmOptionletRates", Description="Create a OptionletStripper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper_atmOptionletRates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OptionletStripper",Description = "OptionletStripper")>] 
          optionletstripper : obj)
@@ -75,7 +75,7 @@ module OptionletStripperFunction =
     *)
     [<ExcelFunction(Name="_OptionletStripper_businessDayConvention", Description="Create a OptionletStripper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OptionletStripper",Description = "OptionletStripper")>] 
          optionletstripper : obj)
@@ -111,7 +111,7 @@ module OptionletStripperFunction =
     *)
     [<ExcelFunction(Name="_OptionletStripper_calendar", Description="Create a OptionletStripper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OptionletStripper",Description = "OptionletStripper")>] 
          optionletstripper : obj)
@@ -147,7 +147,7 @@ module OptionletStripperFunction =
     *)
     [<ExcelFunction(Name="_OptionletStripper_dayCounter", Description="Create a OptionletStripper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OptionletStripper",Description = "OptionletStripper")>] 
          optionletstripper : obj)
@@ -183,7 +183,7 @@ module OptionletStripperFunction =
     *)
     [<ExcelFunction(Name="_OptionletStripper_displacement", Description="Create a OptionletStripper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper_displacement
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OptionletStripper",Description = "OptionletStripper")>] 
          optionletstripper : obj)
@@ -219,7 +219,7 @@ module OptionletStripperFunction =
     *)
     [<ExcelFunction(Name="_OptionletStripper_iborIndex", Description="Create a OptionletStripper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper_iborIndex
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OptionletStripper",Description = "OptionletStripper")>] 
          optionletstripper : obj)
@@ -255,7 +255,7 @@ module OptionletStripperFunction =
     *)
     [<ExcelFunction(Name="_OptionletStripper_optionletAccrualPeriods", Description="Create a OptionletStripper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper_optionletAccrualPeriods
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OptionletStripper",Description = "OptionletStripper")>] 
          optionletstripper : obj)
@@ -291,7 +291,7 @@ module OptionletStripperFunction =
     *)
     [<ExcelFunction(Name="_OptionletStripper_optionletFixingDates", Description="Create a OptionletStripper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper_optionletFixingDates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OptionletStripper",Description = "OptionletStripper")>] 
          optionletstripper : obj)
@@ -327,7 +327,7 @@ module OptionletStripperFunction =
     *)
     [<ExcelFunction(Name="_OptionletStripper_optionletFixingTenors", Description="Create a OptionletStripper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper_optionletFixingTenors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OptionletStripper",Description = "OptionletStripper")>] 
          optionletstripper : obj)
@@ -363,7 +363,7 @@ module OptionletStripperFunction =
     *)
     [<ExcelFunction(Name="_OptionletStripper_optionletFixingTimes", Description="Create a OptionletStripper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper_optionletFixingTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OptionletStripper",Description = "OptionletStripper")>] 
          optionletstripper : obj)
@@ -399,7 +399,7 @@ module OptionletStripperFunction =
     *)
     [<ExcelFunction(Name="_OptionletStripper_optionletMaturities", Description="Create a OptionletStripper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper_optionletMaturities
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OptionletStripper",Description = "OptionletStripper")>] 
          optionletstripper : obj)
@@ -435,7 +435,7 @@ module OptionletStripperFunction =
     *)
     [<ExcelFunction(Name="_OptionletStripper_optionletPaymentDates", Description="Create a OptionletStripper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper_optionletPaymentDates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OptionletStripper",Description = "OptionletStripper")>] 
          optionletstripper : obj)
@@ -471,7 +471,7 @@ module OptionletStripperFunction =
     *)
     [<ExcelFunction(Name="_OptionletStripper_optionletStrikes", Description="Create a OptionletStripper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper_optionletStrikes
-        ([<ExcelArgument(Name="Mnemonic",Description = "CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OptionletStripper",Description = "OptionletStripper")>] 
          optionletstripper : obj)
@@ -513,7 +513,7 @@ module OptionletStripperFunction =
     *)
     [<ExcelFunction(Name="_OptionletStripper_optionletVolatilities", Description="Create a OptionletStripper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper_optionletVolatilities
-        ([<ExcelArgument(Name="Mnemonic",Description = "CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OptionletStripper",Description = "OptionletStripper")>] 
          optionletstripper : obj)
@@ -555,7 +555,7 @@ module OptionletStripperFunction =
     *)
     [<ExcelFunction(Name="_OptionletStripper_settlementDays", Description="Create a OptionletStripper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OptionletStripper",Description = "OptionletStripper")>] 
          optionletstripper : obj)
@@ -591,7 +591,7 @@ module OptionletStripperFunction =
     *)
     [<ExcelFunction(Name="_OptionletStripper_termVolSurface", Description="Create a OptionletStripper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper_termVolSurface
-        ([<ExcelArgument(Name="Mnemonic",Description = "CapFloorTermVolSurface")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OptionletStripper",Description = "OptionletStripper")>] 
          optionletstripper : obj)
@@ -627,7 +627,7 @@ module OptionletStripperFunction =
     *)
     [<ExcelFunction(Name="_OptionletStripper_volatilityType", Description="Create a OptionletStripper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper_volatilityType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OptionletStripper",Description = "OptionletStripper")>] 
          optionletstripper : obj)
@@ -660,9 +660,9 @@ module OptionletStripperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_OptionletStripper_Range", Description="Create a range of OptionletStripper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OptionletStripper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

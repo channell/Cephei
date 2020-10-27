@@ -39,7 +39,7 @@ module BlackDeltaCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackDeltaCalculator_atmStrike", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaCalculator_atmStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "BlackDeltaCalculator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackDeltaCalculator",Description = "BlackDeltaCalculator")>] 
          blackdeltacalculator : obj)
@@ -81,7 +81,7 @@ module BlackDeltaCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackDeltaCalculator", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaCalculator_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BlackDeltaCalculator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ot",Description = "Option.Type: Put, Call")>] 
          ot : obj)
@@ -148,7 +148,7 @@ module BlackDeltaCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackDeltaCalculator_cumD1", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaCalculator_cumD1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackDeltaCalculator",Description = "BlackDeltaCalculator")>] 
          blackdeltacalculator : obj)
@@ -190,7 +190,7 @@ module BlackDeltaCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackDeltaCalculator_cumD2", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaCalculator_cumD2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackDeltaCalculator",Description = "BlackDeltaCalculator")>] 
          blackdeltacalculator : obj)
@@ -232,7 +232,7 @@ module BlackDeltaCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackDeltaCalculator_deltaFromStrike", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaCalculator_deltaFromStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackDeltaCalculator",Description = "BlackDeltaCalculator")>] 
          blackdeltacalculator : obj)
@@ -274,7 +274,7 @@ module BlackDeltaCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackDeltaCalculator_nD1", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaCalculator_nD1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackDeltaCalculator",Description = "BlackDeltaCalculator")>] 
          blackdeltacalculator : obj)
@@ -316,7 +316,7 @@ module BlackDeltaCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackDeltaCalculator_nD2", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaCalculator_nD2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackDeltaCalculator",Description = "BlackDeltaCalculator")>] 
          blackdeltacalculator : obj)
@@ -358,7 +358,7 @@ module BlackDeltaCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackDeltaCalculator_setDeltaType", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaCalculator_setDeltaType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackDeltaCalculator",Description = "BlackDeltaCalculator")>] 
          blackdeltacalculator : obj)
@@ -400,7 +400,7 @@ module BlackDeltaCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackDeltaCalculator_setOptionType", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaCalculator_setOptionType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackDeltaCalculator",Description = "BlackDeltaCalculator")>] 
          blackdeltacalculator : obj)
@@ -442,7 +442,7 @@ module BlackDeltaCalculatorFunction =
     *)
     [<ExcelFunction(Name="_BlackDeltaCalculator_strikeFromDelta", Description="Create a BlackDeltaCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaCalculator_strikeFromDelta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackDeltaCalculator",Description = "BlackDeltaCalculator")>] 
          blackdeltacalculator : obj)
@@ -481,9 +481,9 @@ module BlackDeltaCalculatorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BlackDeltaCalculator_Range", Description="Create a range of BlackDeltaCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaCalculator_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

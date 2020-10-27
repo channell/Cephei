@@ -39,17 +39,17 @@ module PiecewiseZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroSpreadedTermStructure", Description="Create a PiecewiseZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroSpreadedTermStructure_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "PiecewiseZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
-        ([<ExcelArgument(Name="spreads",Description = "Quote")>] 
+        ([<ExcelArgument(Name="spreads",Description = "Quote range")>] 
          spreads : obj)
-        ([<ExcelArgument(Name="dates",Description = "Date")>] 
+        ([<ExcelArgument(Name="dates",Description = "Date range")>] 
          dates : obj)
-        ([<ExcelArgument(Name="compounding",Description = "PiecewiseZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="compounding",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded or empty")>] 
          compounding : obj)
-        ([<ExcelArgument(Name="frequency",Description = "PiecewiseZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency or empty")>] 
          frequency : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
@@ -106,7 +106,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroSpreadedTermStructure_calendar", Description="Create a PiecewiseZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroSpreadedTermStructure_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PiecewiseZeroSpreadedTermStructure",Description = "PiecewiseZeroSpreadedTermStructure")>] 
          piecewisezerospreadedtermstructure : obj)
@@ -142,7 +142,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroSpreadedTermStructure_dayCounter", Description="Create a PiecewiseZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroSpreadedTermStructure_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PiecewiseZeroSpreadedTermStructure",Description = "PiecewiseZeroSpreadedTermStructure")>] 
          piecewisezerospreadedtermstructure : obj)
@@ -178,7 +178,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroSpreadedTermStructure_maxDate", Description="Create a PiecewiseZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroSpreadedTermStructure_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PiecewiseZeroSpreadedTermStructure",Description = "PiecewiseZeroSpreadedTermStructure")>] 
          piecewisezerospreadedtermstructure : obj)
@@ -214,7 +214,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroSpreadedTermStructure_referenceDate", Description="Create a PiecewiseZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroSpreadedTermStructure_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PiecewiseZeroSpreadedTermStructure",Description = "PiecewiseZeroSpreadedTermStructure")>] 
          piecewisezerospreadedtermstructure : obj)
@@ -250,7 +250,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_PiecewiseZeroSpreadedTermStructure_settlementDays", Description="Create a PiecewiseZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroSpreadedTermStructure_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PiecewiseZeroSpreadedTermStructure",Description = "PiecewiseZeroSpreadedTermStructure")>] 
          piecewisezerospreadedtermstructure : obj)
@@ -283,9 +283,9 @@ module PiecewiseZeroSpreadedTermStructureFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PiecewiseZeroSpreadedTermStructure_Range", Description="Create a range of PiecewiseZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PiecewiseZeroSpreadedTermStructure_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

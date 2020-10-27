@@ -39,7 +39,7 @@ module NLGCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NLGCurrency", Description="Create a NLGCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NLGCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "NLGCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module NLGCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NLGCurrency_code", Description="Create a NLGCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NLGCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NLGCurrency",Description = "NLGCurrency")>] 
          nlgcurrency : obj)
@@ -106,7 +106,7 @@ module NLGCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NLGCurrency_empty", Description="Create a NLGCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NLGCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NLGCurrency",Description = "NLGCurrency")>] 
          nlgcurrency : obj)
@@ -142,7 +142,7 @@ module NLGCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NLGCurrency_Equals", Description="Create a NLGCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NLGCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NLGCurrency",Description = "NLGCurrency")>] 
          nlgcurrency : obj)
@@ -184,7 +184,7 @@ module NLGCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NLGCurrency_format", Description="Create a NLGCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NLGCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NLGCurrency",Description = "NLGCurrency")>] 
          nlgcurrency : obj)
@@ -220,7 +220,7 @@ module NLGCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NLGCurrency_fractionsPerUnit", Description="Create a NLGCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NLGCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NLGCurrency",Description = "NLGCurrency")>] 
          nlgcurrency : obj)
@@ -256,7 +256,7 @@ module NLGCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NLGCurrency_fractionSymbol", Description="Create a NLGCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NLGCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NLGCurrency",Description = "NLGCurrency")>] 
          nlgcurrency : obj)
@@ -292,7 +292,7 @@ module NLGCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NLGCurrency_name", Description="Create a NLGCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NLGCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NLGCurrency",Description = "NLGCurrency")>] 
          nlgcurrency : obj)
@@ -328,7 +328,7 @@ module NLGCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NLGCurrency_numericCode", Description="Create a NLGCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NLGCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NLGCurrency",Description = "NLGCurrency")>] 
          nlgcurrency : obj)
@@ -364,7 +364,7 @@ module NLGCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NLGCurrency_rounding", Description="Create a NLGCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NLGCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NLGCurrency",Description = "NLGCurrency")>] 
          nlgcurrency : obj)
@@ -400,7 +400,7 @@ module NLGCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NLGCurrency_symbol", Description="Create a NLGCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NLGCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NLGCurrency",Description = "NLGCurrency")>] 
          nlgcurrency : obj)
@@ -436,7 +436,7 @@ module NLGCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NLGCurrency_ToString", Description="Create a NLGCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NLGCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NLGCurrency",Description = "NLGCurrency")>] 
          nlgcurrency : obj)
@@ -472,7 +472,7 @@ module NLGCurrencyFunction =
     *)
     [<ExcelFunction(Name="_NLGCurrency_triangulationCurrency", Description="Create a NLGCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NLGCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NLGCurrency",Description = "NLGCurrency")>] 
          nlgcurrency : obj)
@@ -505,9 +505,9 @@ module NLGCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NLGCurrency_Range", Description="Create a range of NLGCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NLGCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

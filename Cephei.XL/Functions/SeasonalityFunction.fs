@@ -39,7 +39,7 @@ module SeasonalityFunction =
     *)
     [<ExcelFunction(Name="_Seasonality_correctYoYRate", Description="Create a Seasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Seasonality_correctYoYRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Seasonality",Description = "Seasonality")>] 
          seasonality : obj)
@@ -93,7 +93,7 @@ module SeasonalityFunction =
     *)
     [<ExcelFunction(Name="_Seasonality_correctZeroRate", Description="Create a Seasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Seasonality_correctZeroRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Seasonality",Description = "Seasonality")>] 
          seasonality : obj)
@@ -147,7 +147,7 @@ module SeasonalityFunction =
     *)
     [<ExcelFunction(Name="_Seasonality_isConsistent", Description="Create a Seasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Seasonality_isConsistent
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Seasonality",Description = "Seasonality")>] 
          seasonality : obj)
@@ -186,9 +186,9 @@ module SeasonalityFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Seasonality_Range", Description="Create a range of Seasonality",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Seasonality_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

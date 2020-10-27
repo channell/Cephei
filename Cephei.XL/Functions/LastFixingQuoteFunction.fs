@@ -39,7 +39,7 @@ module LastFixingQuoteFunction =
     *)
     [<ExcelFunction(Name="_LastFixingQuote_isValid", Description="Create a LastFixingQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LastFixingQuote_isValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "LastFixingQuote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LastFixingQuote",Description = "LastFixingQuote")>] 
          lastfixingquote : obj)
@@ -75,7 +75,7 @@ module LastFixingQuoteFunction =
     *)
     [<ExcelFunction(Name="_LastFixingQuote", Description="Create a LastFixingQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LastFixingQuote_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "LastFixingQuote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="index",Description = "Index")>] 
          index : obj)
@@ -112,7 +112,7 @@ module LastFixingQuoteFunction =
     *)
     [<ExcelFunction(Name="_LastFixingQuote_referenceDate", Description="Create a LastFixingQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LastFixingQuote_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LastFixingQuote",Description = "LastFixingQuote")>] 
          lastfixingquote : obj)
@@ -148,7 +148,7 @@ module LastFixingQuoteFunction =
     *)
     [<ExcelFunction(Name="_LastFixingQuote_update", Description="Create a LastFixingQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LastFixingQuote_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LastFixingQuote",Description = "LastFixingQuote")>] 
          lastfixingquote : obj)
@@ -184,7 +184,7 @@ module LastFixingQuoteFunction =
     *)
     [<ExcelFunction(Name="_LastFixingQuote_value", Description="Create a LastFixingQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LastFixingQuote_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LastFixingQuote",Description = "LastFixingQuote")>] 
          lastfixingquote : obj)
@@ -220,7 +220,7 @@ module LastFixingQuoteFunction =
     *)
     [<ExcelFunction(Name="_LastFixingQuote_registerWith", Description="Create a LastFixingQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LastFixingQuote_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LastFixingQuote",Description = "LastFixingQuote")>] 
          lastfixingquote : obj)
@@ -262,7 +262,7 @@ module LastFixingQuoteFunction =
     *)
     [<ExcelFunction(Name="_LastFixingQuote_unregisterWith", Description="Create a LastFixingQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LastFixingQuote_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LastFixingQuote",Description = "LastFixingQuote")>] 
          lastfixingquote : obj)
@@ -301,9 +301,9 @@ module LastFixingQuoteFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LastFixingQuote_Range", Description="Create a range of LastFixingQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LastFixingQuote_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

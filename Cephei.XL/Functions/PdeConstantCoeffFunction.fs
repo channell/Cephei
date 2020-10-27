@@ -39,7 +39,7 @@ module PdeConstantCoeffFunction =
     *)
     [<ExcelFunction(Name="_PdeConstantCoeff_diffusion", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeConstantCoeff_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "PdeSecondOrderParabolic")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeConstantCoeff",Description = "PdeConstantCoeff")>] 
          pdeconstantcoeff : obj)
@@ -87,7 +87,7 @@ module PdeConstantCoeffFunction =
     *)
     [<ExcelFunction(Name="_PdeConstantCoeff_discount", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeConstantCoeff_discount
-        ([<ExcelArgument(Name="Mnemonic",Description = "PdeSecondOrderParabolic")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeConstantCoeff",Description = "PdeConstantCoeff")>] 
          pdeconstantcoeff : obj)
@@ -135,7 +135,7 @@ module PdeConstantCoeffFunction =
     *)
     [<ExcelFunction(Name="_PdeConstantCoeff_drift", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeConstantCoeff_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "PdeSecondOrderParabolic")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeConstantCoeff",Description = "PdeConstantCoeff")>] 
          pdeconstantcoeff : obj)
@@ -183,7 +183,7 @@ module PdeConstantCoeffFunction =
     *)
     [<ExcelFunction(Name="_PdeConstantCoeff_factory", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeConstantCoeff_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "PdeSecondOrderParabolic")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeConstantCoeff",Description = "PdeConstantCoeff")>] 
          pdeconstantcoeff : obj)
@@ -225,7 +225,7 @@ module PdeConstantCoeffFunction =
     *)
     [<ExcelFunction(Name="_PdeConstantCoeff", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeConstantCoeff_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "PdeConstantCoeff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -274,7 +274,7 @@ module PdeConstantCoeffFunction =
     *)
     [<ExcelFunction(Name="_PdeConstantCoeff_generateOperator", Description="Create a PdeConstantCoeff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeConstantCoeff_generateOperator
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeConstantCoeff",Description = "PdeConstantCoeff")>] 
          pdeconstantcoeff : obj)
@@ -325,9 +325,9 @@ module PdeConstantCoeffFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PdeConstantCoeff_Range", Description="Create a range of PdeConstantCoeff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeConstantCoeff_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

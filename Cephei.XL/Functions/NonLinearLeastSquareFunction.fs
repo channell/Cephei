@@ -39,7 +39,7 @@ module NonLinearLeastSquareFunction =
     *)
     [<ExcelFunction(Name="_NonLinearLeastSquare_exitFlag", Description="Create a NonLinearLeastSquare",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonLinearLeastSquare_exitFlag
-        ([<ExcelArgument(Name="Mnemonic",Description = "NonLinearLeastSquare")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NonLinearLeastSquare",Description = "NonLinearLeastSquare")>] 
          nonlinearleastsquare : obj)
@@ -75,7 +75,7 @@ module NonLinearLeastSquareFunction =
     *)
     [<ExcelFunction(Name="_NonLinearLeastSquare_lastValue", Description="Create a NonLinearLeastSquare",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonLinearLeastSquare_lastValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "NonLinearLeastSquare")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NonLinearLeastSquare",Description = "NonLinearLeastSquare")>] 
          nonlinearleastsquare : obj)
@@ -111,7 +111,7 @@ module NonLinearLeastSquareFunction =
     *)
     [<ExcelFunction(Name="_NonLinearLeastSquare1", Description="Create a NonLinearLeastSquare",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonLinearLeastSquare_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "NonLinearLeastSquare")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="c",Description = "Constraint")>] 
          c : obj)
@@ -154,7 +154,7 @@ module NonLinearLeastSquareFunction =
     *)
     [<ExcelFunction(Name="_NonLinearLeastSquare", Description="Create a NonLinearLeastSquare",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonLinearLeastSquare_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "NonLinearLeastSquare")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="c",Description = "Constraint")>] 
          c : obj)
@@ -209,7 +209,7 @@ module NonLinearLeastSquareFunction =
     *)
     [<ExcelFunction(Name="_NonLinearLeastSquare3", Description="Create a NonLinearLeastSquare",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonLinearLeastSquare_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "NonLinearLeastSquare")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="c",Description = "Constraint")>] 
          c : obj)
@@ -246,7 +246,7 @@ module NonLinearLeastSquareFunction =
     *)
     [<ExcelFunction(Name="_NonLinearLeastSquare2", Description="Create a NonLinearLeastSquare",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonLinearLeastSquare_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "NonLinearLeastSquare")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="c",Description = "Constraint")>] 
          c : obj)
@@ -295,7 +295,7 @@ module NonLinearLeastSquareFunction =
     *)
     [<ExcelFunction(Name="_NonLinearLeastSquare_perform", Description="Create a NonLinearLeastSquare",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonLinearLeastSquare_perform
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NonLinearLeastSquare",Description = "NonLinearLeastSquare")>] 
          nonlinearleastsquare : obj)
@@ -337,7 +337,7 @@ module NonLinearLeastSquareFunction =
     *)
     [<ExcelFunction(Name="_NonLinearLeastSquare_residualNorm", Description="Create a NonLinearLeastSquare",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonLinearLeastSquare_residualNorm
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NonLinearLeastSquare",Description = "NonLinearLeastSquare")>] 
          nonlinearleastsquare : obj)
@@ -373,7 +373,7 @@ module NonLinearLeastSquareFunction =
     *)
     [<ExcelFunction(Name="_NonLinearLeastSquare_setInitialValue", Description="Create a NonLinearLeastSquare",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonLinearLeastSquare_setInitialValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NonLinearLeastSquare",Description = "NonLinearLeastSquare")>] 
          nonlinearleastsquare : obj)
@@ -412,9 +412,9 @@ module NonLinearLeastSquareFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NonLinearLeastSquare_Range", Description="Create a range of NonLinearLeastSquare",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NonLinearLeastSquare_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

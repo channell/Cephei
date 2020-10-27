@@ -39,7 +39,7 @@ module SobolBrownianBridgeRsgFunction =
     *)
     [<ExcelFunction(Name="_SobolBrownianBridgeRsg_dimension", Description="Create a SobolBrownianBridgeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianBridgeRsg_dimension
-        ([<ExcelArgument(Name="Mnemonic",Description = "IRNG")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SobolBrownianBridgeRsg",Description = "SobolBrownianBridgeRsg")>] 
          sobolbrownianbridgersg : obj)
@@ -75,13 +75,13 @@ module SobolBrownianBridgeRsgFunction =
     *)
     [<ExcelFunction(Name="_SobolBrownianBridgeRsg_factory", Description="Create a SobolBrownianBridgeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianBridgeRsg_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "IRNG")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SobolBrownianBridgeRsg",Description = "SobolBrownianBridgeRsg")>] 
          sobolbrownianbridgersg : obj)
         ([<ExcelArgument(Name="dimensionality",Description = "int")>] 
          dimensionality : obj)
-        ([<ExcelArgument(Name="seed",Description = "IRNG")>] 
+        ([<ExcelArgument(Name="seed",Description = "uint64 or empty")>] 
          seed : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -124,7 +124,7 @@ module SobolBrownianBridgeRsgFunction =
     (*!! sample not suppoorted bh helper
     [<ExcelFunction(Name="_SobolBrownianBridgeRsg_lastSequence", Description="Create a SobolBrownianBridgeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianBridgeRsg_lastSequence
-        ([<ExcelArgument(Name="Mnemonic",Description = "SobolBrownianBridgeRsg")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SobolBrownianBridgeRsg",Description = "SobolBrownianBridgeRsg")>] 
          sobolbrownianbridgersg : obj)
@@ -162,7 +162,7 @@ module SobolBrownianBridgeRsgFunction =
     (*!! Sample not supported by Helper
     [<ExcelFunction(Name="_SobolBrownianBridgeRsg_nextSequence", Description="Create a SobolBrownianBridgeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianBridgeRsg_nextSequence
-        ([<ExcelArgument(Name="Mnemonic",Description = "SobolBrownianBridgeRsg")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SobolBrownianBridgeRsg",Description = "SobolBrownianBridgeRsg")>] 
          sobolbrownianbridgersg : obj)
@@ -199,17 +199,17 @@ module SobolBrownianBridgeRsgFunction =
     *)
     [<ExcelFunction(Name="_SobolBrownianBridgeRsg", Description="Create a SobolBrownianBridgeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianBridgeRsg_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SobolBrownianBridgeRsg")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="factors",Description = "int")>] 
          factors : obj)
         ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
-        ([<ExcelArgument(Name="ordering",Description = "SobolBrownianBridgeRsg")>] 
+        ([<ExcelArgument(Name="ordering",Description = "SobolBrownianGenerator.Ordering: Factors, Steps, Diagonal or empty")>] 
          ordering : obj)
-        ([<ExcelArgument(Name="seed",Description = "SobolBrownianBridgeRsg")>] 
+        ([<ExcelArgument(Name="seed",Description = "uint64 or empty")>] 
          seed : obj)
-        ([<ExcelArgument(Name="directionIntegers",Description = "SobolBrownianBridgeRsg")>] 
+        ([<ExcelArgument(Name="directionIntegers",Description = "SobolRsg.DirectionIntegers: Unit, Jaeckel, SobolLevitan, SobolLevitanLemieux, JoeKuoD5, JoeKuoD6, JoeKuoD7, Kuo, Kuo2, Kuo3 or empty")>] 
          directionIntegers : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -257,9 +257,9 @@ module SobolBrownianBridgeRsgFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SobolBrownianBridgeRsg_Range", Description="Create a range of SobolBrownianBridgeRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianBridgeRsg_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,7 +39,7 @@ module QuoteFunction =
     *)
     [<ExcelFunction(Name="_Quote_isValid", Description="Create a Quote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Quote_isValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Quote",Description = "Quote")>] 
          quote : obj)
@@ -75,7 +75,7 @@ module QuoteFunction =
     *)
     [<ExcelFunction(Name="_Quote_registerWith", Description="Create a Quote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Quote_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Quote",Description = "Quote")>] 
          quote : obj)
@@ -117,7 +117,7 @@ module QuoteFunction =
     *)
     [<ExcelFunction(Name="_Quote_unregisterWith", Description="Create a Quote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Quote_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Quote",Description = "Quote")>] 
          quote : obj)
@@ -159,7 +159,7 @@ module QuoteFunction =
     *)
     [<ExcelFunction(Name="_Quote_value", Description="Create a Quote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Quote_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Quote",Description = "Quote")>] 
          quote : obj)
@@ -192,9 +192,9 @@ module QuoteFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Quote_Range", Description="Create a range of Quote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Quote_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

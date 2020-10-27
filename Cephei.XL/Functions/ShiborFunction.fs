@@ -39,7 +39,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Shibor")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
@@ -82,7 +82,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor1", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Shibor")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
@@ -119,7 +119,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_businessDayConvention", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -155,7 +155,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_clone", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -197,7 +197,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_endOfMonth", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -233,7 +233,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_forecastFixing1", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -287,7 +287,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_forecastFixing", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -329,7 +329,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_forwardingTermStructure", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -365,7 +365,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_maturityDate", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -407,7 +407,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_currency", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -443,7 +443,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_dayCounter", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -479,7 +479,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_familyName", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -515,7 +515,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_fixing", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -563,7 +563,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_fixingCalendar", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -599,7 +599,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_fixingDate", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -641,7 +641,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_fixingDays", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -677,7 +677,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_isValidFixingDate", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -719,7 +719,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_name", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -755,7 +755,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_pastFixing", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -797,7 +797,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_tenor", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -833,7 +833,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_update", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -869,7 +869,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_valueDate", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -911,7 +911,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_addFixing", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -965,13 +965,13 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_addFixings", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -1019,7 +1019,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_addFixings1", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -1067,7 +1067,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_allowsNativeFixings", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -1103,7 +1103,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_clearFixings", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -1139,7 +1139,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_registerWith", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -1181,7 +1181,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_timeSeries", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -1217,7 +1217,7 @@ module ShiborFunction =
     *)
     [<ExcelFunction(Name="_Shibor_unregisterWith", Description="Create a Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Shibor",Description = "Shibor")>] 
          shibor : obj)
@@ -1256,9 +1256,9 @@ module ShiborFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Shibor_Range", Description="Create a range of Shibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Shibor_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,7 +39,7 @@ module Joshi4Function =
     *)
     [<ExcelFunction(Name="_Joshi4_factory", Description="Create a Joshi4",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Joshi4_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Joshi4")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Joshi4",Description = "Joshi4")>] 
          joshi4 : obj)
@@ -99,7 +99,7 @@ module Joshi4Function =
     *)
     [<ExcelFunction(Name="_Joshi4", Description="Create a Joshi4",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Joshi4_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Joshi4")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
@@ -154,7 +154,7 @@ module Joshi4Function =
     *)
     [<ExcelFunction(Name="_Joshi41", Description="Create a Joshi4",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Joshi4_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Joshi4")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -185,7 +185,7 @@ module Joshi4Function =
     *)
     [<ExcelFunction(Name="_Joshi4_probability", Description="Create a Joshi4",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Joshi4_probability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Joshi4",Description = "Joshi4")>] 
          joshi4 : obj)
@@ -239,7 +239,7 @@ module Joshi4Function =
     *)
     [<ExcelFunction(Name="_Joshi4_underlying", Description="Create a Joshi4",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Joshi4_underlying
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Joshi4",Description = "Joshi4")>] 
          joshi4 : obj)
@@ -287,7 +287,7 @@ module Joshi4Function =
     *)
     [<ExcelFunction(Name="_Joshi4_descendant", Description="Create a Joshi4",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Joshi4_descendant
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Joshi4",Description = "Joshi4")>] 
          joshi4 : obj)
@@ -341,7 +341,7 @@ module Joshi4Function =
     *)
     [<ExcelFunction(Name="_Joshi4_size", Description="Create a Joshi4",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Joshi4_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Joshi4",Description = "Joshi4")>] 
          joshi4 : obj)
@@ -383,7 +383,7 @@ module Joshi4Function =
     *)
     [<ExcelFunction(Name="_Joshi4_columns", Description="Create a Joshi4",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Joshi4_columns
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Joshi4",Description = "Joshi4")>] 
          joshi4 : obj)
@@ -416,9 +416,9 @@ module Joshi4Function =
             "<WIZ>"
     [<ExcelFunction(Name="_Joshi4_Range", Description="Create a range of Joshi4",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Joshi4_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

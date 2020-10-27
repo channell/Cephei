@@ -39,7 +39,7 @@ module EURCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EURCurrency", Description="Create a EURCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "EURCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module EURCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EURCurrency_code", Description="Create a EURCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EURCurrency",Description = "EURCurrency")>] 
          eurcurrency : obj)
@@ -106,7 +106,7 @@ module EURCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EURCurrency_empty", Description="Create a EURCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EURCurrency",Description = "EURCurrency")>] 
          eurcurrency : obj)
@@ -142,7 +142,7 @@ module EURCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EURCurrency_Equals", Description="Create a EURCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EURCurrency",Description = "EURCurrency")>] 
          eurcurrency : obj)
@@ -184,7 +184,7 @@ module EURCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EURCurrency_format", Description="Create a EURCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EURCurrency",Description = "EURCurrency")>] 
          eurcurrency : obj)
@@ -220,7 +220,7 @@ module EURCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EURCurrency_fractionsPerUnit", Description="Create a EURCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EURCurrency",Description = "EURCurrency")>] 
          eurcurrency : obj)
@@ -256,7 +256,7 @@ module EURCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EURCurrency_fractionSymbol", Description="Create a EURCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EURCurrency",Description = "EURCurrency")>] 
          eurcurrency : obj)
@@ -292,7 +292,7 @@ module EURCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EURCurrency_name", Description="Create a EURCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EURCurrency",Description = "EURCurrency")>] 
          eurcurrency : obj)
@@ -328,7 +328,7 @@ module EURCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EURCurrency_numericCode", Description="Create a EURCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EURCurrency",Description = "EURCurrency")>] 
          eurcurrency : obj)
@@ -364,7 +364,7 @@ module EURCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EURCurrency_rounding", Description="Create a EURCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EURCurrency",Description = "EURCurrency")>] 
          eurcurrency : obj)
@@ -400,7 +400,7 @@ module EURCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EURCurrency_symbol", Description="Create a EURCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EURCurrency",Description = "EURCurrency")>] 
          eurcurrency : obj)
@@ -436,7 +436,7 @@ module EURCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EURCurrency_ToString", Description="Create a EURCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EURCurrency",Description = "EURCurrency")>] 
          eurcurrency : obj)
@@ -472,7 +472,7 @@ module EURCurrencyFunction =
     *)
     [<ExcelFunction(Name="_EURCurrency_triangulationCurrency", Description="Create a EURCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EURCurrency",Description = "EURCurrency")>] 
          eurcurrency : obj)
@@ -505,9 +505,9 @@ module EURCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_EURCurrency_Range", Description="Create a range of EURCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EURCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

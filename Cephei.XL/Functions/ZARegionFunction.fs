@@ -39,7 +39,7 @@ module ZARegionFunction =
     *)
     [<ExcelFunction(Name="_ZARegion", Description="Create a ZARegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARegion_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ZARegion")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module ZARegionFunction =
     *)
     [<ExcelFunction(Name="_ZARegion_code", Description="Create a ZARegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARegion_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZARegion",Description = "ZARegion")>] 
          zaregion : obj)
@@ -106,7 +106,7 @@ module ZARegionFunction =
     *)
     [<ExcelFunction(Name="_ZARegion_Equals", Description="Create a ZARegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARegion_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZARegion",Description = "ZARegion")>] 
          zaregion : obj)
@@ -148,7 +148,7 @@ module ZARegionFunction =
     *)
     [<ExcelFunction(Name="_ZARegion_name", Description="Create a ZARegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARegion_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZARegion",Description = "ZARegion")>] 
          zaregion : obj)
@@ -181,9 +181,9 @@ module ZARegionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ZARegion_Range", Description="Create a range of ZARegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZARegion_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

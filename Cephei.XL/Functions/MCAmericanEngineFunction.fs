@@ -40,7 +40,7 @@ module MCAmericanEngineFunction =
     *)
     [<ExcelFunction(Name="_MCAmericanEngine", Description="Create a MCAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCAmericanEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "MCAmericanEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -140,9 +140,9 @@ module MCAmericanEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MCAmericanEngine_Range", Description="Create a range of MCAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCAmericanEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

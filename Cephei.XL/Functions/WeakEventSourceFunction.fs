@@ -39,7 +39,7 @@ module WeakEventSourceFunction =
     *)
     [<ExcelFunction(Name="_WeakEventSource_Clear", Description="Create a WeakEventSource",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeakEventSource_Clear
-        ([<ExcelArgument(Name="Mnemonic",Description = "WeakEventSource")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="WeakEventSource",Description = "WeakEventSource")>] 
          weakeventsource : obj)
@@ -75,7 +75,7 @@ module WeakEventSourceFunction =
     *)
     [<ExcelFunction(Name="_WeakEventSource_Raise", Description="Create a WeakEventSource",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeakEventSource_Raise
-        ([<ExcelArgument(Name="Mnemonic",Description = "WeakEventSource")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="WeakEventSource",Description = "WeakEventSource")>] 
          weakeventsource : obj)
@@ -111,7 +111,7 @@ module WeakEventSourceFunction =
     *)
     [<ExcelFunction(Name="_WeakEventSource_Subscribe", Description="Create a WeakEventSource",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeakEventSource_Subscribe
-        ([<ExcelArgument(Name="Mnemonic",Description = "WeakEventSource")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="WeakEventSource",Description = "WeakEventSource")>] 
          weakeventsource : obj)
@@ -153,7 +153,7 @@ module WeakEventSourceFunction =
     *)
     [<ExcelFunction(Name="_WeakEventSource_Unsubscribe", Description="Create a WeakEventSource",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeakEventSource_Unsubscribe
-        ([<ExcelArgument(Name="Mnemonic",Description = "WeakEventSource")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="WeakEventSource",Description = "WeakEventSource")>] 
          weakeventsource : obj)
@@ -195,7 +195,7 @@ module WeakEventSourceFunction =
     *)
     [<ExcelFunction(Name="_WeakEventSource", Description="Create a WeakEventSource",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeakEventSource_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "WeakEventSource")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -223,9 +223,9 @@ module WeakEventSourceFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_WeakEventSource_Range", Description="Create a range of WeakEventSource",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let WeakEventSource_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

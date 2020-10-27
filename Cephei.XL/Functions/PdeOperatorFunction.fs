@@ -39,7 +39,7 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "PdeOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="grid",Description = "Vector")>] 
          grid : obj)
@@ -82,7 +82,7 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator1", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "PdeOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="grid",Description = "Vector")>] 
          grid : obj)
@@ -131,7 +131,7 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_add", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
@@ -179,7 +179,7 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_applyTo", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
@@ -221,7 +221,7 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_Clone", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
@@ -257,7 +257,7 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_diagonal", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_diagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
@@ -293,7 +293,7 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_identity", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_identity
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
@@ -335,7 +335,7 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_isTimeDependent", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_isTimeDependent
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
@@ -371,7 +371,7 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_lowerDiagonal", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_lowerDiagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
@@ -407,7 +407,7 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_multiply", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_multiply
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
@@ -455,7 +455,7 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_setFirstRow", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_setFirstRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
@@ -503,7 +503,7 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_setLastRow", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_setLastRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
@@ -551,7 +551,7 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_setMidRow", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_setMidRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
@@ -611,7 +611,7 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_setMidRows", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_setMidRows
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
@@ -665,7 +665,7 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_setTime", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
@@ -707,7 +707,7 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_size", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
@@ -743,7 +743,7 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_solveFor", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_solveFor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
@@ -785,7 +785,7 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_SOR", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_SOR
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
@@ -833,7 +833,7 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_subtract", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_subtract
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
@@ -881,7 +881,7 @@ module PdeOperatorFunction =
     *)
     [<ExcelFunction(Name="_PdeOperator_upperDiagonal", Description="Create a PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_upperDiagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeOperator",Description = "PdeOperator")>] 
          pdeoperator : obj)
@@ -914,9 +914,9 @@ module PdeOperatorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PdeOperator_Range", Description="Create a range of PdeOperator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeOperator_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

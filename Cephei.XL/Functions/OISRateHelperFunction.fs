@@ -39,7 +39,7 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_impliedQuote", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_impliedQuote
-        ([<ExcelArgument(Name="Mnemonic",Description = "OISRateHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
@@ -75,7 +75,7 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "OISRateHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
@@ -130,7 +130,7 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_setTermStructure", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_setTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightIndexedSwap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
@@ -172,7 +172,7 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_swap", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_swap
-        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightIndexedSwap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
@@ -208,7 +208,7 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_update", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
@@ -244,7 +244,7 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_earliestDate", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_earliestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
@@ -280,7 +280,7 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_latestDate", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_latestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
@@ -316,7 +316,7 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_latestRelevantDate", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_latestRelevantDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
@@ -352,7 +352,7 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_maturityDate", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
@@ -388,7 +388,7 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_pillarDate", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_pillarDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
@@ -424,7 +424,7 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_quote", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_quote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
@@ -460,7 +460,7 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_quoteError", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_quoteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
@@ -496,7 +496,7 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_quoteIsValid", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_quoteIsValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
@@ -532,7 +532,7 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_quoteValue", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_quoteValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
@@ -568,7 +568,7 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_registerWith", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
@@ -610,7 +610,7 @@ module OISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_OISRateHelper_unregisterWith", Description="Create a OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OISRateHelper",Description = "OISRateHelper")>] 
          oisratehelper : obj)
@@ -649,9 +649,9 @@ module OISRateHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_OISRateHelper_Range", Description="Create a range of OISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OISRateHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

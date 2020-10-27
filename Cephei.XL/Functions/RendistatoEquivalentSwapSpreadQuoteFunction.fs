@@ -39,7 +39,7 @@ module RendistatoEquivalentSwapSpreadQuoteFunction =
     *)
     [<ExcelFunction(Name="_RendistatoEquivalentSwapSpreadQuote_isValid", Description="Create a RendistatoEquivalentSwapSpreadQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoEquivalentSwapSpreadQuote_isValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "RendistatoEquivalentSwapSpreadQuote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoEquivalentSwapSpreadQuote",Description = "RendistatoEquivalentSwapSpreadQuote")>] 
          rendistatoequivalentswapspreadquote : obj)
@@ -75,7 +75,7 @@ module RendistatoEquivalentSwapSpreadQuoteFunction =
     *)
     [<ExcelFunction(Name="_RendistatoEquivalentSwapSpreadQuote", Description="Create a RendistatoEquivalentSwapSpreadQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoEquivalentSwapSpreadQuote_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "RendistatoEquivalentSwapSpreadQuote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="r",Description = "RendistatoCalculator")>] 
          r : obj)
@@ -112,7 +112,7 @@ module RendistatoEquivalentSwapSpreadQuoteFunction =
     *)
     [<ExcelFunction(Name="_RendistatoEquivalentSwapSpreadQuote_value", Description="Create a RendistatoEquivalentSwapSpreadQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoEquivalentSwapSpreadQuote_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoEquivalentSwapSpreadQuote",Description = "RendistatoEquivalentSwapSpreadQuote")>] 
          rendistatoequivalentswapspreadquote : obj)
@@ -148,7 +148,7 @@ module RendistatoEquivalentSwapSpreadQuoteFunction =
     *)
     [<ExcelFunction(Name="_RendistatoEquivalentSwapSpreadQuote_registerWith", Description="Create a RendistatoEquivalentSwapSpreadQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoEquivalentSwapSpreadQuote_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoEquivalentSwapSpreadQuote",Description = "RendistatoEquivalentSwapSpreadQuote")>] 
          rendistatoequivalentswapspreadquote : obj)
@@ -190,7 +190,7 @@ module RendistatoEquivalentSwapSpreadQuoteFunction =
     *)
     [<ExcelFunction(Name="_RendistatoEquivalentSwapSpreadQuote_unregisterWith", Description="Create a RendistatoEquivalentSwapSpreadQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoEquivalentSwapSpreadQuote_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoEquivalentSwapSpreadQuote",Description = "RendistatoEquivalentSwapSpreadQuote")>] 
          rendistatoequivalentswapspreadquote : obj)
@@ -229,9 +229,9 @@ module RendistatoEquivalentSwapSpreadQuoteFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_RendistatoEquivalentSwapSpreadQuote_Range", Description="Create a range of RendistatoEquivalentSwapSpreadQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoEquivalentSwapSpreadQuote_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

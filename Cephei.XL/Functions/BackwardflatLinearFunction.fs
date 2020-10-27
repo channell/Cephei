@@ -39,15 +39,15 @@ module BackwardflatLinearFunction =
     *)
     [<ExcelFunction(Name="_BackwardflatLinear_interpolate", Description="Create a BackwardflatLinear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BackwardflatLinear_interpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation2D")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BackwardflatLinear",Description = "BackwardflatLinear")>] 
          backwardflatlinear : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double range")>] 
          xBegin : obj)
         ([<ExcelArgument(Name="xEnd",Description = "int")>] 
          xEnd : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double range")>] 
          yBegin : obj)
         ([<ExcelArgument(Name="yEnd",Description = "int")>] 
          yEnd : obj)
@@ -102,9 +102,9 @@ module BackwardflatLinearFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BackwardflatLinear_Range", Description="Create a range of BackwardflatLinear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BackwardflatLinear_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

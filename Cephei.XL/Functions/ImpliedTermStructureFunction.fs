@@ -39,7 +39,7 @@ module ImpliedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedTermStructure_calendar", Description="Create a ImpliedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedTermStructure_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImpliedTermStructure",Description = "ImpliedTermStructure")>] 
          impliedtermstructure : obj)
@@ -75,7 +75,7 @@ module ImpliedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedTermStructure_dayCounter", Description="Create a ImpliedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedTermStructure_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImpliedTermStructure",Description = "ImpliedTermStructure")>] 
          impliedtermstructure : obj)
@@ -111,7 +111,7 @@ module ImpliedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedTermStructure", Description="Create a ImpliedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedTermStructure_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ImpliedTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
@@ -154,7 +154,7 @@ module ImpliedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedTermStructure_maxDate", Description="Create a ImpliedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedTermStructure_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImpliedTermStructure",Description = "ImpliedTermStructure")>] 
          impliedtermstructure : obj)
@@ -190,7 +190,7 @@ module ImpliedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedTermStructure_settlementDays", Description="Create a ImpliedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedTermStructure_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImpliedTermStructure",Description = "ImpliedTermStructure")>] 
          impliedtermstructure : obj)
@@ -226,7 +226,7 @@ module ImpliedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedTermStructure_discount", Description="Create a ImpliedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedTermStructure_discount
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImpliedTermStructure",Description = "ImpliedTermStructure")>] 
          impliedtermstructure : obj)
@@ -274,7 +274,7 @@ module ImpliedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedTermStructure_discount1", Description="Create a ImpliedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedTermStructure_discount1
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImpliedTermStructure",Description = "ImpliedTermStructure")>] 
          impliedtermstructure : obj)
@@ -322,7 +322,7 @@ module ImpliedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedTermStructure_forwardRate", Description="Create a ImpliedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedTermStructure_forwardRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImpliedTermStructure",Description = "ImpliedTermStructure")>] 
          impliedtermstructure : obj)
@@ -394,7 +394,7 @@ module ImpliedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedTermStructure_forwardRate1", Description="Create a ImpliedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedTermStructure_forwardRate1
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImpliedTermStructure",Description = "ImpliedTermStructure")>] 
          impliedtermstructure : obj)
@@ -466,7 +466,7 @@ module ImpliedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedTermStructure_forwardRate2", Description="Create a ImpliedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedTermStructure_forwardRate2
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImpliedTermStructure",Description = "ImpliedTermStructure")>] 
          impliedtermstructure : obj)
@@ -532,7 +532,7 @@ module ImpliedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedTermStructure_jumpDates", Description="Create a ImpliedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedTermStructure_jumpDates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImpliedTermStructure",Description = "ImpliedTermStructure")>] 
          impliedtermstructure : obj)
@@ -568,7 +568,7 @@ module ImpliedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedTermStructure_jumpTimes", Description="Create a ImpliedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedTermStructure_jumpTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImpliedTermStructure",Description = "ImpliedTermStructure")>] 
          impliedtermstructure : obj)
@@ -604,7 +604,7 @@ module ImpliedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedTermStructure_update", Description="Create a ImpliedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedTermStructure_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImpliedTermStructure",Description = "ImpliedTermStructure")>] 
          impliedtermstructure : obj)
@@ -640,7 +640,7 @@ module ImpliedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedTermStructure_zeroRate1", Description="Create a ImpliedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedTermStructure_zeroRate1
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImpliedTermStructure",Description = "ImpliedTermStructure")>] 
          impliedtermstructure : obj)
@@ -706,7 +706,7 @@ module ImpliedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedTermStructure_zeroRate", Description="Create a ImpliedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedTermStructure_zeroRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImpliedTermStructure",Description = "ImpliedTermStructure")>] 
          impliedtermstructure : obj)
@@ -766,7 +766,7 @@ module ImpliedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedTermStructure_maxTime", Description="Create a ImpliedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedTermStructure_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImpliedTermStructure",Description = "ImpliedTermStructure")>] 
          impliedtermstructure : obj)
@@ -802,7 +802,7 @@ module ImpliedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedTermStructure_referenceDate", Description="Create a ImpliedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedTermStructure_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImpliedTermStructure",Description = "ImpliedTermStructure")>] 
          impliedtermstructure : obj)
@@ -838,7 +838,7 @@ module ImpliedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedTermStructure_timeFromReference", Description="Create a ImpliedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedTermStructure_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImpliedTermStructure",Description = "ImpliedTermStructure")>] 
          impliedtermstructure : obj)
@@ -880,7 +880,7 @@ module ImpliedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedTermStructure_allowsExtrapolation", Description="Create a ImpliedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedTermStructure_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImpliedTermStructure",Description = "ImpliedTermStructure")>] 
          impliedtermstructure : obj)
@@ -916,7 +916,7 @@ module ImpliedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedTermStructure_disableExtrapolation", Description="Create a ImpliedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedTermStructure_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImpliedTermStructure",Description = "ImpliedTermStructure")>] 
          impliedtermstructure : obj)
@@ -958,7 +958,7 @@ module ImpliedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedTermStructure_enableExtrapolation", Description="Create a ImpliedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedTermStructure_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImpliedTermStructure",Description = "ImpliedTermStructure")>] 
          impliedtermstructure : obj)
@@ -1000,7 +1000,7 @@ module ImpliedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ImpliedTermStructure_extrapolate", Description="Create a ImpliedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedTermStructure_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImpliedTermStructure",Description = "ImpliedTermStructure")>] 
          impliedtermstructure : obj)
@@ -1033,9 +1033,9 @@ module ImpliedTermStructureFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ImpliedTermStructure_Range", Description="Create a range of ImpliedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedTermStructure_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,7 +39,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BMAIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
@@ -76,7 +76,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_fixingSchedule", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_fixingSchedule
-        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -124,7 +124,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_forecastFixing", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -166,7 +166,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_forwardingTermStructure", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -202,7 +202,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_isValidFixingDate", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -244,7 +244,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_maturityDate", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -286,7 +286,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_name", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -322,7 +322,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_currency", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -358,7 +358,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_dayCounter", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -394,7 +394,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_familyName", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -430,7 +430,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_fixing", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -478,7 +478,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_fixingCalendar", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -514,7 +514,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_fixingDate", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -556,7 +556,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_fixingDays", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -592,7 +592,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_pastFixing", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -634,7 +634,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_tenor", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -670,7 +670,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_update", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -706,7 +706,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_valueDate", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -748,7 +748,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_addFixing", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -802,13 +802,13 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_addFixings", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -856,7 +856,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_addFixings1", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -904,7 +904,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_allowsNativeFixings", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -940,7 +940,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_clearFixings", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -976,7 +976,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_registerWith", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -1018,7 +1018,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_timeSeries", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -1054,7 +1054,7 @@ module BMAIndexFunction =
     *)
     [<ExcelFunction(Name="_BMAIndex_unregisterWith", Description="Create a BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMAIndex",Description = "BMAIndex")>] 
          bmaindex : obj)
@@ -1093,9 +1093,9 @@ module BMAIndexFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BMAIndex_Range", Description="Create a range of BMAIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMAIndex_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

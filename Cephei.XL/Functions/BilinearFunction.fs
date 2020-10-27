@@ -39,15 +39,15 @@ module BilinearFunction =
     *)
     [<ExcelFunction(Name="_Bilinear_interpolate", Description="Create a Bilinear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bilinear_interpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation2D")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bilinear",Description = "Bilinear")>] 
          bilinear : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double range")>] 
          xBegin : obj)
         ([<ExcelArgument(Name="xSize",Description = "int")>] 
          xSize : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double range")>] 
          yBegin : obj)
         ([<ExcelArgument(Name="ySize",Description = "int")>] 
          ySize : obj)
@@ -102,9 +102,9 @@ module BilinearFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Bilinear_Range", Description="Create a range of Bilinear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bilinear_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

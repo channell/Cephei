@@ -39,7 +39,7 @@ module VanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_VanillaOption_impliedVolatility", Description="Create a VanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaOption_impliedVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "VanillaOption")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VanillaOption",Description = "VanillaOption")>] 
          vanillaoption : obj)
@@ -111,7 +111,7 @@ module VanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_VanillaOption", Description="Create a VanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "VanillaOption")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="payoff",Description = "StrikedTypePayoff")>] 
          payoff : obj)
@@ -166,7 +166,7 @@ module VanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_VanillaOption_delta", Description="Create a VanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaOption_delta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VanillaOption",Description = "VanillaOption")>] 
          vanillaoption : obj)
@@ -202,7 +202,7 @@ module VanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_VanillaOption_deltaForward", Description="Create a VanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaOption_deltaForward
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VanillaOption",Description = "VanillaOption")>] 
          vanillaoption : obj)
@@ -238,7 +238,7 @@ module VanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_VanillaOption_dividendRho", Description="Create a VanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaOption_dividendRho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VanillaOption",Description = "VanillaOption")>] 
          vanillaoption : obj)
@@ -274,7 +274,7 @@ module VanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_VanillaOption_elasticity", Description="Create a VanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaOption_elasticity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VanillaOption",Description = "VanillaOption")>] 
          vanillaoption : obj)
@@ -310,7 +310,7 @@ module VanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_VanillaOption_gamma", Description="Create a VanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaOption_gamma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VanillaOption",Description = "VanillaOption")>] 
          vanillaoption : obj)
@@ -346,7 +346,7 @@ module VanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_VanillaOption_isExpired", Description="Create a VanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaOption_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VanillaOption",Description = "VanillaOption")>] 
          vanillaoption : obj)
@@ -382,7 +382,7 @@ module VanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_VanillaOption_itmCashProbability", Description="Create a VanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaOption_itmCashProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VanillaOption",Description = "VanillaOption")>] 
          vanillaoption : obj)
@@ -418,7 +418,7 @@ module VanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_VanillaOption_rho", Description="Create a VanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaOption_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VanillaOption",Description = "VanillaOption")>] 
          vanillaoption : obj)
@@ -454,7 +454,7 @@ module VanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_VanillaOption_strikeSensitivity", Description="Create a VanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaOption_strikeSensitivity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VanillaOption",Description = "VanillaOption")>] 
          vanillaoption : obj)
@@ -490,7 +490,7 @@ module VanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_VanillaOption_theta", Description="Create a VanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaOption_theta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VanillaOption",Description = "VanillaOption")>] 
          vanillaoption : obj)
@@ -526,7 +526,7 @@ module VanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_VanillaOption_thetaPerDay", Description="Create a VanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaOption_thetaPerDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VanillaOption",Description = "VanillaOption")>] 
          vanillaoption : obj)
@@ -562,7 +562,7 @@ module VanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_VanillaOption_vega", Description="Create a VanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaOption_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VanillaOption",Description = "VanillaOption")>] 
          vanillaoption : obj)
@@ -598,7 +598,7 @@ module VanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_VanillaOption_exercise", Description="Create a VanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaOption_exercise
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VanillaOption",Description = "VanillaOption")>] 
          vanillaoption : obj)
@@ -634,7 +634,7 @@ module VanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_VanillaOption_payoff", Description="Create a VanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaOption_payoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Payoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VanillaOption",Description = "VanillaOption")>] 
          vanillaoption : obj)
@@ -670,7 +670,7 @@ module VanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_VanillaOption_CASH", Description="Create a VanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaOption_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VanillaOption",Description = "VanillaOption")>] 
          vanillaoption : obj)
@@ -706,7 +706,7 @@ module VanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_VanillaOption_errorEstimate", Description="Create a VanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaOption_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VanillaOption",Description = "VanillaOption")>] 
          vanillaoption : obj)
@@ -742,7 +742,7 @@ module VanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_VanillaOption_NPV", Description="Create a VanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaOption_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VanillaOption",Description = "VanillaOption")>] 
          vanillaoption : obj)
@@ -778,7 +778,7 @@ module VanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_VanillaOption_result", Description="Create a VanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaOption_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VanillaOption",Description = "VanillaOption")>] 
          vanillaoption : obj)
@@ -820,7 +820,7 @@ module VanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_VanillaOption_setPricingEngine", Description="Create a VanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaOption_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VanillaOption",Description = "VanillaOption")>] 
          vanillaoption : obj)
@@ -862,7 +862,7 @@ module VanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_VanillaOption_valuationDate", Description="Create a VanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaOption_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VanillaOption",Description = "VanillaOption")>] 
          vanillaoption : obj)
@@ -895,9 +895,9 @@ module VanillaOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_VanillaOption_Range", Description="Create a range of VanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VanillaOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

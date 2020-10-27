@@ -39,15 +39,15 @@ module BachelierSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_BachelierSwaptionEngine", Description="Create a BachelierSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierSwaptionEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BachelierSwaptionEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
         ([<ExcelArgument(Name="vol",Description = "double")>] 
          vol : obj)
-        ([<ExcelArgument(Name="dc",Description = "BachelierSwaptionEngine")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter or empty")>] 
          dc : obj)
-        ([<ExcelArgument(Name="model",Description = "BachelierSwaptionEngine")>] 
+        ([<ExcelArgument(Name="model",Description = ".CashAnnuityModel or empty")>] 
          model : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,15 +94,15 @@ module BachelierSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_BachelierSwaptionEngine2", Description="Create a BachelierSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierSwaptionEngine_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "BachelierSwaptionEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
         ([<ExcelArgument(Name="vol",Description = "Quote")>] 
          vol : obj)
-        ([<ExcelArgument(Name="dc",Description = "BachelierSwaptionEngine")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter or empty")>] 
          dc : obj)
-        ([<ExcelArgument(Name="model",Description = "BachelierSwaptionEngine")>] 
+        ([<ExcelArgument(Name="model",Description = ".CashAnnuityModel or empty")>] 
          model : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -149,13 +149,13 @@ module BachelierSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_BachelierSwaptionEngine1", Description="Create a BachelierSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierSwaptionEngine_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "BachelierSwaptionEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
         ([<ExcelArgument(Name="vol",Description = "SwaptionVolatilityStructure")>] 
          vol : obj)
-        ([<ExcelArgument(Name="model",Description = "BachelierSwaptionEngine")>] 
+        ([<ExcelArgument(Name="model",Description = ".CashAnnuityModel or empty")>] 
          model : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -199,7 +199,7 @@ module BachelierSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_BachelierSwaptionEngine_termStructure", Description="Create a BachelierSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierSwaptionEngine_termStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BachelierSwaptionEngine",Description = "BachelierSwaptionEngine")>] 
          bachelierswaptionengine : obj)
@@ -235,7 +235,7 @@ module BachelierSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_BachelierSwaptionEngine_volatility", Description="Create a BachelierSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierSwaptionEngine_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionVolatilityStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BachelierSwaptionEngine",Description = "BachelierSwaptionEngine")>] 
          bachelierswaptionengine : obj)
@@ -268,9 +268,9 @@ module BachelierSwaptionEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BachelierSwaptionEngine_Range", Description="Create a range of BachelierSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierSwaptionEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

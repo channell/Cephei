@@ -39,7 +39,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ConvertibleFloatingRateBond")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="exercise",Description = "Exercise")>] 
          exercise : obj)
@@ -59,13 +59,13 @@ module ConvertibleFloatingRateBondFunction =
          index : obj)
         ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
          fixingDays : obj)
-        ([<ExcelArgument(Name="spreads",Description = "double")>] 
+        ([<ExcelArgument(Name="spreads",Description = "double range")>] 
          spreads : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
         ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
-        ([<ExcelArgument(Name="redemption",Description = "ConvertibleFloatingRateBond")>] 
+        ([<ExcelArgument(Name="redemption",Description = "double or empty")>] 
          redemption : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
@@ -160,7 +160,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_callability", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_callability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -196,7 +196,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_conversionRatio", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_conversionRatio
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -232,7 +232,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_creditSpread", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_creditSpread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -268,7 +268,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_dividends", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_dividends
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -304,7 +304,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_accruedAmount", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_accruedAmount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -346,7 +346,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_calendar", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -382,7 +382,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_cashflows", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_cashflows
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -418,7 +418,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_cleanPrice", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_cleanPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -454,7 +454,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_cleanPrice1", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_cleanPrice1
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -520,7 +520,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_dirtyPrice1", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_dirtyPrice1
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -586,7 +586,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_dirtyPrice", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_dirtyPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -622,7 +622,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_isExpired", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -658,7 +658,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_issueDate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_issueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -694,7 +694,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_isTradable", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_isTradable
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -736,7 +736,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_maturityDate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -772,7 +772,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_nextCashFlowDate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_nextCashFlowDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -814,7 +814,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_nextCouponRate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_nextCouponRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -856,7 +856,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_notional", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_notional
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -898,7 +898,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_notionals", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_notionals
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -934,7 +934,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_previousCashFlowDate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_previousCashFlowDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -976,7 +976,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_previousCouponRate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_previousCouponRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -1018,7 +1018,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_redemption", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_redemption
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -1054,7 +1054,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_redemptions", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_redemptions
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -1090,7 +1090,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_settlementDate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_settlementDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -1132,7 +1132,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_settlementDays", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -1168,7 +1168,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_settlementValue", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_settlementValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -1210,7 +1210,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_settlementValue1", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_settlementValue1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -1246,7 +1246,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_startDate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -1282,7 +1282,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_yield1", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_yield1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -1360,7 +1360,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_yield", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_yield
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -1426,7 +1426,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_CASH", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -1462,7 +1462,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_errorEstimate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -1498,7 +1498,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_NPV", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -1534,7 +1534,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_result", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -1576,7 +1576,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_setPricingEngine", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -1618,7 +1618,7 @@ module ConvertibleFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_valuationDate", Description="Create a ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFloatingRateBond",Description = "ConvertibleFloatingRateBond")>] 
          convertiblefloatingratebond : obj)
@@ -1651,9 +1651,9 @@ module ConvertibleFloatingRateBondFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ConvertibleFloatingRateBond_Range", Description="Create a range of ConvertibleFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFloatingRateBond_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

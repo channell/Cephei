@@ -39,7 +39,7 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_mandatoryTimes", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_mandatoryTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
@@ -75,7 +75,7 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_reset", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
@@ -117,7 +117,7 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_adjustValues", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_adjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
@@ -153,7 +153,7 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_initialize", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_initialize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
@@ -201,7 +201,7 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_method", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_method
-        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
@@ -237,7 +237,7 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_partialRollback", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_partialRollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
@@ -279,7 +279,7 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_postAdjustValues", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_postAdjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
@@ -315,7 +315,7 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_preAdjustValues", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_preAdjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
@@ -351,7 +351,7 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_presentValue", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_presentValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
@@ -387,7 +387,7 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_rollback", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_rollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
@@ -429,7 +429,7 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_setTime", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
@@ -471,7 +471,7 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_setValues", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_setValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
@@ -513,7 +513,7 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_time", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
@@ -549,7 +549,7 @@ module DiscretizedDiscountBondFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDiscountBond_values", Description="Create a DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_values
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDiscountBond",Description = "DiscretizedDiscountBond")>] 
          discretizeddiscountbond : obj)
@@ -582,9 +582,9 @@ module DiscretizedDiscountBondFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DiscretizedDiscountBond_Range", Description="Create a range of DiscretizedDiscountBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDiscountBond_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

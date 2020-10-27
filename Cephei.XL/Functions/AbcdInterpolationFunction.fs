@@ -39,7 +39,7 @@ module AbcdInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AbcdInterpolation_a", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_a
-        ([<ExcelArgument(Name="Mnemonic",Description = "AbcdInterpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdInterpolation",Description = "AbcdInterpolation")>] 
          abcdinterpolation : obj)
@@ -75,35 +75,35 @@ module AbcdInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AbcdInterpolation", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AbcdInterpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double range")>] 
          xBegin : obj)
         ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double range")>] 
          yBegin : obj)
-        ([<ExcelArgument(Name="a",Description = "AbcdInterpolation")>] 
+        ([<ExcelArgument(Name="a",Description = "double or empty")>] 
          a : obj)
-        ([<ExcelArgument(Name="b",Description = "AbcdInterpolation")>] 
+        ([<ExcelArgument(Name="b",Description = "double or empty")>] 
          b : obj)
-        ([<ExcelArgument(Name="c",Description = "AbcdInterpolation")>] 
+        ([<ExcelArgument(Name="c",Description = "double or empty")>] 
          c : obj)
-        ([<ExcelArgument(Name="d",Description = "AbcdInterpolation")>] 
+        ([<ExcelArgument(Name="d",Description = "double or empty")>] 
          d : obj)
-        ([<ExcelArgument(Name="aIsFixed",Description = "AbcdInterpolation")>] 
+        ([<ExcelArgument(Name="aIsFixed",Description = "bool or empty")>] 
          aIsFixed : obj)
-        ([<ExcelArgument(Name="bIsFixed",Description = "AbcdInterpolation")>] 
+        ([<ExcelArgument(Name="bIsFixed",Description = "bool or empty")>] 
          bIsFixed : obj)
-        ([<ExcelArgument(Name="cIsFixed",Description = "AbcdInterpolation")>] 
+        ([<ExcelArgument(Name="cIsFixed",Description = "bool or empty")>] 
          cIsFixed : obj)
-        ([<ExcelArgument(Name="dIsFixed",Description = "AbcdInterpolation")>] 
+        ([<ExcelArgument(Name="dIsFixed",Description = "bool or empty")>] 
          dIsFixed : obj)
-        ([<ExcelArgument(Name="vegaWeighted",Description = "AbcdInterpolation")>] 
+        ([<ExcelArgument(Name="vegaWeighted",Description = "bool or empty")>] 
          vegaWeighted : obj)
-        ([<ExcelArgument(Name="endCriteria",Description = "AbcdInterpolation")>] 
+        ([<ExcelArgument(Name="endCriteria",Description = "EndCriteria or empty")>] 
          endCriteria : obj)
-        ([<ExcelArgument(Name="optMethod",Description = "AbcdInterpolation")>] 
+        ([<ExcelArgument(Name="optMethod",Description = "OptimizationMethod or empty")>] 
          optMethod : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,7 +190,7 @@ module AbcdInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AbcdInterpolation_b", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_b
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdInterpolation",Description = "AbcdInterpolation")>] 
          abcdinterpolation : obj)
@@ -226,7 +226,7 @@ module AbcdInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AbcdInterpolation_c", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_c
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdInterpolation",Description = "AbcdInterpolation")>] 
          abcdinterpolation : obj)
@@ -262,7 +262,7 @@ module AbcdInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AbcdInterpolation_d", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_d
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdInterpolation",Description = "AbcdInterpolation")>] 
          abcdinterpolation : obj)
@@ -298,7 +298,7 @@ module AbcdInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AbcdInterpolation_endCriteria", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_endCriteria
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdInterpolation",Description = "AbcdInterpolation")>] 
          abcdinterpolation : obj)
@@ -334,13 +334,13 @@ module AbcdInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AbcdInterpolation_k", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_k
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdInterpolation",Description = "AbcdInterpolation")>] 
          abcdinterpolation : obj)
         ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double range")>] 
          xBegin : obj)
         ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
@@ -388,7 +388,7 @@ module AbcdInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AbcdInterpolation_k1", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_k1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdInterpolation",Description = "AbcdInterpolation")>] 
          abcdinterpolation : obj)
@@ -424,7 +424,7 @@ module AbcdInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AbcdInterpolation_maxError", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_maxError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdInterpolation",Description = "AbcdInterpolation")>] 
          abcdinterpolation : obj)
@@ -460,7 +460,7 @@ module AbcdInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AbcdInterpolation_rmsError", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_rmsError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdInterpolation",Description = "AbcdInterpolation")>] 
          abcdinterpolation : obj)
@@ -496,7 +496,7 @@ module AbcdInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AbcdInterpolation_derivative", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdInterpolation",Description = "AbcdInterpolation")>] 
          abcdinterpolation : obj)
@@ -544,7 +544,7 @@ module AbcdInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AbcdInterpolation_empty", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdInterpolation",Description = "AbcdInterpolation")>] 
          abcdinterpolation : obj)
@@ -580,7 +580,7 @@ module AbcdInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AbcdInterpolation_primitive", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdInterpolation",Description = "AbcdInterpolation")>] 
          abcdinterpolation : obj)
@@ -628,7 +628,7 @@ module AbcdInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AbcdInterpolation_secondDerivative", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_secondDerivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdInterpolation",Description = "AbcdInterpolation")>] 
          abcdinterpolation : obj)
@@ -676,7 +676,7 @@ module AbcdInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AbcdInterpolation_update", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdInterpolation",Description = "AbcdInterpolation")>] 
          abcdinterpolation : obj)
@@ -713,7 +713,7 @@ module AbcdInterpolationFunction =
     (*!!
     [<ExcelFunction(Name="_AbcdInterpolation_value", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdInterpolation",Description = "AbcdInterpolation")>] 
          abcdinterpolation : obj)
@@ -761,7 +761,7 @@ module AbcdInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AbcdInterpolation_value", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdInterpolation",Description = "AbcdInterpolation")>] 
          abcdinterpolation : obj)
@@ -803,7 +803,7 @@ module AbcdInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AbcdInterpolation_xMax", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_xMax
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdInterpolation",Description = "AbcdInterpolation")>] 
          abcdinterpolation : obj)
@@ -839,7 +839,7 @@ module AbcdInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AbcdInterpolation_xMin", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_xMin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdInterpolation",Description = "AbcdInterpolation")>] 
          abcdinterpolation : obj)
@@ -875,7 +875,7 @@ module AbcdInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AbcdInterpolation_allowsExtrapolation", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdInterpolation",Description = "AbcdInterpolation")>] 
          abcdinterpolation : obj)
@@ -911,7 +911,7 @@ module AbcdInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AbcdInterpolation_disableExtrapolation", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdInterpolation",Description = "AbcdInterpolation")>] 
          abcdinterpolation : obj)
@@ -953,7 +953,7 @@ module AbcdInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AbcdInterpolation_enableExtrapolation", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdInterpolation",Description = "AbcdInterpolation")>] 
          abcdinterpolation : obj)
@@ -995,7 +995,7 @@ module AbcdInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AbcdInterpolation_extrapolate", Description="Create a AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdInterpolation",Description = "AbcdInterpolation")>] 
          abcdinterpolation : obj)
@@ -1028,9 +1028,9 @@ module AbcdInterpolationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AbcdInterpolation_Range", Description="Create a range of AbcdInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdInterpolation_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

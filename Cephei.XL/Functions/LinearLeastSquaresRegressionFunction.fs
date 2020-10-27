@@ -40,7 +40,7 @@ module LinearLeastSquaresRegressionFunction =
     *)
     [<ExcelFunction(Name="_LinearLeastSquaresRegression_coefficients", Description="Create a LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearLeastSquaresRegression_coefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LinearLeastSquaresRegression",Description = "LinearLeastSquaresRegression")>] 
          linearleastsquaresregression : obj)
@@ -78,7 +78,7 @@ module LinearLeastSquaresRegressionFunction =
     (*!! ommited 
     [<ExcelFunction(Name="_LinearLeastSquaresRegression_error", Description="Create a LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearLeastSquaresRegression_error
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LinearLeastSquaresRegression",Description = "LinearLeastSquaresRegression")>] 
          linearleastsquaresregression : obj)
@@ -115,13 +115,13 @@ module LinearLeastSquaresRegressionFunction =
     *)
     [<ExcelFunction(Name="_LinearLeastSquaresRegression", Description="Create a LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearLeastSquaresRegression_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "LinearLeastSquaresRegression")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="x",Description = "double")>] 
+        ([<ExcelArgument(Name="x",Description = "double range")>] 
          x : obj)
-        ([<ExcelArgument(Name="y",Description = "double")>] 
+        ([<ExcelArgument(Name="y",Description = "double range")>] 
          y : obj)
-        ([<ExcelArgument(Name="v",Description = "double,double")>] 
+        ([<ExcelArgument(Name="v",Description = "double,double range")>] 
          v : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -165,7 +165,7 @@ module LinearLeastSquaresRegressionFunction =
     (*!! ommited 
     [<ExcelFunction(Name="_LinearLeastSquaresRegression_residuals", Description="Create a LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearLeastSquaresRegression_residuals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LinearLeastSquaresRegression",Description = "LinearLeastSquaresRegression")>] 
          linearleastsquaresregression : obj)
@@ -203,7 +203,7 @@ module LinearLeastSquaresRegressionFunction =
     (*!! omitted
     [<ExcelFunction(Name="_LinearLeastSquaresRegression_standardErrors", Description="Create a LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearLeastSquaresRegression_standardErrors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LinearLeastSquaresRegression",Description = "LinearLeastSquaresRegression")>] 
          linearleastsquaresregression : obj)
@@ -237,9 +237,9 @@ module LinearLeastSquaresRegressionFunction =
             *)
     [<ExcelFunction(Name="_LinearLeastSquaresRegression_Range", Description="Create a range of LinearLeastSquaresRegression",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearLeastSquaresRegression_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

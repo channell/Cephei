@@ -39,7 +39,7 @@ module GaussHyperbolicIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussHyperbolicIntegration", Description="Create a GaussHyperbolicIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHyperbolicIntegration_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "GaussHyperbolicIntegration")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
@@ -76,7 +76,7 @@ module GaussHyperbolicIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussHyperbolicIntegration_order", Description="Create a GaussHyperbolicIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHyperbolicIntegration_order
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussHyperbolicIntegration",Description = "GaussHyperbolicIntegration")>] 
          gausshyperbolicintegration : obj)
@@ -112,7 +112,7 @@ module GaussHyperbolicIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussHyperbolicIntegration_value", Description="Create a GaussHyperbolicIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHyperbolicIntegration_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussHyperbolicIntegration",Description = "GaussHyperbolicIntegration")>] 
          gausshyperbolicintegration : obj)
@@ -154,7 +154,7 @@ module GaussHyperbolicIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussHyperbolicIntegration_weights", Description="Create a GaussHyperbolicIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHyperbolicIntegration_weights
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussHyperbolicIntegration",Description = "GaussHyperbolicIntegration")>] 
          gausshyperbolicintegration : obj)
@@ -190,7 +190,7 @@ module GaussHyperbolicIntegrationFunction =
     *)
     [<ExcelFunction(Name="_GaussHyperbolicIntegration_x", Description="Create a GaussHyperbolicIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHyperbolicIntegration_x
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussHyperbolicIntegration",Description = "GaussHyperbolicIntegration")>] 
          gausshyperbolicintegration : obj)
@@ -223,9 +223,9 @@ module GaussHyperbolicIntegrationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GaussHyperbolicIntegration_Range", Description="Create a range of GaussHyperbolicIntegration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHyperbolicIntegration_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

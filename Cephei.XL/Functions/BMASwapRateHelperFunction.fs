@@ -39,7 +39,7 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BMASwapRateHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="liborFraction",Description = "Quote")>] 
          liborFraction : obj)
@@ -124,7 +124,7 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_impliedQuote", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_impliedQuote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
@@ -160,7 +160,7 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_setTermStructure", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_setTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
@@ -202,7 +202,7 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_update", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
@@ -238,7 +238,7 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_earliestDate", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_earliestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
@@ -274,7 +274,7 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_latestDate", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_latestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
@@ -310,7 +310,7 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_latestRelevantDate", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_latestRelevantDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
@@ -346,7 +346,7 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_maturityDate", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
@@ -382,7 +382,7 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_pillarDate", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_pillarDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
@@ -418,7 +418,7 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_quote", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_quote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
@@ -454,7 +454,7 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_quoteError", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_quoteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
@@ -490,7 +490,7 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_quoteIsValid", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_quoteIsValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
@@ -526,7 +526,7 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_quoteValue", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_quoteValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
@@ -562,7 +562,7 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_registerWith", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
@@ -604,7 +604,7 @@ module BMASwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_BMASwapRateHelper_unregisterWith", Description="Create a BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BMASwapRateHelper",Description = "BMASwapRateHelper")>] 
          bmaswapratehelper : obj)
@@ -643,9 +643,9 @@ module BMASwapRateHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BMASwapRateHelper_Range", Description="Create a range of BMASwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BMASwapRateHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

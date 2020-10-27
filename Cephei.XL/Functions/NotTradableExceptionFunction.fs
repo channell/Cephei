@@ -39,7 +39,7 @@ module NotTradableExceptionFunction =
     *)
     [<ExcelFunction(Name="_NotTradableException", Description="Create a NotTradableException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotTradableException_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "NotTradableException")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="message",Description = "string")>] 
          message : obj)
@@ -82,7 +82,7 @@ module NotTradableExceptionFunction =
     *)
     [<ExcelFunction(Name="_NotTradableException1", Description="Create a NotTradableException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotTradableException_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "NotTradableException")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="message",Description = "string")>] 
          message : obj)
@@ -119,7 +119,7 @@ module NotTradableExceptionFunction =
     *)
     [<ExcelFunction(Name="_NotTradableException2", Description="Create a NotTradableException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotTradableException_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "NotTradableException")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module NotTradableExceptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NotTradableException_Range", Description="Create a range of NotTradableException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotTradableException_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

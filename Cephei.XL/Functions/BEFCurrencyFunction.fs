@@ -39,7 +39,7 @@ module BEFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BEFCurrency", Description="Create a BEFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BEFCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BEFCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module BEFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BEFCurrency_code", Description="Create a BEFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BEFCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BEFCurrency",Description = "BEFCurrency")>] 
          befcurrency : obj)
@@ -106,7 +106,7 @@ module BEFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BEFCurrency_empty", Description="Create a BEFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BEFCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BEFCurrency",Description = "BEFCurrency")>] 
          befcurrency : obj)
@@ -142,7 +142,7 @@ module BEFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BEFCurrency_Equals", Description="Create a BEFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BEFCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BEFCurrency",Description = "BEFCurrency")>] 
          befcurrency : obj)
@@ -184,7 +184,7 @@ module BEFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BEFCurrency_format", Description="Create a BEFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BEFCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BEFCurrency",Description = "BEFCurrency")>] 
          befcurrency : obj)
@@ -220,7 +220,7 @@ module BEFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BEFCurrency_fractionsPerUnit", Description="Create a BEFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BEFCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BEFCurrency",Description = "BEFCurrency")>] 
          befcurrency : obj)
@@ -256,7 +256,7 @@ module BEFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BEFCurrency_fractionSymbol", Description="Create a BEFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BEFCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BEFCurrency",Description = "BEFCurrency")>] 
          befcurrency : obj)
@@ -292,7 +292,7 @@ module BEFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BEFCurrency_name", Description="Create a BEFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BEFCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BEFCurrency",Description = "BEFCurrency")>] 
          befcurrency : obj)
@@ -328,7 +328,7 @@ module BEFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BEFCurrency_numericCode", Description="Create a BEFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BEFCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BEFCurrency",Description = "BEFCurrency")>] 
          befcurrency : obj)
@@ -364,7 +364,7 @@ module BEFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BEFCurrency_rounding", Description="Create a BEFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BEFCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BEFCurrency",Description = "BEFCurrency")>] 
          befcurrency : obj)
@@ -400,7 +400,7 @@ module BEFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BEFCurrency_symbol", Description="Create a BEFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BEFCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BEFCurrency",Description = "BEFCurrency")>] 
          befcurrency : obj)
@@ -436,7 +436,7 @@ module BEFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BEFCurrency_ToString", Description="Create a BEFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BEFCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BEFCurrency",Description = "BEFCurrency")>] 
          befcurrency : obj)
@@ -472,7 +472,7 @@ module BEFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_BEFCurrency_triangulationCurrency", Description="Create a BEFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BEFCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BEFCurrency",Description = "BEFCurrency")>] 
          befcurrency : obj)
@@ -505,9 +505,9 @@ module BEFCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BEFCurrency_Range", Description="Create a range of BEFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BEFCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

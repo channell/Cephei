@@ -39,7 +39,7 @@ module MatrixFunction =
     *)
     [<ExcelFunction(Name="_Matrix_column", Description="Create a Matrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Matrix_column
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Matrix",Description = "Matrix")>] 
          matrix : obj)
@@ -81,7 +81,7 @@ module MatrixFunction =
     *)
     [<ExcelFunction(Name="_Matrix_columns", Description="Create a Matrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Matrix_columns
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Matrix",Description = "Matrix")>] 
          matrix : obj)
@@ -117,7 +117,7 @@ module MatrixFunction =
     *)
     [<ExcelFunction(Name="_Matrix_diagonal", Description="Create a Matrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Matrix_diagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Matrix",Description = "Matrix")>] 
          matrix : obj)
@@ -153,7 +153,7 @@ module MatrixFunction =
     *)
     [<ExcelFunction(Name="_Matrix_empty", Description="Create a Matrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Matrix_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Matrix",Description = "Matrix")>] 
          matrix : obj)
@@ -189,7 +189,7 @@ module MatrixFunction =
     *)
     [<ExcelFunction(Name="_Matrix_fill", Description="Create a Matrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Matrix_fill
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Matrix",Description = "Matrix")>] 
          matrix : obj)
@@ -231,7 +231,7 @@ module MatrixFunction =
     *)
     [<ExcelFunction(Name="_Matrix_GetRange", Description="Create a Matrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Matrix_GetRange
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Matrix",Description = "Matrix")>] 
          matrix : obj)
@@ -279,7 +279,7 @@ module MatrixFunction =
     *)
     [<ExcelFunction(Name="_Matrix2", Description="Create a Matrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Matrix_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="from",Description = "Matrix")>] 
          from : obj)
@@ -316,7 +316,7 @@ module MatrixFunction =
     *)
     [<ExcelFunction(Name="_Matrix", Description="Create a Matrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Matrix_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="rows",Description = "int")>] 
          rows : obj)
@@ -365,7 +365,7 @@ module MatrixFunction =
     *)
     [<ExcelFunction(Name="_Matrix1", Description="Create a Matrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Matrix_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="rows",Description = "int")>] 
          rows : obj)
@@ -408,7 +408,7 @@ module MatrixFunction =
     *)
     [<ExcelFunction(Name="_Matrix3", Description="Create a Matrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Matrix_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -439,7 +439,7 @@ module MatrixFunction =
     *)
     [<ExcelFunction(Name="_Matrix_row", Description="Create a Matrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Matrix_row
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Matrix",Description = "Matrix")>] 
          matrix : obj)
@@ -481,7 +481,7 @@ module MatrixFunction =
     *)
     [<ExcelFunction(Name="_Matrix_rows", Description="Create a Matrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Matrix_rows
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Matrix",Description = "Matrix")>] 
          matrix : obj)
@@ -517,7 +517,7 @@ module MatrixFunction =
     *)
     [<ExcelFunction(Name="_Matrix_swap", Description="Create a Matrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Matrix_swap
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Matrix",Description = "Matrix")>] 
          matrix : obj)
@@ -577,7 +577,7 @@ module MatrixFunction =
     *)
     [<ExcelFunction(Name="_Matrix_swapRow", Description="Create a Matrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Matrix_swapRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Matrix",Description = "Matrix")>] 
          matrix : obj)
@@ -625,7 +625,7 @@ module MatrixFunction =
     *)
     [<ExcelFunction(Name="_Matrix_this", Description="Create a Matrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Matrix_this
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Matrix",Description = "Matrix")>] 
          matrix : obj)
@@ -667,7 +667,7 @@ module MatrixFunction =
     *)
     [<ExcelFunction(Name="_Matrix_this1", Description="Create a Matrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Matrix_this1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Matrix",Description = "Matrix")>] 
          matrix : obj)
@@ -715,7 +715,7 @@ module MatrixFunction =
     *)
     [<ExcelFunction(Name="_Matrix_ToString", Description="Create a Matrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Matrix_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Matrix",Description = "Matrix")>] 
          matrix : obj)
@@ -748,9 +748,9 @@ module MatrixFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Matrix_Range", Description="Create a range of Matrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Matrix_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

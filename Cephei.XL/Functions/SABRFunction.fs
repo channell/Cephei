@@ -39,15 +39,15 @@ module SABRFunction =
     *)
     [<ExcelFunction(Name="_SABR_interpolate", Description="Create a SABR",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABR_interpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABR",Description = "SABR")>] 
          sabr : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double range")>] 
          xBegin : obj)
         ([<ExcelArgument(Name="xEnd",Description = "int")>] 
          xEnd : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double range")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -93,7 +93,7 @@ module SABRFunction =
     *)
     [<ExcelFunction(Name="_SABR", Description="Create a SABR",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABR_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SABR")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
@@ -115,23 +115,23 @@ module SABRFunction =
          nuIsFixed : obj)
         ([<ExcelArgument(Name="rhoIsFixed",Description = "bool")>] 
          rhoIsFixed : obj)
-        ([<ExcelArgument(Name="vegaWeighted",Description = "SABR")>] 
+        ([<ExcelArgument(Name="vegaWeighted",Description = "bool or empty")>] 
          vegaWeighted : obj)
-        ([<ExcelArgument(Name="endCriteria",Description = "SABR")>] 
+        ([<ExcelArgument(Name="endCriteria",Description = "EndCriteria or empty")>] 
          endCriteria : obj)
-        ([<ExcelArgument(Name="optMethod",Description = "SABR")>] 
+        ([<ExcelArgument(Name="optMethod",Description = "OptimizationMethod or empty")>] 
          optMethod : obj)
-        ([<ExcelArgument(Name="errorAccept",Description = "SABR")>] 
+        ([<ExcelArgument(Name="errorAccept",Description = "double or empty")>] 
          errorAccept : obj)
-        ([<ExcelArgument(Name="useMaxError",Description = "SABR")>] 
+        ([<ExcelArgument(Name="useMaxError",Description = "bool or empty")>] 
          useMaxError : obj)
-        ([<ExcelArgument(Name="maxGuesses",Description = "SABR")>] 
+        ([<ExcelArgument(Name="maxGuesses",Description = "int or empty")>] 
          maxGuesses : obj)
-        ([<ExcelArgument(Name="shift",Description = "SABR")>] 
+        ([<ExcelArgument(Name="shift",Description = "double or empty")>] 
          shift : obj)
-        ([<ExcelArgument(Name="volatilityType",Description = "SABR")>] 
+        ([<ExcelArgument(Name="volatilityType",Description = "VolatilityType: ShiftedLognormal, Normal or empty")>] 
          volatilityType : obj)
-        ([<ExcelArgument(Name="approximationModel",Description = "SABR")>] 
+        ([<ExcelArgument(Name="approximationModel",Description = "SabrApproximationModel: Obloj2008, Hagan2002 or empty")>] 
          approximationModel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -235,9 +235,9 @@ module SABRFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SABR_Range", Description="Create a range of SABR",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABR_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

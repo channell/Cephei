@@ -39,7 +39,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "CHFLibor")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
@@ -82,7 +82,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor1", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "CHFLibor")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
@@ -119,7 +119,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_clone", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -161,7 +161,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_maturityDate", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -203,7 +203,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_valueDate", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -245,7 +245,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_businessDayConvention", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -281,7 +281,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_endOfMonth", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -317,7 +317,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_forecastFixing1", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -371,7 +371,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_forecastFixing", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -413,7 +413,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_forwardingTermStructure", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -449,7 +449,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_currency", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -485,7 +485,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_dayCounter", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -521,7 +521,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_familyName", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -557,7 +557,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_fixing", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -605,7 +605,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_fixingCalendar", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -641,7 +641,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_fixingDate", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -683,7 +683,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_fixingDays", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -719,7 +719,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_isValidFixingDate", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -761,7 +761,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_name", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -797,7 +797,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_pastFixing", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -839,7 +839,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_tenor", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -875,7 +875,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_update", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -911,7 +911,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_addFixing", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -965,13 +965,13 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_addFixings", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -1019,7 +1019,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_addFixings1", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -1067,7 +1067,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_allowsNativeFixings", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -1103,7 +1103,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_clearFixings", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -1139,7 +1139,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_registerWith", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -1181,7 +1181,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_timeSeries", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -1217,7 +1217,7 @@ module CHFLiborFunction =
     *)
     [<ExcelFunction(Name="_CHFLibor_unregisterWith", Description="Create a CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFLibor",Description = "CHFLibor")>] 
          chflibor : obj)
@@ -1256,9 +1256,9 @@ module CHFLiborFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CHFLibor_Range", Description="Create a range of CHFLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFLibor_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

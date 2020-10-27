@@ -39,7 +39,7 @@ module AmericanConditionFunction =
     *)
     [<ExcelFunction(Name="_AmericanCondition1", Description="Create a AmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanCondition_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "AmericanCondition")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="intrinsicValues",Description = "Vector")>] 
          intrinsicValues : obj)
@@ -76,7 +76,7 @@ module AmericanConditionFunction =
     *)
     [<ExcelFunction(Name="_AmericanCondition", Description="Create a AmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanCondition_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AmericanCondition")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
@@ -119,7 +119,7 @@ module AmericanConditionFunction =
     *)
     [<ExcelFunction(Name="_AmericanCondition_applyTo", Description="Create a AmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanCondition_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmericanCondition",Description = "AmericanCondition")>] 
          americancondition : obj)
@@ -164,9 +164,9 @@ module AmericanConditionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AmericanCondition_Range", Description="Create a range of AmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanCondition_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

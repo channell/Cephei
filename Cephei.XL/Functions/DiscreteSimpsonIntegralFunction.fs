@@ -39,7 +39,7 @@ module DiscreteSimpsonIntegralFunction =
     *)
     [<ExcelFunction(Name="_DiscreteSimpsonIntegral_value", Description="Create a DiscreteSimpsonIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteSimpsonIntegral_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscreteSimpsonIntegral",Description = "DiscreteSimpsonIntegral")>] 
          discretesimpsonintegral : obj)
@@ -84,9 +84,9 @@ module DiscreteSimpsonIntegralFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DiscreteSimpsonIntegral_Range", Description="Create a range of DiscreteSimpsonIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteSimpsonIntegral_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

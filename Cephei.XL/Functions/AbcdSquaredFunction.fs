@@ -39,7 +39,7 @@ module AbcdSquaredFunction =
     *)
     [<ExcelFunction(Name="_AbcdSquared", Description="Create a AbcdSquared",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdSquared_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AbcdSquared")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
@@ -106,7 +106,7 @@ module AbcdSquaredFunction =
     *)
     [<ExcelFunction(Name="_AbcdSquared_value", Description="Create a AbcdSquared",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdSquared_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdSquared",Description = "AbcdSquared")>] 
          abcdsquared : obj)
@@ -145,9 +145,9 @@ module AbcdSquaredFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AbcdSquared_Range", Description="Create a range of AbcdSquared",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdSquared_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

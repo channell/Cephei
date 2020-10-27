@@ -39,7 +39,7 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_addFixing", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
@@ -47,7 +47,7 @@ module InflationIndexFunction =
          fixingDate : obj)
         ([<ExcelArgument(Name="fixing",Description = "double")>] 
          fixing : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Period")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool or empty")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,7 +94,7 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_availabilityLag", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_availabilityLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
@@ -130,7 +130,7 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_currency", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
@@ -166,7 +166,7 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_familyName", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
@@ -202,13 +202,13 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_fixing", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
         ([<ExcelArgument(Name="fixingDate",Description = "Date")>] 
          fixingDate : obj)
-        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="forecastTodaysFixing",Description = "bool or empty")>] 
          forecastTodaysFixing : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -250,7 +250,7 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_fixingCalendar", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
@@ -286,7 +286,7 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_frequency", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "InflationIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
@@ -322,7 +322,7 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "InflationIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="familyName",Description = "string")>] 
          familyName : obj)
@@ -395,7 +395,7 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_interpolated", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_interpolated
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
@@ -431,7 +431,7 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_isValidFixingDate", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
@@ -473,7 +473,7 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_name", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
@@ -509,7 +509,7 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_region", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_region
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
@@ -545,7 +545,7 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_revised", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_revised
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
@@ -581,7 +581,7 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_update", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
@@ -617,15 +617,15 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_addFixings", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool or empty")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -671,13 +671,13 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_addFixings1", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
         ([<ExcelArgument(Name="source",Description = "double")>] 
          source : obj)
-        ([<ExcelArgument(Name="forceOverwrite",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="forceOverwrite",Description = "bool or empty")>] 
          forceOverwrite : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -719,7 +719,7 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_allowsNativeFixings", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
@@ -755,7 +755,7 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_clearFixings", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
@@ -791,7 +791,7 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_registerWith", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
@@ -833,7 +833,7 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_timeSeries", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
@@ -869,7 +869,7 @@ module InflationIndexFunction =
     *)
     [<ExcelFunction(Name="_InflationIndex_unregisterWith", Description="Create a InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationIndex",Description = "InflationIndex")>] 
          inflationindex : obj)
@@ -908,9 +908,9 @@ module InflationIndexFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InflationIndex_Range", Description="Create a range of InflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationIndex_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

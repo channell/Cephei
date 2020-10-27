@@ -39,7 +39,7 @@ module AnalyticDigitalAmericanKOEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticDigitalAmericanKOEngine", Description="Create a AnalyticDigitalAmericanKOEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDigitalAmericanKOEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AnalyticDigitalAmericanKOEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="engine",Description = "GeneralizedBlackScholesProcess")>] 
          engine : obj)
@@ -76,7 +76,7 @@ module AnalyticDigitalAmericanKOEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticDigitalAmericanKOEngine_knock_in", Description="Create a AnalyticDigitalAmericanKOEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDigitalAmericanKOEngine_knock_in
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AnalyticDigitalAmericanKOEngine",Description = "AnalyticDigitalAmericanKOEngine")>] 
          analyticdigitalamericankoengine : obj)
@@ -113,9 +113,9 @@ module AnalyticDigitalAmericanKOEngineFunction =
 
     [<ExcelFunction(Name="_AnalyticDigitalAmericanKOEngine_Range", Description="Create a range of AnalyticDigitalAmericanKOEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDigitalAmericanKOEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

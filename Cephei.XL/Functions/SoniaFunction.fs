@@ -39,7 +39,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Sonia")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
@@ -76,7 +76,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_clone", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -118,7 +118,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_businessDayConvention", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -154,7 +154,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_endOfMonth", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -190,7 +190,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_forecastFixing1", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -244,7 +244,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_forecastFixing", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -286,7 +286,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_forwardingTermStructure", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -322,7 +322,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_maturityDate", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -364,7 +364,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_currency", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -400,7 +400,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_dayCounter", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -436,7 +436,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_familyName", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -472,7 +472,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_fixing", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -520,7 +520,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_fixingCalendar", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -556,7 +556,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_fixingDate", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -598,7 +598,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_fixingDays", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -634,7 +634,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_isValidFixingDate", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -676,7 +676,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_name", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -712,7 +712,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_pastFixing", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -754,7 +754,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_tenor", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -790,7 +790,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_update", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -826,7 +826,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_valueDate", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -868,7 +868,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_addFixing", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -922,13 +922,13 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_addFixings", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -976,7 +976,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_addFixings1", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -1024,7 +1024,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_allowsNativeFixings", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -1060,7 +1060,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_clearFixings", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -1096,7 +1096,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_registerWith", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -1138,7 +1138,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_timeSeries", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -1174,7 +1174,7 @@ module SoniaFunction =
     *)
     [<ExcelFunction(Name="_Sonia_unregisterWith", Description="Create a Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sonia",Description = "Sonia")>] 
          sonia : obj)
@@ -1213,9 +1213,9 @@ module SoniaFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Sonia_Range", Description="Create a range of Sonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sonia_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

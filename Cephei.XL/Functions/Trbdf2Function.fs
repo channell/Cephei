@@ -39,7 +39,7 @@ module Trbdf2Function =
     *)
     [<ExcelFunction(Name="_Trbdf2_setStep", Description="Create a Trbdf2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trbdf2_setStep
-        ([<ExcelArgument(Name="Mnemonic",Description = "Trbdf2")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Trbdf2",Description = "Trbdf2")>] 
          trbdf2 : obj)
@@ -81,7 +81,7 @@ module Trbdf2Function =
     *)
     [<ExcelFunction(Name="_Trbdf2_step", Description="Create a Trbdf2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trbdf2_step
-        ([<ExcelArgument(Name="Mnemonic",Description = "Trbdf2")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Trbdf2",Description = "Trbdf2")>] 
          trbdf2 : obj)
@@ -135,11 +135,11 @@ module Trbdf2Function =
     *)
     [<ExcelFunction(Name="_Trbdf2", Description="Create a Trbdf2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trbdf2_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Trbdf2")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="L",Description = "'Operator")>] 
          L : obj)
-        ([<ExcelArgument(Name="bcs",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="bcs",Description = "IOperator range")>] 
          bcs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -178,7 +178,7 @@ module Trbdf2Function =
     *)
     [<ExcelFunction(Name="_Trbdf21", Description="Create a Trbdf2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trbdf2_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Trbdf2")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -206,9 +206,9 @@ module Trbdf2Function =
             "<WIZ>"
     [<ExcelFunction(Name="_Trbdf2_Range", Description="Create a range of Trbdf2",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trbdf2_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

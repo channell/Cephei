@@ -39,7 +39,7 @@ module simple_eventFunction =
     *)
     [<ExcelFunction(Name="_simple_event_date", Description="Create a simple_event",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let simple_event_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "simple_event")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="simple_event",Description = "simple_event")>] 
          simple_event : obj)
@@ -75,7 +75,7 @@ module simple_eventFunction =
     *)
     [<ExcelFunction(Name="_simple_event", Description="Create a simple_event",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let simple_event_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "simple_event")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="date",Description = "Date")>] 
          date : obj)
@@ -112,7 +112,7 @@ module simple_eventFunction =
     *)
     [<ExcelFunction(Name="_simple_event_accept", Description="Create a simple_event",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let simple_event_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="simple_event",Description = "simple_event")>] 
          simple_event : obj)
@@ -154,7 +154,7 @@ module simple_eventFunction =
     *)
     [<ExcelFunction(Name="_simple_event_hasOccurred", Description="Create a simple_event",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let simple_event_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="simple_event",Description = "simple_event")>] 
          simple_event : obj)
@@ -202,7 +202,7 @@ module simple_eventFunction =
     *)
     [<ExcelFunction(Name="_simple_event_registerWith", Description="Create a simple_event",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let simple_event_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="simple_event",Description = "simple_event")>] 
          simple_event : obj)
@@ -244,7 +244,7 @@ module simple_eventFunction =
     *)
     [<ExcelFunction(Name="_simple_event_unregisterWith", Description="Create a simple_event",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let simple_event_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="simple_event",Description = "simple_event")>] 
          simple_event : obj)
@@ -283,9 +283,9 @@ module simple_eventFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_simple_event_Range", Description="Create a range of simple_event",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let simple_event_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

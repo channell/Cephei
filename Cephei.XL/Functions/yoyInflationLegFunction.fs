@@ -39,7 +39,7 @@ module yoyInflationLegFunction =
     *)
     [<ExcelFunction(Name="_yoyInflationLeg_value", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let yoyInflationLeg_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "yoyInflationLeg")>] 
          yoyinflationleg : obj)
@@ -75,7 +75,7 @@ module yoyInflationLegFunction =
     *)
     [<ExcelFunction(Name="_yoyInflationLeg", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let yoyInflationLeg_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "yoyInflationLeg")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -130,7 +130,7 @@ module yoyInflationLegFunction =
     *)
     [<ExcelFunction(Name="_yoyInflationLeg_withCaps", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let yoyInflationLeg_withCaps
-        ([<ExcelArgument(Name="Mnemonic",Description = "yoyInflationLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "yoyInflationLeg")>] 
          yoyinflationleg : obj)
@@ -172,11 +172,11 @@ module yoyInflationLegFunction =
     *)
     [<ExcelFunction(Name="_yoyInflationLeg_withCaps1", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let yoyInflationLeg_withCaps1
-        ([<ExcelArgument(Name="Mnemonic",Description = "yoyInflationLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "yoyInflationLeg")>] 
          yoyinflationleg : obj)
-        ([<ExcelArgument(Name="caps",Description = "double")>] 
+        ([<ExcelArgument(Name="caps",Description = "double range")>] 
          caps : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -214,7 +214,7 @@ module yoyInflationLegFunction =
     *)
     [<ExcelFunction(Name="_yoyInflationLeg_withFixingDays1", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let yoyInflationLeg_withFixingDays1
-        ([<ExcelArgument(Name="Mnemonic",Description = "yoyInflationLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "yoyInflationLeg")>] 
          yoyinflationleg : obj)
@@ -256,11 +256,11 @@ module yoyInflationLegFunction =
     *)
     [<ExcelFunction(Name="_yoyInflationLeg_withFixingDays", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let yoyInflationLeg_withFixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "yoyInflationLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "yoyInflationLeg")>] 
          yoyinflationleg : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int range")>] 
          fixingDays : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -298,11 +298,11 @@ module yoyInflationLegFunction =
     *)
     [<ExcelFunction(Name="_yoyInflationLeg_withFloors1", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let yoyInflationLeg_withFloors1
-        ([<ExcelArgument(Name="Mnemonic",Description = "yoyInflationLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "yoyInflationLeg")>] 
          yoyinflationleg : obj)
-        ([<ExcelArgument(Name="floors",Description = "double")>] 
+        ([<ExcelArgument(Name="floors",Description = "double range")>] 
          floors : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -340,7 +340,7 @@ module yoyInflationLegFunction =
     *)
     [<ExcelFunction(Name="_yoyInflationLeg_withFloors", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let yoyInflationLeg_withFloors
-        ([<ExcelArgument(Name="Mnemonic",Description = "yoyInflationLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "yoyInflationLeg")>] 
          yoyinflationleg : obj)
@@ -382,11 +382,11 @@ module yoyInflationLegFunction =
     *)
     [<ExcelFunction(Name="_yoyInflationLeg_withGearings", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let yoyInflationLeg_withGearings
-        ([<ExcelArgument(Name="Mnemonic",Description = "yoyInflationLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "yoyInflationLeg")>] 
          yoyinflationleg : obj)
-        ([<ExcelArgument(Name="gearings",Description = "double")>] 
+        ([<ExcelArgument(Name="gearings",Description = "double range")>] 
          gearings : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -424,7 +424,7 @@ module yoyInflationLegFunction =
     *)
     [<ExcelFunction(Name="_yoyInflationLeg_withGearings1", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let yoyInflationLeg_withGearings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "yoyInflationLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "yoyInflationLeg")>] 
          yoyinflationleg : obj)
@@ -466,7 +466,7 @@ module yoyInflationLegFunction =
     *)
     [<ExcelFunction(Name="_yoyInflationLeg_withPaymentDayCounter", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let yoyInflationLeg_withPaymentDayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "yoyInflationLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "yoyInflationLeg")>] 
          yoyinflationleg : obj)
@@ -508,7 +508,7 @@ module yoyInflationLegFunction =
     *)
     [<ExcelFunction(Name="_yoyInflationLeg_withSpreads", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let yoyInflationLeg_withSpreads
-        ([<ExcelArgument(Name="Mnemonic",Description = "yoyInflationLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "yoyInflationLeg")>] 
          yoyinflationleg : obj)
@@ -550,11 +550,11 @@ module yoyInflationLegFunction =
     *)
     [<ExcelFunction(Name="_yoyInflationLeg_withSpreads1", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let yoyInflationLeg_withSpreads1
-        ([<ExcelArgument(Name="Mnemonic",Description = "yoyInflationLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "yoyInflationLeg")>] 
          yoyinflationleg : obj)
-        ([<ExcelArgument(Name="spreads",Description = "double")>] 
+        ([<ExcelArgument(Name="spreads",Description = "double range")>] 
          spreads : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -592,11 +592,11 @@ module yoyInflationLegFunction =
     *)
     [<ExcelFunction(Name="_yoyInflationLeg_withNotionals1", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let yoyInflationLeg_withNotionals1
-        ([<ExcelArgument(Name="Mnemonic",Description = "RateLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "yoyInflationLeg")>] 
          yoyinflationleg : obj)
-        ([<ExcelArgument(Name="notionals",Description = "double")>] 
+        ([<ExcelArgument(Name="notionals",Description = "double range")>] 
          notionals : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -634,7 +634,7 @@ module yoyInflationLegFunction =
     *)
     [<ExcelFunction(Name="_yoyInflationLeg_withNotionals", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let yoyInflationLeg_withNotionals
-        ([<ExcelArgument(Name="Mnemonic",Description = "RateLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "yoyInflationLeg")>] 
          yoyinflationleg : obj)
@@ -676,7 +676,7 @@ module yoyInflationLegFunction =
     *)
     [<ExcelFunction(Name="_yoyInflationLeg_withPaymentAdjustment", Description="Create a yoyInflationLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let yoyInflationLeg_withPaymentAdjustment
-        ([<ExcelArgument(Name="Mnemonic",Description = "RateLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "yoyInflationLeg")>] 
          yoyinflationleg : obj)
@@ -715,9 +715,9 @@ module yoyInflationLegFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_yoyInflationLeg_Range", Description="Create a range of yoyInflationLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let yoyInflationLeg_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

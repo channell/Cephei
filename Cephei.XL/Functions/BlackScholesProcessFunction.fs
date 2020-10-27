@@ -39,7 +39,7 @@ module BlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesProcess", Description="Create a BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BlackScholesProcess")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="x0",Description = "Quote")>] 
          x0 : obj)
@@ -94,7 +94,7 @@ module BlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesProcess1", Description="Create a BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "BlackScholesProcess")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="x0",Description = "Quote")>] 
          x0 : obj)
@@ -143,7 +143,7 @@ module BlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesProcess_apply", Description="Create a BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "BlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackScholesProcess",Description = "BlackScholesProcess")>] 
          blackscholesprocess : obj)
@@ -191,7 +191,7 @@ module BlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesProcess_blackVolatility", Description="Create a BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_blackVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "BlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackScholesProcess",Description = "BlackScholesProcess")>] 
          blackscholesprocess : obj)
@@ -227,7 +227,7 @@ module BlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesProcess_diffusion", Description="Create a BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackScholesProcess",Description = "BlackScholesProcess")>] 
          blackscholesprocess : obj)
@@ -275,7 +275,7 @@ module BlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesProcess_dividendYield", Description="Create a BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_dividendYield
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackScholesProcess",Description = "BlackScholesProcess")>] 
          blackscholesprocess : obj)
@@ -311,7 +311,7 @@ module BlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesProcess_drift", Description="Create a BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "LocalVolTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackScholesProcess",Description = "BlackScholesProcess")>] 
          blackscholesprocess : obj)
@@ -359,7 +359,7 @@ module BlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesProcess_evolve", Description="Create a BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_evolve
-        ([<ExcelArgument(Name="Mnemonic",Description = "LocalVolTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackScholesProcess",Description = "BlackScholesProcess")>] 
          blackscholesprocess : obj)
@@ -419,7 +419,7 @@ module BlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesProcess_expectation", Description="Create a BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_expectation
-        ([<ExcelArgument(Name="Mnemonic",Description = "LocalVolTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackScholesProcess",Description = "BlackScholesProcess")>] 
          blackscholesprocess : obj)
@@ -473,7 +473,7 @@ module BlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesProcess_localVolatility", Description="Create a BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_localVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "LocalVolTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackScholesProcess",Description = "BlackScholesProcess")>] 
          blackscholesprocess : obj)
@@ -509,7 +509,7 @@ module BlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesProcess_riskFreeRate", Description="Create a BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_riskFreeRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackScholesProcess",Description = "BlackScholesProcess")>] 
          blackscholesprocess : obj)
@@ -545,7 +545,7 @@ module BlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesProcess_stateVariable", Description="Create a BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_stateVariable
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackScholesProcess",Description = "BlackScholesProcess")>] 
          blackscholesprocess : obj)
@@ -581,7 +581,7 @@ module BlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesProcess_stdDeviation", Description="Create a BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_stdDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackScholesProcess",Description = "BlackScholesProcess")>] 
          blackscholesprocess : obj)
@@ -635,7 +635,7 @@ module BlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesProcess_time", Description="Create a BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackScholesProcess",Description = "BlackScholesProcess")>] 
          blackscholesprocess : obj)
@@ -677,7 +677,7 @@ module BlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesProcess_update", Description="Create a BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackScholesProcess",Description = "BlackScholesProcess")>] 
          blackscholesprocess : obj)
@@ -713,7 +713,7 @@ module BlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesProcess_variance", Description="Create a BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackScholesProcess",Description = "BlackScholesProcess")>] 
          blackscholesprocess : obj)
@@ -767,7 +767,7 @@ module BlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesProcess_x0", Description="Create a BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_x0
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackScholesProcess",Description = "BlackScholesProcess")>] 
          blackscholesprocess : obj)
@@ -803,7 +803,7 @@ module BlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesProcess_initialValues", Description="Create a BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_initialValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackScholesProcess",Description = "BlackScholesProcess")>] 
          blackscholesprocess : obj)
@@ -839,7 +839,7 @@ module BlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesProcess_size", Description="Create a BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackScholesProcess",Description = "BlackScholesProcess")>] 
          blackscholesprocess : obj)
@@ -875,7 +875,7 @@ module BlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesProcess_covariance", Description="Create a BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackScholesProcess",Description = "BlackScholesProcess")>] 
          blackscholesprocess : obj)
@@ -929,7 +929,7 @@ module BlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesProcess_factors", Description="Create a BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_factors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackScholesProcess",Description = "BlackScholesProcess")>] 
          blackscholesprocess : obj)
@@ -965,7 +965,7 @@ module BlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesProcess_registerWith", Description="Create a BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackScholesProcess",Description = "BlackScholesProcess")>] 
          blackscholesprocess : obj)
@@ -1007,7 +1007,7 @@ module BlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_BlackScholesProcess_unregisterWith", Description="Create a BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackScholesProcess",Description = "BlackScholesProcess")>] 
          blackscholesprocess : obj)
@@ -1046,9 +1046,9 @@ module BlackScholesProcessFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BlackScholesProcess_Range", Description="Create a range of BlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackScholesProcess_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

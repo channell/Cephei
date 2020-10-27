@@ -39,7 +39,7 @@ module LeastSquareFunctionFunction =
     *)
     [<ExcelFunction(Name="_LeastSquareFunction_gradient", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_gradient
-        ([<ExcelArgument(Name="Mnemonic",Description = "LeastSquareFunction")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LeastSquareFunction",Description = "LeastSquareFunction")>] 
          leastsquarefunction : obj)
@@ -87,7 +87,7 @@ module LeastSquareFunctionFunction =
     *)
     [<ExcelFunction(Name="_LeastSquareFunction", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "LeastSquareFunction")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="lsp",Description = "LeastSquareProblem")>] 
          lsp : obj)
@@ -124,7 +124,7 @@ module LeastSquareFunctionFunction =
     *)
     [<ExcelFunction(Name="_LeastSquareFunction_value", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LeastSquareFunction",Description = "LeastSquareFunction")>] 
          leastsquarefunction : obj)
@@ -166,7 +166,7 @@ module LeastSquareFunctionFunction =
     *)
     [<ExcelFunction(Name="_LeastSquareFunction_valueAndGradient", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_valueAndGradient
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LeastSquareFunction",Description = "LeastSquareFunction")>] 
          leastsquarefunction : obj)
@@ -214,7 +214,7 @@ module LeastSquareFunctionFunction =
     *)
     [<ExcelFunction(Name="_LeastSquareFunction_values", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_values
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LeastSquareFunction",Description = "LeastSquareFunction")>] 
          leastsquarefunction : obj)
@@ -256,7 +256,7 @@ module LeastSquareFunctionFunction =
     *)
     [<ExcelFunction(Name="_LeastSquareFunction_finiteDifferenceEpsilon", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_finiteDifferenceEpsilon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LeastSquareFunction",Description = "LeastSquareFunction")>] 
          leastsquarefunction : obj)
@@ -292,7 +292,7 @@ module LeastSquareFunctionFunction =
     *)
     [<ExcelFunction(Name="_LeastSquareFunction_jacobian", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_jacobian
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LeastSquareFunction",Description = "LeastSquareFunction")>] 
          leastsquarefunction : obj)
@@ -340,7 +340,7 @@ module LeastSquareFunctionFunction =
     *)
     [<ExcelFunction(Name="_LeastSquareFunction_valuesAndJacobian", Description="Create a LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_valuesAndJacobian
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LeastSquareFunction",Description = "LeastSquareFunction")>] 
          leastsquarefunction : obj)
@@ -385,9 +385,9 @@ module LeastSquareFunctionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LeastSquareFunction_Range", Description="Create a range of LeastSquareFunction",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LeastSquareFunction_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

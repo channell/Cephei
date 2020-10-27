@@ -39,7 +39,7 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FRHICP")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="interpolated",Description = "bool")>] 
          interpolated : obj)
@@ -82,7 +82,7 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP1", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FRHICP")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="interpolated",Description = "bool")>] 
          interpolated : obj)
@@ -119,7 +119,7 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP_clone", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FRHICP",Description = "FRHICP")>] 
          frhicp : obj)
@@ -161,7 +161,7 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP_fixing", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FRHICP",Description = "FRHICP")>] 
          frhicp : obj)
@@ -209,7 +209,7 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP_zeroInflationTermStructure", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_zeroInflationTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FRHICP",Description = "FRHICP")>] 
          frhicp : obj)
@@ -245,7 +245,7 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP_addFixing", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FRHICP",Description = "FRHICP")>] 
          frhicp : obj)
@@ -300,7 +300,7 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP_availabilityLag", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_availabilityLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FRHICP",Description = "FRHICP")>] 
          frhicp : obj)
@@ -336,7 +336,7 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP_currency", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FRHICP",Description = "FRHICP")>] 
          frhicp : obj)
@@ -372,7 +372,7 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP_familyName", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FRHICP",Description = "FRHICP")>] 
          frhicp : obj)
@@ -408,7 +408,7 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP_fixingCalendar", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FRHICP",Description = "FRHICP")>] 
          frhicp : obj)
@@ -444,7 +444,7 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP_frequency", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FRHICP",Description = "FRHICP")>] 
          frhicp : obj)
@@ -480,7 +480,7 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP_interpolated", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_interpolated
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FRHICP",Description = "FRHICP")>] 
          frhicp : obj)
@@ -516,7 +516,7 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP_isValidFixingDate", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FRHICP",Description = "FRHICP")>] 
          frhicp : obj)
@@ -558,7 +558,7 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP_name", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FRHICP",Description = "FRHICP")>] 
          frhicp : obj)
@@ -594,7 +594,7 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP_region", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_region
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FRHICP",Description = "FRHICP")>] 
          frhicp : obj)
@@ -630,7 +630,7 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP_revised", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_revised
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FRHICP",Description = "FRHICP")>] 
          frhicp : obj)
@@ -666,7 +666,7 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP_update", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FRHICP",Description = "FRHICP")>] 
          frhicp : obj)
@@ -702,13 +702,13 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP_addFixings", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FRHICP",Description = "FRHICP")>] 
          frhicp : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -756,7 +756,7 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP_addFixings1", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FRHICP",Description = "FRHICP")>] 
          frhicp : obj)
@@ -804,7 +804,7 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP_allowsNativeFixings", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FRHICP",Description = "FRHICP")>] 
          frhicp : obj)
@@ -840,7 +840,7 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP_clearFixings", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FRHICP",Description = "FRHICP")>] 
          frhicp : obj)
@@ -876,7 +876,7 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP_registerWith", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FRHICP",Description = "FRHICP")>] 
          frhicp : obj)
@@ -918,7 +918,7 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP_timeSeries", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FRHICP",Description = "FRHICP")>] 
          frhicp : obj)
@@ -954,7 +954,7 @@ module FRHICPFunction =
     *)
     [<ExcelFunction(Name="_FRHICP_unregisterWith", Description="Create a FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FRHICP",Description = "FRHICP")>] 
          frhicp : obj)
@@ -993,9 +993,9 @@ module FRHICPFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FRHICP_Range", Description="Create a range of FRHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FRHICP_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

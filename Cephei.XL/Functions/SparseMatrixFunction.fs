@@ -39,7 +39,7 @@ module SparseMatrixFunction =
     *)
     [<ExcelFunction(Name="_SparseMatrix_Clear", Description="Create a SparseMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SparseMatrix_Clear
-        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SparseMatrix",Description = "SparseMatrix")>] 
          sparsematrix : obj)
@@ -75,7 +75,7 @@ module SparseMatrixFunction =
     *)
     [<ExcelFunction(Name="_SparseMatrix_columns", Description="Create a SparseMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SparseMatrix_columns
-        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SparseMatrix",Description = "SparseMatrix")>] 
          sparsematrix : obj)
@@ -111,7 +111,7 @@ module SparseMatrixFunction =
     *)
     [<ExcelFunction(Name="_SparseMatrix_GetAt", Description="Create a SparseMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SparseMatrix_GetAt
-        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SparseMatrix",Description = "SparseMatrix")>] 
          sparsematrix : obj)
@@ -159,7 +159,7 @@ module SparseMatrixFunction =
     *)
     [<ExcelFunction(Name="_SparseMatrix_GetColumnData", Description="Create a SparseMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SparseMatrix_GetColumnData
-        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SparseMatrix",Description = "SparseMatrix")>] 
          sparsematrix : obj)
@@ -201,7 +201,7 @@ module SparseMatrixFunction =
     *)
     [<ExcelFunction(Name="_SparseMatrix_GetColumnDataCount", Description="Create a SparseMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SparseMatrix_GetColumnDataCount
-        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SparseMatrix",Description = "SparseMatrix")>] 
          sparsematrix : obj)
@@ -243,7 +243,7 @@ module SparseMatrixFunction =
     *)
     [<ExcelFunction(Name="_SparseMatrix_GetRowData", Description="Create a SparseMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SparseMatrix_GetRowData
-        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SparseMatrix",Description = "SparseMatrix")>] 
          sparsematrix : obj)
@@ -285,7 +285,7 @@ module SparseMatrixFunction =
     *)
     [<ExcelFunction(Name="_SparseMatrix_GetRowDataCount", Description="Create a SparseMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SparseMatrix_GetRowDataCount
-        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SparseMatrix",Description = "SparseMatrix")>] 
          sparsematrix : obj)
@@ -327,7 +327,7 @@ module SparseMatrixFunction =
     *)
     [<ExcelFunction(Name="_SparseMatrix_RemoveAt", Description="Create a SparseMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SparseMatrix_RemoveAt
-        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SparseMatrix",Description = "SparseMatrix")>] 
          sparsematrix : obj)
@@ -375,7 +375,7 @@ module SparseMatrixFunction =
     *)
     [<ExcelFunction(Name="_SparseMatrix_rows", Description="Create a SparseMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SparseMatrix_rows
-        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SparseMatrix",Description = "SparseMatrix")>] 
          sparsematrix : obj)
@@ -411,7 +411,7 @@ module SparseMatrixFunction =
     *)
     [<ExcelFunction(Name="_SparseMatrix_SetAt", Description="Create a SparseMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SparseMatrix_SetAt
-        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SparseMatrix",Description = "SparseMatrix")>] 
          sparsematrix : obj)
@@ -465,7 +465,7 @@ module SparseMatrixFunction =
     *)
     [<ExcelFunction(Name="_SparseMatrix1", Description="Create a SparseMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SparseMatrix_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="rows",Description = "int")>] 
          rows : obj)
@@ -508,7 +508,7 @@ module SparseMatrixFunction =
     *)
     [<ExcelFunction(Name="_SparseMatrix2", Description="Create a SparseMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SparseMatrix_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -539,7 +539,7 @@ module SparseMatrixFunction =
     *)
     [<ExcelFunction(Name="_SparseMatrix", Description="Create a SparseMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SparseMatrix_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="lhs",Description = "SparseMatrix")>] 
          lhs : obj)
@@ -576,7 +576,7 @@ module SparseMatrixFunction =
     *)
     [<ExcelFunction(Name="_SparseMatrix_this", Description="Create a SparseMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SparseMatrix_this
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SparseMatrix",Description = "SparseMatrix")>] 
          sparsematrix : obj)
@@ -624,7 +624,7 @@ module SparseMatrixFunction =
     *)
     [<ExcelFunction(Name="_SparseMatrix_values", Description="Create a SparseMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SparseMatrix_values
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SparseMatrix",Description = "SparseMatrix")>] 
          sparsematrix : obj)
@@ -657,9 +657,9 @@ module SparseMatrixFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SparseMatrix_Range", Description="Create a range of SparseMatrix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SparseMatrix_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,15 +39,15 @@ module SABRWrapperFunction =
     *)
     [<ExcelFunction(Name="_SABRWrapper", Description="Create a SABRWrapper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRWrapper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SABRWrapper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
-        ([<ExcelArgument(Name="param",Description = "double")>] 
+        ([<ExcelArgument(Name="param",Description = "double range")>] 
          param : obj)
-        ([<ExcelArgument(Name="addParams",Description = "double")>] 
+        ([<ExcelArgument(Name="addParams",Description = "double range")>] 
          addParams : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,7 +94,7 @@ module SABRWrapperFunction =
     *)
     [<ExcelFunction(Name="_SABRWrapper_volatility", Description="Create a SABRWrapper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRWrapper_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRWrapper",Description = "SABRWrapper")>] 
          sabrwrapper : obj)
@@ -133,9 +133,9 @@ module SABRWrapperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SABRWrapper_Range", Description="Create a range of SABRWrapper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRWrapper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,7 +39,7 @@ module PriceErrorFunction =
     *)
     [<ExcelFunction(Name="_PriceError", Description="Create a PriceError",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PriceError_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "PriceError")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="engine",Description = "IPricingEngine")>] 
          engine : obj)
@@ -88,7 +88,7 @@ module PriceErrorFunction =
     *)
     [<ExcelFunction(Name="_PriceError_value", Description="Create a PriceError",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PriceError_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PriceError",Description = "PriceError")>] 
          priceerror : obj)
@@ -130,7 +130,7 @@ module PriceErrorFunction =
     *)
     [<ExcelFunction(Name="_PriceError_derivative", Description="Create a PriceError",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PriceError_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PriceError",Description = "PriceError")>] 
          priceerror : obj)
@@ -169,9 +169,9 @@ module PriceErrorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PriceError_Range", Description="Create a range of PriceError",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PriceError_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

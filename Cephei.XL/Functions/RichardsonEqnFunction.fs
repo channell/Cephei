@@ -39,7 +39,7 @@ module RichardsonEqnFunction =
     *)
     [<ExcelFunction(Name="_RichardsonEqn", Description="Create a RichardsonEqn",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RichardsonEqn_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "RichardsonEqn")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="fh",Description = "double")>] 
          fh : obj)
@@ -100,7 +100,7 @@ module RichardsonEqnFunction =
     *)
     [<ExcelFunction(Name="_RichardsonEqn_value", Description="Create a RichardsonEqn",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RichardsonEqn_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RichardsonEqn",Description = "RichardsonEqn")>] 
          richardsoneqn : obj)
@@ -142,7 +142,7 @@ module RichardsonEqnFunction =
     *)
     [<ExcelFunction(Name="_RichardsonEqn_derivative", Description="Create a RichardsonEqn",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RichardsonEqn_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RichardsonEqn",Description = "RichardsonEqn")>] 
          richardsoneqn : obj)
@@ -181,9 +181,9 @@ module RichardsonEqnFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_RichardsonEqn_Range", Description="Create a range of RichardsonEqn",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RichardsonEqn_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

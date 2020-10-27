@@ -39,7 +39,7 @@ module FdmSolverDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSolverDesc_bcSet", Description="Create a FdmSolverDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSolverDesc_bcSet
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmInnerValueCalculator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmSolverDesc",Description = "FdmSolverDesc")>] 
          fdmsolverdesc : obj)
@@ -75,7 +75,7 @@ module FdmSolverDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSolverDesc_calculator", Description="Create a FdmSolverDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSolverDesc_calculator
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmInnerValueCalculator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmSolverDesc",Description = "FdmSolverDesc")>] 
          fdmsolverdesc : obj)
@@ -111,7 +111,7 @@ module FdmSolverDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSolverDesc_condition", Description="Create a FdmSolverDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSolverDesc_condition
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmStepConditionComposite")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmSolverDesc",Description = "FdmSolverDesc")>] 
          fdmsolverdesc : obj)
@@ -147,7 +147,7 @@ module FdmSolverDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSolverDesc_dampingSteps", Description="Create a FdmSolverDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSolverDesc_dampingSteps
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmMesher")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmSolverDesc",Description = "FdmSolverDesc")>] 
          fdmsolverdesc : obj)
@@ -183,7 +183,7 @@ module FdmSolverDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSolverDesc_maturity", Description="Create a FdmSolverDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSolverDesc_maturity
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmMesher")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmSolverDesc",Description = "FdmSolverDesc")>] 
          fdmsolverdesc : obj)
@@ -219,7 +219,7 @@ module FdmSolverDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSolverDesc_mesher", Description="Create a FdmSolverDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSolverDesc_mesher
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmMesher")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmSolverDesc",Description = "FdmSolverDesc")>] 
          fdmsolverdesc : obj)
@@ -255,7 +255,7 @@ module FdmSolverDescFunction =
     *)
     [<ExcelFunction(Name="_FdmSolverDesc_timeSteps", Description="Create a FdmSolverDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSolverDesc_timeSteps
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmSolverDesc",Description = "FdmSolverDesc")>] 
          fdmsolverdesc : obj)
@@ -288,9 +288,9 @@ module FdmSolverDescFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmSolverDesc_Range", Description="Create a range of FdmSolverDesc",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSolverDesc_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

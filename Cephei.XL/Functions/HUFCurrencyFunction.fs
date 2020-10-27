@@ -39,7 +39,7 @@ module HUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HUFCurrency", Description="Create a HUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HUFCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "HUFCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module HUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HUFCurrency_code", Description="Create a HUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HUFCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HUFCurrency",Description = "HUFCurrency")>] 
          hufcurrency : obj)
@@ -106,7 +106,7 @@ module HUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HUFCurrency_empty", Description="Create a HUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HUFCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HUFCurrency",Description = "HUFCurrency")>] 
          hufcurrency : obj)
@@ -142,7 +142,7 @@ module HUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HUFCurrency_Equals", Description="Create a HUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HUFCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HUFCurrency",Description = "HUFCurrency")>] 
          hufcurrency : obj)
@@ -184,7 +184,7 @@ module HUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HUFCurrency_format", Description="Create a HUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HUFCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HUFCurrency",Description = "HUFCurrency")>] 
          hufcurrency : obj)
@@ -220,7 +220,7 @@ module HUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HUFCurrency_fractionsPerUnit", Description="Create a HUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HUFCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HUFCurrency",Description = "HUFCurrency")>] 
          hufcurrency : obj)
@@ -256,7 +256,7 @@ module HUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HUFCurrency_fractionSymbol", Description="Create a HUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HUFCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HUFCurrency",Description = "HUFCurrency")>] 
          hufcurrency : obj)
@@ -292,7 +292,7 @@ module HUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HUFCurrency_name", Description="Create a HUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HUFCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HUFCurrency",Description = "HUFCurrency")>] 
          hufcurrency : obj)
@@ -328,7 +328,7 @@ module HUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HUFCurrency_numericCode", Description="Create a HUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HUFCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HUFCurrency",Description = "HUFCurrency")>] 
          hufcurrency : obj)
@@ -364,7 +364,7 @@ module HUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HUFCurrency_rounding", Description="Create a HUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HUFCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HUFCurrency",Description = "HUFCurrency")>] 
          hufcurrency : obj)
@@ -400,7 +400,7 @@ module HUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HUFCurrency_symbol", Description="Create a HUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HUFCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HUFCurrency",Description = "HUFCurrency")>] 
          hufcurrency : obj)
@@ -436,7 +436,7 @@ module HUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HUFCurrency_ToString", Description="Create a HUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HUFCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HUFCurrency",Description = "HUFCurrency")>] 
          hufcurrency : obj)
@@ -472,7 +472,7 @@ module HUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HUFCurrency_triangulationCurrency", Description="Create a HUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HUFCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HUFCurrency",Description = "HUFCurrency")>] 
          hufcurrency : obj)
@@ -505,9 +505,9 @@ module HUFCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_HUFCurrency_Range", Description="Create a range of HUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HUFCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

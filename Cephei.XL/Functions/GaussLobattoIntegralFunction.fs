@@ -39,7 +39,7 @@ module GaussLobattoIntegralFunction =
     *)
     [<ExcelFunction(Name="_GaussLobattoIntegral", Description="Create a GaussLobattoIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLobattoIntegral_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "GaussLobattoIntegral")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="maxIterations",Description = "int")>] 
          maxIterations : obj)
@@ -47,7 +47,7 @@ module GaussLobattoIntegralFunction =
          absAccuracy : obj)
         ([<ExcelArgument(Name="relAccuracy",Description = "double")>] 
          relAccuracy : obj)
-        ([<ExcelArgument(Name="useConvergenceEstimate",Description = "GaussLobattoIntegral")>] 
+        ([<ExcelArgument(Name="useConvergenceEstimate",Description = "bool or empty")>] 
          useConvergenceEstimate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,7 +94,7 @@ module GaussLobattoIntegralFunction =
     *)
     [<ExcelFunction(Name="_GaussLobattoIntegral_absoluteAccuracy", Description="Create a GaussLobattoIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLobattoIntegral_absoluteAccuracy
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussLobattoIntegral",Description = "GaussLobattoIntegral")>] 
          gausslobattointegral : obj)
@@ -130,7 +130,7 @@ module GaussLobattoIntegralFunction =
     *)
     [<ExcelFunction(Name="_GaussLobattoIntegral_absoluteError", Description="Create a GaussLobattoIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLobattoIntegral_absoluteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussLobattoIntegral",Description = "GaussLobattoIntegral")>] 
          gausslobattointegral : obj)
@@ -166,7 +166,7 @@ module GaussLobattoIntegralFunction =
     *)
     [<ExcelFunction(Name="_GaussLobattoIntegral_integrationSuccess", Description="Create a GaussLobattoIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLobattoIntegral_integrationSuccess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussLobattoIntegral",Description = "GaussLobattoIntegral")>] 
          gausslobattointegral : obj)
@@ -202,7 +202,7 @@ module GaussLobattoIntegralFunction =
     *)
     [<ExcelFunction(Name="_GaussLobattoIntegral_maxEvaluations", Description="Create a GaussLobattoIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLobattoIntegral_maxEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussLobattoIntegral",Description = "GaussLobattoIntegral")>] 
          gausslobattointegral : obj)
@@ -238,7 +238,7 @@ module GaussLobattoIntegralFunction =
     *)
     [<ExcelFunction(Name="_GaussLobattoIntegral_numberOfEvaluations", Description="Create a GaussLobattoIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLobattoIntegral_numberOfEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussLobattoIntegral",Description = "GaussLobattoIntegral")>] 
          gausslobattointegral : obj)
@@ -274,7 +274,7 @@ module GaussLobattoIntegralFunction =
     *)
     [<ExcelFunction(Name="_GaussLobattoIntegral_setAbsoluteAccuracy", Description="Create a GaussLobattoIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLobattoIntegral_setAbsoluteAccuracy
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussLobattoIntegral",Description = "GaussLobattoIntegral")>] 
          gausslobattointegral : obj)
@@ -316,7 +316,7 @@ module GaussLobattoIntegralFunction =
     *)
     [<ExcelFunction(Name="_GaussLobattoIntegral_setMaxEvaluations", Description="Create a GaussLobattoIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLobattoIntegral_setMaxEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussLobattoIntegral",Description = "GaussLobattoIntegral")>] 
          gausslobattointegral : obj)
@@ -358,7 +358,7 @@ module GaussLobattoIntegralFunction =
     *)
     [<ExcelFunction(Name="_GaussLobattoIntegral_value", Description="Create a GaussLobattoIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLobattoIntegral_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussLobattoIntegral",Description = "GaussLobattoIntegral")>] 
          gausslobattointegral : obj)
@@ -409,9 +409,9 @@ module GaussLobattoIntegralFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GaussLobattoIntegral_Range", Description="Create a range of GaussLobattoIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussLobattoIntegral_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

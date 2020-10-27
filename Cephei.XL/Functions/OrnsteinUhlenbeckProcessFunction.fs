@@ -39,7 +39,7 @@ module OrnsteinUhlenbeckProcessFunction =
     *)
     [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_diffusion", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "OrnsteinUhlenbeckProcess")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OrnsteinUhlenbeckProcess",Description = "OrnsteinUhlenbeckProcess")>] 
          ornsteinuhlenbeckprocess : obj)
@@ -87,7 +87,7 @@ module OrnsteinUhlenbeckProcessFunction =
     *)
     [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_drift", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "OrnsteinUhlenbeckProcess")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OrnsteinUhlenbeckProcess",Description = "OrnsteinUhlenbeckProcess")>] 
          ornsteinuhlenbeckprocess : obj)
@@ -135,7 +135,7 @@ module OrnsteinUhlenbeckProcessFunction =
     *)
     [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_expectation", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_expectation
-        ([<ExcelArgument(Name="Mnemonic",Description = "OrnsteinUhlenbeckProcess")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OrnsteinUhlenbeckProcess",Description = "OrnsteinUhlenbeckProcess")>] 
          ornsteinuhlenbeckprocess : obj)
@@ -189,7 +189,7 @@ module OrnsteinUhlenbeckProcessFunction =
     *)
     [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_level", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_level
-        ([<ExcelArgument(Name="Mnemonic",Description = "OrnsteinUhlenbeckProcess")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OrnsteinUhlenbeckProcess",Description = "OrnsteinUhlenbeckProcess")>] 
          ornsteinuhlenbeckprocess : obj)
@@ -225,15 +225,15 @@ module OrnsteinUhlenbeckProcessFunction =
     *)
     [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "OrnsteinUhlenbeckProcess")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="speed",Description = "double")>] 
          speed : obj)
         ([<ExcelArgument(Name="vol",Description = "double")>] 
          vol : obj)
-        ([<ExcelArgument(Name="x0",Description = "OrnsteinUhlenbeckProcess")>] 
+        ([<ExcelArgument(Name="x0",Description = "double or empty")>] 
          x0 : obj)
-        ([<ExcelArgument(Name="level",Description = "OrnsteinUhlenbeckProcess")>] 
+        ([<ExcelArgument(Name="level",Description = "double or empty")>] 
          level : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -280,7 +280,7 @@ module OrnsteinUhlenbeckProcessFunction =
     *)
     [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_speed", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_speed
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OrnsteinUhlenbeckProcess",Description = "OrnsteinUhlenbeckProcess")>] 
          ornsteinuhlenbeckprocess : obj)
@@ -316,13 +316,13 @@ module OrnsteinUhlenbeckProcessFunction =
     *)
     [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_stdDeviation", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_stdDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OrnsteinUhlenbeckProcess",Description = "OrnsteinUhlenbeckProcess")>] 
          ornsteinuhlenbeckprocess : obj)
         ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
+        ([<ExcelArgument(Name="x0",Description = "double or empty")>] 
          x0 : obj)
         ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
@@ -370,7 +370,7 @@ module OrnsteinUhlenbeckProcessFunction =
     *)
     [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_variance", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OrnsteinUhlenbeckProcess",Description = "OrnsteinUhlenbeckProcess")>] 
          ornsteinuhlenbeckprocess : obj)
@@ -424,7 +424,7 @@ module OrnsteinUhlenbeckProcessFunction =
     *)
     [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_volatility", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OrnsteinUhlenbeckProcess",Description = "OrnsteinUhlenbeckProcess")>] 
          ornsteinuhlenbeckprocess : obj)
@@ -460,7 +460,7 @@ module OrnsteinUhlenbeckProcessFunction =
     *)
     [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_x0", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_x0
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OrnsteinUhlenbeckProcess",Description = "OrnsteinUhlenbeckProcess")>] 
          ornsteinuhlenbeckprocess : obj)
@@ -496,7 +496,7 @@ module OrnsteinUhlenbeckProcessFunction =
     *)
     [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_apply1", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_apply1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OrnsteinUhlenbeckProcess",Description = "OrnsteinUhlenbeckProcess")>] 
          ornsteinuhlenbeckprocess : obj)
@@ -544,11 +544,11 @@ module OrnsteinUhlenbeckProcessFunction =
     *)
     [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_apply", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OrnsteinUhlenbeckProcess",Description = "OrnsteinUhlenbeckProcess")>] 
          ornsteinuhlenbeckprocess : obj)
-        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
+        ([<ExcelArgument(Name="x0",Description = "double or empty")>] 
          x0 : obj)
         ([<ExcelArgument(Name="dx",Description = "double")>] 
          dx : obj)
@@ -592,7 +592,7 @@ module OrnsteinUhlenbeckProcessFunction =
     *)
     [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_evolve", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_evolve
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OrnsteinUhlenbeckProcess",Description = "OrnsteinUhlenbeckProcess")>] 
          ornsteinuhlenbeckprocess : obj)
@@ -652,13 +652,13 @@ module OrnsteinUhlenbeckProcessFunction =
     *)
     [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_evolve1", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_evolve1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OrnsteinUhlenbeckProcess",Description = "OrnsteinUhlenbeckProcess")>] 
          ornsteinuhlenbeckprocess : obj)
         ([<ExcelArgument(Name="t0",Description = "double")>] 
          t0 : obj)
-        ([<ExcelArgument(Name="x0",Description = "Vector")>] 
+        ([<ExcelArgument(Name="x0",Description = "double or empty")>] 
          x0 : obj)
         ([<ExcelArgument(Name="dt",Description = "double")>] 
          dt : obj)
@@ -712,7 +712,7 @@ module OrnsteinUhlenbeckProcessFunction =
     *)
     [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_initialValues", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_initialValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OrnsteinUhlenbeckProcess",Description = "OrnsteinUhlenbeckProcess")>] 
          ornsteinuhlenbeckprocess : obj)
@@ -748,7 +748,7 @@ module OrnsteinUhlenbeckProcessFunction =
     *)
     [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_size", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OrnsteinUhlenbeckProcess",Description = "OrnsteinUhlenbeckProcess")>] 
          ornsteinuhlenbeckprocess : obj)
@@ -784,7 +784,7 @@ module OrnsteinUhlenbeckProcessFunction =
     *)
     [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_covariance", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OrnsteinUhlenbeckProcess",Description = "OrnsteinUhlenbeckProcess")>] 
          ornsteinuhlenbeckprocess : obj)
@@ -838,7 +838,7 @@ module OrnsteinUhlenbeckProcessFunction =
     *)
     [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_factors", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_factors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OrnsteinUhlenbeckProcess",Description = "OrnsteinUhlenbeckProcess")>] 
          ornsteinuhlenbeckprocess : obj)
@@ -874,7 +874,7 @@ module OrnsteinUhlenbeckProcessFunction =
     *)
     [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_registerWith", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OrnsteinUhlenbeckProcess",Description = "OrnsteinUhlenbeckProcess")>] 
          ornsteinuhlenbeckprocess : obj)
@@ -916,7 +916,7 @@ module OrnsteinUhlenbeckProcessFunction =
     *)
     [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_time", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OrnsteinUhlenbeckProcess",Description = "OrnsteinUhlenbeckProcess")>] 
          ornsteinuhlenbeckprocess : obj)
@@ -958,7 +958,7 @@ module OrnsteinUhlenbeckProcessFunction =
     *)
     [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_unregisterWith", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OrnsteinUhlenbeckProcess",Description = "OrnsteinUhlenbeckProcess")>] 
          ornsteinuhlenbeckprocess : obj)
@@ -1000,7 +1000,7 @@ module OrnsteinUhlenbeckProcessFunction =
     *)
     [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_update", Description="Create a OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OrnsteinUhlenbeckProcess",Description = "OrnsteinUhlenbeckProcess")>] 
          ornsteinuhlenbeckprocess : obj)
@@ -1033,9 +1033,9 @@ module OrnsteinUhlenbeckProcessFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_OrnsteinUhlenbeckProcess_Range", Description="Create a range of OrnsteinUhlenbeckProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OrnsteinUhlenbeckProcess_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

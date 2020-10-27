@@ -39,7 +39,7 @@ module HazardRateFunction =
     *)
     [<ExcelFunction(Name="_HazardRate_discountImpl", Description="Create a HazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HazardRate_discountImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HazardRate",Description = "HazardRate")>] 
          hazardrate : obj)
@@ -87,7 +87,7 @@ module HazardRateFunction =
     *)
     [<ExcelFunction(Name="_HazardRate_forwardImpl", Description="Create a HazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HazardRate_forwardImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HazardRate",Description = "HazardRate")>] 
          hazardrate : obj)
@@ -135,7 +135,7 @@ module HazardRateFunction =
     *)
     [<ExcelFunction(Name="_HazardRate_guess", Description="Create a HazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HazardRate_guess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HazardRate",Description = "HazardRate")>] 
          hazardrate : obj)
@@ -195,7 +195,7 @@ module HazardRateFunction =
     *)
     [<ExcelFunction(Name="_HazardRate_initialDate", Description="Create a HazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HazardRate_initialDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HazardRate",Description = "HazardRate")>] 
          hazardrate : obj)
@@ -237,7 +237,7 @@ module HazardRateFunction =
     *)
     [<ExcelFunction(Name="_HazardRate_initialValue", Description="Create a HazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HazardRate_initialValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HazardRate",Description = "HazardRate")>] 
          hazardrate : obj)
@@ -279,7 +279,7 @@ module HazardRateFunction =
     *)
     [<ExcelFunction(Name="_HazardRate_maxIterations", Description="Create a HazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HazardRate_maxIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HazardRate",Description = "HazardRate")>] 
          hazardrate : obj)
@@ -315,7 +315,7 @@ module HazardRateFunction =
     *)
     [<ExcelFunction(Name="_HazardRate_maxValueAfter", Description="Create a HazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HazardRate_maxValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HazardRate",Description = "HazardRate")>] 
          hazardrate : obj)
@@ -375,7 +375,7 @@ module HazardRateFunction =
     *)
     [<ExcelFunction(Name="_HazardRate_minValueAfter", Description="Create a HazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HazardRate_minValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HazardRate",Description = "HazardRate")>] 
          hazardrate : obj)
@@ -435,11 +435,11 @@ module HazardRateFunction =
     *)
     [<ExcelFunction(Name="_HazardRate_updateGuess", Description="Create a HazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HazardRate_updateGuess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HazardRate",Description = "HazardRate")>] 
          hazardrate : obj)
-        ([<ExcelArgument(Name="data",Description = "double")>] 
+        ([<ExcelArgument(Name="data",Description = "double range")>] 
          data : obj)
         ([<ExcelArgument(Name="rate",Description = "double")>] 
          rate : obj)
@@ -489,7 +489,7 @@ module HazardRateFunction =
     *)
     [<ExcelFunction(Name="_HazardRate_zeroYieldImpl", Description="Create a HazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HazardRate_zeroYieldImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HazardRate",Description = "HazardRate")>] 
          hazardrate : obj)
@@ -534,9 +534,9 @@ module HazardRateFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_HazardRate_Range", Description="Create a range of HazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HazardRate_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

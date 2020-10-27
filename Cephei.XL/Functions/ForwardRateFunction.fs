@@ -39,7 +39,7 @@ module ForwardRateFunction =
     *)
     [<ExcelFunction(Name="_ForwardRate_discountImpl", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_discountImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardRate",Description = "ForwardRate")>] 
          forwardrate : obj)
@@ -87,7 +87,7 @@ module ForwardRateFunction =
     *)
     [<ExcelFunction(Name="_ForwardRate_forwardImpl", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_forwardImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardRate",Description = "ForwardRate")>] 
          forwardrate : obj)
@@ -135,7 +135,7 @@ module ForwardRateFunction =
     *)
     [<ExcelFunction(Name="_ForwardRate_guess", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_guess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardRate",Description = "ForwardRate")>] 
          forwardrate : obj)
@@ -195,7 +195,7 @@ module ForwardRateFunction =
     *)
     [<ExcelFunction(Name="_ForwardRate_initialDate", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_initialDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardRate",Description = "ForwardRate")>] 
          forwardrate : obj)
@@ -237,7 +237,7 @@ module ForwardRateFunction =
     *)
     [<ExcelFunction(Name="_ForwardRate_initialValue", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_initialValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardRate",Description = "ForwardRate")>] 
          forwardrate : obj)
@@ -279,7 +279,7 @@ module ForwardRateFunction =
     *)
     [<ExcelFunction(Name="_ForwardRate_maxIterations", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_maxIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardRate",Description = "ForwardRate")>] 
          forwardrate : obj)
@@ -315,7 +315,7 @@ module ForwardRateFunction =
     *)
     [<ExcelFunction(Name="_ForwardRate_maxValueAfter", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_maxValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardRate",Description = "ForwardRate")>] 
          forwardrate : obj)
@@ -375,7 +375,7 @@ module ForwardRateFunction =
     *)
     [<ExcelFunction(Name="_ForwardRate_minValueAfter", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_minValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardRate",Description = "ForwardRate")>] 
          forwardrate : obj)
@@ -435,11 +435,11 @@ module ForwardRateFunction =
     *)
     [<ExcelFunction(Name="_ForwardRate_updateGuess", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_updateGuess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardRate",Description = "ForwardRate")>] 
          forwardrate : obj)
-        ([<ExcelArgument(Name="data",Description = "double")>] 
+        ([<ExcelArgument(Name="data",Description = "double range")>] 
          data : obj)
         ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
@@ -489,7 +489,7 @@ module ForwardRateFunction =
     *)
     [<ExcelFunction(Name="_ForwardRate_zeroYieldImpl", Description="Create a ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_zeroYieldImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardRate",Description = "ForwardRate")>] 
          forwardrate : obj)
@@ -534,9 +534,9 @@ module ForwardRateFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ForwardRate_Range", Description="Create a range of ForwardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardRate_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

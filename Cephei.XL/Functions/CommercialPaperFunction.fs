@@ -39,7 +39,7 @@ module CommercialPaperFunction =
     *)
     [<ExcelFunction(Name="_CommercialPaper", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "CommercialPaper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Type",Description = "Loan.Type: Deposit, Loan")>] 
          Type : obj)
@@ -124,7 +124,7 @@ module CommercialPaperFunction =
     *)
     [<ExcelFunction(Name="_CommercialPaper_fixedLeg", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_fixedLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CommercialPaper",Description = "CommercialPaper")>] 
          commercialpaper : obj)
@@ -160,7 +160,7 @@ module CommercialPaperFunction =
     *)
     [<ExcelFunction(Name="_CommercialPaper_principalLeg", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_principalLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CommercialPaper",Description = "CommercialPaper")>] 
          commercialpaper : obj)
@@ -196,7 +196,7 @@ module CommercialPaperFunction =
     *)
     [<ExcelFunction(Name="_CommercialPaper_isExpired", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CommercialPaper",Description = "CommercialPaper")>] 
          commercialpaper : obj)
@@ -232,7 +232,7 @@ module CommercialPaperFunction =
     *)
     [<ExcelFunction(Name="_CommercialPaper_CASH", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CommercialPaper",Description = "CommercialPaper")>] 
          commercialpaper : obj)
@@ -268,7 +268,7 @@ module CommercialPaperFunction =
     *)
     [<ExcelFunction(Name="_CommercialPaper_errorEstimate", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CommercialPaper",Description = "CommercialPaper")>] 
          commercialpaper : obj)
@@ -304,7 +304,7 @@ module CommercialPaperFunction =
     *)
     [<ExcelFunction(Name="_CommercialPaper_NPV", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CommercialPaper",Description = "CommercialPaper")>] 
          commercialpaper : obj)
@@ -340,7 +340,7 @@ module CommercialPaperFunction =
     *)
     [<ExcelFunction(Name="_CommercialPaper_result", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CommercialPaper",Description = "CommercialPaper")>] 
          commercialpaper : obj)
@@ -382,7 +382,7 @@ module CommercialPaperFunction =
     *)
     [<ExcelFunction(Name="_CommercialPaper_setPricingEngine", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CommercialPaper",Description = "CommercialPaper")>] 
          commercialpaper : obj)
@@ -424,7 +424,7 @@ module CommercialPaperFunction =
     *)
     [<ExcelFunction(Name="_CommercialPaper_valuationDate", Description="Create a CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CommercialPaper",Description = "CommercialPaper")>] 
          commercialpaper : obj)
@@ -457,9 +457,9 @@ module CommercialPaperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CommercialPaper_Range", Description="Create a range of CommercialPaper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CommercialPaper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

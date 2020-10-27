@@ -39,7 +39,7 @@ module CumulativeBinomialDistributionFunction =
     *)
     [<ExcelFunction(Name="_CumulativeBinomialDistribution", Description="Create a CumulativeBinomialDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeBinomialDistribution_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "CumulativeBinomialDistribution")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="p",Description = "double")>] 
          p : obj)
@@ -82,7 +82,7 @@ module CumulativeBinomialDistributionFunction =
     *)
     [<ExcelFunction(Name="_CumulativeBinomialDistribution_value", Description="Create a CumulativeBinomialDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeBinomialDistribution_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CumulativeBinomialDistribution",Description = "CumulativeBinomialDistribution")>] 
          cumulativebinomialdistribution : obj)
@@ -121,9 +121,9 @@ module CumulativeBinomialDistributionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CumulativeBinomialDistribution_Range", Description="Create a range of CumulativeBinomialDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeBinomialDistribution_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

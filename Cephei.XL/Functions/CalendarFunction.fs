@@ -39,7 +39,7 @@ module CalendarFunction =
     *)
     [<ExcelFunction(Name="_Calendar_addedHolidays", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_addedHolidays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Calendar",Description = "Calendar")>] 
          calendar : obj)
@@ -75,7 +75,7 @@ module CalendarFunction =
     *)
     [<ExcelFunction(Name="_Calendar_addHoliday", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_addHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Calendar",Description = "Calendar")>] 
          calendar : obj)
@@ -117,7 +117,7 @@ module CalendarFunction =
     *)
     [<ExcelFunction(Name="_Calendar_adjust", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_adjust
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Calendar",Description = "Calendar")>] 
          calendar : obj)
@@ -165,7 +165,7 @@ module CalendarFunction =
     *)
     [<ExcelFunction(Name="_Calendar_advance1", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_advance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Calendar",Description = "Calendar")>] 
          calendar : obj)
@@ -231,7 +231,7 @@ module CalendarFunction =
     *)
     [<ExcelFunction(Name="_Calendar_advance", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_advance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Calendar",Description = "Calendar")>] 
          calendar : obj)
@@ -291,7 +291,7 @@ module CalendarFunction =
     *)
     [<ExcelFunction(Name="_Calendar_businessDaysBetween", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_businessDaysBetween
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Calendar",Description = "Calendar")>] 
          calendar : obj)
@@ -351,7 +351,7 @@ module CalendarFunction =
     *)
     [<ExcelFunction(Name="_Calendar_calendar", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Calendar",Description = "Calendar")>] 
          calendar : obj)
@@ -387,7 +387,7 @@ module CalendarFunction =
     *)
     [<ExcelFunction(Name="_Calendar", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -418,7 +418,7 @@ module CalendarFunction =
     *)
     [<ExcelFunction(Name="_Calendar1", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="c",Description = "Calendar")>] 
          c : obj)
@@ -455,7 +455,7 @@ module CalendarFunction =
     *)
     [<ExcelFunction(Name="_Calendar_empty", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Calendar",Description = "Calendar")>] 
          calendar : obj)
@@ -491,7 +491,7 @@ module CalendarFunction =
     *)
     [<ExcelFunction(Name="_Calendar_endOfMonth", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Calendar",Description = "Calendar")>] 
          calendar : obj)
@@ -533,7 +533,7 @@ module CalendarFunction =
     *)
     [<ExcelFunction(Name="_Calendar_Equals", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Calendar",Description = "Calendar")>] 
          calendar : obj)
@@ -575,7 +575,7 @@ module CalendarFunction =
     *)
     [<ExcelFunction(Name="_Calendar_isBusinessDay", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_isBusinessDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Calendar",Description = "Calendar")>] 
          calendar : obj)
@@ -617,7 +617,7 @@ module CalendarFunction =
     *)
     [<ExcelFunction(Name="_Calendar_isEndOfMonth", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_isEndOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Calendar",Description = "Calendar")>] 
          calendar : obj)
@@ -659,7 +659,7 @@ module CalendarFunction =
     *)
     [<ExcelFunction(Name="_Calendar_isHoliday", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_isHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Calendar",Description = "Calendar")>] 
          calendar : obj)
@@ -701,7 +701,7 @@ module CalendarFunction =
     *)
     [<ExcelFunction(Name="_Calendar_isWeekend", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_isWeekend
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Calendar",Description = "Calendar")>] 
          calendar : obj)
@@ -745,7 +745,7 @@ module CalendarFunction =
     *)
     [<ExcelFunction(Name="_Calendar_name", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Calendar",Description = "Calendar")>] 
          calendar : obj)
@@ -781,7 +781,7 @@ module CalendarFunction =
     *)
     [<ExcelFunction(Name="_Calendar_removedHolidays", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_removedHolidays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Calendar",Description = "Calendar")>] 
          calendar : obj)
@@ -817,7 +817,7 @@ module CalendarFunction =
     *)
     [<ExcelFunction(Name="_Calendar_removeHoliday", Description="Create a Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_removeHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Calendar",Description = "Calendar")>] 
          calendar : obj)
@@ -856,9 +856,9 @@ module CalendarFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Calendar_Range", Description="Create a range of Calendar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Calendar_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,7 +39,7 @@ module GammaDistributionFunction =
     *)
     [<ExcelFunction(Name="_GammaDistribution", Description="Create a GammaDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GammaDistribution_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "GammaDistribution")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
@@ -76,7 +76,7 @@ module GammaDistributionFunction =
     *)
     [<ExcelFunction(Name="_GammaDistribution_value", Description="Create a GammaDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GammaDistribution_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GammaDistribution",Description = "GammaDistribution")>] 
          gammadistribution : obj)
@@ -115,9 +115,9 @@ module GammaDistributionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GammaDistribution_Range", Description="Create a range of GammaDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GammaDistribution_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -40,19 +40,19 @@ module FdBlackScholesRebateEngineFunction =
     *)
     [<ExcelFunction(Name="_FdBlackScholesRebateEngine", Description="Create a FdBlackScholesRebateEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdBlackScholesRebateEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdBlackScholesRebateEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="tGrid",Description = "FdBlackScholesRebateEngine")>] 
+        ([<ExcelArgument(Name="tGrid",Description = "int or empty")>] 
          tGrid : obj)
-        ([<ExcelArgument(Name="xGrid",Description = "FdBlackScholesRebateEngine")>] 
+        ([<ExcelArgument(Name="xGrid",Description = "int or empty")>] 
          xGrid : obj)
-        ([<ExcelArgument(Name="dampingSteps",Description = "FdBlackScholesRebateEngine")>] 
+        ([<ExcelArgument(Name="dampingSteps",Description = "int or empty")>] 
          dampingSteps : obj)
-        ([<ExcelArgument(Name="schemeDesc",Description = "FdBlackScholesRebateEngine")>] 
+        ([<ExcelArgument(Name="schemeDesc",Description = "FdmSchemeDesc or empty")>] 
          schemeDesc : obj)
-        ([<ExcelArgument(Name="localVol",Description = "FdBlackScholesRebateEngine")>] 
+        ([<ExcelArgument(Name="localVol",Description = "bool or empty")>] 
          localVol : obj)
         ([<ExcelArgument(Name="illegalLocalVolOverwrite",Description = "double")>] 
          illegalLocalVolOverwrite : obj)
@@ -110,9 +110,9 @@ module FdBlackScholesRebateEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdBlackScholesRebateEngine_Range", Description="Create a range of FdBlackScholesRebateEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdBlackScholesRebateEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

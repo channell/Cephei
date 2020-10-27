@@ -39,7 +39,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_baseCPI", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_baseCPI
-        ([<ExcelArgument(Name="Mnemonic",Description = "CPIBond")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -75,7 +75,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "CPIBond")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
@@ -93,23 +93,23 @@ module CPIBondFunction =
          observationInterpolation : obj)
         ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
-        ([<ExcelArgument(Name="fixedRate",Description = "double")>] 
+        ([<ExcelArgument(Name="fixedRate",Description = "double range")>] 
          fixedRate : obj)
         ([<ExcelArgument(Name="accrualDayCounter",Description = "DayCounter")>] 
          accrualDayCounter : obj)
-        ([<ExcelArgument(Name="paymentConvention",Description = "CPIBond")>] 
+        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest or empty")>] 
          paymentConvention : obj)
-        ([<ExcelArgument(Name="issueDate",Description = "CPIBond")>] 
+        ([<ExcelArgument(Name="issueDate",Description = "Date or empty")>] 
          issueDate : obj)
-        ([<ExcelArgument(Name="paymentCalendar",Description = "CPIBond")>] 
+        ([<ExcelArgument(Name="paymentCalendar",Description = "Calendar or empty")>] 
          paymentCalendar : obj)
-        ([<ExcelArgument(Name="exCouponPeriod",Description = "CPIBond")>] 
+        ([<ExcelArgument(Name="exCouponPeriod",Description = "Period or empty")>] 
          exCouponPeriod : obj)
-        ([<ExcelArgument(Name="exCouponCalendar",Description = "CPIBond")>] 
+        ([<ExcelArgument(Name="exCouponCalendar",Description = "Calendar or empty")>] 
          exCouponCalendar : obj)
-        ([<ExcelArgument(Name="exCouponConvention",Description = "CPIBond")>] 
+        ([<ExcelArgument(Name="exCouponConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest or empty")>] 
          exCouponConvention : obj)
-        ([<ExcelArgument(Name="exCouponEndOfMonth",Description = "CPIBond")>] 
+        ([<ExcelArgument(Name="exCouponEndOfMonth",Description = "bool or empty")>] 
          exCouponEndOfMonth : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
@@ -220,7 +220,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_cpiIndex", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_cpiIndex
-        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -256,7 +256,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_dayCounter", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -292,7 +292,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_frequency", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -328,7 +328,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_growthOnly", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_growthOnly
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -364,7 +364,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_observationInterpolation", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_observationInterpolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -400,7 +400,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_observationLag", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_observationLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -436,7 +436,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_accruedAmount", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_accruedAmount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -478,7 +478,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_calendar", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -514,7 +514,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_cashflows", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_cashflows
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -550,7 +550,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_cleanPrice", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_cleanPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -586,7 +586,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_cleanPrice1", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_cleanPrice1
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -652,7 +652,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_dirtyPrice1", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_dirtyPrice1
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -718,7 +718,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_dirtyPrice", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_dirtyPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -754,7 +754,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_isExpired", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -790,7 +790,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_issueDate", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_issueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -826,7 +826,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_isTradable", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_isTradable
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -868,7 +868,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_maturityDate", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -904,7 +904,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_nextCashFlowDate", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_nextCashFlowDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -946,7 +946,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_nextCouponRate", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_nextCouponRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -988,7 +988,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_notional", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_notional
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -1030,7 +1030,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_notionals", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_notionals
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -1066,7 +1066,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_previousCashFlowDate", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_previousCashFlowDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -1108,7 +1108,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_previousCouponRate", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_previousCouponRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -1150,7 +1150,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_redemption", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_redemption
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -1186,7 +1186,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_redemptions", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_redemptions
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -1222,7 +1222,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_settlementDate", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_settlementDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -1264,7 +1264,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_settlementDays", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -1300,7 +1300,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_settlementValue", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_settlementValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -1342,7 +1342,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_settlementValue1", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_settlementValue1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -1378,7 +1378,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_startDate", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -1414,7 +1414,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_yield1", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_yield1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -1492,7 +1492,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_yield", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_yield
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -1558,7 +1558,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_CASH", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -1594,7 +1594,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_errorEstimate", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -1630,7 +1630,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_NPV", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -1666,7 +1666,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_result", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -1708,7 +1708,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_setPricingEngine", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -1750,7 +1750,7 @@ module CPIBondFunction =
     *)
     [<ExcelFunction(Name="_CPIBond_valuationDate", Description="Create a CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPIBond",Description = "CPIBond")>] 
          cpibond : obj)
@@ -1783,9 +1783,9 @@ module CPIBondFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CPIBond_Range", Description="Create a range of CPIBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPIBond_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

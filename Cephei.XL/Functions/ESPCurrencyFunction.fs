@@ -39,7 +39,7 @@ module ESPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ESPCurrency", Description="Create a ESPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ESPCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ESPCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module ESPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ESPCurrency_code", Description="Create a ESPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ESPCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ESPCurrency",Description = "ESPCurrency")>] 
          espcurrency : obj)
@@ -106,7 +106,7 @@ module ESPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ESPCurrency_empty", Description="Create a ESPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ESPCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ESPCurrency",Description = "ESPCurrency")>] 
          espcurrency : obj)
@@ -142,7 +142,7 @@ module ESPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ESPCurrency_Equals", Description="Create a ESPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ESPCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ESPCurrency",Description = "ESPCurrency")>] 
          espcurrency : obj)
@@ -184,7 +184,7 @@ module ESPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ESPCurrency_format", Description="Create a ESPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ESPCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ESPCurrency",Description = "ESPCurrency")>] 
          espcurrency : obj)
@@ -220,7 +220,7 @@ module ESPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ESPCurrency_fractionsPerUnit", Description="Create a ESPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ESPCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ESPCurrency",Description = "ESPCurrency")>] 
          espcurrency : obj)
@@ -256,7 +256,7 @@ module ESPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ESPCurrency_fractionSymbol", Description="Create a ESPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ESPCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ESPCurrency",Description = "ESPCurrency")>] 
          espcurrency : obj)
@@ -292,7 +292,7 @@ module ESPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ESPCurrency_name", Description="Create a ESPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ESPCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ESPCurrency",Description = "ESPCurrency")>] 
          espcurrency : obj)
@@ -328,7 +328,7 @@ module ESPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ESPCurrency_numericCode", Description="Create a ESPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ESPCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ESPCurrency",Description = "ESPCurrency")>] 
          espcurrency : obj)
@@ -364,7 +364,7 @@ module ESPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ESPCurrency_rounding", Description="Create a ESPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ESPCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ESPCurrency",Description = "ESPCurrency")>] 
          espcurrency : obj)
@@ -400,7 +400,7 @@ module ESPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ESPCurrency_symbol", Description="Create a ESPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ESPCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ESPCurrency",Description = "ESPCurrency")>] 
          espcurrency : obj)
@@ -436,7 +436,7 @@ module ESPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ESPCurrency_ToString", Description="Create a ESPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ESPCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ESPCurrency",Description = "ESPCurrency")>] 
          espcurrency : obj)
@@ -472,7 +472,7 @@ module ESPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ESPCurrency_triangulationCurrency", Description="Create a ESPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ESPCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ESPCurrency",Description = "ESPCurrency")>] 
          espcurrency : obj)
@@ -505,9 +505,9 @@ module ESPCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ESPCurrency_Range", Description="Create a range of ESPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ESPCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

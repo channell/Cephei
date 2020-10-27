@@ -39,7 +39,7 @@ module MaxNumberFuncEvalExceededFunction =
     *)
     [<ExcelFunction(Name="_MaxNumberFuncEvalExceeded", Description="Create a MaxNumberFuncEvalExceeded",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MaxNumberFuncEvalExceeded_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "MaxNumberFuncEvalExceeded")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="message",Description = "string")>] 
          message : obj)
@@ -82,7 +82,7 @@ module MaxNumberFuncEvalExceededFunction =
     *)
     [<ExcelFunction(Name="_MaxNumberFuncEvalExceeded1", Description="Create a MaxNumberFuncEvalExceeded",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MaxNumberFuncEvalExceeded_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "MaxNumberFuncEvalExceeded")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="message",Description = "string")>] 
          message : obj)
@@ -119,7 +119,7 @@ module MaxNumberFuncEvalExceededFunction =
     *)
     [<ExcelFunction(Name="_MaxNumberFuncEvalExceeded2", Description="Create a MaxNumberFuncEvalExceeded",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MaxNumberFuncEvalExceeded_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "MaxNumberFuncEvalExceeded")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module MaxNumberFuncEvalExceededFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MaxNumberFuncEvalExceeded_Range", Description="Create a range of MaxNumberFuncEvalExceeded",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MaxNumberFuncEvalExceeded_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

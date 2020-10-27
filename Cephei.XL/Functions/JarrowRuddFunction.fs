@@ -39,7 +39,7 @@ module JarrowRuddFunction =
     *)
     [<ExcelFunction(Name="_JarrowRudd_factory", Description="Create a JarrowRudd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JarrowRudd_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "JarrowRudd")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JarrowRudd",Description = "JarrowRudd")>] 
          jarrowrudd : obj)
@@ -99,7 +99,7 @@ module JarrowRuddFunction =
     *)
     [<ExcelFunction(Name="_JarrowRudd1", Description="Create a JarrowRudd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JarrowRudd_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "JarrowRudd")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
@@ -154,7 +154,7 @@ module JarrowRuddFunction =
     *)
     [<ExcelFunction(Name="_JarrowRudd", Description="Create a JarrowRudd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JarrowRudd_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "JarrowRudd")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -185,7 +185,7 @@ module JarrowRuddFunction =
     *)
     [<ExcelFunction(Name="_JarrowRudd_probability", Description="Create a JarrowRudd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JarrowRudd_probability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JarrowRudd",Description = "JarrowRudd")>] 
          jarrowrudd : obj)
@@ -239,7 +239,7 @@ module JarrowRuddFunction =
     *)
     [<ExcelFunction(Name="_JarrowRudd_underlying", Description="Create a JarrowRudd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JarrowRudd_underlying
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JarrowRudd",Description = "JarrowRudd")>] 
          jarrowrudd : obj)
@@ -287,7 +287,7 @@ module JarrowRuddFunction =
     *)
     [<ExcelFunction(Name="_JarrowRudd_descendant", Description="Create a JarrowRudd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JarrowRudd_descendant
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JarrowRudd",Description = "JarrowRudd")>] 
          jarrowrudd : obj)
@@ -341,7 +341,7 @@ module JarrowRuddFunction =
     *)
     [<ExcelFunction(Name="_JarrowRudd_size", Description="Create a JarrowRudd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JarrowRudd_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JarrowRudd",Description = "JarrowRudd")>] 
          jarrowrudd : obj)
@@ -383,7 +383,7 @@ module JarrowRuddFunction =
     *)
     [<ExcelFunction(Name="_JarrowRudd_columns", Description="Create a JarrowRudd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JarrowRudd_columns
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JarrowRudd",Description = "JarrowRudd")>] 
          jarrowrudd : obj)
@@ -416,9 +416,9 @@ module JarrowRuddFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_JarrowRudd_Range", Description="Create a range of JarrowRudd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JarrowRudd_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

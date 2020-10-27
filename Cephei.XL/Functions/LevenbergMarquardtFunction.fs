@@ -40,7 +40,7 @@ module LevenbergMarquardtFunction =
     *)
     [<ExcelFunction(Name="_LevenbergMarquardt_fcn", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LevenbergMarquardt_fcn
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LevenbergMarquardt",Description = "LevenbergMarquardt")>] 
          levenbergmarquardt : obj)
@@ -100,7 +100,7 @@ module LevenbergMarquardtFunction =
     *)
     [<ExcelFunction(Name="_LevenbergMarquardt_getInfo", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LevenbergMarquardt_getInfo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LevenbergMarquardt",Description = "LevenbergMarquardt")>] 
          levenbergmarquardt : obj)
@@ -136,7 +136,7 @@ module LevenbergMarquardtFunction =
     *)
     [<ExcelFunction(Name="_LevenbergMarquardt_jacFcn", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LevenbergMarquardt_jacFcn
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LevenbergMarquardt",Description = "LevenbergMarquardt")>] 
          levenbergmarquardt : obj)
@@ -196,7 +196,7 @@ module LevenbergMarquardtFunction =
     *)
     [<ExcelFunction(Name="_LevenbergMarquardt", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LevenbergMarquardt_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "LevenbergMarquardt")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -227,7 +227,7 @@ module LevenbergMarquardtFunction =
     *)
     [<ExcelFunction(Name="_LevenbergMarquardt1", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LevenbergMarquardt_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "LevenbergMarquardt")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="epsfcn",Description = "double")>] 
          epsfcn : obj)
@@ -235,7 +235,7 @@ module LevenbergMarquardtFunction =
          xtol : obj)
         ([<ExcelArgument(Name="gtol",Description = "double")>] 
          gtol : obj)
-        ([<ExcelArgument(Name="useCostFunctionsJacobian",Description = "LevenbergMarquardt")>] 
+        ([<ExcelArgument(Name="useCostFunctionsJacobian",Description = "bool or empty")>] 
          useCostFunctionsJacobian : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -282,7 +282,7 @@ module LevenbergMarquardtFunction =
     *)
     [<ExcelFunction(Name="_LevenbergMarquardt_minimize", Description="Create a LevenbergMarquardt",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LevenbergMarquardt_minimize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LevenbergMarquardt",Description = "LevenbergMarquardt")>] 
          levenbergmarquardt : obj)
@@ -327,9 +327,9 @@ module LevenbergMarquardtFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LevenbergMarquardt_Range", Description="Create a range of LevenbergMarquardt",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LevenbergMarquardt_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

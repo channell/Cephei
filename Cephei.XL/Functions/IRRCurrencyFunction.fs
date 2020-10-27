@@ -39,7 +39,7 @@ module IRRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IRRCurrency", Description="Create a IRRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IRRCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "IRRCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module IRRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IRRCurrency_code", Description="Create a IRRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IRRCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IRRCurrency",Description = "IRRCurrency")>] 
          irrcurrency : obj)
@@ -106,7 +106,7 @@ module IRRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IRRCurrency_empty", Description="Create a IRRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IRRCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IRRCurrency",Description = "IRRCurrency")>] 
          irrcurrency : obj)
@@ -142,7 +142,7 @@ module IRRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IRRCurrency_Equals", Description="Create a IRRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IRRCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IRRCurrency",Description = "IRRCurrency")>] 
          irrcurrency : obj)
@@ -184,7 +184,7 @@ module IRRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IRRCurrency_format", Description="Create a IRRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IRRCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IRRCurrency",Description = "IRRCurrency")>] 
          irrcurrency : obj)
@@ -220,7 +220,7 @@ module IRRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IRRCurrency_fractionsPerUnit", Description="Create a IRRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IRRCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IRRCurrency",Description = "IRRCurrency")>] 
          irrcurrency : obj)
@@ -256,7 +256,7 @@ module IRRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IRRCurrency_fractionSymbol", Description="Create a IRRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IRRCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IRRCurrency",Description = "IRRCurrency")>] 
          irrcurrency : obj)
@@ -292,7 +292,7 @@ module IRRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IRRCurrency_name", Description="Create a IRRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IRRCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IRRCurrency",Description = "IRRCurrency")>] 
          irrcurrency : obj)
@@ -328,7 +328,7 @@ module IRRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IRRCurrency_numericCode", Description="Create a IRRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IRRCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IRRCurrency",Description = "IRRCurrency")>] 
          irrcurrency : obj)
@@ -364,7 +364,7 @@ module IRRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IRRCurrency_rounding", Description="Create a IRRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IRRCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IRRCurrency",Description = "IRRCurrency")>] 
          irrcurrency : obj)
@@ -400,7 +400,7 @@ module IRRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IRRCurrency_symbol", Description="Create a IRRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IRRCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IRRCurrency",Description = "IRRCurrency")>] 
          irrcurrency : obj)
@@ -436,7 +436,7 @@ module IRRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IRRCurrency_ToString", Description="Create a IRRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IRRCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IRRCurrency",Description = "IRRCurrency")>] 
          irrcurrency : obj)
@@ -472,7 +472,7 @@ module IRRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IRRCurrency_triangulationCurrency", Description="Create a IRRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IRRCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IRRCurrency",Description = "IRRCurrency")>] 
          irrcurrency : obj)
@@ -505,9 +505,9 @@ module IRRCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_IRRCurrency_Range", Description="Create a range of IRRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IRRCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

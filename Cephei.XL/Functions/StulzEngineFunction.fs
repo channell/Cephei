@@ -40,7 +40,7 @@ module StulzEngineFunction =
     *)
     [<ExcelFunction(Name="_StulzEngine", Description="Create a StulzEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StulzEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "StulzEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="process1",Description = "GeneralizedBlackScholesProcess")>] 
          process1 : obj)
@@ -86,9 +86,9 @@ module StulzEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_StulzEngine_Range", Description="Create a range of StulzEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StulzEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

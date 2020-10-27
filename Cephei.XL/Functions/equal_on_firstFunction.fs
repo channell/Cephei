@@ -40,7 +40,7 @@ module equal_on_firstFunction =
     (*!! duplicate equals function
     [<ExcelFunction(Name="_equal_on_first_Equals", Description="Create a equal_on_first",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let equal_on_first_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="equal_on_first",Description = "equal_on_first")>] 
          equal_on_first : obj)
@@ -86,9 +86,9 @@ module equal_on_firstFunction =
             *)
     [<ExcelFunction(Name="_equal_on_first_Range", Description="Create a range of equal_on_first",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let equal_on_first_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

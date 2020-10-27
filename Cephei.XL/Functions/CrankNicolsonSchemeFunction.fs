@@ -39,17 +39,17 @@ module CrankNicolsonSchemeFunction =
     *)
     [<ExcelFunction(Name="_CrankNicolsonScheme", Description="Create a CrankNicolsonScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CrankNicolsonScheme_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "CrankNicolsonScheme")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="theta",Description = "CrankNicolsonScheme")>] 
+        ([<ExcelArgument(Name="theta",Description = "double or empty")>] 
          theta : obj)
         ([<ExcelArgument(Name="map",Description = "FdmLinearOpComposite")>] 
          map : obj)
-        ([<ExcelArgument(Name="bcSet",Description = "CrankNicolsonScheme")>] 
+        ([<ExcelArgument(Name="bcSet",Description = "FdmLinearOp or empty")>] 
          bcSet : obj)
-        ([<ExcelArgument(Name="relTol",Description = "CrankNicolsonScheme")>] 
+        ([<ExcelArgument(Name="relTol",Description = "double or empty")>] 
          relTol : obj)
-        ([<ExcelArgument(Name="solverType",Description = "CrankNicolsonScheme")>] 
+        ([<ExcelArgument(Name="solverType",Description = "ImplicitEulerScheme.SolverType: BiCGstab, GMRES or empty")>] 
          solverType : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -100,7 +100,7 @@ module CrankNicolsonSchemeFunction =
     *)
     [<ExcelFunction(Name="_CrankNicolsonScheme1", Description="Create a CrankNicolsonScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CrankNicolsonScheme_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "CrankNicolsonScheme")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -131,7 +131,7 @@ module CrankNicolsonSchemeFunction =
     *)
     [<ExcelFunction(Name="_CrankNicolsonScheme_factory", Description="Create a CrankNicolsonScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CrankNicolsonScheme_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "IMixedScheme")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CrankNicolsonScheme",Description = "CrankNicolsonScheme")>] 
          cranknicolsonscheme : obj)
@@ -139,7 +139,7 @@ module CrankNicolsonSchemeFunction =
          L : obj)
         ([<ExcelArgument(Name="bcs",Description = "Object")>] 
          bcs : obj)
-        ([<ExcelArgument(Name="additionalInputs",Description = "IMixedScheme")>] 
+        ([<ExcelArgument(Name="additionalInputs",Description = "Object[] or empty")>] 
          additionalInputs : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -185,7 +185,7 @@ module CrankNicolsonSchemeFunction =
     *)
     [<ExcelFunction(Name="_CrankNicolsonScheme_numberOfIterations", Description="Create a CrankNicolsonScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CrankNicolsonScheme_numberOfIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CrankNicolsonScheme",Description = "CrankNicolsonScheme")>] 
          cranknicolsonscheme : obj)
@@ -221,7 +221,7 @@ module CrankNicolsonSchemeFunction =
     *)
     [<ExcelFunction(Name="_CrankNicolsonScheme_setStep", Description="Create a CrankNicolsonScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CrankNicolsonScheme_setStep
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CrankNicolsonScheme",Description = "CrankNicolsonScheme")>] 
          cranknicolsonscheme : obj)
@@ -263,7 +263,7 @@ module CrankNicolsonSchemeFunction =
     *)
     [<ExcelFunction(Name="_CrankNicolsonScheme_step", Description="Create a CrankNicolsonScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CrankNicolsonScheme_step
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CrankNicolsonScheme",Description = "CrankNicolsonScheme")>] 
          cranknicolsonscheme : obj)
@@ -271,7 +271,7 @@ module CrankNicolsonSchemeFunction =
          a : obj)
         ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="theta",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="theta",Description = "double or empty")>] 
          theta : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -314,9 +314,9 @@ module CrankNicolsonSchemeFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CrankNicolsonScheme_Range", Description="Create a range of CrankNicolsonScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CrankNicolsonScheme_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

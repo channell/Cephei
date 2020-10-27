@@ -39,7 +39,7 @@ module FDDividendEngineShiftScaleFunction =
     *)
     [<ExcelFunction(Name="_FDDividendEngineShiftScale_factory2", Description="Create a FDDividendEngineShiftScale",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineShiftScale_factory2
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDDividendEngineShiftScale",Description = "FDDividendEngineShiftScale")>] 
          fddividendengineshiftscale : obj)
@@ -99,7 +99,7 @@ module FDDividendEngineShiftScaleFunction =
     *)
     [<ExcelFunction(Name="_FDDividendEngineShiftScale", Description="Create a FDDividendEngineShiftScale",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineShiftScale_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDDividendEngineShiftScale")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -154,7 +154,7 @@ module FDDividendEngineShiftScaleFunction =
     *)
     [<ExcelFunction(Name="_FDDividendEngineShiftScale_factory", Description="Create a FDDividendEngineShiftScale",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineShiftScale_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDDividendEngineShiftScale",Description = "FDDividendEngineShiftScale")>] 
          fddividendengineshiftscale : obj)
@@ -215,7 +215,7 @@ module FDDividendEngineShiftScaleFunction =
     *)
     [<ExcelFunction(Name="_FDDividendEngineShiftScale_setStepCondition", Description="Create a FDDividendEngineShiftScale",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineShiftScale_setStepCondition
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDDividendEngineShiftScale",Description = "FDDividendEngineShiftScale")>] 
          fddividendengineshiftscale : obj)
@@ -257,7 +257,7 @@ module FDDividendEngineShiftScaleFunction =
     *)
     [<ExcelFunction(Name="_FDDividendEngineShiftScale_ensureStrikeInGrid", Description="Create a FDDividendEngineShiftScale",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineShiftScale_ensureStrikeInGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDDividendEngineShiftScale",Description = "FDDividendEngineShiftScale")>] 
          fddividendengineshiftscale : obj)
@@ -293,7 +293,7 @@ module FDDividendEngineShiftScaleFunction =
     *)
     [<ExcelFunction(Name="_FDDividendEngineShiftScale_getResidualTime", Description="Create a FDDividendEngineShiftScale",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineShiftScale_getResidualTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDDividendEngineShiftScale",Description = "FDDividendEngineShiftScale")>] 
          fddividendengineshiftscale : obj)
@@ -329,7 +329,7 @@ module FDDividendEngineShiftScaleFunction =
     *)
     [<ExcelFunction(Name="_FDDividendEngineShiftScale_grid", Description="Create a FDDividendEngineShiftScale",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineShiftScale_grid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDDividendEngineShiftScale",Description = "FDDividendEngineShiftScale")>] 
          fddividendengineshiftscale : obj)
@@ -365,7 +365,7 @@ module FDDividendEngineShiftScaleFunction =
     *)
     [<ExcelFunction(Name="_FDDividendEngineShiftScale_intrinsicValues_", Description="Create a FDDividendEngineShiftScale",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineShiftScale_intrinsicValues_
-        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDDividendEngineShiftScale",Description = "FDDividendEngineShiftScale")>] 
          fddividendengineshiftscale : obj)
@@ -398,9 +398,9 @@ module FDDividendEngineShiftScaleFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FDDividendEngineShiftScale_Range", Description="Create a range of FDDividendEngineShiftScale",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineShiftScale_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

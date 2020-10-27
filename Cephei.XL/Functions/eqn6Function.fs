@@ -39,7 +39,7 @@ module eqn6Function =
     *)
     [<ExcelFunction(Name="_eqn6", Description="Create a eqn6",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let eqn6_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "eqn6")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
@@ -100,7 +100,7 @@ module eqn6Function =
     *)
     [<ExcelFunction(Name="_eqn6_value", Description="Create a eqn6",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let eqn6_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="eqn6",Description = "eqn6")>] 
          eqn6 : obj)
@@ -139,9 +139,9 @@ module eqn6Function =
             "<WIZ>"
     [<ExcelFunction(Name="_eqn6_Range", Description="Create a range of eqn6",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let eqn6_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

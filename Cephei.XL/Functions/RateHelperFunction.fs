@@ -39,7 +39,7 @@ module RateHelperFunction =
     *)
     [<ExcelFunction(Name="_RateHelper", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "RateHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="quote",Description = "double")>] 
          quote : obj)
@@ -76,7 +76,7 @@ module RateHelperFunction =
     *)
     [<ExcelFunction(Name="_RateHelper1", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "RateHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="quote",Description = "Quote")>] 
          quote : obj)
@@ -113,7 +113,7 @@ module RateHelperFunction =
     *)
     [<ExcelFunction(Name="_RateHelper2", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "RateHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -144,7 +144,7 @@ module RateHelperFunction =
     *)
     [<ExcelFunction(Name="_RateHelper_earliestDate", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_earliestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RateHelper",Description = "RateHelper")>] 
          ratehelper : obj)
@@ -180,7 +180,7 @@ module RateHelperFunction =
     *)
     [<ExcelFunction(Name="_RateHelper_impliedQuote", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_impliedQuote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RateHelper",Description = "RateHelper")>] 
          ratehelper : obj)
@@ -216,7 +216,7 @@ module RateHelperFunction =
     *)
     [<ExcelFunction(Name="_RateHelper_latestDate", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_latestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RateHelper",Description = "RateHelper")>] 
          ratehelper : obj)
@@ -252,7 +252,7 @@ module RateHelperFunction =
     *)
     [<ExcelFunction(Name="_RateHelper_latestRelevantDate", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_latestRelevantDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RateHelper",Description = "RateHelper")>] 
          ratehelper : obj)
@@ -288,7 +288,7 @@ module RateHelperFunction =
     *)
     [<ExcelFunction(Name="_RateHelper_maturityDate", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RateHelper",Description = "RateHelper")>] 
          ratehelper : obj)
@@ -324,7 +324,7 @@ module RateHelperFunction =
     *)
     [<ExcelFunction(Name="_RateHelper_pillarDate", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_pillarDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RateHelper",Description = "RateHelper")>] 
          ratehelper : obj)
@@ -360,7 +360,7 @@ module RateHelperFunction =
     *)
     [<ExcelFunction(Name="_RateHelper_quote", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_quote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RateHelper",Description = "RateHelper")>] 
          ratehelper : obj)
@@ -396,7 +396,7 @@ module RateHelperFunction =
     *)
     [<ExcelFunction(Name="_RateHelper_quoteError", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_quoteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RateHelper",Description = "RateHelper")>] 
          ratehelper : obj)
@@ -432,7 +432,7 @@ module RateHelperFunction =
     *)
     [<ExcelFunction(Name="_RateHelper_quoteIsValid", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_quoteIsValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RateHelper",Description = "RateHelper")>] 
          ratehelper : obj)
@@ -468,7 +468,7 @@ module RateHelperFunction =
     *)
     [<ExcelFunction(Name="_RateHelper_quoteValue", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_quoteValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RateHelper",Description = "RateHelper")>] 
          ratehelper : obj)
@@ -504,7 +504,7 @@ module RateHelperFunction =
     *)
     [<ExcelFunction(Name="_RateHelper_registerWith", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RateHelper",Description = "RateHelper")>] 
          ratehelper : obj)
@@ -546,7 +546,7 @@ module RateHelperFunction =
     *)
     [<ExcelFunction(Name="_RateHelper_setTermStructure", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_setTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RateHelper",Description = "RateHelper")>] 
          ratehelper : obj)
@@ -588,7 +588,7 @@ module RateHelperFunction =
     *)
     [<ExcelFunction(Name="_RateHelper_unregisterWith", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RateHelper",Description = "RateHelper")>] 
          ratehelper : obj)
@@ -630,7 +630,7 @@ module RateHelperFunction =
     *)
     [<ExcelFunction(Name="_RateHelper_update", Description="Create a RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RateHelper",Description = "RateHelper")>] 
          ratehelper : obj)
@@ -663,9 +663,9 @@ module RateHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_RateHelper_Range", Description="Create a range of RateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RateHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

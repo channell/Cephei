@@ -39,7 +39,7 @@ module DiscreteTrapezoidIntegralFunction =
     *)
     [<ExcelFunction(Name="_DiscreteTrapezoidIntegral_value", Description="Create a DiscreteTrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteTrapezoidIntegral_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscreteTrapezoidIntegral",Description = "DiscreteTrapezoidIntegral")>] 
          discretetrapezoidintegral : obj)
@@ -84,9 +84,9 @@ module DiscreteTrapezoidIntegralFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DiscreteTrapezoidIntegral_Range", Description="Create a range of DiscreteTrapezoidIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteTrapezoidIntegral_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

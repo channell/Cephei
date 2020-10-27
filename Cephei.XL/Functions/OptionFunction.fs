@@ -39,7 +39,7 @@ module OptionFunction =
     *)
     [<ExcelFunction(Name="_Option_exercise", Description="Create a Option",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Option_exercise
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Option",Description = "Option")>] 
          option : obj)
@@ -75,7 +75,7 @@ module OptionFunction =
     *)
     [<ExcelFunction(Name="_Option", Description="Create a Option",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Option_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Option")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="payoff",Description = "Payoff")>] 
          payoff : obj)
@@ -130,7 +130,7 @@ module OptionFunction =
     *)
     [<ExcelFunction(Name="_Option_payoff", Description="Create a Option",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Option_payoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Payoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Option",Description = "Option")>] 
          option : obj)
@@ -166,7 +166,7 @@ module OptionFunction =
     *)
     [<ExcelFunction(Name="_Option_CASH", Description="Create a Option",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Option_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Option",Description = "Option")>] 
          option : obj)
@@ -202,7 +202,7 @@ module OptionFunction =
     *)
     [<ExcelFunction(Name="_Option_errorEstimate", Description="Create a Option",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Option_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Option",Description = "Option")>] 
          option : obj)
@@ -238,7 +238,7 @@ module OptionFunction =
     *)
     [<ExcelFunction(Name="_Option_isExpired", Description="Create a Option",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Option_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Option",Description = "Option")>] 
          option : obj)
@@ -274,7 +274,7 @@ module OptionFunction =
     *)
     [<ExcelFunction(Name="_Option_NPV", Description="Create a Option",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Option_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Option",Description = "Option")>] 
          option : obj)
@@ -310,7 +310,7 @@ module OptionFunction =
     *)
     [<ExcelFunction(Name="_Option_result", Description="Create a Option",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Option_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Option",Description = "Option")>] 
          option : obj)
@@ -352,7 +352,7 @@ module OptionFunction =
     *)
     [<ExcelFunction(Name="_Option_setPricingEngine", Description="Create a Option",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Option_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Option",Description = "Option")>] 
          option : obj)
@@ -394,7 +394,7 @@ module OptionFunction =
     *)
     [<ExcelFunction(Name="_Option_valuationDate", Description="Create a Option",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Option_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Option",Description = "Option")>] 
          option : obj)
@@ -427,9 +427,9 @@ module OptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Option_Range", Description="Create a range of Option",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Option_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

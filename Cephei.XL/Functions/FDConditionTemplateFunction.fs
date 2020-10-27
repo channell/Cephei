@@ -40,7 +40,7 @@ module FDConditionTemplateFunction =
     *)
     [<ExcelFunction(Name="_FDConditionTemplate", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDConditionTemplate_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDConditionTemplate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -95,7 +95,7 @@ module FDConditionTemplateFunction =
     *)
     [<ExcelFunction(Name="_FDConditionTemplate1", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDConditionTemplate_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDConditionTemplate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -126,7 +126,7 @@ module FDConditionTemplateFunction =
     *)
     [<ExcelFunction(Name="_FDConditionTemplate_setStepCondition", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDConditionTemplate_setStepCondition
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDConditionTemplate",Description = "FDConditionTemplate")>] 
          fdconditiontemplate : obj)
@@ -168,7 +168,7 @@ module FDConditionTemplateFunction =
     *)
     [<ExcelFunction(Name="_FDConditionTemplate_ensureStrikeInGrid", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDConditionTemplate_ensureStrikeInGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDConditionTemplate",Description = "FDConditionTemplate")>] 
          fdconditiontemplate : obj)
@@ -204,7 +204,7 @@ module FDConditionTemplateFunction =
     *)
     [<ExcelFunction(Name="_FDConditionTemplate_factory", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDConditionTemplate_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDConditionTemplate",Description = "FDConditionTemplate")>] 
          fdconditiontemplate : obj)
@@ -264,7 +264,7 @@ module FDConditionTemplateFunction =
     *)
     [<ExcelFunction(Name="_FDConditionTemplate_getResidualTime", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDConditionTemplate_getResidualTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDConditionTemplate",Description = "FDConditionTemplate")>] 
          fdconditiontemplate : obj)
@@ -300,7 +300,7 @@ module FDConditionTemplateFunction =
     *)
     [<ExcelFunction(Name="_FDConditionTemplate_grid", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDConditionTemplate_grid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDConditionTemplate",Description = "FDConditionTemplate")>] 
          fdconditiontemplate : obj)
@@ -336,7 +336,7 @@ module FDConditionTemplateFunction =
     *)
     [<ExcelFunction(Name="_FDConditionTemplate_intrinsicValues_", Description="Create a FDConditionTemplate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDConditionTemplate_intrinsicValues_
-        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDConditionTemplate",Description = "FDConditionTemplate")>] 
          fdconditiontemplate : obj)
@@ -369,9 +369,9 @@ module FDConditionTemplateFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FDConditionTemplate_Range", Description="Create a range of FDConditionTemplate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDConditionTemplate_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

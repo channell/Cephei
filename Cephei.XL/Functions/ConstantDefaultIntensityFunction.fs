@@ -39,7 +39,7 @@ module ConstantDefaultIntensityFunction =
     *)
     [<ExcelFunction(Name="_ConstantDefaultIntensity", Description="Create a ConstantDefaultIntensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantDefaultIntensity_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ConstantDefaultIntensity")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="constant",Description = "double")>] 
          constant : obj)
@@ -82,7 +82,7 @@ module ConstantDefaultIntensityFunction =
     *)
     [<ExcelFunction(Name="_ConstantDefaultIntensity1", Description="Create a ConstantDefaultIntensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantDefaultIntensity_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "ConstantDefaultIntensity")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="constant",Description = "double")>] 
          constant : obj)
@@ -119,7 +119,7 @@ module ConstantDefaultIntensityFunction =
     *)
     [<ExcelFunction(Name="_ConstantDefaultIntensity_defaultRecovery", Description="Create a ConstantDefaultIntensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantDefaultIntensity_defaultRecovery
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantDefaultIntensity",Description = "ConstantDefaultIntensity")>] 
          constantdefaultintensity : obj)
@@ -167,7 +167,7 @@ module ConstantDefaultIntensityFunction =
     *)
     [<ExcelFunction(Name="_ConstantDefaultIntensity_hazardRate", Description="Create a ConstantDefaultIntensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantDefaultIntensity_hazardRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantDefaultIntensity",Description = "ConstantDefaultIntensity")>] 
          constantdefaultintensity : obj)
@@ -212,9 +212,9 @@ module ConstantDefaultIntensityFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ConstantDefaultIntensity_Range", Description="Create a range of ConstantDefaultIntensity",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantDefaultIntensity_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,7 +39,7 @@ module ConstantCPRFunction =
     *)
     [<ExcelFunction(Name="_ConstantCPR", Description="Create a ConstantCPR",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCPR_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ConstantCPR")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="cpr",Description = "double")>] 
          cpr : obj)
@@ -76,7 +76,7 @@ module ConstantCPRFunction =
     *)
     [<ExcelFunction(Name="_ConstantCPR_getCPR", Description="Create a ConstantCPR",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCPR_getCPR
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantCPR",Description = "ConstantCPR")>] 
          constantcpr : obj)
@@ -118,7 +118,7 @@ module ConstantCPRFunction =
     *)
     [<ExcelFunction(Name="_ConstantCPR_getSMM", Description="Create a ConstantCPR",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCPR_getSMM
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantCPR",Description = "ConstantCPR")>] 
          constantcpr : obj)
@@ -157,9 +157,9 @@ module ConstantCPRFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ConstantCPR_Range", Description="Create a range of ConstantCPR",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantCPR_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

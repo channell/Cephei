@@ -39,7 +39,7 @@ module BivariateCumulativeNormalDistributionDr78Function =
     *)
     [<ExcelFunction(Name="_BivariateCumulativeNormalDistributionDr78", Description="Create a BivariateCumulativeNormalDistributionDr78",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BivariateCumulativeNormalDistributionDr78_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BivariateCumulativeNormalDistributionDr78")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="rho",Description = "double")>] 
          rho : obj)
@@ -76,7 +76,7 @@ module BivariateCumulativeNormalDistributionDr78Function =
     *)
     [<ExcelFunction(Name="_BivariateCumulativeNormalDistributionDr78_value", Description="Create a BivariateCumulativeNormalDistributionDr78",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BivariateCumulativeNormalDistributionDr78_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BivariateCumulativeNormalDistributionDr78",Description = "BivariateCumulativeNormalDistributionDr78")>] 
          bivariatecumulativenormaldistributiondr78 : obj)
@@ -121,9 +121,9 @@ module BivariateCumulativeNormalDistributionDr78Function =
             "<WIZ>"
     [<ExcelFunction(Name="_BivariateCumulativeNormalDistributionDr78_Range", Description="Create a range of BivariateCumulativeNormalDistributionDr78",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BivariateCumulativeNormalDistributionDr78_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

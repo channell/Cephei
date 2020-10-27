@@ -39,7 +39,7 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "EuropeanOption")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="payoff",Description = "StrikedTypePayoff")>] 
          payoff : obj)
@@ -94,7 +94,7 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_impliedVolatility", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_impliedVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
@@ -166,7 +166,7 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_delta", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_delta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
@@ -202,7 +202,7 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_deltaForward", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_deltaForward
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
@@ -238,7 +238,7 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_dividendRho", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_dividendRho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
@@ -274,7 +274,7 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_elasticity", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_elasticity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
@@ -310,7 +310,7 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_gamma", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_gamma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
@@ -346,7 +346,7 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_isExpired", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
@@ -382,7 +382,7 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_itmCashProbability", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_itmCashProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
@@ -418,7 +418,7 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_rho", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
@@ -454,7 +454,7 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_strikeSensitivity", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_strikeSensitivity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
@@ -490,7 +490,7 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_theta", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_theta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
@@ -526,7 +526,7 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_thetaPerDay", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_thetaPerDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
@@ -562,7 +562,7 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_vega", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
@@ -598,7 +598,7 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_exercise", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_exercise
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
@@ -634,7 +634,7 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_payoff", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_payoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Payoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
@@ -670,7 +670,7 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_CASH", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
@@ -706,7 +706,7 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_errorEstimate", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
@@ -742,7 +742,7 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_NPV", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
@@ -778,7 +778,7 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_result", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
@@ -820,7 +820,7 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_setPricingEngine", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
@@ -862,7 +862,7 @@ module EuropeanOptionFunction =
     *)
     [<ExcelFunction(Name="_EuropeanOption_valuationDate", Description="Create a EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuropeanOption",Description = "EuropeanOption")>] 
          europeanoption : obj)
@@ -895,9 +895,9 @@ module EuropeanOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_EuropeanOption_Range", Description="Create a range of EuropeanOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

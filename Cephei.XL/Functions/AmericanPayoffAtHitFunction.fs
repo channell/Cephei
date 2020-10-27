@@ -39,7 +39,7 @@ module AmericanPayoffAtHitFunction =
     *)
     [<ExcelFunction(Name="_AmericanPayoffAtHit", Description="Create a AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtHit_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AmericanPayoffAtHit")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="spot",Description = "double")>] 
          spot : obj)
@@ -100,7 +100,7 @@ module AmericanPayoffAtHitFunction =
     *)
     [<ExcelFunction(Name="_AmericanPayoffAtHit_delta", Description="Create a AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtHit_delta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmericanPayoffAtHit",Description = "AmericanPayoffAtHit")>] 
          americanpayoffathit : obj)
@@ -136,7 +136,7 @@ module AmericanPayoffAtHitFunction =
     *)
     [<ExcelFunction(Name="_AmericanPayoffAtHit_gamma", Description="Create a AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtHit_gamma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmericanPayoffAtHit",Description = "AmericanPayoffAtHit")>] 
          americanpayoffathit : obj)
@@ -172,7 +172,7 @@ module AmericanPayoffAtHitFunction =
     *)
     [<ExcelFunction(Name="_AmericanPayoffAtHit_rho", Description="Create a AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtHit_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmericanPayoffAtHit",Description = "AmericanPayoffAtHit")>] 
          americanpayoffathit : obj)
@@ -214,7 +214,7 @@ module AmericanPayoffAtHitFunction =
     *)
     [<ExcelFunction(Name="_AmericanPayoffAtHit_value", Description="Create a AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtHit_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmericanPayoffAtHit",Description = "AmericanPayoffAtHit")>] 
          americanpayoffathit : obj)
@@ -247,9 +247,9 @@ module AmericanPayoffAtHitFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AmericanPayoffAtHit_Range", Description="Create a range of AmericanPayoffAtHit",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtHit_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

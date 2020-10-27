@@ -39,7 +39,7 @@ module SobolBrownianGeneratorFunction =
     *)
     [<ExcelFunction(Name="_SobolBrownianGenerator_nextPath", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_nextPath
-        ([<ExcelArgument(Name="Mnemonic",Description = "SobolBrownianGenerator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SobolBrownianGenerator",Description = "SobolBrownianGenerator")>] 
          sobolbrowniangenerator : obj)
@@ -75,11 +75,11 @@ module SobolBrownianGeneratorFunction =
     *)
     [<ExcelFunction(Name="_SobolBrownianGenerator_nextStep", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_nextStep
-        ([<ExcelArgument(Name="Mnemonic",Description = "SobolBrownianGenerator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SobolBrownianGenerator",Description = "SobolBrownianGenerator")>] 
          sobolbrowniangenerator : obj)
-        ([<ExcelArgument(Name="output",Description = "double")>] 
+        ([<ExcelArgument(Name="output",Description = "double range")>] 
          output : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -117,7 +117,7 @@ module SobolBrownianGeneratorFunction =
     *)
     [<ExcelFunction(Name="_SobolBrownianGenerator_numberOfFactors", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_numberOfFactors
-        ([<ExcelArgument(Name="Mnemonic",Description = "SobolBrownianGenerator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SobolBrownianGenerator",Description = "SobolBrownianGenerator")>] 
          sobolbrowniangenerator : obj)
@@ -153,7 +153,7 @@ module SobolBrownianGeneratorFunction =
     *)
     [<ExcelFunction(Name="_SobolBrownianGenerator_numberOfSteps", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_numberOfSteps
-        ([<ExcelArgument(Name="Mnemonic",Description = "SobolBrownianGenerator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SobolBrownianGenerator",Description = "SobolBrownianGenerator")>] 
          sobolbrowniangenerator : obj)
@@ -189,7 +189,7 @@ module SobolBrownianGeneratorFunction =
     *)
     [<ExcelFunction(Name="_SobolBrownianGenerator_orderedIndices", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_orderedIndices
-        ([<ExcelArgument(Name="Mnemonic",Description = "SobolBrownianGenerator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SobolBrownianGenerator",Description = "SobolBrownianGenerator")>] 
          sobolbrowniangenerator : obj)
@@ -225,7 +225,7 @@ module SobolBrownianGeneratorFunction =
     *)
     [<ExcelFunction(Name="_SobolBrownianGenerator", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SobolBrownianGenerator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="factors",Description = "int")>] 
          factors : obj)
@@ -233,9 +233,9 @@ module SobolBrownianGeneratorFunction =
          steps : obj)
         ([<ExcelArgument(Name="ordering",Description = "SobolBrownianGenerator.Ordering: Factors, Steps, Diagonal")>] 
          ordering : obj)
-        ([<ExcelArgument(Name="seed",Description = "SobolBrownianGenerator")>] 
+        ([<ExcelArgument(Name="seed",Description = "uint64 or empty")>] 
          seed : obj)
-        ([<ExcelArgument(Name="directionIntegers",Description = "SobolBrownianGenerator")>] 
+        ([<ExcelArgument(Name="directionIntegers",Description = "SobolRsg.DirectionIntegers: Unit, Jaeckel, SobolLevitan, SobolLevitanLemieux, JoeKuoD5, JoeKuoD6, JoeKuoD7, Kuo, Kuo2, Kuo3 or empty")>] 
          directionIntegers : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,11 +286,11 @@ module SobolBrownianGeneratorFunction =
     *)
     [<ExcelFunction(Name="_SobolBrownianGenerator_transform", Description="Create a SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_transform
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SobolBrownianGenerator",Description = "SobolBrownianGenerator")>] 
          sobolbrowniangenerator : obj)
-        ([<ExcelArgument(Name="variates",Description = "double")>] 
+        ([<ExcelArgument(Name="variates",Description = "double range")>] 
          variates : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -325,9 +325,9 @@ module SobolBrownianGeneratorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SobolBrownianGenerator_Range", Description="Create a range of SobolBrownianGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGenerator_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

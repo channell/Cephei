@@ -39,7 +39,7 @@ module RendistatoCalculatorFunction =
     *)
     [<ExcelFunction(Name="_RendistatoCalculator_duration", Description="Create a RendistatoCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoCalculator_duration
-        ([<ExcelArgument(Name="Mnemonic",Description = "VanillaSwap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoCalculator",Description = "RendistatoCalculator")>] 
          rendistatocalculator : obj)
@@ -75,7 +75,7 @@ module RendistatoCalculatorFunction =
     *)
     [<ExcelFunction(Name="_RendistatoCalculator_durations", Description="Create a RendistatoCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoCalculator_durations
-        ([<ExcelArgument(Name="Mnemonic",Description = "VanillaSwap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoCalculator",Description = "RendistatoCalculator")>] 
          rendistatocalculator : obj)
@@ -111,7 +111,7 @@ module RendistatoCalculatorFunction =
     *)
     [<ExcelFunction(Name="_RendistatoCalculator_equivalentSwap", Description="Create a RendistatoCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoCalculator_equivalentSwap
-        ([<ExcelArgument(Name="Mnemonic",Description = "VanillaSwap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoCalculator",Description = "RendistatoCalculator")>] 
          rendistatocalculator : obj)
@@ -147,7 +147,7 @@ module RendistatoCalculatorFunction =
     *)
     [<ExcelFunction(Name="_RendistatoCalculator_equivalentSwapDuration", Description="Create a RendistatoCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoCalculator_equivalentSwapDuration
-        ([<ExcelArgument(Name="Mnemonic",Description = "RendistatoCalculator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoCalculator",Description = "RendistatoCalculator")>] 
          rendistatocalculator : obj)
@@ -183,7 +183,7 @@ module RendistatoCalculatorFunction =
     *)
     [<ExcelFunction(Name="_RendistatoCalculator_equivalentSwapLength", Description="Create a RendistatoCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoCalculator_equivalentSwapLength
-        ([<ExcelArgument(Name="Mnemonic",Description = "RendistatoCalculator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoCalculator",Description = "RendistatoCalculator")>] 
          rendistatocalculator : obj)
@@ -219,7 +219,7 @@ module RendistatoCalculatorFunction =
     *)
     [<ExcelFunction(Name="_RendistatoCalculator_equivalentSwapRate", Description="Create a RendistatoCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoCalculator_equivalentSwapRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "RendistatoCalculator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoCalculator",Description = "RendistatoCalculator")>] 
          rendistatocalculator : obj)
@@ -255,7 +255,7 @@ module RendistatoCalculatorFunction =
     *)
     [<ExcelFunction(Name="_RendistatoCalculator_equivalentSwapSpread", Description="Create a RendistatoCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoCalculator_equivalentSwapSpread
-        ([<ExcelArgument(Name="Mnemonic",Description = "RendistatoCalculator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoCalculator",Description = "RendistatoCalculator")>] 
          rendistatocalculator : obj)
@@ -291,7 +291,7 @@ module RendistatoCalculatorFunction =
     *)
     [<ExcelFunction(Name="_RendistatoCalculator_equivalentSwapYield", Description="Create a RendistatoCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoCalculator_equivalentSwapYield
-        ([<ExcelArgument(Name="Mnemonic",Description = "RendistatoCalculator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoCalculator",Description = "RendistatoCalculator")>] 
          rendistatocalculator : obj)
@@ -327,7 +327,7 @@ module RendistatoCalculatorFunction =
     *)
     [<ExcelFunction(Name="_RendistatoCalculator", Description="Create a RendistatoCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoCalculator_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "RendistatoCalculator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="basket",Description = "RendistatoBasket")>] 
          basket : obj)
@@ -376,7 +376,7 @@ module RendistatoCalculatorFunction =
     *)
     [<ExcelFunction(Name="_RendistatoCalculator_swapDurations", Description="Create a RendistatoCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoCalculator_swapDurations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoCalculator",Description = "RendistatoCalculator")>] 
          rendistatocalculator : obj)
@@ -412,7 +412,7 @@ module RendistatoCalculatorFunction =
     *)
     [<ExcelFunction(Name="_RendistatoCalculator_swapLengths", Description="Create a RendistatoCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoCalculator_swapLengths
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoCalculator",Description = "RendistatoCalculator")>] 
          rendistatocalculator : obj)
@@ -448,7 +448,7 @@ module RendistatoCalculatorFunction =
     *)
     [<ExcelFunction(Name="_RendistatoCalculator_swapRates", Description="Create a RendistatoCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoCalculator_swapRates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoCalculator",Description = "RendistatoCalculator")>] 
          rendistatocalculator : obj)
@@ -484,7 +484,7 @@ module RendistatoCalculatorFunction =
     *)
     [<ExcelFunction(Name="_RendistatoCalculator_swapYields", Description="Create a RendistatoCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoCalculator_swapYields
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoCalculator",Description = "RendistatoCalculator")>] 
          rendistatocalculator : obj)
@@ -520,7 +520,7 @@ module RendistatoCalculatorFunction =
     *)
     [<ExcelFunction(Name="_RendistatoCalculator_yield", Description="Create a RendistatoCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoCalculator_yield
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoCalculator",Description = "RendistatoCalculator")>] 
          rendistatocalculator : obj)
@@ -556,7 +556,7 @@ module RendistatoCalculatorFunction =
     *)
     [<ExcelFunction(Name="_RendistatoCalculator_yields", Description="Create a RendistatoCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoCalculator_yields
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoCalculator",Description = "RendistatoCalculator")>] 
          rendistatocalculator : obj)
@@ -589,9 +589,9 @@ module RendistatoCalculatorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_RendistatoCalculator_Range", Description="Create a range of RendistatoCalculator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoCalculator_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

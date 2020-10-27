@@ -39,7 +39,7 @@ module FordeHestonExpansionFunction =
     *)
     [<ExcelFunction(Name="_FordeHestonExpansion", Description="Create a FordeHestonExpansion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FordeHestonExpansion_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FordeHestonExpansion")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="kappa",Description = "double")>] 
          kappa : obj)
@@ -106,7 +106,7 @@ module FordeHestonExpansionFunction =
     *)
     [<ExcelFunction(Name="_FordeHestonExpansion_impliedVolatility", Description="Create a FordeHestonExpansion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FordeHestonExpansion_impliedVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FordeHestonExpansion",Description = "FordeHestonExpansion")>] 
          fordehestonexpansion : obj)
@@ -151,9 +151,9 @@ module FordeHestonExpansionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FordeHestonExpansion_Range", Description="Create a range of FordeHestonExpansion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FordeHestonExpansion_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

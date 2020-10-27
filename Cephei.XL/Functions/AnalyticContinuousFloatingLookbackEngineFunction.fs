@@ -39,7 +39,7 @@ module AnalyticContinuousFloatingLookbackEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticContinuousFloatingLookbackEngine", Description="Create a AnalyticContinuousFloatingLookbackEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticContinuousFloatingLookbackEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AnalyticContinuousFloatingLookbackEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -74,9 +74,9 @@ module AnalyticContinuousFloatingLookbackEngineFunction =
 
     [<ExcelFunction(Name="_AnalyticContinuousFloatingLookbackEngine_Range", Description="Create a range of AnalyticContinuousFloatingLookbackEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticContinuousFloatingLookbackEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -40,7 +40,7 @@ module SobolBrownianGeneratorFactoryFunction =
     (*!! not implemented 
     [<ExcelFunction(Name="_SobolBrownianGeneratorFactory_create", Description="Create a SobolBrownianGeneratorFactory",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGeneratorFactory_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "IBrownianGenerator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SobolBrownianGeneratorFactory",Description = "SobolBrownianGeneratorFactory")>] 
          sobolbrowniangeneratorfactory : obj)
@@ -89,13 +89,13 @@ module SobolBrownianGeneratorFactoryFunction =
     *)
     [<ExcelFunction(Name="_SobolBrownianGeneratorFactory", Description="Create a SobolBrownianGeneratorFactory",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGeneratorFactory_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SobolBrownianGeneratorFactory")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ordering",Description = "SobolBrownianGenerator.Ordering: Factors, Steps, Diagonal")>] 
          ordering : obj)
-        ([<ExcelArgument(Name="seed",Description = "SobolBrownianGeneratorFactory")>] 
+        ([<ExcelArgument(Name="seed",Description = "uint64 or empty")>] 
          seed : obj)
-        ([<ExcelArgument(Name="integers",Description = "SobolBrownianGeneratorFactory")>] 
+        ([<ExcelArgument(Name="integers",Description = "SobolRsg.DirectionIntegers: Unit, Jaeckel, SobolLevitan, SobolLevitanLemieux, JoeKuoD5, JoeKuoD6, JoeKuoD7, Kuo, Kuo2, Kuo3 or empty")>] 
          integers : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -135,9 +135,9 @@ module SobolBrownianGeneratorFactoryFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SobolBrownianGeneratorFactory_Range", Description="Create a range of SobolBrownianGeneratorFactory",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SobolBrownianGeneratorFactory_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

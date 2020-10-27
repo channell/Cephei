@@ -39,7 +39,7 @@ module FixedRateBondHelperFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBondHelper_fixedRateBond", Description="Create a FixedRateBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondHelper_fixedRateBond
-        ([<ExcelArgument(Name="Mnemonic",Description = "FixedRateBond")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateBondHelper",Description = "FixedRateBondHelper")>] 
          fixedratebondhelper : obj)
@@ -75,7 +75,7 @@ module FixedRateBondHelperFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBondHelper", Description="Create a FixedRateBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FixedRateBondHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="price",Description = "Quote")>] 
          price : obj)
@@ -85,27 +85,27 @@ module FixedRateBondHelperFunction =
          faceAmount : obj)
         ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
-        ([<ExcelArgument(Name="coupons",Description = "double")>] 
+        ([<ExcelArgument(Name="coupons",Description = "double range")>] 
          coupons : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="paymentConvention",Description = "FixedRateBondHelper")>] 
+        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest or empty")>] 
          paymentConvention : obj)
-        ([<ExcelArgument(Name="redemption",Description = "FixedRateBondHelper")>] 
+        ([<ExcelArgument(Name="redemption",Description = "double or empty")>] 
          redemption : obj)
-        ([<ExcelArgument(Name="issueDate",Description = "FixedRateBondHelper")>] 
+        ([<ExcelArgument(Name="issueDate",Description = "Date or empty")>] 
          issueDate : obj)
-        ([<ExcelArgument(Name="paymentCalendar",Description = "FixedRateBondHelper")>] 
+        ([<ExcelArgument(Name="paymentCalendar",Description = "Calendar or empty")>] 
          paymentCalendar : obj)
-        ([<ExcelArgument(Name="exCouponPeriod",Description = "FixedRateBondHelper")>] 
+        ([<ExcelArgument(Name="exCouponPeriod",Description = "Period or empty")>] 
          exCouponPeriod : obj)
-        ([<ExcelArgument(Name="exCouponCalendar",Description = "FixedRateBondHelper")>] 
+        ([<ExcelArgument(Name="exCouponCalendar",Description = "Calendar or empty")>] 
          exCouponCalendar : obj)
-        ([<ExcelArgument(Name="exCouponConvention",Description = "FixedRateBondHelper")>] 
+        ([<ExcelArgument(Name="exCouponConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest or empty")>] 
          exCouponConvention : obj)
-        ([<ExcelArgument(Name="exCouponEndOfMonth",Description = "FixedRateBondHelper")>] 
+        ([<ExcelArgument(Name="exCouponEndOfMonth",Description = "bool or empty")>] 
          exCouponEndOfMonth : obj)
-        ([<ExcelArgument(Name="useCleanPrice",Description = "FixedRateBondHelper")>] 
+        ([<ExcelArgument(Name="useCleanPrice",Description = "bool or empty")>] 
          useCleanPrice : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -196,7 +196,7 @@ module FixedRateBondHelperFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBondHelper_bond", Description="Create a FixedRateBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondHelper_bond
-        ([<ExcelArgument(Name="Mnemonic",Description = "Bond")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateBondHelper",Description = "FixedRateBondHelper")>] 
          fixedratebondhelper : obj)
@@ -232,7 +232,7 @@ module FixedRateBondHelperFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBondHelper_impliedQuote", Description="Create a FixedRateBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondHelper_impliedQuote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateBondHelper",Description = "FixedRateBondHelper")>] 
          fixedratebondhelper : obj)
@@ -268,7 +268,7 @@ module FixedRateBondHelperFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBondHelper_setTermStructure", Description="Create a FixedRateBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondHelper_setTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateBondHelper",Description = "FixedRateBondHelper")>] 
          fixedratebondhelper : obj)
@@ -310,7 +310,7 @@ module FixedRateBondHelperFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBondHelper_useCleanPrice", Description="Create a FixedRateBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondHelper_useCleanPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateBondHelper",Description = "FixedRateBondHelper")>] 
          fixedratebondhelper : obj)
@@ -346,7 +346,7 @@ module FixedRateBondHelperFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBondHelper_earliestDate", Description="Create a FixedRateBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondHelper_earliestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateBondHelper",Description = "FixedRateBondHelper")>] 
          fixedratebondhelper : obj)
@@ -382,7 +382,7 @@ module FixedRateBondHelperFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBondHelper_latestDate", Description="Create a FixedRateBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondHelper_latestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateBondHelper",Description = "FixedRateBondHelper")>] 
          fixedratebondhelper : obj)
@@ -418,7 +418,7 @@ module FixedRateBondHelperFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBondHelper_latestRelevantDate", Description="Create a FixedRateBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondHelper_latestRelevantDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateBondHelper",Description = "FixedRateBondHelper")>] 
          fixedratebondhelper : obj)
@@ -454,7 +454,7 @@ module FixedRateBondHelperFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBondHelper_maturityDate", Description="Create a FixedRateBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondHelper_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateBondHelper",Description = "FixedRateBondHelper")>] 
          fixedratebondhelper : obj)
@@ -490,7 +490,7 @@ module FixedRateBondHelperFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBondHelper_pillarDate", Description="Create a FixedRateBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondHelper_pillarDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateBondHelper",Description = "FixedRateBondHelper")>] 
          fixedratebondhelper : obj)
@@ -526,7 +526,7 @@ module FixedRateBondHelperFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBondHelper_quote", Description="Create a FixedRateBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondHelper_quote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateBondHelper",Description = "FixedRateBondHelper")>] 
          fixedratebondhelper : obj)
@@ -562,7 +562,7 @@ module FixedRateBondHelperFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBondHelper_quoteError", Description="Create a FixedRateBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondHelper_quoteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateBondHelper",Description = "FixedRateBondHelper")>] 
          fixedratebondhelper : obj)
@@ -598,7 +598,7 @@ module FixedRateBondHelperFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBondHelper_quoteIsValid", Description="Create a FixedRateBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondHelper_quoteIsValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateBondHelper",Description = "FixedRateBondHelper")>] 
          fixedratebondhelper : obj)
@@ -634,7 +634,7 @@ module FixedRateBondHelperFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBondHelper_quoteValue", Description="Create a FixedRateBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondHelper_quoteValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateBondHelper",Description = "FixedRateBondHelper")>] 
          fixedratebondhelper : obj)
@@ -670,7 +670,7 @@ module FixedRateBondHelperFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBondHelper_registerWith", Description="Create a FixedRateBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondHelper_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateBondHelper",Description = "FixedRateBondHelper")>] 
          fixedratebondhelper : obj)
@@ -712,7 +712,7 @@ module FixedRateBondHelperFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBondHelper_unregisterWith", Description="Create a FixedRateBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondHelper_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateBondHelper",Description = "FixedRateBondHelper")>] 
          fixedratebondhelper : obj)
@@ -754,7 +754,7 @@ module FixedRateBondHelperFunction =
     *)
     [<ExcelFunction(Name="_FixedRateBondHelper_update", Description="Create a FixedRateBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondHelper_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateBondHelper",Description = "FixedRateBondHelper")>] 
          fixedratebondhelper : obj)
@@ -787,9 +787,9 @@ module FixedRateBondHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FixedRateBondHelper_Range", Description="Create a range of FixedRateBondHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBondHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -40,15 +40,15 @@ module DiscountingSwapEngineFunction =
     *)
     [<ExcelFunction(Name="_DiscountingSwapEngine", Description="Create a DiscountingSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscountingSwapEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "DiscountingSwapEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
         ([<ExcelArgument(Name="includeSettlementDateFlows",Description = "bool")>] 
          includeSettlementDateFlows : obj)
-        ([<ExcelArgument(Name="settlementDate",Description = "DiscountingSwapEngine")>] 
+        ([<ExcelArgument(Name="settlementDate",Description = "Date or empty")>] 
          settlementDate : obj)
-        ([<ExcelArgument(Name="npvDate",Description = "DiscountingSwapEngine")>] 
+        ([<ExcelArgument(Name="npvDate",Description = "Date or empty")>] 
          npvDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -92,9 +92,9 @@ module DiscountingSwapEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DiscountingSwapEngine_Range", Description="Create a range of DiscountingSwapEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscountingSwapEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

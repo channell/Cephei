@@ -39,7 +39,7 @@ module NeumannBCFunction =
     *)
     [<ExcelFunction(Name="_NeumannBC_applyAfterApplying", Description="Create a NeumannBC",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NeumannBC_applyAfterApplying
-        ([<ExcelArgument(Name="Mnemonic",Description = "NeumannBC")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NeumannBC",Description = "NeumannBC")>] 
          neumannbc : obj)
@@ -81,7 +81,7 @@ module NeumannBCFunction =
     *)
     [<ExcelFunction(Name="_NeumannBC_applyAfterSolving", Description="Create a NeumannBC",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NeumannBC_applyAfterSolving
-        ([<ExcelArgument(Name="Mnemonic",Description = "NeumannBC")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NeumannBC",Description = "NeumannBC")>] 
          neumannbc : obj)
@@ -123,7 +123,7 @@ module NeumannBCFunction =
     *)
     [<ExcelFunction(Name="_NeumannBC_applyBeforeApplying", Description="Create a NeumannBC",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NeumannBC_applyBeforeApplying
-        ([<ExcelArgument(Name="Mnemonic",Description = "NeumannBC")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NeumannBC",Description = "NeumannBC")>] 
          neumannbc : obj)
@@ -165,7 +165,7 @@ module NeumannBCFunction =
     *)
     [<ExcelFunction(Name="_NeumannBC_applyBeforeSolving", Description="Create a NeumannBC",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NeumannBC_applyBeforeSolving
-        ([<ExcelArgument(Name="Mnemonic",Description = "NeumannBC")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NeumannBC",Description = "NeumannBC")>] 
          neumannbc : obj)
@@ -213,7 +213,7 @@ module NeumannBCFunction =
     *)
     [<ExcelFunction(Name="_NeumannBC", Description="Create a NeumannBC",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NeumannBC_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "NeumannBC")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="value",Description = "double")>] 
          value : obj)
@@ -256,7 +256,7 @@ module NeumannBCFunction =
     *)
     [<ExcelFunction(Name="_NeumannBC_setTime", Description="Create a NeumannBC",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NeumannBC_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NeumannBC",Description = "NeumannBC")>] 
          neumannbc : obj)
@@ -295,9 +295,9 @@ module NeumannBCFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NeumannBC_Range", Description="Create a range of NeumannBC",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NeumannBC_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,7 +39,7 @@ module MultiPathGeneratorFunction =
     *)
     [<ExcelFunction(Name="_MultiPathGenerator_antithetic", Description="Create a MultiPathGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPathGenerator_antithetic
-        ([<ExcelArgument(Name="Mnemonic",Description = "IPath")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MultiPathGenerator",Description = "MultiPathGenerator")>] 
          multipathgenerator : obj)
@@ -75,7 +75,7 @@ module MultiPathGeneratorFunction =
     *)
     [<ExcelFunction(Name="_MultiPathGenerator", Description="Create a MultiPathGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPathGenerator_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "MultiPathGenerator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "StochasticProcess")>] 
          Process : obj)
@@ -130,7 +130,7 @@ module MultiPathGeneratorFunction =
     *)
     [<ExcelFunction(Name="_MultiPathGenerator_next", Description="Create a MultiPathGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPathGenerator_next
-        ([<ExcelArgument(Name="Mnemonic",Description = "IPath")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MultiPathGenerator",Description = "MultiPathGenerator")>] 
          multipathgenerator : obj)
@@ -163,9 +163,9 @@ module MultiPathGeneratorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MultiPathGenerator_Range", Description="Create a range of MultiPathGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiPathGenerator_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

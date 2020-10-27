@@ -39,7 +39,7 @@ module ZeroInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationIndex_clone", Description="Create a ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationIndex",Description = "ZeroInflationIndex")>] 
          zeroinflationindex : obj)
@@ -81,7 +81,7 @@ module ZeroInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationIndex_fixing", Description="Create a ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationIndex",Description = "ZeroInflationIndex")>] 
          zeroinflationindex : obj)
@@ -129,7 +129,7 @@ module ZeroInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationIndex", Description="Create a ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="familyName",Description = "string")>] 
          familyName : obj)
@@ -208,7 +208,7 @@ module ZeroInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationIndex_zeroInflationTermStructure", Description="Create a ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_zeroInflationTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationIndex",Description = "ZeroInflationIndex")>] 
          zeroinflationindex : obj)
@@ -244,7 +244,7 @@ module ZeroInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationIndex_addFixing", Description="Create a ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationIndex",Description = "ZeroInflationIndex")>] 
          zeroinflationindex : obj)
@@ -299,7 +299,7 @@ module ZeroInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationIndex_availabilityLag", Description="Create a ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_availabilityLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationIndex",Description = "ZeroInflationIndex")>] 
          zeroinflationindex : obj)
@@ -335,7 +335,7 @@ module ZeroInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationIndex_currency", Description="Create a ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationIndex",Description = "ZeroInflationIndex")>] 
          zeroinflationindex : obj)
@@ -371,7 +371,7 @@ module ZeroInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationIndex_familyName", Description="Create a ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationIndex",Description = "ZeroInflationIndex")>] 
          zeroinflationindex : obj)
@@ -407,7 +407,7 @@ module ZeroInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationIndex_fixingCalendar", Description="Create a ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationIndex",Description = "ZeroInflationIndex")>] 
          zeroinflationindex : obj)
@@ -443,7 +443,7 @@ module ZeroInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationIndex_frequency", Description="Create a ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationIndex",Description = "ZeroInflationIndex")>] 
          zeroinflationindex : obj)
@@ -479,7 +479,7 @@ module ZeroInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationIndex_interpolated", Description="Create a ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_interpolated
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationIndex",Description = "ZeroInflationIndex")>] 
          zeroinflationindex : obj)
@@ -515,7 +515,7 @@ module ZeroInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationIndex_isValidFixingDate", Description="Create a ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationIndex",Description = "ZeroInflationIndex")>] 
          zeroinflationindex : obj)
@@ -557,7 +557,7 @@ module ZeroInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationIndex_name", Description="Create a ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationIndex",Description = "ZeroInflationIndex")>] 
          zeroinflationindex : obj)
@@ -593,7 +593,7 @@ module ZeroInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationIndex_region", Description="Create a ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_region
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationIndex",Description = "ZeroInflationIndex")>] 
          zeroinflationindex : obj)
@@ -629,7 +629,7 @@ module ZeroInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationIndex_revised", Description="Create a ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_revised
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationIndex",Description = "ZeroInflationIndex")>] 
          zeroinflationindex : obj)
@@ -665,7 +665,7 @@ module ZeroInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationIndex_update", Description="Create a ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationIndex",Description = "ZeroInflationIndex")>] 
          zeroinflationindex : obj)
@@ -701,13 +701,13 @@ module ZeroInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationIndex_addFixings", Description="Create a ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationIndex",Description = "ZeroInflationIndex")>] 
          zeroinflationindex : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -755,7 +755,7 @@ module ZeroInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationIndex_addFixings1", Description="Create a ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationIndex",Description = "ZeroInflationIndex")>] 
          zeroinflationindex : obj)
@@ -803,7 +803,7 @@ module ZeroInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationIndex_allowsNativeFixings", Description="Create a ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationIndex",Description = "ZeroInflationIndex")>] 
          zeroinflationindex : obj)
@@ -839,7 +839,7 @@ module ZeroInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationIndex_clearFixings", Description="Create a ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationIndex",Description = "ZeroInflationIndex")>] 
          zeroinflationindex : obj)
@@ -875,7 +875,7 @@ module ZeroInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationIndex_registerWith", Description="Create a ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationIndex",Description = "ZeroInflationIndex")>] 
          zeroinflationindex : obj)
@@ -917,7 +917,7 @@ module ZeroInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationIndex_timeSeries", Description="Create a ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationIndex",Description = "ZeroInflationIndex")>] 
          zeroinflationindex : obj)
@@ -953,7 +953,7 @@ module ZeroInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationIndex_unregisterWith", Description="Create a ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationIndex",Description = "ZeroInflationIndex")>] 
          zeroinflationindex : obj)
@@ -992,9 +992,9 @@ module ZeroInflationIndexFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ZeroInflationIndex_Range", Description="Create a range of ZeroInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationIndex_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

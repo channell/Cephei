@@ -39,7 +39,7 @@ module AnalyticDoubleBarrierBinaryEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticDoubleBarrierBinaryEngine", Description="Create a AnalyticDoubleBarrierBinaryEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDoubleBarrierBinaryEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AnalyticDoubleBarrierBinaryEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -77,9 +77,9 @@ module AnalyticDoubleBarrierBinaryEngineFunction =
 
     [<ExcelFunction(Name="_AnalyticDoubleBarrierBinaryEngine_Range", Description="Create a range of AnalyticDoubleBarrierBinaryEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDoubleBarrierBinaryEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

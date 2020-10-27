@@ -39,7 +39,7 @@ module BachelierYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BachelierYoYInflationCouponPricer", Description="Create a BachelierYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierYoYInflationCouponPricer_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BachelierYoYInflationCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="capletVol",Description = "YoYOptionletVolatilitySurface")>] 
          capletVol : obj)
@@ -76,7 +76,7 @@ module BachelierYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BachelierYoYInflationCouponPricer_capletPrice", Description="Create a BachelierYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierYoYInflationCouponPricer_capletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYOptionletVolatilitySurface")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BachelierYoYInflationCouponPricer",Description = "BachelierYoYInflationCouponPricer")>] 
          bachelieryoyinflationcouponpricer : obj)
@@ -118,7 +118,7 @@ module BachelierYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BachelierYoYInflationCouponPricer_capletRate", Description="Create a BachelierYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierYoYInflationCouponPricer_capletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYOptionletVolatilitySurface")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BachelierYoYInflationCouponPricer",Description = "BachelierYoYInflationCouponPricer")>] 
          bachelieryoyinflationcouponpricer : obj)
@@ -160,7 +160,7 @@ module BachelierYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BachelierYoYInflationCouponPricer_capletVolatility", Description="Create a BachelierYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierYoYInflationCouponPricer_capletVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYOptionletVolatilitySurface")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BachelierYoYInflationCouponPricer",Description = "BachelierYoYInflationCouponPricer")>] 
          bachelieryoyinflationcouponpricer : obj)
@@ -196,7 +196,7 @@ module BachelierYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BachelierYoYInflationCouponPricer_floorletPrice", Description="Create a BachelierYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierYoYInflationCouponPricer_floorletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BachelierYoYInflationCouponPricer",Description = "BachelierYoYInflationCouponPricer")>] 
          bachelieryoyinflationcouponpricer : obj)
@@ -238,7 +238,7 @@ module BachelierYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BachelierYoYInflationCouponPricer_floorletRate", Description="Create a BachelierYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierYoYInflationCouponPricer_floorletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BachelierYoYInflationCouponPricer",Description = "BachelierYoYInflationCouponPricer")>] 
          bachelieryoyinflationcouponpricer : obj)
@@ -280,7 +280,7 @@ module BachelierYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BachelierYoYInflationCouponPricer_initialize", Description="Create a BachelierYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierYoYInflationCouponPricer_initialize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BachelierYoYInflationCouponPricer",Description = "BachelierYoYInflationCouponPricer")>] 
          bachelieryoyinflationcouponpricer : obj)
@@ -322,7 +322,7 @@ module BachelierYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BachelierYoYInflationCouponPricer_setCapletVolatility", Description="Create a BachelierYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierYoYInflationCouponPricer_setCapletVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BachelierYoYInflationCouponPricer",Description = "BachelierYoYInflationCouponPricer")>] 
          bachelieryoyinflationcouponpricer : obj)
@@ -364,7 +364,7 @@ module BachelierYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BachelierYoYInflationCouponPricer_swapletPrice", Description="Create a BachelierYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierYoYInflationCouponPricer_swapletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BachelierYoYInflationCouponPricer",Description = "BachelierYoYInflationCouponPricer")>] 
          bachelieryoyinflationcouponpricer : obj)
@@ -400,7 +400,7 @@ module BachelierYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BachelierYoYInflationCouponPricer_swapletRate", Description="Create a BachelierYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierYoYInflationCouponPricer_swapletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BachelierYoYInflationCouponPricer",Description = "BachelierYoYInflationCouponPricer")>] 
          bachelieryoyinflationcouponpricer : obj)
@@ -436,7 +436,7 @@ module BachelierYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BachelierYoYInflationCouponPricer_registerWith", Description="Create a BachelierYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierYoYInflationCouponPricer_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BachelierYoYInflationCouponPricer",Description = "BachelierYoYInflationCouponPricer")>] 
          bachelieryoyinflationcouponpricer : obj)
@@ -478,7 +478,7 @@ module BachelierYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BachelierYoYInflationCouponPricer_unregisterWith", Description="Create a BachelierYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierYoYInflationCouponPricer_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BachelierYoYInflationCouponPricer",Description = "BachelierYoYInflationCouponPricer")>] 
          bachelieryoyinflationcouponpricer : obj)
@@ -520,7 +520,7 @@ module BachelierYoYInflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_BachelierYoYInflationCouponPricer_update", Description="Create a BachelierYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierYoYInflationCouponPricer_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BachelierYoYInflationCouponPricer",Description = "BachelierYoYInflationCouponPricer")>] 
          bachelieryoyinflationcouponpricer : obj)
@@ -553,9 +553,9 @@ module BachelierYoYInflationCouponPricerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BachelierYoYInflationCouponPricer_Range", Description="Create a range of BachelierYoYInflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BachelierYoYInflationCouponPricer_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

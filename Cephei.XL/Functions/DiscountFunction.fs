@@ -39,7 +39,7 @@ module DiscountFunction =
     *)
     [<ExcelFunction(Name="_Discount_discountImpl", Description="Create a Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Discount_discountImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Discount",Description = "Discount")>] 
          discount : obj)
@@ -87,7 +87,7 @@ module DiscountFunction =
     *)
     [<ExcelFunction(Name="_Discount_forwardImpl", Description="Create a Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Discount_forwardImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Discount",Description = "Discount")>] 
          discount : obj)
@@ -135,7 +135,7 @@ module DiscountFunction =
     *)
     [<ExcelFunction(Name="_Discount_guess", Description="Create a Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Discount_guess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Discount",Description = "Discount")>] 
          discount : obj)
@@ -195,7 +195,7 @@ module DiscountFunction =
     *)
     [<ExcelFunction(Name="_Discount_initialDate", Description="Create a Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Discount_initialDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Discount",Description = "Discount")>] 
          discount : obj)
@@ -237,7 +237,7 @@ module DiscountFunction =
     *)
     [<ExcelFunction(Name="_Discount_initialValue", Description="Create a Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Discount_initialValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Discount",Description = "Discount")>] 
          discount : obj)
@@ -279,7 +279,7 @@ module DiscountFunction =
     *)
     [<ExcelFunction(Name="_Discount_maxIterations", Description="Create a Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Discount_maxIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Discount",Description = "Discount")>] 
          discount : obj)
@@ -315,7 +315,7 @@ module DiscountFunction =
     *)
     [<ExcelFunction(Name="_Discount_maxValueAfter", Description="Create a Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Discount_maxValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Discount",Description = "Discount")>] 
          discount : obj)
@@ -375,7 +375,7 @@ module DiscountFunction =
     *)
     [<ExcelFunction(Name="_Discount_minValueAfter", Description="Create a Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Discount_minValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Discount",Description = "Discount")>] 
          discount : obj)
@@ -435,11 +435,11 @@ module DiscountFunction =
     *)
     [<ExcelFunction(Name="_Discount_updateGuess", Description="Create a Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Discount_updateGuess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Discount",Description = "Discount")>] 
          discountMnemonic : obj)
-        ([<ExcelArgument(Name="data",Description = "double")>] 
+        ([<ExcelArgument(Name="data",Description = "double range")>] 
          data : obj)
         ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
@@ -489,7 +489,7 @@ module DiscountFunction =
     *)
     [<ExcelFunction(Name="_Discount_zeroYieldImpl", Description="Create a Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Discount_zeroYieldImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Discount",Description = "Discount")>] 
          discount : obj)
@@ -534,9 +534,9 @@ module DiscountFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Discount_Range", Description="Create a range of Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Discount_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

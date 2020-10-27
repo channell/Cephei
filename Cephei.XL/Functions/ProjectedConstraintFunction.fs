@@ -39,13 +39,13 @@ module ProjectedConstraintFunction =
     *)
     [<ExcelFunction(Name="_ProjectedConstraint1", Description="Create a ProjectedConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedConstraint_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "ProjectedConstraint")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Constraint",Description = "Constraint")>] 
          Constraint : obj)
         ([<ExcelArgument(Name="parameterValues",Description = "Vector")>] 
          parameterValues : obj)
-        ([<ExcelArgument(Name="fixParameters",Description = "bool")>] 
+        ([<ExcelArgument(Name="fixParameters",Description = "bool range")>] 
          fixParameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,7 +88,7 @@ module ProjectedConstraintFunction =
     *)
     [<ExcelFunction(Name="_ProjectedConstraint", Description="Create a ProjectedConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedConstraint_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ProjectedConstraint")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Constraint",Description = "Constraint")>] 
          Constraint : obj)
@@ -131,7 +131,7 @@ module ProjectedConstraintFunction =
     *)
     [<ExcelFunction(Name="_ProjectedConstraint_empty", Description="Create a ProjectedConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedConstraint_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ProjectedConstraint",Description = "ProjectedConstraint")>] 
          projectedconstraint : obj)
@@ -167,7 +167,7 @@ module ProjectedConstraintFunction =
     *)
     [<ExcelFunction(Name="_ProjectedConstraint_lowerBound", Description="Create a ProjectedConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedConstraint_lowerBound
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ProjectedConstraint",Description = "ProjectedConstraint")>] 
          projectedconstraint : obj)
@@ -209,7 +209,7 @@ module ProjectedConstraintFunction =
     *)
     [<ExcelFunction(Name="_ProjectedConstraint_test", Description="Create a ProjectedConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedConstraint_test
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ProjectedConstraint",Description = "ProjectedConstraint")>] 
          projectedconstraint : obj)
@@ -251,7 +251,7 @@ module ProjectedConstraintFunction =
     *)
     [<ExcelFunction(Name="_ProjectedConstraint_update", Description="Create a ProjectedConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedConstraint_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ProjectedConstraint",Description = "ProjectedConstraint")>] 
          projectedconstraint : obj)
@@ -305,7 +305,7 @@ module ProjectedConstraintFunction =
     *)
     [<ExcelFunction(Name="_ProjectedConstraint_upperBound", Description="Create a ProjectedConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedConstraint_upperBound
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ProjectedConstraint",Description = "ProjectedConstraint")>] 
          projectedconstraint : obj)
@@ -344,9 +344,9 @@ module ProjectedConstraintFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ProjectedConstraint_Range", Description="Create a range of ProjectedConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProjectedConstraint_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

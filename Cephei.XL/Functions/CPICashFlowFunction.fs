@@ -39,7 +39,7 @@ module CPICashFlowFunction =
     *)
     [<ExcelFunction(Name="_CPICashFlow_amount", Description="Create a CPICashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICashFlow_amount
-        ([<ExcelArgument(Name="Mnemonic",Description = "CPICashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICashFlow",Description = "CPICashFlow")>] 
          cpicashflow : obj)
@@ -75,7 +75,7 @@ module CPICashFlowFunction =
     *)
     [<ExcelFunction(Name="_CPICashFlow_baseDate", Description="Create a CPICashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICashFlow_baseDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CPICashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICashFlow",Description = "CPICashFlow")>] 
          cpicashflow : obj)
@@ -111,7 +111,7 @@ module CPICashFlowFunction =
     *)
     [<ExcelFunction(Name="_CPICashFlow_baseFixing", Description="Create a CPICashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICashFlow_baseFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "CPICashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICashFlow",Description = "CPICashFlow")>] 
          cpicashflow : obj)
@@ -147,7 +147,7 @@ module CPICashFlowFunction =
     *)
     [<ExcelFunction(Name="_CPICashFlow", Description="Create a CPICashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICashFlow_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "CPICashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="notional",Description = "double")>] 
          notional : obj)
@@ -161,11 +161,11 @@ module CPICashFlowFunction =
          fixingDate : obj)
         ([<ExcelArgument(Name="paymentDate",Description = "Date")>] 
          paymentDate : obj)
-        ([<ExcelArgument(Name="growthOnly",Description = "CPICashFlow")>] 
+        ([<ExcelArgument(Name="growthOnly",Description = "bool or empty")>] 
          growthOnly : obj)
-        ([<ExcelArgument(Name="interpolation",Description = "CPICashFlow")>] 
+        ([<ExcelArgument(Name="interpolation",Description = "InterpolationType: AsIndex, Flat, Linear or empty")>] 
          interpolation : obj)
-        ([<ExcelArgument(Name="frequency",Description = "CPICashFlow")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency or empty")>] 
          frequency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,7 +232,7 @@ module CPICashFlowFunction =
     *)
     [<ExcelFunction(Name="_CPICashFlow_frequency", Description="Create a CPICashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICashFlow_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Index")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICashFlow",Description = "CPICashFlow")>] 
          cpicashflow : obj)
@@ -268,7 +268,7 @@ module CPICashFlowFunction =
     *)
     [<ExcelFunction(Name="_CPICashFlow_interpolation", Description="Create a CPICashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICashFlow_interpolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Index")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICashFlow",Description = "CPICashFlow")>] 
          cpicashflow : obj)
@@ -304,7 +304,7 @@ module CPICashFlowFunction =
     *)
     [<ExcelFunction(Name="_CPICashFlow_date", Description="Create a CPICashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICashFlow_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Index")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICashFlow",Description = "CPICashFlow")>] 
          cpicashflow : obj)
@@ -340,7 +340,7 @@ module CPICashFlowFunction =
     *)
     [<ExcelFunction(Name="_CPICashFlow_fixingDate", Description="Create a CPICashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICashFlow_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Index")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICashFlow",Description = "CPICashFlow")>] 
          cpicashflow : obj)
@@ -376,7 +376,7 @@ module CPICashFlowFunction =
     *)
     [<ExcelFunction(Name="_CPICashFlow_growthOnly", Description="Create a CPICashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICashFlow_growthOnly
-        ([<ExcelArgument(Name="Mnemonic",Description = "Index")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICashFlow",Description = "CPICashFlow")>] 
          cpicashflow : obj)
@@ -412,7 +412,7 @@ module CPICashFlowFunction =
     *)
     [<ExcelFunction(Name="_CPICashFlow_index", Description="Create a CPICashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICashFlow_index
-        ([<ExcelArgument(Name="Mnemonic",Description = "Index")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICashFlow",Description = "CPICashFlow")>] 
          cpicashflow : obj)
@@ -448,7 +448,7 @@ module CPICashFlowFunction =
     *)
     [<ExcelFunction(Name="_CPICashFlow_notional", Description="Create a CPICashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICashFlow_notional
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICashFlow",Description = "CPICashFlow")>] 
          cpicashflow : obj)
@@ -484,7 +484,7 @@ module CPICashFlowFunction =
     *)
     [<ExcelFunction(Name="_CPICashFlow_CompareTo", Description="Create a CPICashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICashFlow_CompareTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICashFlow",Description = "CPICashFlow")>] 
          cpicashflow : obj)
@@ -526,7 +526,7 @@ module CPICashFlowFunction =
     *)
     [<ExcelFunction(Name="_CPICashFlow_Equals", Description="Create a CPICashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICashFlow_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICashFlow",Description = "CPICashFlow")>] 
          cpicashflow : obj)
@@ -568,7 +568,7 @@ module CPICashFlowFunction =
     *)
     [<ExcelFunction(Name="_CPICashFlow_exCouponDate", Description="Create a CPICashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICashFlow_exCouponDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICashFlow",Description = "CPICashFlow")>] 
          cpicashflow : obj)
@@ -604,7 +604,7 @@ module CPICashFlowFunction =
     *)
     [<ExcelFunction(Name="_CPICashFlow_hasOccurred", Description="Create a CPICashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICashFlow_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICashFlow",Description = "CPICashFlow")>] 
          cpicashflow : obj)
@@ -652,7 +652,7 @@ module CPICashFlowFunction =
     *)
     [<ExcelFunction(Name="_CPICashFlow_tradingExCoupon", Description="Create a CPICashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICashFlow_tradingExCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICashFlow",Description = "CPICashFlow")>] 
          cpicashflow : obj)
@@ -694,7 +694,7 @@ module CPICashFlowFunction =
     *)
     [<ExcelFunction(Name="_CPICashFlow_accept", Description="Create a CPICashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICashFlow_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICashFlow",Description = "CPICashFlow")>] 
          cpicashflow : obj)
@@ -736,7 +736,7 @@ module CPICashFlowFunction =
     *)
     [<ExcelFunction(Name="_CPICashFlow_registerWith", Description="Create a CPICashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICashFlow_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICashFlow",Description = "CPICashFlow")>] 
          cpicashflow : obj)
@@ -778,7 +778,7 @@ module CPICashFlowFunction =
     *)
     [<ExcelFunction(Name="_CPICashFlow_unregisterWith", Description="Create a CPICashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICashFlow_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICashFlow",Description = "CPICashFlow")>] 
          cpicashflow : obj)
@@ -817,9 +817,9 @@ module CPICashFlowFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CPICashFlow_Range", Description="Create a range of CPICashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICashFlow_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

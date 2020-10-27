@@ -39,9 +39,9 @@ module EventSetFunction =
     *)
     [<ExcelFunction(Name="_EventSet", Description="Create a EventSet",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EventSet_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "EventSet")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="events",Description = "Date,double")>] 
+        ([<ExcelArgument(Name="events",Description = "Date,double range")>] 
          events : obj)
         ([<ExcelArgument(Name="eventsStart",Description = "Date")>] 
          eventsStart : obj)
@@ -88,7 +88,7 @@ module EventSetFunction =
     *)
     [<ExcelFunction(Name="_EventSet_newSimulation", Description="Create a EventSet",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EventSet_newSimulation
-        ([<ExcelArgument(Name="Mnemonic",Description = "CatSimulation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EventSet",Description = "EventSet")>] 
          eventset : obj)
@@ -133,9 +133,9 @@ module EventSetFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_EventSet_Range", Description="Create a range of EventSet",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EventSet_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

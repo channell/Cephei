@@ -39,7 +39,7 @@ module InterpolatedZeroCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroCurve_Clone", Description="Create a InterpolatedZeroCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroCurve_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedZeroCurve",Description = "InterpolatedZeroCurve")>] 
          interpolatedzerocurve : obj)
@@ -75,7 +75,7 @@ module InterpolatedZeroCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroCurve_data", Description="Create a InterpolatedZeroCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroCurve_data
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedZeroCurve",Description = "InterpolatedZeroCurve")>] 
          interpolatedzerocurve : obj)
@@ -111,7 +111,7 @@ module InterpolatedZeroCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroCurve_data_", Description="Create a InterpolatedZeroCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroCurve_data_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedZeroCurve",Description = "InterpolatedZeroCurve")>] 
          interpolatedzerocurve : obj)
@@ -147,7 +147,7 @@ module InterpolatedZeroCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroCurve_dates", Description="Create a InterpolatedZeroCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroCurve_dates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedZeroCurve",Description = "InterpolatedZeroCurve")>] 
          interpolatedzerocurve : obj)
@@ -183,7 +183,7 @@ module InterpolatedZeroCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroCurve_dates_", Description="Create a InterpolatedZeroCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroCurve_dates_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedZeroCurve",Description = "InterpolatedZeroCurve")>] 
          interpolatedzerocurve : obj)
@@ -219,19 +219,19 @@ module InterpolatedZeroCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroCurve", Description="Create a InterpolatedZeroCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroCurve_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="calendar",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar or empty")>] 
          calendar : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="jumps",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="jumps",Description = "Quote or empty")>] 
          jumps : obj)
-        ([<ExcelArgument(Name="jumpDates",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="jumpDates",Description = "Date or empty")>] 
          jumpDates : obj)
-        ([<ExcelArgument(Name="interpolator",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="interpolator",Description = "'Interpolator or empty")>] 
          interpolator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -286,15 +286,15 @@ module InterpolatedZeroCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroCurve1", Description="Create a InterpolatedZeroCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroCurve_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="jumps",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="jumps",Description = "Quote or empty")>] 
          jumps : obj)
-        ([<ExcelArgument(Name="jumpDates",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="jumpDates",Description = "Date or empty")>] 
          jumpDates : obj)
-        ([<ExcelArgument(Name="interpolator",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="interpolator",Description = "'Interpolator or empty")>] 
          interpolator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -341,17 +341,17 @@ module InterpolatedZeroCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroCurve2", Description="Create a InterpolatedZeroCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroCurve_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="jumps",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="jumps",Description = "Quote or empty")>] 
          jumps : obj)
-        ([<ExcelArgument(Name="jumpDates",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="jumpDates",Description = "Date or empty")>] 
          jumpDates : obj)
-        ([<ExcelArgument(Name="interpolator",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="interpolator",Description = "'Interpolator or empty")>] 
          interpolator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -402,21 +402,21 @@ module InterpolatedZeroCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroCurve3", Description="Create a InterpolatedZeroCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroCurve_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dates",Description = "Date")>] 
+        ([<ExcelArgument(Name="dates",Description = "Date range")>] 
          dates : obj)
-        ([<ExcelArgument(Name="yields",Description = "double")>] 
+        ([<ExcelArgument(Name="yields",Description = "double range")>] 
          yields : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="calendar",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar or empty")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="interpolator",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="interpolator",Description = "'Interpolator or empty")>] 
          interpolator : obj)
-        ([<ExcelArgument(Name="compounding",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="compounding",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded or empty")>] 
          compounding : obj)
-        ([<ExcelArgument(Name="frequency",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency or empty")>] 
          frequency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -475,21 +475,21 @@ module InterpolatedZeroCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroCurve4", Description="Create a InterpolatedZeroCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroCurve_create4
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dates",Description = "Date")>] 
+        ([<ExcelArgument(Name="dates",Description = "Date range")>] 
          dates : obj)
-        ([<ExcelArgument(Name="yields",Description = "double")>] 
+        ([<ExcelArgument(Name="yields",Description = "double range")>] 
          yields : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="interpolator",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="interpolator",Description = "'Interpolator or empty")>] 
          interpolator : obj)
-        ([<ExcelArgument(Name="compounding",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="compounding",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded or empty")>] 
          compounding : obj)
-        ([<ExcelArgument(Name="frequency",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency or empty")>] 
          frequency : obj)
-        ([<ExcelArgument(Name="refDate",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="refDate",Description = "Date or empty")>] 
          refDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -548,25 +548,25 @@ module InterpolatedZeroCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroCurve5", Description="Create a InterpolatedZeroCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroCurve_create5
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dates",Description = "Date")>] 
+        ([<ExcelArgument(Name="dates",Description = "Date range")>] 
          dates : obj)
-        ([<ExcelArgument(Name="yields",Description = "double")>] 
+        ([<ExcelArgument(Name="yields",Description = "double range")>] 
          yields : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="calendar",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar or empty")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="jumps",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="jumps",Description = "Quote or empty")>] 
          jumps : obj)
-        ([<ExcelArgument(Name="jumpDates",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="jumpDates",Description = "Date or empty")>] 
          jumpDates : obj)
-        ([<ExcelArgument(Name="interpolator",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="interpolator",Description = "'Interpolator or empty")>] 
          interpolator : obj)
-        ([<ExcelArgument(Name="compounding",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="compounding",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded or empty")>] 
          compounding : obj)
-        ([<ExcelArgument(Name="frequency",Description = "InterpolatedZeroCurve")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency or empty")>] 
          frequency : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -633,7 +633,7 @@ module InterpolatedZeroCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroCurve_interpolation_", Description="Create a InterpolatedZeroCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroCurve_interpolation_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedZeroCurve",Description = "InterpolatedZeroCurve")>] 
          interpolatedzerocurve : obj)
@@ -669,7 +669,7 @@ module InterpolatedZeroCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroCurve_interpolator_", Description="Create a InterpolatedZeroCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroCurve_interpolator_
-        ([<ExcelArgument(Name="Mnemonic",Description = "IInterpolationFactory")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedZeroCurve",Description = "InterpolatedZeroCurve")>] 
          interpolatedzerocurve : obj)
@@ -705,7 +705,7 @@ module InterpolatedZeroCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroCurve_maxDate", Description="Create a InterpolatedZeroCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroCurve_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedZeroCurve",Description = "InterpolatedZeroCurve")>] 
          interpolatedzerocurve : obj)
@@ -741,7 +741,7 @@ module InterpolatedZeroCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroCurve_maxDate_", Description="Create a InterpolatedZeroCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroCurve_maxDate_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedZeroCurve",Description = "InterpolatedZeroCurve")>] 
          interpolatedzerocurve : obj)
@@ -777,7 +777,7 @@ module InterpolatedZeroCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroCurve_nodes", Description="Create a InterpolatedZeroCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroCurve_nodes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedZeroCurve",Description = "InterpolatedZeroCurve")>] 
          interpolatedzerocurve : obj)
@@ -813,7 +813,7 @@ module InterpolatedZeroCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroCurve_setupInterpolation", Description="Create a InterpolatedZeroCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroCurve_setupInterpolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedZeroCurve",Description = "InterpolatedZeroCurve")>] 
          interpolatedzerocurve : obj)
@@ -849,7 +849,7 @@ module InterpolatedZeroCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroCurve_times", Description="Create a InterpolatedZeroCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroCurve_times
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedZeroCurve",Description = "InterpolatedZeroCurve")>] 
          interpolatedzerocurve : obj)
@@ -885,7 +885,7 @@ module InterpolatedZeroCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroCurve_times_", Description="Create a InterpolatedZeroCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroCurve_times_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedZeroCurve",Description = "InterpolatedZeroCurve")>] 
          interpolatedzerocurve : obj)
@@ -921,7 +921,7 @@ module InterpolatedZeroCurveFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedZeroCurve_zeroRates", Description="Create a InterpolatedZeroCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroCurve_zeroRates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedZeroCurve",Description = "InterpolatedZeroCurve")>] 
          interpolatedzerocurve : obj)
@@ -954,9 +954,9 @@ module InterpolatedZeroCurveFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InterpolatedZeroCurve_Range", Description="Create a range of InterpolatedZeroCurve",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedZeroCurve_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

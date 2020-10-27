@@ -39,7 +39,7 @@ module ClosestRoundingFunction =
     *)
     [<ExcelFunction(Name="_ClosestRounding", Description="Create a ClosestRounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ClosestRounding_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ClosestRounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="precision",Description = "int")>] 
          precision : obj)
@@ -76,7 +76,7 @@ module ClosestRoundingFunction =
     *)
     [<ExcelFunction(Name="_ClosestRounding1", Description="Create a ClosestRounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ClosestRounding_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "ClosestRounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="precision",Description = "int")>] 
          precision : obj)
@@ -119,7 +119,7 @@ module ClosestRoundingFunction =
     *)
     [<ExcelFunction(Name="_ClosestRounding_Digit", Description="Create a ClosestRounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ClosestRounding_Digit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ClosestRounding",Description = "ClosestRounding")>] 
          closestrounding : obj)
@@ -155,7 +155,7 @@ module ClosestRoundingFunction =
     *)
     [<ExcelFunction(Name="_ClosestRounding_getType", Description="Create a ClosestRounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ClosestRounding_getType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ClosestRounding",Description = "ClosestRounding")>] 
          closestrounding : obj)
@@ -191,7 +191,7 @@ module ClosestRoundingFunction =
     *)
     [<ExcelFunction(Name="_ClosestRounding_Precision", Description="Create a ClosestRounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ClosestRounding_Precision
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ClosestRounding",Description = "ClosestRounding")>] 
          closestrounding : obj)
@@ -227,7 +227,7 @@ module ClosestRoundingFunction =
     *)
     [<ExcelFunction(Name="_ClosestRounding_Round", Description="Create a ClosestRounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ClosestRounding_Round
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ClosestRounding",Description = "ClosestRounding")>] 
          closestrounding : obj)
@@ -266,9 +266,9 @@ module ClosestRoundingFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ClosestRounding_Range", Description="Create a range of ClosestRounding",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ClosestRounding_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

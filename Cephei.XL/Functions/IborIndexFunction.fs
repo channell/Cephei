@@ -39,7 +39,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_businessDayConvention", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -75,7 +75,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_clone", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -117,7 +117,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_endOfMonth", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -153,7 +153,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_forecastFixing1", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -207,7 +207,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_forecastFixing", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -249,7 +249,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_forwardingTermStructure", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -285,7 +285,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex1", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="familyName",Description = "string")>] 
          familyName : obj)
@@ -370,7 +370,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -401,7 +401,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_maturityDate", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -443,7 +443,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_currency", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -479,7 +479,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_dayCounter", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -515,7 +515,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_familyName", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -551,7 +551,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_fixing", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -599,7 +599,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_fixingCalendar", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -635,7 +635,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_fixingDate", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -677,7 +677,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_fixingDays", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -713,7 +713,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_isValidFixingDate", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -755,7 +755,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_name", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -791,7 +791,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_pastFixing", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -833,7 +833,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_tenor", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -869,7 +869,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_update", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -905,7 +905,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_valueDate", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -947,7 +947,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_addFixing", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -1001,13 +1001,13 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_addFixings", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -1055,7 +1055,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_addFixings1", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -1103,7 +1103,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_allowsNativeFixings", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -1139,7 +1139,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_clearFixings", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -1175,7 +1175,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_registerWith", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -1217,7 +1217,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_timeSeries", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -1253,7 +1253,7 @@ module IborIndexFunction =
     *)
     [<ExcelFunction(Name="_IborIndex_unregisterWith", Description="Create a IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborIndex",Description = "IborIndex")>] 
          iborindex : obj)
@@ -1292,9 +1292,9 @@ module IborIndexFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_IborIndex_Range", Description="Create a range of IborIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborIndex_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

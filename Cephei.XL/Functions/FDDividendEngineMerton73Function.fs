@@ -39,7 +39,7 @@ module FDDividendEngineMerton73Function =
     *)
     [<ExcelFunction(Name="_FDDividendEngineMerton73_factory2", Description="Create a FDDividendEngineMerton73",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineMerton73_factory2
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDDividendEngineMerton73",Description = "FDDividendEngineMerton73")>] 
          fddividendenginemerton73 : obj)
@@ -99,7 +99,7 @@ module FDDividendEngineMerton73Function =
     *)
     [<ExcelFunction(Name="_FDDividendEngineMerton73", Description="Create a FDDividendEngineMerton73",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineMerton73_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDDividendEngineMerton73")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -154,7 +154,7 @@ module FDDividendEngineMerton73Function =
     *)
     [<ExcelFunction(Name="_FDDividendEngineMerton731", Description="Create a FDDividendEngineMerton73",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineMerton73_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDDividendEngineMerton73")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -185,7 +185,7 @@ module FDDividendEngineMerton73Function =
     *)
     [<ExcelFunction(Name="_FDDividendEngineMerton73_factory", Description="Create a FDDividendEngineMerton73",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineMerton73_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDDividendEngineMerton73",Description = "FDDividendEngineMerton73")>] 
          fddividendenginemerton73 : obj)
@@ -246,7 +246,7 @@ module FDDividendEngineMerton73Function =
     *)
     [<ExcelFunction(Name="_FDDividendEngineMerton73_setStepCondition", Description="Create a FDDividendEngineMerton73",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineMerton73_setStepCondition
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDDividendEngineMerton73",Description = "FDDividendEngineMerton73")>] 
          fddividendenginemerton73 : obj)
@@ -288,7 +288,7 @@ module FDDividendEngineMerton73Function =
     *)
     [<ExcelFunction(Name="_FDDividendEngineMerton73_ensureStrikeInGrid", Description="Create a FDDividendEngineMerton73",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineMerton73_ensureStrikeInGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDDividendEngineMerton73",Description = "FDDividendEngineMerton73")>] 
          fddividendenginemerton73 : obj)
@@ -324,7 +324,7 @@ module FDDividendEngineMerton73Function =
     *)
     [<ExcelFunction(Name="_FDDividendEngineMerton73_getResidualTime", Description="Create a FDDividendEngineMerton73",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineMerton73_getResidualTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDDividendEngineMerton73",Description = "FDDividendEngineMerton73")>] 
          fddividendenginemerton73 : obj)
@@ -360,7 +360,7 @@ module FDDividendEngineMerton73Function =
     *)
     [<ExcelFunction(Name="_FDDividendEngineMerton73_grid", Description="Create a FDDividendEngineMerton73",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineMerton73_grid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDDividendEngineMerton73",Description = "FDDividendEngineMerton73")>] 
          fddividendenginemerton73 : obj)
@@ -396,7 +396,7 @@ module FDDividendEngineMerton73Function =
     *)
     [<ExcelFunction(Name="_FDDividendEngineMerton73_intrinsicValues_", Description="Create a FDDividendEngineMerton73",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineMerton73_intrinsicValues_
-        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDDividendEngineMerton73",Description = "FDDividendEngineMerton73")>] 
          fddividendenginemerton73 : obj)
@@ -429,9 +429,9 @@ module FDDividendEngineMerton73Function =
             "<WIZ>"
     [<ExcelFunction(Name="_FDDividendEngineMerton73_Range", Description="Create a range of FDDividendEngineMerton73",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendEngineMerton73_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

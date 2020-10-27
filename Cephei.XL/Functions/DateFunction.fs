@@ -39,7 +39,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date_CompareTo", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_CompareTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Date")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Date",Description = "Date")>] 
          date : obj)
@@ -81,7 +81,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date4", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_create4
-        ([<ExcelArgument(Name="Mnemonic",Description = "Date")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="d",Description = "DateTime")>] 
          d : obj)
@@ -118,7 +118,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date5", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_create5
-        ([<ExcelArgument(Name="Mnemonic",Description = "Date")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="d",Description = "int")>] 
          d : obj)
@@ -126,13 +126,13 @@ module DateFunction =
          m : obj)
         ([<ExcelArgument(Name="y",Description = "int")>] 
          y : obj)
-        ([<ExcelArgument(Name="h",Description = "Date")>] 
+        ([<ExcelArgument(Name="h",Description = "int or empty")>] 
          h : obj)
-        ([<ExcelArgument(Name="mi",Description = "Date")>] 
+        ([<ExcelArgument(Name="mi",Description = "int or empty")>] 
          mi : obj)
-        ([<ExcelArgument(Name="s",Description = "Date")>] 
+        ([<ExcelArgument(Name="s",Description = "int or empty")>] 
          s : obj)
-        ([<ExcelArgument(Name="ms",Description = "Date")>] 
+        ([<ExcelArgument(Name="ms",Description = "int or empty")>] 
          ms : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -191,7 +191,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date3", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Date")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="d",Description = "int")>] 
          d : obj)
@@ -240,7 +240,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date2", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Date")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="d",Description = "int")>] 
          d : obj)
@@ -248,13 +248,13 @@ module DateFunction =
          m : obj)
         ([<ExcelArgument(Name="y",Description = "int")>] 
          y : obj)
-        ([<ExcelArgument(Name="h",Description = "Date")>] 
+        ([<ExcelArgument(Name="h",Description = "int or empty")>] 
          h : obj)
-        ([<ExcelArgument(Name="mi",Description = "Date")>] 
+        ([<ExcelArgument(Name="mi",Description = "int or empty")>] 
          mi : obj)
-        ([<ExcelArgument(Name="s",Description = "Date")>] 
+        ([<ExcelArgument(Name="s",Description = "int or empty")>] 
          s : obj)
-        ([<ExcelArgument(Name="ms",Description = "Date")>] 
+        ([<ExcelArgument(Name="ms",Description = "int or empty")>] 
          ms : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -313,7 +313,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date1", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Date")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="serialNumber",Description = "int")>] 
          serialNumber : obj)
@@ -350,7 +350,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Date")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -381,7 +381,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date_Day", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_Day
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Date",Description = "Date")>] 
          date : obj)
@@ -417,7 +417,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date_DayOfWeek", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_DayOfWeek
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Date",Description = "Date")>] 
          date : obj)
@@ -453,7 +453,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date_DayOfYear", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_DayOfYear
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Date",Description = "Date")>] 
          date : obj)
@@ -489,7 +489,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date_Equals", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Date",Description = "Date")>] 
          date : obj)
@@ -531,7 +531,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date_fractionOfDay", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_fractionOfDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Date",Description = "Date")>] 
          date : obj)
@@ -567,7 +567,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date_fractionOfSecond", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_fractionOfSecond
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Date",Description = "Date")>] 
          date : obj)
@@ -603,7 +603,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date_hours", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_hours
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Date",Description = "Date")>] 
          date : obj)
@@ -639,7 +639,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date_milliseconds", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_milliseconds
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Date",Description = "Date")>] 
          date : obj)
@@ -675,7 +675,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date_minutes", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_minutes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Date",Description = "Date")>] 
          date : obj)
@@ -711,7 +711,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date_Month", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_Month
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Date",Description = "Date")>] 
          date : obj)
@@ -747,7 +747,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date_seconds", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_seconds
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Date",Description = "Date")>] 
          date : obj)
@@ -784,7 +784,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date_serialNumber", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_serialNumber
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Date",Description = "Date")>] 
          date : obj)
@@ -820,7 +820,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date_ToLongDateString", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_ToLongDateString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Date",Description = "Date")>] 
          date : obj)
@@ -856,7 +856,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date_ToShortDateString", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_ToShortDateString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Date",Description = "Date")>] 
          date : obj)
@@ -892,7 +892,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date_ToString2", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_ToString2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Date",Description = "Date")>] 
          date : obj)
@@ -940,7 +940,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date_ToString3", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_ToString3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Date",Description = "Date")>] 
          date : obj)
@@ -982,7 +982,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date_ToString1", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_ToString1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Date",Description = "Date")>] 
          date : obj)
@@ -1025,7 +1025,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date_ToString", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Date",Description = "Date")>] 
          date : obj)
@@ -1061,7 +1061,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date_weekday", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_weekday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Date",Description = "Date")>] 
          date : obj)
@@ -1098,7 +1098,7 @@ module DateFunction =
     *)
     [<ExcelFunction(Name="_Date_Year", Description="Create a Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_Year
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Date",Description = "Date")>] 
          date : obj)
@@ -1131,9 +1131,9 @@ module DateFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Date_Range", Description="Create a range of Date",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Date_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

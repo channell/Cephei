@@ -39,7 +39,7 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector_Clone", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vector",Description = "Vector")>] 
          vector : obj)
@@ -75,7 +75,7 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector_empty", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vector",Description = "Vector")>] 
          vector : obj)
@@ -111,7 +111,7 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector_Equals", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vector",Description = "Vector")>] 
          vector : obj)
@@ -153,7 +153,7 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector_Equals1", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_Equals1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vector",Description = "Vector")>] 
          vector : obj)
@@ -195,7 +195,7 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector_size", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vector",Description = "Vector")>] 
          vector : obj)
@@ -231,7 +231,7 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector_swap", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_swap
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vector",Description = "Vector")>] 
          vector : obj)
@@ -279,9 +279,9 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector1", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="from",Description = "double")>] 
+        ([<ExcelArgument(Name="from",Description = "double range")>] 
          from : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -316,7 +316,7 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -347,7 +347,7 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector4", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_create4
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
@@ -384,7 +384,7 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector5", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_create5
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
@@ -427,7 +427,7 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector2", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="from",Description = "Vector")>] 
          from : obj)
@@ -464,7 +464,7 @@ module VectorFunction =
     *)
     [<ExcelFunction(Name="_Vector3", Description="Create a Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
@@ -510,9 +510,9 @@ module VectorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Vector_Range", Description="Create a range of Vector",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vector_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

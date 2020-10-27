@@ -39,11 +39,11 @@ module AmericanExerciseFunction =
     *)
     [<ExcelFunction(Name="_AmericanExercise", Description="Create a AmericanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanExercise_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AmericanExercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="latest",Description = "Date")>] 
          latest : obj)
-        ([<ExcelArgument(Name="payoffAtExpiry",Description = "AmericanExercise")>] 
+        ([<ExcelArgument(Name="payoffAtExpiry",Description = "bool or empty")>] 
          payoffAtExpiry : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,13 +82,13 @@ module AmericanExerciseFunction =
     *)
     [<ExcelFunction(Name="_AmericanExercise1", Description="Create a AmericanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanExercise_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "AmericanExercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="earliestDate",Description = "Date")>] 
          earliestDate : obj)
         ([<ExcelArgument(Name="latestDate",Description = "Date")>] 
          latestDate : obj)
-        ([<ExcelArgument(Name="payoffAtExpiry",Description = "AmericanExercise")>] 
+        ([<ExcelArgument(Name="payoffAtExpiry",Description = "bool or empty")>] 
          payoffAtExpiry : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -131,7 +131,7 @@ module AmericanExerciseFunction =
     *)
     [<ExcelFunction(Name="_AmericanExercise_payoffAtExpiry", Description="Create a AmericanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanExercise_payoffAtExpiry
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmericanExercise",Description = "AmericanExercise")>] 
          americanexercise : obj)
@@ -167,7 +167,7 @@ module AmericanExerciseFunction =
     *)
     [<ExcelFunction(Name="_AmericanExercise_date", Description="Create a AmericanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanExercise_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmericanExercise",Description = "AmericanExercise")>] 
          americanexercise : obj)
@@ -209,7 +209,7 @@ module AmericanExerciseFunction =
     *)
     [<ExcelFunction(Name="_AmericanExercise_dates", Description="Create a AmericanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanExercise_dates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmericanExercise",Description = "AmericanExercise")>] 
          americanexercise : obj)
@@ -245,7 +245,7 @@ module AmericanExerciseFunction =
     *)
     [<ExcelFunction(Name="_AmericanExercise_lastDate", Description="Create a AmericanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanExercise_lastDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmericanExercise",Description = "AmericanExercise")>] 
          americanexercise : obj)
@@ -281,7 +281,7 @@ module AmericanExerciseFunction =
     *)
     [<ExcelFunction(Name="_AmericanExercise_type", Description="Create a AmericanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanExercise_type
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmericanExercise",Description = "AmericanExercise")>] 
          americanexercise : obj)
@@ -314,9 +314,9 @@ module AmericanExerciseFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AmericanExercise_Range", Description="Create a range of AmericanExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanExercise_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

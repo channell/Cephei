@@ -39,7 +39,7 @@ module DiscreteTrapezoidIntegratorFunction =
     *)
     [<ExcelFunction(Name="_DiscreteTrapezoidIntegrator", Description="Create a DiscreteTrapezoidIntegrator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteTrapezoidIntegrator_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "DiscreteTrapezoidIntegrator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="evaluations",Description = "int")>] 
          evaluations : obj)
@@ -76,7 +76,7 @@ module DiscreteTrapezoidIntegratorFunction =
     *)
     [<ExcelFunction(Name="_DiscreteTrapezoidIntegrator_absoluteAccuracy", Description="Create a DiscreteTrapezoidIntegrator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteTrapezoidIntegrator_absoluteAccuracy
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscreteTrapezoidIntegrator",Description = "DiscreteTrapezoidIntegrator")>] 
          discretetrapezoidintegrator : obj)
@@ -112,7 +112,7 @@ module DiscreteTrapezoidIntegratorFunction =
     *)
     [<ExcelFunction(Name="_DiscreteTrapezoidIntegrator_absoluteError", Description="Create a DiscreteTrapezoidIntegrator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteTrapezoidIntegrator_absoluteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscreteTrapezoidIntegrator",Description = "DiscreteTrapezoidIntegrator")>] 
          discretetrapezoidintegrator : obj)
@@ -148,7 +148,7 @@ module DiscreteTrapezoidIntegratorFunction =
     *)
     [<ExcelFunction(Name="_DiscreteTrapezoidIntegrator_integrationSuccess", Description="Create a DiscreteTrapezoidIntegrator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteTrapezoidIntegrator_integrationSuccess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscreteTrapezoidIntegrator",Description = "DiscreteTrapezoidIntegrator")>] 
          discretetrapezoidintegrator : obj)
@@ -184,7 +184,7 @@ module DiscreteTrapezoidIntegratorFunction =
     *)
     [<ExcelFunction(Name="_DiscreteTrapezoidIntegrator_maxEvaluations", Description="Create a DiscreteTrapezoidIntegrator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteTrapezoidIntegrator_maxEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscreteTrapezoidIntegrator",Description = "DiscreteTrapezoidIntegrator")>] 
          discretetrapezoidintegrator : obj)
@@ -220,7 +220,7 @@ module DiscreteTrapezoidIntegratorFunction =
     *)
     [<ExcelFunction(Name="_DiscreteTrapezoidIntegrator_numberOfEvaluations", Description="Create a DiscreteTrapezoidIntegrator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteTrapezoidIntegrator_numberOfEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscreteTrapezoidIntegrator",Description = "DiscreteTrapezoidIntegrator")>] 
          discretetrapezoidintegrator : obj)
@@ -256,7 +256,7 @@ module DiscreteTrapezoidIntegratorFunction =
     *)
     [<ExcelFunction(Name="_DiscreteTrapezoidIntegrator_setAbsoluteAccuracy", Description="Create a DiscreteTrapezoidIntegrator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteTrapezoidIntegrator_setAbsoluteAccuracy
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscreteTrapezoidIntegrator",Description = "DiscreteTrapezoidIntegrator")>] 
          discretetrapezoidintegrator : obj)
@@ -298,7 +298,7 @@ module DiscreteTrapezoidIntegratorFunction =
     *)
     [<ExcelFunction(Name="_DiscreteTrapezoidIntegrator_setMaxEvaluations", Description="Create a DiscreteTrapezoidIntegrator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteTrapezoidIntegrator_setMaxEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscreteTrapezoidIntegrator",Description = "DiscreteTrapezoidIntegrator")>] 
          discretetrapezoidintegrator : obj)
@@ -340,7 +340,7 @@ module DiscreteTrapezoidIntegratorFunction =
     *)
     [<ExcelFunction(Name="_DiscreteTrapezoidIntegrator_value", Description="Create a DiscreteTrapezoidIntegrator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteTrapezoidIntegrator_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscreteTrapezoidIntegrator",Description = "DiscreteTrapezoidIntegrator")>] 
          discretetrapezoidintegrator : obj)
@@ -391,9 +391,9 @@ module DiscreteTrapezoidIntegratorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DiscreteTrapezoidIntegrator_Range", Description="Create a range of DiscreteTrapezoidIntegrator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteTrapezoidIntegrator_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

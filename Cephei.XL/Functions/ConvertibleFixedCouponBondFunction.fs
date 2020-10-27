@@ -39,7 +39,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="exercise",Description = "Exercise")>] 
          exercise : obj)
@@ -55,13 +55,13 @@ module ConvertibleFixedCouponBondFunction =
          issueDate : obj)
         ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="coupons",Description = "double")>] 
+        ([<ExcelArgument(Name="coupons",Description = "double range")>] 
          coupons : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
         ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
-        ([<ExcelArgument(Name="redemption",Description = "ConvertibleFixedCouponBond")>] 
+        ([<ExcelArgument(Name="redemption",Description = "double or empty")>] 
          redemption : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
@@ -148,7 +148,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_callability", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_callability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -184,7 +184,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_conversionRatio", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_conversionRatio
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -220,7 +220,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_creditSpread", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_creditSpread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -256,7 +256,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_dividends", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_dividends
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -292,7 +292,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_accruedAmount", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_accruedAmount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -334,7 +334,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_calendar", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -370,7 +370,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_cashflows", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_cashflows
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -406,7 +406,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_cleanPrice", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_cleanPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -442,7 +442,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_cleanPrice1", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_cleanPrice1
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -508,7 +508,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_dirtyPrice1", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_dirtyPrice1
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -574,7 +574,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_dirtyPrice", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_dirtyPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -610,7 +610,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_isExpired", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -646,7 +646,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_issueDate", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_issueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -682,7 +682,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_isTradable", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_isTradable
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -724,7 +724,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_maturityDate", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -760,7 +760,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_nextCashFlowDate", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_nextCashFlowDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -802,7 +802,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_nextCouponRate", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_nextCouponRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -844,7 +844,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_notional", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_notional
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -886,7 +886,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_notionals", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_notionals
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -922,7 +922,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_previousCashFlowDate", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_previousCashFlowDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -964,7 +964,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_previousCouponRate", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_previousCouponRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -1006,7 +1006,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_redemption", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_redemption
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -1042,7 +1042,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_redemptions", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_redemptions
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -1078,7 +1078,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_settlementDate", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_settlementDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -1120,7 +1120,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_settlementDays", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -1156,7 +1156,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_settlementValue", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_settlementValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -1198,7 +1198,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_settlementValue1", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_settlementValue1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -1234,7 +1234,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_startDate", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -1270,7 +1270,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_yield1", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_yield1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -1348,7 +1348,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_yield", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_yield
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -1414,7 +1414,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_CASH", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -1450,7 +1450,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_errorEstimate", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -1486,7 +1486,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_NPV", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -1522,7 +1522,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_result", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -1564,7 +1564,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_setPricingEngine", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -1606,7 +1606,7 @@ module ConvertibleFixedCouponBondFunction =
     *)
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_valuationDate", Description="Create a ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvertibleFixedCouponBond",Description = "ConvertibleFixedCouponBond")>] 
          convertiblefixedcouponbond : obj)
@@ -1639,9 +1639,9 @@ module ConvertibleFixedCouponBondFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ConvertibleFixedCouponBond_Range", Description="Create a range of ConvertibleFixedCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvertibleFixedCouponBond_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

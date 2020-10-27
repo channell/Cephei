@@ -40,7 +40,7 @@ module MCHestonHullWhiteEngineFunction =
     *)
     [<ExcelFunction(Name="_MCHestonHullWhiteEngine", Description="Create a MCHestonHullWhiteEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCHestonHullWhiteEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "MCHestonHullWhiteEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "HybridHestonHullWhiteProcess")>] 
          Process : obj)
@@ -122,9 +122,9 @@ module MCHestonHullWhiteEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MCHestonHullWhiteEngine_Range", Description="Create a range of MCHestonHullWhiteEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCHestonHullWhiteEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

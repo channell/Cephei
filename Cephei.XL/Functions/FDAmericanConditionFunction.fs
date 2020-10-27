@@ -39,7 +39,7 @@ module FDAmericanConditionFunction =
     *)
     [<ExcelFunction(Name="_FDAmericanCondition_factory", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDAmericanCondition_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDAmericanCondition",Description = "FDAmericanCondition")>] 
          fdamericancondition : obj)
@@ -99,7 +99,7 @@ module FDAmericanConditionFunction =
     *)
     [<ExcelFunction(Name="_FDAmericanCondition", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDAmericanCondition_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDAmericanCondition")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -154,7 +154,7 @@ module FDAmericanConditionFunction =
     *)
     [<ExcelFunction(Name="_FDAmericanCondition1", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDAmericanCondition_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDAmericanCondition")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -186,7 +186,7 @@ module FDAmericanConditionFunction =
     *)
     [<ExcelFunction(Name="_FDAmericanCondition_setStepCondition", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDAmericanCondition_setStepCondition
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDAmericanCondition",Description = "FDAmericanCondition")>] 
          fdamericancondition : obj)
@@ -228,7 +228,7 @@ module FDAmericanConditionFunction =
     *)
     [<ExcelFunction(Name="_FDAmericanCondition_ensureStrikeInGrid", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDAmericanCondition_ensureStrikeInGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDAmericanCondition",Description = "FDAmericanCondition")>] 
          fdamericancondition : obj)
@@ -264,7 +264,7 @@ module FDAmericanConditionFunction =
     *)
     [<ExcelFunction(Name="_FDAmericanCondition_getResidualTime", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDAmericanCondition_getResidualTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDAmericanCondition",Description = "FDAmericanCondition")>] 
          fdamericancondition : obj)
@@ -300,7 +300,7 @@ module FDAmericanConditionFunction =
     *)
     [<ExcelFunction(Name="_FDAmericanCondition_grid", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDAmericanCondition_grid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDAmericanCondition",Description = "FDAmericanCondition")>] 
          fdamericancondition : obj)
@@ -336,7 +336,7 @@ module FDAmericanConditionFunction =
     *)
     [<ExcelFunction(Name="_FDAmericanCondition_intrinsicValues_", Description="Create a FDAmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDAmericanCondition_intrinsicValues_
-        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDAmericanCondition",Description = "FDAmericanCondition")>] 
          fdamericancondition : obj)
@@ -369,9 +369,9 @@ module FDAmericanConditionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FDAmericanCondition_Range", Description="Create a range of FDAmericanCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDAmericanCondition_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

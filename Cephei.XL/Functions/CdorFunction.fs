@@ -39,7 +39,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Cdor")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
@@ -82,7 +82,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor1", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Cdor")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
@@ -119,7 +119,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_businessDayConvention", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -155,7 +155,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_clone", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -197,7 +197,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_endOfMonth", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -233,7 +233,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_forecastFixing1", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -287,7 +287,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_forecastFixing", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -329,7 +329,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_forwardingTermStructure", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -365,7 +365,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_maturityDate", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -407,7 +407,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_currency", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -443,7 +443,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_dayCounter", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -479,7 +479,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_familyName", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -515,7 +515,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_fixing", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -563,7 +563,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_fixingCalendar", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -599,7 +599,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_fixingDate", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -641,7 +641,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_fixingDays", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -677,7 +677,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_isValidFixingDate", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -719,7 +719,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_name", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -755,7 +755,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_pastFixing", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -797,7 +797,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_tenor", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -833,7 +833,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_update", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -869,7 +869,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_valueDate", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -911,7 +911,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_addFixing", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -965,13 +965,13 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_addFixings", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -1019,7 +1019,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_addFixings1", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -1067,7 +1067,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_allowsNativeFixings", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -1103,7 +1103,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_clearFixings", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -1139,7 +1139,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_registerWith", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -1181,7 +1181,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_timeSeries", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -1217,7 +1217,7 @@ module CdorFunction =
     *)
     [<ExcelFunction(Name="_Cdor_unregisterWith", Description="Create a Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cdor",Description = "Cdor")>] 
          cdor : obj)
@@ -1256,9 +1256,9 @@ module CdorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Cdor_Range", Description="Create a range of Cdor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cdor_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

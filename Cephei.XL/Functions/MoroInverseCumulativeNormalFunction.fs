@@ -39,7 +39,7 @@ module MoroInverseCumulativeNormalFunction =
     *)
     [<ExcelFunction(Name="_MoroInverseCumulativeNormal", Description="Create a MoroInverseCumulativeNormal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MoroInverseCumulativeNormal_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "MoroInverseCumulativeNormal")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="average",Description = "double")>] 
          average : obj)
@@ -82,7 +82,7 @@ module MoroInverseCumulativeNormalFunction =
     *)
     [<ExcelFunction(Name="_MoroInverseCumulativeNormal_value", Description="Create a MoroInverseCumulativeNormal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MoroInverseCumulativeNormal_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MoroInverseCumulativeNormal",Description = "MoroInverseCumulativeNormal")>] 
          moroinversecumulativenormal : obj)
@@ -121,9 +121,9 @@ module MoroInverseCumulativeNormalFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MoroInverseCumulativeNormal_Range", Description="Create a range of MoroInverseCumulativeNormal",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MoroInverseCumulativeNormal_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

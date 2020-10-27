@@ -39,7 +39,7 @@ module ChiSquareDistributionFunction =
     *)
     [<ExcelFunction(Name="_ChiSquareDistribution", Description="Create a ChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ChiSquareDistribution_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ChiSquareDistribution")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="df",Description = "double")>] 
          df : obj)
@@ -76,7 +76,7 @@ module ChiSquareDistributionFunction =
     *)
     [<ExcelFunction(Name="_ChiSquareDistribution_value", Description="Create a ChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ChiSquareDistribution_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ChiSquareDistribution",Description = "ChiSquareDistribution")>] 
          chisquaredistribution : obj)
@@ -115,9 +115,9 @@ module ChiSquareDistributionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ChiSquareDistribution_Range", Description="Create a range of ChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ChiSquareDistribution_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

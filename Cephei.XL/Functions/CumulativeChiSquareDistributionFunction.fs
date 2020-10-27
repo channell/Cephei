@@ -39,7 +39,7 @@ module CumulativeChiSquareDistributionFunction =
     *)
     [<ExcelFunction(Name="_CumulativeChiSquareDistribution", Description="Create a CumulativeChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeChiSquareDistribution_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "CumulativeChiSquareDistribution")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="df",Description = "double")>] 
          df : obj)
@@ -76,7 +76,7 @@ module CumulativeChiSquareDistributionFunction =
     *)
     [<ExcelFunction(Name="_CumulativeChiSquareDistribution_value", Description="Create a CumulativeChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeChiSquareDistribution_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CumulativeChiSquareDistribution",Description = "CumulativeChiSquareDistribution")>] 
          cumulativechisquaredistribution : obj)
@@ -115,9 +115,9 @@ module CumulativeChiSquareDistributionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CumulativeChiSquareDistribution_Range", Description="Create a range of CumulativeChiSquareDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CumulativeChiSquareDistribution_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

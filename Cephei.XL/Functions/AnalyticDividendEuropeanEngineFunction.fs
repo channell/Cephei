@@ -39,7 +39,7 @@ module AnalyticDividendEuropeanEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticDividendEuropeanEngine", Description="Create a AnalyticDividendEuropeanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDividendEuropeanEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AnalyticDividendEuropeanEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -74,9 +74,9 @@ module AnalyticDividendEuropeanEngineFunction =
 
     [<ExcelFunction(Name="_AnalyticDividendEuropeanEngine_Range", Description="Create a range of AnalyticDividendEuropeanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDividendEuropeanEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -40,7 +40,7 @@ module KirkEngineFunction =
     *)
     [<ExcelFunction(Name="_KirkEngine", Description="Create a KirkEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KirkEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "KirkEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="process1",Description = "BlackProcess")>] 
          process1 : obj)
@@ -86,9 +86,9 @@ module KirkEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_KirkEngine_Range", Description="Create a range of KirkEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KirkEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

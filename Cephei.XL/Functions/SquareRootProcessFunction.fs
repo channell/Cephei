@@ -39,7 +39,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_diffusion", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "SquareRootProcess")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
@@ -87,7 +87,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_drift", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "SquareRootProcess")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
@@ -135,7 +135,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess2", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "SquareRootProcess")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="b",Description = "double")>] 
          b : obj)
@@ -190,7 +190,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SquareRootProcess")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="b",Description = "double")>] 
          b : obj)
@@ -251,7 +251,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess1", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "SquareRootProcess")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="b",Description = "double")>] 
          b : obj)
@@ -300,7 +300,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_x0", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_x0
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
@@ -336,7 +336,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_apply1", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_apply1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
@@ -384,7 +384,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_apply", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
@@ -432,7 +432,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_evolve", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_evolve
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
@@ -492,7 +492,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_evolve1", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_evolve1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
@@ -552,7 +552,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_expectation", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_expectation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
@@ -606,7 +606,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_expectation1", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_expectation1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
@@ -660,7 +660,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_initialValues", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_initialValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
@@ -696,7 +696,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_size", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
@@ -732,7 +732,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_stdDeviation", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_stdDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
@@ -786,7 +786,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_stdDeviation1", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_stdDeviation1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
@@ -840,7 +840,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_variance", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
@@ -894,7 +894,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_variance1", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_variance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
@@ -948,7 +948,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_covariance", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
@@ -1002,7 +1002,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_factors", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_factors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
@@ -1038,7 +1038,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_registerWith", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
@@ -1080,7 +1080,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_time", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
@@ -1122,7 +1122,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_unregisterWith", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
@@ -1164,7 +1164,7 @@ module SquareRootProcessFunction =
     *)
     [<ExcelFunction(Name="_SquareRootProcess_update", Description="Create a SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SquareRootProcess",Description = "SquareRootProcess")>] 
          squarerootprocess : obj)
@@ -1197,9 +1197,9 @@ module SquareRootProcessFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SquareRootProcess_Range", Description="Create a range of SquareRootProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SquareRootProcess_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

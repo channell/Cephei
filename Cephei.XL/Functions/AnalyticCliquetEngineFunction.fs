@@ -39,7 +39,7 @@ module AnalyticCliquetEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticCliquetEngine", Description="Create a AnalyticCliquetEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticCliquetEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AnalyticCliquetEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -74,9 +74,9 @@ module AnalyticCliquetEngineFunction =
 
     [<ExcelFunction(Name="_AnalyticCliquetEngine_Range", Description="Create a range of AnalyticCliquetEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticCliquetEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

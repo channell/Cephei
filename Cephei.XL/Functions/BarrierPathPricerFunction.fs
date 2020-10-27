@@ -39,7 +39,7 @@ module BarrierPathPricerFunction =
     *)
     [<ExcelFunction(Name="_BarrierPathPricer", Description="Create a BarrierPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierPathPricer_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BarrierPathPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="barrierType",Description = "Barrier.Type: DownIn, UpIn, DownOut, UpOut, NULL")>] 
          barrierType : obj)
@@ -51,7 +51,7 @@ module BarrierPathPricerFunction =
          Type : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="discounts",Description = "double")>] 
+        ([<ExcelArgument(Name="discounts",Description = "double range")>] 
          discounts : obj)
         ([<ExcelArgument(Name="diffProcess",Description = "StochasticProcess1D")>] 
          diffProcess : obj)
@@ -118,7 +118,7 @@ module BarrierPathPricerFunction =
     *)
     [<ExcelFunction(Name="_BarrierPathPricer_value", Description="Create a BarrierPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierPathPricer_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BarrierPathPricer",Description = "BarrierPathPricer")>] 
          barrierpathpricer : obj)
@@ -157,9 +157,9 @@ module BarrierPathPricerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BarrierPathPricer_Range", Description="Create a range of BarrierPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BarrierPathPricer_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

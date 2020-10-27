@@ -39,7 +39,7 @@ module ImplicitEulerSchemeFunction =
     *)
     [<ExcelFunction(Name="_ImplicitEulerScheme_factory", Description="Create a ImplicitEulerScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImplicitEulerScheme_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "IMixedScheme")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImplicitEulerScheme",Description = "ImplicitEulerScheme")>] 
          impliciteulerscheme : obj)
@@ -47,7 +47,7 @@ module ImplicitEulerSchemeFunction =
          L : obj)
         ([<ExcelArgument(Name="bcs",Description = "Object")>] 
          bcs : obj)
-        ([<ExcelArgument(Name="additionalFields",Description = "IMixedScheme")>] 
+        ([<ExcelArgument(Name="additionalFields",Description = "Object[] or empty")>] 
          additionalFields : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -93,13 +93,13 @@ module ImplicitEulerSchemeFunction =
     *)
     [<ExcelFunction(Name="_ImplicitEulerScheme", Description="Create a ImplicitEulerScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImplicitEulerScheme_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ImplicitEulerScheme")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="map",Description = "FdmLinearOpComposite")>] 
          map : obj)
-        ([<ExcelArgument(Name="bcSet",Description = "FdmLinearOp")>] 
+        ([<ExcelArgument(Name="bcSet",Description = "FdmLinearOp range")>] 
          bcSet : obj)
-        ([<ExcelArgument(Name="relTol",Description = "ImplicitEulerScheme")>] 
+        ([<ExcelArgument(Name="relTol",Description = "double or empty")>] 
          relTol : obj)
         ([<ExcelArgument(Name="solverType",Description = "ImplicitEulerScheme.SolverType: BiCGstab, GMRES")>] 
          solverType : obj)
@@ -148,7 +148,7 @@ module ImplicitEulerSchemeFunction =
     *)
     [<ExcelFunction(Name="_ImplicitEulerScheme1", Description="Create a ImplicitEulerScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImplicitEulerScheme_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "ImplicitEulerScheme")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -179,7 +179,7 @@ module ImplicitEulerSchemeFunction =
     *)
     [<ExcelFunction(Name="_ImplicitEulerScheme_numberOfIterations", Description="Create a ImplicitEulerScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImplicitEulerScheme_numberOfIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImplicitEulerScheme",Description = "ImplicitEulerScheme")>] 
          impliciteulerscheme : obj)
@@ -215,7 +215,7 @@ module ImplicitEulerSchemeFunction =
     *)
     [<ExcelFunction(Name="_ImplicitEulerScheme_setStep", Description="Create a ImplicitEulerScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImplicitEulerScheme_setStep
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImplicitEulerScheme",Description = "ImplicitEulerScheme")>] 
          impliciteulerscheme : obj)
@@ -257,7 +257,7 @@ module ImplicitEulerSchemeFunction =
     *)
     [<ExcelFunction(Name="_ImplicitEulerScheme_step", Description="Create a ImplicitEulerScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImplicitEulerScheme_step
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImplicitEulerScheme",Description = "ImplicitEulerScheme")>] 
          impliciteulerscheme : obj)
@@ -265,7 +265,7 @@ module ImplicitEulerSchemeFunction =
          a : obj)
         ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="theta",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="theta",Description = "double or empty")>] 
          theta : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -308,9 +308,9 @@ module ImplicitEulerSchemeFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ImplicitEulerScheme_Range", Description="Create a range of ImplicitEulerScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImplicitEulerScheme_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

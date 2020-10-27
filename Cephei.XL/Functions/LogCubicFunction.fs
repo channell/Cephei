@@ -39,7 +39,7 @@ module LogCubicFunction =
     *)
     [<ExcelFunction(Name="_LogCubic_global", Description="Create a LogCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubic_global
-        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LogCubic",Description = "LogCubic")>] 
          logcubic : obj)
@@ -75,15 +75,15 @@ module LogCubicFunction =
     *)
     [<ExcelFunction(Name="_LogCubic_interpolate", Description="Create a LogCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubic_interpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LogCubic",Description = "LogCubic")>] 
          logcubic : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double range")>] 
          xBegin : obj)
         ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double range")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -129,7 +129,7 @@ module LogCubicFunction =
     *)
     [<ExcelFunction(Name="_LogCubic", Description="Create a LogCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubic_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "LogCubic")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="da",Description = "CubicInterpolation.DerivativeApprox: Spline, SplineOM1, SplineOM2, FourthOrder, Parabolic, FritschButland, Akima, Kruger, Harmonic")>] 
          da : obj)
@@ -196,7 +196,7 @@ module LogCubicFunction =
     *)
     [<ExcelFunction(Name="_LogCubic1", Description="Create a LogCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubic_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "LogCubic")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -227,7 +227,7 @@ module LogCubicFunction =
     *)
     [<ExcelFunction(Name="_LogCubic_requiredPoints", Description="Create a LogCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubic_requiredPoints
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LogCubic",Description = "LogCubic")>] 
          logcubic : obj)
@@ -260,9 +260,9 @@ module LogCubicFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LogCubic_Range", Description="Create a range of LogCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogCubic_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,7 +39,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Zibor")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
@@ -82,7 +82,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor1", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Zibor")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
@@ -119,7 +119,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_businessDayConvention", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -155,7 +155,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_clone", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -197,7 +197,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_endOfMonth", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -233,7 +233,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_forecastFixing1", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -287,7 +287,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_forecastFixing", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -329,7 +329,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_forwardingTermStructure", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -365,7 +365,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_maturityDate", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -407,7 +407,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_currency", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -443,7 +443,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_dayCounter", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -479,7 +479,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_familyName", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -515,7 +515,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_fixing", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -563,7 +563,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_fixingCalendar", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -599,7 +599,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_fixingDate", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -641,7 +641,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_fixingDays", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -677,7 +677,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_isValidFixingDate", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -719,7 +719,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_name", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -755,7 +755,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_pastFixing", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -797,7 +797,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_tenor", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -833,7 +833,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_update", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -869,7 +869,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_valueDate", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -911,7 +911,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_addFixing", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -965,13 +965,13 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_addFixings", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -1019,7 +1019,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_addFixings1", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -1067,7 +1067,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_allowsNativeFixings", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -1103,7 +1103,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_clearFixings", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -1139,7 +1139,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_registerWith", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -1181,7 +1181,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_timeSeries", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -1217,7 +1217,7 @@ module ZiborFunction =
     *)
     [<ExcelFunction(Name="_Zibor_unregisterWith", Description="Create a Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Zibor",Description = "Zibor")>] 
          zibor : obj)
@@ -1256,9 +1256,9 @@ module ZiborFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Zibor_Range", Description="Create a range of Zibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Zibor_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

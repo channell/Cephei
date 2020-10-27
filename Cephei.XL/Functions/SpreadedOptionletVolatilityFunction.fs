@@ -39,7 +39,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_businessDayConvention", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -75,7 +75,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_calendar", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -111,7 +111,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_dayCounter", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -147,7 +147,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_maxDate", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -183,7 +183,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_maxStrike", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -219,7 +219,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_maxTime", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -255,7 +255,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_minStrike", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -291,7 +291,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_referenceDate", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -327,7 +327,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_settlementDays", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -363,7 +363,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SpreadedOptionletVolatility")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="baseVol",Description = "OptionletVolatilityStructure")>] 
          baseVol : obj)
@@ -406,7 +406,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_blackVariance", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_blackVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -460,7 +460,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_blackVariance2", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_blackVariance2
-        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -514,7 +514,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_blackVariance1", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_blackVariance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -568,7 +568,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_displacement", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_displacement
-        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -604,7 +604,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_smileSection", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_smileSection
-        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -652,7 +652,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_smileSection2", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_smileSection2
-        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -700,7 +700,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_smileSection1", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_smileSection1
-        ([<ExcelArgument(Name="Mnemonic",Description = "SmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -748,7 +748,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_volatility2", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_volatility2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -802,7 +802,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_volatility1", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_volatility1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -856,7 +856,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_volatility", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -910,7 +910,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_volatilityType", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_volatilityType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -946,7 +946,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_optionDateFromTenor", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_optionDateFromTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -988,7 +988,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_timeFromReference", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -1030,7 +1030,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_update", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -1066,7 +1066,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_allowsExtrapolation", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -1102,7 +1102,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_disableExtrapolation", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -1144,7 +1144,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_enableExtrapolation", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -1186,7 +1186,7 @@ module SpreadedOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_extrapolate", Description="Create a SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SpreadedOptionletVolatility",Description = "SpreadedOptionletVolatility")>] 
          spreadedoptionletvolatility : obj)
@@ -1219,9 +1219,9 @@ module SpreadedOptionletVolatilityFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SpreadedOptionletVolatility_Range", Description="Create a range of SpreadedOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SpreadedOptionletVolatility_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

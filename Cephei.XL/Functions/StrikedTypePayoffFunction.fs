@@ -39,7 +39,7 @@ module StrikedTypePayoffFunction =
     *)
     [<ExcelFunction(Name="_StrikedTypePayoff_description", Description="Create a StrikedTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrikedTypePayoff_description
-        ([<ExcelArgument(Name="Mnemonic",Description = "StrikedTypePayoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="StrikedTypePayoff",Description = "StrikedTypePayoff")>] 
          strikedtypepayoff : obj)
@@ -75,7 +75,7 @@ module StrikedTypePayoffFunction =
     *)
     [<ExcelFunction(Name="_StrikedTypePayoff_strike", Description="Create a StrikedTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrikedTypePayoff_strike
-        ([<ExcelArgument(Name="Mnemonic",Description = "StrikedTypePayoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="StrikedTypePayoff",Description = "StrikedTypePayoff")>] 
          strikedtypepayoff : obj)
@@ -111,7 +111,7 @@ module StrikedTypePayoffFunction =
     *)
     [<ExcelFunction(Name="_StrikedTypePayoff", Description="Create a StrikedTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrikedTypePayoff_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "StrikedTypePayoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="p",Description = "Payoff")>] 
          p : obj)
@@ -148,7 +148,7 @@ module StrikedTypePayoffFunction =
     *)
     [<ExcelFunction(Name="_StrikedTypePayoff1", Description="Create a StrikedTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrikedTypePayoff_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "StrikedTypePayoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
@@ -191,7 +191,7 @@ module StrikedTypePayoffFunction =
     *)
     [<ExcelFunction(Name="_StrikedTypePayoff_optionType", Description="Create a StrikedTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrikedTypePayoff_optionType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="StrikedTypePayoff",Description = "StrikedTypePayoff")>] 
          strikedtypepayoff : obj)
@@ -227,7 +227,7 @@ module StrikedTypePayoffFunction =
     *)
     [<ExcelFunction(Name="_StrikedTypePayoff_accept", Description="Create a StrikedTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrikedTypePayoff_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="StrikedTypePayoff",Description = "StrikedTypePayoff")>] 
          strikedtypepayoff : obj)
@@ -269,7 +269,7 @@ module StrikedTypePayoffFunction =
     *)
     [<ExcelFunction(Name="_StrikedTypePayoff_name", Description="Create a StrikedTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrikedTypePayoff_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="StrikedTypePayoff",Description = "StrikedTypePayoff")>] 
          strikedtypepayoff : obj)
@@ -305,7 +305,7 @@ module StrikedTypePayoffFunction =
     *)
     [<ExcelFunction(Name="_StrikedTypePayoff_value", Description="Create a StrikedTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrikedTypePayoff_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="StrikedTypePayoff",Description = "StrikedTypePayoff")>] 
          strikedtypepayoff : obj)
@@ -344,9 +344,9 @@ module StrikedTypePayoffFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_StrikedTypePayoff_Range", Description="Create a range of StrikedTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StrikedTypePayoff_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

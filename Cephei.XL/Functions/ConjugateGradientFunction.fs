@@ -39,9 +39,9 @@ module ConjugateGradientFunction =
     *)
     [<ExcelFunction(Name="_ConjugateGradient", Description="Create a ConjugateGradient",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConjugateGradient_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ConjugateGradient")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="lineSearch",Description = "ConjugateGradient")>] 
+        ([<ExcelArgument(Name="lineSearch",Description = "LineSearch or empty")>] 
          lineSearch : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,7 +76,7 @@ module ConjugateGradientFunction =
     *)
     [<ExcelFunction(Name="_ConjugateGradient_minimize", Description="Create a ConjugateGradient",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConjugateGradient_minimize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConjugateGradient",Description = "ConjugateGradient")>] 
          conjugategradient : obj)
@@ -121,9 +121,9 @@ module ConjugateGradientFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ConjugateGradient_Range", Description="Create a range of ConjugateGradient",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConjugateGradient_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -67,7 +67,7 @@ module SouthKoreaFunction =
     *)
     [<ExcelFunction(Name="_SouthKorea", Description="Create a SouthKorea",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SouthKorea_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SouthKorea")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -98,7 +98,7 @@ module SouthKoreaFunction =
     *)
     [<ExcelFunction(Name="_SouthKorea1", Description="Create a SouthKorea",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SouthKorea_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "SouthKorea")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="m",Description = "SouthKorea.Market: Settlement, KRX")>] 
          m : obj)
@@ -135,7 +135,7 @@ module SouthKoreaFunction =
     *)
     [<ExcelFunction(Name="_SouthKorea_addedHolidays", Description="Create a SouthKorea",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SouthKorea_addedHolidays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SouthKorea",Description = "SouthKorea")>] 
          southkorea : obj)
@@ -171,7 +171,7 @@ module SouthKoreaFunction =
     *)
     [<ExcelFunction(Name="_SouthKorea_addHoliday", Description="Create a SouthKorea",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SouthKorea_addHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SouthKorea",Description = "SouthKorea")>] 
          southkorea : obj)
@@ -213,7 +213,7 @@ module SouthKoreaFunction =
     *)
     [<ExcelFunction(Name="_SouthKorea_adjust", Description="Create a SouthKorea",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SouthKorea_adjust
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SouthKorea",Description = "SouthKorea")>] 
          southkorea : obj)
@@ -261,7 +261,7 @@ module SouthKoreaFunction =
     *)
     [<ExcelFunction(Name="_SouthKorea_advance1", Description="Create a SouthKorea",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SouthKorea_advance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SouthKorea",Description = "SouthKorea")>] 
          southkorea : obj)
@@ -327,7 +327,7 @@ module SouthKoreaFunction =
     *)
     [<ExcelFunction(Name="_SouthKorea_advance", Description="Create a SouthKorea",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SouthKorea_advance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SouthKorea",Description = "SouthKorea")>] 
          southkorea : obj)
@@ -387,7 +387,7 @@ module SouthKoreaFunction =
     *)
     [<ExcelFunction(Name="_SouthKorea_businessDaysBetween", Description="Create a SouthKorea",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SouthKorea_businessDaysBetween
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SouthKorea",Description = "SouthKorea")>] 
          southkorea : obj)
@@ -447,7 +447,7 @@ module SouthKoreaFunction =
     *)
     [<ExcelFunction(Name="_SouthKorea_calendar", Description="Create a SouthKorea",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SouthKorea_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SouthKorea",Description = "SouthKorea")>] 
          southkorea : obj)
@@ -483,7 +483,7 @@ module SouthKoreaFunction =
     *)
     [<ExcelFunction(Name="_SouthKorea_empty", Description="Create a SouthKorea",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SouthKorea_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SouthKorea",Description = "SouthKorea")>] 
          southkorea : obj)
@@ -519,7 +519,7 @@ module SouthKoreaFunction =
     *)
     [<ExcelFunction(Name="_SouthKorea_endOfMonth", Description="Create a SouthKorea",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SouthKorea_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SouthKorea",Description = "SouthKorea")>] 
          southkorea : obj)
@@ -561,7 +561,7 @@ module SouthKoreaFunction =
     *)
     [<ExcelFunction(Name="_SouthKorea_Equals", Description="Create a SouthKorea",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SouthKorea_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SouthKorea",Description = "SouthKorea")>] 
          southkorea : obj)
@@ -603,7 +603,7 @@ module SouthKoreaFunction =
     *)
     [<ExcelFunction(Name="_SouthKorea_isBusinessDay", Description="Create a SouthKorea",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SouthKorea_isBusinessDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SouthKorea",Description = "SouthKorea")>] 
          southkorea : obj)
@@ -645,7 +645,7 @@ module SouthKoreaFunction =
     *)
     [<ExcelFunction(Name="_SouthKorea_isEndOfMonth", Description="Create a SouthKorea",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SouthKorea_isEndOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SouthKorea",Description = "SouthKorea")>] 
          southkorea : obj)
@@ -687,7 +687,7 @@ module SouthKoreaFunction =
     *)
     [<ExcelFunction(Name="_SouthKorea_isHoliday", Description="Create a SouthKorea",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SouthKorea_isHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SouthKorea",Description = "SouthKorea")>] 
          southkorea : obj)
@@ -729,7 +729,7 @@ module SouthKoreaFunction =
     *)
     [<ExcelFunction(Name="_SouthKorea_isWeekend", Description="Create a SouthKorea",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SouthKorea_isWeekend
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SouthKorea",Description = "SouthKorea")>] 
          southkorea : obj)
@@ -773,7 +773,7 @@ module SouthKoreaFunction =
     *)
     [<ExcelFunction(Name="_SouthKorea_name", Description="Create a SouthKorea",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SouthKorea_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SouthKorea",Description = "SouthKorea")>] 
          southkorea : obj)
@@ -809,7 +809,7 @@ module SouthKoreaFunction =
     *)
     [<ExcelFunction(Name="_SouthKorea_removedHolidays", Description="Create a SouthKorea",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SouthKorea_removedHolidays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SouthKorea",Description = "SouthKorea")>] 
          southkorea : obj)
@@ -845,7 +845,7 @@ module SouthKoreaFunction =
     *)
     [<ExcelFunction(Name="_SouthKorea_removeHoliday", Description="Create a SouthKorea",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SouthKorea_removeHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SouthKorea",Description = "SouthKorea")>] 
          southkorea : obj)
@@ -884,9 +884,9 @@ module SouthKoreaFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SouthKorea_Range", Description="Create a range of SouthKorea",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SouthKorea_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

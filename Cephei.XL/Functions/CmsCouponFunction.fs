@@ -39,7 +39,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "CmsCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon1", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "CmsCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="nominal",Description = "double")>] 
          nominal : obj)
@@ -84,17 +84,17 @@ module CmsCouponFunction =
          fixingDays : obj)
         ([<ExcelArgument(Name="swapIndex",Description = "SwapIndex")>] 
          swapIndex : obj)
-        ([<ExcelArgument(Name="gearing",Description = "CmsCoupon")>] 
+        ([<ExcelArgument(Name="gearing",Description = "double or empty")>] 
          gearing : obj)
-        ([<ExcelArgument(Name="spread",Description = "CmsCoupon")>] 
+        ([<ExcelArgument(Name="spread",Description = "double or empty")>] 
          spread : obj)
-        ([<ExcelArgument(Name="refPeriodStart",Description = "CmsCoupon")>] 
+        ([<ExcelArgument(Name="refPeriodStart",Description = "Date or empty")>] 
          refPeriodStart : obj)
-        ([<ExcelArgument(Name="refPeriodEnd",Description = "CmsCoupon")>] 
+        ([<ExcelArgument(Name="refPeriodEnd",Description = "Date or empty")>] 
          refPeriodEnd : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "CmsCoupon")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter or empty")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="isInArrears",Description = "CmsCoupon")>] 
+        ([<ExcelArgument(Name="isInArrears",Description = "bool or empty")>] 
          isInArrears : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -173,7 +173,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_factory", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -189,17 +189,17 @@ module CmsCouponFunction =
          fixingDays : obj)
         ([<ExcelArgument(Name="index",Description = "InterestRateIndex")>] 
          index : obj)
-        ([<ExcelArgument(Name="gearing",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="gearing",Description = "double or empty")>] 
          gearing : obj)
-        ([<ExcelArgument(Name="spread",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="spread",Description = "double or empty")>] 
          spread : obj)
-        ([<ExcelArgument(Name="refPeriodStart",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="refPeriodStart",Description = "Date or empty")>] 
          refPeriodStart : obj)
-        ([<ExcelArgument(Name="refPeriodEnd",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="refPeriodEnd",Description = "Date or empty")>] 
          refPeriodEnd : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter or empty")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="isInArrears",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="isInArrears",Description = "bool or empty")>] 
          isInArrears : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -281,7 +281,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_swapIndex", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_swapIndex
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwapIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -317,7 +317,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_accruedAmount", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_accruedAmount
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -359,7 +359,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_adjustedFixing", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_adjustedFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -395,7 +395,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_amount", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_amount
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -431,7 +431,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_convexityAdjustment", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_convexityAdjustment
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -467,7 +467,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_dayCounter", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -503,7 +503,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_fixingDate", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -539,7 +539,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_fixingDays", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -575,7 +575,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_gearing", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_gearing
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -611,7 +611,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_index", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_index
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -647,7 +647,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_indexFixing", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_indexFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -683,7 +683,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_isInArrears", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_isInArrears
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -719,7 +719,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_price", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_price
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -761,7 +761,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_pricer", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_pricer
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -797,7 +797,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_rate", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_rate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -833,7 +833,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_setPricer", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_setPricer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -875,7 +875,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_spread", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_spread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -911,7 +911,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_update", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -947,7 +947,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_accrualDays", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_accrualDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -983,7 +983,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_accrualEndDate", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_accrualEndDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -1019,7 +1019,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_accrualPeriod", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_accrualPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -1055,7 +1055,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_accrualStartDate", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_accrualStartDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -1091,7 +1091,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_accruedDays", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_accruedDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -1133,7 +1133,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_accruedPeriod", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_accruedPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -1175,7 +1175,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_date", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -1211,7 +1211,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_exCouponDate", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_exCouponDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -1247,7 +1247,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_nominal", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_nominal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -1283,7 +1283,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_referencePeriodEnd", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_referencePeriodEnd
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -1319,7 +1319,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_referencePeriodStart", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_referencePeriodStart
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -1355,7 +1355,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_CompareTo", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_CompareTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -1397,7 +1397,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_Equals", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -1439,7 +1439,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_hasOccurred", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -1487,7 +1487,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_tradingExCoupon", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_tradingExCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -1529,7 +1529,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_accept", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -1571,7 +1571,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_registerWith", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -1613,7 +1613,7 @@ module CmsCouponFunction =
     *)
     [<ExcelFunction(Name="_CmsCoupon_unregisterWith", Description="Create a CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsCoupon",Description = "CmsCoupon")>] 
          cmscoupon : obj)
@@ -1652,9 +1652,9 @@ module CmsCouponFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CmsCoupon_Range", Description="Create a range of CmsCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsCoupon_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

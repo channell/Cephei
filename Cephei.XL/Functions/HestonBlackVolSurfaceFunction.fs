@@ -39,7 +39,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "HestonBlackVolSurface")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="hestonModel",Description = "HestonModel")>] 
          hestonModel : obj)
@@ -76,7 +76,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_maxDate", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -112,7 +112,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_maxStrike", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -148,7 +148,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_minStrike", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -184,7 +184,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_blackForwardVariance", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_blackForwardVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -244,7 +244,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_blackForwardVariance1", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_blackForwardVariance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -304,7 +304,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_blackForwardVol1", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_blackForwardVol1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -364,7 +364,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_blackForwardVol", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_blackForwardVol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -424,7 +424,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_blackVariance1", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_blackVariance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -478,7 +478,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_blackVariance", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_blackVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -532,7 +532,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_blackVol", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_blackVol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -586,7 +586,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_blackVol1", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_blackVol1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -640,7 +640,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_businessDayConvention", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -676,7 +676,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_optionDateFromTenor", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_optionDateFromTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -718,7 +718,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_calendar", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -754,7 +754,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_dayCounter", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -790,7 +790,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_maxTime", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -826,7 +826,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_referenceDate", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -862,7 +862,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_settlementDays", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -898,7 +898,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_timeFromReference", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -940,7 +940,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_update", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -976,7 +976,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_allowsExtrapolation", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -1012,7 +1012,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_disableExtrapolation", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -1054,7 +1054,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_enableExtrapolation", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -1096,7 +1096,7 @@ module HestonBlackVolSurfaceFunction =
     *)
     [<ExcelFunction(Name="_HestonBlackVolSurface_extrapolate", Description="Create a HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonBlackVolSurface",Description = "HestonBlackVolSurface")>] 
          hestonblackvolsurface : obj)
@@ -1129,9 +1129,9 @@ module HestonBlackVolSurfaceFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_HestonBlackVolSurface_Range", Description="Create a range of HestonBlackVolSurface",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonBlackVolSurface_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

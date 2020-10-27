@@ -39,7 +39,7 @@ module EarlyExerciseFunction =
     *)
     [<ExcelFunction(Name="_EarlyExercise", Description="Create a EarlyExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EarlyExercise_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "EarlyExercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Type",Description = "Exercise.Type: American, Bermudan, European")>] 
          Type : obj)
@@ -82,7 +82,7 @@ module EarlyExerciseFunction =
     *)
     [<ExcelFunction(Name="_EarlyExercise_payoffAtExpiry", Description="Create a EarlyExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EarlyExercise_payoffAtExpiry
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EarlyExercise",Description = "EarlyExercise")>] 
          earlyexercise : obj)
@@ -118,7 +118,7 @@ module EarlyExerciseFunction =
     *)
     [<ExcelFunction(Name="_EarlyExercise_date", Description="Create a EarlyExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EarlyExercise_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EarlyExercise",Description = "EarlyExercise")>] 
          earlyexercise : obj)
@@ -160,7 +160,7 @@ module EarlyExerciseFunction =
     *)
     [<ExcelFunction(Name="_EarlyExercise_dates", Description="Create a EarlyExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EarlyExercise_dates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EarlyExercise",Description = "EarlyExercise")>] 
          earlyexercise : obj)
@@ -196,7 +196,7 @@ module EarlyExerciseFunction =
     *)
     [<ExcelFunction(Name="_EarlyExercise_lastDate", Description="Create a EarlyExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EarlyExercise_lastDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EarlyExercise",Description = "EarlyExercise")>] 
          earlyexercise : obj)
@@ -232,7 +232,7 @@ module EarlyExerciseFunction =
     *)
     [<ExcelFunction(Name="_EarlyExercise_type", Description="Create a EarlyExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EarlyExercise_type
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EarlyExercise",Description = "EarlyExercise")>] 
          earlyexercise : obj)
@@ -265,9 +265,9 @@ module EarlyExerciseFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_EarlyExercise_Range", Description="Create a range of EarlyExercise",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EarlyExercise_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

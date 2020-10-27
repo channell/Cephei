@@ -39,7 +39,7 @@ module ConvexMonotone4HelperFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotone4Helper", Description="Create a ConvexMonotone4Helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotone4Helper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ConvexMonotone4Helper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="xPrev",Description = "double")>] 
          xPrev : obj)
@@ -112,7 +112,7 @@ module ConvexMonotone4HelperFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotone4Helper_fNext", Description="Create a ConvexMonotone4Helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotone4Helper_fNext
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvexMonotone4Helper",Description = "ConvexMonotone4Helper")>] 
          convexmonotone4helper : obj)
@@ -148,7 +148,7 @@ module ConvexMonotone4HelperFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotone4Helper_primitive", Description="Create a ConvexMonotone4Helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotone4Helper_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvexMonotone4Helper",Description = "ConvexMonotone4Helper")>] 
          convexmonotone4helper : obj)
@@ -190,7 +190,7 @@ module ConvexMonotone4HelperFunction =
     *)
     [<ExcelFunction(Name="_ConvexMonotone4Helper_value", Description="Create a ConvexMonotone4Helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotone4Helper_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConvexMonotone4Helper",Description = "ConvexMonotone4Helper")>] 
          convexmonotone4helper : obj)
@@ -229,9 +229,9 @@ module ConvexMonotone4HelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ConvexMonotone4Helper_Range", Description="Create a range of ConvexMonotone4Helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConvexMonotone4Helper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

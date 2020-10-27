@@ -39,7 +39,7 @@ module KWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_KWDCurrency", Description="Create a KWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KWDCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "KWDCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module KWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_KWDCurrency_code", Description="Create a KWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KWDCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="KWDCurrency",Description = "KWDCurrency")>] 
          kwdcurrency : obj)
@@ -106,7 +106,7 @@ module KWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_KWDCurrency_empty", Description="Create a KWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KWDCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="KWDCurrency",Description = "KWDCurrency")>] 
          kwdcurrency : obj)
@@ -142,7 +142,7 @@ module KWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_KWDCurrency_Equals", Description="Create a KWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KWDCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="KWDCurrency",Description = "KWDCurrency")>] 
          kwdcurrency : obj)
@@ -184,7 +184,7 @@ module KWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_KWDCurrency_format", Description="Create a KWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KWDCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="KWDCurrency",Description = "KWDCurrency")>] 
          kwdcurrency : obj)
@@ -220,7 +220,7 @@ module KWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_KWDCurrency_fractionsPerUnit", Description="Create a KWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KWDCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="KWDCurrency",Description = "KWDCurrency")>] 
          kwdcurrency : obj)
@@ -256,7 +256,7 @@ module KWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_KWDCurrency_fractionSymbol", Description="Create a KWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KWDCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="KWDCurrency",Description = "KWDCurrency")>] 
          kwdcurrency : obj)
@@ -292,7 +292,7 @@ module KWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_KWDCurrency_name", Description="Create a KWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KWDCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="KWDCurrency",Description = "KWDCurrency")>] 
          kwdcurrency : obj)
@@ -328,7 +328,7 @@ module KWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_KWDCurrency_numericCode", Description="Create a KWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KWDCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="KWDCurrency",Description = "KWDCurrency")>] 
          kwdcurrency : obj)
@@ -364,7 +364,7 @@ module KWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_KWDCurrency_rounding", Description="Create a KWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KWDCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="KWDCurrency",Description = "KWDCurrency")>] 
          kwdcurrency : obj)
@@ -400,7 +400,7 @@ module KWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_KWDCurrency_symbol", Description="Create a KWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KWDCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="KWDCurrency",Description = "KWDCurrency")>] 
          kwdcurrency : obj)
@@ -436,7 +436,7 @@ module KWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_KWDCurrency_ToString", Description="Create a KWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KWDCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="KWDCurrency",Description = "KWDCurrency")>] 
          kwdcurrency : obj)
@@ -472,7 +472,7 @@ module KWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_KWDCurrency_triangulationCurrency", Description="Create a KWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KWDCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="KWDCurrency",Description = "KWDCurrency")>] 
          kwdcurrency : obj)
@@ -505,9 +505,9 @@ module KWDCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_KWDCurrency_Range", Description="Create a range of KWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KWDCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

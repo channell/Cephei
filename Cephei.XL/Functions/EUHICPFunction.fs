@@ -39,7 +39,7 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP1", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "EUHICP")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="interpolated",Description = "bool")>] 
          interpolated : obj)
@@ -82,7 +82,7 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "EUHICP")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="interpolated",Description = "bool")>] 
          interpolated : obj)
@@ -119,7 +119,7 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP_clone", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EUHICP",Description = "EUHICP")>] 
          euhicp : obj)
@@ -161,7 +161,7 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP_fixing", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EUHICP",Description = "EUHICP")>] 
          euhicp : obj)
@@ -209,7 +209,7 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP_zeroInflationTermStructure", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_zeroInflationTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EUHICP",Description = "EUHICP")>] 
          euhicp : obj)
@@ -245,7 +245,7 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP_addFixing", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EUHICP",Description = "EUHICP")>] 
          euhicp : obj)
@@ -300,7 +300,7 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP_availabilityLag", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_availabilityLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EUHICP",Description = "EUHICP")>] 
          euhicp : obj)
@@ -336,7 +336,7 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP_currency", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EUHICP",Description = "EUHICP")>] 
          euhicp : obj)
@@ -372,7 +372,7 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP_familyName", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EUHICP",Description = "EUHICP")>] 
          euhicp : obj)
@@ -408,7 +408,7 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP_fixingCalendar", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EUHICP",Description = "EUHICP")>] 
          euhicp : obj)
@@ -444,7 +444,7 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP_frequency", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EUHICP",Description = "EUHICP")>] 
          euhicp : obj)
@@ -480,7 +480,7 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP_interpolated", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_interpolated
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EUHICP",Description = "EUHICP")>] 
          euhicp : obj)
@@ -516,7 +516,7 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP_isValidFixingDate", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EUHICP",Description = "EUHICP")>] 
          euhicp : obj)
@@ -558,7 +558,7 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP_name", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EUHICP",Description = "EUHICP")>] 
          euhicp : obj)
@@ -594,7 +594,7 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP_region", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_region
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EUHICP",Description = "EUHICP")>] 
          euhicp : obj)
@@ -630,7 +630,7 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP_revised", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_revised
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EUHICP",Description = "EUHICP")>] 
          euhicp : obj)
@@ -666,7 +666,7 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP_update", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EUHICP",Description = "EUHICP")>] 
          euhicp : obj)
@@ -702,13 +702,13 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP_addFixings", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EUHICP",Description = "EUHICP")>] 
          euhicp : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -756,7 +756,7 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP_addFixings1", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EUHICP",Description = "EUHICP")>] 
          euhicp : obj)
@@ -804,7 +804,7 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP_allowsNativeFixings", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EUHICP",Description = "EUHICP")>] 
          euhicp : obj)
@@ -840,7 +840,7 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP_clearFixings", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EUHICP",Description = "EUHICP")>] 
          euhicp : obj)
@@ -876,7 +876,7 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP_registerWith", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EUHICP",Description = "EUHICP")>] 
          euhicp : obj)
@@ -918,7 +918,7 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP_timeSeries", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EUHICP",Description = "EUHICP")>] 
          euhicp : obj)
@@ -954,7 +954,7 @@ module EUHICPFunction =
     *)
     [<ExcelFunction(Name="_EUHICP_unregisterWith", Description="Create a EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EUHICP",Description = "EUHICP")>] 
          euhicp : obj)
@@ -993,9 +993,9 @@ module EUHICPFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_EUHICP_Range", Description="Create a range of EUHICP",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EUHICP_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

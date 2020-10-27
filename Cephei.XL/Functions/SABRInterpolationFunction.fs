@@ -39,7 +39,7 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation_alpha", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_alpha
-        ([<ExcelArgument(Name="Mnemonic",Description = "SABRInterpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRInterpolation",Description = "SABRInterpolation")>] 
          sabrinterpolation : obj)
@@ -75,7 +75,7 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation_beta", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_beta
-        ([<ExcelArgument(Name="Mnemonic",Description = "SABRInterpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRInterpolation",Description = "SABRInterpolation")>] 
          sabrinterpolation : obj)
@@ -111,7 +111,7 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation_endCriteria", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_endCriteria
-        ([<ExcelArgument(Name="Mnemonic",Description = "SABRInterpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRInterpolation",Description = "SABRInterpolation")>] 
          sabrinterpolation : obj)
@@ -147,7 +147,7 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation_expiry", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_expiry
-        ([<ExcelArgument(Name="Mnemonic",Description = "SABRInterpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRInterpolation",Description = "SABRInterpolation")>] 
          sabrinterpolation : obj)
@@ -183,7 +183,7 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation_forward", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_forward
-        ([<ExcelArgument(Name="Mnemonic",Description = "SABRInterpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRInterpolation",Description = "SABRInterpolation")>] 
          sabrinterpolation : obj)
@@ -219,7 +219,7 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation_interpolationWeights", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_interpolationWeights
-        ([<ExcelArgument(Name="Mnemonic",Description = "SABRInterpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRInterpolation",Description = "SABRInterpolation")>] 
          sabrinterpolation : obj)
@@ -255,7 +255,7 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation_maxError", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_maxError
-        ([<ExcelArgument(Name="Mnemonic",Description = "SABRInterpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRInterpolation",Description = "SABRInterpolation")>] 
          sabrinterpolation : obj)
@@ -291,7 +291,7 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation_nu", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_nu
-        ([<ExcelArgument(Name="Mnemonic",Description = "SABRInterpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRInterpolation",Description = "SABRInterpolation")>] 
          sabrinterpolation : obj)
@@ -327,7 +327,7 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation_rho", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "SABRInterpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRInterpolation",Description = "SABRInterpolation")>] 
          sabrinterpolation : obj)
@@ -363,7 +363,7 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation_rmsError", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_rmsError
-        ([<ExcelArgument(Name="Mnemonic",Description = "SABRInterpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRInterpolation",Description = "SABRInterpolation")>] 
          sabrinterpolation : obj)
@@ -399,13 +399,13 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SABRInterpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double range")>] 
          xBegin : obj)
         ([<ExcelArgument(Name="xEnd",Description = "int")>] 
          xEnd : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double range")>] 
          yBegin : obj)
         ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
@@ -427,23 +427,23 @@ module SABRInterpolationFunction =
          nuIsFixed : obj)
         ([<ExcelArgument(Name="rhoIsFixed",Description = "bool")>] 
          rhoIsFixed : obj)
-        ([<ExcelArgument(Name="vegaWeighted",Description = "SABRInterpolation")>] 
+        ([<ExcelArgument(Name="vegaWeighted",Description = "bool or empty")>] 
          vegaWeighted : obj)
-        ([<ExcelArgument(Name="endCriteria",Description = "SABRInterpolation")>] 
+        ([<ExcelArgument(Name="endCriteria",Description = "EndCriteria or empty")>] 
          endCriteria : obj)
-        ([<ExcelArgument(Name="optMethod",Description = "SABRInterpolation")>] 
+        ([<ExcelArgument(Name="optMethod",Description = "OptimizationMethod or empty")>] 
          optMethod : obj)
-        ([<ExcelArgument(Name="errorAccept",Description = "SABRInterpolation")>] 
+        ([<ExcelArgument(Name="errorAccept",Description = "double or empty")>] 
          errorAccept : obj)
-        ([<ExcelArgument(Name="useMaxError",Description = "SABRInterpolation")>] 
+        ([<ExcelArgument(Name="useMaxError",Description = "bool or empty")>] 
          useMaxError : obj)
-        ([<ExcelArgument(Name="maxGuesses",Description = "SABRInterpolation")>] 
+        ([<ExcelArgument(Name="maxGuesses",Description = "int or empty")>] 
          maxGuesses : obj)
-        ([<ExcelArgument(Name="shift",Description = "SABRInterpolation")>] 
+        ([<ExcelArgument(Name="shift",Description = "double or empty")>] 
          shift : obj)
-        ([<ExcelArgument(Name="volatilityType",Description = "SABRInterpolation")>] 
+        ([<ExcelArgument(Name="volatilityType",Description = "VolatilityType: ShiftedLognormal, Normal or empty")>] 
          volatilityType : obj)
-        ([<ExcelArgument(Name="approximationModel",Description = "SABRInterpolation")>] 
+        ([<ExcelArgument(Name="approximationModel",Description = "SabrApproximationModel: Obloj2008, Hagan2002 or empty")>] 
          approximationModel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -562,7 +562,7 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation_derivative", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRInterpolation",Description = "SABRInterpolation")>] 
          sabrinterpolation : obj)
@@ -610,7 +610,7 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation_empty", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRInterpolation",Description = "SABRInterpolation")>] 
          sabrinterpolation : obj)
@@ -646,7 +646,7 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation_primitive", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRInterpolation",Description = "SABRInterpolation")>] 
          sabrinterpolation : obj)
@@ -694,7 +694,7 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation_secondDerivative", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_secondDerivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRInterpolation",Description = "SABRInterpolation")>] 
          sabrinterpolation : obj)
@@ -742,7 +742,7 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation_update", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRInterpolation",Description = "SABRInterpolation")>] 
          sabrinterpolation : obj)
@@ -778,7 +778,7 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation_value1", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRInterpolation",Description = "SABRInterpolation")>] 
          sabrinterpolation : obj)
@@ -826,7 +826,7 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation_value", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRInterpolation",Description = "SABRInterpolation")>] 
          sabrinterpolation : obj)
@@ -868,7 +868,7 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation_xMax", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_xMax
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRInterpolation",Description = "SABRInterpolation")>] 
          sabrinterpolation : obj)
@@ -904,7 +904,7 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation_xMin", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_xMin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRInterpolation",Description = "SABRInterpolation")>] 
          sabrinterpolation : obj)
@@ -940,7 +940,7 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation_allowsExtrapolation", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRInterpolation",Description = "SABRInterpolation")>] 
          sabrinterpolation : obj)
@@ -976,7 +976,7 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation_disableExtrapolation", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRInterpolation",Description = "SABRInterpolation")>] 
          sabrinterpolation : obj)
@@ -1018,7 +1018,7 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation_enableExtrapolation", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRInterpolation",Description = "SABRInterpolation")>] 
          sabrinterpolation : obj)
@@ -1060,7 +1060,7 @@ module SABRInterpolationFunction =
     *)
     [<ExcelFunction(Name="_SABRInterpolation_extrapolate", Description="Create a SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRInterpolation",Description = "SABRInterpolation")>] 
          sabrinterpolation : obj)
@@ -1093,9 +1093,9 @@ module SABRInterpolationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SABRInterpolation_Range", Description="Create a range of SABRInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRInterpolation_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

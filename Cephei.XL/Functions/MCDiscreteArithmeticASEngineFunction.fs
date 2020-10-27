@@ -39,7 +39,7 @@ module MCDiscreteArithmeticASEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteArithmeticASEngine", Description="Create a MCDiscreteArithmeticASEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteArithmeticASEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "MCDiscreteArithmeticASEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -113,7 +113,7 @@ module MCDiscreteArithmeticASEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteArithmeticASEngine_registerWith", Description="Create a MCDiscreteArithmeticASEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteArithmeticASEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCDiscreteArithmeticASEngine",Description = "MCDiscreteArithmeticASEngine")>] 
          mcdiscretearithmeticasengine : obj)
@@ -155,7 +155,7 @@ module MCDiscreteArithmeticASEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteArithmeticASEngine_reset", Description="Create a MCDiscreteArithmeticASEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteArithmeticASEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCDiscreteArithmeticASEngine",Description = "MCDiscreteArithmeticASEngine")>] 
          mcdiscretearithmeticasengine : obj)
@@ -191,7 +191,7 @@ module MCDiscreteArithmeticASEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteArithmeticASEngine_unregisterWith", Description="Create a MCDiscreteArithmeticASEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteArithmeticASEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCDiscreteArithmeticASEngine",Description = "MCDiscreteArithmeticASEngine")>] 
          mcdiscretearithmeticasengine : obj)
@@ -233,7 +233,7 @@ module MCDiscreteArithmeticASEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteArithmeticASEngine_update", Description="Create a MCDiscreteArithmeticASEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteArithmeticASEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCDiscreteArithmeticASEngine",Description = "MCDiscreteArithmeticASEngine")>] 
          mcdiscretearithmeticasengine : obj)
@@ -269,7 +269,7 @@ module MCDiscreteArithmeticASEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteArithmeticASEngine_errorEstimate", Description="Create a MCDiscreteArithmeticASEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteArithmeticASEngine_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCDiscreteArithmeticASEngine",Description = "MCDiscreteArithmeticASEngine")>] 
          mcdiscretearithmeticasengine : obj)
@@ -305,7 +305,7 @@ module MCDiscreteArithmeticASEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteArithmeticASEngine_sampleAccumulator", Description="Create a MCDiscreteArithmeticASEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteArithmeticASEngine_sampleAccumulator
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCDiscreteArithmeticASEngine",Description = "MCDiscreteArithmeticASEngine")>] 
          mcdiscretearithmeticasengine : obj)
@@ -341,7 +341,7 @@ module MCDiscreteArithmeticASEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteArithmeticASEngine_value", Description="Create a MCDiscreteArithmeticASEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteArithmeticASEngine_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCDiscreteArithmeticASEngine",Description = "MCDiscreteArithmeticASEngine")>] 
          mcdiscretearithmeticasengine : obj)
@@ -395,7 +395,7 @@ module MCDiscreteArithmeticASEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteArithmeticASEngine_valueWithSamples", Description="Create a MCDiscreteArithmeticASEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteArithmeticASEngine_valueWithSamples
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCDiscreteArithmeticASEngine",Description = "MCDiscreteArithmeticASEngine")>] 
          mcdiscretearithmeticasengine : obj)
@@ -434,9 +434,9 @@ module MCDiscreteArithmeticASEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MCDiscreteArithmeticASEngine_Range", Description="Create a range of MCDiscreteArithmeticASEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteArithmeticASEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

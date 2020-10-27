@@ -39,7 +39,7 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_a", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_a
-        ([<ExcelArgument(Name="Mnemonic",Description = "AbcdCalibration")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
@@ -75,7 +75,7 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_abcdBlackVolatility", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_abcdBlackVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "AbcdCalibration")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
@@ -141,31 +141,31 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration1", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "AbcdCalibration")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="t",Description = "double")>] 
+        ([<ExcelArgument(Name="t",Description = "double range")>] 
          t : obj)
-        ([<ExcelArgument(Name="blackVols",Description = "double")>] 
+        ([<ExcelArgument(Name="blackVols",Description = "double range")>] 
          blackVols : obj)
-        ([<ExcelArgument(Name="aGuess",Description = "AbcdCalibration")>] 
+        ([<ExcelArgument(Name="aGuess",Description = "double or empty")>] 
          aGuess : obj)
-        ([<ExcelArgument(Name="bGuess",Description = "AbcdCalibration")>] 
+        ([<ExcelArgument(Name="bGuess",Description = "double or empty")>] 
          bGuess : obj)
-        ([<ExcelArgument(Name="cGuess",Description = "AbcdCalibration")>] 
+        ([<ExcelArgument(Name="cGuess",Description = "double or empty")>] 
          cGuess : obj)
-        ([<ExcelArgument(Name="dGuess",Description = "AbcdCalibration")>] 
+        ([<ExcelArgument(Name="dGuess",Description = "double or empty")>] 
          dGuess : obj)
-        ([<ExcelArgument(Name="aIsFixed",Description = "AbcdCalibration")>] 
+        ([<ExcelArgument(Name="aIsFixed",Description = "bool or empty")>] 
          aIsFixed : obj)
-        ([<ExcelArgument(Name="bIsFixed",Description = "AbcdCalibration")>] 
+        ([<ExcelArgument(Name="bIsFixed",Description = "bool or empty")>] 
          bIsFixed : obj)
-        ([<ExcelArgument(Name="cIsFixed",Description = "AbcdCalibration")>] 
+        ([<ExcelArgument(Name="cIsFixed",Description = "bool or empty")>] 
          cIsFixed : obj)
-        ([<ExcelArgument(Name="dIsFixed",Description = "AbcdCalibration")>] 
+        ([<ExcelArgument(Name="dIsFixed",Description = "bool or empty")>] 
          dIsFixed : obj)
-        ([<ExcelArgument(Name="vegaWeighted",Description = "AbcdCalibration")>] 
+        ([<ExcelArgument(Name="vegaWeighted",Description = "bool or empty")>] 
          vegaWeighted : obj)
-        ([<ExcelArgument(Name="endCriteria",Description = "AbcdCalibration")>] 
+        ([<ExcelArgument(Name="endCriteria",Description = "EndCriteria or empty")>] 
          endCriteria : obj)
         ([<ExcelArgument(Name="Method",Description = "OptimizationMethod")>] 
          Method : obj)
@@ -250,7 +250,7 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AbcdCalibration")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -281,7 +281,7 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_aIsFixed_", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_aIsFixed_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
@@ -317,7 +317,7 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_b", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_b
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
@@ -353,7 +353,7 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_bIsFixed_", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_bIsFixed_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
@@ -389,7 +389,7 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_c", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_c
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
@@ -425,7 +425,7 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_cIsFixed_", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_cIsFixed_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
@@ -461,7 +461,7 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_compute", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_compute
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
@@ -497,7 +497,7 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_d", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_d
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
@@ -533,7 +533,7 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_dIsFixed_", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_dIsFixed_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
@@ -569,7 +569,7 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_endCriteria", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_endCriteria
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
@@ -605,7 +605,7 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_error", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_error
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
@@ -641,7 +641,7 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_errors", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_errors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
@@ -677,13 +677,13 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_k", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_k
-        ([<ExcelArgument(Name="Mnemonic",Description = "IParametersTransformation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
-        ([<ExcelArgument(Name="t",Description = "double")>] 
+        ([<ExcelArgument(Name="t",Description = "double range")>] 
          t : obj)
-        ([<ExcelArgument(Name="blackVols",Description = "double")>] 
+        ([<ExcelArgument(Name="blackVols",Description = "double range")>] 
          blackVols : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -725,7 +725,7 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_maxError", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_maxError
-        ([<ExcelArgument(Name="Mnemonic",Description = "IParametersTransformation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
@@ -761,7 +761,7 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_transformation_", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_transformation_
-        ([<ExcelArgument(Name="Mnemonic",Description = "IParametersTransformation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
@@ -797,7 +797,7 @@ module AbcdCalibrationFunction =
     *)
     [<ExcelFunction(Name="_AbcdCalibration_value", Description="Create a AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCalibration",Description = "AbcdCalibration")>] 
          abcdcalibration : obj)
@@ -836,9 +836,9 @@ module AbcdCalibrationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AbcdCalibration_Range", Description="Create a range of AbcdCalibration",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCalibration_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

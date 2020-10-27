@@ -39,7 +39,7 @@ module RootNotBracketExceptionFunction =
     *)
     [<ExcelFunction(Name="_RootNotBracketException", Description="Create a RootNotBracketException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RootNotBracketException_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "RootNotBracketException")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="message",Description = "string")>] 
          message : obj)
@@ -82,7 +82,7 @@ module RootNotBracketExceptionFunction =
     *)
     [<ExcelFunction(Name="_RootNotBracketException1", Description="Create a RootNotBracketException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RootNotBracketException_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "RootNotBracketException")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -113,7 +113,7 @@ module RootNotBracketExceptionFunction =
     *)
     [<ExcelFunction(Name="_RootNotBracketException2", Description="Create a RootNotBracketException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RootNotBracketException_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "RootNotBracketException")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="message",Description = "string")>] 
          message : obj)
@@ -147,9 +147,9 @@ module RootNotBracketExceptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_RootNotBracketException_Range", Description="Create a range of RootNotBracketException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RootNotBracketException_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

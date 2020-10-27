@@ -39,15 +39,15 @@ module VannaVolgaFunction =
     *)
     [<ExcelFunction(Name="_VannaVolga_interpolate", Description="Create a VannaVolga",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolga_interpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VannaVolga",Description = "VannaVolga")>] 
          vannavolga : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double range")>] 
          xBegin : obj)
         ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double range")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -93,7 +93,7 @@ module VannaVolgaFunction =
     *)
     [<ExcelFunction(Name="_VannaVolga", Description="Create a VannaVolga",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolga_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "VannaVolga")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="spot",Description = "double")>] 
          spot : obj)
@@ -145,9 +145,9 @@ module VannaVolgaFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_VannaVolga_Range", Description="Create a range of VannaVolga",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolga_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

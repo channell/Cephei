@@ -40,7 +40,7 @@ module IncrementalStatisticsFunction =
     (*! duplicate add function 
     [<ExcelFunction(Name="_IncrementalStatistics_add", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
@@ -89,7 +89,7 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_add", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
@@ -131,11 +131,11 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_addSequence", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_addSequence
-        ([<ExcelArgument(Name="Mnemonic",Description = "IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
-        ([<ExcelArgument(Name="list",Description = "double")>] 
+        ([<ExcelArgument(Name="list",Description = "double range")>] 
          list : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -173,13 +173,13 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_addSequence1", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_addSequence1
-        ([<ExcelArgument(Name="Mnemonic",Description = "IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
-        ([<ExcelArgument(Name="data",Description = "double")>] 
+        ([<ExcelArgument(Name="data",Description = "double range")>] 
          data : obj)
-        ([<ExcelArgument(Name="weight",Description = "double")>] 
+        ([<ExcelArgument(Name="weight",Description = "double range")>] 
          weight : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -221,7 +221,7 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_downsideDeviation", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_downsideDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
@@ -257,7 +257,7 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_downsideVariance", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_downsideVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
@@ -293,7 +293,7 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_errorEstimate", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
@@ -329,7 +329,7 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_expectationValue", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_expectationValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
@@ -377,7 +377,7 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "IncrementalStatistics")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -408,7 +408,7 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_kurtosis", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_kurtosis
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
@@ -444,7 +444,7 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_max", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_max
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
@@ -480,7 +480,7 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_mean", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_mean
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
@@ -516,7 +516,7 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_min", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_min
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
@@ -552,7 +552,7 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_percentile", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_percentile
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
@@ -594,7 +594,7 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_reset", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
@@ -630,7 +630,7 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_samples", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_samples
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
@@ -666,7 +666,7 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_skewness", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_skewness
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
@@ -702,7 +702,7 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_standardDeviation", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_standardDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
@@ -738,7 +738,7 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_variance", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
@@ -774,7 +774,7 @@ module IncrementalStatisticsFunction =
     *)
     [<ExcelFunction(Name="_IncrementalStatistics_weightSum", Description="Create a IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_weightSum
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IncrementalStatistics",Description = "IncrementalStatistics")>] 
          incrementalstatistics : obj)
@@ -807,9 +807,9 @@ module IncrementalStatisticsFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_IncrementalStatistics_Range", Description="Create a range of IncrementalStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IncrementalStatistics_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

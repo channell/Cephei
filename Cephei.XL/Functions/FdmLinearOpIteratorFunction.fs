@@ -39,7 +39,7 @@ module FdmLinearOpIteratorFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpIterator_coordinates", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpIterator_coordinates
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLinearOpIterator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmLinearOpIterator",Description = "FdmLinearOpIterator")>] 
          fdmlinearopiterator : obj)
@@ -75,7 +75,7 @@ module FdmLinearOpIteratorFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpIterator_Equals", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpIterator_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLinearOpIterator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmLinearOpIterator",Description = "FdmLinearOpIterator")>] 
          fdmlinearopiterator : obj)
@@ -117,9 +117,9 @@ module FdmLinearOpIteratorFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpIterator", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpIterator_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLinearOpIterator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="index",Description = "FdmLinearOpIterator")>] 
+        ([<ExcelArgument(Name="index",Description = "int or empty")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,9 +154,9 @@ module FdmLinearOpIteratorFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpIterator1", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpIterator_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLinearOpIterator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dim",Description = "int")>] 
+        ([<ExcelArgument(Name="dim",Description = "int range")>] 
          dim : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -191,7 +191,7 @@ module FdmLinearOpIteratorFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpIterator3", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpIterator_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLinearOpIterator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="iter",Description = "FdmLinearOpIterator")>] 
          iter : obj)
@@ -228,13 +228,13 @@ module FdmLinearOpIteratorFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpIterator2", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpIterator_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLinearOpIterator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dim",Description = "int")>] 
+        ([<ExcelArgument(Name="dim",Description = "int range")>] 
          dim : obj)
-        ([<ExcelArgument(Name="coordinates",Description = "int")>] 
+        ([<ExcelArgument(Name="coordinates",Description = "int range")>] 
          coordinates : obj)
-        ([<ExcelArgument(Name="index",Description = "FdmLinearOpIterator")>] 
+        ([<ExcelArgument(Name="index",Description = "int or empty")>] 
          index : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -277,7 +277,7 @@ module FdmLinearOpIteratorFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpIterator_index", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpIterator_index
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmLinearOpIterator",Description = "FdmLinearOpIterator")>] 
          fdmlinearopiterator : obj)
@@ -313,7 +313,7 @@ module FdmLinearOpIteratorFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpIterator_swap", Description="Create a FdmLinearOpIterator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpIterator_swap
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmLinearOpIterator",Description = "FdmLinearOpIterator")>] 
          fdmlinearopiterator : obj)
@@ -352,9 +352,9 @@ module FdmLinearOpIteratorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmLinearOpIterator_Range", Description="Create a range of FdmLinearOpIterator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpIterator_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,7 +39,7 @@ module AnalyticHestonEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticHestonEngine", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticHestonEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AnalyticHestonEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="model",Description = "HestonModel")>] 
          model : obj)
@@ -88,11 +88,11 @@ module AnalyticHestonEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticHestonEngine1", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticHestonEngine_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "AnalyticHestonEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="model",Description = "HestonModel")>] 
          model : obj)
-        ([<ExcelArgument(Name="integrationOrder",Description = "AnalyticHestonEngine")>] 
+        ([<ExcelArgument(Name="integrationOrder",Description = "int or empty")>] 
          integrationOrder : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -131,7 +131,7 @@ module AnalyticHestonEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticHestonEngine", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticHestonEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AnalyticHestonEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="model",Description = "HestonModel")>] 
          model : obj)
@@ -180,7 +180,7 @@ module AnalyticHestonEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticHestonEngine_numberOfEvaluations", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticHestonEngine_numberOfEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AnalyticHestonEngine",Description = "AnalyticHestonEngine")>] 
          analytichestonengine : obj)
@@ -217,7 +217,7 @@ module AnalyticHestonEngineFunction =
     (*!!
     [<ExcelFunction(Name="_AnalyticHestonEngine_setModel", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticHestonEngine_setModel
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AnalyticHestonEngine",Description = "AnalyticHestonEngine")>] 
          analytichestonengine : obj)
@@ -260,7 +260,7 @@ module AnalyticHestonEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticHestonEngine_registerWith", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticHestonEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AnalyticHestonEngine",Description = "AnalyticHestonEngine")>] 
          analytichestonengine : obj)
@@ -302,7 +302,7 @@ module AnalyticHestonEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticHestonEngine_reset", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticHestonEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AnalyticHestonEngine",Description = "AnalyticHestonEngine")>] 
          analytichestonengine : obj)
@@ -338,7 +338,7 @@ module AnalyticHestonEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticHestonEngine_unregisterWith", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticHestonEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AnalyticHestonEngine",Description = "AnalyticHestonEngine")>] 
          analytichestonengine : obj)
@@ -380,7 +380,7 @@ module AnalyticHestonEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticHestonEngine_update", Description="Create a AnalyticHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticHestonEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AnalyticHestonEngine",Description = "AnalyticHestonEngine")>] 
          analytichestonengine : obj)
@@ -413,9 +413,9 @@ module AnalyticHestonEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AnalyticHestonEngine_Range", Description="Create a range of AnalyticHestonEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticHestonEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

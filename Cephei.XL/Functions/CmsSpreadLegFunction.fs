@@ -39,7 +39,7 @@ module CmsSpreadLegFunction =
     *)
     [<ExcelFunction(Name="_CmsSpreadLeg", Description="Create a CmsSpreadLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadLeg_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "CmsSpreadLeg")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -82,7 +82,7 @@ module CmsSpreadLegFunction =
     *)
     [<ExcelFunction(Name="_CmsSpreadLeg_value", Description="Create a CmsSpreadLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadLeg_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsSpreadLeg",Description = "CmsSpreadLeg")>] 
          cmsspreadleg : obj)
@@ -118,7 +118,7 @@ module CmsSpreadLegFunction =
     *)
     [<ExcelFunction(Name="_CmsSpreadLeg_inArrears1", Description="Create a CmsSpreadLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadLeg_inArrears1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsSpreadLeg",Description = "CmsSpreadLeg")>] 
          cmsspreadleg : obj)
@@ -160,7 +160,7 @@ module CmsSpreadLegFunction =
     *)
     [<ExcelFunction(Name="_CmsSpreadLeg_inArrears", Description="Create a CmsSpreadLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadLeg_inArrears
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsSpreadLeg",Description = "CmsSpreadLeg")>] 
          cmsspreadleg : obj)
@@ -196,11 +196,11 @@ module CmsSpreadLegFunction =
     *)
     [<ExcelFunction(Name="_CmsSpreadLeg_withCaps", Description="Create a CmsSpreadLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadLeg_withCaps
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsSpreadLeg",Description = "CmsSpreadLeg")>] 
          cmsspreadleg : obj)
-        ([<ExcelArgument(Name="caps",Description = "double")>] 
+        ([<ExcelArgument(Name="caps",Description = "double range")>] 
          caps : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -238,7 +238,7 @@ module CmsSpreadLegFunction =
     *)
     [<ExcelFunction(Name="_CmsSpreadLeg_withCaps1", Description="Create a CmsSpreadLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadLeg_withCaps1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsSpreadLeg",Description = "CmsSpreadLeg")>] 
          cmsspreadleg : obj)
@@ -280,11 +280,11 @@ module CmsSpreadLegFunction =
     *)
     [<ExcelFunction(Name="_CmsSpreadLeg_withFixingDays1", Description="Create a CmsSpreadLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadLeg_withFixingDays1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsSpreadLeg",Description = "CmsSpreadLeg")>] 
          cmsspreadleg : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int range")>] 
          fixingDays : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -322,7 +322,7 @@ module CmsSpreadLegFunction =
     *)
     [<ExcelFunction(Name="_CmsSpreadLeg_withFixingDays", Description="Create a CmsSpreadLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadLeg_withFixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsSpreadLeg",Description = "CmsSpreadLeg")>] 
          cmsspreadleg : obj)
@@ -364,11 +364,11 @@ module CmsSpreadLegFunction =
     *)
     [<ExcelFunction(Name="_CmsSpreadLeg_withFloors1", Description="Create a CmsSpreadLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadLeg_withFloors1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsSpreadLeg",Description = "CmsSpreadLeg")>] 
          cmsspreadleg : obj)
-        ([<ExcelArgument(Name="floors",Description = "double")>] 
+        ([<ExcelArgument(Name="floors",Description = "double range")>] 
          floors : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -406,7 +406,7 @@ module CmsSpreadLegFunction =
     *)
     [<ExcelFunction(Name="_CmsSpreadLeg_withFloors", Description="Create a CmsSpreadLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadLeg_withFloors
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsSpreadLeg",Description = "CmsSpreadLeg")>] 
          cmsspreadleg : obj)
@@ -448,7 +448,7 @@ module CmsSpreadLegFunction =
     *)
     [<ExcelFunction(Name="_CmsSpreadLeg_withGearings", Description="Create a CmsSpreadLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadLeg_withGearings
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsSpreadLeg",Description = "CmsSpreadLeg")>] 
          cmsspreadleg : obj)
@@ -490,11 +490,11 @@ module CmsSpreadLegFunction =
     *)
     [<ExcelFunction(Name="_CmsSpreadLeg_withGearings1", Description="Create a CmsSpreadLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadLeg_withGearings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsSpreadLeg",Description = "CmsSpreadLeg")>] 
          cmsspreadleg : obj)
-        ([<ExcelArgument(Name="gearings",Description = "double")>] 
+        ([<ExcelArgument(Name="gearings",Description = "double range")>] 
          gearings : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -532,7 +532,7 @@ module CmsSpreadLegFunction =
     *)
     [<ExcelFunction(Name="_CmsSpreadLeg_withPaymentDayCounter", Description="Create a CmsSpreadLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadLeg_withPaymentDayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsSpreadLeg",Description = "CmsSpreadLeg")>] 
          cmsspreadleg : obj)
@@ -574,11 +574,11 @@ module CmsSpreadLegFunction =
     *)
     [<ExcelFunction(Name="_CmsSpreadLeg_withSpreads1", Description="Create a CmsSpreadLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadLeg_withSpreads1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsSpreadLeg",Description = "CmsSpreadLeg")>] 
          cmsspreadleg : obj)
-        ([<ExcelArgument(Name="spreads",Description = "double")>] 
+        ([<ExcelArgument(Name="spreads",Description = "double range")>] 
          spreads : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -616,7 +616,7 @@ module CmsSpreadLegFunction =
     *)
     [<ExcelFunction(Name="_CmsSpreadLeg_withSpreads", Description="Create a CmsSpreadLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadLeg_withSpreads
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsSpreadLeg",Description = "CmsSpreadLeg")>] 
          cmsspreadleg : obj)
@@ -658,7 +658,7 @@ module CmsSpreadLegFunction =
     *)
     [<ExcelFunction(Name="_CmsSpreadLeg_withZeroPayments1", Description="Create a CmsSpreadLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadLeg_withZeroPayments1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsSpreadLeg",Description = "CmsSpreadLeg")>] 
          cmsspreadleg : obj)
@@ -700,7 +700,7 @@ module CmsSpreadLegFunction =
     *)
     [<ExcelFunction(Name="_CmsSpreadLeg_withZeroPayments", Description="Create a CmsSpreadLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadLeg_withZeroPayments
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsSpreadLeg",Description = "CmsSpreadLeg")>] 
          cmsspreadleg : obj)
@@ -736,11 +736,11 @@ module CmsSpreadLegFunction =
     *)
     [<ExcelFunction(Name="_CmsSpreadLeg_withNotionals1", Description="Create a CmsSpreadLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadLeg_withNotionals1
-        ([<ExcelArgument(Name="Mnemonic",Description = "RateLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsSpreadLeg",Description = "CmsSpreadLeg")>] 
          cmsspreadleg : obj)
-        ([<ExcelArgument(Name="notionals",Description = "double")>] 
+        ([<ExcelArgument(Name="notionals",Description = "double range")>] 
          notionals : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -778,7 +778,7 @@ module CmsSpreadLegFunction =
     *)
     [<ExcelFunction(Name="_CmsSpreadLeg_withNotionals", Description="Create a CmsSpreadLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadLeg_withNotionals
-        ([<ExcelArgument(Name="Mnemonic",Description = "RateLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsSpreadLeg",Description = "CmsSpreadLeg")>] 
          cmsspreadleg : obj)
@@ -820,7 +820,7 @@ module CmsSpreadLegFunction =
     *)
     [<ExcelFunction(Name="_CmsSpreadLeg_withPaymentAdjustment", Description="Create a CmsSpreadLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadLeg_withPaymentAdjustment
-        ([<ExcelArgument(Name="Mnemonic",Description = "RateLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CmsSpreadLeg",Description = "CmsSpreadLeg")>] 
          cmsspreadleg : obj)
@@ -859,9 +859,9 @@ module CmsSpreadLegFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CmsSpreadLeg_Range", Description="Create a range of CmsSpreadLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CmsSpreadLeg_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

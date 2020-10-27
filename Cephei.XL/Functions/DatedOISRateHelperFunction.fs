@@ -39,7 +39,7 @@ module DatedOISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DatedOISRateHelper", Description="Create a DatedOISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DatedOISRateHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "DatedOISRateHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="startDate",Description = "Date")>] 
          startDate : obj)
@@ -94,7 +94,7 @@ module DatedOISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DatedOISRateHelper_impliedQuote", Description="Create a DatedOISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DatedOISRateHelper_impliedQuote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DatedOISRateHelper",Description = "DatedOISRateHelper")>] 
          datedoisratehelper : obj)
@@ -130,7 +130,7 @@ module DatedOISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DatedOISRateHelper_setTermStructure", Description="Create a DatedOISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DatedOISRateHelper_setTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DatedOISRateHelper",Description = "DatedOISRateHelper")>] 
          datedoisratehelper : obj)
@@ -172,7 +172,7 @@ module DatedOISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DatedOISRateHelper_earliestDate", Description="Create a DatedOISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DatedOISRateHelper_earliestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DatedOISRateHelper",Description = "DatedOISRateHelper")>] 
          datedoisratehelper : obj)
@@ -208,7 +208,7 @@ module DatedOISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DatedOISRateHelper_latestDate", Description="Create a DatedOISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DatedOISRateHelper_latestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DatedOISRateHelper",Description = "DatedOISRateHelper")>] 
          datedoisratehelper : obj)
@@ -244,7 +244,7 @@ module DatedOISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DatedOISRateHelper_latestRelevantDate", Description="Create a DatedOISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DatedOISRateHelper_latestRelevantDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DatedOISRateHelper",Description = "DatedOISRateHelper")>] 
          datedoisratehelper : obj)
@@ -280,7 +280,7 @@ module DatedOISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DatedOISRateHelper_maturityDate", Description="Create a DatedOISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DatedOISRateHelper_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DatedOISRateHelper",Description = "DatedOISRateHelper")>] 
          datedoisratehelper : obj)
@@ -316,7 +316,7 @@ module DatedOISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DatedOISRateHelper_pillarDate", Description="Create a DatedOISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DatedOISRateHelper_pillarDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DatedOISRateHelper",Description = "DatedOISRateHelper")>] 
          datedoisratehelper : obj)
@@ -352,7 +352,7 @@ module DatedOISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DatedOISRateHelper_quote", Description="Create a DatedOISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DatedOISRateHelper_quote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DatedOISRateHelper",Description = "DatedOISRateHelper")>] 
          datedoisratehelper : obj)
@@ -388,7 +388,7 @@ module DatedOISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DatedOISRateHelper_quoteError", Description="Create a DatedOISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DatedOISRateHelper_quoteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DatedOISRateHelper",Description = "DatedOISRateHelper")>] 
          datedoisratehelper : obj)
@@ -424,7 +424,7 @@ module DatedOISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DatedOISRateHelper_quoteIsValid", Description="Create a DatedOISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DatedOISRateHelper_quoteIsValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DatedOISRateHelper",Description = "DatedOISRateHelper")>] 
          datedoisratehelper : obj)
@@ -460,7 +460,7 @@ module DatedOISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DatedOISRateHelper_quoteValue", Description="Create a DatedOISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DatedOISRateHelper_quoteValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DatedOISRateHelper",Description = "DatedOISRateHelper")>] 
          datedoisratehelper : obj)
@@ -496,7 +496,7 @@ module DatedOISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DatedOISRateHelper_registerWith", Description="Create a DatedOISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DatedOISRateHelper_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DatedOISRateHelper",Description = "DatedOISRateHelper")>] 
          datedoisratehelper : obj)
@@ -538,7 +538,7 @@ module DatedOISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DatedOISRateHelper_unregisterWith", Description="Create a DatedOISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DatedOISRateHelper_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DatedOISRateHelper",Description = "DatedOISRateHelper")>] 
          datedoisratehelper : obj)
@@ -580,7 +580,7 @@ module DatedOISRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DatedOISRateHelper_update", Description="Create a DatedOISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DatedOISRateHelper_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DatedOISRateHelper",Description = "DatedOISRateHelper")>] 
          datedoisratehelper : obj)
@@ -613,9 +613,9 @@ module DatedOISRateHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DatedOISRateHelper_Range", Description="Create a range of DatedOISRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DatedOISRateHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

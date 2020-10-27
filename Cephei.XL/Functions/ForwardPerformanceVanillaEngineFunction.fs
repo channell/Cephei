@@ -40,7 +40,7 @@ module ForwardPerformanceVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_ForwardPerformanceVanillaEngine", Description="Create a ForwardPerformanceVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardPerformanceVanillaEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ForwardPerformanceVanillaEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -96,7 +96,7 @@ module ForwardPerformanceVanillaEngineFunction =
     (*!! ommitted
     [<ExcelFunction(Name="_ForwardPerformanceVanillaEngine_GetOriginalEngine", Description="Create a ForwardPerformanceVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardPerformanceVanillaEngine_GetOriginalEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "IPricingEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardPerformanceVanillaEngine",Description = "ForwardPerformanceVanillaEngine")>] 
          forwardperformancevanillaengine : obj)
@@ -139,7 +139,7 @@ module ForwardPerformanceVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_ForwardPerformanceVanillaEngine_registerWith", Description="Create a ForwardPerformanceVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardPerformanceVanillaEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardPerformanceVanillaEngine",Description = "ForwardPerformanceVanillaEngine")>] 
          forwardperformancevanillaengine : obj)
@@ -181,7 +181,7 @@ module ForwardPerformanceVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_ForwardPerformanceVanillaEngine_reset", Description="Create a ForwardPerformanceVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardPerformanceVanillaEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardPerformanceVanillaEngine",Description = "ForwardPerformanceVanillaEngine")>] 
          forwardperformancevanillaengine : obj)
@@ -217,7 +217,7 @@ module ForwardPerformanceVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_ForwardPerformanceVanillaEngine_unregisterWith", Description="Create a ForwardPerformanceVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardPerformanceVanillaEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardPerformanceVanillaEngine",Description = "ForwardPerformanceVanillaEngine")>] 
          forwardperformancevanillaengine : obj)
@@ -259,7 +259,7 @@ module ForwardPerformanceVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_ForwardPerformanceVanillaEngine_update", Description="Create a ForwardPerformanceVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardPerformanceVanillaEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardPerformanceVanillaEngine",Description = "ForwardPerformanceVanillaEngine")>] 
          forwardperformancevanillaengine : obj)
@@ -292,9 +292,9 @@ module ForwardPerformanceVanillaEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ForwardPerformanceVanillaEngine_Range", Description="Create a range of ForwardPerformanceVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardPerformanceVanillaEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

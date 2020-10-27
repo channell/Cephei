@@ -39,7 +39,7 @@ module BinomialBarrierEngineFunction =
     *)
     [<ExcelFunction(Name="_BinomialBarrierEngine", Description="Create a BinomialBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialBarrierEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BinomialBarrierEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="getTree",Description = "BinomialBarrierEngine.GetTree")>] 
          getTree : obj)
@@ -49,7 +49,7 @@ module BinomialBarrierEngineFunction =
          Process : obj)
         ([<ExcelArgument(Name="timeSteps",Description = "int")>] 
          timeSteps : obj)
-        ([<ExcelArgument(Name="maxTimeSteps",Description = "BinomialBarrierEngine")>] 
+        ([<ExcelArgument(Name="maxTimeSteps",Description = "int or empty")>] 
          maxTimeSteps : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -102,7 +102,7 @@ module BinomialBarrierEngineFunction =
     (*!!
     [<ExcelFunction(Name="_BinomialBarrierEngine_getAsset", Description="Create a BinomialBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialBarrierEngine_getAsset
-        ([<ExcelArgument(Name="Mnemonic",Description = "DiscretizedAsset")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BinomialBarrierEngine",Description = "BinomialBarrierEngine")>] 
          binomialbarrierengine : obj)
@@ -110,7 +110,7 @@ module BinomialBarrierEngineFunction =
          args : obj)
         ([<ExcelArgument(Name="Process",Description = "StochasticProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="grid",Description = "DiscretizedAsset")>] 
+        ([<ExcelArgument(Name="grid",Description = "TimeGrid or empty")>] 
          grid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -158,7 +158,7 @@ module BinomialBarrierEngineFunction =
     (*!!
     [<ExcelFunction(Name="_BinomialBarrierEngine_GetTree", Description="Create a BinomialBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialBarrierEngine_GetTree
-        ([<ExcelArgument(Name="Mnemonic",Description = "ITree")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BinomialBarrierEngine",Description = "BinomialBarrierEngine")>] 
          binomialbarrierengine : obj)
@@ -216,9 +216,9 @@ module BinomialBarrierEngineFunction =
             *)
     [<ExcelFunction(Name="_BinomialBarrierEngine_Range", Description="Create a range of BinomialBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialBarrierEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

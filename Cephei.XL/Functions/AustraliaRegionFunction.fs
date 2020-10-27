@@ -39,7 +39,7 @@ module AustraliaRegionFunction =
     *)
     [<ExcelFunction(Name="_AustraliaRegion", Description="Create a AustraliaRegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AustraliaRegion_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AustraliaRegion")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module AustraliaRegionFunction =
     *)
     [<ExcelFunction(Name="_AustraliaRegion_code", Description="Create a AustraliaRegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AustraliaRegion_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AustraliaRegion",Description = "AustraliaRegion")>] 
          australiaregion : obj)
@@ -106,7 +106,7 @@ module AustraliaRegionFunction =
     *)
     [<ExcelFunction(Name="_AustraliaRegion_Equals", Description="Create a AustraliaRegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AustraliaRegion_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AustraliaRegion",Description = "AustraliaRegion")>] 
          australiaregion : obj)
@@ -148,7 +148,7 @@ module AustraliaRegionFunction =
     *)
     [<ExcelFunction(Name="_AustraliaRegion_name", Description="Create a AustraliaRegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AustraliaRegion_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AustraliaRegion",Description = "AustraliaRegion")>] 
          australiaregion : obj)
@@ -181,9 +181,9 @@ module AustraliaRegionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AustraliaRegion_Range", Description="Create a range of AustraliaRegion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AustraliaRegion_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

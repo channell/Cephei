@@ -39,7 +39,7 @@ module SimpleCashFlowFunction =
     *)
     [<ExcelFunction(Name="_SimpleCashFlow_amount", Description="Create a SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_amount
-        ([<ExcelArgument(Name="Mnemonic",Description = "SimpleCashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpleCashFlow",Description = "SimpleCashFlow")>] 
          simplecashflow : obj)
@@ -75,7 +75,7 @@ module SimpleCashFlowFunction =
     *)
     [<ExcelFunction(Name="_SimpleCashFlow_date", Description="Create a SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "SimpleCashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpleCashFlow",Description = "SimpleCashFlow")>] 
          simplecashflow : obj)
@@ -111,7 +111,7 @@ module SimpleCashFlowFunction =
     *)
     [<ExcelFunction(Name="_SimpleCashFlow", Description="Create a SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SimpleCashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="amount",Description = "double")>] 
          amount : obj)
@@ -154,7 +154,7 @@ module SimpleCashFlowFunction =
     *)
     [<ExcelFunction(Name="_SimpleCashFlow_CompareTo", Description="Create a SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_CompareTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpleCashFlow",Description = "SimpleCashFlow")>] 
          simplecashflow : obj)
@@ -196,7 +196,7 @@ module SimpleCashFlowFunction =
     *)
     [<ExcelFunction(Name="_SimpleCashFlow_Equals", Description="Create a SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpleCashFlow",Description = "SimpleCashFlow")>] 
          simplecashflow : obj)
@@ -238,7 +238,7 @@ module SimpleCashFlowFunction =
     *)
     [<ExcelFunction(Name="_SimpleCashFlow_exCouponDate", Description="Create a SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_exCouponDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpleCashFlow",Description = "SimpleCashFlow")>] 
          simplecashflow : obj)
@@ -274,7 +274,7 @@ module SimpleCashFlowFunction =
     *)
     [<ExcelFunction(Name="_SimpleCashFlow_hasOccurred", Description="Create a SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpleCashFlow",Description = "SimpleCashFlow")>] 
          simplecashflow : obj)
@@ -322,7 +322,7 @@ module SimpleCashFlowFunction =
     *)
     [<ExcelFunction(Name="_SimpleCashFlow_tradingExCoupon", Description="Create a SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_tradingExCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpleCashFlow",Description = "SimpleCashFlow")>] 
          simplecashflow : obj)
@@ -364,7 +364,7 @@ module SimpleCashFlowFunction =
     *)
     [<ExcelFunction(Name="_SimpleCashFlow_accept", Description="Create a SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpleCashFlow",Description = "SimpleCashFlow")>] 
          simplecashflow : obj)
@@ -406,7 +406,7 @@ module SimpleCashFlowFunction =
     *)
     [<ExcelFunction(Name="_SimpleCashFlow_registerWith", Description="Create a SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpleCashFlow",Description = "SimpleCashFlow")>] 
          simplecashflow : obj)
@@ -448,7 +448,7 @@ module SimpleCashFlowFunction =
     *)
     [<ExcelFunction(Name="_SimpleCashFlow_unregisterWith", Description="Create a SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpleCashFlow",Description = "SimpleCashFlow")>] 
          simplecashflow : obj)
@@ -487,9 +487,9 @@ module SimpleCashFlowFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SimpleCashFlow_Range", Description="Create a range of SimpleCashFlow",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleCashFlow_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

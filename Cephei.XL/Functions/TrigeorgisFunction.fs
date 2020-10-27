@@ -39,7 +39,7 @@ module TrigeorgisFunction =
     *)
     [<ExcelFunction(Name="_Trigeorgis_factory", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trigeorgis_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Trigeorgis")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Trigeorgis",Description = "Trigeorgis")>] 
          trigeorgis : obj)
@@ -99,7 +99,7 @@ module TrigeorgisFunction =
     *)
     [<ExcelFunction(Name="_Trigeorgis1", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trigeorgis_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Trigeorgis")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
@@ -154,7 +154,7 @@ module TrigeorgisFunction =
     *)
     [<ExcelFunction(Name="_Trigeorgis", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trigeorgis_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Trigeorgis")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -185,7 +185,7 @@ module TrigeorgisFunction =
     *)
     [<ExcelFunction(Name="_Trigeorgis_probability", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trigeorgis_probability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Trigeorgis",Description = "Trigeorgis")>] 
          trigeorgis : obj)
@@ -239,7 +239,7 @@ module TrigeorgisFunction =
     *)
     [<ExcelFunction(Name="_Trigeorgis_underlying", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trigeorgis_underlying
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Trigeorgis",Description = "Trigeorgis")>] 
          trigeorgis : obj)
@@ -287,7 +287,7 @@ module TrigeorgisFunction =
     *)
     [<ExcelFunction(Name="_Trigeorgis_descendant", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trigeorgis_descendant
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Trigeorgis",Description = "Trigeorgis")>] 
          trigeorgis : obj)
@@ -341,7 +341,7 @@ module TrigeorgisFunction =
     *)
     [<ExcelFunction(Name="_Trigeorgis_size", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trigeorgis_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Trigeorgis",Description = "Trigeorgis")>] 
          trigeorgis : obj)
@@ -383,7 +383,7 @@ module TrigeorgisFunction =
     *)
     [<ExcelFunction(Name="_Trigeorgis_columns", Description="Create a Trigeorgis",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trigeorgis_columns
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Trigeorgis",Description = "Trigeorgis")>] 
          trigeorgis : obj)
@@ -416,9 +416,9 @@ module TrigeorgisFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Trigeorgis_Range", Description="Create a range of Trigeorgis",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Trigeorgis_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

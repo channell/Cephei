@@ -39,7 +39,7 @@ module SGDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SGDCurrency", Description="Create a SGDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SGDCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SGDCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module SGDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SGDCurrency_code", Description="Create a SGDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SGDCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SGDCurrency",Description = "SGDCurrency")>] 
          sgdcurrency : obj)
@@ -106,7 +106,7 @@ module SGDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SGDCurrency_empty", Description="Create a SGDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SGDCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SGDCurrency",Description = "SGDCurrency")>] 
          sgdcurrency : obj)
@@ -142,7 +142,7 @@ module SGDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SGDCurrency_Equals", Description="Create a SGDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SGDCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SGDCurrency",Description = "SGDCurrency")>] 
          sgdcurrency : obj)
@@ -184,7 +184,7 @@ module SGDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SGDCurrency_format", Description="Create a SGDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SGDCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SGDCurrency",Description = "SGDCurrency")>] 
          sgdcurrency : obj)
@@ -220,7 +220,7 @@ module SGDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SGDCurrency_fractionsPerUnit", Description="Create a SGDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SGDCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SGDCurrency",Description = "SGDCurrency")>] 
          sgdcurrency : obj)
@@ -256,7 +256,7 @@ module SGDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SGDCurrency_fractionSymbol", Description="Create a SGDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SGDCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SGDCurrency",Description = "SGDCurrency")>] 
          sgdcurrency : obj)
@@ -292,7 +292,7 @@ module SGDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SGDCurrency_name", Description="Create a SGDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SGDCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SGDCurrency",Description = "SGDCurrency")>] 
          sgdcurrency : obj)
@@ -328,7 +328,7 @@ module SGDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SGDCurrency_numericCode", Description="Create a SGDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SGDCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SGDCurrency",Description = "SGDCurrency")>] 
          sgdcurrency : obj)
@@ -364,7 +364,7 @@ module SGDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SGDCurrency_rounding", Description="Create a SGDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SGDCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SGDCurrency",Description = "SGDCurrency")>] 
          sgdcurrency : obj)
@@ -400,7 +400,7 @@ module SGDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SGDCurrency_symbol", Description="Create a SGDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SGDCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SGDCurrency",Description = "SGDCurrency")>] 
          sgdcurrency : obj)
@@ -436,7 +436,7 @@ module SGDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SGDCurrency_ToString", Description="Create a SGDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SGDCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SGDCurrency",Description = "SGDCurrency")>] 
          sgdcurrency : obj)
@@ -472,7 +472,7 @@ module SGDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SGDCurrency_triangulationCurrency", Description="Create a SGDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SGDCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SGDCurrency",Description = "SGDCurrency")>] 
          sgdcurrency : obj)
@@ -505,9 +505,9 @@ module SGDCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SGDCurrency_Range", Description="Create a range of SGDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SGDCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

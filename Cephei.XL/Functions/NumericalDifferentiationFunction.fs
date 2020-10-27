@@ -39,7 +39,7 @@ module NumericalDifferentiationFunction =
     *)
     [<ExcelFunction(Name="_NumericalDifferentiation", Description="Create a NumericalDifferentiation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericalDifferentiation_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "NumericalDifferentiation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="f",Description = "double,double")>] 
          f : obj)
@@ -100,7 +100,7 @@ module NumericalDifferentiationFunction =
     *)
     [<ExcelFunction(Name="_NumericalDifferentiation1", Description="Create a NumericalDifferentiation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericalDifferentiation_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "NumericalDifferentiation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="f",Description = "double,double")>] 
          f : obj)
@@ -149,7 +149,7 @@ module NumericalDifferentiationFunction =
     *)
     [<ExcelFunction(Name="_NumericalDifferentiation_offsets", Description="Create a NumericalDifferentiation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericalDifferentiation_offsets
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NumericalDifferentiation",Description = "NumericalDifferentiation")>] 
          numericaldifferentiation : obj)
@@ -185,7 +185,7 @@ module NumericalDifferentiationFunction =
     *)
     [<ExcelFunction(Name="_NumericalDifferentiation_value", Description="Create a NumericalDifferentiation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericalDifferentiation_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NumericalDifferentiation",Description = "NumericalDifferentiation")>] 
          numericaldifferentiation : obj)
@@ -227,7 +227,7 @@ module NumericalDifferentiationFunction =
     *)
     [<ExcelFunction(Name="_NumericalDifferentiation_weights", Description="Create a NumericalDifferentiation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericalDifferentiation_weights
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NumericalDifferentiation",Description = "NumericalDifferentiation")>] 
          numericaldifferentiation : obj)
@@ -260,9 +260,9 @@ module NumericalDifferentiationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NumericalDifferentiation_Range", Description="Create a range of NumericalDifferentiation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericalDifferentiation_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

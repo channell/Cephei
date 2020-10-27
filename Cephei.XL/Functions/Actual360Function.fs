@@ -39,9 +39,9 @@ module Actual360Function =
     *)
     [<ExcelFunction(Name="_Actual360", Description="Create a Actual360",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual360_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Actual360")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="c",Description = "Actual360")>] 
+        ([<ExcelArgument(Name="c",Description = "bool or empty")>] 
          c : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,7 +76,7 @@ module Actual360Function =
     *)
     [<ExcelFunction(Name="_Actual360_dayCount", Description="Create a Actual360",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual360_dayCount
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Actual360",Description = "Actual360")>] 
          actual360 : obj)
@@ -124,7 +124,7 @@ module Actual360Function =
     *)
     [<ExcelFunction(Name="_Actual360_dayCounter", Description="Create a Actual360",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual360_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Actual360",Description = "Actual360")>] 
          actual360 : obj)
@@ -160,7 +160,7 @@ module Actual360Function =
     *)
     [<ExcelFunction(Name="_Actual360_empty", Description="Create a Actual360",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual360_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Actual360",Description = "Actual360")>] 
          actual360 : obj)
@@ -196,7 +196,7 @@ module Actual360Function =
     *)
     [<ExcelFunction(Name="_Actual360_Equals", Description="Create a Actual360",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual360_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Actual360",Description = "Actual360")>] 
          actual360 : obj)
@@ -238,7 +238,7 @@ module Actual360Function =
     *)
     [<ExcelFunction(Name="_Actual360_name", Description="Create a Actual360",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual360_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Actual360",Description = "Actual360")>] 
          actual360 : obj)
@@ -274,7 +274,7 @@ module Actual360Function =
     *)
     [<ExcelFunction(Name="_Actual360_ToString", Description="Create a Actual360",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual360_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Actual360",Description = "Actual360")>] 
          actual360 : obj)
@@ -310,7 +310,7 @@ module Actual360Function =
     *)
     [<ExcelFunction(Name="_Actual360_yearFraction", Description="Create a Actual360",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual360_yearFraction
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Actual360",Description = "Actual360")>] 
          actual360 : obj)
@@ -370,7 +370,7 @@ module Actual360Function =
     *)
     [<ExcelFunction(Name="_Actual360_yearFraction1", Description="Create a Actual360",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual360_yearFraction1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Actual360",Description = "Actual360")>] 
          actual360 : obj)
@@ -415,9 +415,9 @@ module Actual360Function =
             "<WIZ>"
     [<ExcelFunction(Name="_Actual360_Range", Description="Create a range of Actual360",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual360_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

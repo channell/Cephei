@@ -39,7 +39,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "NZDLibor")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
@@ -82,7 +82,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor1", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "NZDLibor")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
@@ -119,7 +119,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_clone", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -161,7 +161,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_maturityDate", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -203,7 +203,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_valueDate", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -245,7 +245,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_businessDayConvention", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -281,7 +281,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_endOfMonth", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -317,7 +317,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_forecastFixing1", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -371,7 +371,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_forecastFixing", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -413,7 +413,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_forwardingTermStructure", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -449,7 +449,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_currency", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -485,7 +485,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_dayCounter", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -521,7 +521,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_familyName", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -557,7 +557,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_fixing", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -605,7 +605,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_fixingCalendar", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -641,7 +641,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_fixingDate", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -683,7 +683,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_fixingDays", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -719,7 +719,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_isValidFixingDate", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -761,7 +761,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_name", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -797,7 +797,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_pastFixing", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -839,7 +839,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_tenor", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -875,7 +875,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_update", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -911,7 +911,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_addFixing", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -965,13 +965,13 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_addFixings", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -1019,7 +1019,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_addFixings1", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -1067,7 +1067,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_allowsNativeFixings", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -1103,7 +1103,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_clearFixings", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -1139,7 +1139,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_registerWith", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -1181,7 +1181,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_timeSeries", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -1217,7 +1217,7 @@ module NZDLiborFunction =
     *)
     [<ExcelFunction(Name="_NZDLibor_unregisterWith", Description="Create a NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NZDLibor",Description = "NZDLibor")>] 
          nzdlibor : obj)
@@ -1256,9 +1256,9 @@ module NZDLiborFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NZDLibor_Range", Description="Create a range of NZDLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NZDLibor_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

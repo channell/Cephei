@@ -28,7 +28,7 @@ module ENumFunctions =
 #>
     [<ExcelFunction(Name="_<#= name #>", Description="",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let <#= name #>
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="vlaue",Description = "value of the <#= name #>")>] 
          value: string)

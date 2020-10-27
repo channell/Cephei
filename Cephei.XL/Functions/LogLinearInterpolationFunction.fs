@@ -39,13 +39,13 @@ module LogLinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogLinearInterpolation", Description="Create a LogLinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogLinearInterpolation_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "LogLinearInterpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double range")>] 
          xBegin : obj)
         ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double range")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,7 +88,7 @@ module LogLinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogLinearInterpolation_derivative", Description="Create a LogLinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogLinearInterpolation_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LogLinearInterpolation",Description = "LogLinearInterpolation")>] 
          loglinearinterpolation : obj)
@@ -136,7 +136,7 @@ module LogLinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogLinearInterpolation_empty", Description="Create a LogLinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogLinearInterpolation_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LogLinearInterpolation",Description = "LogLinearInterpolation")>] 
          loglinearinterpolation : obj)
@@ -172,7 +172,7 @@ module LogLinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogLinearInterpolation_primitive", Description="Create a LogLinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogLinearInterpolation_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LogLinearInterpolation",Description = "LogLinearInterpolation")>] 
          loglinearinterpolation : obj)
@@ -220,7 +220,7 @@ module LogLinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogLinearInterpolation_secondDerivative", Description="Create a LogLinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogLinearInterpolation_secondDerivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LogLinearInterpolation",Description = "LogLinearInterpolation")>] 
          loglinearinterpolation : obj)
@@ -268,7 +268,7 @@ module LogLinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogLinearInterpolation_update", Description="Create a LogLinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogLinearInterpolation_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LogLinearInterpolation",Description = "LogLinearInterpolation")>] 
          loglinearinterpolation : obj)
@@ -304,7 +304,7 @@ module LogLinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogLinearInterpolation_value1", Description="Create a LogLinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogLinearInterpolation_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LogLinearInterpolation",Description = "LogLinearInterpolation")>] 
          loglinearinterpolation : obj)
@@ -352,7 +352,7 @@ module LogLinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogLinearInterpolation_value", Description="Create a LogLinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogLinearInterpolation_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LogLinearInterpolation",Description = "LogLinearInterpolation")>] 
          loglinearinterpolation : obj)
@@ -394,7 +394,7 @@ module LogLinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogLinearInterpolation_xMax", Description="Create a LogLinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogLinearInterpolation_xMax
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LogLinearInterpolation",Description = "LogLinearInterpolation")>] 
          loglinearinterpolation : obj)
@@ -430,7 +430,7 @@ module LogLinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogLinearInterpolation_xMin", Description="Create a LogLinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogLinearInterpolation_xMin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LogLinearInterpolation",Description = "LogLinearInterpolation")>] 
          loglinearinterpolation : obj)
@@ -466,7 +466,7 @@ module LogLinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogLinearInterpolation_allowsExtrapolation", Description="Create a LogLinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogLinearInterpolation_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LogLinearInterpolation",Description = "LogLinearInterpolation")>] 
          loglinearinterpolation : obj)
@@ -502,7 +502,7 @@ module LogLinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogLinearInterpolation_disableExtrapolation", Description="Create a LogLinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogLinearInterpolation_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LogLinearInterpolation",Description = "LogLinearInterpolation")>] 
          loglinearinterpolation : obj)
@@ -544,7 +544,7 @@ module LogLinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogLinearInterpolation_enableExtrapolation", Description="Create a LogLinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogLinearInterpolation_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LogLinearInterpolation",Description = "LogLinearInterpolation")>] 
          loglinearinterpolation : obj)
@@ -586,7 +586,7 @@ module LogLinearInterpolationFunction =
     *)
     [<ExcelFunction(Name="_LogLinearInterpolation_extrapolate", Description="Create a LogLinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogLinearInterpolation_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LogLinearInterpolation",Description = "LogLinearInterpolation")>] 
          loglinearinterpolation : obj)
@@ -619,9 +619,9 @@ module LogLinearInterpolationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LogLinearInterpolation_Range", Description="Create a range of LogLinearInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LogLinearInterpolation_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

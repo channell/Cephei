@@ -39,7 +39,7 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ForwardVanillaOption")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="moneyness",Description = "double")>] 
          moneyness : obj)
@@ -106,7 +106,7 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_delta", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_delta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
@@ -142,7 +142,7 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_deltaForward", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_deltaForward
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
@@ -178,7 +178,7 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_dividendRho", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_dividendRho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
@@ -214,7 +214,7 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_elasticity", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_elasticity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
@@ -250,7 +250,7 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_gamma", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_gamma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
@@ -286,7 +286,7 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_isExpired", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
@@ -322,7 +322,7 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_itmCashProbability", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_itmCashProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
@@ -358,7 +358,7 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_rho", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
@@ -394,7 +394,7 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_strikeSensitivity", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_strikeSensitivity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
@@ -430,7 +430,7 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_theta", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_theta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
@@ -466,7 +466,7 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_thetaPerDay", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_thetaPerDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
@@ -502,7 +502,7 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_vega", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
@@ -538,7 +538,7 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_exercise", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_exercise
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
@@ -574,7 +574,7 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_payoff", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_payoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Payoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
@@ -610,7 +610,7 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_CASH", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
@@ -646,7 +646,7 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_errorEstimate", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
@@ -682,7 +682,7 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_NPV", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
@@ -718,7 +718,7 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_result", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
@@ -760,7 +760,7 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_setPricingEngine", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
@@ -802,7 +802,7 @@ module ForwardVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_ForwardVanillaOption_valuationDate", Description="Create a ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardVanillaOption",Description = "ForwardVanillaOption")>] 
          forwardvanillaoption : obj)
@@ -835,9 +835,9 @@ module ForwardVanillaOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ForwardVanillaOption_Range", Description="Create a range of ForwardVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardVanillaOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

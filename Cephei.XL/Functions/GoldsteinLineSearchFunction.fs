@@ -39,15 +39,15 @@ module GoldsteinLineSearchFunction =
     *)
     [<ExcelFunction(Name="_GoldsteinLineSearch", Description="Create a GoldsteinLineSearch",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GoldsteinLineSearch_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "GoldsteinLineSearch")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="eps",Description = "GoldsteinLineSearch")>] 
+        ([<ExcelArgument(Name="eps",Description = "double or empty")>] 
          eps : obj)
-        ([<ExcelArgument(Name="alpha",Description = "GoldsteinLineSearch")>] 
+        ([<ExcelArgument(Name="alpha",Description = "double or empty")>] 
          alpha : obj)
-        ([<ExcelArgument(Name="beta",Description = "GoldsteinLineSearch")>] 
+        ([<ExcelArgument(Name="beta",Description = "double or empty")>] 
          beta : obj)
-        ([<ExcelArgument(Name="extrapolation",Description = "GoldsteinLineSearch")>] 
+        ([<ExcelArgument(Name="extrapolation",Description = "double or empty")>] 
          extrapolation : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,7 +94,7 @@ module GoldsteinLineSearchFunction =
     *)
     [<ExcelFunction(Name="_GoldsteinLineSearch_value", Description="Create a GoldsteinLineSearch",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GoldsteinLineSearch_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GoldsteinLineSearch",Description = "GoldsteinLineSearch")>] 
          goldsteinlinesearch : obj)
@@ -154,7 +154,7 @@ module GoldsteinLineSearchFunction =
     *)
     [<ExcelFunction(Name="_GoldsteinLineSearch_lastFunctionValue", Description="Create a GoldsteinLineSearch",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GoldsteinLineSearch_lastFunctionValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GoldsteinLineSearch",Description = "GoldsteinLineSearch")>] 
          goldsteinlinesearch : obj)
@@ -190,7 +190,7 @@ module GoldsteinLineSearchFunction =
     *)
     [<ExcelFunction(Name="_GoldsteinLineSearch_lastGradient", Description="Create a GoldsteinLineSearch",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GoldsteinLineSearch_lastGradient
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GoldsteinLineSearch",Description = "GoldsteinLineSearch")>] 
          goldsteinlinesearch : obj)
@@ -226,7 +226,7 @@ module GoldsteinLineSearchFunction =
     *)
     [<ExcelFunction(Name="_GoldsteinLineSearch_lastGradientNorm2", Description="Create a GoldsteinLineSearch",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GoldsteinLineSearch_lastGradientNorm2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GoldsteinLineSearch",Description = "GoldsteinLineSearch")>] 
          goldsteinlinesearch : obj)
@@ -262,7 +262,7 @@ module GoldsteinLineSearchFunction =
     *)
     [<ExcelFunction(Name="_GoldsteinLineSearch_lastX", Description="Create a GoldsteinLineSearch",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GoldsteinLineSearch_lastX
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GoldsteinLineSearch",Description = "GoldsteinLineSearch")>] 
          goldsteinlinesearch : obj)
@@ -298,7 +298,7 @@ module GoldsteinLineSearchFunction =
     *)
     [<ExcelFunction(Name="_GoldsteinLineSearch_searchDirection", Description="Create a GoldsteinLineSearch",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GoldsteinLineSearch_searchDirection
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GoldsteinLineSearch",Description = "GoldsteinLineSearch")>] 
          goldsteinlinesearch : obj)
@@ -334,7 +334,7 @@ module GoldsteinLineSearchFunction =
     *)
     [<ExcelFunction(Name="_GoldsteinLineSearch_succeed", Description="Create a GoldsteinLineSearch",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GoldsteinLineSearch_succeed
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GoldsteinLineSearch",Description = "GoldsteinLineSearch")>] 
          goldsteinlinesearch : obj)
@@ -370,7 +370,7 @@ module GoldsteinLineSearchFunction =
     *)
     [<ExcelFunction(Name="_GoldsteinLineSearch_update", Description="Create a GoldsteinLineSearch",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GoldsteinLineSearch_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GoldsteinLineSearch",Description = "GoldsteinLineSearch")>] 
          goldsteinlinesearch : obj)
@@ -378,7 +378,7 @@ module GoldsteinLineSearchFunction =
          data : obj)
         ([<ExcelArgument(Name="direction",Description = "Vector")>] 
          direction : obj)
-        ([<ExcelArgument(Name="beta",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="beta",Description = "double or empty")>] 
          beta : obj)
         ([<ExcelArgument(Name="Constraint",Description = "Constraint")>] 
          Constraint : obj)
@@ -427,9 +427,9 @@ module GoldsteinLineSearchFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GoldsteinLineSearch_Range", Description="Create a range of GoldsteinLineSearch",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GoldsteinLineSearch_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

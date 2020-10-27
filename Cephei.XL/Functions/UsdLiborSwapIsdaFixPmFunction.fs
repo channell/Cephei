@@ -39,7 +39,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "UsdLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
@@ -82,7 +82,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm1", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "UsdLiborSwapIsdaFixPm")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
@@ -119,7 +119,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_clone", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwapIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -161,7 +161,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_clone1", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_clone1
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwapIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -209,7 +209,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_clone2", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_clone2
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwapIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -251,7 +251,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_discountingTermStructure", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_discountingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -287,7 +287,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_exogenousDiscount", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_exogenousDiscount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -323,7 +323,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_fixedLegConvention", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_fixedLegConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -359,7 +359,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_fixedLegTenor", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_fixedLegTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -395,7 +395,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_forecastFixing", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -437,7 +437,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_forwardingTermStructure", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -473,7 +473,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_iborIndex", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_iborIndex
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -509,7 +509,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_maturityDate", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "VanillaSwap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -551,7 +551,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_underlyingSwap", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_underlyingSwap
-        ([<ExcelArgument(Name="Mnemonic",Description = "VanillaSwap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -593,7 +593,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_currency", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -629,7 +629,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_dayCounter", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -665,7 +665,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_familyName", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -701,7 +701,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_fixing", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -749,7 +749,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_fixingCalendar", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -785,7 +785,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_fixingDate", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -827,7 +827,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_fixingDays", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -863,7 +863,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_isValidFixingDate", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -905,7 +905,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_name", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -941,7 +941,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_pastFixing", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -983,7 +983,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_tenor", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -1019,7 +1019,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_update", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -1055,7 +1055,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_valueDate", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -1097,7 +1097,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_addFixing", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -1151,13 +1151,13 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_addFixings", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -1205,7 +1205,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_addFixings1", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -1253,7 +1253,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_allowsNativeFixings", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -1289,7 +1289,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_clearFixings", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -1325,7 +1325,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_registerWith", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -1367,7 +1367,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_timeSeries", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -1403,7 +1403,7 @@ module UsdLiborSwapIsdaFixPmFunction =
     *)
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_unregisterWith", Description="Create a UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UsdLiborSwapIsdaFixPm",Description = "UsdLiborSwapIsdaFixPm")>] 
          usdliborswapisdafixpm : obj)
@@ -1442,9 +1442,9 @@ module UsdLiborSwapIsdaFixPmFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_UsdLiborSwapIsdaFixPm_Range", Description="Create a range of UsdLiborSwapIsdaFixPm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UsdLiborSwapIsdaFixPm_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

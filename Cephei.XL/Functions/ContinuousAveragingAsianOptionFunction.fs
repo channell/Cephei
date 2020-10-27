@@ -39,7 +39,7 @@ module ContinuousAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousAveragingAsianOption", Description="Create a ContinuousAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousAveragingAsianOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ContinuousAveragingAsianOption")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="averageType",Description = "Average.Type: Arithmetic, Geometric, NULL")>] 
          averageType : obj)
@@ -100,7 +100,7 @@ module ContinuousAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousAveragingAsianOption_delta", Description="Create a ContinuousAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousAveragingAsianOption_delta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousAveragingAsianOption",Description = "ContinuousAveragingAsianOption")>] 
          continuousaveragingasianoption : obj)
@@ -136,7 +136,7 @@ module ContinuousAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousAveragingAsianOption_deltaForward", Description="Create a ContinuousAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousAveragingAsianOption_deltaForward
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousAveragingAsianOption",Description = "ContinuousAveragingAsianOption")>] 
          continuousaveragingasianoption : obj)
@@ -172,7 +172,7 @@ module ContinuousAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousAveragingAsianOption_dividendRho", Description="Create a ContinuousAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousAveragingAsianOption_dividendRho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousAveragingAsianOption",Description = "ContinuousAveragingAsianOption")>] 
          continuousaveragingasianoption : obj)
@@ -208,7 +208,7 @@ module ContinuousAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousAveragingAsianOption_elasticity", Description="Create a ContinuousAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousAveragingAsianOption_elasticity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousAveragingAsianOption",Description = "ContinuousAveragingAsianOption")>] 
          continuousaveragingasianoption : obj)
@@ -244,7 +244,7 @@ module ContinuousAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousAveragingAsianOption_gamma", Description="Create a ContinuousAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousAveragingAsianOption_gamma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousAveragingAsianOption",Description = "ContinuousAveragingAsianOption")>] 
          continuousaveragingasianoption : obj)
@@ -280,7 +280,7 @@ module ContinuousAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousAveragingAsianOption_isExpired", Description="Create a ContinuousAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousAveragingAsianOption_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousAveragingAsianOption",Description = "ContinuousAveragingAsianOption")>] 
          continuousaveragingasianoption : obj)
@@ -316,7 +316,7 @@ module ContinuousAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousAveragingAsianOption_itmCashProbability", Description="Create a ContinuousAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousAveragingAsianOption_itmCashProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousAveragingAsianOption",Description = "ContinuousAveragingAsianOption")>] 
          continuousaveragingasianoption : obj)
@@ -352,7 +352,7 @@ module ContinuousAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousAveragingAsianOption_rho", Description="Create a ContinuousAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousAveragingAsianOption_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousAveragingAsianOption",Description = "ContinuousAveragingAsianOption")>] 
          continuousaveragingasianoption : obj)
@@ -388,7 +388,7 @@ module ContinuousAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousAveragingAsianOption_strikeSensitivity", Description="Create a ContinuousAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousAveragingAsianOption_strikeSensitivity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousAveragingAsianOption",Description = "ContinuousAveragingAsianOption")>] 
          continuousaveragingasianoption : obj)
@@ -424,7 +424,7 @@ module ContinuousAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousAveragingAsianOption_theta", Description="Create a ContinuousAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousAveragingAsianOption_theta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousAveragingAsianOption",Description = "ContinuousAveragingAsianOption")>] 
          continuousaveragingasianoption : obj)
@@ -460,7 +460,7 @@ module ContinuousAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousAveragingAsianOption_thetaPerDay", Description="Create a ContinuousAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousAveragingAsianOption_thetaPerDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousAveragingAsianOption",Description = "ContinuousAveragingAsianOption")>] 
          continuousaveragingasianoption : obj)
@@ -496,7 +496,7 @@ module ContinuousAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousAveragingAsianOption_vega", Description="Create a ContinuousAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousAveragingAsianOption_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousAveragingAsianOption",Description = "ContinuousAveragingAsianOption")>] 
          continuousaveragingasianoption : obj)
@@ -532,7 +532,7 @@ module ContinuousAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousAveragingAsianOption_exercise", Description="Create a ContinuousAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousAveragingAsianOption_exercise
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousAveragingAsianOption",Description = "ContinuousAveragingAsianOption")>] 
          continuousaveragingasianoption : obj)
@@ -568,7 +568,7 @@ module ContinuousAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousAveragingAsianOption_payoff", Description="Create a ContinuousAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousAveragingAsianOption_payoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Payoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousAveragingAsianOption",Description = "ContinuousAveragingAsianOption")>] 
          continuousaveragingasianoption : obj)
@@ -604,7 +604,7 @@ module ContinuousAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousAveragingAsianOption_CASH", Description="Create a ContinuousAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousAveragingAsianOption_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousAveragingAsianOption",Description = "ContinuousAveragingAsianOption")>] 
          continuousaveragingasianoption : obj)
@@ -640,7 +640,7 @@ module ContinuousAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousAveragingAsianOption_errorEstimate", Description="Create a ContinuousAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousAveragingAsianOption_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousAveragingAsianOption",Description = "ContinuousAveragingAsianOption")>] 
          continuousaveragingasianoption : obj)
@@ -676,7 +676,7 @@ module ContinuousAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousAveragingAsianOption_NPV", Description="Create a ContinuousAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousAveragingAsianOption_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousAveragingAsianOption",Description = "ContinuousAveragingAsianOption")>] 
          continuousaveragingasianoption : obj)
@@ -712,7 +712,7 @@ module ContinuousAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousAveragingAsianOption_result", Description="Create a ContinuousAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousAveragingAsianOption_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousAveragingAsianOption",Description = "ContinuousAveragingAsianOption")>] 
          continuousaveragingasianoption : obj)
@@ -754,7 +754,7 @@ module ContinuousAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousAveragingAsianOption_setPricingEngine", Description="Create a ContinuousAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousAveragingAsianOption_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousAveragingAsianOption",Description = "ContinuousAveragingAsianOption")>] 
          continuousaveragingasianoption : obj)
@@ -796,7 +796,7 @@ module ContinuousAveragingAsianOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousAveragingAsianOption_valuationDate", Description="Create a ContinuousAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousAveragingAsianOption_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousAveragingAsianOption",Description = "ContinuousAveragingAsianOption")>] 
          continuousaveragingasianoption : obj)
@@ -829,9 +829,9 @@ module ContinuousAveragingAsianOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ContinuousAveragingAsianOption_Range", Description="Create a range of ContinuousAveragingAsianOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousAveragingAsianOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

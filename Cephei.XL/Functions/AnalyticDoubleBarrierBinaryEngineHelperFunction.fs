@@ -39,7 +39,7 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
     *)
     [<ExcelFunction(Name="_AnalyticDoubleBarrierBinaryEngineHelper", Description="Create a AnalyticDoubleBarrierBinaryEngineHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDoubleBarrierBinaryEngineHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AnalyticDoubleBarrierBinaryEngineHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -88,7 +88,7 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
     *)
     [<ExcelFunction(Name="_AnalyticDoubleBarrierBinaryEngineHelper_payoffAtExpiry", Description="Create a AnalyticDoubleBarrierBinaryEngineHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDoubleBarrierBinaryEngineHelper_payoffAtExpiry
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AnalyticDoubleBarrierBinaryEngineHelper",Description = "AnalyticDoubleBarrierBinaryEngineHelper")>] 
          analyticdoublebarrierbinaryenginehelper : obj)
@@ -98,9 +98,9 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
          variance : obj)
         ([<ExcelArgument(Name="barrierType",Description = "DoubleBarrier.Type")>] 
          barrierType : obj)
-        ([<ExcelArgument(Name="maxIteration",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="maxIteration",Description = "int or empty")>] 
          maxIteration : obj)
-        ([<ExcelArgument(Name="requiredConvergence",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="requiredConvergence",Description = "double or empty")>] 
          requiredConvergence : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,7 +154,7 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
     *)
     [<ExcelFunction(Name="_AnalyticDoubleBarrierBinaryEngineHelper_payoffKIKO", Description="Create a AnalyticDoubleBarrierBinaryEngineHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDoubleBarrierBinaryEngineHelper_payoffKIKO
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AnalyticDoubleBarrierBinaryEngineHelper",Description = "AnalyticDoubleBarrierBinaryEngineHelper")>] 
          analyticdoublebarrierbinaryenginehelper : obj)
@@ -164,9 +164,9 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
          variance : obj)
         ([<ExcelArgument(Name="barrierType",Description = "DoubleBarrier.Type")>] 
          barrierType : obj)
-        ([<ExcelArgument(Name="maxIteration",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="maxIteration",Description = "int or empty")>] 
          maxIteration : obj)
-        ([<ExcelArgument(Name="requiredConvergence",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="requiredConvergence",Description = "double or empty")>] 
          requiredConvergence : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -217,9 +217,9 @@ module AnalyticDoubleBarrierBinaryEngineHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AnalyticDoubleBarrierBinaryEngineHelper_Range", Description="Create a range of AnalyticDoubleBarrierBinaryEngineHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDoubleBarrierBinaryEngineHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

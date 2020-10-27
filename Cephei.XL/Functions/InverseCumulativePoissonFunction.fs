@@ -39,7 +39,7 @@ module InverseCumulativePoissonFunction =
     *)
     [<ExcelFunction(Name="_InverseCumulativePoisson1", Description="Create a InverseCumulativePoisson",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativePoisson_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "InverseCumulativePoisson")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="lambda",Description = "double")>] 
          lambda : obj)
@@ -76,7 +76,7 @@ module InverseCumulativePoissonFunction =
     *)
     [<ExcelFunction(Name="_InverseCumulativePoisson", Description="Create a InverseCumulativePoisson",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativePoisson_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "InverseCumulativePoisson")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -107,7 +107,7 @@ module InverseCumulativePoissonFunction =
     *)
     [<ExcelFunction(Name="_InverseCumulativePoisson_value", Description="Create a InverseCumulativePoisson",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativePoisson_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InverseCumulativePoisson",Description = "InverseCumulativePoisson")>] 
          inversecumulativepoisson : obj)
@@ -146,9 +146,9 @@ module InverseCumulativePoissonFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InverseCumulativePoisson_Range", Description="Create a range of InverseCumulativePoisson",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativePoisson_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

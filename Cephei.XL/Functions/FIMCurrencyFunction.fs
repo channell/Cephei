@@ -39,7 +39,7 @@ module FIMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_FIMCurrency", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FIMCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module FIMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_FIMCurrency_code", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FIMCurrency",Description = "FIMCurrency")>] 
          fimcurrency : obj)
@@ -106,7 +106,7 @@ module FIMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_FIMCurrency_empty", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FIMCurrency",Description = "FIMCurrency")>] 
          fimcurrency : obj)
@@ -142,7 +142,7 @@ module FIMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_FIMCurrency_Equals", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FIMCurrency",Description = "FIMCurrency")>] 
          fimcurrency : obj)
@@ -184,7 +184,7 @@ module FIMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_FIMCurrency_format", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FIMCurrency",Description = "FIMCurrency")>] 
          fimcurrency : obj)
@@ -220,7 +220,7 @@ module FIMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_FIMCurrency_fractionsPerUnit", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FIMCurrency",Description = "FIMCurrency")>] 
          fimcurrency : obj)
@@ -256,7 +256,7 @@ module FIMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_FIMCurrency_fractionSymbol", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FIMCurrency",Description = "FIMCurrency")>] 
          fimcurrency : obj)
@@ -292,7 +292,7 @@ module FIMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_FIMCurrency_name", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FIMCurrency",Description = "FIMCurrency")>] 
          fimcurrency : obj)
@@ -328,7 +328,7 @@ module FIMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_FIMCurrency_numericCode", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FIMCurrency",Description = "FIMCurrency")>] 
          fimcurrency : obj)
@@ -364,7 +364,7 @@ module FIMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_FIMCurrency_rounding", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FIMCurrency",Description = "FIMCurrency")>] 
          fimcurrency : obj)
@@ -400,7 +400,7 @@ module FIMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_FIMCurrency_symbol", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FIMCurrency",Description = "FIMCurrency")>] 
          fimcurrency : obj)
@@ -436,7 +436,7 @@ module FIMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_FIMCurrency_ToString", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FIMCurrency",Description = "FIMCurrency")>] 
          fimcurrency : obj)
@@ -472,7 +472,7 @@ module FIMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_FIMCurrency_triangulationCurrency", Description="Create a FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FIMCurrency",Description = "FIMCurrency")>] 
          fimcurrency : obj)
@@ -505,9 +505,9 @@ module FIMCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FIMCurrency_Range", Description="Create a range of FIMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FIMCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

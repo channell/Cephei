@@ -39,7 +39,7 @@ module CubicFunction =
     *)
     [<ExcelFunction(Name="_Cubic", Description="Create a Cubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cubic_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Cubic")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="da",Description = "CubicInterpolation.DerivativeApprox: Spline, SplineOM1, SplineOM2, FourthOrder, Parabolic, FritschButland, Akima, Kruger, Harmonic")>] 
          da : obj)
@@ -106,7 +106,7 @@ module CubicFunction =
     *)
     [<ExcelFunction(Name="_Cubic1", Description="Create a Cubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cubic_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Cubic")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -137,7 +137,7 @@ module CubicFunction =
     *)
     [<ExcelFunction(Name="_Cubic_global", Description="Create a Cubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cubic_global
-        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cubic",Description = "Cubic")>] 
          cubic : obj)
@@ -173,15 +173,15 @@ module CubicFunction =
     *)
     [<ExcelFunction(Name="_Cubic_interpolate", Description="Create a Cubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cubic_interpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cubic",Description = "Cubic")>] 
          cubic : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double range")>] 
          xBegin : obj)
         ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double range")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -227,7 +227,7 @@ module CubicFunction =
     *)
     [<ExcelFunction(Name="_Cubic_requiredPoints", Description="Create a Cubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cubic_requiredPoints
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cubic",Description = "Cubic")>] 
          cubic : obj)
@@ -260,9 +260,9 @@ module CubicFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Cubic_Range", Description="Create a range of Cubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cubic_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

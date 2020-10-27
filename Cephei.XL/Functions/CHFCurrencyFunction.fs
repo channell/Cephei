@@ -39,7 +39,7 @@ module CHFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CHFCurrency", Description="Create a CHFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "CHFCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module CHFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CHFCurrency_code", Description="Create a CHFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFCurrency",Description = "CHFCurrency")>] 
          chfcurrency : obj)
@@ -106,7 +106,7 @@ module CHFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CHFCurrency_empty", Description="Create a CHFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFCurrency",Description = "CHFCurrency")>] 
          chfcurrency : obj)
@@ -142,7 +142,7 @@ module CHFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CHFCurrency_Equals", Description="Create a CHFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFCurrency",Description = "CHFCurrency")>] 
          chfcurrency : obj)
@@ -184,7 +184,7 @@ module CHFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CHFCurrency_format", Description="Create a CHFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFCurrency",Description = "CHFCurrency")>] 
          chfcurrency : obj)
@@ -220,7 +220,7 @@ module CHFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CHFCurrency_fractionsPerUnit", Description="Create a CHFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFCurrency",Description = "CHFCurrency")>] 
          chfcurrency : obj)
@@ -256,7 +256,7 @@ module CHFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CHFCurrency_fractionSymbol", Description="Create a CHFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFCurrency",Description = "CHFCurrency")>] 
          chfcurrency : obj)
@@ -292,7 +292,7 @@ module CHFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CHFCurrency_name", Description="Create a CHFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFCurrency",Description = "CHFCurrency")>] 
          chfcurrency : obj)
@@ -328,7 +328,7 @@ module CHFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CHFCurrency_numericCode", Description="Create a CHFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFCurrency",Description = "CHFCurrency")>] 
          chfcurrency : obj)
@@ -364,7 +364,7 @@ module CHFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CHFCurrency_rounding", Description="Create a CHFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFCurrency",Description = "CHFCurrency")>] 
          chfcurrency : obj)
@@ -400,7 +400,7 @@ module CHFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CHFCurrency_symbol", Description="Create a CHFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFCurrency",Description = "CHFCurrency")>] 
          chfcurrency : obj)
@@ -436,7 +436,7 @@ module CHFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CHFCurrency_ToString", Description="Create a CHFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFCurrency",Description = "CHFCurrency")>] 
          chfcurrency : obj)
@@ -472,7 +472,7 @@ module CHFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CHFCurrency_triangulationCurrency", Description="Create a CHFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CHFCurrency",Description = "CHFCurrency")>] 
          chfcurrency : obj)
@@ -505,9 +505,9 @@ module CHFCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CHFCurrency_Range", Description="Create a range of CHFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CHFCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,11 +39,11 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AmortizingCmsRateBond")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="notionals",Description = "double")>] 
+        ([<ExcelArgument(Name="notionals",Description = "double range")>] 
          notionals : obj)
         ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -51,21 +51,21 @@ module AmortizingCmsRateBondFunction =
          index : obj)
         ([<ExcelArgument(Name="paymentDayCounter",Description = "DayCounter")>] 
          paymentDayCounter : obj)
-        ([<ExcelArgument(Name="paymentConvention",Description = "AmortizingCmsRateBond")>] 
+        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest or empty")>] 
          paymentConvention : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "AmortizingCmsRateBond")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int or empty")>] 
          fixingDays : obj)
-        ([<ExcelArgument(Name="gearings",Description = "AmortizingCmsRateBond")>] 
+        ([<ExcelArgument(Name="gearings",Description = "double or empty")>] 
          gearings : obj)
-        ([<ExcelArgument(Name="spreads",Description = "AmortizingCmsRateBond")>] 
+        ([<ExcelArgument(Name="spreads",Description = "double or empty")>] 
          spreads : obj)
-        ([<ExcelArgument(Name="caps",Description = "AmortizingCmsRateBond")>] 
+        ([<ExcelArgument(Name="caps",Description = "double or empty")>] 
          caps : obj)
-        ([<ExcelArgument(Name="floors",Description = "AmortizingCmsRateBond")>] 
+        ([<ExcelArgument(Name="floors",Description = "double or empty")>] 
          floors : obj)
-        ([<ExcelArgument(Name="inArrears",Description = "AmortizingCmsRateBond")>] 
+        ([<ExcelArgument(Name="inArrears",Description = "bool or empty")>] 
          inArrears : obj)
-        ([<ExcelArgument(Name="issueDate",Description = "AmortizingCmsRateBond")>] 
+        ([<ExcelArgument(Name="issueDate",Description = "Date or empty")>] 
          issueDate : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
@@ -160,7 +160,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_accruedAmount", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_accruedAmount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -202,7 +202,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_calendar", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -238,7 +238,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_cashflows", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_cashflows
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -274,7 +274,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_cleanPrice", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_cleanPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -310,7 +310,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_cleanPrice1", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_cleanPrice1
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -376,7 +376,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_dirtyPrice1", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_dirtyPrice1
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -442,7 +442,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_dirtyPrice", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_dirtyPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -478,7 +478,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_isExpired", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -514,7 +514,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_issueDate", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_issueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -550,7 +550,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_isTradable", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_isTradable
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -592,7 +592,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_maturityDate", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -628,7 +628,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_nextCashFlowDate", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_nextCashFlowDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -670,7 +670,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_nextCouponRate", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_nextCouponRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -712,7 +712,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_notional", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_notional
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -754,7 +754,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_notionals", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_notionals
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -790,7 +790,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_previousCashFlowDate", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_previousCashFlowDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -832,7 +832,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_previousCouponRate", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_previousCouponRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -874,7 +874,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_redemption", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_redemption
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -910,7 +910,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_redemptions", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_redemptions
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -946,7 +946,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_settlementDate", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_settlementDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -988,7 +988,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_settlementDays", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -1024,7 +1024,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_settlementValue", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_settlementValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -1066,7 +1066,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_settlementValue1", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_settlementValue1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -1102,7 +1102,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_startDate", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -1138,7 +1138,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_yield1", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_yield1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -1216,7 +1216,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_yield", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_yield
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -1282,7 +1282,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_CASH", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -1318,7 +1318,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_errorEstimate", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -1354,7 +1354,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_NPV", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -1390,7 +1390,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_result", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -1432,7 +1432,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_setPricingEngine", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -1474,7 +1474,7 @@ module AmortizingCmsRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingCmsRateBond_valuationDate", Description="Create a AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingCmsRateBond",Description = "AmortizingCmsRateBond")>] 
          amortizingcmsratebond : obj)
@@ -1507,9 +1507,9 @@ module AmortizingCmsRateBondFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AmortizingCmsRateBond_Range", Description="Create a range of AmortizingCmsRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingCmsRateBond_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

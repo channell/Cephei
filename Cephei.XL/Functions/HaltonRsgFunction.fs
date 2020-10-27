@@ -39,7 +39,7 @@ module HaltonRsgFunction =
     *)
     [<ExcelFunction(Name="_HaltonRsg_dimension", Description="Create a HaltonRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HaltonRsg_dimension
-        ([<ExcelArgument(Name="Mnemonic",Description = "IRNG")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HaltonRsg",Description = "HaltonRsg")>] 
          haltonrsg : obj)
@@ -75,13 +75,13 @@ module HaltonRsgFunction =
     *)
     [<ExcelFunction(Name="_HaltonRsg_factory", Description="Create a HaltonRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HaltonRsg_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "IRNG")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HaltonRsg",Description = "HaltonRsg")>] 
          haltonrsg : obj)
         ([<ExcelArgument(Name="dimensionality",Description = "int")>] 
          dimensionality : obj)
-        ([<ExcelArgument(Name="seed",Description = "IRNG")>] 
+        ([<ExcelArgument(Name="seed",Description = "uint64 or empty")>] 
          seed : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -123,15 +123,15 @@ module HaltonRsgFunction =
     *)
     [<ExcelFunction(Name="_HaltonRsg", Description="Create a HaltonRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HaltonRsg_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "HaltonRsg")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="dimensionality",Description = "int")>] 
          dimensionality : obj)
-        ([<ExcelArgument(Name="seed",Description = "HaltonRsg")>] 
+        ([<ExcelArgument(Name="seed",Description = "uint64 or empty")>] 
          seed : obj)
-        ([<ExcelArgument(Name="randomStart",Description = "HaltonRsg")>] 
+        ([<ExcelArgument(Name="randomStart",Description = "bool or empty")>] 
          randomStart : obj)
-        ([<ExcelArgument(Name="randomShift",Description = "HaltonRsg")>] 
+        ([<ExcelArgument(Name="randomShift",Description = "bool or empty")>] 
          randomShift : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -179,7 +179,7 @@ module HaltonRsgFunction =
     (*!! sample not supported by Helper
     [<ExcelFunction(Name="_HaltonRsg_lastSequence", Description="Create a HaltonRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HaltonRsg_lastSequence
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HaltonRsg",Description = "HaltonRsg")>] 
          haltonrsg : obj)
@@ -217,7 +217,7 @@ module HaltonRsgFunction =
     (*!! sample not supported by Helper
     [<ExcelFunction(Name="_HaltonRsg_nextSequence", Description="Create a HaltonRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HaltonRsg_nextSequence
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HaltonRsg",Description = "HaltonRsg")>] 
          haltonrsg : obj)
@@ -251,9 +251,9 @@ module HaltonRsgFunction =
             *)
     [<ExcelFunction(Name="_HaltonRsg_Range", Description="Create a range of HaltonRsg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HaltonRsg_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

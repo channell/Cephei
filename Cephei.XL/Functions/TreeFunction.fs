@@ -39,7 +39,7 @@ module TreeFunction =
     *)
     [<ExcelFunction(Name="_Tree_columns", Description="Create a Tree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tree_columns
-        ([<ExcelArgument(Name="Mnemonic",Description = "Tree")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Tree",Description = "Tree")>] 
          tree : obj)
@@ -75,7 +75,7 @@ module TreeFunction =
     *)
     [<ExcelFunction(Name="_Tree", Description="Create a Tree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tree_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Tree")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="columns",Description = "int")>] 
          columns : obj)
@@ -112,7 +112,7 @@ module TreeFunction =
     *)
     [<ExcelFunction(Name="_Tree1", Description="Create a Tree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tree_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Tree")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -140,9 +140,9 @@ module TreeFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Tree_Range", Description="Create a range of Tree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tree_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

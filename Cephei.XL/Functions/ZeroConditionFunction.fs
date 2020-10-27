@@ -39,7 +39,7 @@ module ZeroConditionFunction =
     *)
     [<ExcelFunction(Name="_ZeroCondition_applyTo", Description="Create a ZeroCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCondition_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroCondition",Description = "ZeroCondition")>] 
          zerocondition : obj)
@@ -84,9 +84,9 @@ module ZeroConditionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ZeroCondition_Range", Description="Create a range of ZeroCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroCondition_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

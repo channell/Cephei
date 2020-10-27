@@ -39,7 +39,7 @@ module FdmLogInnerValueFunction =
     *)
     [<ExcelFunction(Name="_FdmLogInnerValue_avgInnerValue", Description="Create a FdmLogInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLogInnerValue_avgInnerValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLogInnerValue")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmLogInnerValue",Description = "FdmLogInnerValue")>] 
          fdmloginnervalue : obj)
@@ -87,7 +87,7 @@ module FdmLogInnerValueFunction =
     *)
     [<ExcelFunction(Name="_FdmLogInnerValue", Description="Create a FdmLogInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLogInnerValue_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLogInnerValue")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="payoff",Description = "Payoff")>] 
          payoff : obj)
@@ -136,7 +136,7 @@ module FdmLogInnerValueFunction =
     *)
     [<ExcelFunction(Name="_FdmLogInnerValue_innerValue", Description="Create a FdmLogInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLogInnerValue_innerValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmLogInnerValue",Description = "FdmLogInnerValue")>] 
          fdmloginnervalue : obj)
@@ -181,9 +181,9 @@ module FdmLogInnerValueFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmLogInnerValue_Range", Description="Create a range of FdmLogInnerValue",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLogInnerValue_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

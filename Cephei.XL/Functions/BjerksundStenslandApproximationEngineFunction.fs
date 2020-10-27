@@ -39,7 +39,7 @@ module BjerksundStenslandApproximationEngineFunction =
     *)
     [<ExcelFunction(Name="_BjerksundStenslandApproximationEngine", Description="Create a BjerksundStenslandApproximationEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BjerksundStenslandApproximationEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BjerksundStenslandApproximationEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -74,9 +74,9 @@ module BjerksundStenslandApproximationEngineFunction =
 
     [<ExcelFunction(Name="_BjerksundStenslandApproximationEngine_Range", Description="Create a range of BjerksundStenslandApproximationEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BjerksundStenslandApproximationEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

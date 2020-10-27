@@ -39,7 +39,7 @@ module DerivedQuoteFunction =
     *)
     [<ExcelFunction(Name="_DerivedQuote", Description="Create a DerivedQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DerivedQuote_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "DerivedQuote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="element",Description = "Quote")>] 
          element : obj)
@@ -82,7 +82,7 @@ module DerivedQuoteFunction =
     *)
     [<ExcelFunction(Name="_DerivedQuote_isValid", Description="Create a DerivedQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DerivedQuote_isValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DerivedQuote",Description = "DerivedQuote")>] 
          derivedquote : obj)
@@ -118,7 +118,7 @@ module DerivedQuoteFunction =
     *)
     [<ExcelFunction(Name="_DerivedQuote_update", Description="Create a DerivedQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DerivedQuote_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DerivedQuote",Description = "DerivedQuote")>] 
          derivedquote : obj)
@@ -154,7 +154,7 @@ module DerivedQuoteFunction =
     *)
     [<ExcelFunction(Name="_DerivedQuote_value", Description="Create a DerivedQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DerivedQuote_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DerivedQuote",Description = "DerivedQuote")>] 
          derivedquote : obj)
@@ -190,7 +190,7 @@ module DerivedQuoteFunction =
     *)
     [<ExcelFunction(Name="_DerivedQuote_registerWith", Description="Create a DerivedQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DerivedQuote_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DerivedQuote",Description = "DerivedQuote")>] 
          derivedquote : obj)
@@ -232,7 +232,7 @@ module DerivedQuoteFunction =
     *)
     [<ExcelFunction(Name="_DerivedQuote_unregisterWith", Description="Create a DerivedQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DerivedQuote_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DerivedQuote",Description = "DerivedQuote")>] 
          derivedquote : obj)
@@ -271,9 +271,9 @@ module DerivedQuoteFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DerivedQuote_Range", Description="Create a range of DerivedQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DerivedQuote_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

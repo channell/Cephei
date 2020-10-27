@@ -39,13 +39,13 @@ module HarmonicCubicFunction =
     *)
     [<ExcelFunction(Name="_HarmonicCubic", Description="Create a HarmonicCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HarmonicCubic_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "HarmonicCubic")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double range")>] 
          xBegin : obj)
         ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double range")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,7 +88,7 @@ module HarmonicCubicFunction =
     *)
     [<ExcelFunction(Name="_HarmonicCubic_aCoefficients", Description="Create a HarmonicCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HarmonicCubic_aCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HarmonicCubic",Description = "HarmonicCubic")>] 
          harmoniccubic : obj)
@@ -124,7 +124,7 @@ module HarmonicCubicFunction =
     *)
     [<ExcelFunction(Name="_HarmonicCubic_bCoefficients", Description="Create a HarmonicCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HarmonicCubic_bCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HarmonicCubic",Description = "HarmonicCubic")>] 
          harmoniccubic : obj)
@@ -160,7 +160,7 @@ module HarmonicCubicFunction =
     *)
     [<ExcelFunction(Name="_HarmonicCubic_cCoefficients", Description="Create a HarmonicCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HarmonicCubic_cCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HarmonicCubic",Description = "HarmonicCubic")>] 
          harmoniccubic : obj)
@@ -196,7 +196,7 @@ module HarmonicCubicFunction =
     *)
     [<ExcelFunction(Name="_HarmonicCubic_derivative", Description="Create a HarmonicCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HarmonicCubic_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HarmonicCubic",Description = "HarmonicCubic")>] 
          harmoniccubic : obj)
@@ -244,7 +244,7 @@ module HarmonicCubicFunction =
     *)
     [<ExcelFunction(Name="_HarmonicCubic_empty", Description="Create a HarmonicCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HarmonicCubic_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HarmonicCubic",Description = "HarmonicCubic")>] 
          harmoniccubic : obj)
@@ -280,7 +280,7 @@ module HarmonicCubicFunction =
     *)
     [<ExcelFunction(Name="_HarmonicCubic_primitive", Description="Create a HarmonicCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HarmonicCubic_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HarmonicCubic",Description = "HarmonicCubic")>] 
          harmoniccubic : obj)
@@ -328,7 +328,7 @@ module HarmonicCubicFunction =
     *)
     [<ExcelFunction(Name="_HarmonicCubic_secondDerivative", Description="Create a HarmonicCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HarmonicCubic_secondDerivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HarmonicCubic",Description = "HarmonicCubic")>] 
          harmoniccubic : obj)
@@ -376,7 +376,7 @@ module HarmonicCubicFunction =
     *)
     [<ExcelFunction(Name="_HarmonicCubic_update", Description="Create a HarmonicCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HarmonicCubic_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HarmonicCubic",Description = "HarmonicCubic")>] 
          harmoniccubic : obj)
@@ -412,7 +412,7 @@ module HarmonicCubicFunction =
     *)
     [<ExcelFunction(Name="_HarmonicCubic_value1", Description="Create a HarmonicCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HarmonicCubic_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HarmonicCubic",Description = "HarmonicCubic")>] 
          harmoniccubic : obj)
@@ -460,7 +460,7 @@ module HarmonicCubicFunction =
     *)
     [<ExcelFunction(Name="_HarmonicCubic_value", Description="Create a HarmonicCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HarmonicCubic_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HarmonicCubic",Description = "HarmonicCubic")>] 
          harmoniccubic : obj)
@@ -502,7 +502,7 @@ module HarmonicCubicFunction =
     *)
     [<ExcelFunction(Name="_HarmonicCubic_xMax", Description="Create a HarmonicCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HarmonicCubic_xMax
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HarmonicCubic",Description = "HarmonicCubic")>] 
          harmoniccubic : obj)
@@ -538,7 +538,7 @@ module HarmonicCubicFunction =
     *)
     [<ExcelFunction(Name="_HarmonicCubic_xMin", Description="Create a HarmonicCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HarmonicCubic_xMin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HarmonicCubic",Description = "HarmonicCubic")>] 
          harmoniccubic : obj)
@@ -574,7 +574,7 @@ module HarmonicCubicFunction =
     *)
     [<ExcelFunction(Name="_HarmonicCubic_allowsExtrapolation", Description="Create a HarmonicCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HarmonicCubic_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HarmonicCubic",Description = "HarmonicCubic")>] 
          harmoniccubic : obj)
@@ -610,7 +610,7 @@ module HarmonicCubicFunction =
     *)
     [<ExcelFunction(Name="_HarmonicCubic_disableExtrapolation", Description="Create a HarmonicCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HarmonicCubic_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HarmonicCubic",Description = "HarmonicCubic")>] 
          harmoniccubic : obj)
@@ -652,7 +652,7 @@ module HarmonicCubicFunction =
     *)
     [<ExcelFunction(Name="_HarmonicCubic_enableExtrapolation", Description="Create a HarmonicCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HarmonicCubic_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HarmonicCubic",Description = "HarmonicCubic")>] 
          harmoniccubic : obj)
@@ -694,7 +694,7 @@ module HarmonicCubicFunction =
     *)
     [<ExcelFunction(Name="_HarmonicCubic_extrapolate", Description="Create a HarmonicCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HarmonicCubic_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HarmonicCubic",Description = "HarmonicCubic")>] 
          harmoniccubic : obj)
@@ -727,9 +727,9 @@ module HarmonicCubicFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_HarmonicCubic_Range", Description="Create a range of HarmonicCubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HarmonicCubic_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

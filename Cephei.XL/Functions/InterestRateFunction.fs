@@ -39,7 +39,7 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_compoundFactor", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_compoundFactor
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
@@ -81,7 +81,7 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_compoundFactor1", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_compoundFactor1
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
@@ -89,9 +89,9 @@ module InterestRateFunction =
          d1 : obj)
         ([<ExcelArgument(Name="d2",Description = "Date")>] 
          d2 : obj)
-        ([<ExcelArgument(Name="refStart",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="refStart",Description = "Date or empty")>] 
          refStart : obj)
-        ([<ExcelArgument(Name="refEnd",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="refEnd",Description = "Date or empty")>] 
          refEnd : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -141,7 +141,7 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_compounding", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_compounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
@@ -177,7 +177,7 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_dayCounter", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
@@ -213,7 +213,7 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_discountFactor", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_discountFactor
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
@@ -273,7 +273,7 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_discountFactor1", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_discountFactor1
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
@@ -315,7 +315,7 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_equivalentRate", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_equivalentRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
@@ -393,7 +393,7 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_equivalentRate1", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_equivalentRate1
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
@@ -447,7 +447,7 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_frequency", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
@@ -483,7 +483,7 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="r",Description = "double")>] 
          r : obj)
@@ -538,7 +538,7 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate1", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -569,7 +569,7 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_rate", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_rate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
@@ -605,7 +605,7 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_ToString", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
@@ -641,7 +641,7 @@ module InterestRateFunction =
     *)
     [<ExcelFunction(Name="_InterestRate_value", Description="Create a InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterestRate",Description = "InterestRate")>] 
          interestrate : obj)
@@ -674,9 +674,9 @@ module InterestRateFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InterestRate_Range", Description="Create a range of InterestRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterestRate_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

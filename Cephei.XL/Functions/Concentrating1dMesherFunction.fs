@@ -39,7 +39,7 @@ module Concentrating1dMesherFunction =
     *)
     [<ExcelFunction(Name="_Concentrating1dMesher1", Description="Create a Concentrating1dMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Concentrating1dMesher_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Concentrating1dMesher")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="start",Description = "double")>] 
          start : obj)
@@ -47,9 +47,9 @@ module Concentrating1dMesherFunction =
          End : obj)
         ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="cPoints",Description = "Concentrating1dMesher")>] 
+        ([<ExcelArgument(Name="cPoints",Description = "double or empty")>] 
          cPoints : obj)
-        ([<ExcelArgument(Name="requireCPoint",Description = "Concentrating1dMesher")>] 
+        ([<ExcelArgument(Name="requireCPoint",Description = "bool or empty")>] 
          requireCPoint : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -100,7 +100,7 @@ module Concentrating1dMesherFunction =
     *)
     [<ExcelFunction(Name="_Concentrating1dMesher", Description="Create a Concentrating1dMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Concentrating1dMesher_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Concentrating1dMesher")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="start",Description = "double")>] 
          start : obj)
@@ -108,9 +108,9 @@ module Concentrating1dMesherFunction =
          End : obj)
         ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="cPoints",Description = "Concentrating1dMesher")>] 
+        ([<ExcelArgument(Name="cPoints",Description = ",bool or empty")>] 
          cPoints : obj)
-        ([<ExcelArgument(Name="tol",Description = "Concentrating1dMesher")>] 
+        ([<ExcelArgument(Name="tol",Description = "double or empty")>] 
          tol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -161,7 +161,7 @@ module Concentrating1dMesherFunction =
     *)
     [<ExcelFunction(Name="_Concentrating1dMesher_dminus", Description="Create a Concentrating1dMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Concentrating1dMesher_dminus
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Concentrating1dMesher",Description = "Concentrating1dMesher")>] 
          concentrating1dmesher : obj)
@@ -203,7 +203,7 @@ module Concentrating1dMesherFunction =
     *)
     [<ExcelFunction(Name="_Concentrating1dMesher_dplus", Description="Create a Concentrating1dMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Concentrating1dMesher_dplus
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Concentrating1dMesher",Description = "Concentrating1dMesher")>] 
          concentrating1dmesher : obj)
@@ -245,7 +245,7 @@ module Concentrating1dMesherFunction =
     *)
     [<ExcelFunction(Name="_Concentrating1dMesher_location", Description="Create a Concentrating1dMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Concentrating1dMesher_location
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Concentrating1dMesher",Description = "Concentrating1dMesher")>] 
          concentrating1dmesher : obj)
@@ -287,7 +287,7 @@ module Concentrating1dMesherFunction =
     *)
     [<ExcelFunction(Name="_Concentrating1dMesher_locations", Description="Create a Concentrating1dMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Concentrating1dMesher_locations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Concentrating1dMesher",Description = "Concentrating1dMesher")>] 
          concentrating1dmesher : obj)
@@ -323,7 +323,7 @@ module Concentrating1dMesherFunction =
     *)
     [<ExcelFunction(Name="_Concentrating1dMesher_size", Description="Create a Concentrating1dMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Concentrating1dMesher_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Concentrating1dMesher",Description = "Concentrating1dMesher")>] 
          concentrating1dmesher : obj)
@@ -356,9 +356,9 @@ module Concentrating1dMesherFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Concentrating1dMesher_Range", Description="Create a range of Concentrating1dMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Concentrating1dMesher_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

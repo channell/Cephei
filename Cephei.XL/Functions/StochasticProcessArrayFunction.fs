@@ -39,7 +39,7 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_apply", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
@@ -87,7 +87,7 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_correlation", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_correlation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
@@ -123,7 +123,7 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_covariance", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
@@ -177,7 +177,7 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_diffusion", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
@@ -225,7 +225,7 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_drift", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
@@ -273,7 +273,7 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_evolve", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_evolve
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
@@ -333,7 +333,7 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_expectation", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_expectation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
@@ -387,7 +387,7 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_initialValues", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_initialValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
@@ -423,7 +423,7 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_process", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_process
-        ([<ExcelArgument(Name="Mnemonic",Description = "StochasticProcess1D")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
@@ -465,7 +465,7 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_size", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
@@ -501,7 +501,7 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_stdDeviation", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_stdDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
@@ -555,9 +555,9 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "StochasticProcessArray")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="processes",Description = "StochasticProcess1D")>] 
+        ([<ExcelArgument(Name="processes",Description = "StochasticProcess1D range")>] 
          processes : obj)
         ([<ExcelArgument(Name="correlation",Description = "Matrix")>] 
          correlation : obj)
@@ -598,7 +598,7 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_time", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
@@ -640,7 +640,7 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_factors", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_factors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
@@ -676,7 +676,7 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_registerWith", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
@@ -718,7 +718,7 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_unregisterWith", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
@@ -760,7 +760,7 @@ module StochasticProcessArrayFunction =
     *)
     [<ExcelFunction(Name="_StochasticProcessArray_update", Description="Create a StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="StochasticProcessArray",Description = "StochasticProcessArray")>] 
          stochasticprocessarray : obj)
@@ -793,9 +793,9 @@ module StochasticProcessArrayFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_StochasticProcessArray_Range", Description="Create a range of StochasticProcessArray",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let StochasticProcessArray_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

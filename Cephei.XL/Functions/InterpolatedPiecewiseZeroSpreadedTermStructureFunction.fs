@@ -39,7 +39,7 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedPiecewiseZeroSpreadedTermStructure_calendar", Description="Create a InterpolatedPiecewiseZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedPiecewiseZeroSpreadedTermStructure_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedPiecewiseZeroSpreadedTermStructure",Description = "InterpolatedPiecewiseZeroSpreadedTermStructure")>] 
          interpolatedpiecewisezerospreadedtermstructure : obj)
@@ -75,7 +75,7 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedPiecewiseZeroSpreadedTermStructure_dayCounter", Description="Create a InterpolatedPiecewiseZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedPiecewiseZeroSpreadedTermStructure_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedPiecewiseZeroSpreadedTermStructure",Description = "InterpolatedPiecewiseZeroSpreadedTermStructure")>] 
          interpolatedpiecewisezerospreadedtermstructure : obj)
@@ -111,21 +111,21 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedPiecewiseZeroSpreadedTermStructure", Description="Create a InterpolatedPiecewiseZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedPiecewiseZeroSpreadedTermStructure_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatedPiecewiseZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
-        ([<ExcelArgument(Name="spreads",Description = "Quote")>] 
+        ([<ExcelArgument(Name="spreads",Description = "Quote range")>] 
          spreads : obj)
-        ([<ExcelArgument(Name="dates",Description = "Date")>] 
+        ([<ExcelArgument(Name="dates",Description = "Date range")>] 
          dates : obj)
-        ([<ExcelArgument(Name="compounding",Description = "InterpolatedPiecewiseZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="compounding",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded or empty")>] 
          compounding : obj)
-        ([<ExcelArgument(Name="frequency",Description = "InterpolatedPiecewiseZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency or empty")>] 
          frequency : obj)
-        ([<ExcelArgument(Name="dc",Description = "InterpolatedPiecewiseZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter or empty")>] 
          dc : obj)
-        ([<ExcelArgument(Name="factory",Description = "InterpolatedPiecewiseZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="factory",Description = "'Interpolator or empty")>] 
          factory : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,7 +184,7 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedPiecewiseZeroSpreadedTermStructure_maxDate", Description="Create a InterpolatedPiecewiseZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedPiecewiseZeroSpreadedTermStructure_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedPiecewiseZeroSpreadedTermStructure",Description = "InterpolatedPiecewiseZeroSpreadedTermStructure")>] 
          interpolatedpiecewisezerospreadedtermstructure : obj)
@@ -220,7 +220,7 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedPiecewiseZeroSpreadedTermStructure_referenceDate", Description="Create a InterpolatedPiecewiseZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedPiecewiseZeroSpreadedTermStructure_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedPiecewiseZeroSpreadedTermStructure",Description = "InterpolatedPiecewiseZeroSpreadedTermStructure")>] 
          interpolatedpiecewisezerospreadedtermstructure : obj)
@@ -256,7 +256,7 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_InterpolatedPiecewiseZeroSpreadedTermStructure_settlementDays", Description="Create a InterpolatedPiecewiseZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedPiecewiseZeroSpreadedTermStructure_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatedPiecewiseZeroSpreadedTermStructure",Description = "InterpolatedPiecewiseZeroSpreadedTermStructure")>] 
          interpolatedpiecewisezerospreadedtermstructure : obj)
@@ -289,9 +289,9 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InterpolatedPiecewiseZeroSpreadedTermStructure_Range", Description="Create a range of InterpolatedPiecewiseZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatedPiecewiseZeroSpreadedTermStructure_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

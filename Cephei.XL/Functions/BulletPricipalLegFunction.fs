@@ -39,7 +39,7 @@ module BulletPricipalLegFunction =
     *)
     [<ExcelFunction(Name="_BulletPricipalLeg", Description="Create a BulletPricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BulletPricipalLeg_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BulletPricipalLeg")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -76,7 +76,7 @@ module BulletPricipalLegFunction =
     *)
     [<ExcelFunction(Name="_BulletPricipalLeg_value", Description="Create a BulletPricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BulletPricipalLeg_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BulletPricipalLeg",Description = "BulletPricipalLeg")>] 
          bulletpricipalleg : obj)
@@ -112,11 +112,11 @@ module BulletPricipalLegFunction =
     *)
     [<ExcelFunction(Name="_BulletPricipalLeg_withNotionals", Description="Create a BulletPricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BulletPricipalLeg_withNotionals
-        ([<ExcelArgument(Name="Mnemonic",Description = "PrincipalLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BulletPricipalLeg",Description = "BulletPricipalLeg")>] 
          bulletpricipalleg : obj)
-        ([<ExcelArgument(Name="notionals",Description = "double")>] 
+        ([<ExcelArgument(Name="notionals",Description = "double range")>] 
          notionals : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,7 +154,7 @@ module BulletPricipalLegFunction =
     *)
     [<ExcelFunction(Name="_BulletPricipalLeg_withNotionals1", Description="Create a BulletPricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BulletPricipalLeg_withNotionals1
-        ([<ExcelArgument(Name="Mnemonic",Description = "PrincipalLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BulletPricipalLeg",Description = "BulletPricipalLeg")>] 
          bulletpricipalleg : obj)
@@ -196,7 +196,7 @@ module BulletPricipalLegFunction =
     *)
     [<ExcelFunction(Name="_BulletPricipalLeg_withPaymentAdjustment", Description="Create a BulletPricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BulletPricipalLeg_withPaymentAdjustment
-        ([<ExcelArgument(Name="Mnemonic",Description = "PrincipalLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BulletPricipalLeg",Description = "BulletPricipalLeg")>] 
          bulletpricipalleg : obj)
@@ -238,7 +238,7 @@ module BulletPricipalLegFunction =
     *)
     [<ExcelFunction(Name="_BulletPricipalLeg_withPaymentDayCounter", Description="Create a BulletPricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BulletPricipalLeg_withPaymentDayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "PrincipalLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BulletPricipalLeg",Description = "BulletPricipalLeg")>] 
          bulletpricipalleg : obj)
@@ -280,7 +280,7 @@ module BulletPricipalLegFunction =
     *)
     [<ExcelFunction(Name="_BulletPricipalLeg_withSign", Description="Create a BulletPricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BulletPricipalLeg_withSign
-        ([<ExcelArgument(Name="Mnemonic",Description = "PrincipalLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BulletPricipalLeg",Description = "BulletPricipalLeg")>] 
          bulletpricipalleg : obj)
@@ -319,9 +319,9 @@ module BulletPricipalLegFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BulletPricipalLeg_Range", Description="Create a range of BulletPricipalLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BulletPricipalLeg_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,7 +39,7 @@ module ZeroYieldFunction =
     *)
     [<ExcelFunction(Name="_ZeroYield_discountImpl", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_discountImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroYield",Description = "ZeroYield")>] 
          zeroyield : obj)
@@ -87,7 +87,7 @@ module ZeroYieldFunction =
     *)
     [<ExcelFunction(Name="_ZeroYield_forwardImpl", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_forwardImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroYield",Description = "ZeroYield")>] 
          zeroyield : obj)
@@ -135,7 +135,7 @@ module ZeroYieldFunction =
     *)
     [<ExcelFunction(Name="_ZeroYield_guess", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_guess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroYield",Description = "ZeroYield")>] 
          zeroyield : obj)
@@ -195,7 +195,7 @@ module ZeroYieldFunction =
     *)
     [<ExcelFunction(Name="_ZeroYield_initialDate", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_initialDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroYield",Description = "ZeroYield")>] 
          zeroyield : obj)
@@ -237,7 +237,7 @@ module ZeroYieldFunction =
     *)
     [<ExcelFunction(Name="_ZeroYield_initialValue", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_initialValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroYield",Description = "ZeroYield")>] 
          zeroyield : obj)
@@ -279,7 +279,7 @@ module ZeroYieldFunction =
     *)
     [<ExcelFunction(Name="_ZeroYield_maxIterations", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_maxIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroYield",Description = "ZeroYield")>] 
          zeroyield : obj)
@@ -315,7 +315,7 @@ module ZeroYieldFunction =
     *)
     [<ExcelFunction(Name="_ZeroYield_maxValueAfter", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_maxValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroYield",Description = "ZeroYield")>] 
          zeroyield : obj)
@@ -375,7 +375,7 @@ module ZeroYieldFunction =
     *)
     [<ExcelFunction(Name="_ZeroYield_minValueAfter", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_minValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroYield",Description = "ZeroYield")>] 
          zeroyield : obj)
@@ -435,11 +435,11 @@ module ZeroYieldFunction =
     *)
     [<ExcelFunction(Name="_ZeroYield_updateGuess", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_updateGuess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroYield",Description = "ZeroYield")>] 
          zeroyield : obj)
-        ([<ExcelArgument(Name="data",Description = "double")>] 
+        ([<ExcelArgument(Name="data",Description = "double range")>] 
          data : obj)
         ([<ExcelArgument(Name="rate",Description = "double")>] 
          rate : obj)
@@ -489,7 +489,7 @@ module ZeroYieldFunction =
     *)
     [<ExcelFunction(Name="_ZeroYield_zeroYieldImpl", Description="Create a ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_zeroYieldImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroYield",Description = "ZeroYield")>] 
          zeroyield : obj)
@@ -534,9 +534,9 @@ module ZeroYieldFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ZeroYield_Range", Description="Create a range of ZeroYield",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroYield_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

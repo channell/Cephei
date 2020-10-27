@@ -39,7 +39,7 @@ module BootstrapErrorFunction =
     *)
     [<ExcelFunction(Name="_BootstrapError", Description="Create a BootstrapError",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapError_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BootstrapError")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="curve",Description = "'T")>] 
          curve : obj)
@@ -88,7 +88,7 @@ module BootstrapErrorFunction =
     *)
     [<ExcelFunction(Name="_BootstrapError_value", Description="Create a BootstrapError",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapError_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BootstrapError",Description = "BootstrapError")>] 
          bootstraperror : obj)
@@ -130,7 +130,7 @@ module BootstrapErrorFunction =
     *)
     [<ExcelFunction(Name="_BootstrapError_derivative", Description="Create a BootstrapError",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapError_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BootstrapError",Description = "BootstrapError")>] 
          bootstraperror : obj)
@@ -169,9 +169,9 @@ module BootstrapErrorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BootstrapError_Range", Description="Create a range of BootstrapError",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BootstrapError_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

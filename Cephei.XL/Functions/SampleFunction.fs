@@ -39,7 +39,7 @@ module SampleFunction =
     *)
     [<ExcelFunction(Name="_Sample", Description="Create a Sample",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sample_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Sample")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="value_",Description = "'T")>] 
          value_ : obj)
@@ -82,7 +82,7 @@ module SampleFunction =
     *)
     [<ExcelFunction(Name="_Sample_value", Description="Create a Sample",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sample_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sample",Description = "Sample")>] 
          sample : obj)
@@ -118,7 +118,7 @@ module SampleFunction =
     *)
     [<ExcelFunction(Name="_Sample_weight", Description="Create a Sample",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sample_weight
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Sample",Description = "Sample")>] 
          sample : obj)
@@ -151,9 +151,9 @@ module SampleFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Sample_Range", Description="Create a range of Sample",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Sample_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

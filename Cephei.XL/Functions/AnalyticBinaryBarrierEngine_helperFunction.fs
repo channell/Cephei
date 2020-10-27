@@ -39,7 +39,7 @@ module AnalyticBinaryBarrierEngine_helperFunction =
     *)
     [<ExcelFunction(Name="_AnalyticBinaryBarrierEngine_helper", Description="Create a AnalyticBinaryBarrierEngine_helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticBinaryBarrierEngine_helper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AnalyticBinaryBarrierEngine_helper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -94,7 +94,7 @@ module AnalyticBinaryBarrierEngine_helperFunction =
     *)
     [<ExcelFunction(Name="_AnalyticBinaryBarrierEngine_helper_payoffAtExpiry", Description="Create a AnalyticBinaryBarrierEngine_helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticBinaryBarrierEngine_helper_payoffAtExpiry
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AnalyticBinaryBarrierEngine_helper",Description = "AnalyticBinaryBarrierEngine_helper")>] 
          analyticbinarybarrierengine_helper : obj)
@@ -145,9 +145,9 @@ module AnalyticBinaryBarrierEngine_helperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AnalyticBinaryBarrierEngine_helper_Range", Description="Create a range of AnalyticBinaryBarrierEngine_helper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticBinaryBarrierEngine_helper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

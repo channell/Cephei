@@ -39,13 +39,13 @@ module AkimaCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AkimaCubicInterpolation", Description="Create a AkimaCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AkimaCubicInterpolation_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AkimaCubicInterpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double range")>] 
          xBegin : obj)
         ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double range")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,7 +88,7 @@ module AkimaCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AkimaCubicInterpolation_aCoefficients", Description="Create a AkimaCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AkimaCubicInterpolation_aCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AkimaCubicInterpolation",Description = "AkimaCubicInterpolation")>] 
          akimacubicinterpolation : obj)
@@ -124,7 +124,7 @@ module AkimaCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AkimaCubicInterpolation_bCoefficients", Description="Create a AkimaCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AkimaCubicInterpolation_bCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AkimaCubicInterpolation",Description = "AkimaCubicInterpolation")>] 
          akimacubicinterpolation : obj)
@@ -160,7 +160,7 @@ module AkimaCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AkimaCubicInterpolation_cCoefficients", Description="Create a AkimaCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AkimaCubicInterpolation_cCoefficients
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AkimaCubicInterpolation",Description = "AkimaCubicInterpolation")>] 
          akimacubicinterpolation : obj)
@@ -196,7 +196,7 @@ module AkimaCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AkimaCubicInterpolation_derivative", Description="Create a AkimaCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AkimaCubicInterpolation_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AkimaCubicInterpolation",Description = "AkimaCubicInterpolation")>] 
          akimacubicinterpolation : obj)
@@ -244,7 +244,7 @@ module AkimaCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AkimaCubicInterpolation_empty", Description="Create a AkimaCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AkimaCubicInterpolation_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AkimaCubicInterpolation",Description = "AkimaCubicInterpolation")>] 
          akimacubicinterpolation : obj)
@@ -280,7 +280,7 @@ module AkimaCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AkimaCubicInterpolation_primitive", Description="Create a AkimaCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AkimaCubicInterpolation_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AkimaCubicInterpolation",Description = "AkimaCubicInterpolation")>] 
          akimacubicinterpolation : obj)
@@ -328,7 +328,7 @@ module AkimaCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AkimaCubicInterpolation_secondDerivative", Description="Create a AkimaCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AkimaCubicInterpolation_secondDerivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AkimaCubicInterpolation",Description = "AkimaCubicInterpolation")>] 
          akimacubicinterpolation : obj)
@@ -376,7 +376,7 @@ module AkimaCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AkimaCubicInterpolation_update", Description="Create a AkimaCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AkimaCubicInterpolation_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AkimaCubicInterpolation",Description = "AkimaCubicInterpolation")>] 
          akimacubicinterpolation : obj)
@@ -412,7 +412,7 @@ module AkimaCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AkimaCubicInterpolation_value1", Description="Create a AkimaCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AkimaCubicInterpolation_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AkimaCubicInterpolation",Description = "AkimaCubicInterpolation")>] 
          akimacubicinterpolation : obj)
@@ -460,7 +460,7 @@ module AkimaCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AkimaCubicInterpolation_value", Description="Create a AkimaCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AkimaCubicInterpolation_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AkimaCubicInterpolation",Description = "AkimaCubicInterpolation")>] 
          akimacubicinterpolation : obj)
@@ -502,7 +502,7 @@ module AkimaCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AkimaCubicInterpolation_xMax", Description="Create a AkimaCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AkimaCubicInterpolation_xMax
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AkimaCubicInterpolation",Description = "AkimaCubicInterpolation")>] 
          akimacubicinterpolation : obj)
@@ -538,7 +538,7 @@ module AkimaCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AkimaCubicInterpolation_xMin", Description="Create a AkimaCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AkimaCubicInterpolation_xMin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AkimaCubicInterpolation",Description = "AkimaCubicInterpolation")>] 
          akimacubicinterpolation : obj)
@@ -574,7 +574,7 @@ module AkimaCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AkimaCubicInterpolation_allowsExtrapolation", Description="Create a AkimaCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AkimaCubicInterpolation_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AkimaCubicInterpolation",Description = "AkimaCubicInterpolation")>] 
          akimacubicinterpolation : obj)
@@ -610,7 +610,7 @@ module AkimaCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AkimaCubicInterpolation_disableExtrapolation", Description="Create a AkimaCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AkimaCubicInterpolation_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AkimaCubicInterpolation",Description = "AkimaCubicInterpolation")>] 
          akimacubicinterpolation : obj)
@@ -652,7 +652,7 @@ module AkimaCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AkimaCubicInterpolation_enableExtrapolation", Description="Create a AkimaCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AkimaCubicInterpolation_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AkimaCubicInterpolation",Description = "AkimaCubicInterpolation")>] 
          akimacubicinterpolation : obj)
@@ -694,7 +694,7 @@ module AkimaCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_AkimaCubicInterpolation_extrapolate", Description="Create a AkimaCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AkimaCubicInterpolation_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AkimaCubicInterpolation",Description = "AkimaCubicInterpolation")>] 
          akimacubicinterpolation : obj)
@@ -727,9 +727,9 @@ module AkimaCubicInterpolationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AkimaCubicInterpolation_Range", Description="Create a range of AkimaCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AkimaCubicInterpolation_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

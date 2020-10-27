@@ -39,13 +39,13 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ForwardFlatInterpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double range")>] 
          xBegin : obj)
         ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double range")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,7 +88,7 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_derivative", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
@@ -136,7 +136,7 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_empty", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
@@ -172,7 +172,7 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_primitive", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
@@ -220,7 +220,7 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_secondDerivative", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_secondDerivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
@@ -268,7 +268,7 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_update", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
@@ -304,7 +304,7 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_value1", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
@@ -352,7 +352,7 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_value", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
@@ -394,7 +394,7 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_xMax", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_xMax
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
@@ -430,7 +430,7 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_xMin", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_xMin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
@@ -466,7 +466,7 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_allowsExtrapolation", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
@@ -502,7 +502,7 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_disableExtrapolation", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
@@ -544,7 +544,7 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_enableExtrapolation", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
@@ -586,7 +586,7 @@ module ForwardFlatInterpolationFunction =
     *)
     [<ExcelFunction(Name="_ForwardFlatInterpolation_extrapolate", Description="Create a ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardFlatInterpolation",Description = "ForwardFlatInterpolation")>] 
          forwardflatinterpolation : obj)
@@ -619,9 +619,9 @@ module ForwardFlatInterpolationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ForwardFlatInterpolation_Range", Description="Create a range of ForwardFlatInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardFlatInterpolation_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

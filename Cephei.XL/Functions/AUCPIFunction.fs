@@ -39,7 +39,7 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AUCPI")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          frequency : obj)
@@ -94,7 +94,7 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI1", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "AUCPI")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          frequency : obj)
@@ -143,7 +143,7 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI_clone", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AUCPI",Description = "AUCPI")>] 
          aucpi : obj)
@@ -185,7 +185,7 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI_fixing", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AUCPI",Description = "AUCPI")>] 
          aucpi : obj)
@@ -233,7 +233,7 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI_zeroInflationTermStructure", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_zeroInflationTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AUCPI",Description = "AUCPI")>] 
          aucpi : obj)
@@ -269,7 +269,7 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI_addFixing", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AUCPI",Description = "AUCPI")>] 
          aucpi : obj)
@@ -324,7 +324,7 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI_availabilityLag", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_availabilityLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AUCPI",Description = "AUCPI")>] 
          aucpi : obj)
@@ -360,7 +360,7 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI_currency", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AUCPI",Description = "AUCPI")>] 
          aucpi : obj)
@@ -396,7 +396,7 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI_familyName", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AUCPI",Description = "AUCPI")>] 
          aucpi : obj)
@@ -432,7 +432,7 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI_fixingCalendar", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AUCPI",Description = "AUCPI")>] 
          aucpi : obj)
@@ -468,7 +468,7 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI_frequency", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AUCPI",Description = "AUCPI")>] 
          aucpi : obj)
@@ -504,7 +504,7 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI_interpolated", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_interpolated
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AUCPI",Description = "AUCPI")>] 
          aucpi : obj)
@@ -540,7 +540,7 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI_isValidFixingDate", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AUCPI",Description = "AUCPI")>] 
          aucpi : obj)
@@ -582,7 +582,7 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI_name", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AUCPI",Description = "AUCPI")>] 
          aucpi : obj)
@@ -618,7 +618,7 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI_region", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_region
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AUCPI",Description = "AUCPI")>] 
          aucpi : obj)
@@ -654,7 +654,7 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI_revised", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_revised
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AUCPI",Description = "AUCPI")>] 
          aucpi : obj)
@@ -690,7 +690,7 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI_update", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AUCPI",Description = "AUCPI")>] 
          aucpi : obj)
@@ -726,13 +726,13 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI_addFixings", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AUCPI",Description = "AUCPI")>] 
          aucpi : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -780,7 +780,7 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI_addFixings1", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AUCPI",Description = "AUCPI")>] 
          aucpi : obj)
@@ -828,7 +828,7 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI_allowsNativeFixings", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AUCPI",Description = "AUCPI")>] 
          aucpi : obj)
@@ -864,7 +864,7 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI_clearFixings", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AUCPI",Description = "AUCPI")>] 
          aucpi : obj)
@@ -900,7 +900,7 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI_registerWith", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AUCPI",Description = "AUCPI")>] 
          aucpi : obj)
@@ -942,7 +942,7 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI_timeSeries", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AUCPI",Description = "AUCPI")>] 
          aucpi : obj)
@@ -978,7 +978,7 @@ module AUCPIFunction =
     *)
     [<ExcelFunction(Name="_AUCPI_unregisterWith", Description="Create a AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AUCPI",Description = "AUCPI")>] 
          aucpi : obj)
@@ -1017,9 +1017,9 @@ module AUCPIFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AUCPI_Range", Description="Create a range of AUCPI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AUCPI_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

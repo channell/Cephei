@@ -39,13 +39,13 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniDoubleBarrierOption", Description="Create a DiscretizedDermanKaniDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniDoubleBarrierOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "DiscretizedDermanKaniDoubleBarrierOption")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="args",Description = "DoubleBarrierOption.Arguments")>] 
          args : obj)
         ([<ExcelArgument(Name="Process",Description = "StochasticProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="grid",Description = "DiscretizedDermanKaniDoubleBarrierOption")>] 
+        ([<ExcelArgument(Name="grid",Description = "TimeGrid or empty")>] 
          grid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -88,7 +88,7 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniDoubleBarrierOption_mandatoryTimes", Description="Create a DiscretizedDermanKaniDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniDoubleBarrierOption_mandatoryTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDermanKaniDoubleBarrierOption",Description = "DiscretizedDermanKaniDoubleBarrierOption")>] 
          discretizeddermankanidoublebarrieroption : obj)
@@ -124,7 +124,7 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniDoubleBarrierOption_reset", Description="Create a DiscretizedDermanKaniDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniDoubleBarrierOption_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDermanKaniDoubleBarrierOption",Description = "DiscretizedDermanKaniDoubleBarrierOption")>] 
          discretizeddermankanidoublebarrieroption : obj)
@@ -166,7 +166,7 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniDoubleBarrierOption_adjustValues", Description="Create a DiscretizedDermanKaniDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniDoubleBarrierOption_adjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDermanKaniDoubleBarrierOption",Description = "DiscretizedDermanKaniDoubleBarrierOption")>] 
          discretizeddermankanidoublebarrieroption : obj)
@@ -202,7 +202,7 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniDoubleBarrierOption_initialize", Description="Create a DiscretizedDermanKaniDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniDoubleBarrierOption_initialize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDermanKaniDoubleBarrierOption",Description = "DiscretizedDermanKaniDoubleBarrierOption")>] 
          discretizeddermankanidoublebarrieroption : obj)
@@ -250,7 +250,7 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniDoubleBarrierOption_method", Description="Create a DiscretizedDermanKaniDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniDoubleBarrierOption_method
-        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDermanKaniDoubleBarrierOption",Description = "DiscretizedDermanKaniDoubleBarrierOption")>] 
          discretizeddermankanidoublebarrieroption : obj)
@@ -286,7 +286,7 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniDoubleBarrierOption_partialRollback", Description="Create a DiscretizedDermanKaniDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniDoubleBarrierOption_partialRollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDermanKaniDoubleBarrierOption",Description = "DiscretizedDermanKaniDoubleBarrierOption")>] 
          discretizeddermankanidoublebarrieroption : obj)
@@ -328,7 +328,7 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniDoubleBarrierOption_postAdjustValues", Description="Create a DiscretizedDermanKaniDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniDoubleBarrierOption_postAdjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDermanKaniDoubleBarrierOption",Description = "DiscretizedDermanKaniDoubleBarrierOption")>] 
          discretizeddermankanidoublebarrieroption : obj)
@@ -364,7 +364,7 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniDoubleBarrierOption_preAdjustValues", Description="Create a DiscretizedDermanKaniDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniDoubleBarrierOption_preAdjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDermanKaniDoubleBarrierOption",Description = "DiscretizedDermanKaniDoubleBarrierOption")>] 
          discretizeddermankanidoublebarrieroption : obj)
@@ -400,7 +400,7 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniDoubleBarrierOption_presentValue", Description="Create a DiscretizedDermanKaniDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniDoubleBarrierOption_presentValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDermanKaniDoubleBarrierOption",Description = "DiscretizedDermanKaniDoubleBarrierOption")>] 
          discretizeddermankanidoublebarrieroption : obj)
@@ -436,7 +436,7 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniDoubleBarrierOption_rollback", Description="Create a DiscretizedDermanKaniDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniDoubleBarrierOption_rollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDermanKaniDoubleBarrierOption",Description = "DiscretizedDermanKaniDoubleBarrierOption")>] 
          discretizeddermankanidoublebarrieroption : obj)
@@ -478,7 +478,7 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniDoubleBarrierOption_setTime", Description="Create a DiscretizedDermanKaniDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniDoubleBarrierOption_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDermanKaniDoubleBarrierOption",Description = "DiscretizedDermanKaniDoubleBarrierOption")>] 
          discretizeddermankanidoublebarrieroption : obj)
@@ -520,7 +520,7 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniDoubleBarrierOption_setValues", Description="Create a DiscretizedDermanKaniDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniDoubleBarrierOption_setValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDermanKaniDoubleBarrierOption",Description = "DiscretizedDermanKaniDoubleBarrierOption")>] 
          discretizeddermankanidoublebarrieroption : obj)
@@ -562,7 +562,7 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniDoubleBarrierOption_time", Description="Create a DiscretizedDermanKaniDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniDoubleBarrierOption_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDermanKaniDoubleBarrierOption",Description = "DiscretizedDermanKaniDoubleBarrierOption")>] 
          discretizeddermankanidoublebarrieroption : obj)
@@ -598,7 +598,7 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedDermanKaniDoubleBarrierOption_values", Description="Create a DiscretizedDermanKaniDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniDoubleBarrierOption_values
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedDermanKaniDoubleBarrierOption",Description = "DiscretizedDermanKaniDoubleBarrierOption")>] 
          discretizeddermankanidoublebarrieroption : obj)
@@ -631,9 +631,9 @@ module DiscretizedDermanKaniDoubleBarrierOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DiscretizedDermanKaniDoubleBarrierOption_Range", Description="Create a range of DiscretizedDermanKaniDoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedDermanKaniDoubleBarrierOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

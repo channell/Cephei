@@ -39,7 +39,7 @@ module BinomialDistributionFunction =
     *)
     [<ExcelFunction(Name="_BinomialDistribution", Description="Create a BinomialDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialDistribution_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BinomialDistribution")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="p",Description = "double")>] 
          p : obj)
@@ -82,7 +82,7 @@ module BinomialDistributionFunction =
     *)
     [<ExcelFunction(Name="_BinomialDistribution_value", Description="Create a BinomialDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialDistribution_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BinomialDistribution",Description = "BinomialDistribution")>] 
          binomialdistribution : obj)
@@ -121,9 +121,9 @@ module BinomialDistributionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BinomialDistribution_Range", Description="Create a range of BinomialDistribution",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialDistribution_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

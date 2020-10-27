@@ -39,7 +39,7 @@ module SwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_SwapRateHelper_forwardStart", Description="Create a SwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapRateHelper_forwardStart
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapRateHelper",Description = "SwapRateHelper")>] 
          swapratehelper : obj)
@@ -75,7 +75,7 @@ module SwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_SwapRateHelper_impliedQuote", Description="Create a SwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapRateHelper_impliedQuote
-        ([<ExcelArgument(Name="Mnemonic",Description = "VanillaSwap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapRateHelper",Description = "SwapRateHelper")>] 
          swapratehelper : obj)
@@ -111,7 +111,7 @@ module SwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_SwapRateHelper_setTermStructure", Description="Create a SwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapRateHelper_setTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "VanillaSwap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapRateHelper",Description = "SwapRateHelper")>] 
          swapratehelper : obj)
@@ -153,7 +153,7 @@ module SwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_SwapRateHelper_spread", Description="Create a SwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapRateHelper_spread
-        ([<ExcelArgument(Name="Mnemonic",Description = "VanillaSwap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapRateHelper",Description = "SwapRateHelper")>] 
          swapratehelper : obj)
@@ -189,7 +189,7 @@ module SwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_SwapRateHelper_swap", Description="Create a SwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapRateHelper_swap
-        ([<ExcelArgument(Name="Mnemonic",Description = "VanillaSwap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapRateHelper",Description = "SwapRateHelper")>] 
          swapratehelper : obj)
@@ -225,7 +225,7 @@ module SwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_SwapRateHelper2", Description="Create a SwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapRateHelper_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwapRateHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="rate",Description = "Quote")>] 
          rate : obj)
@@ -243,15 +243,15 @@ module SwapRateHelperFunction =
          iborIndex : obj)
         ([<ExcelArgument(Name="spread",Description = "Quote")>] 
          spread : obj)
-        ([<ExcelArgument(Name="fwdStart",Description = "SwapRateHelper")>] 
+        ([<ExcelArgument(Name="fwdStart",Description = "Period or empty")>] 
          fwdStart : obj)
         ([<ExcelArgument(Name="discount",Description = "YieldTermStructure")>] 
          discount : obj)
         ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="pillarChoice",Description = "SwapRateHelper")>] 
+        ([<ExcelArgument(Name="pillarChoice",Description = "Pillar.Choice: MaturityDate, LastRelevantDate, CustomDate or empty")>] 
          pillarChoice : obj)
-        ([<ExcelArgument(Name="customPillarDate",Description = "SwapRateHelper")>] 
+        ([<ExcelArgument(Name="customPillarDate",Description = "Date or empty")>] 
          customPillarDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -334,7 +334,7 @@ module SwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_SwapRateHelper", Description="Create a SwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapRateHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwapRateHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="rate",Description = "double")>] 
          rate : obj)
@@ -352,15 +352,15 @@ module SwapRateHelperFunction =
          iborIndex : obj)
         ([<ExcelArgument(Name="spread",Description = "Quote")>] 
          spread : obj)
-        ([<ExcelArgument(Name="fwdStart",Description = "SwapRateHelper")>] 
+        ([<ExcelArgument(Name="fwdStart",Description = "Period or empty")>] 
          fwdStart : obj)
         ([<ExcelArgument(Name="discount",Description = "YieldTermStructure")>] 
          discount : obj)
         ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="pillarChoice",Description = "SwapRateHelper")>] 
+        ([<ExcelArgument(Name="pillarChoice",Description = "Pillar.Choice: MaturityDate, LastRelevantDate, CustomDate or empty")>] 
          pillarChoice : obj)
-        ([<ExcelArgument(Name="customPillarDate",Description = "SwapRateHelper")>] 
+        ([<ExcelArgument(Name="customPillarDate",Description = "Date or empty")>] 
          customPillarDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -443,7 +443,7 @@ module SwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_SwapRateHelper3", Description="Create a SwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapRateHelper_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwapRateHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="rate",Description = "Quote")>] 
          rate : obj)
@@ -451,13 +451,13 @@ module SwapRateHelperFunction =
          swapIndex : obj)
         ([<ExcelArgument(Name="spread",Description = "Quote")>] 
          spread : obj)
-        ([<ExcelArgument(Name="fwdStart",Description = "SwapRateHelper")>] 
+        ([<ExcelArgument(Name="fwdStart",Description = "Period or empty")>] 
          fwdStart : obj)
         ([<ExcelArgument(Name="discount",Description = "YieldTermStructure")>] 
          discount : obj)
-        ([<ExcelArgument(Name="pillarChoice",Description = "SwapRateHelper")>] 
+        ([<ExcelArgument(Name="pillarChoice",Description = "Pillar.Choice: MaturityDate, LastRelevantDate, CustomDate or empty")>] 
          pillarChoice : obj)
-        ([<ExcelArgument(Name="customPillarDate",Description = "SwapRateHelper")>] 
+        ([<ExcelArgument(Name="customPillarDate",Description = "Date or empty")>] 
          customPillarDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -516,7 +516,7 @@ module SwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_SwapRateHelper1", Description="Create a SwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapRateHelper_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwapRateHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="rate",Description = "double")>] 
          rate : obj)
@@ -524,13 +524,13 @@ module SwapRateHelperFunction =
          swapIndex : obj)
         ([<ExcelArgument(Name="spread",Description = "Quote")>] 
          spread : obj)
-        ([<ExcelArgument(Name="fwdStart",Description = "SwapRateHelper")>] 
+        ([<ExcelArgument(Name="fwdStart",Description = "Period or empty")>] 
          fwdStart : obj)
         ([<ExcelArgument(Name="discount",Description = "YieldTermStructure")>] 
          discount : obj)
-        ([<ExcelArgument(Name="pillarChoice",Description = "SwapRateHelper")>] 
+        ([<ExcelArgument(Name="pillarChoice",Description = "Pillar.Choice: MaturityDate, LastRelevantDate, CustomDate or empty")>] 
          pillarChoice : obj)
-        ([<ExcelArgument(Name="customPillarDate",Description = "SwapRateHelper")>] 
+        ([<ExcelArgument(Name="customPillarDate",Description = "Date or empty")>] 
          customPillarDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -589,7 +589,7 @@ module SwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_SwapRateHelper_update", Description="Create a SwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapRateHelper_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapRateHelper",Description = "SwapRateHelper")>] 
          swapratehelper : obj)
@@ -625,7 +625,7 @@ module SwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_SwapRateHelper_earliestDate", Description="Create a SwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapRateHelper_earliestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapRateHelper",Description = "SwapRateHelper")>] 
          swapratehelper : obj)
@@ -661,7 +661,7 @@ module SwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_SwapRateHelper_latestDate", Description="Create a SwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapRateHelper_latestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapRateHelper",Description = "SwapRateHelper")>] 
          swapratehelper : obj)
@@ -697,7 +697,7 @@ module SwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_SwapRateHelper_latestRelevantDate", Description="Create a SwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapRateHelper_latestRelevantDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapRateHelper",Description = "SwapRateHelper")>] 
          swapratehelper : obj)
@@ -733,7 +733,7 @@ module SwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_SwapRateHelper_maturityDate", Description="Create a SwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapRateHelper_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapRateHelper",Description = "SwapRateHelper")>] 
          swapratehelper : obj)
@@ -769,7 +769,7 @@ module SwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_SwapRateHelper_pillarDate", Description="Create a SwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapRateHelper_pillarDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapRateHelper",Description = "SwapRateHelper")>] 
          swapratehelper : obj)
@@ -805,7 +805,7 @@ module SwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_SwapRateHelper_quote", Description="Create a SwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapRateHelper_quote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapRateHelper",Description = "SwapRateHelper")>] 
          swapratehelper : obj)
@@ -841,7 +841,7 @@ module SwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_SwapRateHelper_quoteError", Description="Create a SwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapRateHelper_quoteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapRateHelper",Description = "SwapRateHelper")>] 
          swapratehelper : obj)
@@ -877,7 +877,7 @@ module SwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_SwapRateHelper_quoteIsValid", Description="Create a SwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapRateHelper_quoteIsValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapRateHelper",Description = "SwapRateHelper")>] 
          swapratehelper : obj)
@@ -913,7 +913,7 @@ module SwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_SwapRateHelper_quoteValue", Description="Create a SwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapRateHelper_quoteValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapRateHelper",Description = "SwapRateHelper")>] 
          swapratehelper : obj)
@@ -949,7 +949,7 @@ module SwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_SwapRateHelper_registerWith", Description="Create a SwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapRateHelper_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapRateHelper",Description = "SwapRateHelper")>] 
          swapratehelper : obj)
@@ -991,7 +991,7 @@ module SwapRateHelperFunction =
     *)
     [<ExcelFunction(Name="_SwapRateHelper_unregisterWith", Description="Create a SwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapRateHelper_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapRateHelper",Description = "SwapRateHelper")>] 
          swapratehelper : obj)
@@ -1030,9 +1030,9 @@ module SwapRateHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SwapRateHelper_Range", Description="Create a range of SwapRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapRateHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

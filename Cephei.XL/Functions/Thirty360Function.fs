@@ -39,7 +39,7 @@ module Thirty360Function =
     *)
     [<ExcelFunction(Name="_Thirty3601", Description="Create a Thirty360",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Thirty360_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Thirty360")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module Thirty360Function =
     *)
     [<ExcelFunction(Name="_Thirty360", Description="Create a Thirty360",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Thirty360_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Thirty360")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="c",Description = "Thirty360.Thirty360Convention: USA, BondBasis, European, EurobondBasis, Italian")>] 
          c : obj)
@@ -107,7 +107,7 @@ module Thirty360Function =
     *)
     [<ExcelFunction(Name="_Thirty360_dayCount", Description="Create a Thirty360",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Thirty360_dayCount
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Thirty360",Description = "Thirty360")>] 
          thirty360 : obj)
@@ -155,7 +155,7 @@ module Thirty360Function =
     *)
     [<ExcelFunction(Name="_Thirty360_dayCounter", Description="Create a Thirty360",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Thirty360_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Thirty360",Description = "Thirty360")>] 
          thirty360 : obj)
@@ -191,7 +191,7 @@ module Thirty360Function =
     *)
     [<ExcelFunction(Name="_Thirty360_empty", Description="Create a Thirty360",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Thirty360_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Thirty360",Description = "Thirty360")>] 
          thirty360 : obj)
@@ -227,7 +227,7 @@ module Thirty360Function =
     *)
     [<ExcelFunction(Name="_Thirty360_Equals", Description="Create a Thirty360",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Thirty360_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Thirty360",Description = "Thirty360")>] 
          thirty360 : obj)
@@ -269,7 +269,7 @@ module Thirty360Function =
     *)
     [<ExcelFunction(Name="_Thirty360_name", Description="Create a Thirty360",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Thirty360_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Thirty360",Description = "Thirty360")>] 
          thirty360 : obj)
@@ -305,7 +305,7 @@ module Thirty360Function =
     *)
     [<ExcelFunction(Name="_Thirty360_ToString", Description="Create a Thirty360",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Thirty360_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Thirty360",Description = "Thirty360")>] 
          thirty360 : obj)
@@ -341,7 +341,7 @@ module Thirty360Function =
     *)
     [<ExcelFunction(Name="_Thirty360_yearFraction", Description="Create a Thirty360",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Thirty360_yearFraction
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Thirty360",Description = "Thirty360")>] 
          thirty360 : obj)
@@ -401,7 +401,7 @@ module Thirty360Function =
     *)
     [<ExcelFunction(Name="_Thirty360_yearFraction1", Description="Create a Thirty360",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Thirty360_yearFraction1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Thirty360",Description = "Thirty360")>] 
          thirty360 : obj)
@@ -446,9 +446,9 @@ module Thirty360Function =
             "<WIZ>"
     [<ExcelFunction(Name="_Thirty360_Range", Description="Create a range of Thirty360",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Thirty360_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

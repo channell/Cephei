@@ -39,7 +39,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Bkbm1M")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
@@ -76,7 +76,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_businessDayConvention", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -112,7 +112,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_clone", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -154,7 +154,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_endOfMonth", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -190,7 +190,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_forecastFixing1", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -244,7 +244,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_forecastFixing", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -286,7 +286,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_forwardingTermStructure", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -322,7 +322,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_maturityDate", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -364,7 +364,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_currency", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -400,7 +400,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_dayCounter", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -436,7 +436,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_familyName", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -472,7 +472,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_fixing", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -520,7 +520,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_fixingCalendar", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -556,7 +556,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_fixingDate", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -598,7 +598,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_fixingDays", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -634,7 +634,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_isValidFixingDate", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -676,7 +676,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_name", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -712,7 +712,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_pastFixing", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -754,7 +754,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_tenor", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -790,7 +790,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_update", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -826,7 +826,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_valueDate", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -868,7 +868,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_addFixing", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -922,13 +922,13 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_addFixings", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -976,7 +976,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_addFixings1", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -1024,7 +1024,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_allowsNativeFixings", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -1060,7 +1060,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_clearFixings", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -1096,7 +1096,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_registerWith", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -1138,7 +1138,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_timeSeries", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -1174,7 +1174,7 @@ module Bkbm1MFunction =
     *)
     [<ExcelFunction(Name="_Bkbm1M_unregisterWith", Description="Create a Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bkbm1M",Description = "Bkbm1M")>] 
          bkbm1m : obj)
@@ -1213,9 +1213,9 @@ module Bkbm1MFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Bkbm1M_Range", Description="Create a range of Bkbm1M",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bkbm1M_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

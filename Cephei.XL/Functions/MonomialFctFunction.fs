@@ -39,7 +39,7 @@ module MonomialFctFunction =
     *)
     [<ExcelFunction(Name="_MonomialFct", Description="Create a MonomialFct",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonomialFct_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "MonomialFct")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="order",Description = "int")>] 
          order : obj)
@@ -76,7 +76,7 @@ module MonomialFctFunction =
     *)
     [<ExcelFunction(Name="_MonomialFct_value", Description="Create a MonomialFct",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonomialFct_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MonomialFct",Description = "MonomialFct")>] 
          monomialfct : obj)
@@ -115,9 +115,9 @@ module MonomialFctFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MonomialFct_Range", Description="Create a range of MonomialFct",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonomialFct_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

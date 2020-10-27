@@ -39,7 +39,7 @@ module MYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MYRCurrency", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "MYRCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module MYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MYRCurrency_code", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MYRCurrency",Description = "MYRCurrency")>] 
          myrcurrency : obj)
@@ -106,7 +106,7 @@ module MYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MYRCurrency_empty", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MYRCurrency",Description = "MYRCurrency")>] 
          myrcurrency : obj)
@@ -142,7 +142,7 @@ module MYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MYRCurrency_Equals", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MYRCurrency",Description = "MYRCurrency")>] 
          myrcurrency : obj)
@@ -184,7 +184,7 @@ module MYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MYRCurrency_format", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MYRCurrency",Description = "MYRCurrency")>] 
          myrcurrency : obj)
@@ -220,7 +220,7 @@ module MYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MYRCurrency_fractionsPerUnit", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MYRCurrency",Description = "MYRCurrency")>] 
          myrcurrency : obj)
@@ -256,7 +256,7 @@ module MYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MYRCurrency_fractionSymbol", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MYRCurrency",Description = "MYRCurrency")>] 
          myrcurrency : obj)
@@ -292,7 +292,7 @@ module MYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MYRCurrency_name", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MYRCurrency",Description = "MYRCurrency")>] 
          myrcurrency : obj)
@@ -328,7 +328,7 @@ module MYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MYRCurrency_numericCode", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MYRCurrency",Description = "MYRCurrency")>] 
          myrcurrency : obj)
@@ -364,7 +364,7 @@ module MYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MYRCurrency_rounding", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MYRCurrency",Description = "MYRCurrency")>] 
          myrcurrency : obj)
@@ -400,7 +400,7 @@ module MYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MYRCurrency_symbol", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MYRCurrency",Description = "MYRCurrency")>] 
          myrcurrency : obj)
@@ -436,7 +436,7 @@ module MYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MYRCurrency_ToString", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MYRCurrency",Description = "MYRCurrency")>] 
          myrcurrency : obj)
@@ -472,7 +472,7 @@ module MYRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MYRCurrency_triangulationCurrency", Description="Create a MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MYRCurrency",Description = "MYRCurrency")>] 
          myrcurrency : obj)
@@ -505,9 +505,9 @@ module MYRCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MYRCurrency_Range", Description="Create a range of MYRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MYRCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

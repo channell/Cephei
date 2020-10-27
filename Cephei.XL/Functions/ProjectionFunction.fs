@@ -39,7 +39,7 @@ module ProjectionFunction =
     *)
     [<ExcelFunction(Name="_Projection_include", Description="Create a Projection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Projection_include
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Projection",Description = "Projection")>] 
          projection : obj)
@@ -81,7 +81,7 @@ module ProjectionFunction =
     *)
     [<ExcelFunction(Name="_Projection_project", Description="Create a Projection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Projection_project
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Projection",Description = "Projection")>] 
          projection : obj)
@@ -123,11 +123,11 @@ module ProjectionFunction =
     *)
     [<ExcelFunction(Name="_Projection", Description="Create a Projection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Projection_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Projection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="parameterValues",Description = "Vector")>] 
          parameterValues : obj)
-        ([<ExcelArgument(Name="fixParameters",Description = "Projection")>] 
+        ([<ExcelArgument(Name="fixParameters",Description = "bool or empty")>] 
          fixParameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -163,9 +163,9 @@ module ProjectionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Projection_Range", Description="Create a range of Projection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Projection_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

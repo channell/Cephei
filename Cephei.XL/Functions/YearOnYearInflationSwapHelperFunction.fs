@@ -39,7 +39,7 @@ module YearOnYearInflationSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_impliedQuote", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_impliedQuote
-        ([<ExcelArgument(Name="Mnemonic",Description = "YearOnYearInflationSwapHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YearOnYearInflationSwapHelper",Description = "YearOnYearInflationSwapHelper")>] 
          yearonyearinflationswaphelper : obj)
@@ -75,7 +75,7 @@ module YearOnYearInflationSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_setTermStructure", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_setTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YearOnYearInflationSwapHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YearOnYearInflationSwapHelper",Description = "YearOnYearInflationSwapHelper")>] 
          yearonyearinflationswaphelper : obj)
@@ -117,7 +117,7 @@ module YearOnYearInflationSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_YearOnYearInflationSwapHelper", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "YearOnYearInflationSwapHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="quote",Description = "Quote")>] 
          quote : obj)
@@ -190,7 +190,7 @@ module YearOnYearInflationSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_earliestDate", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_earliestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YearOnYearInflationSwapHelper",Description = "YearOnYearInflationSwapHelper")>] 
          yearonyearinflationswaphelper : obj)
@@ -226,7 +226,7 @@ module YearOnYearInflationSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_latestDate", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_latestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YearOnYearInflationSwapHelper",Description = "YearOnYearInflationSwapHelper")>] 
          yearonyearinflationswaphelper : obj)
@@ -262,7 +262,7 @@ module YearOnYearInflationSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_latestRelevantDate", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_latestRelevantDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YearOnYearInflationSwapHelper",Description = "YearOnYearInflationSwapHelper")>] 
          yearonyearinflationswaphelper : obj)
@@ -298,7 +298,7 @@ module YearOnYearInflationSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_maturityDate", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YearOnYearInflationSwapHelper",Description = "YearOnYearInflationSwapHelper")>] 
          yearonyearinflationswaphelper : obj)
@@ -334,7 +334,7 @@ module YearOnYearInflationSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_pillarDate", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_pillarDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YearOnYearInflationSwapHelper",Description = "YearOnYearInflationSwapHelper")>] 
          yearonyearinflationswaphelper : obj)
@@ -370,7 +370,7 @@ module YearOnYearInflationSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_quote", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_quote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YearOnYearInflationSwapHelper",Description = "YearOnYearInflationSwapHelper")>] 
          yearonyearinflationswaphelper : obj)
@@ -406,7 +406,7 @@ module YearOnYearInflationSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_quoteError", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_quoteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YearOnYearInflationSwapHelper",Description = "YearOnYearInflationSwapHelper")>] 
          yearonyearinflationswaphelper : obj)
@@ -442,7 +442,7 @@ module YearOnYearInflationSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_quoteIsValid", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_quoteIsValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YearOnYearInflationSwapHelper",Description = "YearOnYearInflationSwapHelper")>] 
          yearonyearinflationswaphelper : obj)
@@ -478,7 +478,7 @@ module YearOnYearInflationSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_quoteValue", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_quoteValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YearOnYearInflationSwapHelper",Description = "YearOnYearInflationSwapHelper")>] 
          yearonyearinflationswaphelper : obj)
@@ -514,7 +514,7 @@ module YearOnYearInflationSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_registerWith", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YearOnYearInflationSwapHelper",Description = "YearOnYearInflationSwapHelper")>] 
          yearonyearinflationswaphelper : obj)
@@ -556,7 +556,7 @@ module YearOnYearInflationSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_unregisterWith", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YearOnYearInflationSwapHelper",Description = "YearOnYearInflationSwapHelper")>] 
          yearonyearinflationswaphelper : obj)
@@ -598,7 +598,7 @@ module YearOnYearInflationSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_update", Description="Create a YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YearOnYearInflationSwapHelper",Description = "YearOnYearInflationSwapHelper")>] 
          yearonyearinflationswaphelper : obj)
@@ -631,9 +631,9 @@ module YearOnYearInflationSwapHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_YearOnYearInflationSwapHelper_Range", Description="Create a range of YearOnYearInflationSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YearOnYearInflationSwapHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,7 +39,7 @@ module MonteCarloModelFunction =
     *)
     [<ExcelFunction(Name="_MonteCarloModel_addSamples", Description="Create a MonteCarloModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonteCarloModel_addSamples
-        ([<ExcelArgument(Name="Mnemonic",Description = "MonteCarloModel")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MonteCarloModel",Description = "MonteCarloModel")>] 
          montecarlomodel : obj)
@@ -81,7 +81,7 @@ module MonteCarloModelFunction =
     *)
     [<ExcelFunction(Name="_MonteCarloModel", Description="Create a MonteCarloModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonteCarloModel_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "MonteCarloModel")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="pathGenerator",Description = "IRNG")>] 
          pathGenerator : obj)
@@ -91,11 +91,11 @@ module MonteCarloModelFunction =
          sampleAccumulator : obj)
         ([<ExcelArgument(Name="antitheticVariate",Description = "bool")>] 
          antitheticVariate : obj)
-        ([<ExcelArgument(Name="cvPathPricer",Description = "MonteCarloModel")>] 
+        ([<ExcelArgument(Name="cvPathPricer",Description = "IPath or empty")>] 
          cvPathPricer : obj)
-        ([<ExcelArgument(Name="cvOptionValue",Description = "MonteCarloModel")>] 
+        ([<ExcelArgument(Name="cvOptionValue",Description = "double or empty")>] 
          cvOptionValue : obj)
-        ([<ExcelArgument(Name="cvPathGenerator",Description = "MonteCarloModel")>] 
+        ([<ExcelArgument(Name="cvPathGenerator",Description = "IRNG or empty")>] 
          cvPathGenerator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,7 +154,7 @@ module MonteCarloModelFunction =
     *)
     [<ExcelFunction(Name="_MonteCarloModel_sampleAccumulator", Description="Create a MonteCarloModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonteCarloModel_sampleAccumulator
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MonteCarloModel",Description = "MonteCarloModel")>] 
          montecarlomodel : obj)
@@ -187,9 +187,9 @@ module MonteCarloModelFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MonteCarloModel_Range", Description="Create a range of MonteCarloModel",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonteCarloModel_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

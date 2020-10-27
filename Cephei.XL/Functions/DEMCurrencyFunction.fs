@@ -39,7 +39,7 @@ module DEMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DEMCurrency", Description="Create a DEMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DEMCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "DEMCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module DEMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DEMCurrency_code", Description="Create a DEMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DEMCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DEMCurrency",Description = "DEMCurrency")>] 
          demcurrency : obj)
@@ -106,7 +106,7 @@ module DEMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DEMCurrency_empty", Description="Create a DEMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DEMCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DEMCurrency",Description = "DEMCurrency")>] 
          demcurrency : obj)
@@ -142,7 +142,7 @@ module DEMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DEMCurrency_Equals", Description="Create a DEMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DEMCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DEMCurrency",Description = "DEMCurrency")>] 
          demcurrency : obj)
@@ -184,7 +184,7 @@ module DEMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DEMCurrency_format", Description="Create a DEMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DEMCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DEMCurrency",Description = "DEMCurrency")>] 
          demcurrency : obj)
@@ -220,7 +220,7 @@ module DEMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DEMCurrency_fractionsPerUnit", Description="Create a DEMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DEMCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DEMCurrency",Description = "DEMCurrency")>] 
          demcurrency : obj)
@@ -256,7 +256,7 @@ module DEMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DEMCurrency_fractionSymbol", Description="Create a DEMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DEMCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DEMCurrency",Description = "DEMCurrency")>] 
          demcurrency : obj)
@@ -292,7 +292,7 @@ module DEMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DEMCurrency_name", Description="Create a DEMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DEMCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DEMCurrency",Description = "DEMCurrency")>] 
          demcurrency : obj)
@@ -328,7 +328,7 @@ module DEMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DEMCurrency_numericCode", Description="Create a DEMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DEMCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DEMCurrency",Description = "DEMCurrency")>] 
          demcurrency : obj)
@@ -364,7 +364,7 @@ module DEMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DEMCurrency_rounding", Description="Create a DEMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DEMCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DEMCurrency",Description = "DEMCurrency")>] 
          demcurrency : obj)
@@ -400,7 +400,7 @@ module DEMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DEMCurrency_symbol", Description="Create a DEMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DEMCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DEMCurrency",Description = "DEMCurrency")>] 
          demcurrency : obj)
@@ -436,7 +436,7 @@ module DEMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DEMCurrency_ToString", Description="Create a DEMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DEMCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DEMCurrency",Description = "DEMCurrency")>] 
          demcurrency : obj)
@@ -472,7 +472,7 @@ module DEMCurrencyFunction =
     *)
     [<ExcelFunction(Name="_DEMCurrency_triangulationCurrency", Description="Create a DEMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DEMCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DEMCurrency",Description = "DEMCurrency")>] 
          demcurrency : obj)
@@ -505,9 +505,9 @@ module DEMCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DEMCurrency_Range", Description="Create a range of DEMCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DEMCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

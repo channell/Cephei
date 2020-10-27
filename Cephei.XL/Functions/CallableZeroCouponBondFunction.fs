@@ -39,7 +39,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "CallableZeroCouponBond")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
@@ -51,13 +51,13 @@ module CallableZeroCouponBondFunction =
          maturityDate : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="paymentConvention",Description = "CallableZeroCouponBond")>] 
+        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest or empty")>] 
          paymentConvention : obj)
-        ([<ExcelArgument(Name="redemption",Description = "CallableZeroCouponBond")>] 
+        ([<ExcelArgument(Name="redemption",Description = "double or empty")>] 
          redemption : obj)
-        ([<ExcelArgument(Name="issueDate",Description = "CallableZeroCouponBond")>] 
+        ([<ExcelArgument(Name="issueDate",Description = "Date or empty")>] 
          issueDate : obj)
-        ([<ExcelArgument(Name="putCallSchedule",Description = "CallableZeroCouponBond")>] 
+        ([<ExcelArgument(Name="putCallSchedule",Description = "CallabilitySchedule or empty")>] 
          putCallSchedule : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
@@ -136,7 +136,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_callability", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_callability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -172,7 +172,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_cleanPriceOAS", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_cleanPriceOAS
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -244,7 +244,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_effectiveConvexity", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_effectiveConvexity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -316,7 +316,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_effectiveDuration", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_effectiveDuration
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -388,7 +388,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_impliedVolatility", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_impliedVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -460,7 +460,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_OAS", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_OAS
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -550,7 +550,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_accruedAmount", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_accruedAmount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -592,7 +592,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_calendar", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -628,7 +628,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_cashflows", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_cashflows
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -664,7 +664,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_cleanPrice", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_cleanPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -700,7 +700,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_cleanPrice1", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_cleanPrice1
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -766,7 +766,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_dirtyPrice1", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_dirtyPrice1
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -832,7 +832,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_dirtyPrice", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_dirtyPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -868,7 +868,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_isExpired", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -904,7 +904,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_issueDate", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_issueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -940,7 +940,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_isTradable", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_isTradable
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -982,7 +982,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_maturityDate", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -1018,7 +1018,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_nextCashFlowDate", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_nextCashFlowDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -1060,7 +1060,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_nextCouponRate", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_nextCouponRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -1102,7 +1102,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_notional", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_notional
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -1144,7 +1144,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_notionals", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_notionals
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -1180,7 +1180,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_previousCashFlowDate", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_previousCashFlowDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -1222,7 +1222,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_previousCouponRate", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_previousCouponRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -1264,7 +1264,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_redemption", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_redemption
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -1300,7 +1300,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_redemptions", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_redemptions
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -1336,7 +1336,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_settlementDate", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_settlementDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -1378,7 +1378,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_settlementDays", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -1414,7 +1414,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_settlementValue", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_settlementValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -1456,7 +1456,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_settlementValue1", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_settlementValue1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -1492,7 +1492,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_startDate", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -1528,7 +1528,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_yield1", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_yield1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -1606,7 +1606,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_yield", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_yield
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -1672,7 +1672,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_CASH", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -1708,7 +1708,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_errorEstimate", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -1744,7 +1744,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_NPV", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -1780,7 +1780,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_result", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -1822,7 +1822,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_setPricingEngine", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -1864,7 +1864,7 @@ module CallableZeroCouponBondFunction =
     *)
     [<ExcelFunction(Name="_CallableZeroCouponBond_valuationDate", Description="Create a CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CallableZeroCouponBond",Description = "CallableZeroCouponBond")>] 
          callablezerocouponbond : obj)
@@ -1897,9 +1897,9 @@ module CallableZeroCouponBondFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CallableZeroCouponBond_Range", Description="Create a range of CallableZeroCouponBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CallableZeroCouponBond_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

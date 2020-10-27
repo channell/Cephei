@@ -39,7 +39,7 @@ module FaceValueAccrualClaimFunction =
     *)
     [<ExcelFunction(Name="_FaceValueAccrualClaim_amount", Description="Create a FaceValueAccrualClaim",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FaceValueAccrualClaim_amount
-        ([<ExcelArgument(Name="Mnemonic",Description = "FaceValueAccrualClaim")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FaceValueAccrualClaim",Description = "FaceValueAccrualClaim")>] 
          facevalueaccrualclaim : obj)
@@ -93,7 +93,7 @@ module FaceValueAccrualClaimFunction =
     *)
     [<ExcelFunction(Name="_FaceValueAccrualClaim", Description="Create a FaceValueAccrualClaim",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FaceValueAccrualClaim_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FaceValueAccrualClaim")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="referenceSecurity",Description = "Bond")>] 
          referenceSecurity : obj)
@@ -130,7 +130,7 @@ module FaceValueAccrualClaimFunction =
     *)
     [<ExcelFunction(Name="_FaceValueAccrualClaim_registerWith", Description="Create a FaceValueAccrualClaim",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FaceValueAccrualClaim_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FaceValueAccrualClaim",Description = "FaceValueAccrualClaim")>] 
          facevalueaccrualclaim : obj)
@@ -172,7 +172,7 @@ module FaceValueAccrualClaimFunction =
     *)
     [<ExcelFunction(Name="_FaceValueAccrualClaim_unregisterWith", Description="Create a FaceValueAccrualClaim",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FaceValueAccrualClaim_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FaceValueAccrualClaim",Description = "FaceValueAccrualClaim")>] 
          facevalueaccrualclaim : obj)
@@ -214,7 +214,7 @@ module FaceValueAccrualClaimFunction =
     *)
     [<ExcelFunction(Name="_FaceValueAccrualClaim_update", Description="Create a FaceValueAccrualClaim",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FaceValueAccrualClaim_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FaceValueAccrualClaim",Description = "FaceValueAccrualClaim")>] 
          facevalueaccrualclaim : obj)
@@ -247,9 +247,9 @@ module FaceValueAccrualClaimFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FaceValueAccrualClaim_Range", Description="Create a range of FaceValueAccrualClaim",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FaceValueAccrualClaim_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

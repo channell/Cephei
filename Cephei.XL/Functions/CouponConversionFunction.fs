@@ -39,7 +39,7 @@ module CouponConversionFunction =
     *)
     [<ExcelFunction(Name="_CouponConversion", Description="Create a CouponConversion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CouponConversion_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "CouponConversion")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="date",Description = "DateTime")>] 
          date : obj)
@@ -82,7 +82,7 @@ module CouponConversionFunction =
     *)
     [<ExcelFunction(Name="_CouponConversion_Date", Description="Create a CouponConversion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CouponConversion_Date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CouponConversion",Description = "CouponConversion")>] 
          couponconversion : obj)
@@ -118,7 +118,7 @@ module CouponConversionFunction =
     *)
     [<ExcelFunction(Name="_CouponConversion_Rate", Description="Create a CouponConversion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CouponConversion_Rate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CouponConversion",Description = "CouponConversion")>] 
          couponconversion : obj)
@@ -154,7 +154,7 @@ module CouponConversionFunction =
     *)
     [<ExcelFunction(Name="_CouponConversion_ToString", Description="Create a CouponConversion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CouponConversion_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CouponConversion",Description = "CouponConversion")>] 
          couponconversion : obj)
@@ -187,9 +187,9 @@ module CouponConversionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CouponConversion_Range", Description="Create a range of CouponConversion",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CouponConversion_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

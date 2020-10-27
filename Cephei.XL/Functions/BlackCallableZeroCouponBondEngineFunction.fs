@@ -39,7 +39,7 @@ module BlackCallableZeroCouponBondEngineFunction =
     *)
     [<ExcelFunction(Name="_BlackCallableZeroCouponBondEngine", Description="Create a BlackCallableZeroCouponBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCallableZeroCouponBondEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BlackCallableZeroCouponBondEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="yieldVolStructure",Description = "CallableBondVolatilityStructure")>] 
          yieldVolStructure : obj)
@@ -82,7 +82,7 @@ module BlackCallableZeroCouponBondEngineFunction =
     *)
     [<ExcelFunction(Name="_BlackCallableZeroCouponBondEngine1", Description="Create a BlackCallableZeroCouponBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCallableZeroCouponBondEngine_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "BlackCallableZeroCouponBondEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="fwdYieldVol",Description = "Quote")>] 
          fwdYieldVol : obj)
@@ -123,9 +123,9 @@ module BlackCallableZeroCouponBondEngineFunction =
 
     [<ExcelFunction(Name="_BlackCallableZeroCouponBondEngine_Range", Description="Create a range of BlackCallableZeroCouponBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCallableZeroCouponBondEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

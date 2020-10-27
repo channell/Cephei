@@ -40,7 +40,7 @@ module FDEuropeanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDEuropeanEngine", Description="Create a FDEuropeanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEuropeanEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDEuropeanEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -95,7 +95,7 @@ module FDEuropeanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDEuropeanEngine1", Description="Create a FDEuropeanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEuropeanEngine_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDEuropeanEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -144,7 +144,7 @@ module FDEuropeanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDEuropeanEngine_registerWith", Description="Create a FDEuropeanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEuropeanEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDEuropeanEngine",Description = "FDEuropeanEngine")>] 
          fdeuropeanengine : obj)
@@ -186,7 +186,7 @@ module FDEuropeanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDEuropeanEngine_reset", Description="Create a FDEuropeanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEuropeanEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDEuropeanEngine",Description = "FDEuropeanEngine")>] 
          fdeuropeanengine : obj)
@@ -222,7 +222,7 @@ module FDEuropeanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDEuropeanEngine_unregisterWith", Description="Create a FDEuropeanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEuropeanEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDEuropeanEngine",Description = "FDEuropeanEngine")>] 
          fdeuropeanengine : obj)
@@ -264,7 +264,7 @@ module FDEuropeanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDEuropeanEngine_update", Description="Create a FDEuropeanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEuropeanEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDEuropeanEngine",Description = "FDEuropeanEngine")>] 
          fdeuropeanengine : obj)
@@ -300,7 +300,7 @@ module FDEuropeanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDEuropeanEngine_ensureStrikeInGrid", Description="Create a FDEuropeanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEuropeanEngine_ensureStrikeInGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDEuropeanEngine",Description = "FDEuropeanEngine")>] 
          fdeuropeanengine : obj)
@@ -336,7 +336,7 @@ module FDEuropeanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDEuropeanEngine_factory", Description="Create a FDEuropeanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEuropeanEngine_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDEuropeanEngine",Description = "FDEuropeanEngine")>] 
          fdeuropeanengine : obj)
@@ -396,7 +396,7 @@ module FDEuropeanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDEuropeanEngine_getResidualTime", Description="Create a FDEuropeanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEuropeanEngine_getResidualTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDEuropeanEngine",Description = "FDEuropeanEngine")>] 
          fdeuropeanengine : obj)
@@ -432,7 +432,7 @@ module FDEuropeanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDEuropeanEngine_grid", Description="Create a FDEuropeanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEuropeanEngine_grid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDEuropeanEngine",Description = "FDEuropeanEngine")>] 
          fdeuropeanengine : obj)
@@ -468,7 +468,7 @@ module FDEuropeanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDEuropeanEngine_intrinsicValues_", Description="Create a FDEuropeanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEuropeanEngine_intrinsicValues_
-        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDEuropeanEngine",Description = "FDEuropeanEngine")>] 
          fdeuropeanengine : obj)
@@ -501,9 +501,9 @@ module FDEuropeanEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FDEuropeanEngine_Range", Description="Create a range of FDEuropeanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDEuropeanEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

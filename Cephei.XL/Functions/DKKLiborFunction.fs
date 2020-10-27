@@ -39,7 +39,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "DKKLibor")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
@@ -82,7 +82,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor1", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "DKKLibor")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
@@ -119,7 +119,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_clone", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -161,7 +161,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_maturityDate", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -203,7 +203,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_valueDate", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -245,7 +245,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_businessDayConvention", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -281,7 +281,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_endOfMonth", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -317,7 +317,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_forecastFixing1", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -371,7 +371,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_forecastFixing", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -413,7 +413,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_forwardingTermStructure", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -449,7 +449,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_currency", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -485,7 +485,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_dayCounter", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -521,7 +521,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_familyName", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -557,7 +557,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_fixing", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -605,7 +605,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_fixingCalendar", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -641,7 +641,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_fixingDate", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -683,7 +683,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_fixingDays", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -719,7 +719,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_isValidFixingDate", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -761,7 +761,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_name", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -797,7 +797,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_pastFixing", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -839,7 +839,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_tenor", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -875,7 +875,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_update", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -911,7 +911,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_addFixing", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -965,13 +965,13 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_addFixings", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -1019,7 +1019,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_addFixings1", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -1067,7 +1067,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_allowsNativeFixings", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -1103,7 +1103,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_clearFixings", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -1139,7 +1139,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_registerWith", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -1181,7 +1181,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_timeSeries", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -1217,7 +1217,7 @@ module DKKLiborFunction =
     *)
     [<ExcelFunction(Name="_DKKLibor_unregisterWith", Description="Create a DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DKKLibor",Description = "DKKLibor")>] 
          dkklibor : obj)
@@ -1256,9 +1256,9 @@ module DKKLiborFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DKKLibor_Range", Description="Create a range of DKKLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DKKLibor_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

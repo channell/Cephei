@@ -40,7 +40,7 @@ module JuQuadraticApproximationEngineFunction =
     *)
     [<ExcelFunction(Name="_JuQuadraticApproximationEngine", Description="Create a JuQuadraticApproximationEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JuQuadraticApproximationEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "JuQuadraticApproximationEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -74,9 +74,9 @@ module JuQuadraticApproximationEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_JuQuadraticApproximationEngine_Range", Description="Create a range of JuQuadraticApproximationEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JuQuadraticApproximationEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

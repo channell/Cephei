@@ -39,7 +39,7 @@ module NullParameterFunction =
     *)
     [<ExcelFunction(Name="_NullParameter", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullParameter_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "NullParameter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module NullParameterFunction =
     *)
     [<ExcelFunction(Name="_NullParameter_constraint", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullParameter_constraint
-        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NullParameter",Description = "NullParameter")>] 
          nullparameter : obj)
@@ -106,7 +106,7 @@ module NullParameterFunction =
     *)
     [<ExcelFunction(Name="_NullParameter_implementation", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullParameter_implementation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NullParameter",Description = "NullParameter")>] 
          nullparameter : obj)
@@ -142,7 +142,7 @@ module NullParameterFunction =
     *)
     [<ExcelFunction(Name="_NullParameter_parameters", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullParameter_parameters
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NullParameter",Description = "NullParameter")>] 
          nullparameter : obj)
@@ -178,7 +178,7 @@ module NullParameterFunction =
     *)
     [<ExcelFunction(Name="_NullParameter_setParam", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullParameter_setParam
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NullParameter",Description = "NullParameter")>] 
          nullparameter : obj)
@@ -226,7 +226,7 @@ module NullParameterFunction =
     *)
     [<ExcelFunction(Name="_NullParameter_size", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullParameter_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NullParameter",Description = "NullParameter")>] 
          nullparameter : obj)
@@ -262,7 +262,7 @@ module NullParameterFunction =
     *)
     [<ExcelFunction(Name="_NullParameter_testParams", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullParameter_testParams
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NullParameter",Description = "NullParameter")>] 
          nullparameter : obj)
@@ -304,7 +304,7 @@ module NullParameterFunction =
     *)
     [<ExcelFunction(Name="_NullParameter_value", Description="Create a NullParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullParameter_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NullParameter",Description = "NullParameter")>] 
          nullparameter : obj)
@@ -343,9 +343,9 @@ module NullParameterFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NullParameter_Range", Description="Create a range of NullParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NullParameter_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

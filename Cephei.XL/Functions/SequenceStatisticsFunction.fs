@@ -39,7 +39,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SequenceStatistics")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="dimension",Description = "int")>] 
          dimension : obj)
@@ -77,11 +77,11 @@ module SequenceStatisticsFunction =
     (*!! duplicate add
     [<ExcelFunction(Name="_SequenceStatistics_add", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
-        ([<ExcelArgument(Name="Begin",Description = "double")>] 
+        ([<ExcelArgument(Name="Begin",Description = "double range")>] 
          Begin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -121,11 +121,11 @@ module SequenceStatisticsFunction =
     (*!! duplicate Add functions
     [<ExcelFunction(Name="_SequenceStatistics_add", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
-        ([<ExcelArgument(Name="Begin",Description = "double")>] 
+        ([<ExcelArgument(Name="Begin",Description = "double range")>] 
          Begin : obj)
         ([<ExcelArgument(Name="weight",Description = "double")>] 
          weight : obj)
@@ -170,7 +170,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_averageShortfall", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_averageShortfall
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -212,7 +212,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_correlation", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_correlation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -248,7 +248,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_covariance", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -284,7 +284,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_downsideDeviation", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_downsideDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -320,7 +320,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_downsideVariance", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_downsideVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -356,7 +356,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_errorEstimate", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -392,7 +392,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_expectedShortfall", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_expectedShortfall
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -434,7 +434,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_gaussianAverageShortfall", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_gaussianAverageShortfall
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -476,7 +476,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_gaussianExpectedShortfall", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_gaussianExpectedShortfall
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -518,7 +518,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_gaussianPercentile", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_gaussianPercentile
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -560,7 +560,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_gaussianPotentialUpside", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_gaussianPotentialUpside
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -602,7 +602,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_gaussianShortfall", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_gaussianShortfall
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -644,7 +644,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_gaussianValueAtRisk", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_gaussianValueAtRisk
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -686,7 +686,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_kurtosis", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_kurtosis
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -722,7 +722,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_max", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_max
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -758,7 +758,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_mean", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_mean
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -794,7 +794,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_min", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_min
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -830,7 +830,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_percentile", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_percentile
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -872,7 +872,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_potentialUpside", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_potentialUpside
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -914,7 +914,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_regret", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_regret
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -956,7 +956,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_reset", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -998,7 +998,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_samples", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_samples
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -1034,7 +1034,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_semiDeviation", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_semiDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -1070,7 +1070,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_semiVariance", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_semiVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -1106,7 +1106,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_shortfall", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_shortfall
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -1148,7 +1148,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_size", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -1184,7 +1184,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_skewness", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_skewness
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -1220,7 +1220,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_standardDeviation", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_standardDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -1256,7 +1256,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_valueAtRisk", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_valueAtRisk
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -1298,7 +1298,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_variance", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -1334,7 +1334,7 @@ module SequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_SequenceStatistics_weightSum", Description="Create a SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_weightSum
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SequenceStatistics",Description = "SequenceStatistics")>] 
          sequencestatistics : obj)
@@ -1367,9 +1367,9 @@ module SequenceStatisticsFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SequenceStatistics_Range", Description="Create a range of SequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SequenceStatistics_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

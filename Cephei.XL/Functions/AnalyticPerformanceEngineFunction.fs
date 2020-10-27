@@ -39,7 +39,7 @@ module AnalyticPerformanceEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticPerformanceEngine", Description="Create a AnalyticPerformanceEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticPerformanceEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AnalyticPerformanceEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -74,9 +74,9 @@ module AnalyticPerformanceEngineFunction =
 
     [<ExcelFunction(Name="_AnalyticPerformanceEngine_Range", Description="Create a range of AnalyticPerformanceEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticPerformanceEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

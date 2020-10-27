@@ -39,7 +39,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_clone", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwapIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -81,7 +81,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_clone1", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_clone1
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwapIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -129,7 +129,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_clone2", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_clone2
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwapIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -171,7 +171,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_discountingTermStructure", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_discountingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -207,7 +207,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_exogenousDiscount", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_exogenousDiscount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -243,7 +243,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_fixedLegConvention", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_fixedLegConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -279,7 +279,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_fixedLegTenor", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_fixedLegTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -315,7 +315,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_forecastFixing", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -357,7 +357,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_forwardingTermStructure", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -393,7 +393,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_iborIndex", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_iborIndex
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -429,7 +429,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_maturityDate", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwapIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -471,7 +471,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex1", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwapIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="familyName",Description = "string")>] 
          familyName : obj)
@@ -556,7 +556,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex2", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwapIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -587,7 +587,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwapIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="familyName",Description = "string")>] 
          familyName : obj)
@@ -678,7 +678,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_underlyingSwap", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_underlyingSwap
-        ([<ExcelArgument(Name="Mnemonic",Description = "VanillaSwap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -720,7 +720,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_currency", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -756,7 +756,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_dayCounter", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -792,7 +792,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_familyName", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -828,7 +828,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_fixing", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -876,7 +876,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_fixingCalendar", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -912,7 +912,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_fixingDate", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -954,7 +954,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_fixingDays", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -990,7 +990,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_isValidFixingDate", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -1032,7 +1032,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_name", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -1068,7 +1068,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_pastFixing", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -1110,7 +1110,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_tenor", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -1146,7 +1146,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_update", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -1182,7 +1182,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_valueDate", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -1224,7 +1224,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_addFixing", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -1278,13 +1278,13 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_addFixings", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -1332,7 +1332,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_addFixings1", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -1380,7 +1380,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_allowsNativeFixings", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -1416,7 +1416,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_clearFixings", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -1452,7 +1452,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_registerWith", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -1494,7 +1494,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_timeSeries", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -1530,7 +1530,7 @@ module SwapIndexFunction =
     *)
     [<ExcelFunction(Name="_SwapIndex_unregisterWith", Description="Create a SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SwapIndex",Description = "SwapIndex")>] 
          swapindex : obj)
@@ -1569,9 +1569,9 @@ module SwapIndexFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SwapIndex_Range", Description="Create a range of SwapIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SwapIndex_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

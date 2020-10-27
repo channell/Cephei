@@ -39,7 +39,7 @@ module StockFunction =
     *)
     [<ExcelFunction(Name="_Stock_isExpired", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Stock")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Stock",Description = "Stock")>] 
          stock : obj)
@@ -75,7 +75,7 @@ module StockFunction =
     *)
     [<ExcelFunction(Name="_Stock", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Stock")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="quote",Description = "Quote")>] 
          quote : obj)
@@ -124,7 +124,7 @@ module StockFunction =
     *)
     [<ExcelFunction(Name="_Stock_CASH", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Stock",Description = "Stock")>] 
          stock : obj)
@@ -160,7 +160,7 @@ module StockFunction =
     *)
     [<ExcelFunction(Name="_Stock_errorEstimate", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Stock",Description = "Stock")>] 
          stock : obj)
@@ -196,7 +196,7 @@ module StockFunction =
     *)
     [<ExcelFunction(Name="_Stock_NPV", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Stock",Description = "Stock")>] 
          stock : obj)
@@ -232,7 +232,7 @@ module StockFunction =
     *)
     [<ExcelFunction(Name="_Stock_result", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Stock",Description = "Stock")>] 
          stock : obj)
@@ -274,7 +274,7 @@ module StockFunction =
     *)
     [<ExcelFunction(Name="_Stock_setPricingEngine", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Stock",Description = "Stock")>] 
          stock : obj)
@@ -316,7 +316,7 @@ module StockFunction =
     *)
     [<ExcelFunction(Name="_Stock_valuationDate", Description="Create a Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Stock",Description = "Stock")>] 
          stock : obj)
@@ -349,9 +349,9 @@ module StockFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Stock_Range", Description="Create a range of Stock",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Stock_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

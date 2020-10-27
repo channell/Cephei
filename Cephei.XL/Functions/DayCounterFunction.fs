@@ -39,7 +39,7 @@ module DayCounterFunction =
     *)
     [<ExcelFunction(Name="_DayCounter_dayCount", Description="Create a DayCounter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DayCounter_dayCount
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DayCounter",Description = "DayCounter")>] 
          daycounter : obj)
@@ -87,7 +87,7 @@ module DayCounterFunction =
     *)
     [<ExcelFunction(Name="_DayCounter_dayCounter", Description="Create a DayCounter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DayCounter_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DayCounter",Description = "DayCounter")>] 
          daycounter : obj)
@@ -123,7 +123,7 @@ module DayCounterFunction =
     *)
     [<ExcelFunction(Name="_DayCounter", Description="Create a DayCounter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DayCounter_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="d",Description = "DayCounter")>] 
          d : obj)
@@ -160,7 +160,7 @@ module DayCounterFunction =
     *)
     [<ExcelFunction(Name="_DayCounter1", Description="Create a DayCounter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DayCounter_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -191,7 +191,7 @@ module DayCounterFunction =
     *)
     [<ExcelFunction(Name="_DayCounter_empty", Description="Create a DayCounter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DayCounter_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DayCounter",Description = "DayCounter")>] 
          daycounter : obj)
@@ -227,7 +227,7 @@ module DayCounterFunction =
     *)
     [<ExcelFunction(Name="_DayCounter_Equals", Description="Create a DayCounter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DayCounter_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DayCounter",Description = "DayCounter")>] 
          daycounter : obj)
@@ -269,7 +269,7 @@ module DayCounterFunction =
     *)
     [<ExcelFunction(Name="_DayCounter_name", Description="Create a DayCounter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DayCounter_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DayCounter",Description = "DayCounter")>] 
          daycounter : obj)
@@ -305,7 +305,7 @@ module DayCounterFunction =
     *)
     [<ExcelFunction(Name="_DayCounter_ToString", Description="Create a DayCounter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DayCounter_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DayCounter",Description = "DayCounter")>] 
          daycounter : obj)
@@ -341,7 +341,7 @@ module DayCounterFunction =
     *)
     [<ExcelFunction(Name="_DayCounter_yearFraction", Description="Create a DayCounter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DayCounter_yearFraction
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DayCounter",Description = "DayCounter")>] 
          daycounter : obj)
@@ -401,7 +401,7 @@ module DayCounterFunction =
     *)
     [<ExcelFunction(Name="_DayCounter_yearFraction1", Description="Create a DayCounter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DayCounter_yearFraction1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DayCounter",Description = "DayCounter")>] 
          daycounter : obj)
@@ -446,9 +446,9 @@ module DayCounterFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DayCounter_Range", Description="Create a range of DayCounter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DayCounter_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

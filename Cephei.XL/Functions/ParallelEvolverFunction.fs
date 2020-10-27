@@ -39,7 +39,7 @@ module ParallelEvolverFunction =
     *)
     [<ExcelFunction(Name="_ParallelEvolver_factory", Description="Create a ParallelEvolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ParallelEvolver_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "IMixedScheme")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ParallelEvolver",Description = "ParallelEvolver")>] 
          parallelevolver : obj)
@@ -47,7 +47,7 @@ module ParallelEvolverFunction =
          L : obj)
         ([<ExcelArgument(Name="bcs",Description = "Object")>] 
          bcs : obj)
-        ([<ExcelArgument(Name="additionalFields",Description = "IMixedScheme")>] 
+        ([<ExcelArgument(Name="additionalFields",Description = "Object[] or empty")>] 
          additionalFields : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -93,9 +93,9 @@ module ParallelEvolverFunction =
     *)
     [<ExcelFunction(Name="_ParallelEvolver", Description="Create a ParallelEvolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ParallelEvolver_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ParallelEvolver")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="L",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="L",Description = "IOperator range")>] 
          L : obj)
         ([<ExcelArgument(Name="bcs",Description = "BoundaryConditionSet")>] 
          bcs : obj)
@@ -136,7 +136,7 @@ module ParallelEvolverFunction =
     *)
     [<ExcelFunction(Name="_ParallelEvolver1", Description="Create a ParallelEvolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ParallelEvolver_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "ParallelEvolver")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -167,7 +167,7 @@ module ParallelEvolverFunction =
     *)
     [<ExcelFunction(Name="_ParallelEvolver_setStep", Description="Create a ParallelEvolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ParallelEvolver_setStep
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ParallelEvolver",Description = "ParallelEvolver")>] 
          parallelevolver : obj)
@@ -209,7 +209,7 @@ module ParallelEvolverFunction =
     *)
     [<ExcelFunction(Name="_ParallelEvolver_step", Description="Create a ParallelEvolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ParallelEvolver_step
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ParallelEvolver",Description = "ParallelEvolver")>] 
          parallelevolver : obj)
@@ -217,7 +217,7 @@ module ParallelEvolverFunction =
          o : obj)
         ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="theta",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="theta",Description = "double or empty")>] 
          theta : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -260,9 +260,9 @@ module ParallelEvolverFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ParallelEvolver_Range", Description="Create a range of ParallelEvolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ParallelEvolver_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

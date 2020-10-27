@@ -39,7 +39,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon_accruedAmount", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_accruedAmount
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateCoupon",Description = "FixedRateCoupon")>] 
          fixedratecoupon : obj)
@@ -81,7 +81,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon_amount", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_amount
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateCoupon",Description = "FixedRateCoupon")>] 
          fixedratecoupon : obj)
@@ -117,7 +117,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon_dayCounter", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateCoupon",Description = "FixedRateCoupon")>] 
          fixedratecoupon : obj)
@@ -153,7 +153,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FixedRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="paymentDate",Description = "Date")>] 
          paymentDate : obj)
@@ -165,11 +165,11 @@ module FixedRateCouponFunction =
          accrualStartDate : obj)
         ([<ExcelArgument(Name="accrualEndDate",Description = "Date")>] 
          accrualEndDate : obj)
-        ([<ExcelArgument(Name="refPeriodStart",Description = "FixedRateCoupon")>] 
+        ([<ExcelArgument(Name="refPeriodStart",Description = "Date or empty")>] 
          refPeriodStart : obj)
-        ([<ExcelArgument(Name="refPeriodEnd",Description = "FixedRateCoupon")>] 
+        ([<ExcelArgument(Name="refPeriodEnd",Description = "Date or empty")>] 
          refPeriodEnd : obj)
-        ([<ExcelArgument(Name="exCouponDate",Description = "FixedRateCoupon")>] 
+        ([<ExcelArgument(Name="exCouponDate",Description = "Date or empty")>] 
          exCouponDate : obj)
         ([<ExcelArgument(Name="amount",Description = "double")>] 
          amount : obj)
@@ -238,7 +238,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon1", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FixedRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="paymentDate",Description = "Date")>] 
          paymentDate : obj)
@@ -252,11 +252,11 @@ module FixedRateCouponFunction =
          accrualStartDate : obj)
         ([<ExcelArgument(Name="accrualEndDate",Description = "Date")>] 
          accrualEndDate : obj)
-        ([<ExcelArgument(Name="refPeriodStart",Description = "FixedRateCoupon")>] 
+        ([<ExcelArgument(Name="refPeriodStart",Description = "Date or empty")>] 
          refPeriodStart : obj)
-        ([<ExcelArgument(Name="refPeriodEnd",Description = "FixedRateCoupon")>] 
+        ([<ExcelArgument(Name="refPeriodEnd",Description = "Date or empty")>] 
          refPeriodEnd : obj)
-        ([<ExcelArgument(Name="exCouponDate",Description = "FixedRateCoupon")>] 
+        ([<ExcelArgument(Name="exCouponDate",Description = "Date or empty")>] 
          exCouponDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -323,7 +323,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon_interestRate", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_interestRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateCoupon",Description = "FixedRateCoupon")>] 
          fixedratecoupon : obj)
@@ -359,7 +359,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon_rate", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_rate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateCoupon",Description = "FixedRateCoupon")>] 
          fixedratecoupon : obj)
@@ -395,7 +395,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon_accrualDays", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_accrualDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateCoupon",Description = "FixedRateCoupon")>] 
          fixedratecoupon : obj)
@@ -431,7 +431,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon_accrualEndDate", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_accrualEndDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateCoupon",Description = "FixedRateCoupon")>] 
          fixedratecoupon : obj)
@@ -467,7 +467,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon_accrualPeriod", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_accrualPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateCoupon",Description = "FixedRateCoupon")>] 
          fixedratecoupon : obj)
@@ -503,7 +503,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon_accrualStartDate", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_accrualStartDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateCoupon",Description = "FixedRateCoupon")>] 
          fixedratecoupon : obj)
@@ -539,7 +539,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon_accruedDays", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_accruedDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateCoupon",Description = "FixedRateCoupon")>] 
          fixedratecoupon : obj)
@@ -581,7 +581,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon_accruedPeriod", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_accruedPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateCoupon",Description = "FixedRateCoupon")>] 
          fixedratecoupon : obj)
@@ -623,7 +623,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon_date", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateCoupon",Description = "FixedRateCoupon")>] 
          fixedratecoupon : obj)
@@ -659,7 +659,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon_exCouponDate", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_exCouponDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateCoupon",Description = "FixedRateCoupon")>] 
          fixedratecoupon : obj)
@@ -695,7 +695,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon_nominal", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_nominal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateCoupon",Description = "FixedRateCoupon")>] 
          fixedratecoupon : obj)
@@ -731,7 +731,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon_referencePeriodEnd", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_referencePeriodEnd
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateCoupon",Description = "FixedRateCoupon")>] 
          fixedratecoupon : obj)
@@ -767,7 +767,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon_referencePeriodStart", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_referencePeriodStart
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateCoupon",Description = "FixedRateCoupon")>] 
          fixedratecoupon : obj)
@@ -803,7 +803,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon_CompareTo", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_CompareTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateCoupon",Description = "FixedRateCoupon")>] 
          fixedratecoupon : obj)
@@ -845,7 +845,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon_Equals", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateCoupon",Description = "FixedRateCoupon")>] 
          fixedratecoupon : obj)
@@ -887,7 +887,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon_hasOccurred", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateCoupon",Description = "FixedRateCoupon")>] 
          fixedratecoupon : obj)
@@ -935,7 +935,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon_tradingExCoupon", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_tradingExCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateCoupon",Description = "FixedRateCoupon")>] 
          fixedratecoupon : obj)
@@ -977,7 +977,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon_accept", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateCoupon",Description = "FixedRateCoupon")>] 
          fixedratecoupon : obj)
@@ -1019,7 +1019,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon_registerWith", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateCoupon",Description = "FixedRateCoupon")>] 
          fixedratecoupon : obj)
@@ -1061,7 +1061,7 @@ module FixedRateCouponFunction =
     *)
     [<ExcelFunction(Name="_FixedRateCoupon_unregisterWith", Description="Create a FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedRateCoupon",Description = "FixedRateCoupon")>] 
          fixedratecoupon : obj)
@@ -1100,9 +1100,9 @@ module FixedRateCouponFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FixedRateCoupon_Range", Description="Create a range of FixedRateCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateCoupon_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

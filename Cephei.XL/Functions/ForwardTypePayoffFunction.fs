@@ -39,7 +39,7 @@ module ForwardTypePayoffFunction =
     *)
     [<ExcelFunction(Name="_ForwardTypePayoff_description", Description="Create a ForwardTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardTypePayoff_description
-        ([<ExcelArgument(Name="Mnemonic",Description = "ForwardTypePayoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardTypePayoff",Description = "ForwardTypePayoff")>] 
          forwardtypepayoff : obj)
@@ -75,7 +75,7 @@ module ForwardTypePayoffFunction =
     *)
     [<ExcelFunction(Name="_ForwardTypePayoff_forwardType", Description="Create a ForwardTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardTypePayoff_forwardType
-        ([<ExcelArgument(Name="Mnemonic",Description = "ForwardTypePayoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardTypePayoff",Description = "ForwardTypePayoff")>] 
          forwardtypepayoff : obj)
@@ -111,7 +111,7 @@ module ForwardTypePayoffFunction =
     *)
     [<ExcelFunction(Name="_ForwardTypePayoff", Description="Create a ForwardTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardTypePayoff_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ForwardTypePayoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Type",Description = "Position.Type: Long, Short")>] 
          Type : obj)
@@ -154,7 +154,7 @@ module ForwardTypePayoffFunction =
     *)
     [<ExcelFunction(Name="_ForwardTypePayoff_name", Description="Create a ForwardTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardTypePayoff_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardTypePayoff",Description = "ForwardTypePayoff")>] 
          forwardtypepayoff : obj)
@@ -190,7 +190,7 @@ module ForwardTypePayoffFunction =
     *)
     [<ExcelFunction(Name="_ForwardTypePayoff_strike", Description="Create a ForwardTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardTypePayoff_strike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardTypePayoff",Description = "ForwardTypePayoff")>] 
          forwardtypepayoff : obj)
@@ -226,7 +226,7 @@ module ForwardTypePayoffFunction =
     *)
     [<ExcelFunction(Name="_ForwardTypePayoff_value", Description="Create a ForwardTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardTypePayoff_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardTypePayoff",Description = "ForwardTypePayoff")>] 
          forwardtypepayoff : obj)
@@ -268,7 +268,7 @@ module ForwardTypePayoffFunction =
     *)
     [<ExcelFunction(Name="_ForwardTypePayoff_accept", Description="Create a ForwardTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardTypePayoff_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardTypePayoff",Description = "ForwardTypePayoff")>] 
          forwardtypepayoff : obj)
@@ -307,9 +307,9 @@ module ForwardTypePayoffFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ForwardTypePayoff_Range", Description="Create a range of ForwardTypePayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardTypePayoff_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

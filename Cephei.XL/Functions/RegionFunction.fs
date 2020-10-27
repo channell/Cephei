@@ -39,7 +39,7 @@ module RegionFunction =
     *)
     [<ExcelFunction(Name="_Region_code", Description="Create a Region",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Region_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Region",Description = "Region")>] 
          region : obj)
@@ -75,7 +75,7 @@ module RegionFunction =
     *)
     [<ExcelFunction(Name="_Region_Equals", Description="Create a Region",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Region_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Region",Description = "Region")>] 
          region : obj)
@@ -117,7 +117,7 @@ module RegionFunction =
     *)
     [<ExcelFunction(Name="_Region_name", Description="Create a Region",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Region_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Region",Description = "Region")>] 
          region : obj)
@@ -150,9 +150,9 @@ module RegionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Region_Range", Description="Create a range of Region",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Region_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

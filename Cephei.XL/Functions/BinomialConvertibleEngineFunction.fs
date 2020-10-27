@@ -39,7 +39,7 @@ module BinomialConvertibleEngineFunction =
     *)
     [<ExcelFunction(Name="_BinomialConvertibleEngine", Description="Create a BinomialConvertibleEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialConvertibleEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BinomialConvertibleEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -80,9 +80,9 @@ module BinomialConvertibleEngineFunction =
 
     [<ExcelFunction(Name="_BinomialConvertibleEngine_Range", Description="Create a range of BinomialConvertibleEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BinomialConvertibleEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

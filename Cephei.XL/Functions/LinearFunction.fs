@@ -39,7 +39,7 @@ module LinearFunction =
     *)
     [<ExcelFunction(Name="_Linear_global", Description="Create a Linear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Linear_global
-        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Linear",Description = "Linear")>] 
          linear : obj)
@@ -75,15 +75,15 @@ module LinearFunction =
     *)
     [<ExcelFunction(Name="_Linear_interpolate", Description="Create a Linear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Linear_interpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Linear",Description = "Linear")>] 
          linear : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double range")>] 
          xBegin : obj)
         ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double range")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -129,7 +129,7 @@ module LinearFunction =
     *)
     [<ExcelFunction(Name="_Linear_requiredPoints", Description="Create a Linear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Linear_requiredPoints
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Linear",Description = "Linear")>] 
          linear : obj)
@@ -162,9 +162,9 @@ module LinearFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Linear_Range", Description="Create a range of Linear",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Linear_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

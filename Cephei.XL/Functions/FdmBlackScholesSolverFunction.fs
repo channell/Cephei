@@ -39,7 +39,7 @@ module FdmBlackScholesSolverFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesSolver_deltaAt", Description="Create a FdmBlackScholesSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesSolver_deltaAt
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmBlackScholesSolver")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBlackScholesSolver",Description = "FdmBlackScholesSolver")>] 
          fdmblackscholessolver : obj)
@@ -81,7 +81,7 @@ module FdmBlackScholesSolverFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesSolver", Description="Create a FdmBlackScholesSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesSolver_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmBlackScholesSolver")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -89,9 +89,9 @@ module FdmBlackScholesSolverFunction =
          strike : obj)
         ([<ExcelArgument(Name="solverDesc",Description = "FdmSolverDesc")>] 
          solverDesc : obj)
-        ([<ExcelArgument(Name="schemeDesc",Description = "FdmBlackScholesSolver")>] 
+        ([<ExcelArgument(Name="schemeDesc",Description = "FdmSchemeDesc or empty")>] 
          schemeDesc : obj)
-        ([<ExcelArgument(Name="localVol",Description = "FdmBlackScholesSolver")>] 
+        ([<ExcelArgument(Name="localVol",Description = "bool or empty")>] 
          localVol : obj)
         ([<ExcelArgument(Name="illegalLocalVolOverwrite",Description = "double")>] 
          illegalLocalVolOverwrite : obj)
@@ -154,7 +154,7 @@ module FdmBlackScholesSolverFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesSolver_gammaAt", Description="Create a FdmBlackScholesSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesSolver_gammaAt
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBlackScholesSolver",Description = "FdmBlackScholesSolver")>] 
          fdmblackscholessolver : obj)
@@ -196,7 +196,7 @@ module FdmBlackScholesSolverFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesSolver_thetaAt", Description="Create a FdmBlackScholesSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesSolver_thetaAt
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBlackScholesSolver",Description = "FdmBlackScholesSolver")>] 
          fdmblackscholessolver : obj)
@@ -238,7 +238,7 @@ module FdmBlackScholesSolverFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesSolver_valueAt", Description="Create a FdmBlackScholesSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesSolver_valueAt
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBlackScholesSolver",Description = "FdmBlackScholesSolver")>] 
          fdmblackscholessolver : obj)
@@ -277,9 +277,9 @@ module FdmBlackScholesSolverFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmBlackScholesSolver_Range", Description="Create a range of FdmBlackScholesSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesSolver_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

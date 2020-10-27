@@ -39,7 +39,7 @@ module FdmLinearOpLayoutFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpLayout_begin", Description="Create a FdmLinearOpLayout",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpLayout_begin
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLinearOpIterator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "FdmLinearOpLayout")>] 
          fdmlinearoplayout : obj)
@@ -75,7 +75,7 @@ module FdmLinearOpLayoutFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpLayout_dim", Description="Create a FdmLinearOpLayout",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpLayout_dim
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLinearOpIterator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "FdmLinearOpLayout")>] 
          fdmlinearoplayout : obj)
@@ -111,7 +111,7 @@ module FdmLinearOpLayoutFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpLayout_end", Description="Create a FdmLinearOpLayout",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpLayout_end
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLinearOpIterator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "FdmLinearOpLayout")>] 
          fdmlinearoplayout : obj)
@@ -147,9 +147,9 @@ module FdmLinearOpLayoutFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpLayout", Description="Create a FdmLinearOpLayout",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpLayout_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLinearOpLayout")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dim",Description = "int")>] 
+        ([<ExcelArgument(Name="dim",Description = "int range")>] 
          dim : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,11 +184,11 @@ module FdmLinearOpLayoutFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpLayout_index", Description="Create a FdmLinearOpLayout",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpLayout_index
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLinearOpIterator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "FdmLinearOpLayout")>] 
          fdmlinearoplayout : obj)
-        ([<ExcelArgument(Name="coordinates",Description = "int")>] 
+        ([<ExcelArgument(Name="coordinates",Description = "int range")>] 
          coordinates : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -226,7 +226,7 @@ module FdmLinearOpLayoutFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpLayout_iter_neighbourhood", Description="Create a FdmLinearOpLayout",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpLayout_iter_neighbourhood
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLinearOpIterator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "FdmLinearOpLayout")>] 
          fdmlinearoplayout : obj)
@@ -280,7 +280,7 @@ module FdmLinearOpLayoutFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpLayout_neighbourhood", Description="Create a FdmLinearOpLayout",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpLayout_neighbourhood
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "FdmLinearOpLayout")>] 
          fdmlinearoplayout : obj)
@@ -346,7 +346,7 @@ module FdmLinearOpLayoutFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpLayout_neighbourhood1", Description="Create a FdmLinearOpLayout",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpLayout_neighbourhood1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "FdmLinearOpLayout")>] 
          fdmlinearoplayout : obj)
@@ -400,7 +400,7 @@ module FdmLinearOpLayoutFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpLayout_size", Description="Create a FdmLinearOpLayout",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpLayout_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "FdmLinearOpLayout")>] 
          fdmlinearoplayout : obj)
@@ -436,7 +436,7 @@ module FdmLinearOpLayoutFunction =
     *)
     [<ExcelFunction(Name="_FdmLinearOpLayout_spacing", Description="Create a FdmLinearOpLayout",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpLayout_spacing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmLinearOpLayout",Description = "FdmLinearOpLayout")>] 
          fdmlinearoplayout : obj)
@@ -469,9 +469,9 @@ module FdmLinearOpLayoutFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmLinearOpLayout_Range", Description="Create a range of FdmLinearOpLayout",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmLinearOpLayout_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

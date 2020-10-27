@@ -39,7 +39,7 @@ module ContinuousFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFloatingLookbackOption", Description="Create a ContinuousFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFloatingLookbackOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ContinuousFloatingLookbackOption")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="minmax",Description = "double")>] 
          minmax : obj)
@@ -100,7 +100,7 @@ module ContinuousFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFloatingLookbackOption_delta", Description="Create a ContinuousFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFloatingLookbackOption_delta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFloatingLookbackOption",Description = "ContinuousFloatingLookbackOption")>] 
          continuousfloatinglookbackoption : obj)
@@ -136,7 +136,7 @@ module ContinuousFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFloatingLookbackOption_deltaForward", Description="Create a ContinuousFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFloatingLookbackOption_deltaForward
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFloatingLookbackOption",Description = "ContinuousFloatingLookbackOption")>] 
          continuousfloatinglookbackoption : obj)
@@ -172,7 +172,7 @@ module ContinuousFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFloatingLookbackOption_dividendRho", Description="Create a ContinuousFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFloatingLookbackOption_dividendRho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFloatingLookbackOption",Description = "ContinuousFloatingLookbackOption")>] 
          continuousfloatinglookbackoption : obj)
@@ -208,7 +208,7 @@ module ContinuousFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFloatingLookbackOption_elasticity", Description="Create a ContinuousFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFloatingLookbackOption_elasticity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFloatingLookbackOption",Description = "ContinuousFloatingLookbackOption")>] 
          continuousfloatinglookbackoption : obj)
@@ -244,7 +244,7 @@ module ContinuousFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFloatingLookbackOption_gamma", Description="Create a ContinuousFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFloatingLookbackOption_gamma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFloatingLookbackOption",Description = "ContinuousFloatingLookbackOption")>] 
          continuousfloatinglookbackoption : obj)
@@ -280,7 +280,7 @@ module ContinuousFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFloatingLookbackOption_isExpired", Description="Create a ContinuousFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFloatingLookbackOption_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFloatingLookbackOption",Description = "ContinuousFloatingLookbackOption")>] 
          continuousfloatinglookbackoption : obj)
@@ -316,7 +316,7 @@ module ContinuousFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFloatingLookbackOption_itmCashProbability", Description="Create a ContinuousFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFloatingLookbackOption_itmCashProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFloatingLookbackOption",Description = "ContinuousFloatingLookbackOption")>] 
          continuousfloatinglookbackoption : obj)
@@ -352,7 +352,7 @@ module ContinuousFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFloatingLookbackOption_rho", Description="Create a ContinuousFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFloatingLookbackOption_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFloatingLookbackOption",Description = "ContinuousFloatingLookbackOption")>] 
          continuousfloatinglookbackoption : obj)
@@ -388,7 +388,7 @@ module ContinuousFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFloatingLookbackOption_strikeSensitivity", Description="Create a ContinuousFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFloatingLookbackOption_strikeSensitivity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFloatingLookbackOption",Description = "ContinuousFloatingLookbackOption")>] 
          continuousfloatinglookbackoption : obj)
@@ -424,7 +424,7 @@ module ContinuousFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFloatingLookbackOption_theta", Description="Create a ContinuousFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFloatingLookbackOption_theta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFloatingLookbackOption",Description = "ContinuousFloatingLookbackOption")>] 
          continuousfloatinglookbackoption : obj)
@@ -460,7 +460,7 @@ module ContinuousFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFloatingLookbackOption_thetaPerDay", Description="Create a ContinuousFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFloatingLookbackOption_thetaPerDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFloatingLookbackOption",Description = "ContinuousFloatingLookbackOption")>] 
          continuousfloatinglookbackoption : obj)
@@ -496,7 +496,7 @@ module ContinuousFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFloatingLookbackOption_vega", Description="Create a ContinuousFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFloatingLookbackOption_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFloatingLookbackOption",Description = "ContinuousFloatingLookbackOption")>] 
          continuousfloatinglookbackoption : obj)
@@ -532,7 +532,7 @@ module ContinuousFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFloatingLookbackOption_exercise", Description="Create a ContinuousFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFloatingLookbackOption_exercise
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFloatingLookbackOption",Description = "ContinuousFloatingLookbackOption")>] 
          continuousfloatinglookbackoption : obj)
@@ -568,7 +568,7 @@ module ContinuousFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFloatingLookbackOption_payoff", Description="Create a ContinuousFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFloatingLookbackOption_payoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Payoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFloatingLookbackOption",Description = "ContinuousFloatingLookbackOption")>] 
          continuousfloatinglookbackoption : obj)
@@ -604,7 +604,7 @@ module ContinuousFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFloatingLookbackOption_CASH", Description="Create a ContinuousFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFloatingLookbackOption_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFloatingLookbackOption",Description = "ContinuousFloatingLookbackOption")>] 
          continuousfloatinglookbackoption : obj)
@@ -640,7 +640,7 @@ module ContinuousFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFloatingLookbackOption_errorEstimate", Description="Create a ContinuousFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFloatingLookbackOption_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFloatingLookbackOption",Description = "ContinuousFloatingLookbackOption")>] 
          continuousfloatinglookbackoption : obj)
@@ -676,7 +676,7 @@ module ContinuousFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFloatingLookbackOption_NPV", Description="Create a ContinuousFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFloatingLookbackOption_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFloatingLookbackOption",Description = "ContinuousFloatingLookbackOption")>] 
          continuousfloatinglookbackoption : obj)
@@ -712,7 +712,7 @@ module ContinuousFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFloatingLookbackOption_result", Description="Create a ContinuousFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFloatingLookbackOption_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFloatingLookbackOption",Description = "ContinuousFloatingLookbackOption")>] 
          continuousfloatinglookbackoption : obj)
@@ -754,7 +754,7 @@ module ContinuousFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFloatingLookbackOption_setPricingEngine", Description="Create a ContinuousFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFloatingLookbackOption_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFloatingLookbackOption",Description = "ContinuousFloatingLookbackOption")>] 
          continuousfloatinglookbackoption : obj)
@@ -796,7 +796,7 @@ module ContinuousFloatingLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFloatingLookbackOption_valuationDate", Description="Create a ContinuousFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFloatingLookbackOption_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFloatingLookbackOption",Description = "ContinuousFloatingLookbackOption")>] 
          continuousfloatinglookbackoption : obj)
@@ -829,9 +829,9 @@ module ContinuousFloatingLookbackOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ContinuousFloatingLookbackOption_Range", Description="Create a range of ContinuousFloatingLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFloatingLookbackOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

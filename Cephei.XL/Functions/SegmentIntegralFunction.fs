@@ -39,7 +39,7 @@ module SegmentIntegralFunction =
     *)
     [<ExcelFunction(Name="_SegmentIntegral", Description="Create a SegmentIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SegmentIntegral_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SegmentIntegral")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="intervals",Description = "int")>] 
          intervals : obj)
@@ -76,7 +76,7 @@ module SegmentIntegralFunction =
     *)
     [<ExcelFunction(Name="_SegmentIntegral_absoluteAccuracy", Description="Create a SegmentIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SegmentIntegral_absoluteAccuracy
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SegmentIntegral",Description = "SegmentIntegral")>] 
          segmentintegral : obj)
@@ -112,7 +112,7 @@ module SegmentIntegralFunction =
     *)
     [<ExcelFunction(Name="_SegmentIntegral_absoluteError", Description="Create a SegmentIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SegmentIntegral_absoluteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SegmentIntegral",Description = "SegmentIntegral")>] 
          segmentintegral : obj)
@@ -148,7 +148,7 @@ module SegmentIntegralFunction =
     *)
     [<ExcelFunction(Name="_SegmentIntegral_integrationSuccess", Description="Create a SegmentIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SegmentIntegral_integrationSuccess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SegmentIntegral",Description = "SegmentIntegral")>] 
          segmentintegral : obj)
@@ -184,7 +184,7 @@ module SegmentIntegralFunction =
     *)
     [<ExcelFunction(Name="_SegmentIntegral_maxEvaluations", Description="Create a SegmentIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SegmentIntegral_maxEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SegmentIntegral",Description = "SegmentIntegral")>] 
          segmentintegral : obj)
@@ -220,7 +220,7 @@ module SegmentIntegralFunction =
     *)
     [<ExcelFunction(Name="_SegmentIntegral_numberOfEvaluations", Description="Create a SegmentIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SegmentIntegral_numberOfEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SegmentIntegral",Description = "SegmentIntegral")>] 
          segmentintegral : obj)
@@ -256,7 +256,7 @@ module SegmentIntegralFunction =
     *)
     [<ExcelFunction(Name="_SegmentIntegral_setAbsoluteAccuracy", Description="Create a SegmentIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SegmentIntegral_setAbsoluteAccuracy
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SegmentIntegral",Description = "SegmentIntegral")>] 
          segmentintegral : obj)
@@ -298,7 +298,7 @@ module SegmentIntegralFunction =
     *)
     [<ExcelFunction(Name="_SegmentIntegral_setMaxEvaluations", Description="Create a SegmentIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SegmentIntegral_setMaxEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SegmentIntegral",Description = "SegmentIntegral")>] 
          segmentintegral : obj)
@@ -340,7 +340,7 @@ module SegmentIntegralFunction =
     *)
     [<ExcelFunction(Name="_SegmentIntegral_value", Description="Create a SegmentIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SegmentIntegral_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SegmentIntegral",Description = "SegmentIntegral")>] 
          segmentintegral : obj)
@@ -391,9 +391,9 @@ module SegmentIntegralFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SegmentIntegral_Range", Description="Create a range of SegmentIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SegmentIntegral_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

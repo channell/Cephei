@@ -39,7 +39,7 @@ module ConstantGradHelperFunction =
     *)
     [<ExcelFunction(Name="_ConstantGradHelper", Description="Create a ConstantGradHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantGradHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ConstantGradHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="fPrev",Description = "double")>] 
          fPrev : obj)
@@ -100,7 +100,7 @@ module ConstantGradHelperFunction =
     *)
     [<ExcelFunction(Name="_ConstantGradHelper_fNext", Description="Create a ConstantGradHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantGradHelper_fNext
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantGradHelper",Description = "ConstantGradHelper")>] 
          constantgradhelper : obj)
@@ -136,7 +136,7 @@ module ConstantGradHelperFunction =
     *)
     [<ExcelFunction(Name="_ConstantGradHelper_primitive", Description="Create a ConstantGradHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantGradHelper_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantGradHelper",Description = "ConstantGradHelper")>] 
          constantgradhelper : obj)
@@ -178,7 +178,7 @@ module ConstantGradHelperFunction =
     *)
     [<ExcelFunction(Name="_ConstantGradHelper_value", Description="Create a ConstantGradHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantGradHelper_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantGradHelper",Description = "ConstantGradHelper")>] 
          constantgradhelper : obj)
@@ -217,9 +217,9 @@ module ConstantGradHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ConstantGradHelper_Range", Description="Create a range of ConstantGradHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantGradHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

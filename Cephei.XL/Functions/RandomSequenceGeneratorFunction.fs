@@ -39,7 +39,7 @@ module RandomSequenceGeneratorFunction =
     *)
     [<ExcelFunction(Name="_RandomSequenceGenerator_dimension", Description="Create a RandomSequenceGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RandomSequenceGenerator_dimension
-        ([<ExcelArgument(Name="Mnemonic",Description = "IRNG")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RandomSequenceGenerator",Description = "RandomSequenceGenerator")>] 
          randomsequencegenerator : obj)
@@ -75,7 +75,7 @@ module RandomSequenceGeneratorFunction =
     *)
     [<ExcelFunction(Name="_RandomSequenceGenerator_factory", Description="Create a RandomSequenceGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RandomSequenceGenerator_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "IRNG")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RandomSequenceGenerator",Description = "RandomSequenceGenerator")>] 
          randomsequencegenerator : obj)
@@ -123,7 +123,7 @@ module RandomSequenceGeneratorFunction =
     *)
     [<ExcelFunction(Name="_RandomSequenceGenerator_lastSequence", Description="Create a RandomSequenceGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RandomSequenceGenerator_lastSequence
-        ([<ExcelArgument(Name="Mnemonic",Description = "RandomSequenceGenerator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RandomSequenceGenerator",Description = "RandomSequenceGenerator")>] 
          randomsequencegenerator : obj)
@@ -159,7 +159,7 @@ module RandomSequenceGeneratorFunction =
     *)
     [<ExcelFunction(Name="_RandomSequenceGenerator_nextInt32Sequence", Description="Create a RandomSequenceGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RandomSequenceGenerator_nextInt32Sequence
-        ([<ExcelArgument(Name="Mnemonic",Description = "RandomSequenceGenerator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RandomSequenceGenerator",Description = "RandomSequenceGenerator")>] 
          randomsequencegenerator : obj)
@@ -195,7 +195,7 @@ module RandomSequenceGeneratorFunction =
     *)
     [<ExcelFunction(Name="_RandomSequenceGenerator_nextSequence", Description="Create a RandomSequenceGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RandomSequenceGenerator_nextSequence
-        ([<ExcelArgument(Name="Mnemonic",Description = "RandomSequenceGenerator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RandomSequenceGenerator",Description = "RandomSequenceGenerator")>] 
          randomsequencegenerator : obj)
@@ -231,7 +231,7 @@ module RandomSequenceGeneratorFunction =
     *)
     [<ExcelFunction(Name="_RandomSequenceGenerator", Description="Create a RandomSequenceGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RandomSequenceGenerator_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "RandomSequenceGenerator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="dimensionality",Description = "int")>] 
          dimensionality : obj)
@@ -274,7 +274,7 @@ module RandomSequenceGeneratorFunction =
     *)
     [<ExcelFunction(Name="_RandomSequenceGenerator1", Description="Create a RandomSequenceGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RandomSequenceGenerator_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "RandomSequenceGenerator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="dimensionality",Description = "int")>] 
          dimensionality : obj)
@@ -314,9 +314,9 @@ module RandomSequenceGeneratorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_RandomSequenceGenerator_Range", Description="Create a range of RandomSequenceGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RandomSequenceGenerator_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,7 +39,7 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess2", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "GarmanKohlagenProcess")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="x0",Description = "Quote")>] 
          x0 : obj)
@@ -94,7 +94,7 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess1", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "GarmanKohlagenProcess")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="x0",Description = "Quote")>] 
          x0 : obj)
@@ -104,7 +104,7 @@ module GarmanKohlagenProcessFunction =
          domesticRiskFreeTS : obj)
         ([<ExcelArgument(Name="blackVolTS",Description = "BlackVolTermStructure")>] 
          blackVolTS : obj)
-        ([<ExcelArgument(Name="d",Description = "GarmanKohlagenProcess")>] 
+        ([<ExcelArgument(Name="d",Description = "IDiscretization1D or empty")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -155,7 +155,7 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "GarmanKohlagenProcess")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="x0",Description = "Quote")>] 
          x0 : obj)
@@ -167,7 +167,7 @@ module GarmanKohlagenProcessFunction =
          blackVolTS : obj)
         ([<ExcelArgument(Name="localVolTS",Description = "LocalVolTermStructure")>] 
          localVolTS : obj)
-        ([<ExcelArgument(Name="d",Description = "GarmanKohlagenProcess")>] 
+        ([<ExcelArgument(Name="d",Description = "IDiscretization1D or empty")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -222,7 +222,7 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess_apply", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "BlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GarmanKohlagenProcess",Description = "GarmanKohlagenProcess")>] 
          garmankohlagenprocess : obj)
@@ -270,7 +270,7 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess_blackVolatility", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_blackVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "BlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GarmanKohlagenProcess",Description = "GarmanKohlagenProcess")>] 
          garmankohlagenprocess : obj)
@@ -306,7 +306,7 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess_diffusion", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GarmanKohlagenProcess",Description = "GarmanKohlagenProcess")>] 
          garmankohlagenprocess : obj)
@@ -354,7 +354,7 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess_dividendYield", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_dividendYield
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GarmanKohlagenProcess",Description = "GarmanKohlagenProcess")>] 
          garmankohlagenprocess : obj)
@@ -390,7 +390,7 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess_drift", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "LocalVolTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GarmanKohlagenProcess",Description = "GarmanKohlagenProcess")>] 
          garmankohlagenprocess : obj)
@@ -438,7 +438,7 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess_evolve", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_evolve
-        ([<ExcelArgument(Name="Mnemonic",Description = "LocalVolTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GarmanKohlagenProcess",Description = "GarmanKohlagenProcess")>] 
          garmankohlagenprocess : obj)
@@ -498,7 +498,7 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess_expectation", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_expectation
-        ([<ExcelArgument(Name="Mnemonic",Description = "LocalVolTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GarmanKohlagenProcess",Description = "GarmanKohlagenProcess")>] 
          garmankohlagenprocess : obj)
@@ -552,7 +552,7 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess_localVolatility", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_localVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "LocalVolTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GarmanKohlagenProcess",Description = "GarmanKohlagenProcess")>] 
          garmankohlagenprocess : obj)
@@ -588,7 +588,7 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess_riskFreeRate", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_riskFreeRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GarmanKohlagenProcess",Description = "GarmanKohlagenProcess")>] 
          garmankohlagenprocess : obj)
@@ -624,7 +624,7 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess_stateVariable", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_stateVariable
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GarmanKohlagenProcess",Description = "GarmanKohlagenProcess")>] 
          garmankohlagenprocess : obj)
@@ -660,7 +660,7 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess_stdDeviation", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_stdDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GarmanKohlagenProcess",Description = "GarmanKohlagenProcess")>] 
          garmankohlagenprocess : obj)
@@ -714,11 +714,11 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess_time", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GarmanKohlagenProcess",Description = "GarmanKohlagenProcess")>] 
          garmankohlagenprocess : obj)
-        ([<ExcelArgument(Name="d",Description = "Vector")>] 
+        ([<ExcelArgument(Name="d",Description = "Date or empty")>] 
          d : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -756,7 +756,7 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess_update", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GarmanKohlagenProcess",Description = "GarmanKohlagenProcess")>] 
          garmankohlagenprocess : obj)
@@ -792,7 +792,7 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess_variance", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GarmanKohlagenProcess",Description = "GarmanKohlagenProcess")>] 
          garmankohlagenprocess : obj)
@@ -846,7 +846,7 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess_x0", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_x0
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GarmanKohlagenProcess",Description = "GarmanKohlagenProcess")>] 
          garmankohlagenprocess : obj)
@@ -882,7 +882,7 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess_initialValues", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_initialValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GarmanKohlagenProcess",Description = "GarmanKohlagenProcess")>] 
          garmankohlagenprocess : obj)
@@ -918,7 +918,7 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess_size", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GarmanKohlagenProcess",Description = "GarmanKohlagenProcess")>] 
          garmankohlagenprocess : obj)
@@ -954,7 +954,7 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess_covariance", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GarmanKohlagenProcess",Description = "GarmanKohlagenProcess")>] 
          garmankohlagenprocess : obj)
@@ -1008,7 +1008,7 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess_factors", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_factors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GarmanKohlagenProcess",Description = "GarmanKohlagenProcess")>] 
          garmankohlagenprocess : obj)
@@ -1044,7 +1044,7 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess_registerWith", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GarmanKohlagenProcess",Description = "GarmanKohlagenProcess")>] 
          garmankohlagenprocess : obj)
@@ -1086,7 +1086,7 @@ module GarmanKohlagenProcessFunction =
     *)
     [<ExcelFunction(Name="_GarmanKohlagenProcess_unregisterWith", Description="Create a GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GarmanKohlagenProcess",Description = "GarmanKohlagenProcess")>] 
          garmankohlagenprocess : obj)
@@ -1125,9 +1125,9 @@ module GarmanKohlagenProcessFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GarmanKohlagenProcess_Range", Description="Create a range of GarmanKohlagenProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GarmanKohlagenProcess_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

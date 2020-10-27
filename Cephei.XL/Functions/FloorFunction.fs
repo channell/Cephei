@@ -39,11 +39,11 @@ module FloorFunction =
     *)
     [<ExcelFunction(Name="_Floor", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Floor")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="floatingLeg",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="floatingLeg",Description = "CashFlow range")>] 
          floatingLeg : obj)
-        ([<ExcelArgument(Name="exerciseRates",Description = "double")>] 
+        ([<ExcelArgument(Name="exerciseRates",Description = "double range")>] 
          exerciseRates : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
@@ -94,7 +94,7 @@ module FloorFunction =
     *)
     [<ExcelFunction(Name="_Floor_atmRate", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_atmRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Floor",Description = "Floor")>] 
          floor : obj)
@@ -136,7 +136,7 @@ module FloorFunction =
     *)
     [<ExcelFunction(Name="_Floor_capRates", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_capRates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Floor",Description = "Floor")>] 
          floor : obj)
@@ -172,7 +172,7 @@ module FloorFunction =
     *)
     [<ExcelFunction(Name="_Floor_floatingLeg", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_floatingLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Floor",Description = "Floor")>] 
          floor : obj)
@@ -208,7 +208,7 @@ module FloorFunction =
     *)
     [<ExcelFunction(Name="_Floor_floorRates", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_floorRates
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Floor",Description = "Floor")>] 
          floor : obj)
@@ -244,7 +244,7 @@ module FloorFunction =
     *)
     [<ExcelFunction(Name="_Floor_getType", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_getType
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Floor",Description = "Floor")>] 
          floor : obj)
@@ -280,7 +280,7 @@ module FloorFunction =
     *)
     [<ExcelFunction(Name="_Floor_impliedVolatility", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_impliedVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Floor",Description = "Floor")>] 
          floor : obj)
@@ -370,7 +370,7 @@ module FloorFunction =
     *)
     [<ExcelFunction(Name="_Floor_impliedVolatility1", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_impliedVolatility1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Floor",Description = "Floor")>] 
          floor : obj)
@@ -436,7 +436,7 @@ module FloorFunction =
     *)
     [<ExcelFunction(Name="_Floor_isExpired", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Floor",Description = "Floor")>] 
          floor : obj)
@@ -472,7 +472,7 @@ module FloorFunction =
     *)
     [<ExcelFunction(Name="_Floor_lastFloatingRateCoupon", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_lastFloatingRateCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Floor",Description = "Floor")>] 
          floor : obj)
@@ -508,7 +508,7 @@ module FloorFunction =
     *)
     [<ExcelFunction(Name="_Floor_maturityDate", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CapFloor")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Floor",Description = "Floor")>] 
          floor : obj)
@@ -544,7 +544,7 @@ module FloorFunction =
     *)
     [<ExcelFunction(Name="_Floor_optionlet", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_optionlet
-        ([<ExcelArgument(Name="Mnemonic",Description = "CapFloor")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Floor",Description = "Floor")>] 
          floor : obj)
@@ -586,7 +586,7 @@ module FloorFunction =
     *)
     [<ExcelFunction(Name="_Floor_startDate", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Floor",Description = "Floor")>] 
          floor : obj)
@@ -622,7 +622,7 @@ module FloorFunction =
     *)
     [<ExcelFunction(Name="_Floor_CASH", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Floor",Description = "Floor")>] 
          floor : obj)
@@ -658,7 +658,7 @@ module FloorFunction =
     *)
     [<ExcelFunction(Name="_Floor_errorEstimate", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Floor",Description = "Floor")>] 
          floor : obj)
@@ -694,7 +694,7 @@ module FloorFunction =
     *)
     [<ExcelFunction(Name="_Floor_NPV", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Floor",Description = "Floor")>] 
          floor : obj)
@@ -730,7 +730,7 @@ module FloorFunction =
     *)
     [<ExcelFunction(Name="_Floor_result", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Floor",Description = "Floor")>] 
          floor : obj)
@@ -772,7 +772,7 @@ module FloorFunction =
     *)
     [<ExcelFunction(Name="_Floor_setPricingEngine", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Floor",Description = "Floor")>] 
          floor : obj)
@@ -814,7 +814,7 @@ module FloorFunction =
     *)
     [<ExcelFunction(Name="_Floor_valuationDate", Description="Create a Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Floor",Description = "Floor")>] 
          floor : obj)
@@ -847,9 +847,9 @@ module FloorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Floor_Range", Description="Create a range of Floor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Floor_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

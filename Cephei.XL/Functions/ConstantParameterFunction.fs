@@ -39,7 +39,7 @@ module ConstantParameterFunction =
     *)
     [<ExcelFunction(Name="_ConstantParameter1", Description="Create a ConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantParameter_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "ConstantParameter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="value",Description = "double")>] 
          value : obj)
@@ -82,7 +82,7 @@ module ConstantParameterFunction =
     *)
     [<ExcelFunction(Name="_ConstantParameter", Description="Create a ConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantParameter_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ConstantParameter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Constraint",Description = "Constraint")>] 
          Constraint : obj)
@@ -119,7 +119,7 @@ module ConstantParameterFunction =
     *)
     [<ExcelFunction(Name="_ConstantParameter_constraint", Description="Create a ConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantParameter_constraint
-        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantParameter",Description = "ConstantParameter")>] 
          constantparameter : obj)
@@ -156,7 +156,7 @@ module ConstantParameterFunction =
     (*!! Impl unresolved
     [<ExcelFunction(Name="_ConstantParameter_implementation", Description="Create a ConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantParameter_implementation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantParameter",Description = "ConstantParameter")>] 
          constantparameter : obj)
@@ -193,7 +193,7 @@ module ConstantParameterFunction =
     *)
     [<ExcelFunction(Name="_ConstantParameter_parameters", Description="Create a ConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantParameter_parameters
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantParameter",Description = "ConstantParameter")>] 
          constantparameter : obj)
@@ -229,7 +229,7 @@ module ConstantParameterFunction =
     *)
     [<ExcelFunction(Name="_ConstantParameter_setParam", Description="Create a ConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantParameter_setParam
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantParameter",Description = "ConstantParameter")>] 
          constantparameter : obj)
@@ -277,7 +277,7 @@ module ConstantParameterFunction =
     *)
     [<ExcelFunction(Name="_ConstantParameter_size", Description="Create a ConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantParameter_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantParameter",Description = "ConstantParameter")>] 
          constantparameter : obj)
@@ -313,7 +313,7 @@ module ConstantParameterFunction =
     *)
     [<ExcelFunction(Name="_ConstantParameter_testParams", Description="Create a ConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantParameter_testParams
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantParameter",Description = "ConstantParameter")>] 
          constantparameter : obj)
@@ -355,7 +355,7 @@ module ConstantParameterFunction =
     *)
     [<ExcelFunction(Name="_ConstantParameter_value", Description="Create a ConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantParameter_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantParameter",Description = "ConstantParameter")>] 
          constantparameter : obj)
@@ -394,9 +394,9 @@ module ConstantParameterFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ConstantParameter_Range", Description="Create a range of ConstantParameter",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantParameter_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,11 +39,11 @@ module CapFunction =
     *)
     [<ExcelFunction(Name="_Cap", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Cap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="floatingLeg",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="floatingLeg",Description = "CashFlow range")>] 
          floatingLeg : obj)
-        ([<ExcelArgument(Name="exerciseRates",Description = "double")>] 
+        ([<ExcelArgument(Name="exerciseRates",Description = "double range")>] 
          exerciseRates : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
@@ -94,7 +94,7 @@ module CapFunction =
     *)
     [<ExcelFunction(Name="_Cap_atmRate", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_atmRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cap",Description = "Cap")>] 
          cap : obj)
@@ -136,7 +136,7 @@ module CapFunction =
     *)
     [<ExcelFunction(Name="_Cap_capRates", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_capRates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cap",Description = "Cap")>] 
          cap : obj)
@@ -172,7 +172,7 @@ module CapFunction =
     *)
     [<ExcelFunction(Name="_Cap_floatingLeg", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_floatingLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cap",Description = "Cap")>] 
          cap : obj)
@@ -208,7 +208,7 @@ module CapFunction =
     *)
     [<ExcelFunction(Name="_Cap_floorRates", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_floorRates
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cap",Description = "Cap")>] 
          cap : obj)
@@ -244,7 +244,7 @@ module CapFunction =
     *)
     [<ExcelFunction(Name="_Cap_getType", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_getType
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cap",Description = "Cap")>] 
          cap : obj)
@@ -280,7 +280,7 @@ module CapFunction =
     *)
     [<ExcelFunction(Name="_Cap_impliedVolatility", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_impliedVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cap",Description = "Cap")>] 
          cap : obj)
@@ -370,7 +370,7 @@ module CapFunction =
     *)
     [<ExcelFunction(Name="_Cap_impliedVolatility1", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_impliedVolatility1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cap",Description = "Cap")>] 
          cap : obj)
@@ -436,7 +436,7 @@ module CapFunction =
     *)
     [<ExcelFunction(Name="_Cap_isExpired", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cap",Description = "Cap")>] 
          cap : obj)
@@ -472,7 +472,7 @@ module CapFunction =
     *)
     [<ExcelFunction(Name="_Cap_lastFloatingRateCoupon", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_lastFloatingRateCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cap",Description = "Cap")>] 
          cap : obj)
@@ -508,7 +508,7 @@ module CapFunction =
     *)
     [<ExcelFunction(Name="_Cap_maturityDate", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CapFloor")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cap",Description = "Cap")>] 
          cap : obj)
@@ -544,7 +544,7 @@ module CapFunction =
     *)
     [<ExcelFunction(Name="_Cap_optionlet", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_optionlet
-        ([<ExcelArgument(Name="Mnemonic",Description = "CapFloor")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cap",Description = "Cap")>] 
          cap : obj)
@@ -586,7 +586,7 @@ module CapFunction =
     *)
     [<ExcelFunction(Name="_Cap_startDate", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cap",Description = "Cap")>] 
          cap : obj)
@@ -622,7 +622,7 @@ module CapFunction =
     *)
     [<ExcelFunction(Name="_Cap_CASH", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cap",Description = "Cap")>] 
          cap : obj)
@@ -658,7 +658,7 @@ module CapFunction =
     *)
     [<ExcelFunction(Name="_Cap_errorEstimate", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cap",Description = "Cap")>] 
          cap : obj)
@@ -694,7 +694,7 @@ module CapFunction =
     *)
     [<ExcelFunction(Name="_Cap_NPV", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cap",Description = "Cap")>] 
          cap : obj)
@@ -730,7 +730,7 @@ module CapFunction =
     *)
     [<ExcelFunction(Name="_Cap_result", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cap",Description = "Cap")>] 
          cap : obj)
@@ -772,7 +772,7 @@ module CapFunction =
     *)
     [<ExcelFunction(Name="_Cap_setPricingEngine", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cap",Description = "Cap")>] 
          cap : obj)
@@ -814,7 +814,7 @@ module CapFunction =
     *)
     [<ExcelFunction(Name="_Cap_valuationDate", Description="Create a Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Cap",Description = "Cap")>] 
          cap : obj)
@@ -847,9 +847,9 @@ module CapFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Cap_Range", Description="Create a range of Cap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Cap_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

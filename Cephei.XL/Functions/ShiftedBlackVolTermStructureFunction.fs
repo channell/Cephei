@@ -39,7 +39,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_maxDate", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -75,7 +75,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_maxStrike", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -111,7 +111,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_minStrike", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -147,7 +147,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ShiftedBlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="varianceOffset",Description = "double")>] 
          varianceOffset : obj)
@@ -190,7 +190,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_blackForwardVariance", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_blackForwardVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -250,7 +250,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_blackForwardVariance1", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_blackForwardVariance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -310,7 +310,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_blackForwardVol1", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_blackForwardVol1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -370,7 +370,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_blackForwardVol", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_blackForwardVol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -430,7 +430,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_blackVariance1", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_blackVariance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -484,7 +484,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_blackVariance", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_blackVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -538,7 +538,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_blackVol", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_blackVol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -592,7 +592,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_blackVol1", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_blackVol1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -646,7 +646,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_businessDayConvention", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -682,7 +682,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_optionDateFromTenor", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_optionDateFromTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -724,7 +724,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_calendar", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -760,7 +760,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_dayCounter", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -796,7 +796,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_maxTime", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -832,7 +832,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_referenceDate", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -868,7 +868,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_settlementDays", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -904,7 +904,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_timeFromReference", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -946,7 +946,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_update", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -982,7 +982,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_allowsExtrapolation", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -1018,7 +1018,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_disableExtrapolation", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -1060,7 +1060,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_enableExtrapolation", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -1102,7 +1102,7 @@ module ShiftedBlackVolTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_extrapolate", Description="Create a ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShiftedBlackVolTermStructure",Description = "ShiftedBlackVolTermStructure")>] 
          shiftedblackvoltermstructure : obj)
@@ -1135,9 +1135,9 @@ module ShiftedBlackVolTermStructureFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ShiftedBlackVolTermStructure_Range", Description="Create a range of ShiftedBlackVolTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShiftedBlackVolTermStructure_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

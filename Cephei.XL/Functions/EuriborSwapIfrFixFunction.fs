@@ -39,7 +39,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix2", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "EuriborSwapIfrFix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
@@ -76,7 +76,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "EuriborSwapIfrFix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
@@ -125,7 +125,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix1", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "EuriborSwapIfrFix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
@@ -168,7 +168,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_clone", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwapIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -210,7 +210,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_clone1", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_clone1
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwapIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -258,7 +258,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_clone2", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_clone2
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwapIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -300,7 +300,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_discountingTermStructure", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_discountingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -336,7 +336,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_exogenousDiscount", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_exogenousDiscount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -372,7 +372,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_fixedLegConvention", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_fixedLegConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -408,7 +408,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_fixedLegTenor", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_fixedLegTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -444,7 +444,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_forecastFixing", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -486,7 +486,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_forwardingTermStructure", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -522,7 +522,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_iborIndex", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_iborIndex
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -558,7 +558,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_maturityDate", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "VanillaSwap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -600,7 +600,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_underlyingSwap", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_underlyingSwap
-        ([<ExcelArgument(Name="Mnemonic",Description = "VanillaSwap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -642,7 +642,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_currency", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -678,7 +678,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_dayCounter", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -714,7 +714,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_familyName", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -750,7 +750,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_fixing", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -798,7 +798,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_fixingCalendar", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -834,7 +834,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_fixingDate", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -876,7 +876,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_fixingDays", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -912,7 +912,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_isValidFixingDate", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -954,7 +954,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_name", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -990,7 +990,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_pastFixing", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -1032,7 +1032,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_tenor", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -1068,7 +1068,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_update", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -1104,7 +1104,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_valueDate", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -1146,7 +1146,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_addFixing", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -1200,13 +1200,13 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_addFixings", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -1254,7 +1254,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_addFixings1", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -1302,7 +1302,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_allowsNativeFixings", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -1338,7 +1338,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_clearFixings", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -1374,7 +1374,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_registerWith", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -1416,7 +1416,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_timeSeries", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -1452,7 +1452,7 @@ module EuriborSwapIfrFixFunction =
     *)
     [<ExcelFunction(Name="_EuriborSwapIfrFix_unregisterWith", Description="Create a EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuriborSwapIfrFix",Description = "EuriborSwapIfrFix")>] 
          euriborswapifrfix : obj)
@@ -1491,9 +1491,9 @@ module EuriborSwapIfrFixFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_EuriborSwapIfrFix_Range", Description="Create a range of EuriborSwapIfrFix",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuriborSwapIfrFix_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

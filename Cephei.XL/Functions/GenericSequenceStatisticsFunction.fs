@@ -39,11 +39,11 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_add", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
-        ([<ExcelArgument(Name="Begin",Description = "double")>] 
+        ([<ExcelArgument(Name="Begin",Description = "double range")>] 
          Begin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,11 +81,11 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_add", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
-        ([<ExcelArgument(Name="Begin",Description = "double")>] 
+        ([<ExcelArgument(Name="Begin",Description = "double range")>] 
          Begin : obj)
         ([<ExcelArgument(Name="weight",Description = "double")>] 
          weight : obj)
@@ -129,7 +129,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_averageShortfall", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_averageShortfall
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -171,7 +171,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_correlation", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_correlation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -207,7 +207,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_covariance", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -243,7 +243,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_downsideDeviation", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_downsideDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "GenericSequenceStatistics")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -279,7 +279,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_downsideVariance", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_downsideVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "GenericSequenceStatistics")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -315,7 +315,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_errorEstimate", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "GenericSequenceStatistics")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -351,7 +351,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_expectedShortfall", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_expectedShortfall
-        ([<ExcelArgument(Name="Mnemonic",Description = "GenericSequenceStatistics")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -393,7 +393,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_gaussianAverageShortfall", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_gaussianAverageShortfall
-        ([<ExcelArgument(Name="Mnemonic",Description = "GenericSequenceStatistics")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -435,7 +435,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_gaussianExpectedShortfall", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_gaussianExpectedShortfall
-        ([<ExcelArgument(Name="Mnemonic",Description = "GenericSequenceStatistics")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -477,7 +477,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_gaussianPercentile", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_gaussianPercentile
-        ([<ExcelArgument(Name="Mnemonic",Description = "GenericSequenceStatistics")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -519,7 +519,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_gaussianPotentialUpside", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_gaussianPotentialUpside
-        ([<ExcelArgument(Name="Mnemonic",Description = "GenericSequenceStatistics")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -561,7 +561,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_gaussianShortfall", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_gaussianShortfall
-        ([<ExcelArgument(Name="Mnemonic",Description = "GenericSequenceStatistics")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -603,7 +603,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_gaussianValueAtRisk", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_gaussianValueAtRisk
-        ([<ExcelArgument(Name="Mnemonic",Description = "GenericSequenceStatistics")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -645,7 +645,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "GenericSequenceStatistics")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="dimension",Description = "int")>] 
          dimension : obj)
@@ -682,7 +682,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_kurtosis", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_kurtosis
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -718,7 +718,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_max", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_max
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -754,7 +754,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_mean", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_mean
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -790,7 +790,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_min", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_min
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -826,7 +826,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_percentile", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_percentile
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -868,7 +868,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_potentialUpside", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_potentialUpside
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -910,7 +910,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_regret", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_regret
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -952,7 +952,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_reset", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -994,7 +994,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_samples", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_samples
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -1030,7 +1030,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_semiDeviation", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_semiDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -1066,7 +1066,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_semiVariance", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_semiVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -1102,7 +1102,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_shortfall", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_shortfall
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -1144,7 +1144,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_size", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -1180,7 +1180,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_skewness", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_skewness
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -1216,7 +1216,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_standardDeviation", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_standardDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -1252,7 +1252,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_valueAtRisk", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_valueAtRisk
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -1294,7 +1294,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_variance", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -1330,7 +1330,7 @@ module GenericSequenceStatisticsFunction =
     *)
     [<ExcelFunction(Name="_GenericSequenceStatistics_weightSum", Description="Create a GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_weightSum
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GenericSequenceStatistics",Description = "GenericSequenceStatistics")>] 
          genericsequencestatistics : obj)
@@ -1363,9 +1363,9 @@ module GenericSequenceStatisticsFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GenericSequenceStatistics_Range", Description="Create a range of GenericSequenceStatistics",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GenericSequenceStatistics_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

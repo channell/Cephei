@@ -39,7 +39,7 @@ module GaussHyperbolicPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussHyperbolicPolynomial_alpha", Description="Create a GaussHyperbolicPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHyperbolicPolynomial_alpha
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussHyperbolicPolynomial",Description = "GaussHyperbolicPolynomial")>] 
          gausshyperbolicpolynomial : obj)
@@ -81,7 +81,7 @@ module GaussHyperbolicPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussHyperbolicPolynomial_beta", Description="Create a GaussHyperbolicPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHyperbolicPolynomial_beta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussHyperbolicPolynomial",Description = "GaussHyperbolicPolynomial")>] 
          gausshyperbolicpolynomial : obj)
@@ -123,7 +123,7 @@ module GaussHyperbolicPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussHyperbolicPolynomial_mu_0", Description="Create a GaussHyperbolicPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHyperbolicPolynomial_mu_0
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussHyperbolicPolynomial",Description = "GaussHyperbolicPolynomial")>] 
          gausshyperbolicpolynomial : obj)
@@ -159,7 +159,7 @@ module GaussHyperbolicPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussHyperbolicPolynomial_w", Description="Create a GaussHyperbolicPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHyperbolicPolynomial_w
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussHyperbolicPolynomial",Description = "GaussHyperbolicPolynomial")>] 
          gausshyperbolicpolynomial : obj)
@@ -201,7 +201,7 @@ module GaussHyperbolicPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussHyperbolicPolynomial_value", Description="Create a GaussHyperbolicPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHyperbolicPolynomial_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussHyperbolicPolynomial",Description = "GaussHyperbolicPolynomial")>] 
          gausshyperbolicpolynomial : obj)
@@ -249,7 +249,7 @@ module GaussHyperbolicPolynomialFunction =
     *)
     [<ExcelFunction(Name="_GaussHyperbolicPolynomial_weightedValue", Description="Create a GaussHyperbolicPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHyperbolicPolynomial_weightedValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussHyperbolicPolynomial",Description = "GaussHyperbolicPolynomial")>] 
          gausshyperbolicpolynomial : obj)
@@ -294,9 +294,9 @@ module GaussHyperbolicPolynomialFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GaussHyperbolicPolynomial_Range", Description="Create a range of GaussHyperbolicPolynomial",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussHyperbolicPolynomial_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

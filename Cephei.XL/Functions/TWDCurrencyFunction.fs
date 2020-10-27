@@ -39,7 +39,7 @@ module TWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TWDCurrency", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "TWDCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module TWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TWDCurrency_code", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="TWDCurrency",Description = "TWDCurrency")>] 
          twdcurrency : obj)
@@ -106,7 +106,7 @@ module TWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TWDCurrency_empty", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="TWDCurrency",Description = "TWDCurrency")>] 
          twdcurrency : obj)
@@ -142,7 +142,7 @@ module TWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TWDCurrency_Equals", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="TWDCurrency",Description = "TWDCurrency")>] 
          twdcurrency : obj)
@@ -184,7 +184,7 @@ module TWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TWDCurrency_format", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="TWDCurrency",Description = "TWDCurrency")>] 
          twdcurrency : obj)
@@ -220,7 +220,7 @@ module TWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TWDCurrency_fractionsPerUnit", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="TWDCurrency",Description = "TWDCurrency")>] 
          twdcurrency : obj)
@@ -256,7 +256,7 @@ module TWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TWDCurrency_fractionSymbol", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="TWDCurrency",Description = "TWDCurrency")>] 
          twdcurrency : obj)
@@ -292,7 +292,7 @@ module TWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TWDCurrency_name", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="TWDCurrency",Description = "TWDCurrency")>] 
          twdcurrency : obj)
@@ -328,7 +328,7 @@ module TWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TWDCurrency_numericCode", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="TWDCurrency",Description = "TWDCurrency")>] 
          twdcurrency : obj)
@@ -364,7 +364,7 @@ module TWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TWDCurrency_rounding", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="TWDCurrency",Description = "TWDCurrency")>] 
          twdcurrency : obj)
@@ -400,7 +400,7 @@ module TWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TWDCurrency_symbol", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="TWDCurrency",Description = "TWDCurrency")>] 
          twdcurrency : obj)
@@ -436,7 +436,7 @@ module TWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TWDCurrency_ToString", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="TWDCurrency",Description = "TWDCurrency")>] 
          twdcurrency : obj)
@@ -472,7 +472,7 @@ module TWDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_TWDCurrency_triangulationCurrency", Description="Create a TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="TWDCurrency",Description = "TWDCurrency")>] 
          twdcurrency : obj)
@@ -505,9 +505,9 @@ module TWDCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_TWDCurrency_Range", Description="Create a range of TWDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let TWDCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

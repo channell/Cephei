@@ -39,7 +39,7 @@ module InstrumentFunction =
     *)
     [<ExcelFunction(Name="_Instrument_CASH", Description="Create a Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Instrument",Description = "Instrument")>] 
          instrument : obj)
@@ -75,7 +75,7 @@ module InstrumentFunction =
     *)
     [<ExcelFunction(Name="_Instrument_errorEstimate", Description="Create a Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Instrument",Description = "Instrument")>] 
          instrument : obj)
@@ -111,7 +111,7 @@ module InstrumentFunction =
     *)
     [<ExcelFunction(Name="_Instrument_isExpired", Description="Create a Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Instrument",Description = "Instrument")>] 
          instrument : obj)
@@ -147,7 +147,7 @@ module InstrumentFunction =
     *)
     [<ExcelFunction(Name="_Instrument_NPV", Description="Create a Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Instrument",Description = "Instrument")>] 
          instrument : obj)
@@ -183,7 +183,7 @@ module InstrumentFunction =
     *)
     [<ExcelFunction(Name="_Instrument_result", Description="Create a Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Instrument",Description = "Instrument")>] 
          instrument : obj)
@@ -225,7 +225,7 @@ module InstrumentFunction =
     *)
     [<ExcelFunction(Name="_Instrument_setPricingEngine", Description="Create a Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Instrument",Description = "Instrument")>] 
          instrument : obj)
@@ -267,7 +267,7 @@ module InstrumentFunction =
     *)
     [<ExcelFunction(Name="_Instrument_valuationDate", Description="Create a Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Instrument",Description = "Instrument")>] 
          instrument : obj)
@@ -300,9 +300,9 @@ module InstrumentFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Instrument_Range", Description="Create a range of Instrument",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Instrument_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

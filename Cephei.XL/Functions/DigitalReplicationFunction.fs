@@ -39,11 +39,11 @@ module DigitalReplicationFunction =
     *)
     [<ExcelFunction(Name="_DigitalReplication", Description="Create a DigitalReplication",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalReplication_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalReplication")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="t",Description = "DigitalReplication")>] 
+        ([<ExcelArgument(Name="t",Description = "Replication.Type: Sub, Central, Super or empty")>] 
          t : obj)
-        ([<ExcelArgument(Name="gap",Description = "DigitalReplication")>] 
+        ([<ExcelArgument(Name="gap",Description = "double or empty")>] 
          gap : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -82,7 +82,7 @@ module DigitalReplicationFunction =
     *)
     [<ExcelFunction(Name="_DigitalReplication_gap", Description="Create a DigitalReplication",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalReplication_gap
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalReplication",Description = "DigitalReplication")>] 
          digitalreplication : obj)
@@ -118,7 +118,7 @@ module DigitalReplicationFunction =
     *)
     [<ExcelFunction(Name="_DigitalReplication_replicationType", Description="Create a DigitalReplication",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalReplication_replicationType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalReplication",Description = "DigitalReplication")>] 
          digitalreplication : obj)
@@ -151,9 +151,9 @@ module DigitalReplicationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DigitalReplication_Range", Description="Create a range of DigitalReplication",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalReplication_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

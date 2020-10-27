@@ -39,7 +39,7 @@ module ProportionalNotionalRiskFunction =
     *)
     [<ExcelFunction(Name="_ProportionalNotionalRisk", Description="Create a ProportionalNotionalRisk",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProportionalNotionalRisk_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ProportionalNotionalRisk")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="paymentOffset",Description = "EventPaymentOffset")>] 
          paymentOffset : obj)
@@ -88,11 +88,11 @@ module ProportionalNotionalRiskFunction =
     *)
     [<ExcelFunction(Name="_ProportionalNotionalRisk_updatePath", Description="Create a ProportionalNotionalRisk",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProportionalNotionalRisk_updatePath
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ProportionalNotionalRisk",Description = "ProportionalNotionalRisk")>] 
          proportionalnotionalrisk : obj)
-        ([<ExcelArgument(Name="events",Description = "Date,double")>] 
+        ([<ExcelArgument(Name="events",Description = "Date,double range")>] 
          events : obj)
         ([<ExcelArgument(Name="path",Description = "NotionalPath")>] 
          path : obj)
@@ -133,9 +133,9 @@ module ProportionalNotionalRiskFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ProportionalNotionalRisk_Range", Description="Create a range of ProportionalNotionalRisk",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ProportionalNotionalRisk_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,7 +39,7 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_diffusion", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
@@ -87,7 +87,7 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_drift", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
@@ -135,7 +135,7 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_getForwardMeasureTime", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_getForwardMeasureTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
@@ -171,7 +171,7 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_initialValues", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_initialValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
@@ -207,7 +207,7 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_setForwardMeasureTime", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_setForwardMeasureTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
@@ -249,7 +249,7 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_size", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
@@ -285,7 +285,7 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_apply", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
@@ -333,7 +333,7 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_covariance", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
@@ -387,7 +387,7 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_evolve", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_evolve
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
@@ -447,7 +447,7 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_expectation", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_expectation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
@@ -501,7 +501,7 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_factors", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_factors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
@@ -537,7 +537,7 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_registerWith", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
@@ -579,7 +579,7 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_stdDeviation", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_stdDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
@@ -633,7 +633,7 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_time", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
@@ -675,7 +675,7 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_unregisterWith", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
@@ -717,7 +717,7 @@ module ForwardMeasureProcessFunction =
     *)
     [<ExcelFunction(Name="_ForwardMeasureProcess_update", Description="Create a ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardMeasureProcess",Description = "ForwardMeasureProcess")>] 
          forwardmeasureprocess : obj)
@@ -750,9 +750,9 @@ module ForwardMeasureProcessFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ForwardMeasureProcess_Range", Description="Create a range of ForwardMeasureProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardMeasureProcess_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

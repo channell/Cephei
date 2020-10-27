@@ -39,7 +39,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor1", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "JPYLibor")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
@@ -82,7 +82,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "JPYLibor")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="tenor",Description = "Period")>] 
          tenor : obj)
@@ -119,7 +119,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_clone", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -161,7 +161,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_maturityDate", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -203,7 +203,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_valueDate", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -245,7 +245,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_businessDayConvention", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -281,7 +281,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_endOfMonth", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -317,7 +317,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_forecastFixing1", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -371,7 +371,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_forecastFixing", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -413,7 +413,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_forwardingTermStructure", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -449,7 +449,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_currency", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -485,7 +485,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_dayCounter", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -521,7 +521,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_familyName", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -557,7 +557,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_fixing", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -605,7 +605,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_fixingCalendar", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -641,7 +641,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_fixingDate", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -683,7 +683,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_fixingDays", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -719,7 +719,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_isValidFixingDate", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -761,7 +761,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_name", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -797,7 +797,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_pastFixing", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -839,7 +839,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_tenor", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -875,7 +875,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_update", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -911,7 +911,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_addFixing", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -965,13 +965,13 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_addFixings", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -1019,7 +1019,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_addFixings1", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -1067,7 +1067,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_allowsNativeFixings", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -1103,7 +1103,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_clearFixings", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -1139,7 +1139,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_registerWith", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -1181,7 +1181,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_timeSeries", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -1217,7 +1217,7 @@ module JPYLiborFunction =
     *)
     [<ExcelFunction(Name="_JPYLibor_unregisterWith", Description="Create a JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYLibor",Description = "JPYLibor")>] 
          jpylibor : obj)
@@ -1256,9 +1256,9 @@ module JPYLiborFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_JPYLibor_Range", Description="Create a range of JPYLibor",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYLibor_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -41,7 +41,7 @@ module GaussKronrodAdaptiveFunction =
     *)
     [<ExcelFunction(Name="_GaussKronrodAdaptive", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodAdaptive_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "GaussKronrodAdaptive")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="absoluteAccuracy",Description = "double")>] 
          absoluteAccuracy : obj)
@@ -84,7 +84,7 @@ module GaussKronrodAdaptiveFunction =
     *)
     [<ExcelFunction(Name="_GaussKronrodAdaptive_absoluteAccuracy", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodAdaptive_absoluteAccuracy
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussKronrodAdaptive",Description = "GaussKronrodAdaptive")>] 
          gausskronrodadaptive : obj)
@@ -120,7 +120,7 @@ module GaussKronrodAdaptiveFunction =
     *)
     [<ExcelFunction(Name="_GaussKronrodAdaptive_absoluteError", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodAdaptive_absoluteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussKronrodAdaptive",Description = "GaussKronrodAdaptive")>] 
          gausskronrodadaptive : obj)
@@ -156,7 +156,7 @@ module GaussKronrodAdaptiveFunction =
     *)
     [<ExcelFunction(Name="_GaussKronrodAdaptive_integrationSuccess", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodAdaptive_integrationSuccess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussKronrodAdaptive",Description = "GaussKronrodAdaptive")>] 
          gausskronrodadaptive : obj)
@@ -192,7 +192,7 @@ module GaussKronrodAdaptiveFunction =
     *)
     [<ExcelFunction(Name="_GaussKronrodAdaptive_maxEvaluations", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodAdaptive_maxEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussKronrodAdaptive",Description = "GaussKronrodAdaptive")>] 
          gausskronrodadaptive : obj)
@@ -228,7 +228,7 @@ module GaussKronrodAdaptiveFunction =
     *)
     [<ExcelFunction(Name="_GaussKronrodAdaptive_numberOfEvaluations", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodAdaptive_numberOfEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussKronrodAdaptive",Description = "GaussKronrodAdaptive")>] 
          gausskronrodadaptive : obj)
@@ -264,7 +264,7 @@ module GaussKronrodAdaptiveFunction =
     *)
     [<ExcelFunction(Name="_GaussKronrodAdaptive_setAbsoluteAccuracy", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodAdaptive_setAbsoluteAccuracy
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussKronrodAdaptive",Description = "GaussKronrodAdaptive")>] 
          gausskronrodadaptive : obj)
@@ -306,7 +306,7 @@ module GaussKronrodAdaptiveFunction =
     *)
     [<ExcelFunction(Name="_GaussKronrodAdaptive_setMaxEvaluations", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodAdaptive_setMaxEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussKronrodAdaptive",Description = "GaussKronrodAdaptive")>] 
          gausskronrodadaptive : obj)
@@ -348,7 +348,7 @@ module GaussKronrodAdaptiveFunction =
     *)
     [<ExcelFunction(Name="_GaussKronrodAdaptive_value", Description="Create a GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodAdaptive_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussKronrodAdaptive",Description = "GaussKronrodAdaptive")>] 
          gausskronrodadaptive : obj)
@@ -399,9 +399,9 @@ module GaussKronrodAdaptiveFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GaussKronrodAdaptive_Range", Description="Create a range of GaussKronrodAdaptive",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussKronrodAdaptive_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

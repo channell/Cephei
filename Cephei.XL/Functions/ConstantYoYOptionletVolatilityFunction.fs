@@ -39,7 +39,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ConstantYoYOptionletVolatility")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="v",Description = "double")>] 
          v : obj)
@@ -57,9 +57,9 @@ module ConstantYoYOptionletVolatilityFunction =
          frequency : obj)
         ([<ExcelArgument(Name="indexIsInterpolated",Description = "bool")>] 
          indexIsInterpolated : obj)
-        ([<ExcelArgument(Name="minStrike",Description = "ConstantYoYOptionletVolatility")>] 
+        ([<ExcelArgument(Name="minStrike",Description = "double or empty")>] 
          minStrike : obj)
-        ([<ExcelArgument(Name="maxStrike",Description = "ConstantYoYOptionletVolatility")>] 
+        ([<ExcelArgument(Name="maxStrike",Description = "double or empty")>] 
          maxStrike : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -130,7 +130,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_maxDate", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -166,7 +166,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_maxStrike", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -202,7 +202,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_minStrike", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -238,7 +238,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_baseDate", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_baseDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -274,7 +274,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_baseLevel", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_baseLevel
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -310,7 +310,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_frequency", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -346,7 +346,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_indexIsInterpolated", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_indexIsInterpolated
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -382,7 +382,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_observationLag", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_observationLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -418,7 +418,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_timeFromBase", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_timeFromBase
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -466,7 +466,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_timeFromBase1", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_timeFromBase1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -508,7 +508,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_totalVariance", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_totalVariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -562,7 +562,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_totalVariance4", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_totalVariance4
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -622,7 +622,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_totalVariance5", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_totalVariance5
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -670,7 +670,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_totalVariance2", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_totalVariance2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -718,7 +718,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_totalVariance3", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_totalVariance3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -772,7 +772,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_totalVariance1", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_totalVariance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -832,7 +832,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_volatility2", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_volatility2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -886,7 +886,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_volatility4", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_volatility4
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -934,7 +934,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_volatility", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -994,7 +994,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_volatility5", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_volatility5
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -1042,7 +1042,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_volatility1", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_volatility1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -1096,7 +1096,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_volatility3", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_volatility3
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -1156,7 +1156,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_businessDayConvention", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -1192,7 +1192,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_optionDateFromTenor", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_optionDateFromTenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -1234,7 +1234,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_calendar", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -1270,7 +1270,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_dayCounter", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -1306,7 +1306,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_maxTime", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -1342,7 +1342,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_referenceDate", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -1378,7 +1378,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_settlementDays", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -1414,7 +1414,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_timeFromReference", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_timeFromReference
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -1456,7 +1456,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_update", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -1492,7 +1492,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_allowsExtrapolation", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -1528,7 +1528,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_disableExtrapolation", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -1570,7 +1570,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_enableExtrapolation", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -1612,7 +1612,7 @@ module ConstantYoYOptionletVolatilityFunction =
     *)
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_extrapolate", Description="Create a ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ConstantYoYOptionletVolatility",Description = "ConstantYoYOptionletVolatility")>] 
          constantyoyoptionletvolatility : obj)
@@ -1645,9 +1645,9 @@ module ConstantYoYOptionletVolatilityFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ConstantYoYOptionletVolatility_Range", Description="Create a range of ConstantYoYOptionletVolatility",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ConstantYoYOptionletVolatility_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

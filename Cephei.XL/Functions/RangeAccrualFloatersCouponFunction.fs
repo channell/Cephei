@@ -39,7 +39,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_endTime", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_endTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -75,7 +75,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_lowerTrigger", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_lowerTrigger
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -111,7 +111,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_observationDates", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_observationDates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -147,7 +147,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_observationsNo", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_observationsNo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -183,7 +183,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_observationsSchedule", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_observationsSchedule
-        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -219,7 +219,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_observationTimes", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_observationTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "RangeAccrualFloatersCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -255,7 +255,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_priceWithoutOptionality", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_priceWithoutOptionality
-        ([<ExcelArgument(Name="Mnemonic",Description = "RangeAccrualFloatersCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -297,7 +297,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "RangeAccrualFloatersCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="paymentDate",Description = "Date")>] 
          paymentDate : obj)
@@ -412,7 +412,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_startTime", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_startTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -448,7 +448,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_upperTrigger", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_upperTrigger
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -484,7 +484,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_accruedAmount", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_accruedAmount
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -526,7 +526,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_adjustedFixing", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_adjustedFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -562,7 +562,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_amount", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_amount
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -598,7 +598,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_convexityAdjustment", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_convexityAdjustment
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -634,7 +634,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_dayCounter", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -670,7 +670,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_factory", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -778,7 +778,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_fixingDate", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -814,7 +814,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_fixingDays", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -850,7 +850,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_gearing", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_gearing
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -886,7 +886,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_index", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_index
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -922,7 +922,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_indexFixing", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_indexFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -958,7 +958,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_isInArrears", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_isInArrears
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -994,7 +994,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_price", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_price
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1036,7 +1036,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_pricer", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_pricer
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1072,7 +1072,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_rate", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_rate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1108,7 +1108,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_setPricer", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_setPricer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1150,7 +1150,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_spread", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_spread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1186,7 +1186,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_update", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1222,7 +1222,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_accrualDays", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_accrualDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1258,7 +1258,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_accrualEndDate", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_accrualEndDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1294,7 +1294,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_accrualPeriod", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_accrualPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1330,7 +1330,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_accrualStartDate", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_accrualStartDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1366,7 +1366,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_accruedDays", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_accruedDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1408,7 +1408,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_accruedPeriod", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_accruedPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1450,7 +1450,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_date", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1486,7 +1486,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_exCouponDate", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_exCouponDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1522,7 +1522,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_nominal", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_nominal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1558,7 +1558,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_referencePeriodEnd", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_referencePeriodEnd
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1594,7 +1594,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_referencePeriodStart", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_referencePeriodStart
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1630,7 +1630,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_CompareTo", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_CompareTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1672,7 +1672,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_Equals", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1714,7 +1714,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_hasOccurred", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1762,7 +1762,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_tradingExCoupon", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_tradingExCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1804,7 +1804,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_accept", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1846,7 +1846,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_registerWith", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1888,7 +1888,7 @@ module RangeAccrualFloatersCouponFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_unregisterWith", Description="Create a RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualFloatersCoupon",Description = "RangeAccrualFloatersCoupon")>] 
          rangeaccrualfloaterscoupon : obj)
@@ -1927,9 +1927,9 @@ module RangeAccrualFloatersCouponFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_RangeAccrualFloatersCoupon_Range", Description="Create a range of RangeAccrualFloatersCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualFloatersCoupon_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

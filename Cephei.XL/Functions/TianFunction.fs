@@ -39,7 +39,7 @@ module TianFunction =
     *)
     [<ExcelFunction(Name="_Tian_factory", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "Tian")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Tian",Description = "Tian")>] 
          tian : obj)
@@ -99,7 +99,7 @@ module TianFunction =
     *)
     [<ExcelFunction(Name="_Tian_probability", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_probability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Tian")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Tian",Description = "Tian")>] 
          tian : obj)
@@ -153,7 +153,7 @@ module TianFunction =
     *)
     [<ExcelFunction(Name="_Tian1", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Tian")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,7 +184,7 @@ module TianFunction =
     *)
     [<ExcelFunction(Name="_Tian", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Tian")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
@@ -239,7 +239,7 @@ module TianFunction =
     *)
     [<ExcelFunction(Name="_Tian_underlying", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_underlying
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Tian",Description = "Tian")>] 
          tian : obj)
@@ -287,7 +287,7 @@ module TianFunction =
     *)
     [<ExcelFunction(Name="_Tian_descendant", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_descendant
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Tian",Description = "Tian")>] 
          tian : obj)
@@ -341,7 +341,7 @@ module TianFunction =
     *)
     [<ExcelFunction(Name="_Tian_size", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Tian",Description = "Tian")>] 
          tian : obj)
@@ -383,7 +383,7 @@ module TianFunction =
     *)
     [<ExcelFunction(Name="_Tian_columns", Description="Create a Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_columns
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Tian",Description = "Tian")>] 
          tian : obj)
@@ -416,9 +416,9 @@ module TianFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Tian_Range", Description="Create a range of Tian",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Tian_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,15 +39,15 @@ module FDDividendAmericanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDDividendAmericanEngine_factory", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "IFDEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDDividendAmericanEngine",Description = "FDDividendAmericanEngine")>] 
          fddividendamericanengine : obj)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="timeSteps",Description = "IFDEngine")>] 
+        ([<ExcelArgument(Name="timeSteps",Description = "int or empty")>] 
          timeSteps : obj)
-        ([<ExcelArgument(Name="gridPoints",Description = "IFDEngine")>] 
+        ([<ExcelArgument(Name="gridPoints",Description = "int or empty")>] 
          gridPoints : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -93,15 +93,15 @@ module FDDividendAmericanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDDividendAmericanEngine", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDDividendAmericanEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="timeSteps",Description = "FDDividendAmericanEngine")>] 
+        ([<ExcelArgument(Name="timeSteps",Description = "int or empty")>] 
          timeSteps : obj)
-        ([<ExcelArgument(Name="gridPoints",Description = "FDDividendAmericanEngine")>] 
+        ([<ExcelArgument(Name="gridPoints",Description = "int or empty")>] 
          gridPoints : obj)
-        ([<ExcelArgument(Name="timeDependent",Description = "FDDividendAmericanEngine")>] 
+        ([<ExcelArgument(Name="timeDependent",Description = "bool or empty")>] 
          timeDependent : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,7 +148,7 @@ module FDDividendAmericanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDDividendAmericanEngine1", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDDividendAmericanEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -180,7 +180,7 @@ module FDDividendAmericanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDDividendAmericanEngine_registerWith", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDDividendAmericanEngine",Description = "FDDividendAmericanEngine")>] 
          fddividendamericanengine : obj)
@@ -222,7 +222,7 @@ module FDDividendAmericanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDDividendAmericanEngine_reset", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDDividendAmericanEngine",Description = "FDDividendAmericanEngine")>] 
          fddividendamericanengine : obj)
@@ -258,7 +258,7 @@ module FDDividendAmericanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDDividendAmericanEngine_unregisterWith", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDDividendAmericanEngine",Description = "FDDividendAmericanEngine")>] 
          fddividendamericanengine : obj)
@@ -300,7 +300,7 @@ module FDDividendAmericanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDDividendAmericanEngine_update", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDDividendAmericanEngine",Description = "FDDividendAmericanEngine")>] 
          fddividendamericanengine : obj)
@@ -336,7 +336,7 @@ module FDDividendAmericanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDDividendAmericanEngine_ensureStrikeInGrid", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_ensureStrikeInGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDDividendAmericanEngine",Description = "FDDividendAmericanEngine")>] 
          fddividendamericanengine : obj)
@@ -372,7 +372,7 @@ module FDDividendAmericanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDDividendAmericanEngine_getResidualTime", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_getResidualTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDDividendAmericanEngine",Description = "FDDividendAmericanEngine")>] 
          fddividendamericanengine : obj)
@@ -408,7 +408,7 @@ module FDDividendAmericanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDDividendAmericanEngine_grid", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_grid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDDividendAmericanEngine",Description = "FDDividendAmericanEngine")>] 
          fddividendamericanengine : obj)
@@ -444,7 +444,7 @@ module FDDividendAmericanEngineFunction =
     *)
     [<ExcelFunction(Name="_FDDividendAmericanEngine_intrinsicValues_", Description="Create a FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_intrinsicValues_
-        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDDividendAmericanEngine",Description = "FDDividendAmericanEngine")>] 
          fddividendamericanengine : obj)
@@ -477,9 +477,9 @@ module FDDividendAmericanEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FDDividendAmericanEngine_Range", Description="Create a range of FDDividendAmericanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDDividendAmericanEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

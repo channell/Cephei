@@ -39,7 +39,7 @@ module GMRESResultFunction =
     *)
     [<ExcelFunction(Name="_GMRESResult_Errors", Description="Create a GMRESResult",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GMRESResult_Errors
-        ([<ExcelArgument(Name="Mnemonic",Description = "GMRESResult")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GMRESResult",Description = "GMRESResult")>] 
          gmresresult : obj)
@@ -75,9 +75,9 @@ module GMRESResultFunction =
     *)
     [<ExcelFunction(Name="_GMRESResult", Description="Create a GMRESResult",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GMRESResult_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "GMRESResult")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="e",Description = "double")>] 
+        ([<ExcelArgument(Name="e",Description = "double range")>] 
          e : obj)
         ([<ExcelArgument(Name="xx",Description = "Vector")>] 
          xx : obj)
@@ -118,7 +118,7 @@ module GMRESResultFunction =
     *)
     [<ExcelFunction(Name="_GMRESResult_X", Description="Create a GMRESResult",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GMRESResult_X
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GMRESResult",Description = "GMRESResult")>] 
          gmresresult : obj)
@@ -151,9 +151,9 @@ module GMRESResultFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GMRESResult_Range", Description="Create a range of GMRESResult",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GMRESResult_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,17 +39,17 @@ module MixedLinearMonotonicParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearMonotonicParabolic", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "MixedLinearMonotonicParabolic")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double range")>] 
          xBegin : obj)
         ([<ExcelArgument(Name="xEnd",Description = "int")>] 
          xEnd : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double range")>] 
          yBegin : obj)
         ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
-        ([<ExcelArgument(Name="behavior",Description = "MixedLinearMonotonicParabolic")>] 
+        ([<ExcelArgument(Name="behavior",Description = "Behavior: ShareRanges, SplitRanges or empty")>] 
          behavior : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -100,7 +100,7 @@ module MixedLinearMonotonicParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_derivative", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearMonotonicParabolic",Description = "MixedLinearMonotonicParabolic")>] 
          mixedlinearmonotonicparabolic : obj)
@@ -148,7 +148,7 @@ module MixedLinearMonotonicParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_empty", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearMonotonicParabolic",Description = "MixedLinearMonotonicParabolic")>] 
          mixedlinearmonotonicparabolic : obj)
@@ -184,7 +184,7 @@ module MixedLinearMonotonicParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_primitive", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearMonotonicParabolic",Description = "MixedLinearMonotonicParabolic")>] 
          mixedlinearmonotonicparabolic : obj)
@@ -232,7 +232,7 @@ module MixedLinearMonotonicParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_secondDerivative", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_secondDerivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearMonotonicParabolic",Description = "MixedLinearMonotonicParabolic")>] 
          mixedlinearmonotonicparabolic : obj)
@@ -280,7 +280,7 @@ module MixedLinearMonotonicParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_update", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearMonotonicParabolic",Description = "MixedLinearMonotonicParabolic")>] 
          mixedlinearmonotonicparabolic : obj)
@@ -316,7 +316,7 @@ module MixedLinearMonotonicParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_value1", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearMonotonicParabolic",Description = "MixedLinearMonotonicParabolic")>] 
          mixedlinearmonotonicparabolic : obj)
@@ -364,7 +364,7 @@ module MixedLinearMonotonicParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_value", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearMonotonicParabolic",Description = "MixedLinearMonotonicParabolic")>] 
          mixedlinearmonotonicparabolic : obj)
@@ -406,7 +406,7 @@ module MixedLinearMonotonicParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_xMax", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_xMax
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearMonotonicParabolic",Description = "MixedLinearMonotonicParabolic")>] 
          mixedlinearmonotonicparabolic : obj)
@@ -442,7 +442,7 @@ module MixedLinearMonotonicParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_xMin", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_xMin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearMonotonicParabolic",Description = "MixedLinearMonotonicParabolic")>] 
          mixedlinearmonotonicparabolic : obj)
@@ -478,7 +478,7 @@ module MixedLinearMonotonicParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_allowsExtrapolation", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearMonotonicParabolic",Description = "MixedLinearMonotonicParabolic")>] 
          mixedlinearmonotonicparabolic : obj)
@@ -514,7 +514,7 @@ module MixedLinearMonotonicParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_disableExtrapolation", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearMonotonicParabolic",Description = "MixedLinearMonotonicParabolic")>] 
          mixedlinearmonotonicparabolic : obj)
@@ -556,7 +556,7 @@ module MixedLinearMonotonicParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_enableExtrapolation", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearMonotonicParabolic",Description = "MixedLinearMonotonicParabolic")>] 
          mixedlinearmonotonicparabolic : obj)
@@ -598,7 +598,7 @@ module MixedLinearMonotonicParabolicFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_extrapolate", Description="Create a MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearMonotonicParabolic",Description = "MixedLinearMonotonicParabolic")>] 
          mixedlinearmonotonicparabolic : obj)
@@ -631,9 +631,9 @@ module MixedLinearMonotonicParabolicFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MixedLinearMonotonicParabolic_Range", Description="Create a range of MixedLinearMonotonicParabolic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearMonotonicParabolic_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

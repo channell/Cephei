@@ -40,7 +40,7 @@ module GMRESFunction =
     (*!! ommited 
     [<ExcelFunction(Name="_GMRES", Description="Create a GMRES",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GMRES_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "GMRES")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="A",Description = "MatrixMult")>] 
          A : obj)
@@ -48,7 +48,7 @@ module GMRESFunction =
          maxIter : obj)
         ([<ExcelArgument(Name="relTol",Description = "double")>] 
          relTol : obj)
-        ([<ExcelArgument(Name="preConditioner",Description = "GMRES")>] 
+        ([<ExcelArgument(Name="preConditioner",Description = "MatrixMult or empty")>] 
          preConditioner : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -97,7 +97,7 @@ module GMRESFunction =
     (*!! ommitted
     [<ExcelFunction(Name="_GMRES_MatrixMult", Description="Create a GMRES",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GMRES_MatrixMult
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GMRES",Description = "GMRES")>] 
          gmres : obj)
@@ -140,13 +140,13 @@ module GMRESFunction =
     *)
     [<ExcelFunction(Name="_GMRES_solve", Description="Create a GMRES",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GMRES_solve
-        ([<ExcelArgument(Name="Mnemonic",Description = "GMRESResult")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GMRES",Description = "GMRES")>] 
          gmres : obj)
         ([<ExcelArgument(Name="b",Description = "Vector")>] 
          b : obj)
-        ([<ExcelArgument(Name="x0",Description = "GMRESResult")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector or empty")>] 
          x0 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -188,7 +188,7 @@ module GMRESFunction =
     *)
     [<ExcelFunction(Name="_GMRES_solveWithRestart", Description="Create a GMRES",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GMRES_solveWithRestart
-        ([<ExcelArgument(Name="Mnemonic",Description = "GMRESResult")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GMRES",Description = "GMRES")>] 
          gmres : obj)
@@ -196,7 +196,7 @@ module GMRESFunction =
          restart : obj)
         ([<ExcelArgument(Name="b",Description = "Vector")>] 
          b : obj)
-        ([<ExcelArgument(Name="x0",Description = "GMRESResult")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector or empty")>] 
          x0 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -239,9 +239,9 @@ module GMRESFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GMRES_Range", Description="Create a range of GMRES",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GMRES_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

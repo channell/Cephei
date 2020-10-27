@@ -39,7 +39,7 @@ module ZeroInflationTraitsFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationTraits_discountImpl", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationTraits_discountImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationTraits",Description = "ZeroInflationTraits")>] 
          zeroinflationtraits : obj)
@@ -87,7 +87,7 @@ module ZeroInflationTraitsFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationTraits_forwardImpl", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationTraits_forwardImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationTraits",Description = "ZeroInflationTraits")>] 
          zeroinflationtraits : obj)
@@ -135,7 +135,7 @@ module ZeroInflationTraitsFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationTraits_guess", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationTraits_guess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationTraits",Description = "ZeroInflationTraits")>] 
          zeroinflationtraits : obj)
@@ -195,7 +195,7 @@ module ZeroInflationTraitsFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationTraits_initialDate", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationTraits_initialDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationTraits",Description = "ZeroInflationTraits")>] 
          zeroinflationtraits : obj)
@@ -237,7 +237,7 @@ module ZeroInflationTraitsFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationTraits_initialValue", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationTraits_initialValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationTraits",Description = "ZeroInflationTraits")>] 
          zeroinflationtraits : obj)
@@ -279,7 +279,7 @@ module ZeroInflationTraitsFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationTraits_maxIterations", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationTraits_maxIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationTraits",Description = "ZeroInflationTraits")>] 
          zeroinflationtraits : obj)
@@ -315,7 +315,7 @@ module ZeroInflationTraitsFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationTraits_maxValueAfter", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationTraits_maxValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationTraits",Description = "ZeroInflationTraits")>] 
          zeroinflationtraits : obj)
@@ -375,7 +375,7 @@ module ZeroInflationTraitsFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationTraits_minValueAfter", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationTraits_minValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationTraits",Description = "ZeroInflationTraits")>] 
          zeroinflationtraits : obj)
@@ -435,11 +435,11 @@ module ZeroInflationTraitsFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationTraits_updateGuess", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationTraits_updateGuess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationTraits",Description = "ZeroInflationTraits")>] 
          zeroinflationtraits : obj)
-        ([<ExcelArgument(Name="data",Description = "double")>] 
+        ([<ExcelArgument(Name="data",Description = "double range")>] 
          data : obj)
         ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
@@ -489,7 +489,7 @@ module ZeroInflationTraitsFunction =
     *)
     [<ExcelFunction(Name="_ZeroInflationTraits_zeroYieldImpl", Description="Create a ZeroInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationTraits_zeroYieldImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroInflationTraits",Description = "ZeroInflationTraits")>] 
          zeroinflationtraits : obj)
@@ -534,9 +534,9 @@ module ZeroInflationTraitsFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ZeroInflationTraits_Range", Description="Create a range of ZeroInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroInflationTraits_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

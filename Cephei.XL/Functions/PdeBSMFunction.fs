@@ -39,7 +39,7 @@ module PdeBSMFunction =
     *)
     [<ExcelFunction(Name="_PdeBSM_diffusion", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "PdeSecondOrderParabolic")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeBSM",Description = "PdeBSM")>] 
          pdebsm : obj)
@@ -87,7 +87,7 @@ module PdeBSMFunction =
     *)
     [<ExcelFunction(Name="_PdeBSM_discount", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_discount
-        ([<ExcelArgument(Name="Mnemonic",Description = "PdeSecondOrderParabolic")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeBSM",Description = "PdeBSM")>] 
          pdebsm : obj)
@@ -135,7 +135,7 @@ module PdeBSMFunction =
     *)
     [<ExcelFunction(Name="_PdeBSM_drift", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "PdeSecondOrderParabolic")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeBSM",Description = "PdeBSM")>] 
          pdebsm : obj)
@@ -183,7 +183,7 @@ module PdeBSMFunction =
     *)
     [<ExcelFunction(Name="_PdeBSM_factory", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "PdeSecondOrderParabolic")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeBSM",Description = "PdeBSM")>] 
          pdebsm : obj)
@@ -225,7 +225,7 @@ module PdeBSMFunction =
     *)
     [<ExcelFunction(Name="_PdeBSM1", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "PdeBSM")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -262,7 +262,7 @@ module PdeBSMFunction =
     *)
     [<ExcelFunction(Name="_PdeBSM", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "PdeBSM")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -293,7 +293,7 @@ module PdeBSMFunction =
     *)
     [<ExcelFunction(Name="_PdeBSM_generateOperator", Description="Create a PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_generateOperator
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PdeBSM",Description = "PdeBSM")>] 
          pdebsm : obj)
@@ -344,9 +344,9 @@ module PdeBSMFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PdeBSM_Range", Description="Create a range of PdeBSM",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PdeBSM_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

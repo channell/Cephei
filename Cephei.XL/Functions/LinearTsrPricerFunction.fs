@@ -39,7 +39,7 @@ module LinearTsrPricerFunction =
     *)
     [<ExcelFunction(Name="_LinearTsrPricer_capletPrice", Description="Create a LinearTsrPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearTsrPricer_capletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "LinearTsrPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LinearTsrPricer",Description = "LinearTsrPricer")>] 
          lineartsrpricer : obj)
@@ -81,7 +81,7 @@ module LinearTsrPricerFunction =
     *)
     [<ExcelFunction(Name="_LinearTsrPricer_capletRate", Description="Create a LinearTsrPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearTsrPricer_capletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "LinearTsrPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LinearTsrPricer",Description = "LinearTsrPricer")>] 
          lineartsrpricer : obj)
@@ -123,7 +123,7 @@ module LinearTsrPricerFunction =
     *)
     [<ExcelFunction(Name="_LinearTsrPricer_floorletPrice", Description="Create a LinearTsrPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearTsrPricer_floorletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "LinearTsrPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LinearTsrPricer",Description = "LinearTsrPricer")>] 
          lineartsrpricer : obj)
@@ -165,7 +165,7 @@ module LinearTsrPricerFunction =
     *)
     [<ExcelFunction(Name="_LinearTsrPricer_floorletRate", Description="Create a LinearTsrPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearTsrPricer_floorletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "LinearTsrPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LinearTsrPricer",Description = "LinearTsrPricer")>] 
          lineartsrpricer : obj)
@@ -207,7 +207,7 @@ module LinearTsrPricerFunction =
     *)
     [<ExcelFunction(Name="_LinearTsrPricer_initialize", Description="Create a LinearTsrPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearTsrPricer_initialize
-        ([<ExcelArgument(Name="Mnemonic",Description = "LinearTsrPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LinearTsrPricer",Description = "LinearTsrPricer")>] 
          lineartsrpricer : obj)
@@ -249,7 +249,7 @@ module LinearTsrPricerFunction =
     *)
     [<ExcelFunction(Name="_LinearTsrPricer", Description="Create a LinearTsrPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearTsrPricer_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "LinearTsrPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="swaptionVol",Description = "SwaptionVolatilityStructure")>] 
          swaptionVol : obj)
@@ -257,9 +257,9 @@ module LinearTsrPricerFunction =
          meanReversion : obj)
         ([<ExcelArgument(Name="couponDiscountCurve",Description = "YieldTermStructure")>] 
          couponDiscountCurve : obj)
-        ([<ExcelArgument(Name="settings",Description = "LinearTsrPricer")>] 
+        ([<ExcelArgument(Name="settings",Description = "LinearTsrPricer.Settings or empty")>] 
          settings : obj)
-        ([<ExcelArgument(Name="integrator",Description = "LinearTsrPricer")>] 
+        ([<ExcelArgument(Name="integrator",Description = "Integrator or empty")>] 
          integrator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -310,7 +310,7 @@ module LinearTsrPricerFunction =
     *)
     [<ExcelFunction(Name="_LinearTsrPricer_meanReversion", Description="Create a LinearTsrPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearTsrPricer_meanReversion
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionVolatilityStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LinearTsrPricer",Description = "LinearTsrPricer")>] 
          lineartsrpricer : obj)
@@ -346,7 +346,7 @@ module LinearTsrPricerFunction =
     *)
     [<ExcelFunction(Name="_LinearTsrPricer_setMeanReversion", Description="Create a LinearTsrPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearTsrPricer_setMeanReversion
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionVolatilityStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LinearTsrPricer",Description = "LinearTsrPricer")>] 
          lineartsrpricer : obj)
@@ -388,7 +388,7 @@ module LinearTsrPricerFunction =
     *)
     [<ExcelFunction(Name="_LinearTsrPricer_swapletPrice", Description="Create a LinearTsrPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearTsrPricer_swapletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionVolatilityStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LinearTsrPricer",Description = "LinearTsrPricer")>] 
          lineartsrpricer : obj)
@@ -424,7 +424,7 @@ module LinearTsrPricerFunction =
     *)
     [<ExcelFunction(Name="_LinearTsrPricer_swapletRate", Description="Create a LinearTsrPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearTsrPricer_swapletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionVolatilityStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LinearTsrPricer",Description = "LinearTsrPricer")>] 
          lineartsrpricer : obj)
@@ -460,7 +460,7 @@ module LinearTsrPricerFunction =
     *)
     [<ExcelFunction(Name="_LinearTsrPricer_setSwaptionVolatility", Description="Create a LinearTsrPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearTsrPricer_setSwaptionVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionVolatilityStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LinearTsrPricer",Description = "LinearTsrPricer")>] 
          lineartsrpricer : obj)
@@ -502,7 +502,7 @@ module LinearTsrPricerFunction =
     *)
     [<ExcelFunction(Name="_LinearTsrPricer_swaptionVolatility", Description="Create a LinearTsrPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearTsrPricer_swaptionVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionVolatilityStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LinearTsrPricer",Description = "LinearTsrPricer")>] 
          lineartsrpricer : obj)
@@ -538,7 +538,7 @@ module LinearTsrPricerFunction =
     *)
     [<ExcelFunction(Name="_LinearTsrPricer_registerWith", Description="Create a LinearTsrPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearTsrPricer_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LinearTsrPricer",Description = "LinearTsrPricer")>] 
          lineartsrpricer : obj)
@@ -580,7 +580,7 @@ module LinearTsrPricerFunction =
     *)
     [<ExcelFunction(Name="_LinearTsrPricer_unregisterWith", Description="Create a LinearTsrPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearTsrPricer_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LinearTsrPricer",Description = "LinearTsrPricer")>] 
          lineartsrpricer : obj)
@@ -622,7 +622,7 @@ module LinearTsrPricerFunction =
     *)
     [<ExcelFunction(Name="_LinearTsrPricer_update", Description="Create a LinearTsrPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearTsrPricer_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LinearTsrPricer",Description = "LinearTsrPricer")>] 
          lineartsrpricer : obj)
@@ -655,9 +655,9 @@ module LinearTsrPricerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LinearTsrPricer_Range", Description="Create a range of LinearTsrPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LinearTsrPricer_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

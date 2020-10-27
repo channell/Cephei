@@ -39,7 +39,7 @@ module YoYInflationTraitsFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationTraits_discountImpl", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationTraits_discountImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationTraits",Description = "YoYInflationTraits")>] 
          yoyinflationtraits : obj)
@@ -87,7 +87,7 @@ module YoYInflationTraitsFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationTraits_forwardImpl", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationTraits_forwardImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationTraits",Description = "YoYInflationTraits")>] 
          yoyinflationtraits : obj)
@@ -135,7 +135,7 @@ module YoYInflationTraitsFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationTraits_guess", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationTraits_guess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationTraits",Description = "YoYInflationTraits")>] 
          yoyinflationtraits : obj)
@@ -195,7 +195,7 @@ module YoYInflationTraitsFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationTraits_initialDate", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationTraits_initialDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationTraits",Description = "YoYInflationTraits")>] 
          yoyinflationtraits : obj)
@@ -237,7 +237,7 @@ module YoYInflationTraitsFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationTraits_initialValue", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationTraits_initialValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationTraits",Description = "YoYInflationTraits")>] 
          yoyinflationtraits : obj)
@@ -279,7 +279,7 @@ module YoYInflationTraitsFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationTraits_maxIterations", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationTraits_maxIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationTraits",Description = "YoYInflationTraits")>] 
          yoyinflationtraits : obj)
@@ -315,7 +315,7 @@ module YoYInflationTraitsFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationTraits_maxValueAfter", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationTraits_maxValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationTraits",Description = "YoYInflationTraits")>] 
          yoyinflationtraits : obj)
@@ -375,7 +375,7 @@ module YoYInflationTraitsFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationTraits_minValueAfter", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationTraits_minValueAfter
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationTraits",Description = "YoYInflationTraits")>] 
          yoyinflationtraits : obj)
@@ -435,11 +435,11 @@ module YoYInflationTraitsFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationTraits_updateGuess", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationTraits_updateGuess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationTraits",Description = "YoYInflationTraits")>] 
          yoyinflationtraits : obj)
-        ([<ExcelArgument(Name="data",Description = "double")>] 
+        ([<ExcelArgument(Name="data",Description = "double range")>] 
          data : obj)
         ([<ExcelArgument(Name="discount",Description = "double")>] 
          discount : obj)
@@ -489,7 +489,7 @@ module YoYInflationTraitsFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationTraits_zeroYieldImpl", Description="Create a YoYInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationTraits_zeroYieldImpl
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationTraits",Description = "YoYInflationTraits")>] 
          yoyinflationtraits : obj)
@@ -534,9 +534,9 @@ module YoYInflationTraitsFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_YoYInflationTraits_Range", Description="Create a range of YoYInflationTraits",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationTraits_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

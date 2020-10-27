@@ -39,7 +39,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AverageBMACoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="paymentDate",Description = "Date")>] 
          paymentDate : obj)
@@ -51,15 +51,15 @@ module AverageBMACouponFunction =
          endDate : obj)
         ([<ExcelArgument(Name="index",Description = "BMAIndex")>] 
          index : obj)
-        ([<ExcelArgument(Name="gearing",Description = "AverageBMACoupon")>] 
+        ([<ExcelArgument(Name="gearing",Description = "double or empty")>] 
          gearing : obj)
-        ([<ExcelArgument(Name="spread",Description = "AverageBMACoupon")>] 
+        ([<ExcelArgument(Name="spread",Description = "double or empty")>] 
          spread : obj)
-        ([<ExcelArgument(Name="refPeriodStart",Description = "AverageBMACoupon")>] 
+        ([<ExcelArgument(Name="refPeriodStart",Description = "Date or empty")>] 
          refPeriodStart : obj)
-        ([<ExcelArgument(Name="refPeriodEnd",Description = "AverageBMACoupon")>] 
+        ([<ExcelArgument(Name="refPeriodEnd",Description = "Date or empty")>] 
          refPeriodEnd : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "AverageBMACoupon")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter or empty")>] 
          dayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -130,7 +130,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_convexityAdjustment", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_convexityAdjustment
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -166,7 +166,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_fixingDate", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -202,7 +202,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_fixingDates", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_fixingDates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -238,7 +238,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_indexFixing", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_indexFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -274,7 +274,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_indexFixings", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_indexFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -310,7 +310,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_accruedAmount", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_accruedAmount
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -352,7 +352,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_adjustedFixing", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_adjustedFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -388,7 +388,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_amount", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_amount
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -424,7 +424,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_dayCounter", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -460,7 +460,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_factory", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -476,15 +476,15 @@ module AverageBMACouponFunction =
          fixingDays : obj)
         ([<ExcelArgument(Name="index",Description = "InterestRateIndex")>] 
          index : obj)
-        ([<ExcelArgument(Name="gearing",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="gearing",Description = "double or empty")>] 
          gearing : obj)
-        ([<ExcelArgument(Name="spread",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="spread",Description = "double or empty")>] 
          spread : obj)
-        ([<ExcelArgument(Name="refPeriodStart",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="refPeriodStart",Description = "Date or empty")>] 
          refPeriodStart : obj)
-        ([<ExcelArgument(Name="refPeriodEnd",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="refPeriodEnd",Description = "Date or empty")>] 
          refPeriodEnd : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter or empty")>] 
          dayCounter : obj)
         ([<ExcelArgument(Name="isInArrears",Description = "bool")>] 
          isInArrears : obj)
@@ -568,7 +568,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_fixingDays", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -604,7 +604,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_gearing", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_gearing
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -640,7 +640,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_index", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_index
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -676,7 +676,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_isInArrears", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_isInArrears
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -712,7 +712,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_price", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_price
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -754,7 +754,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_pricer", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_pricer
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -790,7 +790,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_rate", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_rate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -826,7 +826,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_setPricer", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_setPricer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -868,7 +868,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_spread", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_spread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -904,7 +904,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_update", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -940,7 +940,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_accrualDays", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_accrualDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -976,7 +976,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_accrualEndDate", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_accrualEndDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -1012,7 +1012,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_accrualPeriod", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_accrualPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -1048,7 +1048,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_accrualStartDate", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_accrualStartDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -1084,7 +1084,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_accruedDays", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_accruedDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -1126,7 +1126,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_accruedPeriod", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_accruedPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -1168,7 +1168,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_date", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -1204,7 +1204,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_exCouponDate", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_exCouponDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -1240,7 +1240,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_nominal", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_nominal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -1276,7 +1276,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_referencePeriodEnd", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_referencePeriodEnd
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -1312,7 +1312,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_referencePeriodStart", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_referencePeriodStart
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -1348,7 +1348,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_CompareTo", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_CompareTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -1390,7 +1390,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_Equals", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -1432,7 +1432,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_hasOccurred", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -1480,7 +1480,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_tradingExCoupon", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_tradingExCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -1522,7 +1522,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_accept", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -1564,7 +1564,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_registerWith", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -1606,7 +1606,7 @@ module AverageBMACouponFunction =
     *)
     [<ExcelFunction(Name="_AverageBMACoupon_unregisterWith", Description="Create a AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AverageBMACoupon",Description = "AverageBMACoupon")>] 
          averagebmacoupon : obj)
@@ -1645,9 +1645,9 @@ module AverageBMACouponFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AverageBMACoupon_Range", Description="Create a range of AverageBMACoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AverageBMACoupon_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

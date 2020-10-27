@@ -39,13 +39,13 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "CliquetOption")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="payoff",Description = "PercentageStrikePayoff")>] 
          payoff : obj)
         ([<ExcelArgument(Name="maturity",Description = "EuropeanExercise")>] 
          maturity : obj)
-        ([<ExcelArgument(Name="resetDates",Description = "Date")>] 
+        ([<ExcelArgument(Name="resetDate ranges",Description = "Date range")>] 
          resetDates : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
@@ -100,7 +100,7 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_delta", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_delta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
@@ -136,7 +136,7 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_deltaForward", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_deltaForward
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
@@ -172,7 +172,7 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_dividendRho", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_dividendRho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
@@ -208,7 +208,7 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_elasticity", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_elasticity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
@@ -244,7 +244,7 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_gamma", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_gamma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
@@ -280,7 +280,7 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_isExpired", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
@@ -316,7 +316,7 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_itmCashProbability", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_itmCashProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
@@ -352,7 +352,7 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_rho", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
@@ -388,7 +388,7 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_strikeSensitivity", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_strikeSensitivity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
@@ -424,7 +424,7 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_theta", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_theta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
@@ -460,7 +460,7 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_thetaPerDay", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_thetaPerDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
@@ -496,7 +496,7 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_vega", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
@@ -532,7 +532,7 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_exercise", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_exercise
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
@@ -568,7 +568,7 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_payoff", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_payoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Payoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
@@ -604,7 +604,7 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_CASH", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
@@ -640,7 +640,7 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_errorEstimate", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
@@ -676,7 +676,7 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_NPV", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
@@ -712,7 +712,7 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_result", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
@@ -754,7 +754,7 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_setPricingEngine", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
@@ -796,7 +796,7 @@ module CliquetOptionFunction =
     *)
     [<ExcelFunction(Name="_CliquetOption_valuationDate", Description="Create a CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CliquetOption",Description = "CliquetOption")>] 
          cliquetoption : obj)
@@ -829,9 +829,9 @@ module CliquetOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CliquetOption_Range", Description="Create a range of CliquetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CliquetOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

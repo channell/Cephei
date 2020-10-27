@@ -39,7 +39,7 @@ module FixedLoanFunction =
     *)
     [<ExcelFunction(Name="_FixedLoan_fixedLeg", Description="Create a FixedLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLoan_fixedLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedLoan",Description = "FixedLoan")>] 
          fixedloan : obj)
@@ -75,7 +75,7 @@ module FixedLoanFunction =
     *)
     [<ExcelFunction(Name="_FixedLoan", Description="Create a FixedLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLoan_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FixedLoan")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Type",Description = "Loan.Type: Deposit, Loan")>] 
          Type : obj)
@@ -160,7 +160,7 @@ module FixedLoanFunction =
     *)
     [<ExcelFunction(Name="_FixedLoan_principalLeg", Description="Create a FixedLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLoan_principalLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedLoan",Description = "FixedLoan")>] 
          fixedloan : obj)
@@ -196,7 +196,7 @@ module FixedLoanFunction =
     *)
     [<ExcelFunction(Name="_FixedLoan_isExpired", Description="Create a FixedLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLoan_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedLoan",Description = "FixedLoan")>] 
          fixedloan : obj)
@@ -232,7 +232,7 @@ module FixedLoanFunction =
     *)
     [<ExcelFunction(Name="_FixedLoan_CASH", Description="Create a FixedLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLoan_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedLoan",Description = "FixedLoan")>] 
          fixedloan : obj)
@@ -268,7 +268,7 @@ module FixedLoanFunction =
     *)
     [<ExcelFunction(Name="_FixedLoan_errorEstimate", Description="Create a FixedLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLoan_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedLoan",Description = "FixedLoan")>] 
          fixedloan : obj)
@@ -304,7 +304,7 @@ module FixedLoanFunction =
     *)
     [<ExcelFunction(Name="_FixedLoan_NPV", Description="Create a FixedLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLoan_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedLoan",Description = "FixedLoan")>] 
          fixedloan : obj)
@@ -340,7 +340,7 @@ module FixedLoanFunction =
     *)
     [<ExcelFunction(Name="_FixedLoan_result", Description="Create a FixedLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLoan_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedLoan",Description = "FixedLoan")>] 
          fixedloan : obj)
@@ -382,7 +382,7 @@ module FixedLoanFunction =
     *)
     [<ExcelFunction(Name="_FixedLoan_setPricingEngine", Description="Create a FixedLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLoan_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedLoan",Description = "FixedLoan")>] 
          fixedloan : obj)
@@ -424,7 +424,7 @@ module FixedLoanFunction =
     *)
     [<ExcelFunction(Name="_FixedLoan_valuationDate", Description="Create a FixedLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLoan_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FixedLoan",Description = "FixedLoan")>] 
          fixedloan : obj)
@@ -457,9 +457,9 @@ module FixedLoanFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FixedLoan_Range", Description="Create a range of FixedLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedLoan_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,7 +39,7 @@ module CashOrNothingPayoffFunction =
     *)
     [<ExcelFunction(Name="_CashOrNothingPayoff", Description="Create a CashOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CashOrNothingPayoff_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashOrNothingPayoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
@@ -88,7 +88,7 @@ module CashOrNothingPayoffFunction =
     *)
     [<ExcelFunction(Name="_CashOrNothingPayoff_cashPayoff", Description="Create a CashOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CashOrNothingPayoff_cashPayoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CashOrNothingPayoff",Description = "CashOrNothingPayoff")>] 
          cashornothingpayoff : obj)
@@ -124,7 +124,7 @@ module CashOrNothingPayoffFunction =
     *)
     [<ExcelFunction(Name="_CashOrNothingPayoff_description", Description="Create a CashOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CashOrNothingPayoff_description
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CashOrNothingPayoff",Description = "CashOrNothingPayoff")>] 
          cashornothingpayoff : obj)
@@ -160,7 +160,7 @@ module CashOrNothingPayoffFunction =
     *)
     [<ExcelFunction(Name="_CashOrNothingPayoff_name", Description="Create a CashOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CashOrNothingPayoff_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CashOrNothingPayoff",Description = "CashOrNothingPayoff")>] 
          cashornothingpayoff : obj)
@@ -196,7 +196,7 @@ module CashOrNothingPayoffFunction =
     *)
     [<ExcelFunction(Name="_CashOrNothingPayoff_value", Description="Create a CashOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CashOrNothingPayoff_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CashOrNothingPayoff",Description = "CashOrNothingPayoff")>] 
          cashornothingpayoff : obj)
@@ -238,7 +238,7 @@ module CashOrNothingPayoffFunction =
     *)
     [<ExcelFunction(Name="_CashOrNothingPayoff_strike", Description="Create a CashOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CashOrNothingPayoff_strike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CashOrNothingPayoff",Description = "CashOrNothingPayoff")>] 
          cashornothingpayoff : obj)
@@ -274,7 +274,7 @@ module CashOrNothingPayoffFunction =
     *)
     [<ExcelFunction(Name="_CashOrNothingPayoff_optionType", Description="Create a CashOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CashOrNothingPayoff_optionType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CashOrNothingPayoff",Description = "CashOrNothingPayoff")>] 
          cashornothingpayoff : obj)
@@ -310,7 +310,7 @@ module CashOrNothingPayoffFunction =
     *)
     [<ExcelFunction(Name="_CashOrNothingPayoff_accept", Description="Create a CashOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CashOrNothingPayoff_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CashOrNothingPayoff",Description = "CashOrNothingPayoff")>] 
          cashornothingpayoff : obj)
@@ -349,9 +349,9 @@ module CashOrNothingPayoffFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CashOrNothingPayoff_Range", Description="Create a range of CashOrNothingPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CashOrNothingPayoff_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

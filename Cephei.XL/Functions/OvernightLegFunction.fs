@@ -39,7 +39,7 @@ module OvernightLegFunction =
     *)
     [<ExcelFunction(Name="_OvernightLeg", Description="Create a OvernightLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightLeg_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightLeg")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -82,7 +82,7 @@ module OvernightLegFunction =
     *)
     [<ExcelFunction(Name="_OvernightLeg_value", Description="Create a OvernightLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightLeg_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightLeg",Description = "OvernightLeg")>] 
          overnightleg : obj)
@@ -118,11 +118,11 @@ module OvernightLegFunction =
     *)
     [<ExcelFunction(Name="_OvernightLeg_withGearings", Description="Create a OvernightLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightLeg_withGearings
-        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightLeg")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightLeg",Description = "OvernightLeg")>] 
          overnightleg : obj)
-        ([<ExcelArgument(Name="gearings",Description = "double")>] 
+        ([<ExcelArgument(Name="gearings",Description = "double range")>] 
          gearings : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -160,7 +160,7 @@ module OvernightLegFunction =
     *)
     [<ExcelFunction(Name="_OvernightLeg_withGearings1", Description="Create a OvernightLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightLeg_withGearings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightLeg")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightLeg",Description = "OvernightLeg")>] 
          overnightleg : obj)
@@ -202,11 +202,11 @@ module OvernightLegFunction =
     *)
     [<ExcelFunction(Name="_OvernightLeg_withNotionals", Description="Create a OvernightLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightLeg_withNotionals
-        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightLeg")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightLeg",Description = "OvernightLeg")>] 
          overnightleg : obj)
-        ([<ExcelArgument(Name="notionals",Description = "double")>] 
+        ([<ExcelArgument(Name="notionals",Description = "double range")>] 
          notionals : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -244,7 +244,7 @@ module OvernightLegFunction =
     *)
     [<ExcelFunction(Name="_OvernightLeg_withNotionals1", Description="Create a OvernightLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightLeg_withNotionals1
-        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightLeg")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightLeg",Description = "OvernightLeg")>] 
          overnightleg : obj)
@@ -286,7 +286,7 @@ module OvernightLegFunction =
     *)
     [<ExcelFunction(Name="_OvernightLeg_withPaymentAdjustment", Description="Create a OvernightLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightLeg_withPaymentAdjustment
-        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightLeg")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightLeg",Description = "OvernightLeg")>] 
          overnightleg : obj)
@@ -328,7 +328,7 @@ module OvernightLegFunction =
     *)
     [<ExcelFunction(Name="_OvernightLeg_withPaymentDayCounter", Description="Create a OvernightLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightLeg_withPaymentDayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightLeg")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightLeg",Description = "OvernightLeg")>] 
          overnightleg : obj)
@@ -370,11 +370,11 @@ module OvernightLegFunction =
     *)
     [<ExcelFunction(Name="_OvernightLeg_withSpreads1", Description="Create a OvernightLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightLeg_withSpreads1
-        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightLeg")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightLeg",Description = "OvernightLeg")>] 
          overnightleg : obj)
-        ([<ExcelArgument(Name="spreads",Description = "double")>] 
+        ([<ExcelArgument(Name="spreads",Description = "double range")>] 
          spreads : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -412,7 +412,7 @@ module OvernightLegFunction =
     *)
     [<ExcelFunction(Name="_OvernightLeg_withSpreads", Description="Create a OvernightLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightLeg_withSpreads
-        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightLeg")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightLeg",Description = "OvernightLeg")>] 
          overnightleg : obj)
@@ -451,9 +451,9 @@ module OvernightLegFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_OvernightLeg_Range", Description="Create a range of OvernightLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightLeg_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

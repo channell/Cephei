@@ -39,7 +39,7 @@ module EuropeanHestonPathPricerFunction =
     *)
     [<ExcelFunction(Name="_EuropeanHestonPathPricer", Description="Create a EuropeanHestonPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanHestonPathPricer_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "EuropeanHestonPathPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
@@ -88,7 +88,7 @@ module EuropeanHestonPathPricerFunction =
     *)
     [<ExcelFunction(Name="_EuropeanHestonPathPricer_value", Description="Create a EuropeanHestonPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanHestonPathPricer_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EuropeanHestonPathPricer",Description = "EuropeanHestonPathPricer")>] 
          europeanhestonpathpricer : obj)
@@ -127,9 +127,9 @@ module EuropeanHestonPathPricerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_EuropeanHestonPathPricer_Range", Description="Create a range of EuropeanHestonPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EuropeanHestonPathPricer_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

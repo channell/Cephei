@@ -39,7 +39,7 @@ module CallabilityFunction =
     *)
     [<ExcelFunction(Name="_Callability", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Callability")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="price",Description = "Callability.Price")>] 
          price : obj)
@@ -88,7 +88,7 @@ module CallabilityFunction =
     *)
     [<ExcelFunction(Name="_Callability_date", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Callability",Description = "Callability")>] 
          callability : obj)
@@ -124,7 +124,7 @@ module CallabilityFunction =
     *)
     [<ExcelFunction(Name="_Callability_price", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_price
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Callability",Description = "Callability")>] 
          callability : obj)
@@ -160,7 +160,7 @@ module CallabilityFunction =
     *)
     [<ExcelFunction(Name="_Callability_type", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_type
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Callability",Description = "Callability")>] 
          callability : obj)
@@ -196,7 +196,7 @@ module CallabilityFunction =
     *)
     [<ExcelFunction(Name="_Callability_accept", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Callability",Description = "Callability")>] 
          callability : obj)
@@ -238,7 +238,7 @@ module CallabilityFunction =
     *)
     [<ExcelFunction(Name="_Callability_hasOccurred", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Callability",Description = "Callability")>] 
          callability : obj)
@@ -286,7 +286,7 @@ module CallabilityFunction =
     *)
     [<ExcelFunction(Name="_Callability_registerWith", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Callability",Description = "Callability")>] 
          callability : obj)
@@ -328,7 +328,7 @@ module CallabilityFunction =
     *)
     [<ExcelFunction(Name="_Callability_unregisterWith", Description="Create a Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Callability",Description = "Callability")>] 
          callability : obj)
@@ -367,9 +367,9 @@ module CallabilityFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Callability_Range", Description="Create a range of Callability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Callability_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

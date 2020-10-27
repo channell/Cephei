@@ -39,7 +39,7 @@ module IDRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IDRCurrency", Description="Create a IDRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IDRCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "IDRCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module IDRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IDRCurrency_code", Description="Create a IDRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IDRCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IDRCurrency",Description = "IDRCurrency")>] 
          idrcurrency : obj)
@@ -106,7 +106,7 @@ module IDRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IDRCurrency_empty", Description="Create a IDRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IDRCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IDRCurrency",Description = "IDRCurrency")>] 
          idrcurrency : obj)
@@ -142,7 +142,7 @@ module IDRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IDRCurrency_Equals", Description="Create a IDRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IDRCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IDRCurrency",Description = "IDRCurrency")>] 
          idrcurrency : obj)
@@ -184,7 +184,7 @@ module IDRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IDRCurrency_format", Description="Create a IDRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IDRCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IDRCurrency",Description = "IDRCurrency")>] 
          idrcurrency : obj)
@@ -220,7 +220,7 @@ module IDRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IDRCurrency_fractionsPerUnit", Description="Create a IDRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IDRCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IDRCurrency",Description = "IDRCurrency")>] 
          idrcurrency : obj)
@@ -256,7 +256,7 @@ module IDRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IDRCurrency_fractionSymbol", Description="Create a IDRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IDRCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IDRCurrency",Description = "IDRCurrency")>] 
          idrcurrency : obj)
@@ -292,7 +292,7 @@ module IDRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IDRCurrency_name", Description="Create a IDRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IDRCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IDRCurrency",Description = "IDRCurrency")>] 
          idrcurrency : obj)
@@ -328,7 +328,7 @@ module IDRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IDRCurrency_numericCode", Description="Create a IDRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IDRCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IDRCurrency",Description = "IDRCurrency")>] 
          idrcurrency : obj)
@@ -364,7 +364,7 @@ module IDRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IDRCurrency_rounding", Description="Create a IDRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IDRCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IDRCurrency",Description = "IDRCurrency")>] 
          idrcurrency : obj)
@@ -400,7 +400,7 @@ module IDRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IDRCurrency_symbol", Description="Create a IDRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IDRCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IDRCurrency",Description = "IDRCurrency")>] 
          idrcurrency : obj)
@@ -436,7 +436,7 @@ module IDRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IDRCurrency_ToString", Description="Create a IDRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IDRCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IDRCurrency",Description = "IDRCurrency")>] 
          idrcurrency : obj)
@@ -472,7 +472,7 @@ module IDRCurrencyFunction =
     *)
     [<ExcelFunction(Name="_IDRCurrency_triangulationCurrency", Description="Create a IDRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IDRCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IDRCurrency",Description = "IDRCurrency")>] 
          idrcurrency : obj)
@@ -505,9 +505,9 @@ module IDRCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_IDRCurrency_Range", Description="Create a range of IDRCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IDRCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

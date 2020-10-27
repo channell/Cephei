@@ -39,7 +39,7 @@ module VasicekFunction =
     *)
     [<ExcelFunction(Name="_Vasicek_a", Description="Create a Vasicek",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vasicek_a
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vasicek")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vasicek",Description = "Vasicek")>] 
          vasicek : obj)
@@ -75,7 +75,7 @@ module VasicekFunction =
     *)
     [<ExcelFunction(Name="_Vasicek_b", Description="Create a Vasicek",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vasicek_b
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vasicek")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vasicek",Description = "Vasicek")>] 
          vasicek : obj)
@@ -111,7 +111,7 @@ module VasicekFunction =
     *)
     [<ExcelFunction(Name="_Vasicek_discountBondOption", Description="Create a Vasicek",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vasicek_discountBondOption
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vasicek")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vasicek",Description = "Vasicek")>] 
          vasicek : obj)
@@ -171,7 +171,7 @@ module VasicekFunction =
     *)
     [<ExcelFunction(Name="_Vasicek_dynamics", Description="Create a Vasicek",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vasicek_dynamics
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vasicek")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vasicek",Description = "Vasicek")>] 
          vasicek : obj)
@@ -207,7 +207,7 @@ module VasicekFunction =
     *)
     [<ExcelFunction(Name="_Vasicek_lambda", Description="Create a Vasicek",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vasicek_lambda
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vasicek")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vasicek",Description = "Vasicek")>] 
          vasicek : obj)
@@ -243,7 +243,7 @@ module VasicekFunction =
     *)
     [<ExcelFunction(Name="_Vasicek_sigma", Description="Create a Vasicek",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vasicek_sigma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vasicek")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vasicek",Description = "Vasicek")>] 
          vasicek : obj)
@@ -279,17 +279,17 @@ module VasicekFunction =
     *)
     [<ExcelFunction(Name="_Vasicek", Description="Create a Vasicek",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vasicek_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vasicek")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="r0",Description = "double")>] 
          r0 : obj)
         ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
-        ([<ExcelArgument(Name="b",Description = "Vasicek")>] 
+        ([<ExcelArgument(Name="b",Description = "double or empty")>] 
          b : obj)
-        ([<ExcelArgument(Name="sigma",Description = "Vasicek")>] 
+        ([<ExcelArgument(Name="sigma",Description = "double or empty")>] 
          sigma : obj)
-        ([<ExcelArgument(Name="lambda",Description = "Vasicek")>] 
+        ([<ExcelArgument(Name="lambda",Description = "double or empty")>] 
          lambda : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -340,7 +340,7 @@ module VasicekFunction =
     *)
     [<ExcelFunction(Name="_Vasicek_discount", Description="Create a Vasicek",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vasicek_discount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vasicek",Description = "Vasicek")>] 
          vasicek : obj)
@@ -382,7 +382,7 @@ module VasicekFunction =
     *)
     [<ExcelFunction(Name="_Vasicek_discountBond1", Description="Create a Vasicek",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vasicek_discountBond1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vasicek",Description = "Vasicek")>] 
          vasicek : obj)
@@ -436,7 +436,7 @@ module VasicekFunction =
     *)
     [<ExcelFunction(Name="_Vasicek_discountBond", Description="Create a Vasicek",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vasicek_discountBond
-        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vasicek",Description = "Vasicek")>] 
          vasicek : obj)
@@ -490,7 +490,7 @@ module VasicekFunction =
     *)
     [<ExcelFunction(Name="_Vasicek_tree", Description="Create a Vasicek",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vasicek_tree
-        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vasicek",Description = "Vasicek")>] 
          vasicek : obj)
@@ -532,11 +532,11 @@ module VasicekFunction =
     *)
     [<ExcelFunction(Name="_Vasicek_calibrate", Description="Create a Vasicek",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vasicek_calibrate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vasicek",Description = "Vasicek")>] 
          vasicek : obj)
-        ([<ExcelArgument(Name="instruments",Description = "CalibrationHelper")>] 
+        ([<ExcelArgument(Name="instruments",Description = "CalibrationHelper range")>] 
          instruments : obj)
         ([<ExcelArgument(Name="Method",Description = "OptimizationMethod")>] 
          Method : obj)
@@ -544,9 +544,9 @@ module VasicekFunction =
          endCriteria : obj)
         ([<ExcelArgument(Name="additionalConstraint",Description = "Constraint")>] 
          additionalConstraint : obj)
-        ([<ExcelArgument(Name="weights",Description = "double")>] 
+        ([<ExcelArgument(Name="weights",Description = "double range")>] 
          weights : obj)
-        ([<ExcelArgument(Name="fixParameters",Description = "bool")>] 
+        ([<ExcelArgument(Name="fixParameters",Description = "bool range")>] 
          fixParameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -604,7 +604,7 @@ module VasicekFunction =
     *)
     [<ExcelFunction(Name="_Vasicek_constraint", Description="Create a Vasicek",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vasicek_constraint
-        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vasicek",Description = "Vasicek")>] 
          vasicek : obj)
@@ -640,7 +640,7 @@ module VasicekFunction =
     *)
     [<ExcelFunction(Name="_Vasicek_endCriteria", Description="Create a Vasicek",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vasicek_endCriteria
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vasicek",Description = "Vasicek")>] 
          vasicek : obj)
@@ -676,7 +676,7 @@ module VasicekFunction =
     *)
     [<ExcelFunction(Name="_Vasicek_notifyObservers", Description="Create a Vasicek",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vasicek_notifyObservers
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vasicek",Description = "Vasicek")>] 
          vasicek : obj)
@@ -712,7 +712,7 @@ module VasicekFunction =
     *)
     [<ExcelFunction(Name="_Vasicek_parameters", Description="Create a Vasicek",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vasicek_parameters
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vasicek",Description = "Vasicek")>] 
          vasicek : obj)
@@ -748,7 +748,7 @@ module VasicekFunction =
     *)
     [<ExcelFunction(Name="_Vasicek_registerWith", Description="Create a Vasicek",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vasicek_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vasicek",Description = "Vasicek")>] 
          vasicek : obj)
@@ -790,7 +790,7 @@ module VasicekFunction =
     *)
     [<ExcelFunction(Name="_Vasicek_setParams", Description="Create a Vasicek",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vasicek_setParams
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vasicek",Description = "Vasicek")>] 
          vasicek : obj)
@@ -832,7 +832,7 @@ module VasicekFunction =
     *)
     [<ExcelFunction(Name="_Vasicek_unregisterWith", Description="Create a Vasicek",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vasicek_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vasicek",Description = "Vasicek")>] 
          vasicek : obj)
@@ -874,7 +874,7 @@ module VasicekFunction =
     *)
     [<ExcelFunction(Name="_Vasicek_update", Description="Create a Vasicek",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vasicek_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vasicek",Description = "Vasicek")>] 
          vasicek : obj)
@@ -910,13 +910,13 @@ module VasicekFunction =
     *)
     [<ExcelFunction(Name="_Vasicek_value", Description="Create a Vasicek",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vasicek_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Vasicek",Description = "Vasicek")>] 
          vasicek : obj)
         ([<ExcelArgument(Name="parameters",Description = "Vector")>] 
          parameters : obj)
-        ([<ExcelArgument(Name="instruments",Description = "CalibrationHelper")>] 
+        ([<ExcelArgument(Name="instruments",Description = "CalibrationHelper range")>] 
          instruments : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -955,9 +955,9 @@ module VasicekFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Vasicek_Range", Description="Create a range of Vasicek",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Vasicek_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

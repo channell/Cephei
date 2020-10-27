@@ -39,7 +39,7 @@ module MTLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MTLCurrency", Description="Create a MTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MTLCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "MTLCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module MTLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MTLCurrency_code", Description="Create a MTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MTLCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MTLCurrency",Description = "MTLCurrency")>] 
          mtlcurrency : obj)
@@ -106,7 +106,7 @@ module MTLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MTLCurrency_empty", Description="Create a MTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MTLCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MTLCurrency",Description = "MTLCurrency")>] 
          mtlcurrency : obj)
@@ -142,7 +142,7 @@ module MTLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MTLCurrency_Equals", Description="Create a MTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MTLCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MTLCurrency",Description = "MTLCurrency")>] 
          mtlcurrency : obj)
@@ -184,7 +184,7 @@ module MTLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MTLCurrency_format", Description="Create a MTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MTLCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MTLCurrency",Description = "MTLCurrency")>] 
          mtlcurrency : obj)
@@ -220,7 +220,7 @@ module MTLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MTLCurrency_fractionsPerUnit", Description="Create a MTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MTLCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MTLCurrency",Description = "MTLCurrency")>] 
          mtlcurrency : obj)
@@ -256,7 +256,7 @@ module MTLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MTLCurrency_fractionSymbol", Description="Create a MTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MTLCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MTLCurrency",Description = "MTLCurrency")>] 
          mtlcurrency : obj)
@@ -292,7 +292,7 @@ module MTLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MTLCurrency_name", Description="Create a MTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MTLCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MTLCurrency",Description = "MTLCurrency")>] 
          mtlcurrency : obj)
@@ -328,7 +328,7 @@ module MTLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MTLCurrency_numericCode", Description="Create a MTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MTLCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MTLCurrency",Description = "MTLCurrency")>] 
          mtlcurrency : obj)
@@ -364,7 +364,7 @@ module MTLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MTLCurrency_rounding", Description="Create a MTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MTLCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MTLCurrency",Description = "MTLCurrency")>] 
          mtlcurrency : obj)
@@ -400,7 +400,7 @@ module MTLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MTLCurrency_symbol", Description="Create a MTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MTLCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MTLCurrency",Description = "MTLCurrency")>] 
          mtlcurrency : obj)
@@ -436,7 +436,7 @@ module MTLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MTLCurrency_ToString", Description="Create a MTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MTLCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MTLCurrency",Description = "MTLCurrency")>] 
          mtlcurrency : obj)
@@ -472,7 +472,7 @@ module MTLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_MTLCurrency_triangulationCurrency", Description="Create a MTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MTLCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MTLCurrency",Description = "MTLCurrency")>] 
          mtlcurrency : obj)
@@ -505,9 +505,9 @@ module MTLCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MTLCurrency_Range", Description="Create a range of MTLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MTLCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

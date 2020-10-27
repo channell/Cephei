@@ -39,7 +39,7 @@ module GaussianQuadratureFunction =
     *)
     [<ExcelFunction(Name="_GaussianQuadrature", Description="Create a GaussianQuadrature",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussianQuadrature_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "GaussianQuadrature")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
@@ -82,7 +82,7 @@ module GaussianQuadratureFunction =
     *)
     [<ExcelFunction(Name="_GaussianQuadrature_order", Description="Create a GaussianQuadrature",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussianQuadrature_order
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussianQuadrature",Description = "GaussianQuadrature")>] 
          gaussianquadrature : obj)
@@ -118,7 +118,7 @@ module GaussianQuadratureFunction =
     *)
     [<ExcelFunction(Name="_GaussianQuadrature_value", Description="Create a GaussianQuadrature",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussianQuadrature_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussianQuadrature",Description = "GaussianQuadrature")>] 
          gaussianquadrature : obj)
@@ -160,7 +160,7 @@ module GaussianQuadratureFunction =
     *)
     [<ExcelFunction(Name="_GaussianQuadrature_weights", Description="Create a GaussianQuadrature",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussianQuadrature_weights
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussianQuadrature",Description = "GaussianQuadrature")>] 
          gaussianquadrature : obj)
@@ -196,7 +196,7 @@ module GaussianQuadratureFunction =
     *)
     [<ExcelFunction(Name="_GaussianQuadrature_x", Description="Create a GaussianQuadrature",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussianQuadrature_x
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GaussianQuadrature",Description = "GaussianQuadrature")>] 
          gaussianquadrature : obj)
@@ -229,9 +229,9 @@ module GaussianQuadratureFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GaussianQuadrature_Range", Description="Create a range of GaussianQuadrature",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GaussianQuadrature_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

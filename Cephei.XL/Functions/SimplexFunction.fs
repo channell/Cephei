@@ -39,7 +39,7 @@ module SimplexFunction =
     *)
     [<ExcelFunction(Name="_Simplex_minimize", Description="Create a Simplex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Simplex_minimize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Simplex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Simplex",Description = "Simplex")>] 
          simplex : obj)
@@ -87,7 +87,7 @@ module SimplexFunction =
     *)
     [<ExcelFunction(Name="_Simplex", Description="Create a Simplex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Simplex_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Simplex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="lambda",Description = "double")>] 
          lambda : obj)
@@ -121,9 +121,9 @@ module SimplexFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Simplex_Range", Description="Create a range of Simplex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Simplex_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

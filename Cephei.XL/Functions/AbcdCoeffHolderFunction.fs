@@ -39,7 +39,7 @@ module AbcdCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_AbcdCoeffHolder_a_", Description="Create a AbcdCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCoeffHolder_a_
-        ([<ExcelArgument(Name="Mnemonic",Description = "AbcdCoeffHolder")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCoeffHolder",Description = "AbcdCoeffHolder")>] 
          abcdcoeffholder : obj)
@@ -75,7 +75,7 @@ module AbcdCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_AbcdCoeffHolder", Description="Create a AbcdCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCoeffHolder_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AbcdCoeffHolder")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
@@ -154,7 +154,7 @@ module AbcdCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_AbcdCoeffHolder_abcdEndCriteria_", Description="Create a AbcdCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCoeffHolder_abcdEndCriteria_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCoeffHolder",Description = "AbcdCoeffHolder")>] 
          abcdcoeffholder : obj)
@@ -190,7 +190,7 @@ module AbcdCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_AbcdCoeffHolder_aIsFixed_", Description="Create a AbcdCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCoeffHolder_aIsFixed_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCoeffHolder",Description = "AbcdCoeffHolder")>] 
          abcdcoeffholder : obj)
@@ -226,7 +226,7 @@ module AbcdCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_AbcdCoeffHolder_b_", Description="Create a AbcdCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCoeffHolder_b_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCoeffHolder",Description = "AbcdCoeffHolder")>] 
          abcdcoeffholder : obj)
@@ -262,7 +262,7 @@ module AbcdCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_AbcdCoeffHolder_bIsFixed_", Description="Create a AbcdCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCoeffHolder_bIsFixed_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCoeffHolder",Description = "AbcdCoeffHolder")>] 
          abcdcoeffholder : obj)
@@ -298,7 +298,7 @@ module AbcdCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_AbcdCoeffHolder_c_", Description="Create a AbcdCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCoeffHolder_c_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCoeffHolder",Description = "AbcdCoeffHolder")>] 
          abcdcoeffholder : obj)
@@ -334,7 +334,7 @@ module AbcdCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_AbcdCoeffHolder_cIsFixed_", Description="Create a AbcdCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCoeffHolder_cIsFixed_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCoeffHolder",Description = "AbcdCoeffHolder")>] 
          abcdcoeffholder : obj)
@@ -370,7 +370,7 @@ module AbcdCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_AbcdCoeffHolder_d_", Description="Create a AbcdCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCoeffHolder_d_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCoeffHolder",Description = "AbcdCoeffHolder")>] 
          abcdcoeffholder : obj)
@@ -406,7 +406,7 @@ module AbcdCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_AbcdCoeffHolder_dIsFixed_", Description="Create a AbcdCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCoeffHolder_dIsFixed_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCoeffHolder",Description = "AbcdCoeffHolder")>] 
          abcdcoeffholder : obj)
@@ -442,7 +442,7 @@ module AbcdCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_AbcdCoeffHolder_error_", Description="Create a AbcdCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCoeffHolder_error_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCoeffHolder",Description = "AbcdCoeffHolder")>] 
          abcdcoeffholder : obj)
@@ -478,7 +478,7 @@ module AbcdCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_AbcdCoeffHolder_k_", Description="Create a AbcdCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCoeffHolder_k_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCoeffHolder",Description = "AbcdCoeffHolder")>] 
          abcdcoeffholder : obj)
@@ -514,7 +514,7 @@ module AbcdCoeffHolderFunction =
     *)
     [<ExcelFunction(Name="_AbcdCoeffHolder_maxError_", Description="Create a AbcdCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCoeffHolder_maxError_
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AbcdCoeffHolder",Description = "AbcdCoeffHolder")>] 
          abcdcoeffholder : obj)
@@ -547,9 +547,9 @@ module AbcdCoeffHolderFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AbcdCoeffHolder_Range", Description="Create a range of AbcdCoeffHolder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AbcdCoeffHolder_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

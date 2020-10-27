@@ -39,15 +39,15 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "DividendVanillaOption")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="payoff",Description = "StrikedTypePayoff")>] 
          payoff : obj)
         ([<ExcelArgument(Name="exercise",Description = "Exercise")>] 
          exercise : obj)
-        ([<ExcelArgument(Name="dividendDates",Description = "Date")>] 
+        ([<ExcelArgument(Name="dividendDate ranges",Description = "Date range")>] 
          dividendDates : obj)
-        ([<ExcelArgument(Name="dividends",Description = "double")>] 
+        ([<ExcelArgument(Name="dividends",Description = "double range")>] 
          dividends : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
@@ -106,7 +106,7 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_impliedVolatility", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_impliedVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
@@ -114,13 +114,13 @@ module DividendVanillaOptionFunction =
          targetValue : obj)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "double or empty")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "int or empty")>] 
          maxEvaluations : obj)
-        ([<ExcelArgument(Name="minVol",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="minVol",Description = "double or empty")>] 
          minVol : obj)
-        ([<ExcelArgument(Name="maxVol",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="maxVol",Description = "double or empty")>] 
          maxVol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -178,7 +178,7 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_delta", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_delta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
@@ -214,7 +214,7 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_deltaForward", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_deltaForward
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
@@ -250,7 +250,7 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_dividendRho", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_dividendRho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
@@ -286,7 +286,7 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_elasticity", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_elasticity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
@@ -322,7 +322,7 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_gamma", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_gamma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
@@ -358,7 +358,7 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_isExpired", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
@@ -394,7 +394,7 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_itmCashProbability", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_itmCashProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
@@ -430,7 +430,7 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_rho", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
@@ -466,7 +466,7 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_strikeSensitivity", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_strikeSensitivity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
@@ -502,7 +502,7 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_theta", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_theta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
@@ -538,7 +538,7 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_thetaPerDay", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_thetaPerDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
@@ -574,7 +574,7 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_vega", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
@@ -610,7 +610,7 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_exercise", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_exercise
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
@@ -646,7 +646,7 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_payoff", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_payoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Payoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
@@ -682,7 +682,7 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_CASH", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
@@ -718,7 +718,7 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_errorEstimate", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
@@ -754,7 +754,7 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_NPV", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
@@ -790,7 +790,7 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_result", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
@@ -832,7 +832,7 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_setPricingEngine", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
@@ -874,7 +874,7 @@ module DividendVanillaOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendVanillaOption_valuationDate", Description="Create a DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendVanillaOption",Description = "DividendVanillaOption")>] 
          dividendvanillaoption : obj)
@@ -907,9 +907,9 @@ module DividendVanillaOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DividendVanillaOption_Range", Description="Create a range of DividendVanillaOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendVanillaOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

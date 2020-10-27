@@ -39,7 +39,7 @@ module AnalyticDiscreteGeometricAverageStrikeAsianEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticDiscreteGeometricAverageStrikeAsianEngine", Description="Create a AnalyticDiscreteGeometricAverageStrikeAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDiscreteGeometricAverageStrikeAsianEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AnalyticDiscreteGeometricAverageStrikeAsianEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -77,9 +77,9 @@ module AnalyticDiscreteGeometricAverageStrikeAsianEngineFunction =
 
     [<ExcelFunction(Name="_AnalyticDiscreteGeometricAverageStrikeAsianEngine_Range", Description="Create a range of AnalyticDiscreteGeometricAverageStrikeAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticDiscreteGeometricAverageStrikeAsianEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

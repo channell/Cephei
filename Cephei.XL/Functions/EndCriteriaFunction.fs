@@ -39,7 +39,7 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria_checkMaxIterations", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_checkMaxIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "EndCriteria")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EndCriteria",Description = "EndCriteria")>] 
          endcriteria : obj)
@@ -87,7 +87,7 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria_checkStationaryFunctionAccuracy", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_checkStationaryFunctionAccuracy
-        ([<ExcelArgument(Name="Mnemonic",Description = "EndCriteria")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EndCriteria",Description = "EndCriteria")>] 
          endcriteria : obj)
@@ -141,7 +141,7 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria_checkStationaryFunctionValue", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_checkStationaryFunctionValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "EndCriteria")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EndCriteria",Description = "EndCriteria")>] 
          endcriteria : obj)
@@ -201,7 +201,7 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria_checkStationaryPoint", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_checkStationaryPoint
-        ([<ExcelArgument(Name="Mnemonic",Description = "EndCriteria")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EndCriteria",Description = "EndCriteria")>] 
          endcriteria : obj)
@@ -261,7 +261,7 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria_checkZeroGradientNorm", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_checkZeroGradientNorm
-        ([<ExcelArgument(Name="Mnemonic",Description = "EndCriteria")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EndCriteria",Description = "EndCriteria")>] 
          endcriteria : obj)
@@ -309,7 +309,7 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "EndCriteria")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="maxIterations",Description = "int")>] 
          maxIterations : obj)
@@ -370,7 +370,7 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria_functionEpsilon", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_functionEpsilon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EndCriteria",Description = "EndCriteria")>] 
          endcriteria : obj)
@@ -406,7 +406,7 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria_gradientNormEpsilon", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_gradientNormEpsilon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EndCriteria",Description = "EndCriteria")>] 
          endcriteria : obj)
@@ -442,7 +442,7 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria_maxIterations", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_maxIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EndCriteria",Description = "EndCriteria")>] 
          endcriteria : obj)
@@ -478,7 +478,7 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria_maxStationaryStateIterations", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_maxStationaryStateIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EndCriteria",Description = "EndCriteria")>] 
          endcriteria : obj)
@@ -514,7 +514,7 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria_rootEpsilon", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_rootEpsilon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EndCriteria",Description = "EndCriteria")>] 
          endcriteria : obj)
@@ -550,7 +550,7 @@ module EndCriteriaFunction =
     *)
     [<ExcelFunction(Name="_EndCriteria_value", Description="Create a EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EndCriteria",Description = "EndCriteria")>] 
          endcriteria : obj)
@@ -631,9 +631,9 @@ module EndCriteriaFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_EndCriteria_Range", Description="Create a range of EndCriteria",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EndCriteria_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

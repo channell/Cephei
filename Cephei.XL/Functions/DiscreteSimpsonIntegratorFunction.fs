@@ -39,7 +39,7 @@ module DiscreteSimpsonIntegratorFunction =
     *)
     [<ExcelFunction(Name="_DiscreteSimpsonIntegrator", Description="Create a DiscreteSimpsonIntegrator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteSimpsonIntegrator_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "DiscreteSimpsonIntegrator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="evaluations",Description = "int")>] 
          evaluations : obj)
@@ -76,7 +76,7 @@ module DiscreteSimpsonIntegratorFunction =
     *)
     [<ExcelFunction(Name="_DiscreteSimpsonIntegrator_absoluteAccuracy", Description="Create a DiscreteSimpsonIntegrator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteSimpsonIntegrator_absoluteAccuracy
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscreteSimpsonIntegrator",Description = "DiscreteSimpsonIntegrator")>] 
          discretesimpsonintegrator : obj)
@@ -112,7 +112,7 @@ module DiscreteSimpsonIntegratorFunction =
     *)
     [<ExcelFunction(Name="_DiscreteSimpsonIntegrator_absoluteError", Description="Create a DiscreteSimpsonIntegrator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteSimpsonIntegrator_absoluteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscreteSimpsonIntegrator",Description = "DiscreteSimpsonIntegrator")>] 
          discretesimpsonintegrator : obj)
@@ -148,7 +148,7 @@ module DiscreteSimpsonIntegratorFunction =
     *)
     [<ExcelFunction(Name="_DiscreteSimpsonIntegrator_integrationSuccess", Description="Create a DiscreteSimpsonIntegrator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteSimpsonIntegrator_integrationSuccess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscreteSimpsonIntegrator",Description = "DiscreteSimpsonIntegrator")>] 
          discretesimpsonintegrator : obj)
@@ -184,7 +184,7 @@ module DiscreteSimpsonIntegratorFunction =
     *)
     [<ExcelFunction(Name="_DiscreteSimpsonIntegrator_maxEvaluations", Description="Create a DiscreteSimpsonIntegrator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteSimpsonIntegrator_maxEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscreteSimpsonIntegrator",Description = "DiscreteSimpsonIntegrator")>] 
          discretesimpsonintegrator : obj)
@@ -220,7 +220,7 @@ module DiscreteSimpsonIntegratorFunction =
     *)
     [<ExcelFunction(Name="_DiscreteSimpsonIntegrator_numberOfEvaluations", Description="Create a DiscreteSimpsonIntegrator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteSimpsonIntegrator_numberOfEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscreteSimpsonIntegrator",Description = "DiscreteSimpsonIntegrator")>] 
          discretesimpsonintegrator : obj)
@@ -256,7 +256,7 @@ module DiscreteSimpsonIntegratorFunction =
     *)
     [<ExcelFunction(Name="_DiscreteSimpsonIntegrator_setAbsoluteAccuracy", Description="Create a DiscreteSimpsonIntegrator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteSimpsonIntegrator_setAbsoluteAccuracy
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscreteSimpsonIntegrator",Description = "DiscreteSimpsonIntegrator")>] 
          discretesimpsonintegrator : obj)
@@ -298,7 +298,7 @@ module DiscreteSimpsonIntegratorFunction =
     *)
     [<ExcelFunction(Name="_DiscreteSimpsonIntegrator_setMaxEvaluations", Description="Create a DiscreteSimpsonIntegrator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteSimpsonIntegrator_setMaxEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscreteSimpsonIntegrator",Description = "DiscreteSimpsonIntegrator")>] 
          discretesimpsonintegrator : obj)
@@ -340,7 +340,7 @@ module DiscreteSimpsonIntegratorFunction =
     *)
     [<ExcelFunction(Name="_DiscreteSimpsonIntegrator_value", Description="Create a DiscreteSimpsonIntegrator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteSimpsonIntegrator_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscreteSimpsonIntegrator",Description = "DiscreteSimpsonIntegrator")>] 
          discretesimpsonintegrator : obj)
@@ -391,9 +391,9 @@ module DiscreteSimpsonIntegratorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DiscreteSimpsonIntegrator_Range", Description="Create a range of DiscreteSimpsonIntegrator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscreteSimpsonIntegrator_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

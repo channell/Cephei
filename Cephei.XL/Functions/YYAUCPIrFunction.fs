@@ -39,7 +39,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "YYAUCPIr")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          frequency : obj)
@@ -88,7 +88,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr1", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "YYAUCPIr")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          frequency : obj)
@@ -143,7 +143,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_clone", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
@@ -185,7 +185,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_fixing", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
@@ -233,7 +233,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_ratio", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_ratio
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
@@ -269,7 +269,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_yoyInflationTermStructure", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_yoyInflationTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
@@ -305,7 +305,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_addFixing", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
@@ -360,7 +360,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_availabilityLag", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_availabilityLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
@@ -396,7 +396,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_currency", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
@@ -432,7 +432,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_familyName", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
@@ -468,7 +468,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_fixingCalendar", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
@@ -504,7 +504,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_frequency", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
@@ -540,7 +540,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_interpolated", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_interpolated
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
@@ -576,7 +576,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_isValidFixingDate", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
@@ -618,7 +618,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_name", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
@@ -654,7 +654,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_region", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_region
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
@@ -690,7 +690,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_revised", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_revised
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
@@ -726,7 +726,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_update", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
@@ -762,13 +762,13 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_addFixings", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -816,7 +816,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_addFixings1", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
@@ -864,7 +864,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_allowsNativeFixings", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
@@ -900,7 +900,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_clearFixings", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
@@ -936,7 +936,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_registerWith", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
@@ -978,7 +978,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_timeSeries", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
@@ -1014,7 +1014,7 @@ module YYAUCPIrFunction =
     *)
     [<ExcelFunction(Name="_YYAUCPIr_unregisterWith", Description="Create a YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YYAUCPIr",Description = "YYAUCPIr")>] 
          yyaucpir : obj)
@@ -1053,9 +1053,9 @@ module YYAUCPIrFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_YYAUCPIr_Range", Description="Create a range of YYAUCPIr",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YYAUCPIr_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

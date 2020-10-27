@@ -39,7 +39,7 @@ module FdmSimpleProcess1DMesherFunction =
     *)
     [<ExcelFunction(Name="_FdmSimpleProcess1DMesher", Description="Create a FdmSimpleProcess1DMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSimpleProcess1DMesher_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmSimpleProcess1DMesher")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
@@ -47,9 +47,9 @@ module FdmSimpleProcess1DMesherFunction =
          Process : obj)
         ([<ExcelArgument(Name="maturity",Description = "double")>] 
          maturity : obj)
-        ([<ExcelArgument(Name="tAvgSteps",Description = "FdmSimpleProcess1DMesher")>] 
+        ([<ExcelArgument(Name="tAvgSteps",Description = "int or empty")>] 
          tAvgSteps : obj)
-        ([<ExcelArgument(Name="epsilon",Description = "FdmSimpleProcess1DMesher")>] 
+        ([<ExcelArgument(Name="epsilon",Description = "double or empty")>] 
          epsilon : obj)
         ([<ExcelArgument(Name="mandatoryPoint",Description = "double")>] 
          mandatoryPoint : obj)
@@ -106,7 +106,7 @@ module FdmSimpleProcess1DMesherFunction =
     *)
     [<ExcelFunction(Name="_FdmSimpleProcess1DMesher_dminus", Description="Create a FdmSimpleProcess1DMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSimpleProcess1DMesher_dminus
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmSimpleProcess1DMesher",Description = "FdmSimpleProcess1DMesher")>] 
          fdmsimpleprocess1dmesher : obj)
@@ -148,7 +148,7 @@ module FdmSimpleProcess1DMesherFunction =
     *)
     [<ExcelFunction(Name="_FdmSimpleProcess1DMesher_dplus", Description="Create a FdmSimpleProcess1DMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSimpleProcess1DMesher_dplus
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmSimpleProcess1DMesher",Description = "FdmSimpleProcess1DMesher")>] 
          fdmsimpleprocess1dmesher : obj)
@@ -190,7 +190,7 @@ module FdmSimpleProcess1DMesherFunction =
     *)
     [<ExcelFunction(Name="_FdmSimpleProcess1DMesher_location", Description="Create a FdmSimpleProcess1DMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSimpleProcess1DMesher_location
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmSimpleProcess1DMesher",Description = "FdmSimpleProcess1DMesher")>] 
          fdmsimpleprocess1dmesher : obj)
@@ -232,7 +232,7 @@ module FdmSimpleProcess1DMesherFunction =
     *)
     [<ExcelFunction(Name="_FdmSimpleProcess1DMesher_locations", Description="Create a FdmSimpleProcess1DMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSimpleProcess1DMesher_locations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmSimpleProcess1DMesher",Description = "FdmSimpleProcess1DMesher")>] 
          fdmsimpleprocess1dmesher : obj)
@@ -268,7 +268,7 @@ module FdmSimpleProcess1DMesherFunction =
     *)
     [<ExcelFunction(Name="_FdmSimpleProcess1DMesher_size", Description="Create a FdmSimpleProcess1DMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSimpleProcess1DMesher_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmSimpleProcess1DMesher",Description = "FdmSimpleProcess1DMesher")>] 
          fdmsimpleprocess1dmesher : obj)
@@ -301,9 +301,9 @@ module FdmSimpleProcess1DMesherFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmSimpleProcess1DMesher_Range", Description="Create a range of FdmSimpleProcess1DMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmSimpleProcess1DMesher_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

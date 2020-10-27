@@ -89,6 +89,7 @@
                     ("Option.Type","Put, Call");
                     ("Duration.Type","Simple, Macaulay, Modified");
                     ("Position.Type","Long, Short");
+                    ("Position.Type","Long, Short");
                     ("InterestRateType","Fixed, Floating");
                     ("Compounding","Simple, Compounded, Continuous, SimpleThenCompounded");
                     ("Month","January, February, March, April, May, June, July, August, September, October, November, December, Jan, Feb, Mar, Apr, Jun, Jul, Aug, Sep, Oct, Nov, Dec");
@@ -122,7 +123,7 @@ let rec allFiles directory pattern =
                 let rep =
                     matcher
                     |> Array.filter (fun (k,v) -> s.Contains(k))
-                    |> Array.map (fun (k,v) -> ("\"" + k + "\"", "\"" + k  + ": " + v + "\""))
+                    |> Array.map (fun (k,v) -> ("\"" + k , "\"" + k  + ": " + v ))
                 if rep = [||] then 
                     s
                 else

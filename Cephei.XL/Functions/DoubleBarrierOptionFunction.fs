@@ -39,7 +39,7 @@ module DoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DoubleBarrierOption", Description="Create a DoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoubleBarrierOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "DoubleBarrierOption")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="barrierType",Description = "DoubleBarrier.Type")>] 
          barrierType : obj)
@@ -118,7 +118,7 @@ module DoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DoubleBarrierOption_impliedVolatility", Description="Create a DoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoubleBarrierOption_impliedVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DoubleBarrierOption",Description = "DoubleBarrierOption")>] 
          doublebarrieroption : obj)
@@ -126,13 +126,13 @@ module DoubleBarrierOptionFunction =
          targetValue : obj)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "double or empty")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="maxEvaluations",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="maxEvaluations",Description = "int or empty")>] 
          maxEvaluations : obj)
-        ([<ExcelArgument(Name="minVol",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="minVol",Description = "double or empty")>] 
          minVol : obj)
-        ([<ExcelArgument(Name="maxVol",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="maxVol",Description = "double or empty")>] 
          maxVol : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -190,7 +190,7 @@ module DoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DoubleBarrierOption_delta", Description="Create a DoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoubleBarrierOption_delta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DoubleBarrierOption",Description = "DoubleBarrierOption")>] 
          doublebarrieroption : obj)
@@ -226,7 +226,7 @@ module DoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DoubleBarrierOption_deltaForward", Description="Create a DoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoubleBarrierOption_deltaForward
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DoubleBarrierOption",Description = "DoubleBarrierOption")>] 
          doublebarrieroption : obj)
@@ -262,7 +262,7 @@ module DoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DoubleBarrierOption_dividendRho", Description="Create a DoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoubleBarrierOption_dividendRho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DoubleBarrierOption",Description = "DoubleBarrierOption")>] 
          doublebarrieroption : obj)
@@ -298,7 +298,7 @@ module DoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DoubleBarrierOption_elasticity", Description="Create a DoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoubleBarrierOption_elasticity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DoubleBarrierOption",Description = "DoubleBarrierOption")>] 
          doublebarrieroption : obj)
@@ -334,7 +334,7 @@ module DoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DoubleBarrierOption_gamma", Description="Create a DoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoubleBarrierOption_gamma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DoubleBarrierOption",Description = "DoubleBarrierOption")>] 
          doublebarrieroption : obj)
@@ -370,7 +370,7 @@ module DoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DoubleBarrierOption_isExpired", Description="Create a DoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoubleBarrierOption_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DoubleBarrierOption",Description = "DoubleBarrierOption")>] 
          doublebarrieroption : obj)
@@ -406,7 +406,7 @@ module DoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DoubleBarrierOption_itmCashProbability", Description="Create a DoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoubleBarrierOption_itmCashProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DoubleBarrierOption",Description = "DoubleBarrierOption")>] 
          doublebarrieroption : obj)
@@ -442,7 +442,7 @@ module DoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DoubleBarrierOption_rho", Description="Create a DoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoubleBarrierOption_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DoubleBarrierOption",Description = "DoubleBarrierOption")>] 
          doublebarrieroption : obj)
@@ -478,7 +478,7 @@ module DoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DoubleBarrierOption_strikeSensitivity", Description="Create a DoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoubleBarrierOption_strikeSensitivity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DoubleBarrierOption",Description = "DoubleBarrierOption")>] 
          doublebarrieroption : obj)
@@ -514,7 +514,7 @@ module DoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DoubleBarrierOption_theta", Description="Create a DoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoubleBarrierOption_theta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DoubleBarrierOption",Description = "DoubleBarrierOption")>] 
          doublebarrieroption : obj)
@@ -550,7 +550,7 @@ module DoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DoubleBarrierOption_thetaPerDay", Description="Create a DoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoubleBarrierOption_thetaPerDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DoubleBarrierOption",Description = "DoubleBarrierOption")>] 
          doublebarrieroption : obj)
@@ -586,7 +586,7 @@ module DoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DoubleBarrierOption_vega", Description="Create a DoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoubleBarrierOption_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DoubleBarrierOption",Description = "DoubleBarrierOption")>] 
          doublebarrieroption : obj)
@@ -622,7 +622,7 @@ module DoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DoubleBarrierOption_exercise", Description="Create a DoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoubleBarrierOption_exercise
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DoubleBarrierOption",Description = "DoubleBarrierOption")>] 
          doublebarrieroption : obj)
@@ -658,7 +658,7 @@ module DoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DoubleBarrierOption_payoff", Description="Create a DoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoubleBarrierOption_payoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Payoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DoubleBarrierOption",Description = "DoubleBarrierOption")>] 
          doublebarrieroption : obj)
@@ -694,7 +694,7 @@ module DoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DoubleBarrierOption_CASH", Description="Create a DoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoubleBarrierOption_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DoubleBarrierOption",Description = "DoubleBarrierOption")>] 
          doublebarrieroption : obj)
@@ -730,7 +730,7 @@ module DoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DoubleBarrierOption_errorEstimate", Description="Create a DoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoubleBarrierOption_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DoubleBarrierOption",Description = "DoubleBarrierOption")>] 
          doublebarrieroption : obj)
@@ -766,7 +766,7 @@ module DoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DoubleBarrierOption_NPV", Description="Create a DoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoubleBarrierOption_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DoubleBarrierOption",Description = "DoubleBarrierOption")>] 
          doublebarrieroption : obj)
@@ -802,7 +802,7 @@ module DoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DoubleBarrierOption_result", Description="Create a DoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoubleBarrierOption_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DoubleBarrierOption",Description = "DoubleBarrierOption")>] 
          doublebarrieroption : obj)
@@ -844,7 +844,7 @@ module DoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DoubleBarrierOption_setPricingEngine", Description="Create a DoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoubleBarrierOption_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DoubleBarrierOption",Description = "DoubleBarrierOption")>] 
          doublebarrieroption : obj)
@@ -886,7 +886,7 @@ module DoubleBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DoubleBarrierOption_valuationDate", Description="Create a DoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoubleBarrierOption_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DoubleBarrierOption",Description = "DoubleBarrierOption")>] 
          doublebarrieroption : obj)
@@ -919,9 +919,9 @@ module DoubleBarrierOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DoubleBarrierOption_Range", Description="Create a range of DoubleBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoubleBarrierOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

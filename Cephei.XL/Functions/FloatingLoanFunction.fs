@@ -39,7 +39,7 @@ module FloatingLoanFunction =
     *)
     [<ExcelFunction(Name="_FloatingLoan_floatingLeg", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_floatingLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FloatingLoan",Description = "FloatingLoan")>] 
          floatingloan : obj)
@@ -75,7 +75,7 @@ module FloatingLoanFunction =
     *)
     [<ExcelFunction(Name="_FloatingLoan", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLoan")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Type",Description = "Loan.Type: Deposit, Loan")>] 
          Type : obj)
@@ -166,7 +166,7 @@ module FloatingLoanFunction =
     *)
     [<ExcelFunction(Name="_FloatingLoan_principalLeg", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_principalLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FloatingLoan",Description = "FloatingLoan")>] 
          floatingloan : obj)
@@ -202,7 +202,7 @@ module FloatingLoanFunction =
     *)
     [<ExcelFunction(Name="_FloatingLoan_isExpired", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FloatingLoan",Description = "FloatingLoan")>] 
          floatingloan : obj)
@@ -238,7 +238,7 @@ module FloatingLoanFunction =
     *)
     [<ExcelFunction(Name="_FloatingLoan_CASH", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FloatingLoan",Description = "FloatingLoan")>] 
          floatingloan : obj)
@@ -274,7 +274,7 @@ module FloatingLoanFunction =
     *)
     [<ExcelFunction(Name="_FloatingLoan_errorEstimate", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FloatingLoan",Description = "FloatingLoan")>] 
          floatingloan : obj)
@@ -310,7 +310,7 @@ module FloatingLoanFunction =
     *)
     [<ExcelFunction(Name="_FloatingLoan_NPV", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FloatingLoan",Description = "FloatingLoan")>] 
          floatingloan : obj)
@@ -346,7 +346,7 @@ module FloatingLoanFunction =
     *)
     [<ExcelFunction(Name="_FloatingLoan_result", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FloatingLoan",Description = "FloatingLoan")>] 
          floatingloan : obj)
@@ -388,7 +388,7 @@ module FloatingLoanFunction =
     *)
     [<ExcelFunction(Name="_FloatingLoan_setPricingEngine", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FloatingLoan",Description = "FloatingLoan")>] 
          floatingloan : obj)
@@ -430,7 +430,7 @@ module FloatingLoanFunction =
     *)
     [<ExcelFunction(Name="_FloatingLoan_valuationDate", Description="Create a FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FloatingLoan",Description = "FloatingLoan")>] 
          floatingloan : obj)
@@ -463,9 +463,9 @@ module FloatingLoanFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FloatingLoan_Range", Description="Create a range of FloatingLoan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingLoan_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

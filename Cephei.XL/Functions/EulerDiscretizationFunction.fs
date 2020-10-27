@@ -39,7 +39,7 @@ module EulerDiscretizationFunction =
     *)
     [<ExcelFunction(Name="_EulerDiscretization_covariance", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EulerDiscretization_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EulerDiscretization",Description = "EulerDiscretization")>] 
          eulerdiscretization : obj)
@@ -99,7 +99,7 @@ module EulerDiscretizationFunction =
     *)
     [<ExcelFunction(Name="_EulerDiscretization_diffusion", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EulerDiscretization_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EulerDiscretization",Description = "EulerDiscretization")>] 
          eulerdiscretization : obj)
@@ -159,7 +159,7 @@ module EulerDiscretizationFunction =
     *)
     [<ExcelFunction(Name="_EulerDiscretization_diffusion1", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EulerDiscretization_diffusion1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EulerDiscretization",Description = "EulerDiscretization")>] 
          eulerdiscretization : obj)
@@ -219,7 +219,7 @@ module EulerDiscretizationFunction =
     *)
     [<ExcelFunction(Name="_EulerDiscretization_drift1", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EulerDiscretization_drift1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EulerDiscretization",Description = "EulerDiscretization")>] 
          eulerdiscretization : obj)
@@ -279,7 +279,7 @@ module EulerDiscretizationFunction =
     *)
     [<ExcelFunction(Name="_EulerDiscretization_drift", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EulerDiscretization_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EulerDiscretization",Description = "EulerDiscretization")>] 
          eulerdiscretization : obj)
@@ -339,7 +339,7 @@ module EulerDiscretizationFunction =
     *)
     [<ExcelFunction(Name="_EulerDiscretization_variance", Description="Create a EulerDiscretization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EulerDiscretization_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EulerDiscretization",Description = "EulerDiscretization")>] 
          eulerdiscretization : obj)
@@ -396,9 +396,9 @@ module EulerDiscretizationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_EulerDiscretization_Range", Description="Create a range of EulerDiscretization",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EulerDiscretization_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

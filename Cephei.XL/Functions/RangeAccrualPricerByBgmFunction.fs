@@ -39,7 +39,7 @@ module RangeAccrualPricerByBgmFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualPricerByBgm", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "RangeAccrualPricerByBgm")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="correlation",Description = "double")>] 
          correlation : obj)
@@ -100,7 +100,7 @@ module RangeAccrualPricerByBgmFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualPricerByBgm_swapletPrice", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_swapletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualPricerByBgm",Description = "RangeAccrualPricerByBgm")>] 
          rangeaccrualpricerbybgm : obj)
@@ -136,7 +136,7 @@ module RangeAccrualPricerByBgmFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualPricerByBgm_capletPrice", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_capletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualPricerByBgm",Description = "RangeAccrualPricerByBgm")>] 
          rangeaccrualpricerbybgm : obj)
@@ -178,7 +178,7 @@ module RangeAccrualPricerByBgmFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualPricerByBgm_capletRate", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_capletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualPricerByBgm",Description = "RangeAccrualPricerByBgm")>] 
          rangeaccrualpricerbybgm : obj)
@@ -220,7 +220,7 @@ module RangeAccrualPricerByBgmFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualPricerByBgm_floorletPrice", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_floorletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualPricerByBgm",Description = "RangeAccrualPricerByBgm")>] 
          rangeaccrualpricerbybgm : obj)
@@ -262,7 +262,7 @@ module RangeAccrualPricerByBgmFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualPricerByBgm_floorletRate", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_floorletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualPricerByBgm",Description = "RangeAccrualPricerByBgm")>] 
          rangeaccrualpricerbybgm : obj)
@@ -304,7 +304,7 @@ module RangeAccrualPricerByBgmFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualPricerByBgm_initialize", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_initialize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualPricerByBgm",Description = "RangeAccrualPricerByBgm")>] 
          rangeaccrualpricerbybgm : obj)
@@ -346,7 +346,7 @@ module RangeAccrualPricerByBgmFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualPricerByBgm_swapletRate", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_swapletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualPricerByBgm",Description = "RangeAccrualPricerByBgm")>] 
          rangeaccrualpricerbybgm : obj)
@@ -382,7 +382,7 @@ module RangeAccrualPricerByBgmFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualPricerByBgm_registerWith", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualPricerByBgm",Description = "RangeAccrualPricerByBgm")>] 
          rangeaccrualpricerbybgm : obj)
@@ -424,7 +424,7 @@ module RangeAccrualPricerByBgmFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualPricerByBgm_unregisterWith", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualPricerByBgm",Description = "RangeAccrualPricerByBgm")>] 
          rangeaccrualpricerbybgm : obj)
@@ -466,7 +466,7 @@ module RangeAccrualPricerByBgmFunction =
     *)
     [<ExcelFunction(Name="_RangeAccrualPricerByBgm_update", Description="Create a RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RangeAccrualPricerByBgm",Description = "RangeAccrualPricerByBgm")>] 
          rangeaccrualpricerbybgm : obj)
@@ -499,9 +499,9 @@ module RangeAccrualPricerByBgmFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_RangeAccrualPricerByBgm_Range", Description="Create a range of RangeAccrualPricerByBgm",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RangeAccrualPricerByBgm_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

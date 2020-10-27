@@ -39,19 +39,19 @@ module SVISpecsFunction =
     *)
     [<ExcelFunction(Name="_SVISpecs_defaultValues", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_defaultValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SVISpecs",Description = "SVISpecs")>] 
          svispecs : obj)
-        ([<ExcelArgument(Name="param",Description = "double")>] 
+        ([<ExcelArgument(Name="param",Description = "double range")>] 
          param : obj)
-        ([<ExcelArgument(Name="paramIsFixed",Description = "bool")>] 
+        ([<ExcelArgument(Name="paramIsFixed",Description = "bool range")>] 
          paramIsFixed : obj)
         ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
         ([<ExcelArgument(Name="expiryTime",Description = "double")>] 
          expiryTime : obj)
-        ([<ExcelArgument(Name="addParams",Description = "double")>] 
+        ([<ExcelArgument(Name="addParams",Description = "double range")>] 
          addParams : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -105,7 +105,7 @@ module SVISpecsFunction =
     *)
     [<ExcelFunction(Name="_SVISpecs_dilationFactor", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_dilationFactor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SVISpecs",Description = "SVISpecs")>] 
          svispecs : obj)
@@ -141,7 +141,7 @@ module SVISpecsFunction =
     *)
     [<ExcelFunction(Name="_SVISpecs_dimension", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_dimension
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SVISpecs",Description = "SVISpecs")>] 
          svispecs : obj)
@@ -177,15 +177,15 @@ module SVISpecsFunction =
     *)
     [<ExcelFunction(Name="_SVISpecs_direct", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_direct
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SVISpecs",Description = "SVISpecs")>] 
          svispecs : obj)
         ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
-        ([<ExcelArgument(Name="paramIsFixed",Description = "bool")>] 
+        ([<ExcelArgument(Name="paramIsFixed",Description = "bool range")>] 
          paramIsFixed : obj)
-        ([<ExcelArgument(Name="param",Description = "double")>] 
+        ([<ExcelArgument(Name="param",Description = "double range")>] 
          param : obj)
         ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
@@ -237,7 +237,7 @@ module SVISpecsFunction =
     *)
     [<ExcelFunction(Name="_SVISpecs_eps1", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_eps1
-        ([<ExcelArgument(Name="Mnemonic",Description = "IWrapper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SVISpecs",Description = "SVISpecs")>] 
          svispecs : obj)
@@ -273,7 +273,7 @@ module SVISpecsFunction =
     *)
     [<ExcelFunction(Name="_SVISpecs_eps2", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_eps2
-        ([<ExcelArgument(Name="Mnemonic",Description = "IWrapper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SVISpecs",Description = "SVISpecs")>] 
          svispecs : obj)
@@ -309,21 +309,21 @@ module SVISpecsFunction =
     *)
     [<ExcelFunction(Name="_SVISpecs_guess", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_guess
-        ([<ExcelArgument(Name="Mnemonic",Description = "IWrapper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SVISpecs",Description = "SVISpecs")>] 
          svispecs : obj)
         ([<ExcelArgument(Name="values",Description = "Vector")>] 
          values : obj)
-        ([<ExcelArgument(Name="paramIsFixed",Description = "bool")>] 
+        ([<ExcelArgument(Name="paramIsFixed",Description = "bool range")>] 
          paramIsFixed : obj)
         ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
         ([<ExcelArgument(Name="expiryTime",Description = "double")>] 
          expiryTime : obj)
-        ([<ExcelArgument(Name="r",Description = "double")>] 
+        ([<ExcelArgument(Name="r",Description = "double range")>] 
          r : obj)
-        ([<ExcelArgument(Name="addParams",Description = "double")>] 
+        ([<ExcelArgument(Name="addParams",Description = "double range")>] 
          addParams : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -381,7 +381,7 @@ module SVISpecsFunction =
     *)
     [<ExcelFunction(Name="_SVISpecs_instance", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_instance
-        ([<ExcelArgument(Name="Mnemonic",Description = "IWrapper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SVISpecs",Description = "SVISpecs")>] 
          svispecs : obj)
@@ -389,9 +389,9 @@ module SVISpecsFunction =
          t : obj)
         ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
-        ([<ExcelArgument(Name="param",Description = "double")>] 
+        ([<ExcelArgument(Name="param",Description = "double range")>] 
          param : obj)
-        ([<ExcelArgument(Name="addParams",Description = "double")>] 
+        ([<ExcelArgument(Name="addParams",Description = "double range")>] 
          addParams : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -441,15 +441,15 @@ module SVISpecsFunction =
     *)
     [<ExcelFunction(Name="_SVISpecs_inverse", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_inverse
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SVISpecs",Description = "SVISpecs")>] 
          svispecs : obj)
         ([<ExcelArgument(Name="y",Description = "Vector")>] 
          y : obj)
-        ([<ExcelArgument(Name="b",Description = "bool")>] 
+        ([<ExcelArgument(Name="b",Description = "bool range")>] 
          b : obj)
-        ([<ExcelArgument(Name="c",Description = "double")>] 
+        ([<ExcelArgument(Name="c",Description = "double range")>] 
          c : obj)
         ([<ExcelArgument(Name="d",Description = "double")>] 
          d : obj)
@@ -501,7 +501,7 @@ module SVISpecsFunction =
     *)
     [<ExcelFunction(Name="_SVISpecs_modelInstance_", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_modelInstance_
-        ([<ExcelArgument(Name="Mnemonic",Description = "SVIWrapper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SVISpecs",Description = "SVISpecs")>] 
          svispecs : obj)
@@ -537,7 +537,7 @@ module SVISpecsFunction =
     *)
     [<ExcelFunction(Name="_SVISpecs_weight", Description="Create a SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_weight
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SVISpecs",Description = "SVISpecs")>] 
          svispecs : obj)
@@ -547,7 +547,7 @@ module SVISpecsFunction =
          forward : obj)
         ([<ExcelArgument(Name="stdDev",Description = "double")>] 
          stdDev : obj)
-        ([<ExcelArgument(Name="addParams",Description = "double")>] 
+        ([<ExcelArgument(Name="addParams",Description = "double range")>] 
          addParams : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -594,9 +594,9 @@ module SVISpecsFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SVISpecs_Range", Description="Create a range of SVISpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVISpecs_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

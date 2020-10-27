@@ -39,7 +39,7 @@ module SwapFunction =
     *)
     [<ExcelFunction(Name="_Swap_endDiscounts", Description="Create a Swap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Swap_endDiscounts
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Swap",Description = "Swap")>] 
          swap : obj)
@@ -81,7 +81,7 @@ module SwapFunction =
     *)
     [<ExcelFunction(Name="_Swap_engine", Description="Create a Swap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Swap_engine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Swap",Description = "Swap")>] 
          swap : obj)
@@ -117,7 +117,7 @@ module SwapFunction =
     *)
     [<ExcelFunction(Name="_Swap_isExpired", Description="Create a Swap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Swap_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Swap",Description = "Swap")>] 
          swap : obj)
@@ -153,7 +153,7 @@ module SwapFunction =
     *)
     [<ExcelFunction(Name="_Swap_leg", Description="Create a Swap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Swap_leg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Swap",Description = "Swap")>] 
          swap : obj)
@@ -195,7 +195,7 @@ module SwapFunction =
     *)
     [<ExcelFunction(Name="_Swap_legBPS", Description="Create a Swap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Swap_legBPS
-        ([<ExcelArgument(Name="Mnemonic",Description = "Swap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Swap",Description = "Swap")>] 
          swap : obj)
@@ -237,7 +237,7 @@ module SwapFunction =
     *)
     [<ExcelFunction(Name="_Swap_legNPV", Description="Create a Swap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Swap_legNPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Swap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Swap",Description = "Swap")>] 
          swap : obj)
@@ -279,7 +279,7 @@ module SwapFunction =
     *)
     [<ExcelFunction(Name="_Swap_maturityDate", Description="Create a Swap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Swap_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Swap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Swap",Description = "Swap")>] 
          swap : obj)
@@ -315,7 +315,7 @@ module SwapFunction =
     *)
     [<ExcelFunction(Name="_Swap_npvDateDiscount", Description="Create a Swap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Swap_npvDateDiscount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Swap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Swap",Description = "Swap")>] 
          swap : obj)
@@ -351,7 +351,7 @@ module SwapFunction =
     *)
     [<ExcelFunction(Name="_Swap_payer", Description="Create a Swap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Swap_payer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Swap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Swap",Description = "Swap")>] 
          swap : obj)
@@ -393,7 +393,7 @@ module SwapFunction =
     *)
     [<ExcelFunction(Name="_Swap_startDate", Description="Create a Swap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Swap_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Swap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Swap",Description = "Swap")>] 
          swap : obj)
@@ -429,7 +429,7 @@ module SwapFunction =
     *)
     [<ExcelFunction(Name="_Swap_startDiscounts", Description="Create a Swap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Swap_startDiscounts
-        ([<ExcelArgument(Name="Mnemonic",Description = "Swap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Swap",Description = "Swap")>] 
          swap : obj)
@@ -471,11 +471,11 @@ module SwapFunction =
     *)
     [<ExcelFunction(Name="_Swap", Description="Create a Swap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Swap_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Swap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="legs",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="legs",Description = "CashFlow range")>] 
          legs : obj)
-        ([<ExcelArgument(Name="payer",Description = "bool")>] 
+        ([<ExcelArgument(Name="payer",Description = "bool range")>] 
          payer : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
@@ -526,11 +526,11 @@ module SwapFunction =
     *)
     [<ExcelFunction(Name="_Swap1", Description="Create a Swap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Swap_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Swap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="firstLeg",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="firstLeg",Description = "CashFlow range")>] 
          firstLeg : obj)
-        ([<ExcelArgument(Name="secondLeg",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="secondLeg",Description = "CashFlow range")>] 
          secondLeg : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
@@ -581,7 +581,7 @@ module SwapFunction =
     *)
     [<ExcelFunction(Name="_Swap_CASH", Description="Create a Swap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Swap_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Swap",Description = "Swap")>] 
          swap : obj)
@@ -617,7 +617,7 @@ module SwapFunction =
     *)
     [<ExcelFunction(Name="_Swap_errorEstimate", Description="Create a Swap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Swap_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Swap",Description = "Swap")>] 
          swap : obj)
@@ -653,7 +653,7 @@ module SwapFunction =
     *)
     [<ExcelFunction(Name="_Swap_NPV", Description="Create a Swap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Swap_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Swap",Description = "Swap")>] 
          swap : obj)
@@ -689,7 +689,7 @@ module SwapFunction =
     *)
     [<ExcelFunction(Name="_Swap_result", Description="Create a Swap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Swap_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Swap",Description = "Swap")>] 
          swap : obj)
@@ -731,7 +731,7 @@ module SwapFunction =
     *)
     [<ExcelFunction(Name="_Swap_setPricingEngine", Description="Create a Swap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Swap_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Swap",Description = "Swap")>] 
          swap : obj)
@@ -773,7 +773,7 @@ module SwapFunction =
     *)
     [<ExcelFunction(Name="_Swap_valuationDate", Description="Create a Swap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Swap_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Swap",Description = "Swap")>] 
          swap : obj)
@@ -806,9 +806,9 @@ module SwapFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Swap_Range", Description="Create a range of Swap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Swap_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

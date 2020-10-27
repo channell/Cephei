@@ -39,13 +39,13 @@ module MixedLinearCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearCubicInterpolation", Description="Create a MixedLinearCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubicInterpolation_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "MixedLinearCubicInterpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double range")>] 
          xBegin : obj)
         ([<ExcelArgument(Name="xEnd",Description = "int")>] 
          xEnd : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double range")>] 
          yBegin : obj)
         ([<ExcelArgument(Name="n",Description = "int")>] 
          n : obj)
@@ -136,7 +136,7 @@ module MixedLinearCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearCubicInterpolation_derivative", Description="Create a MixedLinearCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubicInterpolation_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearCubicInterpolation",Description = "MixedLinearCubicInterpolation")>] 
          mixedlinearcubicinterpolation : obj)
@@ -184,7 +184,7 @@ module MixedLinearCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearCubicInterpolation_empty", Description="Create a MixedLinearCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubicInterpolation_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearCubicInterpolation",Description = "MixedLinearCubicInterpolation")>] 
          mixedlinearcubicinterpolation : obj)
@@ -220,7 +220,7 @@ module MixedLinearCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearCubicInterpolation_primitive", Description="Create a MixedLinearCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubicInterpolation_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearCubicInterpolation",Description = "MixedLinearCubicInterpolation")>] 
          mixedlinearcubicinterpolation : obj)
@@ -268,7 +268,7 @@ module MixedLinearCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearCubicInterpolation_secondDerivative", Description="Create a MixedLinearCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubicInterpolation_secondDerivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearCubicInterpolation",Description = "MixedLinearCubicInterpolation")>] 
          mixedlinearcubicinterpolation : obj)
@@ -316,7 +316,7 @@ module MixedLinearCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearCubicInterpolation_update", Description="Create a MixedLinearCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubicInterpolation_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearCubicInterpolation",Description = "MixedLinearCubicInterpolation")>] 
          mixedlinearcubicinterpolation : obj)
@@ -352,7 +352,7 @@ module MixedLinearCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearCubicInterpolation_value1", Description="Create a MixedLinearCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubicInterpolation_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearCubicInterpolation",Description = "MixedLinearCubicInterpolation")>] 
          mixedlinearcubicinterpolation : obj)
@@ -400,7 +400,7 @@ module MixedLinearCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearCubicInterpolation_value", Description="Create a MixedLinearCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubicInterpolation_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearCubicInterpolation",Description = "MixedLinearCubicInterpolation")>] 
          mixedlinearcubicinterpolation : obj)
@@ -442,7 +442,7 @@ module MixedLinearCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearCubicInterpolation_xMax", Description="Create a MixedLinearCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubicInterpolation_xMax
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearCubicInterpolation",Description = "MixedLinearCubicInterpolation")>] 
          mixedlinearcubicinterpolation : obj)
@@ -478,7 +478,7 @@ module MixedLinearCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearCubicInterpolation_xMin", Description="Create a MixedLinearCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubicInterpolation_xMin
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearCubicInterpolation",Description = "MixedLinearCubicInterpolation")>] 
          mixedlinearcubicinterpolation : obj)
@@ -514,7 +514,7 @@ module MixedLinearCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearCubicInterpolation_allowsExtrapolation", Description="Create a MixedLinearCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubicInterpolation_allowsExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearCubicInterpolation",Description = "MixedLinearCubicInterpolation")>] 
          mixedlinearcubicinterpolation : obj)
@@ -550,7 +550,7 @@ module MixedLinearCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearCubicInterpolation_disableExtrapolation", Description="Create a MixedLinearCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubicInterpolation_disableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearCubicInterpolation",Description = "MixedLinearCubicInterpolation")>] 
          mixedlinearcubicinterpolation : obj)
@@ -592,7 +592,7 @@ module MixedLinearCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearCubicInterpolation_enableExtrapolation", Description="Create a MixedLinearCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubicInterpolation_enableExtrapolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearCubicInterpolation",Description = "MixedLinearCubicInterpolation")>] 
          mixedlinearcubicinterpolation : obj)
@@ -634,7 +634,7 @@ module MixedLinearCubicInterpolationFunction =
     *)
     [<ExcelFunction(Name="_MixedLinearCubicInterpolation_extrapolate", Description="Create a MixedLinearCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubicInterpolation_extrapolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MixedLinearCubicInterpolation",Description = "MixedLinearCubicInterpolation")>] 
          mixedlinearcubicinterpolation : obj)
@@ -667,9 +667,9 @@ module MixedLinearCubicInterpolationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MixedLinearCubicInterpolation_Range", Description="Create a range of MixedLinearCubicInterpolation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MixedLinearCubicInterpolation_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

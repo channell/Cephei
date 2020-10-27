@@ -39,9 +39,9 @@ module SteepestDescentFunction =
     *)
     [<ExcelFunction(Name="_SteepestDescent", Description="Create a SteepestDescent",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SteepestDescent_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SteepestDescent")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="lineSearch",Description = "SteepestDescent")>] 
+        ([<ExcelArgument(Name="lineSearch",Description = "LineSearch or empty")>] 
          lineSearch : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,7 +76,7 @@ module SteepestDescentFunction =
     *)
     [<ExcelFunction(Name="_SteepestDescent_minimize", Description="Create a SteepestDescent",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SteepestDescent_minimize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SteepestDescent",Description = "SteepestDescent")>] 
          steepestdescent : obj)
@@ -121,9 +121,9 @@ module SteepestDescentFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SteepestDescent_Range", Description="Create a range of SteepestDescent",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SteepestDescent_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

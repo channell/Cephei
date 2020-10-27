@@ -39,7 +39,7 @@ module UAHCurrencyFunction =
     *)
     [<ExcelFunction(Name="_UAHCurrency", Description="Create a UAHCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UAHCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "UAHCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module UAHCurrencyFunction =
     *)
     [<ExcelFunction(Name="_UAHCurrency_code", Description="Create a UAHCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UAHCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UAHCurrency",Description = "UAHCurrency")>] 
          uahcurrency : obj)
@@ -106,7 +106,7 @@ module UAHCurrencyFunction =
     *)
     [<ExcelFunction(Name="_UAHCurrency_empty", Description="Create a UAHCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UAHCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UAHCurrency",Description = "UAHCurrency")>] 
          uahcurrency : obj)
@@ -142,7 +142,7 @@ module UAHCurrencyFunction =
     *)
     [<ExcelFunction(Name="_UAHCurrency_Equals", Description="Create a UAHCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UAHCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UAHCurrency",Description = "UAHCurrency")>] 
          uahcurrency : obj)
@@ -184,7 +184,7 @@ module UAHCurrencyFunction =
     *)
     [<ExcelFunction(Name="_UAHCurrency_format", Description="Create a UAHCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UAHCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UAHCurrency",Description = "UAHCurrency")>] 
          uahcurrency : obj)
@@ -220,7 +220,7 @@ module UAHCurrencyFunction =
     *)
     [<ExcelFunction(Name="_UAHCurrency_fractionsPerUnit", Description="Create a UAHCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UAHCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UAHCurrency",Description = "UAHCurrency")>] 
          uahcurrency : obj)
@@ -256,7 +256,7 @@ module UAHCurrencyFunction =
     *)
     [<ExcelFunction(Name="_UAHCurrency_fractionSymbol", Description="Create a UAHCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UAHCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UAHCurrency",Description = "UAHCurrency")>] 
          uahcurrency : obj)
@@ -292,7 +292,7 @@ module UAHCurrencyFunction =
     *)
     [<ExcelFunction(Name="_UAHCurrency_name", Description="Create a UAHCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UAHCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UAHCurrency",Description = "UAHCurrency")>] 
          uahcurrency : obj)
@@ -328,7 +328,7 @@ module UAHCurrencyFunction =
     *)
     [<ExcelFunction(Name="_UAHCurrency_numericCode", Description="Create a UAHCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UAHCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UAHCurrency",Description = "UAHCurrency")>] 
          uahcurrency : obj)
@@ -364,7 +364,7 @@ module UAHCurrencyFunction =
     *)
     [<ExcelFunction(Name="_UAHCurrency_rounding", Description="Create a UAHCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UAHCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UAHCurrency",Description = "UAHCurrency")>] 
          uahcurrency : obj)
@@ -400,7 +400,7 @@ module UAHCurrencyFunction =
     *)
     [<ExcelFunction(Name="_UAHCurrency_symbol", Description="Create a UAHCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UAHCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UAHCurrency",Description = "UAHCurrency")>] 
          uahcurrency : obj)
@@ -436,7 +436,7 @@ module UAHCurrencyFunction =
     *)
     [<ExcelFunction(Name="_UAHCurrency_ToString", Description="Create a UAHCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UAHCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UAHCurrency",Description = "UAHCurrency")>] 
          uahcurrency : obj)
@@ -472,7 +472,7 @@ module UAHCurrencyFunction =
     *)
     [<ExcelFunction(Name="_UAHCurrency_triangulationCurrency", Description="Create a UAHCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UAHCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UAHCurrency",Description = "UAHCurrency")>] 
          uahcurrency : obj)
@@ -505,9 +505,9 @@ module UAHCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_UAHCurrency_Range", Description="Create a range of UAHCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UAHCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

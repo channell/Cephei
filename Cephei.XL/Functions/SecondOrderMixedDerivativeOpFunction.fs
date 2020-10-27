@@ -39,7 +39,7 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SecondOrderMixedDerivativeOp")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="d0",Description = "int")>] 
          d0 : obj)
@@ -89,7 +89,7 @@ module SecondOrderMixedDerivativeOpFunction =
     (*!! duplicate Add function 
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_add", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
@@ -138,7 +138,7 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_apply", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
@@ -180,7 +180,7 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_applyTo", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
@@ -222,7 +222,7 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_Clone", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
@@ -258,7 +258,7 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_identity", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_identity
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
@@ -300,7 +300,7 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_isTimeDependent", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_isTimeDependent
-        ([<ExcelArgument(Name="Mnemonic",Description = "NinePointLinearOp")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
@@ -336,7 +336,7 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_mult", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_mult
-        ([<ExcelArgument(Name="Mnemonic",Description = "NinePointLinearOp")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
@@ -378,7 +378,7 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_multiply", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_multiply
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
@@ -426,7 +426,7 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_setTime", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
@@ -468,7 +468,7 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_size", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
@@ -504,7 +504,7 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_solveFor", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_solveFor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
@@ -546,7 +546,7 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_subtract", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_subtract
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
@@ -594,7 +594,7 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_swap", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_swap
-        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
@@ -636,7 +636,7 @@ module SecondOrderMixedDerivativeOpFunction =
     *)
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_toMatrix", Description="Create a SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_toMatrix
-        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SecondOrderMixedDerivativeOp",Description = "SecondOrderMixedDerivativeOp")>] 
          secondordermixedderivativeop : obj)
@@ -669,9 +669,9 @@ module SecondOrderMixedDerivativeOpFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SecondOrderMixedDerivativeOp_Range", Description="Create a range of SecondOrderMixedDerivativeOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SecondOrderMixedDerivativeOp_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

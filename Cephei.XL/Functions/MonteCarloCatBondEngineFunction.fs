@@ -40,7 +40,7 @@ module MonteCarloCatBondEngineFunction =
     *)
     [<ExcelFunction(Name="_MonteCarloCatBondEngine_discountCurve", Description="Create a MonteCarloCatBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonteCarloCatBondEngine_discountCurve
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MonteCarloCatBondEngine",Description = "MonteCarloCatBondEngine")>] 
          montecarlocatbondengine : obj)
@@ -76,7 +76,7 @@ module MonteCarloCatBondEngineFunction =
     *)
     [<ExcelFunction(Name="_MonteCarloCatBondEngine", Description="Create a MonteCarloCatBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonteCarloCatBondEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "MonteCarloCatBondEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="catRisk",Description = "CatRisk")>] 
          catRisk : obj)
@@ -122,9 +122,9 @@ module MonteCarloCatBondEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MonteCarloCatBondEngine_Range", Description="Create a range of MonteCarloCatBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonteCarloCatBondEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

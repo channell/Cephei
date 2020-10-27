@@ -39,7 +39,7 @@ module QuadraticMinHelperFunction =
     *)
     [<ExcelFunction(Name="_QuadraticMinHelper_fNext", Description="Create a QuadraticMinHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuadraticMinHelper_fNext
-        ([<ExcelArgument(Name="Mnemonic",Description = "QuadraticMinHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="QuadraticMinHelper",Description = "QuadraticMinHelper")>] 
          quadraticminhelper : obj)
@@ -75,7 +75,7 @@ module QuadraticMinHelperFunction =
     *)
     [<ExcelFunction(Name="_QuadraticMinHelper_primitive", Description="Create a QuadraticMinHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuadraticMinHelper_primitive
-        ([<ExcelArgument(Name="Mnemonic",Description = "QuadraticMinHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="QuadraticMinHelper",Description = "QuadraticMinHelper")>] 
          quadraticminhelper : obj)
@@ -117,7 +117,7 @@ module QuadraticMinHelperFunction =
     *)
     [<ExcelFunction(Name="_QuadraticMinHelper", Description="Create a QuadraticMinHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuadraticMinHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "QuadraticMinHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="xPrev",Description = "double")>] 
          xPrev : obj)
@@ -184,7 +184,7 @@ module QuadraticMinHelperFunction =
     *)
     [<ExcelFunction(Name="_QuadraticMinHelper_value", Description="Create a QuadraticMinHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuadraticMinHelper_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="QuadraticMinHelper",Description = "QuadraticMinHelper")>] 
          quadraticminhelper : obj)
@@ -223,9 +223,9 @@ module QuadraticMinHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_QuadraticMinHelper_Range", Description="Create a range of QuadraticMinHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuadraticMinHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

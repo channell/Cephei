@@ -39,7 +39,7 @@ module PathGeneratorFunction =
     *)
     [<ExcelFunction(Name="_PathGenerator_antithetic", Description="Create a PathGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PathGenerator_antithetic
-        ([<ExcelArgument(Name="Mnemonic",Description = "IPath")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PathGenerator",Description = "PathGenerator")>] 
          pathgenerator : obj)
@@ -75,7 +75,7 @@ module PathGeneratorFunction =
     *)
     [<ExcelFunction(Name="_PathGenerator_next", Description="Create a PathGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PathGenerator_next
-        ([<ExcelArgument(Name="Mnemonic",Description = "IPath")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="PathGenerator",Description = "PathGenerator")>] 
          pathgenerator : obj)
@@ -111,7 +111,7 @@ module PathGeneratorFunction =
     *)
     [<ExcelFunction(Name="_PathGenerator", Description="Create a PathGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PathGenerator_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "PathGenerator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "StochasticProcess")>] 
          Process : obj)
@@ -172,7 +172,7 @@ module PathGeneratorFunction =
     *)
     [<ExcelFunction(Name="_PathGenerator1", Description="Create a PathGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PathGenerator_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "PathGenerator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "StochasticProcess")>] 
          Process : obj)
@@ -224,9 +224,9 @@ module PathGeneratorFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_PathGenerator_Range", Description="Create a range of PathGenerator",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let PathGenerator_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

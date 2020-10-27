@@ -39,7 +39,7 @@ module FdmIndicesOnBoundaryFunction =
     *)
     [<ExcelFunction(Name="_FdmIndicesOnBoundary", Description="Create a FdmIndicesOnBoundary",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmIndicesOnBoundary_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmIndicesOnBoundary")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="layout",Description = "FdmLinearOpLayout")>] 
          layout : obj)
@@ -88,7 +88,7 @@ module FdmIndicesOnBoundaryFunction =
     *)
     [<ExcelFunction(Name="_FdmIndicesOnBoundary_getIndices", Description="Create a FdmIndicesOnBoundary",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmIndicesOnBoundary_getIndices
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmIndicesOnBoundary",Description = "FdmIndicesOnBoundary")>] 
          fdmindicesonboundary : obj)
@@ -121,9 +121,9 @@ module FdmIndicesOnBoundaryFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmIndicesOnBoundary_Range", Description="Create a range of FdmIndicesOnBoundary",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmIndicesOnBoundary_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,7 +39,7 @@ module ILSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ILSCurrency", Description="Create a ILSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ILSCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ILSCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module ILSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ILSCurrency_code", Description="Create a ILSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ILSCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ILSCurrency",Description = "ILSCurrency")>] 
          ilscurrency : obj)
@@ -106,7 +106,7 @@ module ILSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ILSCurrency_empty", Description="Create a ILSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ILSCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ILSCurrency",Description = "ILSCurrency")>] 
          ilscurrency : obj)
@@ -142,7 +142,7 @@ module ILSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ILSCurrency_Equals", Description="Create a ILSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ILSCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ILSCurrency",Description = "ILSCurrency")>] 
          ilscurrency : obj)
@@ -184,7 +184,7 @@ module ILSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ILSCurrency_format", Description="Create a ILSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ILSCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ILSCurrency",Description = "ILSCurrency")>] 
          ilscurrency : obj)
@@ -220,7 +220,7 @@ module ILSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ILSCurrency_fractionsPerUnit", Description="Create a ILSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ILSCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ILSCurrency",Description = "ILSCurrency")>] 
          ilscurrency : obj)
@@ -256,7 +256,7 @@ module ILSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ILSCurrency_fractionSymbol", Description="Create a ILSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ILSCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ILSCurrency",Description = "ILSCurrency")>] 
          ilscurrency : obj)
@@ -292,7 +292,7 @@ module ILSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ILSCurrency_name", Description="Create a ILSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ILSCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ILSCurrency",Description = "ILSCurrency")>] 
          ilscurrency : obj)
@@ -328,7 +328,7 @@ module ILSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ILSCurrency_numericCode", Description="Create a ILSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ILSCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ILSCurrency",Description = "ILSCurrency")>] 
          ilscurrency : obj)
@@ -364,7 +364,7 @@ module ILSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ILSCurrency_rounding", Description="Create a ILSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ILSCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ILSCurrency",Description = "ILSCurrency")>] 
          ilscurrency : obj)
@@ -400,7 +400,7 @@ module ILSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ILSCurrency_symbol", Description="Create a ILSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ILSCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ILSCurrency",Description = "ILSCurrency")>] 
          ilscurrency : obj)
@@ -436,7 +436,7 @@ module ILSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ILSCurrency_ToString", Description="Create a ILSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ILSCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ILSCurrency",Description = "ILSCurrency")>] 
          ilscurrency : obj)
@@ -472,7 +472,7 @@ module ILSCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ILSCurrency_triangulationCurrency", Description="Create a ILSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ILSCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ILSCurrency",Description = "ILSCurrency")>] 
          ilscurrency : obj)
@@ -505,9 +505,9 @@ module ILSCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ILSCurrency_Range", Description="Create a range of ILSCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ILSCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

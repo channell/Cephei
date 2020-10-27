@@ -40,7 +40,7 @@ module FDMultiPeriodEngineFunction =
     *)
     [<ExcelFunction(Name="_FDMultiPeriodEngine", Description="Create a FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDMultiPeriodEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDMultiPeriodEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -71,7 +71,7 @@ module FDMultiPeriodEngineFunction =
     *)
     [<ExcelFunction(Name="_FDMultiPeriodEngine_setStepCondition", Description="Create a FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDMultiPeriodEngine_setStepCondition
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDMultiPeriodEngine",Description = "FDMultiPeriodEngine")>] 
          fdmultiperiodengine : obj)
@@ -113,7 +113,7 @@ module FDMultiPeriodEngineFunction =
     *)
     [<ExcelFunction(Name="_FDMultiPeriodEngine_ensureStrikeInGrid", Description="Create a FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDMultiPeriodEngine_ensureStrikeInGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDMultiPeriodEngine",Description = "FDMultiPeriodEngine")>] 
          fdmultiperiodengine : obj)
@@ -149,7 +149,7 @@ module FDMultiPeriodEngineFunction =
     *)
     [<ExcelFunction(Name="_FDMultiPeriodEngine_factory", Description="Create a FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDMultiPeriodEngine_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDMultiPeriodEngine",Description = "FDMultiPeriodEngine")>] 
          fdmultiperiodengine : obj)
@@ -209,7 +209,7 @@ module FDMultiPeriodEngineFunction =
     *)
     [<ExcelFunction(Name="_FDMultiPeriodEngine_getResidualTime", Description="Create a FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDMultiPeriodEngine_getResidualTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDMultiPeriodEngine",Description = "FDMultiPeriodEngine")>] 
          fdmultiperiodengine : obj)
@@ -245,7 +245,7 @@ module FDMultiPeriodEngineFunction =
     *)
     [<ExcelFunction(Name="_FDMultiPeriodEngine_grid", Description="Create a FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDMultiPeriodEngine_grid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDMultiPeriodEngine",Description = "FDMultiPeriodEngine")>] 
          fdmultiperiodengine : obj)
@@ -281,7 +281,7 @@ module FDMultiPeriodEngineFunction =
     *)
     [<ExcelFunction(Name="_FDMultiPeriodEngine_intrinsicValues_", Description="Create a FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDMultiPeriodEngine_intrinsicValues_
-        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDMultiPeriodEngine",Description = "FDMultiPeriodEngine")>] 
          fdmultiperiodengine : obj)
@@ -314,9 +314,9 @@ module FDMultiPeriodEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FDMultiPeriodEngine_Range", Description="Create a range of FDMultiPeriodEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDMultiPeriodEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

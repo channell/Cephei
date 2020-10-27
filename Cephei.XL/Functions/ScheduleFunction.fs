@@ -39,7 +39,7 @@ module ScheduleFunction =
     *)
     [<ExcelFunction(Name="_Schedule_at", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_at
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -81,7 +81,7 @@ module ScheduleFunction =
     *)
     [<ExcelFunction(Name="_Schedule_businessDayConvention", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -117,7 +117,7 @@ module ScheduleFunction =
     *)
     [<ExcelFunction(Name="_Schedule_calendar", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -153,7 +153,7 @@ module ScheduleFunction =
     *)
     [<ExcelFunction(Name="_Schedule_Count", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_Count
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -189,7 +189,7 @@ module ScheduleFunction =
     *)
     [<ExcelFunction(Name="_Schedule_date", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -231,7 +231,7 @@ module ScheduleFunction =
     *)
     [<ExcelFunction(Name="_Schedule_dates", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_dates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -267,7 +267,7 @@ module ScheduleFunction =
     *)
     [<ExcelFunction(Name="_Schedule_empty", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -303,7 +303,7 @@ module ScheduleFunction =
     *)
     [<ExcelFunction(Name="_Schedule_endDate", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_endDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -339,7 +339,7 @@ module ScheduleFunction =
     *)
     [<ExcelFunction(Name="_Schedule_endOfMonth", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -375,7 +375,7 @@ module ScheduleFunction =
     *)
     [<ExcelFunction(Name="_Schedule_isRegular", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_isRegular
-        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -411,7 +411,7 @@ module ScheduleFunction =
     *)
     [<ExcelFunction(Name="_Schedule_isRegular1", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_isRegular1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -453,7 +453,7 @@ module ScheduleFunction =
     *)
     [<ExcelFunction(Name="_Schedule_nextDate", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_nextDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -495,7 +495,7 @@ module ScheduleFunction =
     *)
     [<ExcelFunction(Name="_Schedule_previousDate", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_previousDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -537,7 +537,7 @@ module ScheduleFunction =
     *)
     [<ExcelFunction(Name="_Schedule_rule", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_rule
-        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -573,17 +573,17 @@ module ScheduleFunction =
     *)
     [<ExcelFunction(Name="_Schedule", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="effectiveDate",Description = "Date")>] 
          effectiveDate : obj)
         ([<ExcelArgument(Name="terminationDate",Description = "Date")>] 
          terminationDate : obj)
-        ([<ExcelArgument(Name="tenor",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period or empty")>] 
          tenor : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar or empty")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="convention",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest or empty")>] 
          convention : obj)
         ([<ExcelArgument(Name="terminationDateConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          terminationDateConvention : obj)
@@ -591,9 +591,9 @@ module ScheduleFunction =
          rule : obj)
         ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
-        ([<ExcelArgument(Name="firstDate",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="firstDate",Description = "Date or empty")>] 
          firstDate : obj)
-        ([<ExcelArgument(Name="nextToLastDate",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="nextToLastDate",Description = "Date or empty")>] 
          nextToLastDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -664,7 +664,7 @@ module ScheduleFunction =
     *)
     [<ExcelFunction(Name="_Schedule2", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -695,23 +695,23 @@ module ScheduleFunction =
     *)
     [<ExcelFunction(Name="_Schedule1", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="dates",Description = "Date")>] 
+        ([<ExcelArgument(Name="dates",Description = "Date range")>] 
          dates : obj)
-        ([<ExcelArgument(Name="calendar",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="calendar",Description = "Calendar or empty")>] 
          calendar : obj)
-        ([<ExcelArgument(Name="convention",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="convention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest or empty")>] 
          convention : obj)
         ([<ExcelArgument(Name="terminationDateConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest")>] 
          terminationDateConvention : obj)
-        ([<ExcelArgument(Name="tenor",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="tenor",Description = "Period or empty")>] 
          tenor : obj)
         ([<ExcelArgument(Name="rule",Description = "DateGeneration.Rule: Backward, Forward, Zero, ThirdWednesday, Twentieth, TwentiethIMM, OldCDS, CDS, CDS2015")>] 
          rule : obj)
         ([<ExcelArgument(Name="endOfMonth",Description = "bool")>] 
          endOfMonth : obj)
-        ([<ExcelArgument(Name="isRegular",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="isRegular",Description = "bool or empty")>] 
          isRegular : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -774,7 +774,7 @@ module ScheduleFunction =
     *)
     [<ExcelFunction(Name="_Schedule_size", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -810,7 +810,7 @@ module ScheduleFunction =
     *)
     [<ExcelFunction(Name="_Schedule_startDate", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -846,7 +846,7 @@ module ScheduleFunction =
     *)
     [<ExcelFunction(Name="_Schedule_tenor", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -882,7 +882,7 @@ module ScheduleFunction =
     *)
     [<ExcelFunction(Name="_Schedule_terminationDateBusinessDayConvention", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_terminationDateBusinessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -918,7 +918,7 @@ module ScheduleFunction =
     *)
     [<ExcelFunction(Name="_Schedule_this", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_this
-        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -960,7 +960,7 @@ module ScheduleFunction =
     *)
     [<ExcelFunction(Name="_Schedule_until", Description="Create a Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_until
-        ([<ExcelArgument(Name="Mnemonic",Description = "Schedule")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -999,9 +999,9 @@ module ScheduleFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Schedule_Range", Description="Create a range of Schedule",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Schedule_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

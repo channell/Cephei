@@ -44,7 +44,7 @@ module MCBarrierEngineFunction =
     *)
     [<ExcelFunction(Name="_MCBarrierEngine", Description="Create a MCBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCBarrierEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "MCBarrierEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -135,7 +135,7 @@ module MCBarrierEngineFunction =
     *)
     [<ExcelFunction(Name="_MCBarrierEngine_registerWith", Description="Create a MCBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCBarrierEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCBarrierEngine",Description = "MCBarrierEngine")>] 
          mcbarrierengine : obj)
@@ -177,7 +177,7 @@ module MCBarrierEngineFunction =
     *)
     [<ExcelFunction(Name="_MCBarrierEngine_reset", Description="Create a MCBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCBarrierEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCBarrierEngine",Description = "MCBarrierEngine")>] 
          mcbarrierengine : obj)
@@ -213,7 +213,7 @@ module MCBarrierEngineFunction =
     *)
     [<ExcelFunction(Name="_MCBarrierEngine_unregisterWith", Description="Create a MCBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCBarrierEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCBarrierEngine",Description = "MCBarrierEngine")>] 
          mcbarrierengine : obj)
@@ -255,7 +255,7 @@ module MCBarrierEngineFunction =
     *)
     [<ExcelFunction(Name="_MCBarrierEngine_update", Description="Create a MCBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCBarrierEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCBarrierEngine",Description = "MCBarrierEngine")>] 
          mcbarrierengine : obj)
@@ -291,7 +291,7 @@ module MCBarrierEngineFunction =
     *)
     [<ExcelFunction(Name="_MCBarrierEngine_errorEstimate", Description="Create a MCBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCBarrierEngine_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCBarrierEngine",Description = "MCBarrierEngine")>] 
          mcbarrierengine : obj)
@@ -327,7 +327,7 @@ module MCBarrierEngineFunction =
     *)
     [<ExcelFunction(Name="_MCBarrierEngine_sampleAccumulator", Description="Create a MCBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCBarrierEngine_sampleAccumulator
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCBarrierEngine",Description = "MCBarrierEngine")>] 
          mcbarrierengine : obj)
@@ -363,7 +363,7 @@ module MCBarrierEngineFunction =
     *)
     [<ExcelFunction(Name="_MCBarrierEngine_value", Description="Create a MCBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCBarrierEngine_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCBarrierEngine",Description = "MCBarrierEngine")>] 
          mcbarrierengine : obj)
@@ -417,7 +417,7 @@ module MCBarrierEngineFunction =
     *)
     [<ExcelFunction(Name="_MCBarrierEngine_valueWithSamples", Description="Create a MCBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCBarrierEngine_valueWithSamples
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCBarrierEngine",Description = "MCBarrierEngine")>] 
          mcbarrierengine : obj)
@@ -456,9 +456,9 @@ module MCBarrierEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MCBarrierEngine_Range", Description="Create a range of MCBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCBarrierEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

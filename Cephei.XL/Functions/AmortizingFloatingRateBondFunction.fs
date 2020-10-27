@@ -39,11 +39,11 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AmortizingFloatingRateBond")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
-        ([<ExcelArgument(Name="notionals",Description = "double")>] 
+        ([<ExcelArgument(Name="notionals",Description = "double range")>] 
          notionals : obj)
         ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -51,21 +51,21 @@ module AmortizingFloatingRateBondFunction =
          index : obj)
         ([<ExcelArgument(Name="accrualDayCounter",Description = "DayCounter")>] 
          accrualDayCounter : obj)
-        ([<ExcelArgument(Name="paymentConvention",Description = "AmortizingFloatingRateBond")>] 
+        ([<ExcelArgument(Name="paymentConvention",Description = "BusinessDayConvention: Following, ModifiedFollowing, Preceding, ModifiedPreceding, Unadjusted, HalfMonthModifiedFollowing, Nearest or empty")>] 
          paymentConvention : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "AmortizingFloatingRateBond")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int or empty")>] 
          fixingDays : obj)
-        ([<ExcelArgument(Name="gearings",Description = "AmortizingFloatingRateBond")>] 
+        ([<ExcelArgument(Name="gearings",Description = "double or empty")>] 
          gearings : obj)
-        ([<ExcelArgument(Name="spreads",Description = "AmortizingFloatingRateBond")>] 
+        ([<ExcelArgument(Name="spreads",Description = "double or empty")>] 
          spreads : obj)
-        ([<ExcelArgument(Name="caps",Description = "AmortizingFloatingRateBond")>] 
+        ([<ExcelArgument(Name="caps",Description = "double or empty")>] 
          caps : obj)
-        ([<ExcelArgument(Name="floors",Description = "AmortizingFloatingRateBond")>] 
+        ([<ExcelArgument(Name="floors",Description = "double or empty")>] 
          floors : obj)
-        ([<ExcelArgument(Name="inArrears",Description = "AmortizingFloatingRateBond")>] 
+        ([<ExcelArgument(Name="inArrears",Description = "bool or empty")>] 
          inArrears : obj)
-        ([<ExcelArgument(Name="issueDate",Description = "AmortizingFloatingRateBond")>] 
+        ([<ExcelArgument(Name="issueDate",Description = "Date or empty")>] 
          issueDate : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
@@ -160,7 +160,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_accruedAmount", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_accruedAmount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -202,7 +202,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_calendar", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -238,7 +238,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_cashflows", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_cashflows
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -274,7 +274,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_cleanPrice", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_cleanPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -310,7 +310,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_cleanPrice1", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_cleanPrice1
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -376,7 +376,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_dirtyPrice1", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_dirtyPrice1
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -442,7 +442,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_dirtyPrice", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_dirtyPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -478,7 +478,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_isExpired", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -514,7 +514,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_issueDate", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_issueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -550,7 +550,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_isTradable", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_isTradable
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -592,7 +592,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_maturityDate", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -628,7 +628,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_nextCashFlowDate", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_nextCashFlowDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -670,7 +670,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_nextCouponRate", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_nextCouponRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -712,7 +712,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_notional", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_notional
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -754,7 +754,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_notionals", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_notionals
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -790,7 +790,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_previousCashFlowDate", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_previousCashFlowDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -832,7 +832,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_previousCouponRate", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_previousCouponRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -874,7 +874,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_redemption", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_redemption
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -910,7 +910,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_redemptions", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_redemptions
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -946,7 +946,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_settlementDate", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_settlementDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -988,7 +988,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_settlementDays", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -1024,7 +1024,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_settlementValue", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_settlementValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -1066,7 +1066,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_settlementValue1", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_settlementValue1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -1102,7 +1102,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_startDate", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -1138,7 +1138,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_yield1", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_yield1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -1216,7 +1216,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_yield", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_yield
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -1282,7 +1282,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_CASH", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -1318,7 +1318,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_errorEstimate", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -1354,7 +1354,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_NPV", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -1390,7 +1390,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_result", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -1432,7 +1432,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_setPricingEngine", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -1474,7 +1474,7 @@ module AmortizingFloatingRateBondFunction =
     *)
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_valuationDate", Description="Create a AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingFloatingRateBond",Description = "AmortizingFloatingRateBond")>] 
          amortizingfloatingratebond : obj)
@@ -1507,9 +1507,9 @@ module AmortizingFloatingRateBondFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AmortizingFloatingRateBond_Range", Description="Create a range of AmortizingFloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingFloatingRateBond_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

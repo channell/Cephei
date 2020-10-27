@@ -40,7 +40,7 @@ module VannaVolgaBarrierEngineFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaBarrierEngine", Description="Create a VannaVolgaBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaBarrierEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "VannaVolgaBarrierEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="atmVol",Description = "DeltaVolQuote")>] 
          atmVol : obj)
@@ -54,9 +54,9 @@ module VannaVolgaBarrierEngineFunction =
          domesticTS : obj)
         ([<ExcelArgument(Name="foreignTS",Description = "YieldTermStructure")>] 
          foreignTS : obj)
-        ([<ExcelArgument(Name="adaptVanDelta",Description = "VannaVolgaBarrierEngine")>] 
+        ([<ExcelArgument(Name="adaptVanDelta",Description = "bool or empty")>] 
          adaptVanDelta : obj)
-        ([<ExcelArgument(Name="bsPriceWithSmile",Description = "VannaVolgaBarrierEngine")>] 
+        ([<ExcelArgument(Name="bsPriceWithSmile",Description = "double or empty")>] 
          bsPriceWithSmile : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -119,7 +119,7 @@ module VannaVolgaBarrierEngineFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaBarrierEngine_registerWith", Description="Create a VannaVolgaBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaBarrierEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VannaVolgaBarrierEngine",Description = "VannaVolgaBarrierEngine")>] 
          vannavolgabarrierengine : obj)
@@ -161,7 +161,7 @@ module VannaVolgaBarrierEngineFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaBarrierEngine_reset", Description="Create a VannaVolgaBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaBarrierEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VannaVolgaBarrierEngine",Description = "VannaVolgaBarrierEngine")>] 
          vannavolgabarrierengine : obj)
@@ -197,7 +197,7 @@ module VannaVolgaBarrierEngineFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaBarrierEngine_unregisterWith", Description="Create a VannaVolgaBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaBarrierEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VannaVolgaBarrierEngine",Description = "VannaVolgaBarrierEngine")>] 
          vannavolgabarrierengine : obj)
@@ -239,7 +239,7 @@ module VannaVolgaBarrierEngineFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaBarrierEngine_update", Description="Create a VannaVolgaBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaBarrierEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VannaVolgaBarrierEngine",Description = "VannaVolgaBarrierEngine")>] 
          vannavolgabarrierengine : obj)
@@ -272,9 +272,9 @@ module VannaVolgaBarrierEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_VannaVolgaBarrierEngine_Range", Description="Create a range of VannaVolgaBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaBarrierEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

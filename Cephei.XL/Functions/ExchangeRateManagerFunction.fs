@@ -40,7 +40,7 @@ module ExchangeRateManagerFunction =
     (*!! duplicate add function 
     [<ExcelFunction(Name="_ExchangeRateManager_add", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRateManager_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "ExchangeRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ExchangeRateManager",Description = "ExchangeRateManager")>] 
          exchangeratemanager : obj)
@@ -90,7 +90,7 @@ module ExchangeRateManagerFunction =
     (*!! duplicate add function
     [<ExcelFunction(Name="_ExchangeRateManager_add", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRateManager_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "ExchangeRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ExchangeRateManager",Description = "ExchangeRateManager")>] 
          exchangeratemanager : obj)
@@ -133,7 +133,7 @@ module ExchangeRateManagerFunction =
     *)
     [<ExcelFunction(Name="_ExchangeRateManager_clear", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRateManager_clear
-        ([<ExcelArgument(Name="Mnemonic",Description = "ExchangeRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ExchangeRateManager",Description = "ExchangeRateManager")>] 
          exchangeratemanager : obj)
@@ -169,7 +169,7 @@ module ExchangeRateManagerFunction =
     *)
     [<ExcelFunction(Name="_ExchangeRateManager_lookup", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRateManager_lookup
-        ([<ExcelArgument(Name="Mnemonic",Description = "ExchangeRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ExchangeRateManager",Description = "ExchangeRateManager")>] 
          exchangeratemanager : obj)
@@ -229,7 +229,7 @@ module ExchangeRateManagerFunction =
     *)
     [<ExcelFunction(Name="_ExchangeRateManager_lookup", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRateManager_lookup
-        ([<ExcelArgument(Name="Mnemonic",Description = "ExchangeRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ExchangeRateManager",Description = "ExchangeRateManager")>] 
          exchangeratemanager : obj)
@@ -283,7 +283,7 @@ module ExchangeRateManagerFunction =
     *)
     [<ExcelFunction(Name="_ExchangeRateManager_lookup", Description="Create a ExchangeRateManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRateManager_lookup
-        ([<ExcelArgument(Name="Mnemonic",Description = "ExchangeRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ExchangeRateManager",Description = "ExchangeRateManager")>] 
          exchangeratemanager : obj)
@@ -328,9 +328,9 @@ module ExchangeRateManagerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ExchangeRateManager_Range", Description="Create a range of ExchangeRateManager",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRateManager_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

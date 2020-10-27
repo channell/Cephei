@@ -40,7 +40,7 @@ module FdmBlackScholesOpFunction =
     (*!! duplicate add function 
     [<ExcelFunction(Name="_FdmBlackScholesOp_add", Description="Create a FdmBlackScholesOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesOp_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBlackScholesOp",Description = "FdmBlackScholesOp")>] 
          fdmblackscholesop : obj)
@@ -89,7 +89,7 @@ module FdmBlackScholesOpFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesOp_apply", Description="Create a FdmBlackScholesOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesOp_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBlackScholesOp",Description = "FdmBlackScholesOp")>] 
          fdmblackscholesop : obj)
@@ -131,11 +131,11 @@ module FdmBlackScholesOpFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesOp_apply_direction", Description="Create a FdmBlackScholesOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesOp_apply_direction
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBlackScholesOp",Description = "FdmBlackScholesOp")>] 
          fdmblackscholesop : obj)
-        ([<ExcelArgument(Name="direction",Description = "Vector")>] 
+        ([<ExcelArgument(Name="direction",Description = "int or empty")>] 
          direction : obj)
         ([<ExcelArgument(Name="r",Description = "Vector")>] 
          r : obj)
@@ -179,7 +179,7 @@ module FdmBlackScholesOpFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesOp_apply_mixed", Description="Create a FdmBlackScholesOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesOp_apply_mixed
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBlackScholesOp",Description = "FdmBlackScholesOp")>] 
          fdmblackscholesop : obj)
@@ -221,7 +221,7 @@ module FdmBlackScholesOpFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesOp_applyTo", Description="Create a FdmBlackScholesOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesOp_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBlackScholesOp",Description = "FdmBlackScholesOp")>] 
          fdmblackscholesop : obj)
@@ -263,7 +263,7 @@ module FdmBlackScholesOpFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesOp_Clone", Description="Create a FdmBlackScholesOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesOp_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmBlackScholesOp")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBlackScholesOp",Description = "FdmBlackScholesOp")>] 
          fdmblackscholesop : obj)
@@ -299,7 +299,7 @@ module FdmBlackScholesOpFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesOp", Description="Create a FdmBlackScholesOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesOp_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmBlackScholesOp")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="mesher",Description = "FdmMesher")>] 
          mesher : obj)
@@ -307,13 +307,13 @@ module FdmBlackScholesOpFunction =
          bsProcess : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
-        ([<ExcelArgument(Name="localVol",Description = "FdmBlackScholesOp")>] 
+        ([<ExcelArgument(Name="localVol",Description = "bool or empty")>] 
          localVol : obj)
         ([<ExcelArgument(Name="illegalLocalVolOverwrite",Description = "double")>] 
          illegalLocalVolOverwrite : obj)
-        ([<ExcelArgument(Name="direction",Description = "FdmBlackScholesOp")>] 
+        ([<ExcelArgument(Name="direction",Description = "int or empty")>] 
          direction : obj)
-        ([<ExcelArgument(Name="quantoHelper",Description = "FdmBlackScholesOp")>] 
+        ([<ExcelArgument(Name="quantoHelper",Description = "FdmQuantoHelper or empty")>] 
          quantoHelper : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -372,7 +372,7 @@ module FdmBlackScholesOpFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesOp_identity", Description="Create a FdmBlackScholesOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesOp_identity
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBlackScholesOp",Description = "FdmBlackScholesOp")>] 
          fdmblackscholesop : obj)
@@ -414,7 +414,7 @@ module FdmBlackScholesOpFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesOp_isTimeDependent", Description="Create a FdmBlackScholesOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesOp_isTimeDependent
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBlackScholesOp",Description = "FdmBlackScholesOp")>] 
          fdmblackscholesop : obj)
@@ -450,7 +450,7 @@ module FdmBlackScholesOpFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesOp_multiply", Description="Create a FdmBlackScholesOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesOp_multiply
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBlackScholesOp",Description = "FdmBlackScholesOp")>] 
          fdmblackscholesop : obj)
@@ -498,7 +498,7 @@ module FdmBlackScholesOpFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesOp_preconditioner", Description="Create a FdmBlackScholesOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesOp_preconditioner
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBlackScholesOp",Description = "FdmBlackScholesOp")>] 
          fdmblackscholesop : obj)
@@ -546,7 +546,7 @@ module FdmBlackScholesOpFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesOp_setTime1", Description="Create a FdmBlackScholesOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesOp_setTime1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBlackScholesOp",Description = "FdmBlackScholesOp")>] 
          fdmblackscholesop : obj)
@@ -594,7 +594,7 @@ module FdmBlackScholesOpFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesOp_setTime", Description="Create a FdmBlackScholesOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesOp_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBlackScholesOp",Description = "FdmBlackScholesOp")>] 
          fdmblackscholesop : obj)
@@ -636,7 +636,7 @@ module FdmBlackScholesOpFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesOp_size", Description="Create a FdmBlackScholesOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesOp_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBlackScholesOp",Description = "FdmBlackScholesOp")>] 
          fdmblackscholesop : obj)
@@ -672,11 +672,11 @@ module FdmBlackScholesOpFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesOp_solve_splitting", Description="Create a FdmBlackScholesOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesOp_solve_splitting
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBlackScholesOp",Description = "FdmBlackScholesOp")>] 
          fdmblackscholesop : obj)
-        ([<ExcelArgument(Name="direction",Description = "Vector")>] 
+        ([<ExcelArgument(Name="direction",Description = "int or empty")>] 
          direction : obj)
         ([<ExcelArgument(Name="r",Description = "Vector")>] 
          r : obj)
@@ -726,7 +726,7 @@ module FdmBlackScholesOpFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesOp_solveFor", Description="Create a FdmBlackScholesOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesOp_solveFor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBlackScholesOp",Description = "FdmBlackScholesOp")>] 
          fdmblackscholesop : obj)
@@ -768,7 +768,7 @@ module FdmBlackScholesOpFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesOp_subtract", Description="Create a FdmBlackScholesOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesOp_subtract
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBlackScholesOp",Description = "FdmBlackScholesOp")>] 
          fdmblackscholesop : obj)
@@ -816,7 +816,7 @@ module FdmBlackScholesOpFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesOp_toMatrixDecomp", Description="Create a FdmBlackScholesOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesOp_toMatrixDecomp
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBlackScholesOp",Description = "FdmBlackScholesOp")>] 
          fdmblackscholesop : obj)
@@ -852,7 +852,7 @@ module FdmBlackScholesOpFunction =
     *)
     [<ExcelFunction(Name="_FdmBlackScholesOp_toMatrix", Description="Create a FdmBlackScholesOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesOp_toMatrix
-        ([<ExcelArgument(Name="Mnemonic",Description = "SparseMatrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBlackScholesOp",Description = "FdmBlackScholesOp")>] 
          fdmblackscholesop : obj)
@@ -885,9 +885,9 @@ module FdmBlackScholesOpFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmBlackScholesOp_Range", Description="Create a range of FdmBlackScholesOp",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBlackScholesOp_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

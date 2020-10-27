@@ -39,7 +39,7 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_diffusion", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
@@ -87,7 +87,7 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_drift", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
@@ -135,7 +135,7 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "GeometricBrownianMotionProcess")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="initialValue",Description = "double")>] 
          initialValue : obj)
@@ -184,7 +184,7 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_x0", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_x0
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
@@ -220,7 +220,7 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_apply1", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_apply1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
@@ -268,7 +268,7 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_apply", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
@@ -316,7 +316,7 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_evolve", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_evolve
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
@@ -376,7 +376,7 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_evolve1", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_evolve1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
@@ -436,7 +436,7 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_expectation", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_expectation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
@@ -490,7 +490,7 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_expectation1", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_expectation1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
@@ -544,7 +544,7 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_initialValues", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_initialValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
@@ -580,7 +580,7 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_size", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
@@ -616,7 +616,7 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_stdDeviation", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_stdDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
@@ -670,7 +670,7 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_stdDeviation1", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_stdDeviation1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
@@ -724,7 +724,7 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_variance", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
@@ -778,7 +778,7 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_variance1", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_variance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
@@ -832,7 +832,7 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_covariance", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
@@ -886,7 +886,7 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_factors", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_factors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
@@ -922,7 +922,7 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_registerWith", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
@@ -964,7 +964,7 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_time", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
@@ -1006,7 +1006,7 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_unregisterWith", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
@@ -1048,7 +1048,7 @@ module GeometricBrownianMotionProcessFunction =
     *)
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_update", Description="Create a GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeometricBrownianMotionProcess",Description = "GeometricBrownianMotionProcess")>] 
          geometricbrownianmotionprocess : obj)
@@ -1081,9 +1081,9 @@ module GeometricBrownianMotionProcessFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GeometricBrownianMotionProcess_Range", Description="Create a range of GeometricBrownianMotionProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricBrownianMotionProcess_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,9 +39,9 @@ module BFGSFunction =
     *)
     [<ExcelFunction(Name="_BFGS", Description="Create a BFGS",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BFGS_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BFGS")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="lineSearch",Description = "BFGS")>] 
+        ([<ExcelArgument(Name="lineSearch",Description = "LineSearch or empty")>] 
          lineSearch : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,7 +76,7 @@ module BFGSFunction =
     *)
     [<ExcelFunction(Name="_BFGS_minimize", Description="Create a BFGS",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BFGS_minimize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BFGS",Description = "BFGS")>] 
          bfgs : obj)
@@ -121,9 +121,9 @@ module BFGSFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BFGS_Range", Description="Create a range of BFGS",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BFGS_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

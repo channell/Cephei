@@ -41,13 +41,13 @@ module VannaVolgaDoubleBarrierEngineFunction =
     (*!!
     [<ExcelFunction(Name="_VannaVolgaDoubleBarrierEngine_GetOriginalEngine", Description="Create a VannaVolgaDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaDoubleBarrierEngine_GetOriginalEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "IPricingEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VannaVolgaDoubleBarrierEngine",Description = "VannaVolgaDoubleBarrierEngine")>] 
          vannavolgadoublebarrierengine : obj)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="series",Description = "IPricingEngine")>] 
+        ([<ExcelArgument(Name="series",Description = "int or empty")>] 
          series : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -90,7 +90,7 @@ module VannaVolgaDoubleBarrierEngineFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaDoubleBarrierEngine", Description="Create a VannaVolgaDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaDoubleBarrierEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "VannaVolgaDoubleBarrierEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="atmVol",Description = "DeltaVolQuote")>] 
          atmVol : obj)
@@ -106,11 +106,11 @@ module VannaVolgaDoubleBarrierEngineFunction =
          foreignTS : obj)
         ([<ExcelArgument(Name="getEngine",Description = "VannaVolgaDoubleBarrierEngine.GetOriginalEngine")>] 
          getEngine : obj)
-        ([<ExcelArgument(Name="adaptVanDelta",Description = "VannaVolgaDoubleBarrierEngine")>] 
+        ([<ExcelArgument(Name="adaptVanDelta",Description = "bool or empty")>] 
          adaptVanDelta : obj)
-        ([<ExcelArgument(Name="bsPriceWithSmile",Description = "VannaVolgaDoubleBarrierEngine")>] 
+        ([<ExcelArgument(Name="bsPriceWithSmile",Description = "double or empty")>] 
          bsPriceWithSmile : obj)
-        ([<ExcelArgument(Name="series",Description = "VannaVolgaDoubleBarrierEngine")>] 
+        ([<ExcelArgument(Name="series",Description = "int or empty")>] 
          series : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
@@ -193,7 +193,7 @@ module VannaVolgaDoubleBarrierEngineFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaDoubleBarrierEngine_registerWith", Description="Create a VannaVolgaDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaDoubleBarrierEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VannaVolgaDoubleBarrierEngine",Description = "VannaVolgaDoubleBarrierEngine")>] 
          vannavolgadoublebarrierengine : obj)
@@ -235,7 +235,7 @@ module VannaVolgaDoubleBarrierEngineFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaDoubleBarrierEngine_reset", Description="Create a VannaVolgaDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaDoubleBarrierEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VannaVolgaDoubleBarrierEngine",Description = "VannaVolgaDoubleBarrierEngine")>] 
          vannavolgadoublebarrierengine : obj)
@@ -271,7 +271,7 @@ module VannaVolgaDoubleBarrierEngineFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaDoubleBarrierEngine_unregisterWith", Description="Create a VannaVolgaDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaDoubleBarrierEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VannaVolgaDoubleBarrierEngine",Description = "VannaVolgaDoubleBarrierEngine")>] 
          vannavolgadoublebarrierengine : obj)
@@ -313,7 +313,7 @@ module VannaVolgaDoubleBarrierEngineFunction =
     *)
     [<ExcelFunction(Name="_VannaVolgaDoubleBarrierEngine_update", Description="Create a VannaVolgaDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaDoubleBarrierEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VannaVolgaDoubleBarrierEngine",Description = "VannaVolgaDoubleBarrierEngine")>] 
          vannavolgadoublebarrierengine : obj)
@@ -346,9 +346,9 @@ module VannaVolgaDoubleBarrierEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_VannaVolgaDoubleBarrierEngine_Range", Description="Create a range of VannaVolgaDoubleBarrierEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VannaVolgaDoubleBarrierEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

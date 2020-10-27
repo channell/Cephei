@@ -39,7 +39,7 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "DPlusDMinus")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="gridPoints",Description = "int")>] 
          gridPoints : obj)
@@ -83,7 +83,7 @@ module DPlusDMinusFunction =
     (* duplicate add function
     [<ExcelFunction(Name="_DPlusDMinus_add", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_add
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
@@ -132,7 +132,7 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_applyTo", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
@@ -174,7 +174,7 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_Clone", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_Clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
@@ -210,7 +210,7 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_diagonal", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_diagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
@@ -246,7 +246,7 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_identity", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_identity
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
@@ -288,7 +288,7 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_isTimeDependent", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_isTimeDependent
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
@@ -324,7 +324,7 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_lowerDiagonal", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_lowerDiagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
@@ -360,7 +360,7 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_multiply", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_multiply
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
@@ -408,7 +408,7 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_setFirstRow", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_setFirstRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
@@ -456,7 +456,7 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_setLastRow", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_setLastRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
@@ -504,7 +504,7 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_setMidRow", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_setMidRow
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
@@ -564,7 +564,7 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_setMidRows", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_setMidRows
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
@@ -618,7 +618,7 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_setTime", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
@@ -660,7 +660,7 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_size", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
@@ -696,7 +696,7 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_solveFor", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_solveFor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
@@ -738,7 +738,7 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_SOR", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_SOR
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
@@ -786,7 +786,7 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_subtract", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_subtract
-        ([<ExcelArgument(Name="Mnemonic",Description = "IOperator")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
@@ -834,7 +834,7 @@ module DPlusDMinusFunction =
     *)
     [<ExcelFunction(Name="_DPlusDMinus_upperDiagonal", Description="Create a DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_upperDiagonal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DPlusDMinus",Description = "DPlusDMinus")>] 
          dplusdminus : obj)
@@ -867,9 +867,9 @@ module DPlusDMinusFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DPlusDMinus_Range", Description="Create a range of DPlusDMinus",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DPlusDMinus_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

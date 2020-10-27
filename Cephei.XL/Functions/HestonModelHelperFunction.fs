@@ -39,11 +39,11 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_addTimesTo", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_addTimesTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "HestonModelHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
-        ([<ExcelArgument(Name="t",Description = "double")>] 
+        ([<ExcelArgument(Name="t",Description = "double range")>] 
          t : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -81,7 +81,7 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_blackPrice", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_blackPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "HestonModelHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
@@ -123,7 +123,7 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper1", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "HestonModelHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="maturity",Description = "Period")>] 
          maturity : obj)
@@ -139,7 +139,7 @@ module HestonModelHelperFunction =
          riskFreeRate : obj)
         ([<ExcelArgument(Name="dividendYield",Description = "YieldTermStructure")>] 
          dividendYield : obj)
-        ([<ExcelArgument(Name="errorType",Description = "HestonModelHelper")>] 
+        ([<ExcelArgument(Name="errorType",Description = "CalibrationHelper.CalibrationErrorType: RelativePriceError, PriceError, ImpliedVolError or empty")>] 
          errorType : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
@@ -214,7 +214,7 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "HestonModelHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="maturity",Description = "Period")>] 
          maturity : obj)
@@ -230,7 +230,7 @@ module HestonModelHelperFunction =
          riskFreeRate : obj)
         ([<ExcelArgument(Name="dividendYield",Description = "YieldTermStructure")>] 
          dividendYield : obj)
-        ([<ExcelArgument(Name="errorType",Description = "HestonModelHelper")>] 
+        ([<ExcelArgument(Name="errorType",Description = "CalibrationHelper.CalibrationErrorType: RelativePriceError, PriceError, ImpliedVolError or empty")>] 
          errorType : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
@@ -305,7 +305,7 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_maturity", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_maturity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
@@ -341,7 +341,7 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_modelValue", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_modelValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
@@ -377,7 +377,7 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_optionType", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_optionType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
@@ -413,7 +413,7 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_strike", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_strike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
@@ -449,7 +449,7 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_calibrationError", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_calibrationError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
@@ -485,7 +485,7 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_impliedVolatility", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_impliedVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
@@ -551,7 +551,7 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_marketValue", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_marketValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
@@ -587,7 +587,7 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_setPricingEngine", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
@@ -629,7 +629,7 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_volatility", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
@@ -665,7 +665,7 @@ module HestonModelHelperFunction =
     *)
     [<ExcelFunction(Name="_HestonModelHelper_volatilityType", Description="Create a HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_volatilityType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HestonModelHelper",Description = "HestonModelHelper")>] 
          hestonmodelhelper : obj)
@@ -698,9 +698,9 @@ module HestonModelHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_HestonModelHelper_Range", Description="Create a range of HestonModelHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HestonModelHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

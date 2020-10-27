@@ -39,7 +39,7 @@ module BrownianBridgeFunction =
     *)
     [<ExcelFunction(Name="_BrownianBridge", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BrownianBridge_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BrownianBridge")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="timeGrid",Description = "TimeGrid")>] 
          timeGrid : obj)
@@ -76,9 +76,9 @@ module BrownianBridgeFunction =
     *)
     [<ExcelFunction(Name="_BrownianBridge1", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BrownianBridge_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "BrownianBridge")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="times",Description = "double")>] 
+        ([<ExcelArgument(Name="times",Description = "double range")>] 
          times : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -113,7 +113,7 @@ module BrownianBridgeFunction =
     *)
     [<ExcelFunction(Name="_BrownianBridge2", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BrownianBridge_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "BrownianBridge")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="steps",Description = "int")>] 
          steps : obj)
@@ -150,7 +150,7 @@ module BrownianBridgeFunction =
     *)
     [<ExcelFunction(Name="_BrownianBridge_size", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BrownianBridge_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BrownianBridge",Description = "BrownianBridge")>] 
          brownianbridge : obj)
@@ -186,7 +186,7 @@ module BrownianBridgeFunction =
     *)
     [<ExcelFunction(Name="_BrownianBridge_times", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BrownianBridge_times
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BrownianBridge",Description = "BrownianBridge")>] 
          brownianbridge : obj)
@@ -222,13 +222,13 @@ module BrownianBridgeFunction =
     *)
     [<ExcelFunction(Name="_BrownianBridge_transform", Description="Create a BrownianBridge",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BrownianBridge_transform
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BrownianBridge",Description = "BrownianBridge")>] 
          brownianbridge : obj)
-        ([<ExcelArgument(Name="Begin",Description = "double")>] 
+        ([<ExcelArgument(Name="Begin",Description = "double range")>] 
          Begin : obj)
-        ([<ExcelArgument(Name="output",Description = "double")>] 
+        ([<ExcelArgument(Name="output",Description = "double range")>] 
          output : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -267,9 +267,9 @@ module BrownianBridgeFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BrownianBridge_Range", Description="Create a range of BrownianBridge",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BrownianBridge_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

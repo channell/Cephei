@@ -39,7 +39,7 @@ module CoxRossRubinsteinFunction =
     *)
     [<ExcelFunction(Name="_CoxRossRubinstein1", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "CoxRossRubinstein")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
@@ -94,7 +94,7 @@ module CoxRossRubinsteinFunction =
     *)
     [<ExcelFunction(Name="_CoxRossRubinstein", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "CoxRossRubinstein")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -125,7 +125,7 @@ module CoxRossRubinsteinFunction =
     *)
     [<ExcelFunction(Name="_CoxRossRubinstein_factory", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "CoxRossRubinstein")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CoxRossRubinstein",Description = "CoxRossRubinstein")>] 
          coxrossrubinstein : obj)
@@ -185,7 +185,7 @@ module CoxRossRubinsteinFunction =
     *)
     [<ExcelFunction(Name="_CoxRossRubinstein_probability", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_probability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CoxRossRubinstein",Description = "CoxRossRubinstein")>] 
          coxrossrubinstein : obj)
@@ -239,7 +239,7 @@ module CoxRossRubinsteinFunction =
     *)
     [<ExcelFunction(Name="_CoxRossRubinstein_underlying", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_underlying
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CoxRossRubinstein",Description = "CoxRossRubinstein")>] 
          coxrossrubinstein : obj)
@@ -287,7 +287,7 @@ module CoxRossRubinsteinFunction =
     *)
     [<ExcelFunction(Name="_CoxRossRubinstein_descendant", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_descendant
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CoxRossRubinstein",Description = "CoxRossRubinstein")>] 
          coxrossrubinstein : obj)
@@ -341,7 +341,7 @@ module CoxRossRubinsteinFunction =
     *)
     [<ExcelFunction(Name="_CoxRossRubinstein_size", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CoxRossRubinstein",Description = "CoxRossRubinstein")>] 
          coxrossrubinstein : obj)
@@ -383,7 +383,7 @@ module CoxRossRubinsteinFunction =
     *)
     [<ExcelFunction(Name="_CoxRossRubinstein_columns", Description="Create a CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_columns
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CoxRossRubinstein",Description = "CoxRossRubinstein")>] 
          coxrossrubinstein : obj)
@@ -416,9 +416,9 @@ module CoxRossRubinsteinFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CoxRossRubinstein_Range", Description="Create a range of CoxRossRubinstein",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CoxRossRubinstein_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

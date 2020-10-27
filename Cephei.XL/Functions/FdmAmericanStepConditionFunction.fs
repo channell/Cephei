@@ -39,7 +39,7 @@ module FdmAmericanStepConditionFunction =
     *)
     [<ExcelFunction(Name="_FdmAmericanStepCondition_applyTo", Description="Create a FdmAmericanStepCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAmericanStepCondition_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmAmericanStepCondition")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmAmericanStepCondition",Description = "FdmAmericanStepCondition")>] 
          fdmamericanstepcondition : obj)
@@ -87,7 +87,7 @@ module FdmAmericanStepConditionFunction =
     *)
     [<ExcelFunction(Name="_FdmAmericanStepCondition", Description="Create a FdmAmericanStepCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAmericanStepCondition_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmAmericanStepCondition")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="mesher",Description = "FdmMesher")>] 
          mesher : obj)
@@ -127,9 +127,9 @@ module FdmAmericanStepConditionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmAmericanStepCondition_Range", Description="Create a range of FdmAmericanStepCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmAmericanStepCondition_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

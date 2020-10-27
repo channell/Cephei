@@ -39,7 +39,7 @@ module MultiAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_MultiAssetOption_delta", Description="Create a MultiAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiAssetOption_delta
-        ([<ExcelArgument(Name="Mnemonic",Description = "MultiAssetOption")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MultiAssetOption",Description = "MultiAssetOption")>] 
          multiassetoption : obj)
@@ -75,7 +75,7 @@ module MultiAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_MultiAssetOption_dividendRho", Description="Create a MultiAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiAssetOption_dividendRho
-        ([<ExcelArgument(Name="Mnemonic",Description = "MultiAssetOption")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MultiAssetOption",Description = "MultiAssetOption")>] 
          multiassetoption : obj)
@@ -111,7 +111,7 @@ module MultiAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_MultiAssetOption_gamma", Description="Create a MultiAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiAssetOption_gamma
-        ([<ExcelArgument(Name="Mnemonic",Description = "MultiAssetOption")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MultiAssetOption",Description = "MultiAssetOption")>] 
          multiassetoption : obj)
@@ -147,7 +147,7 @@ module MultiAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_MultiAssetOption_isExpired", Description="Create a MultiAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiAssetOption_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "MultiAssetOption")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MultiAssetOption",Description = "MultiAssetOption")>] 
          multiassetoption : obj)
@@ -183,7 +183,7 @@ module MultiAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_MultiAssetOption", Description="Create a MultiAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiAssetOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "MultiAssetOption")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="payoff",Description = "Payoff")>] 
          payoff : obj)
@@ -238,7 +238,7 @@ module MultiAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_MultiAssetOption_rho", Description="Create a MultiAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiAssetOption_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MultiAssetOption",Description = "MultiAssetOption")>] 
          multiassetoption : obj)
@@ -274,7 +274,7 @@ module MultiAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_MultiAssetOption_theta", Description="Create a MultiAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiAssetOption_theta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MultiAssetOption",Description = "MultiAssetOption")>] 
          multiassetoption : obj)
@@ -310,7 +310,7 @@ module MultiAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_MultiAssetOption_vega", Description="Create a MultiAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiAssetOption_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MultiAssetOption",Description = "MultiAssetOption")>] 
          multiassetoption : obj)
@@ -346,7 +346,7 @@ module MultiAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_MultiAssetOption_exercise", Description="Create a MultiAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiAssetOption_exercise
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MultiAssetOption",Description = "MultiAssetOption")>] 
          multiassetoption : obj)
@@ -382,7 +382,7 @@ module MultiAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_MultiAssetOption_payoff", Description="Create a MultiAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiAssetOption_payoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Payoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MultiAssetOption",Description = "MultiAssetOption")>] 
          multiassetoption : obj)
@@ -418,7 +418,7 @@ module MultiAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_MultiAssetOption_CASH", Description="Create a MultiAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiAssetOption_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MultiAssetOption",Description = "MultiAssetOption")>] 
          multiassetoption : obj)
@@ -454,7 +454,7 @@ module MultiAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_MultiAssetOption_errorEstimate", Description="Create a MultiAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiAssetOption_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MultiAssetOption",Description = "MultiAssetOption")>] 
          multiassetoption : obj)
@@ -490,7 +490,7 @@ module MultiAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_MultiAssetOption_NPV", Description="Create a MultiAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiAssetOption_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MultiAssetOption",Description = "MultiAssetOption")>] 
          multiassetoption : obj)
@@ -526,7 +526,7 @@ module MultiAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_MultiAssetOption_result", Description="Create a MultiAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiAssetOption_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MultiAssetOption",Description = "MultiAssetOption")>] 
          multiassetoption : obj)
@@ -568,7 +568,7 @@ module MultiAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_MultiAssetOption_setPricingEngine", Description="Create a MultiAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiAssetOption_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MultiAssetOption",Description = "MultiAssetOption")>] 
          multiassetoption : obj)
@@ -610,7 +610,7 @@ module MultiAssetOptionFunction =
     *)
     [<ExcelFunction(Name="_MultiAssetOption_valuationDate", Description="Create a MultiAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiAssetOption_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MultiAssetOption",Description = "MultiAssetOption")>] 
          multiassetoption : obj)
@@ -643,9 +643,9 @@ module MultiAssetOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MultiAssetOption_Range", Description="Create a range of MultiAssetOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MultiAssetOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,7 +39,7 @@ module ExchangeRateFunction =
     *)
     [<ExcelFunction(Name="_ExchangeRate_exchange", Description="Create a ExchangeRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRate_exchange
-        ([<ExcelArgument(Name="Mnemonic",Description = "Money")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ExchangeRate",Description = "ExchangeRate")>] 
          exchangerate : obj)
@@ -81,7 +81,7 @@ module ExchangeRateFunction =
     *)
     [<ExcelFunction(Name="_ExchangeRate", Description="Create a ExchangeRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRate_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ExchangeRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="source",Description = "Currency")>] 
          source : obj)
@@ -130,7 +130,7 @@ module ExchangeRateFunction =
     *)
     [<ExcelFunction(Name="_ExchangeRate1", Description="Create a ExchangeRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRate_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "ExchangeRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -161,7 +161,7 @@ module ExchangeRateFunction =
     *)
     [<ExcelFunction(Name="_ExchangeRate_HasValue", Description="Create a ExchangeRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRate_HasValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ExchangeRate",Description = "ExchangeRate")>] 
          exchangerate : obj)
@@ -197,7 +197,7 @@ module ExchangeRateFunction =
     *)
     [<ExcelFunction(Name="_ExchangeRate_rate", Description="Create a ExchangeRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRate_rate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ExchangeRate",Description = "ExchangeRate")>] 
          exchangerate : obj)
@@ -233,7 +233,7 @@ module ExchangeRateFunction =
     *)
     [<ExcelFunction(Name="_ExchangeRate_source", Description="Create a ExchangeRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRate_source
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ExchangeRate",Description = "ExchangeRate")>] 
          exchangerate : obj)
@@ -269,7 +269,7 @@ module ExchangeRateFunction =
     *)
     [<ExcelFunction(Name="_ExchangeRate_target", Description="Create a ExchangeRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRate_target
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ExchangeRate",Description = "ExchangeRate")>] 
          exchangerate : obj)
@@ -305,7 +305,7 @@ module ExchangeRateFunction =
     *)
     [<ExcelFunction(Name="_ExchangeRate_type", Description="Create a ExchangeRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRate_type
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ExchangeRate",Description = "ExchangeRate")>] 
          exchangerate : obj)
@@ -338,9 +338,9 @@ module ExchangeRateFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ExchangeRate_Range", Description="Create a range of ExchangeRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ExchangeRate_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

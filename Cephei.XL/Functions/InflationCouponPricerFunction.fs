@@ -39,7 +39,7 @@ module InflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_InflationCouponPricer_capletPrice", Description="Create a InflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCouponPricer_capletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationCouponPricer",Description = "InflationCouponPricer")>] 
          inflationcouponpricer : obj)
@@ -81,7 +81,7 @@ module InflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_InflationCouponPricer_capletRate", Description="Create a InflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCouponPricer_capletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationCouponPricer",Description = "InflationCouponPricer")>] 
          inflationcouponpricer : obj)
@@ -123,7 +123,7 @@ module InflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_InflationCouponPricer_floorletPrice", Description="Create a InflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCouponPricer_floorletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationCouponPricer",Description = "InflationCouponPricer")>] 
          inflationcouponpricer : obj)
@@ -165,7 +165,7 @@ module InflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_InflationCouponPricer_floorletRate", Description="Create a InflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCouponPricer_floorletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationCouponPricer",Description = "InflationCouponPricer")>] 
          inflationcouponpricer : obj)
@@ -207,7 +207,7 @@ module InflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_InflationCouponPricer_initialize", Description="Create a InflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCouponPricer_initialize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationCouponPricer",Description = "InflationCouponPricer")>] 
          inflationcouponpricer : obj)
@@ -249,7 +249,7 @@ module InflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_InflationCouponPricer_registerWith", Description="Create a InflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCouponPricer_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationCouponPricer",Description = "InflationCouponPricer")>] 
          inflationcouponpricer : obj)
@@ -291,7 +291,7 @@ module InflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_InflationCouponPricer_swapletPrice", Description="Create a InflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCouponPricer_swapletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationCouponPricer",Description = "InflationCouponPricer")>] 
          inflationcouponpricer : obj)
@@ -327,7 +327,7 @@ module InflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_InflationCouponPricer_swapletRate", Description="Create a InflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCouponPricer_swapletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationCouponPricer",Description = "InflationCouponPricer")>] 
          inflationcouponpricer : obj)
@@ -363,7 +363,7 @@ module InflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_InflationCouponPricer_unregisterWith", Description="Create a InflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCouponPricer_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationCouponPricer",Description = "InflationCouponPricer")>] 
          inflationcouponpricer : obj)
@@ -405,7 +405,7 @@ module InflationCouponPricerFunction =
     *)
     [<ExcelFunction(Name="_InflationCouponPricer_update", Description="Create a InflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCouponPricer_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InflationCouponPricer",Description = "InflationCouponPricer")>] 
          inflationcouponpricer : obj)
@@ -438,9 +438,9 @@ module InflationCouponPricerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InflationCouponPricer_Range", Description="Create a range of InflationCouponPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InflationCouponPricer_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

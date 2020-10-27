@@ -39,7 +39,7 @@ module SuperFundPayoffFunction =
     *)
     [<ExcelFunction(Name="_SuperFundPayoff_name", Description="Create a SuperFundPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SuperFundPayoff_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "SuperFundPayoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SuperFundPayoff",Description = "SuperFundPayoff")>] 
          superfundpayoff : obj)
@@ -75,7 +75,7 @@ module SuperFundPayoffFunction =
     *)
     [<ExcelFunction(Name="_SuperFundPayoff_secondStrike", Description="Create a SuperFundPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SuperFundPayoff_secondStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "SuperFundPayoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SuperFundPayoff",Description = "SuperFundPayoff")>] 
          superfundpayoff : obj)
@@ -111,7 +111,7 @@ module SuperFundPayoffFunction =
     *)
     [<ExcelFunction(Name="_SuperFundPayoff", Description="Create a SuperFundPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SuperFundPayoff_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SuperFundPayoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
@@ -154,7 +154,7 @@ module SuperFundPayoffFunction =
     *)
     [<ExcelFunction(Name="_SuperFundPayoff_value", Description="Create a SuperFundPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SuperFundPayoff_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SuperFundPayoff",Description = "SuperFundPayoff")>] 
          superfundpayoff : obj)
@@ -196,7 +196,7 @@ module SuperFundPayoffFunction =
     *)
     [<ExcelFunction(Name="_SuperFundPayoff_description", Description="Create a SuperFundPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SuperFundPayoff_description
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SuperFundPayoff",Description = "SuperFundPayoff")>] 
          superfundpayoff : obj)
@@ -232,7 +232,7 @@ module SuperFundPayoffFunction =
     *)
     [<ExcelFunction(Name="_SuperFundPayoff_strike", Description="Create a SuperFundPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SuperFundPayoff_strike
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SuperFundPayoff",Description = "SuperFundPayoff")>] 
          superfundpayoff : obj)
@@ -268,7 +268,7 @@ module SuperFundPayoffFunction =
     *)
     [<ExcelFunction(Name="_SuperFundPayoff_optionType", Description="Create a SuperFundPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SuperFundPayoff_optionType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SuperFundPayoff",Description = "SuperFundPayoff")>] 
          superfundpayoff : obj)
@@ -304,7 +304,7 @@ module SuperFundPayoffFunction =
     *)
     [<ExcelFunction(Name="_SuperFundPayoff_accept", Description="Create a SuperFundPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SuperFundPayoff_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SuperFundPayoff",Description = "SuperFundPayoff")>] 
          superfundpayoff : obj)
@@ -343,9 +343,9 @@ module SuperFundPayoffFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SuperFundPayoff_Range", Description="Create a range of SuperFundPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SuperFundPayoff_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

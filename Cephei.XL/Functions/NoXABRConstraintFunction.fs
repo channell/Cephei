@@ -39,7 +39,7 @@ module NoXABRConstraintFunction =
     *)
     [<ExcelFunction(Name="_NoXABRConstraint", Description="Create a NoXABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoXABRConstraint_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "NoXABRConstraint")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -71,7 +71,7 @@ module NoXABRConstraintFunction =
     (*!! generic
     [<ExcelFunction(Name="_NoXABRConstraint_config", Description="Create a NoXABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoXABRConstraint_config
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NoXABRConstraint",Description = "NoXABRConstraint")>] 
          noxabrconstraint : obj)
@@ -126,7 +126,7 @@ module NoXABRConstraintFunction =
     *)
     [<ExcelFunction(Name="_NoXABRConstraint_empty", Description="Create a NoXABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoXABRConstraint_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NoXABRConstraint",Description = "NoXABRConstraint")>] 
          noxabrconstraint : obj)
@@ -162,7 +162,7 @@ module NoXABRConstraintFunction =
     *)
     [<ExcelFunction(Name="_NoXABRConstraint_lowerBound", Description="Create a NoXABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoXABRConstraint_lowerBound
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NoXABRConstraint",Description = "NoXABRConstraint")>] 
          noxabrconstraint : obj)
@@ -204,7 +204,7 @@ module NoXABRConstraintFunction =
     *)
     [<ExcelFunction(Name="_NoXABRConstraint_test", Description="Create a NoXABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoXABRConstraint_test
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NoXABRConstraint",Description = "NoXABRConstraint")>] 
          noxabrconstraint : obj)
@@ -246,7 +246,7 @@ module NoXABRConstraintFunction =
     *)
     [<ExcelFunction(Name="_NoXABRConstraint_update", Description="Create a NoXABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoXABRConstraint_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NoXABRConstraint",Description = "NoXABRConstraint")>] 
          noxabrconstraint : obj)
@@ -300,7 +300,7 @@ module NoXABRConstraintFunction =
     *)
     [<ExcelFunction(Name="_NoXABRConstraint_upperBound", Description="Create a NoXABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoXABRConstraint_upperBound
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NoXABRConstraint",Description = "NoXABRConstraint")>] 
          noxabrconstraint : obj)
@@ -339,9 +339,9 @@ module NoXABRConstraintFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NoXABRConstraint_Range", Description="Create a range of NoXABRConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NoXABRConstraint_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

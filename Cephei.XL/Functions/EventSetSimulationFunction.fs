@@ -39,9 +39,9 @@ module EventSetSimulationFunction =
     *)
     [<ExcelFunction(Name="_EventSetSimulation", Description="Create a EventSetSimulation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EventSetSimulation_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "EventSetSimulation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="events",Description = "Date,double")>] 
+        ([<ExcelArgument(Name="events",Description = "Date,double range")>] 
          events : obj)
         ([<ExcelArgument(Name="eventsStart",Description = "Date")>] 
          eventsStart : obj)
@@ -100,11 +100,11 @@ module EventSetSimulationFunction =
     *)
     [<ExcelFunction(Name="_EventSetSimulation_nextPath", Description="Create a EventSetSimulation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EventSetSimulation_nextPath
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EventSetSimulation",Description = "EventSetSimulation")>] 
          eventsetsimulation : obj)
-        ([<ExcelArgument(Name="path",Description = "Date,double")>] 
+        ([<ExcelArgument(Name="path",Description = "Date,double range")>] 
          path : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -139,9 +139,9 @@ module EventSetSimulationFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_EventSetSimulation_Range", Description="Create a range of EventSetSimulation",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EventSetSimulation_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

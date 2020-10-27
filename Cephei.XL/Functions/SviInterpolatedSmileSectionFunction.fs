@@ -39,7 +39,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_a", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_a
-        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -75,7 +75,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_atmLevel", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_atmLevel
-        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -111,7 +111,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_b", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_b
-        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -147,7 +147,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_endCriteria", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_endCriteria
-        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -183,7 +183,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_m", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_m
-        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -219,7 +219,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_maxError", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_maxError
-        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -255,7 +255,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_maxStrike", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_maxStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -291,7 +291,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_minStrike", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_minStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -327,7 +327,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_rho", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -363,7 +363,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_rmsError", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_rmsError
-        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -399,7 +399,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_sigma", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_sigma
-        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -435,19 +435,19 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
         ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
-        ([<ExcelArgument(Name="strikes",Description = "double")>] 
+        ([<ExcelArgument(Name="strikes",Description = "double range")>] 
          strikes : obj)
         ([<ExcelArgument(Name="hasFloatingStrikes",Description = "bool")>] 
          hasFloatingStrikes : obj)
         ([<ExcelArgument(Name="atmVolatility",Description = "double")>] 
          atmVolatility : obj)
-        ([<ExcelArgument(Name="volHandles",Description = "double")>] 
+        ([<ExcelArgument(Name="volHandles",Description = "double range")>] 
          volHandles : obj)
         ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
@@ -471,11 +471,11 @@ module SviInterpolatedSmileSectionFunction =
          isMFixed : obj)
         ([<ExcelArgument(Name="vegaWeighted",Description = "bool")>] 
          vegaWeighted : obj)
-        ([<ExcelArgument(Name="endCriteria",Description = "SviInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="endCriteria",Description = "EndCriteria or empty")>] 
          endCriteria : obj)
         ([<ExcelArgument(Name="Method",Description = "OptimizationMethod")>] 
          Method : obj)
-        ([<ExcelArgument(Name="dc",Description = "SviInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter or empty")>] 
          dc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -587,19 +587,19 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection1", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "SviInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="optionDate",Description = "Date")>] 
          optionDate : obj)
         ([<ExcelArgument(Name="forward",Description = "Quote")>] 
          forward : obj)
-        ([<ExcelArgument(Name="strikes",Description = "double")>] 
+        ([<ExcelArgument(Name="strikes",Description = "double range")>] 
          strikes : obj)
         ([<ExcelArgument(Name="hasFloatingStrikes",Description = "bool")>] 
          hasFloatingStrikes : obj)
         ([<ExcelArgument(Name="atmVolatility",Description = "Quote")>] 
          atmVolatility : obj)
-        ([<ExcelArgument(Name="volHandles",Description = "Quote")>] 
+        ([<ExcelArgument(Name="volHandles",Description = "Quote range")>] 
          volHandles : obj)
         ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
@@ -623,11 +623,11 @@ module SviInterpolatedSmileSectionFunction =
          isMFixed : obj)
         ([<ExcelArgument(Name="vegaWeighted",Description = "bool")>] 
          vegaWeighted : obj)
-        ([<ExcelArgument(Name="endCriteria",Description = "SviInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="endCriteria",Description = "EndCriteria or empty")>] 
          endCriteria : obj)
         ([<ExcelArgument(Name="Method",Description = "OptimizationMethod")>] 
          Method : obj)
-        ([<ExcelArgument(Name="dc",Description = "SviInterpolatedSmileSection")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter or empty")>] 
          dc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -738,7 +738,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_update", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -774,7 +774,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_dayCounter", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -810,7 +810,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_density", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_density
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -864,7 +864,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_digitalOptionPrice", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_digitalOptionPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -924,7 +924,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_exerciseDate", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_exerciseDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -960,7 +960,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_exerciseTime", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_exerciseTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -996,7 +996,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_optionPrice", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_optionPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -1050,7 +1050,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_referenceDate", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -1086,7 +1086,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_shift", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_shift
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -1122,7 +1122,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_variance", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -1164,7 +1164,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_vega", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -1212,7 +1212,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_volatility", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -1266,7 +1266,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_volatility1", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_volatility1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -1308,7 +1308,7 @@ module SviInterpolatedSmileSectionFunction =
     *)
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_volatilityType", Description="Create a SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_volatilityType
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SviInterpolatedSmileSection",Description = "SviInterpolatedSmileSection")>] 
          sviinterpolatedsmilesection : obj)
@@ -1341,9 +1341,9 @@ module SviInterpolatedSmileSectionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SviInterpolatedSmileSection_Range", Description="Create a range of SviInterpolatedSmileSection",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SviInterpolatedSmileSection_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

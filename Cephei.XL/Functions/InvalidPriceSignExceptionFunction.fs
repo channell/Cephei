@@ -39,7 +39,7 @@ module InvalidPriceSignExceptionFunction =
     *)
     [<ExcelFunction(Name="_InvalidPriceSignException", Description="Create a InvalidPriceSignException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InvalidPriceSignException_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "InvalidPriceSignException")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="message",Description = "string")>] 
          message : obj)
@@ -82,7 +82,7 @@ module InvalidPriceSignExceptionFunction =
     *)
     [<ExcelFunction(Name="_InvalidPriceSignException1", Description="Create a InvalidPriceSignException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InvalidPriceSignException_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "InvalidPriceSignException")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="message",Description = "string")>] 
          message : obj)
@@ -119,7 +119,7 @@ module InvalidPriceSignExceptionFunction =
     *)
     [<ExcelFunction(Name="_InvalidPriceSignException2", Description="Create a InvalidPriceSignException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InvalidPriceSignException_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "InvalidPriceSignException")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -147,9 +147,9 @@ module InvalidPriceSignExceptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InvalidPriceSignException_Range", Description="Create a range of InvalidPriceSignException",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InvalidPriceSignException_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

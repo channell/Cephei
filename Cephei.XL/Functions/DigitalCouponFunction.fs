@@ -39,7 +39,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_callDigitalPayoff", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_callDigitalPayoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -75,7 +75,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_callOptionRate", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_callOptionRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -111,7 +111,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_callStrike", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_callStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -147,7 +147,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_convexityAdjustment", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_convexityAdjustment
-        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -183,27 +183,27 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="underlying",Description = "FloatingRateCoupon")>] 
          underlying : obj)
         ([<ExcelArgument(Name="callStrike",Description = "double")>] 
          callStrike : obj)
-        ([<ExcelArgument(Name="callPosition",Description = "DigitalCoupon")>] 
+        ([<ExcelArgument(Name="callPosition",Description = "Position.Type: Long, Short or empty")>] 
          callPosition : obj)
-        ([<ExcelArgument(Name="isCallATMIncluded",Description = "DigitalCoupon")>] 
+        ([<ExcelArgument(Name="isCallATMIncluded",Description = "bool or empty")>] 
          isCallATMIncluded : obj)
         ([<ExcelArgument(Name="callDigitalPayoff",Description = "double")>] 
          callDigitalPayoff : obj)
         ([<ExcelArgument(Name="putStrike",Description = "double")>] 
          putStrike : obj)
-        ([<ExcelArgument(Name="putPosition",Description = "DigitalCoupon")>] 
+        ([<ExcelArgument(Name="putPosition",Description = "Position.Type: Long, Short or empty")>] 
          putPosition : obj)
-        ([<ExcelArgument(Name="isPutATMIncluded",Description = "DigitalCoupon")>] 
+        ([<ExcelArgument(Name="isPutATMIncluded",Description = "bool or empty")>] 
          isPutATMIncluded : obj)
         ([<ExcelArgument(Name="putDigitalPayoff",Description = "double")>] 
          putDigitalPayoff : obj)
-        ([<ExcelArgument(Name="replication",Description = "DigitalCoupon")>] 
+        ([<ExcelArgument(Name="replication",Description = "DigitalReplication or empty")>] 
          replication : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,7 +274,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon1", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -305,7 +305,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_factory", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -313,21 +313,21 @@ module DigitalCouponFunction =
          underlying : obj)
         ([<ExcelArgument(Name="callStrike",Description = "double")>] 
          callStrike : obj)
-        ([<ExcelArgument(Name="callPosition",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="callPosition",Description = "Position.Type: Long, Short or empty")>] 
          callPosition : obj)
-        ([<ExcelArgument(Name="isCallATMIncluded",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="isCallATMIncluded",Description = "bool or empty")>] 
          isCallATMIncluded : obj)
         ([<ExcelArgument(Name="callDigitalPayoff",Description = "double")>] 
          callDigitalPayoff : obj)
         ([<ExcelArgument(Name="putStrike",Description = "double")>] 
          putStrike : obj)
-        ([<ExcelArgument(Name="putPosition",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="putPosition",Description = "Position.Type: Long, Short or empty")>] 
          putPosition : obj)
-        ([<ExcelArgument(Name="isPutATMIncluded",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="isPutATMIncluded",Description = "bool or empty")>] 
          isPutATMIncluded : obj)
         ([<ExcelArgument(Name="putDigitalPayoff",Description = "double")>] 
          putDigitalPayoff : obj)
-        ([<ExcelArgument(Name="replication",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="replication",Description = "DigitalReplication or empty")>] 
          replication : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -401,7 +401,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_hasCall", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_hasCall
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -437,7 +437,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_hasCollar", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_hasCollar
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -473,7 +473,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_hasPut", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_hasPut
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -509,7 +509,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_isLongCall", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_isLongCall
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -545,7 +545,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_isLongPut", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_isLongPut
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -581,7 +581,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_putDigitalPayoff", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_putDigitalPayoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -617,7 +617,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_putOptionRate", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_putOptionRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -653,7 +653,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_putStrike", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_putStrike
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -689,7 +689,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_rate", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_rate
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -725,7 +725,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_setPricer", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_setPricer
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -767,7 +767,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_underlying", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_underlying
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -803,7 +803,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_accruedAmount", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_accruedAmount
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -845,7 +845,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_adjustedFixing", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_adjustedFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -881,7 +881,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_amount", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_amount
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -917,7 +917,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_dayCounter", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -953,7 +953,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_fixingDate", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -989,7 +989,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_fixingDays", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1025,7 +1025,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_gearing", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_gearing
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1061,7 +1061,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_index", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_index
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1097,7 +1097,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_indexFixing", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_indexFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1133,7 +1133,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_isInArrears", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_isInArrears
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1169,7 +1169,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_price", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_price
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1211,7 +1211,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_pricer", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_pricer
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1247,7 +1247,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_spread", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_spread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1283,7 +1283,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_update", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1319,7 +1319,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_accrualDays", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_accrualDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1355,7 +1355,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_accrualEndDate", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_accrualEndDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1391,7 +1391,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_accrualPeriod", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_accrualPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1427,7 +1427,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_accrualStartDate", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_accrualStartDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1463,7 +1463,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_accruedDays", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_accruedDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1505,7 +1505,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_accruedPeriod", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_accruedPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1547,7 +1547,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_date", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1583,7 +1583,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_exCouponDate", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_exCouponDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1619,7 +1619,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_nominal", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_nominal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1655,7 +1655,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_referencePeriodEnd", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_referencePeriodEnd
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1691,7 +1691,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_referencePeriodStart", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_referencePeriodStart
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1727,7 +1727,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_CompareTo", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_CompareTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1769,7 +1769,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_Equals", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1811,7 +1811,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_hasOccurred", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1859,7 +1859,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_tradingExCoupon", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_tradingExCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1901,7 +1901,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_accept", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1943,7 +1943,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_registerWith", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -1985,7 +1985,7 @@ module DigitalCouponFunction =
     *)
     [<ExcelFunction(Name="_DigitalCoupon_unregisterWith", Description="Create a DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalCoupon",Description = "DigitalCoupon")>] 
          digitalcoupon : obj)
@@ -2024,9 +2024,9 @@ module DigitalCouponFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DigitalCoupon_Range", Description="Create a range of DigitalCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalCoupon_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

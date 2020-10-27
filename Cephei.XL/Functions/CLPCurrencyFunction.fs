@@ -39,7 +39,7 @@ module CLPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CLPCurrency", Description="Create a CLPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CLPCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "CLPCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module CLPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CLPCurrency_code", Description="Create a CLPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CLPCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CLPCurrency",Description = "CLPCurrency")>] 
          clpcurrency : obj)
@@ -106,7 +106,7 @@ module CLPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CLPCurrency_empty", Description="Create a CLPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CLPCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CLPCurrency",Description = "CLPCurrency")>] 
          clpcurrency : obj)
@@ -142,7 +142,7 @@ module CLPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CLPCurrency_Equals", Description="Create a CLPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CLPCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CLPCurrency",Description = "CLPCurrency")>] 
          clpcurrency : obj)
@@ -184,7 +184,7 @@ module CLPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CLPCurrency_format", Description="Create a CLPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CLPCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CLPCurrency",Description = "CLPCurrency")>] 
          clpcurrency : obj)
@@ -220,7 +220,7 @@ module CLPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CLPCurrency_fractionsPerUnit", Description="Create a CLPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CLPCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CLPCurrency",Description = "CLPCurrency")>] 
          clpcurrency : obj)
@@ -256,7 +256,7 @@ module CLPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CLPCurrency_fractionSymbol", Description="Create a CLPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CLPCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CLPCurrency",Description = "CLPCurrency")>] 
          clpcurrency : obj)
@@ -292,7 +292,7 @@ module CLPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CLPCurrency_name", Description="Create a CLPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CLPCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CLPCurrency",Description = "CLPCurrency")>] 
          clpcurrency : obj)
@@ -328,7 +328,7 @@ module CLPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CLPCurrency_numericCode", Description="Create a CLPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CLPCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CLPCurrency",Description = "CLPCurrency")>] 
          clpcurrency : obj)
@@ -364,7 +364,7 @@ module CLPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CLPCurrency_rounding", Description="Create a CLPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CLPCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CLPCurrency",Description = "CLPCurrency")>] 
          clpcurrency : obj)
@@ -400,7 +400,7 @@ module CLPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CLPCurrency_symbol", Description="Create a CLPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CLPCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CLPCurrency",Description = "CLPCurrency")>] 
          clpcurrency : obj)
@@ -436,7 +436,7 @@ module CLPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CLPCurrency_ToString", Description="Create a CLPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CLPCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CLPCurrency",Description = "CLPCurrency")>] 
          clpcurrency : obj)
@@ -472,7 +472,7 @@ module CLPCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CLPCurrency_triangulationCurrency", Description="Create a CLPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CLPCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CLPCurrency",Description = "CLPCurrency")>] 
          clpcurrency : obj)
@@ -505,9 +505,9 @@ module CLPCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CLPCurrency_Range", Description="Create a range of CLPCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CLPCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

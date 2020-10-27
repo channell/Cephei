@@ -40,19 +40,19 @@ module FdHullWhiteSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_FdHullWhiteSwaptionEngine", Description="Create a FdHullWhiteSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdHullWhiteSwaptionEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdHullWhiteSwaptionEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="model",Description = "HullWhite")>] 
          model : obj)
-        ([<ExcelArgument(Name="tGrid",Description = "FdHullWhiteSwaptionEngine")>] 
+        ([<ExcelArgument(Name="tGrid",Description = "int or empty")>] 
          tGrid : obj)
-        ([<ExcelArgument(Name="xGrid",Description = "FdHullWhiteSwaptionEngine")>] 
+        ([<ExcelArgument(Name="xGrid",Description = "int or empty")>] 
          xGrid : obj)
-        ([<ExcelArgument(Name="dampingSteps",Description = "FdHullWhiteSwaptionEngine")>] 
+        ([<ExcelArgument(Name="dampingSteps",Description = "int or empty")>] 
          dampingSteps : obj)
-        ([<ExcelArgument(Name="invEps",Description = "FdHullWhiteSwaptionEngine")>] 
+        ([<ExcelArgument(Name="invEps",Description = "double or empty")>] 
          invEps : obj)
-        ([<ExcelArgument(Name="schemeDesc",Description = "FdHullWhiteSwaptionEngine")>] 
+        ([<ExcelArgument(Name="schemeDesc",Description = "FdmSchemeDesc or empty")>] 
          schemeDesc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -108,7 +108,7 @@ module FdHullWhiteSwaptionEngineFunction =
     (*!!
     [<ExcelFunction(Name="_FdHullWhiteSwaptionEngine_setModel", Description="Create a FdHullWhiteSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdHullWhiteSwaptionEngine_setModel
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdHullWhiteSwaptionEngine",Description = "FdHullWhiteSwaptionEngine")>] 
          fdhullwhiteswaptionengine : obj)
@@ -150,7 +150,7 @@ module FdHullWhiteSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_FdHullWhiteSwaptionEngine_registerWith", Description="Create a FdHullWhiteSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdHullWhiteSwaptionEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdHullWhiteSwaptionEngine",Description = "FdHullWhiteSwaptionEngine")>] 
          fdhullwhiteswaptionengine : obj)
@@ -192,7 +192,7 @@ module FdHullWhiteSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_FdHullWhiteSwaptionEngine_reset", Description="Create a FdHullWhiteSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdHullWhiteSwaptionEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdHullWhiteSwaptionEngine",Description = "FdHullWhiteSwaptionEngine")>] 
          fdhullwhiteswaptionengine : obj)
@@ -228,7 +228,7 @@ module FdHullWhiteSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_FdHullWhiteSwaptionEngine_unregisterWith", Description="Create a FdHullWhiteSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdHullWhiteSwaptionEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdHullWhiteSwaptionEngine",Description = "FdHullWhiteSwaptionEngine")>] 
          fdhullwhiteswaptionengine : obj)
@@ -270,7 +270,7 @@ module FdHullWhiteSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_FdHullWhiteSwaptionEngine_update", Description="Create a FdHullWhiteSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdHullWhiteSwaptionEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdHullWhiteSwaptionEngine",Description = "FdHullWhiteSwaptionEngine")>] 
          fdhullwhiteswaptionengine : obj)
@@ -303,9 +303,9 @@ module FdHullWhiteSwaptionEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdHullWhiteSwaptionEngine_Range", Description="Create a range of FdHullWhiteSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdHullWhiteSwaptionEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

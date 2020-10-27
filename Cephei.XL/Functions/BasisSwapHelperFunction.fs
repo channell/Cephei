@@ -39,7 +39,7 @@ module BasisSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_BasisSwapHelper", Description="Create a BasisSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwapHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BasisSwapHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="spreadQuote",Description = "Quote")>] 
          spreadQuote : obj)
@@ -57,9 +57,9 @@ module BasisSwapHelperFunction =
          longIndex : obj)
         ([<ExcelArgument(Name="discount",Description = "YieldTermStructure")>] 
          discount : obj)
-        ([<ExcelArgument(Name="eom",Description = "BasisSwapHelper")>] 
+        ([<ExcelArgument(Name="eom",Description = "bool or empty")>] 
          eom : obj)
-        ([<ExcelArgument(Name="spreadOnShort",Description = "BasisSwapHelper")>] 
+        ([<ExcelArgument(Name="spreadOnShort",Description = "bool or empty")>] 
          spreadOnShort : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -131,7 +131,7 @@ module BasisSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_BasisSwapHelper_impliedQuote", Description="Create a BasisSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwapHelper_impliedQuote
-        ([<ExcelArgument(Name="Mnemonic",Description = "BasisSwap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BasisSwapHelper",Description = "BasisSwapHelper")>] 
          basisswaphelper : obj)
@@ -167,7 +167,7 @@ module BasisSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_BasisSwapHelper_setTermStructure", Description="Create a BasisSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwapHelper_setTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "BasisSwap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BasisSwapHelper",Description = "BasisSwapHelper")>] 
          basisswaphelper : obj)
@@ -210,7 +210,7 @@ module BasisSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_BasisSwapHelper_swap", Description="Create a BasisSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwapHelper_swap
-        ([<ExcelArgument(Name="Mnemonic",Description = "BasisSwap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BasisSwapHelper",Description = "BasisSwapHelper")>] 
          basisswaphelper : obj)
@@ -246,7 +246,7 @@ module BasisSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_BasisSwapHelper_update", Description="Create a BasisSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwapHelper_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BasisSwapHelper",Description = "BasisSwapHelper")>] 
          basisswaphelper : obj)
@@ -282,7 +282,7 @@ module BasisSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_BasisSwapHelper_earliestDate", Description="Create a BasisSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwapHelper_earliestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BasisSwapHelper",Description = "BasisSwapHelper")>] 
          basisswaphelper : obj)
@@ -318,7 +318,7 @@ module BasisSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_BasisSwapHelper_latestDate", Description="Create a BasisSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwapHelper_latestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BasisSwapHelper",Description = "BasisSwapHelper")>] 
          basisswaphelper : obj)
@@ -354,7 +354,7 @@ module BasisSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_BasisSwapHelper_latestRelevantDate", Description="Create a BasisSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwapHelper_latestRelevantDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BasisSwapHelper",Description = "BasisSwapHelper")>] 
          basisswaphelper : obj)
@@ -390,7 +390,7 @@ module BasisSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_BasisSwapHelper_maturityDate", Description="Create a BasisSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwapHelper_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BasisSwapHelper",Description = "BasisSwapHelper")>] 
          basisswaphelper : obj)
@@ -426,7 +426,7 @@ module BasisSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_BasisSwapHelper_pillarDate", Description="Create a BasisSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwapHelper_pillarDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BasisSwapHelper",Description = "BasisSwapHelper")>] 
          basisswaphelper : obj)
@@ -462,7 +462,7 @@ module BasisSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_BasisSwapHelper_quote", Description="Create a BasisSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwapHelper_quote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BasisSwapHelper",Description = "BasisSwapHelper")>] 
          basisswaphelper : obj)
@@ -498,7 +498,7 @@ module BasisSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_BasisSwapHelper_quoteError", Description="Create a BasisSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwapHelper_quoteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BasisSwapHelper",Description = "BasisSwapHelper")>] 
          basisswaphelper : obj)
@@ -534,7 +534,7 @@ module BasisSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_BasisSwapHelper_quoteIsValid", Description="Create a BasisSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwapHelper_quoteIsValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BasisSwapHelper",Description = "BasisSwapHelper")>] 
          basisswaphelper : obj)
@@ -570,7 +570,7 @@ module BasisSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_BasisSwapHelper_quoteValue", Description="Create a BasisSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwapHelper_quoteValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BasisSwapHelper",Description = "BasisSwapHelper")>] 
          basisswaphelper : obj)
@@ -606,7 +606,7 @@ module BasisSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_BasisSwapHelper_registerWith", Description="Create a BasisSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwapHelper_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BasisSwapHelper",Description = "BasisSwapHelper")>] 
          basisswaphelper : obj)
@@ -648,7 +648,7 @@ module BasisSwapHelperFunction =
     *)
     [<ExcelFunction(Name="_BasisSwapHelper_unregisterWith", Description="Create a BasisSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwapHelper_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BasisSwapHelper",Description = "BasisSwapHelper")>] 
          basisswaphelper : obj)
@@ -687,9 +687,9 @@ module BasisSwapHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BasisSwapHelper_Range", Description="Create a range of BasisSwapHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BasisSwapHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

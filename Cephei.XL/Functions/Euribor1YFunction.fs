@@ -39,7 +39,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Euribor1Y")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
@@ -76,7 +76,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y1", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Euribor1Y")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -107,7 +107,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_businessDayConvention", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -143,7 +143,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_clone", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -185,7 +185,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_endOfMonth", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -221,7 +221,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_forecastFixing1", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -275,7 +275,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_forecastFixing", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -317,7 +317,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_forwardingTermStructure", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -353,7 +353,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_maturityDate", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -395,7 +395,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_currency", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -431,7 +431,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_dayCounter", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -467,7 +467,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_familyName", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -503,7 +503,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_fixing", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -551,7 +551,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_fixingCalendar", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -587,7 +587,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_fixingDate", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -629,7 +629,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_fixingDays", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -665,7 +665,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_isValidFixingDate", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -707,7 +707,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_name", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -743,7 +743,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_pastFixing", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -785,7 +785,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_tenor", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -821,7 +821,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_update", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -857,7 +857,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_valueDate", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -899,7 +899,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_addFixing", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -953,13 +953,13 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_addFixings", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -1007,7 +1007,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_addFixings1", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -1055,7 +1055,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_allowsNativeFixings", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -1091,7 +1091,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_clearFixings", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -1127,7 +1127,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_registerWith", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -1169,7 +1169,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_timeSeries", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -1205,7 +1205,7 @@ module Euribor1YFunction =
     *)
     [<ExcelFunction(Name="_Euribor1Y_unregisterWith", Description="Create a Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Euribor1Y",Description = "Euribor1Y")>] 
          euribor1y : obj)
@@ -1244,9 +1244,9 @@ module Euribor1YFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Euribor1Y_Range", Description="Create a range of Euribor1Y",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Euribor1Y_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

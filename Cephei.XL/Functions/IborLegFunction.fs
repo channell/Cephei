@@ -39,7 +39,7 @@ module IborLegFunction =
     *)
     [<ExcelFunction(Name="_IborLeg", Description="Create a IborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborLeg_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "IborLeg")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="schedule",Description = "Schedule")>] 
          schedule : obj)
@@ -82,7 +82,7 @@ module IborLegFunction =
     *)
     [<ExcelFunction(Name="_IborLeg_value", Description="Create a IborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborLeg_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborLeg",Description = "IborLeg")>] 
          iborleg : obj)
@@ -118,7 +118,7 @@ module IborLegFunction =
     *)
     [<ExcelFunction(Name="_IborLeg_inArrears1", Description="Create a IborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborLeg_inArrears1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborLeg",Description = "IborLeg")>] 
          iborleg : obj)
@@ -160,7 +160,7 @@ module IborLegFunction =
     *)
     [<ExcelFunction(Name="_IborLeg_inArrears", Description="Create a IborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborLeg_inArrears
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborLeg",Description = "IborLeg")>] 
          iborleg : obj)
@@ -196,11 +196,11 @@ module IborLegFunction =
     *)
     [<ExcelFunction(Name="_IborLeg_withCaps", Description="Create a IborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborLeg_withCaps
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborLeg",Description = "IborLeg")>] 
          iborleg : obj)
-        ([<ExcelArgument(Name="caps",Description = "double")>] 
+        ([<ExcelArgument(Name="caps",Description = "double range")>] 
          caps : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -238,7 +238,7 @@ module IborLegFunction =
     *)
     [<ExcelFunction(Name="_IborLeg_withCaps1", Description="Create a IborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborLeg_withCaps1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborLeg",Description = "IborLeg")>] 
          iborleg : obj)
@@ -280,11 +280,11 @@ module IborLegFunction =
     *)
     [<ExcelFunction(Name="_IborLeg_withFixingDays1", Description="Create a IborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborLeg_withFixingDays1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborLeg",Description = "IborLeg")>] 
          iborleg : obj)
-        ([<ExcelArgument(Name="fixingDays",Description = "int")>] 
+        ([<ExcelArgument(Name="fixingDays",Description = "int range")>] 
          fixingDays : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -322,7 +322,7 @@ module IborLegFunction =
     *)
     [<ExcelFunction(Name="_IborLeg_withFixingDays", Description="Create a IborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborLeg_withFixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborLeg",Description = "IborLeg")>] 
          iborleg : obj)
@@ -364,11 +364,11 @@ module IborLegFunction =
     *)
     [<ExcelFunction(Name="_IborLeg_withFloors1", Description="Create a IborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborLeg_withFloors1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborLeg",Description = "IborLeg")>] 
          iborleg : obj)
-        ([<ExcelArgument(Name="floors",Description = "double")>] 
+        ([<ExcelArgument(Name="floors",Description = "double range")>] 
          floors : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -406,7 +406,7 @@ module IborLegFunction =
     *)
     [<ExcelFunction(Name="_IborLeg_withFloors", Description="Create a IborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborLeg_withFloors
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborLeg",Description = "IborLeg")>] 
          iborleg : obj)
@@ -448,7 +448,7 @@ module IborLegFunction =
     *)
     [<ExcelFunction(Name="_IborLeg_withGearings", Description="Create a IborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborLeg_withGearings
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborLeg",Description = "IborLeg")>] 
          iborleg : obj)
@@ -490,11 +490,11 @@ module IborLegFunction =
     *)
     [<ExcelFunction(Name="_IborLeg_withGearings1", Description="Create a IborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborLeg_withGearings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborLeg",Description = "IborLeg")>] 
          iborleg : obj)
-        ([<ExcelArgument(Name="gearings",Description = "double")>] 
+        ([<ExcelArgument(Name="gearings",Description = "double range")>] 
          gearings : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -532,7 +532,7 @@ module IborLegFunction =
     *)
     [<ExcelFunction(Name="_IborLeg_withPaymentDayCounter", Description="Create a IborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborLeg_withPaymentDayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborLeg",Description = "IborLeg")>] 
          iborleg : obj)
@@ -574,11 +574,11 @@ module IborLegFunction =
     *)
     [<ExcelFunction(Name="_IborLeg_withSpreads1", Description="Create a IborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborLeg_withSpreads1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborLeg",Description = "IborLeg")>] 
          iborleg : obj)
-        ([<ExcelArgument(Name="spreads",Description = "double")>] 
+        ([<ExcelArgument(Name="spreads",Description = "double range")>] 
          spreads : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -616,7 +616,7 @@ module IborLegFunction =
     *)
     [<ExcelFunction(Name="_IborLeg_withSpreads", Description="Create a IborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborLeg_withSpreads
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborLeg",Description = "IborLeg")>] 
          iborleg : obj)
@@ -658,7 +658,7 @@ module IborLegFunction =
     *)
     [<ExcelFunction(Name="_IborLeg_withZeroPayments1", Description="Create a IborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborLeg_withZeroPayments1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborLeg",Description = "IborLeg")>] 
          iborleg : obj)
@@ -700,7 +700,7 @@ module IborLegFunction =
     *)
     [<ExcelFunction(Name="_IborLeg_withZeroPayments", Description="Create a IborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborLeg_withZeroPayments
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborLeg",Description = "IborLeg")>] 
          iborleg : obj)
@@ -736,11 +736,11 @@ module IborLegFunction =
     *)
     [<ExcelFunction(Name="_IborLeg_withNotionals1", Description="Create a IborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborLeg_withNotionals1
-        ([<ExcelArgument(Name="Mnemonic",Description = "RateLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborLeg",Description = "IborLeg")>] 
          iborleg : obj)
-        ([<ExcelArgument(Name="notionals",Description = "double")>] 
+        ([<ExcelArgument(Name="notionals",Description = "double range")>] 
          notionals : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -778,7 +778,7 @@ module IborLegFunction =
     *)
     [<ExcelFunction(Name="_IborLeg_withNotionals", Description="Create a IborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborLeg_withNotionals
-        ([<ExcelArgument(Name="Mnemonic",Description = "RateLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborLeg",Description = "IborLeg")>] 
          iborleg : obj)
@@ -820,7 +820,7 @@ module IborLegFunction =
     *)
     [<ExcelFunction(Name="_IborLeg_withPaymentAdjustment", Description="Create a IborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborLeg_withPaymentAdjustment
-        ([<ExcelArgument(Name="Mnemonic",Description = "RateLegBase")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="IborLeg",Description = "IborLeg")>] 
          iborleg : obj)
@@ -859,9 +859,9 @@ module IborLegFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_IborLeg_Range", Description="Create a range of IborLeg",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IborLeg_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

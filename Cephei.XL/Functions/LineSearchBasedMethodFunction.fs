@@ -39,9 +39,9 @@ module LineSearchBasedMethodFunction =
     *)
     [<ExcelFunction(Name="_LineSearchBasedMethod", Description="Create a LineSearchBasedMethod",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LineSearchBasedMethod_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "LineSearchBasedMethod")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="lineSearch",Description = "LineSearchBasedMethod")>] 
+        ([<ExcelArgument(Name="lineSearch",Description = "LineSearch or empty")>] 
          lineSearch : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -76,7 +76,7 @@ module LineSearchBasedMethodFunction =
     *)
     [<ExcelFunction(Name="_LineSearchBasedMethod_minimize", Description="Create a LineSearchBasedMethod",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LineSearchBasedMethod_minimize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LineSearchBasedMethod",Description = "LineSearchBasedMethod")>] 
          linesearchbasedmethod : obj)
@@ -121,9 +121,9 @@ module LineSearchBasedMethodFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LineSearchBasedMethod_Range", Description="Create a range of LineSearchBasedMethod",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LineSearchBasedMethod_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

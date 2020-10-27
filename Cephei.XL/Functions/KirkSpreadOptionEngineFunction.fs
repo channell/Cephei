@@ -40,7 +40,7 @@ module KirkSpreadOptionEngineFunction =
     *)
     [<ExcelFunction(Name="_KirkSpreadOptionEngine", Description="Create a KirkSpreadOptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KirkSpreadOptionEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "KirkSpreadOptionEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="process1",Description = "BlackProcess")>] 
          process1 : obj)
@@ -86,9 +86,9 @@ module KirkSpreadOptionEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_KirkSpreadOptionEngine_Range", Description="Create a range of KirkSpreadOptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let KirkSpreadOptionEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

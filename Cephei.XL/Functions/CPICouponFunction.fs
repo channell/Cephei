@@ -39,7 +39,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_adjustedFixing", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_adjustedFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "CPICoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -75,7 +75,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_baseCPI", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_baseCPI
-        ([<ExcelArgument(Name="Mnemonic",Description = "CPICoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -111,7 +111,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "CPICoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="baseCPI",Description = "double")>] 
          baseCPI : obj)
@@ -135,13 +135,13 @@ module CPICouponFunction =
          dayCounter : obj)
         ([<ExcelArgument(Name="fixedRate",Description = "double")>] 
          fixedRate : obj)
-        ([<ExcelArgument(Name="spread",Description = "CPICoupon")>] 
+        ([<ExcelArgument(Name="spread",Description = "double or empty")>] 
          spread : obj)
-        ([<ExcelArgument(Name="refPeriodStart",Description = "CPICoupon")>] 
+        ([<ExcelArgument(Name="refPeriodStart",Description = "Date or empty")>] 
          refPeriodStart : obj)
-        ([<ExcelArgument(Name="refPeriodEnd",Description = "CPICoupon")>] 
+        ([<ExcelArgument(Name="refPeriodEnd",Description = "Date or empty")>] 
          refPeriodEnd : obj)
-        ([<ExcelArgument(Name="exCouponDate",Description = "CPICoupon")>] 
+        ([<ExcelArgument(Name="exCouponDate",Description = "Date or empty")>] 
          exCouponDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -232,7 +232,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_cpiIndex", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_cpiIndex
-        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroInflationIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -268,7 +268,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_fixedRate", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_fixedRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -304,7 +304,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_indexFixing", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_indexFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -340,7 +340,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_indexObservation", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_indexObservation
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -382,7 +382,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_observationInterpolation", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_observationInterpolation
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -418,7 +418,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_spread", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_spread
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -454,7 +454,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_accruedAmount", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_accruedAmount
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -496,7 +496,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_amount", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_amount
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -532,7 +532,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_dayCounter", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -568,7 +568,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_fixingDate", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "InflationIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -604,7 +604,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_fixingDays", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "InflationIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -640,7 +640,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_index", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_index
-        ([<ExcelArgument(Name="Mnemonic",Description = "InflationIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -676,7 +676,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_observationLag", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_observationLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -712,7 +712,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_price", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_price
-        ([<ExcelArgument(Name="Mnemonic",Description = "InflationCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -754,7 +754,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_pricer", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_pricer
-        ([<ExcelArgument(Name="Mnemonic",Description = "InflationCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -790,7 +790,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_rate", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_rate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -826,7 +826,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_setPricer", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_setPricer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -868,7 +868,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_update", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -904,7 +904,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_accrualDays", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_accrualDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -940,7 +940,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_accrualEndDate", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_accrualEndDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -976,7 +976,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_accrualPeriod", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_accrualPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -1012,7 +1012,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_accrualStartDate", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_accrualStartDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -1048,7 +1048,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_accruedDays", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_accruedDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -1090,7 +1090,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_accruedPeriod", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_accruedPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -1132,7 +1132,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_date", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -1168,7 +1168,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_exCouponDate", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_exCouponDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -1204,7 +1204,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_nominal", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_nominal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -1240,7 +1240,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_referencePeriodEnd", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_referencePeriodEnd
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -1276,7 +1276,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_referencePeriodStart", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_referencePeriodStart
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -1312,7 +1312,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_CompareTo", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_CompareTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -1354,7 +1354,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_Equals", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -1396,7 +1396,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_hasOccurred", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -1444,7 +1444,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_tradingExCoupon", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_tradingExCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -1486,7 +1486,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_accept", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -1528,7 +1528,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_registerWith", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -1570,7 +1570,7 @@ module CPICouponFunction =
     *)
     [<ExcelFunction(Name="_CPICoupon_unregisterWith", Description="Create a CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CPICoupon",Description = "CPICoupon")>] 
          cpicoupon : obj)
@@ -1609,9 +1609,9 @@ module CPICouponFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CPICoupon_Range", Description="Create a range of CPICoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CPICoupon_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

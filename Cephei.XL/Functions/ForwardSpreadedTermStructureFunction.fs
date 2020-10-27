@@ -39,7 +39,7 @@ module ForwardSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ForwardSpreadedTermStructure_calendar", Description="Create a ForwardSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardSpreadedTermStructure_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardSpreadedTermStructure",Description = "ForwardSpreadedTermStructure")>] 
          forwardspreadedtermstructure : obj)
@@ -75,7 +75,7 @@ module ForwardSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ForwardSpreadedTermStructure_dayCounter", Description="Create a ForwardSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardSpreadedTermStructure_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardSpreadedTermStructure",Description = "ForwardSpreadedTermStructure")>] 
          forwardspreadedtermstructure : obj)
@@ -111,7 +111,7 @@ module ForwardSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ForwardSpreadedTermStructure", Description="Create a ForwardSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardSpreadedTermStructure_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ForwardSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
@@ -154,7 +154,7 @@ module ForwardSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ForwardSpreadedTermStructure_maxDate", Description="Create a ForwardSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardSpreadedTermStructure_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardSpreadedTermStructure",Description = "ForwardSpreadedTermStructure")>] 
          forwardspreadedtermstructure : obj)
@@ -190,7 +190,7 @@ module ForwardSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ForwardSpreadedTermStructure_maxTime", Description="Create a ForwardSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardSpreadedTermStructure_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardSpreadedTermStructure",Description = "ForwardSpreadedTermStructure")>] 
          forwardspreadedtermstructure : obj)
@@ -226,7 +226,7 @@ module ForwardSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ForwardSpreadedTermStructure_referenceDate", Description="Create a ForwardSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardSpreadedTermStructure_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardSpreadedTermStructure",Description = "ForwardSpreadedTermStructure")>] 
          forwardspreadedtermstructure : obj)
@@ -262,7 +262,7 @@ module ForwardSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ForwardSpreadedTermStructure_settlementDays", Description="Create a ForwardSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardSpreadedTermStructure_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ForwardSpreadedTermStructure",Description = "ForwardSpreadedTermStructure")>] 
          forwardspreadedtermstructure : obj)
@@ -295,9 +295,9 @@ module ForwardSpreadedTermStructureFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ForwardSpreadedTermStructure_Range", Description="Create a range of ForwardSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ForwardSpreadedTermStructure_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

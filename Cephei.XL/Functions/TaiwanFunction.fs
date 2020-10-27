@@ -53,7 +53,7 @@ module TaiwanFunction =
     *)
     [<ExcelFunction(Name="_Taiwan", Description="Create a Taiwan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Taiwan_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Taiwan")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -84,7 +84,7 @@ module TaiwanFunction =
     *)
     [<ExcelFunction(Name="_Taiwan_addedHolidays", Description="Create a Taiwan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Taiwan_addedHolidays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Taiwan",Description = "Taiwan")>] 
          taiwan : obj)
@@ -120,7 +120,7 @@ module TaiwanFunction =
     *)
     [<ExcelFunction(Name="_Taiwan_addHoliday", Description="Create a Taiwan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Taiwan_addHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Taiwan",Description = "Taiwan")>] 
          taiwan : obj)
@@ -162,7 +162,7 @@ module TaiwanFunction =
     *)
     [<ExcelFunction(Name="_Taiwan_adjust", Description="Create a Taiwan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Taiwan_adjust
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Taiwan",Description = "Taiwan")>] 
          taiwan : obj)
@@ -210,7 +210,7 @@ module TaiwanFunction =
     *)
     [<ExcelFunction(Name="_Taiwan_advance1", Description="Create a Taiwan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Taiwan_advance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Taiwan",Description = "Taiwan")>] 
          taiwan : obj)
@@ -276,7 +276,7 @@ module TaiwanFunction =
     *)
     [<ExcelFunction(Name="_Taiwan_advance", Description="Create a Taiwan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Taiwan_advance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Taiwan",Description = "Taiwan")>] 
          taiwan : obj)
@@ -336,7 +336,7 @@ module TaiwanFunction =
     *)
     [<ExcelFunction(Name="_Taiwan_businessDaysBetween", Description="Create a Taiwan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Taiwan_businessDaysBetween
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Taiwan",Description = "Taiwan")>] 
          taiwan : obj)
@@ -396,7 +396,7 @@ module TaiwanFunction =
     *)
     [<ExcelFunction(Name="_Taiwan_calendar", Description="Create a Taiwan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Taiwan_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Taiwan",Description = "Taiwan")>] 
          taiwan : obj)
@@ -432,7 +432,7 @@ module TaiwanFunction =
     *)
     [<ExcelFunction(Name="_Taiwan_empty", Description="Create a Taiwan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Taiwan_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Taiwan",Description = "Taiwan")>] 
          taiwan : obj)
@@ -468,7 +468,7 @@ module TaiwanFunction =
     *)
     [<ExcelFunction(Name="_Taiwan_endOfMonth", Description="Create a Taiwan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Taiwan_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Taiwan",Description = "Taiwan")>] 
          taiwan : obj)
@@ -510,7 +510,7 @@ module TaiwanFunction =
     *)
     [<ExcelFunction(Name="_Taiwan_Equals", Description="Create a Taiwan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Taiwan_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Taiwan",Description = "Taiwan")>] 
          taiwan : obj)
@@ -552,7 +552,7 @@ module TaiwanFunction =
     *)
     [<ExcelFunction(Name="_Taiwan_isBusinessDay", Description="Create a Taiwan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Taiwan_isBusinessDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Taiwan",Description = "Taiwan")>] 
          taiwan : obj)
@@ -594,7 +594,7 @@ module TaiwanFunction =
     *)
     [<ExcelFunction(Name="_Taiwan_isEndOfMonth", Description="Create a Taiwan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Taiwan_isEndOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Taiwan",Description = "Taiwan")>] 
          taiwan : obj)
@@ -636,7 +636,7 @@ module TaiwanFunction =
     *)
     [<ExcelFunction(Name="_Taiwan_isHoliday", Description="Create a Taiwan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Taiwan_isHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Taiwan",Description = "Taiwan")>] 
          taiwan : obj)
@@ -678,7 +678,7 @@ module TaiwanFunction =
     *)
     [<ExcelFunction(Name="_Taiwan_isWeekend", Description="Create a Taiwan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Taiwan_isWeekend
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Taiwan",Description = "Taiwan")>] 
          taiwan : obj)
@@ -722,7 +722,7 @@ module TaiwanFunction =
     *)
     [<ExcelFunction(Name="_Taiwan_name", Description="Create a Taiwan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Taiwan_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Taiwan",Description = "Taiwan")>] 
          taiwan : obj)
@@ -758,7 +758,7 @@ module TaiwanFunction =
     *)
     [<ExcelFunction(Name="_Taiwan_removedHolidays", Description="Create a Taiwan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Taiwan_removedHolidays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Taiwan",Description = "Taiwan")>] 
          taiwan : obj)
@@ -794,7 +794,7 @@ module TaiwanFunction =
     *)
     [<ExcelFunction(Name="_Taiwan_removeHoliday", Description="Create a Taiwan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Taiwan_removeHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Taiwan",Description = "Taiwan")>] 
          taiwan : obj)
@@ -833,9 +833,9 @@ module TaiwanFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Taiwan_Range", Description="Create a range of Taiwan",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Taiwan_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

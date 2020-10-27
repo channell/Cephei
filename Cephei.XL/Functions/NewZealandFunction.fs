@@ -54,7 +54,7 @@ module NewZealandFunction =
     *)
     [<ExcelFunction(Name="_NewZealand", Description="Create a NewZealand",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NewZealand_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "NewZealand")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -85,7 +85,7 @@ module NewZealandFunction =
     *)
     [<ExcelFunction(Name="_NewZealand_addedHolidays", Description="Create a NewZealand",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NewZealand_addedHolidays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NewZealand",Description = "NewZealand")>] 
          newzealand : obj)
@@ -121,7 +121,7 @@ module NewZealandFunction =
     *)
     [<ExcelFunction(Name="_NewZealand_addHoliday", Description="Create a NewZealand",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NewZealand_addHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NewZealand",Description = "NewZealand")>] 
          newzealand : obj)
@@ -163,7 +163,7 @@ module NewZealandFunction =
     *)
     [<ExcelFunction(Name="_NewZealand_adjust", Description="Create a NewZealand",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NewZealand_adjust
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NewZealand",Description = "NewZealand")>] 
          newzealand : obj)
@@ -211,7 +211,7 @@ module NewZealandFunction =
     *)
     [<ExcelFunction(Name="_NewZealand_advance1", Description="Create a NewZealand",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NewZealand_advance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NewZealand",Description = "NewZealand")>] 
          newzealand : obj)
@@ -277,7 +277,7 @@ module NewZealandFunction =
     *)
     [<ExcelFunction(Name="_NewZealand_advance", Description="Create a NewZealand",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NewZealand_advance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NewZealand",Description = "NewZealand")>] 
          newzealand : obj)
@@ -337,7 +337,7 @@ module NewZealandFunction =
     *)
     [<ExcelFunction(Name="_NewZealand_businessDaysBetween", Description="Create a NewZealand",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NewZealand_businessDaysBetween
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NewZealand",Description = "NewZealand")>] 
          newzealand : obj)
@@ -397,7 +397,7 @@ module NewZealandFunction =
     *)
     [<ExcelFunction(Name="_NewZealand_calendar", Description="Create a NewZealand",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NewZealand_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NewZealand",Description = "NewZealand")>] 
          newzealand : obj)
@@ -433,7 +433,7 @@ module NewZealandFunction =
     *)
     [<ExcelFunction(Name="_NewZealand_empty", Description="Create a NewZealand",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NewZealand_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NewZealand",Description = "NewZealand")>] 
          newzealand : obj)
@@ -469,7 +469,7 @@ module NewZealandFunction =
     *)
     [<ExcelFunction(Name="_NewZealand_endOfMonth", Description="Create a NewZealand",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NewZealand_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NewZealand",Description = "NewZealand")>] 
          newzealand : obj)
@@ -511,7 +511,7 @@ module NewZealandFunction =
     *)
     [<ExcelFunction(Name="_NewZealand_Equals", Description="Create a NewZealand",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NewZealand_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NewZealand",Description = "NewZealand")>] 
          newzealand : obj)
@@ -553,7 +553,7 @@ module NewZealandFunction =
     *)
     [<ExcelFunction(Name="_NewZealand_isBusinessDay", Description="Create a NewZealand",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NewZealand_isBusinessDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NewZealand",Description = "NewZealand")>] 
          newzealand : obj)
@@ -595,7 +595,7 @@ module NewZealandFunction =
     *)
     [<ExcelFunction(Name="_NewZealand_isEndOfMonth", Description="Create a NewZealand",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NewZealand_isEndOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NewZealand",Description = "NewZealand")>] 
          newzealand : obj)
@@ -637,7 +637,7 @@ module NewZealandFunction =
     *)
     [<ExcelFunction(Name="_NewZealand_isHoliday", Description="Create a NewZealand",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NewZealand_isHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NewZealand",Description = "NewZealand")>] 
          newzealand : obj)
@@ -679,7 +679,7 @@ module NewZealandFunction =
     *)
     [<ExcelFunction(Name="_NewZealand_isWeekend", Description="Create a NewZealand",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NewZealand_isWeekend
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NewZealand",Description = "NewZealand")>] 
          newzealand : obj)
@@ -723,7 +723,7 @@ module NewZealandFunction =
     *)
     [<ExcelFunction(Name="_NewZealand_name", Description="Create a NewZealand",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NewZealand_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NewZealand",Description = "NewZealand")>] 
          newzealand : obj)
@@ -759,7 +759,7 @@ module NewZealandFunction =
     *)
     [<ExcelFunction(Name="_NewZealand_removedHolidays", Description="Create a NewZealand",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NewZealand_removedHolidays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NewZealand",Description = "NewZealand")>] 
          newzealand : obj)
@@ -795,7 +795,7 @@ module NewZealandFunction =
     *)
     [<ExcelFunction(Name="_NewZealand_removeHoliday", Description="Create a NewZealand",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NewZealand_removeHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NewZealand",Description = "NewZealand")>] 
          newzealand : obj)
@@ -834,9 +834,9 @@ module NewZealandFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NewZealand_Range", Description="Create a range of NewZealand",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NewZealand_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

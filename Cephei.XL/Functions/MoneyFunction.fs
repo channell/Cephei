@@ -39,7 +39,7 @@ module MoneyFunction =
     *)
     [<ExcelFunction(Name="_Money_currency", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Money",Description = "Money")>] 
          money : obj)
@@ -75,7 +75,7 @@ module MoneyFunction =
     *)
     [<ExcelFunction(Name="_Money_Equals", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Money")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Money",Description = "Money")>] 
          money : obj)
@@ -117,7 +117,7 @@ module MoneyFunction =
     *)
     [<ExcelFunction(Name="_Money1", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Money")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="currency",Description = "Currency")>] 
          currency : obj)
@@ -160,7 +160,7 @@ module MoneyFunction =
     *)
     [<ExcelFunction(Name="_Money", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Money")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -191,7 +191,7 @@ module MoneyFunction =
     *)
     [<ExcelFunction(Name="_Money2", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "Money")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="value",Description = "double")>] 
          value : obj)
@@ -234,7 +234,7 @@ module MoneyFunction =
     *)
     [<ExcelFunction(Name="_Money_rounded", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_rounded
-        ([<ExcelArgument(Name="Mnemonic",Description = "Money")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Money",Description = "Money")>] 
          money : obj)
@@ -270,7 +270,7 @@ module MoneyFunction =
     *)
     [<ExcelFunction(Name="_Money_ToString", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Money",Description = "Money")>] 
          money : obj)
@@ -306,7 +306,7 @@ module MoneyFunction =
     *)
     [<ExcelFunction(Name="_Money_value", Description="Create a Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Money",Description = "Money")>] 
          money : obj)
@@ -339,9 +339,9 @@ module MoneyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Money_Range", Description="Create a range of Money",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Money_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

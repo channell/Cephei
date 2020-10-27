@@ -39,7 +39,7 @@ module EqualProbabilitiesBinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_EqualProbabilitiesBinomialTree", Description="Create a EqualProbabilitiesBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualProbabilitiesBinomialTree_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "EqualProbabilitiesBinomialTree")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module EqualProbabilitiesBinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_EqualProbabilitiesBinomialTree1", Description="Create a EqualProbabilitiesBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualProbabilitiesBinomialTree_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "EqualProbabilitiesBinomialTree")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "StochasticProcess1D")>] 
          Process : obj)
@@ -119,7 +119,7 @@ module EqualProbabilitiesBinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_EqualProbabilitiesBinomialTree_probability", Description="Create a EqualProbabilitiesBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualProbabilitiesBinomialTree_probability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EqualProbabilitiesBinomialTree",Description = "EqualProbabilitiesBinomialTree")>] 
          equalprobabilitiesbinomialtree : obj)
@@ -173,7 +173,7 @@ module EqualProbabilitiesBinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_EqualProbabilitiesBinomialTree_underlying", Description="Create a EqualProbabilitiesBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualProbabilitiesBinomialTree_underlying
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EqualProbabilitiesBinomialTree",Description = "EqualProbabilitiesBinomialTree")>] 
          equalprobabilitiesbinomialtree : obj)
@@ -221,7 +221,7 @@ module EqualProbabilitiesBinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_EqualProbabilitiesBinomialTree_descendant", Description="Create a EqualProbabilitiesBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualProbabilitiesBinomialTree_descendant
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EqualProbabilitiesBinomialTree",Description = "EqualProbabilitiesBinomialTree")>] 
          equalprobabilitiesbinomialtree : obj)
@@ -275,7 +275,7 @@ module EqualProbabilitiesBinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_EqualProbabilitiesBinomialTree_size", Description="Create a EqualProbabilitiesBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualProbabilitiesBinomialTree_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EqualProbabilitiesBinomialTree",Description = "EqualProbabilitiesBinomialTree")>] 
          equalprobabilitiesbinomialtree : obj)
@@ -317,7 +317,7 @@ module EqualProbabilitiesBinomialTreeFunction =
     *)
     [<ExcelFunction(Name="_EqualProbabilitiesBinomialTree_columns", Description="Create a EqualProbabilitiesBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualProbabilitiesBinomialTree_columns
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="EqualProbabilitiesBinomialTree",Description = "EqualProbabilitiesBinomialTree")>] 
          equalprobabilitiesbinomialtree : obj)
@@ -350,9 +350,9 @@ module EqualProbabilitiesBinomialTreeFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_EqualProbabilitiesBinomialTree_Range", Description="Create a range of EqualProbabilitiesBinomialTree",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let EqualProbabilitiesBinomialTree_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

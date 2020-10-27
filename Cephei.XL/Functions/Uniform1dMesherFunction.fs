@@ -39,7 +39,7 @@ module Uniform1dMesherFunction =
     *)
     [<ExcelFunction(Name="_Uniform1dMesher", Description="Create a Uniform1dMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Uniform1dMesher_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Uniform1dMesher")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="start",Description = "double")>] 
          start : obj)
@@ -88,7 +88,7 @@ module Uniform1dMesherFunction =
     *)
     [<ExcelFunction(Name="_Uniform1dMesher_dminus", Description="Create a Uniform1dMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Uniform1dMesher_dminus
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Uniform1dMesher",Description = "Uniform1dMesher")>] 
          uniform1dmesher : obj)
@@ -130,7 +130,7 @@ module Uniform1dMesherFunction =
     *)
     [<ExcelFunction(Name="_Uniform1dMesher_dplus", Description="Create a Uniform1dMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Uniform1dMesher_dplus
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Uniform1dMesher",Description = "Uniform1dMesher")>] 
          uniform1dmesher : obj)
@@ -172,7 +172,7 @@ module Uniform1dMesherFunction =
     *)
     [<ExcelFunction(Name="_Uniform1dMesher_location", Description="Create a Uniform1dMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Uniform1dMesher_location
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Uniform1dMesher",Description = "Uniform1dMesher")>] 
          uniform1dmesher : obj)
@@ -214,7 +214,7 @@ module Uniform1dMesherFunction =
     *)
     [<ExcelFunction(Name="_Uniform1dMesher_locations", Description="Create a Uniform1dMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Uniform1dMesher_locations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Uniform1dMesher",Description = "Uniform1dMesher")>] 
          uniform1dmesher : obj)
@@ -250,7 +250,7 @@ module Uniform1dMesherFunction =
     *)
     [<ExcelFunction(Name="_Uniform1dMesher_size", Description="Create a Uniform1dMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Uniform1dMesher_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Uniform1dMesher",Description = "Uniform1dMesher")>] 
          uniform1dmesher : obj)
@@ -283,9 +283,9 @@ module Uniform1dMesherFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Uniform1dMesher_Range", Description="Create a range of Uniform1dMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Uniform1dMesher_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

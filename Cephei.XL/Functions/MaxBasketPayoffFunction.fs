@@ -39,7 +39,7 @@ module MaxBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_MaxBasketPayoff_accumulate", Description="Create a MaxBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MaxBasketPayoff_accumulate
-        ([<ExcelArgument(Name="Mnemonic",Description = "MaxBasketPayoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MaxBasketPayoff",Description = "MaxBasketPayoff")>] 
          maxbasketpayoff : obj)
@@ -81,7 +81,7 @@ module MaxBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_MaxBasketPayoff", Description="Create a MaxBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MaxBasketPayoff_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "MaxBasketPayoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="p",Description = "Payoff")>] 
          p : obj)
@@ -118,7 +118,7 @@ module MaxBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_MaxBasketPayoff_basePayoff", Description="Create a MaxBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MaxBasketPayoff_basePayoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Payoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MaxBasketPayoff",Description = "MaxBasketPayoff")>] 
          maxbasketpayoff : obj)
@@ -154,7 +154,7 @@ module MaxBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_MaxBasketPayoff_description", Description="Create a MaxBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MaxBasketPayoff_description
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MaxBasketPayoff",Description = "MaxBasketPayoff")>] 
          maxbasketpayoff : obj)
@@ -190,7 +190,7 @@ module MaxBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_MaxBasketPayoff_name", Description="Create a MaxBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MaxBasketPayoff_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MaxBasketPayoff",Description = "MaxBasketPayoff")>] 
          maxbasketpayoff : obj)
@@ -226,7 +226,7 @@ module MaxBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_MaxBasketPayoff_value1", Description="Create a MaxBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MaxBasketPayoff_value1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MaxBasketPayoff",Description = "MaxBasketPayoff")>] 
          maxbasketpayoff : obj)
@@ -268,7 +268,7 @@ module MaxBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_MaxBasketPayoff_value", Description="Create a MaxBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MaxBasketPayoff_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MaxBasketPayoff",Description = "MaxBasketPayoff")>] 
          maxbasketpayoff : obj)
@@ -310,7 +310,7 @@ module MaxBasketPayoffFunction =
     *)
     [<ExcelFunction(Name="_MaxBasketPayoff_accept", Description="Create a MaxBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MaxBasketPayoff_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MaxBasketPayoff",Description = "MaxBasketPayoff")>] 
          maxbasketpayoff : obj)
@@ -349,9 +349,9 @@ module MaxBasketPayoffFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MaxBasketPayoff_Range", Description="Create a range of MaxBasketPayoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MaxBasketPayoff_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

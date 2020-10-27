@@ -39,7 +39,7 @@ module CNYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CNYCurrency", Description="Create a CNYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CNYCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "CNYCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module CNYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CNYCurrency_code", Description="Create a CNYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CNYCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CNYCurrency",Description = "CNYCurrency")>] 
          cnycurrency : obj)
@@ -106,7 +106,7 @@ module CNYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CNYCurrency_empty", Description="Create a CNYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CNYCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CNYCurrency",Description = "CNYCurrency")>] 
          cnycurrency : obj)
@@ -142,7 +142,7 @@ module CNYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CNYCurrency_Equals", Description="Create a CNYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CNYCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CNYCurrency",Description = "CNYCurrency")>] 
          cnycurrency : obj)
@@ -184,7 +184,7 @@ module CNYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CNYCurrency_format", Description="Create a CNYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CNYCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CNYCurrency",Description = "CNYCurrency")>] 
          cnycurrency : obj)
@@ -220,7 +220,7 @@ module CNYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CNYCurrency_fractionsPerUnit", Description="Create a CNYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CNYCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CNYCurrency",Description = "CNYCurrency")>] 
          cnycurrency : obj)
@@ -256,7 +256,7 @@ module CNYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CNYCurrency_fractionSymbol", Description="Create a CNYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CNYCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CNYCurrency",Description = "CNYCurrency")>] 
          cnycurrency : obj)
@@ -292,7 +292,7 @@ module CNYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CNYCurrency_name", Description="Create a CNYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CNYCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CNYCurrency",Description = "CNYCurrency")>] 
          cnycurrency : obj)
@@ -328,7 +328,7 @@ module CNYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CNYCurrency_numericCode", Description="Create a CNYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CNYCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CNYCurrency",Description = "CNYCurrency")>] 
          cnycurrency : obj)
@@ -364,7 +364,7 @@ module CNYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CNYCurrency_rounding", Description="Create a CNYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CNYCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CNYCurrency",Description = "CNYCurrency")>] 
          cnycurrency : obj)
@@ -400,7 +400,7 @@ module CNYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CNYCurrency_symbol", Description="Create a CNYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CNYCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CNYCurrency",Description = "CNYCurrency")>] 
          cnycurrency : obj)
@@ -436,7 +436,7 @@ module CNYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CNYCurrency_ToString", Description="Create a CNYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CNYCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CNYCurrency",Description = "CNYCurrency")>] 
          cnycurrency : obj)
@@ -472,7 +472,7 @@ module CNYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CNYCurrency_triangulationCurrency", Description="Create a CNYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CNYCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CNYCurrency",Description = "CNYCurrency")>] 
          cnycurrency : obj)
@@ -505,9 +505,9 @@ module CNYCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CNYCurrency_Range", Description="Create a range of CNYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CNYCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -40,7 +40,7 @@ module InterpolatingCPICapFloorEngineFunction =
     *)
     [<ExcelFunction(Name="_InterpolatingCPICapFloorEngine", Description="Create a InterpolatingCPICapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatingCPICapFloorEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterpolatingCPICapFloorEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="priceSurf",Description = "CPICapFloorTermPriceSurface")>] 
          priceSurf : obj)
@@ -77,7 +77,7 @@ module InterpolatingCPICapFloorEngineFunction =
     *)
     [<ExcelFunction(Name="_InterpolatingCPICapFloorEngine_name", Description="Create a InterpolatingCPICapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatingCPICapFloorEngine_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InterpolatingCPICapFloorEngine",Description = "InterpolatingCPICapFloorEngine")>] 
          interpolatingcpicapfloorengine : obj)
@@ -110,9 +110,9 @@ module InterpolatingCPICapFloorEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InterpolatingCPICapFloorEngine_Range", Description="Create a range of InterpolatingCPICapFloorEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InterpolatingCPICapFloorEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,7 +39,7 @@ module FastFourierTransformFunction =
     *)
     [<ExcelFunction(Name="_FastFourierTransform", Description="Create a FastFourierTransform",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FastFourierTransform_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FastFourierTransform")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="order",Description = "int")>] 
          order : obj)
@@ -76,17 +76,17 @@ module FastFourierTransformFunction =
     *)
     [<ExcelFunction(Name="_FastFourierTransform_inverse_transform", Description="Create a FastFourierTransform",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FastFourierTransform_inverse_transform
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FastFourierTransform",Description = "FastFourierTransform")>] 
          fastfouriertransform : obj)
-        ([<ExcelArgument(Name="input",Description = "System.Numerics.Complex")>] 
+        ([<ExcelArgument(Name="input",Description = "System.Numerics.Complex range")>] 
          input : obj)
         ([<ExcelArgument(Name="inputBeg",Description = "int")>] 
          inputBeg : obj)
         ([<ExcelArgument(Name="inputEnd",Description = "int")>] 
          inputEnd : obj)
-        ([<ExcelArgument(Name="output",Description = "System.Numerics.Complex")>] 
+        ([<ExcelArgument(Name="output",Description = "System.Numerics.Complex range")>] 
          output : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -136,7 +136,7 @@ module FastFourierTransformFunction =
     *)
     [<ExcelFunction(Name="_FastFourierTransform_output_size", Description="Create a FastFourierTransform",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FastFourierTransform_output_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FastFourierTransform",Description = "FastFourierTransform")>] 
          fastfouriertransform : obj)
@@ -172,17 +172,17 @@ module FastFourierTransformFunction =
     *)
     [<ExcelFunction(Name="_FastFourierTransform_transform", Description="Create a FastFourierTransform",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FastFourierTransform_transform
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FastFourierTransform",Description = "FastFourierTransform")>] 
          fastfouriertransform : obj)
-        ([<ExcelArgument(Name="input",Description = "System.Numerics.Complex")>] 
+        ([<ExcelArgument(Name="input",Description = "System.Numerics.Complex range")>] 
          input : obj)
         ([<ExcelArgument(Name="inputBeg",Description = "int")>] 
          inputBeg : obj)
         ([<ExcelArgument(Name="inputEnd",Description = "int")>] 
          inputEnd : obj)
-        ([<ExcelArgument(Name="output",Description = "System.Numerics.Complex")>] 
+        ([<ExcelArgument(Name="output",Description = "System.Numerics.Complex range")>] 
          output : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -229,9 +229,9 @@ module FastFourierTransformFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FastFourierTransform_Range", Description="Create a range of FastFourierTransform",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FastFourierTransform_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

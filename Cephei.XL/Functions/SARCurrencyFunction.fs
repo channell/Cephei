@@ -39,7 +39,7 @@ module SARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SARCurrency", Description="Create a SARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SARCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SARCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module SARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SARCurrency_code", Description="Create a SARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SARCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SARCurrency",Description = "SARCurrency")>] 
          sarcurrency : obj)
@@ -106,7 +106,7 @@ module SARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SARCurrency_empty", Description="Create a SARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SARCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SARCurrency",Description = "SARCurrency")>] 
          sarcurrency : obj)
@@ -142,7 +142,7 @@ module SARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SARCurrency_Equals", Description="Create a SARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SARCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SARCurrency",Description = "SARCurrency")>] 
          sarcurrency : obj)
@@ -184,7 +184,7 @@ module SARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SARCurrency_format", Description="Create a SARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SARCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SARCurrency",Description = "SARCurrency")>] 
          sarcurrency : obj)
@@ -220,7 +220,7 @@ module SARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SARCurrency_fractionsPerUnit", Description="Create a SARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SARCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SARCurrency",Description = "SARCurrency")>] 
          sarcurrency : obj)
@@ -256,7 +256,7 @@ module SARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SARCurrency_fractionSymbol", Description="Create a SARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SARCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SARCurrency",Description = "SARCurrency")>] 
          sarcurrency : obj)
@@ -292,7 +292,7 @@ module SARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SARCurrency_name", Description="Create a SARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SARCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SARCurrency",Description = "SARCurrency")>] 
          sarcurrency : obj)
@@ -328,7 +328,7 @@ module SARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SARCurrency_numericCode", Description="Create a SARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SARCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SARCurrency",Description = "SARCurrency")>] 
          sarcurrency : obj)
@@ -364,7 +364,7 @@ module SARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SARCurrency_rounding", Description="Create a SARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SARCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SARCurrency",Description = "SARCurrency")>] 
          sarcurrency : obj)
@@ -400,7 +400,7 @@ module SARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SARCurrency_symbol", Description="Create a SARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SARCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SARCurrency",Description = "SARCurrency")>] 
          sarcurrency : obj)
@@ -436,7 +436,7 @@ module SARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SARCurrency_ToString", Description="Create a SARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SARCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SARCurrency",Description = "SARCurrency")>] 
          sarcurrency : obj)
@@ -472,7 +472,7 @@ module SARCurrencyFunction =
     *)
     [<ExcelFunction(Name="_SARCurrency_triangulationCurrency", Description="Create a SARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SARCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SARCurrency",Description = "SARCurrency")>] 
          sarcurrency : obj)
@@ -505,9 +505,9 @@ module SARCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SARCurrency_Range", Description="Create a range of SARCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SARCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

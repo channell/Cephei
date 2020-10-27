@@ -39,7 +39,7 @@ module MCDiscreteGeometricAPEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteGeometricAPEngine", Description="Create a MCDiscreteGeometricAPEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteGeometricAPEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "MCDiscreteGeometricAPEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -125,7 +125,7 @@ module MCDiscreteGeometricAPEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteGeometricAPEngine_registerWith", Description="Create a MCDiscreteGeometricAPEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteGeometricAPEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCDiscreteGeometricAPEngine",Description = "MCDiscreteGeometricAPEngine")>] 
          mcdiscretegeometricapengine : obj)
@@ -167,7 +167,7 @@ module MCDiscreteGeometricAPEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteGeometricAPEngine_reset", Description="Create a MCDiscreteGeometricAPEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteGeometricAPEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCDiscreteGeometricAPEngine",Description = "MCDiscreteGeometricAPEngine")>] 
          mcdiscretegeometricapengine : obj)
@@ -203,7 +203,7 @@ module MCDiscreteGeometricAPEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteGeometricAPEngine_unregisterWith", Description="Create a MCDiscreteGeometricAPEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteGeometricAPEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCDiscreteGeometricAPEngine",Description = "MCDiscreteGeometricAPEngine")>] 
          mcdiscretegeometricapengine : obj)
@@ -245,7 +245,7 @@ module MCDiscreteGeometricAPEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteGeometricAPEngine_update", Description="Create a MCDiscreteGeometricAPEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteGeometricAPEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCDiscreteGeometricAPEngine",Description = "MCDiscreteGeometricAPEngine")>] 
          mcdiscretegeometricapengine : obj)
@@ -281,7 +281,7 @@ module MCDiscreteGeometricAPEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteGeometricAPEngine_errorEstimate", Description="Create a MCDiscreteGeometricAPEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteGeometricAPEngine_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCDiscreteGeometricAPEngine",Description = "MCDiscreteGeometricAPEngine")>] 
          mcdiscretegeometricapengine : obj)
@@ -317,7 +317,7 @@ module MCDiscreteGeometricAPEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteGeometricAPEngine_sampleAccumulator", Description="Create a MCDiscreteGeometricAPEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteGeometricAPEngine_sampleAccumulator
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCDiscreteGeometricAPEngine",Description = "MCDiscreteGeometricAPEngine")>] 
          mcdiscretegeometricapengine : obj)
@@ -353,7 +353,7 @@ module MCDiscreteGeometricAPEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteGeometricAPEngine_value", Description="Create a MCDiscreteGeometricAPEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteGeometricAPEngine_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCDiscreteGeometricAPEngine",Description = "MCDiscreteGeometricAPEngine")>] 
          mcdiscretegeometricapengine : obj)
@@ -407,7 +407,7 @@ module MCDiscreteGeometricAPEngineFunction =
     *)
     [<ExcelFunction(Name="_MCDiscreteGeometricAPEngine_valueWithSamples", Description="Create a MCDiscreteGeometricAPEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteGeometricAPEngine_valueWithSamples
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MCDiscreteGeometricAPEngine",Description = "MCDiscreteGeometricAPEngine")>] 
          mcdiscretegeometricapengine : obj)
@@ -446,9 +446,9 @@ module MCDiscreteGeometricAPEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MCDiscreteGeometricAPEngine_Range", Description="Create a range of MCDiscreteGeometricAPEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MCDiscreteGeometricAPEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

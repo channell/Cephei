@@ -39,7 +39,7 @@ module MersenneTwisterUniformRngFunction =
     *)
     [<ExcelFunction(Name="_MersenneTwisterUniformRng_factory", Description="Create a MersenneTwisterUniformRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MersenneTwisterUniformRng_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "IRNGTraits")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MersenneTwisterUniformRng",Description = "MersenneTwisterUniformRng")>] 
          mersennetwisteruniformrng : obj)
@@ -81,9 +81,9 @@ module MersenneTwisterUniformRngFunction =
     *)
     [<ExcelFunction(Name="_MersenneTwisterUniformRng2", Description="Create a MersenneTwisterUniformRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MersenneTwisterUniformRng_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "MersenneTwisterUniformRng")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="seeds",Description = "uint64")>] 
+        ([<ExcelArgument(Name="seeds",Description = "uint64 range")>] 
          seeds : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -118,7 +118,7 @@ module MersenneTwisterUniformRngFunction =
     *)
     [<ExcelFunction(Name="_MersenneTwisterUniformRng", Description="Create a MersenneTwisterUniformRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MersenneTwisterUniformRng_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "MersenneTwisterUniformRng")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="seed",Description = "uint64")>] 
          seed : obj)
@@ -155,7 +155,7 @@ module MersenneTwisterUniformRngFunction =
     *)
     [<ExcelFunction(Name="_MersenneTwisterUniformRng1", Description="Create a MersenneTwisterUniformRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MersenneTwisterUniformRng_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "MersenneTwisterUniformRng")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -186,7 +186,7 @@ module MersenneTwisterUniformRngFunction =
     *)
     [<ExcelFunction(Name="_MersenneTwisterUniformRng_next", Description="Create a MersenneTwisterUniformRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MersenneTwisterUniformRng_next
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MersenneTwisterUniformRng",Description = "MersenneTwisterUniformRng")>] 
          mersennetwisteruniformrng : obj)
@@ -222,7 +222,7 @@ module MersenneTwisterUniformRngFunction =
     *)
     [<ExcelFunction(Name="_MersenneTwisterUniformRng_nextInt32", Description="Create a MersenneTwisterUniformRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MersenneTwisterUniformRng_nextInt32
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MersenneTwisterUniformRng",Description = "MersenneTwisterUniformRng")>] 
          mersennetwisteruniformrng : obj)
@@ -258,7 +258,7 @@ module MersenneTwisterUniformRngFunction =
     *)
     [<ExcelFunction(Name="_MersenneTwisterUniformRng_nextReal", Description="Create a MersenneTwisterUniformRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MersenneTwisterUniformRng_nextReal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="MersenneTwisterUniformRng",Description = "MersenneTwisterUniformRng")>] 
          mersennetwisteruniformrng : obj)
@@ -291,9 +291,9 @@ module MersenneTwisterUniformRngFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MersenneTwisterUniformRng_Range", Description="Create a range of MersenneTwisterUniformRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MersenneTwisterUniformRng_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

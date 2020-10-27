@@ -39,7 +39,7 @@ module Black76SpecFunction =
     *)
     [<ExcelFunction(Name="_Black76Spec", Description="Create a Black76Spec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Black76Spec_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Black76Spec")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module Black76SpecFunction =
     *)
     [<ExcelFunction(Name="_Black76Spec_type", Description="Create a Black76Spec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Black76Spec_type
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Black76Spec",Description = "Black76Spec")>] 
          black76spec : obj)
@@ -106,7 +106,7 @@ module Black76SpecFunction =
     *)
     [<ExcelFunction(Name="_Black76Spec_value", Description="Create a Black76Spec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Black76Spec_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Black76Spec",Description = "Black76Spec")>] 
          black76spec : obj)
@@ -120,7 +120,7 @@ module Black76SpecFunction =
          stdDev : obj)
         ([<ExcelArgument(Name="annuity",Description = "double")>] 
          annuity : obj)
-        ([<ExcelArgument(Name="displacement",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="displacement",Description = "double or empty")>] 
          displacement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -178,7 +178,7 @@ module Black76SpecFunction =
     *)
     [<ExcelFunction(Name="_Black76Spec_vega", Description="Create a Black76Spec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Black76Spec_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Black76Spec",Description = "Black76Spec")>] 
          black76spec : obj)
@@ -192,7 +192,7 @@ module Black76SpecFunction =
          exerciseTime : obj)
         ([<ExcelArgument(Name="annuity",Description = "double")>] 
          annuity : obj)
-        ([<ExcelArgument(Name="displacement",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="displacement",Description = "double or empty")>] 
          displacement : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -247,9 +247,9 @@ module Black76SpecFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Black76Spec_Range", Description="Create a range of Black76Spec",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Black76Spec_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

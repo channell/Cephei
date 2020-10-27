@@ -39,7 +39,7 @@ module JPYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_JPYCurrency", Description="Create a JPYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "JPYCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module JPYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_JPYCurrency_code", Description="Create a JPYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYCurrency",Description = "JPYCurrency")>] 
          jpycurrency : obj)
@@ -106,7 +106,7 @@ module JPYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_JPYCurrency_empty", Description="Create a JPYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYCurrency",Description = "JPYCurrency")>] 
          jpycurrency : obj)
@@ -142,7 +142,7 @@ module JPYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_JPYCurrency_Equals", Description="Create a JPYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYCurrency",Description = "JPYCurrency")>] 
          jpycurrency : obj)
@@ -184,7 +184,7 @@ module JPYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_JPYCurrency_format", Description="Create a JPYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYCurrency",Description = "JPYCurrency")>] 
          jpycurrency : obj)
@@ -220,7 +220,7 @@ module JPYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_JPYCurrency_fractionsPerUnit", Description="Create a JPYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYCurrency",Description = "JPYCurrency")>] 
          jpycurrency : obj)
@@ -256,7 +256,7 @@ module JPYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_JPYCurrency_fractionSymbol", Description="Create a JPYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYCurrency",Description = "JPYCurrency")>] 
          jpycurrency : obj)
@@ -292,7 +292,7 @@ module JPYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_JPYCurrency_name", Description="Create a JPYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYCurrency",Description = "JPYCurrency")>] 
          jpycurrency : obj)
@@ -328,7 +328,7 @@ module JPYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_JPYCurrency_numericCode", Description="Create a JPYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYCurrency",Description = "JPYCurrency")>] 
          jpycurrency : obj)
@@ -364,7 +364,7 @@ module JPYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_JPYCurrency_rounding", Description="Create a JPYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYCurrency",Description = "JPYCurrency")>] 
          jpycurrency : obj)
@@ -400,7 +400,7 @@ module JPYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_JPYCurrency_symbol", Description="Create a JPYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYCurrency",Description = "JPYCurrency")>] 
          jpycurrency : obj)
@@ -436,7 +436,7 @@ module JPYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_JPYCurrency_ToString", Description="Create a JPYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYCurrency",Description = "JPYCurrency")>] 
          jpycurrency : obj)
@@ -472,7 +472,7 @@ module JPYCurrencyFunction =
     *)
     [<ExcelFunction(Name="_JPYCurrency_triangulationCurrency", Description="Create a JPYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="JPYCurrency",Description = "JPYCurrency")>] 
          jpycurrency : obj)
@@ -505,9 +505,9 @@ module JPYCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_JPYCurrency_Range", Description="Create a range of JPYCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let JPYCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

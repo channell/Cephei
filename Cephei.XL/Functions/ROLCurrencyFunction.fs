@@ -39,7 +39,7 @@ module ROLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ROLCurrency", Description="Create a ROLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ROLCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ROLCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module ROLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ROLCurrency_code", Description="Create a ROLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ROLCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ROLCurrency",Description = "ROLCurrency")>] 
          rolcurrency : obj)
@@ -106,7 +106,7 @@ module ROLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ROLCurrency_empty", Description="Create a ROLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ROLCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ROLCurrency",Description = "ROLCurrency")>] 
          rolcurrency : obj)
@@ -142,7 +142,7 @@ module ROLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ROLCurrency_Equals", Description="Create a ROLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ROLCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ROLCurrency",Description = "ROLCurrency")>] 
          rolcurrency : obj)
@@ -184,7 +184,7 @@ module ROLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ROLCurrency_format", Description="Create a ROLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ROLCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ROLCurrency",Description = "ROLCurrency")>] 
          rolcurrency : obj)
@@ -220,7 +220,7 @@ module ROLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ROLCurrency_fractionsPerUnit", Description="Create a ROLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ROLCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ROLCurrency",Description = "ROLCurrency")>] 
          rolcurrency : obj)
@@ -256,7 +256,7 @@ module ROLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ROLCurrency_fractionSymbol", Description="Create a ROLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ROLCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ROLCurrency",Description = "ROLCurrency")>] 
          rolcurrency : obj)
@@ -292,7 +292,7 @@ module ROLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ROLCurrency_name", Description="Create a ROLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ROLCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ROLCurrency",Description = "ROLCurrency")>] 
          rolcurrency : obj)
@@ -328,7 +328,7 @@ module ROLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ROLCurrency_numericCode", Description="Create a ROLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ROLCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ROLCurrency",Description = "ROLCurrency")>] 
          rolcurrency : obj)
@@ -364,7 +364,7 @@ module ROLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ROLCurrency_rounding", Description="Create a ROLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ROLCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ROLCurrency",Description = "ROLCurrency")>] 
          rolcurrency : obj)
@@ -400,7 +400,7 @@ module ROLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ROLCurrency_symbol", Description="Create a ROLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ROLCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ROLCurrency",Description = "ROLCurrency")>] 
          rolcurrency : obj)
@@ -436,7 +436,7 @@ module ROLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ROLCurrency_ToString", Description="Create a ROLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ROLCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ROLCurrency",Description = "ROLCurrency")>] 
          rolcurrency : obj)
@@ -472,7 +472,7 @@ module ROLCurrencyFunction =
     *)
     [<ExcelFunction(Name="_ROLCurrency_triangulationCurrency", Description="Create a ROLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ROLCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ROLCurrency",Description = "ROLCurrency")>] 
          rolcurrency : obj)
@@ -505,9 +505,9 @@ module ROLCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ROLCurrency_Range", Description="Create a range of ROLCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ROLCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

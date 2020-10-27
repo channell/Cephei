@@ -39,7 +39,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Aonia")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
@@ -76,7 +76,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_clone", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -118,7 +118,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_businessDayConvention", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_businessDayConvention
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -154,7 +154,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_endOfMonth", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -190,7 +190,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_forecastFixing1", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_forecastFixing1
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -245,7 +245,7 @@ module AoniaFunction =
     
     [<ExcelFunction(Name="_Aonia_forecastFixing", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_forecastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -288,7 +288,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_forwardingTermStructure", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_forwardingTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -324,7 +324,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_maturityDate", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -366,7 +366,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_currency", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -402,7 +402,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_dayCounter", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -438,7 +438,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_familyName", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -474,7 +474,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_fixing", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -522,7 +522,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_fixingCalendar", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -558,7 +558,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_fixingDate", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -600,7 +600,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_fixingDays", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -636,7 +636,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_isValidFixingDate", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -678,7 +678,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_name", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -714,7 +714,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_pastFixing", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_pastFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -756,7 +756,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_tenor", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_tenor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -792,7 +792,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_update", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -828,7 +828,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_valueDate", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_valueDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -870,7 +870,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_addFixing", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -924,13 +924,13 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_addFixings", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -978,7 +978,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_addFixings1", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -1026,7 +1026,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_allowsNativeFixings", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -1062,7 +1062,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_clearFixings", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -1098,7 +1098,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_registerWith", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -1140,7 +1140,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_timeSeries", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -1176,7 +1176,7 @@ module AoniaFunction =
     *)
     [<ExcelFunction(Name="_Aonia_unregisterWith", Description="Create a Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Aonia",Description = "Aonia")>] 
          aonia : obj)
@@ -1215,9 +1215,9 @@ module AoniaFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Aonia_Range", Description="Create a range of Aonia",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Aonia_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

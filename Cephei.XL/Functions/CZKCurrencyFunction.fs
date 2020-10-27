@@ -39,7 +39,7 @@ module CZKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CZKCurrency", Description="Create a CZKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CZKCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "CZKCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module CZKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CZKCurrency_code", Description="Create a CZKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CZKCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CZKCurrency",Description = "CZKCurrency")>] 
          czkcurrency : obj)
@@ -106,7 +106,7 @@ module CZKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CZKCurrency_empty", Description="Create a CZKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CZKCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CZKCurrency",Description = "CZKCurrency")>] 
          czkcurrency : obj)
@@ -142,7 +142,7 @@ module CZKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CZKCurrency_Equals", Description="Create a CZKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CZKCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CZKCurrency",Description = "CZKCurrency")>] 
          czkcurrency : obj)
@@ -184,7 +184,7 @@ module CZKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CZKCurrency_format", Description="Create a CZKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CZKCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CZKCurrency",Description = "CZKCurrency")>] 
          czkcurrency : obj)
@@ -220,7 +220,7 @@ module CZKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CZKCurrency_fractionsPerUnit", Description="Create a CZKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CZKCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CZKCurrency",Description = "CZKCurrency")>] 
          czkcurrency : obj)
@@ -256,7 +256,7 @@ module CZKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CZKCurrency_fractionSymbol", Description="Create a CZKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CZKCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CZKCurrency",Description = "CZKCurrency")>] 
          czkcurrency : obj)
@@ -292,7 +292,7 @@ module CZKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CZKCurrency_name", Description="Create a CZKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CZKCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CZKCurrency",Description = "CZKCurrency")>] 
          czkcurrency : obj)
@@ -328,7 +328,7 @@ module CZKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CZKCurrency_numericCode", Description="Create a CZKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CZKCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CZKCurrency",Description = "CZKCurrency")>] 
          czkcurrency : obj)
@@ -364,7 +364,7 @@ module CZKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CZKCurrency_rounding", Description="Create a CZKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CZKCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CZKCurrency",Description = "CZKCurrency")>] 
          czkcurrency : obj)
@@ -400,7 +400,7 @@ module CZKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CZKCurrency_symbol", Description="Create a CZKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CZKCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CZKCurrency",Description = "CZKCurrency")>] 
          czkcurrency : obj)
@@ -436,7 +436,7 @@ module CZKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CZKCurrency_ToString", Description="Create a CZKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CZKCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CZKCurrency",Description = "CZKCurrency")>] 
          czkcurrency : obj)
@@ -472,7 +472,7 @@ module CZKCurrencyFunction =
     *)
     [<ExcelFunction(Name="_CZKCurrency_triangulationCurrency", Description="Create a CZKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CZKCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CZKCurrency",Description = "CZKCurrency")>] 
          czkcurrency : obj)
@@ -505,9 +505,9 @@ module CZKCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CZKCurrency_Range", Description="Create a range of CZKCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CZKCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

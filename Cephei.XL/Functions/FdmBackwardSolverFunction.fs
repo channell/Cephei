@@ -39,7 +39,7 @@ module FdmBackwardSolverFunction =
     *)
     [<ExcelFunction(Name="_FdmBackwardSolver", Description="Create a FdmBackwardSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBackwardSolver_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmBackwardSolver")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="map",Description = "FdmLinearOpComposite")>] 
          map : obj)
@@ -94,7 +94,7 @@ module FdmBackwardSolverFunction =
     *)
     [<ExcelFunction(Name="_FdmBackwardSolver_rollback", Description="Create a FdmBackwardSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBackwardSolver_rollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FdmBackwardSolver",Description = "FdmBackwardSolver")>] 
          fdmbackwardsolver : obj)
@@ -157,9 +157,9 @@ module FdmBackwardSolverFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdmBackwardSolver_Range", Description="Create a range of FdmBackwardSolver",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdmBackwardSolver_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

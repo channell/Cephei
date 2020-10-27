@@ -39,7 +39,7 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_clone", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
@@ -81,7 +81,7 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_fixing", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_fixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
@@ -129,7 +129,7 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_ratio", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_ratio
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
@@ -165,7 +165,7 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="familyName",Description = "string")>] 
          familyName : obj)
@@ -250,7 +250,7 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_yoyInflationTermStructure", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_yoyInflationTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
@@ -286,7 +286,7 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_addFixing", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_addFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
@@ -341,7 +341,7 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_availabilityLag", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_availabilityLag
-        ([<ExcelArgument(Name="Mnemonic",Description = "Period")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
@@ -377,7 +377,7 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_currency", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_currency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
@@ -413,7 +413,7 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_familyName", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_familyName
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
@@ -449,7 +449,7 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_fixingCalendar", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_fixingCalendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
@@ -485,7 +485,7 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_frequency", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_frequency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
@@ -521,7 +521,7 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_interpolated", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_interpolated
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
@@ -557,7 +557,7 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_isValidFixingDate", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_isValidFixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
@@ -599,7 +599,7 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_name", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
@@ -635,7 +635,7 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_region", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_region
-        ([<ExcelArgument(Name="Mnemonic",Description = "Region")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
@@ -671,7 +671,7 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_revised", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_revised
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
@@ -707,7 +707,7 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_update", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
@@ -743,13 +743,13 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_addFixings", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_addFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
-        ([<ExcelArgument(Name="d",Description = "Date")>] 
+        ([<ExcelArgument(Name="d",Description = "Date range")>] 
          d : obj)
-        ([<ExcelArgument(Name="v",Description = "double")>] 
+        ([<ExcelArgument(Name="v",Description = "double range")>] 
          v : obj)
         ([<ExcelArgument(Name="forceOverwrite",Description = "bool")>] 
          forceOverwrite : obj)
@@ -797,7 +797,7 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_addFixings1", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_addFixings1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
@@ -845,7 +845,7 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_allowsNativeFixings", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_allowsNativeFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
@@ -881,7 +881,7 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_clearFixings", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_clearFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
@@ -917,7 +917,7 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_registerWith", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
@@ -959,7 +959,7 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_timeSeries", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_timeSeries
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
@@ -995,7 +995,7 @@ module YoYInflationIndexFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationIndex_unregisterWith", Description="Create a YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationIndex",Description = "YoYInflationIndex")>] 
          yoyinflationindex : obj)
@@ -1034,9 +1034,9 @@ module YoYInflationIndexFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_YoYInflationIndex_Range", Description="Create a range of YoYInflationIndex",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationIndex_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

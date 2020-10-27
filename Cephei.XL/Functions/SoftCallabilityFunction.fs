@@ -39,7 +39,7 @@ module SoftCallabilityFunction =
     *)
     [<ExcelFunction(Name="_SoftCallability", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SoftCallability")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="price",Description = "Callability.Price")>] 
          price : obj)
@@ -88,7 +88,7 @@ module SoftCallabilityFunction =
     *)
     [<ExcelFunction(Name="_SoftCallability_trigger", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_trigger
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SoftCallability",Description = "SoftCallability")>] 
          softcallability : obj)
@@ -124,7 +124,7 @@ module SoftCallabilityFunction =
     *)
     [<ExcelFunction(Name="_SoftCallability_date", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SoftCallability",Description = "SoftCallability")>] 
          softcallability : obj)
@@ -160,7 +160,7 @@ module SoftCallabilityFunction =
     *)
     [<ExcelFunction(Name="_SoftCallability_price", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_price
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SoftCallability",Description = "SoftCallability")>] 
          softcallability : obj)
@@ -196,7 +196,7 @@ module SoftCallabilityFunction =
     *)
     [<ExcelFunction(Name="_SoftCallability_type", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_type
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SoftCallability",Description = "SoftCallability")>] 
          softcallability : obj)
@@ -232,7 +232,7 @@ module SoftCallabilityFunction =
     *)
     [<ExcelFunction(Name="_SoftCallability_accept", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SoftCallability",Description = "SoftCallability")>] 
          softcallability : obj)
@@ -274,7 +274,7 @@ module SoftCallabilityFunction =
     *)
     [<ExcelFunction(Name="_SoftCallability_hasOccurred", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SoftCallability",Description = "SoftCallability")>] 
          softcallability : obj)
@@ -322,7 +322,7 @@ module SoftCallabilityFunction =
     *)
     [<ExcelFunction(Name="_SoftCallability_registerWith", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SoftCallability",Description = "SoftCallability")>] 
          softcallability : obj)
@@ -364,7 +364,7 @@ module SoftCallabilityFunction =
     *)
     [<ExcelFunction(Name="_SoftCallability_unregisterWith", Description="Create a SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SoftCallability",Description = "SoftCallability")>] 
          softcallability : obj)
@@ -403,9 +403,9 @@ module SoftCallabilityFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SoftCallability_Range", Description="Create a range of SoftCallability",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SoftCallability_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

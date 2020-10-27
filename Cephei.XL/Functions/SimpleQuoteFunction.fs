@@ -39,7 +39,7 @@ module SimpleQuoteFunction =
     *)
     [<ExcelFunction(Name="_SimpleQuote_isValid", Description="Create a SimpleQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleQuote_isValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "SimpleQuote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpleQuote",Description = "SimpleQuote")>] 
          simplequote : obj)
@@ -75,7 +75,7 @@ module SimpleQuoteFunction =
     *)
     [<ExcelFunction(Name="_SimpleQuote_reset", Description="Create a SimpleQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleQuote_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "SimpleQuote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpleQuote",Description = "SimpleQuote")>] 
          simplequote : obj)
@@ -111,7 +111,7 @@ module SimpleQuoteFunction =
     *)
     [<ExcelFunction(Name="_SimpleQuote_setValue", Description="Create a SimpleQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleQuote_setValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "SimpleQuote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpleQuote",Description = "SimpleQuote")>] 
          simplequote : obj)
@@ -153,7 +153,7 @@ module SimpleQuoteFunction =
     *)
     [<ExcelFunction(Name="_SimpleQuote1", Description="Create a SimpleQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleQuote_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "SimpleQuote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="value",Description = "double")>] 
          value : obj)
@@ -190,7 +190,7 @@ module SimpleQuoteFunction =
     *)
     [<ExcelFunction(Name="_SimpleQuote", Description="Create a SimpleQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleQuote_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SimpleQuote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -221,7 +221,7 @@ module SimpleQuoteFunction =
     *)
     [<ExcelFunction(Name="_SimpleQuote_value", Description="Create a SimpleQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleQuote_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpleQuote",Description = "SimpleQuote")>] 
          simplequote : obj)
@@ -257,7 +257,7 @@ module SimpleQuoteFunction =
     *)
     [<ExcelFunction(Name="_SimpleQuote_registerWith", Description="Create a SimpleQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleQuote_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpleQuote",Description = "SimpleQuote")>] 
          simplequote : obj)
@@ -299,7 +299,7 @@ module SimpleQuoteFunction =
     *)
     [<ExcelFunction(Name="_SimpleQuote_unregisterWith", Description="Create a SimpleQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleQuote_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpleQuote",Description = "SimpleQuote")>] 
          simplequote : obj)
@@ -338,9 +338,9 @@ module SimpleQuoteFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SimpleQuote_Range", Description="Create a range of SimpleQuote",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpleQuote_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

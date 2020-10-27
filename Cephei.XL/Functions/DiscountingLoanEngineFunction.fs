@@ -40,7 +40,7 @@ module DiscountingLoanEngineFunction =
     *)
     [<ExcelFunction(Name="_DiscountingLoanEngine_discountCurve", Description="Create a DiscountingLoanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscountingLoanEngine_discountCurve
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscountingLoanEngine",Description = "DiscountingLoanEngine")>] 
          discountingloanengine : obj)
@@ -76,7 +76,7 @@ module DiscountingLoanEngineFunction =
     *)
     [<ExcelFunction(Name="_DiscountingLoanEngine", Description="Create a DiscountingLoanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscountingLoanEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "DiscountingLoanEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
@@ -116,9 +116,9 @@ module DiscountingLoanEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DiscountingLoanEngine_Range", Description="Create a range of DiscountingLoanEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscountingLoanEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

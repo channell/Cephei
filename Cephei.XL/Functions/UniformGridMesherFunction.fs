@@ -39,7 +39,7 @@ module UniformGridMesherFunction =
     *)
     [<ExcelFunction(Name="_UniformGridMesher_dminus", Description="Create a UniformGridMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UniformGridMesher_dminus
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UniformGridMesher",Description = "UniformGridMesher")>] 
          uniformgridmesher : obj)
@@ -87,7 +87,7 @@ module UniformGridMesherFunction =
     *)
     [<ExcelFunction(Name="_UniformGridMesher_dplus", Description="Create a UniformGridMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UniformGridMesher_dplus
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UniformGridMesher",Description = "UniformGridMesher")>] 
          uniformgridmesher : obj)
@@ -135,7 +135,7 @@ module UniformGridMesherFunction =
     *)
     [<ExcelFunction(Name="_UniformGridMesher_location", Description="Create a UniformGridMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UniformGridMesher_location
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UniformGridMesher",Description = "UniformGridMesher")>] 
          uniformgridmesher : obj)
@@ -183,7 +183,7 @@ module UniformGridMesherFunction =
     *)
     [<ExcelFunction(Name="_UniformGridMesher_locations", Description="Create a UniformGridMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UniformGridMesher_locations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UniformGridMesher",Description = "UniformGridMesher")>] 
          uniformgridmesher : obj)
@@ -225,11 +225,11 @@ module UniformGridMesherFunction =
     *)
     [<ExcelFunction(Name="_UniformGridMesher", Description="Create a UniformGridMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UniformGridMesher_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "UniformGridMesher")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="layout",Description = "FdmLinearOpLayout")>] 
          layout : obj)
-        ([<ExcelArgument(Name="boundaries",Description = "double")>] 
+        ([<ExcelArgument(Name="boundaries",Description = "double range")>] 
          boundaries : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -268,7 +268,7 @@ module UniformGridMesherFunction =
     *)
     [<ExcelFunction(Name="_UniformGridMesher_layout", Description="Create a UniformGridMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UniformGridMesher_layout
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdmLinearOpLayout")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="UniformGridMesher",Description = "UniformGridMesher")>] 
          uniformgridmesher : obj)
@@ -301,9 +301,9 @@ module UniformGridMesherFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_UniformGridMesher_Range", Description="Create a range of UniformGridMesher",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let UniformGridMesher_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

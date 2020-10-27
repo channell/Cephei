@@ -39,11 +39,11 @@ module MonthlyYieldFinderFunction =
     *)
     [<ExcelFunction(Name="_MonthlyYieldFinder", Description="Create a MonthlyYieldFinder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonthlyYieldFinder_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "MonthlyYieldFinder")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="faceAmount",Description = "double")>] 
          faceAmount : obj)
-        ([<ExcelArgument(Name="cashflows",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="cashflows",Description = "CashFlow range")>] 
          cashflows : obj)
         ([<ExcelArgument(Name="settlement",Description = "Date")>] 
          settlement : obj)
@@ -88,9 +88,9 @@ module MonthlyYieldFinderFunction =
     *)
     [<ExcelFunction(Name="_MonthlyYieldFinder_value", Description="Create a MonthlyYieldFinder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonthlyYieldFinder_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MonthlyYieldFinder",Description = "MonthlyYieldFinder")>] 
+        ([<ExcelArgument(Name="Month: January, February, March, April, May, June, July, August, September, October, November, December, Jan, Feb, Mar, Apr, Jun, Jul, Aug, Sep, Oct, Nov, DeclyYieldFinder",Description = "Month: January, February, March, April, May, June, July, August, September, October, November, December, Jan, Feb, Mar, Apr, Jun, Jul, Aug, Sep, Oct, Nov, DeclyYieldFinder")>] 
          monthlyyieldfinder : obj)
         ([<ExcelArgument(Name="Yield",Description = "double")>] 
          Yield : obj)
@@ -130,9 +130,9 @@ module MonthlyYieldFinderFunction =
     *)
     [<ExcelFunction(Name="_MonthlyYieldFinder_derivative", Description="Create a MonthlyYieldFinder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonthlyYieldFinder_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="MonthlyYieldFinder",Description = "MonthlyYieldFinder")>] 
+        ([<ExcelArgument(Name="Month: January, February, March, April, May, June, July, August, September, October, November, December, Jan, Feb, Mar, Apr, Jun, Jul, Aug, Sep, Oct, Nov, DeclyYieldFinder",Description = "Month: January, February, March, April, May, June, July, August, September, October, November, December, Jan, Feb, Mar, Apr, Jun, Jul, Aug, Sep, Oct, Nov, DeclyYieldFinder")>] 
          monthlyyieldfinder : obj)
         ([<ExcelArgument(Name="x",Description = "double")>] 
          x : obj)
@@ -169,9 +169,9 @@ module MonthlyYieldFinderFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_MonthlyYieldFinder_Range", Description="Create a range of MonthlyYieldFinder",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let MonthlyYieldFinder_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

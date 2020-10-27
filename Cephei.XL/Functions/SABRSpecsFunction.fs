@@ -39,19 +39,19 @@ module SABRSpecsFunction =
     *)
     [<ExcelFunction(Name="_SABRSpecs_defaultValues", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRSpecs_defaultValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRSpecs",Description = "SABRSpecs")>] 
          sabrspecs : obj)
-        ([<ExcelArgument(Name="param",Description = "double")>] 
+        ([<ExcelArgument(Name="param",Description = "double range")>] 
          param : obj)
-        ([<ExcelArgument(Name="b",Description = "bool")>] 
+        ([<ExcelArgument(Name="b",Description = "bool range")>] 
          b : obj)
         ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
         ([<ExcelArgument(Name="expiryTime",Description = "double")>] 
          expiryTime : obj)
-        ([<ExcelArgument(Name="addParams",Description = "double")>] 
+        ([<ExcelArgument(Name="addParams",Description = "double range")>] 
          addParams : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -105,7 +105,7 @@ module SABRSpecsFunction =
     *)
     [<ExcelFunction(Name="_SABRSpecs_dilationFactor", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRSpecs_dilationFactor
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRSpecs",Description = "SABRSpecs")>] 
          sabrspecs : obj)
@@ -141,7 +141,7 @@ module SABRSpecsFunction =
     *)
     [<ExcelFunction(Name="_SABRSpecs_dimension", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRSpecs_dimension
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRSpecs",Description = "SABRSpecs")>] 
          sabrspecs : obj)
@@ -177,15 +177,15 @@ module SABRSpecsFunction =
     *)
     [<ExcelFunction(Name="_SABRSpecs_direct", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRSpecs_direct
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRSpecs",Description = "SABRSpecs")>] 
          sabrspecs : obj)
         ([<ExcelArgument(Name="x",Description = "Vector")>] 
          x : obj)
-        ([<ExcelArgument(Name="b",Description = "bool")>] 
+        ([<ExcelArgument(Name="b",Description = "bool range")>] 
          b : obj)
-        ([<ExcelArgument(Name="c",Description = "double")>] 
+        ([<ExcelArgument(Name="c",Description = "double range")>] 
          c : obj)
         ([<ExcelArgument(Name="d",Description = "double")>] 
          d : obj)
@@ -237,7 +237,7 @@ module SABRSpecsFunction =
     *)
     [<ExcelFunction(Name="_SABRSpecs_eps1", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRSpecs_eps1
-        ([<ExcelArgument(Name="Mnemonic",Description = "IWrapper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRSpecs",Description = "SABRSpecs")>] 
          sabrspecs : obj)
@@ -273,7 +273,7 @@ module SABRSpecsFunction =
     *)
     [<ExcelFunction(Name="_SABRSpecs_eps2", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRSpecs_eps2
-        ([<ExcelArgument(Name="Mnemonic",Description = "IWrapper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRSpecs",Description = "SABRSpecs")>] 
          sabrspecs : obj)
@@ -309,21 +309,21 @@ module SABRSpecsFunction =
     *)
     [<ExcelFunction(Name="_SABRSpecs_guess", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRSpecs_guess
-        ([<ExcelArgument(Name="Mnemonic",Description = "IWrapper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRSpecs",Description = "SABRSpecs")>] 
          sabrspecs : obj)
         ([<ExcelArgument(Name="values",Description = "Vector")>] 
          values : obj)
-        ([<ExcelArgument(Name="paramIsFixed",Description = "bool")>] 
+        ([<ExcelArgument(Name="paramIsFixed",Description = "bool range")>] 
          paramIsFixed : obj)
         ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
         ([<ExcelArgument(Name="expiryTime",Description = "double")>] 
          expiryTime : obj)
-        ([<ExcelArgument(Name="r",Description = "double")>] 
+        ([<ExcelArgument(Name="r",Description = "double range")>] 
          r : obj)
-        ([<ExcelArgument(Name="addParams",Description = "double")>] 
+        ([<ExcelArgument(Name="addParams",Description = "double range")>] 
          addParams : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -381,7 +381,7 @@ module SABRSpecsFunction =
     *)
     [<ExcelFunction(Name="_SABRSpecs_instance", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRSpecs_instance
-        ([<ExcelArgument(Name="Mnemonic",Description = "IWrapper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRSpecs",Description = "SABRSpecs")>] 
          sabrspecs : obj)
@@ -389,9 +389,9 @@ module SABRSpecsFunction =
          t : obj)
         ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
-        ([<ExcelArgument(Name="param",Description = "double")>] 
+        ([<ExcelArgument(Name="param",Description = "double range")>] 
          param : obj)
-        ([<ExcelArgument(Name="addParams",Description = "double")>] 
+        ([<ExcelArgument(Name="addParams",Description = "double range")>] 
          addParams : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -441,15 +441,15 @@ module SABRSpecsFunction =
     *)
     [<ExcelFunction(Name="_SABRSpecs_inverse", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRSpecs_inverse
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRSpecs",Description = "SABRSpecs")>] 
          sabrspecs : obj)
         ([<ExcelArgument(Name="y",Description = "Vector")>] 
          y : obj)
-        ([<ExcelArgument(Name="b",Description = "bool")>] 
+        ([<ExcelArgument(Name="b",Description = "bool range")>] 
          b : obj)
-        ([<ExcelArgument(Name="c",Description = "double")>] 
+        ([<ExcelArgument(Name="c",Description = "double range")>] 
          c : obj)
         ([<ExcelArgument(Name="d",Description = "double")>] 
          d : obj)
@@ -501,7 +501,7 @@ module SABRSpecsFunction =
     *)
     [<ExcelFunction(Name="_SABRSpecs_weight", Description="Create a SABRSpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRSpecs_weight
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SABRSpecs",Description = "SABRSpecs")>] 
          sabrspecs : obj)
@@ -511,7 +511,7 @@ module SABRSpecsFunction =
          forward : obj)
         ([<ExcelArgument(Name="stdDev",Description = "double")>] 
          stdDev : obj)
-        ([<ExcelArgument(Name="addParams",Description = "double")>] 
+        ([<ExcelArgument(Name="addParams",Description = "double range")>] 
          addParams : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -558,9 +558,9 @@ module SABRSpecsFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SABRSpecs_Range", Description="Create a range of SABRSpecs",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SABRSpecs_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,7 +39,7 @@ module DepositRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DepositRateHelper", Description="Create a DepositRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DepositRateHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "DepositRateHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="rate",Description = "Quote")>] 
          rate : obj)
@@ -112,7 +112,7 @@ module DepositRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DepositRateHelper1", Description="Create a DepositRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DepositRateHelper_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "DepositRateHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="rate",Description = "double")>] 
          rate : obj)
@@ -155,7 +155,7 @@ module DepositRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DepositRateHelper2", Description="Create a DepositRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DepositRateHelper_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "DepositRateHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="rate",Description = "Quote")>] 
          rate : obj)
@@ -198,7 +198,7 @@ module DepositRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DepositRateHelper3", Description="Create a DepositRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DepositRateHelper_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "DepositRateHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="rate",Description = "double")>] 
          rate : obj)
@@ -271,7 +271,7 @@ module DepositRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DepositRateHelper_impliedQuote", Description="Create a DepositRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DepositRateHelper_impliedQuote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DepositRateHelper",Description = "DepositRateHelper")>] 
          depositratehelper : obj)
@@ -307,7 +307,7 @@ module DepositRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DepositRateHelper_setTermStructure", Description="Create a DepositRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DepositRateHelper_setTermStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DepositRateHelper",Description = "DepositRateHelper")>] 
          depositratehelper : obj)
@@ -349,7 +349,7 @@ module DepositRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DepositRateHelper_update", Description="Create a DepositRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DepositRateHelper_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DepositRateHelper",Description = "DepositRateHelper")>] 
          depositratehelper : obj)
@@ -385,7 +385,7 @@ module DepositRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DepositRateHelper_earliestDate", Description="Create a DepositRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DepositRateHelper_earliestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DepositRateHelper",Description = "DepositRateHelper")>] 
          depositratehelper : obj)
@@ -421,7 +421,7 @@ module DepositRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DepositRateHelper_latestDate", Description="Create a DepositRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DepositRateHelper_latestDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DepositRateHelper",Description = "DepositRateHelper")>] 
          depositratehelper : obj)
@@ -457,7 +457,7 @@ module DepositRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DepositRateHelper_latestRelevantDate", Description="Create a DepositRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DepositRateHelper_latestRelevantDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DepositRateHelper",Description = "DepositRateHelper")>] 
          depositratehelper : obj)
@@ -493,7 +493,7 @@ module DepositRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DepositRateHelper_maturityDate", Description="Create a DepositRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DepositRateHelper_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DepositRateHelper",Description = "DepositRateHelper")>] 
          depositratehelper : obj)
@@ -529,7 +529,7 @@ module DepositRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DepositRateHelper_pillarDate", Description="Create a DepositRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DepositRateHelper_pillarDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DepositRateHelper",Description = "DepositRateHelper")>] 
          depositratehelper : obj)
@@ -565,7 +565,7 @@ module DepositRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DepositRateHelper_quote", Description="Create a DepositRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DepositRateHelper_quote
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DepositRateHelper",Description = "DepositRateHelper")>] 
          depositratehelper : obj)
@@ -601,7 +601,7 @@ module DepositRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DepositRateHelper_quoteError", Description="Create a DepositRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DepositRateHelper_quoteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DepositRateHelper",Description = "DepositRateHelper")>] 
          depositratehelper : obj)
@@ -637,7 +637,7 @@ module DepositRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DepositRateHelper_quoteIsValid", Description="Create a DepositRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DepositRateHelper_quoteIsValid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DepositRateHelper",Description = "DepositRateHelper")>] 
          depositratehelper : obj)
@@ -673,7 +673,7 @@ module DepositRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DepositRateHelper_quoteValue", Description="Create a DepositRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DepositRateHelper_quoteValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DepositRateHelper",Description = "DepositRateHelper")>] 
          depositratehelper : obj)
@@ -709,7 +709,7 @@ module DepositRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DepositRateHelper_registerWith", Description="Create a DepositRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DepositRateHelper_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DepositRateHelper",Description = "DepositRateHelper")>] 
          depositratehelper : obj)
@@ -751,7 +751,7 @@ module DepositRateHelperFunction =
     *)
     [<ExcelFunction(Name="_DepositRateHelper_unregisterWith", Description="Create a DepositRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DepositRateHelper_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DepositRateHelper",Description = "DepositRateHelper")>] 
          depositratehelper : obj)
@@ -790,9 +790,9 @@ module DepositRateHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DepositRateHelper_Range", Description="Create a range of DepositRateHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DepositRateHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

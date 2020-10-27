@@ -39,7 +39,7 @@ module AmortizingPaymentFunction =
     *)
     [<ExcelFunction(Name="_AmortizingPayment", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AmortizingPayment")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="amount",Description = "double")>] 
          amount : obj)
@@ -82,7 +82,7 @@ module AmortizingPaymentFunction =
     *)
     [<ExcelFunction(Name="_AmortizingPayment_amount", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_amount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingPayment",Description = "AmortizingPayment")>] 
          amortizingpayment : obj)
@@ -118,7 +118,7 @@ module AmortizingPaymentFunction =
     *)
     [<ExcelFunction(Name="_AmortizingPayment_date", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingPayment",Description = "AmortizingPayment")>] 
          amortizingpayment : obj)
@@ -154,7 +154,7 @@ module AmortizingPaymentFunction =
     *)
     [<ExcelFunction(Name="_AmortizingPayment_CompareTo", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_CompareTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingPayment",Description = "AmortizingPayment")>] 
          amortizingpayment : obj)
@@ -196,7 +196,7 @@ module AmortizingPaymentFunction =
     *)
     [<ExcelFunction(Name="_AmortizingPayment_Equals", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingPayment",Description = "AmortizingPayment")>] 
          amortizingpayment : obj)
@@ -238,7 +238,7 @@ module AmortizingPaymentFunction =
     *)
     [<ExcelFunction(Name="_AmortizingPayment_exCouponDate", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_exCouponDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingPayment",Description = "AmortizingPayment")>] 
          amortizingpayment : obj)
@@ -274,7 +274,7 @@ module AmortizingPaymentFunction =
     *)
     [<ExcelFunction(Name="_AmortizingPayment_hasOccurred", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingPayment",Description = "AmortizingPayment")>] 
          amortizingpayment : obj)
@@ -322,7 +322,7 @@ module AmortizingPaymentFunction =
     *)
     [<ExcelFunction(Name="_AmortizingPayment_tradingExCoupon", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_tradingExCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingPayment",Description = "AmortizingPayment")>] 
          amortizingpayment : obj)
@@ -364,7 +364,7 @@ module AmortizingPaymentFunction =
     *)
     [<ExcelFunction(Name="_AmortizingPayment_accept", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingPayment",Description = "AmortizingPayment")>] 
          amortizingpayment : obj)
@@ -406,7 +406,7 @@ module AmortizingPaymentFunction =
     *)
     [<ExcelFunction(Name="_AmortizingPayment_registerWith", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingPayment",Description = "AmortizingPayment")>] 
          amortizingpayment : obj)
@@ -448,7 +448,7 @@ module AmortizingPaymentFunction =
     *)
     [<ExcelFunction(Name="_AmortizingPayment_unregisterWith", Description="Create a AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmortizingPayment",Description = "AmortizingPayment")>] 
          amortizingpayment : obj)
@@ -487,9 +487,9 @@ module AmortizingPaymentFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AmortizingPayment_Range", Description="Create a range of AmortizingPayment",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmortizingPayment_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

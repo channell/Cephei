@@ -39,7 +39,7 @@ module DividendBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendBarrierOption", Description="Create a DividendBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendBarrierOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "DividendBarrierOption")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="barrierType",Description = "Barrier.Type: DownIn, UpIn, DownOut, UpOut, NULL")>] 
          barrierType : obj)
@@ -51,9 +51,9 @@ module DividendBarrierOptionFunction =
          payoff : obj)
         ([<ExcelArgument(Name="exercise",Description = "Exercise")>] 
          exercise : obj)
-        ([<ExcelArgument(Name="dividendDates",Description = "Date")>] 
+        ([<ExcelArgument(Name="dividendDate ranges",Description = "Date range")>] 
          dividendDates : obj)
-        ([<ExcelArgument(Name="dividends",Description = "double")>] 
+        ([<ExcelArgument(Name="dividends",Description = "double range")>] 
          dividends : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
@@ -124,7 +124,7 @@ module DividendBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendBarrierOption_impliedVolatility", Description="Create a DividendBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendBarrierOption_impliedVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendBarrierOption",Description = "DividendBarrierOption")>] 
          dividendbarrieroption : obj)
@@ -196,7 +196,7 @@ module DividendBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendBarrierOption_delta", Description="Create a DividendBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendBarrierOption_delta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendBarrierOption",Description = "DividendBarrierOption")>] 
          dividendbarrieroption : obj)
@@ -232,7 +232,7 @@ module DividendBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendBarrierOption_deltaForward", Description="Create a DividendBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendBarrierOption_deltaForward
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendBarrierOption",Description = "DividendBarrierOption")>] 
          dividendbarrieroption : obj)
@@ -268,7 +268,7 @@ module DividendBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendBarrierOption_dividendRho", Description="Create a DividendBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendBarrierOption_dividendRho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendBarrierOption",Description = "DividendBarrierOption")>] 
          dividendbarrieroption : obj)
@@ -304,7 +304,7 @@ module DividendBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendBarrierOption_elasticity", Description="Create a DividendBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendBarrierOption_elasticity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendBarrierOption",Description = "DividendBarrierOption")>] 
          dividendbarrieroption : obj)
@@ -340,7 +340,7 @@ module DividendBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendBarrierOption_gamma", Description="Create a DividendBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendBarrierOption_gamma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendBarrierOption",Description = "DividendBarrierOption")>] 
          dividendbarrieroption : obj)
@@ -376,7 +376,7 @@ module DividendBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendBarrierOption_isExpired", Description="Create a DividendBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendBarrierOption_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendBarrierOption",Description = "DividendBarrierOption")>] 
          dividendbarrieroption : obj)
@@ -412,7 +412,7 @@ module DividendBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendBarrierOption_itmCashProbability", Description="Create a DividendBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendBarrierOption_itmCashProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendBarrierOption",Description = "DividendBarrierOption")>] 
          dividendbarrieroption : obj)
@@ -448,7 +448,7 @@ module DividendBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendBarrierOption_rho", Description="Create a DividendBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendBarrierOption_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendBarrierOption",Description = "DividendBarrierOption")>] 
          dividendbarrieroption : obj)
@@ -484,7 +484,7 @@ module DividendBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendBarrierOption_strikeSensitivity", Description="Create a DividendBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendBarrierOption_strikeSensitivity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendBarrierOption",Description = "DividendBarrierOption")>] 
          dividendbarrieroption : obj)
@@ -520,7 +520,7 @@ module DividendBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendBarrierOption_theta", Description="Create a DividendBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendBarrierOption_theta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendBarrierOption",Description = "DividendBarrierOption")>] 
          dividendbarrieroption : obj)
@@ -556,7 +556,7 @@ module DividendBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendBarrierOption_thetaPerDay", Description="Create a DividendBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendBarrierOption_thetaPerDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendBarrierOption",Description = "DividendBarrierOption")>] 
          dividendbarrieroption : obj)
@@ -592,7 +592,7 @@ module DividendBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendBarrierOption_vega", Description="Create a DividendBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendBarrierOption_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendBarrierOption",Description = "DividendBarrierOption")>] 
          dividendbarrieroption : obj)
@@ -628,7 +628,7 @@ module DividendBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendBarrierOption_exercise", Description="Create a DividendBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendBarrierOption_exercise
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendBarrierOption",Description = "DividendBarrierOption")>] 
          dividendbarrieroption : obj)
@@ -664,7 +664,7 @@ module DividendBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendBarrierOption_payoff", Description="Create a DividendBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendBarrierOption_payoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Payoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendBarrierOption",Description = "DividendBarrierOption")>] 
          dividendbarrieroption : obj)
@@ -700,7 +700,7 @@ module DividendBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendBarrierOption_CASH", Description="Create a DividendBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendBarrierOption_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendBarrierOption",Description = "DividendBarrierOption")>] 
          dividendbarrieroption : obj)
@@ -736,7 +736,7 @@ module DividendBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendBarrierOption_errorEstimate", Description="Create a DividendBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendBarrierOption_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendBarrierOption",Description = "DividendBarrierOption")>] 
          dividendbarrieroption : obj)
@@ -772,7 +772,7 @@ module DividendBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendBarrierOption_NPV", Description="Create a DividendBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendBarrierOption_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendBarrierOption",Description = "DividendBarrierOption")>] 
          dividendbarrieroption : obj)
@@ -808,7 +808,7 @@ module DividendBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendBarrierOption_result", Description="Create a DividendBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendBarrierOption_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendBarrierOption",Description = "DividendBarrierOption")>] 
          dividendbarrieroption : obj)
@@ -850,7 +850,7 @@ module DividendBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendBarrierOption_setPricingEngine", Description="Create a DividendBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendBarrierOption_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendBarrierOption",Description = "DividendBarrierOption")>] 
          dividendbarrieroption : obj)
@@ -892,7 +892,7 @@ module DividendBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DividendBarrierOption_valuationDate", Description="Create a DividendBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendBarrierOption_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DividendBarrierOption",Description = "DividendBarrierOption")>] 
          dividendbarrieroption : obj)
@@ -925,9 +925,9 @@ module DividendBarrierOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DividendBarrierOption_Range", Description="Create a range of DividendBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DividendBarrierOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

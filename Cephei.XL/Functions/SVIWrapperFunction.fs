@@ -39,15 +39,15 @@ module SVIWrapperFunction =
     *)
     [<ExcelFunction(Name="_SVIWrapper", Description="Create a SVIWrapper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVIWrapper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SVIWrapper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
         ([<ExcelArgument(Name="forward",Description = "double")>] 
          forward : obj)
-        ([<ExcelArgument(Name="param",Description = "double")>] 
+        ([<ExcelArgument(Name="param",Description = "double range")>] 
          param : obj)
-        ([<ExcelArgument(Name="addParams",Description = "double")>] 
+        ([<ExcelArgument(Name="addParams",Description = "double range")>] 
          addParams : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -94,7 +94,7 @@ module SVIWrapperFunction =
     *)
     [<ExcelFunction(Name="_SVIWrapper_volatility", Description="Create a SVIWrapper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVIWrapper_volatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SVIWrapper",Description = "SVIWrapper")>] 
          sviwrapper : obj)
@@ -133,9 +133,9 @@ module SVIWrapperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SVIWrapper_Range", Description="Create a range of SVIWrapper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVIWrapper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

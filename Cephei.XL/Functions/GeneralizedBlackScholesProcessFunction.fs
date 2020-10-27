@@ -39,7 +39,7 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_apply", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_apply
-        ([<ExcelArgument(Name="Mnemonic",Description = "BlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
@@ -87,7 +87,7 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_blackVolatility", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_blackVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "BlackVolTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
@@ -123,7 +123,7 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_diffusion", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_diffusion
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
@@ -171,7 +171,7 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_dividendYield", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_dividendYield
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
@@ -207,7 +207,7 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_drift", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_drift
-        ([<ExcelArgument(Name="Mnemonic",Description = "GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
@@ -255,7 +255,7 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_evolve", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_evolve
-        ([<ExcelArgument(Name="Mnemonic",Description = "GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
@@ -315,7 +315,7 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_expectation", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_expectation
-        ([<ExcelArgument(Name="Mnemonic",Description = "GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
@@ -369,7 +369,7 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess1", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="x0",Description = "Quote")>] 
          x0 : obj)
@@ -379,7 +379,7 @@ module GeneralizedBlackScholesProcessFunction =
          riskFreeTS : obj)
         ([<ExcelArgument(Name="blackVolTS",Description = "BlackVolTermStructure")>] 
          blackVolTS : obj)
-        ([<ExcelArgument(Name="disc",Description = "GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="disc",Description = "IDiscretization1D or empty")>] 
          disc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -430,7 +430,7 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="x0",Description = "Quote")>] 
          x0 : obj)
@@ -442,7 +442,7 @@ module GeneralizedBlackScholesProcessFunction =
          blackVolTS : obj)
         ([<ExcelArgument(Name="localVolTS",Description = "LocalVolTermStructure")>] 
          localVolTS : obj)
-        ([<ExcelArgument(Name="disc",Description = "GeneralizedBlackScholesProcess")>] 
+        ([<ExcelArgument(Name="disc",Description = "IDiscretization1D or empty")>] 
          disc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -497,7 +497,7 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_localVolatility", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_localVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "LocalVolTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
@@ -533,7 +533,7 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_riskFreeRate", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_riskFreeRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
@@ -569,7 +569,7 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_stateVariable", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_stateVariable
-        ([<ExcelArgument(Name="Mnemonic",Description = "Quote")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
@@ -605,7 +605,7 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_stdDeviation", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_stdDeviation
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
@@ -659,7 +659,7 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_time", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
@@ -701,7 +701,7 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_update", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
@@ -737,7 +737,7 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_variance", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_variance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
@@ -791,7 +791,7 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_x0", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_x0
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
@@ -827,7 +827,7 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_initialValues", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_initialValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
@@ -863,7 +863,7 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_size", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
@@ -899,7 +899,7 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_covariance", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_covariance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Matrix")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
@@ -953,7 +953,7 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_factors", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_factors
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
@@ -989,7 +989,7 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_registerWith", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
@@ -1031,7 +1031,7 @@ module GeneralizedBlackScholesProcessFunction =
     *)
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_unregisterWith", Description="Create a GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeneralizedBlackScholesProcess",Description = "GeneralizedBlackScholesProcess")>] 
          generalizedblackscholesprocess : obj)
@@ -1070,9 +1070,9 @@ module GeneralizedBlackScholesProcessFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GeneralizedBlackScholesProcess_Range", Description="Create a range of GeneralizedBlackScholesProcess",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeneralizedBlackScholesProcess_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

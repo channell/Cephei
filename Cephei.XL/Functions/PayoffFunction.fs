@@ -39,7 +39,7 @@ module PayoffFunction =
     *)
     [<ExcelFunction(Name="_Payoff_accept", Description="Create a Payoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Payoff_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Payoff",Description = "Payoff")>] 
          payoff : obj)
@@ -81,7 +81,7 @@ module PayoffFunction =
     *)
     [<ExcelFunction(Name="_Payoff_description", Description="Create a Payoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Payoff_description
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Payoff",Description = "Payoff")>] 
          payoff : obj)
@@ -117,7 +117,7 @@ module PayoffFunction =
     *)
     [<ExcelFunction(Name="_Payoff_name", Description="Create a Payoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Payoff_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Payoff",Description = "Payoff")>] 
          payoff : obj)
@@ -153,7 +153,7 @@ module PayoffFunction =
     *)
     [<ExcelFunction(Name="_Payoff_value", Description="Create a Payoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Payoff_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Payoff",Description = "Payoff")>] 
          payoff : obj)
@@ -192,9 +192,9 @@ module PayoffFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Payoff_Range", Description="Create a range of Payoff",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Payoff_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

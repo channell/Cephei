@@ -49,7 +49,7 @@ module TurkeyFunction =
     *)
     [<ExcelFunction(Name="_Turkey", Description="Create a Turkey",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Turkey_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Turkey")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -80,7 +80,7 @@ module TurkeyFunction =
     *)
     [<ExcelFunction(Name="_Turkey_addedHolidays", Description="Create a Turkey",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Turkey_addedHolidays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Turkey",Description = "Turkey")>] 
          turkey : obj)
@@ -116,7 +116,7 @@ module TurkeyFunction =
     *)
     [<ExcelFunction(Name="_Turkey_addHoliday", Description="Create a Turkey",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Turkey_addHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Turkey",Description = "Turkey")>] 
          turkey : obj)
@@ -158,7 +158,7 @@ module TurkeyFunction =
     *)
     [<ExcelFunction(Name="_Turkey_adjust", Description="Create a Turkey",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Turkey_adjust
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Turkey",Description = "Turkey")>] 
          turkey : obj)
@@ -206,7 +206,7 @@ module TurkeyFunction =
     *)
     [<ExcelFunction(Name="_Turkey_advance1", Description="Create a Turkey",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Turkey_advance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Turkey",Description = "Turkey")>] 
          turkey : obj)
@@ -272,7 +272,7 @@ module TurkeyFunction =
     *)
     [<ExcelFunction(Name="_Turkey_advance", Description="Create a Turkey",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Turkey_advance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Turkey",Description = "Turkey")>] 
          turkey : obj)
@@ -332,7 +332,7 @@ module TurkeyFunction =
     *)
     [<ExcelFunction(Name="_Turkey_businessDaysBetween", Description="Create a Turkey",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Turkey_businessDaysBetween
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Turkey",Description = "Turkey")>] 
          turkey : obj)
@@ -392,7 +392,7 @@ module TurkeyFunction =
     *)
     [<ExcelFunction(Name="_Turkey_calendar", Description="Create a Turkey",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Turkey_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Turkey",Description = "Turkey")>] 
          turkey : obj)
@@ -428,7 +428,7 @@ module TurkeyFunction =
     *)
     [<ExcelFunction(Name="_Turkey_empty", Description="Create a Turkey",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Turkey_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Turkey",Description = "Turkey")>] 
          turkey : obj)
@@ -464,7 +464,7 @@ module TurkeyFunction =
     *)
     [<ExcelFunction(Name="_Turkey_endOfMonth", Description="Create a Turkey",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Turkey_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Turkey",Description = "Turkey")>] 
          turkey : obj)
@@ -506,7 +506,7 @@ module TurkeyFunction =
     *)
     [<ExcelFunction(Name="_Turkey_Equals", Description="Create a Turkey",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Turkey_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Turkey",Description = "Turkey")>] 
          turkey : obj)
@@ -548,7 +548,7 @@ module TurkeyFunction =
     *)
     [<ExcelFunction(Name="_Turkey_isBusinessDay", Description="Create a Turkey",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Turkey_isBusinessDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Turkey",Description = "Turkey")>] 
          turkey : obj)
@@ -590,7 +590,7 @@ module TurkeyFunction =
     *)
     [<ExcelFunction(Name="_Turkey_isEndOfMonth", Description="Create a Turkey",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Turkey_isEndOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Turkey",Description = "Turkey")>] 
          turkey : obj)
@@ -632,7 +632,7 @@ module TurkeyFunction =
     *)
     [<ExcelFunction(Name="_Turkey_isHoliday", Description="Create a Turkey",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Turkey_isHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Turkey",Description = "Turkey")>] 
          turkey : obj)
@@ -674,7 +674,7 @@ module TurkeyFunction =
     *)
     [<ExcelFunction(Name="_Turkey_isWeekend", Description="Create a Turkey",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Turkey_isWeekend
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Turkey",Description = "Turkey")>] 
          turkey : obj)
@@ -718,7 +718,7 @@ module TurkeyFunction =
     *)
     [<ExcelFunction(Name="_Turkey_name", Description="Create a Turkey",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Turkey_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Turkey",Description = "Turkey")>] 
          turkey : obj)
@@ -754,7 +754,7 @@ module TurkeyFunction =
     *)
     [<ExcelFunction(Name="_Turkey_removedHolidays", Description="Create a Turkey",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Turkey_removedHolidays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Turkey",Description = "Turkey")>] 
          turkey : obj)
@@ -790,7 +790,7 @@ module TurkeyFunction =
     *)
     [<ExcelFunction(Name="_Turkey_removeHoliday", Description="Create a Turkey",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Turkey_removeHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Turkey",Description = "Turkey")>] 
          turkey : obj)
@@ -829,9 +829,9 @@ module TurkeyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Turkey_Range", Description="Create a range of Turkey",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Turkey_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

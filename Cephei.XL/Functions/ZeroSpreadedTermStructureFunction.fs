@@ -39,7 +39,7 @@ module ZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ZeroSpreadedTermStructure_calendar", Description="Create a ZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroSpreadedTermStructure_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroSpreadedTermStructure",Description = "ZeroSpreadedTermStructure")>] 
          zerospreadedtermstructure : obj)
@@ -75,7 +75,7 @@ module ZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ZeroSpreadedTermStructure_dayCounter", Description="Create a ZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroSpreadedTermStructure_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroSpreadedTermStructure",Description = "ZeroSpreadedTermStructure")>] 
          zerospreadedtermstructure : obj)
@@ -111,7 +111,7 @@ module ZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ZeroSpreadedTermStructure_maxDate", Description="Create a ZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroSpreadedTermStructure_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroSpreadedTermStructure",Description = "ZeroSpreadedTermStructure")>] 
          zerospreadedtermstructure : obj)
@@ -147,7 +147,7 @@ module ZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ZeroSpreadedTermStructure_maxTime", Description="Create a ZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroSpreadedTermStructure_maxTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroSpreadedTermStructure",Description = "ZeroSpreadedTermStructure")>] 
          zerospreadedtermstructure : obj)
@@ -183,7 +183,7 @@ module ZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ZeroSpreadedTermStructure_referenceDate", Description="Create a ZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroSpreadedTermStructure_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroSpreadedTermStructure",Description = "ZeroSpreadedTermStructure")>] 
          zerospreadedtermstructure : obj)
@@ -219,7 +219,7 @@ module ZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ZeroSpreadedTermStructure_settlementDays", Description="Create a ZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroSpreadedTermStructure_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ZeroSpreadedTermStructure",Description = "ZeroSpreadedTermStructure")>] 
          zerospreadedtermstructure : obj)
@@ -255,17 +255,17 @@ module ZeroSpreadedTermStructureFunction =
     *)
     [<ExcelFunction(Name="_ZeroSpreadedTermStructure", Description="Create a ZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroSpreadedTermStructure_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="h",Description = "YieldTermStructure")>] 
          h : obj)
         ([<ExcelArgument(Name="spread",Description = "Quote")>] 
          spread : obj)
-        ([<ExcelArgument(Name="comp",Description = "ZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="comp",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded or empty")>] 
          comp : obj)
-        ([<ExcelArgument(Name="freq",Description = "ZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="freq",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency or empty")>] 
          freq : obj)
-        ([<ExcelArgument(Name="dc",Description = "ZeroSpreadedTermStructure")>] 
+        ([<ExcelArgument(Name="dc",Description = "DayCounter or empty")>] 
          dc : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -313,9 +313,9 @@ module ZeroSpreadedTermStructureFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ZeroSpreadedTermStructure_Range", Description="Create a range of ZeroSpreadedTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ZeroSpreadedTermStructure_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

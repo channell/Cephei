@@ -39,7 +39,7 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite_discountBondOption", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_discountBondOption
-        ([<ExcelArgument(Name="Mnemonic",Description = "HullWhite")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HullWhite",Description = "HullWhite")>] 
          hullwhite : obj)
@@ -99,7 +99,7 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite_dynamics", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_dynamics
-        ([<ExcelArgument(Name="Mnemonic",Description = "HullWhite")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HullWhite",Description = "HullWhite")>] 
          hullwhite : obj)
@@ -135,7 +135,7 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "HullWhite")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
@@ -184,7 +184,7 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite2", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "HullWhite")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
@@ -227,7 +227,7 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite1", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "HullWhite")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
@@ -264,7 +264,7 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite_termStructure", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_termStructure
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HullWhite",Description = "HullWhite")>] 
          hullwhite : obj)
@@ -300,7 +300,7 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite_termStructure_", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_termStructure_
-        ([<ExcelArgument(Name="Mnemonic",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HullWhite",Description = "HullWhite")>] 
          hullwhite : obj)
@@ -336,7 +336,7 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite_tree", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_tree
-        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HullWhite",Description = "HullWhite")>] 
          hullwhite : obj)
@@ -378,7 +378,7 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite_a", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_a
-        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HullWhite",Description = "HullWhite")>] 
          hullwhite : obj)
@@ -414,7 +414,7 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite_b", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_b
-        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HullWhite",Description = "HullWhite")>] 
          hullwhite : obj)
@@ -450,7 +450,7 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite_lambda", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_lambda
-        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HullWhite",Description = "HullWhite")>] 
          hullwhite : obj)
@@ -486,7 +486,7 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite_sigma", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_sigma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HullWhite",Description = "HullWhite")>] 
          hullwhite : obj)
@@ -522,7 +522,7 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite_discount", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_discount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HullWhite",Description = "HullWhite")>] 
          hullwhite : obj)
@@ -564,7 +564,7 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite_discountBond1", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_discountBond1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HullWhite",Description = "HullWhite")>] 
          hullwhite : obj)
@@ -618,7 +618,7 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite_discountBond", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_discountBond
-        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HullWhite",Description = "HullWhite")>] 
          hullwhite : obj)
@@ -672,11 +672,11 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite_calibrate", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_calibrate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HullWhite",Description = "HullWhite")>] 
          hullwhite : obj)
-        ([<ExcelArgument(Name="instruments",Description = "CalibrationHelper")>] 
+        ([<ExcelArgument(Name="instruments",Description = "CalibrationHelper range")>] 
          instruments : obj)
         ([<ExcelArgument(Name="Method",Description = "OptimizationMethod")>] 
          Method : obj)
@@ -684,9 +684,9 @@ module HullWhiteFunction =
          endCriteria : obj)
         ([<ExcelArgument(Name="additionalConstraint",Description = "Constraint")>] 
          additionalConstraint : obj)
-        ([<ExcelArgument(Name="weights",Description = "double")>] 
+        ([<ExcelArgument(Name="weights",Description = "double range")>] 
          weights : obj)
-        ([<ExcelArgument(Name="fixParameters",Description = "bool")>] 
+        ([<ExcelArgument(Name="fixParameters",Description = "bool range")>] 
          fixParameters : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -744,7 +744,7 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite_constraint", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_constraint
-        ([<ExcelArgument(Name="Mnemonic",Description = "Constraint")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HullWhite",Description = "HullWhite")>] 
          hullwhite : obj)
@@ -780,7 +780,7 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite_endCriteria", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_endCriteria
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HullWhite",Description = "HullWhite")>] 
          hullwhite : obj)
@@ -816,7 +816,7 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite_notifyObservers", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_notifyObservers
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HullWhite",Description = "HullWhite")>] 
          hullwhite : obj)
@@ -852,7 +852,7 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite_parameters", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_parameters
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HullWhite",Description = "HullWhite")>] 
          hullwhite : obj)
@@ -888,7 +888,7 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite_registerWith", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HullWhite",Description = "HullWhite")>] 
          hullwhite : obj)
@@ -930,7 +930,7 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite_setParams", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_setParams
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HullWhite",Description = "HullWhite")>] 
          hullwhite : obj)
@@ -972,7 +972,7 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite_unregisterWith", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HullWhite",Description = "HullWhite")>] 
          hullwhite : obj)
@@ -1014,7 +1014,7 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite_update", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HullWhite",Description = "HullWhite")>] 
          hullwhite : obj)
@@ -1050,13 +1050,13 @@ module HullWhiteFunction =
     *)
     [<ExcelFunction(Name="_HullWhite_value", Description="Create a HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HullWhite",Description = "HullWhite")>] 
          hullwhite : obj)
         ([<ExcelArgument(Name="parameters",Description = "Vector")>] 
          parameters : obj)
-        ([<ExcelArgument(Name="instruments",Description = "CalibrationHelper")>] 
+        ([<ExcelArgument(Name="instruments",Description = "CalibrationHelper range")>] 
          instruments : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -1095,9 +1095,9 @@ module HullWhiteFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_HullWhite_Range", Description="Create a range of HullWhite",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HullWhite_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

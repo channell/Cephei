@@ -39,7 +39,7 @@ module CubicBSplinesFittingFunction =
     *)
     [<ExcelFunction(Name="_CubicBSplinesFitting_basisFunction", Description="Create a CubicBSplinesFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicBSplinesFitting_basisFunction
-        ([<ExcelArgument(Name="Mnemonic",Description = "FittedBondDiscountCurve.FittingMethod")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CubicBSplinesFitting",Description = "CubicBSplinesFitting")>] 
          cubicbsplinesfitting : obj)
@@ -87,7 +87,7 @@ module CubicBSplinesFittingFunction =
     *)
     [<ExcelFunction(Name="_CubicBSplinesFitting_clone", Description="Create a CubicBSplinesFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicBSplinesFitting_clone
-        ([<ExcelArgument(Name="Mnemonic",Description = "FittedBondDiscountCurve.FittingMethod")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CubicBSplinesFitting",Description = "CubicBSplinesFitting")>] 
          cubicbsplinesfitting : obj)
@@ -123,15 +123,15 @@ module CubicBSplinesFittingFunction =
     *)
     [<ExcelFunction(Name="_CubicBSplinesFitting", Description="Create a CubicBSplinesFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicBSplinesFitting_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "CubicBSplinesFitting")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="knots",Description = "double")>] 
+        ([<ExcelArgument(Name="knots",Description = "double range")>] 
          knots : obj)
-        ([<ExcelArgument(Name="constrainAtZero",Description = "CubicBSplinesFitting")>] 
+        ([<ExcelArgument(Name="constrainAtZero",Description = "bool or empty")>] 
          constrainAtZero : obj)
-        ([<ExcelArgument(Name="weights",Description = "CubicBSplinesFitting")>] 
+        ([<ExcelArgument(Name="weights",Description = "Vector or empty")>] 
          weights : obj)
-        ([<ExcelArgument(Name="optimizationMethod",Description = "CubicBSplinesFitting")>] 
+        ([<ExcelArgument(Name="optimizationMethod",Description = "OptimizationMethod or empty")>] 
          optimizationMethod : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -178,7 +178,7 @@ module CubicBSplinesFittingFunction =
     *)
     [<ExcelFunction(Name="_CubicBSplinesFitting_size", Description="Create a CubicBSplinesFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicBSplinesFitting_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CubicBSplinesFitting",Description = "CubicBSplinesFitting")>] 
          cubicbsplinesfitting : obj)
@@ -214,7 +214,7 @@ module CubicBSplinesFittingFunction =
     *)
     [<ExcelFunction(Name="_CubicBSplinesFitting_constrainAtZero", Description="Create a CubicBSplinesFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicBSplinesFitting_constrainAtZero
-        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CubicBSplinesFitting",Description = "CubicBSplinesFitting")>] 
          cubicbsplinesfitting : obj)
@@ -250,7 +250,7 @@ module CubicBSplinesFittingFunction =
     *)
     [<ExcelFunction(Name="_CubicBSplinesFitting_discount", Description="Create a CubicBSplinesFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicBSplinesFitting_discount
-        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CubicBSplinesFitting",Description = "CubicBSplinesFitting")>] 
          cubicbsplinesfitting : obj)
@@ -298,7 +298,7 @@ module CubicBSplinesFittingFunction =
     *)
     [<ExcelFunction(Name="_CubicBSplinesFitting_minimumCostValue", Description="Create a CubicBSplinesFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicBSplinesFitting_minimumCostValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CubicBSplinesFitting",Description = "CubicBSplinesFitting")>] 
          cubicbsplinesfitting : obj)
@@ -334,7 +334,7 @@ module CubicBSplinesFittingFunction =
     *)
     [<ExcelFunction(Name="_CubicBSplinesFitting_numberOfIterations", Description="Create a CubicBSplinesFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicBSplinesFitting_numberOfIterations
-        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CubicBSplinesFitting",Description = "CubicBSplinesFitting")>] 
          cubicbsplinesfitting : obj)
@@ -370,7 +370,7 @@ module CubicBSplinesFittingFunction =
     *)
     [<ExcelFunction(Name="_CubicBSplinesFitting_optimizationMethod", Description="Create a CubicBSplinesFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicBSplinesFitting_optimizationMethod
-        ([<ExcelArgument(Name="Mnemonic",Description = "OptimizationMethod")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CubicBSplinesFitting",Description = "CubicBSplinesFitting")>] 
          cubicbsplinesfitting : obj)
@@ -406,7 +406,7 @@ module CubicBSplinesFittingFunction =
     *)
     [<ExcelFunction(Name="_CubicBSplinesFitting_solution", Description="Create a CubicBSplinesFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicBSplinesFitting_solution
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CubicBSplinesFitting",Description = "CubicBSplinesFitting")>] 
          cubicbsplinesfitting : obj)
@@ -442,7 +442,7 @@ module CubicBSplinesFittingFunction =
     *)
     [<ExcelFunction(Name="_CubicBSplinesFitting_weights", Description="Create a CubicBSplinesFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicBSplinesFitting_weights
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CubicBSplinesFitting",Description = "CubicBSplinesFitting")>] 
          cubicbsplinesfitting : obj)
@@ -475,9 +475,9 @@ module CubicBSplinesFittingFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CubicBSplinesFitting_Range", Description="Create a range of CubicBSplinesFitting",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CubicBSplinesFitting_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,13 +39,13 @@ module YoYInflationCollarFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationCollar", Description="Create a YoYInflationCollar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCollar_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationCollar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="yoyLeg",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="yoyLeg",Description = "CashFlow range")>] 
          yoyLeg : obj)
-        ([<ExcelArgument(Name="capRates",Description = "double")>] 
+        ([<ExcelArgument(Name="capRates",Description = "double range")>] 
          capRates : obj)
-        ([<ExcelArgument(Name="floorRates",Description = "double")>] 
+        ([<ExcelArgument(Name="floorRates",Description = "double range")>] 
          floorRates : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
@@ -100,7 +100,7 @@ module YoYInflationCollarFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationCollar_atmRate", Description="Create a YoYInflationCollar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCollar_atmRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationCollar",Description = "YoYInflationCollar")>] 
          yoyinflationcollar : obj)
@@ -142,7 +142,7 @@ module YoYInflationCollarFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationCollar_capRates", Description="Create a YoYInflationCollar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCollar_capRates
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationCollar",Description = "YoYInflationCollar")>] 
          yoyinflationcollar : obj)
@@ -178,7 +178,7 @@ module YoYInflationCollarFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationCollar_floorRates", Description="Create a YoYInflationCollar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCollar_floorRates
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationCollar",Description = "YoYInflationCollar")>] 
          yoyinflationcollar : obj)
@@ -214,7 +214,7 @@ module YoYInflationCollarFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationCollar_impliedVolatility", Description="Create a YoYInflationCollar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCollar_impliedVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationCollar",Description = "YoYInflationCollar")>] 
          yoyinflationcollar : obj)
@@ -292,7 +292,7 @@ module YoYInflationCollarFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationCollar_isExpired", Description="Create a YoYInflationCollar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCollar_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationCollar",Description = "YoYInflationCollar")>] 
          yoyinflationcollar : obj)
@@ -328,7 +328,7 @@ module YoYInflationCollarFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationCollar_lastYoYInflationCoupon", Description="Create a YoYInflationCollar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCollar_lastYoYInflationCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationCollar",Description = "YoYInflationCollar")>] 
          yoyinflationcollar : obj)
@@ -364,7 +364,7 @@ module YoYInflationCollarFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationCollar_maturityDate", Description="Create a YoYInflationCollar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCollar_maturityDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationCapFloor")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationCollar",Description = "YoYInflationCollar")>] 
          yoyinflationcollar : obj)
@@ -400,7 +400,7 @@ module YoYInflationCollarFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationCollar_optionlet", Description="Create a YoYInflationCollar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCollar_optionlet
-        ([<ExcelArgument(Name="Mnemonic",Description = "YoYInflationCapFloor")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationCollar",Description = "YoYInflationCollar")>] 
          yoyinflationcollar : obj)
@@ -442,7 +442,7 @@ module YoYInflationCollarFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationCollar_startDate", Description="Create a YoYInflationCollar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCollar_startDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationCollar",Description = "YoYInflationCollar")>] 
          yoyinflationcollar : obj)
@@ -478,7 +478,7 @@ module YoYInflationCollarFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationCollar_type", Description="Create a YoYInflationCollar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCollar_type
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationCollar",Description = "YoYInflationCollar")>] 
          yoyinflationcollar : obj)
@@ -514,7 +514,7 @@ module YoYInflationCollarFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationCollar_yoyLeg", Description="Create a YoYInflationCollar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCollar_yoyLeg
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationCollar",Description = "YoYInflationCollar")>] 
          yoyinflationcollar : obj)
@@ -550,7 +550,7 @@ module YoYInflationCollarFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationCollar_CASH", Description="Create a YoYInflationCollar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCollar_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationCollar",Description = "YoYInflationCollar")>] 
          yoyinflationcollar : obj)
@@ -586,7 +586,7 @@ module YoYInflationCollarFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationCollar_errorEstimate", Description="Create a YoYInflationCollar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCollar_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationCollar",Description = "YoYInflationCollar")>] 
          yoyinflationcollar : obj)
@@ -622,7 +622,7 @@ module YoYInflationCollarFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationCollar_NPV", Description="Create a YoYInflationCollar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCollar_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationCollar",Description = "YoYInflationCollar")>] 
          yoyinflationcollar : obj)
@@ -658,7 +658,7 @@ module YoYInflationCollarFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationCollar_result", Description="Create a YoYInflationCollar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCollar_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationCollar",Description = "YoYInflationCollar")>] 
          yoyinflationcollar : obj)
@@ -700,7 +700,7 @@ module YoYInflationCollarFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationCollar_setPricingEngine", Description="Create a YoYInflationCollar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCollar_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationCollar",Description = "YoYInflationCollar")>] 
          yoyinflationcollar : obj)
@@ -742,7 +742,7 @@ module YoYInflationCollarFunction =
     *)
     [<ExcelFunction(Name="_YoYInflationCollar_valuationDate", Description="Create a YoYInflationCollar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCollar_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="YoYInflationCollar",Description = "YoYInflationCollar")>] 
          yoyinflationcollar : obj)
@@ -775,9 +775,9 @@ module YoYInflationCollarFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_YoYInflationCollar_Range", Description="Create a range of YoYInflationCollar",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let YoYInflationCollar_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

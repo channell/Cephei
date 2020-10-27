@@ -39,7 +39,7 @@ module RendistatoBasketFunction =
     *)
     [<ExcelFunction(Name="_RendistatoBasket_btps", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_btps
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoBasket",Description = "RendistatoBasket")>] 
          rendistatobasket : obj)
@@ -75,7 +75,7 @@ module RendistatoBasketFunction =
     *)
     [<ExcelFunction(Name="_RendistatoBasket_cleanPriceQuotes", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_cleanPriceQuotes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoBasket",Description = "RendistatoBasket")>] 
          rendistatobasket : obj)
@@ -111,7 +111,7 @@ module RendistatoBasketFunction =
     *)
     [<ExcelFunction(Name="_RendistatoBasket_outstanding", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_outstanding
-        ([<ExcelArgument(Name="Mnemonic",Description = "RendistatoBasket")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoBasket",Description = "RendistatoBasket")>] 
          rendistatobasket : obj)
@@ -147,7 +147,7 @@ module RendistatoBasketFunction =
     *)
     [<ExcelFunction(Name="_RendistatoBasket_outstandings", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_outstandings
-        ([<ExcelArgument(Name="Mnemonic",Description = "RendistatoBasket")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoBasket",Description = "RendistatoBasket")>] 
          rendistatobasket : obj)
@@ -183,7 +183,7 @@ module RendistatoBasketFunction =
     *)
     [<ExcelFunction(Name="_RendistatoBasket_registerWith", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "RendistatoBasket")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoBasket",Description = "RendistatoBasket")>] 
          rendistatobasket : obj)
@@ -225,13 +225,13 @@ module RendistatoBasketFunction =
     *)
     [<ExcelFunction(Name="_RendistatoBasket", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "RendistatoBasket")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="btps",Description = "BTP")>] 
+        ([<ExcelArgument(Name="btps",Description = "BTP range")>] 
          btps : obj)
-        ([<ExcelArgument(Name="outstandings",Description = "double")>] 
+        ([<ExcelArgument(Name="outstandings",Description = "double range")>] 
          outstandings : obj)
-        ([<ExcelArgument(Name="cleanPriceQuotes",Description = "Quote")>] 
+        ([<ExcelArgument(Name="cleanPriceQuote ranges",Description = "Quote range")>] 
          cleanPriceQuotes : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -274,7 +274,7 @@ module RendistatoBasketFunction =
     *)
     [<ExcelFunction(Name="_RendistatoBasket_size", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_size
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoBasket",Description = "RendistatoBasket")>] 
          rendistatobasket : obj)
@@ -310,7 +310,7 @@ module RendistatoBasketFunction =
     *)
     [<ExcelFunction(Name="_RendistatoBasket_unregisterWith", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoBasket",Description = "RendistatoBasket")>] 
          rendistatobasket : obj)
@@ -352,7 +352,7 @@ module RendistatoBasketFunction =
     *)
     [<ExcelFunction(Name="_RendistatoBasket_update", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoBasket",Description = "RendistatoBasket")>] 
          rendistatobasket : obj)
@@ -388,7 +388,7 @@ module RendistatoBasketFunction =
     *)
     [<ExcelFunction(Name="_RendistatoBasket_weights", Description="Create a RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_weights
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="RendistatoBasket",Description = "RendistatoBasket")>] 
          rendistatobasket : obj)
@@ -421,9 +421,9 @@ module RendistatoBasketFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_RendistatoBasket_Range", Description="Create a range of RendistatoBasket",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let RendistatoBasket_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

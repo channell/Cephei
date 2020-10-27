@@ -39,7 +39,7 @@ module GeometricAPOPathPricerFunction =
     *)
     [<ExcelFunction(Name="_GeometricAPOPathPricer", Description="Create a GeometricAPOPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricAPOPathPricer_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "GeometricAPOPathPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
@@ -88,7 +88,7 @@ module GeometricAPOPathPricerFunction =
     *)
     [<ExcelFunction(Name="_GeometricAPOPathPricer2", Description="Create a GeometricAPOPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricAPOPathPricer_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "GeometricAPOPathPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
@@ -149,7 +149,7 @@ module GeometricAPOPathPricerFunction =
     *)
     [<ExcelFunction(Name="_GeometricAPOPathPricer1", Description="Create a GeometricAPOPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricAPOPathPricer_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "GeometricAPOPathPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
@@ -204,7 +204,7 @@ module GeometricAPOPathPricerFunction =
     *)
     [<ExcelFunction(Name="_GeometricAPOPathPricer_value", Description="Create a GeometricAPOPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricAPOPathPricer_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="GeometricAPOPathPricer",Description = "GeometricAPOPathPricer")>] 
          geometricapopathpricer : obj)
@@ -243,9 +243,9 @@ module GeometricAPOPathPricerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_GeometricAPOPathPricer_Range", Description="Create a range of GeometricAPOPathPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let GeometricAPOPathPricer_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

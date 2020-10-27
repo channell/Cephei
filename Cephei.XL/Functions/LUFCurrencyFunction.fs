@@ -39,7 +39,7 @@ module LUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_LUFCurrency", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "LUFCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module LUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_LUFCurrency_code", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LUFCurrency",Description = "LUFCurrency")>] 
          lufcurrency : obj)
@@ -106,7 +106,7 @@ module LUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_LUFCurrency_empty", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LUFCurrency",Description = "LUFCurrency")>] 
          lufcurrency : obj)
@@ -142,7 +142,7 @@ module LUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_LUFCurrency_Equals", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LUFCurrency",Description = "LUFCurrency")>] 
          lufcurrency : obj)
@@ -184,7 +184,7 @@ module LUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_LUFCurrency_format", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LUFCurrency",Description = "LUFCurrency")>] 
          lufcurrency : obj)
@@ -220,7 +220,7 @@ module LUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_LUFCurrency_fractionsPerUnit", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LUFCurrency",Description = "LUFCurrency")>] 
          lufcurrency : obj)
@@ -256,7 +256,7 @@ module LUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_LUFCurrency_fractionSymbol", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LUFCurrency",Description = "LUFCurrency")>] 
          lufcurrency : obj)
@@ -292,7 +292,7 @@ module LUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_LUFCurrency_name", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LUFCurrency",Description = "LUFCurrency")>] 
          lufcurrency : obj)
@@ -328,7 +328,7 @@ module LUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_LUFCurrency_numericCode", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LUFCurrency",Description = "LUFCurrency")>] 
          lufcurrency : obj)
@@ -364,7 +364,7 @@ module LUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_LUFCurrency_rounding", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LUFCurrency",Description = "LUFCurrency")>] 
          lufcurrency : obj)
@@ -400,7 +400,7 @@ module LUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_LUFCurrency_symbol", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LUFCurrency",Description = "LUFCurrency")>] 
          lufcurrency : obj)
@@ -436,7 +436,7 @@ module LUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_LUFCurrency_ToString", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LUFCurrency",Description = "LUFCurrency")>] 
          lufcurrency : obj)
@@ -472,7 +472,7 @@ module LUFCurrencyFunction =
     *)
     [<ExcelFunction(Name="_LUFCurrency_triangulationCurrency", Description="Create a LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LUFCurrency",Description = "LUFCurrency")>] 
          lufcurrency : obj)
@@ -505,9 +505,9 @@ module LUFCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LUFCurrency_Range", Description="Create a range of LUFCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LUFCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

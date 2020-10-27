@@ -39,7 +39,7 @@ module BlackCallableFixedRateBondEngineFunction =
     *)
     [<ExcelFunction(Name="_BlackCallableFixedRateBondEngine", Description="Create a BlackCallableFixedRateBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCallableFixedRateBondEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BlackCallableFixedRateBondEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="fwdYieldVol",Description = "Quote")>] 
          fwdYieldVol : obj)
@@ -82,7 +82,7 @@ module BlackCallableFixedRateBondEngineFunction =
     *)
     [<ExcelFunction(Name="_BlackCallableFixedRateBondEngine1", Description="Create a BlackCallableFixedRateBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCallableFixedRateBondEngine_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "BlackCallableFixedRateBondEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="yieldVolStructure",Description = "CallableBondVolatilityStructure")>] 
          yieldVolStructure : obj)
@@ -123,9 +123,9 @@ module BlackCallableFixedRateBondEngineFunction =
 
     [<ExcelFunction(Name="_BlackCallableFixedRateBondEngine_Range", Description="Create a range of BlackCallableFixedRateBondEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackCallableFixedRateBondEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

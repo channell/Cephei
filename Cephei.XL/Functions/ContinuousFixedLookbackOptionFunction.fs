@@ -39,7 +39,7 @@ module ContinuousFixedLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFixedLookbackOption", Description="Create a ContinuousFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFixedLookbackOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ContinuousFixedLookbackOption")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="minmax",Description = "double")>] 
          minmax : obj)
@@ -100,7 +100,7 @@ module ContinuousFixedLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFixedLookbackOption_delta", Description="Create a ContinuousFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFixedLookbackOption_delta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFixedLookbackOption",Description = "ContinuousFixedLookbackOption")>] 
          continuousfixedlookbackoption : obj)
@@ -136,7 +136,7 @@ module ContinuousFixedLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFixedLookbackOption_deltaForward", Description="Create a ContinuousFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFixedLookbackOption_deltaForward
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFixedLookbackOption",Description = "ContinuousFixedLookbackOption")>] 
          continuousfixedlookbackoption : obj)
@@ -172,7 +172,7 @@ module ContinuousFixedLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFixedLookbackOption_dividendRho", Description="Create a ContinuousFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFixedLookbackOption_dividendRho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFixedLookbackOption",Description = "ContinuousFixedLookbackOption")>] 
          continuousfixedlookbackoption : obj)
@@ -208,7 +208,7 @@ module ContinuousFixedLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFixedLookbackOption_elasticity", Description="Create a ContinuousFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFixedLookbackOption_elasticity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFixedLookbackOption",Description = "ContinuousFixedLookbackOption")>] 
          continuousfixedlookbackoption : obj)
@@ -244,7 +244,7 @@ module ContinuousFixedLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFixedLookbackOption_gamma", Description="Create a ContinuousFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFixedLookbackOption_gamma
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFixedLookbackOption",Description = "ContinuousFixedLookbackOption")>] 
          continuousfixedlookbackoption : obj)
@@ -280,7 +280,7 @@ module ContinuousFixedLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFixedLookbackOption_isExpired", Description="Create a ContinuousFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFixedLookbackOption_isExpired
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFixedLookbackOption",Description = "ContinuousFixedLookbackOption")>] 
          continuousfixedlookbackoption : obj)
@@ -316,7 +316,7 @@ module ContinuousFixedLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFixedLookbackOption_itmCashProbability", Description="Create a ContinuousFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFixedLookbackOption_itmCashProbability
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFixedLookbackOption",Description = "ContinuousFixedLookbackOption")>] 
          continuousfixedlookbackoption : obj)
@@ -352,7 +352,7 @@ module ContinuousFixedLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFixedLookbackOption_rho", Description="Create a ContinuousFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFixedLookbackOption_rho
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFixedLookbackOption",Description = "ContinuousFixedLookbackOption")>] 
          continuousfixedlookbackoption : obj)
@@ -388,7 +388,7 @@ module ContinuousFixedLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFixedLookbackOption_strikeSensitivity", Description="Create a ContinuousFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFixedLookbackOption_strikeSensitivity
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFixedLookbackOption",Description = "ContinuousFixedLookbackOption")>] 
          continuousfixedlookbackoption : obj)
@@ -424,7 +424,7 @@ module ContinuousFixedLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFixedLookbackOption_theta", Description="Create a ContinuousFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFixedLookbackOption_theta
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFixedLookbackOption",Description = "ContinuousFixedLookbackOption")>] 
          continuousfixedlookbackoption : obj)
@@ -460,7 +460,7 @@ module ContinuousFixedLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFixedLookbackOption_thetaPerDay", Description="Create a ContinuousFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFixedLookbackOption_thetaPerDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFixedLookbackOption",Description = "ContinuousFixedLookbackOption")>] 
          continuousfixedlookbackoption : obj)
@@ -496,7 +496,7 @@ module ContinuousFixedLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFixedLookbackOption_vega", Description="Create a ContinuousFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFixedLookbackOption_vega
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFixedLookbackOption",Description = "ContinuousFixedLookbackOption")>] 
          continuousfixedlookbackoption : obj)
@@ -532,7 +532,7 @@ module ContinuousFixedLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFixedLookbackOption_exercise", Description="Create a ContinuousFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFixedLookbackOption_exercise
-        ([<ExcelArgument(Name="Mnemonic",Description = "Exercise")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFixedLookbackOption",Description = "ContinuousFixedLookbackOption")>] 
          continuousfixedlookbackoption : obj)
@@ -568,7 +568,7 @@ module ContinuousFixedLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFixedLookbackOption_payoff", Description="Create a ContinuousFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFixedLookbackOption_payoff
-        ([<ExcelArgument(Name="Mnemonic",Description = "Payoff")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFixedLookbackOption",Description = "ContinuousFixedLookbackOption")>] 
          continuousfixedlookbackoption : obj)
@@ -604,7 +604,7 @@ module ContinuousFixedLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFixedLookbackOption_CASH", Description="Create a ContinuousFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFixedLookbackOption_CASH
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFixedLookbackOption",Description = "ContinuousFixedLookbackOption")>] 
          continuousfixedlookbackoption : obj)
@@ -640,7 +640,7 @@ module ContinuousFixedLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFixedLookbackOption_errorEstimate", Description="Create a ContinuousFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFixedLookbackOption_errorEstimate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFixedLookbackOption",Description = "ContinuousFixedLookbackOption")>] 
          continuousfixedlookbackoption : obj)
@@ -676,7 +676,7 @@ module ContinuousFixedLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFixedLookbackOption_NPV", Description="Create a ContinuousFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFixedLookbackOption_NPV
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFixedLookbackOption",Description = "ContinuousFixedLookbackOption")>] 
          continuousfixedlookbackoption : obj)
@@ -712,7 +712,7 @@ module ContinuousFixedLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFixedLookbackOption_result", Description="Create a ContinuousFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFixedLookbackOption_result
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFixedLookbackOption",Description = "ContinuousFixedLookbackOption")>] 
          continuousfixedlookbackoption : obj)
@@ -754,7 +754,7 @@ module ContinuousFixedLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFixedLookbackOption_setPricingEngine", Description="Create a ContinuousFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFixedLookbackOption_setPricingEngine
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFixedLookbackOption",Description = "ContinuousFixedLookbackOption")>] 
          continuousfixedlookbackoption : obj)
@@ -796,7 +796,7 @@ module ContinuousFixedLookbackOptionFunction =
     *)
     [<ExcelFunction(Name="_ContinuousFixedLookbackOption_valuationDate", Description="Create a ContinuousFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFixedLookbackOption_valuationDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ContinuousFixedLookbackOption",Description = "ContinuousFixedLookbackOption")>] 
          continuousfixedlookbackoption : obj)
@@ -829,9 +829,9 @@ module ContinuousFixedLookbackOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ContinuousFixedLookbackOption_Range", Description="Create a range of ContinuousFixedLookbackOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ContinuousFixedLookbackOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

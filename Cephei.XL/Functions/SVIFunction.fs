@@ -39,15 +39,15 @@ module SVIFunction =
     *)
     [<ExcelFunction(Name="_SVI_interpolate", Description="Create a SVI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVI_interpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SVI",Description = "SVI")>] 
          svi : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double range")>] 
          xBegin : obj)
         ([<ExcelArgument(Name="xEnd",Description = "int")>] 
          xEnd : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double range")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -93,7 +93,7 @@ module SVIFunction =
     *)
     [<ExcelFunction(Name="_SVI", Description="Create a SVI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVI_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SVI")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
@@ -119,19 +119,19 @@ module SVIFunction =
          rhoIsFixed : obj)
         ([<ExcelArgument(Name="mIsFixed",Description = "bool")>] 
          mIsFixed : obj)
-        ([<ExcelArgument(Name="vegaWeighted",Description = "SVI")>] 
+        ([<ExcelArgument(Name="vegaWeighted",Description = "bool or empty")>] 
          vegaWeighted : obj)
-        ([<ExcelArgument(Name="endCriteria",Description = "SVI")>] 
+        ([<ExcelArgument(Name="endCriteria",Description = "EndCriteria or empty")>] 
          endCriteria : obj)
-        ([<ExcelArgument(Name="optMethod",Description = "SVI")>] 
+        ([<ExcelArgument(Name="optMethod",Description = "OptimizationMethod or empty")>] 
          optMethod : obj)
-        ([<ExcelArgument(Name="errorAccept",Description = "SVI")>] 
+        ([<ExcelArgument(Name="errorAccept",Description = "double or empty")>] 
          errorAccept : obj)
-        ([<ExcelArgument(Name="useMaxError",Description = "SVI")>] 
+        ([<ExcelArgument(Name="useMaxError",Description = "bool or empty")>] 
          useMaxError : obj)
-        ([<ExcelArgument(Name="maxGuesses",Description = "SVI")>] 
+        ([<ExcelArgument(Name="maxGuesses",Description = "int or empty")>] 
          maxGuesses : obj)
-        ([<ExcelArgument(Name="addParams",Description = "SVI")>] 
+        ([<ExcelArgument(Name="addParams",Description = "double or empty")>] 
          addParams : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -235,9 +235,9 @@ module SVIFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SVI_Range", Description="Create a range of SVI",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SVI_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

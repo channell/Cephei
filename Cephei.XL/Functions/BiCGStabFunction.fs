@@ -39,7 +39,7 @@ module BiCGStabFunction =
     *)
     [<ExcelFunction(Name="_BiCGStab", Description="Create a BiCGStab",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiCGStab_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BiCGStab")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="A",Description = "BiCGStab.MatrixMult")>] 
          A : obj)
@@ -47,7 +47,7 @@ module BiCGStabFunction =
          maxIter : obj)
         ([<ExcelArgument(Name="relTol",Description = "double")>] 
          relTol : obj)
-        ([<ExcelArgument(Name="preConditioner",Description = "BiCGStab")>] 
+        ([<ExcelArgument(Name="preConditioner",Description = "BiCGStab.MatrixMult or empty")>] 
          preConditioner : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -95,7 +95,7 @@ module BiCGStabFunction =
     (*!!
     [<ExcelFunction(Name="_BiCGStab_MatrixMult", Description="Create a BiCGStab",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiCGStab_MatrixMult
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BiCGStab",Description = "BiCGStab")>] 
          bicgstab : obj)
@@ -138,13 +138,13 @@ module BiCGStabFunction =
     *)
     [<ExcelFunction(Name="_BiCGStab_solve", Description="Create a BiCGStab",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiCGStab_solve
-        ([<ExcelArgument(Name="Mnemonic",Description = "BiCGStabResult")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BiCGStab",Description = "BiCGStab")>] 
          bicgstab : obj)
         ([<ExcelArgument(Name="b",Description = "Vector")>] 
          b : obj)
-        ([<ExcelArgument(Name="x0",Description = "BiCGStabResult")>] 
+        ([<ExcelArgument(Name="x0",Description = "Vector or empty")>] 
          x0 : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -183,9 +183,9 @@ module BiCGStabFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BiCGStab_Range", Description="Create a range of BiCGStab",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BiCGStab_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

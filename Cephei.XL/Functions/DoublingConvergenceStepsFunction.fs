@@ -39,7 +39,7 @@ module DoublingConvergenceStepsFunction =
     *)
     [<ExcelFunction(Name="_DoublingConvergenceSteps_initialSamples", Description="Create a DoublingConvergenceSteps",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoublingConvergenceSteps_initialSamples
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DoublingConvergenceSteps",Description = "DoublingConvergenceSteps")>] 
          doublingconvergencesteps : obj)
@@ -75,7 +75,7 @@ module DoublingConvergenceStepsFunction =
     *)
     [<ExcelFunction(Name="_DoublingConvergenceSteps_nextSamples", Description="Create a DoublingConvergenceSteps",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoublingConvergenceSteps_nextSamples
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DoublingConvergenceSteps",Description = "DoublingConvergenceSteps")>] 
          doublingconvergencesteps : obj)
@@ -114,9 +114,9 @@ module DoublingConvergenceStepsFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DoublingConvergenceSteps_Range", Description="Create a range of DoublingConvergenceSteps",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DoublingConvergenceSteps_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

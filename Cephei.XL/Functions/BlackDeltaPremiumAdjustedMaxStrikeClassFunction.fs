@@ -39,7 +39,7 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
     *)
     [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedMaxStrikeClass", Description="Create a BlackDeltaPremiumAdjustedMaxStrikeClass",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaPremiumAdjustedMaxStrikeClass_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "BlackDeltaPremiumAdjustedMaxStrikeClass")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ot",Description = "Option.Type: Put, Call")>] 
          ot : obj)
@@ -106,7 +106,7 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
     *)
     [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedMaxStrikeClass_value", Description="Create a BlackDeltaPremiumAdjustedMaxStrikeClass",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaPremiumAdjustedMaxStrikeClass_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackDeltaPremiumAdjustedMaxStrikeClass",Description = "BlackDeltaPremiumAdjustedMaxStrikeClass")>] 
          blackdeltapremiumadjustedmaxstrikeclass : obj)
@@ -148,7 +148,7 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
     *)
     [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedMaxStrikeClass_derivative", Description="Create a BlackDeltaPremiumAdjustedMaxStrikeClass",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaPremiumAdjustedMaxStrikeClass_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="BlackDeltaPremiumAdjustedMaxStrikeClass",Description = "BlackDeltaPremiumAdjustedMaxStrikeClass")>] 
          blackdeltapremiumadjustedmaxstrikeclass : obj)
@@ -187,9 +187,9 @@ module BlackDeltaPremiumAdjustedMaxStrikeClassFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_BlackDeltaPremiumAdjustedMaxStrikeClass_Range", Description="Create a range of BlackDeltaPremiumAdjustedMaxStrikeClass",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let BlackDeltaPremiumAdjustedMaxStrikeClass_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

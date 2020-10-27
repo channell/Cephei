@@ -40,7 +40,7 @@ module FDStepConditionEngineFunction =
     *)
     [<ExcelFunction(Name="_FDStepConditionEngine_factory", Description="Create a FDStepConditionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDStepConditionEngine_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDVanillaEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDStepConditionEngine",Description = "FDStepConditionEngine")>] 
          fdstepconditionengine : obj)
@@ -100,7 +100,7 @@ module FDStepConditionEngineFunction =
     *)
     [<ExcelFunction(Name="_FDStepConditionEngine", Description="Create a FDStepConditionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDStepConditionEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDStepConditionEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -155,7 +155,7 @@ module FDStepConditionEngineFunction =
     *)
     [<ExcelFunction(Name="_FDStepConditionEngine1", Description="Create a FDStepConditionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDStepConditionEngine_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FDStepConditionEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -186,7 +186,7 @@ module FDStepConditionEngineFunction =
     *)
     [<ExcelFunction(Name="_FDStepConditionEngine_setStepCondition", Description="Create a FDStepConditionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDStepConditionEngine_setStepCondition
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDStepConditionEngine",Description = "FDStepConditionEngine")>] 
          fdstepconditionengine : obj)
@@ -228,7 +228,7 @@ module FDStepConditionEngineFunction =
     *)
     [<ExcelFunction(Name="_FDStepConditionEngine_ensureStrikeInGrid", Description="Create a FDStepConditionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDStepConditionEngine_ensureStrikeInGrid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDStepConditionEngine",Description = "FDStepConditionEngine")>] 
          fdstepconditionengine : obj)
@@ -264,7 +264,7 @@ module FDStepConditionEngineFunction =
     *)
     [<ExcelFunction(Name="_FDStepConditionEngine_getResidualTime", Description="Create a FDStepConditionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDStepConditionEngine_getResidualTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDStepConditionEngine",Description = "FDStepConditionEngine")>] 
          fdstepconditionengine : obj)
@@ -300,7 +300,7 @@ module FDStepConditionEngineFunction =
     *)
     [<ExcelFunction(Name="_FDStepConditionEngine_grid", Description="Create a FDStepConditionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDStepConditionEngine_grid
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDStepConditionEngine",Description = "FDStepConditionEngine")>] 
          fdstepconditionengine : obj)
@@ -336,7 +336,7 @@ module FDStepConditionEngineFunction =
     *)
     [<ExcelFunction(Name="_FDStepConditionEngine_intrinsicValues_", Description="Create a FDStepConditionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDStepConditionEngine_intrinsicValues_
-        ([<ExcelArgument(Name="Mnemonic",Description = "SampledCurve")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FDStepConditionEngine",Description = "FDStepConditionEngine")>] 
          fdstepconditionengine : obj)
@@ -369,9 +369,9 @@ module FDStepConditionEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FDStepConditionEngine_Range", Description="Create a range of FDStepConditionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FDStepConditionEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

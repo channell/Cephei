@@ -39,7 +39,7 @@ module InverseCumulativeRngFunction =
     *)
     [<ExcelFunction(Name="_InverseCumulativeRng", Description="Create a InverseCumulativeRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeRng_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "InverseCumulativeRng")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="uniformGenerator",Description = "'RNG")>] 
          uniformGenerator : obj)
@@ -76,7 +76,7 @@ module InverseCumulativeRngFunction =
     *)
     [<ExcelFunction(Name="_InverseCumulativeRng_next", Description="Create a InverseCumulativeRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeRng_next
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="InverseCumulativeRng",Description = "InverseCumulativeRng")>] 
          inversecumulativerng : obj)
@@ -109,9 +109,9 @@ module InverseCumulativeRngFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_InverseCumulativeRng_Range", Description="Create a range of InverseCumulativeRng",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let InverseCumulativeRng_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

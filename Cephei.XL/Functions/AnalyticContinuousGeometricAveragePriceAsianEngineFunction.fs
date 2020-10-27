@@ -39,7 +39,7 @@ module AnalyticContinuousGeometricAveragePriceAsianEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticContinuousGeometricAveragePriceAsianEngine", Description="Create a AnalyticContinuousGeometricAveragePriceAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticContinuousGeometricAveragePriceAsianEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AnalyticContinuousGeometricAveragePriceAsianEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
@@ -74,9 +74,9 @@ module AnalyticContinuousGeometricAveragePriceAsianEngineFunction =
 
     [<ExcelFunction(Name="_AnalyticContinuousGeometricAveragePriceAsianEngine_Range", Description="Create a range of AnalyticContinuousGeometricAveragePriceAsianEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticContinuousGeometricAveragePriceAsianEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

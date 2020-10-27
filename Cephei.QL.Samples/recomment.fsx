@@ -14,13 +14,22 @@ let rec allFiles directory pattern =
 
         let edit (s : string) = 
 
-            if s.Contains(" = Helper.") then
-                let arr = s.Split(' ','<','>')|> Array.filter (fun i -> not (i = "")) |> Array.rev
+            if s.Contains(" = Helper.to") then
+                let words = 
+                    s.Split(' ')
+                    |> Array.filter (fun i -> i.Contains("\"") || i.Contains("<"))
+                let typename = 
+                    words.[0].Split('<','>')
+                    |> Array.filter (fun i -> not (i = ""))
+                    |> Array.rev
+                    |> Array.head
                 if s.Contains("toDefault") then 
-                    replist <- [(arr.[0], (arr.[2] + " or empty"))] @ replist
+                    replist <- [(words.[1], (typename + " or empty"))] @ replist
+                elif s.Contains("List<") then
+                    replist <- [(words.[1], (typename + " range"))] @ replist
                 else
-                    Console.WriteLine ("Adding mapping of {0} with {1}\n", arr.[0],  arr.[2])
-                    replist <- [(arr.[0], arr.[2])] @ replist
+                    replist <- [(words.[1], typename)] @ replist
+                Console.WriteLine ("Mapping {0} to {1}\n", words.[1], typename)
 
             if s.Contains("[<ExcelArgument") then
                 let rep =

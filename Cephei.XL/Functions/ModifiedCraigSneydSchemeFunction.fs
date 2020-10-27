@@ -39,7 +39,7 @@ module ModifiedCraigSneydSchemeFunction =
     *)
     [<ExcelFunction(Name="_ModifiedCraigSneydScheme_factory", Description="Create a ModifiedCraigSneydScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ModifiedCraigSneydScheme_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "IMixedScheme")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ModifiedCraigSneydScheme",Description = "ModifiedCraigSneydScheme")>] 
          modifiedcraigsneydscheme : obj)
@@ -93,15 +93,15 @@ module ModifiedCraigSneydSchemeFunction =
     *)
     [<ExcelFunction(Name="_ModifiedCraigSneydScheme1", Description="Create a ModifiedCraigSneydScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ModifiedCraigSneydScheme_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "ModifiedCraigSneydScheme")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="theta",Description = "ModifiedCraigSneydScheme")>] 
+        ([<ExcelArgument(Name="theta",Description = "double or empty")>] 
          theta : obj)
         ([<ExcelArgument(Name="mu",Description = "double")>] 
          mu : obj)
         ([<ExcelArgument(Name="map",Description = "FdmLinearOpComposite")>] 
          map : obj)
-        ([<ExcelArgument(Name="bcSet",Description = "ModifiedCraigSneydScheme")>] 
+        ([<ExcelArgument(Name="bcSet",Description = "FdmLinearOp or empty")>] 
          bcSet : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,7 +148,7 @@ module ModifiedCraigSneydSchemeFunction =
     *)
     [<ExcelFunction(Name="_ModifiedCraigSneydScheme", Description="Create a ModifiedCraigSneydScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ModifiedCraigSneydScheme_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ModifiedCraigSneydScheme")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -179,7 +179,7 @@ module ModifiedCraigSneydSchemeFunction =
     *)
     [<ExcelFunction(Name="_ModifiedCraigSneydScheme_setStep", Description="Create a ModifiedCraigSneydScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ModifiedCraigSneydScheme_setStep
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ModifiedCraigSneydScheme",Description = "ModifiedCraigSneydScheme")>] 
          modifiedcraigsneydscheme : obj)
@@ -221,7 +221,7 @@ module ModifiedCraigSneydSchemeFunction =
     *)
     [<ExcelFunction(Name="_ModifiedCraigSneydScheme_step", Description="Create a ModifiedCraigSneydScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ModifiedCraigSneydScheme_step
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ModifiedCraigSneydScheme",Description = "ModifiedCraigSneydScheme")>] 
          modifiedcraigsneydscheme : obj)
@@ -229,7 +229,7 @@ module ModifiedCraigSneydSchemeFunction =
          a : obj)
         ([<ExcelArgument(Name="t",Description = "double")>] 
          t : obj)
-        ([<ExcelArgument(Name="theta",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="theta",Description = "double or empty")>] 
          theta : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -272,9 +272,9 @@ module ModifiedCraigSneydSchemeFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ModifiedCraigSneydScheme_Range", Description="Create a range of ModifiedCraigSneydScheme",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ModifiedCraigSneydScheme_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

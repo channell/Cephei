@@ -39,7 +39,7 @@ module SimulatedAnnealingFunction =
     *)
     [<ExcelFunction(Name="_SimulatedAnnealing_minimize", Description="Create a SimulatedAnnealing",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimulatedAnnealing_minimize
-        ([<ExcelArgument(Name="Mnemonic",Description = "SimulatedAnnealing")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimulatedAnnealing",Description = "SimulatedAnnealing")>] 
          simulatedannealing : obj)
@@ -87,7 +87,7 @@ module SimulatedAnnealingFunction =
     *)
     [<ExcelFunction(Name="_SimulatedAnnealing", Description="Create a SimulatedAnnealing",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimulatedAnnealing_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SimulatedAnnealing")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="lambda",Description = "double")>] 
          lambda : obj)
@@ -97,7 +97,7 @@ module SimulatedAnnealingFunction =
          K : obj)
         ([<ExcelArgument(Name="alpha",Description = "double")>] 
          alpha : obj)
-        ([<ExcelArgument(Name="rng",Description = "SimulatedAnnealing")>] 
+        ([<ExcelArgument(Name="rng",Description = "'RNG or empty")>] 
          rng : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -148,7 +148,7 @@ module SimulatedAnnealingFunction =
     *)
     [<ExcelFunction(Name="_SimulatedAnnealing1", Description="Create a SimulatedAnnealing",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimulatedAnnealing_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "SimulatedAnnealing")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="lambda",Description = "double")>] 
          lambda : obj)
@@ -158,7 +158,7 @@ module SimulatedAnnealingFunction =
          epsilon : obj)
         ([<ExcelArgument(Name="m",Description = "int")>] 
          m : obj)
-        ([<ExcelArgument(Name="rng",Description = "SimulatedAnnealing")>] 
+        ([<ExcelArgument(Name="rng",Description = "'RNG or empty")>] 
          rng : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -206,9 +206,9 @@ module SimulatedAnnealingFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SimulatedAnnealing_Range", Description="Create a range of SimulatedAnnealing",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimulatedAnnealing_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

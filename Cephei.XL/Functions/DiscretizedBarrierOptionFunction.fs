@@ -39,7 +39,7 @@ module DiscretizedBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedBarrierOption_checkBarrier", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_checkBarrier
-        ([<ExcelArgument(Name="Mnemonic",Description = "DiscretizedBarrierOption")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedBarrierOption",Description = "DiscretizedBarrierOption")>] 
          discretizedbarrieroption : obj)
@@ -87,13 +87,13 @@ module DiscretizedBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedBarrierOption", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "DiscretizedBarrierOption")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="args",Description = "BarrierOption.Arguments")>] 
          args : obj)
         ([<ExcelArgument(Name="Process",Description = "StochasticProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="grid",Description = "DiscretizedBarrierOption")>] 
+        ([<ExcelArgument(Name="grid",Description = "TimeGrid or empty")>] 
          grid : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -136,7 +136,7 @@ module DiscretizedBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedBarrierOption_mandatoryTimes", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_mandatoryTimes
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedBarrierOption",Description = "DiscretizedBarrierOption")>] 
          discretizedbarrieroption : obj)
@@ -172,7 +172,7 @@ module DiscretizedBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedBarrierOption_reset", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedBarrierOption",Description = "DiscretizedBarrierOption")>] 
          discretizedbarrieroption : obj)
@@ -214,7 +214,7 @@ module DiscretizedBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedBarrierOption_vanilla", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_vanilla
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedBarrierOption",Description = "DiscretizedBarrierOption")>] 
          discretizedbarrieroption : obj)
@@ -250,7 +250,7 @@ module DiscretizedBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedBarrierOption_adjustValues", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_adjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedBarrierOption",Description = "DiscretizedBarrierOption")>] 
          discretizedbarrieroption : obj)
@@ -286,7 +286,7 @@ module DiscretizedBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedBarrierOption_initialize", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_initialize
-        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedBarrierOption",Description = "DiscretizedBarrierOption")>] 
          discretizedbarrieroption : obj)
@@ -334,7 +334,7 @@ module DiscretizedBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedBarrierOption_method", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_method
-        ([<ExcelArgument(Name="Mnemonic",Description = "Lattice")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedBarrierOption",Description = "DiscretizedBarrierOption")>] 
          discretizedbarrieroption : obj)
@@ -370,7 +370,7 @@ module DiscretizedBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedBarrierOption_partialRollback", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_partialRollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedBarrierOption",Description = "DiscretizedBarrierOption")>] 
          discretizedbarrieroption : obj)
@@ -412,7 +412,7 @@ module DiscretizedBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedBarrierOption_postAdjustValues", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_postAdjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedBarrierOption",Description = "DiscretizedBarrierOption")>] 
          discretizedbarrieroption : obj)
@@ -448,7 +448,7 @@ module DiscretizedBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedBarrierOption_preAdjustValues", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_preAdjustValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedBarrierOption",Description = "DiscretizedBarrierOption")>] 
          discretizedbarrieroption : obj)
@@ -484,7 +484,7 @@ module DiscretizedBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedBarrierOption_presentValue", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_presentValue
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedBarrierOption",Description = "DiscretizedBarrierOption")>] 
          discretizedbarrieroption : obj)
@@ -520,7 +520,7 @@ module DiscretizedBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedBarrierOption_rollback", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_rollback
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedBarrierOption",Description = "DiscretizedBarrierOption")>] 
          discretizedbarrieroption : obj)
@@ -562,7 +562,7 @@ module DiscretizedBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedBarrierOption_setTime", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_setTime
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedBarrierOption",Description = "DiscretizedBarrierOption")>] 
          discretizedbarrieroption : obj)
@@ -604,7 +604,7 @@ module DiscretizedBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedBarrierOption_setValues", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_setValues
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedBarrierOption",Description = "DiscretizedBarrierOption")>] 
          discretizedbarrieroption : obj)
@@ -646,7 +646,7 @@ module DiscretizedBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedBarrierOption_time", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_time
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedBarrierOption",Description = "DiscretizedBarrierOption")>] 
          discretizedbarrieroption : obj)
@@ -682,7 +682,7 @@ module DiscretizedBarrierOptionFunction =
     *)
     [<ExcelFunction(Name="_DiscretizedBarrierOption_values", Description="Create a DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_values
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DiscretizedBarrierOption",Description = "DiscretizedBarrierOption")>] 
          discretizedbarrieroption : obj)
@@ -715,9 +715,9 @@ module DiscretizedBarrierOptionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DiscretizedBarrierOption_Range", Description="Create a range of DiscretizedBarrierOption",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DiscretizedBarrierOption_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

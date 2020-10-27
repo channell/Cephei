@@ -39,7 +39,7 @@ module CompositeConstraintFunction =
     *)
     [<ExcelFunction(Name="_CompositeConstraint", Description="Create a CompositeConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeConstraint_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "CompositeConstraint")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="c1",Description = "Constraint")>] 
          c1 : obj)
@@ -82,7 +82,7 @@ module CompositeConstraintFunction =
     *)
     [<ExcelFunction(Name="_CompositeConstraint_empty", Description="Create a CompositeConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeConstraint_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CompositeConstraint",Description = "CompositeConstraint")>] 
          compositeconstraint : obj)
@@ -118,7 +118,7 @@ module CompositeConstraintFunction =
     *)
     [<ExcelFunction(Name="_CompositeConstraint_lowerBound", Description="Create a CompositeConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeConstraint_lowerBound
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CompositeConstraint",Description = "CompositeConstraint")>] 
          compositeconstraint : obj)
@@ -160,7 +160,7 @@ module CompositeConstraintFunction =
     *)
     [<ExcelFunction(Name="_CompositeConstraint_test", Description="Create a CompositeConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeConstraint_test
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CompositeConstraint",Description = "CompositeConstraint")>] 
          compositeconstraint : obj)
@@ -202,7 +202,7 @@ module CompositeConstraintFunction =
     *)
     [<ExcelFunction(Name="_CompositeConstraint_update", Description="Create a CompositeConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeConstraint_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CompositeConstraint",Description = "CompositeConstraint")>] 
          compositeconstraint : obj)
@@ -256,7 +256,7 @@ module CompositeConstraintFunction =
     *)
     [<ExcelFunction(Name="_CompositeConstraint_upperBound", Description="Create a CompositeConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeConstraint_upperBound
-        ([<ExcelArgument(Name="Mnemonic",Description = "Vector")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="CompositeConstraint",Description = "CompositeConstraint")>] 
          compositeconstraint : obj)
@@ -295,9 +295,9 @@ module CompositeConstraintFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_CompositeConstraint_Range", Description="Create a range of CompositeConstraint",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let CompositeConstraint_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

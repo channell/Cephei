@@ -54,7 +54,7 @@ module FinlandFunction =
     *)
     [<ExcelFunction(Name="_Finland", Description="Create a Finland",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Finland_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Finland")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -85,7 +85,7 @@ module FinlandFunction =
     *)
     [<ExcelFunction(Name="_Finland_addedHolidays", Description="Create a Finland",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Finland_addedHolidays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Finland",Description = "Finland")>] 
          finland : obj)
@@ -121,7 +121,7 @@ module FinlandFunction =
     *)
     [<ExcelFunction(Name="_Finland_addHoliday", Description="Create a Finland",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Finland_addHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Finland",Description = "Finland")>] 
          finland : obj)
@@ -163,7 +163,7 @@ module FinlandFunction =
     *)
     [<ExcelFunction(Name="_Finland_adjust", Description="Create a Finland",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Finland_adjust
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Finland",Description = "Finland")>] 
          finland : obj)
@@ -211,7 +211,7 @@ module FinlandFunction =
     *)
     [<ExcelFunction(Name="_Finland_advance1", Description="Create a Finland",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Finland_advance1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Finland",Description = "Finland")>] 
          finland : obj)
@@ -277,7 +277,7 @@ module FinlandFunction =
     *)
     [<ExcelFunction(Name="_Finland_advance", Description="Create a Finland",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Finland_advance
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Finland",Description = "Finland")>] 
          finland : obj)
@@ -337,7 +337,7 @@ module FinlandFunction =
     *)
     [<ExcelFunction(Name="_Finland_businessDaysBetween", Description="Create a Finland",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Finland_businessDaysBetween
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Finland",Description = "Finland")>] 
          finland : obj)
@@ -397,7 +397,7 @@ module FinlandFunction =
     *)
     [<ExcelFunction(Name="_Finland_calendar", Description="Create a Finland",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Finland_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Finland",Description = "Finland")>] 
          finland : obj)
@@ -433,7 +433,7 @@ module FinlandFunction =
     *)
     [<ExcelFunction(Name="_Finland_empty", Description="Create a Finland",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Finland_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Finland",Description = "Finland")>] 
          finland : obj)
@@ -469,7 +469,7 @@ module FinlandFunction =
     *)
     [<ExcelFunction(Name="_Finland_endOfMonth", Description="Create a Finland",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Finland_endOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Finland",Description = "Finland")>] 
          finland : obj)
@@ -511,7 +511,7 @@ module FinlandFunction =
     *)
     [<ExcelFunction(Name="_Finland_Equals", Description="Create a Finland",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Finland_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Finland",Description = "Finland")>] 
          finland : obj)
@@ -553,7 +553,7 @@ module FinlandFunction =
     *)
     [<ExcelFunction(Name="_Finland_isBusinessDay", Description="Create a Finland",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Finland_isBusinessDay
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Finland",Description = "Finland")>] 
          finland : obj)
@@ -595,7 +595,7 @@ module FinlandFunction =
     *)
     [<ExcelFunction(Name="_Finland_isEndOfMonth", Description="Create a Finland",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Finland_isEndOfMonth
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Finland",Description = "Finland")>] 
          finland : obj)
@@ -637,7 +637,7 @@ module FinlandFunction =
     *)
     [<ExcelFunction(Name="_Finland_isHoliday", Description="Create a Finland",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Finland_isHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Finland",Description = "Finland")>] 
          finland : obj)
@@ -679,7 +679,7 @@ module FinlandFunction =
     *)
     [<ExcelFunction(Name="_Finland_isWeekend", Description="Create a Finland",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Finland_isWeekend
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Finland",Description = "Finland")>] 
          finland : obj)
@@ -723,7 +723,7 @@ module FinlandFunction =
     *)
     [<ExcelFunction(Name="_Finland_name", Description="Create a Finland",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Finland_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Finland",Description = "Finland")>] 
          finland : obj)
@@ -759,7 +759,7 @@ module FinlandFunction =
     *)
     [<ExcelFunction(Name="_Finland_removedHolidays", Description="Create a Finland",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Finland_removedHolidays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Finland",Description = "Finland")>] 
          finland : obj)
@@ -795,7 +795,7 @@ module FinlandFunction =
     *)
     [<ExcelFunction(Name="_Finland_removeHoliday", Description="Create a Finland",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Finland_removeHoliday
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Finland",Description = "Finland")>] 
          finland : obj)
@@ -834,9 +834,9 @@ module FinlandFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Finland_Range", Description="Create a range of Finland",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Finland_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,7 +39,7 @@ module NotionalPathFunction =
     *)
     [<ExcelFunction(Name="_NotionalPath_addReduction", Description="Create a NotionalPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotionalPath_addReduction
-        ([<ExcelArgument(Name="Mnemonic",Description = "NotionalPath")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NotionalPath",Description = "NotionalPath")>] 
          notionalpath : obj)
@@ -87,7 +87,7 @@ module NotionalPathFunction =
     *)
     [<ExcelFunction(Name="_NotionalPath_loss", Description="Create a NotionalPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotionalPath_loss
-        ([<ExcelArgument(Name="Mnemonic",Description = "NotionalPath")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NotionalPath",Description = "NotionalPath")>] 
          notionalpath : obj)
@@ -123,7 +123,7 @@ module NotionalPathFunction =
     *)
     [<ExcelFunction(Name="_NotionalPath", Description="Create a NotionalPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotionalPath_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "NotionalPath")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -154,7 +154,7 @@ module NotionalPathFunction =
     *)
     [<ExcelFunction(Name="_NotionalPath_notionalRate", Description="Create a NotionalPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotionalPath_notionalRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NotionalPath",Description = "NotionalPath")>] 
          notionalpath : obj)
@@ -196,7 +196,7 @@ module NotionalPathFunction =
     *)
     [<ExcelFunction(Name="_NotionalPath_reset", Description="Create a NotionalPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotionalPath_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NotionalPath",Description = "NotionalPath")>] 
          notionalpath : obj)
@@ -229,9 +229,9 @@ module NotionalPathFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NotionalPath_Range", Description="Create a range of NotionalPath",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NotionalPath_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

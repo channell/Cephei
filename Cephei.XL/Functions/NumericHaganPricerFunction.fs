@@ -39,7 +39,7 @@ module NumericHaganPricerFunction =
     *)
     [<ExcelFunction(Name="_NumericHaganPricer_integrate", Description="Create a NumericHaganPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericHaganPricer_integrate
-        ([<ExcelArgument(Name="Mnemonic",Description = "NumericHaganPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NumericHaganPricer",Description = "NumericHaganPricer")>] 
          numerichaganpricer : obj)
@@ -94,7 +94,7 @@ module NumericHaganPricerFunction =
     *)
     [<ExcelFunction(Name="_NumericHaganPricer", Description="Create a NumericHaganPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericHaganPricer_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "NumericHaganPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="swaptionVol",Description = "SwaptionVolatilityStructure")>] 
          swaptionVol : obj)
@@ -102,13 +102,13 @@ module NumericHaganPricerFunction =
          modelOfYieldCurve : obj)
         ([<ExcelArgument(Name="meanReversion",Description = "Quote")>] 
          meanReversion : obj)
-        ([<ExcelArgument(Name="lowerLimit",Description = "NumericHaganPricer")>] 
+        ([<ExcelArgument(Name="lowerLimit",Description = "double or empty")>] 
          lowerLimit : obj)
-        ([<ExcelArgument(Name="upperLimit",Description = "NumericHaganPricer")>] 
+        ([<ExcelArgument(Name="upperLimit",Description = "double or empty")>] 
          upperLimit : obj)
-        ([<ExcelArgument(Name="precision",Description = "NumericHaganPricer")>] 
+        ([<ExcelArgument(Name="precision",Description = "double or empty")>] 
          precision : obj)
-        ([<ExcelArgument(Name="hardUpperLimit",Description = "NumericHaganPricer")>] 
+        ([<ExcelArgument(Name="hardUpperLimit",Description = "double or empty")>] 
          hardUpperLimit : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -167,7 +167,7 @@ module NumericHaganPricerFunction =
     *)
     [<ExcelFunction(Name="_NumericHaganPricer_refineIntegration", Description="Create a NumericHaganPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericHaganPricer_refineIntegration
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionVolatilityStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NumericHaganPricer",Description = "NumericHaganPricer")>] 
          numerichaganpricer : obj)
@@ -215,7 +215,7 @@ module NumericHaganPricerFunction =
     *)
     [<ExcelFunction(Name="_NumericHaganPricer_resetUpperLimit", Description="Create a NumericHaganPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericHaganPricer_resetUpperLimit
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionVolatilityStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NumericHaganPricer",Description = "NumericHaganPricer")>] 
          numerichaganpricer : obj)
@@ -257,7 +257,7 @@ module NumericHaganPricerFunction =
     *)
     [<ExcelFunction(Name="_NumericHaganPricer_stdDeviations", Description="Create a NumericHaganPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericHaganPricer_stdDeviations
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionVolatilityStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NumericHaganPricer",Description = "NumericHaganPricer")>] 
          numerichaganpricer : obj)
@@ -293,7 +293,7 @@ module NumericHaganPricerFunction =
     *)
     [<ExcelFunction(Name="_NumericHaganPricer_swapletPrice", Description="Create a NumericHaganPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericHaganPricer_swapletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionVolatilityStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NumericHaganPricer",Description = "NumericHaganPricer")>] 
          numerichaganpricer : obj)
@@ -329,7 +329,7 @@ module NumericHaganPricerFunction =
     *)
     [<ExcelFunction(Name="_NumericHaganPricer_upperLimit", Description="Create a NumericHaganPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericHaganPricer_upperLimit
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionVolatilityStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NumericHaganPricer",Description = "NumericHaganPricer")>] 
          numerichaganpricer : obj)
@@ -365,7 +365,7 @@ module NumericHaganPricerFunction =
     *)
     [<ExcelFunction(Name="_NumericHaganPricer_capletPrice", Description="Create a NumericHaganPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericHaganPricer_capletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionVolatilityStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NumericHaganPricer",Description = "NumericHaganPricer")>] 
          numerichaganpricer : obj)
@@ -407,7 +407,7 @@ module NumericHaganPricerFunction =
     *)
     [<ExcelFunction(Name="_NumericHaganPricer_capletRate", Description="Create a NumericHaganPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericHaganPricer_capletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionVolatilityStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NumericHaganPricer",Description = "NumericHaganPricer")>] 
          numerichaganpricer : obj)
@@ -449,7 +449,7 @@ module NumericHaganPricerFunction =
     *)
     [<ExcelFunction(Name="_NumericHaganPricer_floorletPrice", Description="Create a NumericHaganPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericHaganPricer_floorletPrice
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionVolatilityStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NumericHaganPricer",Description = "NumericHaganPricer")>] 
          numerichaganpricer : obj)
@@ -491,7 +491,7 @@ module NumericHaganPricerFunction =
     *)
     [<ExcelFunction(Name="_NumericHaganPricer_floorletRate", Description="Create a NumericHaganPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericHaganPricer_floorletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionVolatilityStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NumericHaganPricer",Description = "NumericHaganPricer")>] 
          numerichaganpricer : obj)
@@ -533,7 +533,7 @@ module NumericHaganPricerFunction =
     *)
     [<ExcelFunction(Name="_NumericHaganPricer_initialize", Description="Create a NumericHaganPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericHaganPricer_initialize
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionVolatilityStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NumericHaganPricer",Description = "NumericHaganPricer")>] 
          numerichaganpricer : obj)
@@ -575,7 +575,7 @@ module NumericHaganPricerFunction =
     *)
     [<ExcelFunction(Name="_NumericHaganPricer_meanReversion", Description="Create a NumericHaganPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericHaganPricer_meanReversion
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionVolatilityStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NumericHaganPricer",Description = "NumericHaganPricer")>] 
          numerichaganpricer : obj)
@@ -611,7 +611,7 @@ module NumericHaganPricerFunction =
     *)
     [<ExcelFunction(Name="_NumericHaganPricer_setMeanReversion", Description="Create a NumericHaganPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericHaganPricer_setMeanReversion
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionVolatilityStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NumericHaganPricer",Description = "NumericHaganPricer")>] 
          numerichaganpricer : obj)
@@ -653,7 +653,7 @@ module NumericHaganPricerFunction =
     *)
     [<ExcelFunction(Name="_NumericHaganPricer_swapletRate", Description="Create a NumericHaganPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericHaganPricer_swapletRate
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionVolatilityStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NumericHaganPricer",Description = "NumericHaganPricer")>] 
          numerichaganpricer : obj)
@@ -689,7 +689,7 @@ module NumericHaganPricerFunction =
     *)
     [<ExcelFunction(Name="_NumericHaganPricer_setSwaptionVolatility", Description="Create a NumericHaganPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericHaganPricer_setSwaptionVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionVolatilityStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NumericHaganPricer",Description = "NumericHaganPricer")>] 
          numerichaganpricer : obj)
@@ -731,7 +731,7 @@ module NumericHaganPricerFunction =
     *)
     [<ExcelFunction(Name="_NumericHaganPricer_swaptionVolatility", Description="Create a NumericHaganPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericHaganPricer_swaptionVolatility
-        ([<ExcelArgument(Name="Mnemonic",Description = "SwaptionVolatilityStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NumericHaganPricer",Description = "NumericHaganPricer")>] 
          numerichaganpricer : obj)
@@ -767,7 +767,7 @@ module NumericHaganPricerFunction =
     *)
     [<ExcelFunction(Name="_NumericHaganPricer_registerWith", Description="Create a NumericHaganPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericHaganPricer_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NumericHaganPricer",Description = "NumericHaganPricer")>] 
          numerichaganpricer : obj)
@@ -809,7 +809,7 @@ module NumericHaganPricerFunction =
     *)
     [<ExcelFunction(Name="_NumericHaganPricer_unregisterWith", Description="Create a NumericHaganPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericHaganPricer_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NumericHaganPricer",Description = "NumericHaganPricer")>] 
          numerichaganpricer : obj)
@@ -851,7 +851,7 @@ module NumericHaganPricerFunction =
     *)
     [<ExcelFunction(Name="_NumericHaganPricer_update", Description="Create a NumericHaganPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericHaganPricer_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="NumericHaganPricer",Description = "NumericHaganPricer")>] 
          numerichaganpricer : obj)
@@ -884,9 +884,9 @@ module NumericHaganPricerFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_NumericHaganPricer_Range", Description="Create a range of NumericHaganPricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let NumericHaganPricer_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

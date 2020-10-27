@@ -40,7 +40,7 @@ module LfmSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_LfmSwaptionEngine", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmSwaptionEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "LfmSwaptionEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="model",Description = "LiborForwardModel")>] 
          model : obj)
@@ -84,7 +84,7 @@ module LfmSwaptionEngineFunction =
     (*!!
     [<ExcelFunction(Name="_LfmSwaptionEngine_setModel", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmSwaptionEngine_setModel
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LfmSwaptionEngine",Description = "LfmSwaptionEngine")>] 
          lfmswaptionengine : obj)
@@ -126,7 +126,7 @@ module LfmSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_LfmSwaptionEngine_registerWith", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmSwaptionEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LfmSwaptionEngine",Description = "LfmSwaptionEngine")>] 
          lfmswaptionengine : obj)
@@ -168,7 +168,7 @@ module LfmSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_LfmSwaptionEngine_reset", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmSwaptionEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LfmSwaptionEngine",Description = "LfmSwaptionEngine")>] 
          lfmswaptionengine : obj)
@@ -204,7 +204,7 @@ module LfmSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_LfmSwaptionEngine_unregisterWith", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmSwaptionEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LfmSwaptionEngine",Description = "LfmSwaptionEngine")>] 
          lfmswaptionengine : obj)
@@ -246,7 +246,7 @@ module LfmSwaptionEngineFunction =
     *)
     [<ExcelFunction(Name="_LfmSwaptionEngine_update", Description="Create a LfmSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmSwaptionEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LfmSwaptionEngine",Description = "LfmSwaptionEngine")>] 
          lfmswaptionengine : obj)
@@ -279,9 +279,9 @@ module LfmSwaptionEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LfmSwaptionEngine_Range", Description="Create a range of LfmSwaptionEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LfmSwaptionEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,7 +39,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_dt", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_dt
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -75,7 +75,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_fixingDates", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_fixingDates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -111,7 +111,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_indexFixings", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_indexFixings
-        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightIndexedCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -147,7 +147,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "OvernightIndexedCoupon")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="paymentDate",Description = "Date")>] 
          paymentDate : obj)
@@ -159,15 +159,15 @@ module OvernightIndexedCouponFunction =
          endDate : obj)
         ([<ExcelArgument(Name="overnightIndex",Description = "OvernightIndex")>] 
          overnightIndex : obj)
-        ([<ExcelArgument(Name="gearing",Description = "OvernightIndexedCoupon")>] 
+        ([<ExcelArgument(Name="gearing",Description = "double or empty")>] 
          gearing : obj)
-        ([<ExcelArgument(Name="spread",Description = "OvernightIndexedCoupon")>] 
+        ([<ExcelArgument(Name="spread",Description = "double or empty")>] 
          spread : obj)
-        ([<ExcelArgument(Name="refPeriodStart",Description = "OvernightIndexedCoupon")>] 
+        ([<ExcelArgument(Name="refPeriodStart",Description = "Date or empty")>] 
          refPeriodStart : obj)
-        ([<ExcelArgument(Name="refPeriodEnd",Description = "OvernightIndexedCoupon")>] 
+        ([<ExcelArgument(Name="refPeriodEnd",Description = "Date or empty")>] 
          refPeriodEnd : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "OvernightIndexedCoupon")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter or empty")>] 
          dayCounter : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -238,7 +238,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_valueDates", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_valueDates
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -274,7 +274,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_accruedAmount", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_accruedAmount
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -316,7 +316,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_adjustedFixing", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_adjustedFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -352,7 +352,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_amount", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_amount
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -388,7 +388,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_convexityAdjustment", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_convexityAdjustment
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -424,7 +424,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_dayCounter", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -460,7 +460,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_factory", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_factory
-        ([<ExcelArgument(Name="Mnemonic",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -476,15 +476,15 @@ module OvernightIndexedCouponFunction =
          fixingDays : obj)
         ([<ExcelArgument(Name="index",Description = "InterestRateIndex")>] 
          index : obj)
-        ([<ExcelArgument(Name="gearing",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="gearing",Description = "double or empty")>] 
          gearing : obj)
-        ([<ExcelArgument(Name="spread",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="spread",Description = "double or empty")>] 
          spread : obj)
-        ([<ExcelArgument(Name="refPeriodStart",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="refPeriodStart",Description = "Date or empty")>] 
          refPeriodStart : obj)
-        ([<ExcelArgument(Name="refPeriodEnd",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="refPeriodEnd",Description = "Date or empty")>] 
          refPeriodEnd : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "CashFlow")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter or empty")>] 
          dayCounter : obj)
         ([<ExcelArgument(Name="isInArrears",Description = "bool")>] 
          isInArrears : obj)
@@ -568,7 +568,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_fixingDate", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_fixingDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -604,7 +604,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_fixingDays", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_fixingDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -640,7 +640,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_gearing", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_gearing
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -676,7 +676,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_index", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_index
-        ([<ExcelArgument(Name="Mnemonic",Description = "InterestRateIndex")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -712,7 +712,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_indexFixing", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_indexFixing
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -748,7 +748,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_isInArrears", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_isInArrears
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -784,7 +784,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_price", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_price
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -826,7 +826,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_pricer", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_pricer
-        ([<ExcelArgument(Name="Mnemonic",Description = "FloatingRateCouponPricer")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -862,7 +862,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_rate", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_rate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -898,7 +898,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_setPricer", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_setPricer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -940,7 +940,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_spread", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_spread
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -976,7 +976,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_update", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -1012,7 +1012,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_accrualDays", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_accrualDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -1048,7 +1048,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_accrualEndDate", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_accrualEndDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -1084,7 +1084,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_accrualPeriod", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_accrualPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -1120,7 +1120,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_accrualStartDate", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_accrualStartDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -1156,7 +1156,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_accruedDays", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_accruedDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -1198,7 +1198,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_accruedPeriod", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_accruedPeriod
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -1240,7 +1240,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_date", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -1276,7 +1276,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_exCouponDate", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_exCouponDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -1312,7 +1312,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_nominal", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_nominal
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -1348,7 +1348,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_referencePeriodEnd", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_referencePeriodEnd
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -1384,7 +1384,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_referencePeriodStart", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_referencePeriodStart
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -1420,7 +1420,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_CompareTo", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_CompareTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -1462,7 +1462,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_Equals", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -1504,7 +1504,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_hasOccurred", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -1552,7 +1552,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_tradingExCoupon", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_tradingExCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -1594,7 +1594,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_accept", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -1636,7 +1636,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_registerWith", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -1678,7 +1678,7 @@ module OvernightIndexedCouponFunction =
     *)
     [<ExcelFunction(Name="_OvernightIndexedCoupon_unregisterWith", Description="Create a OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="OvernightIndexedCoupon",Description = "OvernightIndexedCoupon")>] 
          overnightindexedcoupon : obj)
@@ -1717,9 +1717,9 @@ module OvernightIndexedCouponFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_OvernightIndexedCoupon_Range", Description="Create a range of OvernightIndexedCoupon",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let OvernightIndexedCoupon_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

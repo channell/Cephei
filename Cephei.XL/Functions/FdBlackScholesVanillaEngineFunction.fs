@@ -40,25 +40,25 @@ module FdBlackScholesVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_FdBlackScholesVanillaEngine1", Description="Create a FdBlackScholesVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdBlackScholesVanillaEngine_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdBlackScholesVanillaEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="quantoHelper",Description = "FdBlackScholesVanillaEngine")>] 
+        ([<ExcelArgument(Name="quantoHelper",Description = "FdmQuantoHelper or empty")>] 
          quantoHelper : obj)
-        ([<ExcelArgument(Name="tGrid",Description = "FdBlackScholesVanillaEngine")>] 
+        ([<ExcelArgument(Name="tGrid",Description = "int or empty")>] 
          tGrid : obj)
-        ([<ExcelArgument(Name="xGrid",Description = "FdBlackScholesVanillaEngine")>] 
+        ([<ExcelArgument(Name="xGrid",Description = "int or empty")>] 
          xGrid : obj)
-        ([<ExcelArgument(Name="dampingSteps",Description = "FdBlackScholesVanillaEngine")>] 
+        ([<ExcelArgument(Name="dampingSteps",Description = "int or empty")>] 
          dampingSteps : obj)
-        ([<ExcelArgument(Name="schemeDesc",Description = "FdBlackScholesVanillaEngine")>] 
+        ([<ExcelArgument(Name="schemeDesc",Description = "FdmSchemeDesc or empty")>] 
          schemeDesc : obj)
-        ([<ExcelArgument(Name="localVol",Description = "FdBlackScholesVanillaEngine")>] 
+        ([<ExcelArgument(Name="localVol",Description = "bool or empty")>] 
          localVol : obj)
         ([<ExcelArgument(Name="illegalLocalVolOverwrite",Description = "double")>] 
          illegalLocalVolOverwrite : obj)
-        ([<ExcelArgument(Name="cashDividendModel",Description = "FdBlackScholesVanillaEngine")>] 
+        ([<ExcelArgument(Name="cashDividendModel",Description = "FdBlackScholesVanillaEngine.CashDividendModel: Spot, Escrowed or empty")>] 
          cashDividendModel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -125,23 +125,23 @@ module FdBlackScholesVanillaEngineFunction =
     *)
     [<ExcelFunction(Name="_FdBlackScholesVanillaEngine", Description="Create a FdBlackScholesVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdBlackScholesVanillaEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FdBlackScholesVanillaEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Process",Description = "GeneralizedBlackScholesProcess")>] 
          Process : obj)
-        ([<ExcelArgument(Name="tGrid",Description = "FdBlackScholesVanillaEngine")>] 
+        ([<ExcelArgument(Name="tGrid",Description = "int or empty")>] 
          tGrid : obj)
-        ([<ExcelArgument(Name="xGrid",Description = "FdBlackScholesVanillaEngine")>] 
+        ([<ExcelArgument(Name="xGrid",Description = "int or empty")>] 
          xGrid : obj)
-        ([<ExcelArgument(Name="dampingSteps",Description = "FdBlackScholesVanillaEngine")>] 
+        ([<ExcelArgument(Name="dampingSteps",Description = "int or empty")>] 
          dampingSteps : obj)
-        ([<ExcelArgument(Name="schemeDesc",Description = "FdBlackScholesVanillaEngine")>] 
+        ([<ExcelArgument(Name="schemeDesc",Description = "FdmSchemeDesc or empty")>] 
          schemeDesc : obj)
-        ([<ExcelArgument(Name="localVol",Description = "FdBlackScholesVanillaEngine")>] 
+        ([<ExcelArgument(Name="localVol",Description = "bool or empty")>] 
          localVol : obj)
         ([<ExcelArgument(Name="illegalLocalVolOverwrite",Description = "double")>] 
          illegalLocalVolOverwrite : obj)
-        ([<ExcelArgument(Name="cashDividendModel",Description = "FdBlackScholesVanillaEngine")>] 
+        ([<ExcelArgument(Name="cashDividendModel",Description = "FdBlackScholesVanillaEngine.CashDividendModel: Spot, Escrowed or empty")>] 
          cashDividendModel : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -201,9 +201,9 @@ module FdBlackScholesVanillaEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FdBlackScholesVanillaEngine_Range", Description="Create a range of FdBlackScholesVanillaEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FdBlackScholesVanillaEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

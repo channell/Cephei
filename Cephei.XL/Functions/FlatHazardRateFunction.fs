@@ -39,7 +39,7 @@ module FlatHazardRateFunction =
     *)
     [<ExcelFunction(Name="_FlatHazardRate3", Description="Create a FlatHazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatHazardRate_create3
-        ([<ExcelArgument(Name="Mnemonic",Description = "FlatHazardRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
@@ -94,7 +94,7 @@ module FlatHazardRateFunction =
     *)
     [<ExcelFunction(Name="_FlatHazardRat1", Description="Create a FlatHazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatHazardRate_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "FlatHazardRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
@@ -149,7 +149,7 @@ module FlatHazardRateFunction =
     *)
     [<ExcelFunction(Name="_FlatHazardRate1", Description="Create a FlatHazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatHazardRate_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "FlatHazardRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
@@ -198,7 +198,7 @@ module FlatHazardRateFunction =
     *)
     [<ExcelFunction(Name="_FlatHazardRate2", Description="Create a FlatHazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatHazardRate_create2
-        ([<ExcelArgument(Name="Mnemonic",Description = "FlatHazardRate")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
@@ -247,7 +247,7 @@ module FlatHazardRateFunction =
     *)
     [<ExcelFunction(Name="_FlatHazardRate_maxDate", Description="Create a FlatHazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatHazardRate_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="FlatHazardRate",Description = "FlatHazardRate")>] 
          flathazardrate : obj)
@@ -280,9 +280,9 @@ module FlatHazardRateFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_FlatHazardRate_Range", Description="Create a range of FlatHazardRate",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FlatHazardRate_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,7 +39,7 @@ module DigitalNotionalRiskFunction =
     *)
     [<ExcelFunction(Name="_DigitalNotionalRisk", Description="Create a DigitalNotionalRisk",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalNotionalRisk_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "DigitalNotionalRisk")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="paymentOffset",Description = "EventPaymentOffset")>] 
          paymentOffset : obj)
@@ -82,11 +82,11 @@ module DigitalNotionalRiskFunction =
     *)
     [<ExcelFunction(Name="_DigitalNotionalRisk_updatePath", Description="Create a DigitalNotionalRisk",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalNotionalRisk_updatePath
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="DigitalNotionalRisk",Description = "DigitalNotionalRisk")>] 
          digitalnotionalrisk : obj)
-        ([<ExcelArgument(Name="events",Description = "Date,double")>] 
+        ([<ExcelArgument(Name="events",Description = "Date,double range")>] 
          events : obj)
         ([<ExcelArgument(Name="path",Description = "NotionalPath")>] 
          path : obj)
@@ -127,9 +127,9 @@ module DigitalNotionalRiskFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_DigitalNotionalRisk_Range", Description="Create a range of DigitalNotionalRisk",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let DigitalNotionalRisk_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

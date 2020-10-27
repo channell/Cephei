@@ -39,7 +39,7 @@ module QuantoTermStructureFunction =
     *)
     [<ExcelFunction(Name="_QuantoTermStructure_calendar", Description="Create a QuantoTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuantoTermStructure_calendar
-        ([<ExcelArgument(Name="Mnemonic",Description = "Calendar")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="QuantoTermStructure",Description = "QuantoTermStructure")>] 
          quantotermstructure : obj)
@@ -75,7 +75,7 @@ module QuantoTermStructureFunction =
     *)
     [<ExcelFunction(Name="_QuantoTermStructure_dayCounter", Description="Create a QuantoTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuantoTermStructure_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="QuantoTermStructure",Description = "QuantoTermStructure")>] 
          quantotermstructure : obj)
@@ -111,7 +111,7 @@ module QuantoTermStructureFunction =
     *)
     [<ExcelFunction(Name="_QuantoTermStructure_maxDate", Description="Create a QuantoTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuantoTermStructure_maxDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "QuantoTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="QuantoTermStructure",Description = "QuantoTermStructure")>] 
          quantotermstructure : obj)
@@ -147,7 +147,7 @@ module QuantoTermStructureFunction =
     *)
     [<ExcelFunction(Name="_QuantoTermStructure", Description="Create a QuantoTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuantoTermStructure_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "QuantoTermStructure")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="underlyingDividendTS",Description = "YieldTermStructure")>] 
          underlyingDividendTS : obj)
@@ -226,7 +226,7 @@ module QuantoTermStructureFunction =
     *)
     [<ExcelFunction(Name="_QuantoTermStructure_referenceDate", Description="Create a QuantoTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuantoTermStructure_referenceDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="QuantoTermStructure",Description = "QuantoTermStructure")>] 
          quantotermstructure : obj)
@@ -262,7 +262,7 @@ module QuantoTermStructureFunction =
     *)
     [<ExcelFunction(Name="_QuantoTermStructure_settlementDays", Description="Create a QuantoTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuantoTermStructure_settlementDays
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="QuantoTermStructure",Description = "QuantoTermStructure")>] 
          quantotermstructure : obj)
@@ -295,9 +295,9 @@ module QuantoTermStructureFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_QuantoTermStructure_Range", Description="Create a range of QuantoTermStructure",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let QuantoTermStructure_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

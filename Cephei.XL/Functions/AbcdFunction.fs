@@ -39,7 +39,7 @@ module AbcdFunction =
     *)
     [<ExcelFunction(Name="_Abcd", Description="Create a Abcd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Abcd_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Abcd")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="a",Description = "double")>] 
          a : obj)
@@ -57,11 +57,11 @@ module AbcdFunction =
          cIsFixed : obj)
         ([<ExcelArgument(Name="dIsFixed",Description = "bool")>] 
          dIsFixed : obj)
-        ([<ExcelArgument(Name="vegaWeighted",Description = "Abcd")>] 
+        ([<ExcelArgument(Name="vegaWeighted",Description = "bool or empty")>] 
          vegaWeighted : obj)
-        ([<ExcelArgument(Name="endCriteria",Description = "Abcd")>] 
+        ([<ExcelArgument(Name="endCriteria",Description = "EndCriteria or empty")>] 
          endCriteria : obj)
-        ([<ExcelArgument(Name="optMethod",Description = "Abcd")>] 
+        ([<ExcelArgument(Name="optMethod",Description = "OptimizationMethod or empty")>] 
          optMethod : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -136,7 +136,7 @@ module AbcdFunction =
     *)
     [<ExcelFunction(Name="_Abcd_global", Description="Create a Abcd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Abcd_global
-        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Abcd",Description = "Abcd")>] 
          abcd : obj)
@@ -172,15 +172,15 @@ module AbcdFunction =
     *)
     [<ExcelFunction(Name="_Abcd_interpolate", Description="Create a Abcd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Abcd_interpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Abcd",Description = "Abcd")>] 
          abcd : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double range")>] 
          xBegin : obj)
         ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double range")>] 
          yBegin : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -223,9 +223,9 @@ module AbcdFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Abcd_Range", Description="Create a range of Abcd",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Abcd_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

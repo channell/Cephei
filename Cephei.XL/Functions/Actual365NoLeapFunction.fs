@@ -39,7 +39,7 @@ module Actual365NoLeapFunction =
     *)
     [<ExcelFunction(Name="_Actual365NoLeap", Description="Create a Actual365NoLeap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual365NoLeap_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "Actual365NoLeap")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module Actual365NoLeapFunction =
     *)
     [<ExcelFunction(Name="_Actual365NoLeap_dayCount", Description="Create a Actual365NoLeap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual365NoLeap_dayCount
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Actual365NoLeap",Description = "Actual365NoLeap")>] 
          actual365noleap : obj)
@@ -118,7 +118,7 @@ module Actual365NoLeapFunction =
     *)
     [<ExcelFunction(Name="_Actual365NoLeap_dayCounter", Description="Create a Actual365NoLeap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual365NoLeap_dayCounter
-        ([<ExcelArgument(Name="Mnemonic",Description = "DayCounter")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Actual365NoLeap",Description = "Actual365NoLeap")>] 
          actual365noleap : obj)
@@ -154,7 +154,7 @@ module Actual365NoLeapFunction =
     *)
     [<ExcelFunction(Name="_Actual365NoLeap_empty", Description="Create a Actual365NoLeap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual365NoLeap_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Actual365NoLeap",Description = "Actual365NoLeap")>] 
          actual365noleap : obj)
@@ -190,7 +190,7 @@ module Actual365NoLeapFunction =
     *)
     [<ExcelFunction(Name="_Actual365NoLeap_Equals", Description="Create a Actual365NoLeap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual365NoLeap_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Actual365NoLeap",Description = "Actual365NoLeap")>] 
          actual365noleap : obj)
@@ -232,7 +232,7 @@ module Actual365NoLeapFunction =
     *)
     [<ExcelFunction(Name="_Actual365NoLeap_name", Description="Create a Actual365NoLeap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual365NoLeap_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Actual365NoLeap",Description = "Actual365NoLeap")>] 
          actual365noleap : obj)
@@ -268,7 +268,7 @@ module Actual365NoLeapFunction =
     *)
     [<ExcelFunction(Name="_Actual365NoLeap_ToString", Description="Create a Actual365NoLeap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual365NoLeap_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Actual365NoLeap",Description = "Actual365NoLeap")>] 
          actual365noleap : obj)
@@ -304,7 +304,7 @@ module Actual365NoLeapFunction =
     *)
     [<ExcelFunction(Name="_Actual365NoLeap_yearFraction", Description="Create a Actual365NoLeap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual365NoLeap_yearFraction
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Actual365NoLeap",Description = "Actual365NoLeap")>] 
          actual365noleap : obj)
@@ -364,7 +364,7 @@ module Actual365NoLeapFunction =
     *)
     [<ExcelFunction(Name="_Actual365NoLeap_yearFraction1", Description="Create a Actual365NoLeap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual365NoLeap_yearFraction1
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Actual365NoLeap",Description = "Actual365NoLeap")>] 
          actual365noleap : obj)
@@ -409,9 +409,9 @@ module Actual365NoLeapFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Actual365NoLeap_Range", Description="Create a range of Actual365NoLeap",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Actual365NoLeap_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

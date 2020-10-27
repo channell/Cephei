@@ -39,7 +39,7 @@ module AmericanPayoffAtExpiryFunction =
     *)
     [<ExcelFunction(Name="_AmericanPayoffAtExpiry", Description="Create a AmericanPayoffAtExpiry",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtExpiry_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AmericanPayoffAtExpiry")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="spot",Description = "double")>] 
          spot : obj)
@@ -51,7 +51,7 @@ module AmericanPayoffAtExpiryFunction =
          variance : obj)
         ([<ExcelArgument(Name="payoff",Description = "StrikedTypePayoff")>] 
          payoff : obj)
-        ([<ExcelArgument(Name="knock_in",Description = "AmericanPayoffAtExpiry")>] 
+        ([<ExcelArgument(Name="knock_in",Description = "bool or empty")>] 
          knock_in : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -106,7 +106,7 @@ module AmericanPayoffAtExpiryFunction =
     *)
     [<ExcelFunction(Name="_AmericanPayoffAtExpiry_value", Description="Create a AmericanPayoffAtExpiry",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtExpiry_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AmericanPayoffAtExpiry",Description = "AmericanPayoffAtExpiry")>] 
          americanpayoffatexpiry : obj)
@@ -139,9 +139,9 @@ module AmericanPayoffAtExpiryFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AmericanPayoffAtExpiry_Range", Description="Create a range of AmericanPayoffAtExpiry",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AmericanPayoffAtExpiry_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

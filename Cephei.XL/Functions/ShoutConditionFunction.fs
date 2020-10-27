@@ -39,7 +39,7 @@ module ShoutConditionFunction =
     *)
     [<ExcelFunction(Name="_ShoutCondition_applyTo", Description="Create a ShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShoutCondition_applyTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "ShoutCondition")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ShoutCondition",Description = "ShoutCondition")>] 
          shoutcondition : obj)
@@ -87,7 +87,7 @@ module ShoutConditionFunction =
     *)
     [<ExcelFunction(Name="_ShoutCondition", Description="Create a ShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShoutCondition_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ShoutCondition")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Type",Description = "Option.Type: Put, Call")>] 
          Type : obj)
@@ -142,7 +142,7 @@ module ShoutConditionFunction =
     *)
     [<ExcelFunction(Name="_ShoutCondition1", Description="Create a ShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShoutCondition_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "ShoutCondition")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="intrinsicValues",Description = "Vector")>] 
          intrinsicValues : obj)
@@ -188,9 +188,9 @@ module ShoutConditionFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ShoutCondition_Range", Description="Create a range of ShoutCondition",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ShoutCondition_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -39,7 +39,7 @@ module SimpsonIntegralFunction =
     *)
     [<ExcelFunction(Name="_SimpsonIntegral", Description="Create a SimpsonIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpsonIntegral_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "SimpsonIntegral")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)
@@ -82,7 +82,7 @@ module SimpsonIntegralFunction =
     *)
     [<ExcelFunction(Name="_SimpsonIntegral_absoluteAccuracy", Description="Create a SimpsonIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpsonIntegral_absoluteAccuracy
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpsonIntegral",Description = "SimpsonIntegral")>] 
          simpsonintegral : obj)
@@ -118,7 +118,7 @@ module SimpsonIntegralFunction =
     *)
     [<ExcelFunction(Name="_SimpsonIntegral_absoluteError", Description="Create a SimpsonIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpsonIntegral_absoluteError
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpsonIntegral",Description = "SimpsonIntegral")>] 
          simpsonintegral : obj)
@@ -154,7 +154,7 @@ module SimpsonIntegralFunction =
     *)
     [<ExcelFunction(Name="_SimpsonIntegral_integrationSuccess", Description="Create a SimpsonIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpsonIntegral_integrationSuccess
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpsonIntegral",Description = "SimpsonIntegral")>] 
          simpsonintegral : obj)
@@ -190,7 +190,7 @@ module SimpsonIntegralFunction =
     *)
     [<ExcelFunction(Name="_SimpsonIntegral_maxEvaluations", Description="Create a SimpsonIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpsonIntegral_maxEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpsonIntegral",Description = "SimpsonIntegral")>] 
          simpsonintegral : obj)
@@ -226,7 +226,7 @@ module SimpsonIntegralFunction =
     *)
     [<ExcelFunction(Name="_SimpsonIntegral_numberOfEvaluations", Description="Create a SimpsonIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpsonIntegral_numberOfEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpsonIntegral",Description = "SimpsonIntegral")>] 
          simpsonintegral : obj)
@@ -262,7 +262,7 @@ module SimpsonIntegralFunction =
     *)
     [<ExcelFunction(Name="_SimpsonIntegral_setAbsoluteAccuracy", Description="Create a SimpsonIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpsonIntegral_setAbsoluteAccuracy
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpsonIntegral",Description = "SimpsonIntegral")>] 
          simpsonintegral : obj)
@@ -304,7 +304,7 @@ module SimpsonIntegralFunction =
     *)
     [<ExcelFunction(Name="_SimpsonIntegral_setMaxEvaluations", Description="Create a SimpsonIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpsonIntegral_setMaxEvaluations
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpsonIntegral",Description = "SimpsonIntegral")>] 
          simpsonintegral : obj)
@@ -346,7 +346,7 @@ module SimpsonIntegralFunction =
     *)
     [<ExcelFunction(Name="_SimpsonIntegral_value", Description="Create a SimpsonIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpsonIntegral_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="SimpsonIntegral",Description = "SimpsonIntegral")>] 
          simpsonintegral : obj)
@@ -397,9 +397,9 @@ module SimpsonIntegralFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_SimpsonIntegral_Range", Description="Create a range of SimpsonIntegral",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let SimpsonIntegral_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

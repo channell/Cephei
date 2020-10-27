@@ -39,15 +39,15 @@ module BicubicFunction =
     *)
     [<ExcelFunction(Name="_Bicubic_interpolate", Description="Create a Bicubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bicubic_interpolate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Interpolation2D")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Bicubic",Description = "Bicubic")>] 
          bicubic : obj)
-        ([<ExcelArgument(Name="xBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="xBegin",Description = "double range")>] 
          xBegin : obj)
         ([<ExcelArgument(Name="size",Description = "int")>] 
          size : obj)
-        ([<ExcelArgument(Name="yBegin",Description = "double")>] 
+        ([<ExcelArgument(Name="yBegin",Description = "double range")>] 
          yBegin : obj)
         ([<ExcelArgument(Name="ySize",Description = "int")>] 
          ySize : obj)
@@ -102,9 +102,9 @@ module BicubicFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_Bicubic_Range", Description="Create a range of Bicubic",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Bicubic_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

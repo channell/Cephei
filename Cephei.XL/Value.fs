@@ -13,7 +13,7 @@ module Values =
 
     [<ExcelFunction(Name="_Value", Description="Get the value of Cephei reference",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Value 
-        ([<ExcelArgument(Name="Mnemonic", Description="Identifier")>] mnemonic : string) 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell") 
         =
         if mnemonic = null || mnemonic = "" then
             "#NA" :> obj
@@ -23,8 +23,8 @@ module Values =
 
     [<ExcelFunction(Name="_Value_Range", Description="Get the range value of Cephei reference",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ValueRange
-        ([<ExcelArgument(Name="Mnemonic", Description="Identifier")>] mnemonic : string) 
-        ([<ExcelArgument(Name="Mnemonic", Description="Identifier")>] layout : string) 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell") 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell") 
         : obj[,]
         =
         let layout = layout.ToUpper()
@@ -41,7 +41,7 @@ module Values =
  *********************************************************************************************************************************************************)
     [<ExcelFunction(Name="_Int", Description="Set an int value ",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec Int 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
         ([<ExcelArgument(Name="Int",Description = "Value")>] value : int) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)
@@ -66,7 +66,7 @@ module Values =
 
     [<ExcelFunction(Name="_Int_Range", Description="Set a referene for a list of ints",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec IntRange 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
         ([<ExcelArgument(Name="Int",Description = "Value")>] values : obj[,]) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)
@@ -98,7 +98,7 @@ module Values =
  *********************************************************************************************************************************************************)
     [<ExcelFunction(Name="_Long", Description="Set an long value ",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec Long 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
         ([<ExcelArgument(Name="Int",Description = "Value")>] value : int) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)
@@ -123,7 +123,7 @@ module Values =
 
     [<ExcelFunction(Name="_Long_Range", Description="Set a referene for a list of ints",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec LongRange 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
         ([<ExcelArgument(Name="Int",Description = "Value")>] values : obj[,]) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)
@@ -156,7 +156,7 @@ module Values =
  *********************************************************************************************************************************************************)
     [<ExcelFunction(Name="_Double", Description="Set a double value ",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec Double 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
         ([<ExcelArgument(Name="Double",Description = "Value")>] value : double) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)
@@ -181,7 +181,7 @@ module Values =
 
     [<ExcelFunction(Name="_Double_Range", Description="Set a referene for a list of doubles",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec DoubleRange 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
         ([<ExcelArgument(Name="Double",Description = "Value")>] values : obj[,]) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)
@@ -214,7 +214,7 @@ Bool
  *********************************************************************************************************************************************************)
     [<ExcelFunction(Name="_Bool", Description="Set a bool value ",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec Bool
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
         ([<ExcelArgument(Name="Bool",Description = "Value")>] value : double) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)
@@ -239,7 +239,7 @@ Bool
 
     [<ExcelFunction(Name="_Bool_Range", Description="Set a referene for a list of bools",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec BoolRange 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
         ([<ExcelArgument(Name="Bools",Description = "Value")>] values : obj[,]) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)
@@ -272,7 +272,7 @@ Bool
  *********************************************************************************************************************************************************)
     [<ExcelFunction(Name="_DateTime", Description="Set a DatTime value ",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec DateTimeFunction 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
         ([<ExcelArgument(Name="DateTime",Description = "Value")>] value : double) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)
@@ -297,7 +297,7 @@ Bool
 
     [<ExcelFunction(Name="_DaeTime_Range", Description="Set a referene for a list of DateTime",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec DateTimeRange 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
         ([<ExcelArgument(Name="DateTime",Description = "Value")>] values : obj[,]) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)
@@ -328,7 +328,7 @@ Bool
  *********************************************************************************************************************************************************)
     [<ExcelFunction(Name="_Text", Description="Set a string value ",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec StringFunction 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
         ([<ExcelArgument(Name="Text",Description = "Value")>] value : string) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)
@@ -353,7 +353,7 @@ Bool
 
     [<ExcelFunction(Name="_Text_Range", Description="Set a referene for a list of DateTime",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec StringRange 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
         ([<ExcelArgument(Name="DateTime",Description = "Value")>] values : obj[,]) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)

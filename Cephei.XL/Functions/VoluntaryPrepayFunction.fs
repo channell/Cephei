@@ -39,7 +39,7 @@ module VoluntaryPrepayFunction =
     *)
     [<ExcelFunction(Name="_VoluntaryPrepay", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "VoluntaryPrepay")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="amount",Description = "double")>] 
          amount : obj)
@@ -82,7 +82,7 @@ module VoluntaryPrepayFunction =
     *)
     [<ExcelFunction(Name="_VoluntaryPrepay_amount", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_amount
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VoluntaryPrepay",Description = "VoluntaryPrepay")>] 
          voluntaryprepay : obj)
@@ -118,7 +118,7 @@ module VoluntaryPrepayFunction =
     *)
     [<ExcelFunction(Name="_VoluntaryPrepay_date", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_date
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VoluntaryPrepay",Description = "VoluntaryPrepay")>] 
          voluntaryprepay : obj)
@@ -154,7 +154,7 @@ module VoluntaryPrepayFunction =
     *)
     [<ExcelFunction(Name="_VoluntaryPrepay_CompareTo", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_CompareTo
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VoluntaryPrepay",Description = "VoluntaryPrepay")>] 
          voluntaryprepay : obj)
@@ -196,7 +196,7 @@ module VoluntaryPrepayFunction =
     *)
     [<ExcelFunction(Name="_VoluntaryPrepay_Equals", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VoluntaryPrepay",Description = "VoluntaryPrepay")>] 
          voluntaryprepay : obj)
@@ -238,7 +238,7 @@ module VoluntaryPrepayFunction =
     *)
     [<ExcelFunction(Name="_VoluntaryPrepay_exCouponDate", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_exCouponDate
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VoluntaryPrepay",Description = "VoluntaryPrepay")>] 
          voluntaryprepay : obj)
@@ -274,7 +274,7 @@ module VoluntaryPrepayFunction =
     *)
     [<ExcelFunction(Name="_VoluntaryPrepay_hasOccurred", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_hasOccurred
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VoluntaryPrepay",Description = "VoluntaryPrepay")>] 
          voluntaryprepay : obj)
@@ -322,7 +322,7 @@ module VoluntaryPrepayFunction =
     *)
     [<ExcelFunction(Name="_VoluntaryPrepay_tradingExCoupon", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_tradingExCoupon
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VoluntaryPrepay",Description = "VoluntaryPrepay")>] 
          voluntaryprepay : obj)
@@ -364,7 +364,7 @@ module VoluntaryPrepayFunction =
     *)
     [<ExcelFunction(Name="_VoluntaryPrepay_accept", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_accept
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VoluntaryPrepay",Description = "VoluntaryPrepay")>] 
          voluntaryprepay : obj)
@@ -406,7 +406,7 @@ module VoluntaryPrepayFunction =
     *)
     [<ExcelFunction(Name="_VoluntaryPrepay_registerWith", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VoluntaryPrepay",Description = "VoluntaryPrepay")>] 
          voluntaryprepay : obj)
@@ -448,7 +448,7 @@ module VoluntaryPrepayFunction =
     *)
     [<ExcelFunction(Name="_VoluntaryPrepay_unregisterWith", Description="Create a VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="VoluntaryPrepay",Description = "VoluntaryPrepay")>] 
          voluntaryprepay : obj)
@@ -487,9 +487,9 @@ module VoluntaryPrepayFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_VoluntaryPrepay_Range", Description="Create a range of VoluntaryPrepay",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let VoluntaryPrepay_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

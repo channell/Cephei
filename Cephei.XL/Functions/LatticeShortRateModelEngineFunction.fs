@@ -39,7 +39,7 @@ module LatticeShortRateModelEngineFunction =
     *)
     [<ExcelFunction(Name="_LatticeShortRateModelEngine", Description="Create a LatticeShortRateModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LatticeShortRateModelEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "LatticeShortRateModelEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="model",Description = "ShortRateModel")>] 
          model : obj)
@@ -82,7 +82,7 @@ module LatticeShortRateModelEngineFunction =
     *)
     [<ExcelFunction(Name="_LatticeShortRateModelEngine1", Description="Create a LatticeShortRateModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LatticeShortRateModelEngine_create1
-        ([<ExcelArgument(Name="Mnemonic",Description = "LatticeShortRateModelEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="model",Description = "ShortRateModel")>] 
          model : obj)
@@ -125,7 +125,7 @@ module LatticeShortRateModelEngineFunction =
     *)
     [<ExcelFunction(Name="_LatticeShortRateModelEngine_update", Description="Create a LatticeShortRateModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LatticeShortRateModelEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LatticeShortRateModelEngine",Description = "LatticeShortRateModelEngine")>] 
          latticeshortratemodelengine : obj)
@@ -161,7 +161,7 @@ module LatticeShortRateModelEngineFunction =
     *)
     [<ExcelFunction(Name="_LatticeShortRateModelEngine_setModel", Description="Create a LatticeShortRateModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LatticeShortRateModelEngine_setModel
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LatticeShortRateModelEngine",Description = "LatticeShortRateModelEngine")>] 
          latticeshortratemodelengine : obj)
@@ -204,7 +204,7 @@ module LatticeShortRateModelEngineFunction =
     *)
     [<ExcelFunction(Name="_LatticeShortRateModelEngine_registerWith", Description="Create a LatticeShortRateModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LatticeShortRateModelEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LatticeShortRateModelEngine",Description = "LatticeShortRateModelEngine")>] 
          latticeshortratemodelengine : obj)
@@ -246,7 +246,7 @@ module LatticeShortRateModelEngineFunction =
     *)
     [<ExcelFunction(Name="_LatticeShortRateModelEngine_reset", Description="Create a LatticeShortRateModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LatticeShortRateModelEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LatticeShortRateModelEngine",Description = "LatticeShortRateModelEngine")>] 
          latticeshortratemodelengine : obj)
@@ -282,7 +282,7 @@ module LatticeShortRateModelEngineFunction =
     *)
     [<ExcelFunction(Name="_LatticeShortRateModelEngine_unregisterWith", Description="Create a LatticeShortRateModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LatticeShortRateModelEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="LatticeShortRateModelEngine",Description = "LatticeShortRateModelEngine")>] 
          latticeshortratemodelengine : obj)
@@ -321,9 +321,9 @@ module LatticeShortRateModelEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_LatticeShortRateModelEngine_Range", Description="Create a range of LatticeShortRateModelEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let LatticeShortRateModelEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

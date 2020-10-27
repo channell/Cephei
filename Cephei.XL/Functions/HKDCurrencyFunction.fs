@@ -39,7 +39,7 @@ module HKDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HKDCurrency", Description="Create a HKDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HKDCurrency_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "HKDCurrency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -70,7 +70,7 @@ module HKDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HKDCurrency_code", Description="Create a HKDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HKDCurrency_code
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HKDCurrency",Description = "HKDCurrency")>] 
          hkdcurrency : obj)
@@ -106,7 +106,7 @@ module HKDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HKDCurrency_empty", Description="Create a HKDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HKDCurrency_empty
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HKDCurrency",Description = "HKDCurrency")>] 
          hkdcurrency : obj)
@@ -142,7 +142,7 @@ module HKDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HKDCurrency_Equals", Description="Create a HKDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HKDCurrency_Equals
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HKDCurrency",Description = "HKDCurrency")>] 
          hkdcurrency : obj)
@@ -184,7 +184,7 @@ module HKDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HKDCurrency_format", Description="Create a HKDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HKDCurrency_format
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HKDCurrency",Description = "HKDCurrency")>] 
          hkdcurrency : obj)
@@ -220,7 +220,7 @@ module HKDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HKDCurrency_fractionsPerUnit", Description="Create a HKDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HKDCurrency_fractionsPerUnit
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HKDCurrency",Description = "HKDCurrency")>] 
          hkdcurrency : obj)
@@ -256,7 +256,7 @@ module HKDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HKDCurrency_fractionSymbol", Description="Create a HKDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HKDCurrency_fractionSymbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HKDCurrency",Description = "HKDCurrency")>] 
          hkdcurrency : obj)
@@ -292,7 +292,7 @@ module HKDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HKDCurrency_name", Description="Create a HKDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HKDCurrency_name
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HKDCurrency",Description = "HKDCurrency")>] 
          hkdcurrency : obj)
@@ -328,7 +328,7 @@ module HKDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HKDCurrency_numericCode", Description="Create a HKDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HKDCurrency_numericCode
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HKDCurrency",Description = "HKDCurrency")>] 
          hkdcurrency : obj)
@@ -364,7 +364,7 @@ module HKDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HKDCurrency_rounding", Description="Create a HKDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HKDCurrency_rounding
-        ([<ExcelArgument(Name="Mnemonic",Description = "Rounding")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HKDCurrency",Description = "HKDCurrency")>] 
          hkdcurrency : obj)
@@ -400,7 +400,7 @@ module HKDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HKDCurrency_symbol", Description="Create a HKDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HKDCurrency_symbol
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HKDCurrency",Description = "HKDCurrency")>] 
          hkdcurrency : obj)
@@ -436,7 +436,7 @@ module HKDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HKDCurrency_ToString", Description="Create a HKDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HKDCurrency_ToString
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HKDCurrency",Description = "HKDCurrency")>] 
          hkdcurrency : obj)
@@ -472,7 +472,7 @@ module HKDCurrencyFunction =
     *)
     [<ExcelFunction(Name="_HKDCurrency_triangulationCurrency", Description="Create a HKDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HKDCurrency_triangulationCurrency
-        ([<ExcelArgument(Name="Mnemonic",Description = "Currency")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="HKDCurrency",Description = "HKDCurrency")>] 
          hkdcurrency : obj)
@@ -505,9 +505,9 @@ module HKDCurrencyFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_HKDCurrency_Range", Description="Create a range of HKDCurrency",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let HKDCurrency_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

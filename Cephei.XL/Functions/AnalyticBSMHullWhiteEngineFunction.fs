@@ -39,7 +39,7 @@ module AnalyticBSMHullWhiteEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticBSMHullWhiteEngine", Description="Create a AnalyticBSMHullWhiteEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticBSMHullWhiteEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "AnalyticBSMHullWhiteEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="equityShortRateCorrelation",Description = "double")>] 
          equityShortRateCorrelation : obj)
@@ -88,7 +88,7 @@ module AnalyticBSMHullWhiteEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticBSMHullWhiteEngine_setModel", Description="Create a AnalyticBSMHullWhiteEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticBSMHullWhiteEngine_setModel
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AnalyticBSMHullWhiteEngine",Description = "AnalyticBSMHullWhiteEngine")>] 
          analyticbsmhullwhiteengine : obj)
@@ -130,7 +130,7 @@ module AnalyticBSMHullWhiteEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticBSMHullWhiteEngine_registerWith", Description="Create a AnalyticBSMHullWhiteEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticBSMHullWhiteEngine_registerWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AnalyticBSMHullWhiteEngine",Description = "AnalyticBSMHullWhiteEngine")>] 
          analyticbsmhullwhiteengine : obj)
@@ -172,7 +172,7 @@ module AnalyticBSMHullWhiteEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticBSMHullWhiteEngine_reset", Description="Create a AnalyticBSMHullWhiteEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticBSMHullWhiteEngine_reset
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AnalyticBSMHullWhiteEngine",Description = "AnalyticBSMHullWhiteEngine")>] 
          analyticbsmhullwhiteengine : obj)
@@ -208,7 +208,7 @@ module AnalyticBSMHullWhiteEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticBSMHullWhiteEngine_unregisterWith", Description="Create a AnalyticBSMHullWhiteEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticBSMHullWhiteEngine_unregisterWith
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AnalyticBSMHullWhiteEngine",Description = "AnalyticBSMHullWhiteEngine")>] 
          analyticbsmhullwhiteengine : obj)
@@ -250,7 +250,7 @@ module AnalyticBSMHullWhiteEngineFunction =
     *)
     [<ExcelFunction(Name="_AnalyticBSMHullWhiteEngine_update", Description="Create a AnalyticBSMHullWhiteEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticBSMHullWhiteEngine_update
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="AnalyticBSMHullWhiteEngine",Description = "AnalyticBSMHullWhiteEngine")>] 
          analyticbsmhullwhiteengine : obj)
@@ -283,9 +283,9 @@ module AnalyticBSMHullWhiteEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_AnalyticBSMHullWhiteEngine_Range", Description="Create a range of AnalyticBSMHullWhiteEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let AnalyticBSMHullWhiteEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

@@ -40,7 +40,7 @@ module IntegralCdsEngineFunction =
     *)
     [<ExcelFunction(Name="_IntegralCdsEngine", Description="Create a IntegralCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IntegralCdsEngine_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "IntegralCdsEngine")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="step",Description = "Period")>] 
          step : obj)
@@ -98,9 +98,9 @@ module IntegralCdsEngineFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_IntegralCdsEngine_Range", Description="Create a range of IntegralCdsEngine",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let IntegralCdsEngine_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 

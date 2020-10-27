@@ -39,7 +39,7 @@ module ImpliedVolHelperFunction =
     *)
     [<ExcelFunction(Name="_ImpliedVolHelper_derivative", Description="Create a ImpliedVolHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolHelper_derivative
-        ([<ExcelArgument(Name="Mnemonic",Description = "ImpliedVolHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImpliedVolHelper",Description = "ImpliedVolHelper")>] 
          impliedvolhelper : obj)
@@ -81,7 +81,7 @@ module ImpliedVolHelperFunction =
     *)
     [<ExcelFunction(Name="_ImpliedVolHelper", Description="Create a ImpliedVolHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolHelper_create
-        ([<ExcelArgument(Name="Mnemonic",Description = "ImpliedVolHelper")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="cap",Description = "CapFloor")>] 
          cap : obj)
@@ -142,7 +142,7 @@ module ImpliedVolHelperFunction =
     *)
     [<ExcelFunction(Name="_ImpliedVolHelper_value", Description="Create a ImpliedVolHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolHelper_value
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="ImpliedVolHelper",Description = "ImpliedVolHelper")>] 
          impliedvolhelper : obj)
@@ -181,9 +181,9 @@ module ImpliedVolHelperFunction =
             "<WIZ>"
     [<ExcelFunction(Name="_ImpliedVolHelper_Range", Description="Create a range of ImpliedVolHelper",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ImpliedVolHelper_Range 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="Objects",Description = "Helper.Range.fromModelList")>] 
+        ([<ExcelArgument(Name="Objects",Description = "")>] 
          values : obj[,])
          =
 
