@@ -68,3 +68,36 @@ module Util =
     let nullableNull<'T when 'T :struct and 'T :> ValueType and 'T : (new : unit -> 'T)> () = 
         Nullable<'T> ()
 
+// Summary: Time lapse value
+type TimeLapse<'t> (reference : ICell<'t>, lapse : ICell<double>) as this = 
+    inherit Model<'t> ()
+
+    let _queue  = new Generic.Queue<Generic.KeyValuePair<DateTime,'t>> ()
+
+    let mutable _reference = reference
+    let mutable _lapse = lapse
+    let mutable _span = Util.cell (fun () -> TimeSpan.FromSeconds(_lapse.Value))
+
+    let at (span : TimeSpan) (now : DateTime) (current : 't) = 
+        System.Threading.Monitor.Enter _queue
+        try
+            _queue.Enqueue (new Generic.KeyValuePair<DateTime,'t> (now, current))
+            let peek = _queue.Peek()
+            if peek.Key.Add(span) >= now then 
+                peek.Value
+            else
+                while (_queue.Peek().Key.Add(span) < now) do ignore (_queue.Dequeue())
+                _queue.Peek().Value
+        finally
+            System.Threading.Monitor.Exit _queue
+
+    let _value = Util.cell (fun () -> at _span.Value DateTime.Now _reference.Value)
+
+    do this.Bind(_value)
+
+    member this.Value = _value
+    member this.Reference = _reference 
+    member this.Lapse = _lapse
+    member this.Span = _span
+
+

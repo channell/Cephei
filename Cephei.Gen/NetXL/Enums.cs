@@ -58,9 +58,9 @@ namespace Cephei.Gen
             
             #line default
             #line hidden
-            this.Write("\r\n        ([<ExcelArgument(Name=\"Mnemonic\",Description = \"Identifer for the value" +
-                    "\")>] \r\n         mnemonic : string)\r\n        ([<ExcelArgument(Name=\"vlaue\",Descri" +
-                    "ption = \"value of the ");
+            this.Write("\r\n        ([<ExcelArgument(Name=\"Mnemonic\",Description = \"Identifier for Cell\")>]" +
+                    " \r\n         mnemonic : string)\r\n        ([<ExcelArgument(Name=\"vlaue\",Descriptio" +
+                    "n = \"value of the ");
             
             #line 33 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Enums.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(name));

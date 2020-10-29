@@ -32,7 +32,6 @@ namespace Cephei.Cell.Generic
         private T _value;
         private Exception _lastException = null;
         private DateTime _epoch;
-        private DateTime _eventEpoch;
         private bool _disposd = false;
 
         // number of pending calculations
@@ -109,7 +108,7 @@ namespace Cephei.Cell.Generic
                             return Calculate(epoch, recurse, session);
                         }
                     }
-                    if (epoch > _epoch)
+                    if (epoch >= _epoch)
                     {
                         _epoch = epoch;
                         _value = t;
@@ -337,22 +336,20 @@ namespace Cephei.Cell.Generic
         public virtual void OnChange(CellEvent eventType, ICellEvent root,  ICellEvent sender,  DateTime epoch, ISession session)
         {
             if (_disposd && root != this && eventType != CellEvent.Delete) sender.OnChange(CellEvent.Delete, this, this, epoch, session);
-            if (epoch < _eventEpoch && session == null) return; else _eventEpoch = epoch;
+            if (sender == Parent) return;
             switch (eventType)
             {
                 case CellEvent.Calculate:
                     if (session != null && session.State == SessionState.Open)
                         _pending++;
-                    else
+                    else if (epoch > _epoch)
                     {
-                        if (epoch > _epoch)
-                        {
-                            RaiseChange(CellEvent.Invalidate, root, this, epoch, session);
-                            if (Cell.Parellel)
-                                Task.Run(() => PoolCalculate(epoch, session));
-                            else
-                                PoolCalculate(epoch, session);
-                        }
+                        _epoch = epoch;
+                        OnChange(CellEvent.Invalidate, root, this, epoch, session);
+                        if (Cell.Parellel)
+                            Task.Run(() => PoolCalculate(epoch, session));
+                        else
+                            PoolCalculate(epoch, session);
                     }
                     break;
                 case CellEvent.Delete:

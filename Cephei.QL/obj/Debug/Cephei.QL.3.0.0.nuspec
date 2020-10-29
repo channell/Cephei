@@ -40,11 +40,11 @@ The source types can be used as-is or as recipes for domain specific implementat
     </dependencies>
   </metadata>
   <files>
-    <file src="C:\Users\steve\Source\Repos\Cephei2\bin\Debug\net48\Cephei.QL.dll" target="lib\net48\Cephei.QL.dll" />
-    <file src="C:\Users\steve\Source\Repos\Cephei2\bin\Debug\netstandard2.1\Cephei.QL.dll" target="lib\netstandard2.1\Cephei.QL.dll" />
-    <file src="C:\Users\steve\Source\Repos\Cephei2\Cephei.QL\QLNetCephei.dll" target="lib\netstandard2.0\QLNetCephei.dll" />
-    <file src="C:\Users\steve\Source\Repos\Cephei2\Cephei.QL\Cephei.QLNetHelper.dll" target="lib\netstandard2.0\Cephei.QLNetHelper.dll" />
-    <file src="C:\Users\steve\Source\Repos\Cephei2\Cephei.Cell\Licence.txt" target="Licence.txt" />
-    <file src="C:\Users\steve\Source\Repos\Cephei2\Cephei.Cell\Logo.png" target="Logo.png" />
+    <file src="C:\Users\steve\source\repos\Cephei2\bin\Debug\net48\Cephei.QL.dll" target="lib\net48\Cephei.QL.dll" />
+    <file src="C:\Users\steve\source\repos\Cephei2\bin\Debug\netstandard2.1\Cephei.QL.dll" target="lib\netstandard2.1\Cephei.QL.dll" />
+    <file src="C:\Users\steve\source\repos\Cephei2\Cephei.QL\QLNetCephei.dll" target="lib\netstandard2.0\QLNetCephei.dll" />
+    <file src="C:\Users\steve\source\repos\Cephei2\Cephei.QL\Cephei.QLNetHelper.dll" target="lib\netstandard2.0\Cephei.QLNetHelper.dll" />
+    <file src="C:\Users\steve\source\repos\Cephei2\Cephei.Cell\Licence.txt" target="Licence.txt" />
+    <file src="C:\Users\steve\source\repos\Cephei2\Cephei.Cell\Logo.png" target="Logo.png" />
   </files>
 </package>

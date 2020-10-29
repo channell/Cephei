@@ -8,6 +8,8 @@ open Cephei.QL
 open Cephei.QL.Util
 open System.Collections
 open System
+open System.Threading
+open Cephei.XL.Helper
 
 type Clock (tick : float) as this = 
     inherit CellFast<DateTime> (DateTime.Now)
@@ -38,7 +40,6 @@ type Today () as this =
         _timer.Enabled <- true
         _timer.Start ()
 
-
 module Today =
 
     [<ExcelFunction(Name="_Clock", Description="Get the current date ",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
@@ -65,3 +66,53 @@ module Today =
             ; hash = 0
             } 
 
+    [<ExcelFunction(Name="_Value_Lapse", Description="Value at timelapse",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
+    let lapse
+        ([<ExcelArgument(Name="Mnemonic",Description = "Mnemonic for this lapse")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="Reference",Description = "Mnemonic of Cell with the Value")>] 
+         reference : string)
+        ([<ExcelArgument(Name="time lapse",Description = "Time Span ")>] 
+        lapse : obj)
+        = 
+
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let mnemonic = Model.formatMnemonic mnemonic
+                let _reference = Helper.toCell<double> reference "reference" 
+                let _lapse = Helper.toCell<double> lapse "lapse" 
+
+                let builder (current : ICell) = 
+                    if current = null then 
+                        withMnemonic mnemonic (new TimeLapse<double> (_reference.cell, _lapse.cell)) :> ICell
+                    else
+                        let source = current :?> TimeLapse<double>
+                        source.Reference.Value  <- _reference.cell.Value
+                        source.Lapse.Value <- _lapse.cell.Value
+                        current
+
+                let format (i : double) (l:string) = i :> obj
+
+                let source () = Helper.sourceFold "new TimeLapse<double>" 
+                                               [| _reference.source
+                                               ;  _lapse.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _reference.cell
+                                ;  _lapse.cell
+                                |]
+                Model.specify 
+                    { mnemonic = mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } |> ignore
+                Model.value mnemonic
+
+            with
+            | _ as e ->  "#" + e.Message :> obj
+        else
+            "<WIZ>" :> obj

@@ -175,11 +175,11 @@ module Helper =
                 if c:? ICell<'T> then 
                     let c = c :?> ICell<'T>
                     { cell = withMnemonic c.Mnemonic (triv (fun () -> Util.toHandle (c.Value)))
-                    ; source =  "(triv (fun () -> toHandle (_" + c.Mnemonic + ")))"
+                    ; source =  "(triv (fun () -> toHandle (_" + c.Mnemonic + ".Value)))"
                     }
                 else
                     { cell = withMnemonic c.Mnemonic (triv (fun () -> Util.toHandle<'T> (c.Box :?> 'T)))
-                    ; source =  "(triv (fun () -> toHandle<" + typeof<'T>.Name + "> (_" + c.Mnemonic + ")))"
+                    ; source =  "(triv (fun () -> toHandle<" + typeof<'T>.Name + "> (_" + c.Mnemonic + ".Value)))"
                     }
             else
                 invalidArg (o.ToString()) ("Invalid " + attribute)
@@ -198,7 +198,7 @@ module Helper =
             if  c.IsSome then
                 let c = c.Value :?> ICell<'T>
                 { cell = triv (fun () -> Util.toNullable (c.Value))
-                ; source = "(triv (fun () -> toNullable (" + c.Mnemonic + ".Value)"
+                ; source = "(triv (fun () -> toNullable (_" + c.Mnemonic + ".Value)))"
                 }
             else
                 { cell = triv (fun () -> Util.nullableNull<'T> ())
@@ -207,7 +207,7 @@ module Helper =
 
         elif o :? 'T then 
             { cell = triv (fun () -> Util.toNullable (o :?> 'T))
-            ; source =  "(triv (fun () -> toNullable (" + o.ToString() + "))"
+            ; source =  "(triv (fun () -> toNullable (" + o.ToString() + ")))"
             }
         else 
             invalidArg (o.ToString()) ("Invalid " + attribute)

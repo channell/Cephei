@@ -13,7 +13,7 @@ module Values =
 
     [<ExcelFunction(Name="_Value", Description="Get the value of Cephei reference",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let Value 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell") 
+        ([<ExcelArgument(Name="Mnemonic", Description="Identifier")>] mnemonic : string) 
         =
         if mnemonic = null || mnemonic = "" then
             "#NA" :> obj
@@ -23,8 +23,8 @@ module Values =
 
     [<ExcelFunction(Name="_Value_Range", Description="Get the range value of Cephei reference",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ValueRange
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell") 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell") 
+        ([<ExcelArgument(Name="Mnemonic", Description="Identifier")>] mnemonic : string) 
+        ([<ExcelArgument(Name="Layout", Description="C: Column, R:Row, CT:Column with title, RT:Row with Titles")>] layout : string) 
         : obj[,]
         =
         let layout = layout.ToUpper()
@@ -41,7 +41,7 @@ module Values =
  *********************************************************************************************************************************************************)
     [<ExcelFunction(Name="_Int", Description="Set an int value ",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec Int 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
         ([<ExcelArgument(Name="Int",Description = "Value")>] value : int) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)
@@ -57,7 +57,7 @@ module Values =
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriber (fun (i:int) (l:string) -> i :> obj)
-                ; source =  (fun () -> "(value " + value.ToString() + ")")
+                ; source =  (fun () -> "(value (Convert.ToInt32(" + value.ToString() + ")))")
                 ; hash = value.GetHashCode()
                 } :?> string
         else
@@ -66,7 +66,7 @@ module Values =
 
     [<ExcelFunction(Name="_Int_Range", Description="Set a referene for a list of ints",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec IntRange 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
         ([<ExcelArgument(Name="Int",Description = "Value")>] values : obj[,]) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)
@@ -87,7 +87,7 @@ module Values =
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriberRange<int> format
-                ; source =  (fun () -> "cell new Generic.List<int>([|" + (a |> Array.fold (fun a y -> a + ";" + y.ToString()) "").Substring(1) + "|]")
+                ; source =  (fun () -> "cell new Generic.List<int>([|" + (a |> Array.fold (fun a y -> a + "; Convert.ToInt32(" + y.ToString() + ")") "").Substring(1) + "|]")
                 ; hash = Array.fold (fun a y -> (a <<< 4) ^^^ y.GetHashCode()) 0 a
                 } :?> string
         else
@@ -98,7 +98,7 @@ module Values =
  *********************************************************************************************************************************************************)
     [<ExcelFunction(Name="_Long", Description="Set an long value ",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec Long 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
         ([<ExcelArgument(Name="Int",Description = "Value")>] value : int) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)
@@ -114,7 +114,7 @@ module Values =
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriber (fun (i:int) (l:string) -> i :> obj)
-                ; source =  (fun () -> "(value " + value.ToString() + ")")
+                ; source =  (fun () -> "(value (Convert.ToInt64(" + value.ToString() + ")))")
                 ; hash = value.GetHashCode()
                 } :?> string
         else
@@ -123,7 +123,7 @@ module Values =
 
     [<ExcelFunction(Name="_Long_Range", Description="Set a referene for a list of ints",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec LongRange 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
         ([<ExcelArgument(Name="Int",Description = "Value")>] values : obj[,]) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)
@@ -144,7 +144,7 @@ module Values =
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriberRange<int64> format
-                ; source =  (fun () -> "cell new Generic.List<int>([|" + (a |> Array.fold (fun a y -> a + ";" + y.ToString()) "").Substring(1) + "|]")
+                ; source =  (fun () -> "cell new Generic.List<int64>([|" + (a |> Array.fold (fun a y -> a + "; Convert.ToInt64(" + y.ToString() + ")") "").Substring(1) + "|]")
                 ; hash = Array.fold (fun a y -> (a <<< 4) ^^^ y.GetHashCode()) 0 a
                 } :?> string
         else
@@ -156,7 +156,7 @@ module Values =
  *********************************************************************************************************************************************************)
     [<ExcelFunction(Name="_Double", Description="Set a double value ",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec Double 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
         ([<ExcelArgument(Name="Double",Description = "Value")>] value : double) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)
@@ -172,7 +172,7 @@ module Values =
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriber (fun (i:double) (l:string) -> i :> obj)
-                ; source =  (fun () -> "(value " + value.ToString() + ")")
+                ; source =  (fun () -> "(value (Convert.ToDouble(" + value.ToString() + ")))")
                 ; hash = value.GetHashCode()
                 } :?> string
         else
@@ -181,7 +181,7 @@ module Values =
 
     [<ExcelFunction(Name="_Double_Range", Description="Set a referene for a list of doubles",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec DoubleRange 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
         ([<ExcelArgument(Name="Double",Description = "Value")>] values : obj[,]) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)
@@ -202,7 +202,7 @@ module Values =
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriberRange<double> format
-                ; source =  (fun () -> "cell new Generic.List<int>([|" + (a |> Array.fold (fun a y -> a + ";" + y.ToString()) "").Substring(1) + "|]")
+                ; source =  (fun () -> "cell new Generic.List<double>([|" + (a |> Array.fold (fun a y -> a + "; Convert.ToDouble(" + y.ToString() + ")") "").Substring(1) + "|]")
                 ; hash = Array.fold (fun a y -> (a <<< 4) ^^^ y.GetHashCode()) 0 a
                 } :?> string
         else
@@ -214,7 +214,7 @@ Bool
  *********************************************************************************************************************************************************)
     [<ExcelFunction(Name="_Bool", Description="Set a bool value ",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec Bool
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
         ([<ExcelArgument(Name="Bool",Description = "Value")>] value : double) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)
@@ -230,7 +230,7 @@ Bool
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriber (fun (i:double) (l:string) -> i :> obj)
-                ; source =  (fun () -> "(value " + value.ToString() + ")")
+                ; source =  (fun () -> "(value (Convert.ToBoolean(" + value.ToString() + ")))")
                 ; hash = value.GetHashCode()
                 } :?> string
         else
@@ -239,7 +239,7 @@ Bool
 
     [<ExcelFunction(Name="_Bool_Range", Description="Set a referene for a list of bools",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec BoolRange 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
         ([<ExcelArgument(Name="Bools",Description = "Value")>] values : obj[,]) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)
@@ -260,7 +260,7 @@ Bool
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriberRange<bool> format
-                ; source =  (fun () -> "cell new Generic.List<int>([|" + (a |> Array.fold (fun a y -> a + ";" + y.ToString()) "").Substring(1) + "|]")
+                ; source =  (fun () -> "cell new Generic.List<bool>([|" + (a |> Array.fold (fun a y -> a + "; Convert.ToBoolean(" + y.ToString() + ")") "").Substring(1) + "|]")
                 ; hash = Array.fold (fun a y -> (a <<< 4) ^^^ y.GetHashCode()) 0 a
                 } :?> string
         else
@@ -272,7 +272,7 @@ Bool
  *********************************************************************************************************************************************************)
     [<ExcelFunction(Name="_DateTime", Description="Set a DatTime value ",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec DateTimeFunction 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
         ([<ExcelArgument(Name="DateTime",Description = "Value")>] value : double) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)
@@ -288,7 +288,7 @@ Bool
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriber (fun (i:DateTime) (l:string) -> i :> obj)
-                ; source =  (fun () -> "(value " + value.ToString() + ")")
+                ; source =  (fun () -> "(value (DateTime.FromOADate(" + value.ToString() + ")))")
                 ; hash = value.GetHashCode()
                 } :?> string
         else
@@ -297,7 +297,7 @@ Bool
 
     [<ExcelFunction(Name="_DaeTime_Range", Description="Set a referene for a list of DateTime",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec DateTimeRange 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
         ([<ExcelArgument(Name="DateTime",Description = "Value")>] values : obj[,]) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)
@@ -317,7 +317,7 @@ Bool
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriberRange<DateTime> format
-                ; source =  (fun () -> "cell new Generic.List<int>([|" + (a |> Array.fold (fun a y -> a + ";" + y.ToString()) "").Substring(1) + "|]")
+                ; source =  (fun () -> "cell new Generic.List<DateTime>([|" + (a |> Array.fold (fun a y -> a + "; DateTime.FromOADate(" + y.ToString() + ")") "").Substring(1) + "|]")
                 ; hash = Array.fold (fun a y -> (a <<< 4) ^^^ y.GetHashCode()) 0 a
                 } :?> string
         else
@@ -328,7 +328,7 @@ Bool
  *********************************************************************************************************************************************************)
     [<ExcelFunction(Name="_Text", Description="Set a string value ",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec StringFunction 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
         ([<ExcelArgument(Name="Text",Description = "Value")>] value : string) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)
@@ -344,7 +344,7 @@ Bool
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriber (fun (i:string) (l:string) -> i :> obj)
-                ; source =  (fun () -> "(value " + value.ToString() + ")")
+                ; source =  (fun () -> "(value \"" + value.ToString() + "\")")
                 ; hash = value.GetHashCode()
                 } :?> string
         else
@@ -353,7 +353,7 @@ Bool
 
     [<ExcelFunction(Name="_Text_Range", Description="Set a referene for a list of DateTime",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let rec StringRange 
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")  
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifer for the value")>] mnemonic : string)  
         ([<ExcelArgument(Name="DateTime",Description = "Value")>] values : obj[,]) = 
 
         let mnemonic = (Model.formatMnemonic mnemonic)
@@ -373,7 +373,7 @@ Bool
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriberRange<string> format
-                ; source =  (fun () -> "cell new Generic.List<int>([|" + (a |> Array.fold (fun a y -> a + ";" + y.ToString()) "").Substring(1) + "|]")
+                ; source =  (fun () -> "cell new Generic.List<string>([|" + (a |> Array.fold (fun a y -> a + ";\"" + y.ToString() + "\"") "").Substring(1) + "|]")
                 ; hash = Array.fold (fun a y -> (a <<< 4) ^^^ y.GetHashCode()) 0 a
                 } :?> string
         else

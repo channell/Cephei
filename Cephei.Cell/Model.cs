@@ -22,7 +22,6 @@ namespace Cephei.Cell
                          IObservable<KeyValuePair<string, Decimal>>
     {
         protected ICell _Parent;
-        protected DateTime _eventEpoch;
         #region ICell
         public ICell Parent 
         {
@@ -67,7 +66,8 @@ namespace Cephei.Cell
 
         public virtual void OnChange(CellEvent eventType, ICellEvent root,  ICellEvent sender,  DateTime epoch, ISession session)
         {
-            if (epoch <= _eventEpoch && session == null) return; else _eventEpoch = epoch;
+            if (sender == Parent)
+                return;
             RaiseChange(eventType, root, this, epoch, session);
         }
         #endregion
@@ -363,7 +363,7 @@ namespace Cephei.Cell
                     var s = key.Substring(0, key.IndexOf('|'));
                     if (TryGetValue(s, out cell) && cell is Model m)
                     {
-                        s = key.Substring(key.IndexOf('|') + 1 );
+                        s = key.Substring(key.IndexOf('|') + 1);
                         retr = m[s];
                     }
                     if ((retr == null || retr is ICellEmpty) && Parent != null && Parent is Model m2)
@@ -371,8 +371,10 @@ namespace Cephei.Cell
                     else
                         return retr;
                 }
-                else
+                else if (base.ContainsKey(key))
                     return base[key];
+                else
+                    return null;
             }
             set
             {

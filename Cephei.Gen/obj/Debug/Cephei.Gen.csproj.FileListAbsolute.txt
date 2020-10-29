@@ -16,3 +16,4 @@ C:\Users\steve\source\repos\Cephei2\Cephei.Gen\obj\Debug\Cephei.Gen.csproj.CoreC
 C:\Users\steve\source\repos\Cephei2\Cephei.Gen\obj\Debug\Cephei.Gen.csproj.CopyComplete
 C:\Users\steve\source\repos\Cephei2\Cephei.Gen\obj\Debug\Cephei.Gen.exe
 C:\Users\steve\source\repos\Cephei2\Cephei.Gen\obj\Debug\Cephei.Gen.pdb
+C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\obj\Debug\Cephei.Gen.csprojAssemblyReference.cache

@@ -129,8 +129,8 @@ open Cephei.XL.Helper
             
             #line default
             #line hidden
-            this.Write("\r\n        ([<ExcelArgument(Name=\"Mnemonic\",Description = \"Identifer for the value" +
-                    "\")>] \r\n         mnemonic : string)\r\n");
+            this.Write("\r\n        ([<ExcelArgument(Name=\"Mnemonic\",Description = \"Identifier for Cell\")>]" +
+                    " \r\n         mnemonic : string)\r\n");
             
             #line 59 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
@@ -183,8 +183,8 @@ open Cephei.XL.Helper
             
             #line default
             #line hidden
-            this.Write("\r\n        ([<ExcelArgument(Name=\"Mnemonic\",Description = \"Identifer for the value" +
-                    "\")>] \r\n         mnemonic : string)\r\n");
+            this.Write("\r\n        ([<ExcelArgument(Name=\"Mnemonic\",Description = \"Identifier for Cell\")>]" +
+                    " \r\n         mnemonic : string)\r\n");
             
             #line 71 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
@@ -991,9 +991,9 @@ open Cephei.XL.Helper
             
             #line default
             #line hidden
-            this.Write("_Range \r\n        ([<ExcelArgument(Name=\"Mnemonic\",Description = \"Identifer for th" +
-                    "e value\")>] \r\n         mnemonic : string)\r\n        ([<ExcelArgument(Name=\"Object" +
-                    "s\",Description = \"Identifer for the ");
+            this.Write("_Range \r\n        ([<ExcelArgument(Name=\"Mnemonic\",Description = \"Identifier for C" +
+                    "ell\")>] \r\n         mnemonic : string)\r\n        ([<ExcelArgument(Name=\"Objects\",D" +
+                    "escription = \"Identifer for the ");
             
             #line 335 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));

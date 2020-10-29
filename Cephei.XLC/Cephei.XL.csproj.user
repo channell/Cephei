@@ -9,6 +9,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <StartAction>Program</StartAction>
     <StartProgram>C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE</StartProgram>
-    <StartArguments>"Cephei.XL-AddIn64.xll"</StartArguments>
+    <StartArguments>"Cephei.XL64.xll"</StartArguments>
   </PropertyGroup>
 </Project>

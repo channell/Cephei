@@ -16,8 +16,8 @@ namespace Cephei.Cell.Generic
         public void Bind (ICell<T> cell)
         {
             _cell = cell;
-            Bind();
             _cell.Parent = this;
+            Bind();
         }
 
         public override IEnumerable<ICellEvent> Dependants
@@ -127,8 +127,9 @@ namespace Cephei.Cell.Generic
             _cell.UnNotify(listener);
         }
         public override void OnChange(CellEvent eventType, ICellEvent root,  ICellEvent sender,  DateTime epoch, ISession session)
-        {
-            if (epoch <= _eventEpoch && session == null) return; else _eventEpoch = epoch;
+        {            
+            if (sender == Parent) 
+                return; 
             if (root != this)
                 _cell.OnChange(eventType, root,  this, epoch, session);
             if (Parent != null)

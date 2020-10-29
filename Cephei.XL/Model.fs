@@ -191,12 +191,12 @@ module public  Model =
             cell.Dependants
             |> Seq.filter (fun i -> i :? ICell)
             |> Seq.map (fun i -> i :?> ICell)
-            |> Seq.fold (fun a y -> [y.Mnemonic + "/" + y.GetType().ToString() + "/" + y.GetHashCode().ToString()] @ a) []
+            |> Seq.fold (fun a y -> [y.Mnemonic] @ a) []
 
         let depens = 
             _state.Value.Model
             |> Seq.map (fun i -> if i.Value :? ICellModel then new KeyValuePair<string, ICell>(i.Key, (i.Value :?> ICellModel).Cell) else i)
-            |> Seq.map (fun i -> (i.Key + "/" + i.Value.GetType().ToString() + "/" + i.Value.GetHashCode().ToString() , (deps i.Value)))
+            |> Seq.map (fun i -> (i.Key, (deps i.Value)))
             |> Seq.toList
 
         let size = 
@@ -243,7 +243,7 @@ module public  Model =
                 s
 
         let typeString (o : obj)  =
-            let t = o.GetType().ToString()
+            let t = o.GetType().Name
             if t.Contains("`") then
                 let parse (s,f) y = 
                     if y = '`' then 
@@ -287,7 +287,7 @@ module public  Model =
         let excelParameters = 
             cells |>
             Array.filter (fun (c,s) -> c.Mnemonic.StartsWith("+")) |>
-            Array.map (fun (c,s) -> sprintf "        ([<ExcelArgument(Name=\"__%s\",Description = \"reference to %s\")>]\n        %s : obj)\n" (strip c.Mnemonic) (strip c.Mnemonic) (strip c.Mnemonic)) |>
+            Array.map (fun (c,s) -> sprintf "        ([<ExcelArgument(Name=\"__%s\",Description = \"reference to %s\")>]\n        %s : obj)\n" (strip c.Mnemonic) (typeString c.Box) (strip c.Mnemonic)) |>
             Array.fold (fun a y -> a + y) ""
 
         let excelCasts = 
@@ -331,11 +331,11 @@ module public  Model =
         let formatProperty (n : string) (p : string) (t : string) = 
             String.Format ("
     [<ExcelFunction(Name=\"__{0}_{1}\", Description=\"Create a {2}\",Category=\"Cephei Models\", IsThreadSafe = false, IsExceptionSafe=true)>]
-    let Period_ToShortString
+    let {0}_{1}
         ([<ExcelArgument(Name=\"Mnemonic\",Description = \"Identifer for the Cell\")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name=\"{0}\",Description = \"{2}\")>] 
-         {1} : obj)
+        ([<ExcelArgument(Name=\"{0}\",Description = \"{0}\")>] 
+         {0} : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
