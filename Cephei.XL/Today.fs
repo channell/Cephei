@@ -66,13 +66,13 @@ module Today =
             ; hash = 0
             } 
 
-    [<ExcelFunction(Name="_Value_Lapse", Description="Value at timelapse",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
-    let lapse
+    [<ExcelFunction(Name="_Delay_Double", Description="Delay a price for # seconds",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
+    let delay
         ([<ExcelArgument(Name="Mnemonic",Description = "Mnemonic for this lapse")>] 
          mnemonic : string)
         ([<ExcelArgument(Name="Reference",Description = "Mnemonic of Cell with the Value")>] 
          reference : string)
-        ([<ExcelArgument(Name="time lapse",Description = "Time Span ")>] 
+        ([<ExcelArgument(Name="time lapse",Description = "number of seconds to delay")>] 
         lapse : obj)
         = 
 
@@ -86,16 +86,16 @@ module Today =
 
                 let builder (current : ICell) = 
                     if current = null then 
-                        withMnemonic mnemonic (new TimeLapse<double> (_reference.cell, _lapse.cell)) :> ICell
+                        withMnemonic mnemonic (new Delay<double> (_reference.cell, _lapse.cell)) :> ICell
                     else
-                        let source = current :?> TimeLapse<double>
+                        let source = current :?> Delay<double>
                         source.Reference.Value  <- _reference.cell.Value
                         source.Lapse.Value <- _lapse.cell.Value
                         current
 
                 let format (i : double) (l:string) = i :> obj
 
-                let source () = Helper.sourceFold "new TimeLapse<double>" 
+                let source () = Helper.sourceFold "Fun.Delay" 
                                                [| _reference.source
                                                ;  _lapse.source
                                                |]
@@ -109,8 +109,7 @@ module Today =
                     ; subscriber = Helper.subscriber format
                     ; source = source 
                     ; hash = hash
-                    } |> ignore
-                Model.value mnemonic
+                    } 
 
             with
             | _ as e ->  "#" + e.Message :> obj

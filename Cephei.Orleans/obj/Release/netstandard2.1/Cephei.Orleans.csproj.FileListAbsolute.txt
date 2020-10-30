@@ -1,0 +1,4 @@
+C:\Users\steve\source\repos\Cephei2\Cephei.Orleans\obj\Release\netstandard2.1\Cephei.Orleans.csprojAssemblyReference.cache
+C:\Users\steve\source\repos\Cephei2\Cephei.Orleans\obj\Release\netstandard2.1\Cephei.Orleans.AssemblyInfoInputs.cache
+C:\Users\steve\source\repos\Cephei2\Cephei.Orleans\obj\Release\netstandard2.1\Cephei.Orleans.AssemblyInfo.cs
+C:\Users\steve\source\repos\Cephei2\Cephei.Orleans\obj\Release\netstandard2.1\Cephei.Orleans.csproj.CoreCompileInputs.cache

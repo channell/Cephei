@@ -79,13 +79,19 @@ namespace Cephei.XL
                 if (t.IsGenericType)
                 {
                     var p = t.GenericTypeArguments[0];
-                    var m = String.Format("CALC {0}", p.Name);
-                    Log.Information(m);
+                    if (p.IsClass)
+                    {
+                        var m = String.Format("CALC {0}", p.Name);
+                        Log.Information(m);
+                    }
                 }
                 else
                 {
-                    var m = String.Format("CALC {0}", t.Name);
-                    Log.Information(m);
+                    if (t.IsClass)
+                    {
+                        var m = String.Format("CALC {0}", t.Name);
+                        Log.Information(m);
+                    }
                 }
             }
         }

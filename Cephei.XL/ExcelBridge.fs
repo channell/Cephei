@@ -9,11 +9,13 @@ open System.Collections
 open Cephei.QL
 open System.Threading.Tasks
 
-type ModelRTD ()  =
+type ModelRTD () as this =
     inherit ExcelDna.Integration.Rtd.ExcelRtdServer ()
 
     let _topics                 = new ConcurrentDictionary<ExcelRtdServer.Topic, string>()
     let _topicIndex             = new ConcurrentDictionary<string, ExcelRtdServer.Topic list>()
+
+    do AppDomain.CurrentDomain.SetData("RTDServer", this)
 
     override this.ConnectData (topic : ExcelRtdServer.Topic, topicInfo : IList<string>, newValues : bool byref) =
 
@@ -53,6 +55,16 @@ type ModelRTD ()  =
 
             Task.Run (dispatch) |> ignore
             
+    interface IValueRTD with 
+        member this.UpdateValue (mnemonic : string) (layout : string) (value : obj) = 
+            if _topicIndex.ContainsKey (mnemonic) then
+                let topics = _topicIndex.[mnemonic]
+                let apply (t : ExcelRtdServer.Topic) = t.UpdateValue (value)
+                List.iter apply topics
+
+        member this.UpdateRange (mnemonic : string) (layout : string) (value : obj[,]) = 
+            raise (new NotImplementedException ())
+
 type ValueRTD ()  =
     inherit ExcelDna.Integration.Rtd.ExcelRtdServer ()
 
@@ -61,9 +73,16 @@ type ValueRTD ()  =
     let _subscriptions          = new ConcurrentDictionary<Generic.KeyValuePair<string, string>, IDisposable> ()
     let _value                  = new ConcurrentDictionary<string, obj> ()
 
+    let _RTDModel               = AppDomain.CurrentDomain.GetData("RTDServer") :?> IValueRTD
+
+    let updateValue (topic : ExcelRtdServer.Topic) mnemonic (value : obj) = 
+        if value :? string && (value :?> string).StartsWith("#") then 
+            _RTDModel.UpdateValue mnemonic ""  (mnemonic + "/1")
+            topic.UpdateValue value
+
     override this.ConnectData (topic : ExcelRtdServer.Topic, topicInfo : IList<string>, newValues : bool byref) =
 
-        let mnemonic = topicInfo.[0]
+        let mnemonic =  if topicInfo.[0].Contains("/") then topicInfo.[0].Substring(0,topicInfo.[0].IndexOf('/')) else topicInfo.[0]
         let layout = topicInfo.[1]
 
         System.Diagnostics.Debug.Print ("ValueRTD ConnectData " + mnemonic + " " + layout);
@@ -92,11 +111,11 @@ type ValueRTD ()  =
                             try
                                 topic.UpdateValue ((Model.cell mnemonic).Value.Box.ToString())
                             with
-                            | e -> topic.UpdateValue ("#" + e.Message :> obj)
+                            | e -> updateValue topic mnemonic ("#" + e.Message :> obj)
                     else
-                        topic.UpdateValue "#NotValue"
+                        updateValue topic mnemonic "#NotValue"
             with
-            | e -> topic.UpdateValue ("#" + e.Message)
+            | e -> updateValue topic mnemonic ("#" + e.Message)
         Task.Run (dispatch) |> ignore
         "..." + mnemonic :> obj
 

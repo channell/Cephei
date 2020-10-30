@@ -141,6 +141,11 @@
             and write
             </summary>
         </member>
+        <member name="F:Cephei.Cell.Generic.Cell`1._lockHolder">
+            <summary>
+            Holder of the lock while calculating
+            </summary>
+        </member>
         <member name="F:Cephei.Cell.Generic.Cell`1._value">
             <summary>
             cached value of the last calculation
@@ -177,6 +182,11 @@
             calculation
             </summary>
         </member>
+        <member name="F:Cephei.Cell.Generic.Cell`1._disposd">
+            <summary>
+            Has this cell been disposed, buy wating for references to be cleared
+            </summary>
+        </member>
         <!-- Badly formed XML comment ignored for member "M:Cephei.Cell.Generic.Cell`1.#ctor(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,`0})" -->
         <member name="M:Cephei.Cell.Generic.Cell`1.#ctor(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,`0},System.String)">
             <summary>
@@ -210,7 +220,7 @@
             </summary>
             <param name="t"></param>
         </member>
-        <member name="M:Cephei.Cell.Generic.Cell`1.Calculate(System.DateTime,System.Int32,Cephei.Cell.ISession)">
+        <member name="M:Cephei.Cell.Generic.Cell`1.Calculate(System.DateTime,System.Int32,Cephei.Cell.ISession,System.Boolean)">
             <summary>
             Internal calculation function, that is triggered either by:
             <ol>
@@ -286,6 +296,16 @@
         <member name="P:Cephei.Cell.Generic.CellTrivial`1.Box">
             <see cref="P:Cephei.Cell.ICell.Box"/>
         </member>
+        <!-- Badly formed XML comment ignored for member "T:Cephei.Cell.Generic.CellKernel`1" -->
+        <member name="P:Cephei.Cell.Generic.CellKernel`1.HasFunction">
+            <see cref="P:Cephei.Cell.ICell.HasFunction"/>
+        </member>
+        <member name="P:Cephei.Cell.Generic.CellKernel`1.HasValue">
+            <see cref="P:Cephei.Cell.ICell.HasValue"/>
+        </member>
+        <member name="P:Cephei.Cell.Generic.CellKernel`1.Box">
+            <see cref="P:Cephei.Cell.ICell.Box"/>
+        </member>
         <member name="T:Cephei.Cell.Generic.CellSpot`1">
             <summary>
             CellSpot is a further specialization of Cell from CellFast for cells where the
@@ -314,6 +334,11 @@
             Either the Value of the Cell, or the appropriate value for the current session
             </summary>
         </member>
+        <member name="P:Cephei.Cell.Generic.ICell`1.Function">
+            <summary>
+            Access the functions for this cell for cloning
+            </summary>
+        </member>
         <member name="T:Cephei.Cell.Generic.Model`1">
             <summary>
             Specialisation of Model for recipes models that add cell functions to an oject
@@ -328,6 +353,24 @@
             <param name="sender">the cell that triggered this change</param>
             <param name="epoch">the time epoch of the original source change.. used for throttling</param>
             <param name="transaction">optionaly the transaction that is completing</param>
+        </member>
+        <member name="T:Cephei.Cell.ICellEvent">
+            <summary>
+            Cells and observers that handle change events
+            </summary>
+        </member>
+        <member name="M:Cephei.Cell.ICellEvent.OnChange(Cephei.Cell.CellEvent,Cephei.Cell.ICellEvent,Cephei.Cell.ICellEvent,System.DateTime,Cephei.Cell.ISession)">
+            <summary>
+            OnChange is the event sink that receives notification of changes to dependant
+            cells
+            </summary>
+            <param name="eventType">The event be raised</param>
+            <param name="root">The cell that sent this event,</param>
+            <param name="epoch">timestamp of the change.  This is used to ensure that
+            latest values are not overwirtten by calculations dispatched out of
+            order</param>
+            <param name="session">reference to the session that the eventi was originally
+            source in</param>
         </member>
         <member name="T:Cephei.Cell.ICell">
             <summary>
@@ -361,23 +404,28 @@
             Event to subscribe to changes<i> </i>
             </summary>
         </member>
-        <member name="M:Cephei.Cell.ICell.OnChange(Cephei.Cell.CellEvent,Cephei.Cell.ICell,System.DateTime,Cephei.Cell.ISession)">
-            <summary>
-            OnChange is the event sink that receives notification of changes to dependant
-            cells
-            </summary>
-            <param name="eventType">The event be raised</param>
-            <param name="root">The cell that sent this event,</param>
-            <param name="epoch">timestamp of the change.  This is used to ensure that
-            latest values are not overwirtten by calculations dispatched out of
-            order</param>
-            <param name="session">reference to the session that the eventi was originally
-            source in</param>
-        </member>
         <member name="P:Cephei.Cell.ICell.HasFunction">
             <summary>
             Does the cell havee a function that can be subscribed to 
             </summary>
+        </member>
+        <member name="M:Cephei.Cell.ICell.Merge(Cephei.Cell.ICell,Cephei.Cell.Model)">
+            <summary>
+            Clone the dependencies of another cell
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:Cephei.Cell.ICell.Notify(Cephei.Cell.ICell)">
+            <summary>
+            Add notifcation 
+            </summary>
+            <param name="listener">cell aquiring the notification</param>
+        </member>
+        <member name="M:Cephei.Cell.ICell.UnNotify(Cephei.Cell.ICell)">
+            <summary>
+            Drop notifciation
+            </summary>
+            <param name="listener">cell aquiring the notification</param>
         </member>
         <member name="P:Cephei.Cell.ICell.HasValue">
             <summary>
@@ -387,6 +435,33 @@
         <member name="P:Cephei.Cell.ICell.Box">
             <summary>
             Support assignement from boxed values
+            </summary>
+        </member>
+        <member name="T:Cephei.Cell.ITrivial">
+            <summary>
+            Trivial Cells are executed inline with their calling function
+            </summary>
+        </member>
+        <member name="M:Cephei.Cell.ITrivial.ToCell">
+            <summary>
+            Allow Trivial Cells to be upgraded to tracking Cells
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cephei.Cell.ITrivial.GetFunction">
+            <summary>
+            enable passthrough profiling of trivial funtions
+            </summary>
+            <returns>_func</returns>
+        </member>
+        <member name="T:Cephei.Cell.IFast">
+            <summary>
+            Fast Cells do not need to have dependancie migrated
+            </summary>
+        </member>
+        <member name="T:Cephei.Cell.ICellModel">
+            <summary>
+            Model that wrapps a subject cell
             </summary>
         </member>
         <member name="T:Cephei.Cell.Cell">
@@ -405,6 +480,12 @@
             <summary>
             flag to whether cells to evaluate on creation or wait for reference 
             cells
+            </summary>
+        </member>
+        <member name="F:Cephei.Cell.Cell.ErrorRetry">
+            <summary>
+            Number of time to retry an error recieved by an observer.
+            Needed for complex dependancy update through Excel
             </summary>
         </member>
         <member name="F:Cephei.Cell.Cell.Current">
@@ -512,6 +593,18 @@
             <param name="mnemonic"></param>
         </member>
         <member name="M:Cephei.Cell.Cell.Profile``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})">
+            <summary>
+            profile the closure to extract a list of the cells referenced
+            </summary>
+            <param name="func"></param>
+        </member>
+        <member name="M:Cephei.Cell.Cell.Profile``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0}})">
+            <summary>
+            profile the kernel bootstrap closure to extract a list of the cells referenced
+            </summary>
+            <param name="func"></param>
+        </member>
+        <member name="M:Cephei.Cell.Cell.ProfileObject(System.Object)">
             <summary>
             profile the closure to extract a list of the cells referenced
             </summary>

@@ -5,3 +5,4 @@ C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\obj\Release\Cephei.Gen.csproj.Cor
 C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\obj\Release\Cephei.Gen.csproj.CopyComplete
 C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\obj\Release\Cephei.Gen.exe
 C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\obj\Release\Cephei.Gen.pdb
+C:\Users\steve\source\repos\Cephei2\Cephei.Gen\obj\Release\Cephei.Gen.csprojAssemblyReference.cache

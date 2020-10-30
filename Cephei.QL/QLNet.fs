@@ -21,6 +21,9 @@ module Cephei.QL.Fun
 open Cephei.QL
 open QLNet
 
+let Delay<'t>                                   (r : Cephei.Cell.Generic.ICell<'t>) l
+                                                = new Delay<'t>(r, l)
+
 let Abcd                                        a b c d aIsFixed bIsFixed cIsFixed dIsFixed vegaWeighted endCriteria optMethod 
                                                 = new AbcdModel (a, b, c, d, aIsFixed, bIsFixed, cIsFixed, dIsFixed, vegaWeighted, endCriteria, optMethod)
 let AbcdCalibration                             ()

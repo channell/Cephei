@@ -127,31 +127,23 @@ module public  Model =
 
     // Register a functor to create a cell if requried
     let specify (spec : spec) : obj =
-        let respec () =
-            Thread.Sleep (2000)
-            xlInterface.ModelRTD (spec.mnemonic + "/1") (spec.hash.ToString()) |> ignore
-
         _state.Value.Rtd.[spec.mnemonic] <- spec
         let xlv = xlInterface.ModelRTD spec.mnemonic (spec.hash.ToString()) 
         if xlv = null then 
             add spec.mnemonic |> ignore
             spec.mnemonic :> obj
         elif xlv :? string && (xlv :?> string).StartsWith("#") then
-            Task.Run respec |> ignore
-            xlv
+            // trigger reeval, and re-schedule of RTD call 
+            (xlInterface.ModelRTD spec.mnemonic (spec.hash.ToString() + "/")) :> obj
         else
             xlv
+
     // Register and get the value of a single obj
     let value (mnemonic : string) : obj =
         let xlv = xlInterface.ValueRTD mnemonic ""
         if xlv = null then 
             add mnemonic |> ignore
-            mnemonic :> obj
-        elif xlv :? string && not ((xlv :?> string) = mnemonic) then
-            try
-                genericFormat (_state.Value.Model.[mnemonic].Box)
-            with
-            | ex -> "#" + ex.Message :> obj
+            genericFormat (_state.Value.Model.[mnemonic].Box)
         else
             xlv
 

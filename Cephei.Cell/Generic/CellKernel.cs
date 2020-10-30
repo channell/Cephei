@@ -28,6 +28,7 @@ namespace Cephei.Cell.Generic
         private volatile ManualResetEvent _event = new ManualResetEvent(false);
 
         private volatile int _state = (int)CellState.Dirty;
+        private Thread _lockHolder = null;
         //private volatile CellState _state = CellState.Dirty;
         private T _value;
         private Exception _lastException = null;
@@ -195,7 +196,7 @@ namespace Cephei.Cell.Generic
                         for (int c = 0; c < 60000; c += 100)
                         {
                             //                            if (_event == null) _event = new ManualResetEvent(false);
-                            if (_event.WaitOne(c) || _state != (int)CellState.Blocking)
+                            if (_event.WaitOne(c) || _state != (int)CellState.Blocking || !_lockHolder.IsAlive)
                                 break;
                         }
                         if (_state != (int)CellState.Clean)
@@ -304,12 +305,14 @@ namespace Cephei.Cell.Generic
 
         private void PoolCalculate(DateTime epoch, ISession session)
         {
-            var lastsession = Session.Current;
-            Session.Current = session;
-            Calculate(epoch, 0, session);
-            RaiseChange(CellEvent.Calculate, this, this, epoch, session);
-
-            Session.Current = lastsession;
+            if (Change != null || !Cell.Lazy)
+            {
+                var lastsession = Session.Current;
+                Session.Current = session;
+                Calculate(epoch, 0, session);
+                RaiseChange(CellEvent.Calculate, this, this, epoch, session);
+                Session.Current = lastsession;
+            }
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -324,6 +327,14 @@ namespace Cephei.Cell.Generic
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private Cephei.Cell.CellState SetState(CellState value)
         {
+            if (value == CellState.Calculating)
+            {
+                _lockHolder = Thread.CurrentThread;
+            }
+            else if (value == CellState.Clean)
+            {
+                _lockHolder = null;
+            }
             var s = (CellState)Interlocked.Exchange(ref _state, (int)value);
             if (s == CellState.Blocking)
             {
@@ -336,7 +347,7 @@ namespace Cephei.Cell.Generic
         public virtual void OnChange(CellEvent eventType, ICellEvent root,  ICellEvent sender,  DateTime epoch, ISession session)
         {
             if (_disposd && root != this && eventType != CellEvent.Delete) sender.OnChange(CellEvent.Delete, this, this, epoch, session);
-            if (sender == Parent) return;
+            if (sender == Parent || root == this) return;
             switch (eventType)
             {
                 case CellEvent.Calculate:
@@ -371,16 +382,13 @@ namespace Cephei.Cell.Generic
                 case CellEvent.Error:
                     bool taken = false;
                     _spinLock.Enter(ref taken);
-                    if (taken)
+                    while (!taken)
                     {
-                        SetState(CellState.Error);
-                        _spinLock.Exit();
+                        Thread.Yield();
+                        _spinLock.Enter(ref taken);
                     }
-                    else
-                    {
-                        Thread.Sleep(100);
-                        OnChange(eventType, root, this, epoch, session);
-                    }
+                    SetState(CellState.Error);
+                    _spinLock.Exit();
                     break;
                 case CellEvent.Link:
                     if (root == this)

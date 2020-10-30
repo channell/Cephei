@@ -26,10 +26,11 @@ C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\bin\Debug\net48\Cephei.Ce
 C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\bin\Debug\net48\QLNetCephei.dll
 C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\bin\Debug\net48\QLNetCephei.pdb
 C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\bin\Debug\net48\Cephei.Cell.pdb
-C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\obj\Debug\net48\Cephei.QLNetHelper.csprojAssemblyReference.cache
 C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\obj\Debug\net48\Cephei.QLNetHelper.AssemblyInfoInputs.cache
 C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\obj\Debug\net48\Cephei.QLNetHelper.AssemblyInfo.cs
 C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\obj\Debug\net48\Cephei.QLNetHelper.csproj.CoreCompileInputs.cache
 C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\obj\Debug\net48\Cephei.QLNetHelper.csproj.CopyComplete
 C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\obj\Debug\net48\Cephei.QLNetHelper.dll
 C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\obj\Debug\net48\Cephei.QLNetHelper.pdb
+C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\bin\Debug\net48\Cephei.Cell.xml
+C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\obj\Debug\net48\Cephei.QLNetHelper.csprojAssemblyReference.cache

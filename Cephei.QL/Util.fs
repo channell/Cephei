@@ -69,7 +69,7 @@ module Util =
         Nullable<'T> ()
 
 // Summary: Time lapse value
-type TimeLapse<'t> (reference : ICell<'t>, lapse : ICell<double>) as this = 
+type Delay<'t> (reference : ICell<'t>, lapse : ICell<double>) as this = 
     inherit Model<'t> ()
 
     let _queue  = new Generic.Queue<Generic.KeyValuePair<DateTime,'t>> ()
@@ -81,17 +81,22 @@ type TimeLapse<'t> (reference : ICell<'t>, lapse : ICell<double>) as this =
     let at (span : TimeSpan) (now : DateTime) (current : 't) = 
         System.Threading.Monitor.Enter _queue
         try
-            _queue.Enqueue (new Generic.KeyValuePair<DateTime,'t> (now, current))
-            let peek = _queue.Peek()
-            if peek.Key.Add(span) >= now then 
-                peek.Value
-            else
-                while (_queue.Peek().Key.Add(span) < now) do ignore (_queue.Dequeue())
-                _queue.Peek().Value
+            try
+                _queue.Enqueue (new Generic.KeyValuePair<DateTime,'t> (now, current))
+                let peek = _queue.Peek()
+                if peek.Key.Add(span) >= now then 
+                    peek.Value
+                else
+                    while (_queue.Peek().Key.Add(span) < now) do ignore (_queue.Dequeue())
+                    _queue.Peek().Value
+            with
+            | e -> current
+
         finally
             System.Threading.Monitor.Exit _queue
 
     let _value = Util.cell (fun () -> at _span.Value DateTime.Now _reference.Value)
+
 
     do this.Bind(_value)
 
@@ -99,5 +104,3 @@ type TimeLapse<'t> (reference : ICell<'t>, lapse : ICell<double>) as this =
     member this.Reference = _reference 
     member this.Lapse = _lapse
     member this.Span = _span
-
-

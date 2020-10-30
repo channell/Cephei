@@ -131,3 +131,6 @@ C:\Users\steve\Source\Repos\Cephei2\Cephei.Cell.FTest\obj\Release\netcoreapp3.1\
 C:\Users\steve\Source\Repos\Cephei2\Cephei.Cell.FTest\obj\Release\netcoreapp3.1\Cephei.Cell.Test.dll
 C:\Users\steve\Source\Repos\Cephei2\Cephei.Cell.FTest\obj\Release\netcoreapp3.1\Cephei.Cell.Test.pdb
 C:\Users\steve\Source\Repos\Cephei2\Cephei.Cell.FTest\obj\Release\netcoreapp3.1\Cephei.Cell.Test.genruntimeconfig.cache
+C:\Users\steve\source\repos\Cephei2\Cephei.Cell.FTest\bin\Release\netcoreapp3.1\ILGPU.dll
+C:\Users\steve\source\repos\Cephei2\Cephei.Cell.FTest\bin\Release\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\steve\source\repos\Cephei2\Cephei.Cell.FTest\bin\Release\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
