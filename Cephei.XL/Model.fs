@@ -134,7 +134,7 @@ module public  Model =
             spec.mnemonic :> obj
         elif xlv :? string && (xlv :?> string).StartsWith("#") then
             // trigger reeval, and re-schedule of RTD call 
-            (xlInterface.ModelRTD spec.mnemonic (spec.hash.ToString() + "/")) :> obj
+            (xlInterface.ModelRTD spec.mnemonic (spec.hash.ToString() + "/"))
         else
             xlv
 

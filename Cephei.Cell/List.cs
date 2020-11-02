@@ -322,6 +322,9 @@ namespace Cephei.Cell
         {
             Change -= listener.OnChange;
         }
-
+        public object GetFunction()
+        {
+            return null;
+        }
     }
 }

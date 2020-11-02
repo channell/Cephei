@@ -1,6 +1,7 @@
 ﻿namespace Cephei.XL
 
 open System;
+open System.Threading
 open System.Collections.Generic
 open System.Collections.Concurrent
 open ExcelDna.Integration
@@ -31,14 +32,13 @@ type ModelRTD () as this =
 
             Model.add mnemonic 
             topic.UpdateValue mnemonic
-
         Task.Run (dispatch) |> ignore
+            
         mnemonic :> obj
-  
 
     override this.DisconnectData (topic : ExcelRtdServer.Topic) =
 
-        if _topics.ContainsKey(topic) then 
+        if  _topics.ContainsKey(topic) then 
             let mnemonic = _topics.[topic]
             System.Diagnostics.Debug.Print ("ModelRTD DisconnectData " + mnemonic );
             let dispatch () : unit = 
@@ -65,27 +65,66 @@ type ModelRTD () as this =
         member this.UpdateRange (mnemonic : string) (layout : string) (value : obj[,]) = 
             raise (new NotImplementedException ())
 
-type ValueRTD ()  =
+type ValueRTD () as this =
     inherit ExcelDna.Integration.Rtd.ExcelRtdServer ()
 
     let _topics                 = new ConcurrentDictionary<ExcelRtdServer.Topic, KeyValuePair<string, string>>()
     let _topicIndex             = new ConcurrentDictionary<Generic.KeyValuePair<string, string>, ExcelRtdServer.Topic list>()
     let _subscriptions          = new ConcurrentDictionary<Generic.KeyValuePair<string, string>, IDisposable> ()
     let _value                  = new ConcurrentDictionary<string, obj> ()
+    let _retry                  = new ConcurrentQueue<KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic>> ()
+    let _relink                 = new ConcurrentQueue<KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic>> ()
+    let _timer                  = new System.Timers.Timer (2000.0);
 
     let _RTDModel               = AppDomain.CurrentDomain.GetData("RTDServer") :?> IValueRTD
 
+    let kvp (k : 'k) (v : 'v) = new KeyValuePair<'k,'v>(k,v)
+
     let updateValue (topic : ExcelRtdServer.Topic) mnemonic (value : obj) = 
         if value :? string && (value :?> string).StartsWith("#") then 
-            _RTDModel.UpdateValue mnemonic ""  (mnemonic + "/1")
-            topic.UpdateValue value
+            let c = Model.cell mnemonic
+            if c.IsSome then
+                c.Value.OnChange(Cephei.Cell.CellEvent.Link, c.Value, c.Value, DateTime.Now, null);
+                _RTDModel.UpdateValue mnemonic ""  (mnemonic)
+        topic.UpdateValue value
+
+    let subscribe (kv : KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic>) = 
+        let listener = Model.subscribe this kv.Key.Key kv.Key.Value
+        if not (listener = (null :> IDisposable)) then 
+            _subscriptions.[kv.Key] <- listener
+            if Model.hasRange kv.Key.Key kv.Key.Value then
+                kv.Value.UpdateValue kv.Key
+                false
+            elif _value.ContainsKey(kv.Key.Key) then
+                kv.Value.UpdateValue _value.[kv.Key.Key]
+                false
+            else
+                let c = Model.cell kv.Key.Key
+                if c.IsSome then
+                    c.Value.OnChange(Cephei.Cell.CellEvent.Link, c.Value, c.Value, DateTime.Now, null);
+//                    _RTDModel.UpdateValue kv.Key.Key ""  kv.Key.Key
+                true
+        else
+            true
+    
+    let tick (e : System.Timers.ElapsedEventArgs) : unit = 
+        let mutable v : KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic> = new KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic> (KeyValuePair<string, string>(null,null), null)
+        while _retry.TryDequeue(ref v) do
+            if not (v.Key.Key = null) && (v.Value.Value :? string) then
+                if subscribe v then
+                    _retry.Enqueue v
+
+    do  _timer.Elapsed.Add tick
+        _timer.AutoReset <- true
+        _timer.Enabled <- true
+        _timer.Start ()
 
     override this.ConnectData (topic : ExcelRtdServer.Topic, topicInfo : IList<string>, newValues : bool byref) =
 
         let mnemonic =  if topicInfo.[0].Contains("/") then topicInfo.[0].Substring(0,topicInfo.[0].IndexOf('/')) else topicInfo.[0]
         let layout = topicInfo.[1]
 
-        System.Diagnostics.Debug.Print ("ValueRTD ConnectData " + mnemonic + " " + layout);
+        //System.Diagnostics.Debug.Print ("ValueRTD ConnectData " + mnemonic + " " + layout);
 
         let dispatch () : unit = 
             let kv = new KeyValuePair<string,string>(mnemonic, layout);
@@ -100,30 +139,19 @@ type ValueRTD ()  =
                 else
                     _topics.[topic] <- kv
                     _topicIndex.[kv] <- [topic]
-                    let listener = Model.subscribe this mnemonic layout
-                    if not (listener = (null :> IDisposable)) then 
-                        _subscriptions.[kv] <- listener
-                        if Model.hasRange mnemonic layout then
-                            topic.UpdateValue mnemonic 
-                        elif _value.ContainsKey(mnemonic) then
-                            topic.UpdateValue _value.[mnemonic]
-                        else
-                            try
-                                topic.UpdateValue ((Model.cell mnemonic).Value.Box.ToString())
-                            with
-                            | e -> updateValue topic mnemonic ("#" + e.Message :> obj)
-                    else
-                        updateValue topic mnemonic "#NotValue"
+                    let retry = kvp kv topic 
+                    if subscribe retry then 
+                        _retry.Enqueue(retry)
             with
             | e -> updateValue topic mnemonic ("#" + e.Message)
         Task.Run (dispatch) |> ignore
-        "..." + mnemonic :> obj
+        "#..." + mnemonic :> obj
 
     override this.DisconnectData (topic : ExcelRtdServer.Topic) =
         
         let dispatch () : unit = 
             let kv = _topics.[topic]
-            System.Diagnostics.Debug.Print ("ValueRTD DisconnectData " + kv.Value);
+            //System.Diagnostics.Debug.Print ("ValueRTD DisconnectData " + kv.Value);
 
             _topics.TryRemove (topic) |> ignore
             let nl = _topicIndex.[kv] |> List.filter (fun t -> not (t = topic))

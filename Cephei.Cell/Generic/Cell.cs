@@ -641,6 +641,11 @@ namespace Cephei.Cell.Generic
         {
             Change -= listener.OnChange;
         }
+        public object GetFunction()
+        {
+            return _func;
+        }
+
         #endregion
     }
 }

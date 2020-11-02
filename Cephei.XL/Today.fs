@@ -49,7 +49,7 @@ module Today =
             { mnemonic = "Clock"
             ; creator = fun (current : ICell) -> new Clock(1000.0) :> ICell
             ; subscriber = Helper.subscriber format
-            ; source =  (fun () -> "cell " + value.ToString())
+            ; source =  (fun () -> "(value DateTime.Today)")
             ; hash = 0
             } |> ignore 
         Model.add "Clock"            
@@ -89,8 +89,10 @@ module Today =
                         withMnemonic mnemonic (new Delay<double> (_reference.cell, _lapse.cell)) :> ICell
                     else
                         let source = current :?> Delay<double>
-                        source.Reference.Value  <- _reference.cell.Value
-                        source.Lapse.Value <- _lapse.cell.Value
+                        if (not (source.Reference = _reference.cell) || not (source.Lapse = _lapse.cell)) && source.Parent :? Model  then
+                            source.Reference <- _reference.cell
+                            source.Lapse <- _lapse.cell
+                            Cell.Relink (source.GetFunction(), source.Parent :?> Model) |> ignore
                         current
 
                 let format (i : double) (l:string) = i :> obj

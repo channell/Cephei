@@ -85,7 +85,6 @@ namespace Cephei.Cell.Generic
             return _func;
         }
 
-
         public IEnumerable<ICellEvent> Dependants
         {
             get

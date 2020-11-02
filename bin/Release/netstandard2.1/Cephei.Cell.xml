@@ -437,6 +437,12 @@
             Support assignement from boxed values
             </summary>
         </member>
+        <member name="M:Cephei.Cell.ICell.GetFunction">
+            <summary>
+            enable passthrough profiling of trivial funtions
+            </summary>
+            <returns>_func</returns>
+        </member>
         <member name="T:Cephei.Cell.ITrivial">
             <summary>
             Trivial Cells are executed inline with their calling function
@@ -447,12 +453,6 @@
             Allow Trivial Cells to be upgraded to tracking Cells
             </summary>
             <returns></returns>
-        </member>
-        <member name="M:Cephei.Cell.ITrivial.GetFunction">
-            <summary>
-            enable passthrough profiling of trivial funtions
-            </summary>
-            <returns>_func</returns>
         </member>
         <member name="T:Cephei.Cell.IFast">
             <summary>
@@ -609,6 +609,13 @@
             profile the closure to extract a list of the cells referenced
             </summary>
             <param name="func"></param>
+        </member>
+        <member name="M:Cephei.Cell.Cell.Relink(System.Object,Cephei.Cell.Model)">
+            <summary>
+            Remink the formula of a cell to use current value
+            </summary>
+            <param name="func">function within cell</param>
+            <param name="model">model that the functions cell is within </param>
         </member>
         <member name="T:Cephei.Cell.SessionState">
             <summary>

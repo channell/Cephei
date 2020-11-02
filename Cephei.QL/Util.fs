@@ -101,6 +101,6 @@ type Delay<'t> (reference : ICell<'t>, lapse : ICell<double>) as this =
     do this.Bind(_value)
 
     member this.Value = _value
-    member this.Reference = _reference 
-    member this.Lapse = _lapse
-    member this.Span = _span
+    member this.Reference with get () = _reference and set v = _reference <- v
+    member this.Lapse with get () = _lapse and set v = _lapse <- v
+    member this.Span with get () = _span and set v = _span <- v

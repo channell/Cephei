@@ -18,7 +18,7 @@ module Values =
         if mnemonic = null || mnemonic = "" then
             "#NA" :> obj
         else
-           Model.value mnemonic
+            Model.value mnemonic
 
 
     [<ExcelFunction(Name="_Value_Range", Description="Get the range value of Cephei reference",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]

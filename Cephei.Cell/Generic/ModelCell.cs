@@ -89,6 +89,10 @@ namespace Cephei.Cell.Generic
                 _cell.Function = value;
             }
         }
+        public object GetFunction()
+        {
+            return _cell.GetFunction();
+        }
 
         public ICell Cell => _cell;
 

@@ -210,7 +210,7 @@ namespace Cephei.Cell.Generic
                         for (int c = 0; c < 60000; c += 100)
                         {
                             //                            if (_event == null) _event = new ManualResetEvent(false);
-                            if (_event.WaitOne(c) || _state != (int)CellState.Blocking || !_lockHolder.IsAlive)
+                            if (_event.WaitOne(c) || _state != (int)CellState.Blocking || _lockHolder == null || !_lockHolder.IsAlive)
                                 break;
                         }
                          if (_state != (int)CellState.Clean)
@@ -421,14 +421,16 @@ namespace Cephei.Cell.Generic
                         throw new CyclicDependencyException();
                     }
                     else
-                        SetState(CellState.Dirty);
-                        RaiseChange(eventType, root, this, epoch, session);
+                        if (Parent != null && Parent is Model m)
+                            if (Cell.Relink(_func, m))
+                                SetState(CellState.Dirty);
                     break;
 
                 default:
                     break;
             }
         }
+
         /// <see cref="ICell.HasFunction"/>
         public bool HasFunction => _func != null;
         /// <see cref="ICell.HasValue"/>
@@ -530,6 +532,10 @@ namespace Cephei.Cell.Generic
         {
             if (listener != null)
                 Change -= listener.OnChange;
+        }
+        public object GetFunction()
+        {
+            return _func;
         }
 
     }

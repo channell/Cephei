@@ -19,10 +19,10 @@
 	<Compile Include="Observers.fs" />
 	<Compile Include="Model.fs" />
 	<Compile Include="Helper.fs" />
+	<Compile Include="Diag.fs" />
 	<Compile Include="Value.fs" />
 	<Compile Include="Today.fs" />
 	<Compile Include="ExcelBridge.fs" />
-	  <Compile Include="Diag.fs" />
   </ItemGroup>
 
   <ItemGroup>

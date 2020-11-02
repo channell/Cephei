@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Runtime.ConstrainedExecution;
 
 namespace Cephei.Cell
 {
@@ -103,6 +104,13 @@ namespace Cephei.Cell
         /// Support assignement from boxed values
         /// </summary>
         object Box { get; set; }
+
+        /// <summary>
+        /// enable passthrough profiling of trivial funtions
+        /// </summary>
+        /// <returns>_func</returns>
+        object GetFunction();
+
     }
 
     /// <summary>
@@ -115,12 +123,6 @@ namespace Cephei.Cell
         /// </summary>
         /// <returns></returns>
         ICell ToCell();
-
-        /// <summary>
-        /// enable passthrough profiling of trivial funtions
-        /// </summary>
-        /// <returns>_func</returns>
-        object GetFunction();
     }
 
     /// <summary>
@@ -364,7 +366,7 @@ namespace Cephei.Cell
                         l.AddLast(m.Cell);
                     else if (c is ITrivial t)
                     {
-                        foreach (var x in ProfileObject(t.GetFunction()))
+                        foreach (var x in ProfileObject(c.GetFunction()))
                             l.AddLast(x);
                     }
                     else if (!(c is Model))
@@ -397,7 +399,7 @@ namespace Cephei.Cell
                                             l.AddLast(m.Cell);
                                         else if (p is ITrivial t)
                                         {
-                                            foreach (var x in ProfileObject(t.GetFunction()))
+                                            foreach (var x in ProfileObject(c.GetFunction()))
                                                 l.AddLast(x);
                                         }
                                         else if (!(c is Model))
@@ -412,6 +414,38 @@ namespace Cephei.Cell
                 }
             }
             return l.Distinct().ToArray();
+        }
+    
+        /// <summary>
+        /// Remink the formula of a cell to use current value
+        /// </summary>
+        /// <param name="func">function within cell</param>
+        /// <param name="model">model that the functions cell is within </param>
+        public static bool Relink(object func, Model model)
+        {
+            var changed = false;
+            var fields = func.GetType().GetFields();
+
+            foreach (var f in fields)
+            {
+                var o = f.GetValue(func);
+                if (o is ICell c)
+                {
+                    if (model.ContainsKey(c.Mnemonic))
+                    {
+                        var n = model[c.Mnemonic];
+                        if (n != null && n != c)
+                        {
+                            changed = true;
+                            f.SetValue(func, n);
+//                            if (n.GetFunction() != null)
+//                                Relink(n.GetFunction(), model);
+//                            c.Dispose();
+                        }
+                    }
+                }
+            }
+            return changed;
         }
     }
 }
