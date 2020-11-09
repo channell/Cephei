@@ -2282,12 +2282,10 @@ let PiecewiseConstantParameter                  times Constraint
                                                 = new PiecewiseConstantParameterModel (times, Constraint)
 let PiecewiseTimeDependentHestonModel           riskFreeRate dividendYield s0 v0 theta kappa sigma rho timeGrid 
                                                 = new PiecewiseTimeDependentHestonModelModel (riskFreeRate, dividendYield, s0, v0, theta, kappa, sigma, rho, timeGrid)
-let PiecewiseYieldCurve                         ()
-                                                = new PiecewiseYieldCurveModel ()
-let PiecewiseYieldCurve1                        settlementDays cal dc jumps jumpDates 
-                                                = new PiecewiseYieldCurveModel1 (settlementDays, cal, dc, jumps, jumpDates)
-let PiecewiseYieldCurve2                        referenceDate cal dc jumps jumpDates 
-                                                = new PiecewiseYieldCurveModel2 (referenceDate, cal, dc, jumps, jumpDates)
+//_PiecewiseYieldCurve                       = cell (fun () -> new PiecewiseYieldCurve (_traints.Value, _referenceDate.Value, _instruments.Value, _dayCounter.Value, _jumps.Value, _jumpDates.Value, _accurancy.Value, _i.Value, _bootstrap.Value))
+
+let PiecewiseYieldCurve                         traints referenceDate instruments dayCounter jumps jumpDates accurancy i bootstrap
+                                                = new PiecewiseYieldCurveModel (traints, referenceDate, instruments, dayCounter, jumps, jumpDates, accurancy, i, bootstrap)
 let PiecewiseYoYInflationCurve                  dayCounter baseZeroRate observationLag frequency indexIsInterpolated yTS 
                                                 = new PiecewiseYoYInflationCurveModel (dayCounter, baseZeroRate, observationLag, frequency, indexIsInterpolated, yTS)
 let PiecewiseYoYInflationCurve1                 referenceDate calendar dayCounter baseZeroRate observationLag frequency indexIsInterpolated yTS 

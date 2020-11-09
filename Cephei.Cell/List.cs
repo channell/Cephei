@@ -4,15 +4,23 @@
  */
 using Microsoft.FSharp.Core;
 using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Cephei.Cell.Generic;
 
 namespace Cephei.Cell
 {
-    public class List<T> : IList<Generic.ICell<T>>, Generic.ICell<T>
+    /// <summary>
+    /// Lust that combines the view of the a list of Cells with a list of Cells
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public class List<T> : IList<ICell<T>>, ICell<System.Collections.Generic.List<T>>, IList<T> where T : IEqualityComparer
     {
-        private IList<Generic.ICell<T>> _list;
+        private System.Collections.Generic.List<Generic.ICell<T>> _list;
+        private System.Collections.Generic.List<T> _cache;
+        #region constructors
         public List()
         {
             _list = new System.Collections.Generic.List<Generic.ICell<T>>();
@@ -23,7 +31,19 @@ namespace Cephei.Cell
         //     is empty and has the default initial capacity.
         public List(IList<Generic.ICell<T>> list)
         {
-            _list = list;
+            _list = (from r in list
+                     select withNotify(r)
+                    ).ToList();
+        }
+        //
+        // Summary:
+        //     Initializes a new instance of the System.Collections.Generic.List`1 class that
+        //     is empty and has the default initial capacity.
+        public List(System.Collections.Generic.List<T> list)
+        {
+            _list = (from r in list
+                     select withNotify(Cell.CreateValue<T>(r))
+                     ).ToList();
         }
         //
         // Summary:
@@ -40,9 +60,9 @@ namespace Cephei.Cell
         //     collection is null.
         public List(IEnumerable<Generic.ICell<T>> collection)
         {
-            _list = new System.Collections.Generic.List<Generic.ICell<T>>(collection);
-            foreach (var v in _list)
-                v.Parent = this;
+            _list = (from r in collection
+                     select withNotify(r)
+                    ).ToList();
         }
         //
         // Summary:
@@ -52,7 +72,7 @@ namespace Cephei.Cell
         // Parameters:
         //   capacity:
         //     The number of elements that the new list can initially store.
-        //
+        //  
         // Exceptions:
         //   T:System.ArgumentOutOfRangeException:
         //     capacity is less than 0.
@@ -61,7 +81,157 @@ namespace Cephei.Cell
             _list = new System.Collections.Generic.List<Generic.ICell<T>>(capacity);
         }
 
-        public FSharpFunc<Unit, T> Function
+        public List(Generic.ICell<T>[] a)
+        {
+            _list = (from r in a
+                     select withNotify(r)
+                    ).ToList();
+        }
+
+        #endregion
+
+        #region helper
+        private Generic.ICell<T> withNotify(Generic.ICell<T> c)
+        {
+            c.Notify(this);
+            return c;
+        }
+
+        #endregion
+
+        #region IList<ICell<T>>
+        public Generic.ICell<T> this[int index]
+        {
+            get
+            {
+                return _list[index];
+            }
+            set
+            {
+                if (_list.Count >= index)
+                {
+                    ICell current = _list[index];
+                    if (current != value)
+                    {
+                        LinkedList<ICellEvent> dependants = new LinkedList<ICellEvent>(current.Dependants);
+                        foreach (var c in dependants)
+                            value.Change += c.OnChange;
+                        foreach (var c in dependants)
+                            value.OnChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+                        _cache = null;
+                    }
+                }
+                else
+                {
+                    value.Notify(this);
+                    _list[index] = value;
+                }
+            }
+        }
+
+        public int Count => _list.Count;
+
+        public bool IsReadOnly => false;
+
+        public void Add(ICell<T> item)
+        {
+            _list.Add(item);
+            item.Notify(this);
+            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+        }
+
+        public void Clear()
+        {
+            _list.Clear();
+        }
+
+        public bool Contains(ICell<T> item)
+        {
+            return _list.Contains(item);
+        }
+
+        public void CopyTo(ICell<T>[] array, int arrayIndex)
+        {
+            _list.CopyTo(array, arrayIndex);
+        }
+
+        public IEnumerator<ICell<T>> GetEnumerator()
+        {
+            return _list.GetEnumerator();
+        }
+
+        public int IndexOf(ICell<T> item)
+        {
+            return _list.IndexOf(item);
+        }
+
+        public void Insert(int index, ICell<T> item)
+        {
+            _list.Insert(index, withNotify(item));
+            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+        }
+
+        public bool Remove(ICell<T> item)
+        {
+            if (_list.Remove(item))
+            {
+                RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public void RemoveAt(int index)
+        {
+            _list.RemoveAt(index);
+            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return _list.GetEnumerator();
+        }
+        #endregion
+
+        #region Generic.ICell<List<T>>
+        public System.Collections.Generic.List<T> Value 
+        { 
+            get
+            {
+                if (_cache == null)
+                {
+                    _cache = _list.Select(p => p.Value).ToList();
+
+                }
+                return _cache;
+            }
+            set
+            {
+                var changed = false;
+                var s = value.ToHashSet();
+                var ll = new System.Collections.Generic.LinkedList<Generic.ICell<T>>();
+                foreach (var v in _list)
+                {
+                    if (s.Contains(v.Value))
+                        s.Remove(v.Value);
+                    else
+                    {
+                        ll.AddLast(v);
+                        changed = true;
+                    }
+                }
+                foreach (var v in ll)
+                    _list.Remove(v);
+                foreach (var v in s)
+                    _list.Add(withNotify(Cell.CreateValue(v)));
+
+                _cache = value;
+                if (changed)
+                    RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+            }
+        }
+        public FSharpFunc<Unit, System.Collections.Generic.List<T>> Function
         {
             get
             {
@@ -69,24 +239,7 @@ namespace Cephei.Cell
             }
             set
             {
-            }
-        }
 
-        public void Merge(ICell source, Model model)
-        {
-        }
-
-
-        #region Cell
-        public IList<Generic.ICell<T>> Value
-        {
-            get
-            {
-                return _list;
-            }
-            set
-            {
-                _list = this;
             }
         }
 
@@ -107,44 +260,14 @@ namespace Cephei.Cell
         }
 
         public string Mnemonic { get; set; }
-        T Generic.ICell<T>.Value { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public int Count => _list.Count;
+        public bool HasFunction => false;
 
-        public bool IsReadOnly => _list.IsReadOnly;
+        public bool HasValue => true;
 
-        public Generic.ICell<T> this[int index]
-        {
-            get
-            {
-                return _list[index];
-            }
-            set
-            {
-                if (_list.Count >= index)
-                {
-                    ICell current = _list[index];
-                    if (current != value)
-                    {
-                        LinkedList<ICellEvent> dependants = new LinkedList<ICellEvent>(current.Dependants);
-                        foreach (var c in dependants)
-                            value.Change += c.OnChange;
-                        foreach (var c in dependants)
-                            value.OnChange(CellEvent.Link, this, this, DateTime.Now, null);
-                    }
-                }
-                value.Parent = this;
-                _list[index] = value;
-            }
-        }
+        public object Box { get => Value; set => Value = (value as System.Collections.Generic.List<T>); }
 
         public event CellChange Change;
-
-        public void Dispose()
-        {
-            RaiseChange(CellEvent.Delete, this, this, DateTime.Now, null);
-
-        }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void RaiseChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session)
@@ -152,55 +275,52 @@ namespace Cephei.Cell
             if (Change != null)
                 Change(eventType, root, this, epoch, session);
             if (Parent != null)
-                Parent.OnChange(eventType, root,  this, epoch, session);
+                Parent.OnChange(eventType, root, this, epoch, session);
         }
 
-        public void OnChange(CellEvent eventType, ICellEvent root,  ICellEvent sender,  DateTime epoch, ISession session)
+        public void Dispose()
+        {
+            RaiseChange(CellEvent.Delete, this, this, DateTime.Now, null);
+
+        }
+
+        public object GetFunction()
+        {
+            return null;
+        }
+
+        public void Merge(ICell source, Model model)
+        {
+            lock (_list)
+            {
+                var l = source as IList<Generic.ICell<T>>;
+                var s = l.ToHashSet();
+                var ll = new System.Collections.Generic.LinkedList<Generic.ICell<T>>();
+
+                foreach (var v in _list)
+                {
+                    if (s.Contains(v))
+                        s.Remove(v);
+                    else
+                        ll.AddLast(v);
+                }
+                foreach (var v in ll)
+                    _list.Remove(v);
+                foreach (var v in s)
+                    _list.Add(v);
+            }
+        }
+
+        public void Notify(ICell listener)
+        {
+            Change += listener.OnChange;
+        }
+
+        public void OnChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session)
         {
             RaiseChange(eventType, this, this, DateTime.Now, null);
 
         }
-
-        public IDisposable Subscribe(IObserver<T> observer)
-        {
-            return new CellObserver<T>(this, observer);
-        }
-
-        public IDisposable Subscribe(IObserver<KeyValuePair<ISession, KeyValuePair<string, T>>> observer)
-        {
-            return new SessionObserver<T>(this, observer);
-        }
-
-        public IDisposable Subscribe(IObserver<Tuple<ISession, Generic.ICell<T>, CellEvent, ICell, DateTime>> observer)
-        {
-            return new TraceObserver<T>(this, observer);
-        }
-
-
-        /// <see cref="ICell.HasFunction"/>
-        public bool HasFunction => false;
-        /// <see cref="ICell.HasValue"/>
-        public bool HasValue => true;
-
-        /// <see cref="ICell.Box"/>
-        public object Box
-        {
-            get
-            {
-                return this;
-            }
-            set
-            {
-                var e = value as IEnumerable<Generic.ICell<T>>;
-                if (e != null)
-                    foreach (var c in e)
-                        this.Add (c);
-            }
-        }
-
-        #endregion
-
-        #region observer
 
         public void OnCompleted()
         {
@@ -210,121 +330,109 @@ namespace Cephei.Cell
         {
         }
 
-        public void OnNext(T value)
+        public void OnNext(System.Collections.Generic.List<T> value)
         {
-            this.Add(new Generic.Cell<T>(value));
-        }
-        #endregion
-
-        #region List
-        public int IndexOf(Generic.ICell<T> item)
-        {
-            return _list.IndexOf(item);
+            Value = value;
         }
 
-        public void Insert(int index, Generic.ICell<T> item)
+        public IDisposable Subscribe(IObserver<System.Collections.Generic.List<T>> observer)
         {
-            item.Parent = this;
-            _list.Insert(index, item);
-            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
-
+            return new CellObserver<System.Collections.Generic.List<T>>(this, observer);
         }
 
-        public void RemoveAt(int index)
+        public IDisposable Subscribe(IObserver<KeyValuePair<ISession, KeyValuePair<string, System.Collections.Generic.List<T>>>> observer)
         {
-            if (_list.Count < index)
-            {
-                var i = _list[index];
-                if (i.Parent == this) i.Parent = null;
-                RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
-
-            }
+            return new SessionObserver<System.Collections.Generic.List<T>>(this, observer);
         }
 
-        public void Add(Generic.ICell<T> item)
+        public IDisposable Subscribe(IObserver<Tuple<ISession, ICell<System.Collections.Generic.List<T>>, CellEvent, ICell, DateTime>> observer)
         {
-            item.Parent = this;
-            _list.Add(item);
-            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
-
-        }
-
-        public void Clear()
-        {
-            _list.Clear();
-            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
-
-        }
-
-        public bool Contains(Generic.ICell<T> item)
-        {
-            return _list.Contains(item);
-        }
-
-        public void CopyTo(Generic.ICell<T>[] array, int arrayIndex)
-        {
-            _list.CopyTo(array, arrayIndex);
-        }
-
-        public bool Remove(Generic.ICell<T> item)
-        {
-            var r = _list.Remove(item);
-            if (r)
-                RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
-
-            return r;
-        }
-
-        /// <summary>
-        /// before eunumerating, add this list the dependants insetad of the content of the list
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerator<Generic.ICell<T>> GetEnumerator()
-        {
-            bool pop = false;
-            var s = Cell.Current.Value;
-            var c = s.Peek();
-            if (c != null)
-            {
-                bool already = false;
-                foreach (var v in c.Dependants)
-                {
-                    if (v == this)
-                    {
-                        already = true;
-                        break;
-                    }
-                }
-                if (!already) this.Change += c.OnChange;
-
-                s.Push(null);
-                pop = true;
-            }
-            foreach (var v in _list)
-                yield return v;
-            if (pop)
-                s.Pop();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return _list.GetEnumerator();
-            throw new NotImplementedException();
-        }
-
-        #endregion
-        public void Notify(ICell listener)
-        {
-            Change += listener.OnChange;
+            return new TraceObserver<System.Collections.Generic.List<T>>(this, observer);
         }
 
         public void UnNotify(ICell listener)
         {
-            Change -= listener.OnChange;
+            CellChange cellChange = null;
+            foreach (var v in Change.GetInvocationList())
+                if (v.Target == listener)
+                {
+                    cellChange = v.Target as CellChange;
+                    break;
+                }
+            if (cellChange != null)
+                Change -= cellChange;
         }
-        public object GetFunction()
+        #endregion
+
+        #region IList<T>
+
+        T IList<T>.this[int index]
         {
-            return null;
+            get
+            {
+                return Value[index];
+            }
+            set
+            {
+                Value[index] = value;
+            }
         }
+
+        int ICollection<T>.Count => _list.Count;
+
+        bool ICollection<T>.IsReadOnly => false;
+
+        void ICollection<T>.Add(T item)
+        {
+            _list.Add(withNotify(Cell.CreateValue(item)));
+            if (_cache != null) _cache.Add(item);
+            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+        }
+
+        void ICollection<T>.Clear()
+        {
+            _list.Clear();
+            _cache = null;
+            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+        }
+
+        bool ICollection<T>.Contains(T item)
+        {
+            return Value.Contains(item);
+        }
+
+        void ICollection<T>.CopyTo(T[] array, int arrayIndex)
+        {
+            Value.CopyTo(array, arrayIndex);
+        }
+
+        IEnumerator<T> IEnumerable<T>.GetEnumerator()
+        {
+            return Value.GetEnumerator();
+        }
+
+        int IList<T>.IndexOf(T item)
+        {
+            return Value.IndexOf(item);
+        }
+
+        void IList<T>.Insert(int index, T item)
+        {
+            _list.Insert(index, withNotify(Cell.CreateValue(item)));
+            Value.Insert(index, item);
+            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+        }
+        bool ICollection<T>.Remove(T item)
+        {
+            _list.RemoveAt(Value.IndexOf(item));
+            return Value.Remove(item);
+        }
+
+        void IList<T>.RemoveAt(int index)
+        {
+            _list.RemoveAt(index);
+            Value.RemoveAt(index);
+        }
+        #endregion
     }
 }

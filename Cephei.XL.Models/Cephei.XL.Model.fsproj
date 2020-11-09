@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <OutputPath>..\bin\debug</OutputPath> 
+
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;EXCEL</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="FinxedBond.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="ExcelDna.Integration" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\amaggiulli\QLNet\src\QLNet\QLNet.csproj" />
+    <ProjectReference Include="..\Cephei.Cell\Cephei.Cell.csproj" />
+    <ProjectReference Include="..\Cephei.QLNetHelper\Cephei.QLNetHelper.csproj" />
+    <ProjectReference Include="..\Cephei.QL\Cephei.QL.fsproj" />
+    <ProjectReference Include="..\Cephei.XL\Cephei.XLM.fsproj" />
+  </ItemGroup>
+</Project>
