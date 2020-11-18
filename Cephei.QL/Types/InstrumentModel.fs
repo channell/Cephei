@@ -39,7 +39,8 @@ type InstrumentModel
 (*
     Parameters
 *)
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -60,17 +61,27 @@ type InstrumentModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+        
+
     internal new () = new InstrumentModel(null,null)
     member internal this.Inject v = _Instrument <- v
     static member Cast (p : ICell<Instrument>) = 
         if p :? InstrumentModel then 
             p :?> InstrumentModel
+        elif p :? IDateDependant then
+            let o = new InstrumentModel ()
+            o.Inject p
+            (p :?> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            o.Bind p
+            o
         else
             let o = new InstrumentModel ()
             o.Inject p
             o.Bind p
             o
-                            
+                           
 
 (* 
     Externally visible/bindable properties

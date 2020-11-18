@@ -142,7 +142,7 @@ module CPILegFunction =
             try
 
                 let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
-                let _cap = Helper.toCell<Generic.List<Nullable<double>>> cap "cap" 
+                let _cap = Helper.toNullabletList<double> cap "cap" 
                 let builder (current : ICell) = withMnemonic mnemonic ((CPILegModel.Cast _CPILeg.cell).WithCaps1
                                                             _cap.cell 
                                                        ) :> ICell
@@ -446,7 +446,7 @@ module CPILegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="CPILeg",Description = "CPILeg")>] 
          cpileg : obj)
-        ([<ExcelArgument(Name="floors",Description = "double range")>] 
+        ([<ExcelArgument(Name="floors",Description = "double range or empty")>] 
          floors : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -454,7 +454,7 @@ module CPILegFunction =
             try
 
                 let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
-                let _floors = Helper.toCell<Generic.List<Nullable<double>>> floors "floors" 
+                let _floors = Helper.toNullabletList<double> floors "floors" 
                 let builder (current : ICell) = withMnemonic mnemonic ((CPILegModel.Cast _CPILeg.cell).WithFloors
                                                             _floors.cell 
                                                        ) :> ICell
@@ -916,9 +916,9 @@ module CPILegFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<CPILeg> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<CPILeg>> (c)
+                let l = new Cephei.Cell.List<CPILeg> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<CPILeg>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

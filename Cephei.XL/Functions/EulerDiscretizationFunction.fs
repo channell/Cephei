@@ -411,9 +411,9 @@ module EulerDiscretizationFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<EulerDiscretization> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<EulerDiscretization>> (c)
+                let l = new Cephei.Cell.List<EulerDiscretization> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<EulerDiscretization>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

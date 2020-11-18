@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.1": {
-      "FSharp.Core/4.7.2": {
+      "FSharp.Core/5.0.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/FSharp.Core.dll": {}
@@ -93,10 +93,10 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {}
         }
       },
-      "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
+      "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "type": "package",
         "dependencies": {
-          "System.Threading.Tasks.Extensions": "4.5.2"
+          "System.Threading.Tasks.Extensions": "4.5.4"
         },
         "compile": {
           "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
@@ -321,11 +321,11 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.Orleans.Core/3.2.1": {
+      "Microsoft.Orleans.Core/3.3.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Connections.Abstractions": "3.0.0",
-          "Microsoft.Bcl.AsyncInterfaces": "1.1.0",
+          "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
           "Microsoft.Extensions.Configuration": "3.0.0",
           "Microsoft.Extensions.DependencyInjection": "3.0.0",
           "Microsoft.Extensions.DependencyModel": "3.0.0",
@@ -333,7 +333,7 @@
           "Microsoft.Extensions.Logging": "3.0.0",
           "Microsoft.Extensions.ObjectPool": "3.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "3.0.0",
-          "Microsoft.Orleans.Core.Abstractions": "3.2.1",
+          "Microsoft.Orleans.Core.Abstractions": "3.3.0",
           "Newtonsoft.Json": "10.0.3",
           "System.Buffers": "4.5.0",
           "System.Collections.Immutable": "1.7.0",
@@ -354,11 +354,11 @@
           "lib/netstandard2.0/Orleans.Core.dll": {}
         }
       },
-      "Microsoft.Orleans.Core.Abstractions/3.2.1": {
+      "Microsoft.Orleans.Core.Abstractions/3.3.0": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3",
-          "System.Threading.Tasks.Extensions": "4.5.3"
+          "System.Threading.Tasks.Extensions": "4.5.4"
         },
         "compile": {
           "lib/netstandard2.0/Orleans.Core.Abstractions.dll": {}
@@ -367,11 +367,11 @@
           "lib/netstandard2.0/Orleans.Core.Abstractions.dll": {}
         }
       },
-      "Microsoft.Orleans.EventSourcing/3.2.1": {
+      "Microsoft.Orleans.EventSourcing/3.3.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Orleans.Core": "3.2.1",
-          "Microsoft.Orleans.Runtime.Abstractions": "3.2.1"
+          "Microsoft.Orleans.Core": "3.3.0",
+          "Microsoft.Orleans.Runtime.Abstractions": "3.3.0"
         },
         "compile": {
           "lib/netstandard2.0/Orleans.EventSourcing.dll": {}
@@ -380,12 +380,12 @@
           "lib/netstandard2.0/Orleans.EventSourcing.dll": {}
         }
       },
-      "Microsoft.Orleans.Runtime.Abstractions/3.2.1": {
+      "Microsoft.Orleans.Runtime.Abstractions/3.3.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Hosting.Abstractions": "3.0.0",
           "Microsoft.Extensions.Options": "3.0.0",
-          "Microsoft.Orleans.Core": "3.2.1"
+          "Microsoft.Orleans.Core": "3.3.0"
         },
         "compile": {
           "lib/netstandard2.0/Orleans.Runtime.Abstractions.dll": {}
@@ -717,7 +717,7 @@
           "lib/netstandard1.3/System.Collections.Concurrent.dll": {}
         }
       },
-      "System.Collections.Immutable/1.7.1": {
+      "System.Collections.Immutable/5.0.0": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.4"
@@ -1772,10 +1772,10 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
-      "System.Threading.Tasks.Extensions/4.5.3": {
+      "System.Threading.Tasks.Extensions/4.5.4": {
         "type": "package",
         "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
         },
         "compile": {
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {}
@@ -1878,10 +1878,10 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
-          "FSharp.Core": "4.7.2",
+          "FSharp.Core": "5.0.0",
           "ILGPU": "0.9.1",
           "Serilog": "2.10.0",
-          "System.Collections.Immutable": "1.7.1"
+          "System.Collections.Immutable": "5.0.0"
         },
         "compile": {
           "bin/placeholder/Cephei.Cell.dll": {}
@@ -1893,36 +1893,17 @@
     }
   },
   "libraries": {
-    "FSharp.Core/4.7.2": {
-      "sha512": "w3XFVTnyZUbC8e2QT6a85ern6y7eQPPk+MYemz1FP0iBfgZcembL+wmo5cIZ1kxB8jfoXC8Q9KVkOMsGpkBKbA==",
+    "FSharp.Core/5.0.0": {
+      "sha512": "iHoYXA0VaSQUONGENB1aVafjDDZDZpwu39MtaRCTrmwFW/cTcK0b2yKNVYneFHJMc3ChtsSoM9lNtJ1dYXkHfA==",
       "type": "package",
-      "path": "fsharp.core/4.7.2",
+      "path": "fsharp.core/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "fsharp.core.4.7.2.nupkg.sha512",
+        "fsharp.core.5.0.0.nupkg.sha512",
         "fsharp.core.nuspec",
-        "lib/net45/FSharp.Core.dll",
-        "lib/net45/FSharp.Core.optdata",
-        "lib/net45/FSharp.Core.sigdata",
-        "lib/net45/FSharp.Core.xml",
-        "lib/net45/cs/FSharp.Core.resources.dll",
-        "lib/net45/de/FSharp.Core.resources.dll",
-        "lib/net45/es/FSharp.Core.resources.dll",
-        "lib/net45/fr/FSharp.Core.resources.dll",
-        "lib/net45/it/FSharp.Core.resources.dll",
-        "lib/net45/ja/FSharp.Core.resources.dll",
-        "lib/net45/ko/FSharp.Core.resources.dll",
-        "lib/net45/pl/FSharp.Core.resources.dll",
-        "lib/net45/pt-BR/FSharp.Core.resources.dll",
-        "lib/net45/ru/FSharp.Core.resources.dll",
-        "lib/net45/tr/FSharp.Core.resources.dll",
-        "lib/net45/zh-Hans/FSharp.Core.resources.dll",
-        "lib/net45/zh-Hant/FSharp.Core.resources.dll",
         "lib/netstandard2.0/FSharp.Core.dll",
-        "lib/netstandard2.0/FSharp.Core.optdata",
-        "lib/netstandard2.0/FSharp.Core.sigdata",
         "lib/netstandard2.0/FSharp.Core.xml",
         "lib/netstandard2.0/cs/FSharp.Core.resources.dll",
         "lib/netstandard2.0/de/FSharp.Core.resources.dll",
@@ -1991,13 +1972,14 @@
         "microsoft.aspnetcore.http.features.nuspec"
       ]
     },
-    "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
-      "sha512": "1Am6l4Vpn3/K32daEqZI+FFr96OlZkgwK2LcT3pZ2zWubR5zTPW3/FkO1Rat9kb7oQOa4rxgl9LJHc5tspCWfg==",
+    "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
+      "sha512": "yuvf07qFWFqtK3P/MRkEKLhn5r2UbSpVueRziSqj0yJQIKFwG1pq9mOayK3zE5qZCTs0CbrwL9M6R8VwqyGy2w==",
       "type": "package",
-      "path": "microsoft.bcl.asyncinterfaces/1.1.0",
+      "path": "microsoft.bcl.asyncinterfaces/1.1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll",
@@ -2006,7 +1988,7 @@
         "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.xml",
         "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
         "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml",
-        "microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
+        "microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
         "microsoft.bcl.asyncinterfaces.nuspec",
         "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll",
         "ref/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
@@ -2316,10 +2298,10 @@
         "runtime.json"
       ]
     },
-    "Microsoft.Orleans.Core/3.2.1": {
-      "sha512": "H5j8LaCOhxI6fOvq+EK5w3SfuhujCu9/8FnjKQ2rIdkEvBc9BX9xALU9ZEmGqdZHeYgiOu7Bcyok257xOgfanw==",
+    "Microsoft.Orleans.Core/3.3.0": {
+      "sha512": "DMLpD8gZ+2YXo4CmwpNH0fKAqGs2Mmh003mTQ9GBz58m3crbJe4j2oysFjJvl1sTafiK1qrSoNwsCjoP9/PWZQ==",
       "type": "package",
-      "path": "microsoft.orleans.core/3.2.1",
+      "path": "microsoft.orleans.core/3.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2330,14 +2312,14 @@
         "lib/netstandard2.0/Orleans.Core.pdb",
         "lib/netstandard2.0/Orleans.Core.xml",
         "logo_128.png",
-        "microsoft.orleans.core.3.2.1.nupkg.sha512",
+        "microsoft.orleans.core.3.3.0.nupkg.sha512",
         "microsoft.orleans.core.nuspec"
       ]
     },
-    "Microsoft.Orleans.Core.Abstractions/3.2.1": {
-      "sha512": "QQBsPhAPxpSBOfCfPxP1OZz6BbupmRYFISemN7KYYTLtIx7TdFAgFXJ9AgtOERhYkhiw/0oh3WCXiWTJ2gp4+g==",
+    "Microsoft.Orleans.Core.Abstractions/3.3.0": {
+      "sha512": "IRhaEu6RVxnY+yk6wGPeZHsUYSG0eL1gRShKG2dFpQuEn9OGANmuR96gWIAMULfF7DJREO91ujIwd61lVZS2kw==",
       "type": "package",
-      "path": "microsoft.orleans.core.abstractions/3.2.1",
+      "path": "microsoft.orleans.core.abstractions/3.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2345,14 +2327,14 @@
         "lib/netstandard2.0/Orleans.Core.Abstractions.pdb",
         "lib/netstandard2.0/Orleans.Core.Abstractions.xml",
         "logo_128.png",
-        "microsoft.orleans.core.abstractions.3.2.1.nupkg.sha512",
+        "microsoft.orleans.core.abstractions.3.3.0.nupkg.sha512",
         "microsoft.orleans.core.abstractions.nuspec"
       ]
     },
-    "Microsoft.Orleans.EventSourcing/3.2.1": {
-      "sha512": "pIpLLzOzwxY1AvJjHMsXFk2xGr/KCsb1/jFyno7wj8q3zLhSCrBnjRiNKvaJOBMmOe9LoT7PR86aHy9Ht4G2qQ==",
+    "Microsoft.Orleans.EventSourcing/3.3.0": {
+      "sha512": "mAd9MreJmPnQO5tN3zl1fZpHzybLZm6qH0ETpBNYmGMFRYS3bXjTIos0aR8fMTtjdopGLyw5+LlAPgf07qUJpw==",
       "type": "package",
-      "path": "microsoft.orleans.eventsourcing/3.2.1",
+      "path": "microsoft.orleans.eventsourcing/3.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2360,14 +2342,14 @@
         "lib/netstandard2.0/Orleans.EventSourcing.pdb",
         "lib/netstandard2.0/Orleans.EventSourcing.xml",
         "logo_128.png",
-        "microsoft.orleans.eventsourcing.3.2.1.nupkg.sha512",
+        "microsoft.orleans.eventsourcing.3.3.0.nupkg.sha512",
         "microsoft.orleans.eventsourcing.nuspec"
       ]
     },
-    "Microsoft.Orleans.Runtime.Abstractions/3.2.1": {
-      "sha512": "HWg2ENBfBuRkdvzgKfwYPI2kT9wwgVWhOFrjmCG7wzA0GHa6sKzjuK93GayuFQoRIb+yPAHqnjqDmEqK+ZzPjw==",
+    "Microsoft.Orleans.Runtime.Abstractions/3.3.0": {
+      "sha512": "gMuu4avUXMFqrYCRYX/Gl8Mq+pLvgcOkhlG1/WBeefzPtoTK9zdCFmOGg5F/4BNBHk7TF33zKwPNXPmu/r0pAg==",
       "type": "package",
-      "path": "microsoft.orleans.runtime.abstractions/3.2.1",
+      "path": "microsoft.orleans.runtime.abstractions/3.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2375,7 +2357,7 @@
         "lib/netstandard2.0/Orleans.Runtime.Abstractions.pdb",
         "lib/netstandard2.0/Orleans.Runtime.Abstractions.xml",
         "logo_128.png",
-        "microsoft.orleans.runtime.abstractions.3.2.1.nupkg.sha512",
+        "microsoft.orleans.runtime.abstractions.3.3.0.nupkg.sha512",
         "microsoft.orleans.runtime.abstractions.nuspec"
       ]
     },
@@ -2942,10 +2924,10 @@
         "system.collections.concurrent.nuspec"
       ]
     },
-    "System.Collections.Immutable/1.7.1": {
-      "sha512": "B43Zsz5EfMwyEbnObwRxW5u85fzJma3lrDeGcSAV1qkhSRTNY5uXAByTn9h9ddNdhM+4/YoLc/CI43umjwIl9Q==",
+    "System.Collections.Immutable/5.0.0": {
+      "sha512": "FXkLXiK0sVVewcso0imKQoOxjoPAj42R8HtjjbSjVPAzwDfzoyoznWxgA3c38LDbN9SJux1xXoXYAhz98j7r2g==",
       "type": "package",
-      "path": "system.collections.immutable/1.7.1",
+      "path": "system.collections.immutable/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2962,7 +2944,7 @@
         "lib/netstandard2.0/System.Collections.Immutable.xml",
         "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll",
         "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.xml",
-        "system.collections.immutable.1.7.1.nupkg.sha512",
+        "system.collections.immutable.5.0.0.nupkg.sha512",
         "system.collections.immutable.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -6245,10 +6227,10 @@
         "system.threading.tasks.nuspec"
       ]
     },
-    "System.Threading.Tasks.Extensions/4.5.3": {
-      "sha512": "+MvhNtcvIbqmhANyKu91jQnvIRVSTiaOiFNfKWwXGHG48YAb4I/TyH8spsySiPYla7gKal5ZnF3teJqZAximyQ==",
+    "System.Threading.Tasks.Extensions/4.5.4": {
+      "sha512": "zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
       "type": "package",
-      "path": "system.threading.tasks.extensions/4.5.3",
+      "path": "system.threading.tasks.extensions/4.5.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -6256,6 +6238,8 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
+        "lib/net461/System.Threading.Tasks.Extensions.dll",
+        "lib/net461/System.Threading.Tasks.Extensions.xml",
         "lib/netcoreapp2.1/_._",
         "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
         "lib/netstandard1.0/System.Threading.Tasks.Extensions.xml",
@@ -6274,7 +6258,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.threading.tasks.extensions.4.5.3.nupkg.sha512",
+        "system.threading.tasks.extensions.4.5.4.nupkg.sha512",
         "system.threading.tasks.extensions.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -6569,7 +6553,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.1": [
       "Cephei.Cell >= 3.0.3",
-      "Microsoft.Orleans.EventSourcing >= 3.2.1",
+      "Microsoft.Orleans.EventSourcing >= 3.3.0",
       "QLNet >= 1.12.0-preview.26"
     ]
   },
@@ -6604,6 +6588,7 @@
       },
       "frameworks": {
         "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
           "projectReferences": {
             "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
               "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
@@ -6619,10 +6604,11 @@
     },
     "frameworks": {
       "netstandard2.1": {
+        "targetAlias": "netstandard2.1",
         "dependencies": {
           "Microsoft.Orleans.EventSourcing": {
             "target": "Package",
-            "version": "[3.2.1, )"
+            "version": "[3.3.0, )"
           },
           "QLNet": {
             "target": "Package",
@@ -6644,7 +6630,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

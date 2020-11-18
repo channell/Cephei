@@ -316,9 +316,9 @@ module FdmSimpleProcess1DMesherFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<FdmSimpleProcess1DMesher> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<FdmSimpleProcess1DMesher>> (c)
+                let l = new Cephei.Cell.List<FdmSimpleProcess1DMesher> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<FdmSimpleProcess1DMesher>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

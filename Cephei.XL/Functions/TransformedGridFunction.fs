@@ -557,9 +557,9 @@ module TransformedGridFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<TransformedGrid> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<TransformedGrid>> (c)
+                let l = new Cephei.Cell.List<TransformedGrid> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<TransformedGrid>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

@@ -23,15 +23,20 @@ type ModelRTD () as this =
         let mnemonic =  if topicInfo.[0].Contains("/") then topicInfo.[0].Substring(0,topicInfo.[0].IndexOf('/')) else topicInfo.[0]
         let hc = topicInfo.[1]
 
-        let dispatch () : unit = 
-            _topics.[topic] <- mnemonic
-            if _topicIndex.ContainsKey (mnemonic) then 
-                _topicIndex.[mnemonic] <- [topic] @ _topicIndex.[mnemonic]
-            else
-                _topicIndex.[mnemonic] <- [topic]
+        System.Diagnostics.Debug.Print ("ModelRTD ConnectData " + mnemonic + " " + hc);
 
-            Model.add mnemonic 
-            topic.UpdateValue mnemonic
+        let dispatch () : unit = 
+            try
+                _topics.[topic] <- mnemonic
+                if _topicIndex.ContainsKey (mnemonic) then 
+                    _topicIndex.[mnemonic] <- [topic] @ _topicIndex.[mnemonic]
+                else
+                    _topicIndex.[mnemonic] <- [topic]
+
+                Model.add mnemonic 
+                topic.UpdateValue mnemonic
+            with 
+            | e -> topic.UpdateValue ("#" + e.Message)
         Task.Run (dispatch) |> ignore
             
         mnemonic :> obj
@@ -124,7 +129,7 @@ type ValueRTD () as this =
         let mnemonic =  if topicInfo.[0].Contains("/") then topicInfo.[0].Substring(0,topicInfo.[0].IndexOf('/')) else topicInfo.[0]
         let layout = topicInfo.[1]
 
-        //System.Diagnostics.Debug.Print ("ValueRTD ConnectData " + mnemonic + " " + layout);
+        System.Diagnostics.Debug.Print ("ValueRTD ConnectData " + mnemonic + " " + layout);
 
         let dispatch () : unit = 
             let kv = new KeyValuePair<string,string>(mnemonic, layout);
@@ -151,7 +156,7 @@ type ValueRTD () as this =
         
         let dispatch () : unit = 
             let kv = _topics.[topic]
-            //System.Diagnostics.Debug.Print ("ValueRTD DisconnectData " + kv.Value);
+            System.Diagnostics.Debug.Print ("ValueRTD DisconnectData " + kv.Value);
 
             _topics.TryRemove (topic) |> ignore
             let nl = _topicIndex.[kv] |> List.filter (fun t -> not (t = topic))

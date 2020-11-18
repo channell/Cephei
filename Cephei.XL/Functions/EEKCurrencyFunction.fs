@@ -520,9 +520,9 @@ module EEKCurrencyFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<EEKCurrency> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<EEKCurrency>> (c)
+                let l = new Cephei.Cell.List<EEKCurrency> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<EEKCurrency>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

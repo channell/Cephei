@@ -200,7 +200,7 @@ module CmsLegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="CmsLeg",Description = "CmsLeg")>] 
          cmsleg : obj)
-        ([<ExcelArgument(Name="caps",Description = "double range")>] 
+        ([<ExcelArgument(Name="caps",Description = "double range or empty")>] 
          caps : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -208,7 +208,7 @@ module CmsLegFunction =
             try
 
                 let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
-                let _caps = Helper.toCell<Generic.List<Nullable<double>>> caps "caps" 
+                let _caps = Helper.toNullabletList<double> caps "caps" 
                 let builder (current : ICell) = withMnemonic mnemonic ((CmsLegModel.Cast _CmsLeg.cell).WithCaps
                                                             _caps.cell 
                                                        ) :> ICell
@@ -368,7 +368,7 @@ module CmsLegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="CmsLeg",Description = "CmsLeg")>] 
          cmsleg : obj)
-        ([<ExcelArgument(Name="floors",Description = "double range")>] 
+        ([<ExcelArgument(Name="floors",Description = "double range or empty")>] 
          floors : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -376,7 +376,7 @@ module CmsLegFunction =
             try
 
                 let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
-                let _floors = Helper.toCell<Generic.List<Nullable<double>>> floors "floors" 
+                let _floors = Helper.toNullabletList<double> floors "floors" 
                 let builder (current : ICell) = withMnemonic mnemonic ((CmsLegModel.Cast _CmsLeg.cell).WithFloors1
                                                             _floors.cell 
                                                        ) :> ICell
@@ -874,9 +874,9 @@ module CmsLegFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<CmsLeg> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<CmsLeg>> (c)
+                let l = new Cephei.Cell.List<CmsLeg> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<CmsLeg>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

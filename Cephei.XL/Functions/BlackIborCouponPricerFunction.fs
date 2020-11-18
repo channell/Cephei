@@ -52,9 +52,9 @@ module BlackIborCouponPricerFunction =
 
             try
 
-                let _v = Helper.toHandle<OptionletVolatilityStructure> v "v" 
+                let _v = Helper.toDefaultHandle<OptionletVolatilityStructure> v "v" null
                 let _timingAdjustment = Helper.toDefault<BlackIborCouponPricer.TimingAdjustment> timingAdjustment "timingAdjustment" BlackIborCouponPricer.TimingAdjustment.Black76
-                let _correlation = Helper.toHandle<Quote> correlation "correlation" 
+                let _correlation = Helper.toDefaultHandle<Quote> correlation "correlation" null
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackIborCouponPricer 
                                                             _v.cell 
                                                             _timingAdjustment.cell 
@@ -418,7 +418,7 @@ module BlackIborCouponPricerFunction =
             try
 
                 let _BlackIborCouponPricer = Helper.toCell<BlackIborCouponPricer> blackiborcouponpricer "BlackIborCouponPricer"  
-                let _v = Helper.toHandle<OptionletVolatilityStructure> v "v" 
+                let _v = Helper.toDefaultHandle<OptionletVolatilityStructure> v "v" null
                 let builder (current : ICell) = withMnemonic mnemonic ((BlackIborCouponPricerModel.Cast _BlackIborCouponPricer.cell).SetCapletVolatility
                                                             _v.cell 
                                                        ) :> ICell
@@ -580,9 +580,9 @@ module BlackIborCouponPricerFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<BlackIborCouponPricer> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<BlackIborCouponPricer>> (c)
+                let l = new Cephei.Cell.List<BlackIborCouponPricer> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<BlackIborCouponPricer>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

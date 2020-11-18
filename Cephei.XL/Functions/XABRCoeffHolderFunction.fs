@@ -454,9 +454,9 @@ module XABRCoeffHolderFunction =
 
                 let _t = Helper.toCell<double> t "t" 
                 let _forward = Helper.toCell<double> forward "forward" 
-                let __params = Helper.toCell<Generic.List<Nullable<double>>> _params "_params" 
+                let __params = Helper.toNullabletList<double> _params "_params" 
                 let _paramIsFixed = Helper.toCell<Generic.List<bool>> paramIsFixed "paramIsFixed" 
-                let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
+                let _addParams = Helper.toNullabletList<double> addParams "addParams" 
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.XABRCoeffHolder 
                                                             _t.cell 
                                                             _forward.cell 
@@ -544,9 +544,9 @@ module XABRCoeffHolderFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<XABRCoeffHolder> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<XABRCoeffHolder>> (c)
+                let l = new Cephei.Cell.List<XABRCoeffHolder> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<XABRCoeffHolder>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

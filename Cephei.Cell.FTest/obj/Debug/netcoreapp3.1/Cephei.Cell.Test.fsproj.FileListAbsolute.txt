@@ -141,3 +141,5 @@ C:\Users\steve\source\repos\Cephei2\bin\Debug\netcoreapp3.1\Cephei.Cell.Test.run
 C:\Users\steve\source\repos\Cephei2\bin\Debug\netcoreapp3.1\Cephei.Cell.Test.runtimeconfig.dev.json
 C:\Users\steve\source\repos\Cephei2\bin\Debug\netcoreapp3.1\Cephei.Cell.Test.dll
 C:\Users\steve\source\repos\Cephei2\bin\Debug\netcoreapp3.1\Cephei.Cell.Test.pdb
+C:\Users\steve\source\repos\Cephei2\bin\Debug\netcoreapp3.1\testhost.exe
+C:\Users\steve\source\repos\Cephei2\bin\Debug\netcoreapp3.1\testhost.dll

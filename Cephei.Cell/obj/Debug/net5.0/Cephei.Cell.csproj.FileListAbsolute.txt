@@ -1,0 +1,12 @@
+C:\Users\steve\Source\Repos\Cephei2\Cephei.Cell\obj\Debug\net5.0\Cephei.Cell.csprojAssemblyReference.cache
+C:\Users\steve\Source\Repos\Cephei2\Cephei.Cell\obj\Debug\net5.0\Cephei.Cell.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\steve\Source\Repos\Cephei2\Cephei.Cell\obj\Debug\net5.0\Cephei.Cell.AssemblyInfoInputs.cache
+C:\Users\steve\Source\Repos\Cephei2\Cephei.Cell\obj\Debug\net5.0\Cephei.Cell.AssemblyInfo.cs
+C:\Users\steve\Source\Repos\Cephei2\Cephei.Cell\obj\Debug\net5.0\Cephei.Cell.csproj.CoreCompileInputs.cache
+C:\Users\steve\source\repos\Cephei2\bin\Debug\net5.0\Cephei.Cell.deps.json
+C:\Users\steve\source\repos\Cephei2\bin\Debug\net5.0\Cephei.Cell.dll
+C:\Users\steve\source\repos\Cephei2\bin\Debug\net5.0\ref\Cephei.Cell.dll
+C:\Users\steve\source\repos\Cephei2\bin\Debug\net5.0\Cephei.Cell.pdb
+C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\Debug\net5.0\Cephei.Cell.dll
+C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\Debug\net5.0\ref\Cephei.Cell.dll
+C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\Debug\net5.0\Cephei.Cell.pdb

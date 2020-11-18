@@ -268,9 +268,9 @@ module Fdm1DimSolverFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<Fdm1DimSolver> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<Fdm1DimSolver>> (c)
+                let l = new Cephei.Cell.List<Fdm1DimSolver> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<Fdm1DimSolver>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

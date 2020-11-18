@@ -7,7 +7,7 @@
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
     <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\steve\.nuget\packages\;C:\Microsoft\Xamarin\NuGet\</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
-    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">5.7.0</NuGetToolVersion>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">5.8.0</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="$([MSBuild]::EnsureTrailingSlash($(NuGetPackageFolders)))" />
@@ -16,13 +16,18 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net48' AND '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgSystem_Collections_Immutable Condition=" '$(PkgSystem_Collections_Immutable)' == '' ">C:\Users\steve\.nuget\packages\system.collections.immutable\1.7.1</PkgSystem_Collections_Immutable>
+    <PkgSystem_Collections_Immutable Condition=" '$(PkgSystem_Collections_Immutable)' == '' ">C:\Users\steve\.nuget\packages\system.collections.immutable\5.0.0</PkgSystem_Collections_Immutable>
     <PkgILGPU Condition=" '$(PkgILGPU)' == '' ">C:\Users\steve\.nuget\packages\ilgpu\0.9.1</PkgILGPU>
-    <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\steve\.nuget\packages\fsharp.core\4.7.2</PkgFSharp_Core>
+    <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\steve\.nuget\packages\fsharp.core\5.0.0</PkgFSharp_Core>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net5.0' AND '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgSystem_Collections_Immutable Condition=" '$(PkgSystem_Collections_Immutable)' == '' ">C:\Users\steve\.nuget\packages\system.collections.immutable\5.0.0</PkgSystem_Collections_Immutable>
+    <PkgILGPU Condition=" '$(PkgILGPU)' == '' ">C:\Users\steve\.nuget\packages\ilgpu\0.9.1</PkgILGPU>
+    <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\steve\.nuget\packages\fsharp.core\5.0.0</PkgFSharp_Core>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.1' AND '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgSystem_Collections_Immutable Condition=" '$(PkgSystem_Collections_Immutable)' == '' ">C:\Users\steve\.nuget\packages\system.collections.immutable\1.7.1</PkgSystem_Collections_Immutable>
+    <PkgSystem_Collections_Immutable Condition=" '$(PkgSystem_Collections_Immutable)' == '' ">C:\Users\steve\.nuget\packages\system.collections.immutable\5.0.0</PkgSystem_Collections_Immutable>
     <PkgILGPU Condition=" '$(PkgILGPU)' == '' ">C:\Users\steve\.nuget\packages\ilgpu\0.9.1</PkgILGPU>
-    <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\steve\.nuget\packages\fsharp.core\4.7.2</PkgFSharp_Core>
+    <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">C:\Users\steve\.nuget\packages\fsharp.core\5.0.0</PkgFSharp_Core>
   </PropertyGroup>
 </Project>

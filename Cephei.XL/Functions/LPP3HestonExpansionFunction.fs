@@ -166,9 +166,9 @@ module LPP3HestonExpansionFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<LPP3HestonExpansion> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<LPP3HestonExpansion>> (c)
+                let l = new Cephei.Cell.List<LPP3HestonExpansion> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<LPP3HestonExpansion>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

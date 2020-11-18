@@ -176,7 +176,7 @@ module yoyInflationLegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "yoyInflationLeg")>] 
          yoyinflationleg : obj)
-        ([<ExcelArgument(Name="caps",Description = "double range")>] 
+        ([<ExcelArgument(Name="caps",Description = "double range or empty")>] 
          caps : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -184,7 +184,7 @@ module yoyInflationLegFunction =
             try
 
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
-                let _caps = Helper.toCell<Generic.List<Nullable<double>>> caps "caps" 
+                let _caps = Helper.toNullabletList<double> caps "caps" 
                 let builder (current : ICell) = withMnemonic mnemonic ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithCaps1
                                                             _caps.cell 
                                                        ) :> ICell
@@ -302,7 +302,7 @@ module yoyInflationLegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="yoyInflationLeg",Description = "yoyInflationLeg")>] 
          yoyinflationleg : obj)
-        ([<ExcelArgument(Name="floors",Description = "double range")>] 
+        ([<ExcelArgument(Name="floors",Description = "double range or empty")>] 
          floors : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -310,7 +310,7 @@ module yoyInflationLegFunction =
             try
 
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
-                let _floors = Helper.toCell<Generic.List<Nullable<double>>> floors "floors" 
+                let _floors = Helper.toNullabletList<double> floors "floors" 
                 let builder (current : ICell) = withMnemonic mnemonic ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).WithFloors1
                                                             _floors.cell 
                                                        ) :> ICell
@@ -730,9 +730,9 @@ module yoyInflationLegFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<yoyInflationLeg> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<yoyInflationLeg>> (c)
+                let l = new Cephei.Cell.List<yoyInflationLeg> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<yoyInflationLeg>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

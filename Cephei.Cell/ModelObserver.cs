@@ -53,6 +53,18 @@ namespace Cephei.Cell
         {
             _source.Change -= OnChange;
         }
+        public ICell Parent 
+        { 
+            get
+            {
+                return null;
+            }
+            set
+            {
+
+            }
+        }
+
     }
     internal class ModelCellObserver<T> : IDisposable
     {

@@ -208,9 +208,9 @@ module BlackDeltaPremiumAdjustedSolverClassFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<BlackDeltaPremiumAdjustedSolverClass> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<BlackDeltaPremiumAdjustedSolverClass>> (c)
+                let l = new Cephei.Cell.List<BlackDeltaPremiumAdjustedSolverClass> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<BlackDeltaPremiumAdjustedSolverClass>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

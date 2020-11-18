@@ -41,6 +41,13 @@ namespace Cephei.Cell
         /// <param name="session">reference to the session that the eventi was originally
         /// source in</param>
         void OnChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session);
+
+        /// <summary>
+        /// Reference to the parent of this cell - usually the model the cell is defined in.
+        /// 
+        /// Parents get notifications for all changes to their childen
+        /// </summary>
+        ICell Parent { get; set; }
     }
 
     /// <summary>
@@ -48,12 +55,6 @@ namespace Cephei.Cell
     /// </summary>
     public interface ICell : ICellEvent
     {
-        /// <summary>
-        /// Reference to the parent of this cell - usually the model the cell is defined in.
-        /// 
-        /// Parents get notifications for all changes to their childen
-        /// </summary>
-        ICell Parent { get; set; }
         /// <summary>
         /// Enumerated list of the Target vale of all event delegates.
         /// This is used to ensure that multiple references do not result in events being
@@ -111,6 +112,12 @@ namespace Cephei.Cell
         /// <returns>_func</returns>
         object GetFunction();
 
+        /// <summary>
+        /// Can this cell be cast to to the Base class
+        /// </summary>
+        /// <typeparam name="Base"></typeparam>
+        /// <returns></returns>
+        bool ValueIs<Base>();
     }
 
     /// <summary>
@@ -431,16 +438,13 @@ namespace Cephei.Cell
                 var o = f.GetValue(func);
                 if (o is ICell c)
                 {
-                    if (model.ContainsKey(c.Mnemonic))
+                    if (c.Mnemonic != null && model.ContainsKey(c.Mnemonic))
                     {
                         var n = model[c.Mnemonic];
-                        if (n != null && n != c)
+                        if (n != null && n != c && c.GetType().IsSubclassOf (n.GetType()))
                         {
                             changed = true;
                             f.SetValue(func, n);
-//                            if (n.GetFunction() != null)
-//                                Relink(n.GetFunction(), model);
-//                            c.Dispose();
                         }
                     }
                 }

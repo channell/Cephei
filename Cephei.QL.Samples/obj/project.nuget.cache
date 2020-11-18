@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "sNwqu42kmQlMWsEag0pvKBDSNv6SyadzB2N2jDLxv6Rt1qgHlP/mpEQiBSMhj9HaxZP7gDBSQkQUt7KrnjrRiQ==",
+  "dgSpecHash": "lqATu343r/T5I9rRgvSL6NrBq84GeWPedXqA5kia1uu7vqtuBCrwEYajxtOaoUAF36J+vCHxcc7aa2lCNDg4Ew==",
   "success": true,
   "projectFilePath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL.Samples\\Cephei.QL.Samples.fsproj",
   "expectedPackageFiles": [
-    "C:\\Users\\steve\\.nuget\\packages\\fsharp.core\\4.7.2\\fsharp.core.4.7.2.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\ilgpu\\0.9.1\\ilgpu.0.9.1.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
-    "C:\\Users\\steve\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512",

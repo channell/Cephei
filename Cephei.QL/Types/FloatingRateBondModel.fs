@@ -106,6 +106,11 @@ type FloatingRateBondModel
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).setPricingEngine(e.Value)
                                                                      _FloatingRateBond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).valuationDate())
+    // add access to static util finction from model
+    let _setCouponPricer                           (pricer : ICell<FloatingRateCouponPricer>)
+                                                   = cell (fun () -> QLNet.Utils.setCouponPricer (_cashflows.Value, pricer.Value)
+                                                                     _FloatingRateBond.Value)
+
     do this.Bind(_FloatingRateBond)
 (* 
     casting 
@@ -179,6 +184,8 @@ type FloatingRateBondModel
     member this.SetPricingEngine                   e   
                                                    = _setPricingEngine e 
     member this.ValuationDate                      = _valuationDate
+    member this.SetCouponPricer                    pricer
+                                                   = _setCouponPricer pricer
 (* <summary>
   floating-rate bond (possibly capped and/or floored)   calculations are tested by checking results against cached values.
 
@@ -266,6 +273,10 @@ type FloatingRateBondModel1
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).setPricingEngine(e.Value)
                                                                      _FloatingRateBond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).valuationDate())
+    // add access to static util finction from model
+    let _setCouponPricer                           (pricer : ICell<FloatingRateCouponPricer>)
+                                                   = cell (fun () -> QLNet.Utils.setCouponPricer (_cashflows.Value, pricer.Value)
+                                                                     _FloatingRateBond.Value)
     do this.Bind(_FloatingRateBond)
 (* 
     casting 
@@ -343,6 +354,8 @@ type FloatingRateBondModel1
     member this.SetPricingEngine                   e   
                                                    = _setPricingEngine e 
     member this.ValuationDate                      = _valuationDate
+    member this.SetCouponPricer                    pricer
+                                                   = _setCouponPricer pricer
 (* <summary>
   floating-rate bond (possibly capped and/or floored)   calculations are tested by checking results against cached values.
 
@@ -440,6 +453,11 @@ type FloatingRateBondModel2
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).setPricingEngine(e.Value)
                                                                      _FloatingRateBond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).valuationDate())
+    // add access to static util finction from model
+    let _setCouponPricer                           (pricer : ICell<FloatingRateCouponPricer>)
+                                                   = cell (fun () -> QLNet.Utils.setCouponPricer (_cashflows.Value, pricer.Value)
+                                                                     _FloatingRateBond.Value)
+
     do this.Bind(_FloatingRateBond)
 (* 
     casting 
@@ -522,6 +540,9 @@ type FloatingRateBondModel2
     member this.SetPricingEngine                   e   
                                                    = _setPricingEngine e 
     member this.ValuationDate                      = _valuationDate
+    member this.SetCouponPricer                    pricer
+                                                   = _setCouponPricer pricer
+
 (* <summary>
   floating-rate bond (possibly capped and/or floored)   calculations are tested by checking results against cached values.
 public FloatingRateBond(int settlementDays, double faceAmount, Date startDate, Date maturityDate, Frequency couponFrequency, Calendar calendar, IborIndex index, DayCounter accrualDayCounter, BusinessDayConvention accrualConvention = Following, BusinessDayConvention paymentConvention = Following, int fixingDays = Null<Natural>(), List<double> gearings = std::vector<Real>(1, 1.0), List<double> spreads = std::vector<Spread>(1, 0.0), List<double> caps = std::vector<Rate>(), List<double> floors = std::vector<Rate>(), bool inArrears = false, double redemption = 100.0, Date issueDate = Date(), Date stubDate = Date(), DateGeneration.Rule rule = DateGeneration::Backward, bool endOfMonth = false)
@@ -633,6 +654,11 @@ type FloatingRateBondModel3
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).setPricingEngine(e.Value)
                                                                      _FloatingRateBond.Value)
     let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingRateBond).valuationDate())
+    // add access to static util finction from model
+    let _setCouponPricer                           (pricer : ICell<FloatingRateCouponPricer>)
+                                                   = cell (fun () -> QLNet.Utils.setCouponPricer (_cashflows.Value, pricer.Value)
+                                                                     _FloatingRateBond.Value)
+
     do this.Bind(_FloatingRateBond)
 (* 
     casting 
@@ -722,3 +748,6 @@ type FloatingRateBondModel3
     member this.SetPricingEngine                   e   
                                                    = _setPricingEngine e 
     member this.ValuationDate                      = _valuationDate
+    member this.SetCouponPricer                    pricer
+                                                   = _setCouponPricer pricer
+

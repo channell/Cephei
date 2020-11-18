@@ -9,20 +9,20 @@
     ".NETStandard,Version=v2.1/": {
       "Cephei.Cell/3.0.3": {
         "dependencies": {
-          "FSharp.Core": "4.7.2",
+          "FSharp.Core": "5.0.0",
           "ILGPU": "0.9.1",
           "Serilog": "2.10.0",
-          "System.Collections.Immutable": "1.7.1"
+          "System.Collections.Immutable": "5.0.0"
         },
         "runtime": {
           "Cephei.Cell.dll": {}
         }
       },
-      "FSharp.Core/4.7.2": {
+      "FSharp.Core/5.0.0": {
         "runtime": {
           "lib/netstandard2.0/FSharp.Core.dll": {
-            "assemblyVersion": "4.7.0.0",
-            "fileVersion": "4.700.20.27008"
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.50704"
           }
         },
         "resources": {
@@ -69,7 +69,7 @@
       },
       "ILGPU/0.9.1": {
         "dependencies": {
-          "System.Collections.Immutable": "1.7.1",
+          "System.Collections.Immutable": "5.0.0",
           "System.Memory": "4.5.4",
           "System.Reflection.Metadata": "1.8.0",
           "System.Runtime.CompilerServices.Unsafe": "4.7.1"
@@ -97,14 +97,14 @@
           }
         }
       },
-      "System.Collections.Immutable/1.7.1": {
+      "System.Collections.Immutable/5.0.0": {
         "dependencies": {
           "System.Memory": "4.5.4"
         },
         "runtime": {
           "lib/netstandard2.0/System.Collections.Immutable.dll": {
-            "assemblyVersion": "1.2.5.0",
-            "fileVersion": "4.700.20.21406"
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
           }
         }
       },
@@ -131,7 +131,7 @@
       },
       "System.Reflection.Metadata/1.8.0": {
         "dependencies": {
-          "System.Collections.Immutable": "1.7.1"
+          "System.Collections.Immutable": "5.0.0"
         },
         "runtime": {
           "lib/netstandard2.0/System.Reflection.Metadata.dll": {
@@ -156,12 +156,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "FSharp.Core/4.7.2": {
+    "FSharp.Core/5.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-w3XFVTnyZUbC8e2QT6a85ern6y7eQPPk+MYemz1FP0iBfgZcembL+wmo5cIZ1kxB8jfoXC8Q9KVkOMsGpkBKbA==",
-      "path": "fsharp.core/4.7.2",
-      "hashPath": "fsharp.core.4.7.2.nupkg.sha512"
+      "sha512": "sha512-iHoYXA0VaSQUONGENB1aVafjDDZDZpwu39MtaRCTrmwFW/cTcK0b2yKNVYneFHJMc3ChtsSoM9lNtJ1dYXkHfA==",
+      "path": "fsharp.core/5.0.0",
+      "hashPath": "fsharp.core.5.0.0.nupkg.sha512"
     },
     "ILGPU/0.9.1": {
       "type": "package",
@@ -184,12 +184,12 @@
       "path": "system.buffers/4.5.1",
       "hashPath": "system.buffers.4.5.1.nupkg.sha512"
     },
-    "System.Collections.Immutable/1.7.1": {
+    "System.Collections.Immutable/5.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-B43Zsz5EfMwyEbnObwRxW5u85fzJma3lrDeGcSAV1qkhSRTNY5uXAByTn9h9ddNdhM+4/YoLc/CI43umjwIl9Q==",
-      "path": "system.collections.immutable/1.7.1",
-      "hashPath": "system.collections.immutable.1.7.1.nupkg.sha512"
+      "sha512": "sha512-FXkLXiK0sVVewcso0imKQoOxjoPAj42R8HtjjbSjVPAzwDfzoyoznWxgA3c38LDbN9SJux1xXoXYAhz98j7r2g==",
+      "path": "system.collections.immutable/5.0.0",
+      "hashPath": "system.collections.immutable.5.0.0.nupkg.sha512"
     },
     "System.Memory/4.5.4": {
       "type": "package",

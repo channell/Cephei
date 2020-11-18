@@ -298,9 +298,9 @@ module TsiveriotisFernandesLatticeFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<TsiveriotisFernandesLattice> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<TsiveriotisFernandesLattice>> (c)
+                let l = new Cephei.Cell.List<TsiveriotisFernandesLattice> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<TsiveriotisFernandesLattice>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

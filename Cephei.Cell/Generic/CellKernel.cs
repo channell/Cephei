@@ -138,6 +138,7 @@ namespace Cephei.Cell.Generic
                 }
                 else
                 {
+                    Serilog.Log.Error(e, "Calculation failed for {0} with error {1}", Mnemonic, e.Message);
                     _lastException = e;
                     SetState(CellState.Error);
                     RaiseChange(CellEvent.Error, this, this, epoch, null);
@@ -196,7 +197,7 @@ namespace Cephei.Cell.Generic
                         for (int c = 0; c < 60000; c += 100)
                         {
                             //                            if (_event == null) _event = new ManualResetEvent(false);
-                            if (_event.WaitOne(c) || _state != (int)CellState.Blocking || !_lockHolder.IsAlive)
+                            if (_event.WaitOne(c) || _state != (int)CellState.Blocking || _lockHolder == null || !_lockHolder.IsAlive || _lockHolder == Thread.CurrentThread)
                                 break;
                         }
                         if (_state != (int)CellState.Clean)
@@ -347,7 +348,8 @@ namespace Cephei.Cell.Generic
         public virtual void OnChange(CellEvent eventType, ICellEvent root,  ICellEvent sender,  DateTime epoch, ISession session)
         {
             if (_disposd && root != this && eventType != CellEvent.Delete) sender.OnChange(CellEvent.Delete, this, this, epoch, session);
-            if (sender == Parent || root == this) return;
+            if (eventType == CellEvent.Link && root == this) throw new CyclicDependencyException();
+            else if (sender == Parent || root == this) return;
             switch (eventType)
             {
                 case CellEvent.Calculate:
@@ -391,12 +393,15 @@ namespace Cephei.Cell.Generic
                     _spinLock.Exit();
                     break;
                 case CellEvent.Link:
+                    if (Parent != null && Parent is Model m)
+                        if (Cell.Relink(_func, m))
+                            SetState(CellState.Dirty);
+                    RaiseChange(eventType, root, this, epoch, session);
+                    break;
+                case CellEvent.CyclicCheck:
                     if (root == this)
-                    {
                         throw new CyclicDependencyException();
-                    }
                     else
-                        SetState(CellState.Dirty);
                         RaiseChange(eventType, root, this, epoch, session);
                     break;
                 default:
@@ -443,15 +448,17 @@ namespace Cephei.Cell.Generic
                 Parent = c.Parent;
                 _state = (int)CellState.Dirty;
             }
-            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+
 
             // handle update of current while this cell is being constructed
             if (Parent is Model m)
             {
                 var cur = m[this.Mnemonic];
-                if (cur != this && cur.GetType() == this.GetType())
+                if (cur != this && cur != null && cur.GetType() == this.GetType())
                     cur.Merge(this, model);
             }
+            RaiseChange(CellEvent.CyclicCheck, this, this, DateTime.Now, null);
+            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
         }
 
         #region observable
@@ -503,6 +510,10 @@ namespace Cephei.Cell.Generic
         {
             return _func;
         }
-
+        public bool ValueIs<Base>()
+        {
+            return typeof(Base).IsAssignableFrom(typeof(T)) ||
+                   typeof(T).IsSubclassOf(typeof(Base));
+        }
     }
 }

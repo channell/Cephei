@@ -4,11 +4,9 @@
       "src": [
         {
           "files": [
-            "Cephei.Cell/**.csproj",
-            "Cephei.QL/**.fsproj",
-            "Cephei.XL/**.fsproj"
+            "*.csproj"
           ],
-          "cwd": "..",
+          "cwd": ".",
           "exclude": [
             "**/obj/**",
             "**/bin/**",

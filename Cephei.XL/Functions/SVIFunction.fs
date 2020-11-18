@@ -250,9 +250,9 @@ module SVIFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<SVI> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<SVI>> (c)
+                let l = new Cephei.Cell.List<SVI> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<SVI>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

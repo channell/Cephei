@@ -569,11 +569,11 @@ open Cephei.XL.Helper
             this.Write("                let format (i : ");
             
             #line 177 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(m.ReturnType.Replace("List<", "Generic.List<ICell<")));
+            this.Write(this.ToStringHelper.ToStringWithCulture(m.ReturnType.Replace("List<", "Generic.Cephei.Cell.List<")));
             
             #line default
             #line hidden
-            this.Write(">) (l : string) = Helper.Range.fromModelList i l\r\n");
+            this.Write(") (l : string) = Helper.Range.fromModelList i l\r\n");
             
             #line 178 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
@@ -1018,23 +1018,24 @@ open Cephei.XL.Helper
             #line default
             #line hidden
             this.Write("> i \"value\" ) |>\r\n                        Seq.toArray\r\n                let c = a " +
-                    "|> Array.map (fun i -> i.cell)\r\n                let l = new Generic.List<ICell<");
+                    "|> Array.map (fun i -> i.cell)\r\n                let l = new Generic.Cephei.Cell." +
+                    "List<");
             
             #line 348 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
-            this.Write(">> (c)\r\n                let s = a |> Array.map (fun i -> i.source)\r\n             " +
-                    "   let builder (current : ICell) = Util.value l :> ICell\r\n                let fo" +
-                    "rmat (i : Generic.List<ICell<");
+            this.Write("> (c)\r\n                let s = a |> Array.map (fun i -> i.source)\r\n              " +
+                    "  let builder (current : ICell) = l :> ICell\r\n                let format (i : Ge" +
+                    "neric.Cephei.Cell.List<");
             
             #line 351 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
-            this.Write(@">>) (l : string) = Helper.Range.fromModelList i l
+            this.Write(@">) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

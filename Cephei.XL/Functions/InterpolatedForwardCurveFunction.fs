@@ -995,9 +995,9 @@ module InterpolatedForwardCurveFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<InterpolatedForwardCurve> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<InterpolatedForwardCurve>> (c)
+                let l = new Cephei.Cell.List<InterpolatedForwardCurve> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<InterpolatedForwardCurve>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

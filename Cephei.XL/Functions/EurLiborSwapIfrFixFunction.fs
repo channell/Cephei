@@ -1506,9 +1506,9 @@ module EurLiborSwapIfrFixFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<EurLiborSwapIfrFix> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<EurLiborSwapIfrFix>> (c)
+                let l = new Cephei.Cell.List<EurLiborSwapIfrFix> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<EurLiborSwapIfrFix>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

@@ -35,6 +35,36 @@ open Cephei.XL.Helper
 module DiscountFunction =
 
     (*
+        create a Discount object
+    *)
+    [<ExcelFunction(Name="_Discount", Description="Create a Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
+    let Discount_create
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
+         mnemonic : string)
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Discount ()) :> ICell
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Discount>) l
+
+                let source () = "Fun.Discount ()"
+                let hash = 0
+                Model.specify 
+                    { mnemonic = Model.formatMnemonic mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriberModel format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+
+
+    (*
         upper bound for convergence loop
     *)
     [<ExcelFunction(Name="_Discount_discountImpl", Description="Create a Discount",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
@@ -549,9 +579,9 @@ module DiscountFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<Discount> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<Discount>> (c)
+                let l = new Cephei.Cell.List<Discount> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<Discount>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

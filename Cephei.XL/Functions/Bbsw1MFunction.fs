@@ -1228,9 +1228,9 @@ module Bbsw1MFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<Bbsw1M> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<Bbsw1M>> (c)
+                let l = new Cephei.Cell.List<Bbsw1M> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<Bbsw1M>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

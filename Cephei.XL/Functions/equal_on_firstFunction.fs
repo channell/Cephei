@@ -101,9 +101,9 @@ module equal_on_firstFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<equal_on_first> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<equal_on_first>> (c)
+                let l = new Cephei.Cell.List<equal_on_first> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<equal_on_first>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

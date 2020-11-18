@@ -23,7 +23,17 @@ namespace Cephei.Cell
             _target = target;
 
             source.Change += OnChange;
-            System.Threading.Tasks.Task.Run(() => _source.Value);
+            System.Threading.Tasks.Task.Run(() => 
+            {
+                try
+                {
+                    _target.OnNext(_source.Value);
+                }
+                catch (Exception e)
+                {
+                    Log.Error(e, e.Message);
+                }
+            });
         }
 
         public void OnChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session)
@@ -74,6 +84,18 @@ namespace Cephei.Cell
         {
             _source.Change -= OnChange;
         }
+        public ICell Parent
+        {
+            get
+            {
+                return null;
+            }
+            set
+            {
+
+            }
+        }
+
     }
 
     internal class SessionObserver<T> : IDisposable, ICellEvent
@@ -87,7 +109,17 @@ namespace Cephei.Cell
             _target = target;
 
             source.Change += OnChange;
-            System.Threading.Tasks.Task.Run(() => _source.Value);
+            System.Threading.Tasks.Task.Run(() =>
+            {
+                try
+                {
+                    _target.OnNext(new KeyValuePair<ISession, KeyValuePair<string, T>>(null, new KeyValuePair<string, T>(_source.Mnemonic, _source.Value)));
+                }
+                catch (Exception e)
+                {
+                    Log.Error(e, e.Message);
+                }
+            });
         }
 
         public void OnChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session)
@@ -130,6 +162,18 @@ namespace Cephei.Cell
         {
             _source.Change -= OnChange;
         }
+        public ICell Parent
+        {
+            get
+            {
+                return null;
+            }
+            set
+            {
+
+            }
+        }
+
     }
 
     internal class TraceObserver<T> : IDisposable, ICellEvent
@@ -143,7 +187,17 @@ namespace Cephei.Cell
             _target = target;
 
             source.Change += OnChange;
-            System.Threading.Tasks.Task.Run(() => _source.Value);
+            System.Threading.Tasks.Task.Run(() => 
+            {
+                try
+                {
+                    _target.OnNext(new Tuple<ISession, Generic.ICell<T>, CellEvent, ICell, DateTime>(null, _source, CellEvent.Calculate, null, DateTime.Now));
+                }
+                catch (Exception e)
+                {
+                    Log.Error(e, e.Message);
+                }
+            });
         }
 
         public void OnChange(CellEvent eventType, ICellEvent root, ICellEvent sender, DateTime epoch, ISession session)
@@ -182,6 +236,17 @@ namespace Cephei.Cell
         public void Dispose()
         {
             _source.Change -= OnChange;
+        }
+        public ICell Parent
+        {
+            get
+            {
+                return null;
+            }
+            set
+            {
+
+            }
         }
     }
 

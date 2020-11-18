@@ -2,52 +2,52 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.8": {
-      "FSharp.Core/4.7.2": {
+      "FSharp.Core/5.0.0": {
         "type": "package",
         "compile": {
-          "lib/net45/FSharp.Core.dll": {}
+          "lib/netstandard2.0/FSharp.Core.dll": {}
         },
         "runtime": {
-          "lib/net45/FSharp.Core.dll": {}
+          "lib/netstandard2.0/FSharp.Core.dll": {}
         },
         "resource": {
-          "lib/net45/cs/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/cs/FSharp.Core.resources.dll": {
             "locale": "cs"
           },
-          "lib/net45/de/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/de/FSharp.Core.resources.dll": {
             "locale": "de"
           },
-          "lib/net45/es/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/es/FSharp.Core.resources.dll": {
             "locale": "es"
           },
-          "lib/net45/fr/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/fr/FSharp.Core.resources.dll": {
             "locale": "fr"
           },
-          "lib/net45/it/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/it/FSharp.Core.resources.dll": {
             "locale": "it"
           },
-          "lib/net45/ja/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/ja/FSharp.Core.resources.dll": {
             "locale": "ja"
           },
-          "lib/net45/ko/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/ko/FSharp.Core.resources.dll": {
             "locale": "ko"
           },
-          "lib/net45/pl/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/pl/FSharp.Core.resources.dll": {
             "locale": "pl"
           },
-          "lib/net45/pt-BR/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/pt-BR/FSharp.Core.resources.dll": {
             "locale": "pt-BR"
           },
-          "lib/net45/ru/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/ru/FSharp.Core.resources.dll": {
             "locale": "ru"
           },
-          "lib/net45/tr/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/tr/FSharp.Core.resources.dll": {
             "locale": "tr"
           },
-          "lib/net45/zh-Hans/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/zh-Hans/FSharp.Core.resources.dll": {
             "locale": "zh-Hans"
           },
-          "lib/net45/zh-Hant/FSharp.Core.resources.dll": {
+          "lib/netstandard2.0/zh-Hant/FSharp.Core.resources.dll": {
             "locale": "zh-Hant"
           }
         }
@@ -93,7 +93,7 @@
           "lib/net461/System.Buffers.dll": {}
         }
       },
-      "System.Collections.Immutable/1.7.1": {
+      "System.Collections.Immutable/5.0.0": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.4"
@@ -178,10 +178,10 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.8",
         "dependencies": {
-          "FSharp.Core": "4.7.2",
+          "FSharp.Core": "5.0.0",
           "ILGPU": "0.9.1",
           "Serilog": "2.10.0",
-          "System.Collections.Immutable": "1.7.1"
+          "System.Collections.Immutable": "5.0.0"
         },
         "compile": {
           "bin/placeholder/Cephei.Cell.dll": {}
@@ -205,7 +205,7 @@
       }
     },
     ".NETStandard,Version=v2.1": {
-      "FSharp.Core/4.7.2": {
+      "FSharp.Core/5.0.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/FSharp.Core.dll": {}
@@ -288,7 +288,7 @@
           "lib/netstandard2.0/System.Buffers.dll": {}
         }
       },
-      "System.Collections.Immutable/1.7.1": {
+      "System.Collections.Immutable/5.0.0": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.4"
@@ -357,10 +357,10 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
-          "FSharp.Core": "4.7.2",
+          "FSharp.Core": "5.0.0",
           "ILGPU": "0.9.1",
           "Serilog": "2.10.0",
-          "System.Collections.Immutable": "1.7.1"
+          "System.Collections.Immutable": "5.0.0"
         },
         "compile": {
           "bin/placeholder/Cephei.Cell.dll": {}
@@ -385,36 +385,17 @@
     }
   },
   "libraries": {
-    "FSharp.Core/4.7.2": {
-      "sha512": "w3XFVTnyZUbC8e2QT6a85ern6y7eQPPk+MYemz1FP0iBfgZcembL+wmo5cIZ1kxB8jfoXC8Q9KVkOMsGpkBKbA==",
+    "FSharp.Core/5.0.0": {
+      "sha512": "iHoYXA0VaSQUONGENB1aVafjDDZDZpwu39MtaRCTrmwFW/cTcK0b2yKNVYneFHJMc3ChtsSoM9lNtJ1dYXkHfA==",
       "type": "package",
-      "path": "fsharp.core/4.7.2",
+      "path": "fsharp.core/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "fsharp.core.4.7.2.nupkg.sha512",
+        "fsharp.core.5.0.0.nupkg.sha512",
         "fsharp.core.nuspec",
-        "lib/net45/FSharp.Core.dll",
-        "lib/net45/FSharp.Core.optdata",
-        "lib/net45/FSharp.Core.sigdata",
-        "lib/net45/FSharp.Core.xml",
-        "lib/net45/cs/FSharp.Core.resources.dll",
-        "lib/net45/de/FSharp.Core.resources.dll",
-        "lib/net45/es/FSharp.Core.resources.dll",
-        "lib/net45/fr/FSharp.Core.resources.dll",
-        "lib/net45/it/FSharp.Core.resources.dll",
-        "lib/net45/ja/FSharp.Core.resources.dll",
-        "lib/net45/ko/FSharp.Core.resources.dll",
-        "lib/net45/pl/FSharp.Core.resources.dll",
-        "lib/net45/pt-BR/FSharp.Core.resources.dll",
-        "lib/net45/ru/FSharp.Core.resources.dll",
-        "lib/net45/tr/FSharp.Core.resources.dll",
-        "lib/net45/zh-Hans/FSharp.Core.resources.dll",
-        "lib/net45/zh-Hant/FSharp.Core.resources.dll",
         "lib/netstandard2.0/FSharp.Core.dll",
-        "lib/netstandard2.0/FSharp.Core.optdata",
-        "lib/netstandard2.0/FSharp.Core.sigdata",
         "lib/netstandard2.0/FSharp.Core.xml",
         "lib/netstandard2.0/cs/FSharp.Core.resources.dll",
         "lib/netstandard2.0/de/FSharp.Core.resources.dll",
@@ -506,10 +487,10 @@
         "version.txt"
       ]
     },
-    "System.Collections.Immutable/1.7.1": {
-      "sha512": "B43Zsz5EfMwyEbnObwRxW5u85fzJma3lrDeGcSAV1qkhSRTNY5uXAByTn9h9ddNdhM+4/YoLc/CI43umjwIl9Q==",
+    "System.Collections.Immutable/5.0.0": {
+      "sha512": "FXkLXiK0sVVewcso0imKQoOxjoPAj42R8HtjjbSjVPAzwDfzoyoznWxgA3c38LDbN9SJux1xXoXYAhz98j7r2g==",
       "type": "package",
-      "path": "system.collections.immutable/1.7.1",
+      "path": "system.collections.immutable/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -526,7 +507,7 @@
         "lib/netstandard2.0/System.Collections.Immutable.xml",
         "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll",
         "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.xml",
-        "system.collections.immutable.1.7.1.nupkg.sha512",
+        "system.collections.immutable.5.0.0.nupkg.sha512",
         "system.collections.immutable.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -808,6 +789,7 @@
       },
       "frameworks": {
         "net48": {
+          "targetAlias": "net48",
           "projectReferences": {
             "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
               "projectPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
@@ -818,6 +800,7 @@
           }
         },
         "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
           "projectReferences": {
             "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj": {
               "projectPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj"
@@ -836,9 +819,11 @@
     },
     "frameworks": {
       "net48": {
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "targetAlias": "net48",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       },
       "netstandard2.1": {
+        "targetAlias": "netstandard2.1",
         "imports": [
           "net461",
           "net462",
@@ -854,7 +839,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

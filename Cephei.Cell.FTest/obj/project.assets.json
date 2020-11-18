@@ -2,13 +2,13 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "coverlet.collector/1.2.0": {
+      "coverlet.collector/1.3.0": {
         "type": "package",
         "build": {
           "build/netstandard1.0/coverlet.collector.targets": {}
         }
       },
-      "FSharp.Core/4.7.2": {
+      "FSharp.Core/5.0.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/FSharp.Core.dll": {}
@@ -99,7 +99,7 @@
           "lib/netcoreapp3.0/Microsoft.AspNetCore.Http.Features.dll": {}
         }
       },
-      "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
+      "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "type": "package",
         "compile": {
           "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
@@ -108,7 +108,7 @@
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
         }
       },
-      "Microsoft.CodeCoverage/16.5.0": {
+      "Microsoft.CodeCoverage/16.8.0": {
         "type": "package",
         "compile": {
           "lib/netcoreapp1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {}
@@ -314,11 +314,11 @@
           "lib/netcoreapp3.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "Microsoft.NET.Test.Sdk/16.5.0": {
+      "Microsoft.NET.Test.Sdk/16.8.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.CodeCoverage": "16.5.0",
-          "Microsoft.TestPlatform.TestHost": "16.5.0"
+          "Microsoft.CodeCoverage": "16.8.0",
+          "Microsoft.TestPlatform.TestHost": "16.8.0"
         },
         "build": {
           "build/netcoreapp2.1/Microsoft.NET.Test.Sdk.props": {},
@@ -346,11 +346,11 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.Orleans.Core/3.2.1": {
+      "Microsoft.Orleans.Core/3.3.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Connections.Abstractions": "3.0.0",
-          "Microsoft.Bcl.AsyncInterfaces": "1.1.0",
+          "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
           "Microsoft.Extensions.Configuration": "3.0.0",
           "Microsoft.Extensions.DependencyInjection": "3.0.0",
           "Microsoft.Extensions.DependencyModel": "3.0.0",
@@ -358,7 +358,7 @@
           "Microsoft.Extensions.Logging": "3.0.0",
           "Microsoft.Extensions.ObjectPool": "3.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "3.0.0",
-          "Microsoft.Orleans.Core.Abstractions": "3.2.1",
+          "Microsoft.Orleans.Core.Abstractions": "3.3.0",
           "Newtonsoft.Json": "10.0.3",
           "System.Buffers": "4.5.0",
           "System.Collections.Immutable": "1.7.0",
@@ -379,11 +379,11 @@
           "lib/netcoreapp3.1/Orleans.Core.dll": {}
         }
       },
-      "Microsoft.Orleans.Core.Abstractions/3.2.1": {
+      "Microsoft.Orleans.Core.Abstractions/3.3.0": {
         "type": "package",
         "dependencies": {
           "System.Memory": "4.5.3",
-          "System.Threading.Tasks.Extensions": "4.5.3"
+          "System.Threading.Tasks.Extensions": "4.5.4"
         },
         "compile": {
           "lib/netstandard2.0/Orleans.Core.Abstractions.dll": {}
@@ -392,7 +392,7 @@
           "lib/netstandard2.0/Orleans.Core.Abstractions.dll": {}
         }
       },
-      "Microsoft.TestPlatform.ObjectModel/16.5.0": {
+      "Microsoft.TestPlatform.ObjectModel/16.8.0": {
         "type": "package",
         "dependencies": {
           "NuGet.Frameworks": "5.0.0"
@@ -488,10 +488,10 @@
           }
         }
       },
-      "Microsoft.TestPlatform.TestHost/16.5.0": {
+      "Microsoft.TestPlatform.TestHost/16.8.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.TestPlatform.ObjectModel": "16.5.0",
+          "Microsoft.TestPlatform.ObjectModel": "16.8.0",
           "Newtonsoft.Json": "9.0.1"
         },
         "compile": {
@@ -642,7 +642,7 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "MSTest.TestAdapter/2.1.0": {
+      "MSTest.TestAdapter/2.1.2": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1",
@@ -652,7 +652,7 @@
           "build/netcoreapp1.0/MSTest.TestAdapter.props": {}
         }
       },
-      "MSTest.TestFramework/2.1.0": {
+      "MSTest.TestFramework/2.1.2": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll": {},
@@ -998,7 +998,7 @@
           "lib/netstandard1.3/System.Collections.Concurrent.dll": {}
         }
       },
-      "System.Collections.Immutable/1.7.1": {
+      "System.Collections.Immutable/5.0.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/System.Collections.Immutable.dll": {}
@@ -2031,7 +2031,7 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
-      "System.Threading.Tasks.Extensions/4.5.3": {
+      "System.Threading.Tasks.Extensions/4.5.4": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.1/_._": {}
@@ -2134,10 +2134,10 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
-          "FSharp.Core": "4.7.2",
+          "FSharp.Core": "5.0.0",
           "ILGPU": "0.9.1",
           "Serilog": "2.10.0",
-          "System.Collections.Immutable": "1.7.1"
+          "System.Collections.Immutable": "5.0.0"
         },
         "compile": {
           "bin/placeholder/Cephei.Cell.dll": {}
@@ -2149,10 +2149,10 @@
     }
   },
   "libraries": {
-    "coverlet.collector/1.2.0": {
-      "sha512": "ZB+EGXsVBIn8cew7D3S2c+rgIlokKv1dSwsXEoiFQaNXF/BSxp9Rlfz/jV1ehSWH5XpLitfRxFNW3ok7uPDOXA==",
+    "coverlet.collector/1.3.0": {
+      "sha512": "t8pnf5SX2ya0RX4vjoxsbhDMQCZJcpPun2neHKJ4FouMmObylo25FvoOydvf3Bl+l+IzWw7u2vjEeCBHnleB9g==",
       "type": "package",
-      "path": "coverlet.collector/1.2.0",
+      "path": "coverlet.collector/1.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2169,47 +2169,29 @@
         "build/netstandard1.0/Mono.Cecil.Rocks.dll",
         "build/netstandard1.0/Mono.Cecil.dll",
         "build/netstandard1.0/Newtonsoft.Json.dll",
-        "build/netstandard1.0/System.Xml.XPath.XmlDocument.dll",
+        "build/netstandard1.0/NuGet.Frameworks.dll",
         "build/netstandard1.0/coverlet.collector.deps.json",
         "build/netstandard1.0/coverlet.collector.dll",
         "build/netstandard1.0/coverlet.collector.pdb",
         "build/netstandard1.0/coverlet.collector.targets",
         "build/netstandard1.0/coverlet.core.dll",
         "build/netstandard1.0/coverlet.core.pdb",
-        "coverlet.collector.1.2.0.nupkg.sha512",
+        "coverlet-icon.png",
+        "coverlet.collector.1.3.0.nupkg.sha512",
         "coverlet.collector.nuspec"
       ]
     },
-    "FSharp.Core/4.7.2": {
-      "sha512": "w3XFVTnyZUbC8e2QT6a85ern6y7eQPPk+MYemz1FP0iBfgZcembL+wmo5cIZ1kxB8jfoXC8Q9KVkOMsGpkBKbA==",
+    "FSharp.Core/5.0.0": {
+      "sha512": "iHoYXA0VaSQUONGENB1aVafjDDZDZpwu39MtaRCTrmwFW/cTcK0b2yKNVYneFHJMc3ChtsSoM9lNtJ1dYXkHfA==",
       "type": "package",
-      "path": "fsharp.core/4.7.2",
+      "path": "fsharp.core/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "fsharp.core.4.7.2.nupkg.sha512",
+        "fsharp.core.5.0.0.nupkg.sha512",
         "fsharp.core.nuspec",
-        "lib/net45/FSharp.Core.dll",
-        "lib/net45/FSharp.Core.optdata",
-        "lib/net45/FSharp.Core.sigdata",
-        "lib/net45/FSharp.Core.xml",
-        "lib/net45/cs/FSharp.Core.resources.dll",
-        "lib/net45/de/FSharp.Core.resources.dll",
-        "lib/net45/es/FSharp.Core.resources.dll",
-        "lib/net45/fr/FSharp.Core.resources.dll",
-        "lib/net45/it/FSharp.Core.resources.dll",
-        "lib/net45/ja/FSharp.Core.resources.dll",
-        "lib/net45/ko/FSharp.Core.resources.dll",
-        "lib/net45/pl/FSharp.Core.resources.dll",
-        "lib/net45/pt-BR/FSharp.Core.resources.dll",
-        "lib/net45/ru/FSharp.Core.resources.dll",
-        "lib/net45/tr/FSharp.Core.resources.dll",
-        "lib/net45/zh-Hans/FSharp.Core.resources.dll",
-        "lib/net45/zh-Hant/FSharp.Core.resources.dll",
         "lib/netstandard2.0/FSharp.Core.dll",
-        "lib/netstandard2.0/FSharp.Core.optdata",
-        "lib/netstandard2.0/FSharp.Core.sigdata",
         "lib/netstandard2.0/FSharp.Core.xml",
         "lib/netstandard2.0/cs/FSharp.Core.resources.dll",
         "lib/netstandard2.0/de/FSharp.Core.resources.dll",
@@ -2278,13 +2260,14 @@
         "microsoft.aspnetcore.http.features.nuspec"
       ]
     },
-    "Microsoft.Bcl.AsyncInterfaces/1.1.0": {
-      "sha512": "1Am6l4Vpn3/K32daEqZI+FFr96OlZkgwK2LcT3pZ2zWubR5zTPW3/FkO1Rat9kb7oQOa4rxgl9LJHc5tspCWfg==",
+    "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
+      "sha512": "yuvf07qFWFqtK3P/MRkEKLhn5r2UbSpVueRziSqj0yJQIKFwG1pq9mOayK3zE5qZCTs0CbrwL9M6R8VwqyGy2w==",
       "type": "package",
-      "path": "microsoft.bcl.asyncinterfaces/1.1.0",
+      "path": "microsoft.bcl.asyncinterfaces/1.1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll",
@@ -2293,7 +2276,7 @@
         "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.xml",
         "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
         "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml",
-        "microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
+        "microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
         "microsoft.bcl.asyncinterfaces.nuspec",
         "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll",
         "ref/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
@@ -2302,10 +2285,10 @@
         "version.txt"
       ]
     },
-    "Microsoft.CodeCoverage/16.5.0": {
-      "sha512": "PM5YLtyN45EyUGePJpaNogndlaQPrMgQQXHKMhMESC6KfSVvt+j7+dxBi8NYC6X6dZVysf7ngwhSW3wwvPJRSQ==",
+    "Microsoft.CodeCoverage/16.8.0": {
+      "sha512": "fR7HsWO+jTRhfBPWVl6QJbJSEU98siIKcQIDIo2tOH6nlogcOdScquWzVABR0UUpQlfWwt13vyryOltvLfsHnw==",
       "type": "package",
-      "path": "microsoft.codecoverage/16.5.0",
+      "path": "microsoft.codecoverage/16.8.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2334,7 +2317,7 @@
         "build/netstandard1.0/zh-Hant/Microsoft.VisualStudio.TraceDataCollector.resources.dll",
         "lib/net45/Microsoft.VisualStudio.CodeCoverage.Shim.dll",
         "lib/netcoreapp1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll",
-        "microsoft.codecoverage.16.5.0.nupkg.sha512",
+        "microsoft.codecoverage.16.8.0.nupkg.sha512",
         "microsoft.codecoverage.nuspec"
       ]
     },
@@ -2609,10 +2592,10 @@
         "microsoft.extensions.primitives.nuspec"
       ]
     },
-    "Microsoft.NET.Test.Sdk/16.5.0": {
-      "sha512": "yHZOhVSPuGqgHi+KhHiAZqNY08avkQraXKvgKgDU8c/ztmGzw7gmukkv49EaTq6T3xmp4XroWk3gAlbJHMxl8w==",
+    "Microsoft.NET.Test.Sdk/16.8.0": {
+      "sha512": "fc8VoTlD9+en13XWT9SW86M9jn4Y0Vns/uHRUJ2B6fevnuYmkilBLL+bIXC9yMELGYrerXIZm+B6Caux8lopfQ==",
       "type": "package",
-      "path": "microsoft.net.test.sdk/16.5.0",
+      "path": "microsoft.net.test.sdk/16.8.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2625,7 +2608,7 @@
         "build/netcoreapp2.1/Microsoft.NET.Test.Sdk.targets",
         "build/uap10.0/Microsoft.NET.Test.Sdk.props",
         "buildMultiTargeting/Microsoft.NET.Test.Sdk.props",
-        "microsoft.net.test.sdk.16.5.0.nupkg.sha512",
+        "microsoft.net.test.sdk.16.8.0.nupkg.sha512",
         "microsoft.net.test.sdk.nuspec"
       ]
     },
@@ -2659,10 +2642,10 @@
         "runtime.json"
       ]
     },
-    "Microsoft.Orleans.Core/3.2.1": {
-      "sha512": "H5j8LaCOhxI6fOvq+EK5w3SfuhujCu9/8FnjKQ2rIdkEvBc9BX9xALU9ZEmGqdZHeYgiOu7Bcyok257xOgfanw==",
+    "Microsoft.Orleans.Core/3.3.0": {
+      "sha512": "DMLpD8gZ+2YXo4CmwpNH0fKAqGs2Mmh003mTQ9GBz58m3crbJe4j2oysFjJvl1sTafiK1qrSoNwsCjoP9/PWZQ==",
       "type": "package",
-      "path": "microsoft.orleans.core/3.2.1",
+      "path": "microsoft.orleans.core/3.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2673,14 +2656,14 @@
         "lib/netstandard2.0/Orleans.Core.pdb",
         "lib/netstandard2.0/Orleans.Core.xml",
         "logo_128.png",
-        "microsoft.orleans.core.3.2.1.nupkg.sha512",
+        "microsoft.orleans.core.3.3.0.nupkg.sha512",
         "microsoft.orleans.core.nuspec"
       ]
     },
-    "Microsoft.Orleans.Core.Abstractions/3.2.1": {
-      "sha512": "QQBsPhAPxpSBOfCfPxP1OZz6BbupmRYFISemN7KYYTLtIx7TdFAgFXJ9AgtOERhYkhiw/0oh3WCXiWTJ2gp4+g==",
+    "Microsoft.Orleans.Core.Abstractions/3.3.0": {
+      "sha512": "IRhaEu6RVxnY+yk6wGPeZHsUYSG0eL1gRShKG2dFpQuEn9OGANmuR96gWIAMULfF7DJREO91ujIwd61lVZS2kw==",
       "type": "package",
-      "path": "microsoft.orleans.core.abstractions/3.2.1",
+      "path": "microsoft.orleans.core.abstractions/3.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2688,14 +2671,14 @@
         "lib/netstandard2.0/Orleans.Core.Abstractions.pdb",
         "lib/netstandard2.0/Orleans.Core.Abstractions.xml",
         "logo_128.png",
-        "microsoft.orleans.core.abstractions.3.2.1.nupkg.sha512",
+        "microsoft.orleans.core.abstractions.3.3.0.nupkg.sha512",
         "microsoft.orleans.core.abstractions.nuspec"
       ]
     },
-    "Microsoft.TestPlatform.ObjectModel/16.5.0": {
-      "sha512": "NnLFxmFBCAS6kye2JFszD5WKgj4Zve5KX/R0mhYwh6BVnSeybI2unRnjEPtLyY3CAVhwrY4bh/8LNFtslAcGZg==",
+    "Microsoft.TestPlatform.ObjectModel/16.8.0": {
+      "sha512": "Y60IDgwinOqwECwmvXyFqk2lnQAvcS6EKevc3DyKUJoJaNJ9bUGsUS8H2nlgBHloSQ/Zqj27CjRuLhBsCUO58w==",
       "type": "package",
-      "path": "microsoft.testplatform.objectmodel/16.5.0",
+      "path": "microsoft.testplatform.objectmodel/16.8.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2757,14 +2740,14 @@
         "lib/netstandard2.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
         "lib/netstandard2.0/zh-Hant/Microsoft.TestPlatform.CoreUtilities.resources.dll",
         "lib/netstandard2.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll",
-        "microsoft.testplatform.objectmodel.16.5.0.nupkg.sha512",
+        "microsoft.testplatform.objectmodel.16.8.0.nupkg.sha512",
         "microsoft.testplatform.objectmodel.nuspec"
       ]
     },
-    "Microsoft.TestPlatform.TestHost/16.5.0": {
-      "sha512": "ytGymboQIvjNX5pLC0yp/Bz9sGDHqSnLQgBRtd4VrqOUgKmmcfxMYZ6p0TBZgAT1oijdC6xqUZ7rl8mbaaXTJw==",
+    "Microsoft.TestPlatform.TestHost/16.8.0": {
+      "sha512": "CVXKGIWakPq7UboAlJ7ukcngBFF2UaHwS9pAN3nLyOpOR3yUYbinpd+eVvz6Fm/qRBP4uiwx0lWEZlHOHG1c0w==",
       "type": "package",
-      "path": "microsoft.testplatform.testhost/16.5.0",
+      "path": "microsoft.testplatform.testhost/16.8.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2909,7 +2892,7 @@
         "lib/uap10.0/Microsoft.TestPlatform.Utilities.dll",
         "lib/uap10.0/Microsoft.VisualStudio.TestPlatform.Common.dll",
         "lib/uap10.0/testhost.dll",
-        "microsoft.testplatform.testhost.16.5.0.nupkg.sha512",
+        "microsoft.testplatform.testhost.16.8.0.nupkg.sha512",
         "microsoft.testplatform.testhost.nuspec"
       ]
     },
@@ -2951,10 +2934,10 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "MSTest.TestAdapter/2.1.0": {
-      "sha512": "roxWjDyH5S+XlibaHM96VswxYq4vfbB53Ys9k3Qr2F1uNH+VpgIbygNQvtZUxSoAaI7aNSMMKA/HBfZPg5QDCA==",
+    "MSTest.TestAdapter/2.1.2": {
+      "sha512": "SjDlWk9t9cZKqyMReioqzRkZ1n4kPIqdAAYLd1vY2rEnx16aCShhSt4uXgTN0T1lNZgWE4Ge2+KVxHgxmtQ6QQ==",
       "type": "package",
-      "path": "mstest.testadapter/2.1.0",
+      "path": "mstest.testadapter/2.1.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3009,14 +2992,14 @@
         "build/uap10.0/MSTest.TestAdapter.props",
         "build/uap10.0/MSTest.TestAdapter.targets",
         "build/uap10.0/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll",
-        "mstest.testadapter.2.1.0.nupkg.sha512",
+        "mstest.testadapter.2.1.2.nupkg.sha512",
         "mstest.testadapter.nuspec"
       ]
     },
-    "MSTest.TestFramework/2.1.0": {
-      "sha512": "FcW3sokxmi52e4gzBdv4bv59yQWJ0Lg2F579U82O4V9Pr7aNwTe7HxlHChzQqvcqgnH69XH8aDfMlfM3Y1wjAg==",
+    "MSTest.TestFramework/2.1.2": {
+      "sha512": "DXTDuBumPC4oo9KKZMt5zgOuLdfUjqcsLRLyqeubaIxfl7ZBfk8wfsKRWYd1m5aCL3ekifW5pwT3rwuB2mDdLw==",
       "type": "package",
-      "path": "mstest.testframework/2.1.0",
+      "path": "mstest.testframework/2.1.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3111,7 +3094,7 @@
         "lib/uap10.0/zh-Hans/Microsoft.VisualStudio.TestPlatform.TestFramework.xml",
         "lib/uap10.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml",
         "lib/uap10.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.TestFramework.xml",
-        "mstest.testframework.2.1.0.nupkg.sha512",
+        "mstest.testframework.2.1.2.nupkg.sha512",
         "mstest.testframework.nuspec"
       ]
     },
@@ -3676,10 +3659,10 @@
         "system.collections.concurrent.nuspec"
       ]
     },
-    "System.Collections.Immutable/1.7.1": {
-      "sha512": "B43Zsz5EfMwyEbnObwRxW5u85fzJma3lrDeGcSAV1qkhSRTNY5uXAByTn9h9ddNdhM+4/YoLc/CI43umjwIl9Q==",
+    "System.Collections.Immutable/5.0.0": {
+      "sha512": "FXkLXiK0sVVewcso0imKQoOxjoPAj42R8HtjjbSjVPAzwDfzoyoznWxgA3c38LDbN9SJux1xXoXYAhz98j7r2g==",
       "type": "package",
-      "path": "system.collections.immutable/1.7.1",
+      "path": "system.collections.immutable/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3696,7 +3679,7 @@
         "lib/netstandard2.0/System.Collections.Immutable.xml",
         "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll",
         "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.xml",
-        "system.collections.immutable.1.7.1.nupkg.sha512",
+        "system.collections.immutable.5.0.0.nupkg.sha512",
         "system.collections.immutable.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -6902,10 +6885,10 @@
         "system.threading.tasks.nuspec"
       ]
     },
-    "System.Threading.Tasks.Extensions/4.5.3": {
-      "sha512": "+MvhNtcvIbqmhANyKu91jQnvIRVSTiaOiFNfKWwXGHG48YAb4I/TyH8spsySiPYla7gKal5ZnF3teJqZAximyQ==",
+    "System.Threading.Tasks.Extensions/4.5.4": {
+      "sha512": "zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
       "type": "package",
-      "path": "system.threading.tasks.extensions/4.5.3",
+      "path": "system.threading.tasks.extensions/4.5.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -6913,6 +6896,8 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
+        "lib/net461/System.Threading.Tasks.Extensions.dll",
+        "lib/net461/System.Threading.Tasks.Extensions.xml",
         "lib/netcoreapp2.1/_._",
         "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
         "lib/netstandard1.0/System.Threading.Tasks.Extensions.xml",
@@ -6931,7 +6916,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.threading.tasks.extensions.4.5.3.nupkg.sha512",
+        "system.threading.tasks.extensions.4.5.4.nupkg.sha512",
         "system.threading.tasks.extensions.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -7226,17 +7211,17 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Cephei.Cell >= 3.0.3",
-      "FSharp.Core >= 4.7.2",
+      "FSharp.Core >= 5.0.0",
       "ILGPU >= 0.9.1",
-      "MSTest.TestAdapter >= 2.1.0",
-      "MSTest.TestFramework >= 2.1.0",
-      "Microsoft.NET.Test.Sdk >= 16.5.0",
-      "Microsoft.Orleans.Core >= 3.2.1",
+      "MSTest.TestAdapter >= 2.1.2",
+      "MSTest.TestFramework >= 2.1.2",
+      "Microsoft.NET.Test.Sdk >= 16.8.0",
+      "Microsoft.Orleans.Core >= 3.3.0",
       "QLNet >= 1.11.4",
       "Serilog >= 2.10.0",
       "Serilog.Sinks.File >= 4.1.0",
-      "System.Collections.Immutable >= 1.7.1",
-      "coverlet.collector >= 1.2.0"
+      "System.Collections.Immutable >= 5.0.0",
+      "coverlet.collector >= 1.3.0"
     ]
   },
   "packageFolders": {
@@ -7270,6 +7255,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
             "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj": {
               "projectPath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell\\Cephei.Cell.csproj"
@@ -7280,10 +7266,11 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "FSharp.Core": {
             "target": "Package",
-            "version": "[4.7.2, )",
+            "version": "[5.0.0, )",
             "generatePathProperty": true
           },
           "ILGPU": {
@@ -7293,22 +7280,22 @@
           },
           "MSTest.TestAdapter": {
             "target": "Package",
-            "version": "[2.1.0, )",
+            "version": "[2.1.2, )",
             "generatePathProperty": true
           },
           "MSTest.TestFramework": {
             "target": "Package",
-            "version": "[2.1.0, )",
+            "version": "[2.1.2, )",
             "generatePathProperty": true
           },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
-            "version": "[16.5.0, )",
+            "version": "[16.8.0, )",
             "generatePathProperty": true
           },
           "Microsoft.Orleans.Core": {
             "target": "Package",
-            "version": "[3.2.1, )",
+            "version": "[3.3.0, )",
             "generatePathProperty": true
           },
           "QLNet": {
@@ -7328,12 +7315,14 @@
           },
           "System.Collections.Immutable": {
             "target": "Package",
-            "version": "[1.7.1, )",
+            "version": "[5.0.0, )",
             "generatePathProperty": true
           },
           "coverlet.collector": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
             "target": "Package",
-            "version": "[1.2.0, )",
+            "version": "[1.3.0, )",
             "generatePathProperty": true
           }
         },
@@ -7352,7 +7341,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

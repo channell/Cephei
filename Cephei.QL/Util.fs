@@ -24,6 +24,11 @@ open System.Collections
 open QLNet
 open System
 
+// Summary : Date dependant models need to have the evaluation date injected
+type IDateDependant =
+
+    abstract EvaluationDate : Cephei.Cell.Generic.ICell<QLNet.Date> with get, set
+
 module Util = 
     // Summary: create a value that notifies other cells when the value changes
     let value v = Cell.CreateFastValue (v)

@@ -364,9 +364,9 @@ module GapPayoffFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<GapPayoff> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<GapPayoff>> (c)
+                let l = new Cephei.Cell.List<GapPayoff> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<GapPayoff>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

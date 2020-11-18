@@ -229,9 +229,9 @@ module FloatingRateBondFunction =
          gearings : obj)
         ([<ExcelArgument(Name="spreads",Description = "double range")>] 
          spreads : obj)
-        ([<ExcelArgument(Name="caps",Description = "double range")>] 
+        ([<ExcelArgument(Name="caps",Description = "double range or empty")>] 
          caps : obj)
-        ([<ExcelArgument(Name="floors",Description = "double range")>] 
+        ([<ExcelArgument(Name="floors",Description = "double range or empty")>] 
          floors : obj)
         ([<ExcelArgument(Name="inArrears",Description = "bool")>] 
          inArrears : obj)
@@ -257,8 +257,8 @@ module FloatingRateBondFunction =
                 let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
                 let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" 
                 let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
-                let _caps = Helper.toCell<Generic.List<Nullable<double>>> caps "caps" 
-                let _floors = Helper.toCell<Generic.List<Nullable<double>>> floors "floors" 
+                let _caps = Helper.toNullabletList<double> caps "caps" 
+                let _floors = Helper.toNullabletList<double> floors "floors" 
                 let _inArrears = Helper.toCell<bool> inArrears "inArrears" 
                 let _redemption = Helper.toCell<double> redemption "redemption" 
                 let _issueDate = Helper.toCell<Date> issueDate "issueDate" 
@@ -364,9 +364,9 @@ module FloatingRateBondFunction =
          gearings : obj)
         ([<ExcelArgument(Name="spreads",Description = "double range")>] 
          spreads : obj)
-        ([<ExcelArgument(Name="caps",Description = "double range")>] 
+        ([<ExcelArgument(Name="caps",Description = "double range or empty")>] 
          caps : obj)
-        ([<ExcelArgument(Name="floors",Description = "double range")>] 
+        ([<ExcelArgument(Name="floors",Description = "double range or empty")>] 
          floors : obj)
         ([<ExcelArgument(Name="inArrears",Description = "bool")>] 
          inArrears : obj)
@@ -402,8 +402,8 @@ module FloatingRateBondFunction =
                 let _fixingDays = Helper.toCell<int> fixingDays "fixingDays" 
                 let _gearings = Helper.toCell<Generic.List<double>> gearings "gearings" 
                 let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
-                let _caps = Helper.toCell<Generic.List<Nullable<double>>> caps "caps" 
-                let _floors = Helper.toCell<Generic.List<Nullable<double>>> floors "floors" 
+                let _caps = Helper.toNullabletList<double> caps "caps" 
+                let _floors = Helper.toNullabletList<double> floors "floors" 
                 let _inArrears = Helper.toCell<bool> inArrears "inArrears" 
                 let _redemption = Helper.toCell<double> redemption "redemption" 
                 let _issueDate = Helper.toCell<Date> issueDate "issueDate" 
@@ -1850,6 +1850,51 @@ module FloatingRateBondFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
+
+    (*
+        ! returns the date the net present value refers to.
+    *)
+    [<ExcelFunction(Name="_FloatingRateBond_SetCouponPricer", Description="Set a coupon pricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
+    let FloatingRateBond_SetCouponPricer
+        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
+         mnemonic : string)
+        ([<ExcelArgument(Name="FloatingRateBond",Description = "FloatingRateBond")>] 
+         floatingratebond : obj)
+        ([<ExcelArgument(Name="Pricer",Description = "FloatingRateCouponPricer")>] 
+         pricer : obj)
+
+        = 
+        if not (Model.IsInFunctionWizard()) then
+
+            try
+
+                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
+                let _pricer = Helper.toCell<FloatingRateCouponPricer> pricer "FloatingRateCouponPricer"
+                let builder (current : ICell) = withMnemonic mnemonic ((FloatingRateBondModel.Cast _FloatingRateBond.cell).SetCouponPricer
+                                                                        _pricer.cell
+                                                                      ) :> ICell
+                let format (d : Date) (l:string) = d.serialNumber() :> obj
+
+                let source () = Helper.sourceFold (_FloatingRateBond.source + ".SetCouponPricer") 
+                                               [| _pricer.source
+                                               |]
+                let hash = Helper.hashFold 
+                                [| _FloatingRateBond.cell
+                                ;  _pricer.cell
+                                |]
+                Model.specify 
+                    { mnemonic = Model.formatMnemonic mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    } :?> string
+            with
+            | _ as e ->  "#" + e.Message
+        else
+            "<WIZ>"
+
+
     [<ExcelFunction(Name="_FloatingRateBond_Range", Description="Create a range of FloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateBond_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
@@ -1867,9 +1912,9 @@ module FloatingRateBondFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<FloatingRateBond> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<FloatingRateBond>> (c)
+                let l = new Cephei.Cell.List<FloatingRateBond> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<FloatingRateBond>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

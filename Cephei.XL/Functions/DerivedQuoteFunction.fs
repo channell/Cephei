@@ -286,9 +286,9 @@ module DerivedQuoteFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<DerivedQuote> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<DerivedQuote>> (c)
+                let l = new Cephei.Cell.List<DerivedQuote> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<DerivedQuote>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

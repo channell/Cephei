@@ -532,9 +532,13 @@ namespace Cephei.Cell
         {
             Change -= listener.OnChange;
         }
-        public object GetFunction()
+        public virtual object GetFunction()
         {
             return null;
+        }
+        public virtual bool ValueIs<Base>()
+        {
+            return typeof(Model) == typeof(Base);
         }
     }
 }

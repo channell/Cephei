@@ -35,6 +35,12 @@ namespace Cephei.Cell.Generic
                 return _cell.Box;
             }
         }
+
+        public override bool ValueIs<Base>()
+        {
+            return _cell.ValueIs<Base>();
+        }
+
         public override string Mnemonic 
         {
             get
@@ -89,10 +95,11 @@ namespace Cephei.Cell.Generic
                 _cell.Function = value;
             }
         }
-        public object GetFunction()
+        public override object GetFunction()
         {
             return _cell.GetFunction();
         }
+
 
         public ICell Cell => _cell;
 
@@ -116,7 +123,7 @@ namespace Cephei.Cell.Generic
             if (Parent is Model mod)
             {
                 var cur = mod[this.Mnemonic];
-                if (cur != this && cur.GetType() == this.GetType())
+                if (cur != this && cur != null && cur.GetType() == this.GetType())
                     cur.Merge(this, model);
             }
         }
@@ -134,7 +141,7 @@ namespace Cephei.Cell.Generic
         {            
             if (sender == Parent) 
                 return; 
-            if (root != this)
+            if (root != this && sender.Parent != this)
                 _cell.OnChange(eventType, root,  this, epoch, session);
             if (Parent != null)
                 Parent.OnChange(eventType, root, this, epoch, session);

@@ -424,9 +424,9 @@ module Actual365FixedFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<Actual365Fixed> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<Actual365Fixed>> (c)
+                let l = new Cephei.Cell.List<Actual365Fixed> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<Actual365Fixed>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

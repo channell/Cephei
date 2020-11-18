@@ -200,7 +200,7 @@ module CmsSpreadLegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="CmsSpreadLeg",Description = "CmsSpreadLeg")>] 
          cmsspreadleg : obj)
-        ([<ExcelArgument(Name="caps",Description = "double range")>] 
+        ([<ExcelArgument(Name="caps",Description = "double range or empty")>] 
          caps : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -208,7 +208,7 @@ module CmsSpreadLegFunction =
             try
 
                 let _CmsSpreadLeg = Helper.toCell<CmsSpreadLeg> cmsspreadleg "CmsSpreadLeg"  
-                let _caps = Helper.toCell<Generic.List<Nullable<double>>> caps "caps" 
+                let _caps = Helper.toNullabletList<double> caps "caps" 
                 let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithCaps
                                                             _caps.cell 
                                                        ) :> ICell
@@ -368,7 +368,7 @@ module CmsSpreadLegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="CmsSpreadLeg",Description = "CmsSpreadLeg")>] 
          cmsspreadleg : obj)
-        ([<ExcelArgument(Name="floors",Description = "double range")>] 
+        ([<ExcelArgument(Name="floors",Description = "double range or empty")>] 
          floors : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -376,7 +376,7 @@ module CmsSpreadLegFunction =
             try
 
                 let _CmsSpreadLeg = Helper.toCell<CmsSpreadLeg> cmsspreadleg "CmsSpreadLeg"  
-                let _floors = Helper.toCell<Generic.List<Nullable<double>>> floors "floors" 
+                let _floors = Helper.toNullabletList<double> floors "floors" 
                 let builder (current : ICell) = withMnemonic mnemonic ((CmsSpreadLegModel.Cast _CmsSpreadLeg.cell).WithFloors1
                                                             _floors.cell 
                                                        ) :> ICell
@@ -874,9 +874,9 @@ module CmsSpreadLegFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<CmsSpreadLeg> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<CmsSpreadLeg>> (c)
+                let l = new Cephei.Cell.List<CmsSpreadLeg> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<CmsSpreadLeg>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

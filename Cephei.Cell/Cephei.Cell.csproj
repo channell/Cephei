@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net48;netstandard2.1</TargetFrameworks>
+    <TargetFrameworks>net48;netstandard2.1;net5.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>3.0.3</Version>
     <UserSecretsId>6cae7644-0aae-4e42-b92c-f948aa487a5c</UserSecretsId>
@@ -39,11 +39,15 @@ Cells can be grouped into a Model to encapsulate the implementation of the model
     <OutputPath>..\bin\release\</OutputPath>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net48|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="FSharp.Core" Version="4.7.2" />
+    <PackageReference Include="FSharp.Core" Version="5.0.0" />
     <PackageReference Include="ILGPU" Version="0.9.1" />
     <PackageReference Include="Serilog" Version="2.10.0" />
-    <PackageReference Include="System.Collections.Immutable" Version="1.7.1" />
+    <PackageReference Include="System.Collections.Immutable" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>

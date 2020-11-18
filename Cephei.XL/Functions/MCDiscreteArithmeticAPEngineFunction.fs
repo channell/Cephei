@@ -461,9 +461,9 @@ module MCDiscreteArithmeticAPEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<MCDiscreteArithmeticAPEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<MCDiscreteArithmeticAPEngine>> (c)
+                let l = new Cephei.Cell.List<MCDiscreteArithmeticAPEngine> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<MCDiscreteArithmeticAPEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

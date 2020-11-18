@@ -16,7 +16,7 @@ namespace Cephei.Cell
     /// Lust that combines the view of the a list of Cells with a list of Cells
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class List<T> : IList<ICell<T>>, ICell<System.Collections.Generic.List<T>>, IList<T> where T : IEqualityComparer
+    public class List<T> : IList<ICell<T>>, ICell<System.Collections.Generic.List<T>>, IList<T>, ICell<System.Collections.Generic.List<ICell<T>>>
     {
         private System.Collections.Generic.List<Generic.ICell<T>> _list;
         private System.Collections.Generic.List<T> _cache;
@@ -88,6 +88,13 @@ namespace Cephei.Cell
                     ).ToList();
         }
 
+        public List(T[] a)
+        {
+            _list = (from r in a
+                     select withNotify(Cell.CreateValue(r))
+                    ).ToList();
+        }
+
         #endregion
 
         #region helper
@@ -97,9 +104,17 @@ namespace Cephei.Cell
             return c;
         }
 
+        public static implicit operator System.Collections.Generic.List<T>(List<T> v) { return v.Value; }
+        public static implicit operator System.Collections.Generic.List<ICell<T>>(List<T> v) { return v._list; }
+
+        public T[] ToArray ()
+        {
+            return Value.ToArray();
+        }
+
         #endregion
 
-        #region IList<ICell<T>>
+        #region IList<T>
         public Generic.ICell<T> this[int index]
         {
             get
@@ -288,6 +303,10 @@ namespace Cephei.Cell
         {
             return null;
         }
+        public bool ValueIs<Base>()
+        {
+            return typeof(T).IsSubclassOf(typeof(Base));
+        }
 
         public void Merge(ICell source, Model model)
         {
@@ -308,6 +327,8 @@ namespace Cephei.Cell
                     _list.Remove(v);
                 foreach (var v in s)
                     _list.Add(v);
+                if (ll.Count == 0 || s.Count > 0)
+                    RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
             }
         }
 
@@ -432,6 +453,50 @@ namespace Cephei.Cell
         {
             _list.RemoveAt(index);
             Value.RemoveAt(index);
+        }
+        #endregion
+
+        #region ICell<System.Collections.Generic.List<ICell<T>>>
+        System.Collections.Generic.List<ICell<T>> ICell<System.Collections.Generic.List<ICell<T>>>.Value 
+        {
+            get => _list;
+            set
+            {
+                _list = value;
+                _cache = null;
+                RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+            }
+        }
+        FSharpFunc<Unit, System.Collections.Generic.List<ICell<T>>> ICell<System.Collections.Generic.List<ICell<T>>>.Function { get => null; set { } }
+
+        void IObserver<System.Collections.Generic.List<ICell<T>>>.OnCompleted()
+        {
+        }
+
+        void IObserver<System.Collections.Generic.List<ICell<T>>>.OnError(Exception error)
+        {
+        }
+
+        void IObserver<System.Collections.Generic.List<ICell<T>>>.OnNext(System.Collections.Generic.List<ICell<T>> value)
+        {
+            _list = value;
+            _cache = null;
+            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+        }
+
+        IDisposable IObservable<System.Collections.Generic.List<ICell<T>>>.Subscribe(IObserver<System.Collections.Generic.List<ICell<T>>> observer)
+        {
+            return new CellObserver<System.Collections.Generic.List<ICell<T>>>(this, observer);
+        }
+
+        IDisposable IObservable<KeyValuePair<ISession, KeyValuePair<string, System.Collections.Generic.List<ICell<T>>>>>.Subscribe(IObserver<KeyValuePair<ISession, KeyValuePair<string, System.Collections.Generic.List<ICell<T>>>>> observer)
+        {
+            return new SessionObserver<System.Collections.Generic.List<ICell<T>>>(this, observer);
+        }
+
+        IDisposable IObservable<Tuple<ISession, ICell<System.Collections.Generic.List<ICell<T>>>, CellEvent, ICell, DateTime>>.Subscribe(IObserver<Tuple<ISession, ICell<System.Collections.Generic.List<ICell<T>>>, CellEvent, ICell, DateTime>> observer)
+        {
+            return new TraceObserver<System.Collections.Generic.List<ICell<T>>>(this, observer);
         }
         #endregion
     }

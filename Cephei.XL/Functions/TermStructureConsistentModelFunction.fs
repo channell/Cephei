@@ -208,9 +208,9 @@ module TermStructureConsistentModelFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<TermStructureConsistentModel> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<TermStructureConsistentModel>> (c)
+                let l = new Cephei.Cell.List<TermStructureConsistentModel> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<TermStructureConsistentModel>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

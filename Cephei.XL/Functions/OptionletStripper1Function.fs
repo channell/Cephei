@@ -904,9 +904,9 @@ module OptionletStripper1Function =
                         Seq.map (fun (i : obj) -> Helper.toCell<OptionletStripper1> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<OptionletStripper1>> (c)
+                let l = new Cephei.Cell.List<OptionletStripper1> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<OptionletStripper1>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

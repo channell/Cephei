@@ -38,6 +38,18 @@ namespace Cephei.XL
 
         public void AutoOpen()
         {
+            var logfile = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\CepheiXL\\logs.json");
+#if DEBUG
+            var cfg = new LoggerConfiguration()
+                .MinimumLevel.Information()
+                .WriteTo.RollingFile((new Serilog.Formatting.Json.JsonFormatter()), logfile)
+                .Enrich.WithMachineName()
+                .Enrich.WithEnvironmentUserName()
+                .Enrich.WithProcessId()
+                .Enrich.FromLogContext();
+
+            Log.Logger = cfg.CreateLogger();
+#else
             TelemetryConfiguration configuration = TelemetryConfiguration.CreateDefault();
             configuration.InstrumentationKey = "d5a8ffc9-329b-4341-bfff-0069e30bcfa0";
             configuration.ConnectionString = "InstrumentationKey=d5a8ffc9-329b-4341-bfff-0069e30bcfa0;IngestionEndpoint=https://uksouth-0.in.applicationinsights.azure.com/";
@@ -46,14 +58,16 @@ namespace Cephei.XL
             var cfg = new LoggerConfiguration()
                 .MinimumLevel.Information()
                 .WriteTo.ApplicationInsights(configuration, TelemetryConverter.Events)
+                .WriteTo.RollingFile((new Serilog.Formatting.Json.JsonFormatter()), logfile)
                 .Enrich.WithMachineName()
                 .Enrich.WithEnvironmentUserName()
                 .Enrich.WithProcessId()
                 .Enrich.FromLogContext();
 
             Log.Logger = cfg.CreateLogger();
-
+#endif
             _modelListener = Model.getState().Model.Subscribe(this);
+            Cell.Cell.Parellel = false;
             
             _email = UserPrincipal.Current.EmailAddress;
             var version = Assembly.GetExecutingAssembly().GetName().Version;

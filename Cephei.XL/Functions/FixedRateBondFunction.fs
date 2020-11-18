@@ -1855,6 +1855,7 @@ module FixedRateBondFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
+
     [<ExcelFunction(Name="_FixedRateBond_Range", Description="Create a range of FixedRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FixedRateBond_Range 
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
@@ -1872,9 +1873,9 @@ module FixedRateBondFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<FixedRateBond> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<FixedRateBond>> (c)
+                let l = new Cephei.Cell.List<FixedRateBond> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<FixedRateBond>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

@@ -1228,9 +1228,9 @@ module StrippedOptionletAdapterFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<StrippedOptionletAdapter> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<StrippedOptionletAdapter>> (c)
+                let l = new Cephei.Cell.List<StrippedOptionletAdapter> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<StrippedOptionletAdapter>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

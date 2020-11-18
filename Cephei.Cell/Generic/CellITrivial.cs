@@ -184,5 +184,10 @@ namespace Cephei.Cell.Generic
         {
             Change -= listener.OnChange;
         }
+        public bool ValueIs<Base> ()
+        {
+            return typeof(Base).IsAssignableFrom(typeof(T)) ||
+                   typeof(T).IsSubclassOf(typeof(Base));
+        }
     }
 }

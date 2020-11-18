@@ -298,9 +298,9 @@ module PositiveConstraintFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<PositiveConstraint> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<PositiveConstraint>> (c)
+                let l = new Cephei.Cell.List<PositiveConstraint> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<PositiveConstraint>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

@@ -936,9 +936,9 @@ module GermanyFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<Germany> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<Germany>> (c)
+                let l = new Cephei.Cell.List<Germany> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<Germany>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

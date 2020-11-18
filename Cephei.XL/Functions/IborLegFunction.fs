@@ -200,7 +200,7 @@ module IborLegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="IborLeg",Description = "IborLeg")>] 
          iborleg : obj)
-        ([<ExcelArgument(Name="caps",Description = "double range")>] 
+        ([<ExcelArgument(Name="caps",Description = "double range or empty")>] 
          caps : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -208,7 +208,7 @@ module IborLegFunction =
             try
 
                 let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
-                let _caps = Helper.toCell<Generic.List<Nullable<double>>> caps "caps" 
+                let _caps = Helper.toNullabletList<double> caps "caps" 
                 let builder (current : ICell) = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithCaps
                                                             _caps.cell 
                                                        ) :> ICell
@@ -368,7 +368,7 @@ module IborLegFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="IborLeg",Description = "IborLeg")>] 
          iborleg : obj)
-        ([<ExcelArgument(Name="floors",Description = "double range")>] 
+        ([<ExcelArgument(Name="floors",Description = "double range or empty")>] 
          floors : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
@@ -376,7 +376,7 @@ module IborLegFunction =
             try
 
                 let _IborLeg = Helper.toCell<IborLeg> iborleg "IborLeg"  
-                let _floors = Helper.toCell<Generic.List<Nullable<double>>> floors "floors" 
+                let _floors = Helper.toNullabletList<double> floors "floors" 
                 let builder (current : ICell) = withMnemonic mnemonic ((IborLegModel.Cast _IborLeg.cell).WithFloors1
                                                             _floors.cell 
                                                        ) :> ICell
@@ -874,9 +874,9 @@ module IborLegFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<IborLeg> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<IborLeg>> (c)
+                let l = new Cephei.Cell.List<IborLeg> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<IborLeg>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

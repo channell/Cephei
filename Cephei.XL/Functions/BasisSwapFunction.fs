@@ -1501,9 +1501,9 @@ module BasisSwapFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<BasisSwap> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<BasisSwap>> (c)
+                let l = new Cephei.Cell.List<BasisSwap> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<BasisSwap>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

@@ -1228,9 +1228,9 @@ module GBPLiborONFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<GBPLiborON> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<GBPLiborON>> (c)
+                let l = new Cephei.Cell.List<GBPLiborON> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<GBPLiborON>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

@@ -78,16 +78,16 @@ module Values =
                     Seq.filter (fun (i : obj) -> Helper.isNumeric i ) |>
                     Seq.map (fun (i : obj) -> Convert.ToInt32(i)) |>
                     Seq.toArray
-            let l = new Generic.List<int> (a)
+            let l = new List<int> (a)
             let sa = "[|" + (Array.fold (fun a y -> a + ";" + y.ToString()) "" a).Substring(1) + "|]"
-            let builder (current : ICell) = Util.value l :> ICell
+            let builder (current : ICell) = l :> ICell
             let format (i : Generic.List<int>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
             Model.specify 
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriberRange<int> format
-                ; source =  (fun () -> "cell new Generic.List<int>([|" + (a |> Array.fold (fun a y -> a + "; Convert.ToInt32(" + y.ToString() + ")") "").Substring(1) + "|]")
+                ; source =  (fun () -> "cell new List<int>([|" + (a |> Array.fold (fun a y -> a + "; Convert.ToInt32(" + y.ToString() + ")") "").Substring(1) + "|]")
                 ; hash = Array.fold (fun a y -> (a <<< 4) ^^^ y.GetHashCode()) 0 a
                 } :?> string
         else
@@ -135,16 +135,16 @@ module Values =
                     Seq.filter (fun (i : obj) -> Helper.isNumeric i ) |>
                     Seq.map (fun (i : obj) -> Convert.ToInt64(i)) |>
                     Seq.toArray
-            let l = new Generic.List<int64> (a)
+            let l = new List<int64> (a)
             let sa = "[|" + (Array.fold (fun a y -> a + ";" + y.ToString()) "" a).Substring(1) + "|]"
-            let builder (current : ICell) = Util.value l :> ICell
+            let builder (current : ICell) = l :> ICell
             let format (i : Generic.List<int64>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
             Model.specify 
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriberRange<int64> format
-                ; source =  (fun () -> "cell new Generic.List<int64>([|" + (a |> Array.fold (fun a y -> a + "; Convert.ToInt64(" + y.ToString() + ")") "").Substring(1) + "|]")
+                ; source =  (fun () -> "cell new List<int64>([|" + (a |> Array.fold (fun a y -> a + "; Convert.ToInt64(" + y.ToString() + ")") "").Substring(1) + "|]")
                 ; hash = Array.fold (fun a y -> (a <<< 4) ^^^ y.GetHashCode()) 0 a
                 } :?> string
         else
@@ -193,16 +193,16 @@ module Values =
                     Seq.filter (fun (i : obj) -> Helper.isNumeric i ) |>
                     Seq.map (fun (i : obj) -> Convert.ToDouble(i)) |>
                     Seq.toArray
-            let l = new Generic.List<double> (a)
+            let l = new List<double> (a)
             let sa = "[|" + (Array.fold (fun a y -> a + ";" + y.ToString()) "" a).Substring(1) + "|]"
-            let builder (current : ICell) = Util.value l :> ICell
+            let builder (current : ICell) = l :> ICell
             let format (i : Generic.List<double>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
             Model.specify 
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriberRange<double> format
-                ; source =  (fun () -> "cell new Generic.List<double>([|" + (a |> Array.fold (fun a y -> a + "; Convert.ToDouble(" + y.ToString() + ")") "").Substring(1) + "|]")
+                ; source =  (fun () -> "cell new List<double>([|" + (a |> Array.fold (fun a y -> a + "; Convert.ToDouble(" + y.ToString() + ")") "").Substring(1) + "|]")
                 ; hash = Array.fold (fun a y -> (a <<< 4) ^^^ y.GetHashCode()) 0 a
                 } :?> string
         else
@@ -251,16 +251,16 @@ Bool
                     Seq.filter (fun (i : obj) -> Helper.isNumeric i ) |>
                     Seq.map (fun (i : obj) -> Convert.ToBoolean(i)) |>
                     Seq.toArray
-            let l = new Generic.List<bool> (a)
+            let l = new List<bool> (a)
             let sa = "[|" + (Array.fold (fun a y -> a + ";" + y.ToString()) "" a).Substring(1) + "|]"
-            let builder (current : ICell) = Util.value l :> ICell
+            let builder (current : ICell) = l :> ICell
             let format (i : Generic.List<bool>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
             Model.specify 
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriberRange<bool> format
-                ; source =  (fun () -> "cell new Generic.List<bool>([|" + (a |> Array.fold (fun a y -> a + "; Convert.ToBoolean(" + y.ToString() + ")") "").Substring(1) + "|]")
+                ; source =  (fun () -> "cell new List<bool>([|" + (a |> Array.fold (fun a y -> a + "; Convert.ToBoolean(" + y.ToString() + ")") "").Substring(1) + "|]")
                 ; hash = Array.fold (fun a y -> (a <<< 4) ^^^ y.GetHashCode()) 0 a
                 } :?> string
         else
@@ -308,16 +308,16 @@ Bool
                     Seq.cast<obj> |>
                     Seq.map (fun (i : obj) -> DateTime.FromOADate(Convert.ToDouble(i))) |>
                     Seq.toArray
-            let l = new Generic.List<DateTime> (a)
+            let l = new List<DateTime> (a)
             let sa = "[|" + (Array.fold (fun a y -> a + ";" + y.ToString()) "" a).Substring(1) + "|]"
-            let builder (current : ICell) = Util.value l :> ICell
+            let builder (current : ICell) = l :> ICell
             let format (i : Generic.List<DateTime>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
             Model.specify 
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriberRange<DateTime> format
-                ; source =  (fun () -> "cell new Generic.List<DateTime>([|" + (a |> Array.fold (fun a y -> a + "; DateTime.FromOADate(" + y.ToString() + ")") "").Substring(1) + "|]")
+                ; source =  (fun () -> "cell new List<DateTime>([|" + (a |> Array.fold (fun a y -> a + "; DateTime.FromOADate(" + y.ToString() + ")") "").Substring(1) + "|]")
                 ; hash = Array.fold (fun a y -> (a <<< 4) ^^^ y.GetHashCode()) 0 a
                 } :?> string
         else
@@ -364,16 +364,16 @@ Bool
                     Seq.cast<obj> |>
                     Seq.map (fun (i : obj) -> i.ToString()) |>
                     Seq.toArray
-            let l = new Generic.List<string> (a)
+            let l = new List<string> (a)
             let sa = "[|" + (Array.fold (fun a y -> a + ";" + y) "" a).Substring(1) + "|]"
-            let builder (current : ICell) = Util.value l :> ICell
+            let builder (current : ICell) = l :> ICell
             let format (i : Generic.List<string>) (l : string) = (Helper.Range.fromArray (i.ToArray()) l)
 
             Model.specify 
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriberRange<string> format
-                ; source =  (fun () -> "cell new Generic.List<string>([|" + (a |> Array.fold (fun a y -> a + ";\"" + y.ToString() + "\"") "").Substring(1) + "|]")
+                ; source =  (fun () -> "cell new List<string>([|" + (a |> Array.fold (fun a y -> a + ";\"" + y.ToString() + "\"") "").Substring(1) + "|]")
                 ; hash = Array.fold (fun a y -> (a <<< 4) ^^^ y.GetHashCode()) 0 a
                 } :?> string
         else

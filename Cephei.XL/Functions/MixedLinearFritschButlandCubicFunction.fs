@@ -646,9 +646,9 @@ module MixedLinearFritschButlandCubicFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<MixedLinearFritschButlandCubic> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<MixedLinearFritschButlandCubic>> (c)
+                let l = new Cephei.Cell.List<MixedLinearFritschButlandCubic> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<MixedLinearFritschButlandCubic>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

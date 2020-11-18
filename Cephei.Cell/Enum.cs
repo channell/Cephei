@@ -49,9 +49,12 @@ namespace Cephei.Cell
 		/// they can determine whether a session value should be used instead of the spot
 		/// value
 		/// </summary>
-		JoinSession = 64
+		JoinSession = 64,
 
-
+		/// <summary>
+		/// Check for cyclic dependancy
+		/// </summary>
+		CyclicCheck = 128
 	}
 
 	/// <summary>

@@ -109,7 +109,13 @@ namespace Cephei.Cell.Generic
         {
             _func = func;
             if (Cell.Parellel && !Cell.Lazy)
-                Task.Run(() => Calculate(DateTime.Now, 0));
+                Task.Run(() => 
+                    {
+                        try 
+                        { 
+                            Calculate(DateTime.Now, 0); 
+                        } catch { } 
+                    });
             else if (!Cell.Lazy)
                 Calculate(DateTime.Now, 0);
         }
@@ -263,6 +269,7 @@ namespace Cephei.Cell.Generic
                 }
                 else
                 {
+                    Serilog.Log.Error(e, "Calculation failed for {0} with error {1}", Mnemonic, e.Message);
                     _lastException = e;
                     SetState(CellState.Error);
                     RaiseChange(CellEvent.Error, this, this, epoch, null);
@@ -332,7 +339,7 @@ namespace Cephei.Cell.Generic
                         taken = false;
                         for (int c = 0; c < 60000; c += 100)
                         {
-                            if (_event.WaitOne(c) || _state != (int)CellState.Blocking || !_lockHolder.IsAlive)
+                            if (_event.WaitOne(c) || _state != (int)CellState.Blocking || _lockHolder == null || !_lockHolder.IsAlive || _lockHolder == Thread.CurrentThread)
                                 break;
                         }
                         if (_state != (int)CellState.Clean)
@@ -506,21 +513,21 @@ namespace Cephei.Cell.Generic
                 Parent = c.Parent;
                 _state = (int)CellState.Dirty;
             }
-            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
 
             // handle update of current while this cell is being constructed
             if (Parent is Model m)
             {
                 var cur = m[this.Mnemonic];
-                if (cur != this && cur.GetType() == this.GetType())
+                if (cur != this && cur != null && cur.GetType() == this.GetType())
                     cur.Merge(this, model);
             }
+            RaiseChange(CellEvent.CyclicCheck, this, this, DateTime.Now, null);
+            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
         }
 
         public virtual void OnChange(CellEvent eventType, ICellEvent root,  ICellEvent sender,  DateTime epoch, ISession session)
         {
             if (_disposd && root != this && eventType != CellEvent.Delete) sender.OnChange(CellEvent.Delete, this, this, epoch, session);
-            if (sender == Parent || root == this) return;
             switch (eventType)
             {
                 case CellEvent.Calculate:
@@ -548,15 +555,11 @@ namespace Cephei.Cell.Generic
                         RaiseChange(eventType, root, this, epoch, session);
                     break;
                 case CellEvent.Link:
-                    if (root == this)
-                    {
-                        throw new CyclicDependencyException();
-                    }
                     _link = true;
                     _flip = true;
                     if (_func != null)
                         SetState(CellState.Dirty);
-                    OnChange(CellEvent.Calculate, root, this, epoch, session);
+                    RaiseChange(eventType, root, this, epoch, session);
                     break;
 
                 case CellEvent.JoinSession:
@@ -574,6 +577,12 @@ namespace Cephei.Cell.Generic
                     }
                     SetState(CellState.Error);
                     _spinLock.Exit();
+                    break;
+                case CellEvent.CyclicCheck:
+                    if (root == this)
+                        throw new CyclicDependencyException();
+                    else
+                        RaiseChange(eventType, root, this, epoch, session);
                     break;
             }
         }
@@ -594,6 +603,12 @@ namespace Cephei.Cell.Generic
             {
                 Value = (T)value;
             }
+        }
+
+        public bool ValueIs<Base>()
+        {
+            return typeof(Base).IsAssignableFrom(typeof(T)) ||
+                   typeof(T).IsSubclassOf(typeof(Base));
         }
 
         #region observable

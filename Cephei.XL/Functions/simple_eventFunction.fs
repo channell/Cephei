@@ -298,9 +298,9 @@ module simple_eventFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<simple_event> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<simple_event>> (c)
+                let l = new Cephei.Cell.List<simple_event> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<simple_event>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

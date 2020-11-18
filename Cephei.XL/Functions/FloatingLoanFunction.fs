@@ -478,9 +478,9 @@ module FloatingLoanFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<FloatingLoan> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<FloatingLoan>> (c)
+                let l = new Cephei.Cell.List<FloatingLoan> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<FloatingLoan>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

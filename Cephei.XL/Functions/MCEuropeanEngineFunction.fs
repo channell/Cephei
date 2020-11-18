@@ -136,9 +136,9 @@ module MCEuropeanEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<MCEuropeanEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<MCEuropeanEngine>> (c)
+                let l = new Cephei.Cell.List<MCEuropeanEngine> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<MCEuropeanEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

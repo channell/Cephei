@@ -183,6 +183,20 @@ module public  Model =
             cell.Dependants
             |> Seq.filter (fun i -> i :? ICell)
             |> Seq.map (fun i -> i :?> ICell)
+            |> Seq.fold (fun a y -> [y.Mnemonic + "/" + y.GetType().ToString() + "/" + y.GetHashCode().ToString()] @ a) []
+
+        let depens = 
+            _state.Value.Model
+            |> Seq.map (fun i -> if i.Value :? ICellModel then new KeyValuePair<string, ICell>(i.Key, (i.Value :?> ICellModel).Cell) else i)
+            |> Seq.map (fun i -> (i.Key + "/" + i.Value.GetType().ToString() + "/" + i.Value.GetHashCode().ToString() , (deps i.Value)))
+            |> Seq.toList
+
+(*
+
+        let rec deps (cell : ICell) : string list = 
+            cell.Dependants
+            |> Seq.filter (fun i -> i :? ICell)
+            |> Seq.map (fun i -> i :?> ICell)
             |> Seq.fold (fun a y -> [y.Mnemonic] @ a) []
 
         let depens = 
@@ -190,7 +204,7 @@ module public  Model =
             |> Seq.map (fun i -> if i.Value :? ICellModel then new KeyValuePair<string, ICell>(i.Key, (i.Value :?> ICellModel).Cell) else i)
             |> Seq.map (fun i -> (i.Key, (deps i.Value)))
             |> Seq.toList
-
+*)
         let size = 
             let max a b = if a > b then a else b
             depens 

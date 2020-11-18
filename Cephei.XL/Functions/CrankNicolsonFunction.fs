@@ -275,9 +275,9 @@ module CrankNicolsonFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<CrankNicolson> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<CrankNicolson>> (c)
+                let l = new Cephei.Cell.List<CrankNicolson> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<CrankNicolson>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

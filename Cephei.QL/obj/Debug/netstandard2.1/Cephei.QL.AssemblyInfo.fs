@@ -16,5 +16,6 @@ open System.Reflection
 [<assembly: System.Reflection.AssemblyProductAttribute("Cephei.QL")>]
 [<assembly: System.Reflection.AssemblyTitleAttribute("Cephei.QL")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("3.0.0.0")>]
+[<assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://github.com/channell/Cephei")>]
 [<assembly: System.Resources.NeutralResourcesLanguageAttribute("en")>]
 do()

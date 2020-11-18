@@ -848,9 +848,9 @@ module TaiwanFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<Taiwan> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<Taiwan>> (c)
+                let l = new Cephei.Cell.List<Taiwan> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<Taiwan>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

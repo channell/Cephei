@@ -1308,9 +1308,9 @@ module SabrInterpolatedSmileSectionFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<SabrInterpolatedSmileSection> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<SabrInterpolatedSmileSection>> (c)
+                let l = new Cephei.Cell.List<SabrInterpolatedSmileSection> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<SabrInterpolatedSmileSection>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

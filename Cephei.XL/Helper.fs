@@ -53,68 +53,72 @@ module Helper =
             let c = Model.cell so
             let s = if so.StartsWith("+") || so.StartsWith("-") then so.Substring(1) else so
             if c.IsSome then 
-                let c = c.Value
-                if c :? ICell<'T> then
-                    { cell = c :?> ICell<'T>
+                let cv = c.Value
+                if cv :? ICell<'T> then
+                    { cell = cv :?> ICell<'T>
                     ; source = "_" + s
+                    }
+                elif cv.ValueIs<'T>() then 
+                    { cell = withMnemonic cv.Mnemonic (triv (fun () -> (cv.Box :?> 'T)))
+                    ; source = "(triv (fun () -> _" + s + ".Value :> " + typeof<'T>.Name + "))"
                     }
                 elif typeof<'T> = typeof<Date> then 
                     if o :? ICell<double> then
-                        let cd = c :?> ICell<double>
-                        { cell = triv (fun () -> (new Date(int (cd.Value)))) :?> ICell<'T>
-                        ; source =  "(triv (fun () -> new Date(int (_" + c.Mnemonic + ".Value))))"
+                        let cd = cv :?> ICell<double>
+                        { cell = withMnemonic cv.Mnemonic (triv (fun () -> (new Date(int (cd.Value)))) :?> ICell<'T>)
+                        ; source =  "(triv (fun () -> new Date(int (_" + cv.Mnemonic + ".Value))))"
                         }
                     elif o :? ICell<DateTime> then
-                        let ct = c :?> ICell<DateTime>
-                        { cell = triv (fun () -> new Date(int (ct.Value.ToOADate()))) :?> ICell<'T>
-                        ; source =  "(triv (fun () -> new Date(int (_" + c.Mnemonic + ".Value.ToOADate())))"
+                        let ct = cv :?> ICell<DateTime>
+                        { cell = withMnemonic cv.Mnemonic (triv (fun () -> new Date(int (ct.Value.ToOADate()))) :?> ICell<'T>)
+                        ; source =  "(triv (fun () -> new Date(int (_" + cv.Mnemonic + ".Value.ToOADate())))"
                         }
                     elif o :? ICell<int> then
-                        let i = c :?> ICell<int>
-                        { cell = triv (fun () -> new Date(i.Value)) :?> ICell<'T>
-                        ; source =  "(triv (fun () -> new Date(_" + c.Mnemonic + ".Value)))"
+                        let i = cv :?> ICell<int>
+                        { cell = withMnemonic cv.Mnemonic (triv (fun () -> new Date(i.Value)) :?> ICell<'T>)
+                        ; source =  "(triv (fun () -> new Date(_" + cv.Mnemonic + ".Value)))"
                         }
                     else
-                        { cell = c :?> ICell<'T>
+                        { cell = cv :?> ICell<'T>
                         ; source = "_" + s
                         }
-                elif c :? ICell<DateTime> then 
-                    let d = c :?> ICell<DateTime>
+                elif cv :? ICell<DateTime> then 
+                    let d = cv :?> ICell<DateTime>
                     if typeof<'T> = typeof<int> then
-                        { cell = withMnemonic c.Mnemonic (triv (fun () -> (Convert.ToInt32(d.Value.ToOADate()) :> obj) :?> 'T))
+                        { cell = withMnemonic cv.Mnemonic (triv (fun () -> (Convert.ToInt32(d.Value.ToOADate()) :> obj) :?> 'T))
                         ; source =  "(triv (fun () -> int (_" + s + ".Value.ToOADate())))"
                         }
                     else
-                        { cell = withMnemonic c.Mnemonic (triv (fun () -> ((d.Value.ToOADate()) :> obj) :?> 'T))
+                        { cell = withMnemonic cv.Mnemonic (triv (fun () -> ((d.Value.ToOADate()) :> obj) :?> 'T))
                         ; source =  "(triv (fun () -> " + s + ".Value.ToOADate()))"
                         }
                 elif typeof<'T>.IsEnum then
                     let en = Enum.Parse(typeof<'T>, o.ToString()) :?> 'T
-                    { cell = (value en)
+                    { cell = withMnemonic attribute (value en)
                     ; source =  "(value " + typeof<'T>.Name + "." + en.ToString() + ")"
                     }
-                else    // upcast
-                    { cell = withMnemonic c.Mnemonic (triv (fun () -> (c.Box :?> 'T)))
-                    ; source = "(triv (fun () -> _" + s + ".Value :> " + typeof<'T>.Name + "))"
-                    }
-            else
-                { cell = (triv (fun () -> o :?> 'T))
+                else
+                    invalidArg (o.ToString()) ("Invalid " + attribute)
+            elif o :? 'T then
+                { cell = triv (fun () -> o :?> 'T)
                 ; source =  "(triv (fun () -> _" + s + " :?> " + typeof<'T>.Name + "))"
                 }
+            else
+                invalidArg (o.ToString()) ("Invalid " + attribute)
         elif typeof<'T> = typeof<Date> &&  o :? double then
             if o :? double then
                 let d = o :?> double
-                { cell = triv (fun () -> (new Date(int (d)))) :?> ICell<'T> 
-                ; source =  "(triv (fun () -> new Date(int (" + d.ToString() + ".Value))))"
+                { cell = (value (new Date (int d))) :?> ICell<'T>
+                ; source =  "(value (new Date(int (" + d.ToString() + "))))"
                 }
             elif o :? DateTime then
                 let t = o :?> DateTime
-                { cell = triv (fun () -> new Date(int (t.ToOADate()))) :?> ICell<'T>
-                ; source =  "(triv (fun () -> new Date(int (" + t.ToOADate().ToString() + "t.ToOADate()))))"
+                { cell = (value (new Date(int (t.ToOADate())))) :?> ICell<'T>
+                ; source =  "(value (Date(int (" + t.ToOADate().ToString() + "))))"
                 }
             else
-                { cell = triv (fun () -> o :?> 'T)
-                ; source =  "(triv (fun () -> " + o.ToString() + " :?> " + typeof<'T>.Name + "))"
+                { cell = value (o :?> 'T)
+                ; source =  "(value (" + o.ToString() + " :?> " + typeof<'T>.Name + "))"
                 }
         elif typeof<'T> = typeof<bool>  && o :? bool then
             { cell = (value (o :?> 'T))
@@ -127,24 +131,24 @@ module Helper =
         else
             try
                 if typeof<'T> = typeof<int> then 
-                    { cell = triv (fun () -> Convert.ToInt32(o) :> obj :?> 'T)
-                    ; source =  "(triv (fun () -> Convert.ToInt32(" + o.ToString() + ")))"
+                    { cell = (value (Convert.ToInt32(o)) :?> ICell<'T>)
+                    ; source =  "(value (Convert.ToInt32(" + o.ToString() + ")))"
                     }
                 elif typeof<'T> = typeof<double> then 
-                    { cell = triv (fun () -> Convert.ToDouble(o) :> obj :?> 'T)
-                    ; source =  "(triv (fun () -> Convert.ToDouble(" + o.ToString() + ")))"
+                    { cell = (value (Convert.ToDouble(o)) :?> ICell<'T>)
+                    ; source =  "(value (Convert.ToDouble(" + o.ToString() + ")))"
                     }
                 elif typeof<'T> = typeof<int64> then 
-                    { cell = triv (fun () -> Convert.ToInt64(o) :> obj :?> 'T)
-                    ; source =  "(triv (fun () -> Convert.ToInt64(" + o.ToString() + ")))"
+                    { cell = (value (Convert.ToInt64(o)) :?> ICell<'T>)
+                    ; source =  "(value (Convert.ToInt64(" + o.ToString() + ")))"
                     }
                 elif typeof<'T> = typeof<uint64> then 
-                    { cell = triv (fun () -> Convert.ToUInt64(o) :> obj :?> 'T)
-                    ; source =  "(triv (fun () -> Convert.ToInt64(" + o.ToString() + ")))"
+                    { cell = (value (Convert.ToUInt64(o)) :?> ICell<'T>) 
+                    ; source =  "(value (Convert.ToInt64(" + o.ToString() + ")))"
                     }
                 elif typeof<'T> = typeof<string> then 
-                    { cell = triv (fun () -> o.ToString() :> obj :?> 'T)
-                    ; source =  "(triv (fun () -> \"" + o.ToString() + "\")))"
+                    { cell = value (o.ToString() :> obj :?> 'T)
+                    ; source =  "(value \"" + o.ToString() + "\")"
                     }
                 else 
                     invalidArg (o.ToString()) ("Invalid " + attribute)
@@ -164,6 +168,7 @@ module Helper =
             }
         else
             toCell<'T> o attribute
+
 
     // Summary: Convert the reference to a cell handle for QL legacy handle class
     let toHandle<'T when 'T :> IObservable> (o : obj) (attribute : string) : CellSource<Handle<'T>> = 
@@ -190,6 +195,63 @@ module Helper =
         else 
             invalidArg (o.ToString()) ("Invalid " + attribute)
 
+    // Summary: Convert the list to a cell handle for QL legacy handle class
+    let toHandleList<'T when 'T :> IObservable> (o : obj) (attribute : string) : CellSource<Generic.List<Handle<'T>>> = 
+        if o :? string then
+            let s = o :?> string
+            let c = Model.cell s
+            if c.IsSome then 
+                let c = c.Value
+                if c:? ICell<Generic.List<'T>> then 
+                    let l = c :?> ICell<Generic.List<'T>>
+                    let folder (a : CellSource<Generic.List<Handle<'T>>>) fo : CellSource<Generic.List<Handle<'T>>> = 
+                        let h = toHandle fo attribute 
+                        a.cell.Value.Add (h.cell.Value)
+                        { cell = (a.cell)
+                        ; source = a.source + ";" + h.source
+                        }
+                    let accu = 
+                        l.Value |> Seq.fold folder ({cell = (value (new Generic.List<Handle<'T>> ())); source = "[|"})
+                    { cell = accu.cell
+                    ; source = "(new Generic.List<Handle<" + typeof<'T>.Name + ">(" + accu.source.Replace("[|;", "[|") + "|]))" 
+                    }
+                else
+                    invalidArg (o.ToString()) ("Invalid " + attribute)
+            else
+                invalidArg (o.ToString()) ("Invalid " + attribute)
+        else 
+            invalidArg (o.ToString()) ("Invalid " + attribute)
+
+    // Summary: convert value or use default
+    let toDefaultHandle<'T when 'T :> IObservable> (o : obj) (attribute : string) (defaultValue : Handle<'T>) : CellSource<Handle<'T>> = 
+        if o = null || o :? ExcelDna.Integration.ExcelMissing then 
+            let s = 
+                try
+                    defaultValue.ToString()
+                with 
+                | _ -> "(null :> " + typeof<'T>.Name + ")"
+
+            { cell = withMnemonic attribute (value defaultValue)
+            ; source =  "(value " + s + ")"
+            }
+        else
+            toHandle<'T> o attribute
+
+    // Summary: convert value or use default
+    let toDefaultHandleList<'T when 'T :> IObservable> (o : obj) (attribute : string) (defaultValue : Generic.List<Handle<'T>>) : CellSource<Generic.List<Handle<'T>>> = 
+        if o = null || o :? ExcelDna.Integration.ExcelMissing then 
+            let s = 
+                try
+                    defaultValue.ToString()
+                with 
+                | _ -> "(null :> " + typeof<'T>.Name + ")"
+
+            { cell = withMnemonic attribute (value defaultValue)
+            ; source =  "(value " + s + ")"
+            }
+        else
+            toHandleList<'T> o attribute
+
     // Summary: Convert the reference to a cell handle for QL legacy handle class
     let toNullable<'T when 'T :struct and 'T :> ValueType and 'T : (new : unit -> 'T)> (o : obj) (attribute : string) : CellSource<Nullable<'T>> = 
         if o :? string then
@@ -211,6 +273,38 @@ module Helper =
             }
         else 
             invalidArg (o.ToString()) ("Invalid " + attribute)
+
+
+    // Summary: Convert the list to a cell handle for QL legacy handle class
+    let toNullabletList<'T when 'T : (new : unit -> 'T) and 'T : struct and 'T :> ValueType> (o : obj) (attribute : string) : CellSource<Generic.List<Nullable<'T>>> = 
+        if o :? string then
+            let s = o :?> string
+            let c = Model.cell s
+            if c.IsSome then 
+                let c = c.Value
+                if c:? ICell<Generic.List<'T>> then 
+                    let l = c :?> ICell<Generic.List<'T>>
+                    let folder (a : CellSource<Generic.List<Nullable<'T>>>) fo : CellSource<Generic.List<Nullable<'T>>> = 
+                        let h = toNullable  fo attribute 
+                        a.cell.Value.Add (h.cell.Value)
+                        { cell = (a.cell)
+                        ; source = a.source + ";" + h.source
+                        }
+                    let accu = 
+                        l.Value |> Seq.fold folder ({cell = (value (new Generic.List<Nullable<'T>> ())); source = "[|"})
+                    { cell = accu.cell
+                    ; source = "(new Generic.List<Handle<" + typeof<'T>.Name + ">(" + accu.source.Replace("[|;", "[|") + "|]))" 
+                    }
+                else
+                    invalidArg (o.ToString()) ("Invalid " + attribute)
+            else
+                { cell = value (new Generic.List<Nullable<'T>>())
+                ; source = "(new Generic.List<Nullable<" + typeof<'T>.Name + ">())" 
+                }
+        else 
+            { cell = value (new Generic.List<Nullable<'T>>())
+            ; source = "(new Generic.List<Nullable<" + typeof<'T>.Name + ">())" 
+            }
            
     let isNumeric (o : obj) : bool = 
         o.ToString().ToCharArray() |> Array.fold (fun a y -> if a && (Char.IsDigit(y) || y = '-' || y = '+' || y = '.' || y = 'e') then true else false) true
@@ -228,24 +322,22 @@ module Helper =
 
     let hashFold (cs : ICell array) = 
         let folder h (y : ICell) = 
-            if y.HasFunction || y.Mnemonic = null then 
-                if y.Box.ToString().StartsWith("..") then 
-                    (h <<< 4) ^^^ y.Box.GetHashCode()
-                else
-                    (h <<< 4) ^^^ y.Box.GetHashCode()
-            else 
+            if not (y.Mnemonic = null) then 
                 (h <<< 4) ^^^ y.Mnemonic.GetHashCode()
+            elif (not (y.HasFunction) && not (y.Box = null)) then 
+                (h <<< 4) ^^^ y.Box.ToString().GetHashCode()
+            else 
+                h
         cs |> Array.fold folder 0
 
     let hashFold2 (cs : ICell<'t> array) = 
         let folder h (y : ICell<'t>) = 
-            if y.HasFunction || y.Mnemonic = null then 
-                if y.Box.ToString().StartsWith("..") then 
-                    (h <<< 4) ^^^ y.Box.GetHashCode()
-                else
-                    (h <<< 4) ^^^ y.Box.GetHashCode()
-            else 
+            if not (y.Mnemonic = null) then 
                 (h <<< 4) ^^^ y.Mnemonic.GetHashCode()
+            elif (not (y.HasFunction) && not (y.Box = null)) then 
+                (h <<< 4) ^^^ y.Box.ToString().GetHashCode()
+            else 
+                h
         cs |> Array.fold folder 0
 
     module Range =

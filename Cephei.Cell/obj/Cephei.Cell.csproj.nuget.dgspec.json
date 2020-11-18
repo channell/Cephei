@@ -25,6 +25,7 @@
         ],
         "originalTargetFrameworks": [
           "net48",
+          "net5.0",
           "netstandard2.1"
         ],
         "sources": {
@@ -32,10 +33,16 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          },
           "net48": {
+            "targetAlias": "net48",
             "projectReferences": {}
           },
           "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
             "projectReferences": {}
           }
         },
@@ -46,11 +53,12 @@
         }
       },
       "frameworks": {
-        "net48": {
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
             "FSharp.Core": {
               "target": "Package",
-              "version": "[4.7.2, )"
+              "version": "[5.0.0, )"
             },
             "ILGPU": {
               "target": "Package",
@@ -62,16 +70,32 @@
             },
             "System.Collections.Immutable": {
               "target": "Package",
-              "version": "[1.7.1, )"
+              "version": "[5.0.0, )"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         },
-        "netstandard2.1": {
+        "net48": {
+          "targetAlias": "net48",
           "dependencies": {
             "FSharp.Core": {
               "target": "Package",
-              "version": "[4.7.2, )"
+              "version": "[5.0.0, )"
             },
             "ILGPU": {
               "target": "Package",
@@ -83,7 +107,29 @@
             },
             "System.Collections.Immutable": {
               "target": "Package",
-              "version": "[1.7.1, )"
+              "version": "[5.0.0, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        },
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "FSharp.Core": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "ILGPU": {
+              "target": "Package",
+              "version": "[0.9.1, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[2.10.0, )"
+            },
+            "System.Collections.Immutable": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             }
           },
           "imports": [
@@ -101,7 +147,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

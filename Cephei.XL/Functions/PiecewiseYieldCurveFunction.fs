@@ -977,37 +977,34 @@ module PiecewiseYieldCurveFunction =
     let PiecewiseYieldCurve_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
-        ([<ExcelArgument(Name="traits",Description = "int")>] 
+        ([<ExcelArgument(Name="traits",Description = "ITraits<YieldTermStructure>")>] 
          traits : obj)
-        ([<ExcelArgument(Name="referenceDate",Description = "int")>] 
+        ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
-        ([<ExcelArgument(Name="instruments",Description = "int")>] 
+        ([<ExcelArgument(Name="instruments",Description = "RateHelper range")>] 
          instruments : obj)
-        ([<ExcelArgument(Name="dayCounter",Description = "int")>] 
+        ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
-        ([<ExcelArgument(Name="jumps",Description = "int")>] 
+        ([<ExcelArgument(Name="jumps",Description = "Quote")>] 
          jumps : obj)
-        ([<ExcelArgument(Name="jumpDates",Description = "int")>] 
+        ([<ExcelArgument(Name="jumpDates",Description = "Date")>] 
          jumpDates : obj)
-        ([<ExcelArgument(Name="accuracy",Description = "int")>] 
+        ([<ExcelArgument(Name="accuracy",Description = "double")>] 
          accuracy : obj)
-        ([<ExcelArgument(Name="i",Description = "int")>] 
-         i : obj)
-        ([<ExcelArgument(Name="bootstrap",Description = "int")>] 
-         bootstrap : obj)
+        ([<ExcelArgument(Name="interpolator",Description = "IInterpolationFactory")>] 
+         interpolator : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
             try
                 let _traits = Helper.toCell<ITraits<YieldTermStructure>> traits "traits"
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate"
-                let _instruments = Helper.toCell<List<RateHelper>> instruments "instruments"
+                let _instruments = Helper.toCell<Generic.List<RateHelper>> instruments "instruments"
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter"
-                let _jumps = Helper.toCell<List<Handle<Quote>>> jumps "jumps"
-                let _jumpDates = Helper.toCell<List<Date>> jumpDates "jumpDates"
+                let _jumps = Helper.toDefaultHandleList<Quote> jumps "jumps" (new Generic.List<Handle<Quote>>())
+                let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" (Generic.List<Date> ())
                 let _accuracy = Helper.toCell<double> accuracy "accuracy"
-                let _i = Helper.toCell<IInterpolationFactory> i "i"
-                let _bootstrap = Helper.toCell<IBootStrap<QLNet.PiecewiseYieldCurve>> bootstrap "bootstrap"
+                let _i = Helper.toCell<IInterpolationFactory> interpolator "interpolator"
 
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.PiecewiseYieldCurve
                                                             _traits.cell
@@ -1018,7 +1015,6 @@ module PiecewiseYieldCurveFunction =
                                                             _jumpDates.cell
                                                             _accuracy.cell
                                                             _i.cell
-                                                            _bootstrap.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<QLNetHelper.PiecewiseYieldCurve>) l
 
@@ -1031,7 +1027,6 @@ module PiecewiseYieldCurveFunction =
                                                 ;  _jumpDates.source
                                                 ;  _accuracy.source
                                                 ;  _i.source
-                                                ;  _bootstrap.source
                                                 |]
                 let hash = Helper.hashFold 
                                 [| _traits.cell
@@ -1042,7 +1037,6 @@ module PiecewiseYieldCurveFunction =
                                 ;  _jumpDates.cell
                                 ;  _accuracy.cell
                                 ;  _i.cell
-                                ;  _bootstrap.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -2320,9 +2314,9 @@ module PiecewiseYieldCurveFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<QLNetHelper.PiecewiseYieldCurve> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<QLNetHelper.PiecewiseYieldCurve>> (c)
+                let l = new Cephei.Cell.List<QLNetHelper.PiecewiseYieldCurve> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<QLNetHelper.PiecewiseYieldCurve>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

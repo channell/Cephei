@@ -1630,9 +1630,9 @@ module InterpolatedZeroInflationCurveFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<InterpolatedZeroInflationCurve> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<InterpolatedZeroInflationCurve>> (c)
+                let l = new Cephei.Cell.List<InterpolatedZeroInflationCurve> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<InterpolatedZeroInflationCurve>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

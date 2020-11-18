@@ -424,9 +424,9 @@ module GaussLobattoIntegralFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<GaussLobattoIntegral> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<GaussLobattoIntegral>> (c)
+                let l = new Cephei.Cell.List<GaussLobattoIntegral> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<GaussLobattoIntegral>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

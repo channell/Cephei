@@ -1026,7 +1026,7 @@ open Cephei.XL.Helper
             #line default
             #line hidden
             this.Write(">> (c)\r\n                let s = a |> Array.map (fun i -> i.source)\r\n             " +
-                    "   let builder (current : ICell) = Util.value l :> ICell\r\n                let format (i : Gener" +
+                    "   let builder (current : ICell) = l :> ICell\r\n                let format (i : Gener" +
                     "ic.List<ICell<");
             
             #line 351 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetXL\Class.tt"

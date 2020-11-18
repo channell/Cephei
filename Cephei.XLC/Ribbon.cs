@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.IO;
+using Serilog;
 
 namespace Cephei.XL
 {
@@ -67,6 +68,8 @@ namespace Cephei.XL
             }
             catch (Exception e)
             {
+                var st = e.StackTrace;
+                Log.Error(e, e.Message);
                 MessageBox.Show(e.Message, "Generate Error");
             }
         }

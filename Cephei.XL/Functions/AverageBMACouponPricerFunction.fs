@@ -453,9 +453,9 @@ module AverageBMACouponPricerFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<AverageBMACouponPricer> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<AverageBMACouponPricer>> (c)
+                let l = new Cephei.Cell.List<AverageBMACouponPricer> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<AverageBMACouponPricer>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

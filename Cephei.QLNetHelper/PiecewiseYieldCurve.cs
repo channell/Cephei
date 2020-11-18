@@ -23,12 +23,11 @@ namespace Cephei.QLNetHelper
         /// <param name="jumpDates"></param>
         /// <param name="accuracy"></param>
         /// <param name="i"></param>
-        /// <param name="bootstrap"></param>
         public PiecewiseYieldCurve
             ( ITraits<YieldTermStructure> trait
             , Date referenceDate, List<RateHelper> instruments,
                                    DayCounter dayCounter, List<Handle<Quote>> jumps, List<Date> jumpDates,
-                                   double accuracy, IInterpolationFactory i, IBootStrap<QLNet.PiecewiseYieldCurve> bootstrap)
+                                   double accuracy, IInterpolationFactory i)
            : base(referenceDate, new Calendar(), dayCounter, jumps, jumpDates)
         {
 
@@ -36,10 +35,10 @@ namespace Cephei.QLNetHelper
 
             accuracy_ = accuracy;
             interpolator_ = i;
-            bootstrap_ = bootstrap;
+            bootstrap_ = new IterativeBootstrapForYield();
             _traits_ = trait;
 
-            bootstrap_.setup(this);
+            bootstrap_ .setup(this);
         }
 
     }

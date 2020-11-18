@@ -245,9 +245,9 @@ module LinearRegressionFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<LinearRegression> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<LinearRegression>> (c)
+                let l = new Cephei.Cell.List<LinearRegression> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<LinearRegression>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

@@ -940,9 +940,9 @@ module DividendBarrierOptionFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<DividendBarrierOption> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<DividendBarrierOption>> (c)
+                let l = new Cephei.Cell.List<DividendBarrierOption> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<DividendBarrierOption>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

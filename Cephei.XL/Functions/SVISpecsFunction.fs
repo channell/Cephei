@@ -59,11 +59,11 @@ module SVISpecsFunction =
             try
 
                 let _SVISpecs = Helper.toCell<SVISpecs> svispecs "SVISpecs"  
-                let _param = Helper.toCell<Generic.List<Nullable<double>>> param "param" 
+                let _param = Helper.toNullabletList<double> param "param" 
                 let _paramIsFixed = Helper.toCell<Generic.List<bool>> paramIsFixed "paramIsFixed" 
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _expiryTime = Helper.toCell<double> expiryTime "expiryTime" 
-                let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
+                let _addParams = Helper.toNullabletList<double> addParams "addParams" 
                 let builder (current : ICell) = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).DefaultValues
                                                             _param.cell 
                                                             _paramIsFixed.cell 
@@ -197,7 +197,7 @@ module SVISpecsFunction =
                 let _SVISpecs = Helper.toCell<SVISpecs> svispecs "SVISpecs"  
                 let _x = Helper.toCell<Vector> x "x" 
                 let _paramIsFixed = Helper.toCell<Generic.List<bool>> paramIsFixed "paramIsFixed" 
-                let _param = Helper.toCell<Generic.List<Nullable<double>>> param "param" 
+                let _param = Helper.toNullabletList<double> param "param" 
                 let _forward = Helper.toCell<double> forward "forward" 
                 let builder (current : ICell) = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).Direct
                                                             _x.cell 
@@ -336,7 +336,7 @@ module SVISpecsFunction =
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _expiryTime = Helper.toCell<double> expiryTime "expiryTime" 
                 let _r = Helper.toCell<Generic.List<double>> r "r" 
-                let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
+                let _addParams = Helper.toNullabletList<double> addParams "addParams" 
                 let builder (current : ICell) = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).Guess
                                                             _values.cell 
                                                             _paramIsFixed.cell 
@@ -401,8 +401,8 @@ module SVISpecsFunction =
                 let _SVISpecs = Helper.toCell<SVISpecs> svispecs "SVISpecs"  
                 let _t = Helper.toCell<double> t "t" 
                 let _forward = Helper.toCell<double> forward "forward" 
-                let _param = Helper.toCell<Generic.List<Nullable<double>>> param "param" 
-                let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
+                let _param = Helper.toNullabletList<double> param "param" 
+                let _addParams = Helper.toNullabletList<double> addParams "addParams" 
                 let builder (current : ICell) = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).Instance
                                                             _t.cell 
                                                             _forward.cell 
@@ -461,7 +461,7 @@ module SVISpecsFunction =
                 let _SVISpecs = Helper.toCell<SVISpecs> svispecs "SVISpecs"  
                 let _y = Helper.toCell<Vector> y "y" 
                 let _b = Helper.toCell<Generic.List<bool>> b "b" 
-                let _c = Helper.toCell<Generic.List<Nullable<double>>> c "c" 
+                let _c = Helper.toNullabletList<double> c "c" 
                 let _d = Helper.toCell<double> d "d" 
                 let builder (current : ICell) = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).Inverse
                                                             _y.cell 
@@ -558,7 +558,7 @@ module SVISpecsFunction =
                 let _strike = Helper.toCell<double> strike "strike" 
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _stdDev = Helper.toCell<double> stdDev "stdDev" 
-                let _addParams = Helper.toCell<Generic.List<Nullable<double>>> addParams "addParams" 
+                let _addParams = Helper.toNullabletList<double> addParams "addParams" 
                 let builder (current : ICell) = withMnemonic mnemonic ((SVISpecsModel.Cast _SVISpecs.cell).Weight
                                                             _strike.cell 
                                                             _forward.cell 
@@ -609,9 +609,9 @@ module SVISpecsFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<SVISpecs> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<SVISpecs>> (c)
+                let l = new Cephei.Cell.List<SVISpecs> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<SVISpecs>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

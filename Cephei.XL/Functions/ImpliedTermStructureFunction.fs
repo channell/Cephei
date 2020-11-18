@@ -1048,9 +1048,9 @@ module ImpliedTermStructureFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<ImpliedTermStructure> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<ImpliedTermStructure>> (c)
+                let l = new Cephei.Cell.List<ImpliedTermStructure> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<ImpliedTermStructure>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

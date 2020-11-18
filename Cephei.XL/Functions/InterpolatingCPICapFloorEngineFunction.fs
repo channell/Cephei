@@ -125,9 +125,9 @@ module InterpolatingCPICapFloorEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<InterpolatingCPICapFloorEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<InterpolatingCPICapFloorEngine>> (c)
+                let l = new Cephei.Cell.List<InterpolatingCPICapFloorEngine> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<InterpolatingCPICapFloorEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

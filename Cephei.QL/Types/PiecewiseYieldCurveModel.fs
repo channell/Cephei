@@ -41,7 +41,6 @@ type PiecewiseYieldCurveModel
     , jumpDates                                    : ICell<List<Date>>
     , accuracy                                     : ICell<double>
     , i                                            : ICell<IInterpolationFactory>
-    , bootstrap                                    : ICell<IBootStrap<QLNet.PiecewiseYieldCurve>>
     ) as this =
     inherit Model<PiecewiseYieldCurve> ()
 (*
@@ -55,14 +54,13 @@ type PiecewiseYieldCurveModel
     let _jumpDates                                 = jumpDates
     let _accurancy                                 = accuracy
     let _i                                         = i
-    let _bootstrap                                 = bootstrap
 
 (*
     Functions
 *)
 
     let mutable
-        _PiecewiseYieldCurve                       = cell (fun () -> new PiecewiseYieldCurve (_traints.Value, _referenceDate.Value, _instruments.Value, _dayCounter.Value, _jumps.Value, _jumpDates.Value, _accurancy.Value, _i.Value, _bootstrap.Value))
+        _PiecewiseYieldCurve                       = cell (fun () -> new PiecewiseYieldCurve (_traints.Value, _referenceDate.Value, _instruments.Value, _dayCounter.Value, _jumps.Value, _jumpDates.Value, _accurancy.Value, _i.Value))
     let _accuracy_                                 = triv (fun () -> _PiecewiseYieldCurve.Value.accuracy_)
     let _Clone                                     = triv (fun () -> _PiecewiseYieldCurve.Value.Clone())
     let _data                                      = triv (fun () -> _PiecewiseYieldCurve.Value.data())
@@ -153,11 +151,10 @@ type PiecewiseYieldCurveModel
         if p :? PiecewiseYieldCurveModel then 
             p :?> PiecewiseYieldCurveModel
         else
-            let o = new PiecewiseYieldCurveModel (null,null,null,null,null,null,null,null,null)
+            let o = new PiecewiseYieldCurveModel (null,null,null,null,null,null,null,null)
             o.Inject p
             o.Bind p
             o
-                            
 
 (* 
     Externally visible/bindable properties

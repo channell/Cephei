@@ -125,9 +125,9 @@ module AnalyticDigitalAmericanEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<AnalyticDigitalAmericanEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<AnalyticDigitalAmericanEngine>> (c)
+                let l = new Cephei.Cell.List<AnalyticDigitalAmericanEngine> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<AnalyticDigitalAmericanEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

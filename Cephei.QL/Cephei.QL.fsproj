@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net48;netstandard2.1</TargetFrameworks>
+    <TargetFrameworks>net48;netstandard2.1;net5.0</TargetFrameworks>
     <AssemblyVersion>3.0.0.0</AssemblyVersion>
     <Version>3.0.0</Version>
     <Company>Cepheis Ltd</Company>
@@ -1054,7 +1054,7 @@ The source types can be used as-is or as recipes for domain specific implementat
   </ItemGroup> 
 
   <ItemGroup>
-    <PackageReference Update="FSharp.Core" Version="4.7.2" />
+    <PackageReference Update="FSharp.Core" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -1078,7 +1078,7 @@ The source types can be used as-is or as recipes for domain specific implementat
 
   <ItemGroup>
     <PackageReference Include="ILGPU" Version="0.9.1" />
-    <PackageReference Include="System.Collections.Immutable" Version="1.7.1" />
+    <PackageReference Include="System.Collections.Immutable" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>

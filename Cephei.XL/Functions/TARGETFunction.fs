@@ -845,9 +845,9 @@ module TARGETFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<TARGET> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<TARGET>> (c)
+                let l = new Cephei.Cell.List<TARGET> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<TARGET>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

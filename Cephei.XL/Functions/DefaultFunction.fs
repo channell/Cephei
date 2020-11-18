@@ -153,9 +153,9 @@ module DefaultFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<Default> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<Default>> (c)
+                let l = new Cephei.Cell.List<Default> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<Default>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

@@ -520,9 +520,9 @@ module VNDCurrencyFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<VNDCurrency> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<VNDCurrency>> (c)
+                let l = new Cephei.Cell.List<VNDCurrency> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<VNDCurrency>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 

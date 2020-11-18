@@ -382,9 +382,9 @@ module CallabilityFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<Callability> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Generic.List<ICell<Callability>> (c)
+                let l = new Cephei.Cell.List<Callability> (c)
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = Util.value l :> ICell
+                let builder (current : ICell) = l :> ICell
                 let format (i : Generic.List<ICell<Callability>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
