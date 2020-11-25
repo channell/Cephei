@@ -139,8 +139,8 @@ open Cephei.QLNetHelper
             
             #line default
             #line hidden
-            this.Write("    let _evaluationDate                            = evaluationDate\r\n    let _pri" +
-                    "cingEngine                             = pricingEngine\r\n");
+            this.Write("    let mutable\n        _evaluationDate                            = evaluationDa" +
+                    "te\r\n    let _pricingEngine                             = pricingEngine\r\n");
             
             #line 65 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetQL\Class.tt"
 

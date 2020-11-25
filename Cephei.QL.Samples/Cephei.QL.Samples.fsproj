@@ -5,13 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="AddEvaluation.fsx" />
+    <Compile Include="ChnageEvalDate.fsx" />
     <None Include="codegen.fsx" />
     <Compile Include="generatedbond.fs" />
     <None Include="enums.fsx" />
     <None Include="recomment.fsx" />
     <None Include="mutable.fsx" />
     <None Include="tst.fsx" />
-    <None Include="CastConversion.fsx" />
+    <None Include="castConversion.fsx" />
     <None Include="addcast.fsx" />
     <None Include="defalV.fsx" />
     <None Include="EditFiles.fsx" />

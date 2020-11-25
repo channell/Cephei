@@ -55,7 +55,8 @@ type CommercialPaperModel
     let _fixedDayCount                             = fixedDayCount
     let _principalSchedule                         = principalSchedule
     let _paymentConvention                         = paymentConvention
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -78,6 +79,9 @@ type CommercialPaperModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new CommercialPaperModel(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CommercialPaper <- v
     static member Cast (p : ICell<CommercialPaper>) = 
@@ -86,6 +90,7 @@ type CommercialPaperModel
         else
             let o = new CommercialPaperModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

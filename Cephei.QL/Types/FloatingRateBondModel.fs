@@ -51,7 +51,8 @@ type FloatingRateBondModel
     let _schedule                                  = schedule
     let _index                                     = index
     let _paymentDayCounter                         = paymentDayCounter
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -115,6 +116,9 @@ type FloatingRateBondModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new FloatingRateBondModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _FloatingRateBond <- v
     static member Cast (p : ICell<FloatingRateBond>) = 
@@ -123,6 +127,7 @@ type FloatingRateBondModel
         else
             let o = new FloatingRateBondModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -218,7 +223,8 @@ type FloatingRateBondModel1
     let _fixingDays                                = fixingDays
     let _gearings                                  = gearings
     let _spreads                                   = spreads
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -281,6 +287,9 @@ type FloatingRateBondModel1
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new FloatingRateBondModel1(null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FloatingRateBond <- v
     static member Cast (p : ICell<FloatingRateBond>) = 
@@ -289,6 +298,7 @@ type FloatingRateBondModel1
         else
             let o = new FloatingRateBondModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -398,7 +408,8 @@ type FloatingRateBondModel2
     let _inArrears                                 = inArrears
     let _redemption                                = redemption
     let _issueDate                                 = issueDate
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -462,6 +473,9 @@ type FloatingRateBondModel2
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new FloatingRateBondModel2(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FloatingRateBond <- v
     static member Cast (p : ICell<FloatingRateBond>) = 
@@ -470,6 +484,7 @@ type FloatingRateBondModel2
         else
             let o = new FloatingRateBondModel2 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -599,7 +614,8 @@ type FloatingRateBondModel3
     let _stubDate                                  = stubDate
     let _rule                                      = rule
     let _endOfMonth                                = endOfMonth
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -663,6 +679,9 @@ type FloatingRateBondModel3
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new FloatingRateBondModel3(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FloatingRateBond <- v
     static member Cast (p : ICell<FloatingRateBond>) = 
@@ -671,6 +690,7 @@ type FloatingRateBondModel3
         else
             let o = new FloatingRateBondModel3 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

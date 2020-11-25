@@ -45,7 +45,8 @@ type BasketOptionModel
 *)
     let _payoff                                    = payoff
     let _exercise                                  = exercise
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -74,6 +75,9 @@ type BasketOptionModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new BasketOptionModel(null,null,null,null)
     member internal this.Inject v = _BasketOption <- v
     static member Cast (p : ICell<BasketOption>) = 
@@ -82,6 +86,7 @@ type BasketOptionModel
         else
             let o = new BasketOptionModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

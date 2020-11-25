@@ -63,7 +63,8 @@ type ConvertibleFixedCouponBondModel
     let _dayCounter                                = dayCounter
     let _schedule                                  = schedule
     let _redemption                                = redemption
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -126,6 +127,9 @@ type ConvertibleFixedCouponBondModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new ConvertibleFixedCouponBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _ConvertibleFixedCouponBond <- v
     static member Cast (p : ICell<ConvertibleFixedCouponBond>) = 
@@ -134,6 +138,7 @@ type ConvertibleFixedCouponBondModel
         else
             let o = new ConvertibleFixedCouponBondModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

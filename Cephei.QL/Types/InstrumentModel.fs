@@ -70,18 +70,12 @@ type InstrumentModel
     static member Cast (p : ICell<Instrument>) = 
         if p :? InstrumentModel then 
             p :?> InstrumentModel
-        elif p :? IDateDependant then
-            let o = new InstrumentModel ()
-            o.Inject p
-            (p :?> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
-            o.Bind p
-            o
         else
             let o = new InstrumentModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
-                           
 
 (* 
     Externally visible/bindable properties

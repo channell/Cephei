@@ -67,7 +67,8 @@ type ZeroCouponInflationSwapModel
     let _adjustInfObsDates                         = adjustInfObsDates
     let _infCalendar                               = infCalendar
     let _infConvention                             = infConvention
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -120,6 +121,9 @@ type ZeroCouponInflationSwapModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new ZeroCouponInflationSwapModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _ZeroCouponInflationSwap <- v
     static member Cast (p : ICell<ZeroCouponInflationSwap>) = 
@@ -128,6 +132,7 @@ type ZeroCouponInflationSwapModel
         else
             let o = new ZeroCouponInflationSwapModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

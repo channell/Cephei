@@ -3,6 +3,7 @@
  * All rights reserves
  */
 using System;
+using System.Text;
 
 namespace Cephei.Cell
 {
@@ -62,8 +63,6 @@ namespace Cephei.Cell
 	/// </summary>
 	public enum CellState : int
 	{
-
-
 		/// <summary>
 		/// Clean state is set whenever a value is assigned to the Cell, or a Calculation
 		/// has completed
@@ -95,12 +94,52 @@ namespace Cephei.Cell
 		/// value for a session
 		/// </summary>
 		Blocking = 8 + 4 + 2
-
-
 	}
 
 	public class CyclicDependencyException : Exception
 	{
 		public CyclicDependencyException() : base() { }
 	}
+
+	/// <summary>
+	/// Exception with source summary
+	/// </summary>
+	public class CalculationException : Exception
+	{
+		// «
+		private string calls = "";
+
+		public CalculationException (Exception real) : base (real.Message, real)
+        {
+			var st = new System.Diagnostics.StackTrace(real);
+			var sb = new StringBuilder();
+			string lastName = null;
+			string lastType = null;
+			foreach (var sf in st.GetFrames())
+            {
+				var m = sf.GetMethod();
+				var t = m.DeclaringType;
+				if (!m.IsStatic && m.Name != lastName)
+                {
+					if (m.Name != lastName)
+					if (lastType != null && 
+						m.Name != lastName && 
+						!lastType.Contains("@") && 
+						!lastName.Contains("$"))
+						sb.AppendFormat(" ,{0}.{1}", lastType, lastName);
+					lastName = m.Name;
+					lastType = t.Name;
+                }
+			}
+			calls = sb.ToString();
+		}
+
+        public override string Message
+        {
+			get
+            {
+				return InnerException.Message + calls;
+			}
+		}
+    }
 }

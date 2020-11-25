@@ -77,7 +77,8 @@ type CPISwapModel
     let _fixedIndex                                = fixedIndex
     let _observationInterpolation                  = observationInterpolation
     let _inflationNominal                          = inflationNominal
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -138,6 +139,9 @@ type CPISwapModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new CPISwapModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CPISwap <- v
     static member Cast (p : ICell<CPISwap>) = 
@@ -146,6 +150,7 @@ type CPISwapModel
         else
             let o = new CPISwapModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

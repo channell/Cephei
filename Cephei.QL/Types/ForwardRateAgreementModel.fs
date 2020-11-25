@@ -56,7 +56,8 @@ type ForwardRateAgreementModel
     let _notionalAmount                            = notionalAmount
     let _index                                     = index
     let _discountCurve                             = discountCurve
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -85,6 +86,9 @@ type ForwardRateAgreementModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new ForwardRateAgreementModel(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _ForwardRateAgreement <- v
     static member Cast (p : ICell<ForwardRateAgreement>) = 
@@ -93,6 +97,7 @@ type ForwardRateAgreementModel
         else
             let o = new ForwardRateAgreementModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

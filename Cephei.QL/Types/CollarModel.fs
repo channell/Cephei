@@ -47,7 +47,8 @@ type CollarModel
     let _floatingLeg                               = floatingLeg
     let _capRates                                  = capRates
     let _floorRates                                = floorRates
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -83,6 +84,9 @@ type CollarModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new CollarModel(null,null,null,null,null)
     member internal this.Inject v = _Collar <- v
     static member Cast (p : ICell<Collar>) = 
@@ -91,6 +95,7 @@ type CollarModel
         else
             let o = new CollarModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

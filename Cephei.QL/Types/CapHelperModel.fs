@@ -57,7 +57,8 @@ type CapHelperModel
     let _includeFirstSwaplet                       = includeFirstSwaplet
     let _termStructure                             = termStructure
     let _errorType                                 = errorType
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -83,6 +84,9 @@ type CapHelperModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new CapHelperModel(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CapHelper <- v
     static member Cast (p : ICell<CapHelper>) = 
@@ -91,6 +95,7 @@ type CapHelperModel
         else
             let o = new CapHelperModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

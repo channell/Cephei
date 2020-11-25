@@ -39,7 +39,8 @@ type CompositeInstrumentModel
 (*
     Parameters
 *)
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -66,6 +67,9 @@ type CompositeInstrumentModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new CompositeInstrumentModel(null,null)
     member internal this.Inject v = _CompositeInstrument <- v
     static member Cast (p : ICell<CompositeInstrument>) = 
@@ -74,6 +78,7 @@ type CompositeInstrumentModel
         else
             let o = new CompositeInstrumentModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

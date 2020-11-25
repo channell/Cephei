@@ -67,7 +67,8 @@ type CPICapFloorModel
     let _infIndex                                  = infIndex
     let _observationLag                            = observationLag
     let _observationInterpolation                  = observationInterpolation
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -95,6 +96,9 @@ type CPICapFloorModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new CPICapFloorModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CPICapFloor <- v
     static member Cast (p : ICell<CPICapFloor>) = 
@@ -103,6 +107,7 @@ type CPICapFloorModel
         else
             let o = new CPICapFloorModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

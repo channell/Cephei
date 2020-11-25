@@ -57,7 +57,8 @@ type HestonModelHelperModel
     let _riskFreeRate                              = riskFreeRate
     let _dividendYield                             = dividendYield
     let _errorType                                 = errorType
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -86,6 +87,9 @@ type HestonModelHelperModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new HestonModelHelperModel(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _HestonModelHelper <- v
     static member Cast (p : ICell<HestonModelHelper>) = 
@@ -94,6 +98,7 @@ type HestonModelHelperModel
         else
             let o = new HestonModelHelperModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -157,7 +162,8 @@ type HestonModelHelperModel1
     let _riskFreeRate                              = riskFreeRate
     let _dividendYield                             = dividendYield
     let _errorType                                 = errorType
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -186,6 +192,9 @@ type HestonModelHelperModel1
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new HestonModelHelperModel1(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _HestonModelHelper <- v
     static member Cast (p : ICell<HestonModelHelper>) = 
@@ -194,6 +203,7 @@ type HestonModelHelperModel1
         else
             let o = new HestonModelHelperModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

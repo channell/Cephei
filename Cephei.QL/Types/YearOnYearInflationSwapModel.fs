@@ -65,7 +65,8 @@ type YearOnYearInflationSwapModel
     let _yoyDayCount                               = yoyDayCount
     let _paymentCalendar                           = paymentCalendar
     let _paymentConvention                         = paymentConvention
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -120,6 +121,9 @@ type YearOnYearInflationSwapModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new YearOnYearInflationSwapModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _YearOnYearInflationSwap <- v
     static member Cast (p : ICell<YearOnYearInflationSwap>) = 
@@ -128,6 +132,7 @@ type YearOnYearInflationSwapModel
         else
             let o = new YearOnYearInflationSwapModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

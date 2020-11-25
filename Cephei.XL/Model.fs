@@ -178,7 +178,7 @@ module public  Model =
         _state.Value.Model.ContainsKey mnemonic
 
     let dependancyMatrix () = 
-
+    (*
         let rec deps (cell : ICell) : string list = 
             cell.Dependants
             |> Seq.filter (fun i -> i :? ICell)
@@ -190,9 +190,8 @@ module public  Model =
             |> Seq.map (fun i -> if i.Value :? ICellModel then new KeyValuePair<string, ICell>(i.Key, (i.Value :?> ICellModel).Cell) else i)
             |> Seq.map (fun i -> (i.Key + "/" + i.Value.GetType().ToString() + "/" + i.Value.GetHashCode().ToString() , (deps i.Value)))
             |> Seq.toList
-
-(*
-
+            |> List.sortBy (fun i -> (fst i).ToUpper())
+*)
         let rec deps (cell : ICell) : string list = 
             cell.Dependants
             |> Seq.filter (fun i -> i :? ICell)
@@ -204,7 +203,8 @@ module public  Model =
             |> Seq.map (fun i -> if i.Value :? ICellModel then new KeyValuePair<string, ICell>(i.Key, (i.Value :?> ICellModel).Cell) else i)
             |> Seq.map (fun i -> (i.Key, (deps i.Value)))
             |> Seq.toList
-*)
+            |> List.sortBy (fun i -> (fst i).ToUpper())
+
         let size = 
             let max a b = if a > b then a else b
             depens 

@@ -43,7 +43,8 @@ type LoanModel
     Parameters
 *)
     let _legs                                      = legs
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -64,6 +65,9 @@ type LoanModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new LoanModel(null,null,null)
     member internal this.Inject v = _Loan <- v
     static member Cast (p : ICell<Loan>) = 
@@ -72,6 +76,7 @@ type LoanModel
         else
             let o = new LoanModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

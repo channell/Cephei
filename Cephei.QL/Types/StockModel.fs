@@ -43,7 +43,8 @@ type StockModel
     Parameters
 *)
     let _quote                                     = quote
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -64,6 +65,9 @@ type StockModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new StockModel(null,null,null)
     member internal this.Inject v = _Stock <- v
     static member Cast (p : ICell<Stock>) = 
@@ -72,6 +76,7 @@ type StockModel
         else
             let o = new StockModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

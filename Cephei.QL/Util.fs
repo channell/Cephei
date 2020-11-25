@@ -29,6 +29,15 @@ type IDateDependant =
 
     abstract EvaluationDate : Cephei.Cell.Generic.ICell<QLNet.Date> with get, set
 
+type DateDependantTrivial<'T> (f : unit -> 'T, d : ICell<Date>) =
+
+    inherit CellTrivial<'T> (f)
+
+    let mutable _evaluationDate = d
+
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d        
+
 module Util = 
     // Summary: create a value that notifies other cells when the value changes
     let value v = Cell.CreateFastValue (v)
@@ -38,6 +47,9 @@ module Util =
 
     // cretate a trivial cell
     let triv (f : unit -> 'f) = Cell.CreateTrivial (f)
+
+    let trivDate (f : unit -> 'f) (d : IDateDependant) = 
+        new DateDependantTrivial<'f> (f, d.EvaluationDate);
 
     // Summary: variant of lazy evaluation where the value is claculated on a background thread
     let future (f : unit -> 'f) = 
@@ -65,7 +77,9 @@ module Util =
         new Cephei.Cell.List<'c> (l)
 
     let toHandle<'T when 'T :> IObservable> (v : 'T) =
-        new Handle<'T> (v)
+        let h = new RelinkableHandle<'T> (v)
+        h.linkTo (v)
+        h :> Handle<'T>
 
     let toNullable<'T when 'T :struct and 'T :> ValueType and 'T : (new : unit -> 'T)> (v : 'T) = 
         Nullable<'T> (v)

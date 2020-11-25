@@ -61,7 +61,8 @@ type AssetSwapModel
     let _floatingDayCount                          = floatingDayCount
     let _dealMaturity                              = dealMaturity
     let _payBondCoupon                             = payBondCoupon
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -111,6 +112,9 @@ type AssetSwapModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new AssetSwapModel(null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _AssetSwap <- v
     static member Cast (p : ICell<AssetSwap>) = 
@@ -119,6 +123,7 @@ type AssetSwapModel
         else
             let o = new AssetSwapModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -206,7 +211,8 @@ type AssetSwapModel1
     let _floatSchedule                             = floatSchedule
     let _floatingDayCount                          = floatingDayCount
     let _parAssetSwap                              = parAssetSwap
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -256,6 +262,9 @@ type AssetSwapModel1
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new AssetSwapModel1(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _AssetSwap <- v
     static member Cast (p : ICell<AssetSwap>) = 
@@ -264,6 +273,7 @@ type AssetSwapModel1
         else
             let o = new AssetSwapModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

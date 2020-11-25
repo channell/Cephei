@@ -31,6 +31,7 @@ namespace Cephei.Cell
                 }
                 catch (Exception e)
                 {
+                    _target.OnError(e);
                     Log.Error(e, e.Message);
                 }
             });
@@ -117,6 +118,7 @@ namespace Cephei.Cell
                 }
                 catch (Exception e)
                 {
+                    _target.OnError(e);
                     Log.Error(e, e.Message);
                 }
             });
@@ -195,6 +197,7 @@ namespace Cephei.Cell
                 }
                 catch (Exception e)
                 {
+                    _target.OnError(e);
                     Log.Error(e, e.Message);
                 }
             });
@@ -340,7 +343,7 @@ namespace Cephei.Cell
         }
     }
     public class ConsoleSessionSubscriber<T> : IObserver<KeyValuePair<ISession, KeyValuePair<string,T>>>, IDisposable
-    {
+        {
         IDisposable listener;
         string printline;
         bool collection = false;

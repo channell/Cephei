@@ -49,7 +49,8 @@ type SwaptionModel
     let _exercise                                  = exercise
     let _delivery                                  = delivery
     let _settlementMethod                          = settlementMethod
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -81,6 +82,9 @@ type SwaptionModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new SwaptionModel(null,null,null,null,null,null)
     member internal this.Inject v = _Swaption <- v
     static member Cast (p : ICell<Swaption>) = 
@@ -89,6 +93,7 @@ type SwaptionModel
         else
             let o = new SwaptionModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

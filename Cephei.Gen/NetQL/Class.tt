@@ -60,7 +60,8 @@ type <#=NetClass.FSTemplate (version++)#>
         if (NetClass.HasEngine)
         {
 #>
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 <#
         }

@@ -57,7 +57,8 @@ type FloatingLoanModel
     let _principalSchedule                         = principalSchedule
     let _paymentConvention                         = paymentConvention
     let _index                                     = index
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -80,6 +81,9 @@ type FloatingLoanModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new FloatingLoanModel(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FloatingLoan <- v
     static member Cast (p : ICell<FloatingLoan>) = 
@@ -88,6 +92,7 @@ type FloatingLoanModel
         else
             let o = new FloatingLoanModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

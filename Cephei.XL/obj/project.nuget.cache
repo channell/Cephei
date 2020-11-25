@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "K8BlzCtpOTum6wRasIinONpL/4EfrjCLxwahbbeHZojkmK6lZZmVt1kQY99pKEynMdz7uqDMNe847aLCsaG7BQ==",
+  "dgSpecHash": "kapYWauNfiFFhoWHmsToWgBSatCd9czbklGPK29Usr8ItiARyuEh2P8xh2qmNZVG/0i/jUfatYVDWsdk9jcvVQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.XL\\Cephei.XL2.fsproj",
+  "projectFilePath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.XL\\Cephei.XLM.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\steve\\.nuget\\packages\\exceldna.integration\\1.1.0\\exceldna.integration.1.1.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512",

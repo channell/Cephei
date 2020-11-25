@@ -61,7 +61,8 @@ type BasisSwapModel
     let _iborIndex2                                = iborIndex2
     let _spread2                                   = spread2
     let _float2DayCount                            = float2DayCount
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -114,6 +115,9 @@ type BasisSwapModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new BasisSwapModel(null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _BasisSwap <- v
     static member Cast (p : ICell<BasisSwap>) = 
@@ -122,6 +126,7 @@ type BasisSwapModel
         else
             let o = new BasisSwapModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -218,7 +223,8 @@ type BasisSwapModel1
     let _spread2                                   = spread2
     let _float2DayCount                            = float2DayCount
     let _paymentConvention                         = paymentConvention
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -271,6 +277,9 @@ type BasisSwapModel1
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new BasisSwapModel1(null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _BasisSwap <- v
     static member Cast (p : ICell<BasisSwap>) = 
@@ -279,6 +288,7 @@ type BasisSwapModel1
         else
             let o = new BasisSwapModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

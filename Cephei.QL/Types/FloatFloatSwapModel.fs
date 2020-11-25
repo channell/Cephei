@@ -83,7 +83,8 @@ type FloatFloatSwapModel
     let _flooredRate2                              = flooredRate2
     let _paymentConvention1                        = paymentConvention1
     let _paymentConvention2                        = paymentConvention2
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -141,6 +142,9 @@ type FloatFloatSwapModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new FloatFloatSwapModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FloatFloatSwap <- v
     static member Cast (p : ICell<FloatFloatSwap>) = 
@@ -149,6 +153,7 @@ type FloatFloatSwapModel
         else
             let o = new FloatFloatSwapModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -281,7 +286,8 @@ type FloatFloatSwapModel1
     let _flooredRate2                              = flooredRate2
     let _paymentConvention1                        = paymentConvention1
     let _paymentConvention2                        = paymentConvention2
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -339,6 +345,9 @@ type FloatFloatSwapModel1
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new FloatFloatSwapModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FloatFloatSwap <- v
     static member Cast (p : ICell<FloatFloatSwap>) = 
@@ -347,6 +356,7 @@ type FloatFloatSwapModel1
         else
             let o = new FloatFloatSwapModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

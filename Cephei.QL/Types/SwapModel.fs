@@ -45,7 +45,8 @@ type SwapModel
 *)
     let _legs                                      = legs
     let _payer                                     = payer
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -82,6 +83,9 @@ type SwapModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new SwapModel(null,null,null,null)
     member internal this.Inject v = _Swap <- v
     static member Cast (p : ICell<Swap>) = 
@@ -90,6 +94,7 @@ type SwapModel
         else
             let o = new SwapModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -144,7 +149,8 @@ type SwapModel1
 *)
     let _firstLeg                                  = firstLeg
     let _secondLeg                                 = secondLeg
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -181,6 +187,9 @@ type SwapModel1
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new SwapModel1(null,null,null,null)
     member internal this.Inject v = _Swap <- v
     static member Cast (p : ICell<Swap>) = 
@@ -189,6 +198,7 @@ type SwapModel1
         else
             let o = new SwapModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

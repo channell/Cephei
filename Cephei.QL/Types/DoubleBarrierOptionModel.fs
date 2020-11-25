@@ -53,7 +53,8 @@ type DoubleBarrierOptionModel
     let _rebate                                    = rebate
     let _payoff                                    = payoff
     let _exercise                                  = exercise
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -89,6 +90,9 @@ type DoubleBarrierOptionModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new DoubleBarrierOptionModel(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _DoubleBarrierOption <- v
     static member Cast (p : ICell<DoubleBarrierOption>) = 
@@ -97,6 +101,7 @@ type DoubleBarrierOptionModel
         else
             let o = new DoubleBarrierOptionModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

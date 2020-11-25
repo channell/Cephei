@@ -67,7 +67,8 @@ type ConvertibleFloatingRateBondModel
     let _dayCounter                                = dayCounter
     let _schedule                                  = schedule
     let _redemption                                = redemption
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -130,6 +131,9 @@ type ConvertibleFloatingRateBondModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new ConvertibleFloatingRateBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _ConvertibleFloatingRateBond <- v
     static member Cast (p : ICell<ConvertibleFloatingRateBond>) = 
@@ -138,6 +142,7 @@ type ConvertibleFloatingRateBondModel
         else
             let o = new ConvertibleFloatingRateBondModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

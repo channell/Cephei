@@ -55,7 +55,8 @@ type DividendBarrierOptionModel
     let _exercise                                  = exercise
     let _dividendDates                             = dividendDates
     let _dividends                                 = dividends
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -91,6 +92,9 @@ type DividendBarrierOptionModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new DividendBarrierOptionModel(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _DividendBarrierOption <- v
     static member Cast (p : ICell<DividendBarrierOption>) = 
@@ -99,6 +103,7 @@ type DividendBarrierOptionModel
         else
             let o = new DividendBarrierOptionModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

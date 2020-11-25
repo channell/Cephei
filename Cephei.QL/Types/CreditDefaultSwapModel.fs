@@ -65,7 +65,8 @@ type CreditDefaultSwapModel
     let _claim                                     = claim
     let _lastPeriodDayCounter                      = lastPeriodDayCounter
     let _rebatesAccrual                            = rebatesAccrual
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -108,6 +109,9 @@ type CreditDefaultSwapModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new CreditDefaultSwapModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CreditDefaultSwap <- v
     static member Cast (p : ICell<CreditDefaultSwap>) = 
@@ -116,6 +120,7 @@ type CreditDefaultSwapModel
         else
             let o = new CreditDefaultSwapModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -210,7 +215,8 @@ type CreditDefaultSwapModel1
     let _claim                                     = claim
     let _lastPeriodDayCounter                      = lastPeriodDayCounter
     let _rebatesAccrual                            = rebatesAccrual
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -253,6 +259,9 @@ type CreditDefaultSwapModel1
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new CreditDefaultSwapModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CreditDefaultSwap <- v
     static member Cast (p : ICell<CreditDefaultSwap>) = 
@@ -261,6 +270,7 @@ type CreditDefaultSwapModel1
         else
             let o = new CreditDefaultSwapModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

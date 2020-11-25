@@ -61,7 +61,8 @@ type AmortizingFixedRateBondModel
     let _accrualDayCounter                         = accrualDayCounter
     let _paymentConvention                         = paymentConvention
     let _issueDate                                 = issueDate
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -122,6 +123,9 @@ type AmortizingFixedRateBondModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new AmortizingFixedRateBondModel(null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _AmortizingFixedRateBond <- v
     static member Cast (p : ICell<AmortizingFixedRateBond>) = 
@@ -130,6 +134,7 @@ type AmortizingFixedRateBondModel
         else
             let o = new AmortizingFixedRateBondModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -226,7 +231,8 @@ type AmortizingFixedRateBondModel1
     let _accrualDayCounter                         = accrualDayCounter
     let _paymentConvention                         = paymentConvention
     let _issueDate                                 = issueDate
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -287,6 +293,9 @@ type AmortizingFixedRateBondModel1
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new AmortizingFixedRateBondModel1(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _AmortizingFixedRateBond <- v
     static member Cast (p : ICell<AmortizingFixedRateBond>) = 
@@ -295,6 +304,7 @@ type AmortizingFixedRateBondModel1
         else
             let o = new AmortizingFixedRateBondModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -388,7 +398,8 @@ type AmortizingFixedRateBondModel2
     let _accrualDayCounter                         = accrualDayCounter
     let _paymentConvention                         = paymentConvention
     let _issueDate                                 = issueDate
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -449,6 +460,9 @@ type AmortizingFixedRateBondModel2
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new AmortizingFixedRateBondModel2(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _AmortizingFixedRateBond <- v
     static member Cast (p : ICell<AmortizingFixedRateBond>) = 
@@ -457,6 +471,7 @@ type AmortizingFixedRateBondModel2
         else
             let o = new AmortizingFixedRateBondModel2 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

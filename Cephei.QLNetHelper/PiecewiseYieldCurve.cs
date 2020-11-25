@@ -28,6 +28,7 @@ namespace Cephei.QLNetHelper
             , Date referenceDate, List<RateHelper> instruments,
                                    DayCounter dayCounter, List<Handle<Quote>> jumps, List<Date> jumpDates,
                                    double accuracy, IInterpolationFactory i)
+
            : base(referenceDate, new Calendar(), dayCounter, jumps, jumpDates)
         {
 
@@ -40,6 +41,17 @@ namespace Cephei.QLNetHelper
 
             bootstrap_ .setup(this);
         }
+        // observer interface
+        public override void update()
+        {
+            base.update();
+            // LazyObject::update();        // we do it in the TermStructure
+        }
 
+        protected override void performCalculations()
+        {
+            // just delegate to the bootstrapper
+            bootstrap_.calculate();
+        }
     }
 }

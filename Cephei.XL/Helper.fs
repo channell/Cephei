@@ -59,9 +59,14 @@ module Helper =
                     ; source = "_" + s
                     }
                 elif cv.ValueIs<'T>() then 
-                    { cell = withMnemonic cv.Mnemonic (triv (fun () -> (cv.Box :?> 'T)))
-                    ; source = "(triv (fun () -> _" + s + ".Value :> " + typeof<'T>.Name + "))"
-                    }
+                    if cv :? IDateDependant then
+                        { cell = withMnemonic cv.Mnemonic (trivDate (fun () -> (cv.Box :?> 'T)) (cv :?> IDateDependant))
+                        ; source = "(trivDate (fun () -> _" + s + ".Value :> " + typeof<'T>.Name + ") " + s + " :?> IDateDependant)"
+                        }
+                    else
+                        { cell = withMnemonic cv.Mnemonic (triv (fun () -> (cv.Box :?> 'T)))
+                        ; source = "(triv (fun () -> _" + s + ".Value :> " + typeof<'T>.Name + "))"
+                        }
                 elif typeof<'T> = typeof<Date> then 
                     if o :? ICell<double> then
                         let cd = cv :?> ICell<double>

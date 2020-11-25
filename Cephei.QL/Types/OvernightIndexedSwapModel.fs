@@ -59,7 +59,8 @@ type OvernightIndexedSwapModel
     let _overnightSchedule                         = overnightSchedule
     let _overnightIndex                            = overnightIndex
     let _spread                                    = spread
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -112,6 +113,9 @@ type OvernightIndexedSwapModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new OvernightIndexedSwapModel(null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _OvernightIndexedSwap <- v
     static member Cast (p : ICell<OvernightIndexedSwap>) = 
@@ -120,6 +124,7 @@ type OvernightIndexedSwapModel
         else
             let o = new OvernightIndexedSwapModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -207,7 +212,8 @@ type OvernightIndexedSwapModel1
     let _fixedDC                                   = fixedDC
     let _overnightIndex                            = overnightIndex
     let _spread                                    = spread
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -260,6 +266,9 @@ type OvernightIndexedSwapModel1
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new OvernightIndexedSwapModel1(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _OvernightIndexedSwap <- v
     static member Cast (p : ICell<OvernightIndexedSwap>) = 
@@ -268,6 +277,7 @@ type OvernightIndexedSwapModel1
         else
             let o = new OvernightIndexedSwapModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

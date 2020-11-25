@@ -51,7 +51,8 @@ type BarrierOptionModel
     let _rebate                                    = rebate
     let _payoff                                    = payoff
     let _exercise                                  = exercise
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -87,6 +88,9 @@ type BarrierOptionModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new BarrierOptionModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _BarrierOption <- v
     static member Cast (p : ICell<BarrierOption>) = 
@@ -95,6 +99,7 @@ type BarrierOptionModel
         else
             let o = new BarrierOptionModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

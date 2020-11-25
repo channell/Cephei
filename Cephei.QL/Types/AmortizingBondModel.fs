@@ -63,7 +63,8 @@ type AmortizingBondModel
     let _Method                                    = Method
     let _calendar                                  = calendar
     let _gYield                                    = gYield
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -126,6 +127,9 @@ type AmortizingBondModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new AmortizingBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _AmortizingBond <- v
     static member Cast (p : ICell<AmortizingBond>) = 
@@ -134,6 +138,7 @@ type AmortizingBondModel
         else
             let o = new AmortizingBondModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

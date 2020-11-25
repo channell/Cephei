@@ -9,6 +9,7 @@ open ExcelDna.Integration.Rtd
 open System.Collections
 open Cephei.QL
 open System.Threading.Tasks
+open Serilog
 
 type ModelRTD () as this =
     inherit ExcelDna.Integration.Rtd.ExcelRtdServer ()
@@ -47,16 +48,19 @@ type ModelRTD () as this =
             let mnemonic = _topics.[topic]
             System.Diagnostics.Debug.Print ("ModelRTD DisconnectData " + mnemonic );
             let dispatch () : unit = 
-                _topics.TryRemove (topic) |> ignore
-                if _topicIndex.ContainsKey(mnemonic) then 
-                    let nl = _topicIndex.[mnemonic] |> List.filter (fun t -> not (t = topic))
-                    if nl = [] then 
-                        _topicIndex.TryRemove mnemonic |> ignore
-                        Model.remove mnemonic
-                    else 
-                            _topicIndex.[mnemonic] <- nl
-
+                try
                     _topics.TryRemove (topic) |> ignore
+                    if _topicIndex.ContainsKey(mnemonic) then 
+                        let nl = _topicIndex.[mnemonic] |> List.filter (fun t -> not (t = topic))
+                        if nl = [] then 
+                            _topicIndex.TryRemove mnemonic |> ignore
+                            Model.remove mnemonic
+                        else 
+                                _topicIndex.[mnemonic] <- nl
+
+                        _topics.TryRemove (topic) |> ignore
+                with 
+                | e -> Log.Error (e, e.Message)
 
             Task.Run (dispatch) |> ignore
             
@@ -148,7 +152,7 @@ type ValueRTD () as this =
                     if subscribe retry then 
                         _retry.Enqueue(retry)
             with
-            | e -> updateValue topic mnemonic ("#" + e.Message)
+            | e -> updateValue topic mnemonic ("#" + ((new Cephei.Cell.CalculationException(e)).Message))
         Task.Run (dispatch) |> ignore
         "#..." + mnemonic :> obj
 

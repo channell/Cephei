@@ -53,7 +53,8 @@ type DiscreteAveragingAsianOptionModel
     let _fixingDates                               = fixingDates
     let _payoff                                    = payoff
     let _exercise                                  = exercise
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -87,6 +88,9 @@ type DiscreteAveragingAsianOptionModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new DiscreteAveragingAsianOptionModel(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _DiscreteAveragingAsianOption <- v
     static member Cast (p : ICell<DiscreteAveragingAsianOption>) = 
@@ -95,6 +99,7 @@ type DiscreteAveragingAsianOptionModel
         else
             let o = new DiscreteAveragingAsianOptionModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

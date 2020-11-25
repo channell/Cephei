@@ -64,7 +64,8 @@ type FixedRateBondForwardModel
     let _fixedCouponBond                           = fixedCouponBond
     let _discountCurve                             = discountCurve
     let _incomeDiscountCurve                       = incomeDiscountCurve
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -94,6 +95,9 @@ type FixedRateBondForwardModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new FixedRateBondForwardModel(null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FixedRateBondForward <- v
     static member Cast (p : ICell<FixedRateBondForward>) = 
@@ -102,6 +106,7 @@ type FixedRateBondForwardModel
         else
             let o = new FixedRateBondForwardModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

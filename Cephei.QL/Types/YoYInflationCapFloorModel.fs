@@ -47,7 +47,8 @@ type YoYInflationCapFloorModel
     let _Type                                      = Type
     let _yoyLeg                                    = yoyLeg
     let _strikes                                   = strikes
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -81,6 +82,9 @@ type YoYInflationCapFloorModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new YoYInflationCapFloorModel(null,null,null,null,null)
     member internal this.Inject v = _YoYInflationCapFloor <- v
     static member Cast (p : ICell<YoYInflationCapFloor>) = 
@@ -89,6 +93,7 @@ type YoYInflationCapFloorModel
         else
             let o = new YoYInflationCapFloorModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -145,7 +150,8 @@ type YoYInflationCapFloorModel1
     let _yoyLeg                                    = yoyLeg
     let _capRates                                  = capRates
     let _floorRates                                = floorRates
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -179,6 +185,9 @@ type YoYInflationCapFloorModel1
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new YoYInflationCapFloorModel1(null,null,null,null,null,null)
     member internal this.Inject v = _YoYInflationCapFloor <- v
     static member Cast (p : ICell<YoYInflationCapFloor>) = 
@@ -187,6 +196,7 @@ type YoYInflationCapFloorModel1
         else
             let o = new YoYInflationCapFloorModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

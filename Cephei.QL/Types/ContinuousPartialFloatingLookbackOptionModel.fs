@@ -51,7 +51,8 @@ type ContinuousPartialFloatingLookbackOptionModel
     let _lookbackPeriodEnd                         = lookbackPeriodEnd
     let _payoff                                    = payoff
     let _exercise                                  = exercise
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -85,6 +86,9 @@ type ContinuousPartialFloatingLookbackOptionModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new ContinuousPartialFloatingLookbackOptionModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _ContinuousPartialFloatingLookbackOption <- v
     static member Cast (p : ICell<ContinuousPartialFloatingLookbackOption>) = 
@@ -93,6 +97,7 @@ type ContinuousPartialFloatingLookbackOptionModel
         else
             let o = new ContinuousPartialFloatingLookbackOptionModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

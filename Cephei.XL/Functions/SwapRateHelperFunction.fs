@@ -241,11 +241,11 @@ module SwapRateHelperFunction =
          fixedDayCount : obj)
         ([<ExcelArgument(Name="iborIndex",Description = "IborIndex")>] 
          iborIndex : obj)
-        ([<ExcelArgument(Name="spread",Description = "Quote")>] 
+        ([<ExcelArgument(Name="spread",Description = "Quote or empty")>] 
          spread : obj)
         ([<ExcelArgument(Name="fwdStart",Description = "Period or empty")>] 
          fwdStart : obj)
-        ([<ExcelArgument(Name="discount",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="discount",Description = "YieldTermStructure or empty")>] 
          discount : obj)
         ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
@@ -265,9 +265,9 @@ module SwapRateHelperFunction =
                 let _fixedConvention = Helper.toCell<BusinessDayConvention> fixedConvention "fixedConvention" 
                 let _fixedDayCount = Helper.toCell<DayCounter> fixedDayCount "fixedDayCount" 
                 let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" 
-                let _spread = Helper.toHandle<Quote> spread "spread" 
+                let _spread = Helper.toDefaultHandle<Quote> spread "spread" null
                 let _fwdStart = Helper.toDefault<Period> fwdStart "fwdStart" null
-                let _discount = Helper.toHandle<YieldTermStructure> discount "discount" 
+                let _discount = Helper.toDefaultHandle<YieldTermStructure> discount "discount" null
                 let _settlementDays = Helper.toNullable<int> settlementDays "settlementDays"
                 let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
                 let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
@@ -350,11 +350,11 @@ module SwapRateHelperFunction =
          fixedDayCount : obj)
         ([<ExcelArgument(Name="iborIndex",Description = "IborIndex")>] 
          iborIndex : obj)
-        ([<ExcelArgument(Name="spread",Description = "Quote")>] 
+        ([<ExcelArgument(Name="spread",Description = "Quote or empty")>] 
          spread : obj)
         ([<ExcelArgument(Name="fwdStart",Description = "Period or empty")>] 
          fwdStart : obj)
-        ([<ExcelArgument(Name="discount",Description = "YieldTermStructure")>] 
+        ([<ExcelArgument(Name="discount",Description = "YieldTermStructure or empty")>] 
          discount : obj)
         ([<ExcelArgument(Name="settlementDays",Description = "int")>] 
          settlementDays : obj)
@@ -374,9 +374,9 @@ module SwapRateHelperFunction =
                 let _fixedConvention = Helper.toCell<BusinessDayConvention> fixedConvention "fixedConvention" 
                 let _fixedDayCount = Helper.toCell<DayCounter> fixedDayCount "fixedDayCount" 
                 let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" 
-                let _spread = Helper.toHandle<Quote> spread "spread" 
+                let _spread = Helper.toDefaultHandle<Quote> spread "spread" null
                 let _fwdStart = Helper.toDefault<Period> fwdStart "fwdStart" null
-                let _discount = Helper.toHandle<YieldTermStructure> discount "discount" 
+                let _discount = Helper.toDefaultHandle<YieldTermStructure> discount "discount" null
                 let _settlementDays = Helper.toNullable<int> settlementDays "settlementDays"
                 let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
                 let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
@@ -468,7 +468,7 @@ module SwapRateHelperFunction =
                 let _swapIndex = Helper.toCell<SwapIndex> swapIndex "swapIndex" 
                 let _spread = Helper.toHandle<Quote> spread "spread" 
                 let _fwdStart = Helper.toDefault<Period> fwdStart "fwdStart" null
-                let _discount = Helper.toHandle<YieldTermStructure> discount "discount" 
+                let _discount = Helper.toDefaultHandle<YieldTermStructure> discount "discount" null
                 let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
                 let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.SwapRateHelper3

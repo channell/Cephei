@@ -20,6 +20,7 @@ using Serilog.Sinks.ApplicationInsights.Sinks.ApplicationInsights.Formatters;
 using Cephei.Cell;
 using System.IO;
 using QLNet;
+using System.Collections.Concurrent;
 
 namespace Cephei.XL
 {
@@ -29,6 +30,35 @@ namespace Cephei.XL
         private TelemetryClient _telemetry;
         private IDisposable _modelListener;
         private string _email;
+
+        private ConcurrentDictionary<string, long> _metric = new ConcurrentDictionary<string, long>();
+        private System.Timers.Timer _timer = new System.Timers.Timer(60000.0);
+
+        public Addin ()
+        {
+            _timer.Elapsed += _timer_Elapsed;
+            _timer.AutoReset = true;
+            _timer.Enabled = true;
+            _timer.Start();
+            Cell.Cell.Parellel = true;
+        }
+
+        ~Addin ()
+        {
+            _timer_Elapsed(null, null);
+        }
+
+        private void _timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            var metric = _metric;
+            _metric = new ConcurrentDictionary<string, long>();
+
+            foreach (var v in metric)
+            {
+                Log.Information("CALC {0} {1}", v.Key, v.Value);
+            }
+        }
+
         public void AutoClose()
         {
             Log.Information("CLOSE {0}", _email);
@@ -67,7 +97,6 @@ namespace Cephei.XL
             Log.Logger = cfg.CreateLogger();
 #endif
             _modelListener = Model.getState().Model.Subscribe(this);
-            Cell.Cell.Parellel = false;
             
             _email = UserPrincipal.Current.EmailAddress;
             var version = Assembly.GetExecutingAssembly().GetName().Version;
@@ -95,16 +124,14 @@ namespace Cephei.XL
                     var p = t.GenericTypeArguments[0];
                     if (p.IsClass)
                     {
-                        var m = String.Format("CALC {0}", p.Name);
-                        Log.Information(m);
+                        _metric[p.Name] += 1;
                     }
                 }
                 else
                 {
                     if (t.IsClass)
                     {
-                        var m = String.Format("CALC {0}", t.Name);
-                        Log.Information(m);
+                        _metric[t.Name] += 1;
                     }
                 }
             }

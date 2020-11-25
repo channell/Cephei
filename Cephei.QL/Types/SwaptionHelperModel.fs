@@ -67,7 +67,8 @@ type SwaptionHelperModel
     let _nominal                                   = nominal
     let _Type                                      = Type
     let _shift                                     = shift
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -95,6 +96,9 @@ type SwaptionHelperModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new SwaptionHelperModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _SwaptionHelper <- v
     static member Cast (p : ICell<SwaptionHelper>) = 
@@ -103,6 +107,7 @@ type SwaptionHelperModel
         else
             let o = new SwaptionHelperModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -180,7 +185,8 @@ type SwaptionHelperModel1
     let _nominal                                   = nominal
     let _Type                                      = Type
     let _shift                                     = shift
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -208,6 +214,9 @@ type SwaptionHelperModel1
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new SwaptionHelperModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _SwaptionHelper <- v
     static member Cast (p : ICell<SwaptionHelper>) = 
@@ -216,6 +225,7 @@ type SwaptionHelperModel1
         else
             let o = new SwaptionHelperModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -293,7 +303,8 @@ type SwaptionHelperModel2
     let _nominal                                   = nominal
     let _Type                                      = Type
     let _shift                                     = shift
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -321,6 +332,9 @@ type SwaptionHelperModel2
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new SwaptionHelperModel2(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _SwaptionHelper <- v
     static member Cast (p : ICell<SwaptionHelper>) = 
@@ -329,6 +343,7 @@ type SwaptionHelperModel2
         else
             let o = new SwaptionHelperModel2 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

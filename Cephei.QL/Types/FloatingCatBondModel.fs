@@ -85,7 +85,8 @@ type FloatingCatBondModel
     let _stubDate                                  = stubDate
     let _rule                                      = rule
     let _endOfMonth                                = endOfMonth
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -147,6 +148,9 @@ type FloatingCatBondModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new FloatingCatBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FloatingCatBond <- v
     static member Cast (p : ICell<FloatingCatBond>) = 
@@ -155,6 +159,7 @@ type FloatingCatBondModel
         else
             let o = new FloatingCatBondModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -280,7 +285,8 @@ type FloatingCatBondModel1
     let _inArrears                                 = inArrears
     let _redemption                                = redemption
     let _issueDate                                 = issueDate
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -342,6 +348,9 @@ type FloatingCatBondModel1
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new FloatingCatBondModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FloatingCatBond <- v
     static member Cast (p : ICell<FloatingCatBond>) = 
@@ -350,6 +359,7 @@ type FloatingCatBondModel1
         else
             let o = new FloatingCatBondModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

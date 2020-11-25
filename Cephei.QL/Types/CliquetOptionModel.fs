@@ -47,7 +47,8 @@ type CliquetOptionModel
     let _payoff                                    = payoff
     let _maturity                                  = maturity
     let _resetDates                                = resetDates
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -81,6 +82,9 @@ type CliquetOptionModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new CliquetOptionModel(null,null,null,null,null)
     member internal this.Inject v = _CliquetOption <- v
     static member Cast (p : ICell<CliquetOption>) = 
@@ -89,6 +93,7 @@ type CliquetOptionModel
         else
             let o = new CliquetOptionModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

@@ -61,7 +61,8 @@ type VanillaSwapModel
     let _spread                                    = spread
     let _floatingDayCount                          = floatingDayCount
     let _paymentConvention                         = paymentConvention
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -115,6 +116,9 @@ type VanillaSwapModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new VanillaSwapModel(null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _VanillaSwap <- v
     static member Cast (p : ICell<VanillaSwap>) = 
@@ -123,6 +127,7 @@ type VanillaSwapModel
         else
             let o = new VanillaSwapModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

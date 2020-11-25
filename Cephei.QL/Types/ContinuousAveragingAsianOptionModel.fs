@@ -47,7 +47,8 @@ type ContinuousAveragingAsianOptionModel
     let _averageType                               = averageType
     let _payoff                                    = payoff
     let _exercise                                  = exercise
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -81,6 +82,9 @@ type ContinuousAveragingAsianOptionModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new ContinuousAveragingAsianOptionModel(null,null,null,null,null)
     member internal this.Inject v = _ContinuousAveragingAsianOption <- v
     static member Cast (p : ICell<ContinuousAveragingAsianOption>) = 
@@ -89,6 +93,7 @@ type ContinuousAveragingAsianOptionModel
         else
             let o = new ContinuousAveragingAsianOptionModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

@@ -45,7 +45,8 @@ type MultiAssetOptionModel
 *)
     let _payoff                                    = payoff
     let _exercise                                  = exercise
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -74,6 +75,9 @@ type MultiAssetOptionModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new MultiAssetOptionModel(null,null,null,null)
     member internal this.Inject v = _MultiAssetOption <- v
     static member Cast (p : ICell<MultiAssetOption>) = 
@@ -82,6 +86,7 @@ type MultiAssetOptionModel
         else
             let o = new MultiAssetOptionModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

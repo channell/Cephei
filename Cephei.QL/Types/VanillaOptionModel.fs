@@ -45,7 +45,8 @@ type VanillaOptionModel
 *)
     let _payoff                                    = payoff
     let _exercise                                  = exercise
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -81,6 +82,9 @@ type VanillaOptionModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new VanillaOptionModel(null,null,null,null)
     member internal this.Inject v = _VanillaOption <- v
     static member Cast (p : ICell<VanillaOption>) = 
@@ -89,6 +93,7 @@ type VanillaOptionModel
         else
             let o = new VanillaOptionModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

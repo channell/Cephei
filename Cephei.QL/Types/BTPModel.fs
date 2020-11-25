@@ -51,7 +51,8 @@ type BTPModel
     let _redemption                                = redemption
     let _startDate                                 = startDate
     let _issueDate                                 = issueDate
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -110,6 +111,9 @@ type BTPModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new BTPModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _BTP <- v
     static member Cast (p : ICell<BTP>) = 
@@ -118,6 +122,7 @@ type BTPModel
         else
             let o = new BTPModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -201,7 +206,8 @@ type BTPModel1
     let _fixedRate                                 = fixedRate
     let _startDate                                 = startDate
     let _issueDate                                 = issueDate
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -260,6 +266,9 @@ type BTPModel1
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new BTPModel1(null,null,null,null,null,null)
     member internal this.Inject v = _BTP <- v
     static member Cast (p : ICell<BTP>) = 
@@ -268,6 +277,7 @@ type BTPModel1
         else
             let o = new BTPModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

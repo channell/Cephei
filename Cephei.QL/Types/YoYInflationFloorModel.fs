@@ -45,7 +45,8 @@ type YoYInflationFloorModel
 *)
     let _yoyLeg                                    = yoyLeg
     let _exerciseRates                             = exerciseRates
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -79,6 +80,9 @@ type YoYInflationFloorModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new YoYInflationFloorModel(null,null,null,null)
     member internal this.Inject v = _YoYInflationFloor <- v
     static member Cast (p : ICell<YoYInflationFloor>) = 
@@ -87,6 +91,7 @@ type YoYInflationFloorModel
         else
             let o = new YoYInflationFloorModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

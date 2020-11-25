@@ -193,7 +193,7 @@ namespace Cephei.Cell.Generic
 #if !DEBUG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
-        private T Calculate(DateTime epoch, int recurse, ISession session = null, bool retry = true)
+        private T Calculate(DateTime epoch, int recurse, ISession session = null)
         {
             if (recurse > 60) throw new LockRecursionException();
             bool taken = false;
@@ -261,21 +261,12 @@ namespace Cephei.Cell.Generic
             }
             catch (Exception e)
             {
-                if (retry)
-                {
-                    if (taken) _spinLock.Exit(true);
-                    Thread.Sleep(0);
-                    return Calculate(epoch, recurse + 1, session, false);
-                }
-                else
-                {
-                    Serilog.Log.Error(e, "Calculation failed for {0} with error {1}", Mnemonic, e.Message);
-                    _lastException = e;
-                    SetState(CellState.Error);
-                    RaiseChange(CellEvent.Error, this, this, epoch, null);
+                Serilog.Log.Error(e, "Calculation failed for {0} with error {1}", Mnemonic, e.Message);
+                _lastException = new CalculationException(e);
+                SetState(CellState.Error);
+                RaiseChange(CellEvent.Error, this, this, epoch, null);
 
-                    throw;
-                }
+                throw;
             }
             finally
             {
@@ -538,7 +529,17 @@ namespace Cephei.Cell.Generic
                         _epoch = epoch;
                         OnChange(CellEvent.Invalidate, root, this, epoch, session);
                         if (Cell.Parellel)
-                            Task.Run(() => PoolCalculate(epoch, session));
+                            Task.Run(() =>
+                            {
+                                try
+                                {
+                                    PoolCalculate(epoch, session);
+                                }
+                                catch (Exception e)
+                                {
+                                    Serilog.Log.Error(e, e.Message);
+                                }
+                            });
                         else
                             PoolCalculate(epoch, session);
                     }

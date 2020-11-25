@@ -67,7 +67,8 @@ type FixedRateBondModel
     let _exCouponCalendar                          = exCouponCalendar
     let _exCouponConvention                        = exCouponConvention
     let _exCouponEndOfMonth                        = exCouponEndOfMonth
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -128,6 +129,9 @@ type FixedRateBondModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new FixedRateBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FixedRateBond <- v
     static member Cast (p : ICell<FixedRateBond>) = 
@@ -136,6 +140,7 @@ type FixedRateBondModel
         else
             let o = new FixedRateBondModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -261,7 +266,8 @@ type FixedRateBondModel1
     let _exCouponCalendar                          = exCouponCalendar
     let _exCouponConvention                        = exCouponConvention
     let _exCouponEndOfMonth                        = exCouponEndOfMonth
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -322,6 +328,9 @@ type FixedRateBondModel1
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new FixedRateBondModel1(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FixedRateBond <- v
     static member Cast (p : ICell<FixedRateBond>) = 
@@ -330,6 +339,7 @@ type FixedRateBondModel1
         else
             let o = new FixedRateBondModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -446,7 +456,8 @@ type FixedRateBondModel2
     let _exCouponCalendar                          = exCouponCalendar
     let _exCouponConvention                        = exCouponConvention
     let _exCouponEndOfMonth                        = exCouponEndOfMonth
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -507,6 +518,9 @@ type FixedRateBondModel2
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new FixedRateBondModel2(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FixedRateBond <- v
     static member Cast (p : ICell<FixedRateBond>) = 
@@ -515,6 +529,7 @@ type FixedRateBondModel2
         else
             let o = new FixedRateBondModel2 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

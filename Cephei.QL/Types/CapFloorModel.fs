@@ -49,7 +49,8 @@ type CapFloorModel
     let _floatingLeg                               = floatingLeg
     let _capRates                                  = capRates
     let _floorRates                                = floorRates
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -85,6 +86,9 @@ type CapFloorModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new CapFloorModel(null,null,null,null,null,null)
     member internal this.Inject v = _CapFloor <- v
     static member Cast (p : ICell<CapFloor>) = 
@@ -93,6 +97,7 @@ type CapFloorModel
         else
             let o = new CapFloorModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -150,7 +155,8 @@ type CapFloorModel1
     let _Type                                      = Type
     let _floatingLeg                               = floatingLeg
     let _strikes                                   = strikes
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -186,6 +192,9 @@ type CapFloorModel1
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new CapFloorModel1(null,null,null,null,null)
     member internal this.Inject v = _CapFloor <- v
     static member Cast (p : ICell<CapFloor>) = 
@@ -194,6 +203,7 @@ type CapFloorModel1
         else
             let o = new CapFloorModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

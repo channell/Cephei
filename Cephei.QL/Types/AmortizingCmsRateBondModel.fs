@@ -67,7 +67,8 @@ type AmortizingCmsRateBondModel
     let _floors                                    = floors
     let _inArrears                                 = inArrears
     let _issueDate                                 = issueDate
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -126,6 +127,9 @@ type AmortizingCmsRateBondModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new AmortizingCmsRateBondModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _AmortizingCmsRateBond <- v
     static member Cast (p : ICell<AmortizingCmsRateBond>) = 
@@ -134,6 +138,7 @@ type AmortizingCmsRateBondModel
         else
             let o = new AmortizingCmsRateBondModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

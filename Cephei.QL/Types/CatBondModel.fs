@@ -49,7 +49,8 @@ type CatBondModel
     let _calendar                                  = calendar
     let _issueDate                                 = issueDate
     let _notionalRisk                              = notionalRisk
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -111,6 +112,9 @@ type CatBondModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new CatBondModel(null,null,null,null,null,null)
     member internal this.Inject v = _CatBond <- v
     static member Cast (p : ICell<CatBond>) = 
@@ -119,6 +123,7 @@ type CatBondModel
         else
             let o = new CatBondModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

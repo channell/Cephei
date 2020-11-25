@@ -61,7 +61,8 @@ type BMASwapModel
     let _bmaSchedule                               = bmaSchedule
     let _bmaIndex                                  = bmaIndex
     let _bmaDayCount                               = bmaDayCount
-    let _evaluationDate                            = evaluationDate
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricingEngine                             = pricingEngine
 (*
     Functions
@@ -110,6 +111,9 @@ type BMASwapModel
 (* 
     casting 
 *)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
     internal new () = new BMASwapModel(null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _BMASwap <- v
     static member Cast (p : ICell<BMASwap>) = 
@@ -118,6 +122,7 @@ type BMASwapModel
         else
             let o = new BMASwapModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
