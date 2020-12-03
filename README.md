@@ -27,7 +27,7 @@ While `Cell` provides a mechanism to automatically parallel calculate a number o
 There are three specialisations of `Cell<T>` that are instantiated either through the `Cell` module, or (in the case of `CellEmpty`) through a `Model` that includes forward-reference to Cells that have not been defined at that point in the `Model`
 ## CellFast
 When it is know in advance that Cells and their references will not be redefined at runtime, and their references are not forward referenced, `CellFast<T>` can be used to bypass runtime profiling of cells.  In this scenario [closures]( https://en.wikipedia.org/wiki/Closure_(computer_programming)) are inspected at instantiation to extract the cells that this `cell` is dependent on.
-```
+```fsharp
 let calculation_cell =
   let build (p : ICell<’t>) =
     Cell.CreateFast (fun () -> some_complex_calculation  p.Value)
@@ -41,7 +41,7 @@ In this example `referenced_cell` is captured by the closure rather than the wid
 The static module `Cell` provides factory functions to create cells from F# using type-inference, plus a Thread Local stack of Cells currently being profiled.
 > Any Cell that reads the content of another Cell while evaluating its function, is by definition dependant on it
 For the Boolean conditional logic, the condition code needs to be in a separate cell in order for the expression to re-profile when the boolean value changes:
-```
+```fsharp
 let dependant_cell = Cell.Create (fun () -> 
 		if cond_cell.Value then 
 			equity_trade.Value 
@@ -81,7 +81,7 @@ The example of a floating rate bond that provides NPV, CleanPrice and DirtyPrice
 * liquidity risk
 All without any changes to the quantitative model.  Changing the subscription used to provide deposit and swap rates and adding an onward subscriptions of the NPV, Clean and Dirty prices allows the model to be used for different scenarios
 
-```
+```fsharp
 namespace SampleModels
 
 open Cephei.Cell
@@ -112,7 +112,7 @@ type FloatingBondModel () as this =
 
 The full implementation of the model using [Cephei.QL](https://www.nuget.org/packages/Cephei.QL) for [QuantLib](https://www.quantlib.org/) functions  demonstrates why F# has been selected as the model scripting language
 
-```
+```fsharp
 namespace SampleModels
 
 open Cephei.Cell
