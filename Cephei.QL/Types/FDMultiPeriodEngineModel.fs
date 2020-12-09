@@ -33,34 +33,41 @@ required for generics
   </summary> *)
 [<AutoSerializable(true)>]
 type FDMultiPeriodEngineModel
-    () as this =
+    ( evaluationDate                               : ICell<Date>
+    ) as this =
     inherit Model<FDMultiPeriodEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
 (*
     Functions
 *)
     let mutable
-        _FDMultiPeriodEngine                       = cell (fun () -> new FDMultiPeriodEngine ())
+        _FDMultiPeriodEngine                       = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FDMultiPeriodEngine ())))
     let _calculate                                 (r : ICell<IPricingEngineResults>)   
-                                                   = triv (fun () -> _FDMultiPeriodEngine.Value.calculate(r.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDMultiPeriodEngine).Value.calculate(r.Value)
                                                                      _FDMultiPeriodEngine.Value)
     let _setStepCondition                          (impl : ICell<Func<IStepCondition<Vector>>>)   
-                                                   = triv (fun () -> _FDMultiPeriodEngine.Value.setStepCondition(impl.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDMultiPeriodEngine).Value.setStepCondition(impl.Value)
                                                                      _FDMultiPeriodEngine.Value)
-    let _ensureStrikeInGrid                        = triv (fun () -> _FDMultiPeriodEngine.Value.ensureStrikeInGrid()
+    let _ensureStrikeInGrid                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FDMultiPeriodEngine).Value.ensureStrikeInGrid()
                                                                      _FDMultiPeriodEngine.Value)
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
-                                                   = triv (fun () -> _FDMultiPeriodEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
-    let _getResidualTime                           = triv (fun () -> _FDMultiPeriodEngine.Value.getResidualTime())
-    let _grid                                      = triv (fun () -> _FDMultiPeriodEngine.Value.grid())
-    let _intrinsicValues_                          = triv (fun () -> _FDMultiPeriodEngine.Value.intrinsicValues_)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDMultiPeriodEngine).Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+    let _getResidualTime                           = triv (fun () -> (curryEvaluationDate _evaluationDate _FDMultiPeriodEngine).Value.getResidualTime())
+    let _grid                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _FDMultiPeriodEngine).Value.grid())
+    let _intrinsicValues_                          = triv (fun () -> (curryEvaluationDate _evaluationDate _FDMultiPeriodEngine).Value.intrinsicValues_)
     do this.Bind(_FDMultiPeriodEngine)
 (* 
     casting 
 *)
     
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FDMultiPeriodEngineModel(null)
     member internal this.Inject v = _FDMultiPeriodEngine <- v
     static member Cast (p : ICell<FDMultiPeriodEngine>) = 
         if p :? FDMultiPeriodEngineModel then 
@@ -68,6 +75,7 @@ type FDMultiPeriodEngineModel
         else
             let o = new FDMultiPeriodEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

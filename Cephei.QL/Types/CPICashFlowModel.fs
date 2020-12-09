@@ -42,12 +42,15 @@ type CPICashFlowModel
     , growthOnly                                   : ICell<bool>
     , interpolation                                : ICell<InterpolationType>
     , frequency                                    : ICell<Frequency>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<CPICashFlow> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _notional                                  = notional
     let _index                                     = index
     let _baseDate                                  = baseDate
@@ -61,40 +64,43 @@ type CPICashFlowModel
     Functions
 *)
     let mutable
-        _CPICashFlow                               = cell (fun () -> new CPICashFlow (notional.Value, index.Value, baseDate.Value, baseFixing.Value, fixingDate.Value, paymentDate.Value, growthOnly.Value, interpolation.Value, frequency.Value))
-    let _amount                                    = triv (fun () -> _CPICashFlow.Value.amount())
-    let _baseDate                                  = triv (fun () -> _CPICashFlow.Value.baseDate())
-    let _baseFixing                                = triv (fun () -> _CPICashFlow.Value.baseFixing())
-    let _frequency                                 = triv (fun () -> _CPICashFlow.Value.frequency())
-    let _interpolation                             = triv (fun () -> _CPICashFlow.Value.interpolation())
-    let _date                                      = triv (fun () -> _CPICashFlow.Value.date())
-    let _fixingDate                                = triv (fun () -> _CPICashFlow.Value.fixingDate())
-    let _growthOnly                                = triv (fun () -> _CPICashFlow.Value.growthOnly())
-    let _index                                     = triv (fun () -> _CPICashFlow.Value.index())
-    let _notional                                  = triv (fun () -> _CPICashFlow.Value.notional())
+        _CPICashFlow                               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new CPICashFlow (notional.Value, index.Value, baseDate.Value, baseFixing.Value, fixingDate.Value, paymentDate.Value, growthOnly.Value, interpolation.Value, frequency.Value))))
+    let _amount                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICashFlow).Value.amount())
+    let _baseDate                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICashFlow).Value.baseDate())
+    let _baseFixing                                = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICashFlow).Value.baseFixing())
+    let _frequency                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICashFlow).Value.frequency())
+    let _interpolation                             = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICashFlow).Value.interpolation())
+    let _date                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICashFlow).Value.date())
+    let _fixingDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICashFlow).Value.fixingDate())
+    let _growthOnly                                = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICashFlow).Value.growthOnly())
+    let _index                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICashFlow).Value.index())
+    let _notional                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICashFlow).Value.notional())
     let _CompareTo                                 (cf : ICell<CashFlow>)   
-                                                   = triv (fun () -> _CPICashFlow.Value.CompareTo(cf.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICashFlow).Value.CompareTo(cf.Value))
     let _Equals                                    (cf : ICell<Object>)   
-                                                   = triv (fun () -> _CPICashFlow.Value.Equals(cf.Value))
-    let _exCouponDate                              = triv (fun () -> _CPICashFlow.Value.exCouponDate())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICashFlow).Value.Equals(cf.Value))
+    let _exCouponDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICashFlow).Value.exCouponDate())
     let _hasOccurred                               (refDate : ICell<Date>) (includeRefDate : ICell<Nullable<bool>>)   
-                                                   = triv (fun () -> _CPICashFlow.Value.hasOccurred(refDate.Value, includeRefDate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICashFlow).Value.hasOccurred(refDate.Value, includeRefDate.Value))
     let _tradingExCoupon                           (refDate : ICell<Date>)   
-                                                   = triv (fun () -> _CPICashFlow.Value.tradingExCoupon(refDate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICashFlow).Value.tradingExCoupon(refDate.Value))
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> _CPICashFlow.Value.accept(v.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICashFlow).Value.accept(v.Value)
                                                                      _CPICashFlow.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _CPICashFlow.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICashFlow).Value.registerWith(handler.Value)
                                                                      _CPICashFlow.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _CPICashFlow.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICashFlow).Value.unregisterWith(handler.Value)
                                                                      _CPICashFlow.Value)
     do this.Bind(_CPICashFlow)
 (* 
     casting 
 *)
-    internal new () = new CPICashFlowModel(null,null,null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new CPICashFlowModel(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CPICashFlow <- v
     static member Cast (p : ICell<CPICashFlow>) = 
         if p :? CPICashFlowModel then 
@@ -102,6 +108,7 @@ type CPICashFlowModel
         else
             let o = new CPICashFlowModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

@@ -53,6 +53,8 @@ module FdmAffineModelTermStructureFunction =
          modelReferenceDate : obj)
         ([<ExcelArgument(Name="model",Description = "IAffineModel")>] 
          model : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -64,6 +66,7 @@ module FdmAffineModelTermStructureFunction =
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
                 let _modelReferenceDate = Helper.toCell<Date> modelReferenceDate "modelReferenceDate" 
                 let _model = Helper.toCell<IAffineModel> model "model" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FdmAffineModelTermStructure 
                                                             _r.cell 
                                                             _cal.cell 
@@ -71,6 +74,7 @@ module FdmAffineModelTermStructureFunction =
                                                             _referenceDate.cell 
                                                             _modelReferenceDate.cell 
                                                             _model.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdmAffineModelTermStructure>) l
 
@@ -81,6 +85,7 @@ module FdmAffineModelTermStructureFunction =
                                                ;  _referenceDate.source
                                                ;  _modelReferenceDate.source
                                                ;  _model.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _r.cell
@@ -89,6 +94,7 @@ module FdmAffineModelTermStructureFunction =
                                 ;  _referenceDate.cell
                                 ;  _modelReferenceDate.cell
                                 ;  _model.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -1114,16 +1120,16 @@ module FdmAffineModelTermStructureFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<FdmAffineModelTermStructure> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<FdmAffineModelTermStructure> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<FdmAffineModelTermStructure> (c)) :> ICell
                 let format (i : Generic.List<ICell<FdmAffineModelTermStructure>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<FdmAffineModelTermStructure>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<FdmAffineModelTermStructure>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

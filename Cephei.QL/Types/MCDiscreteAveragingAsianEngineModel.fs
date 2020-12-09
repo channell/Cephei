@@ -42,12 +42,15 @@ type MCDiscreteAveragingAsianEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (
     , requiredTolerance                            : ICell<double>
     , maxSamples                                   : ICell<int>
     , seed                                         : ICell<uint64>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<MCDiscreteAveragingAsianEngine<'RNG,'S>> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
     let _maxTimeStepsPerYear                       = maxTimeStepsPerYear
     let _brownianBridge                            = brownianBridge
@@ -61,23 +64,23 @@ type MCDiscreteAveragingAsianEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (
     Functions
 *)
     let mutable
-        _MCDiscreteAveragingAsianEngine            = cell (fun () -> new MCDiscreteAveragingAsianEngine<'RNG,'S> (Process.Value, maxTimeStepsPerYear.Value, brownianBridge.Value, antitheticVariate.Value, controlVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))
+        _MCDiscreteAveragingAsianEngine            = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new MCDiscreteAveragingAsianEngine<'RNG,'S> (Process.Value, maxTimeStepsPerYear.Value, brownianBridge.Value, antitheticVariate.Value, controlVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _MCDiscreteAveragingAsianEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteAveragingAsianEngine).Value.registerWith(handler.Value)
                                                                      _MCDiscreteAveragingAsianEngine.Value)
-    let _reset                                     = triv (fun () -> _MCDiscreteAveragingAsianEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteAveragingAsianEngine).Value.reset()
                                                                      _MCDiscreteAveragingAsianEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _MCDiscreteAveragingAsianEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteAveragingAsianEngine).Value.unregisterWith(handler.Value)
                                                                      _MCDiscreteAveragingAsianEngine.Value)
-    let _update                                    = triv (fun () -> _MCDiscreteAveragingAsianEngine.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteAveragingAsianEngine).Value.update()
                                                                      _MCDiscreteAveragingAsianEngine.Value)
-    let _errorEstimate                             = triv (fun () -> _MCDiscreteAveragingAsianEngine.Value.errorEstimate())
-    let _sampleAccumulator                         = triv (fun () -> _MCDiscreteAveragingAsianEngine.Value.sampleAccumulator())
+    let _errorEstimate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteAveragingAsianEngine).Value.errorEstimate())
+    let _sampleAccumulator                         = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteAveragingAsianEngine).Value.sampleAccumulator())
     let _value                                     (tolerance : ICell<double>) (maxSamples : ICell<int>) (minSamples : ICell<int>)   
-                                                   = triv (fun () -> _MCDiscreteAveragingAsianEngine.Value.value(tolerance.Value, maxSamples.Value, minSamples.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteAveragingAsianEngine).Value.value(tolerance.Value, maxSamples.Value, minSamples.Value))
     let _valueWithSamples                          (samples : ICell<int>)   
-                                                   = triv (fun () -> _MCDiscreteAveragingAsianEngine.Value.valueWithSamples(samples.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteAveragingAsianEngine).Value.valueWithSamples(samples.Value))
     do this.Bind(_MCDiscreteAveragingAsianEngine)
 
 (* 

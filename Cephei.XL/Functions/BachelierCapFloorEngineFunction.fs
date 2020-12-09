@@ -47,6 +47,8 @@ module BachelierCapFloorEngineFunction =
          vol : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter or empty")>] 
          dc : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -55,10 +57,12 @@ module BachelierCapFloorEngineFunction =
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toHandle<Quote> vol "vol" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.BachelierCapFloorEngine1 
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _dc.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BachelierCapFloorEngine>) l
 
@@ -66,11 +70,13 @@ module BachelierCapFloorEngineFunction =
                                                [| _discountCurve.source
                                                ;  _vol.source
                                                ;  _dc.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _discountCurve.cell
                                 ;  _vol.cell
                                 ;  _dc.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -96,6 +102,8 @@ module BachelierCapFloorEngineFunction =
          vol : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter or empty")>] 
          dc : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -104,10 +112,12 @@ module BachelierCapFloorEngineFunction =
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toCell<double> vol "vol" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.BachelierCapFloorEngine2
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _dc.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BachelierCapFloorEngine>) l
 
@@ -115,11 +125,13 @@ module BachelierCapFloorEngineFunction =
                                                [| _discountCurve.source
                                                ;  _vol.source
                                                ;  _dc.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _discountCurve.cell
                                 ;  _vol.cell
                                 ;  _dc.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -143,6 +155,8 @@ module BachelierCapFloorEngineFunction =
          discountCurve : obj)
         ([<ExcelArgument(Name="vol",Description = "OptionletVolatilityStructure")>] 
          vol : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -150,19 +164,23 @@ module BachelierCapFloorEngineFunction =
 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toHandle<OptionletVolatilityStructure> vol "vol" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.BachelierCapFloorEngine
                                                             _discountCurve.cell 
                                                             _vol.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BachelierCapFloorEngine>) l
 
                 let source () = Helper.sourceFold "Fun.BachelierCapFloorEngine2" 
                                                [| _discountCurve.source
                                                ;  _vol.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _discountCurve.cell
                                 ;  _vol.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -264,16 +282,16 @@ module BachelierCapFloorEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<BachelierCapFloorEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<BachelierCapFloorEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<BachelierCapFloorEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<BachelierCapFloorEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<BachelierCapFloorEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<BachelierCapFloorEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

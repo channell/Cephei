@@ -36,12 +36,15 @@ type AnalyticPTDHestonEngineModel
     ( model                                        : ICell<PiecewiseTimeDependentHestonModel>
     , relTolerance                                 : ICell<double>
     , maxEvaluations                               : ICell<int>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<AnalyticPTDHestonEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _model                                     = model
     let _relTolerance                              = relTolerance
     let _maxEvaluations                            = maxEvaluations
@@ -49,25 +52,28 @@ type AnalyticPTDHestonEngineModel
     Functions
 *)
     let mutable
-        _AnalyticPTDHestonEngine                   = cell (fun () -> new AnalyticPTDHestonEngine (model.Value, relTolerance.Value, maxEvaluations.Value))
+        _AnalyticPTDHestonEngine                   = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticPTDHestonEngine (model.Value, relTolerance.Value, maxEvaluations.Value))))
     let _setModel                                  (model : ICell<Handle<PiecewiseTimeDependentHestonModel>>)   
-                                                   = triv (fun () -> _AnalyticPTDHestonEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticPTDHestonEngine).Value.setModel(model.Value)
                                                                      _AnalyticPTDHestonEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _AnalyticPTDHestonEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticPTDHestonEngine).Value.registerWith(handler.Value)
                                                                      _AnalyticPTDHestonEngine.Value)
-    let _reset                                     = triv (fun () -> _AnalyticPTDHestonEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticPTDHestonEngine).Value.reset()
                                                                      _AnalyticPTDHestonEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _AnalyticPTDHestonEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticPTDHestonEngine).Value.unregisterWith(handler.Value)
                                                                      _AnalyticPTDHestonEngine.Value)
-    let _update                                    = triv (fun () -> _AnalyticPTDHestonEngine.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticPTDHestonEngine).Value.update()
                                                                      _AnalyticPTDHestonEngine.Value)
     do this.Bind(_AnalyticPTDHestonEngine)
 (* 
     casting 
 *)
-    internal new () = new AnalyticPTDHestonEngineModel(null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new AnalyticPTDHestonEngineModel(null,null,null,null)
     member internal this.Inject v = _AnalyticPTDHestonEngine <- v
     static member Cast (p : ICell<AnalyticPTDHestonEngine>) = 
         if p :? AnalyticPTDHestonEngineModel then 
@@ -75,6 +81,7 @@ type AnalyticPTDHestonEngineModel
         else
             let o = new AnalyticPTDHestonEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -101,37 +108,43 @@ Constructor using Laguerre integration and Gatheral's version of complex log.
 type AnalyticPTDHestonEngineModel1
     ( model                                        : ICell<PiecewiseTimeDependentHestonModel>
     , integrationOrder                             : ICell<int>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<AnalyticPTDHestonEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _model                                     = model
     let _integrationOrder                          = integrationOrder
 (*
     Functions
 *)
     let mutable
-        _AnalyticPTDHestonEngine                   = cell (fun () -> new AnalyticPTDHestonEngine (model.Value, integrationOrder.Value))
+        _AnalyticPTDHestonEngine                   = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticPTDHestonEngine (model.Value, integrationOrder.Value))))
     let _setModel                                  (model : ICell<Handle<PiecewiseTimeDependentHestonModel>>)   
-                                                   = triv (fun () -> _AnalyticPTDHestonEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticPTDHestonEngine).Value.setModel(model.Value)
                                                                      _AnalyticPTDHestonEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _AnalyticPTDHestonEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticPTDHestonEngine).Value.registerWith(handler.Value)
                                                                      _AnalyticPTDHestonEngine.Value)
-    let _reset                                     = triv (fun () -> _AnalyticPTDHestonEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticPTDHestonEngine).Value.reset()
                                                                      _AnalyticPTDHestonEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _AnalyticPTDHestonEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticPTDHestonEngine).Value.unregisterWith(handler.Value)
                                                                      _AnalyticPTDHestonEngine.Value)
-    let _update                                    = triv (fun () -> _AnalyticPTDHestonEngine.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticPTDHestonEngine).Value.update()
                                                                      _AnalyticPTDHestonEngine.Value)
     do this.Bind(_AnalyticPTDHestonEngine)
 (* 
     casting 
 *)
-    internal new () = new AnalyticPTDHestonEngineModel1(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new AnalyticPTDHestonEngineModel1(null,null,null)
     member internal this.Inject v = _AnalyticPTDHestonEngine <- v
     static member Cast (p : ICell<AnalyticPTDHestonEngine>) = 
         if p :? AnalyticPTDHestonEngineModel1 then 
@@ -139,6 +152,7 @@ type AnalyticPTDHestonEngineModel1
         else
             let o = new AnalyticPTDHestonEngineModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

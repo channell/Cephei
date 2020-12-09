@@ -33,36 +33,43 @@ Use Merton73 engine as default.
   </summary> *)
 [<AutoSerializable(true)>]
 type FDDividendEngineModel
-    () as this =
+    ( evaluationDate                               : ICell<Date>
+    ) as this =
     inherit Model<FDDividendEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
 (*
     Functions
 *)
     let mutable
-        _FDDividendEngine                          = cell (fun () -> new FDDividendEngine ())
+        _FDDividendEngine                          = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FDDividendEngine ())))
     let _factory2                                  (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
-                                                   = triv (fun () -> _FDDividendEngine.Value.factory2(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDDividendEngine).Value.factory2(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
-                                                   = triv (fun () -> _FDDividendEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDDividendEngine).Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _calculate                                 (r : ICell<IPricingEngineResults>)   
-                                                   = triv (fun () -> _FDDividendEngine.Value.calculate(r.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDDividendEngine).Value.calculate(r.Value)
                                                                      _FDDividendEngine.Value)
     let _setStepCondition                          (impl : ICell<Func<IStepCondition<Vector>>>)   
-                                                   = triv (fun () -> _FDDividendEngine.Value.setStepCondition(impl.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDDividendEngine).Value.setStepCondition(impl.Value)
                                                                      _FDDividendEngine.Value)
-    let _ensureStrikeInGrid                        = triv (fun () -> _FDDividendEngine.Value.ensureStrikeInGrid()
+    let _ensureStrikeInGrid                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FDDividendEngine).Value.ensureStrikeInGrid()
                                                                      _FDDividendEngine.Value)
-    let _getResidualTime                           = triv (fun () -> _FDDividendEngine.Value.getResidualTime())
-    let _grid                                      = triv (fun () -> _FDDividendEngine.Value.grid())
-    let _intrinsicValues_                          = triv (fun () -> _FDDividendEngine.Value.intrinsicValues_)
+    let _getResidualTime                           = triv (fun () -> (curryEvaluationDate _evaluationDate _FDDividendEngine).Value.getResidualTime())
+    let _grid                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _FDDividendEngine).Value.grid())
+    let _intrinsicValues_                          = triv (fun () -> (curryEvaluationDate _evaluationDate _FDDividendEngine).Value.intrinsicValues_)
     do this.Bind(_FDDividendEngine)
 (* 
     casting 
 *)
     
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FDDividendEngineModel(null)
     member internal this.Inject v = _FDDividendEngine <- v
     static member Cast (p : ICell<FDDividendEngine>) = 
         if p :? FDDividendEngineModel then 
@@ -70,6 +77,7 @@ type FDDividendEngineModel
         else
             let o = new FDDividendEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -99,12 +107,15 @@ type FDDividendEngineModel1
     , timeSteps                                    : ICell<int>
     , gridPoints                                   : ICell<int>
     , timeDependent                                : ICell<bool>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FDDividendEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
     let _timeSteps                                 = timeSteps
     let _gridPoints                                = gridPoints
@@ -113,27 +124,30 @@ type FDDividendEngineModel1
     Functions
 *)
     let mutable
-        _FDDividendEngine                          = cell (fun () -> new FDDividendEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+        _FDDividendEngine                          = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FDDividendEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))))
     let _factory2                                  (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
-                                                   = triv (fun () -> _FDDividendEngine.Value.factory2(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDDividendEngine).Value.factory2(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
-                                                   = triv (fun () -> _FDDividendEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDDividendEngine).Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _calculate                                 (r : ICell<IPricingEngineResults>)   
-                                                   = triv (fun () -> _FDDividendEngine.Value.calculate(r.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDDividendEngine).Value.calculate(r.Value)
                                                                      _FDDividendEngine.Value)
     let _setStepCondition                          (impl : ICell<Func<IStepCondition<Vector>>>)   
-                                                   = triv (fun () -> _FDDividendEngine.Value.setStepCondition(impl.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDDividendEngine).Value.setStepCondition(impl.Value)
                                                                      _FDDividendEngine.Value)
-    let _ensureStrikeInGrid                        = triv (fun () -> _FDDividendEngine.Value.ensureStrikeInGrid()
+    let _ensureStrikeInGrid                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FDDividendEngine).Value.ensureStrikeInGrid()
                                                                      _FDDividendEngine.Value)
-    let _getResidualTime                           = triv (fun () -> _FDDividendEngine.Value.getResidualTime())
-    let _grid                                      = triv (fun () -> _FDDividendEngine.Value.grid())
-    let _intrinsicValues_                          = triv (fun () -> _FDDividendEngine.Value.intrinsicValues_)
+    let _getResidualTime                           = triv (fun () -> (curryEvaluationDate _evaluationDate _FDDividendEngine).Value.getResidualTime())
+    let _grid                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _FDDividendEngine).Value.grid())
+    let _intrinsicValues_                          = triv (fun () -> (curryEvaluationDate _evaluationDate _FDDividendEngine).Value.intrinsicValues_)
     do this.Bind(_FDDividendEngine)
 (* 
     casting 
 *)
-    internal new () = new FDDividendEngineModel1(null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FDDividendEngineModel1(null,null,null,null,null)
     member internal this.Inject v = _FDDividendEngine <- v
     static member Cast (p : ICell<FDDividendEngine>) = 
         if p :? FDDividendEngineModel1 then 
@@ -141,6 +155,7 @@ type FDDividendEngineModel1
         else
             let o = new FDDividendEngineModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

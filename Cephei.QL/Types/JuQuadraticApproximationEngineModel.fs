@@ -34,23 +34,29 @@ open Cephei.QLNetHelper
 [<AutoSerializable(true)>]
 type JuQuadraticApproximationEngineModel
     ( Process                                      : ICell<GeneralizedBlackScholesProcess>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<JuQuadraticApproximationEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
 (*
     Functions
 *)
     let mutable
-        _JuQuadraticApproximationEngine            = cell (fun () -> new JuQuadraticApproximationEngine (Process.Value))
+        _JuQuadraticApproximationEngine            = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new JuQuadraticApproximationEngine (Process.Value))))
     do this.Bind(_JuQuadraticApproximationEngine)
 (* 
     casting 
 *)
-    internal new () = new JuQuadraticApproximationEngineModel(null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new JuQuadraticApproximationEngineModel(null,null)
     member internal this.Inject v = _JuQuadraticApproximationEngine <- v
     static member Cast (p : ICell<JuQuadraticApproximationEngine>) = 
         if p :? JuQuadraticApproximationEngineModel then 
@@ -58,6 +64,7 @@ type JuQuadraticApproximationEngineModel
         else
             let o = new JuQuadraticApproximationEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

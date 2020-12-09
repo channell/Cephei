@@ -354,7 +354,7 @@ module <#= NetClass.Name #>Function =
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<<#= NetClass.Name #>>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<<#= NetClass.Name #>>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

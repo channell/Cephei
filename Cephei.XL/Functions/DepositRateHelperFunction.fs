@@ -55,6 +55,8 @@ module DepositRateHelperFunction =
          endOfMonth : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -67,6 +69,7 @@ module DepositRateHelperFunction =
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.DepositRateHelper 
                                                             _rate.cell 
                                                             _tenor.cell 
@@ -75,6 +78,7 @@ module DepositRateHelperFunction =
                                                             _convention.cell 
                                                             _endOfMonth.cell 
                                                             _dayCounter.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DepositRateHelper>) l
 
@@ -86,6 +90,7 @@ module DepositRateHelperFunction =
                                                ;  _convention.source
                                                ;  _endOfMonth.source
                                                ;  _dayCounter.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _rate.cell
@@ -95,6 +100,7 @@ module DepositRateHelperFunction =
                                 ;  _convention.cell
                                 ;  _endOfMonth.cell
                                 ;  _dayCounter.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -118,6 +124,8 @@ module DepositRateHelperFunction =
          rate : obj)
         ([<ExcelArgument(Name="i",Description = "IborIndex")>] 
          i : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -125,19 +133,23 @@ module DepositRateHelperFunction =
 
                 let _rate = Helper.toCell<double> rate "rate" 
                 let _i = Helper.toCell<IborIndex> i "i" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.DepositRateHelper1 
                                                             _rate.cell 
                                                             _i.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DepositRateHelper>) l
 
                 let source () = Helper.sourceFold "Fun.DepositRateHelper1" 
                                                [| _rate.source
                                                ;  _i.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _rate.cell
                                 ;  _i.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -161,6 +173,8 @@ module DepositRateHelperFunction =
          rate : obj)
         ([<ExcelArgument(Name="i",Description = "IborIndex")>] 
          i : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -168,19 +182,23 @@ module DepositRateHelperFunction =
 
                 let _rate = Helper.toHandle<Quote> rate "rate" 
                 let _i = Helper.toCell<IborIndex> i "i" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.DepositRateHelper2 
                                                             _rate.cell 
                                                             _i.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DepositRateHelper>) l
 
                 let source () = Helper.sourceFold "Fun.DepositRateHelper2" 
                                                [| _rate.source
                                                ;  _i.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _rate.cell
                                 ;  _i.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -214,6 +232,8 @@ module DepositRateHelperFunction =
          endOfMonth : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -226,6 +246,7 @@ module DepositRateHelperFunction =
                 let _convention = Helper.toCell<BusinessDayConvention> convention "convention" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.DepositRateHelper3 
                                                             _rate.cell 
                                                             _tenor.cell 
@@ -234,6 +255,7 @@ module DepositRateHelperFunction =
                                                             _convention.cell 
                                                             _endOfMonth.cell 
                                                             _dayCounter.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DepositRateHelper>) l
 
@@ -245,6 +267,7 @@ module DepositRateHelperFunction =
                                                ;  _convention.source
                                                ;  _endOfMonth.source
                                                ;  _dayCounter.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _rate.cell
@@ -254,6 +277,7 @@ module DepositRateHelperFunction =
                                 ;  _convention.cell
                                 ;  _endOfMonth.cell
                                 ;  _dayCounter.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -805,16 +829,16 @@ module DepositRateHelperFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<DepositRateHelper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<DepositRateHelper> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<DepositRateHelper> (c)) :> ICell
                 let format (i : Generic.List<ICell<DepositRateHelper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<DepositRateHelper>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<DepositRateHelper>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

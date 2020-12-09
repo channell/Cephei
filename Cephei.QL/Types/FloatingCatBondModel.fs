@@ -47,8 +47,8 @@ type FloatingCatBondModel
     , fixingDays                                   : ICell<int>
     , gearings                                     : ICell<Generic.List<double>>
     , spreads                                      : ICell<Generic.List<double>>
-    , caps                                         : ICell<List<Nullable<double>>>
-    , floors                                       : ICell<List<Nullable<double>>>
+    , caps                                         : ICell<Generic.List<Nullable<double>>>
+    , floors                                       : ICell<Generic.List<Nullable<double>>>
     , inArrears                                    : ICell<bool>
     , redemption                                   : ICell<double>
     , issueDate                                    : ICell<Date>
@@ -92,7 +92,7 @@ type FloatingCatBondModel
     Functions
 *)
     let mutable
-        _FloatingCatBond                           = cell (fun () -> withEngine pricingEngine (new FloatingCatBond (settlementDays.Value, faceAmount.Value, startDate.Value, maturityDate.Value, couponFrequency.Value, calendar.Value, iborIndex.Value, accrualDayCounter.Value, notionalRisk.Value, accrualConvention.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, redemption.Value, issueDate.Value, stubDate.Value, rule.Value, endOfMonth.Value)))
+        _FloatingCatBond                           = cell (fun () -> withEngine pricingEngine evaluationDate (new FloatingCatBond (settlementDays.Value, faceAmount.Value, startDate.Value, maturityDate.Value, couponFrequency.Value, calendar.Value, iborIndex.Value, accrualDayCounter.Value, notionalRisk.Value, accrualConvention.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, redemption.Value, issueDate.Value, stubDate.Value, rule.Value, endOfMonth.Value)))
     let _exhaustionProbability                     = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingCatBond).exhaustionProbability())
     let _expectedLoss                              = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingCatBond).expectedLoss())
     let _lossProbability                           = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingCatBond).lossProbability())
@@ -257,8 +257,8 @@ type FloatingCatBondModel1
     , fixingDays                                   : ICell<int>
     , gearings                                     : ICell<Generic.List<double>>
     , spreads                                      : ICell<Generic.List<double>>
-    , caps                                         : ICell<List<Nullable<double>>>
-    , floors                                       : ICell<List<Nullable<double>>>
+    , caps                                         : ICell<Generic.List<Nullable<double>>>
+    , floors                                       : ICell<Generic.List<Nullable<double>>>
     , inArrears                                    : ICell<bool>
     , redemption                                   : ICell<double>
     , issueDate                                    : ICell<Date>
@@ -292,7 +292,7 @@ type FloatingCatBondModel1
     Functions
 *)
     let mutable
-        _FloatingCatBond                           = cell (fun () -> withEngine pricingEngine (new FloatingCatBond (settlementDays.Value, faceAmount.Value, schedule.Value, iborIndex.Value, paymentDayCounter.Value, notionalRisk.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, redemption.Value, issueDate.Value)))
+        _FloatingCatBond                           = cell (fun () -> withEngine pricingEngine evaluationDate (new FloatingCatBond (settlementDays.Value, faceAmount.Value, schedule.Value, iborIndex.Value, paymentDayCounter.Value, notionalRisk.Value, paymentConvention.Value, fixingDays.Value, gearings.Value, spreads.Value, caps.Value, floors.Value, inArrears.Value, redemption.Value, issueDate.Value)))
     let _exhaustionProbability                     = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingCatBond).exhaustionProbability())
     let _expectedLoss                              = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingCatBond).expectedLoss())
     let _lossProbability                           = triv (fun () -> (withEvaluationDate _evaluationDate _FloatingCatBond).lossProbability())

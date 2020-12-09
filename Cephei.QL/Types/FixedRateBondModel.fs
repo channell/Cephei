@@ -74,7 +74,7 @@ type FixedRateBondModel
     Functions
 *)
     let mutable
-        _FixedRateBond                             = cell (fun () -> withEngine pricingEngine (new FixedRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, coupons.Value, accrualDayCounter.Value, paymentConvention.Value, redemption.Value, issueDate.Value, paymentCalendar.Value, exCouponPeriod.Value, exCouponCalendar.Value, exCouponConvention.Value, exCouponEndOfMonth.Value)))
+        _FixedRateBond                             = cell (fun () -> withEngine pricingEngine evaluationDate (new FixedRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, coupons.Value, accrualDayCounter.Value, paymentConvention.Value, redemption.Value, issueDate.Value, paymentCalendar.Value, exCouponPeriod.Value, exCouponCalendar.Value, exCouponConvention.Value, exCouponEndOfMonth.Value)))
     let _dayCounter                                = triv (fun () -> (withEvaluationDate _evaluationDate _FixedRateBond).dayCounter())
     let _frequency                                 = triv (fun () -> (withEvaluationDate _evaluationDate _FixedRateBond).frequency())
     let _accruedAmount                             (settlement : ICell<Date>)   
@@ -273,7 +273,7 @@ type FixedRateBondModel1
     Functions
 *)
     let mutable
-        _FixedRateBond                             = cell (fun () -> withEngine pricingEngine (new FixedRateBond (settlementDays.Value, calendar.Value, faceAmount.Value, startDate.Value, maturityDate.Value, tenor.Value, coupons.Value, accrualDayCounter.Value, accrualConvention.Value, paymentConvention.Value, redemption.Value, issueDate.Value, stubDate.Value, rule.Value, endOfMonth.Value, paymentCalendar.Value, exCouponPeriod.Value, exCouponCalendar.Value, exCouponConvention.Value, exCouponEndOfMonth.Value)))
+        _FixedRateBond                             = cell (fun () -> withEngine pricingEngine evaluationDate (new FixedRateBond (settlementDays.Value, calendar.Value, faceAmount.Value, startDate.Value, maturityDate.Value, tenor.Value, coupons.Value, accrualDayCounter.Value, accrualConvention.Value, paymentConvention.Value, redemption.Value, issueDate.Value, stubDate.Value, rule.Value, endOfMonth.Value, paymentCalendar.Value, exCouponPeriod.Value, exCouponCalendar.Value, exCouponConvention.Value, exCouponEndOfMonth.Value)))
     let _dayCounter                                = triv (fun () -> (withEvaluationDate _evaluationDate _FixedRateBond).dayCounter())
     let _frequency                                 = triv (fun () -> (withEvaluationDate _evaluationDate _FixedRateBond).frequency())
     let _accruedAmount                             (settlement : ICell<Date>)   
@@ -463,7 +463,7 @@ type FixedRateBondModel2
     Functions
 *)
     let mutable
-        _FixedRateBond                             = cell (fun () -> withEngine pricingEngine (new FixedRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, coupons.Value, paymentConvention.Value, redemption.Value, issueDate.Value, paymentCalendar.Value, exCouponPeriod.Value, exCouponCalendar.Value, exCouponConvention.Value, exCouponEndOfMonth.Value)))
+        _FixedRateBond                             = cell (fun () -> withEngine pricingEngine evaluationDate (new FixedRateBond (settlementDays.Value, faceAmount.Value, schedule.Value, coupons.Value, paymentConvention.Value, redemption.Value, issueDate.Value, paymentCalendar.Value, exCouponPeriod.Value, exCouponCalendar.Value, exCouponConvention.Value, exCouponEndOfMonth.Value)))
     let _dayCounter                                = triv (fun () -> (withEvaluationDate _evaluationDate _FixedRateBond).dayCounter())
     let _frequency                                 = triv (fun () -> (withEvaluationDate _evaluationDate _FixedRateBond).frequency())
     let _accruedAmount                             (settlement : ICell<Date>)   

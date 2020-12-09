@@ -165,6 +165,8 @@ module QuantoTermStructureFunction =
          exchRateATMlevel : obj)
         ([<ExcelArgument(Name="underlyingExchRateCorrelation",Description = "double")>] 
          underlyingExchRateCorrelation : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -178,6 +180,7 @@ module QuantoTermStructureFunction =
                 let _exchRateBlackVolTS = Helper.toHandle<BlackVolTermStructure> exchRateBlackVolTS "exchRateBlackVolTS" 
                 let _exchRateATMlevel = Helper.toCell<double> exchRateATMlevel "exchRateATMlevel" 
                 let _underlyingExchRateCorrelation = Helper.toCell<double> underlyingExchRateCorrelation "underlyingExchRateCorrelation" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.QuantoTermStructure 
                                                             _underlyingDividendTS.cell 
                                                             _riskFreeTS.cell 
@@ -187,6 +190,7 @@ module QuantoTermStructureFunction =
                                                             _exchRateBlackVolTS.cell 
                                                             _exchRateATMlevel.cell 
                                                             _underlyingExchRateCorrelation.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<QuantoTermStructure>) l
 
@@ -199,6 +203,7 @@ module QuantoTermStructureFunction =
                                                ;  _exchRateBlackVolTS.source
                                                ;  _exchRateATMlevel.source
                                                ;  _underlyingExchRateCorrelation.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _underlyingDividendTS.cell
@@ -209,6 +214,7 @@ module QuantoTermStructureFunction =
                                 ;  _exchRateBlackVolTS.cell
                                 ;  _exchRateATMlevel.cell
                                 ;  _underlyingExchRateCorrelation.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -310,16 +316,16 @@ module QuantoTermStructureFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<QuantoTermStructure> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<QuantoTermStructure> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<QuantoTermStructure> (c)) :> ICell
                 let format (i : Generic.List<ICell<QuantoTermStructure>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<QuantoTermStructure>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<QuantoTermStructure>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

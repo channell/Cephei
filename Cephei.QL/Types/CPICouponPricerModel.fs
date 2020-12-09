@@ -34,48 +34,54 @@ open Cephei.QLNetHelper
 [<AutoSerializable(true)>]
 type CPICouponPricerModel
     ( capletVol                                    : ICell<Handle<CPIVolatilitySurface>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<CPICouponPricer> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _capletVol                                 = capletVol
 (*
     Functions
 *)
     let mutable
-        _CPICouponPricer                           = cell (fun () -> new CPICouponPricer (capletVol.Value))
+        _CPICouponPricer                           = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new CPICouponPricer (capletVol.Value))))
     let _capletPrice                               (effectiveCap : ICell<double>)   
-                                                   = triv (fun () -> _CPICouponPricer.Value.capletPrice(effectiveCap.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICouponPricer).Value.capletPrice(effectiveCap.Value))
     let _capletRate                                (effectiveCap : ICell<double>)   
-                                                   = triv (fun () -> _CPICouponPricer.Value.capletRate(effectiveCap.Value))
-    let _capletVolatility                          = triv (fun () -> _CPICouponPricer.Value.capletVolatility())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICouponPricer).Value.capletRate(effectiveCap.Value))
+    let _capletVolatility                          = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICouponPricer).Value.capletVolatility())
     let _floorletPrice                             (effectiveFloor : ICell<double>)   
-                                                   = triv (fun () -> _CPICouponPricer.Value.floorletPrice(effectiveFloor.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICouponPricer).Value.floorletPrice(effectiveFloor.Value))
     let _floorletRate                              (effectiveFloor : ICell<double>)   
-                                                   = triv (fun () -> _CPICouponPricer.Value.floorletRate(effectiveFloor.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICouponPricer).Value.floorletRate(effectiveFloor.Value))
     let _initialize                                (coupon : ICell<InflationCoupon>)   
-                                                   = triv (fun () -> _CPICouponPricer.Value.initialize(coupon.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICouponPricer).Value.initialize(coupon.Value)
                                                                      _CPICouponPricer.Value)
     let _setCapletVolatility                       (capletVol : ICell<Handle<CPIVolatilitySurface>>)   
-                                                   = triv (fun () -> _CPICouponPricer.Value.setCapletVolatility(capletVol.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICouponPricer).Value.setCapletVolatility(capletVol.Value)
                                                                      _CPICouponPricer.Value)
-    let _swapletPrice                              = triv (fun () -> _CPICouponPricer.Value.swapletPrice())
-    let _swapletRate                               = triv (fun () -> _CPICouponPricer.Value.swapletRate())
+    let _swapletPrice                              = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICouponPricer).Value.swapletPrice())
+    let _swapletRate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICouponPricer).Value.swapletRate())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _CPICouponPricer.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICouponPricer).Value.registerWith(handler.Value)
                                                                      _CPICouponPricer.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _CPICouponPricer.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICouponPricer).Value.unregisterWith(handler.Value)
                                                                      _CPICouponPricer.Value)
-    let _update                                    = triv (fun () -> _CPICouponPricer.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _CPICouponPricer).Value.update()
                                                                      _CPICouponPricer.Value)
     do this.Bind(_CPICouponPricer)
 (* 
     casting 
 *)
-    internal new () = new CPICouponPricerModel(null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new CPICouponPricerModel(null,null)
     member internal this.Inject v = _CPICouponPricer <- v
     static member Cast (p : ICell<CPICouponPricer>) = 
         if p :? CPICouponPricerModel then 
@@ -83,6 +89,7 @@ type CPICouponPricerModel
         else
             let o = new CPICouponPricerModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

@@ -37,12 +37,15 @@ type BlackVanillaOptionPricerModel
     , expiryDate                                   : ICell<Date>
     , swapTenor                                    : ICell<Period>
     , volatilityStructure                          : ICell<SwaptionVolatilityStructure>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BlackVanillaOptionPricer> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _forwardValue                              = forwardValue
     let _expiryDate                                = expiryDate
     let _swapTenor                                 = swapTenor
@@ -51,14 +54,17 @@ type BlackVanillaOptionPricerModel
     Functions
 *)
     let mutable
-        _BlackVanillaOptionPricer                  = cell (fun () -> new BlackVanillaOptionPricer (forwardValue.Value, expiryDate.Value, swapTenor.Value, volatilityStructure.Value))
+        _BlackVanillaOptionPricer                  = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackVanillaOptionPricer (forwardValue.Value, expiryDate.Value, swapTenor.Value, volatilityStructure.Value))))
     let _value                                     (strike : ICell<double>) (optionType : ICell<Option.Type>) (deflator : ICell<double>)   
-                                                   = triv (fun () -> _BlackVanillaOptionPricer.Value.value(strike.Value, optionType.Value, deflator.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackVanillaOptionPricer).Value.value(strike.Value, optionType.Value, deflator.Value))
     do this.Bind(_BlackVanillaOptionPricer)
 (* 
     casting 
 *)
-    internal new () = new BlackVanillaOptionPricerModel(null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new BlackVanillaOptionPricerModel(null,null,null,null,null)
     member internal this.Inject v = _BlackVanillaOptionPricer <- v
     static member Cast (p : ICell<BlackVanillaOptionPricer>) = 
         if p :? BlackVanillaOptionPricerModel then 
@@ -66,6 +72,7 @@ type BlackVanillaOptionPricerModel
         else
             let o = new BlackVanillaOptionPricerModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

@@ -35,24 +35,30 @@ open Cephei.QLNetHelper
 type BlackCallableZeroCouponBondEngineModel
     ( yieldVolStructure                            : ICell<Handle<CallableBondVolatilityStructure>>
     , discountCurve                                : ICell<Handle<YieldTermStructure>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BlackCallableZeroCouponBondEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _yieldVolStructure                         = yieldVolStructure
     let _discountCurve                             = discountCurve
 (*
     Functions
 *)
     let mutable
-        _BlackCallableZeroCouponBondEngine         = cell (fun () -> new BlackCallableZeroCouponBondEngine (yieldVolStructure.Value, discountCurve.Value))
+        _BlackCallableZeroCouponBondEngine         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackCallableZeroCouponBondEngine (yieldVolStructure.Value, discountCurve.Value))))
     do this.Bind(_BlackCallableZeroCouponBondEngine)
 (* 
     casting 
 *)
-    internal new () = new BlackCallableZeroCouponBondEngineModel(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new BlackCallableZeroCouponBondEngineModel(null,null,null)
     member internal this.Inject v = _BlackCallableZeroCouponBondEngine <- v
     static member Cast (p : ICell<BlackCallableZeroCouponBondEngine>) = 
         if p :? BlackCallableZeroCouponBondEngineModel then 
@@ -60,6 +66,7 @@ type BlackCallableZeroCouponBondEngineModel
         else
             let o = new BlackCallableZeroCouponBondEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -77,24 +84,30 @@ type BlackCallableZeroCouponBondEngineModel
 type BlackCallableZeroCouponBondEngineModel1
     ( fwdYieldVol                                  : ICell<Handle<Quote>>
     , discountCurve                                : ICell<Handle<YieldTermStructure>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BlackCallableZeroCouponBondEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _fwdYieldVol                               = fwdYieldVol
     let _discountCurve                             = discountCurve
 (*
     Functions
 *)
     let mutable
-        _BlackCallableZeroCouponBondEngine         = cell (fun () -> new BlackCallableZeroCouponBondEngine (fwdYieldVol.Value, discountCurve.Value))
+        _BlackCallableZeroCouponBondEngine         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackCallableZeroCouponBondEngine (fwdYieldVol.Value, discountCurve.Value))))
     do this.Bind(_BlackCallableZeroCouponBondEngine)
 (* 
     casting 
 *)
-    internal new () = new BlackCallableZeroCouponBondEngineModel1(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new BlackCallableZeroCouponBondEngineModel1(null,null,null)
     member internal this.Inject v = _BlackCallableZeroCouponBondEngine <- v
     static member Cast (p : ICell<BlackCallableZeroCouponBondEngine>) = 
         if p :? BlackCallableZeroCouponBondEngineModel1 then 
@@ -102,6 +115,7 @@ type BlackCallableZeroCouponBondEngineModel1
         else
             let o = new BlackCallableZeroCouponBondEngineModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

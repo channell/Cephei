@@ -42,12 +42,15 @@ type MCEuropeanEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (new : unit -> 
     , requiredTolerance                            : ICell<Nullable<double>>
     , maxSamples                                   : ICell<Nullable<int>>
     , seed                                         : ICell<uint64>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<MCEuropeanEngine<'RNG,'S>> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
     let _timeSteps                                 = timeSteps
     let _timeStepsPerYear                          = timeStepsPerYear
@@ -61,7 +64,7 @@ type MCEuropeanEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (new : unit -> 
     Functions
 *)
     let mutable
-        _MCEuropeanEngine                          = cell (fun () -> new MCEuropeanEngine<'RNG,'S> (Process.Value, timeSteps.Value, timeStepsPerYear.Value, brownianBridge.Value, antitheticVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))
+        _MCEuropeanEngine                          = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new MCEuropeanEngine<'RNG,'S> (Process.Value, timeSteps.Value, timeStepsPerYear.Value, brownianBridge.Value, antitheticVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))))
     do this.Bind(_MCEuropeanEngine)
 
 (* 

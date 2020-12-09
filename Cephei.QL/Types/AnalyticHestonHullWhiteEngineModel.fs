@@ -37,12 +37,15 @@ type AnalyticHestonHullWhiteEngineModel
     , hullWhiteModel                               : ICell<HullWhite>
     , relTolerance                                 : ICell<double>
     , maxEvaluations                               : ICell<int>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<AnalyticHestonHullWhiteEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _hestonModel                               = hestonModel
     let _hullWhiteModel                            = hullWhiteModel
     let _relTolerance                              = relTolerance
@@ -51,26 +54,29 @@ type AnalyticHestonHullWhiteEngineModel
     Functions
 *)
     let mutable
-        _AnalyticHestonHullWhiteEngine             = cell (fun () -> new AnalyticHestonHullWhiteEngine (hestonModel.Value, hullWhiteModel.Value, relTolerance.Value, maxEvaluations.Value))
-    let _update                                    = triv (fun () -> _AnalyticHestonHullWhiteEngine.Value.update()
+        _AnalyticHestonHullWhiteEngine             = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticHestonHullWhiteEngine (hestonModel.Value, hullWhiteModel.Value, relTolerance.Value, maxEvaluations.Value))))
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticHestonHullWhiteEngine).Value.update()
                                                                      _AnalyticHestonHullWhiteEngine.Value)
-    let _numberOfEvaluations                       = triv (fun () -> _AnalyticHestonHullWhiteEngine.Value.numberOfEvaluations())
+    let _numberOfEvaluations                       = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticHestonHullWhiteEngine).Value.numberOfEvaluations())
     let _setModel                                  (model : ICell<Handle<HestonModel>>)   
-                                                   = triv (fun () -> _AnalyticHestonHullWhiteEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticHestonHullWhiteEngine).Value.setModel(model.Value)
                                                                      _AnalyticHestonHullWhiteEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _AnalyticHestonHullWhiteEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticHestonHullWhiteEngine).Value.registerWith(handler.Value)
                                                                      _AnalyticHestonHullWhiteEngine.Value)
-    let _reset                                     = triv (fun () -> _AnalyticHestonHullWhiteEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticHestonHullWhiteEngine).Value.reset()
                                                                      _AnalyticHestonHullWhiteEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _AnalyticHestonHullWhiteEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticHestonHullWhiteEngine).Value.unregisterWith(handler.Value)
                                                                      _AnalyticHestonHullWhiteEngine.Value)
     do this.Bind(_AnalyticHestonHullWhiteEngine)
 (* 
     casting 
 *)
-    internal new () = new AnalyticHestonHullWhiteEngineModel(null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new AnalyticHestonHullWhiteEngineModel(null,null,null,null,null)
     member internal this.Inject v = _AnalyticHestonHullWhiteEngine <- v
     static member Cast (p : ICell<AnalyticHestonHullWhiteEngine>) = 
         if p :? AnalyticHestonHullWhiteEngineModel then 
@@ -78,6 +84,7 @@ type AnalyticHestonHullWhiteEngineModel
         else
             let o = new AnalyticHestonHullWhiteEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -107,12 +114,15 @@ type AnalyticHestonHullWhiteEngineModel1
     ( hestonModel                                  : ICell<HestonModel>
     , hullWhiteModel                               : ICell<HullWhite>
     , integrationOrder                             : ICell<int>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<AnalyticHestonHullWhiteEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _hestonModel                               = hestonModel
     let _hullWhiteModel                            = hullWhiteModel
     let _integrationOrder                          = integrationOrder
@@ -120,26 +130,29 @@ type AnalyticHestonHullWhiteEngineModel1
     Functions
 *)
     let mutable
-        _AnalyticHestonHullWhiteEngine             = cell (fun () -> new AnalyticHestonHullWhiteEngine (hestonModel.Value, hullWhiteModel.Value, integrationOrder.Value))
-    let _update                                    = triv (fun () -> _AnalyticHestonHullWhiteEngine.Value.update()
+        _AnalyticHestonHullWhiteEngine             = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticHestonHullWhiteEngine (hestonModel.Value, hullWhiteModel.Value, integrationOrder.Value))))
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticHestonHullWhiteEngine).Value.update()
                                                                      _AnalyticHestonHullWhiteEngine.Value)
-    let _numberOfEvaluations                       = triv (fun () -> _AnalyticHestonHullWhiteEngine.Value.numberOfEvaluations())
+    let _numberOfEvaluations                       = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticHestonHullWhiteEngine).Value.numberOfEvaluations())
     let _setModel                                  (model : ICell<Handle<HestonModel>>)   
-                                                   = triv (fun () -> _AnalyticHestonHullWhiteEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticHestonHullWhiteEngine).Value.setModel(model.Value)
                                                                      _AnalyticHestonHullWhiteEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _AnalyticHestonHullWhiteEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticHestonHullWhiteEngine).Value.registerWith(handler.Value)
                                                                      _AnalyticHestonHullWhiteEngine.Value)
-    let _reset                                     = triv (fun () -> _AnalyticHestonHullWhiteEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticHestonHullWhiteEngine).Value.reset()
                                                                      _AnalyticHestonHullWhiteEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _AnalyticHestonHullWhiteEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticHestonHullWhiteEngine).Value.unregisterWith(handler.Value)
                                                                      _AnalyticHestonHullWhiteEngine.Value)
     do this.Bind(_AnalyticHestonHullWhiteEngine)
 (* 
     casting 
 *)
-    internal new () = new AnalyticHestonHullWhiteEngineModel1(null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new AnalyticHestonHullWhiteEngineModel1(null,null,null,null)
     member internal this.Inject v = _AnalyticHestonHullWhiteEngine <- v
     static member Cast (p : ICell<AnalyticHestonHullWhiteEngine>) = 
         if p :? AnalyticHestonHullWhiteEngineModel1 then 
@@ -147,6 +160,7 @@ type AnalyticHestonHullWhiteEngineModel1
         else
             let o = new AnalyticHestonHullWhiteEngineModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

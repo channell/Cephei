@@ -39,12 +39,15 @@ type SabrSmileSectionModel
     , dc                                           : ICell<DayCounter>
     , volatilityType                               : ICell<VolatilityType>
     , shift                                        : ICell<double>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<SabrSmileSection> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _d                                         = d
     let _forward                                   = forward
     let _sabrParams                                = sabrParams
@@ -55,37 +58,40 @@ type SabrSmileSectionModel
     Functions
 *)
     let mutable
-        _SabrSmileSection                          = cell (fun () -> new SabrSmileSection (d.Value, forward.Value, sabrParams.Value, dc.Value, volatilityType.Value, shift.Value))
-    let _atmLevel                                  = triv (fun () -> _SabrSmileSection.Value.atmLevel())
-    let _maxStrike                                 = triv (fun () -> _SabrSmileSection.Value.maxStrike())
-    let _minStrike                                 = triv (fun () -> _SabrSmileSection.Value.minStrike())
-    let _dayCounter                                = triv (fun () -> _SabrSmileSection.Value.dayCounter())
+        _SabrSmileSection                          = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new SabrSmileSection (d.Value, forward.Value, sabrParams.Value, dc.Value, volatilityType.Value, shift.Value))))
+    let _atmLevel                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.atmLevel())
+    let _maxStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.maxStrike())
+    let _minStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.minStrike())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.dayCounter())
     let _density                                   (strike : ICell<double>) (discount : ICell<double>) (gap : ICell<double>)   
-                                                   = triv (fun () -> _SabrSmileSection.Value.density(strike.Value, discount.Value, gap.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.density(strike.Value, discount.Value, gap.Value))
     let _digitalOptionPrice                        (strike : ICell<double>) (Type : ICell<Option.Type>) (discount : ICell<double>) (gap : ICell<double>)   
-                                                   = triv (fun () -> _SabrSmileSection.Value.digitalOptionPrice(strike.Value, Type.Value, discount.Value, gap.Value))
-    let _exerciseDate                              = triv (fun () -> _SabrSmileSection.Value.exerciseDate())
-    let _exerciseTime                              = triv (fun () -> _SabrSmileSection.Value.exerciseTime())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.digitalOptionPrice(strike.Value, Type.Value, discount.Value, gap.Value))
+    let _exerciseDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.exerciseDate())
+    let _exerciseTime                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.exerciseTime())
     let _optionPrice                               (strike : ICell<double>) (Type : ICell<Option.Type>) (discount : ICell<double>)   
-                                                   = triv (fun () -> _SabrSmileSection.Value.optionPrice(strike.Value, Type.Value, discount.Value))
-    let _referenceDate                             = triv (fun () -> _SabrSmileSection.Value.referenceDate())
-    let _shift                                     = triv (fun () -> _SabrSmileSection.Value.shift())
-    let _update                                    = triv (fun () -> _SabrSmileSection.Value.update()
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.optionPrice(strike.Value, Type.Value, discount.Value))
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.referenceDate())
+    let _shift                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.shift())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.update()
                                                                      _SabrSmileSection.Value)
     let _variance                                  (strike : ICell<double>)   
-                                                   = triv (fun () -> _SabrSmileSection.Value.variance(strike.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.variance(strike.Value))
     let _vega                                      (strike : ICell<double>) (discount : ICell<double>)   
-                                                   = triv (fun () -> _SabrSmileSection.Value.vega(strike.Value, discount.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.vega(strike.Value, discount.Value))
     let _volatility                                (strike : ICell<double>) (volatilityType : ICell<VolatilityType>) (shift : ICell<double>)   
-                                                   = triv (fun () -> _SabrSmileSection.Value.volatility(strike.Value, volatilityType.Value, shift.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.volatility(strike.Value, volatilityType.Value, shift.Value))
     let _volatility1                               (strike : ICell<double>)   
-                                                   = triv (fun () -> _SabrSmileSection.Value.volatility(strike.Value))
-    let _volatilityType                            = triv (fun () -> _SabrSmileSection.Value.volatilityType())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.volatility(strike.Value))
+    let _volatilityType                            = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.volatilityType())
     do this.Bind(_SabrSmileSection)
 (* 
     casting 
 *)
-    internal new () = new SabrSmileSectionModel(null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new SabrSmileSectionModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _SabrSmileSection <- v
     static member Cast (p : ICell<SabrSmileSection>) = 
         if p :? SabrSmileSectionModel then 
@@ -93,6 +99,7 @@ type SabrSmileSectionModel
         else
             let o = new SabrSmileSectionModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -141,12 +148,15 @@ type SabrSmileSectionModel1
     , sabrParams                                   : ICell<Generic.List<double>>
     , volatilityType                               : ICell<VolatilityType>
     , shift                                        : ICell<double>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<SabrSmileSection> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _timeToExpiry                              = timeToExpiry
     let _forward                                   = forward
     let _sabrParams                                = sabrParams
@@ -156,37 +166,40 @@ type SabrSmileSectionModel1
     Functions
 *)
     let mutable
-        _SabrSmileSection                          = cell (fun () -> new SabrSmileSection (timeToExpiry.Value, forward.Value, sabrParams.Value, volatilityType.Value, shift.Value))
-    let _atmLevel                                  = triv (fun () -> _SabrSmileSection.Value.atmLevel())
-    let _maxStrike                                 = triv (fun () -> _SabrSmileSection.Value.maxStrike())
-    let _minStrike                                 = triv (fun () -> _SabrSmileSection.Value.minStrike())
-    let _dayCounter                                = triv (fun () -> _SabrSmileSection.Value.dayCounter())
+        _SabrSmileSection                          = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new SabrSmileSection (timeToExpiry.Value, forward.Value, sabrParams.Value, volatilityType.Value, shift.Value))))
+    let _atmLevel                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.atmLevel())
+    let _maxStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.maxStrike())
+    let _minStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.minStrike())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.dayCounter())
     let _density                                   (strike : ICell<double>) (discount : ICell<double>) (gap : ICell<double>)   
-                                                   = triv (fun () -> _SabrSmileSection.Value.density(strike.Value, discount.Value, gap.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.density(strike.Value, discount.Value, gap.Value))
     let _digitalOptionPrice                        (strike : ICell<double>) (Type : ICell<Option.Type>) (discount : ICell<double>) (gap : ICell<double>)   
-                                                   = triv (fun () -> _SabrSmileSection.Value.digitalOptionPrice(strike.Value, Type.Value, discount.Value, gap.Value))
-    let _exerciseDate                              = triv (fun () -> _SabrSmileSection.Value.exerciseDate())
-    let _exerciseTime                              = triv (fun () -> _SabrSmileSection.Value.exerciseTime())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.digitalOptionPrice(strike.Value, Type.Value, discount.Value, gap.Value))
+    let _exerciseDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.exerciseDate())
+    let _exerciseTime                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.exerciseTime())
     let _optionPrice                               (strike : ICell<double>) (Type : ICell<Option.Type>) (discount : ICell<double>)   
-                                                   = triv (fun () -> _SabrSmileSection.Value.optionPrice(strike.Value, Type.Value, discount.Value))
-    let _referenceDate                             = triv (fun () -> _SabrSmileSection.Value.referenceDate())
-    let _shift                                     = triv (fun () -> _SabrSmileSection.Value.shift())
-    let _update                                    = triv (fun () -> _SabrSmileSection.Value.update()
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.optionPrice(strike.Value, Type.Value, discount.Value))
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.referenceDate())
+    let _shift                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.shift())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.update()
                                                                      _SabrSmileSection.Value)
     let _variance                                  (strike : ICell<double>)   
-                                                   = triv (fun () -> _SabrSmileSection.Value.variance(strike.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.variance(strike.Value))
     let _vega                                      (strike : ICell<double>) (discount : ICell<double>)   
-                                                   = triv (fun () -> _SabrSmileSection.Value.vega(strike.Value, discount.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.vega(strike.Value, discount.Value))
     let _volatility                                (strike : ICell<double>) (volatilityType : ICell<VolatilityType>) (shift : ICell<double>)   
-                                                   = triv (fun () -> _SabrSmileSection.Value.volatility(strike.Value, volatilityType.Value, shift.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.volatility(strike.Value, volatilityType.Value, shift.Value))
     let _volatility1                               (strike : ICell<double>)   
-                                                   = triv (fun () -> _SabrSmileSection.Value.volatility(strike.Value))
-    let _volatilityType                            = triv (fun () -> _SabrSmileSection.Value.volatilityType())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.volatility(strike.Value))
+    let _volatilityType                            = triv (fun () -> (curryEvaluationDate _evaluationDate _SabrSmileSection).Value.volatilityType())
     do this.Bind(_SabrSmileSection)
 (* 
     casting 
 *)
-    internal new () = new SabrSmileSectionModel1(null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new SabrSmileSectionModel1(null,null,null,null,null,null)
     member internal this.Inject v = _SabrSmileSection <- v
     static member Cast (p : ICell<SabrSmileSection>) = 
         if p :? SabrSmileSectionModel1 then 
@@ -194,6 +207,7 @@ type SabrSmileSectionModel1
         else
             let o = new SabrSmileSectionModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

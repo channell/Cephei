@@ -38,12 +38,15 @@ type ZeroSpreadedTermStructureModel
     , comp                                         : ICell<Compounding>
     , freq                                         : ICell<Frequency>
     , dc                                           : ICell<DayCounter>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<ZeroSpreadedTermStructure> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _h                                         = h
     let _spread                                    = spread
     let _comp                                      = comp
@@ -53,18 +56,21 @@ type ZeroSpreadedTermStructureModel
     Functions
 *)
     let mutable
-        _ZeroSpreadedTermStructure                 = cell (fun () -> new ZeroSpreadedTermStructure (h.Value, spread.Value, comp.Value, freq.Value, dc.Value))
-    let _calendar                                  = triv (fun () -> _ZeroSpreadedTermStructure.Value.calendar())
-    let _dayCounter                                = triv (fun () -> _ZeroSpreadedTermStructure.Value.dayCounter())
-    let _maxDate                                   = triv (fun () -> _ZeroSpreadedTermStructure.Value.maxDate())
-    let _maxTime                                   = triv (fun () -> _ZeroSpreadedTermStructure.Value.maxTime())
-    let _referenceDate                             = triv (fun () -> _ZeroSpreadedTermStructure.Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> _ZeroSpreadedTermStructure.Value.settlementDays())
+        _ZeroSpreadedTermStructure                 = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new ZeroSpreadedTermStructure (h.Value, spread.Value, comp.Value, freq.Value, dc.Value))))
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroSpreadedTermStructure).Value.calendar())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroSpreadedTermStructure).Value.dayCounter())
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroSpreadedTermStructure).Value.maxDate())
+    let _maxTime                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroSpreadedTermStructure).Value.maxTime())
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroSpreadedTermStructure).Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroSpreadedTermStructure).Value.settlementDays())
     do this.Bind(_ZeroSpreadedTermStructure)
 (* 
     casting 
 *)
-    internal new () = new ZeroSpreadedTermStructureModel(null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new ZeroSpreadedTermStructureModel(null,null,null,null,null,null)
     member internal this.Inject v = _ZeroSpreadedTermStructure <- v
     static member Cast (p : ICell<ZeroSpreadedTermStructure>) = 
         if p :? ZeroSpreadedTermStructureModel then 
@@ -72,6 +78,7 @@ type ZeroSpreadedTermStructureModel
         else
             let o = new ZeroSpreadedTermStructureModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

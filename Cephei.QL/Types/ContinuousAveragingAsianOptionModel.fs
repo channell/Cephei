@@ -54,7 +54,7 @@ type ContinuousAveragingAsianOptionModel
     Functions
 *)
     let mutable
-        _ContinuousAveragingAsianOption            = cell (fun () -> withEngine pricingEngine (new ContinuousAveragingAsianOption (averageType.Value, payoff.Value, exercise.Value)))
+        _ContinuousAveragingAsianOption            = cell (fun () -> withEngine pricingEngine evaluationDate (new ContinuousAveragingAsianOption (averageType.Value, payoff.Value, exercise.Value)))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _ContinuousAveragingAsianOption).delta())
     let _deltaForward                              = triv (fun () -> (withEvaluationDate _evaluationDate _ContinuousAveragingAsianOption).deltaForward())
     let _dividendRho                               = triv (fun () -> (withEvaluationDate _evaluationDate _ContinuousAveragingAsianOption).dividendRho())

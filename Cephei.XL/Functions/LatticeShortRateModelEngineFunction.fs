@@ -45,6 +45,8 @@ module LatticeShortRateModelEngineFunction =
          model : obj)
         ([<ExcelArgument(Name="timeSteps",Description = "int")>] 
          timeSteps : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -52,19 +54,23 @@ module LatticeShortRateModelEngineFunction =
 
                 let _model = Helper.toCell<ShortRateModel> model "model" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.LatticeShortRateModelEngine 
                                                             _model.cell 
                                                             _timeSteps.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LatticeShortRateModelEngine>) l
 
                 let source () = Helper.sourceFold "Fun.LatticeShortRateModelEngine" 
                                                [| _model.source
                                                ;  _timeSteps.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _model.cell
                                 ;  _timeSteps.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -88,6 +94,8 @@ module LatticeShortRateModelEngineFunction =
          model : obj)
         ([<ExcelArgument(Name="timeGrid",Description = "TimeGrid")>] 
          timeGrid : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -95,19 +103,23 @@ module LatticeShortRateModelEngineFunction =
 
                 let _model = Helper.toCell<ShortRateModel> model "model" 
                 let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.LatticeShortRateModelEngine1 
                                                             _model.cell 
                                                             _timeGrid.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LatticeShortRateModelEngine>) l
 
                 let source () = Helper.sourceFold "Fun.LatticeShortRateModelEngine1" 
                                                [| _model.source
                                                ;  _timeGrid.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _model.cell
                                 ;  _timeGrid.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -336,16 +348,16 @@ module LatticeShortRateModelEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<LatticeShortRateModelEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<LatticeShortRateModelEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<LatticeShortRateModelEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<LatticeShortRateModelEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<LatticeShortRateModelEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<LatticeShortRateModelEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -16,6 +16,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT
 ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 FOR A PARTICULAR PURPOSE.  See the license for more details.
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
 namespace Cephei.QL
 
 open System
@@ -34,18 +36,23 @@ open Cephei.QLNetHelper
 [<AutoSerializable(true)>]
 type BPSCalculatorModel
     ( discountCurve                                : ICell<YieldTermStructure>
+    ( evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BPSCalculator> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _discountCurve                             = discountCurve
 (*
     Functions
 *)
     let mutable
-        _BPSCalculator                             = cell (fun () -> new BPSCalculator (discountCurve.Value))
+        _evaluationDate                            = evaluationDate
+    let mutable
+        _BPSCalculator                             = cell (fun () -> (withEvaluationDate _evaluationDate new BPSCalculator (discountCurve.Value)))
     let _bps                                       = cell (fun () -> _BPSCalculator.Value.bps())
     let _nonSensNPV                                = cell (fun () -> _BPSCalculator.Value.nonSensNPV())
     let _visit                                     (cf : ICell<CashFlow>)   
@@ -61,6 +68,10 @@ type BPSCalculatorModel
 (* 
     casting 
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
+   interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
     internal new () = BPSCalculatorModel(null)
     member internal this.Inject v = _BPSCalculator <- v
     static member Cast (p : ICell<BPSCalculator>) = 
@@ -68,13 +79,25 @@ type BPSCalculatorModel
             p :?> BPSCalculatorModel
         else
             let o = new BPSCalculatorModel ()
-            o.Inject p
+            o.Inject p\m            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
 (* 
     casting 
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
+   interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
     internal new () = BPSCalculatorModel(null)
     static member Cast (p : ICell<BPSCalculator>) = 
         if p :? BPSCalculatorModel then 
@@ -88,6 +111,8 @@ type BPSCalculatorModel
 (* 
     Externally visible/bindable properties
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     member this.discountCurve                      = _discountCurve 
     member this.Bps                                = _bps
     member this.NonSensNPV                         = _nonSensNPV

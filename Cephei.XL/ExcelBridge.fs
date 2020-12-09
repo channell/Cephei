@@ -8,6 +8,7 @@ open ExcelDna.Integration
 open ExcelDna.Integration.Rtd
 open System.Collections
 open Cephei.QL
+open Cephei.Cell
 open System.Threading.Tasks
 open Serilog
 
@@ -16,6 +17,8 @@ type ModelRTD () as this =
 
     let _topics                 = new ConcurrentDictionary<ExcelRtdServer.Topic, string>()
     let _topicIndex             = new ConcurrentDictionary<string, ExcelRtdServer.Topic list>()
+
+    let _subscription           = Model._state.Value.Model.Subscribe(this :> IObserver<ICell>)
 
     do AppDomain.CurrentDomain.SetData("RTDServer", this)
 
@@ -38,7 +41,7 @@ type ModelRTD () as this =
                 topic.UpdateValue mnemonic
             with 
             | e -> topic.UpdateValue ("#" + e.Message)
-        Task.Run (dispatch) |> ignore
+        Cephei.Cell.Cell.Dispatch (Action(dispatch)) 
             
         mnemonic :> obj
 
@@ -62,7 +65,23 @@ type ModelRTD () as this =
                 with 
                 | e -> Log.Error (e, e.Message)
 
-            Task.Run (dispatch) |> ignore
+            Cephei.Cell.Cell.Dispatch (Action(dispatch)) 
+
+    interface IObserver<ICell> with
+
+        member this.OnCompleted () =
+            ignore 0
+        member this.OnError (error : Exception) = 
+            ignore 0
+
+        member this.OnNext (c : ICell) = 
+            if c.State = CellState.Error && not (c.Error = null) && _topicIndex.ContainsKey(c.Mnemonic) then
+                if c.Error :? CalculationException then
+                    _topicIndex.[c.Mnemonic]
+                    |> List.iter (fun i -> i.UpdateValue ("#" + c.Error.Message))
+                else
+                    _topicIndex.[c.Mnemonic]
+                    |> List.iter (fun i -> i.UpdateValue ("#" + (new CalculationException(c.Error)).Message))
             
     interface IValueRTD with 
         member this.UpdateValue (mnemonic : string) (layout : string) (value : obj) = 
@@ -90,11 +109,13 @@ type ValueRTD () as this =
     let kvp (k : 'k) (v : 'v) = new KeyValuePair<'k,'v>(k,v)
 
     let updateValue (topic : ExcelRtdServer.Topic) mnemonic (value : obj) = 
+(* not needed after change too post event notifcation
         if value :? string && (value :?> string).StartsWith("#") then 
             let c = Model.cell mnemonic
             if c.IsSome then
                 c.Value.OnChange(Cephei.Cell.CellEvent.Link, c.Value, c.Value, DateTime.Now, null);
                 _RTDModel.UpdateValue mnemonic ""  (mnemonic)
+*)
         topic.UpdateValue value
 
     let subscribe (kv : KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic>) = 
@@ -171,7 +192,7 @@ type ValueRTD () as this =
                 Model.clearRange kv.Key
             else 
                 _topicIndex.[kv] <- nl
-        Task.Run (dispatch) |> ignore
+        Cell.Dispatch (new Action (dispatch))
 
     interface IValueRTD with 
         member this.UpdateValue (mnemonic : string) (layout : string) (value : obj) = 

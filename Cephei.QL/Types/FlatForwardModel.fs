@@ -36,12 +36,15 @@ type FlatForwardModel
     ( referenceDate                                : ICell<Date>
     , forward                                      : ICell<Quote>
     , dayCounter                                   : ICell<DayCounter>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FlatForward> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _referenceDate                             = referenceDate
     let _forward                                   = forward
     let _dayCounter                                = dayCounter
@@ -49,46 +52,49 @@ type FlatForwardModel
     Functions
 *)
     let mutable
-        _FlatForward                               = cell (fun () -> new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value))
-    let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
+        _FlatForward                               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value))))
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(t.Value, extrapolate.Value))
     let _discount1                                 (d : ICell<Date>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(d.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(d.Value, extrapolate.Value))
     let _forwardRate                               (d : ICell<Date>) (p : ICell<Period>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate1                              (d1 : ICell<Date>) (d2 : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate2                              (t1 : ICell<double>) (t2 : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _jumpDates                                 = triv (fun () -> _FlatForward.Value.jumpDates())
-    let _jumpTimes                                 = triv (fun () -> _FlatForward.Value.jumpTimes())
-    let _update                                    = triv (fun () -> _FlatForward.Value.update()
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _jumpDates                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpDates())
+    let _jumpTimes                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpTimes())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.update()
                                                                      _FlatForward.Value)
     let _zeroRate                                  (t : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
     let _zeroRate1                                 (d : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _calendar                                  = triv (fun () -> _FlatForward.Value.calendar())
-    let _dayCounter                                = triv (fun () -> _FlatForward.Value.dayCounter())
-    let _maxTime                                   = triv (fun () -> _FlatForward.Value.maxTime())
-    let _referenceDate                             = triv (fun () -> _FlatForward.Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> _FlatForward.Value.settlementDays())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.calendar())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.dayCounter())
+    let _maxTime                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxTime())
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.settlementDays())
     let _timeFromReference                         (date : ICell<Date>)   
-                                                   = triv (fun () -> _FlatForward.Value.timeFromReference(date.Value))
-    let _allowsExtrapolation                       = triv (fun () -> _FlatForward.Value.allowsExtrapolation())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.timeFromReference(date.Value))
+    let _allowsExtrapolation                       = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.allowsExtrapolation())
     let _disableExtrapolation                      (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.disableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.disableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
     let _enableExtrapolation                       (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.enableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.enableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
-    let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
+    let _extrapolate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.extrapolate)
     do this.Bind(_FlatForward)
 (* 
     casting 
 *)
-    internal new () = new FlatForwardModel(null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FlatForwardModel(null,null,null,null)
     member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel then 
@@ -96,6 +102,7 @@ type FlatForwardModel
         else
             let o = new FlatForwardModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -147,12 +154,15 @@ type FlatForwardModel1
     , calendar                                     : ICell<Calendar>
     , forward                                      : ICell<Quote>
     , dayCounter                                   : ICell<DayCounter>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FlatForward> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _settlementDays                            = settlementDays
     let _calendar                                  = calendar
     let _forward                                   = forward
@@ -161,46 +171,49 @@ type FlatForwardModel1
     Functions
 *)
     let mutable
-        _FlatForward                               = cell (fun () -> new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value))
-    let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
+        _FlatForward                               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value))))
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(t.Value, extrapolate.Value))
     let _discount1                                 (d : ICell<Date>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(d.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(d.Value, extrapolate.Value))
     let _forwardRate                               (d : ICell<Date>) (p : ICell<Period>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate1                              (d1 : ICell<Date>) (d2 : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate2                              (t1 : ICell<double>) (t2 : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _jumpDates                                 = triv (fun () -> _FlatForward.Value.jumpDates())
-    let _jumpTimes                                 = triv (fun () -> _FlatForward.Value.jumpTimes())
-    let _update                                    = triv (fun () -> _FlatForward.Value.update()
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _jumpDates                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpDates())
+    let _jumpTimes                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpTimes())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.update()
                                                                      _FlatForward.Value)
     let _zeroRate                                  (t : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
     let _zeroRate1                                 (d : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _calendar                                  = triv (fun () -> _FlatForward.Value.calendar())
-    let _dayCounter                                = triv (fun () -> _FlatForward.Value.dayCounter())
-    let _maxTime                                   = triv (fun () -> _FlatForward.Value.maxTime())
-    let _referenceDate                             = triv (fun () -> _FlatForward.Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> _FlatForward.Value.settlementDays())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.calendar())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.dayCounter())
+    let _maxTime                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxTime())
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.settlementDays())
     let _timeFromReference                         (date : ICell<Date>)   
-                                                   = triv (fun () -> _FlatForward.Value.timeFromReference(date.Value))
-    let _allowsExtrapolation                       = triv (fun () -> _FlatForward.Value.allowsExtrapolation())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.timeFromReference(date.Value))
+    let _allowsExtrapolation                       = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.allowsExtrapolation())
     let _disableExtrapolation                      (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.disableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.disableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
     let _enableExtrapolation                       (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.enableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.enableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
-    let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
+    let _extrapolate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.extrapolate)
     do this.Bind(_FlatForward)
 (* 
     casting 
 *)
-    internal new () = new FlatForwardModel1(null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FlatForwardModel1(null,null,null,null,null)
     member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel1 then 
@@ -208,6 +221,7 @@ type FlatForwardModel1
         else
             let o = new FlatForwardModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -262,12 +276,15 @@ type FlatForwardModel2
     , dayCounter                                   : ICell<DayCounter>
     , compounding                                  : ICell<Compounding>
     , frequency                                    : ICell<Frequency>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FlatForward> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _settlementDays                            = settlementDays
     let _calendar                                  = calendar
     let _forward                                   = forward
@@ -278,46 +295,49 @@ type FlatForwardModel2
     Functions
 *)
     let mutable
-        _FlatForward                               = cell (fun () -> new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value, compounding.Value, frequency.Value))
-    let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
+        _FlatForward                               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value, compounding.Value, frequency.Value))))
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(t.Value, extrapolate.Value))
     let _discount1                                 (d : ICell<Date>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(d.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(d.Value, extrapolate.Value))
     let _forwardRate                               (d : ICell<Date>) (p : ICell<Period>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate1                              (d1 : ICell<Date>) (d2 : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate2                              (t1 : ICell<double>) (t2 : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _jumpDates                                 = triv (fun () -> _FlatForward.Value.jumpDates())
-    let _jumpTimes                                 = triv (fun () -> _FlatForward.Value.jumpTimes())
-    let _update                                    = triv (fun () -> _FlatForward.Value.update()
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _jumpDates                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpDates())
+    let _jumpTimes                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpTimes())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.update()
                                                                      _FlatForward.Value)
     let _zeroRate                                  (t : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
     let _zeroRate1                                 (d : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _calendar                                  = triv (fun () -> _FlatForward.Value.calendar())
-    let _dayCounter                                = triv (fun () -> _FlatForward.Value.dayCounter())
-    let _maxTime                                   = triv (fun () -> _FlatForward.Value.maxTime())
-    let _referenceDate                             = triv (fun () -> _FlatForward.Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> _FlatForward.Value.settlementDays())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.calendar())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.dayCounter())
+    let _maxTime                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxTime())
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.settlementDays())
     let _timeFromReference                         (date : ICell<Date>)   
-                                                   = triv (fun () -> _FlatForward.Value.timeFromReference(date.Value))
-    let _allowsExtrapolation                       = triv (fun () -> _FlatForward.Value.allowsExtrapolation())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.timeFromReference(date.Value))
+    let _allowsExtrapolation                       = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.allowsExtrapolation())
     let _disableExtrapolation                      (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.disableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.disableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
     let _enableExtrapolation                       (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.enableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.enableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
-    let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
+    let _extrapolate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.extrapolate)
     do this.Bind(_FlatForward)
 (* 
     casting 
 *)
-    internal new () = new FlatForwardModel2(null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FlatForwardModel2(null,null,null,null,null,null,null)
     member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel2 then 
@@ -325,6 +345,7 @@ type FlatForwardModel2
         else
             let o = new FlatForwardModel2 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -380,12 +401,15 @@ type FlatForwardModel3
     , forward                                      : ICell<double>
     , dayCounter                                   : ICell<DayCounter>
     , compounding                                  : ICell<Compounding>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FlatForward> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _settlementDays                            = settlementDays
     let _calendar                                  = calendar
     let _forward                                   = forward
@@ -395,46 +419,49 @@ type FlatForwardModel3
     Functions
 *)
     let mutable
-        _FlatForward                               = cell (fun () -> new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value, compounding.Value))
-    let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
+        _FlatForward                               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value, compounding.Value))))
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(t.Value, extrapolate.Value))
     let _discount1                                 (d : ICell<Date>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(d.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(d.Value, extrapolate.Value))
     let _forwardRate                               (d : ICell<Date>) (p : ICell<Period>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate1                              (d1 : ICell<Date>) (d2 : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate2                              (t1 : ICell<double>) (t2 : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _jumpDates                                 = triv (fun () -> _FlatForward.Value.jumpDates())
-    let _jumpTimes                                 = triv (fun () -> _FlatForward.Value.jumpTimes())
-    let _update                                    = triv (fun () -> _FlatForward.Value.update()
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _jumpDates                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpDates())
+    let _jumpTimes                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpTimes())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.update()
                                                                      _FlatForward.Value)
     let _zeroRate                                  (t : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
     let _zeroRate1                                 (d : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _calendar                                  = triv (fun () -> _FlatForward.Value.calendar())
-    let _dayCounter                                = triv (fun () -> _FlatForward.Value.dayCounter())
-    let _maxTime                                   = triv (fun () -> _FlatForward.Value.maxTime())
-    let _referenceDate                             = triv (fun () -> _FlatForward.Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> _FlatForward.Value.settlementDays())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.calendar())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.dayCounter())
+    let _maxTime                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxTime())
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.settlementDays())
     let _timeFromReference                         (date : ICell<Date>)   
-                                                   = triv (fun () -> _FlatForward.Value.timeFromReference(date.Value))
-    let _allowsExtrapolation                       = triv (fun () -> _FlatForward.Value.allowsExtrapolation())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.timeFromReference(date.Value))
+    let _allowsExtrapolation                       = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.allowsExtrapolation())
     let _disableExtrapolation                      (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.disableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.disableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
     let _enableExtrapolation                       (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.enableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.enableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
-    let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
+    let _extrapolate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.extrapolate)
     do this.Bind(_FlatForward)
 (* 
     casting 
 *)
-    internal new () = new FlatForwardModel3(null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FlatForwardModel3(null,null,null,null,null,null)
     member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel3 then 
@@ -442,6 +469,7 @@ type FlatForwardModel3
         else
             let o = new FlatForwardModel3 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -495,12 +523,15 @@ type FlatForwardModel4
     , calendar                                     : ICell<Calendar>
     , forward                                      : ICell<double>
     , dayCounter                                   : ICell<DayCounter>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FlatForward> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _settlementDays                            = settlementDays
     let _calendar                                  = calendar
     let _forward                                   = forward
@@ -509,46 +540,49 @@ type FlatForwardModel4
     Functions
 *)
     let mutable
-        _FlatForward                               = cell (fun () -> new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value))
-    let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
+        _FlatForward                               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value))))
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(t.Value, extrapolate.Value))
     let _discount1                                 (d : ICell<Date>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(d.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(d.Value, extrapolate.Value))
     let _forwardRate                               (d : ICell<Date>) (p : ICell<Period>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate1                              (d1 : ICell<Date>) (d2 : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate2                              (t1 : ICell<double>) (t2 : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _jumpDates                                 = triv (fun () -> _FlatForward.Value.jumpDates())
-    let _jumpTimes                                 = triv (fun () -> _FlatForward.Value.jumpTimes())
-    let _update                                    = triv (fun () -> _FlatForward.Value.update()
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _jumpDates                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpDates())
+    let _jumpTimes                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpTimes())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.update()
                                                                      _FlatForward.Value)
     let _zeroRate                                  (t : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
     let _zeroRate1                                 (d : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _calendar                                  = triv (fun () -> _FlatForward.Value.calendar())
-    let _dayCounter                                = triv (fun () -> _FlatForward.Value.dayCounter())
-    let _maxTime                                   = triv (fun () -> _FlatForward.Value.maxTime())
-    let _referenceDate                             = triv (fun () -> _FlatForward.Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> _FlatForward.Value.settlementDays())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.calendar())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.dayCounter())
+    let _maxTime                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxTime())
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.settlementDays())
     let _timeFromReference                         (date : ICell<Date>)   
-                                                   = triv (fun () -> _FlatForward.Value.timeFromReference(date.Value))
-    let _allowsExtrapolation                       = triv (fun () -> _FlatForward.Value.allowsExtrapolation())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.timeFromReference(date.Value))
+    let _allowsExtrapolation                       = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.allowsExtrapolation())
     let _disableExtrapolation                      (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.disableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.disableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
     let _enableExtrapolation                       (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.enableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.enableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
-    let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
+    let _extrapolate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.extrapolate)
     do this.Bind(_FlatForward)
 (* 
     casting 
 *)
-    internal new () = new FlatForwardModel4(null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FlatForwardModel4(null,null,null,null,null)
     member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel4 then 
@@ -556,6 +590,7 @@ type FlatForwardModel4
         else
             let o = new FlatForwardModel4 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -610,12 +645,15 @@ type FlatForwardModel5
     , dayCounter                                   : ICell<DayCounter>
     , compounding                                  : ICell<Compounding>
     , frequency                                    : ICell<Frequency>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FlatForward> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _settlementDays                            = settlementDays
     let _calendar                                  = calendar
     let _forward                                   = forward
@@ -626,46 +664,49 @@ type FlatForwardModel5
     Functions
 *)
     let mutable
-        _FlatForward                               = cell (fun () -> new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value, compounding.Value, frequency.Value))
-    let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
+        _FlatForward                               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value, compounding.Value, frequency.Value))))
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(t.Value, extrapolate.Value))
     let _discount1                                 (d : ICell<Date>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(d.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(d.Value, extrapolate.Value))
     let _forwardRate                               (d : ICell<Date>) (p : ICell<Period>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate1                              (d1 : ICell<Date>) (d2 : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate2                              (t1 : ICell<double>) (t2 : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _jumpDates                                 = triv (fun () -> _FlatForward.Value.jumpDates())
-    let _jumpTimes                                 = triv (fun () -> _FlatForward.Value.jumpTimes())
-    let _update                                    = triv (fun () -> _FlatForward.Value.update()
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _jumpDates                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpDates())
+    let _jumpTimes                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpTimes())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.update()
                                                                      _FlatForward.Value)
     let _zeroRate                                  (t : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
     let _zeroRate1                                 (d : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _calendar                                  = triv (fun () -> _FlatForward.Value.calendar())
-    let _dayCounter                                = triv (fun () -> _FlatForward.Value.dayCounter())
-    let _maxTime                                   = triv (fun () -> _FlatForward.Value.maxTime())
-    let _referenceDate                             = triv (fun () -> _FlatForward.Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> _FlatForward.Value.settlementDays())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.calendar())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.dayCounter())
+    let _maxTime                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxTime())
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.settlementDays())
     let _timeFromReference                         (date : ICell<Date>)   
-                                                   = triv (fun () -> _FlatForward.Value.timeFromReference(date.Value))
-    let _allowsExtrapolation                       = triv (fun () -> _FlatForward.Value.allowsExtrapolation())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.timeFromReference(date.Value))
+    let _allowsExtrapolation                       = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.allowsExtrapolation())
     let _disableExtrapolation                      (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.disableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.disableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
     let _enableExtrapolation                       (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.enableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.enableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
-    let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
+    let _extrapolate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.extrapolate)
     do this.Bind(_FlatForward)
 (* 
     casting 
 *)
-    internal new () = new FlatForwardModel5(null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FlatForwardModel5(null,null,null,null,null,null,null)
     member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel5 then 
@@ -673,6 +714,7 @@ type FlatForwardModel5
         else
             let o = new FlatForwardModel5 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -728,12 +770,15 @@ type FlatForwardModel6
     , forward                                      : ICell<Quote>
     , dayCounter                                   : ICell<DayCounter>
     , compounding                                  : ICell<Compounding>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FlatForward> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _settlementDays                            = settlementDays
     let _calendar                                  = calendar
     let _forward                                   = forward
@@ -743,46 +788,49 @@ type FlatForwardModel6
     Functions
 *)
     let mutable
-        _FlatForward                               = cell (fun () -> new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value, compounding.Value))
-    let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
+        _FlatForward                               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FlatForward (settlementDays.Value, calendar.Value, forward.Value, dayCounter.Value, compounding.Value))))
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(t.Value, extrapolate.Value))
     let _discount1                                 (d : ICell<Date>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(d.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(d.Value, extrapolate.Value))
     let _forwardRate                               (d : ICell<Date>) (p : ICell<Period>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate1                              (d1 : ICell<Date>) (d2 : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate2                              (t1 : ICell<double>) (t2 : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _jumpDates                                 = triv (fun () -> _FlatForward.Value.jumpDates())
-    let _jumpTimes                                 = triv (fun () -> _FlatForward.Value.jumpTimes())
-    let _update                                    = triv (fun () -> _FlatForward.Value.update()
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _jumpDates                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpDates())
+    let _jumpTimes                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpTimes())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.update()
                                                                      _FlatForward.Value)
     let _zeroRate                                  (t : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
     let _zeroRate1                                 (d : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _calendar                                  = triv (fun () -> _FlatForward.Value.calendar())
-    let _dayCounter                                = triv (fun () -> _FlatForward.Value.dayCounter())
-    let _maxTime                                   = triv (fun () -> _FlatForward.Value.maxTime())
-    let _referenceDate                             = triv (fun () -> _FlatForward.Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> _FlatForward.Value.settlementDays())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.calendar())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.dayCounter())
+    let _maxTime                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxTime())
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.settlementDays())
     let _timeFromReference                         (date : ICell<Date>)   
-                                                   = triv (fun () -> _FlatForward.Value.timeFromReference(date.Value))
-    let _allowsExtrapolation                       = triv (fun () -> _FlatForward.Value.allowsExtrapolation())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.timeFromReference(date.Value))
+    let _allowsExtrapolation                       = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.allowsExtrapolation())
     let _disableExtrapolation                      (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.disableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.disableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
     let _enableExtrapolation                       (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.enableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.enableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
-    let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
+    let _extrapolate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.extrapolate)
     do this.Bind(_FlatForward)
 (* 
     casting 
 *)
-    internal new () = new FlatForwardModel6(null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FlatForwardModel6(null,null,null,null,null,null)
     member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel6 then 
@@ -790,6 +838,7 @@ type FlatForwardModel6
         else
             let o = new FlatForwardModel6 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -844,12 +893,15 @@ type FlatForwardModel7
     , dayCounter                                   : ICell<DayCounter>
     , compounding                                  : ICell<Compounding>
     , frequency                                    : ICell<Frequency>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FlatForward> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _referenceDate                             = referenceDate
     let _forward                                   = forward
     let _dayCounter                                = dayCounter
@@ -859,46 +911,49 @@ type FlatForwardModel7
     Functions
 *)
     let mutable
-        _FlatForward                               = cell (fun () -> new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value, compounding.Value, frequency.Value))
-    let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
+        _FlatForward                               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value, compounding.Value, frequency.Value))))
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(t.Value, extrapolate.Value))
     let _discount1                                 (d : ICell<Date>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(d.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(d.Value, extrapolate.Value))
     let _forwardRate                               (d : ICell<Date>) (p : ICell<Period>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate1                              (d1 : ICell<Date>) (d2 : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate2                              (t1 : ICell<double>) (t2 : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _jumpDates                                 = triv (fun () -> _FlatForward.Value.jumpDates())
-    let _jumpTimes                                 = triv (fun () -> _FlatForward.Value.jumpTimes())
-    let _update                                    = triv (fun () -> _FlatForward.Value.update()
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _jumpDates                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpDates())
+    let _jumpTimes                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpTimes())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.update()
                                                                      _FlatForward.Value)
     let _zeroRate                                  (t : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
     let _zeroRate1                                 (d : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _calendar                                  = triv (fun () -> _FlatForward.Value.calendar())
-    let _dayCounter                                = triv (fun () -> _FlatForward.Value.dayCounter())
-    let _maxTime                                   = triv (fun () -> _FlatForward.Value.maxTime())
-    let _referenceDate                             = triv (fun () -> _FlatForward.Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> _FlatForward.Value.settlementDays())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.calendar())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.dayCounter())
+    let _maxTime                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxTime())
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.settlementDays())
     let _timeFromReference                         (date : ICell<Date>)   
-                                                   = triv (fun () -> _FlatForward.Value.timeFromReference(date.Value))
-    let _allowsExtrapolation                       = triv (fun () -> _FlatForward.Value.allowsExtrapolation())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.timeFromReference(date.Value))
+    let _allowsExtrapolation                       = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.allowsExtrapolation())
     let _disableExtrapolation                      (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.disableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.disableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
     let _enableExtrapolation                       (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.enableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.enableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
-    let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
+    let _extrapolate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.extrapolate)
     do this.Bind(_FlatForward)
 (* 
     casting 
 *)
-    internal new () = new FlatForwardModel7(null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FlatForwardModel7(null,null,null,null,null,null)
     member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel7 then 
@@ -906,6 +961,7 @@ type FlatForwardModel7
         else
             let o = new FlatForwardModel7 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -959,12 +1015,15 @@ type FlatForwardModel8
     , forward                                      : ICell<double>
     , dayCounter                                   : ICell<DayCounter>
     , compounding                                  : ICell<Compounding>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FlatForward> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _referenceDate                             = referenceDate
     let _forward                                   = forward
     let _dayCounter                                = dayCounter
@@ -973,46 +1032,49 @@ type FlatForwardModel8
     Functions
 *)
     let mutable
-        _FlatForward                               = cell (fun () -> new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value, compounding.Value))
-    let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
+        _FlatForward                               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value, compounding.Value))))
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(t.Value, extrapolate.Value))
     let _discount1                                 (d : ICell<Date>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(d.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(d.Value, extrapolate.Value))
     let _forwardRate                               (d : ICell<Date>) (p : ICell<Period>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate1                              (d1 : ICell<Date>) (d2 : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate2                              (t1 : ICell<double>) (t2 : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _jumpDates                                 = triv (fun () -> _FlatForward.Value.jumpDates())
-    let _jumpTimes                                 = triv (fun () -> _FlatForward.Value.jumpTimes())
-    let _update                                    = triv (fun () -> _FlatForward.Value.update()
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _jumpDates                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpDates())
+    let _jumpTimes                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpTimes())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.update()
                                                                      _FlatForward.Value)
     let _zeroRate                                  (t : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
     let _zeroRate1                                 (d : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _calendar                                  = triv (fun () -> _FlatForward.Value.calendar())
-    let _dayCounter                                = triv (fun () -> _FlatForward.Value.dayCounter())
-    let _maxTime                                   = triv (fun () -> _FlatForward.Value.maxTime())
-    let _referenceDate                             = triv (fun () -> _FlatForward.Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> _FlatForward.Value.settlementDays())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.calendar())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.dayCounter())
+    let _maxTime                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxTime())
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.settlementDays())
     let _timeFromReference                         (date : ICell<Date>)   
-                                                   = triv (fun () -> _FlatForward.Value.timeFromReference(date.Value))
-    let _allowsExtrapolation                       = triv (fun () -> _FlatForward.Value.allowsExtrapolation())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.timeFromReference(date.Value))
+    let _allowsExtrapolation                       = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.allowsExtrapolation())
     let _disableExtrapolation                      (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.disableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.disableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
     let _enableExtrapolation                       (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.enableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.enableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
-    let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
+    let _extrapolate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.extrapolate)
     do this.Bind(_FlatForward)
 (* 
     casting 
 *)
-    internal new () = new FlatForwardModel8(null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FlatForwardModel8(null,null,null,null,null)
     member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel8 then 
@@ -1020,6 +1082,7 @@ type FlatForwardModel8
         else
             let o = new FlatForwardModel8 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -1071,12 +1134,15 @@ type FlatForwardModel9
     ( referenceDate                                : ICell<Date>
     , forward                                      : ICell<double>
     , dayCounter                                   : ICell<DayCounter>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FlatForward> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _referenceDate                             = referenceDate
     let _forward                                   = forward
     let _dayCounter                                = dayCounter
@@ -1084,46 +1150,49 @@ type FlatForwardModel9
     Functions
 *)
     let mutable
-        _FlatForward                               = cell (fun () -> new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value))
-    let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
+        _FlatForward                               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value))))
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(t.Value, extrapolate.Value))
     let _discount1                                 (d : ICell<Date>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(d.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(d.Value, extrapolate.Value))
     let _forwardRate                               (d : ICell<Date>) (p : ICell<Period>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate1                              (d1 : ICell<Date>) (d2 : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate2                              (t1 : ICell<double>) (t2 : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _jumpDates                                 = triv (fun () -> _FlatForward.Value.jumpDates())
-    let _jumpTimes                                 = triv (fun () -> _FlatForward.Value.jumpTimes())
-    let _update                                    = triv (fun () -> _FlatForward.Value.update()
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _jumpDates                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpDates())
+    let _jumpTimes                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpTimes())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.update()
                                                                      _FlatForward.Value)
     let _zeroRate                                  (t : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
     let _zeroRate1                                 (d : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _calendar                                  = triv (fun () -> _FlatForward.Value.calendar())
-    let _dayCounter                                = triv (fun () -> _FlatForward.Value.dayCounter())
-    let _maxTime                                   = triv (fun () -> _FlatForward.Value.maxTime())
-    let _referenceDate                             = triv (fun () -> _FlatForward.Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> _FlatForward.Value.settlementDays())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.calendar())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.dayCounter())
+    let _maxTime                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxTime())
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.settlementDays())
     let _timeFromReference                         (date : ICell<Date>)   
-                                                   = triv (fun () -> _FlatForward.Value.timeFromReference(date.Value))
-    let _allowsExtrapolation                       = triv (fun () -> _FlatForward.Value.allowsExtrapolation())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.timeFromReference(date.Value))
+    let _allowsExtrapolation                       = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.allowsExtrapolation())
     let _disableExtrapolation                      (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.disableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.disableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
     let _enableExtrapolation                       (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.enableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.enableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
-    let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
+    let _extrapolate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.extrapolate)
     do this.Bind(_FlatForward)
 (* 
     casting 
 *)
-    internal new () = new FlatForwardModel9(null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FlatForwardModel9(null,null,null,null)
     member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel9 then 
@@ -1131,6 +1200,7 @@ type FlatForwardModel9
         else
             let o = new FlatForwardModel9 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -1183,12 +1253,15 @@ type FlatForwardModel10
     , dayCounter                                   : ICell<DayCounter>
     , compounding                                  : ICell<Compounding>
     , frequency                                    : ICell<Frequency>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FlatForward> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _referenceDate                             = referenceDate
     let _forward                                   = forward
     let _dayCounter                                = dayCounter
@@ -1198,46 +1271,49 @@ type FlatForwardModel10
     Functions
 *)
     let mutable
-        _FlatForward                               = cell (fun () -> new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value, compounding.Value, frequency.Value))
-    let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
+        _FlatForward                               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value, compounding.Value, frequency.Value))))
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(t.Value, extrapolate.Value))
     let _discount1                                 (d : ICell<Date>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(d.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(d.Value, extrapolate.Value))
     let _forwardRate                               (d : ICell<Date>) (p : ICell<Period>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate1                              (d1 : ICell<Date>) (d2 : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate2                              (t1 : ICell<double>) (t2 : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _jumpDates                                 = triv (fun () -> _FlatForward.Value.jumpDates())
-    let _jumpTimes                                 = triv (fun () -> _FlatForward.Value.jumpTimes())
-    let _update                                    = triv (fun () -> _FlatForward.Value.update()
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _jumpDates                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpDates())
+    let _jumpTimes                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpTimes())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.update()
                                                                      _FlatForward.Value)
     let _zeroRate                                  (t : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
     let _zeroRate1                                 (d : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _calendar                                  = triv (fun () -> _FlatForward.Value.calendar())
-    let _dayCounter                                = triv (fun () -> _FlatForward.Value.dayCounter())
-    let _maxTime                                   = triv (fun () -> _FlatForward.Value.maxTime())
-    let _referenceDate                             = triv (fun () -> _FlatForward.Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> _FlatForward.Value.settlementDays())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.calendar())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.dayCounter())
+    let _maxTime                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxTime())
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.settlementDays())
     let _timeFromReference                         (date : ICell<Date>)   
-                                                   = triv (fun () -> _FlatForward.Value.timeFromReference(date.Value))
-    let _allowsExtrapolation                       = triv (fun () -> _FlatForward.Value.allowsExtrapolation())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.timeFromReference(date.Value))
+    let _allowsExtrapolation                       = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.allowsExtrapolation())
     let _disableExtrapolation                      (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.disableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.disableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
     let _enableExtrapolation                       (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.enableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.enableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
-    let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
+    let _extrapolate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.extrapolate)
     do this.Bind(_FlatForward)
 (* 
     casting 
 *)
-    internal new () = new FlatForwardModel10(null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FlatForwardModel10(null,null,null,null,null,null)
     member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel10 then 
@@ -1245,6 +1321,7 @@ type FlatForwardModel10
         else
             let o = new FlatForwardModel10 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -1298,12 +1375,15 @@ type FlatForwardModel11
     , forward                                      : ICell<Quote>
     , dayCounter                                   : ICell<DayCounter>
     , compounding                                  : ICell<Compounding>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FlatForward> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _referenceDate                             = referenceDate
     let _forward                                   = forward
     let _dayCounter                                = dayCounter
@@ -1312,46 +1392,49 @@ type FlatForwardModel11
     Functions
 *)
     let mutable
-        _FlatForward                               = cell (fun () -> new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value, compounding.Value))
-    let _maxDate                                   = triv (fun () -> _FlatForward.Value.maxDate())
+        _FlatForward                               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FlatForward (referenceDate.Value, forward.Value, dayCounter.Value, compounding.Value))))
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxDate())
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(t.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(t.Value, extrapolate.Value))
     let _discount1                                 (d : ICell<Date>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.discount(d.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.discount(d.Value, extrapolate.Value))
     let _forwardRate                               (d : ICell<Date>) (p : ICell<Period>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate1                              (d1 : ICell<Date>) (d2 : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate2                              (t1 : ICell<double>) (t2 : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _jumpDates                                 = triv (fun () -> _FlatForward.Value.jumpDates())
-    let _jumpTimes                                 = triv (fun () -> _FlatForward.Value.jumpTimes())
-    let _update                                    = triv (fun () -> _FlatForward.Value.update()
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _jumpDates                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpDates())
+    let _jumpTimes                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.jumpTimes())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.update()
                                                                      _FlatForward.Value)
     let _zeroRate                                  (t : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
     let _zeroRate1                                 (d : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _calendar                                  = triv (fun () -> _FlatForward.Value.calendar())
-    let _dayCounter                                = triv (fun () -> _FlatForward.Value.dayCounter())
-    let _maxTime                                   = triv (fun () -> _FlatForward.Value.maxTime())
-    let _referenceDate                             = triv (fun () -> _FlatForward.Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> _FlatForward.Value.settlementDays())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.calendar())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.dayCounter())
+    let _maxTime                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.maxTime())
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.settlementDays())
     let _timeFromReference                         (date : ICell<Date>)   
-                                                   = triv (fun () -> _FlatForward.Value.timeFromReference(date.Value))
-    let _allowsExtrapolation                       = triv (fun () -> _FlatForward.Value.allowsExtrapolation())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.timeFromReference(date.Value))
+    let _allowsExtrapolation                       = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.allowsExtrapolation())
     let _disableExtrapolation                      (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.disableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.disableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
     let _enableExtrapolation                       (b : ICell<bool>)   
-                                                   = triv (fun () -> _FlatForward.Value.enableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.enableExtrapolation(b.Value)
                                                                      _FlatForward.Value)
-    let _extrapolate                               = triv (fun () -> _FlatForward.Value.extrapolate)
+    let _extrapolate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _FlatForward).Value.extrapolate)
     do this.Bind(_FlatForward)
 (* 
     casting 
 *)
-    internal new () = new FlatForwardModel11(null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FlatForwardModel11(null,null,null,null,null)
     member internal this.Inject v = _FlatForward <- v
     static member Cast (p : ICell<FlatForward>) = 
         if p :? FlatForwardModel11 then 
@@ -1359,6 +1442,7 @@ type FlatForwardModel11
         else
             let o = new FlatForwardModel11 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

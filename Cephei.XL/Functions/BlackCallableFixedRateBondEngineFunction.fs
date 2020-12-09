@@ -45,6 +45,8 @@ module BlackCallableFixedRateBondEngineFunction =
          fwdYieldVol : obj)
         ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -52,19 +54,23 @@ module BlackCallableFixedRateBondEngineFunction =
 
                 let _fwdYieldVol = Helper.toHandle<Quote> fwdYieldVol "fwdYieldVol" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackCallableFixedRateBondEngine 
                                                             _fwdYieldVol.cell 
                                                             _discountCurve.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackCallableFixedRateBondEngine>) l
 
                 let source () = Helper.sourceFold "Fun.BlackCallableFixedRateBondEngine" 
                                                [| _fwdYieldVol.source
                                                ;  _discountCurve.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _fwdYieldVol.cell
                                 ;  _discountCurve.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -88,6 +94,8 @@ module BlackCallableFixedRateBondEngineFunction =
          yieldVolStructure : obj)
         ([<ExcelArgument(Name="discountCurve",Description = "YieldTermStructure")>] 
          discountCurve : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -95,19 +103,23 @@ module BlackCallableFixedRateBondEngineFunction =
 
                 let _yieldVolStructure = Helper.toHandle<CallableBondVolatilityStructure> yieldVolStructure "yieldVolStructure" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackCallableFixedRateBondEngine1 
                                                             _yieldVolStructure.cell 
                                                             _discountCurve.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackCallableFixedRateBondEngine>) l
 
                 let source () = Helper.sourceFold "Fun.BlackCallableFixedRateBondEngine1" 
                                                [| _yieldVolStructure.source
                                                ;  _discountCurve.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _yieldVolStructure.cell
                                 ;  _discountCurve.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -138,16 +150,16 @@ module BlackCallableFixedRateBondEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<BlackCallableFixedRateBondEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<BlackCallableFixedRateBondEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<BlackCallableFixedRateBondEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<BlackCallableFixedRateBondEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<BlackCallableFixedRateBondEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<BlackCallableFixedRateBondEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

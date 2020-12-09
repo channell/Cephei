@@ -46,12 +46,15 @@ type SwapRateHelperModel
     , settlementDays                               : ICell<Nullable<int>>
     , pillarChoice                                 : ICell<Pillar.Choice>
     , customPillarDate                             : ICell<Date>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<SwapRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _rate                                      = rate
     let _tenor                                     = tenor
     let _calendar                                  = calendar
@@ -69,36 +72,39 @@ type SwapRateHelperModel
     Functions
 *)
     let mutable
-        _SwapRateHelper                            = cell (fun () -> new SwapRateHelper (rate.Value, tenor.Value, calendar.Value, fixedFrequency.Value, fixedConvention.Value, fixedDayCount.Value, iborIndex.Value, spread.Value, fwdStart.Value, discount.Value, settlementDays.Value, pillarChoice.Value, customPillarDate.Value))
-    let _forwardStart                              = triv (fun () -> _SwapRateHelper.Value.forwardStart())
-    let _impliedQuote                              = triv (fun () -> _SwapRateHelper.Value.impliedQuote())
+        _SwapRateHelper                            = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new SwapRateHelper (rate.Value, tenor.Value, calendar.Value, fixedFrequency.Value, fixedConvention.Value, fixedDayCount.Value, iborIndex.Value, spread.Value, fwdStart.Value, discount.Value, settlementDays.Value, pillarChoice.Value, customPillarDate.Value))))
+    let _forwardStart                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.forwardStart())
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
-                                                   = triv (fun () -> _SwapRateHelper.Value.setTermStructure(t.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.setTermStructure(t.Value)
                                                                      _SwapRateHelper.Value)
-    let _spread                                    = triv (fun () -> _SwapRateHelper.Value.spread())
-    let _swap                                      = triv (fun () -> _SwapRateHelper.Value.swap())
-    let _update                                    = triv (fun () -> _SwapRateHelper.Value.update()
+    let _spread                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.spread())
+    let _swap                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.swap())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.update()
                                                                      _SwapRateHelper.Value)
-    let _earliestDate                              = triv (fun () -> _SwapRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _SwapRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _SwapRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _SwapRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _SwapRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _SwapRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _SwapRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _SwapRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _SwapRateHelper.Value.quoteValue())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _SwapRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.registerWith(handler.Value)
                                                                      _SwapRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _SwapRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.unregisterWith(handler.Value)
                                                                      _SwapRateHelper.Value)
     do this.Bind(_SwapRateHelper)
 (* 
     casting 
 *)
-    internal new () = new SwapRateHelperModel(null,null,null,null,null,null,null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new SwapRateHelperModel(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _SwapRateHelper <- v
     static member Cast (p : ICell<SwapRateHelper>) = 
         if p :? SwapRateHelperModel then 
@@ -106,6 +112,7 @@ type SwapRateHelperModel
         else
             let o = new SwapRateHelperModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -159,12 +166,15 @@ type SwapRateHelperModel1
     , discount                                     : ICell<Handle<YieldTermStructure>>
     , pillarChoice                                 : ICell<Pillar.Choice>
     , customPillarDate                             : ICell<Date>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<SwapRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _rate                                      = rate
     let _swapIndex                                 = swapIndex
     let _spread                                    = spread
@@ -176,36 +186,39 @@ type SwapRateHelperModel1
     Functions
 *)
     let mutable
-        _SwapRateHelper                            = cell (fun () -> new SwapRateHelper (rate.Value, swapIndex.Value, spread.Value, fwdStart.Value, discount.Value, pillarChoice.Value, customPillarDate.Value))
-    let _forwardStart                              = triv (fun () -> _SwapRateHelper.Value.forwardStart())
-    let _impliedQuote                              = triv (fun () -> _SwapRateHelper.Value.impliedQuote())
+        _SwapRateHelper                            = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new SwapRateHelper (rate.Value, swapIndex.Value, spread.Value, fwdStart.Value, discount.Value, pillarChoice.Value, customPillarDate.Value))))
+    let _forwardStart                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.forwardStart())
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
-                                                   = triv (fun () -> _SwapRateHelper.Value.setTermStructure(t.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.setTermStructure(t.Value)
                                                                      _SwapRateHelper.Value)
-    let _spread                                    = triv (fun () -> _SwapRateHelper.Value.spread())
-    let _swap                                      = triv (fun () -> _SwapRateHelper.Value.swap())
-    let _update                                    = triv (fun () -> _SwapRateHelper.Value.update()
+    let _spread                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.spread())
+    let _swap                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.swap())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.update()
                                                                      _SwapRateHelper.Value)
-    let _earliestDate                              = triv (fun () -> _SwapRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _SwapRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _SwapRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _SwapRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _SwapRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _SwapRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _SwapRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _SwapRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _SwapRateHelper.Value.quoteValue())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _SwapRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.registerWith(handler.Value)
                                                                      _SwapRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _SwapRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.unregisterWith(handler.Value)
                                                                      _SwapRateHelper.Value)
     do this.Bind(_SwapRateHelper)
 (* 
     casting 
 *)
-    internal new () = new SwapRateHelperModel1(null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new SwapRateHelperModel1(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _SwapRateHelper <- v
     static member Cast (p : ICell<SwapRateHelper>) = 
         if p :? SwapRateHelperModel1 then 
@@ -213,6 +226,7 @@ type SwapRateHelperModel1
         else
             let o = new SwapRateHelperModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -266,12 +280,15 @@ type SwapRateHelperModel2
     , settlementDays                               : ICell<Nullable<int>>
     , pillarChoice                                 : ICell<Pillar.Choice>
     , customPillarDate                             : ICell<Date>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<SwapRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _rate                                      = rate
     let _tenor                                     = tenor
     let _calendar                                  = calendar
@@ -289,36 +306,39 @@ type SwapRateHelperModel2
     Functions
 *)
     let mutable
-        _SwapRateHelper                            = cell (fun () -> new SwapRateHelper (rate.Value, tenor.Value, calendar.Value, fixedFrequency.Value, fixedConvention.Value, fixedDayCount.Value, iborIndex.Value, spread.Value, fwdStart.Value, discount.Value, settlementDays.Value, pillarChoice.Value, customPillarDate.Value))
-    let _forwardStart                              = triv (fun () -> _SwapRateHelper.Value.forwardStart())
-    let _impliedQuote                              = triv (fun () -> _SwapRateHelper.Value.impliedQuote())
+        _SwapRateHelper                            = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new SwapRateHelper (rate.Value, tenor.Value, calendar.Value, fixedFrequency.Value, fixedConvention.Value, fixedDayCount.Value, iborIndex.Value, spread.Value, fwdStart.Value, discount.Value, settlementDays.Value, pillarChoice.Value, customPillarDate.Value))))
+    let _forwardStart                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.forwardStart())
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
-                                                   = triv (fun () -> _SwapRateHelper.Value.setTermStructure(t.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.setTermStructure(t.Value)
                                                                      _SwapRateHelper.Value)
-    let _spread                                    = triv (fun () -> _SwapRateHelper.Value.spread())
-    let _swap                                      = triv (fun () -> _SwapRateHelper.Value.swap())
-    let _update                                    = triv (fun () -> _SwapRateHelper.Value.update()
+    let _spread                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.spread())
+    let _swap                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.swap())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.update()
                                                                      _SwapRateHelper.Value)
-    let _earliestDate                              = triv (fun () -> _SwapRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _SwapRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _SwapRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _SwapRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _SwapRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _SwapRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _SwapRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _SwapRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _SwapRateHelper.Value.quoteValue())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _SwapRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.registerWith(handler.Value)
                                                                      _SwapRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _SwapRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.unregisterWith(handler.Value)
                                                                      _SwapRateHelper.Value)
     do this.Bind(_SwapRateHelper)
 (* 
     casting 
 *)
-    internal new () = new SwapRateHelperModel2(null,null,null,null,null,null,null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new SwapRateHelperModel2(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _SwapRateHelper <- v
     static member Cast (p : ICell<SwapRateHelper>) = 
         if p :? SwapRateHelperModel2 then 
@@ -326,6 +346,7 @@ type SwapRateHelperModel2
         else
             let o = new SwapRateHelperModel2 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -379,12 +400,15 @@ type SwapRateHelperModel3
     , discount                                     : ICell<Handle<YieldTermStructure>>
     , pillarChoice                                 : ICell<Pillar.Choice>
     , customPillarDate                             : ICell<Date>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<SwapRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _rate                                      = rate
     let _swapIndex                                 = swapIndex
     let _spread                                    = spread
@@ -396,36 +420,39 @@ type SwapRateHelperModel3
     Functions
 *)
     let mutable
-        _SwapRateHelper                            = cell (fun () -> new SwapRateHelper (rate.Value, swapIndex.Value, spread.Value, fwdStart.Value, discount.Value, pillarChoice.Value, customPillarDate.Value))
-    let _forwardStart                              = triv (fun () -> _SwapRateHelper.Value.forwardStart())
-    let _impliedQuote                              = triv (fun () -> _SwapRateHelper.Value.impliedQuote())
+        _SwapRateHelper                            = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new SwapRateHelper (rate.Value, swapIndex.Value, spread.Value, fwdStart.Value, discount.Value, pillarChoice.Value, customPillarDate.Value))))
+    let _forwardStart                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.forwardStart())
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
-                                                   = triv (fun () -> _SwapRateHelper.Value.setTermStructure(t.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.setTermStructure(t.Value)
                                                                      _SwapRateHelper.Value)
-    let _spread                                    = triv (fun () -> _SwapRateHelper.Value.spread())
-    let _swap                                      = triv (fun () -> _SwapRateHelper.Value.swap())
-    let _update                                    = triv (fun () -> _SwapRateHelper.Value.update()
+    let _spread                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.spread())
+    let _swap                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.swap())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.update()
                                                                      _SwapRateHelper.Value)
-    let _earliestDate                              = triv (fun () -> _SwapRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _SwapRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _SwapRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _SwapRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _SwapRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _SwapRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _SwapRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _SwapRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _SwapRateHelper.Value.quoteValue())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _SwapRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.registerWith(handler.Value)
                                                                      _SwapRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _SwapRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SwapRateHelper).Value.unregisterWith(handler.Value)
                                                                      _SwapRateHelper.Value)
     do this.Bind(_SwapRateHelper)
 (* 
     casting 
 *)
-    internal new () = new SwapRateHelperModel3(null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new SwapRateHelperModel3(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _SwapRateHelper <- v
     static member Cast (p : ICell<SwapRateHelper>) = 
         if p :? SwapRateHelperModel3 then 
@@ -433,6 +460,7 @@ type SwapRateHelperModel3
         else
             let o = new SwapRateHelperModel3 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

@@ -34,24 +34,30 @@ open Cephei.QLNetHelper
 [<AutoSerializable(true)>]
 type AnalyticDigitalAmericanEngineModel
     ( Process                                      : ICell<GeneralizedBlackScholesProcess>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<AnalyticDigitalAmericanEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
 (*
     Functions
 *)
     let mutable
-        _AnalyticDigitalAmericanEngine             = cell (fun () -> new AnalyticDigitalAmericanEngine (Process.Value))
-    let _knock_in                                  = triv (fun () -> _AnalyticDigitalAmericanEngine.Value.knock_in())
+        _AnalyticDigitalAmericanEngine             = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticDigitalAmericanEngine (Process.Value))))
+    let _knock_in                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticDigitalAmericanEngine).Value.knock_in())
     do this.Bind(_AnalyticDigitalAmericanEngine)
 (* 
     casting 
 *)
-    internal new () = new AnalyticDigitalAmericanEngineModel(null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new AnalyticDigitalAmericanEngineModel(null,null)
     member internal this.Inject v = _AnalyticDigitalAmericanEngine <- v
     static member Cast (p : ICell<AnalyticDigitalAmericanEngine>) = 
         if p :? AnalyticDigitalAmericanEngineModel then 
@@ -59,6 +65,7 @@ type AnalyticDigitalAmericanEngineModel
         else
             let o = new AnalyticDigitalAmericanEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

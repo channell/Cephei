@@ -36,7 +36,7 @@ type Concentrating1dMesherModel
     ( start                                        : ICell<double>
     , End                                          : ICell<double>
     , size                                         : ICell<int>
-    , cPoints                                      : ICell<List<Tuple<Nullable<double>,Nullable<double>,bool>>>
+    , cPoints                                      : ICell<Generic.List<Tuple<Nullable<double>,Nullable<double>,bool>>>
     , tol                                          : ICell<double>
     ) as this =
 

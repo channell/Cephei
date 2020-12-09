@@ -159,6 +159,8 @@ module SabrSmileSectionFunction =
          volatilityType : obj)
         ([<ExcelArgument(Name="shift",Description = "double or empty")>] 
          shift : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -169,12 +171,14 @@ module SabrSmileSectionFunction =
                 let _sabrParams = Helper.toCell<Generic.List<double>> sabrParams "sabrParams" 
                 let _volatilityType = Helper.toDefault<VolatilityType> volatilityType "volatilityType" VolatilityType.ShiftedLognormal
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.SabrSmileSection1 
                                                             _timeToExpiry.cell 
                                                             _forward.cell 
                                                             _sabrParams.cell 
                                                             _volatilityType.cell 
                                                             _shift.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SabrSmileSection>) l
 
@@ -184,6 +188,7 @@ module SabrSmileSectionFunction =
                                                ;  _sabrParams.source
                                                ;  _volatilityType.source
                                                ;  _shift.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _timeToExpiry.cell
@@ -191,6 +196,7 @@ module SabrSmileSectionFunction =
                                 ;  _sabrParams.cell
                                 ;  _volatilityType.cell
                                 ;  _shift.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -222,6 +228,8 @@ module SabrSmileSectionFunction =
          volatilityType : obj)
         ([<ExcelArgument(Name="shift",Description = "double or empty")>] 
          shift : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -233,6 +241,7 @@ module SabrSmileSectionFunction =
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _volatilityType = Helper.toDefault<VolatilityType> volatilityType "volatilityType" VolatilityType.ShiftedLognormal
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.SabrSmileSection
                                                             _d.cell 
                                                             _forward.cell 
@@ -240,6 +249,7 @@ module SabrSmileSectionFunction =
                                                             _dc.cell 
                                                             _volatilityType.cell 
                                                             _shift.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SabrSmileSection>) l
 
@@ -250,6 +260,7 @@ module SabrSmileSectionFunction =
                                                ;  _dc.source
                                                ;  _volatilityType.source
                                                ;  _shift.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _d.cell
@@ -258,6 +269,7 @@ module SabrSmileSectionFunction =
                                 ;  _dc.cell
                                 ;  _volatilityType.cell
                                 ;  _shift.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -893,16 +905,16 @@ module SabrSmileSectionFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<SabrSmileSection> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<SabrSmileSection> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<SabrSmileSection> (c)) :> ICell
                 let format (i : Generic.List<ICell<SabrSmileSection>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<SabrSmileSection>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<SabrSmileSection>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

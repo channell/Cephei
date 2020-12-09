@@ -48,6 +48,8 @@ module TreeSwaptionEngineFunction =
          timeGrid : obj)
         ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -56,10 +58,12 @@ module TreeSwaptionEngineFunction =
                 let _model = Helper.toCell<ShortRateModel> model "model" 
                 let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.TreeSwaptionEngine 
                                                             _model.cell 
                                                             _timeGrid.cell 
                                                             _termStructure.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TreeSwaptionEngine>) l
 
@@ -67,11 +71,13 @@ module TreeSwaptionEngineFunction =
                                                [| _model.source
                                                ;  _timeGrid.source
                                                ;  _termStructure.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _model.cell
                                 ;  _timeGrid.cell
                                 ;  _termStructure.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -95,6 +101,8 @@ module TreeSwaptionEngineFunction =
          model : obj)
         ([<ExcelArgument(Name="timeGrid",Description = "TimeGrid")>] 
          timeGrid : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -102,19 +110,23 @@ module TreeSwaptionEngineFunction =
 
                 let _model = Helper.toCell<ShortRateModel> model "model" 
                 let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.TreeSwaptionEngine1 
                                                             _model.cell 
                                                             _timeGrid.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TreeSwaptionEngine>) l
 
                 let source () = Helper.sourceFold "Fun.TreeSwaptionEngine1" 
                                                [| _model.source
                                                ;  _timeGrid.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _model.cell
                                 ;  _timeGrid.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -140,6 +152,8 @@ module TreeSwaptionEngineFunction =
          timeSteps : obj)
         ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -148,10 +162,12 @@ module TreeSwaptionEngineFunction =
                 let _model = Helper.toCell<ShortRateModel> model "model" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.TreeSwaptionEngine2 
                                                             _model.cell 
                                                             _timeSteps.cell 
                                                             _termStructure.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TreeSwaptionEngine>) l
 
@@ -159,11 +175,13 @@ module TreeSwaptionEngineFunction =
                                                [| _model.source
                                                ;  _timeSteps.source
                                                ;  _termStructure.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _model.cell
                                 ;  _timeSteps.cell
                                 ;  _termStructure.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -187,6 +205,8 @@ module TreeSwaptionEngineFunction =
          model : obj)
         ([<ExcelArgument(Name="timeSteps",Description = "int")>] 
          timeSteps : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -194,19 +214,23 @@ module TreeSwaptionEngineFunction =
 
                 let _model = Helper.toCell<ShortRateModel> model "model" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.TreeSwaptionEngine3 
                                                             _model.cell 
                                                             _timeSteps.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TreeSwaptionEngine>) l
 
                 let source () = Helper.sourceFold "Fun.TreeSwaptionEngine3" 
                                                [| _model.source
                                                ;  _timeSteps.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _model.cell
                                 ;  _timeSteps.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -435,16 +459,16 @@ module TreeSwaptionEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<TreeSwaptionEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<TreeSwaptionEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<TreeSwaptionEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<TreeSwaptionEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<TreeSwaptionEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<TreeSwaptionEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

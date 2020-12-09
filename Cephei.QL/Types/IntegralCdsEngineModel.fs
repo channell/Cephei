@@ -38,12 +38,15 @@ type IntegralCdsEngineModel
     , recoveryRate                                 : ICell<double>
     , discountCurve                                : ICell<Handle<YieldTermStructure>>
     , includeSettlementDateFlows                   : ICell<Nullable<bool>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<IntegralCdsEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _step                                      = step
     let _probability                               = probability
     let _recoveryRate                              = recoveryRate
@@ -53,12 +56,15 @@ type IntegralCdsEngineModel
     Functions
 *)
     let mutable
-        _IntegralCdsEngine                         = cell (fun () -> new IntegralCdsEngine (step.Value, probability.Value, recoveryRate.Value, discountCurve.Value, includeSettlementDateFlows.Value))
+        _IntegralCdsEngine                         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new IntegralCdsEngine (step.Value, probability.Value, recoveryRate.Value, discountCurve.Value, includeSettlementDateFlows.Value))))
     do this.Bind(_IntegralCdsEngine)
 (* 
     casting 
 *)
-    internal new () = new IntegralCdsEngineModel(null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new IntegralCdsEngineModel(null,null,null,null,null,null)
     member internal this.Inject v = _IntegralCdsEngine <- v
     static member Cast (p : ICell<IntegralCdsEngine>) = 
         if p :? IntegralCdsEngineModel then 
@@ -66,6 +72,7 @@ type IntegralCdsEngineModel
         else
             let o = new IntegralCdsEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

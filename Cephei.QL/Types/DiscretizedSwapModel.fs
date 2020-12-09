@@ -36,12 +36,15 @@ type DiscretizedSwapModel
     ( args                                         : ICell<VanillaSwap.Arguments>
     , referenceDate                                : ICell<Date>
     , dayCounter                                   : ICell<DayCounter>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<DiscretizedSwap> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _args                                      = args
     let _referenceDate                             = referenceDate
     let _dayCounter                                = dayCounter
@@ -49,41 +52,44 @@ type DiscretizedSwapModel
     Functions
 *)
     let mutable
-        _DiscretizedSwap                           = cell (fun () -> new DiscretizedSwap (args.Value, referenceDate.Value, dayCounter.Value))
-    let _mandatoryTimes                            = triv (fun () -> _DiscretizedSwap.Value.mandatoryTimes())
+        _DiscretizedSwap                           = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new DiscretizedSwap (args.Value, referenceDate.Value, dayCounter.Value))))
+    let _mandatoryTimes                            = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedSwap).Value.mandatoryTimes())
     let _reset                                     (size : ICell<int>)   
-                                                   = triv (fun () -> _DiscretizedSwap.Value.reset(size.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedSwap).Value.reset(size.Value)
                                                                      _DiscretizedSwap.Value)
-    let _adjustValues                              = triv (fun () -> _DiscretizedSwap.Value.adjustValues()
+    let _adjustValues                              = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedSwap).Value.adjustValues()
                                                                      _DiscretizedSwap.Value)
     let _initialize                                (Method : ICell<Lattice>) (t : ICell<double>)   
-                                                   = triv (fun () -> _DiscretizedSwap.Value.initialize(Method.Value, t.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedSwap).Value.initialize(Method.Value, t.Value)
                                                                      _DiscretizedSwap.Value)
-    let _method                                    = triv (fun () -> _DiscretizedSwap.Value.METHOD())
+    let _method                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedSwap).Value.METHOD())
     let _partialRollback                           (To : ICell<double>)   
-                                                   = triv (fun () -> _DiscretizedSwap.Value.partialRollback(To.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedSwap).Value.partialRollback(To.Value)
                                                                      _DiscretizedSwap.Value)
-    let _postAdjustValues                          = triv (fun () -> _DiscretizedSwap.Value.postAdjustValues()
+    let _postAdjustValues                          = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedSwap).Value.postAdjustValues()
                                                                      _DiscretizedSwap.Value)
-    let _preAdjustValues                           = triv (fun () -> _DiscretizedSwap.Value.preAdjustValues()
+    let _preAdjustValues                           = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedSwap).Value.preAdjustValues()
                                                                      _DiscretizedSwap.Value)
-    let _presentValue                              = triv (fun () -> _DiscretizedSwap.Value.presentValue())
+    let _presentValue                              = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedSwap).Value.presentValue())
     let _rollback                                  (To : ICell<double>)   
-                                                   = triv (fun () -> _DiscretizedSwap.Value.rollback(To.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedSwap).Value.rollback(To.Value)
                                                                      _DiscretizedSwap.Value)
     let _setTime                                   (t : ICell<double>)   
-                                                   = triv (fun () -> _DiscretizedSwap.Value.setTime(t.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedSwap).Value.setTime(t.Value)
                                                                      _DiscretizedSwap.Value)
     let _setValues                                 (v : ICell<Vector>)   
-                                                   = triv (fun () -> _DiscretizedSwap.Value.setValues(v.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedSwap).Value.setValues(v.Value)
                                                                      _DiscretizedSwap.Value)
-    let _time                                      = triv (fun () -> _DiscretizedSwap.Value.time())
-    let _values                                    = triv (fun () -> _DiscretizedSwap.Value.values())
+    let _time                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedSwap).Value.time())
+    let _values                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedSwap).Value.values())
     do this.Bind(_DiscretizedSwap)
 (* 
     casting 
 *)
-    internal new () = new DiscretizedSwapModel(null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new DiscretizedSwapModel(null,null,null,null)
     member internal this.Inject v = _DiscretizedSwap <- v
     static member Cast (p : ICell<DiscretizedSwap>) = 
         if p :? DiscretizedSwapModel then 
@@ -91,6 +97,7 @@ type DiscretizedSwapModel
         else
             let o = new DiscretizedSwapModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

@@ -42,19 +42,25 @@ module FDMultiPeriodEngineFunction =
     let FDMultiPeriodEngine_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FDMultiPeriodEngine ()
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FDMultiPeriodEngine
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDMultiPeriodEngine>) l
 
                 let source () = Helper.sourceFold "Fun.FDMultiPeriodEngine" 
-                                               [||]
+                                               [| _evaluationDate.source
+                                               |]
                 let hash = Helper.hashFold 
-                                [||]
+                                [|  _evaluationDate.cell
+                                |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
@@ -329,16 +335,16 @@ module FDMultiPeriodEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<FDMultiPeriodEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<FDMultiPeriodEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<FDMultiPeriodEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<FDMultiPeriodEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<FDMultiPeriodEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<FDMultiPeriodEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

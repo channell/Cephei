@@ -43,13 +43,18 @@ module Util =
     let value v = Cell.CreateFastValue (v)
 
     // Summary: run calcualtions within in the background
-    let cell (f : unit -> 'f) = Cell.CreateFast (f)
+    let cell (f : unit -> 'f) = 
+        let r = Cell.CreateFast (f)
+        if typeof<'f> .IsSubclassOf(typeof<LazyObject>) then
+            let l = (r.Value :> obj) :?> LazyObject
+            l.update()
+        r
 
     // cretate a trivial cell
     let triv (f : unit -> 'f) = Cell.CreateTrivial (f)
 
     let trivDate (f : unit -> 'f) (d : IDateDependant) = 
-        new DateDependantTrivial<'f> (f, d.EvaluationDate);
+        new DateDependantTrivial<'f> (f, d.EvaluationDate) :> ICell<'f>
 
     // Summary: variant of lazy evaluation where the value is claculated on a background thread
     let future (f : unit -> 'f) = 
@@ -57,18 +62,35 @@ module Util =
         async { r.Value |> ignore } |> Async.StartAsTask |> ignore
         r
 
-    let withEngine (e : ICell<IPricingEngine>) (priced : 'priced when 'priced :> LazyObject) = 
+    let withEngine (e : ICell<IPricingEngine>) (d : ICell<Date>) (priced : 'priced when 'priced :> LazyObject) = 
         let lo = priced :> LazyObject
+        if not (d = null) then Settings.setEvaluationDate (d.Value)
+        if e = null then raise (new Exception ("Pricing Engine is null"))
         match lo with 
         | :? Instrument as i         -> i.setPricingEngine e.Value
+                                        i.recalculate()
         | :? CalibrationHelper  as c -> c.setPricingEngine e.Value
         | _                          -> e |> ignore
         priced
 
     let withEvaluationDate<'i when 'i :> LazyObject> (d : ICell<Date>) (i : ICell<'i>) = 
-        Settings.setEvaluationDate (d.Value)
+        if not (d = null) then 
+            Settings.setEvaluationDate (d.Value)
         i.Value.update()
         i.Value
+
+    let curryEvaluationDate (d : ICell<Date>) i = 
+        if not (d = null) then 
+            Settings.setEvaluationDate (d.Value)
+        i
+
+#if !DEBUG
+    [<MethodImpl(MethodImplOptions.AggressiveInlining)>]
+#endif
+    let createEvaluationDate (d: ICell<Date>) (f : unit -> 'f) = 
+        if not (d = null) then
+            Settings.setEvaluationDate (d.Value)
+        f ()
 
     let toGeneric (l : 'i list) : Generic.List<'i> =
         new Generic.List<'i> (l)
@@ -78,7 +100,7 @@ module Util =
 
     let toHandle<'T when 'T :> IObservable> (v : 'T) =
         let h = new RelinkableHandle<'T> (v)
-        h.linkTo (v)
+        h.linkTo (v)    
         h :> Handle<'T>
 
     let toNullable<'T when 'T :struct and 'T :> ValueType and 'T : (new : unit -> 'T)> (v : 'T) = 

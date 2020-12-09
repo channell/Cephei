@@ -37,12 +37,15 @@ type BlackCapFloorEngineModel
     , vol                                          : ICell<double>
     , dc                                           : ICell<DayCounter>
     , displacement                                 : ICell<double>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BlackCapFloorEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _discountCurve                             = discountCurve
     let _vol                                       = vol
     let _dc                                        = dc
@@ -51,15 +54,18 @@ type BlackCapFloorEngineModel
     Functions
 *)
     let mutable
-        _BlackCapFloorEngine                       = cell (fun () -> new BlackCapFloorEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value))
-    let _displacement                              = triv (fun () -> _BlackCapFloorEngine.Value.displacement())
-    let _termStructure                             = triv (fun () -> _BlackCapFloorEngine.Value.termStructure())
-    let _volatility                                = triv (fun () -> _BlackCapFloorEngine.Value.volatility())
+        _BlackCapFloorEngine                       = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackCapFloorEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value))))
+    let _displacement                              = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.displacement())
+    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.termStructure())
+    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.volatility())
     do this.Bind(_BlackCapFloorEngine)
 (* 
     casting 
 *)
-    internal new () = new BlackCapFloorEngineModel(null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new BlackCapFloorEngineModel(null,null,null,null,null)
     member internal this.Inject v = _BlackCapFloorEngine <- v
     static member Cast (p : ICell<BlackCapFloorEngine>) = 
         if p :? BlackCapFloorEngineModel then 
@@ -67,6 +73,7 @@ type BlackCapFloorEngineModel
         else
             let o = new BlackCapFloorEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -90,12 +97,15 @@ type BlackCapFloorEngineModel1
     ( discountCurve                                : ICell<Handle<YieldTermStructure>>
     , vol                                          : ICell<Handle<OptionletVolatilityStructure>>
     , displacement                                 : ICell<double>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BlackCapFloorEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _discountCurve                             = discountCurve
     let _vol                                       = vol
     let _displacement                              = displacement
@@ -103,15 +113,18 @@ type BlackCapFloorEngineModel1
     Functions
 *)
     let mutable
-        _BlackCapFloorEngine                       = cell (fun () -> new BlackCapFloorEngine (discountCurve.Value, vol.Value, displacement.Value))
-    let _displacement                              = triv (fun () -> _BlackCapFloorEngine.Value.displacement())
-    let _termStructure                             = triv (fun () -> _BlackCapFloorEngine.Value.termStructure())
-    let _volatility                                = triv (fun () -> _BlackCapFloorEngine.Value.volatility())
+        _BlackCapFloorEngine                       = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackCapFloorEngine (discountCurve.Value, vol.Value, displacement.Value))))
+    let _displacement                              = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.displacement())
+    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.termStructure())
+    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.volatility())
     do this.Bind(_BlackCapFloorEngine)
 (* 
     casting 
 *)
-    internal new () = new BlackCapFloorEngineModel1(null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new BlackCapFloorEngineModel1(null,null,null,null)
     member internal this.Inject v = _BlackCapFloorEngine <- v
     static member Cast (p : ICell<BlackCapFloorEngine>) = 
         if p :? BlackCapFloorEngineModel1 then 
@@ -119,6 +132,7 @@ type BlackCapFloorEngineModel1
         else
             let o = new BlackCapFloorEngineModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -142,12 +156,15 @@ type BlackCapFloorEngineModel2
     , vol                                          : ICell<Handle<Quote>>
     , dc                                           : ICell<DayCounter>
     , displacement                                 : ICell<double>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BlackCapFloorEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _discountCurve                             = discountCurve
     let _vol                                       = vol
     let _dc                                        = dc
@@ -156,15 +173,18 @@ type BlackCapFloorEngineModel2
     Functions
 *)
     let mutable
-        _BlackCapFloorEngine                       = cell (fun () -> new BlackCapFloorEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value))
-    let _displacement                              = triv (fun () -> _BlackCapFloorEngine.Value.displacement())
-    let _termStructure                             = triv (fun () -> _BlackCapFloorEngine.Value.termStructure())
-    let _volatility                                = triv (fun () -> _BlackCapFloorEngine.Value.volatility())
+        _BlackCapFloorEngine                       = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackCapFloorEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value))))
+    let _displacement                              = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.displacement())
+    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.termStructure())
+    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.volatility())
     do this.Bind(_BlackCapFloorEngine)
 (* 
     casting 
 *)
-    internal new () = new BlackCapFloorEngineModel2(null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new BlackCapFloorEngineModel2(null,null,null,null,null)
     member internal this.Inject v = _BlackCapFloorEngine <- v
     static member Cast (p : ICell<BlackCapFloorEngine>) = 
         if p :? BlackCapFloorEngineModel2 then 
@@ -172,6 +192,7 @@ type BlackCapFloorEngineModel2
         else
             let o = new BlackCapFloorEngineModel2 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

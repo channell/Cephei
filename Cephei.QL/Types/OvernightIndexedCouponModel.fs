@@ -43,12 +43,15 @@ type OvernightIndexedCouponModel
     , refPeriodStart                               : ICell<Date>
     , refPeriodEnd                                 : ICell<Date>
     , dayCounter                                   : ICell<DayCounter>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<OvernightIndexedCoupon> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _paymentDate                               = paymentDate
     let _nominal                                   = nominal
     let _startDate                                 = startDate
@@ -63,70 +66,73 @@ type OvernightIndexedCouponModel
     Functions
 *)
     let mutable
-        _OvernightIndexedCoupon                    = cell (fun () -> new OvernightIndexedCoupon (paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, overnightIndex.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value))
-    let _dt                                        = triv (fun () -> _OvernightIndexedCoupon.Value.dt())
-    let _fixingDates                               = triv (fun () -> _OvernightIndexedCoupon.Value.fixingDates())
-    let _indexFixings                              = triv (fun () -> _OvernightIndexedCoupon.Value.indexFixings())
-    let _valueDates                                = triv (fun () -> _OvernightIndexedCoupon.Value.valueDates())
+        _OvernightIndexedCoupon                    = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new OvernightIndexedCoupon (paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, overnightIndex.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value))))
+    let _dt                                        = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.dt())
+    let _fixingDates                               = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.fixingDates())
+    let _indexFixings                              = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.indexFixings())
+    let _valueDates                                = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.valueDates())
     let _accruedAmount                             (d : ICell<Date>)   
-                                                   = triv (fun () -> _OvernightIndexedCoupon.Value.accruedAmount(d.Value))
-    let _adjustedFixing                            = triv (fun () -> _OvernightIndexedCoupon.Value.adjustedFixing)
-    let _amount                                    = triv (fun () -> _OvernightIndexedCoupon.Value.amount())
-    let _convexityAdjustment                       = triv (fun () -> _OvernightIndexedCoupon.Value.convexityAdjustment())
-    let _dayCounter                                = triv (fun () -> _OvernightIndexedCoupon.Value.dayCounter())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.accruedAmount(d.Value))
+    let _adjustedFixing                            = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.adjustedFixing)
+    let _amount                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.amount())
+    let _convexityAdjustment                       = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.convexityAdjustment())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.dayCounter())
     let _factory                                   (nominal : ICell<double>) (paymentDate : ICell<Date>) (startDate : ICell<Date>) (endDate : ICell<Date>) (fixingDays : ICell<int>) (index : ICell<InterestRateIndex>) (gearing : ICell<double>) (spread : ICell<double>) (refPeriodStart : ICell<Date>) (refPeriodEnd : ICell<Date>) (dayCounter : ICell<DayCounter>) (isInArrears : ICell<bool>)   
-                                                   = triv (fun () -> _OvernightIndexedCoupon.Value.factory(nominal.Value, paymentDate.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
-    let _fixingDate                                = triv (fun () -> _OvernightIndexedCoupon.Value.fixingDate())
-    let _fixingDays                                = triv (fun () -> _OvernightIndexedCoupon.Value.fixingDays)
-    let _gearing                                   = triv (fun () -> _OvernightIndexedCoupon.Value.gearing())
-    let _index                                     = triv (fun () -> _OvernightIndexedCoupon.Value.index())
-    let _indexFixing                               = triv (fun () -> _OvernightIndexedCoupon.Value.indexFixing())
-    let _isInArrears                               = triv (fun () -> _OvernightIndexedCoupon.Value.isInArrears())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.factory(nominal.Value, paymentDate.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
+    let _fixingDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.fixingDate())
+    let _fixingDays                                = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.fixingDays)
+    let _gearing                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.gearing())
+    let _index                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.index())
+    let _indexFixing                               = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.indexFixing())
+    let _isInArrears                               = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.isInArrears())
     let _price                                     (yts : ICell<YieldTermStructure>)   
-                                                   = triv (fun () -> _OvernightIndexedCoupon.Value.price(yts.Value))
-    let _pricer                                    = triv (fun () -> _OvernightIndexedCoupon.Value.pricer())
-    let _rate                                      = triv (fun () -> _OvernightIndexedCoupon.Value.rate())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.price(yts.Value))
+    let _pricer                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.pricer())
+    let _rate                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.rate())
     let _setPricer                                 (pricer : ICell<FloatingRateCouponPricer>)   
-                                                   = triv (fun () -> _OvernightIndexedCoupon.Value.setPricer(pricer.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.setPricer(pricer.Value)
                                                                      _OvernightIndexedCoupon.Value)
-    let _spread                                    = triv (fun () -> _OvernightIndexedCoupon.Value.spread())
-    let _update                                    = triv (fun () -> _OvernightIndexedCoupon.Value.update()
+    let _spread                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.spread())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.update()
                                                                      _OvernightIndexedCoupon.Value)
-    let _accrualDays                               = triv (fun () -> _OvernightIndexedCoupon.Value.accrualDays())
-    let _accrualEndDate                            = triv (fun () -> _OvernightIndexedCoupon.Value.accrualEndDate())
-    let _accrualPeriod                             = triv (fun () -> _OvernightIndexedCoupon.Value.accrualPeriod())
-    let _accrualStartDate                          = triv (fun () -> _OvernightIndexedCoupon.Value.accrualStartDate())
+    let _accrualDays                               = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.accrualDays())
+    let _accrualEndDate                            = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.accrualEndDate())
+    let _accrualPeriod                             = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.accrualPeriod())
+    let _accrualStartDate                          = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.accrualStartDate())
     let _accruedDays                               (d : ICell<Date>)   
-                                                   = triv (fun () -> _OvernightIndexedCoupon.Value.accruedDays(d.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.accruedDays(d.Value))
     let _accruedPeriod                             (d : ICell<Date>)   
-                                                   = triv (fun () -> _OvernightIndexedCoupon.Value.accruedPeriod(d.Value))
-    let _date                                      = triv (fun () -> _OvernightIndexedCoupon.Value.date())
-    let _exCouponDate                              = triv (fun () -> _OvernightIndexedCoupon.Value.exCouponDate())
-    let _nominal                                   = triv (fun () -> _OvernightIndexedCoupon.Value.nominal())
-    let _referencePeriodEnd                        = triv (fun () -> _OvernightIndexedCoupon.Value.referencePeriodEnd)
-    let _referencePeriodStart                      = triv (fun () -> _OvernightIndexedCoupon.Value.referencePeriodStart)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.accruedPeriod(d.Value))
+    let _date                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.date())
+    let _exCouponDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.exCouponDate())
+    let _nominal                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.nominal())
+    let _referencePeriodEnd                        = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.referencePeriodEnd)
+    let _referencePeriodStart                      = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.referencePeriodStart)
     let _CompareTo                                 (cf : ICell<CashFlow>)   
-                                                   = triv (fun () -> _OvernightIndexedCoupon.Value.CompareTo(cf.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.CompareTo(cf.Value))
     let _Equals                                    (cf : ICell<Object>)   
-                                                   = triv (fun () -> _OvernightIndexedCoupon.Value.Equals(cf.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.Equals(cf.Value))
     let _hasOccurred                               (refDate : ICell<Date>) (includeRefDate : ICell<Nullable<bool>>)   
-                                                   = triv (fun () -> _OvernightIndexedCoupon.Value.hasOccurred(refDate.Value, includeRefDate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.hasOccurred(refDate.Value, includeRefDate.Value))
     let _tradingExCoupon                           (refDate : ICell<Date>)   
-                                                   = triv (fun () -> _OvernightIndexedCoupon.Value.tradingExCoupon(refDate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.tradingExCoupon(refDate.Value))
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> _OvernightIndexedCoupon.Value.accept(v.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.accept(v.Value)
                                                                      _OvernightIndexedCoupon.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _OvernightIndexedCoupon.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.registerWith(handler.Value)
                                                                      _OvernightIndexedCoupon.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _OvernightIndexedCoupon.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCoupon).Value.unregisterWith(handler.Value)
                                                                      _OvernightIndexedCoupon.Value)
     do this.Bind(_OvernightIndexedCoupon)
 (* 
     casting 
 *)
-    internal new () = new OvernightIndexedCouponModel(null,null,null,null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new OvernightIndexedCouponModel(null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _OvernightIndexedCoupon <- v
     static member Cast (p : ICell<OvernightIndexedCoupon>) = 
         if p :? OvernightIndexedCouponModel then 
@@ -134,6 +140,7 @@ type OvernightIndexedCouponModel
         else
             let o = new OvernightIndexedCouponModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

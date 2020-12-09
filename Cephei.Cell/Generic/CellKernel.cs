@@ -44,10 +44,18 @@ namespace Cephei.Cell.Generic
         public CellKernel(FSharpFunc<Unit, FSharpFunc<Unit, T>> kernelFunc, ICell[] dependencies)
         {
             _kernelFunc = kernelFunc;
-            if (Cell.Parellel && !Cell.Lazy)
-                Task.Run(() => Calculate(DateTime.Now, 0));
-            else if (!Cell.Lazy)
-                Calculate(DateTime.Now, 0);
+            if (!Cell.Lazy)
+                Cell.Dispatch(() =>
+                {
+                    try
+                    {
+                        Calculate(DateTime.Now, 0);
+                    }
+                    catch (Exception e)
+                    {
+                        Serilog.Log.Error(e, e.Message);
+                    }
+                });
 
             foreach (var d in dependencies)
                 d.Notify(this);
@@ -60,10 +68,18 @@ namespace Cephei.Cell.Generic
         {
             var dependencies = Cell.Profile(_kernelFunc);
             _kernelFunc = kernelFunc;
-            if (Cell.Parellel && !Cell.Lazy)
-                Task.Run(() => Calculate(DateTime.Now, 0));
-            else if (!Cell.Lazy)
-                Calculate(DateTime.Now, 0);
+            if (!Cell.Lazy)
+                Cell.Dispatch(() =>
+                {
+                    try
+                    {
+                        Calculate(DateTime.Now, 0);
+                    }
+                    catch (Exception e)
+                    {
+                        Serilog.Log.Error(e, e.Message);
+                    }
+                });
 
             foreach (var d in dependencies)
                 d.Notify(this);
@@ -351,7 +367,7 @@ namespace Cephei.Cell.Generic
                         _epoch = epoch;
                         OnChange(CellEvent.Invalidate, root, this, epoch, session);
                         if (Cell.Parellel)
-                            Task.Run(() =>
+                            Cell.Dispatch(() =>
                             {
                                 try
                                 {
@@ -362,8 +378,6 @@ namespace Cephei.Cell.Generic
                                     Serilog.Log.Error(e, e.Message);
                                 }
                             });
-                        else
-                            PoolCalculate(epoch, session);
                     }
                     break;
                 case CellEvent.Delete:
@@ -516,5 +530,7 @@ namespace Cephei.Cell.Generic
             return typeof(Base).IsAssignableFrom(typeof(T)) ||
                    typeof(T).IsSubclassOf(typeof(Base));
         }
+        public CellState State => (CellState)_state;
+        public Exception Error => _lastException;
     }
 }

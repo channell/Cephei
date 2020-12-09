@@ -153,6 +153,8 @@ module ShiftedBlackVolTermStructureFunction =
          varianceOffset : obj)
         ([<ExcelArgument(Name="volTS",Description = "BlackVolTermStructure")>] 
          volTS : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -160,19 +162,23 @@ module ShiftedBlackVolTermStructureFunction =
 
                 let _varianceOffset = Helper.toCell<double> varianceOffset "varianceOffset" 
                 let _volTS = Helper.toHandle<BlackVolTermStructure> volTS "volTS" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.ShiftedBlackVolTermStructure 
                                                             _varianceOffset.cell 
                                                             _volTS.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ShiftedBlackVolTermStructure>) l
 
                 let source () = Helper.sourceFold "Fun.ShiftedBlackVolTermStructure" 
                                                [| _varianceOffset.source
                                                ;  _volTS.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _varianceOffset.cell
                                 ;  _volTS.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -1150,16 +1156,16 @@ module ShiftedBlackVolTermStructureFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<ShiftedBlackVolTermStructure> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<ShiftedBlackVolTermStructure> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<ShiftedBlackVolTermStructure> (c)) :> ICell
                 let format (i : Generic.List<ICell<ShiftedBlackVolTermStructure>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<ShiftedBlackVolTermStructure>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<ShiftedBlackVolTermStructure>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

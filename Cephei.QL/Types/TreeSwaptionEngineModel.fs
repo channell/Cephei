@@ -36,12 +36,15 @@ type TreeSwaptionEngineModel
     ( model                                        : ICell<ShortRateModel>
     , timeGrid                                     : ICell<TimeGrid>
     , termStructure                                : ICell<Handle<YieldTermStructure>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<TreeSwaptionEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _model                                     = model
     let _timeGrid                                  = timeGrid
     let _termStructure                             = termStructure
@@ -49,25 +52,28 @@ type TreeSwaptionEngineModel
     Functions
 *)
     let mutable
-        _TreeSwaptionEngine                        = cell (fun () -> new TreeSwaptionEngine (model.Value, timeGrid.Value, termStructure.Value))
-    let _update                                    = triv (fun () -> _TreeSwaptionEngine.Value.update()
+        _TreeSwaptionEngine                        = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new TreeSwaptionEngine (model.Value, timeGrid.Value, termStructure.Value))))
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeSwaptionEngine).Value.update()
                                                                      _TreeSwaptionEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   
-                                                   = triv (fun () -> _TreeSwaptionEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeSwaptionEngine).Value.setModel(model.Value)
                                                                      _TreeSwaptionEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _TreeSwaptionEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeSwaptionEngine).Value.registerWith(handler.Value)
                                                                      _TreeSwaptionEngine.Value)
-    let _reset                                     = triv (fun () -> _TreeSwaptionEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeSwaptionEngine).Value.reset()
                                                                      _TreeSwaptionEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _TreeSwaptionEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeSwaptionEngine).Value.unregisterWith(handler.Value)
                                                                      _TreeSwaptionEngine.Value)
     do this.Bind(_TreeSwaptionEngine)
 (* 
     casting 
 *)
-    internal new () = new TreeSwaptionEngineModel(null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new TreeSwaptionEngineModel(null,null,null,null)
     member internal this.Inject v = _TreeSwaptionEngine <- v
     static member Cast (p : ICell<TreeSwaptionEngine>) = 
         if p :? TreeSwaptionEngineModel then 
@@ -75,6 +81,7 @@ type TreeSwaptionEngineModel
         else
             let o = new TreeSwaptionEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -101,37 +108,43 @@ type TreeSwaptionEngineModel
 type TreeSwaptionEngineModel1
     ( model                                        : ICell<ShortRateModel>
     , timeGrid                                     : ICell<TimeGrid>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<TreeSwaptionEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _model                                     = model
     let _timeGrid                                  = timeGrid
 (*
     Functions
 *)
     let mutable
-        _TreeSwaptionEngine                        = cell (fun () -> new TreeSwaptionEngine (model.Value, timeGrid.Value))
-    let _update                                    = triv (fun () -> _TreeSwaptionEngine.Value.update()
+        _TreeSwaptionEngine                        = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new TreeSwaptionEngine (model.Value, timeGrid.Value))))
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeSwaptionEngine).Value.update()
                                                                      _TreeSwaptionEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   
-                                                   = triv (fun () -> _TreeSwaptionEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeSwaptionEngine).Value.setModel(model.Value)
                                                                      _TreeSwaptionEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _TreeSwaptionEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeSwaptionEngine).Value.registerWith(handler.Value)
                                                                      _TreeSwaptionEngine.Value)
-    let _reset                                     = triv (fun () -> _TreeSwaptionEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeSwaptionEngine).Value.reset()
                                                                      _TreeSwaptionEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _TreeSwaptionEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeSwaptionEngine).Value.unregisterWith(handler.Value)
                                                                      _TreeSwaptionEngine.Value)
     do this.Bind(_TreeSwaptionEngine)
 (* 
     casting 
 *)
-    internal new () = new TreeSwaptionEngineModel1(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new TreeSwaptionEngineModel1(null,null,null)
     member internal this.Inject v = _TreeSwaptionEngine <- v
     static member Cast (p : ICell<TreeSwaptionEngine>) = 
         if p :? TreeSwaptionEngineModel1 then 
@@ -139,6 +152,7 @@ type TreeSwaptionEngineModel1
         else
             let o = new TreeSwaptionEngineModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -165,12 +179,15 @@ type TreeSwaptionEngineModel2
     ( model                                        : ICell<ShortRateModel>
     , timeSteps                                    : ICell<int>
     , termStructure                                : ICell<Handle<YieldTermStructure>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<TreeSwaptionEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _model                                     = model
     let _timeSteps                                 = timeSteps
     let _termStructure                             = termStructure
@@ -178,25 +195,28 @@ type TreeSwaptionEngineModel2
     Functions
 *)
     let mutable
-        _TreeSwaptionEngine                        = cell (fun () -> new TreeSwaptionEngine (model.Value, timeSteps.Value, termStructure.Value))
-    let _update                                    = triv (fun () -> _TreeSwaptionEngine.Value.update()
+        _TreeSwaptionEngine                        = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new TreeSwaptionEngine (model.Value, timeSteps.Value, termStructure.Value))))
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeSwaptionEngine).Value.update()
                                                                      _TreeSwaptionEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   
-                                                   = triv (fun () -> _TreeSwaptionEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeSwaptionEngine).Value.setModel(model.Value)
                                                                      _TreeSwaptionEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _TreeSwaptionEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeSwaptionEngine).Value.registerWith(handler.Value)
                                                                      _TreeSwaptionEngine.Value)
-    let _reset                                     = triv (fun () -> _TreeSwaptionEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeSwaptionEngine).Value.reset()
                                                                      _TreeSwaptionEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _TreeSwaptionEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeSwaptionEngine).Value.unregisterWith(handler.Value)
                                                                      _TreeSwaptionEngine.Value)
     do this.Bind(_TreeSwaptionEngine)
 (* 
     casting 
 *)
-    internal new () = new TreeSwaptionEngineModel2(null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new TreeSwaptionEngineModel2(null,null,null,null)
     member internal this.Inject v = _TreeSwaptionEngine <- v
     static member Cast (p : ICell<TreeSwaptionEngine>) = 
         if p :? TreeSwaptionEngineModel2 then 
@@ -204,6 +224,7 @@ type TreeSwaptionEngineModel2
         else
             let o = new TreeSwaptionEngineModel2 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -230,37 +251,43 @@ Constructors \note the term structure is only needed when the short-rate model c
 type TreeSwaptionEngineModel3
     ( model                                        : ICell<ShortRateModel>
     , timeSteps                                    : ICell<int>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<TreeSwaptionEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _model                                     = model
     let _timeSteps                                 = timeSteps
 (*
     Functions
 *)
     let mutable
-        _TreeSwaptionEngine                        = cell (fun () -> new TreeSwaptionEngine (model.Value, timeSteps.Value))
-    let _update                                    = triv (fun () -> _TreeSwaptionEngine.Value.update()
+        _TreeSwaptionEngine                        = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new TreeSwaptionEngine (model.Value, timeSteps.Value))))
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeSwaptionEngine).Value.update()
                                                                      _TreeSwaptionEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   
-                                                   = triv (fun () -> _TreeSwaptionEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeSwaptionEngine).Value.setModel(model.Value)
                                                                      _TreeSwaptionEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _TreeSwaptionEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeSwaptionEngine).Value.registerWith(handler.Value)
                                                                      _TreeSwaptionEngine.Value)
-    let _reset                                     = triv (fun () -> _TreeSwaptionEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeSwaptionEngine).Value.reset()
                                                                      _TreeSwaptionEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _TreeSwaptionEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeSwaptionEngine).Value.unregisterWith(handler.Value)
                                                                      _TreeSwaptionEngine.Value)
     do this.Bind(_TreeSwaptionEngine)
 (* 
     casting 
 *)
-    internal new () = new TreeSwaptionEngineModel3(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new TreeSwaptionEngineModel3(null,null,null)
     member internal this.Inject v = _TreeSwaptionEngine <- v
     static member Cast (p : ICell<TreeSwaptionEngine>) = 
         if p :? TreeSwaptionEngineModel3 then 
@@ -268,6 +295,7 @@ type TreeSwaptionEngineModel3
         else
             let o = new TreeSwaptionEngineModel3 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

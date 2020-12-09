@@ -40,12 +40,15 @@ type CapFloorTermVolSurfaceModel
     , strikes                                      : ICell<Generic.List<double>>
     , vols                                         : ICell<Matrix>
     , dc                                           : ICell<DayCounter>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<CapFloorTermVolSurface> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _settlementDate                            = settlementDate
     let _calendar                                  = calendar
     let _bdc                                       = bdc
@@ -57,45 +60,48 @@ type CapFloorTermVolSurfaceModel
     Functions
 *)
     let mutable
-        _CapFloorTermVolSurface                    = cell (fun () -> new CapFloorTermVolSurface (settlementDate.Value, calendar.Value, bdc.Value, optionTenors.Value, strikes.Value, vols.Value, dc.Value))
-    let _maxDate                                   = triv (fun () -> _CapFloorTermVolSurface.Value.maxDate())
-    let _maxStrike                                 = triv (fun () -> _CapFloorTermVolSurface.Value.maxStrike())
-    let _minStrike                                 = triv (fun () -> _CapFloorTermVolSurface.Value.minStrike())
-    let _optionDates                               = triv (fun () -> _CapFloorTermVolSurface.Value.optionDates())
-    let _optionTenors                              = triv (fun () -> _CapFloorTermVolSurface.Value.optionTenors())
-    let _optionTimes                               = triv (fun () -> _CapFloorTermVolSurface.Value.optionTimes())
-    let _strikes                                   = triv (fun () -> _CapFloorTermVolSurface.Value.strikes())
-    let _update                                    = triv (fun () -> _CapFloorTermVolSurface.Value.update()
+        _CapFloorTermVolSurface                    = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new CapFloorTermVolSurface (settlementDate.Value, calendar.Value, bdc.Value, optionTenors.Value, strikes.Value, vols.Value, dc.Value))))
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.maxDate())
+    let _maxStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.maxStrike())
+    let _minStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.minStrike())
+    let _optionDates                               = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.optionDates())
+    let _optionTenors                              = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.optionTenors())
+    let _optionTimes                               = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.optionTimes())
+    let _strikes                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.strikes())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.update()
                                                                      _CapFloorTermVolSurface.Value)
     let _volatility                                (length : ICell<Period>) (strike : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.volatility(length.Value, strike.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.volatility(length.Value, strike.Value, extrapolate.Value))
     let _volatility1                               (t : ICell<double>) (strike : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.volatility(t.Value, strike.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.volatility(t.Value, strike.Value, extrapolate.Value))
     let _volatility2                               (End : ICell<Date>) (strike : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.volatility(End.Value, strike.Value, extrapolate.Value))
-    let _businessDayConvention                     = triv (fun () -> _CapFloorTermVolSurface.Value.businessDayConvention())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.volatility(End.Value, strike.Value, extrapolate.Value))
+    let _businessDayConvention                     = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.businessDayConvention())
     let _optionDateFromTenor                       (p : ICell<Period>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.optionDateFromTenor(p.Value))
-    let _calendar                                  = triv (fun () -> _CapFloorTermVolSurface.Value.calendar())
-    let _dayCounter                                = triv (fun () -> _CapFloorTermVolSurface.Value.dayCounter())
-    let _maxTime                                   = triv (fun () -> _CapFloorTermVolSurface.Value.maxTime())
-    let _referenceDate                             = triv (fun () -> _CapFloorTermVolSurface.Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> _CapFloorTermVolSurface.Value.settlementDays())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.optionDateFromTenor(p.Value))
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.calendar())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.dayCounter())
+    let _maxTime                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.maxTime())
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.settlementDays())
     let _timeFromReference                         (date : ICell<Date>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.timeFromReference(date.Value))
-    let _allowsExtrapolation                       = triv (fun () -> _CapFloorTermVolSurface.Value.allowsExtrapolation())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.timeFromReference(date.Value))
+    let _allowsExtrapolation                       = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.allowsExtrapolation())
     let _disableExtrapolation                      (b : ICell<bool>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.disableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.disableExtrapolation(b.Value)
                                                                      _CapFloorTermVolSurface.Value)
     let _enableExtrapolation                       (b : ICell<bool>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.enableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.enableExtrapolation(b.Value)
                                                                      _CapFloorTermVolSurface.Value)
-    let _extrapolate                               = triv (fun () -> _CapFloorTermVolSurface.Value.extrapolate)
+    let _extrapolate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.extrapolate)
     do this.Bind(_CapFloorTermVolSurface)
 (* 
     casting 
 *)
-    internal new () = new CapFloorTermVolSurfaceModel(null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new CapFloorTermVolSurfaceModel(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CapFloorTermVolSurface <- v
     static member Cast (p : ICell<CapFloorTermVolSurface>) = 
         if p :? CapFloorTermVolSurfaceModel then 
@@ -103,6 +109,7 @@ type CapFloorTermVolSurfaceModel
         else
             let o = new CapFloorTermVolSurfaceModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -160,12 +167,15 @@ type CapFloorTermVolSurfaceModel1
     , strikes                                      : ICell<Generic.List<double>>
     , vols                                         : ICell<Generic.List<Generic.List<Handle<Quote>>>>
     , dc                                           : ICell<DayCounter>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<CapFloorTermVolSurface> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _settlementDate                            = settlementDate
     let _calendar                                  = calendar
     let _bdc                                       = bdc
@@ -177,45 +187,48 @@ type CapFloorTermVolSurfaceModel1
     Functions
 *)
     let mutable
-        _CapFloorTermVolSurface                    = cell (fun () -> new CapFloorTermVolSurface (settlementDate.Value, calendar.Value, bdc.Value, optionTenors.Value, strikes.Value, vols.Value, dc.Value))
-    let _maxDate                                   = triv (fun () -> _CapFloorTermVolSurface.Value.maxDate())
-    let _maxStrike                                 = triv (fun () -> _CapFloorTermVolSurface.Value.maxStrike())
-    let _minStrike                                 = triv (fun () -> _CapFloorTermVolSurface.Value.minStrike())
-    let _optionDates                               = triv (fun () -> _CapFloorTermVolSurface.Value.optionDates())
-    let _optionTenors                              = triv (fun () -> _CapFloorTermVolSurface.Value.optionTenors())
-    let _optionTimes                               = triv (fun () -> _CapFloorTermVolSurface.Value.optionTimes())
-    let _strikes                                   = triv (fun () -> _CapFloorTermVolSurface.Value.strikes())
-    let _update                                    = triv (fun () -> _CapFloorTermVolSurface.Value.update()
+        _CapFloorTermVolSurface                    = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new CapFloorTermVolSurface (settlementDate.Value, calendar.Value, bdc.Value, optionTenors.Value, strikes.Value, vols.Value, dc.Value))))
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.maxDate())
+    let _maxStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.maxStrike())
+    let _minStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.minStrike())
+    let _optionDates                               = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.optionDates())
+    let _optionTenors                              = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.optionTenors())
+    let _optionTimes                               = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.optionTimes())
+    let _strikes                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.strikes())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.update()
                                                                      _CapFloorTermVolSurface.Value)
     let _volatility                                (length : ICell<Period>) (strike : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.volatility(length.Value, strike.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.volatility(length.Value, strike.Value, extrapolate.Value))
     let _volatility1                               (t : ICell<double>) (strike : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.volatility(t.Value, strike.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.volatility(t.Value, strike.Value, extrapolate.Value))
     let _volatility2                               (End : ICell<Date>) (strike : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.volatility(End.Value, strike.Value, extrapolate.Value))
-    let _businessDayConvention                     = triv (fun () -> _CapFloorTermVolSurface.Value.businessDayConvention())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.volatility(End.Value, strike.Value, extrapolate.Value))
+    let _businessDayConvention                     = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.businessDayConvention())
     let _optionDateFromTenor                       (p : ICell<Period>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.optionDateFromTenor(p.Value))
-    let _calendar                                  = triv (fun () -> _CapFloorTermVolSurface.Value.calendar())
-    let _dayCounter                                = triv (fun () -> _CapFloorTermVolSurface.Value.dayCounter())
-    let _maxTime                                   = triv (fun () -> _CapFloorTermVolSurface.Value.maxTime())
-    let _referenceDate                             = triv (fun () -> _CapFloorTermVolSurface.Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> _CapFloorTermVolSurface.Value.settlementDays())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.optionDateFromTenor(p.Value))
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.calendar())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.dayCounter())
+    let _maxTime                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.maxTime())
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.settlementDays())
     let _timeFromReference                         (date : ICell<Date>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.timeFromReference(date.Value))
-    let _allowsExtrapolation                       = triv (fun () -> _CapFloorTermVolSurface.Value.allowsExtrapolation())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.timeFromReference(date.Value))
+    let _allowsExtrapolation                       = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.allowsExtrapolation())
     let _disableExtrapolation                      (b : ICell<bool>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.disableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.disableExtrapolation(b.Value)
                                                                      _CapFloorTermVolSurface.Value)
     let _enableExtrapolation                       (b : ICell<bool>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.enableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.enableExtrapolation(b.Value)
                                                                      _CapFloorTermVolSurface.Value)
-    let _extrapolate                               = triv (fun () -> _CapFloorTermVolSurface.Value.extrapolate)
+    let _extrapolate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.extrapolate)
     do this.Bind(_CapFloorTermVolSurface)
 (* 
     casting 
 *)
-    internal new () = new CapFloorTermVolSurfaceModel1(null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new CapFloorTermVolSurfaceModel1(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CapFloorTermVolSurface <- v
     static member Cast (p : ICell<CapFloorTermVolSurface>) = 
         if p :? CapFloorTermVolSurfaceModel1 then 
@@ -223,6 +236,7 @@ type CapFloorTermVolSurfaceModel1
         else
             let o = new CapFloorTermVolSurfaceModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -280,12 +294,15 @@ type CapFloorTermVolSurfaceModel2
     , strikes                                      : ICell<Generic.List<double>>
     , vols                                         : ICell<Generic.List<Generic.List<Handle<Quote>>>>
     , dc                                           : ICell<DayCounter>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<CapFloorTermVolSurface> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _settlementDays                            = settlementDays
     let _calendar                                  = calendar
     let _bdc                                       = bdc
@@ -297,45 +314,48 @@ type CapFloorTermVolSurfaceModel2
     Functions
 *)
     let mutable
-        _CapFloorTermVolSurface                    = cell (fun () -> new CapFloorTermVolSurface (settlementDays.Value, calendar.Value, bdc.Value, optionTenors.Value, strikes.Value, vols.Value, dc.Value))
-    let _maxDate                                   = triv (fun () -> _CapFloorTermVolSurface.Value.maxDate())
-    let _maxStrike                                 = triv (fun () -> _CapFloorTermVolSurface.Value.maxStrike())
-    let _minStrike                                 = triv (fun () -> _CapFloorTermVolSurface.Value.minStrike())
-    let _optionDates                               = triv (fun () -> _CapFloorTermVolSurface.Value.optionDates())
-    let _optionTenors                              = triv (fun () -> _CapFloorTermVolSurface.Value.optionTenors())
-    let _optionTimes                               = triv (fun () -> _CapFloorTermVolSurface.Value.optionTimes())
-    let _strikes                                   = triv (fun () -> _CapFloorTermVolSurface.Value.strikes())
-    let _update                                    = triv (fun () -> _CapFloorTermVolSurface.Value.update()
+        _CapFloorTermVolSurface                    = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new CapFloorTermVolSurface (settlementDays.Value, calendar.Value, bdc.Value, optionTenors.Value, strikes.Value, vols.Value, dc.Value))))
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.maxDate())
+    let _maxStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.maxStrike())
+    let _minStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.minStrike())
+    let _optionDates                               = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.optionDates())
+    let _optionTenors                              = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.optionTenors())
+    let _optionTimes                               = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.optionTimes())
+    let _strikes                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.strikes())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.update()
                                                                      _CapFloorTermVolSurface.Value)
     let _volatility                                (length : ICell<Period>) (strike : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.volatility(length.Value, strike.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.volatility(length.Value, strike.Value, extrapolate.Value))
     let _volatility1                               (t : ICell<double>) (strike : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.volatility(t.Value, strike.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.volatility(t.Value, strike.Value, extrapolate.Value))
     let _volatility2                               (End : ICell<Date>) (strike : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.volatility(End.Value, strike.Value, extrapolate.Value))
-    let _businessDayConvention                     = triv (fun () -> _CapFloorTermVolSurface.Value.businessDayConvention())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.volatility(End.Value, strike.Value, extrapolate.Value))
+    let _businessDayConvention                     = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.businessDayConvention())
     let _optionDateFromTenor                       (p : ICell<Period>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.optionDateFromTenor(p.Value))
-    let _calendar                                  = triv (fun () -> _CapFloorTermVolSurface.Value.calendar())
-    let _dayCounter                                = triv (fun () -> _CapFloorTermVolSurface.Value.dayCounter())
-    let _maxTime                                   = triv (fun () -> _CapFloorTermVolSurface.Value.maxTime())
-    let _referenceDate                             = triv (fun () -> _CapFloorTermVolSurface.Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> _CapFloorTermVolSurface.Value.settlementDays())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.optionDateFromTenor(p.Value))
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.calendar())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.dayCounter())
+    let _maxTime                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.maxTime())
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.settlementDays())
     let _timeFromReference                         (date : ICell<Date>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.timeFromReference(date.Value))
-    let _allowsExtrapolation                       = triv (fun () -> _CapFloorTermVolSurface.Value.allowsExtrapolation())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.timeFromReference(date.Value))
+    let _allowsExtrapolation                       = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.allowsExtrapolation())
     let _disableExtrapolation                      (b : ICell<bool>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.disableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.disableExtrapolation(b.Value)
                                                                      _CapFloorTermVolSurface.Value)
     let _enableExtrapolation                       (b : ICell<bool>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.enableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.enableExtrapolation(b.Value)
                                                                      _CapFloorTermVolSurface.Value)
-    let _extrapolate                               = triv (fun () -> _CapFloorTermVolSurface.Value.extrapolate)
+    let _extrapolate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.extrapolate)
     do this.Bind(_CapFloorTermVolSurface)
 (* 
     casting 
 *)
-    internal new () = new CapFloorTermVolSurfaceModel2(null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new CapFloorTermVolSurfaceModel2(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CapFloorTermVolSurface <- v
     static member Cast (p : ICell<CapFloorTermVolSurface>) = 
         if p :? CapFloorTermVolSurfaceModel2 then 
@@ -343,6 +363,7 @@ type CapFloorTermVolSurfaceModel2
         else
             let o = new CapFloorTermVolSurfaceModel2 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -400,12 +421,15 @@ type CapFloorTermVolSurfaceModel3
     , strikes                                      : ICell<Generic.List<double>>
     , vols                                         : ICell<Matrix>
     , dc                                           : ICell<DayCounter>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<CapFloorTermVolSurface> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _settlementDays                            = settlementDays
     let _calendar                                  = calendar
     let _bdc                                       = bdc
@@ -417,45 +441,48 @@ type CapFloorTermVolSurfaceModel3
     Functions
 *)
     let mutable
-        _CapFloorTermVolSurface                    = cell (fun () -> new CapFloorTermVolSurface (settlementDays.Value, calendar.Value, bdc.Value, optionTenors.Value, strikes.Value, vols.Value, dc.Value))
-    let _maxDate                                   = triv (fun () -> _CapFloorTermVolSurface.Value.maxDate())
-    let _maxStrike                                 = triv (fun () -> _CapFloorTermVolSurface.Value.maxStrike())
-    let _minStrike                                 = triv (fun () -> _CapFloorTermVolSurface.Value.minStrike())
-    let _optionDates                               = triv (fun () -> _CapFloorTermVolSurface.Value.optionDates())
-    let _optionTenors                              = triv (fun () -> _CapFloorTermVolSurface.Value.optionTenors())
-    let _optionTimes                               = triv (fun () -> _CapFloorTermVolSurface.Value.optionTimes())
-    let _strikes                                   = triv (fun () -> _CapFloorTermVolSurface.Value.strikes())
-    let _update                                    = triv (fun () -> _CapFloorTermVolSurface.Value.update()
+        _CapFloorTermVolSurface                    = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new CapFloorTermVolSurface (settlementDays.Value, calendar.Value, bdc.Value, optionTenors.Value, strikes.Value, vols.Value, dc.Value))))
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.maxDate())
+    let _maxStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.maxStrike())
+    let _minStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.minStrike())
+    let _optionDates                               = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.optionDates())
+    let _optionTenors                              = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.optionTenors())
+    let _optionTimes                               = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.optionTimes())
+    let _strikes                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.strikes())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.update()
                                                                      _CapFloorTermVolSurface.Value)
     let _volatility                                (length : ICell<Period>) (strike : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.volatility(length.Value, strike.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.volatility(length.Value, strike.Value, extrapolate.Value))
     let _volatility1                               (t : ICell<double>) (strike : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.volatility(t.Value, strike.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.volatility(t.Value, strike.Value, extrapolate.Value))
     let _volatility2                               (End : ICell<Date>) (strike : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.volatility(End.Value, strike.Value, extrapolate.Value))
-    let _businessDayConvention                     = triv (fun () -> _CapFloorTermVolSurface.Value.businessDayConvention())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.volatility(End.Value, strike.Value, extrapolate.Value))
+    let _businessDayConvention                     = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.businessDayConvention())
     let _optionDateFromTenor                       (p : ICell<Period>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.optionDateFromTenor(p.Value))
-    let _calendar                                  = triv (fun () -> _CapFloorTermVolSurface.Value.calendar())
-    let _dayCounter                                = triv (fun () -> _CapFloorTermVolSurface.Value.dayCounter())
-    let _maxTime                                   = triv (fun () -> _CapFloorTermVolSurface.Value.maxTime())
-    let _referenceDate                             = triv (fun () -> _CapFloorTermVolSurface.Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> _CapFloorTermVolSurface.Value.settlementDays())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.optionDateFromTenor(p.Value))
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.calendar())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.dayCounter())
+    let _maxTime                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.maxTime())
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.settlementDays())
     let _timeFromReference                         (date : ICell<Date>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.timeFromReference(date.Value))
-    let _allowsExtrapolation                       = triv (fun () -> _CapFloorTermVolSurface.Value.allowsExtrapolation())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.timeFromReference(date.Value))
+    let _allowsExtrapolation                       = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.allowsExtrapolation())
     let _disableExtrapolation                      (b : ICell<bool>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.disableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.disableExtrapolation(b.Value)
                                                                      _CapFloorTermVolSurface.Value)
     let _enableExtrapolation                       (b : ICell<bool>)   
-                                                   = triv (fun () -> _CapFloorTermVolSurface.Value.enableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.enableExtrapolation(b.Value)
                                                                      _CapFloorTermVolSurface.Value)
-    let _extrapolate                               = triv (fun () -> _CapFloorTermVolSurface.Value.extrapolate)
+    let _extrapolate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _CapFloorTermVolSurface).Value.extrapolate)
     do this.Bind(_CapFloorTermVolSurface)
 (* 
     casting 
 *)
-    internal new () = new CapFloorTermVolSurfaceModel3(null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new CapFloorTermVolSurfaceModel3(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _CapFloorTermVolSurface <- v
     static member Cast (p : ICell<CapFloorTermVolSurface>) = 
         if p :? CapFloorTermVolSurfaceModel3 then 
@@ -463,6 +490,7 @@ type CapFloorTermVolSurfaceModel3
         else
             let o = new CapFloorTermVolSurfaceModel3 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

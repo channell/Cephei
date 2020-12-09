@@ -160,6 +160,8 @@ module YoYInflationCapFloorEngineFunction =
          index : obj)
         ([<ExcelArgument(Name="vol",Description = "YoYOptionletVolatilitySurface")>] 
          vol : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -167,19 +169,23 @@ module YoYInflationCapFloorEngineFunction =
 
                 let _index = Helper.toCell<YoYInflationIndex> index "index" 
                 let _vol = Helper.toHandle<YoYOptionletVolatilitySurface> vol "vol" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.YoYInflationCapFloorEngine 
                                                             _index.cell 
                                                             _vol.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<YoYInflationCapFloorEngine>) l
 
                 let source () = Helper.sourceFold "Fun.YoYInflationCapFloorEngine" 
                                                [| _index.source
                                                ;  _vol.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _index.cell
                                 ;  _vol.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -209,16 +215,16 @@ module YoYInflationCapFloorEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<YoYInflationCapFloorEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<YoYInflationCapFloorEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<YoYInflationCapFloorEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<YoYInflationCapFloorEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<YoYInflationCapFloorEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<YoYInflationCapFloorEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

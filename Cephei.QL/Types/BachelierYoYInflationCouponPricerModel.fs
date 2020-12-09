@@ -34,48 +34,54 @@ open Cephei.QLNetHelper
 [<AutoSerializable(true)>]
 type BachelierYoYInflationCouponPricerModel
     ( capletVol                                    : ICell<Handle<YoYOptionletVolatilitySurface>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BachelierYoYInflationCouponPricer> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _capletVol                                 = capletVol
 (*
     Functions
 *)
     let mutable
-        _BachelierYoYInflationCouponPricer         = cell (fun () -> new BachelierYoYInflationCouponPricer (capletVol.Value))
+        _BachelierYoYInflationCouponPricer         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BachelierYoYInflationCouponPricer (capletVol.Value))))
     let _capletPrice                               (effectiveCap : ICell<double>)   
-                                                   = triv (fun () -> _BachelierYoYInflationCouponPricer.Value.capletPrice(effectiveCap.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierYoYInflationCouponPricer).Value.capletPrice(effectiveCap.Value))
     let _capletRate                                (effectiveCap : ICell<double>)   
-                                                   = triv (fun () -> _BachelierYoYInflationCouponPricer.Value.capletRate(effectiveCap.Value))
-    let _capletVolatility                          = triv (fun () -> _BachelierYoYInflationCouponPricer.Value.capletVolatility())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierYoYInflationCouponPricer).Value.capletRate(effectiveCap.Value))
+    let _capletVolatility                          = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierYoYInflationCouponPricer).Value.capletVolatility())
     let _floorletPrice                             (effectiveFloor : ICell<double>)   
-                                                   = triv (fun () -> _BachelierYoYInflationCouponPricer.Value.floorletPrice(effectiveFloor.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierYoYInflationCouponPricer).Value.floorletPrice(effectiveFloor.Value))
     let _floorletRate                              (effectiveFloor : ICell<double>)   
-                                                   = triv (fun () -> _BachelierYoYInflationCouponPricer.Value.floorletRate(effectiveFloor.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierYoYInflationCouponPricer).Value.floorletRate(effectiveFloor.Value))
     let _initialize                                (coupon : ICell<InflationCoupon>)   
-                                                   = triv (fun () -> _BachelierYoYInflationCouponPricer.Value.initialize(coupon.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierYoYInflationCouponPricer).Value.initialize(coupon.Value)
                                                                      _BachelierYoYInflationCouponPricer.Value)
     let _setCapletVolatility                       (capletVol : ICell<Handle<YoYOptionletVolatilitySurface>>)   
-                                                   = triv (fun () -> _BachelierYoYInflationCouponPricer.Value.setCapletVolatility(capletVol.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierYoYInflationCouponPricer).Value.setCapletVolatility(capletVol.Value)
                                                                      _BachelierYoYInflationCouponPricer.Value)
-    let _swapletPrice                              = triv (fun () -> _BachelierYoYInflationCouponPricer.Value.swapletPrice())
-    let _swapletRate                               = triv (fun () -> _BachelierYoYInflationCouponPricer.Value.swapletRate())
+    let _swapletPrice                              = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierYoYInflationCouponPricer).Value.swapletPrice())
+    let _swapletRate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierYoYInflationCouponPricer).Value.swapletRate())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _BachelierYoYInflationCouponPricer.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierYoYInflationCouponPricer).Value.registerWith(handler.Value)
                                                                      _BachelierYoYInflationCouponPricer.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _BachelierYoYInflationCouponPricer.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierYoYInflationCouponPricer).Value.unregisterWith(handler.Value)
                                                                      _BachelierYoYInflationCouponPricer.Value)
-    let _update                                    = triv (fun () -> _BachelierYoYInflationCouponPricer.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierYoYInflationCouponPricer).Value.update()
                                                                      _BachelierYoYInflationCouponPricer.Value)
     do this.Bind(_BachelierYoYInflationCouponPricer)
 (* 
     casting 
 *)
-    internal new () = new BachelierYoYInflationCouponPricerModel(null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new BachelierYoYInflationCouponPricerModel(null,null)
     member internal this.Inject v = _BachelierYoYInflationCouponPricer <- v
     static member Cast (p : ICell<BachelierYoYInflationCouponPricer>) = 
         if p :? BachelierYoYInflationCouponPricerModel then 
@@ -83,6 +89,7 @@ type BachelierYoYInflationCouponPricerModel
         else
             let o = new BachelierYoYInflationCouponPricerModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

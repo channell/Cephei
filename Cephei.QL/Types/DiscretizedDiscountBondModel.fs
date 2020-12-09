@@ -33,50 +33,57 @@ Missing Constructor
   </summary> *)
 [<AutoSerializable(true)>]
 type DiscretizedDiscountBondModel
-    () as this =
+    ( evaluationDate                               : ICell<Date>
+    ) as this =
     inherit Model<DiscretizedDiscountBond> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
 (*
     Functions
 *)
     let mutable
-        _DiscretizedDiscountBond                   = cell (fun () -> new DiscretizedDiscountBond ())
-    let _mandatoryTimes                            = triv (fun () -> _DiscretizedDiscountBond.Value.mandatoryTimes())
+        _DiscretizedDiscountBond                   = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new DiscretizedDiscountBond ())))
+    let _mandatoryTimes                            = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedDiscountBond).Value.mandatoryTimes())
     let _reset                                     (size : ICell<int>)   
-                                                   = triv (fun () -> _DiscretizedDiscountBond.Value.reset(size.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedDiscountBond).Value.reset(size.Value)
                                                                      _DiscretizedDiscountBond.Value)
-    let _adjustValues                              = triv (fun () -> _DiscretizedDiscountBond.Value.adjustValues()
+    let _adjustValues                              = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedDiscountBond).Value.adjustValues()
                                                                      _DiscretizedDiscountBond.Value)
     let _initialize                                (Method : ICell<Lattice>) (t : ICell<double>)   
-                                                   = triv (fun () -> _DiscretizedDiscountBond.Value.initialize(Method.Value, t.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedDiscountBond).Value.initialize(Method.Value, t.Value)
                                                                      _DiscretizedDiscountBond.Value)
-    let _method                                    = triv (fun () -> _DiscretizedDiscountBond.Value.METHOD())
+    let _method                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedDiscountBond).Value.METHOD())
     let _partialRollback                           (To : ICell<double>)   
-                                                   = triv (fun () -> _DiscretizedDiscountBond.Value.partialRollback(To.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedDiscountBond).Value.partialRollback(To.Value)
                                                                      _DiscretizedDiscountBond.Value)
-    let _postAdjustValues                          = triv (fun () -> _DiscretizedDiscountBond.Value.postAdjustValues()
+    let _postAdjustValues                          = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedDiscountBond).Value.postAdjustValues()
                                                                      _DiscretizedDiscountBond.Value)
-    let _preAdjustValues                           = triv (fun () -> _DiscretizedDiscountBond.Value.preAdjustValues()
+    let _preAdjustValues                           = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedDiscountBond).Value.preAdjustValues()
                                                                      _DiscretizedDiscountBond.Value)
-    let _presentValue                              = triv (fun () -> _DiscretizedDiscountBond.Value.presentValue())
+    let _presentValue                              = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedDiscountBond).Value.presentValue())
     let _rollback                                  (To : ICell<double>)   
-                                                   = triv (fun () -> _DiscretizedDiscountBond.Value.rollback(To.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedDiscountBond).Value.rollback(To.Value)
                                                                      _DiscretizedDiscountBond.Value)
     let _setTime                                   (t : ICell<double>)   
-                                                   = triv (fun () -> _DiscretizedDiscountBond.Value.setTime(t.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedDiscountBond).Value.setTime(t.Value)
                                                                      _DiscretizedDiscountBond.Value)
     let _setValues                                 (v : ICell<Vector>)   
-                                                   = triv (fun () -> _DiscretizedDiscountBond.Value.setValues(v.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedDiscountBond).Value.setValues(v.Value)
                                                                      _DiscretizedDiscountBond.Value)
-    let _time                                      = triv (fun () -> _DiscretizedDiscountBond.Value.time())
-    let _values                                    = triv (fun () -> _DiscretizedDiscountBond.Value.values())
+    let _time                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedDiscountBond).Value.time())
+    let _values                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscretizedDiscountBond).Value.values())
     do this.Bind(_DiscretizedDiscountBond)
 (* 
     casting 
 *)
     
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new DiscretizedDiscountBondModel(null)
     member internal this.Inject v = _DiscretizedDiscountBond <- v
     static member Cast (p : ICell<DiscretizedDiscountBond>) = 
         if p :? DiscretizedDiscountBondModel then 
@@ -84,6 +91,7 @@ type DiscretizedDiscountBondModel
         else
             let o = new DiscretizedDiscountBondModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

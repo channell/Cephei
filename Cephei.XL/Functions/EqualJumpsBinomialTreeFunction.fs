@@ -365,16 +365,16 @@ module EqualJumpsBinomialTreeFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<EqualJumpsBinomialTree> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<EqualJumpsBinomialTree> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<EqualJumpsBinomialTree> (c)) :> ICell
                 let format (i : Generic.List<ICell<EqualJumpsBinomialTree>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<EqualJumpsBinomialTree>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<EqualJumpsBinomialTree>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

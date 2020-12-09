@@ -53,6 +53,8 @@ module CapFloorTermVolCurveFunction =
          vols : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter or empty")>] 
          dc : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -64,6 +66,7 @@ module CapFloorTermVolCurveFunction =
                 let _optionTenors = Helper.toCell<Generic.List<Period>> optionTenors "optionTenors" 
                 let _vols = Helper.toCell<Generic.List<double>> vols "vols" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.CapFloorTermVolCurve1 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
@@ -71,6 +74,7 @@ module CapFloorTermVolCurveFunction =
                                                             _optionTenors.cell 
                                                             _vols.cell 
                                                             _dc.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloorTermVolCurve>) l
 
@@ -81,6 +85,7 @@ module CapFloorTermVolCurveFunction =
                                                ;  _optionTenors.source
                                                ;  _vols.source
                                                ;  _dc.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _settlementDays.cell
@@ -89,6 +94,7 @@ module CapFloorTermVolCurveFunction =
                                 ;  _optionTenors.cell
                                 ;  _vols.cell
                                 ;  _dc.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -120,6 +126,8 @@ module CapFloorTermVolCurveFunction =
          vols : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter or empty")>] 
          dc : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -131,6 +139,7 @@ module CapFloorTermVolCurveFunction =
                 let _optionTenors = Helper.toCell<Generic.List<Period>> optionTenors "optionTenors" 
                 let _vols = Helper.toCell<Generic.List<double>> vols "vols" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.CapFloorTermVolCurve3
                                                             _settlementDate.cell 
                                                             _calendar.cell 
@@ -138,6 +147,7 @@ module CapFloorTermVolCurveFunction =
                                                             _optionTenors.cell 
                                                             _vols.cell 
                                                             _dc.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloorTermVolCurve>) l
 
@@ -148,6 +158,7 @@ module CapFloorTermVolCurveFunction =
                                                ;  _optionTenors.source
                                                ;  _vols.source
                                                ;  _dc.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _settlementDate.cell
@@ -156,6 +167,7 @@ module CapFloorTermVolCurveFunction =
                                 ;  _optionTenors.cell
                                 ;  _vols.cell
                                 ;  _dc.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -187,6 +199,8 @@ module CapFloorTermVolCurveFunction =
          vols : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter or empty")>] 
          dc : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -198,6 +212,7 @@ module CapFloorTermVolCurveFunction =
                 let _optionTenors = Helper.toCell<Generic.List<Period>> optionTenors "optionTenors" 
                 let _vols = Helper.toCell<Generic.List<Handle<Quote>>> vols "vols" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.CapFloorTermVolCurve2 
                                                             _settlementDate.cell 
                                                             _calendar.cell 
@@ -205,6 +220,7 @@ module CapFloorTermVolCurveFunction =
                                                             _optionTenors.cell 
                                                             _vols.cell 
                                                             _dc.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloorTermVolCurve>) l
 
@@ -215,6 +231,7 @@ module CapFloorTermVolCurveFunction =
                                                ;  _optionTenors.source
                                                ;  _vols.source
                                                ;  _dc.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _settlementDate.cell
@@ -223,6 +240,7 @@ module CapFloorTermVolCurveFunction =
                                 ;  _optionTenors.cell
                                 ;  _vols.cell
                                 ;  _dc.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -254,6 +272,8 @@ module CapFloorTermVolCurveFunction =
          vols : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter or empty")>] 
          dc : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -265,6 +285,7 @@ module CapFloorTermVolCurveFunction =
                 let _optionTenors = Helper.toCell<Generic.List<Period>> optionTenors "optionTenors" 
                 let _vols = Helper.toCell<Generic.List<Handle<Quote>>> vols "vols" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.CapFloorTermVolCurve
                                                             _settlementDays.cell 
                                                             _calendar.cell 
@@ -272,6 +293,7 @@ module CapFloorTermVolCurveFunction =
                                                             _optionTenors.cell 
                                                             _vols.cell 
                                                             _dc.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CapFloorTermVolCurve>) l
 
@@ -282,6 +304,7 @@ module CapFloorTermVolCurveFunction =
                                                ;  _optionTenors.source
                                                ;  _vols.source
                                                ;  _dc.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _settlementDays.cell
@@ -290,6 +313,7 @@ module CapFloorTermVolCurveFunction =
                                 ;  _optionTenors.cell
                                 ;  _vols.cell
                                 ;  _dc.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -1189,16 +1213,16 @@ module CapFloorTermVolCurveFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<CapFloorTermVolCurve> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<CapFloorTermVolCurve> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<CapFloorTermVolCurve> (c)) :> ICell
                 let format (i : Generic.List<ICell<CapFloorTermVolCurve>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<CapFloorTermVolCurve>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<CapFloorTermVolCurve>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

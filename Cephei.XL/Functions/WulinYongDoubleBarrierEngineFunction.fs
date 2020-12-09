@@ -46,6 +46,8 @@ module WulinYongDoubleBarrierEngineFunction =
          Process : obj)
         ([<ExcelArgument(Name="series",Description = "int or empty")>] 
          series : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -53,19 +55,23 @@ module WulinYongDoubleBarrierEngineFunction =
 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _series = Helper.toDefault<int> series "series" 5
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.WulinYongDoubleBarrierEngine 
                                                             _Process.cell 
                                                             _series.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<WulinYongDoubleBarrierEngine>) l
 
                 let source () = Helper.sourceFold "Fun.WulinYongDoubleBarrierEngine" 
                                                [| _Process.source
                                                ;  _series.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Process.cell
                                 ;  _series.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -95,16 +101,16 @@ module WulinYongDoubleBarrierEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<WulinYongDoubleBarrierEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<WulinYongDoubleBarrierEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<WulinYongDoubleBarrierEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<WulinYongDoubleBarrierEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<WulinYongDoubleBarrierEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<WulinYongDoubleBarrierEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

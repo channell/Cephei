@@ -108,16 +108,18 @@ namespace Cephei.Cell.Generic
         public Cell(FSharpFunc<Unit, T> func)
         {
             _func = func;
-            if (Cell.Parellel && !Cell.Lazy)
-                Task.Run(() => 
+            if (!Cell.Lazy)
+                Cell.Dispatch(() => 
                     {
                         try 
                         { 
                             Calculate(DateTime.Now, 0); 
-                        } catch { } 
+                        } 
+                        catch (Exception e)
+                        {
+                            Serilog.Log.Error(e, e.Message);
+                        } 
                     });
-            else if (!Cell.Lazy)
-                Calculate(DateTime.Now, 0);
         }
         /// <summary>
         /// Create a cell with a mnemonic reference
@@ -528,8 +530,7 @@ namespace Cephei.Cell.Generic
                     {
                         _epoch = epoch;
                         OnChange(CellEvent.Invalidate, root, this, epoch, session);
-                        if (Cell.Parellel)
-                            Task.Run(() =>
+                        Cell.Dispatch(() =>
                             {
                                 try
                                 {
@@ -540,8 +541,6 @@ namespace Cephei.Cell.Generic
                                     Serilog.Log.Error(e, e.Message);
                                 }
                             });
-                        else
-                            PoolCalculate(epoch, session);
                     }
                     break;
                 case CellEvent.Delete:
@@ -605,6 +604,9 @@ namespace Cephei.Cell.Generic
                 Value = (T)value;
             }
         }
+
+        public CellState State => (CellState)_state;
+        public Exception Error => _lastException;
 
         public bool ValueIs<Base>()
         {

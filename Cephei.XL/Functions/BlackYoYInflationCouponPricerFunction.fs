@@ -43,22 +43,28 @@ module BlackYoYInflationCouponPricerFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="capletVol",Description = "YoYOptionletVolatilitySurface")>] 
          capletVol : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
             try
 
                 let _capletVol = Helper.toHandle<YoYOptionletVolatilitySurface> capletVol "capletVol" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackYoYInflationCouponPricer 
                                                             _capletVol.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackYoYInflationCouponPricer>) l
 
                 let source () = Helper.sourceFold "Fun.BlackYoYInflationCouponPricer" 
                                                [| _capletVol.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _capletVol.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -568,16 +574,16 @@ module BlackYoYInflationCouponPricerFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<BlackYoYInflationCouponPricer> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<BlackYoYInflationCouponPricer> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<BlackYoYInflationCouponPricer> (c)) :> ICell
                 let format (i : Generic.List<ICell<BlackYoYInflationCouponPricer>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<BlackYoYInflationCouponPricer>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<BlackYoYInflationCouponPricer>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

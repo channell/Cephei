@@ -38,12 +38,15 @@ type BinomialBarrierEngineModel
     , Process                                      : ICell<GeneralizedBlackScholesProcess>
     , timeSteps                                    : ICell<int>
     , maxTimeSteps                                 : ICell<int>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BinomialBarrierEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _getTree                                   = getTree
     let _getAsset                                  = getAsset
     let _Process                                   = Process
@@ -53,12 +56,15 @@ type BinomialBarrierEngineModel
     Functions
 *)
     let mutable
-        _BinomialBarrierEngine                     = cell (fun () -> new BinomialBarrierEngine (getTree.Value, getAsset.Value, Process.Value, timeSteps.Value, maxTimeSteps.Value))
+        _BinomialBarrierEngine                     = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BinomialBarrierEngine (getTree.Value, getAsset.Value, Process.Value, timeSteps.Value, maxTimeSteps.Value))))
     do this.Bind(_BinomialBarrierEngine)
 (* 
     casting 
 *)
-    internal new () = new BinomialBarrierEngineModel(null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new BinomialBarrierEngineModel(null,null,null,null,null,null)
     member internal this.Inject v = _BinomialBarrierEngine <- v
     static member Cast (p : ICell<BinomialBarrierEngine>) = 
         if p :? BinomialBarrierEngineModel then 
@@ -66,6 +72,7 @@ type BinomialBarrierEngineModel
         else
             let o = new BinomialBarrierEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

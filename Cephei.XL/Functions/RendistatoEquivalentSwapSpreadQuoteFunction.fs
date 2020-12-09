@@ -244,16 +244,16 @@ module RendistatoEquivalentSwapSpreadQuoteFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<RendistatoEquivalentSwapSpreadQuote> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<RendistatoEquivalentSwapSpreadQuote> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<RendistatoEquivalentSwapSpreadQuote> (c)) :> ICell
                 let format (i : Generic.List<ICell<RendistatoEquivalentSwapSpreadQuote>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<RendistatoEquivalentSwapSpreadQuote>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<RendistatoEquivalentSwapSpreadQuote>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

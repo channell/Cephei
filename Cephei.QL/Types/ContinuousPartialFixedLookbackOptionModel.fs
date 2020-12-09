@@ -53,7 +53,7 @@ type ContinuousPartialFixedLookbackOptionModel
     Functions
 *)
     let mutable
-        _ContinuousPartialFixedLookbackOption      = cell (fun () -> withEngine pricingEngine (new ContinuousPartialFixedLookbackOption (lookbackPeriodStart.Value, payoff.Value, exercise.Value)))
+        _ContinuousPartialFixedLookbackOption      = cell (fun () -> withEngine pricingEngine evaluationDate (new ContinuousPartialFixedLookbackOption (lookbackPeriodStart.Value, payoff.Value, exercise.Value)))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _ContinuousPartialFixedLookbackOption).delta())
     let _deltaForward                              = triv (fun () -> (withEvaluationDate _evaluationDate _ContinuousPartialFixedLookbackOption).deltaForward())
     let _dividendRho                               = triv (fun () -> (withEvaluationDate _evaluationDate _ContinuousPartialFixedLookbackOption).dividendRho())

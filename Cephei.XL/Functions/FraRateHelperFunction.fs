@@ -61,6 +61,8 @@ module FraRateHelperFunction =
          pillarChoice : obj)
         ([<ExcelArgument(Name="customPillarDate",Description = "Date or empty")>] 
          customPillarDate : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -76,6 +78,7 @@ module FraRateHelperFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
                 let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FraRateHelper7 
                                                             _rate.cell 
                                                             _monthsToStart.cell 
@@ -87,6 +90,7 @@ module FraRateHelperFunction =
                                                             _dayCounter.cell 
                                                             _pillarChoice.cell 
                                                             _customPillarDate.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FraRateHelper>) l
 
@@ -101,6 +105,7 @@ module FraRateHelperFunction =
                                                ;  _dayCounter.source
                                                ;  _pillarChoice.source
                                                ;  _customPillarDate.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _rate.cell
@@ -113,6 +118,7 @@ module FraRateHelperFunction =
                                 ;  _dayCounter.cell
                                 ;  _pillarChoice.cell
                                 ;  _customPillarDate.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -142,6 +148,8 @@ module FraRateHelperFunction =
          pillarChoice : obj)
         ([<ExcelArgument(Name="customPillarDate",Description = "Date or empty")>] 
          customPillarDate : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -152,12 +160,14 @@ module FraRateHelperFunction =
                 let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" 
                 let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
                 let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FraRateHelper
                                                             _rate.cell 
                                                             _periodToStart.cell 
                                                             _iborIndex.cell 
                                                             _pillarChoice.cell 
                                                             _customPillarDate.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FraRateHelper>) l
 
@@ -167,6 +177,7 @@ module FraRateHelperFunction =
                                                ;  _iborIndex.source
                                                ;  _pillarChoice.source
                                                ;  _customPillarDate.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _rate.cell
@@ -174,6 +185,7 @@ module FraRateHelperFunction =
                                 ;  _iborIndex.cell
                                 ;  _pillarChoice.cell
                                 ;  _customPillarDate.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -203,6 +215,8 @@ module FraRateHelperFunction =
          pillarChoice : obj)
         ([<ExcelArgument(Name="customPillarDate",Description = "Date or empty")>] 
          customPillarDate : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -213,12 +227,14 @@ module FraRateHelperFunction =
                 let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" 
                 let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
                 let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FraRateHelper1
                                                             _rate.cell 
                                                             _periodToStart.cell 
                                                             _iborIndex.cell 
                                                             _pillarChoice.cell 
                                                             _customPillarDate.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FraRateHelper>) l
 
@@ -228,6 +244,7 @@ module FraRateHelperFunction =
                                                ;  _iborIndex.source
                                                ;  _pillarChoice.source
                                                ;  _customPillarDate.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _rate.cell
@@ -235,6 +252,7 @@ module FraRateHelperFunction =
                                 ;  _iborIndex.cell
                                 ;  _pillarChoice.cell
                                 ;  _customPillarDate.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -274,6 +292,8 @@ module FraRateHelperFunction =
          pillarChoice : obj)
         ([<ExcelArgument(Name="customPillarDate",Description = "Date or empty")>] 
          customPillarDate : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -289,6 +309,7 @@ module FraRateHelperFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
                 let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FraRateHelper2
                                                             _rate.cell 
                                                             _periodToStart.cell 
@@ -300,6 +321,7 @@ module FraRateHelperFunction =
                                                             _dayCounter.cell 
                                                             _pillarChoice.cell 
                                                             _customPillarDate.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FraRateHelper>) l
 
@@ -314,6 +336,7 @@ module FraRateHelperFunction =
                                                ;  _dayCounter.source
                                                ;  _pillarChoice.source
                                                ;  _customPillarDate.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _rate.cell
@@ -326,6 +349,7 @@ module FraRateHelperFunction =
                                 ;  _dayCounter.cell
                                 ;  _pillarChoice.cell
                                 ;  _customPillarDate.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -365,6 +389,8 @@ module FraRateHelperFunction =
          pillarChoice : obj)
         ([<ExcelArgument(Name="customPillarDate",Description = "Date or empty")>] 
          customPillarDate : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -380,6 +406,7 @@ module FraRateHelperFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
                 let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FraRateHelper3
                                                             _rate.cell 
                                                             _periodToStart.cell 
@@ -391,6 +418,7 @@ module FraRateHelperFunction =
                                                             _dayCounter.cell 
                                                             _pillarChoice.cell 
                                                             _customPillarDate.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FraRateHelper>) l
 
@@ -405,6 +433,7 @@ module FraRateHelperFunction =
                                                ;  _dayCounter.source
                                                ;  _pillarChoice.source
                                                ;  _customPillarDate.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _rate.cell
@@ -417,6 +446,7 @@ module FraRateHelperFunction =
                                 ;  _dayCounter.cell
                                 ;  _pillarChoice.cell
                                 ;  _customPillarDate.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -446,6 +476,8 @@ module FraRateHelperFunction =
          pillarChoice : obj)
         ([<ExcelArgument(Name="customPillarDate",Description = "Date or empty")>] 
          customPillarDate : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -456,12 +488,14 @@ module FraRateHelperFunction =
                 let _i = Helper.toCell<IborIndex> i "i" 
                 let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
                 let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FraRateHelper4
                                                             _rate.cell 
                                                             _monthsToStart.cell 
                                                             _i.cell 
                                                             _pillarChoice.cell 
                                                             _customPillarDate.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FraRateHelper>) l
 
@@ -471,6 +505,7 @@ module FraRateHelperFunction =
                                                ;  _i.source
                                                ;  _pillarChoice.source
                                                ;  _customPillarDate.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _rate.cell
@@ -478,6 +513,7 @@ module FraRateHelperFunction =
                                 ;  _i.cell
                                 ;  _pillarChoice.cell
                                 ;  _customPillarDate.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -517,6 +553,8 @@ module FraRateHelperFunction =
          pillarChoice : obj)
         ([<ExcelArgument(Name="customPillarDate",Description = "Date or empty")>] 
          customPillarDate : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -532,6 +570,7 @@ module FraRateHelperFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
                 let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FraRateHelper6 
                                                             _rate.cell 
                                                             _monthsToStart.cell 
@@ -543,6 +582,7 @@ module FraRateHelperFunction =
                                                             _dayCounter.cell 
                                                             _pillarChoice.cell 
                                                             _customPillarDate.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FraRateHelper>) l
 
@@ -557,6 +597,7 @@ module FraRateHelperFunction =
                                                ;  _dayCounter.source
                                                ;  _pillarChoice.source
                                                ;  _customPillarDate.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _rate.cell
@@ -569,6 +610,7 @@ module FraRateHelperFunction =
                                 ;  _dayCounter.cell
                                 ;  _pillarChoice.cell
                                 ;  _customPillarDate.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -598,6 +640,8 @@ module FraRateHelperFunction =
          pillarChoice : obj)
         ([<ExcelArgument(Name="customPillarDate",Description = "Date or empty")>] 
          customPillarDate : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -608,12 +652,14 @@ module FraRateHelperFunction =
                 let _i = Helper.toCell<IborIndex> i "i" 
                 let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
                 let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FraRateHelper5 
                                                             _rate.cell 
                                                             _monthsToStart.cell 
                                                             _i.cell 
                                                             _pillarChoice.cell 
                                                             _customPillarDate.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FraRateHelper>) l
 
@@ -623,6 +669,7 @@ module FraRateHelperFunction =
                                                ;  _i.source
                                                ;  _pillarChoice.source
                                                ;  _customPillarDate.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _rate.cell
@@ -630,6 +677,7 @@ module FraRateHelperFunction =
                                 ;  _i.cell
                                 ;  _pillarChoice.cell
                                 ;  _customPillarDate.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -1181,16 +1229,16 @@ module FraRateHelperFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<FraRateHelper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<FraRateHelper> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<FraRateHelper> (c)) :> ICell
                 let format (i : Generic.List<ICell<FraRateHelper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<FraRateHelper>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<FraRateHelper>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

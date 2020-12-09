@@ -39,12 +39,15 @@ type FdHullWhiteSwaptionEngineModel
     , dampingSteps                                 : ICell<int>
     , invEps                                       : ICell<double>
     , schemeDesc                                   : ICell<FdmSchemeDesc>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FdHullWhiteSwaptionEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _model                                     = model
     let _tGrid                                     = tGrid
     let _xGrid                                     = xGrid
@@ -55,25 +58,28 @@ type FdHullWhiteSwaptionEngineModel
     Functions
 *)
     let mutable
-        _FdHullWhiteSwaptionEngine                 = cell (fun () -> new FdHullWhiteSwaptionEngine (model.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, invEps.Value, schemeDesc.Value))
+        _FdHullWhiteSwaptionEngine                 = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FdHullWhiteSwaptionEngine (model.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, invEps.Value, schemeDesc.Value))))
     let _setModel                                  (model : ICell<Handle<HullWhite>>)   
-                                                   = triv (fun () -> _FdHullWhiteSwaptionEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FdHullWhiteSwaptionEngine).Value.setModel(model.Value)
                                                                      _FdHullWhiteSwaptionEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FdHullWhiteSwaptionEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FdHullWhiteSwaptionEngine).Value.registerWith(handler.Value)
                                                                      _FdHullWhiteSwaptionEngine.Value)
-    let _reset                                     = triv (fun () -> _FdHullWhiteSwaptionEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _FdHullWhiteSwaptionEngine).Value.reset()
                                                                      _FdHullWhiteSwaptionEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FdHullWhiteSwaptionEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FdHullWhiteSwaptionEngine).Value.unregisterWith(handler.Value)
                                                                      _FdHullWhiteSwaptionEngine.Value)
-    let _update                                    = triv (fun () -> _FdHullWhiteSwaptionEngine.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FdHullWhiteSwaptionEngine).Value.update()
                                                                      _FdHullWhiteSwaptionEngine.Value)
     do this.Bind(_FdHullWhiteSwaptionEngine)
 (* 
     casting 
 *)
-    internal new () = new FdHullWhiteSwaptionEngineModel(null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FdHullWhiteSwaptionEngineModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _FdHullWhiteSwaptionEngine <- v
     static member Cast (p : ICell<FdHullWhiteSwaptionEngine>) = 
         if p :? FdHullWhiteSwaptionEngineModel then 
@@ -81,6 +87,7 @@ type FdHullWhiteSwaptionEngineModel
         else
             let o = new FdHullWhiteSwaptionEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

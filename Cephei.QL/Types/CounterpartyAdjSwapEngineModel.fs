@@ -45,12 +45,15 @@ type CounterpartyAdjSwapEngineModel
     , ctptyRecoveryRate                            : ICell<double>
     , invstDTS                                     : ICell<Handle<DefaultProbabilityTermStructure>>
     , invstRecoveryRate                            : ICell<double>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<CounterpartyAdjSwapEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _discountCurve                             = discountCurve
     let _blackVol                                  = blackVol
     let _ctptyDTS                                  = ctptyDTS
@@ -61,12 +64,15 @@ type CounterpartyAdjSwapEngineModel
     Functions
 *)
     let mutable
-        _CounterpartyAdjSwapEngine                 = cell (fun () -> new CounterpartyAdjSwapEngine (discountCurve.Value, blackVol.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))
+        _CounterpartyAdjSwapEngine                 = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new CounterpartyAdjSwapEngine (discountCurve.Value, blackVol.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))))
     do this.Bind(_CounterpartyAdjSwapEngine)
 (* 
     casting 
 *)
-    internal new () = new CounterpartyAdjSwapEngineModel(null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new CounterpartyAdjSwapEngineModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _CounterpartyAdjSwapEngine <- v
     static member Cast (p : ICell<CounterpartyAdjSwapEngine>) = 
         if p :? CounterpartyAdjSwapEngineModel then 
@@ -74,6 +80,7 @@ type CounterpartyAdjSwapEngineModel
         else
             let o = new CounterpartyAdjSwapEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -105,12 +112,15 @@ type CounterpartyAdjSwapEngineModel1
     , ctptyRecoveryRate                            : ICell<double>
     , invstDTS                                     : ICell<Handle<DefaultProbabilityTermStructure>>
     , invstRecoveryRate                            : ICell<double>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<CounterpartyAdjSwapEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _discountCurve                             = discountCurve
     let _blackVol                                  = blackVol
     let _ctptyDTS                                  = ctptyDTS
@@ -121,12 +131,15 @@ type CounterpartyAdjSwapEngineModel1
     Functions
 *)
     let mutable
-        _CounterpartyAdjSwapEngine                 = cell (fun () -> new CounterpartyAdjSwapEngine (discountCurve.Value, blackVol.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))
+        _CounterpartyAdjSwapEngine                 = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new CounterpartyAdjSwapEngine (discountCurve.Value, blackVol.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))))
     do this.Bind(_CounterpartyAdjSwapEngine)
 (* 
     casting 
 *)
-    internal new () = new CounterpartyAdjSwapEngineModel1(null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new CounterpartyAdjSwapEngineModel1(null,null,null,null,null,null,null)
     member internal this.Inject v = _CounterpartyAdjSwapEngine <- v
     static member Cast (p : ICell<CounterpartyAdjSwapEngine>) = 
         if p :? CounterpartyAdjSwapEngineModel1 then 
@@ -134,6 +147,7 @@ type CounterpartyAdjSwapEngineModel1
         else
             let o = new CounterpartyAdjSwapEngineModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -165,12 +179,15 @@ type CounterpartyAdjSwapEngineModel2
     , ctptyRecoveryRate                            : ICell<double>
     , invstDTS                                     : ICell<Handle<DefaultProbabilityTermStructure>>
     , invstRecoveryRate                            : ICell<double>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<CounterpartyAdjSwapEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _discountCurve                             = discountCurve
     let _swaptionEngine                            = swaptionEngine
     let _ctptyDTS                                  = ctptyDTS
@@ -181,12 +198,15 @@ type CounterpartyAdjSwapEngineModel2
     Functions
 *)
     let mutable
-        _CounterpartyAdjSwapEngine                 = cell (fun () -> new CounterpartyAdjSwapEngine (discountCurve.Value, swaptionEngine.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))
+        _CounterpartyAdjSwapEngine                 = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new CounterpartyAdjSwapEngine (discountCurve.Value, swaptionEngine.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))))
     do this.Bind(_CounterpartyAdjSwapEngine)
 (* 
     casting 
 *)
-    internal new () = new CounterpartyAdjSwapEngineModel2(null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new CounterpartyAdjSwapEngineModel2(null,null,null,null,null,null,null)
     member internal this.Inject v = _CounterpartyAdjSwapEngine <- v
     static member Cast (p : ICell<CounterpartyAdjSwapEngine>) = 
         if p :? CounterpartyAdjSwapEngineModel2 then 
@@ -194,6 +214,7 @@ type CounterpartyAdjSwapEngineModel2
         else
             let o = new CounterpartyAdjSwapEngineModel2 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

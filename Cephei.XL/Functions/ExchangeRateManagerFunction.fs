@@ -343,16 +343,16 @@ module ExchangeRateManagerFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<ExchangeRateManager> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<ExchangeRateManager> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder () = Util.value l :> ICell
+                let builder () = Util.value (new Cephei.Cell.List<ExchangeRateManager> (c)) :> ICell
                 let format (i : Generic.List<ICell<ExchangeRateManager>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<ExchangeRateManager>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<ExchangeRateManager>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

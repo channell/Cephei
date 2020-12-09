@@ -37,12 +37,15 @@ type DiscountingSwapEngineModel
     , includeSettlementDateFlows                   : ICell<Nullable<bool>>
     , settlementDate                               : ICell<Date>
     , npvDate                                      : ICell<Date>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<DiscountingSwapEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _discountCurve                             = discountCurve
     let _includeSettlementDateFlows                = includeSettlementDateFlows
     let _settlementDate                            = settlementDate
@@ -51,12 +54,15 @@ type DiscountingSwapEngineModel
     Functions
 *)
     let mutable
-        _DiscountingSwapEngine                     = cell (fun () -> new DiscountingSwapEngine (discountCurve.Value, includeSettlementDateFlows.Value, settlementDate.Value, npvDate.Value))
+        _DiscountingSwapEngine                     = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new DiscountingSwapEngine (discountCurve.Value, includeSettlementDateFlows.Value, settlementDate.Value, npvDate.Value))))
     do this.Bind(_DiscountingSwapEngine)
 (* 
     casting 
 *)
-    internal new () = new DiscountingSwapEngineModel(null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new DiscountingSwapEngineModel(null,null,null,null,null)
     member internal this.Inject v = _DiscountingSwapEngine <- v
     static member Cast (p : ICell<DiscountingSwapEngine>) = 
         if p :? DiscountingSwapEngineModel then 
@@ -64,6 +70,7 @@ type DiscountingSwapEngineModel
         else
             let o = new DiscountingSwapEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

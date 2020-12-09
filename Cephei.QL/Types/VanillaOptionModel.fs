@@ -52,7 +52,7 @@ type VanillaOptionModel
     Functions
 *)
     let mutable
-        _VanillaOption                             = cell (fun () -> withEngine pricingEngine (new VanillaOption (payoff.Value, exercise.Value)))
+        _VanillaOption                             = cell (fun () -> withEngine pricingEngine evaluationDate (new VanillaOption (payoff.Value, exercise.Value)))
     let _impliedVolatility                         (targetValue : ICell<double>) (Process : ICell<GeneralizedBlackScholesProcess>) (accuracy : ICell<double>) (maxEvaluations : ICell<int>) (minVol : ICell<double>) (maxVol : ICell<double>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _VanillaOption).impliedVolatility(targetValue.Value, Process.Value, accuracy.Value, maxEvaluations.Value, minVol.Value, maxVol.Value))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _VanillaOption).delta())

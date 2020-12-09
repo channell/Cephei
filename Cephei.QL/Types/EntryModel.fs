@@ -16,6 +16,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT
 ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 FOR A PARTICULAR PURPOSE.  See the license for more details.
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
 namespace Cephei.QL
 
 open System
@@ -36,12 +38,15 @@ type EntryModel
     ( r                                            : ICell<ExchangeRate>
     , s                                            : ICell<Date>
     , e                                            : ICell<Date>
+    ( evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<Entry> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _r                                         = r
     let _s                                         = s
     let _e                                         = e
@@ -49,7 +54,9 @@ type EntryModel
     Functions
 *)
     let mutable
-        _Entry                                     = cell (fun () -> new Entry (r.Value, s.Value, e.Value))
+        _evaluationDate                            = evaluationDate
+    let mutable
+        _Entry                                     = cell (fun () -> (withEvaluationDate _evaluationDate new Entry (r.Value, s.Value, e.Value)))
     let _endDate                                   = cell (fun () -> _Entry.Value.endDate)
     let _rate                                      = cell (fun () -> _Entry.Value.rate)
     let _startDate                                 = cell (fun () -> _Entry.Value.startDate)
@@ -57,6 +64,10 @@ type EntryModel
 (* 
     casting 
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
+   interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
     internal new () = EntryModel(null,null,null)
     member internal this.Inject v = _Entry <- v
     static member Cast (p : ICell<Entry>) = 
@@ -64,13 +75,25 @@ type EntryModel
             p :?> EntryModel
         else
             let o = new EntryModel ()
-            o.Inject p
+            o.Inject p\m            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
 (* 
     casting 
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
+   interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
     internal new () = EntryModel(null,null,null)
     static member Cast (p : ICell<Entry>) = 
         if p :? EntryModel then 
@@ -84,6 +107,8 @@ type EntryModel
 (* 
     Externally visible/bindable properties
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     member this.r                                  = _r 
     member this.s                                  = _s 
     member this.e                                  = _e 

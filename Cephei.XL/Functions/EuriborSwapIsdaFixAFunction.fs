@@ -1506,16 +1506,16 @@ module EuriborSwapIsdaFixAFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<EuriborSwapIsdaFixA> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<EuriborSwapIsdaFixA> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<EuriborSwapIsdaFixA> (c)) :> ICell
                 let format (i : Generic.List<ICell<EuriborSwapIsdaFixA>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<EuriborSwapIsdaFixA>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<EuriborSwapIsdaFixA>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

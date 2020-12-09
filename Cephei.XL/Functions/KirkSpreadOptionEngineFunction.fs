@@ -48,6 +48,8 @@ module KirkSpreadOptionEngineFunction =
          process2 : obj)
         ([<ExcelArgument(Name="correlation",Description = "Quote")>] 
          correlation : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -56,10 +58,12 @@ module KirkSpreadOptionEngineFunction =
                 let _process1 = Helper.toCell<BlackProcess> process1 "process1" 
                 let _process2 = Helper.toCell<BlackProcess> process2 "process2" 
                 let _correlation = Helper.toHandle<Quote> correlation "correlation" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.KirkSpreadOptionEngine 
                                                             _process1.cell 
                                                             _process2.cell 
                                                             _correlation.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<KirkSpreadOptionEngine>) l
 
@@ -67,11 +71,13 @@ module KirkSpreadOptionEngineFunction =
                                                [| _process1.source
                                                ;  _process2.source
                                                ;  _correlation.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _process1.cell
                                 ;  _process2.cell
                                 ;  _correlation.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -101,16 +107,16 @@ module KirkSpreadOptionEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<KirkSpreadOptionEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<KirkSpreadOptionEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<KirkSpreadOptionEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<KirkSpreadOptionEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<KirkSpreadOptionEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<KirkSpreadOptionEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

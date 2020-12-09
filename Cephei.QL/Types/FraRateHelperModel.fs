@@ -38,12 +38,15 @@ type FraRateHelperModel
     , iborIndex                                    : ICell<IborIndex>
     , pillarChoice                                 : ICell<Pillar.Choice>
     , customPillarDate                             : ICell<Date>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FraRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _rate                                      = rate
     let _periodToStart                             = periodToStart
     let _iborIndex                                 = iborIndex
@@ -53,33 +56,36 @@ type FraRateHelperModel
     Functions
 *)
     let mutable
-        _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, periodToStart.Value, iborIndex.Value, pillarChoice.Value, customPillarDate.Value))
-    let _impliedQuote                              = triv (fun () -> _FraRateHelper.Value.impliedQuote())
+        _FraRateHelper                             = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FraRateHelper (rate.Value, periodToStart.Value, iborIndex.Value, pillarChoice.Value, customPillarDate.Value))))
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.setTermStructure(t.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.setTermStructure(t.Value)
                                                                      _FraRateHelper.Value)
-    let _update                                    = triv (fun () -> _FraRateHelper.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.update()
                                                                      _FraRateHelper.Value)
-    let _earliestDate                              = triv (fun () -> _FraRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _FraRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _FraRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _FraRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _FraRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _FraRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _FraRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _FraRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _FraRateHelper.Value.quoteValue())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.registerWith(handler.Value)
                                                                      _FraRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.unregisterWith(handler.Value)
                                                                      _FraRateHelper.Value)
     do this.Bind(_FraRateHelper)
 (* 
     casting 
 *)
-    internal new () = new FraRateHelperModel(null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FraRateHelperModel(null,null,null,null,null,null)
     member internal this.Inject v = _FraRateHelper <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel then 
@@ -87,6 +93,7 @@ type FraRateHelperModel
         else
             let o = new FraRateHelperModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -127,12 +134,15 @@ type FraRateHelperModel1
     , iborIndex                                    : ICell<IborIndex>
     , pillarChoice                                 : ICell<Pillar.Choice>
     , customPillarDate                             : ICell<Date>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FraRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _rate                                      = rate
     let _periodToStart                             = periodToStart
     let _iborIndex                                 = iborIndex
@@ -142,33 +152,36 @@ type FraRateHelperModel1
     Functions
 *)
     let mutable
-        _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, periodToStart.Value, iborIndex.Value, pillarChoice.Value, customPillarDate.Value))
-    let _impliedQuote                              = triv (fun () -> _FraRateHelper.Value.impliedQuote())
+        _FraRateHelper                             = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FraRateHelper (rate.Value, periodToStart.Value, iborIndex.Value, pillarChoice.Value, customPillarDate.Value))))
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.setTermStructure(t.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.setTermStructure(t.Value)
                                                                      _FraRateHelper.Value)
-    let _update                                    = triv (fun () -> _FraRateHelper.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.update()
                                                                      _FraRateHelper.Value)
-    let _earliestDate                              = triv (fun () -> _FraRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _FraRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _FraRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _FraRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _FraRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _FraRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _FraRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _FraRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _FraRateHelper.Value.quoteValue())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.registerWith(handler.Value)
                                                                      _FraRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.unregisterWith(handler.Value)
                                                                      _FraRateHelper.Value)
     do this.Bind(_FraRateHelper)
 (* 
     casting 
 *)
-    internal new () = new FraRateHelperModel1(null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FraRateHelperModel1(null,null,null,null,null,null)
     member internal this.Inject v = _FraRateHelper <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel1 then 
@@ -176,6 +189,7 @@ type FraRateHelperModel1
         else
             let o = new FraRateHelperModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -221,12 +235,15 @@ type FraRateHelperModel2
     , dayCounter                                   : ICell<DayCounter>
     , pillarChoice                                 : ICell<Pillar.Choice>
     , customPillarDate                             : ICell<Date>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FraRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _rate                                      = rate
     let _periodToStart                             = periodToStart
     let _lengthInMonths                            = lengthInMonths
@@ -241,33 +258,36 @@ type FraRateHelperModel2
     Functions
 *)
     let mutable
-        _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, periodToStart.Value, lengthInMonths.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, pillarChoice.Value, customPillarDate.Value))
-    let _impliedQuote                              = triv (fun () -> _FraRateHelper.Value.impliedQuote())
+        _FraRateHelper                             = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FraRateHelper (rate.Value, periodToStart.Value, lengthInMonths.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, pillarChoice.Value, customPillarDate.Value))))
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.setTermStructure(t.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.setTermStructure(t.Value)
                                                                      _FraRateHelper.Value)
-    let _update                                    = triv (fun () -> _FraRateHelper.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.update()
                                                                      _FraRateHelper.Value)
-    let _earliestDate                              = triv (fun () -> _FraRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _FraRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _FraRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _FraRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _FraRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _FraRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _FraRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _FraRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _FraRateHelper.Value.quoteValue())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.registerWith(handler.Value)
                                                                      _FraRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.unregisterWith(handler.Value)
                                                                      _FraRateHelper.Value)
     do this.Bind(_FraRateHelper)
 (* 
     casting 
 *)
-    internal new () = new FraRateHelperModel2(null,null,null,null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FraRateHelperModel2(null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FraRateHelper <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel2 then 
@@ -275,6 +295,7 @@ type FraRateHelperModel2
         else
             let o = new FraRateHelperModel2 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -325,12 +346,15 @@ type FraRateHelperModel3
     , dayCounter                                   : ICell<DayCounter>
     , pillarChoice                                 : ICell<Pillar.Choice>
     , customPillarDate                             : ICell<Date>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FraRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _rate                                      = rate
     let _periodToStart                             = periodToStart
     let _lengthInMonths                            = lengthInMonths
@@ -345,33 +369,36 @@ type FraRateHelperModel3
     Functions
 *)
     let mutable
-        _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, periodToStart.Value, lengthInMonths.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, pillarChoice.Value, customPillarDate.Value))
-    let _impliedQuote                              = triv (fun () -> _FraRateHelper.Value.impliedQuote())
+        _FraRateHelper                             = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FraRateHelper (rate.Value, periodToStart.Value, lengthInMonths.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, pillarChoice.Value, customPillarDate.Value))))
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.setTermStructure(t.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.setTermStructure(t.Value)
                                                                      _FraRateHelper.Value)
-    let _update                                    = triv (fun () -> _FraRateHelper.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.update()
                                                                      _FraRateHelper.Value)
-    let _earliestDate                              = triv (fun () -> _FraRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _FraRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _FraRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _FraRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _FraRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _FraRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _FraRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _FraRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _FraRateHelper.Value.quoteValue())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.registerWith(handler.Value)
                                                                      _FraRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.unregisterWith(handler.Value)
                                                                      _FraRateHelper.Value)
     do this.Bind(_FraRateHelper)
 (* 
     casting 
 *)
-    internal new () = new FraRateHelperModel3(null,null,null,null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FraRateHelperModel3(null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FraRateHelper <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel3 then 
@@ -379,6 +406,7 @@ type FraRateHelperModel3
         else
             let o = new FraRateHelperModel3 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -424,12 +452,15 @@ type FraRateHelperModel4
     , i                                            : ICell<IborIndex>
     , pillarChoice                                 : ICell<Pillar.Choice>
     , customPillarDate                             : ICell<Date>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FraRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _rate                                      = rate
     let _monthsToStart                             = monthsToStart
     let _i                                         = i
@@ -439,33 +470,36 @@ type FraRateHelperModel4
     Functions
 *)
     let mutable
-        _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, monthsToStart.Value, i.Value, pillarChoice.Value, customPillarDate.Value))
-    let _impliedQuote                              = triv (fun () -> _FraRateHelper.Value.impliedQuote())
+        _FraRateHelper                             = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FraRateHelper (rate.Value, monthsToStart.Value, i.Value, pillarChoice.Value, customPillarDate.Value))))
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.setTermStructure(t.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.setTermStructure(t.Value)
                                                                      _FraRateHelper.Value)
-    let _update                                    = triv (fun () -> _FraRateHelper.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.update()
                                                                      _FraRateHelper.Value)
-    let _earliestDate                              = triv (fun () -> _FraRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _FraRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _FraRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _FraRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _FraRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _FraRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _FraRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _FraRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _FraRateHelper.Value.quoteValue())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.registerWith(handler.Value)
                                                                      _FraRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.unregisterWith(handler.Value)
                                                                      _FraRateHelper.Value)
     do this.Bind(_FraRateHelper)
 (* 
     casting 
 *)
-    internal new () = new FraRateHelperModel4(null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FraRateHelperModel4(null,null,null,null,null,null)
     member internal this.Inject v = _FraRateHelper <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel4 then 
@@ -473,6 +507,7 @@ type FraRateHelperModel4
         else
             let o = new FraRateHelperModel4 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -513,12 +548,15 @@ type FraRateHelperModel5
     , i                                            : ICell<IborIndex>
     , pillarChoice                                 : ICell<Pillar.Choice>
     , customPillarDate                             : ICell<Date>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FraRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _rate                                      = rate
     let _monthsToStart                             = monthsToStart
     let _i                                         = i
@@ -528,33 +566,36 @@ type FraRateHelperModel5
     Functions
 *)
     let mutable
-        _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, monthsToStart.Value, i.Value, pillarChoice.Value, customPillarDate.Value))
-    let _impliedQuote                              = triv (fun () -> _FraRateHelper.Value.impliedQuote())
+        _FraRateHelper                             = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FraRateHelper (rate.Value, monthsToStart.Value, i.Value, pillarChoice.Value, customPillarDate.Value))))
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.setTermStructure(t.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.setTermStructure(t.Value)
                                                                      _FraRateHelper.Value)
-    let _update                                    = triv (fun () -> _FraRateHelper.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.update()
                                                                      _FraRateHelper.Value)
-    let _earliestDate                              = triv (fun () -> _FraRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _FraRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _FraRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _FraRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _FraRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _FraRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _FraRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _FraRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _FraRateHelper.Value.quoteValue())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.registerWith(handler.Value)
                                                                      _FraRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.unregisterWith(handler.Value)
                                                                      _FraRateHelper.Value)
     do this.Bind(_FraRateHelper)
 (* 
     casting 
 *)
-    internal new () = new FraRateHelperModel5(null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FraRateHelperModel5(null,null,null,null,null,null)
     member internal this.Inject v = _FraRateHelper <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel5 then 
@@ -562,6 +603,7 @@ type FraRateHelperModel5
         else
             let o = new FraRateHelperModel5 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -607,12 +649,15 @@ type FraRateHelperModel6
     , dayCounter                                   : ICell<DayCounter>
     , pillarChoice                                 : ICell<Pillar.Choice>
     , customPillarDate                             : ICell<Date>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FraRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _rate                                      = rate
     let _monthsToStart                             = monthsToStart
     let _monthsToEnd                               = monthsToEnd
@@ -627,33 +672,36 @@ type FraRateHelperModel6
     Functions
 *)
     let mutable
-        _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, monthsToStart.Value, monthsToEnd.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, pillarChoice.Value, customPillarDate.Value))
-    let _impliedQuote                              = triv (fun () -> _FraRateHelper.Value.impliedQuote())
+        _FraRateHelper                             = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FraRateHelper (rate.Value, monthsToStart.Value, monthsToEnd.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, pillarChoice.Value, customPillarDate.Value))))
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.setTermStructure(t.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.setTermStructure(t.Value)
                                                                      _FraRateHelper.Value)
-    let _update                                    = triv (fun () -> _FraRateHelper.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.update()
                                                                      _FraRateHelper.Value)
-    let _earliestDate                              = triv (fun () -> _FraRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _FraRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _FraRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _FraRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _FraRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _FraRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _FraRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _FraRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _FraRateHelper.Value.quoteValue())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.registerWith(handler.Value)
                                                                      _FraRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.unregisterWith(handler.Value)
                                                                      _FraRateHelper.Value)
     do this.Bind(_FraRateHelper)
 (* 
     casting 
 *)
-    internal new () = new FraRateHelperModel6(null,null,null,null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FraRateHelperModel6(null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FraRateHelper <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel6 then 
@@ -661,6 +709,7 @@ type FraRateHelperModel6
         else
             let o = new FraRateHelperModel6 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -711,12 +760,15 @@ type FraRateHelperModel7
     , dayCounter                                   : ICell<DayCounter>
     , pillarChoice                                 : ICell<Pillar.Choice>
     , customPillarDate                             : ICell<Date>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FraRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _rate                                      = rate
     let _monthsToStart                             = monthsToStart
     let _monthsToEnd                               = monthsToEnd
@@ -731,33 +783,36 @@ type FraRateHelperModel7
     Functions
 *)
     let mutable
-        _FraRateHelper                             = cell (fun () -> new FraRateHelper (rate.Value, monthsToStart.Value, monthsToEnd.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, pillarChoice.Value, customPillarDate.Value))
-    let _impliedQuote                              = triv (fun () -> _FraRateHelper.Value.impliedQuote())
+        _FraRateHelper                             = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FraRateHelper (rate.Value, monthsToStart.Value, monthsToEnd.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, pillarChoice.Value, customPillarDate.Value))))
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.setTermStructure(t.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.setTermStructure(t.Value)
                                                                      _FraRateHelper.Value)
-    let _update                                    = triv (fun () -> _FraRateHelper.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.update()
                                                                      _FraRateHelper.Value)
-    let _earliestDate                              = triv (fun () -> _FraRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _FraRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _FraRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _FraRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _FraRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _FraRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _FraRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _FraRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _FraRateHelper.Value.quoteValue())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.registerWith(handler.Value)
                                                                      _FraRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FraRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FraRateHelper).Value.unregisterWith(handler.Value)
                                                                      _FraRateHelper.Value)
     do this.Bind(_FraRateHelper)
 (* 
     casting 
 *)
-    internal new () = new FraRateHelperModel7(null,null,null,null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FraRateHelperModel7(null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FraRateHelper <- v
     static member Cast (p : ICell<FraRateHelper>) = 
         if p :? FraRateHelperModel7 then 
@@ -765,6 +820,7 @@ type FraRateHelperModel7
         else
             let o = new FraRateHelperModel7 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

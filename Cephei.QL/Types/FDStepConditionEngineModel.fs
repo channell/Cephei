@@ -37,12 +37,15 @@ type FDStepConditionEngineModel
     , timeSteps                                    : ICell<int>
     , gridPoints                                   : ICell<int>
     , timeDependent                                : ICell<bool>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FDStepConditionEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
     let _timeSteps                                 = timeSteps
     let _gridPoints                                = gridPoints
@@ -51,25 +54,28 @@ type FDStepConditionEngineModel
     Functions
 *)
     let mutable
-        _FDStepConditionEngine                     = cell (fun () -> new FDStepConditionEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+        _FDStepConditionEngine                     = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FDStepConditionEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))))
     let _calculate                                 (r : ICell<IPricingEngineResults>)   
-                                                   = triv (fun () -> _FDStepConditionEngine.Value.calculate(r.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDStepConditionEngine).Value.calculate(r.Value)
                                                                      _FDStepConditionEngine.Value)
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
-                                                   = triv (fun () -> _FDStepConditionEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDStepConditionEngine).Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _setStepCondition                          (impl : ICell<Func<IStepCondition<Vector>>>)   
-                                                   = triv (fun () -> _FDStepConditionEngine.Value.setStepCondition(impl.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDStepConditionEngine).Value.setStepCondition(impl.Value)
                                                                      _FDStepConditionEngine.Value)
-    let _ensureStrikeInGrid                        = triv (fun () -> _FDStepConditionEngine.Value.ensureStrikeInGrid()
+    let _ensureStrikeInGrid                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FDStepConditionEngine).Value.ensureStrikeInGrid()
                                                                      _FDStepConditionEngine.Value)
-    let _getResidualTime                           = triv (fun () -> _FDStepConditionEngine.Value.getResidualTime())
-    let _grid                                      = triv (fun () -> _FDStepConditionEngine.Value.grid())
-    let _intrinsicValues_                          = triv (fun () -> _FDStepConditionEngine.Value.intrinsicValues_)
+    let _getResidualTime                           = triv (fun () -> (curryEvaluationDate _evaluationDate _FDStepConditionEngine).Value.getResidualTime())
+    let _grid                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _FDStepConditionEngine).Value.grid())
+    let _intrinsicValues_                          = triv (fun () -> (curryEvaluationDate _evaluationDate _FDStepConditionEngine).Value.intrinsicValues_)
     do this.Bind(_FDStepConditionEngine)
 (* 
     casting 
 *)
-    internal new () = new FDStepConditionEngineModel(null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FDStepConditionEngineModel(null,null,null,null,null)
     member internal this.Inject v = _FDStepConditionEngine <- v
     static member Cast (p : ICell<FDStepConditionEngine>) = 
         if p :? FDStepConditionEngineModel then 
@@ -77,6 +83,7 @@ type FDStepConditionEngineModel
         else
             let o = new FDStepConditionEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -104,34 +111,41 @@ required for generics
   </summary> *)
 [<AutoSerializable(true)>]
 type FDStepConditionEngineModel1
-    () as this =
+    ( evaluationDate                               : ICell<Date>
+    ) as this =
     inherit Model<FDStepConditionEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
 (*
     Functions
 *)
     let mutable
-        _FDStepConditionEngine                     = cell (fun () -> new FDStepConditionEngine ())
+        _FDStepConditionEngine                     = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FDStepConditionEngine ())))
     let _calculate                                 (r : ICell<IPricingEngineResults>)   
-                                                   = triv (fun () -> _FDStepConditionEngine.Value.calculate(r.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDStepConditionEngine).Value.calculate(r.Value)
                                                                      _FDStepConditionEngine.Value)
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
-                                                   = triv (fun () -> _FDStepConditionEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDStepConditionEngine).Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
     let _setStepCondition                          (impl : ICell<Func<IStepCondition<Vector>>>)   
-                                                   = triv (fun () -> _FDStepConditionEngine.Value.setStepCondition(impl.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDStepConditionEngine).Value.setStepCondition(impl.Value)
                                                                      _FDStepConditionEngine.Value)
-    let _ensureStrikeInGrid                        = triv (fun () -> _FDStepConditionEngine.Value.ensureStrikeInGrid()
+    let _ensureStrikeInGrid                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FDStepConditionEngine).Value.ensureStrikeInGrid()
                                                                      _FDStepConditionEngine.Value)
-    let _getResidualTime                           = triv (fun () -> _FDStepConditionEngine.Value.getResidualTime())
-    let _grid                                      = triv (fun () -> _FDStepConditionEngine.Value.grid())
-    let _intrinsicValues_                          = triv (fun () -> _FDStepConditionEngine.Value.intrinsicValues_)
+    let _getResidualTime                           = triv (fun () -> (curryEvaluationDate _evaluationDate _FDStepConditionEngine).Value.getResidualTime())
+    let _grid                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _FDStepConditionEngine).Value.grid())
+    let _intrinsicValues_                          = triv (fun () -> (curryEvaluationDate _evaluationDate _FDStepConditionEngine).Value.intrinsicValues_)
     do this.Bind(_FDStepConditionEngine)
 (* 
     casting 
 *)
     
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FDStepConditionEngineModel1(null)
     member internal this.Inject v = _FDStepConditionEngine <- v
     static member Cast (p : ICell<FDStepConditionEngine>) = 
         if p :? FDStepConditionEngineModel1 then 
@@ -139,6 +153,7 @@ type FDStepConditionEngineModel1
         else
             let o = new FDStepConditionEngineModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

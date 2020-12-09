@@ -58,7 +58,7 @@ type BarrierOptionModel
     Functions
 *)
     let mutable
-        _BarrierOption                             = cell (fun () -> withEngine pricingEngine (new BarrierOption (barrierType.Value, barrier.Value, rebate.Value, payoff.Value, exercise.Value)))
+        _BarrierOption                             = cell (fun () -> withEngine pricingEngine evaluationDate (new BarrierOption (barrierType.Value, barrier.Value, rebate.Value, payoff.Value, exercise.Value)))
     let _impliedVolatility                         (targetValue : ICell<double>) (Process : ICell<GeneralizedBlackScholesProcess>) (accuracy : ICell<double>) (maxEvaluations : ICell<int>) (minVol : ICell<double>) (maxVol : ICell<double>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _BarrierOption).impliedVolatility(targetValue.Value, Process.Value, accuracy.Value, maxEvaluations.Value, minVol.Value, maxVol.Value))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _BarrierOption).delta())

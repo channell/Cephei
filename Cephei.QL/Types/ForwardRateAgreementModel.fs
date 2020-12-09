@@ -63,7 +63,7 @@ type ForwardRateAgreementModel
     Functions
 *)
     let mutable
-        _ForwardRateAgreement                      = cell (fun () -> withEngine pricingEngine (new ForwardRateAgreement (valueDate.Value, maturityDate.Value, Type.Value, strikeForwardRate.Value, notionalAmount.Value, index.Value, discountCurve.Value)))
+        _ForwardRateAgreement                      = cell (fun () -> withEngine pricingEngine evaluationDate (new ForwardRateAgreement (valueDate.Value, maturityDate.Value, Type.Value, strikeForwardRate.Value, notionalAmount.Value, index.Value, discountCurve.Value)))
     let _forwardRate                               = triv (fun () -> (withEvaluationDate _evaluationDate _ForwardRateAgreement).forwardRate())
     let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _ForwardRateAgreement).isExpired())
     let _settlementDate                            = triv (fun () -> (withEvaluationDate _evaluationDate _ForwardRateAgreement).settlementDate())

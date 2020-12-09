@@ -37,12 +37,15 @@ type BachelierSwaptionEngineModel
     , vol                                          : ICell<double>
     , dc                                           : ICell<DayCounter>
     , model                                        : ICell<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BachelierSwaptionEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _discountCurve                             = discountCurve
     let _vol                                       = vol
     let _dc                                        = dc
@@ -51,14 +54,17 @@ type BachelierSwaptionEngineModel
     Functions
 *)
     let mutable
-        _BachelierSwaptionEngine                   = cell (fun () -> new BachelierSwaptionEngine (discountCurve.Value, vol.Value, dc.Value, model.Value))
-    let _termStructure                             = triv (fun () -> _BachelierSwaptionEngine.Value.termStructure())
-    let _volatility                                = triv (fun () -> _BachelierSwaptionEngine.Value.volatility())
+        _BachelierSwaptionEngine                   = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BachelierSwaptionEngine (discountCurve.Value, vol.Value, dc.Value, model.Value))))
+    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierSwaptionEngine).Value.termStructure())
+    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierSwaptionEngine).Value.volatility())
     do this.Bind(_BachelierSwaptionEngine)
 (* 
     casting 
 *)
-    internal new () = new BachelierSwaptionEngineModel(null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new BachelierSwaptionEngineModel(null,null,null,null,null)
     member internal this.Inject v = _BachelierSwaptionEngine <- v
     static member Cast (p : ICell<BachelierSwaptionEngine>) = 
         if p :? BachelierSwaptionEngineModel then 
@@ -66,6 +72,7 @@ type BachelierSwaptionEngineModel
         else
             let o = new BachelierSwaptionEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -88,12 +95,15 @@ type BachelierSwaptionEngineModel1
     ( discountCurve                                : ICell<Handle<YieldTermStructure>>
     , vol                                          : ICell<Handle<SwaptionVolatilityStructure>>
     , model                                        : ICell<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BachelierSwaptionEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _discountCurve                             = discountCurve
     let _vol                                       = vol
     let _model                                     = model
@@ -101,14 +111,17 @@ type BachelierSwaptionEngineModel1
     Functions
 *)
     let mutable
-        _BachelierSwaptionEngine                   = cell (fun () -> new BachelierSwaptionEngine (discountCurve.Value, vol.Value, model.Value))
-    let _termStructure                             = triv (fun () -> _BachelierSwaptionEngine.Value.termStructure())
-    let _volatility                                = triv (fun () -> _BachelierSwaptionEngine.Value.volatility())
+        _BachelierSwaptionEngine                   = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BachelierSwaptionEngine (discountCurve.Value, vol.Value, model.Value))))
+    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierSwaptionEngine).Value.termStructure())
+    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierSwaptionEngine).Value.volatility())
     do this.Bind(_BachelierSwaptionEngine)
 (* 
     casting 
 *)
-    internal new () = new BachelierSwaptionEngineModel1(null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new BachelierSwaptionEngineModel1(null,null,null,null)
     member internal this.Inject v = _BachelierSwaptionEngine <- v
     static member Cast (p : ICell<BachelierSwaptionEngine>) = 
         if p :? BachelierSwaptionEngineModel1 then 
@@ -116,6 +129,7 @@ type BachelierSwaptionEngineModel1
         else
             let o = new BachelierSwaptionEngineModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -138,12 +152,15 @@ type BachelierSwaptionEngineModel2
     , vol                                          : ICell<Handle<Quote>>
     , dc                                           : ICell<DayCounter>
     , model                                        : ICell<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BachelierSwaptionEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _discountCurve                             = discountCurve
     let _vol                                       = vol
     let _dc                                        = dc
@@ -152,14 +169,17 @@ type BachelierSwaptionEngineModel2
     Functions
 *)
     let mutable
-        _BachelierSwaptionEngine                   = cell (fun () -> new BachelierSwaptionEngine (discountCurve.Value, vol.Value, dc.Value, model.Value))
-    let _termStructure                             = triv (fun () -> _BachelierSwaptionEngine.Value.termStructure())
-    let _volatility                                = triv (fun () -> _BachelierSwaptionEngine.Value.volatility())
+        _BachelierSwaptionEngine                   = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BachelierSwaptionEngine (discountCurve.Value, vol.Value, dc.Value, model.Value))))
+    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierSwaptionEngine).Value.termStructure())
+    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierSwaptionEngine).Value.volatility())
     do this.Bind(_BachelierSwaptionEngine)
 (* 
     casting 
 *)
-    internal new () = new BachelierSwaptionEngineModel2(null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new BachelierSwaptionEngineModel2(null,null,null,null,null)
     member internal this.Inject v = _BachelierSwaptionEngine <- v
     static member Cast (p : ICell<BachelierSwaptionEngine>) = 
         if p :? BachelierSwaptionEngineModel2 then 
@@ -167,6 +187,7 @@ type BachelierSwaptionEngineModel2
         else
             let o = new BachelierSwaptionEngineModel2 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

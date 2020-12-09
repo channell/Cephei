@@ -40,12 +40,15 @@ type FdBlackScholesRebateEngineModel
     , schemeDesc                                   : ICell<FdmSchemeDesc>
     , localVol                                     : ICell<bool>
     , illegalLocalVolOverwrite                     : ICell<Nullable<double>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FdBlackScholesRebateEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
     let _tGrid                                     = tGrid
     let _xGrid                                     = xGrid
@@ -57,12 +60,15 @@ type FdBlackScholesRebateEngineModel
     Functions
 *)
     let mutable
-        _FdBlackScholesRebateEngine                = cell (fun () -> new FdBlackScholesRebateEngine (Process.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value))
+        _FdBlackScholesRebateEngine                = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FdBlackScholesRebateEngine (Process.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value))))
     do this.Bind(_FdBlackScholesRebateEngine)
 (* 
     casting 
 *)
-    internal new () = new FdBlackScholesRebateEngineModel(null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FdBlackScholesRebateEngineModel(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FdBlackScholesRebateEngine <- v
     static member Cast (p : ICell<FdBlackScholesRebateEngine>) = 
         if p :? FdBlackScholesRebateEngineModel then 
@@ -70,6 +76,7 @@ type FdBlackScholesRebateEngineModel
         else
             let o = new FdBlackScholesRebateEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

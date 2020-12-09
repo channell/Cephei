@@ -34,24 +34,30 @@ open Cephei.QLNetHelper
 [<AutoSerializable(true)>]
 type InterpolatingCPICapFloorEngineModel
     ( priceSurf                                    : ICell<Handle<CPICapFloorTermPriceSurface>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<InterpolatingCPICapFloorEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _priceSurf                                 = priceSurf
 (*
     Functions
 *)
     let mutable
-        _InterpolatingCPICapFloorEngine            = cell (fun () -> new InterpolatingCPICapFloorEngine (priceSurf.Value))
-    let _name                                      = triv (fun () -> _InterpolatingCPICapFloorEngine.Value.name())
+        _InterpolatingCPICapFloorEngine            = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new InterpolatingCPICapFloorEngine (priceSurf.Value))))
+    let _name                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatingCPICapFloorEngine).Value.name())
     do this.Bind(_InterpolatingCPICapFloorEngine)
 (* 
     casting 
 *)
-    internal new () = new InterpolatingCPICapFloorEngineModel(null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new InterpolatingCPICapFloorEngineModel(null,null)
     member internal this.Inject v = _InterpolatingCPICapFloorEngine <- v
     static member Cast (p : ICell<InterpolatingCPICapFloorEngine>) = 
         if p :? InterpolatingCPICapFloorEngineModel then 
@@ -59,6 +65,7 @@ type InterpolatingCPICapFloorEngineModel
         else
             let o = new InterpolatingCPICapFloorEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

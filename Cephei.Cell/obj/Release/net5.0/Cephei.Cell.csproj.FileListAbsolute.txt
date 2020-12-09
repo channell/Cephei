@@ -2,3 +2,4 @@ C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\release\net5.0\Cephei.Cell.G
 C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\release\net5.0\Cephei.Cell.AssemblyInfoInputs.cache
 C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\release\net5.0\Cephei.Cell.AssemblyInfo.cs
 C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\release\net5.0\Cephei.Cell.csproj.CoreCompileInputs.cache
+C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\release\net5.0\Cephei.Cell.csprojAssemblyReference.cache

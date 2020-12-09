@@ -37,12 +37,15 @@ type FDBermudanEngineModel
     , timeSteps                                    : ICell<int>
     , gridPoints                                   : ICell<int>
     , timeDependent                                : ICell<bool>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FDBermudanEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
     let _timeSteps                                 = timeSteps
     let _gridPoints                                = gridPoints
@@ -51,32 +54,35 @@ type FDBermudanEngineModel
     Functions
 *)
     let mutable
-        _FDBermudanEngine                          = cell (fun () -> new FDBermudanEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+        _FDBermudanEngine                          = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FDBermudanEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FDBermudanEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDBermudanEngine).Value.registerWith(handler.Value)
                                                                      _FDBermudanEngine.Value)
-    let _reset                                     = triv (fun () -> _FDBermudanEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _FDBermudanEngine).Value.reset()
                                                                      _FDBermudanEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FDBermudanEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDBermudanEngine).Value.unregisterWith(handler.Value)
                                                                      _FDBermudanEngine.Value)
-    let _update                                    = triv (fun () -> _FDBermudanEngine.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FDBermudanEngine).Value.update()
                                                                      _FDBermudanEngine.Value)
     let _setStepCondition                          (impl : ICell<Func<IStepCondition<Vector>>>)   
-                                                   = triv (fun () -> _FDBermudanEngine.Value.setStepCondition(impl.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDBermudanEngine).Value.setStepCondition(impl.Value)
                                                                      _FDBermudanEngine.Value)
-    let _ensureStrikeInGrid                        = triv (fun () -> _FDBermudanEngine.Value.ensureStrikeInGrid()
+    let _ensureStrikeInGrid                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FDBermudanEngine).Value.ensureStrikeInGrid()
                                                                      _FDBermudanEngine.Value)
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
-                                                   = triv (fun () -> _FDBermudanEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
-    let _getResidualTime                           = triv (fun () -> _FDBermudanEngine.Value.getResidualTime())
-    let _grid                                      = triv (fun () -> _FDBermudanEngine.Value.grid())
-    let _intrinsicValues_                          = triv (fun () -> _FDBermudanEngine.Value.intrinsicValues_)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDBermudanEngine).Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+    let _getResidualTime                           = triv (fun () -> (curryEvaluationDate _evaluationDate _FDBermudanEngine).Value.getResidualTime())
+    let _grid                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _FDBermudanEngine).Value.grid())
+    let _intrinsicValues_                          = triv (fun () -> (curryEvaluationDate _evaluationDate _FDBermudanEngine).Value.intrinsicValues_)
     do this.Bind(_FDBermudanEngine)
 (* 
     casting 
 *)
-    internal new () = new FDBermudanEngineModel(null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FDBermudanEngineModel(null,null,null,null,null)
     member internal this.Inject v = _FDBermudanEngine <- v
     static member Cast (p : ICell<FDBermudanEngine>) = 
         if p :? FDBermudanEngineModel then 
@@ -84,6 +90,7 @@ type FDBermudanEngineModel
         else
             let o = new FDBermudanEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

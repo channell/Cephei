@@ -41,12 +41,15 @@ type VannaVolgaBarrierEngineModel
     , foreignTS                                    : ICell<Handle<YieldTermStructure>>
     , adaptVanDelta                                : ICell<bool>
     , bsPriceWithSmile                             : ICell<double>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<VannaVolgaBarrierEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _atmVol                                    = atmVol
     let _vol25Put                                  = vol25Put
     let _vol25Call                                 = vol25Call
@@ -59,22 +62,25 @@ type VannaVolgaBarrierEngineModel
     Functions
 *)
     let mutable
-        _VannaVolgaBarrierEngine                   = cell (fun () -> new VannaVolgaBarrierEngine (atmVol.Value, vol25Put.Value, vol25Call.Value, spotFX.Value, domesticTS.Value, foreignTS.Value, adaptVanDelta.Value, bsPriceWithSmile.Value))
+        _VannaVolgaBarrierEngine                   = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new VannaVolgaBarrierEngine (atmVol.Value, vol25Put.Value, vol25Call.Value, spotFX.Value, domesticTS.Value, foreignTS.Value, adaptVanDelta.Value, bsPriceWithSmile.Value))))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _VannaVolgaBarrierEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _VannaVolgaBarrierEngine).Value.registerWith(handler.Value)
                                                                      _VannaVolgaBarrierEngine.Value)
-    let _reset                                     = triv (fun () -> _VannaVolgaBarrierEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _VannaVolgaBarrierEngine).Value.reset()
                                                                      _VannaVolgaBarrierEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _VannaVolgaBarrierEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _VannaVolgaBarrierEngine).Value.unregisterWith(handler.Value)
                                                                      _VannaVolgaBarrierEngine.Value)
-    let _update                                    = triv (fun () -> _VannaVolgaBarrierEngine.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _VannaVolgaBarrierEngine).Value.update()
                                                                      _VannaVolgaBarrierEngine.Value)
     do this.Bind(_VannaVolgaBarrierEngine)
 (* 
     casting 
 *)
-    internal new () = new VannaVolgaBarrierEngineModel(null,null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new VannaVolgaBarrierEngineModel(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _VannaVolgaBarrierEngine <- v
     static member Cast (p : ICell<VannaVolgaBarrierEngine>) = 
         if p :? VannaVolgaBarrierEngineModel then 
@@ -82,6 +88,7 @@ type VannaVolgaBarrierEngineModel
         else
             let o = new VannaVolgaBarrierEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

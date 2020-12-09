@@ -34,23 +34,29 @@ open Cephei.QLNetHelper
 [<AutoSerializable(true)>]
 type AnalyticDiscreteGeometricAveragePriceAsianEngineModel
     ( Process                                      : ICell<GeneralizedBlackScholesProcess>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<AnalyticDiscreteGeometricAveragePriceAsianEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
 (*
     Functions
 *)
     let mutable
-        _AnalyticDiscreteGeometricAveragePriceAsianEngine = cell (fun () -> new AnalyticDiscreteGeometricAveragePriceAsianEngine (Process.Value))
+        _AnalyticDiscreteGeometricAveragePriceAsianEngine = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticDiscreteGeometricAveragePriceAsianEngine (Process.Value))))
     do this.Bind(_AnalyticDiscreteGeometricAveragePriceAsianEngine)
 (* 
     casting 
 *)
-    internal new () = new AnalyticDiscreteGeometricAveragePriceAsianEngineModel(null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new AnalyticDiscreteGeometricAveragePriceAsianEngineModel(null,null)
     member internal this.Inject v = _AnalyticDiscreteGeometricAveragePriceAsianEngine <- v
     static member Cast (p : ICell<AnalyticDiscreteGeometricAveragePriceAsianEngine>) = 
         if p :? AnalyticDiscreteGeometricAveragePriceAsianEngineModel then 
@@ -58,6 +64,7 @@ type AnalyticDiscreteGeometricAveragePriceAsianEngineModel
         else
             let o = new AnalyticDiscreteGeometricAveragePriceAsianEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

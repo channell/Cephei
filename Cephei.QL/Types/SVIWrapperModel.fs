@@ -35,8 +35,8 @@ open Cephei.QLNetHelper
 type SVIWrapperModel
     ( t                                            : ICell<double>
     , forward                                      : ICell<double>
-    , param                                        : ICell<List<Nullable<double>>>
-    , addParams                                    : ICell<List<Nullable<double>>>
+    , param                                        : ICell<Generic.List<Nullable<double>>>
+    , addParams                                    : ICell<Generic.List<Nullable<double>>>
     ) as this =
 
     inherit Model<SVIWrapper> ()

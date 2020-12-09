@@ -34,59 +34,65 @@ open Cephei.QLNetHelper
 [<AutoSerializable(true)>]
 type PricerSetterModel
     ( pricer                                       : ICell<FloatingRateCouponPricer>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<PricerSetter> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _pricer                                    = pricer
 (*
     Functions
 *)
     let mutable
-        _PricerSetter                              = cell (fun () -> new PricerSetter (pricer.Value))
+        _PricerSetter                              = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new PricerSetter (pricer.Value))))
     let _visit                                     (c : ICell<RangeAccrualFloatersCoupon>)   
-                                                   = triv (fun () -> _PricerSetter.Value.visit(c.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _PricerSetter).Value.visit(c.Value)
                                                                      _PricerSetter.Value)
     let _visit1                                    (c : ICell<DigitalCmsCoupon>)   
-                                                   = triv (fun () -> _PricerSetter.Value.visit(c.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _PricerSetter).Value.visit(c.Value)
                                                                      _PricerSetter.Value)
     let _visit2                                    (c : ICell<CappedFlooredIborCoupon>)   
-                                                   = triv (fun () -> _PricerSetter.Value.visit(c.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _PricerSetter).Value.visit(c.Value)
                                                                      _PricerSetter.Value)
     let _visit3                                    (o : ICell<Object>)   
-                                                   = triv (fun () -> _PricerSetter.Value.visit(o.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _PricerSetter).Value.visit(o.Value)
                                                                      _PricerSetter.Value)
     let _visit4                                    (c : ICell<CashFlow>)   
-                                                   = triv (fun () -> _PricerSetter.Value.visit(c.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _PricerSetter).Value.visit(c.Value)
                                                                      _PricerSetter.Value)
     let _visit5                                    (c : ICell<CmsCoupon>)   
-                                                   = triv (fun () -> _PricerSetter.Value.visit(c.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _PricerSetter).Value.visit(c.Value)
                                                                      _PricerSetter.Value)
     let _visit6                                    (c : ICell<Coupon>)   
-                                                   = triv (fun () -> _PricerSetter.Value.visit(c.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _PricerSetter).Value.visit(c.Value)
                                                                      _PricerSetter.Value)
     let _visit7                                    (c : ICell<FloatingRateCoupon>)   
-                                                   = triv (fun () -> _PricerSetter.Value.visit(c.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _PricerSetter).Value.visit(c.Value)
                                                                      _PricerSetter.Value)
     let _visit8                                    (c : ICell<CappedFlooredCoupon>)   
-                                                   = triv (fun () -> _PricerSetter.Value.visit(c.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _PricerSetter).Value.visit(c.Value)
                                                                      _PricerSetter.Value)
     let _visit9                                    (c : ICell<IborCoupon>)   
-                                                   = triv (fun () -> _PricerSetter.Value.visit(c.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _PricerSetter).Value.visit(c.Value)
                                                                      _PricerSetter.Value)
     let _visit10                                   (c : ICell<DigitalIborCoupon>)   
-                                                   = triv (fun () -> _PricerSetter.Value.visit(c.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _PricerSetter).Value.visit(c.Value)
                                                                      _PricerSetter.Value)
     let _visit11                                   (c : ICell<CappedFlooredCmsCoupon>)   
-                                                   = triv (fun () -> _PricerSetter.Value.visit(c.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _PricerSetter).Value.visit(c.Value)
                                                                      _PricerSetter.Value)
     do this.Bind(_PricerSetter)
 (* 
     casting 
 *)
-    internal new () = new PricerSetterModel(null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new PricerSetterModel(null,null)
     member internal this.Inject v = _PricerSetter <- v
     static member Cast (p : ICell<PricerSetter>) = 
         if p :? PricerSetterModel then 
@@ -94,6 +100,7 @@ type PricerSetterModel
         else
             let o = new PricerSetterModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

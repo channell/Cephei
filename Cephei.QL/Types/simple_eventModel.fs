@@ -34,35 +34,41 @@ used to create an Event instance. to be replaced with specific events as soon as
 [<AutoSerializable(true)>]
 type simple_eventModel
     ( date                                         : ICell<Date>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<simple_event> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _date                                      = date
 (*
     Functions
 *)
     let mutable
-        _simple_event                              = cell (fun () -> new simple_event (date.Value))
-    let _date                                      = triv (fun () -> _simple_event.Value.date())
+        _simple_event                              = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new simple_event (date.Value))))
+    let _date                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _simple_event).Value.date())
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> _simple_event.Value.accept(v.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _simple_event).Value.accept(v.Value)
                                                                      _simple_event.Value)
     let _hasOccurred                               (d : ICell<Date>) (includeRefDate : ICell<Nullable<bool>>)   
-                                                   = triv (fun () -> _simple_event.Value.hasOccurred(d.Value, includeRefDate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _simple_event).Value.hasOccurred(d.Value, includeRefDate.Value))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _simple_event.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _simple_event).Value.registerWith(handler.Value)
                                                                      _simple_event.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _simple_event.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _simple_event).Value.unregisterWith(handler.Value)
                                                                      _simple_event.Value)
     do this.Bind(_simple_event)
 (* 
     casting 
 *)
-    internal new () = new simple_eventModel(null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new simple_eventModel(null,null)
     member internal this.Inject v = _simple_event <- v
     static member Cast (p : ICell<simple_event>) = 
         if p :? simple_eventModel then 
@@ -70,6 +76,7 @@ type simple_eventModel
         else
             let o = new simple_eventModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

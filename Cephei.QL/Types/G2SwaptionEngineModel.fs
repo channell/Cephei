@@ -36,12 +36,15 @@ type G2SwaptionEngineModel
     ( model                                        : ICell<G2>
     , range                                        : ICell<double>
     , intervals                                    : ICell<int>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<G2SwaptionEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _model                                     = model
     let _range                                     = range
     let _intervals                                 = intervals
@@ -49,25 +52,28 @@ type G2SwaptionEngineModel
     Functions
 *)
     let mutable
-        _G2SwaptionEngine                          = cell (fun () -> new G2SwaptionEngine (model.Value, range.Value, intervals.Value))
+        _G2SwaptionEngine                          = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new G2SwaptionEngine (model.Value, range.Value, intervals.Value))))
     let _setModel                                  (model : ICell<Handle<G2>>)   
-                                                   = triv (fun () -> _G2SwaptionEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _G2SwaptionEngine).Value.setModel(model.Value)
                                                                      _G2SwaptionEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _G2SwaptionEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _G2SwaptionEngine).Value.registerWith(handler.Value)
                                                                      _G2SwaptionEngine.Value)
-    let _reset                                     = triv (fun () -> _G2SwaptionEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _G2SwaptionEngine).Value.reset()
                                                                      _G2SwaptionEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _G2SwaptionEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _G2SwaptionEngine).Value.unregisterWith(handler.Value)
                                                                      _G2SwaptionEngine.Value)
-    let _update                                    = triv (fun () -> _G2SwaptionEngine.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _G2SwaptionEngine).Value.update()
                                                                      _G2SwaptionEngine.Value)
     do this.Bind(_G2SwaptionEngine)
 (* 
     casting 
 *)
-    internal new () = new G2SwaptionEngineModel(null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new G2SwaptionEngineModel(null,null,null,null)
     member internal this.Inject v = _G2SwaptionEngine <- v
     static member Cast (p : ICell<G2SwaptionEngine>) = 
         if p :? G2SwaptionEngineModel then 
@@ -75,6 +81,7 @@ type G2SwaptionEngineModel
         else
             let o = new G2SwaptionEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

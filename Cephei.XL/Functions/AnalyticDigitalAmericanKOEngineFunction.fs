@@ -43,22 +43,28 @@ module AnalyticDigitalAmericanKOEngineFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="engine",Description = "GeneralizedBlackScholesProcess")>] 
          engine : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
             try
 
                 let _engine = Helper.toCell<GeneralizedBlackScholesProcess> engine "engine" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticDigitalAmericanKOEngine 
                                                             _engine.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AnalyticDigitalAmericanKOEngine>) l
 
                 let source () = Helper.sourceFold "Fun.AnalyticDigitalAmericanKOEngine" 
                                                [| _engine.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _engine.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -128,16 +134,16 @@ module AnalyticDigitalAmericanKOEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<AnalyticDigitalAmericanKOEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<AnalyticDigitalAmericanKOEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<AnalyticDigitalAmericanKOEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<AnalyticDigitalAmericanKOEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<AnalyticDigitalAmericanKOEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<AnalyticDigitalAmericanKOEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

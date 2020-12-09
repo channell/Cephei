@@ -37,12 +37,15 @@ type BlackStyleSwaptionEngineModel<'Spec when 'Spec :> ISwaptionEngineSpec and '
     , volatility                                   : ICell<Handle<SwaptionVolatilityStructure>>
     , displacement                                 : ICell<Nullable<double>>
     , model                                        : ICell<BlackStyleSwaptionEngine<'Spec>.CashAnnuityModel>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BlackStyleSwaptionEngine<'Spec>> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _discountCurve                             = discountCurve
     let _volatility                                = volatility
     let _displacement                              = displacement
@@ -51,9 +54,9 @@ type BlackStyleSwaptionEngineModel<'Spec when 'Spec :> ISwaptionEngineSpec and '
     Functions
 *)
     let mutable
-        _BlackStyleSwaptionEngine                  = cell (fun () -> new BlackStyleSwaptionEngine<'Spec> (discountCurve.Value, volatility.Value, displacement.Value, model.Value))
-    let _termStructure                             = triv (fun () -> _BlackStyleSwaptionEngine.Value.termStructure())
-    let _volatility                                = triv (fun () -> _BlackStyleSwaptionEngine.Value.volatility())
+        _BlackStyleSwaptionEngine                  = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackStyleSwaptionEngine<'Spec> (discountCurve.Value, volatility.Value, displacement.Value, model.Value))))
+    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackStyleSwaptionEngine).Value.termStructure())
+    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackStyleSwaptionEngine).Value.volatility())
     do this.Bind(_BlackStyleSwaptionEngine)
 
 (* 
@@ -76,12 +79,15 @@ type BlackStyleSwaptionEngineModel1<'Spec when 'Spec :> ISwaptionEngineSpec and 
     , dc                                           : ICell<DayCounter>
     , displacement                                 : ICell<Nullable<double>>
     , model                                        : ICell<BlackStyleSwaptionEngine<'Spec>.CashAnnuityModel>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BlackStyleSwaptionEngine<'Spec>> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _discountCurve                             = discountCurve
     let _vol                                       = vol
     let _dc                                        = dc
@@ -91,9 +97,9 @@ type BlackStyleSwaptionEngineModel1<'Spec when 'Spec :> ISwaptionEngineSpec and 
     Functions
 *)
     let mutable
-        _BlackStyleSwaptionEngine                  = cell (fun () -> new BlackStyleSwaptionEngine<'Spec> (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))
-    let _termStructure                             = triv (fun () -> _BlackStyleSwaptionEngine.Value.termStructure())
-    let _volatility                                = triv (fun () -> _BlackStyleSwaptionEngine.Value.volatility())
+        _BlackStyleSwaptionEngine                  = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackStyleSwaptionEngine<'Spec> (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))))
+    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackStyleSwaptionEngine).Value.termStructure())
+    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackStyleSwaptionEngine).Value.volatility())
     do this.Bind(_BlackStyleSwaptionEngine)
 
 (* 
@@ -117,12 +123,15 @@ type BlackStyleSwaptionEngineModel2<'Spec when 'Spec :> ISwaptionEngineSpec and 
     , dc                                           : ICell<DayCounter>
     , displacement                                 : ICell<Nullable<double>>
     , model                                        : ICell<BlackStyleSwaptionEngine<'Spec>.CashAnnuityModel>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BlackStyleSwaptionEngine<'Spec>> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _discountCurve                             = discountCurve
     let _vol                                       = vol
     let _dc                                        = dc
@@ -132,9 +141,9 @@ type BlackStyleSwaptionEngineModel2<'Spec when 'Spec :> ISwaptionEngineSpec and 
     Functions
 *)
     let mutable
-        _BlackStyleSwaptionEngine                  = cell (fun () -> new BlackStyleSwaptionEngine<'Spec> (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))
-    let _termStructure                             = triv (fun () -> _BlackStyleSwaptionEngine.Value.termStructure())
-    let _volatility                                = triv (fun () -> _BlackStyleSwaptionEngine.Value.volatility())
+        _BlackStyleSwaptionEngine                  = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackStyleSwaptionEngine<'Spec> (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))))
+    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackStyleSwaptionEngine).Value.termStructure())
+    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackStyleSwaptionEngine).Value.volatility())
     do this.Bind(_BlackStyleSwaptionEngine)
 
 (* 

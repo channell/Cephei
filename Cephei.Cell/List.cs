@@ -499,5 +499,7 @@ namespace Cephei.Cell
             return new TraceObserver<System.Collections.Generic.List<ICell<T>>>(this, observer);
         }
         #endregion
+        public CellState State => CellState.Clean;
+        public Exception Error => null;
     }
 }

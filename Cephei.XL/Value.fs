@@ -20,7 +20,6 @@ module Values =
         else
             Model.value mnemonic
 
-
     [<ExcelFunction(Name="_Value_Range", Description="Get the range value of Cephei reference",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let ValueRange
         ([<ExcelArgument(Name="Mnemonic", Description="Identifier")>] mnemonic : string) 
@@ -87,7 +86,7 @@ module Values =
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriberRange<int> format
-                ; source =  (fun () -> "cell new List<int>([|" + (a |> Array.fold (fun a y -> a + "; Convert.ToInt32(" + y.ToString() + ")") "").Substring(1) + "|]")
+                ; source =  (fun () -> "(new Cephei.Cell.List<int>([|" + (a |> Array.fold (fun a y -> a + "; Convert.ToInt32(" + y.ToString() + "") "").Substring(1) + "|])))")
                 ; hash = Array.fold (fun a y -> (a <<< 4) ^^^ y.GetHashCode()) 0 a
                 } :?> string
         else
@@ -144,7 +143,7 @@ module Values =
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriberRange<int64> format
-                ; source =  (fun () -> "cell new List<int64>([|" + (a |> Array.fold (fun a y -> a + "; Convert.ToInt64(" + y.ToString() + ")") "").Substring(1) + "|]")
+                ; source =  (fun () -> "(new Cephei.Cell.List<int64>([|" + (a |> Array.fold (fun a y -> a + "; Convert.ToInt64(" + y.ToString() + "") "").Substring(1) + "|])))")
                 ; hash = Array.fold (fun a y -> (a <<< 4) ^^^ y.GetHashCode()) 0 a
                 } :?> string
         else
@@ -202,7 +201,7 @@ module Values =
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriberRange<double> format
-                ; source =  (fun () -> "cell new List<double>([|" + (a |> Array.fold (fun a y -> a + "; Convert.ToDouble(" + y.ToString() + ")") "").Substring(1) + "|]")
+                ; source =  (fun () -> "(new Cephei.Cell.List<double>([|" + (a |> Array.fold (fun a y -> a + "; Convert.ToDouble(" + y.ToString() + "") "").Substring(1) + "|])))")
                 ; hash = Array.fold (fun a y -> (a <<< 4) ^^^ y.GetHashCode()) 0 a
                 } :?> string
         else
@@ -260,7 +259,7 @@ Bool
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriberRange<bool> format
-                ; source =  (fun () -> "cell new List<bool>([|" + (a |> Array.fold (fun a y -> a + "; Convert.ToBoolean(" + y.ToString() + ")") "").Substring(1) + "|]")
+                ; source =  (fun () -> "(new Cephei.Cell.List<bool>([|" + (a |> Array.fold (fun a y -> a + "; Convert.ToBoolean(" + y.ToString() + "") "").Substring(1) + "|])))")
                 ; hash = Array.fold (fun a y -> (a <<< 4) ^^^ y.GetHashCode()) 0 a
                 } :?> string
         else
@@ -317,7 +316,7 @@ Bool
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriberRange<DateTime> format
-                ; source =  (fun () -> "cell new List<DateTime>([|" + (a |> Array.fold (fun a y -> a + "; DateTime.FromOADate(" + y.ToString() + ")") "").Substring(1) + "|]")
+                ; source =  (fun () -> "(new Cephei.Cell.List<DateTime>([|" + (a |> Array.fold (fun a y -> a + "; DateTime.FromOADate(" + y.ToString() + "") "").Substring(1) + "|])))")
                 ; hash = Array.fold (fun a y -> (a <<< 4) ^^^ y.GetHashCode()) 0 a
                 } :?> string
         else
@@ -373,7 +372,7 @@ Bool
                 { mnemonic = Model.formatMnemonic mnemonic
                 ; creator = builder
                 ; subscriber = Helper.subscriberRange<string> format
-                ; source =  (fun () -> "cell new List<string>([|" + (a |> Array.fold (fun a y -> a + ";\"" + y.ToString() + "\"") "").Substring(1) + "|]")
+                ; source =  (fun () -> "(cell (fun () -> new List<string>([|" + (a |> Array.fold (fun a y -> a + ";\"" + y.ToString() + "\"") "").Substring(1) + "|])))")
                 ; hash = Array.fold (fun a y -> (a <<< 4) ^^^ y.GetHashCode()) 0 a
                 } :?> string
         else

@@ -42,12 +42,15 @@ type FuturesRateHelperModel
     , dayCounter                                   : ICell<DayCounter>
     , convAdj                                      : ICell<Handle<Quote>>
     , Type                                         : ICell<Futures.Type>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FuturesRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _price                                     = price
     let _iborStartDate                             = iborStartDate
     let _lengthInMonths                            = lengthInMonths
@@ -61,34 +64,37 @@ type FuturesRateHelperModel
     Functions
 *)
     let mutable
-        _FuturesRateHelper                         = cell (fun () -> new FuturesRateHelper (price.Value, iborStartDate.Value, lengthInMonths.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, convAdj.Value, Type.Value))
-    let _convexityAdjustment                       = triv (fun () -> _FuturesRateHelper.Value.convexityAdjustment())
-    let _impliedQuote                              = triv (fun () -> _FuturesRateHelper.Value.impliedQuote())
-    let _earliestDate                              = triv (fun () -> _FuturesRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _FuturesRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _FuturesRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _FuturesRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _FuturesRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _FuturesRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _FuturesRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _FuturesRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _FuturesRateHelper.Value.quoteValue())
+        _FuturesRateHelper                         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FuturesRateHelper (price.Value, iborStartDate.Value, lengthInMonths.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, convAdj.Value, Type.Value))))
+    let _convexityAdjustment                       = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.convexityAdjustment())
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.impliedQuote())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FuturesRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.registerWith(handler.Value)
                                                                      _FuturesRateHelper.Value)
     let _setTermStructure                          (ts : ICell<'TS>)   
-                                                   = triv (fun () -> _FuturesRateHelper.Value.setTermStructure(ts.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.setTermStructure(ts.Value)
                                                                      _FuturesRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FuturesRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.unregisterWith(handler.Value)
                                                                      _FuturesRateHelper.Value)
-    let _update                                    = triv (fun () -> _FuturesRateHelper.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.update()
                                                                      _FuturesRateHelper.Value)
     do this.Bind(_FuturesRateHelper)
 (* 
     casting 
 *)
-    internal new () = new FuturesRateHelperModel(null,null,null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FuturesRateHelperModel(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FuturesRateHelper <- v
     static member Cast (p : ICell<FuturesRateHelper>) = 
         if p :? FuturesRateHelperModel then 
@@ -96,6 +102,7 @@ type FuturesRateHelperModel
         else
             let o = new FuturesRateHelperModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -141,12 +148,15 @@ type FuturesRateHelperModel1
     , i                                            : ICell<IborIndex>
     , convAdj                                      : ICell<double>
     , Type                                         : ICell<Futures.Type>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FuturesRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _price                                     = price
     let _iborStartDate                             = iborStartDate
     let _i                                         = i
@@ -156,34 +166,37 @@ type FuturesRateHelperModel1
     Functions
 *)
     let mutable
-        _FuturesRateHelper                         = cell (fun () -> new FuturesRateHelper (price.Value, iborStartDate.Value, i.Value, convAdj.Value, Type.Value))
-    let _convexityAdjustment                       = triv (fun () -> _FuturesRateHelper.Value.convexityAdjustment())
-    let _impliedQuote                              = triv (fun () -> _FuturesRateHelper.Value.impliedQuote())
-    let _earliestDate                              = triv (fun () -> _FuturesRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _FuturesRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _FuturesRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _FuturesRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _FuturesRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _FuturesRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _FuturesRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _FuturesRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _FuturesRateHelper.Value.quoteValue())
+        _FuturesRateHelper                         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FuturesRateHelper (price.Value, iborStartDate.Value, i.Value, convAdj.Value, Type.Value))))
+    let _convexityAdjustment                       = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.convexityAdjustment())
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.impliedQuote())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FuturesRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.registerWith(handler.Value)
                                                                      _FuturesRateHelper.Value)
     let _setTermStructure                          (ts : ICell<'TS>)   
-                                                   = triv (fun () -> _FuturesRateHelper.Value.setTermStructure(ts.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.setTermStructure(ts.Value)
                                                                      _FuturesRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FuturesRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.unregisterWith(handler.Value)
                                                                      _FuturesRateHelper.Value)
-    let _update                                    = triv (fun () -> _FuturesRateHelper.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.update()
                                                                      _FuturesRateHelper.Value)
     do this.Bind(_FuturesRateHelper)
 (* 
     casting 
 *)
-    internal new () = new FuturesRateHelperModel1(null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FuturesRateHelperModel1(null,null,null,null,null,null)
     member internal this.Inject v = _FuturesRateHelper <- v
     static member Cast (p : ICell<FuturesRateHelper>) = 
         if p :? FuturesRateHelperModel1 then 
@@ -191,6 +204,7 @@ type FuturesRateHelperModel1
         else
             let o = new FuturesRateHelperModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -232,12 +246,15 @@ type FuturesRateHelperModel2
     , i                                            : ICell<IborIndex>
     , convAdj                                      : ICell<Handle<Quote>>
     , Type                                         : ICell<Futures.Type>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FuturesRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _price                                     = price
     let _iborStartDate                             = iborStartDate
     let _i                                         = i
@@ -247,34 +264,37 @@ type FuturesRateHelperModel2
     Functions
 *)
     let mutable
-        _FuturesRateHelper                         = cell (fun () -> new FuturesRateHelper (price.Value, iborStartDate.Value, i.Value, convAdj.Value, Type.Value))
-    let _convexityAdjustment                       = triv (fun () -> _FuturesRateHelper.Value.convexityAdjustment())
-    let _impliedQuote                              = triv (fun () -> _FuturesRateHelper.Value.impliedQuote())
-    let _earliestDate                              = triv (fun () -> _FuturesRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _FuturesRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _FuturesRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _FuturesRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _FuturesRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _FuturesRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _FuturesRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _FuturesRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _FuturesRateHelper.Value.quoteValue())
+        _FuturesRateHelper                         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FuturesRateHelper (price.Value, iborStartDate.Value, i.Value, convAdj.Value, Type.Value))))
+    let _convexityAdjustment                       = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.convexityAdjustment())
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.impliedQuote())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FuturesRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.registerWith(handler.Value)
                                                                      _FuturesRateHelper.Value)
     let _setTermStructure                          (ts : ICell<'TS>)   
-                                                   = triv (fun () -> _FuturesRateHelper.Value.setTermStructure(ts.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.setTermStructure(ts.Value)
                                                                      _FuturesRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FuturesRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.unregisterWith(handler.Value)
                                                                      _FuturesRateHelper.Value)
-    let _update                                    = triv (fun () -> _FuturesRateHelper.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.update()
                                                                      _FuturesRateHelper.Value)
     do this.Bind(_FuturesRateHelper)
 (* 
     casting 
 *)
-    internal new () = new FuturesRateHelperModel2(null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FuturesRateHelperModel2(null,null,null,null,null,null)
     member internal this.Inject v = _FuturesRateHelper <- v
     static member Cast (p : ICell<FuturesRateHelper>) = 
         if p :? FuturesRateHelperModel2 then 
@@ -282,6 +302,7 @@ type FuturesRateHelperModel2
         else
             let o = new FuturesRateHelperModel2 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -324,12 +345,15 @@ type FuturesRateHelperModel3
     , dayCounter                                   : ICell<DayCounter>
     , convAdj                                      : ICell<double>
     , Type                                         : ICell<Futures.Type>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FuturesRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _price                                     = price
     let _iborStartDate                             = iborStartDate
     let _iborEndDate                               = iborEndDate
@@ -340,34 +364,37 @@ type FuturesRateHelperModel3
     Functions
 *)
     let mutable
-        _FuturesRateHelper                         = cell (fun () -> new FuturesRateHelper (price.Value, iborStartDate.Value, iborEndDate.Value, dayCounter.Value, convAdj.Value, Type.Value))
-    let _convexityAdjustment                       = triv (fun () -> _FuturesRateHelper.Value.convexityAdjustment())
-    let _impliedQuote                              = triv (fun () -> _FuturesRateHelper.Value.impliedQuote())
-    let _earliestDate                              = triv (fun () -> _FuturesRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _FuturesRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _FuturesRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _FuturesRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _FuturesRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _FuturesRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _FuturesRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _FuturesRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _FuturesRateHelper.Value.quoteValue())
+        _FuturesRateHelper                         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FuturesRateHelper (price.Value, iborStartDate.Value, iborEndDate.Value, dayCounter.Value, convAdj.Value, Type.Value))))
+    let _convexityAdjustment                       = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.convexityAdjustment())
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.impliedQuote())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FuturesRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.registerWith(handler.Value)
                                                                      _FuturesRateHelper.Value)
     let _setTermStructure                          (ts : ICell<'TS>)   
-                                                   = triv (fun () -> _FuturesRateHelper.Value.setTermStructure(ts.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.setTermStructure(ts.Value)
                                                                      _FuturesRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FuturesRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.unregisterWith(handler.Value)
                                                                      _FuturesRateHelper.Value)
-    let _update                                    = triv (fun () -> _FuturesRateHelper.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.update()
                                                                      _FuturesRateHelper.Value)
     do this.Bind(_FuturesRateHelper)
 (* 
     casting 
 *)
-    internal new () = new FuturesRateHelperModel3(null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FuturesRateHelperModel3(null,null,null,null,null,null,null)
     member internal this.Inject v = _FuturesRateHelper <- v
     static member Cast (p : ICell<FuturesRateHelper>) = 
         if p :? FuturesRateHelperModel3 then 
@@ -375,6 +402,7 @@ type FuturesRateHelperModel3
         else
             let o = new FuturesRateHelperModel3 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -418,12 +446,15 @@ type FuturesRateHelperModel4
     , dayCounter                                   : ICell<DayCounter>
     , convAdj                                      : ICell<Handle<Quote>>
     , Type                                         : ICell<Futures.Type>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FuturesRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _price                                     = price
     let _iborStartDate                             = iborStartDate
     let _iborEndDate                               = iborEndDate
@@ -434,34 +465,37 @@ type FuturesRateHelperModel4
     Functions
 *)
     let mutable
-        _FuturesRateHelper                         = cell (fun () -> new FuturesRateHelper (price.Value, iborStartDate.Value, iborEndDate.Value, dayCounter.Value, convAdj.Value, Type.Value))
-    let _convexityAdjustment                       = triv (fun () -> _FuturesRateHelper.Value.convexityAdjustment())
-    let _impliedQuote                              = triv (fun () -> _FuturesRateHelper.Value.impliedQuote())
-    let _earliestDate                              = triv (fun () -> _FuturesRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _FuturesRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _FuturesRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _FuturesRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _FuturesRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _FuturesRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _FuturesRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _FuturesRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _FuturesRateHelper.Value.quoteValue())
+        _FuturesRateHelper                         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FuturesRateHelper (price.Value, iborStartDate.Value, iborEndDate.Value, dayCounter.Value, convAdj.Value, Type.Value))))
+    let _convexityAdjustment                       = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.convexityAdjustment())
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.impliedQuote())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FuturesRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.registerWith(handler.Value)
                                                                      _FuturesRateHelper.Value)
     let _setTermStructure                          (ts : ICell<'TS>)   
-                                                   = triv (fun () -> _FuturesRateHelper.Value.setTermStructure(ts.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.setTermStructure(ts.Value)
                                                                      _FuturesRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FuturesRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.unregisterWith(handler.Value)
                                                                      _FuturesRateHelper.Value)
-    let _update                                    = triv (fun () -> _FuturesRateHelper.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.update()
                                                                      _FuturesRateHelper.Value)
     do this.Bind(_FuturesRateHelper)
 (* 
     casting 
 *)
-    internal new () = new FuturesRateHelperModel4(null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FuturesRateHelperModel4(null,null,null,null,null,null,null)
     member internal this.Inject v = _FuturesRateHelper <- v
     static member Cast (p : ICell<FuturesRateHelper>) = 
         if p :? FuturesRateHelperModel4 then 
@@ -469,6 +503,7 @@ type FuturesRateHelperModel4
         else
             let o = new FuturesRateHelperModel4 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -515,12 +550,15 @@ type FuturesRateHelperModel5
     , dayCounter                                   : ICell<DayCounter>
     , convexityAdjustment                          : ICell<double>
     , Type                                         : ICell<Futures.Type>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FuturesRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _price                                     = price
     let _iborStartDate                             = iborStartDate
     let _lengthInMonths                            = lengthInMonths
@@ -534,34 +572,37 @@ type FuturesRateHelperModel5
     Functions
 *)
     let mutable
-        _FuturesRateHelper                         = cell (fun () -> new FuturesRateHelper (price.Value, iborStartDate.Value, lengthInMonths.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, convexityAdjustment.Value, Type.Value))
-    let _convexityAdjustment                       = triv (fun () -> _FuturesRateHelper.Value.convexityAdjustment())
-    let _impliedQuote                              = triv (fun () -> _FuturesRateHelper.Value.impliedQuote())
-    let _earliestDate                              = triv (fun () -> _FuturesRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _FuturesRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _FuturesRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _FuturesRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _FuturesRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _FuturesRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _FuturesRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _FuturesRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _FuturesRateHelper.Value.quoteValue())
+        _FuturesRateHelper                         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FuturesRateHelper (price.Value, iborStartDate.Value, lengthInMonths.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value, convexityAdjustment.Value, Type.Value))))
+    let _convexityAdjustment                       = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.convexityAdjustment())
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.impliedQuote())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FuturesRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.registerWith(handler.Value)
                                                                      _FuturesRateHelper.Value)
     let _setTermStructure                          (ts : ICell<'TS>)   
-                                                   = triv (fun () -> _FuturesRateHelper.Value.setTermStructure(ts.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.setTermStructure(ts.Value)
                                                                      _FuturesRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FuturesRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.unregisterWith(handler.Value)
                                                                      _FuturesRateHelper.Value)
-    let _update                                    = triv (fun () -> _FuturesRateHelper.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FuturesRateHelper).Value.update()
                                                                      _FuturesRateHelper.Value)
     do this.Bind(_FuturesRateHelper)
 (* 
     casting 
 *)
-    internal new () = new FuturesRateHelperModel5(null,null,null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FuturesRateHelperModel5(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FuturesRateHelper <- v
     static member Cast (p : ICell<FuturesRateHelper>) = 
         if p :? FuturesRateHelperModel5 then 
@@ -569,6 +610,7 @@ type FuturesRateHelperModel5
         else
             let o = new FuturesRateHelperModel5 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

@@ -34,23 +34,29 @@ open Cephei.QLNetHelper
 [<AutoSerializable(true)>]
 type AnalyticContinuousPartialFloatingLookbackEngineModel
     ( Process                                      : ICell<GeneralizedBlackScholesProcess>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<AnalyticContinuousPartialFloatingLookbackEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
 (*
     Functions
 *)
     let mutable
-        _AnalyticContinuousPartialFloatingLookbackEngine = cell (fun () -> new AnalyticContinuousPartialFloatingLookbackEngine (Process.Value))
+        _AnalyticContinuousPartialFloatingLookbackEngine = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticContinuousPartialFloatingLookbackEngine (Process.Value))))
     do this.Bind(_AnalyticContinuousPartialFloatingLookbackEngine)
 (* 
     casting 
 *)
-    internal new () = new AnalyticContinuousPartialFloatingLookbackEngineModel(null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new AnalyticContinuousPartialFloatingLookbackEngineModel(null,null)
     member internal this.Inject v = _AnalyticContinuousPartialFloatingLookbackEngine <- v
     static member Cast (p : ICell<AnalyticContinuousPartialFloatingLookbackEngine>) = 
         if p :? AnalyticContinuousPartialFloatingLookbackEngineModel then 
@@ -58,6 +64,7 @@ type AnalyticContinuousPartialFloatingLookbackEngineModel
         else
             let o = new AnalyticContinuousPartialFloatingLookbackEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

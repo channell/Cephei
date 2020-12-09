@@ -35,33 +35,39 @@ open Cephei.QLNetHelper
 type ForwardTypePayoffModel
     ( Type                                         : ICell<Position.Type>
     , strike                                       : ICell<double>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<ForwardTypePayoff> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Type                                      = Type
     let _strike                                    = strike
 (*
     Functions
 *)
     let mutable
-        _ForwardTypePayoff                         = cell (fun () -> new ForwardTypePayoff (Type.Value, strike.Value))
-    let _description                               = triv (fun () -> _ForwardTypePayoff.Value.description())
-    let _forwardType                               = triv (fun () -> _ForwardTypePayoff.Value.forwardType())
-    let _name                                      = triv (fun () -> _ForwardTypePayoff.Value.name())
-    let _strike                                    = triv (fun () -> _ForwardTypePayoff.Value.strike())
+        _ForwardTypePayoff                         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new ForwardTypePayoff (Type.Value, strike.Value))))
+    let _description                               = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardTypePayoff).Value.description())
+    let _forwardType                               = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardTypePayoff).Value.forwardType())
+    let _name                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardTypePayoff).Value.name())
+    let _strike                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardTypePayoff).Value.strike())
     let _value                                     (price : ICell<double>)   
-                                                   = triv (fun () -> _ForwardTypePayoff.Value.value(price.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardTypePayoff).Value.value(price.Value))
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> _ForwardTypePayoff.Value.accept(v.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardTypePayoff).Value.accept(v.Value)
                                                                      _ForwardTypePayoff.Value)
     do this.Bind(_ForwardTypePayoff)
 (* 
     casting 
 *)
-    internal new () = new ForwardTypePayoffModel(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new ForwardTypePayoffModel(null,null,null)
     member internal this.Inject v = _ForwardTypePayoff <- v
     static member Cast (p : ICell<ForwardTypePayoff>) = 
         if p :? ForwardTypePayoffModel then 
@@ -69,6 +75,7 @@ type ForwardTypePayoffModel
         else
             let o = new ForwardTypePayoffModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

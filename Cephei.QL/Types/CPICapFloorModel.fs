@@ -74,7 +74,7 @@ type CPICapFloorModel
     Functions
 *)
     let mutable
-        _CPICapFloor                               = cell (fun () -> withEngine pricingEngine (new CPICapFloor (Type.Value, nominal.Value, startDate.Value, baseCPI.Value, maturity.Value, fixCalendar.Value, fixConvention.Value, payCalendar.Value, payConvention.Value, strike.Value, infIndex.Value, observationLag.Value, observationInterpolation.Value)))
+        _CPICapFloor                               = cell (fun () -> withEngine pricingEngine evaluationDate (new CPICapFloor (Type.Value, nominal.Value, startDate.Value, baseCPI.Value, maturity.Value, fixCalendar.Value, fixConvention.Value, payCalendar.Value, payConvention.Value, strike.Value, infIndex.Value, observationLag.Value, observationInterpolation.Value)))
     let _fixingDate                                = triv (fun () -> (withEvaluationDate _evaluationDate _CPICapFloor).fixingDate())
     let _inflationIndex                            = triv (fun () -> (withEvaluationDate _evaluationDate _CPICapFloor).inflationIndex())
     let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _CPICapFloor).isExpired())

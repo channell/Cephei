@@ -16,6 +16,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT
 ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 FOR A PARTICULAR PURPOSE.  See the license for more details.
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
 namespace Cephei.QL
 
 open System
@@ -42,12 +44,15 @@ type ZSpreadFinderModel
     , includeSettlementDateFlows                   : ICell<bool>
     , settlementDate                               : ICell<Date>
     , npvDate                                      : ICell<Date>
+    ( evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<ZSpreadFinder> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _leg                                       = leg
     let _discountCurve                             = discountCurve
     let _npv                                       = npv
@@ -61,7 +66,9 @@ type ZSpreadFinderModel
     Functions
 *)
     let mutable
-        _ZSpreadFinder                             = cell (fun () -> new ZSpreadFinder (leg.Value, discountCurve.Value, npv.Value, dc.Value, comp.Value, freq.Value, includeSettlementDateFlows.Value, settlementDate.Value, npvDate.Value))
+        _evaluationDate                            = evaluationDate
+    let mutable
+        _ZSpreadFinder                             = cell (fun () -> (withEvaluationDate _evaluationDate new ZSpreadFinder (leg.Value, discountCurve.Value, npv.Value, dc.Value, comp.Value, freq.Value, includeSettlementDateFlows.Value, settlementDate.Value, npvDate.Value)))
     let _value                                     (zSpread : ICell<double>)   
                                                    = cell (fun () -> _ZSpreadFinder.Value.value(zSpread.Value))
     let _derivative                                (x : ICell<double>)   
@@ -70,6 +77,10 @@ type ZSpreadFinderModel
 (* 
     casting 
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
+   interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
     internal new () = ZSpreadFinderModel(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _ZSpreadFinder <- v
     static member Cast (p : ICell<ZSpreadFinder>) = 
@@ -77,13 +88,25 @@ type ZSpreadFinderModel
             p :?> ZSpreadFinderModel
         else
             let o = new ZSpreadFinderModel ()
-            o.Inject p
+            o.Inject p\m            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
 (* 
     casting 
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
+   interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
     internal new () = ZSpreadFinderModel(null,null,null,null,null,null,null,null,null)
     static member Cast (p : ICell<ZSpreadFinder>) = 
         if p :? ZSpreadFinderModel then 
@@ -97,6 +120,8 @@ type ZSpreadFinderModel
 (* 
     Externally visible/bindable properties
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     member this.leg                                = _leg 
     member this.discountCurve                      = _discountCurve 
     member this.npv                                = _npv 

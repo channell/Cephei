@@ -50,7 +50,7 @@ type StockModel
     Functions
 *)
     let mutable
-        _Stock                                     = cell (fun () -> withEngine pricingEngine (new Stock (quote.Value)))
+        _Stock                                     = cell (fun () -> withEngine pricingEngine evaluationDate (new Stock (quote.Value)))
     let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _Stock).isExpired())
     let _CASH                                      = cell (fun () -> (withEvaluationDate _evaluationDate _Stock).CASH())
     let _errorEstimate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Stock).errorEstimate())

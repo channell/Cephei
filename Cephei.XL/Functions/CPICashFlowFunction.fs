@@ -167,6 +167,8 @@ module CPICashFlowFunction =
          interpolation : obj)
         ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency or empty")>] 
          frequency : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -181,6 +183,7 @@ module CPICashFlowFunction =
                 let _growthOnly = Helper.toDefault<bool> growthOnly "growthOnly" false
                 let _interpolation = Helper.toDefault<InterpolationType> interpolation "interpolation" InterpolationType.AsIndex
                 let _frequency = Helper.toDefault<Frequency> frequency "frequency" Frequency.NoFrequency
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.CPICashFlow 
                                                             _notional.cell 
                                                             _index.cell 
@@ -191,6 +194,7 @@ module CPICashFlowFunction =
                                                             _growthOnly.cell 
                                                             _interpolation.cell 
                                                             _frequency.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CPICashFlow>) l
 
@@ -204,6 +208,7 @@ module CPICashFlowFunction =
                                                ;  _growthOnly.source
                                                ;  _interpolation.source
                                                ;  _frequency.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _notional.cell
@@ -215,6 +220,7 @@ module CPICashFlowFunction =
                                 ;  _growthOnly.cell
                                 ;  _interpolation.cell
                                 ;  _frequency.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -832,16 +838,16 @@ module CPICashFlowFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<CPICashFlow> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<CPICashFlow> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<CPICashFlow> (c)) :> ICell
                 let format (i : Generic.List<ICell<CPICashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<CPICashFlow>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<CPICashFlow>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

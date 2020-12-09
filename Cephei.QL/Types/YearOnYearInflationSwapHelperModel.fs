@@ -40,12 +40,15 @@ type YearOnYearInflationSwapHelperModel
     , paymentConvention                            : ICell<BusinessDayConvention>
     , dayCounter                                   : ICell<DayCounter>
     , yii                                          : ICell<YoYInflationIndex>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<YearOnYearInflationSwapHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _quote                                     = quote
     let _swapObsLag                                = swapObsLag
     let _maturity                                  = maturity
@@ -57,33 +60,36 @@ type YearOnYearInflationSwapHelperModel
     Functions
 *)
     let mutable
-        _YearOnYearInflationSwapHelper             = cell (fun () -> new YearOnYearInflationSwapHelper (quote.Value, swapObsLag.Value, maturity.Value, calendar.Value, paymentConvention.Value, dayCounter.Value, yii.Value))
-    let _impliedQuote                              = triv (fun () -> _YearOnYearInflationSwapHelper.Value.impliedQuote())
+        _YearOnYearInflationSwapHelper             = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new YearOnYearInflationSwapHelper (quote.Value, swapObsLag.Value, maturity.Value, calendar.Value, paymentConvention.Value, dayCounter.Value, yii.Value))))
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _YearOnYearInflationSwapHelper).Value.impliedQuote())
     let _setTermStructure                          (y : ICell<YoYInflationTermStructure>)   
-                                                   = triv (fun () -> _YearOnYearInflationSwapHelper.Value.setTermStructure(y.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _YearOnYearInflationSwapHelper).Value.setTermStructure(y.Value)
                                                                      _YearOnYearInflationSwapHelper.Value)
-    let _earliestDate                              = triv (fun () -> _YearOnYearInflationSwapHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _YearOnYearInflationSwapHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _YearOnYearInflationSwapHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _YearOnYearInflationSwapHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _YearOnYearInflationSwapHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _YearOnYearInflationSwapHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _YearOnYearInflationSwapHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _YearOnYearInflationSwapHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _YearOnYearInflationSwapHelper.Value.quoteValue())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _YearOnYearInflationSwapHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _YearOnYearInflationSwapHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _YearOnYearInflationSwapHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _YearOnYearInflationSwapHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _YearOnYearInflationSwapHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _YearOnYearInflationSwapHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _YearOnYearInflationSwapHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _YearOnYearInflationSwapHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _YearOnYearInflationSwapHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _YearOnYearInflationSwapHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _YearOnYearInflationSwapHelper).Value.registerWith(handler.Value)
                                                                      _YearOnYearInflationSwapHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _YearOnYearInflationSwapHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _YearOnYearInflationSwapHelper).Value.unregisterWith(handler.Value)
                                                                      _YearOnYearInflationSwapHelper.Value)
-    let _update                                    = triv (fun () -> _YearOnYearInflationSwapHelper.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _YearOnYearInflationSwapHelper).Value.update()
                                                                      _YearOnYearInflationSwapHelper.Value)
     do this.Bind(_YearOnYearInflationSwapHelper)
 (* 
     casting 
 *)
-    internal new () = new YearOnYearInflationSwapHelperModel(null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new YearOnYearInflationSwapHelperModel(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _YearOnYearInflationSwapHelper <- v
     static member Cast (p : ICell<YearOnYearInflationSwapHelper>) = 
         if p :? YearOnYearInflationSwapHelperModel then 
@@ -91,6 +97,7 @@ type YearOnYearInflationSwapHelperModel
         else
             let o = new YearOnYearInflationSwapHelperModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

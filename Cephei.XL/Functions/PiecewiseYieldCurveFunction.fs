@@ -993,6 +993,8 @@ module PiecewiseYieldCurveFunction =
          accuracy : obj)
         ([<ExcelArgument(Name="interpolator",Description = "IInterpolationFactory")>] 
          interpolator : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
+         evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -1005,7 +1007,7 @@ module PiecewiseYieldCurveFunction =
                 let _jumpDates = Helper.toDefault<Generic.List<Date>> jumpDates "jumpDates" (Generic.List<Date> ())
                 let _accuracy = Helper.toCell<double> accuracy "accuracy"
                 let _i = Helper.toCell<IInterpolationFactory> interpolator "interpolator"
-
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.PiecewiseYieldCurve
                                                             _traits.cell
                                                             _referenceDate.cell
@@ -1015,10 +1017,11 @@ module PiecewiseYieldCurveFunction =
                                                             _jumpDates.cell
                                                             _accuracy.cell
                                                             _i.cell
+                                                            _evaluationDate.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<QLNetHelper.PiecewiseYieldCurve>) l
 
-                let source () = Helper.sourceFold "Fun.PiecewiseYieldCurve1" 
+                let source () = Helper.sourceFold "Fun.PiecewiseYieldCurve" 
                                                 [| _traits.source
                                                 ;  _referenceDate.source
                                                 ;  _instruments.source
@@ -1027,6 +1030,7 @@ module PiecewiseYieldCurveFunction =
                                                 ;  _jumpDates.source
                                                 ;  _accuracy.source
                                                 ;  _i.source
+                                                ;  _evaluationDate.source
                                                 |]
                 let hash = Helper.hashFold 
                                 [| _traits.cell
@@ -1037,6 +1041,7 @@ module PiecewiseYieldCurveFunction =
                                 ;  _jumpDates.cell
                                 ;  _accuracy.cell
                                 ;  _i.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -2314,16 +2319,16 @@ module PiecewiseYieldCurveFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<QLNetHelper.PiecewiseYieldCurve> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<QLNetHelper.PiecewiseYieldCurve> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<QLNetHelper.PiecewiseYieldCurve> (c)) :> ICell
                 let format (i : Generic.List<ICell<QLNetHelper.PiecewiseYieldCurve>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<QLNetHelper.PiecewiseYieldCurve>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<QLNetHelper.PiecewiseYieldCurve>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

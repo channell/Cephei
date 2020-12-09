@@ -35,30 +35,36 @@ open Cephei.QLNetHelper
 type ForwardSpreadedTermStructureModel
     ( h                                            : ICell<Handle<YieldTermStructure>>
     , spread                                       : ICell<Handle<Quote>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<ForwardSpreadedTermStructure> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _h                                         = h
     let _spread                                    = spread
 (*
     Functions
 *)
     let mutable
-        _ForwardSpreadedTermStructure              = cell (fun () -> new ForwardSpreadedTermStructure (h.Value, spread.Value))
-    let _calendar                                  = triv (fun () -> _ForwardSpreadedTermStructure.Value.calendar())
-    let _dayCounter                                = triv (fun () -> _ForwardSpreadedTermStructure.Value.dayCounter())
-    let _maxDate                                   = triv (fun () -> _ForwardSpreadedTermStructure.Value.maxDate())
-    let _maxTime                                   = triv (fun () -> _ForwardSpreadedTermStructure.Value.maxTime())
-    let _referenceDate                             = triv (fun () -> _ForwardSpreadedTermStructure.Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> _ForwardSpreadedTermStructure.Value.settlementDays())
+        _ForwardSpreadedTermStructure              = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new ForwardSpreadedTermStructure (h.Value, spread.Value))))
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardSpreadedTermStructure).Value.calendar())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardSpreadedTermStructure).Value.dayCounter())
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardSpreadedTermStructure).Value.maxDate())
+    let _maxTime                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardSpreadedTermStructure).Value.maxTime())
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardSpreadedTermStructure).Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardSpreadedTermStructure).Value.settlementDays())
     do this.Bind(_ForwardSpreadedTermStructure)
 (* 
     casting 
 *)
-    internal new () = new ForwardSpreadedTermStructureModel(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new ForwardSpreadedTermStructureModel(null,null,null)
     member internal this.Inject v = _ForwardSpreadedTermStructure <- v
     static member Cast (p : ICell<ForwardSpreadedTermStructure>) = 
         if p :? ForwardSpreadedTermStructureModel then 
@@ -66,6 +72,7 @@ type ForwardSpreadedTermStructureModel
         else
             let o = new ForwardSpreadedTermStructureModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

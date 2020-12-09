@@ -45,6 +45,8 @@ module AnalyticCapFloorEngineFunction =
          model : obj)
         ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -52,19 +54,23 @@ module AnalyticCapFloorEngineFunction =
 
                 let _model = Helper.toCell<IAffineModel> model "model" 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticCapFloorEngine1 
                                                             _model.cell 
                                                             _termStructure.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AnalyticCapFloorEngine>) l
 
                 let source () = Helper.sourceFold "Fun.AnalyticCapFloorEngine" 
                                                [| _model.source
                                                ;  _termStructure.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _model.cell
                                 ;  _termStructure.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -86,22 +92,28 @@ module AnalyticCapFloorEngineFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="model",Description = "IAffineModel")>] 
          model : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
             try
 
                 let _model = Helper.toCell<IAffineModel> model "model" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticCapFloorEngine
                                                             _model.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AnalyticCapFloorEngine>) l
 
                 let source () = Helper.sourceFold "Fun.AnalyticCapFloorEngine1" 
                                                [| _model.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _model.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -332,16 +344,16 @@ module AnalyticCapFloorEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<AnalyticCapFloorEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<AnalyticCapFloorEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<AnalyticCapFloorEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<AnalyticCapFloorEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<AnalyticCapFloorEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<AnalyticCapFloorEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -36,12 +36,15 @@ type BlackIborCouponPricerModel
     ( v                                            : ICell<Handle<OptionletVolatilityStructure>>
     , timingAdjustment                             : ICell<BlackIborCouponPricer.TimingAdjustment>
     , correlation                                  : ICell<Handle<Quote>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BlackIborCouponPricer> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _v                                         = v
     let _timingAdjustment                          = timingAdjustment
     let _correlation                               = correlation
@@ -49,37 +52,40 @@ type BlackIborCouponPricerModel
     Functions
 *)
     let mutable
-        _BlackIborCouponPricer                     = cell (fun () -> new BlackIborCouponPricer (v.Value, timingAdjustment.Value, correlation.Value))
+        _BlackIborCouponPricer                     = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackIborCouponPricer (v.Value, timingAdjustment.Value, correlation.Value))))
     let _capletPrice                               (effectiveCap : ICell<double>)   
-                                                   = triv (fun () -> _BlackIborCouponPricer.Value.capletPrice(effectiveCap.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackIborCouponPricer).Value.capletPrice(effectiveCap.Value))
     let _capletRate                                (effectiveCap : ICell<double>)   
-                                                   = triv (fun () -> _BlackIborCouponPricer.Value.capletRate(effectiveCap.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackIborCouponPricer).Value.capletRate(effectiveCap.Value))
     let _floorletPrice                             (effectiveFloor : ICell<double>)   
-                                                   = triv (fun () -> _BlackIborCouponPricer.Value.floorletPrice(effectiveFloor.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackIborCouponPricer).Value.floorletPrice(effectiveFloor.Value))
     let _floorletRate                              (effectiveFloor : ICell<double>)   
-                                                   = triv (fun () -> _BlackIborCouponPricer.Value.floorletRate(effectiveFloor.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackIborCouponPricer).Value.floorletRate(effectiveFloor.Value))
     let _initialize                                (coupon : ICell<FloatingRateCoupon>)   
-                                                   = triv (fun () -> _BlackIborCouponPricer.Value.initialize(coupon.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackIborCouponPricer).Value.initialize(coupon.Value)
                                                                      _BlackIborCouponPricer.Value)
-    let _swapletPrice                              = triv (fun () -> _BlackIborCouponPricer.Value.swapletPrice())
-    let _swapletRate                               = triv (fun () -> _BlackIborCouponPricer.Value.swapletRate())
-    let _capletVolatility                          = triv (fun () -> _BlackIborCouponPricer.Value.capletVolatility())
+    let _swapletPrice                              = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackIborCouponPricer).Value.swapletPrice())
+    let _swapletRate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackIborCouponPricer).Value.swapletRate())
+    let _capletVolatility                          = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackIborCouponPricer).Value.capletVolatility())
     let _setCapletVolatility                       (v : ICell<Handle<OptionletVolatilityStructure>>)   
-                                                   = triv (fun () -> _BlackIborCouponPricer.Value.setCapletVolatility(v.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackIborCouponPricer).Value.setCapletVolatility(v.Value)
                                                                      _BlackIborCouponPricer.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _BlackIborCouponPricer.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackIborCouponPricer).Value.registerWith(handler.Value)
                                                                      _BlackIborCouponPricer.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _BlackIborCouponPricer.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackIborCouponPricer).Value.unregisterWith(handler.Value)
                                                                      _BlackIborCouponPricer.Value)
-    let _update                                    = triv (fun () -> _BlackIborCouponPricer.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackIborCouponPricer).Value.update()
                                                                      _BlackIborCouponPricer.Value)
     do this.Bind(_BlackIborCouponPricer)
 (* 
     casting 
 *)
-    internal new () = new BlackIborCouponPricerModel(null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new BlackIborCouponPricerModel(null,null,null,null)
     member internal this.Inject v = _BlackIborCouponPricer <- v
     static member Cast (p : ICell<BlackIborCouponPricer>) = 
         if p :? BlackIborCouponPricerModel then 
@@ -87,6 +93,7 @@ type BlackIborCouponPricerModel
         else
             let o = new BlackIborCouponPricerModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

@@ -35,49 +35,55 @@ open Cephei.QLNetHelper
 type SpreadedSmileSectionModel
     ( underlyingSection                            : ICell<SmileSection>
     , spread                                       : ICell<Handle<Quote>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<SpreadedSmileSection> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _underlyingSection                         = underlyingSection
     let _spread                                    = spread
 (*
     Functions
 *)
     let mutable
-        _SpreadedSmileSection                      = cell (fun () -> new SpreadedSmileSection (underlyingSection.Value, spread.Value))
-    let _atmLevel                                  = triv (fun () -> _SpreadedSmileSection.Value.atmLevel())
-    let _dayCounter                                = triv (fun () -> _SpreadedSmileSection.Value.dayCounter())
-    let _exerciseDate                              = triv (fun () -> _SpreadedSmileSection.Value.exerciseDate())
-    let _exerciseTime                              = triv (fun () -> _SpreadedSmileSection.Value.exerciseTime())
-    let _maxStrike                                 = triv (fun () -> _SpreadedSmileSection.Value.maxStrike())
-    let _minStrike                                 = triv (fun () -> _SpreadedSmileSection.Value.minStrike())
-    let _referenceDate                             = triv (fun () -> _SpreadedSmileSection.Value.referenceDate())
-    let _shift                                     = triv (fun () -> _SpreadedSmileSection.Value.shift())
-    let _update                                    = triv (fun () -> _SpreadedSmileSection.Value.update()
+        _SpreadedSmileSection                      = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new SpreadedSmileSection (underlyingSection.Value, spread.Value))))
+    let _atmLevel                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _SpreadedSmileSection).Value.atmLevel())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _SpreadedSmileSection).Value.dayCounter())
+    let _exerciseDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SpreadedSmileSection).Value.exerciseDate())
+    let _exerciseTime                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SpreadedSmileSection).Value.exerciseTime())
+    let _maxStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _SpreadedSmileSection).Value.maxStrike())
+    let _minStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _SpreadedSmileSection).Value.minStrike())
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _SpreadedSmileSection).Value.referenceDate())
+    let _shift                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _SpreadedSmileSection).Value.shift())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _SpreadedSmileSection).Value.update()
                                                                      _SpreadedSmileSection.Value)
-    let _volatilityType                            = triv (fun () -> _SpreadedSmileSection.Value.volatilityType())
+    let _volatilityType                            = triv (fun () -> (curryEvaluationDate _evaluationDate _SpreadedSmileSection).Value.volatilityType())
     let _density                                   (strike : ICell<double>) (discount : ICell<double>) (gap : ICell<double>)   
-                                                   = triv (fun () -> _SpreadedSmileSection.Value.density(strike.Value, discount.Value, gap.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SpreadedSmileSection).Value.density(strike.Value, discount.Value, gap.Value))
     let _digitalOptionPrice                        (strike : ICell<double>) (Type : ICell<Option.Type>) (discount : ICell<double>) (gap : ICell<double>)   
-                                                   = triv (fun () -> _SpreadedSmileSection.Value.digitalOptionPrice(strike.Value, Type.Value, discount.Value, gap.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SpreadedSmileSection).Value.digitalOptionPrice(strike.Value, Type.Value, discount.Value, gap.Value))
     let _optionPrice                               (strike : ICell<double>) (Type : ICell<Option.Type>) (discount : ICell<double>)   
-                                                   = triv (fun () -> _SpreadedSmileSection.Value.optionPrice(strike.Value, Type.Value, discount.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SpreadedSmileSection).Value.optionPrice(strike.Value, Type.Value, discount.Value))
     let _variance                                  (strike : ICell<double>)   
-                                                   = triv (fun () -> _SpreadedSmileSection.Value.variance(strike.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SpreadedSmileSection).Value.variance(strike.Value))
     let _vega                                      (strike : ICell<double>) (discount : ICell<double>)   
-                                                   = triv (fun () -> _SpreadedSmileSection.Value.vega(strike.Value, discount.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SpreadedSmileSection).Value.vega(strike.Value, discount.Value))
     let _volatility                                (strike : ICell<double>) (volatilityType : ICell<VolatilityType>) (shift : ICell<double>)   
-                                                   = triv (fun () -> _SpreadedSmileSection.Value.volatility(strike.Value, volatilityType.Value, shift.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SpreadedSmileSection).Value.volatility(strike.Value, volatilityType.Value, shift.Value))
     let _volatility1                               (strike : ICell<double>)   
-                                                   = triv (fun () -> _SpreadedSmileSection.Value.volatility(strike.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SpreadedSmileSection).Value.volatility(strike.Value))
     do this.Bind(_SpreadedSmileSection)
 (* 
     casting 
 *)
-    internal new () = new SpreadedSmileSectionModel(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new SpreadedSmileSectionModel(null,null,null)
     member internal this.Inject v = _SpreadedSmileSection <- v
     static member Cast (p : ICell<SpreadedSmileSection>) = 
         if p :? SpreadedSmileSectionModel then 
@@ -85,6 +91,7 @@ type SpreadedSmileSectionModel
         else
             let o = new SpreadedSmileSectionModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

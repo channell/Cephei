@@ -70,7 +70,7 @@ type AmortizingBondModel
     Functions
 *)
     let mutable
-        _AmortizingBond                            = cell (fun () -> withEngine pricingEngine (new AmortizingBond (FaceValue.Value, MarketValue.Value, CouponRate.Value, IssueDate.Value, MaturityDate.Value, TradeDate.Value, payFrequency.Value, dCounter.Value, Method.Value, calendar.Value, gYield.Value)))
+        _AmortizingBond                            = cell (fun () -> withEngine pricingEngine evaluationDate (new AmortizingBond (FaceValue.Value, MarketValue.Value, CouponRate.Value, IssueDate.Value, MaturityDate.Value, TradeDate.Value, payFrequency.Value, dCounter.Value, Method.Value, calendar.Value, gYield.Value)))
     let _AmortizationValue                         (d : ICell<Date>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _AmortizingBond).AmortizationValue(d.Value))
     let _isPremium                                 = triv (fun () -> (withEvaluationDate _evaluationDate _AmortizingBond).isPremium())

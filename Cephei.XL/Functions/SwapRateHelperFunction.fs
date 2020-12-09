@@ -253,6 +253,8 @@ module SwapRateHelperFunction =
          pillarChoice : obj)
         ([<ExcelArgument(Name="customPillarDate",Description = "Date or empty")>] 
          customPillarDate : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -271,6 +273,7 @@ module SwapRateHelperFunction =
                 let _settlementDays = Helper.toNullable<int> settlementDays "settlementDays"
                 let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
                 let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.SwapRateHelper2 
                                                             _rate.cell 
                                                             _tenor.cell 
@@ -285,6 +288,7 @@ module SwapRateHelperFunction =
                                                             _settlementDays.cell 
                                                             _pillarChoice.cell 
                                                             _customPillarDate.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapRateHelper>) l
 
@@ -302,6 +306,7 @@ module SwapRateHelperFunction =
                                                ;  _settlementDays.source
                                                ;  _pillarChoice.source
                                                ;  _customPillarDate.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _rate.cell
@@ -317,6 +322,7 @@ module SwapRateHelperFunction =
                                 ;  _settlementDays.cell
                                 ;  _pillarChoice.cell
                                 ;  _customPillarDate.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -362,6 +368,8 @@ module SwapRateHelperFunction =
          pillarChoice : obj)
         ([<ExcelArgument(Name="customPillarDate",Description = "Date or empty")>] 
          customPillarDate : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -380,6 +388,7 @@ module SwapRateHelperFunction =
                 let _settlementDays = Helper.toNullable<int> settlementDays "settlementDays"
                 let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
                 let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.SwapRateHelper
                                                             _rate.cell 
                                                             _tenor.cell 
@@ -394,6 +403,7 @@ module SwapRateHelperFunction =
                                                             _settlementDays.cell 
                                                             _pillarChoice.cell 
                                                             _customPillarDate.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapRateHelper>) l
 
@@ -411,6 +421,7 @@ module SwapRateHelperFunction =
                                                ;  _settlementDays.source
                                                ;  _pillarChoice.source
                                                ;  _customPillarDate.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _rate.cell
@@ -426,6 +437,7 @@ module SwapRateHelperFunction =
                                 ;  _settlementDays.cell
                                 ;  _pillarChoice.cell
                                 ;  _customPillarDate.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -459,6 +471,8 @@ module SwapRateHelperFunction =
          pillarChoice : obj)
         ([<ExcelArgument(Name="customPillarDate",Description = "Date or empty")>] 
          customPillarDate : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -471,6 +485,7 @@ module SwapRateHelperFunction =
                 let _discount = Helper.toDefaultHandle<YieldTermStructure> discount "discount" null
                 let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
                 let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.SwapRateHelper3
                                                             _rate.cell 
                                                             _swapIndex.cell 
@@ -479,6 +494,7 @@ module SwapRateHelperFunction =
                                                             _discount.cell 
                                                             _pillarChoice.cell 
                                                             _customPillarDate.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapRateHelper>) l
 
@@ -490,6 +506,7 @@ module SwapRateHelperFunction =
                                                ;  _discount.source
                                                ;  _pillarChoice.source
                                                ;  _customPillarDate.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _rate.cell
@@ -499,6 +516,7 @@ module SwapRateHelperFunction =
                                 ;  _discount.cell
                                 ;  _pillarChoice.cell
                                 ;  _customPillarDate.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -532,6 +550,8 @@ module SwapRateHelperFunction =
          pillarChoice : obj)
         ([<ExcelArgument(Name="customPillarDate",Description = "Date or empty")>] 
          customPillarDate : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -544,6 +564,7 @@ module SwapRateHelperFunction =
                 let _discount = Helper.toHandle<YieldTermStructure> discount "discount" 
                 let _pillarChoice = Helper.toDefault<Pillar.Choice> pillarChoice "pillarChoice" Pillar.Choice.LastRelevantDate
                 let _customPillarDate = Helper.toDefault<Date> customPillarDate "customPillarDate" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.SwapRateHelper1
                                                             _rate.cell 
                                                             _swapIndex.cell 
@@ -552,6 +573,7 @@ module SwapRateHelperFunction =
                                                             _discount.cell 
                                                             _pillarChoice.cell 
                                                             _customPillarDate.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SwapRateHelper>) l
 
@@ -563,6 +585,7 @@ module SwapRateHelperFunction =
                                                ;  _discount.source
                                                ;  _pillarChoice.source
                                                ;  _customPillarDate.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _rate.cell
@@ -572,6 +595,7 @@ module SwapRateHelperFunction =
                                 ;  _discount.cell
                                 ;  _pillarChoice.cell
                                 ;  _customPillarDate.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -1045,16 +1069,16 @@ module SwapRateHelperFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<SwapRateHelper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<SwapRateHelper> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<SwapRateHelper> (c)) :> ICell
                 let format (i : Generic.List<ICell<SwapRateHelper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<SwapRateHelper>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<SwapRateHelper>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

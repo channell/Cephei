@@ -4,7 +4,7 @@
       "$(TargetDir)FSharp.Core.dll",
       "$(TargetDir)Serilog.dll",
       "$(TargetDir)Cephei.Cell.dll",
-      "$(TargetDir)QLNetCephei.dll",
+      "$(TargetDir)QLNet.dll",
       "$(TargetDir)Cephei.QLNetHelper.dll",
       "$(SolutionDir)packages\\ExcelDna.Integration.1.1.0\\lib\\ExcelDna.integration.dll",
       "$(TargetDir)Cephei.XLM.dll",

@@ -36,12 +36,15 @@ type LiborForwardModelProcessModel
     ( size                                         : ICell<int>
     , index                                        : ICell<IborIndex>
     , disc                                         : ICell<IDiscretization>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<LiborForwardModelProcess> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _size                                      = size
     let _index                                     = index
     let _disc                                      = disc
@@ -49,63 +52,66 @@ type LiborForwardModelProcessModel
     Functions
 *)
     let mutable
-        _LiborForwardModelProcess                  = cell (fun () -> new LiborForwardModelProcess (size.Value, index.Value, disc.Value))
-    let _accrualEndTimes                           = triv (fun () -> _LiborForwardModelProcess.Value.accrualEndTimes())
-    let _accrualPeriod_                            = triv (fun () -> _LiborForwardModelProcess.Value.accrualPeriod_)
-    let _accrualStartTimes                         = triv (fun () -> _LiborForwardModelProcess.Value.accrualStartTimes())
-    let _accrualStartTimes_                        = triv (fun () -> _LiborForwardModelProcess.Value.accrualStartTimes_)
+        _LiborForwardModelProcess                  = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new LiborForwardModelProcess (size.Value, index.Value, disc.Value))))
+    let _accrualEndTimes                           = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.accrualEndTimes())
+    let _accrualPeriod_                            = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.accrualPeriod_)
+    let _accrualStartTimes                         = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.accrualStartTimes())
+    let _accrualStartTimes_                        = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.accrualStartTimes_)
     let _apply                                     (x0 : ICell<Vector>) (dx : ICell<Vector>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.apply(x0.Value, dx.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.apply(x0.Value, dx.Value))
     let _cashFlows                                 (amount : ICell<double>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.cashFlows(amount.Value))
-    let _cashFlows1                                = triv (fun () -> _LiborForwardModelProcess.Value.cashFlows())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.cashFlows(amount.Value))
+    let _cashFlows1                                = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.cashFlows())
     let _covariance                                (t : ICell<double>) (x : ICell<Vector>) (dt : ICell<double>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.covariance(t.Value, x.Value, dt.Value))
-    let _covarParam                                = triv (fun () -> _LiborForwardModelProcess.Value.covarParam())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.covariance(t.Value, x.Value, dt.Value))
+    let _covarParam                                = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.covarParam())
     let _diffusion                                 (t : ICell<double>) (x : ICell<Vector>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.diffusion(t.Value, x.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.diffusion(t.Value, x.Value))
     let _discountBond                              (rates : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.discountBond(rates.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.discountBond(rates.Value))
     let _drift                                     (t : ICell<double>) (x : ICell<Vector>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.drift(t.Value, x.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.drift(t.Value, x.Value))
     let _evolve                                    (t0 : ICell<double>) (x0 : ICell<Vector>) (dt : ICell<double>) (dw : ICell<Vector>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.evolve(t0.Value, x0.Value, dt.Value, dw.Value))
-    let _factors                                   = triv (fun () -> _LiborForwardModelProcess.Value.factors())
-    let _fixingDates                               = triv (fun () -> _LiborForwardModelProcess.Value.fixingDates())
-    let _fixingDates_                              = triv (fun () -> _LiborForwardModelProcess.Value.fixingDates_)
-    let _fixingTimes                               = triv (fun () -> _LiborForwardModelProcess.Value.fixingTimes())
-    let _fixingTimes_                              = triv (fun () -> _LiborForwardModelProcess.Value.fixingTimes_)
-    let _index                                     = triv (fun () -> _LiborForwardModelProcess.Value.index())
-    let _index_                                    = triv (fun () -> _LiborForwardModelProcess.Value.index_)
-    let _initialValues                             = triv (fun () -> _LiborForwardModelProcess.Value.initialValues())
-    let _initialValues_                            = triv (fun () -> _LiborForwardModelProcess.Value.initialValues_)
-    let _lfmParam_                                 = triv (fun () -> _LiborForwardModelProcess.Value.lfmParam_)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.evolve(t0.Value, x0.Value, dt.Value, dw.Value))
+    let _factors                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.factors())
+    let _fixingDates                               = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.fixingDates())
+    let _fixingDates_                              = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.fixingDates_)
+    let _fixingTimes                               = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.fixingTimes())
+    let _fixingTimes_                              = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.fixingTimes_)
+    let _index                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.index())
+    let _index_                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.index_)
+    let _initialValues                             = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.initialValues())
+    let _initialValues_                            = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.initialValues_)
+    let _lfmParam_                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.lfmParam_)
     let _nextIndexReset                            (t : ICell<double>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.nextIndexReset(t.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.nextIndexReset(t.Value))
     let _setCovarParam                             (param : ICell<LfmCovarianceParameterization>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.setCovarParam(param.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.setCovarParam(param.Value)
                                                                      _LiborForwardModelProcess.Value)
-    let _size                                      = triv (fun () -> _LiborForwardModelProcess.Value.size())
-    let _size_                                     = triv (fun () -> _LiborForwardModelProcess.Value.size_)
+    let _size                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.size())
+    let _size_                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.size_)
     let _expectation                               (t0 : ICell<double>) (x0 : ICell<Vector>) (dt : ICell<double>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.expectation(t0.Value, x0.Value, dt.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.expectation(t0.Value, x0.Value, dt.Value))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.registerWith(handler.Value)
                                                                      _LiborForwardModelProcess.Value)
     let _stdDeviation                              (t0 : ICell<double>) (x0 : ICell<Vector>) (dt : ICell<double>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.stdDeviation(t0.Value, x0.Value, dt.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.stdDeviation(t0.Value, x0.Value, dt.Value))
     let _time                                      (d : ICell<Date>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.time(d.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.time(d.Value))
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.unregisterWith(handler.Value)
                                                                      _LiborForwardModelProcess.Value)
-    let _update                                    = triv (fun () -> _LiborForwardModelProcess.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.update()
                                                                      _LiborForwardModelProcess.Value)
     do this.Bind(_LiborForwardModelProcess)
 (* 
     casting 
 *)
-    internal new () = new LiborForwardModelProcessModel(null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new LiborForwardModelProcessModel(null,null,null,null)
     member internal this.Inject v = _LiborForwardModelProcess <- v
     static member Cast (p : ICell<LiborForwardModelProcess>) = 
         if p :? LiborForwardModelProcessModel then 
@@ -113,6 +119,7 @@ type LiborForwardModelProcessModel
         else
             let o = new LiborForwardModelProcessModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -178,75 +185,81 @@ type LiborForwardModelProcessModel
 type LiborForwardModelProcessModel1
     ( size                                         : ICell<int>
     , index                                        : ICell<IborIndex>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<LiborForwardModelProcess> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _size                                      = size
     let _index                                     = index
 (*
     Functions
 *)
     let mutable
-        _LiborForwardModelProcess                  = cell (fun () -> new LiborForwardModelProcess (size.Value, index.Value))
-    let _accrualEndTimes                           = triv (fun () -> _LiborForwardModelProcess.Value.accrualEndTimes())
-    let _accrualPeriod_                            = triv (fun () -> _LiborForwardModelProcess.Value.accrualPeriod_)
-    let _accrualStartTimes                         = triv (fun () -> _LiborForwardModelProcess.Value.accrualStartTimes())
-    let _accrualStartTimes_                        = triv (fun () -> _LiborForwardModelProcess.Value.accrualStartTimes_)
+        _LiborForwardModelProcess                  = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new LiborForwardModelProcess (size.Value, index.Value))))
+    let _accrualEndTimes                           = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.accrualEndTimes())
+    let _accrualPeriod_                            = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.accrualPeriod_)
+    let _accrualStartTimes                         = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.accrualStartTimes())
+    let _accrualStartTimes_                        = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.accrualStartTimes_)
     let _apply                                     (x0 : ICell<Vector>) (dx : ICell<Vector>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.apply(x0.Value, dx.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.apply(x0.Value, dx.Value))
     let _cashFlows                                 (amount : ICell<double>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.cashFlows(amount.Value))
-    let _cashFlows1                                = triv (fun () -> _LiborForwardModelProcess.Value.cashFlows())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.cashFlows(amount.Value))
+    let _cashFlows1                                = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.cashFlows())
     let _covariance                                (t : ICell<double>) (x : ICell<Vector>) (dt : ICell<double>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.covariance(t.Value, x.Value, dt.Value))
-    let _covarParam                                = triv (fun () -> _LiborForwardModelProcess.Value.covarParam())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.covariance(t.Value, x.Value, dt.Value))
+    let _covarParam                                = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.covarParam())
     let _diffusion                                 (t : ICell<double>) (x : ICell<Vector>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.diffusion(t.Value, x.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.diffusion(t.Value, x.Value))
     let _discountBond                              (rates : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.discountBond(rates.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.discountBond(rates.Value))
     let _drift                                     (t : ICell<double>) (x : ICell<Vector>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.drift(t.Value, x.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.drift(t.Value, x.Value))
     let _evolve                                    (t0 : ICell<double>) (x0 : ICell<Vector>) (dt : ICell<double>) (dw : ICell<Vector>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.evolve(t0.Value, x0.Value, dt.Value, dw.Value))
-    let _factors                                   = triv (fun () -> _LiborForwardModelProcess.Value.factors())
-    let _fixingDates                               = triv (fun () -> _LiborForwardModelProcess.Value.fixingDates())
-    let _fixingDates_                              = triv (fun () -> _LiborForwardModelProcess.Value.fixingDates_)
-    let _fixingTimes                               = triv (fun () -> _LiborForwardModelProcess.Value.fixingTimes())
-    let _fixingTimes_                              = triv (fun () -> _LiborForwardModelProcess.Value.fixingTimes_)
-    let _index                                     = triv (fun () -> _LiborForwardModelProcess.Value.index())
-    let _index_                                    = triv (fun () -> _LiborForwardModelProcess.Value.index_)
-    let _initialValues                             = triv (fun () -> _LiborForwardModelProcess.Value.initialValues())
-    let _initialValues_                            = triv (fun () -> _LiborForwardModelProcess.Value.initialValues_)
-    let _lfmParam_                                 = triv (fun () -> _LiborForwardModelProcess.Value.lfmParam_)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.evolve(t0.Value, x0.Value, dt.Value, dw.Value))
+    let _factors                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.factors())
+    let _fixingDates                               = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.fixingDates())
+    let _fixingDates_                              = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.fixingDates_)
+    let _fixingTimes                               = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.fixingTimes())
+    let _fixingTimes_                              = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.fixingTimes_)
+    let _index                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.index())
+    let _index_                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.index_)
+    let _initialValues                             = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.initialValues())
+    let _initialValues_                            = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.initialValues_)
+    let _lfmParam_                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.lfmParam_)
     let _nextIndexReset                            (t : ICell<double>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.nextIndexReset(t.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.nextIndexReset(t.Value))
     let _setCovarParam                             (param : ICell<LfmCovarianceParameterization>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.setCovarParam(param.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.setCovarParam(param.Value)
                                                                      _LiborForwardModelProcess.Value)
-    let _size                                      = triv (fun () -> _LiborForwardModelProcess.Value.size())
-    let _size_                                     = triv (fun () -> _LiborForwardModelProcess.Value.size_)
+    let _size                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.size())
+    let _size_                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.size_)
     let _expectation                               (t0 : ICell<double>) (x0 : ICell<Vector>) (dt : ICell<double>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.expectation(t0.Value, x0.Value, dt.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.expectation(t0.Value, x0.Value, dt.Value))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.registerWith(handler.Value)
                                                                      _LiborForwardModelProcess.Value)
     let _stdDeviation                              (t0 : ICell<double>) (x0 : ICell<Vector>) (dt : ICell<double>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.stdDeviation(t0.Value, x0.Value, dt.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.stdDeviation(t0.Value, x0.Value, dt.Value))
     let _time                                      (d : ICell<Date>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.time(d.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.time(d.Value))
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _LiborForwardModelProcess.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.unregisterWith(handler.Value)
                                                                      _LiborForwardModelProcess.Value)
-    let _update                                    = triv (fun () -> _LiborForwardModelProcess.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModelProcess).Value.update()
                                                                      _LiborForwardModelProcess.Value)
     do this.Bind(_LiborForwardModelProcess)
 (* 
     casting 
 *)
-    internal new () = new LiborForwardModelProcessModel1(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new LiborForwardModelProcessModel1(null,null,null)
     member internal this.Inject v = _LiborForwardModelProcess <- v
     static member Cast (p : ICell<LiborForwardModelProcess>) = 
         if p :? LiborForwardModelProcessModel1 then 
@@ -254,6 +267,7 @@ type LiborForwardModelProcessModel1
         else
             let o = new LiborForwardModelProcessModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

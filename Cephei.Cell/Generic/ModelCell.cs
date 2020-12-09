@@ -57,7 +57,7 @@ namespace Cephei.Cell.Generic
 
         public void OnCompleted()
         {
-            _cell.OnCompleted();
+            _cell.OnCompleted();    
         }
 
         public void OnError(Exception error)
@@ -146,5 +146,8 @@ namespace Cephei.Cell.Generic
             if (Parent != null)
                 Parent.OnChange(eventType, root, this, epoch, session);
         }
+        public override CellState State => _cell.State;
+        public override Exception Error => _cell.Error;
+
     }
 }

@@ -86,70 +86,70 @@ let AmortizingFloatingRateBond                  settlementDays notionals schedul
                                                 = new AmortizingFloatingRateBondModel (settlementDays, notionals, schedule, index, accrualDayCounter, paymentConvention, fixingDays, gearings, spreads, caps, floors, inArrears, issueDate, pricingEngine, evaluationDate)
 let AmortizingPayment                           amount date 
                                                 = new AmortizingPaymentModel (amount, date)
-let AnalyticBarrierEngine                       Process 
-                                                = new AnalyticBarrierEngineModel (Process)
-let AnalyticBinaryBarrierEngine                 Process 
-                                                = new AnalyticBinaryBarrierEngineModel (Process)
+let AnalyticBarrierEngine                       Process ed
+                                                = new AnalyticBarrierEngineModel (Process, ed)
+let AnalyticBinaryBarrierEngine                 Process ed
+                                                = new AnalyticBinaryBarrierEngineModel (Process, ed)
 let AnalyticBinaryBarrierEngine_helper          Process payoff exercise arguments 
                                                 = new AnalyticBinaryBarrierEngine_helperModel (Process, payoff, exercise, arguments)
-let AnalyticBSMHullWhiteEngine                  equityShortRateCorrelation Process model 
-                                                = new AnalyticBSMHullWhiteEngineModel (equityShortRateCorrelation, Process, model)
-let AnalyticCapFloorEngine                      model 
-                                                = new AnalyticCapFloorEngineModel (model)
-let AnalyticCapFloorEngine1                     model termStructure 
-                                                = new AnalyticCapFloorEngineModel1 (model, termStructure)
-let AnalyticCliquetEngine                       Process 
-                                                = new AnalyticCliquetEngineModel (Process)
-let AnalyticContinuousFixedLookbackEngine       Process 
-                                                = new AnalyticContinuousFixedLookbackEngineModel (Process)
-let AnalyticContinuousFloatingLookbackEngine    Process 
-                                                = new AnalyticContinuousFloatingLookbackEngineModel (Process)
-let AnalyticContinuousGeometricAveragePriceAsianEngine  Process 
-                                                = new AnalyticContinuousGeometricAveragePriceAsianEngineModel (Process)
-let AnalyticContinuousPartialFixedLookbackEngine  Process 
-                                                = new AnalyticContinuousPartialFixedLookbackEngineModel (Process)
-let AnalyticContinuousPartialFloatingLookbackEngine  Process 
-                                                = new AnalyticContinuousPartialFloatingLookbackEngineModel (Process)
-let AnalyticDigitalAmericanEngine               Process 
-                                                = new AnalyticDigitalAmericanEngineModel (Process)
-let AnalyticDigitalAmericanKOEngine             engine 
-                                                = new AnalyticDigitalAmericanKOEngineModel (engine)
-let AnalyticDiscreteGeometricAveragePriceAsianEngine  Process 
-                                                = new AnalyticDiscreteGeometricAveragePriceAsianEngineModel (Process)
-let AnalyticDiscreteGeometricAverageStrikeAsianEngine  Process 
-                                                = new AnalyticDiscreteGeometricAverageStrikeAsianEngineModel (Process)
-let AnalyticDividendEuropeanEngine              Process 
-                                                = new AnalyticDividendEuropeanEngineModel (Process)
-let AnalyticDoubleBarrierBinaryEngine           Process 
-                                                = new AnalyticDoubleBarrierBinaryEngineModel (Process)
+let AnalyticBSMHullWhiteEngine                  equityShortRateCorrelation Process model ed
+                                                = new AnalyticBSMHullWhiteEngineModel (equityShortRateCorrelation, Process, model, ed)
+let AnalyticCapFloorEngine                      model ed
+                                                = new AnalyticCapFloorEngineModel (model, ed)
+let AnalyticCapFloorEngine1                     model termStructure ed
+                                                = new AnalyticCapFloorEngineModel1 (model, termStructure, ed)
+let AnalyticCliquetEngine                       Process ed
+                                                = new AnalyticCliquetEngineModel (Process, ed)
+let AnalyticContinuousFixedLookbackEngine       Process ed
+                                                = new AnalyticContinuousFixedLookbackEngineModel (Process, ed)
+let AnalyticContinuousFloatingLookbackEngine    Process ed
+                                                = new AnalyticContinuousFloatingLookbackEngineModel (Process, ed)
+let AnalyticContinuousGeometricAveragePriceAsianEngine  Process ed
+                                                = new AnalyticContinuousGeometricAveragePriceAsianEngineModel (Process, ed)
+let AnalyticContinuousPartialFixedLookbackEngine  Process ed
+                                                = new AnalyticContinuousPartialFixedLookbackEngineModel (Process, ed)
+let AnalyticContinuousPartialFloatingLookbackEngine  Process ed
+                                                = new AnalyticContinuousPartialFloatingLookbackEngineModel (Process, ed)
+let AnalyticDigitalAmericanEngine               Process ed
+                                                = new AnalyticDigitalAmericanEngineModel (Process, ed)
+let AnalyticDigitalAmericanKOEngine             engine ed
+                                                = new AnalyticDigitalAmericanKOEngineModel (engine, ed)
+let AnalyticDiscreteGeometricAveragePriceAsianEngine  Process ed
+                                                = new AnalyticDiscreteGeometricAveragePriceAsianEngineModel (Process, ed)
+let AnalyticDiscreteGeometricAverageStrikeAsianEngine  Process ed
+                                                = new AnalyticDiscreteGeometricAverageStrikeAsianEngineModel (Process, ed)
+let AnalyticDividendEuropeanEngine              Process ed
+                                                = new AnalyticDividendEuropeanEngineModel (Process, ed)
+let AnalyticDoubleBarrierBinaryEngine           Process ed
+                                                = new AnalyticDoubleBarrierBinaryEngineModel (Process, ed)
 let AnalyticDoubleBarrierBinaryEngineHelper     Process payoff arguments 
                                                 = new AnalyticDoubleBarrierBinaryEngineHelperModel (Process, payoff, arguments)
-let AnalyticDoubleBarrierEngine                 Process series 
-                                                = new AnalyticDoubleBarrierEngineModel (Process, series)
-let AnalyticEuropeanEngine                      Process 
-                                                = new AnalyticEuropeanEngineModel (Process)
-let AnalyticH1HWEngine                          model hullWhiteModel rhoSr integrationOrder 
-                                                = new AnalyticH1HWEngineModel (model, hullWhiteModel, rhoSr, integrationOrder)
-let AnalyticH1HWEngine1                         model hullWhiteModel rhoSr relTolerance maxEvaluations 
-                                                = new AnalyticH1HWEngineModel1 (model, hullWhiteModel, rhoSr, relTolerance, maxEvaluations)
-let AnalyticHaganPricer                         swaptionVol modelOfYieldCurve meanReversion 
-                                                = new AnalyticHaganPricerModel (swaptionVol, modelOfYieldCurve, meanReversion)
-let AnalyticHestonEngine                        model relTolerance maxEvaluations 
-                                                = new AnalyticHestonEngineModel (model, relTolerance, maxEvaluations)
-let AnalyticHestonEngine1                       model integrationOrder 
-                                                = new AnalyticHestonEngineModel1 (model, integrationOrder)
-let AnalyticHestonEngine2                       model cpxLog integration 
-                                                = new AnalyticHestonEngineModel2 (model, cpxLog, integration)
-let AnalyticHestonHullWhiteEngine               hestonModel hullWhiteModel relTolerance maxEvaluations 
-                                                = new AnalyticHestonHullWhiteEngineModel (hestonModel, hullWhiteModel, relTolerance, maxEvaluations)
-let AnalyticHestonHullWhiteEngine1              hestonModel hullWhiteModel integrationOrder 
-                                                = new AnalyticHestonHullWhiteEngineModel1 (hestonModel, hullWhiteModel, integrationOrder)
-let AnalyticPerformanceEngine                   Process 
-                                                = new AnalyticPerformanceEngineModel (Process)
-let AnalyticPTDHestonEngine                     model relTolerance maxEvaluations 
-                                                = new AnalyticPTDHestonEngineModel (model, relTolerance, maxEvaluations)
-let AnalyticPTDHestonEngine1                    model integrationOrder 
-                                                = new AnalyticPTDHestonEngineModel1 (model, integrationOrder)
+let AnalyticDoubleBarrierEngine                 Process series ed
+                                                = new AnalyticDoubleBarrierEngineModel (Process, series, ed)
+let AnalyticEuropeanEngine                      Process ed
+                                                = new AnalyticEuropeanEngineModel (Process, ed)
+let AnalyticH1HWEngine                          model hullWhiteModel rhoSr integrationOrder ed
+                                                = new AnalyticH1HWEngineModel (model, hullWhiteModel, rhoSr, integrationOrder, ed)
+let AnalyticH1HWEngine1                         model hullWhiteModel rhoSr relTolerance maxEvaluations ed
+                                                = new AnalyticH1HWEngineModel1 (model, hullWhiteModel, rhoSr, relTolerance, maxEvaluations, ed)
+let AnalyticHaganPricer                         swaptionVol modelOfYieldCurve meanReversion ed
+                                                = new AnalyticHaganPricerModel (swaptionVol, modelOfYieldCurve, meanReversion, ed)
+let AnalyticHestonEngine                        model relTolerance maxEvaluations ed
+                                                = new AnalyticHestonEngineModel (model, relTolerance, maxEvaluations, ed)
+let AnalyticHestonEngine1                       model integrationOrder ed
+                                                = new AnalyticHestonEngineModel1 (model, integrationOrder, ed)
+let AnalyticHestonEngine2                       model cpxLog integration ed
+                                                = new AnalyticHestonEngineModel2 (model, cpxLog, integration, ed)
+let AnalyticHestonHullWhiteEngine               hestonModel hullWhiteModel relTolerance maxEvaluations ed
+                                                = new AnalyticHestonHullWhiteEngineModel (hestonModel, hullWhiteModel, relTolerance, maxEvaluations, ed)
+let AnalyticHestonHullWhiteEngine1              hestonModel hullWhiteModel integrationOrder ed
+                                                = new AnalyticHestonHullWhiteEngineModel1 (hestonModel, hullWhiteModel, integrationOrder, ed)
+let AnalyticPerformanceEngine                   Process ed
+                                                = new AnalyticPerformanceEngineModel (Process, ed)
+let AnalyticPTDHestonEngine                     model relTolerance maxEvaluations ed
+                                                = new AnalyticPTDHestonEngineModel (model, relTolerance, maxEvaluations, ed)
+let AnalyticPTDHestonEngine1                    model integrationOrder ed
+                                                = new AnalyticPTDHestonEngineModel1 (model, integrationOrder, ed)
 let Aonia                                       h 
                                                 = new AoniaModel (h)
 let Argentina                                   ()
@@ -182,8 +182,8 @@ let AssetSwap                                   parAssetSwap bond bondCleanPrice
                                                 = new AssetSwapModel (parAssetSwap, bond, bondCleanPrice, nonParRepayment, gearing, iborIndex, spread, floatingDayCount, dealMaturity, payBondCoupon, pricingEngine, evaluationDate)
 let AssetSwap1                                  payBondCoupon bond bondCleanPrice iborIndex spread floatSchedule floatingDayCount parAssetSwap pricingEngine evaluationDate 
                                                 = new AssetSwapModel1 (payBondCoupon, bond, bondCleanPrice, iborIndex, spread, floatSchedule, floatingDayCount, parAssetSwap, pricingEngine, evaluationDate)
-let AtmSmileSection                             source atm 
-                                                = new AtmSmileSectionModel (source, atm)
+let AtmSmileSection                             source atm ed
+                                                = new AtmSmileSectionModel (source, atm, ed)
 let ATSCurrency                                 ()
                                                 = new ATSCurrencyModel ()
 let AUCPI                                       frequency revised interpolated ts 
@@ -210,22 +210,22 @@ let AverageBMACouponPricer                      ()
                                                 = new AverageBMACouponPricerModel ()
 let AverageBMALeg                               schedule index 
                                                 = new AverageBMALegModel (schedule, index)
-let BachelierCapFloorEngine                     discountCurve vol 
-                                                = new BachelierCapFloorEngineModel (discountCurve, vol)
-let BachelierCapFloorEngine1                    discountCurve vol dc 
-                                                = new BachelierCapFloorEngineModel1 (discountCurve, vol, dc)
-let BachelierCapFloorEngine2                    discountCurve vol dc 
-                                                = new BachelierCapFloorEngineModel2 (discountCurve, vol, dc)
+let BachelierCapFloorEngine                     discountCurve vol ed
+                                                = new BachelierCapFloorEngineModel (discountCurve, vol, ed)
+let BachelierCapFloorEngine1                    discountCurve vol dc ed
+                                                = new BachelierCapFloorEngineModel1 (discountCurve, vol, dc, ed)
+let BachelierCapFloorEngine2                    discountCurve vol dc ed
+                                                = new BachelierCapFloorEngineModel2 (discountCurve, vol, dc, ed)
 let BachelierSpec                               ()
                                                 = new BachelierSpecModel ()
-let BachelierSwaptionEngine                     discountCurve vol dc model 
-                                                = new BachelierSwaptionEngineModel (discountCurve, vol, dc, model)
-let BachelierSwaptionEngine1                    discountCurve vol model 
-                                                = new BachelierSwaptionEngineModel1 (discountCurve, vol, model)
-let BachelierSwaptionEngine2                    discountCurve vol dc model 
-                                                = new BachelierSwaptionEngineModel2 (discountCurve, vol, dc, model)
-let BachelierYoYInflationCouponPricer           capletVol 
-                                                = new BachelierYoYInflationCouponPricerModel (capletVol)
+let BachelierSwaptionEngine                     discountCurve vol dc model ed
+                                                = new BachelierSwaptionEngineModel (discountCurve, vol, dc, model, ed)
+let BachelierSwaptionEngine1                    discountCurve vol model ed
+                                                = new BachelierSwaptionEngineModel1 (discountCurve, vol, model, ed)
+let BachelierSwaptionEngine2                    discountCurve vol dc model ed
+                                                = new BachelierSwaptionEngineModel2 (discountCurve, vol, dc, model, ed)
+let BachelierYoYInflationCouponPricer           capletVol ed
+                                                = new BachelierYoYInflationCouponPricerModel (capletVol, ed)
 let BackwardFlat                                ()
                                                 = new BackwardFlatModel ()
 let BackwardFlatInterpolation                   xBegin size yBegin 
@@ -234,8 +234,8 @@ let BackwardflatLinear                          ()
                                                 = new BackwardflatLinearModel ()
 let BackwardflatLinearInterpolation             xBegin xEnd yBegin yEnd zData 
                                                 = new BackwardflatLinearInterpolationModel (xBegin, xEnd, yBegin, yEnd, zData)
-let BaroneAdesiWhaleyApproximationEngine        Process 
-                                                = new BaroneAdesiWhaleyApproximationEngineModel (Process)
+let BaroneAdesiWhaleyApproximationEngine        Process ed
+                                                = new BaroneAdesiWhaleyApproximationEngineModel (Process, ed)
 let BarrierOption                               barrierType barrier rebate payoff exercise pricingEngine evaluationDate 
                                                 = new BarrierOptionModel (barrierType, barrier, rebate, payoff, exercise, pricingEngine, evaluationDate)
 let BarrierPathPricer                           barrierType barrier rebate Type strike discounts diffProcess sequenceGen 
@@ -294,22 +294,22 @@ let Bilinear                                    ()
                                                 = new BilinearModel ()
 let BilinearInterpolation                       xBegin xSize yBegin ySize zData 
                                                 = new BilinearInterpolationModel (xBegin, xSize, yBegin, ySize, zData)
-let BinomialBarrierEngine                       getTree getAsset Process timeSteps maxTimeSteps 
-                                                = new BinomialBarrierEngineModel (getTree, getAsset, Process, timeSteps, maxTimeSteps)
-let BinomialConvertibleEngine                   Process timeSteps 
-                                                = new BinomialConvertibleEngineModel<'T> (Process, timeSteps)
+let BinomialBarrierEngine                       getTree getAsset Process timeSteps maxTimeSteps ed
+                                                = new BinomialBarrierEngineModel (getTree, getAsset, Process, timeSteps, maxTimeSteps, ed)
+let BinomialConvertibleEngine                   Process timeSteps ed
+                                                = new BinomialConvertibleEngineModel<'T> (Process, timeSteps, ed)
 let BinomialDistribution                        p n 
                                                 = new BinomialDistributionModel (p, n)
-let BinomialDoubleBarrierEngine                 getTree getAsset Process timeSteps maxTimeSteps 
-                                                = new BinomialDoubleBarrierEngineModel (getTree, getAsset, Process, timeSteps, maxTimeSteps)
-let BinomialVanillaEngine                       Process timeSteps 
-                                                = new BinomialVanillaEngineModel<'T> (Process, timeSteps)
+let BinomialDoubleBarrierEngine                 getTree getAsset Process timeSteps maxTimeSteps ed
+                                                = new BinomialDoubleBarrierEngineModel (getTree, getAsset, Process, timeSteps, maxTimeSteps, ed)
+let BinomialVanillaEngine                       Process timeSteps ed
+                                                = new BinomialVanillaEngineModel<'T> (Process, timeSteps, ed)
 let BivariateCumulativeNormalDistributionDr78   rho 
                                                 = new BivariateCumulativeNormalDistributionDr78Model (rho)
 let BivariateCumulativeNormalDistributionWe04DP  rho 
                                                 = new BivariateCumulativeNormalDistributionWe04DPModel (rho)
-let BjerksundStenslandApproximationEngine       Process 
-                                                = new BjerksundStenslandApproximationEngineModel (Process)
+let BjerksundStenslandApproximationEngine       Process ed
+                                                = new BjerksundStenslandApproximationEngineModel (Process, ed)
 let Bkbm                                        tenor h 
                                                 = new BkbmModel (tenor, h)
 let Bkbm1M                                      h 
@@ -328,20 +328,20 @@ let Black76Spec                                 ()
                                                 = new Black76SpecModel ()
 let BlackCalculator                             payoff forward stdDev discount 
                                                 = new BlackCalculatorModel (payoff, forward, stdDev, discount)
-let BlackCallableFixedRateBondEngine            fwdYieldVol discountCurve 
-                                                = new BlackCallableFixedRateBondEngineModel (fwdYieldVol, discountCurve)
-let BlackCallableFixedRateBondEngine1           yieldVolStructure discountCurve 
-                                                = new BlackCallableFixedRateBondEngineModel1 (yieldVolStructure, discountCurve)
-let BlackCallableZeroCouponBondEngine           yieldVolStructure discountCurve 
-                                                = new BlackCallableZeroCouponBondEngineModel (yieldVolStructure, discountCurve)
-let BlackCallableZeroCouponBondEngine1          fwdYieldVol discountCurve 
-                                                = new BlackCallableZeroCouponBondEngineModel1 (fwdYieldVol, discountCurve)
-let BlackCapFloorEngine                         discountCurve vol dc displacement 
-                                                = new BlackCapFloorEngineModel (discountCurve, vol, dc, displacement)
-let BlackCapFloorEngine1                        discountCurve vol displacement 
-                                                = new BlackCapFloorEngineModel1 (discountCurve, vol, displacement)
-let BlackCapFloorEngine2                        discountCurve vol dc displacement 
-                                                = new BlackCapFloorEngineModel2 (discountCurve, vol, dc, displacement)
+let BlackCallableFixedRateBondEngine            fwdYieldVol discountCurve ed
+                                                = new BlackCallableFixedRateBondEngineModel (fwdYieldVol, discountCurve, ed)
+let BlackCallableFixedRateBondEngine1           yieldVolStructure discountCurve ed
+                                                = new BlackCallableFixedRateBondEngineModel1 (yieldVolStructure, discountCurve, ed)
+let BlackCallableZeroCouponBondEngine           yieldVolStructure discountCurve ed
+                                                = new BlackCallableZeroCouponBondEngineModel (yieldVolStructure, discountCurve, ed)
+let BlackCallableZeroCouponBondEngine1          fwdYieldVol discountCurve ed
+                                                = new BlackCallableZeroCouponBondEngineModel1 (fwdYieldVol, discountCurve, ed)
+let BlackCapFloorEngine                         discountCurve vol dc displacement ed
+                                                = new BlackCapFloorEngineModel (discountCurve, vol, dc, displacement, ed)
+let BlackCapFloorEngine1                        discountCurve vol displacement ed
+                                                = new BlackCapFloorEngineModel1 (discountCurve, vol, displacement, ed)
+let BlackCapFloorEngine2                        discountCurve vol dc displacement ed
+                                                = new BlackCapFloorEngineModel2 (discountCurve, vol, dc, displacement, ed)
 let BlackConstantVol                            settlementDays cal volatility dc 
                                                 = new BlackConstantVolModel (settlementDays, cal, volatility, dc)
 let BlackConstantVol1                           settlementDays cal volatility dc 
@@ -356,8 +356,8 @@ let BlackDeltaPremiumAdjustedMaxStrikeClass     ot dt spot dDiscount fDiscount s
                                                 = new BlackDeltaPremiumAdjustedMaxStrikeClassModel (ot, dt, spot, dDiscount, fDiscount, stdDev)
 let BlackDeltaPremiumAdjustedSolverClass        ot dt spot dDiscount fDiscount stdDev delta 
                                                 = new BlackDeltaPremiumAdjustedSolverClassModel (ot, dt, spot, dDiscount, fDiscount, stdDev, delta)
-let BlackIborCouponPricer                       v timingAdjustment correlation 
-                                                = new BlackIborCouponPricerModel (v, timingAdjustment, correlation)
+let BlackIborCouponPricer                       v timingAdjustment correlation ed
+                                                = new BlackIborCouponPricerModel (v, timingAdjustment, correlation, ed)
 let BlackKarasinski                             termStructure a sigma 
                                                 = new BlackKarasinskiModel (termStructure, a, sigma)
 let BlackKarasinski1                            termStructure 
@@ -378,34 +378,34 @@ let BlackScholesProcess                         x0 riskFreeTS blackVolTS d
                                                 = new BlackScholesProcessModel (x0, riskFreeTS, blackVolTS, d)
 let BlackScholesProcess1                        x0 riskFreeTS blackVolTS 
                                                 = new BlackScholesProcessModel1 (x0, riskFreeTS, blackVolTS)
-let BlackStyleSwaptionEngine                    discountCurve volatility displacement model 
-                                                = new BlackStyleSwaptionEngineModel<'Spec> (discountCurve, volatility, displacement, model)
-let BlackStyleSwaptionEngine1                   discountCurve vol dc displacement model 
-                                                = new BlackStyleSwaptionEngineModel1<'Spec> (discountCurve, vol, dc, displacement, model)
-let BlackStyleSwaptionEngine2                   discountCurve vol dc displacement model 
-                                                = new BlackStyleSwaptionEngineModel2<'Spec> (discountCurve, vol, dc, displacement, model)
-let BlackSwaptionEngine                         discountCurve vol displacement model 
-                                                = new BlackSwaptionEngineModel (discountCurve, vol, displacement, model)
-let BlackSwaptionEngine1                        discountCurve vol dc displacement model 
-                                                = new BlackSwaptionEngineModel1 (discountCurve, vol, dc, displacement, model)
-let BlackSwaptionEngine2                        discountCurve vol dc displacement model 
-                                                = new BlackSwaptionEngineModel2 (discountCurve, vol, dc, displacement, model)
-let BlackVanillaOptionPricer                    forwardValue expiryDate swapTenor volatilityStructure 
-                                                = new BlackVanillaOptionPricerModel (forwardValue, expiryDate, swapTenor, volatilityStructure)
+let BlackStyleSwaptionEngine                    discountCurve volatility displacement model ed
+                                                = new BlackStyleSwaptionEngineModel<'Spec> (discountCurve, volatility, displacement, model, ed)
+let BlackStyleSwaptionEngine1                   discountCurve vol dc displacement model ed
+                                                = new BlackStyleSwaptionEngineModel1<'Spec> (discountCurve, vol, dc, displacement, model, ed)
+let BlackStyleSwaptionEngine2                   discountCurve vol dc displacement model ed
+                                                = new BlackStyleSwaptionEngineModel2<'Spec> (discountCurve, vol, dc, displacement, model, ed)
+let BlackSwaptionEngine                         discountCurve vol displacement model ed
+                                                = new BlackSwaptionEngineModel (discountCurve, vol, displacement, model, ed)
+let BlackSwaptionEngine1                        discountCurve vol dc displacement model ed
+                                                = new BlackSwaptionEngineModel1 (discountCurve, vol, dc, displacement, model, ed)
+let BlackSwaptionEngine2                        discountCurve vol dc displacement model ed
+                                                = new BlackSwaptionEngineModel2 (discountCurve, vol, dc, displacement, model, ed)
+let BlackVanillaOptionPricer                    forwardValue expiryDate swapTenor volatilityStructure ed
+                                                = new BlackVanillaOptionPricerModel (forwardValue, expiryDate, swapTenor, volatilityStructure, ed)
 let BlackVarianceCurve                          referenceDate dates blackVolCurve dayCounter forceMonotoneVariance 
                                                 = new BlackVarianceCurveModel (referenceDate, dates, blackVolCurve, dayCounter, forceMonotoneVariance)
 let BlackVarianceSurface                        referenceDate calendar dates strikes blackVolMatrix dayCounter lowerExtrapolation upperExtrapolation 
                                                 = new BlackVarianceSurfaceModel (referenceDate, calendar, dates, strikes, blackVolMatrix, dayCounter, lowerExtrapolation, upperExtrapolation)
 let BlackVarianceSurface1                       ()
                                                 = new BlackVarianceSurfaceModel1 ()
-let BlackYoYInflationCouponPricer               capletVol 
-                                                = new BlackYoYInflationCouponPricerModel (capletVol)
+let BlackYoYInflationCouponPricer               capletVol ed
+                                                = new BlackYoYInflationCouponPricerModel (capletVol, ed)
 let BMAIndex                                    h 
                                                 = new BMAIndexModel (h)
 let BMASwap                                     Type nominal liborSchedule liborFraction liborSpread liborIndex liborDayCount bmaSchedule bmaIndex bmaDayCount pricingEngine evaluationDate 
                                                 = new BMASwapModel (Type, nominal, liborSchedule, liborFraction, liborSpread, liborIndex, liborDayCount, bmaSchedule, bmaIndex, bmaDayCount, pricingEngine, evaluationDate)
-let BMASwapRateHelper                           liborFraction tenor settlementDays calendar bmaPeriod bmaConvention bmaDayCount bmaIndex iborIndex 
-                                                = new BMASwapRateHelperModel (liborFraction, tenor, settlementDays, calendar, bmaPeriod, bmaConvention, bmaDayCount, bmaIndex, iborIndex)
+let BMASwapRateHelper                           liborFraction tenor settlementDays calendar bmaPeriod bmaConvention bmaDayCount bmaIndex iborIndex ed
+                                                = new BMASwapRateHelperModel (liborFraction, tenor, settlementDays, calendar, bmaPeriod, bmaConvention, bmaDayCount, bmaIndex, iborIndex, ed)
 let Bond                                        settlementDays calendar faceAmount maturityDate issueDate cashflows pricingEngine evaluationDate 
                                                 = new BondModel (settlementDays, calendar, faceAmount, maturityDate, issueDate, cashflows, pricingEngine, evaluationDate)
 let Bond1                                       settlementDays calendar issueDate coupons pricingEngine evaluationDate 
@@ -496,22 +496,22 @@ let CapFloor                                    Type floatingLeg capRates floorR
                                                 = new CapFloorModel (Type, floatingLeg, capRates, floorRates, pricingEngine, evaluationDate)
 let CapFloor1                                   Type floatingLeg strikes pricingEngine evaluationDate 
                                                 = new CapFloorModel1 (Type, floatingLeg, strikes, pricingEngine, evaluationDate)
-let CapFloorTermVolCurve                        settlementDays calendar bdc optionTenors vols dc 
-                                                = new CapFloorTermVolCurveModel (settlementDays, calendar, bdc, optionTenors, vols, dc)
-let CapFloorTermVolCurve1                       settlementDays calendar bdc optionTenors vols dc 
-                                                = new CapFloorTermVolCurveModel1 (settlementDays, calendar, bdc, optionTenors, vols, dc)
-let CapFloorTermVolCurve2                       settlementDate calendar bdc optionTenors vols dc 
-                                                = new CapFloorTermVolCurveModel2 (settlementDate, calendar, bdc, optionTenors, vols, dc)
-let CapFloorTermVolCurve3                       settlementDate calendar bdc optionTenors vols dc 
-                                                = new CapFloorTermVolCurveModel3 (settlementDate, calendar, bdc, optionTenors, vols, dc)
-let CapFloorTermVolSurface                      settlementDate calendar bdc optionTenors strikes vols dc 
-                                                = new CapFloorTermVolSurfaceModel (settlementDate, calendar, bdc, optionTenors, strikes, vols, dc)
-let CapFloorTermVolSurface1                     settlementDate calendar bdc optionTenors strikes vols dc 
-                                                = new CapFloorTermVolSurfaceModel1 (settlementDate, calendar, bdc, optionTenors, strikes, vols, dc)
-let CapFloorTermVolSurface2                     settlementDays calendar bdc optionTenors strikes vols dc 
-                                                = new CapFloorTermVolSurfaceModel2 (settlementDays, calendar, bdc, optionTenors, strikes, vols, dc)
-let CapFloorTermVolSurface3                     settlementDays calendar bdc optionTenors strikes vols dc 
-                                                = new CapFloorTermVolSurfaceModel3 (settlementDays, calendar, bdc, optionTenors, strikes, vols, dc)
+let CapFloorTermVolCurve                        settlementDays calendar bdc optionTenors vols dc ed
+                                                = new CapFloorTermVolCurveModel (settlementDays, calendar, bdc, optionTenors, vols, dc, ed)
+let CapFloorTermVolCurve1                       settlementDays calendar bdc optionTenors vols dc ed
+                                                = new CapFloorTermVolCurveModel1 (settlementDays, calendar, bdc, optionTenors, vols, dc, ed)
+let CapFloorTermVolCurve2                       settlementDate calendar bdc optionTenors vols dc ed
+                                                = new CapFloorTermVolCurveModel2 (settlementDate, calendar, bdc, optionTenors, vols, dc, ed)
+let CapFloorTermVolCurve3                       settlementDate calendar bdc optionTenors vols dc ed
+                                                = new CapFloorTermVolCurveModel3 (settlementDate, calendar, bdc, optionTenors, vols, dc, ed)
+let CapFloorTermVolSurface                      settlementDate calendar bdc optionTenors strikes vols dc ed
+                                                = new CapFloorTermVolSurfaceModel (settlementDate, calendar, bdc, optionTenors, strikes, vols, dc, ed)
+let CapFloorTermVolSurface1                     settlementDate calendar bdc optionTenors strikes vols dc ed
+                                                = new CapFloorTermVolSurfaceModel1 (settlementDate, calendar, bdc, optionTenors, strikes, vols, dc, ed)
+let CapFloorTermVolSurface2                     settlementDays calendar bdc optionTenors strikes vols dc ed
+                                                = new CapFloorTermVolSurfaceModel2 (settlementDays, calendar, bdc, optionTenors, strikes, vols, dc, ed)
+let CapFloorTermVolSurface3                     settlementDays calendar bdc optionTenors strikes vols dc ed
+                                                = new CapFloorTermVolSurfaceModel3 (settlementDays, calendar, bdc, optionTenors, strikes, vols, dc, ed)
 let CapHelper                                   length volatility index fixedLegFrequency fixedLegDayCounter includeFirstSwaplet termStructure errorType pricingEngine evaluationDate 
                                                 = new CapHelperModel (length, volatility, index, fixedLegFrequency, fixedLegDayCounter, includeFirstSwaplet, termStructure, errorType, pricingEngine, evaluationDate)
 let CapletVarianceCurve                         referenceDate dates capletVolCurve dayCounter 
@@ -528,10 +528,10 @@ let CappedFlooredCoupon                         ()
                                                 = new CappedFlooredCouponModel ()
 let CappedFlooredCoupon1                        underlying cap floor 
                                                 = new CappedFlooredCouponModel1 (underlying, cap, floor)
-let CappedFlooredIborCoupon                     ()
-                                                = new CappedFlooredIborCouponModel ()
-let CappedFlooredIborCoupon1                    paymentDate nominal startDate endDate fixingDays index gearing spread cap floor refPeriodStart refPeriodEnd dayCounter isInArrears 
-                                                = new CappedFlooredIborCouponModel1 (paymentDate, nominal, startDate, endDate, fixingDays, index, gearing, spread, cap, floor, refPeriodStart, refPeriodEnd, dayCounter, isInArrears)
+let CappedFlooredIborCoupon                     ed
+                                                = new CappedFlooredIborCouponModel (ed)
+let CappedFlooredIborCoupon1                    paymentDate nominal startDate endDate fixingDays index gearing spread cap floor refPeriodStart refPeriodEnd dayCounter isInArrears ed
+                                                = new CappedFlooredIborCouponModel1 (paymentDate, nominal, startDate, endDate, fixingDays, index, gearing, spread, cap, floor, refPeriodStart, refPeriodEnd, dayCounter, isInArrears, ed)
 let CappedFlooredYoYInflationCoupon             paymentDate nominal startDate endDate fixingDays index observationLag dayCounter gearing spread cap floor refPeriodStart refPeriodEnd 
                                                 = new CappedFlooredYoYInflationCouponModel (paymentDate, nominal, startDate, endDate, fixingDays, index, observationLag, dayCounter, gearing, spread, cap, floor, refPeriodStart, refPeriodEnd)
 let CappedFlooredYoYInflationCoupon1            underlying cap floor 
@@ -686,12 +686,12 @@ let ConvexMonotoneInterpolation1                xBegin size yBegin quadraticity 
                                                 = new ConvexMonotoneInterpolationModel1 (xBegin, size, yBegin, quadraticity, monotonicity, forcePositive, flatFinalPeriod)
 let COPCurrency                                 ()
                                                 = new COPCurrencyModel ()
-let CounterpartyAdjSwapEngine                   discountCurve blackVol ctptyDTS ctptyRecoveryRate invstDTS invstRecoveryRate 
-                                                = new CounterpartyAdjSwapEngineModel (discountCurve, blackVol, ctptyDTS, ctptyRecoveryRate, invstDTS, invstRecoveryRate)
-let CounterpartyAdjSwapEngine1                  discountCurve blackVol ctptyDTS ctptyRecoveryRate invstDTS invstRecoveryRate 
-                                                = new CounterpartyAdjSwapEngineModel1 (discountCurve, blackVol, ctptyDTS, ctptyRecoveryRate, invstDTS, invstRecoveryRate)
-let CounterpartyAdjSwapEngine2                  discountCurve swaptionEngine ctptyDTS ctptyRecoveryRate invstDTS invstRecoveryRate 
-                                                = new CounterpartyAdjSwapEngineModel2 (discountCurve, swaptionEngine, ctptyDTS, ctptyRecoveryRate, invstDTS, invstRecoveryRate)
+let CounterpartyAdjSwapEngine                   discountCurve blackVol ctptyDTS ctptyRecoveryRate invstDTS invstRecoveryRate ed
+                                                = new CounterpartyAdjSwapEngineModel (discountCurve, blackVol, ctptyDTS, ctptyRecoveryRate, invstDTS, invstRecoveryRate, ed)
+let CounterpartyAdjSwapEngine1                  discountCurve blackVol ctptyDTS ctptyRecoveryRate invstDTS invstRecoveryRate ed
+                                                = new CounterpartyAdjSwapEngineModel1 (discountCurve, blackVol, ctptyDTS, ctptyRecoveryRate, invstDTS, invstRecoveryRate, ed)
+let CounterpartyAdjSwapEngine2                  discountCurve swaptionEngine ctptyDTS ctptyRecoveryRate invstDTS invstRecoveryRate ed
+                                                = new CounterpartyAdjSwapEngineModel2 (discountCurve, swaptionEngine, ctptyDTS, ctptyRecoveryRate, invstDTS, invstRecoveryRate, ed)
 let CouponConversion                            date rate 
                                                 = new CouponConversionModel (date, rate)
 let CoxIngersollRoss                            r0 theta k sigma 
@@ -706,12 +706,12 @@ let CPIBondHelper                               price settlementDays faceAmount 
                                                 = new CPIBondHelperModel (price, settlementDays, faceAmount, growthOnly, baseCPI, observationLag, cpiIndex, observationInterpolation, schedule, fixedRate, accrualDayCounter, paymentConvention, issueDate, paymentCalendar, exCouponPeriod, exCouponCalendar, exCouponConvention, exCouponEndOfMonth, useCleanPrice)
 let CPICapFloor                                 Type nominal startDate baseCPI maturity fixCalendar fixConvention payCalendar payConvention strike infIndex observationLag observationInterpolation pricingEngine evaluationDate 
                                                 = new CPICapFloorModel (Type, nominal, startDate, baseCPI, maturity, fixCalendar, fixConvention, payCalendar, payConvention, strike, infIndex, observationLag, observationInterpolation, pricingEngine, evaluationDate)
-let CPICashFlow                                 notional index baseDate baseFixing fixingDate paymentDate growthOnly interpolation frequency 
-                                                = new CPICashFlowModel (notional, index, baseDate, baseFixing, fixingDate, paymentDate, growthOnly, interpolation, frequency)
+let CPICashFlow                                 notional index baseDate baseFixing fixingDate paymentDate growthOnly interpolation frequency ed
+                                                = new CPICashFlowModel (notional, index, baseDate, baseFixing, fixingDate, paymentDate, growthOnly, interpolation, frequency, ed)
 let CPICoupon                                   baseCPI paymentDate nominal startDate endDate fixingDays index observationLag observationInterpolation dayCounter fixedRate spread refPeriodStart refPeriodEnd exCouponDate 
                                                 = new CPICouponModel (baseCPI, paymentDate, nominal, startDate, endDate, fixingDays, index, observationLag, observationInterpolation, dayCounter, fixedRate, spread, refPeriodStart, refPeriodEnd, exCouponDate)
-let CPICouponPricer                             capletVol 
-                                                = new CPICouponPricerModel (capletVol)
+let CPICouponPricer                             capletVol ed
+                                                = new CPICouponPricerModel (capletVol, ed)
 let CPILeg                                      schedule index baseCPI observationLag 
                                                 = new CPILegModel (schedule, index, baseCPI, observationLag)
 let CPISwap                                     Type nominal subtractInflationNominal spread floatDayCount floatSchedule floatPaymentRoll fixingDays floatIndex fixedRate baseCPI fixedDayCount fixedSchedule fixedPaymentRoll observationLag fixedIndex observationInterpolation inflationNominal pricingEngine evaluationDate 
@@ -820,14 +820,14 @@ let DEMCurrency                                 ()
                                                 = new DEMCurrencyModel ()
 let Denmark                                     ()
                                                 = new DenmarkModel ()
-let DepositRateHelper                           rate tenor fixingDays calendar convention endOfMonth dayCounter 
-                                                = new DepositRateHelperModel (rate, tenor, fixingDays, calendar, convention, endOfMonth, dayCounter)
-let DepositRateHelper1                          rate i 
-                                                = new DepositRateHelperModel1 (rate, i)
-let DepositRateHelper2                          rate i 
-                                                = new DepositRateHelperModel2 (rate, i)
-let DepositRateHelper3                          rate tenor fixingDays calendar convention endOfMonth dayCounter 
-                                                = new DepositRateHelperModel3 (rate, tenor, fixingDays, calendar, convention, endOfMonth, dayCounter)
+let DepositRateHelper                           rate tenor fixingDays calendar convention endOfMonth dayCounter ed
+                                                = new DepositRateHelperModel (rate, tenor, fixingDays, calendar, convention, endOfMonth, dayCounter, ed)
+let DepositRateHelper1                          rate i ed
+                                                = new DepositRateHelperModel1 (rate, i, ed)
+let DepositRateHelper2                          rate i ed
+                                                = new DepositRateHelperModel2 (rate, i, ed)
+let DepositRateHelper3                          rate tenor fixingDays calendar convention endOfMonth dayCounter ed
+                                                = new DepositRateHelperModel3 (rate, tenor, fixingDays, calendar, convention, endOfMonth, dayCounter, ed)
 let DerivedQuote                                element f 
                                                 = new DerivedQuoteModel (element, f)
 let DifferentialEvolution                       configuration 
@@ -838,30 +838,30 @@ let DigitalCmsCoupon1                           ()
                                                 = new DigitalCmsCouponModel1 ()
 let DigitalCmsLeg                               schedule index 
                                                 = new DigitalCmsLegModel (schedule, index)
-let DigitalCoupon                               underlying callStrike callPosition isCallATMIncluded callDigitalPayoff putStrike putPosition isPutATMIncluded putDigitalPayoff replication 
-                                                = new DigitalCouponModel (underlying, callStrike, callPosition, isCallATMIncluded, callDigitalPayoff, putStrike, putPosition, isPutATMIncluded, putDigitalPayoff, replication)
-let DigitalCoupon1                              ()
-                                                = new DigitalCouponModel1 ()
-let DigitalIborCoupon                           ()
-                                                = new DigitalIborCouponModel ()
-let DigitalIborCoupon1                          underlying callStrike callPosition isCallATMIncluded callDigitalPayoff putStrike putPosition isPutATMIncluded putDigitalPayoff replication 
-                                                = new DigitalIborCouponModel1 (underlying, callStrike, callPosition, isCallATMIncluded, callDigitalPayoff, putStrike, putPosition, isPutATMIncluded, putDigitalPayoff, replication)
-let DigitalIborLeg                              schedule index 
-                                                = new DigitalIborLegModel (schedule, index)
+let DigitalCoupon                               underlying callStrike callPosition isCallATMIncluded callDigitalPayoff putStrike putPosition isPutATMIncluded putDigitalPayoff replication ed
+                                                = new DigitalCouponModel (underlying, callStrike, callPosition, isCallATMIncluded, callDigitalPayoff, putStrike, putPosition, isPutATMIncluded, putDigitalPayoff, replication, ed)
+let DigitalCoupon1                              ed
+                                                = new DigitalCouponModel1 (ed)
+let DigitalIborCoupon                           ed
+                                                = new DigitalIborCouponModel (ed)
+let DigitalIborCoupon1                          underlying callStrike callPosition isCallATMIncluded callDigitalPayoff putStrike putPosition isPutATMIncluded putDigitalPayoff replication ed
+                                                = new DigitalIborCouponModel1 (underlying, callStrike, callPosition, isCallATMIncluded, callDigitalPayoff, putStrike, putPosition, isPutATMIncluded, putDigitalPayoff, replication, ed)
+let DigitalIborLeg                              schedule index ed
+                                                = new DigitalIborLegModel (schedule, index, ed)
 let DigitalNotionalRisk                         paymentOffset threshold 
                                                 = new DigitalNotionalRiskModel (paymentOffset, threshold)
 let DigitalReplication                          t gap 
                                                 = new DigitalReplicationModel (t, gap)
 let Discount                                    ()
                                                 = new DiscountModel ()
-let DiscountingBasisSwapEngine                  discountCurve1 discountCurve2 
-                                                = new DiscountingBasisSwapEngineModel (discountCurve1, discountCurve2)
-let DiscountingBondEngine                       discountCurve includeSettlementDateFlows 
-                                                = new DiscountingBondEngineModel (discountCurve, includeSettlementDateFlows)
-let DiscountingLoanEngine                       discountCurve includeSettlementDateFlows 
-                                                = new DiscountingLoanEngineModel (discountCurve, includeSettlementDateFlows)
-let DiscountingSwapEngine                       discountCurve includeSettlementDateFlows settlementDate npvDate 
-                                                = new DiscountingSwapEngineModel (discountCurve, includeSettlementDateFlows, settlementDate, npvDate)
+let DiscountingBasisSwapEngine                  discountCurve1 discountCurve2 ed
+                                                = new DiscountingBasisSwapEngineModel (discountCurve1, discountCurve2, ed)
+let DiscountingBondEngine                       discountCurve includeSettlementDateFlows ed
+                                                = new DiscountingBondEngineModel (discountCurve, includeSettlementDateFlows, ed)
+let DiscountingLoanEngine                       discountCurve includeSettlementDateFlows ed
+                                                = new DiscountingLoanEngineModel (discountCurve, includeSettlementDateFlows, ed)
+let DiscountingSwapEngine                       discountCurve includeSettlementDateFlows settlementDate npvDate ed
+                                                = new DiscountingSwapEngineModel (discountCurve, includeSettlementDateFlows, settlementDate, npvDate, ed)
 let DiscrepancyStatistics                       dimension 
                                                 = new DiscrepancyStatisticsModel (dimension)
 let DiscreteAveragingAsianOption                averageType runningAccumulator pastFixings fixingDates payoff exercise pricingEngine evaluationDate 
@@ -876,10 +876,10 @@ let DiscreteTrapezoidIntegrator                 evaluations
                                                 = new DiscreteTrapezoidIntegratorModel (evaluations)
 let DiscretizedBarrierOption                    args Process grid 
                                                 = new DiscretizedBarrierOptionModel (args, Process, grid)
-let DiscretizedCallableFixedRateBond            args referenceDate dayCounter 
-                                                = new DiscretizedCallableFixedRateBondModel (args, referenceDate, dayCounter)
-let DiscretizedCapFloor                         args referenceDate dayCounter 
-                                                = new DiscretizedCapFloorModel (args, referenceDate, dayCounter)
+let DiscretizedCallableFixedRateBond            args referenceDate dayCounter ed
+                                                = new DiscretizedCallableFixedRateBondModel (args, referenceDate, dayCounter, ed)
+let DiscretizedCapFloor                         args referenceDate dayCounter ed
+                                                = new DiscretizedCapFloorModel (args, referenceDate, dayCounter, ed)
 let DiscretizedConvertible                      args Process grid 
                                                 = new DiscretizedConvertibleModel (args, Process, grid)
 let DiscretizedDermanKaniBarrierOption          args Process grid 
@@ -892,8 +892,8 @@ let DiscretizedDoubleBarrierOption              args Process grid
                                                 = new DiscretizedDoubleBarrierOptionModel (args, Process, grid)
 let DiscretizedOption                           underlying exerciseType exerciseTimes 
                                                 = new DiscretizedOptionModel (underlying, exerciseType, exerciseTimes)
-let DiscretizedSwap                             args referenceDate dayCounter 
-                                                = new DiscretizedSwapModel (args, referenceDate, dayCounter)
+let DiscretizedSwap                             args referenceDate dayCounter ed
+                                                = new DiscretizedSwapModel (args, referenceDate, dayCounter, ed)
 let DiscretizedSwaption                         args referenceDate dayCounter 
                                                 = new DiscretizedSwaptionModel (args, referenceDate, dayCounter)
 let DiscretizedVanillaOption                    args Process grid 
@@ -1152,20 +1152,20 @@ let FDAmericanCondition<'baseEngine when 'baseEngine :> FDConditionEngineTemplat
                                                 = new FDAmericanConditionModel<'baseEngine> ()
 let FDAmericanCondition1                        Process timeSteps gridPoints timeDependent 
                                                 = new FDAmericanConditionModel1<'baseEngine> (Process, timeSteps, gridPoints, timeDependent)
-let FDAmericanEngine                            ()
-                                                = new FDAmericanEngineModel ()
-let FDAmericanEngine1                           Process timeSteps gridPoints timeDependent 
-                                                = new FDAmericanEngineModel1 (Process, timeSteps, gridPoints, timeDependent)
-let FDBermudanEngine                            Process timeSteps gridPoints timeDependent 
-                                                = new FDBermudanEngineModel (Process, timeSteps, gridPoints, timeDependent)
-let FdBlackScholesBarrierEngine                 Process tGrid xGrid dampingSteps schemeDesc localVol illegalLocalVolOverwrite 
-                                                = new FdBlackScholesBarrierEngineModel (Process, tGrid, xGrid, dampingSteps, schemeDesc, localVol, illegalLocalVolOverwrite)
-let FdBlackScholesRebateEngine                  Process tGrid xGrid dampingSteps schemeDesc localVol illegalLocalVolOverwrite 
-                                                = new FdBlackScholesRebateEngineModel (Process, tGrid, xGrid, dampingSteps, schemeDesc, localVol, illegalLocalVolOverwrite)
-let FdBlackScholesVanillaEngine                 Process tGrid xGrid dampingSteps schemeDesc localVol illegalLocalVolOverwrite cashDividendModel 
-                                                = new FdBlackScholesVanillaEngineModel (Process, tGrid, xGrid, dampingSteps, schemeDesc, localVol, illegalLocalVolOverwrite, cashDividendModel)
-let FdBlackScholesVanillaEngine1                Process quantoHelper tGrid xGrid dampingSteps schemeDesc localVol illegalLocalVolOverwrite cashDividendModel 
-                                                = new FdBlackScholesVanillaEngineModel1 (Process, quantoHelper, tGrid, xGrid, dampingSteps, schemeDesc, localVol, illegalLocalVolOverwrite, cashDividendModel)
+let FDAmericanEngine                            ed
+                                                = new FDAmericanEngineModel (ed)
+let FDAmericanEngine1                           Process timeSteps gridPoints timeDependent ed
+                                                = new FDAmericanEngineModel1 (Process, timeSteps, gridPoints, timeDependent, ed)
+let FDBermudanEngine                            Process timeSteps gridPoints timeDependent ed
+                                                = new FDBermudanEngineModel (Process, timeSteps, gridPoints, timeDependent, ed)
+let FdBlackScholesBarrierEngine                 Process tGrid xGrid dampingSteps schemeDesc localVol illegalLocalVolOverwrite ed
+                                                = new FdBlackScholesBarrierEngineModel (Process, tGrid, xGrid, dampingSteps, schemeDesc, localVol, illegalLocalVolOverwrite, ed)
+let FdBlackScholesRebateEngine                  Process tGrid xGrid dampingSteps schemeDesc localVol illegalLocalVolOverwrite ed
+                                                = new FdBlackScholesRebateEngineModel (Process, tGrid, xGrid, dampingSteps, schemeDesc, localVol, illegalLocalVolOverwrite, ed)
+let FdBlackScholesVanillaEngine                 Process tGrid xGrid dampingSteps schemeDesc localVol illegalLocalVolOverwrite cashDividendModel ed
+                                                = new FdBlackScholesVanillaEngineModel (Process, tGrid, xGrid, dampingSteps, schemeDesc, localVol, illegalLocalVolOverwrite, cashDividendModel, ed)
+let FdBlackScholesVanillaEngine1                Process quantoHelper tGrid xGrid dampingSteps schemeDesc localVol illegalLocalVolOverwrite cashDividendModel ed
+                                                = new FdBlackScholesVanillaEngineModel1 (Process, quantoHelper, tGrid, xGrid, dampingSteps, schemeDesc, localVol, illegalLocalVolOverwrite, cashDividendModel, ed)
 let FDConditionEngineTemplate                   ()
                                                 = new FDConditionEngineTemplateModel ()
 let FDConditionEngineTemplate1                  Process timeSteps gridPoints timeDependent 
@@ -1174,42 +1174,42 @@ let FDConditionTemplate<'baseEngine when 'baseEngine :> FDConditionEngineTemplat
                                                 = new FDConditionTemplateModel<'baseEngine> ()
 let FDConditionTemplate1                        Process timeSteps gridPoints timeDependent 
                                                 = new FDConditionTemplateModel1<'baseEngine> (Process, timeSteps, gridPoints, timeDependent)
-let FDDividendAmericanEngine                    Process timeSteps gridPoints timeDependent 
-                                                = new FDDividendAmericanEngineModel (Process, timeSteps, gridPoints, timeDependent)
-let FDDividendAmericanEngine1                   ()
-                                                = new FDDividendAmericanEngineModel1 ()
-let FDDividendEngine                            ()
-                                                = new FDDividendEngineModel ()
-let FDDividendEngine1                           Process timeSteps gridPoints timeDependent 
-                                                = new FDDividendEngineModel1 (Process, timeSteps, gridPoints, timeDependent)
+let FDDividendAmericanEngine                    Process timeSteps gridPoints timeDependent ed
+                                                = new FDDividendAmericanEngineModel (Process, timeSteps, gridPoints, timeDependent, ed)
+let FDDividendAmericanEngine1                   ed
+                                                = new FDDividendAmericanEngineModel1 (ed)
+let FDDividendEngine                            ed
+                                                = new FDDividendEngineModel (ed)
+let FDDividendEngine1                           Process timeSteps gridPoints timeDependent ed
+                                                = new FDDividendEngineModel1 (Process, timeSteps, gridPoints, timeDependent, ed)
 let FDDividendEngineMerton73                    Process timeSteps gridPoints timeDependent 
                                                 = new FDDividendEngineMerton73Model (Process, timeSteps, gridPoints, timeDependent)
 let FDDividendEngineMerton731                   ()
                                                 = new FDDividendEngineMerton73Model1 ()
 let FDDividendEngineShiftScale                  Process timeSteps gridPoints timeDependent 
                                                 = new FDDividendEngineShiftScaleModel (Process, timeSteps, gridPoints, timeDependent)
-let FDDividendEuropeanEngine                    ()
-                                                = new FDDividendEuropeanEngineModel ()
-let FDDividendEuropeanEngine1                   Process timeSteps gridPoints timeDependent 
-                                                = new FDDividendEuropeanEngineModel1 (Process, timeSteps, gridPoints, timeDependent)
+let FDDividendEuropeanEngine                    ed
+                                                = new FDDividendEuropeanEngineModel (ed)
+let FDDividendEuropeanEngine1                   Process timeSteps gridPoints timeDependent ed
+                                                = new FDDividendEuropeanEngineModel1 (Process, timeSteps, gridPoints, timeDependent, ed)
 let FDEngineAdapter                             Process timeSteps gridPoints timeDependent 
                                                 = new FDEngineAdapterModel<'Base, 'Engine> (Process, timeSteps, gridPoints, timeDependent)
 let FDEngineAdapter1<'Base, 'Engine when 'Base :> FDConditionEngineTemplate and 'Base : (new : unit -> 'Base) and 'Engine :> IGenericEngine and 'Engine : (new : unit -> 'Engine)>                            
                                                 = new FDEngineAdapterModel1<'Base, 'Engine> ()
-let FDEuropeanEngine                            Process timeSteps gridPoints timeDependent 
-                                                = new FDEuropeanEngineModel (Process, timeSteps, gridPoints, timeDependent)
-let FDEuropeanEngine1                           Process timeSteps gridPoints 
-                                                = new FDEuropeanEngineModel1 (Process, timeSteps, gridPoints)
-let FdHullWhiteSwaptionEngine                   model tGrid xGrid dampingSteps invEps schemeDesc 
-                                                = new FdHullWhiteSwaptionEngineModel (model, tGrid, xGrid, dampingSteps, invEps, schemeDesc)
+let FDEuropeanEngine                            Process timeSteps gridPoints timeDependent ed
+                                                = new FDEuropeanEngineModel (Process, timeSteps, gridPoints, timeDependent, ed)
+let FDEuropeanEngine1                           Process timeSteps gridPoints ed
+                                                = new FDEuropeanEngineModel1 (Process, timeSteps, gridPoints, ed)
+let FdHullWhiteSwaptionEngine                   model tGrid xGrid dampingSteps invEps schemeDesc ed
+                                                = new FdHullWhiteSwaptionEngineModel (model, tGrid, xGrid, dampingSteps, invEps, schemeDesc, ed)
 let Fdm1DimSolver                               solverDesc schemeDesc op 
                                                 = new Fdm1DimSolverModel (solverDesc, schemeDesc, op)
 let Fdm1dMesher                                 size 
                                                 = new Fdm1dMesherModel (size)
 let FdmAffineModelSwapInnerValue                disModel fwdModel swap exerciseDates mesher direction 
                                                 = new FdmAffineModelSwapInnerValueModel<'ModelType> (disModel, fwdModel, swap, exerciseDates, mesher, direction)
-let FdmAffineModelTermStructure                 r cal dayCounter referenceDate modelReferenceDate model 
-                                                = new FdmAffineModelTermStructureModel (r, cal, dayCounter, referenceDate, modelReferenceDate, model)
+let FdmAffineModelTermStructure                 r cal dayCounter referenceDate modelReferenceDate model ed
+                                                = new FdmAffineModelTermStructureModel (r, cal, dayCounter, referenceDate, modelReferenceDate, model, ed)
 let FdmAmericanStepCondition                    mesher calculator 
                                                 = new FdmAmericanStepConditionModel (mesher, calculator)
 let FdmBackwardSolver                           map bcSet condition schemeDesc 
@@ -1276,26 +1276,26 @@ let FdmStepConditionComposite                   ()
                                                 = new FdmStepConditionCompositeModel ()
 let FdmStepConditionComposite1                  stoppingTimes conditions 
                                                 = new FdmStepConditionCompositeModel1 (stoppingTimes, conditions)
-let FDMultiPeriodEngine                         ()
-                                                = new FDMultiPeriodEngineModel ()
+let FDMultiPeriodEngine                         ed
+                                                = new FDMultiPeriodEngineModel (ed)
 let FdmZeroInnerValue                           ()
                                                 = new FdmZeroInnerValueModel ()
 let FDShoutCondition                            Process timeSteps gridPoints timeDependent 
                                                 = new FDShoutConditionModel<'baseEngine> (Process, timeSteps, gridPoints, timeDependent)
 let FDShoutCondition1<'baseEngine when 'baseEngine :> FDConditionEngineTemplate and 'baseEngine : (new : unit -> 'baseEngine)>                           
                                                 = new FDShoutConditionModel1<'baseEngine> ()
-let FDShoutEngine                               Process timeSteps gridPoints timeDependent 
-                                                = new FDShoutEngineModel (Process, timeSteps, gridPoints, timeDependent)
-let FDShoutEngine1                              ()
-                                                = new FDShoutEngineModel1 ()
-let FDStepConditionEngine                       Process timeSteps gridPoints timeDependent 
-                                                = new FDStepConditionEngineModel (Process, timeSteps, gridPoints, timeDependent)
-let FDStepConditionEngine1                      ()
-                                                = new FDStepConditionEngineModel1 ()
-let FDVanillaEngine                             Process timeSteps gridPoints timeDependent 
-                                                = new FDVanillaEngineModel (Process, timeSteps, gridPoints, timeDependent)
-let FDVanillaEngine1                            ()
-                                                = new FDVanillaEngineModel1 ()
+let FDShoutEngine                               Process timeSteps gridPoints timeDependent ed
+                                                = new FDShoutEngineModel (Process, timeSteps, gridPoints, timeDependent, ed)
+let FDShoutEngine1                              ed
+                                                = new FDShoutEngineModel1 (ed)
+let FDStepConditionEngine                       Process timeSteps gridPoints timeDependent ed
+                                                = new FDStepConditionEngineModel (Process, timeSteps, gridPoints, timeDependent, ed)
+let FDStepConditionEngine1                      ed
+                                                = new FDStepConditionEngineModel1 (ed)
+let FDVanillaEngine                             Process timeSteps gridPoints timeDependent ed
+                                                = new FDVanillaEngineModel (Process, timeSteps, gridPoints, timeDependent, ed)
+let FDVanillaEngine1                            ed
+                                                = new FDVanillaEngineModel1 (ed)
 let FedFunds                                    h 
                                                 = new FedFundsModel (h)
 let FIMCurrency                                 ()
@@ -1344,30 +1344,30 @@ let FixedRateLeg                                schedule
                                                 = new FixedRateLegModel (schedule)
 let FlatExtrapolator2D                          decoratedInterpolation 
                                                 = new FlatExtrapolator2DModel (decoratedInterpolation)
-let FlatForward                                 referenceDate forward dayCounter 
-                                                = new FlatForwardModel (referenceDate, forward, dayCounter)
-let FlatForward1                                settlementDays calendar forward dayCounter 
-                                                = new FlatForwardModel1 (settlementDays, calendar, forward, dayCounter)
-let FlatForward2                                settlementDays calendar forward dayCounter compounding frequency 
-                                                = new FlatForwardModel2 (settlementDays, calendar, forward, dayCounter, compounding, frequency)
-let FlatForward3                                settlementDays calendar forward dayCounter compounding 
-                                                = new FlatForwardModel3 (settlementDays, calendar, forward, dayCounter, compounding)
-let FlatForward4                                settlementDays calendar forward dayCounter 
-                                                = new FlatForwardModel4 (settlementDays, calendar, forward, dayCounter)
-let FlatForward5                                settlementDays calendar forward dayCounter compounding frequency 
-                                                = new FlatForwardModel5 (settlementDays, calendar, forward, dayCounter, compounding, frequency)
-let FlatForward6                                settlementDays calendar forward dayCounter compounding 
-                                                = new FlatForwardModel6 (settlementDays, calendar, forward, dayCounter, compounding)
-let FlatForward7                                referenceDate forward dayCounter compounding frequency 
-                                                = new FlatForwardModel7 (referenceDate, forward, dayCounter, compounding, frequency)
-let FlatForward8                                referenceDate forward dayCounter compounding 
-                                                = new FlatForwardModel8 (referenceDate, forward, dayCounter, compounding)
-let FlatForward9                                referenceDate forward dayCounter 
-                                                = new FlatForwardModel9 (referenceDate, forward, dayCounter)
-let FlatForward10                               referenceDate forward dayCounter compounding frequency 
-                                                = new FlatForwardModel10 (referenceDate, forward, dayCounter, compounding, frequency)
-let FlatForward11                               referenceDate forward dayCounter compounding 
-                                                = new FlatForwardModel11 (referenceDate, forward, dayCounter, compounding)
+let FlatForward                                 referenceDate forward dayCounter ed
+                                                = new FlatForwardModel (referenceDate, forward, dayCounter, ed)
+let FlatForward1                                settlementDays calendar forward dayCounter ed
+                                                = new FlatForwardModel1 (settlementDays, calendar, forward, dayCounter, ed)
+let FlatForward2                                settlementDays calendar forward dayCounter compounding frequency ed
+                                                = new FlatForwardModel2 (settlementDays, calendar, forward, dayCounter, compounding, frequency, ed)
+let FlatForward3                                settlementDays calendar forward dayCounter compounding ed
+                                                = new FlatForwardModel3 (settlementDays, calendar, forward, dayCounter, compounding, ed)
+let FlatForward4                                settlementDays calendar forward dayCounter ed
+                                                = new FlatForwardModel4 (settlementDays, calendar, forward, dayCounter, ed)
+let FlatForward5                                settlementDays calendar forward dayCounter compounding frequency ed
+                                                = new FlatForwardModel5 (settlementDays, calendar, forward, dayCounter, compounding, frequency, ed)
+let FlatForward6                                settlementDays calendar forward dayCounter compounding ed
+                                                = new FlatForwardModel6 (settlementDays, calendar, forward, dayCounter, compounding, ed)
+let FlatForward7                                referenceDate forward dayCounter compounding frequency ed
+                                                = new FlatForwardModel7 (referenceDate, forward, dayCounter, compounding, frequency, ed)
+let FlatForward8                                referenceDate forward dayCounter compounding ed
+                                                = new FlatForwardModel8 (referenceDate, forward, dayCounter, compounding, ed)
+let FlatForward9                                referenceDate forward dayCounter ed
+                                                = new FlatForwardModel9 (referenceDate, forward, dayCounter, ed)
+let FlatForward10                               referenceDate forward dayCounter compounding frequency ed
+                                                = new FlatForwardModel10 (referenceDate, forward, dayCounter, compounding, frequency, ed)
+let FlatForward11                               referenceDate forward dayCounter compounding ed
+                                                = new FlatForwardModel11 (referenceDate, forward, dayCounter, compounding, ed)
 let FlatHazardRate                              settlementDays calendar hazardRate dc 
                                                 = new FlatHazardRateModel (settlementDays, calendar, hazardRate, dc)
 let FlatHazardRate1                             referenceDate hazardRate dc 
@@ -1376,10 +1376,10 @@ let FlatHazardRate2                             referenceDate hazardRate dc
                                                 = new FlatHazardRateModel2 (referenceDate, hazardRate, dc)
 let FlatHazardRate3                             settlementDays calendar hazardRate dc 
                                                 = new FlatHazardRateModel3 (settlementDays, calendar, hazardRate, dc)
-let FlatSmileSection                            exerciseTime vol dc atmLevel Type shift 
-                                                = new FlatSmileSectionModel (exerciseTime, vol, dc, atmLevel, Type, shift)
-let FlatSmileSection1                           d vol dc referenceDate atmLevel Type shift 
-                                                = new FlatSmileSectionModel1 (d, vol, dc, referenceDate, atmLevel, Type, shift)
+let FlatSmileSection                            exerciseTime vol dc atmLevel Type shift ed
+                                                = new FlatSmileSectionModel (exerciseTime, vol, dc, atmLevel, Type, shift, ed)
+let FlatSmileSection1                           d vol dc referenceDate atmLevel Type shift ed
+                                                = new FlatSmileSectionModel1 (d, vol, dc, referenceDate, atmLevel, Type, shift, ed)
 let FloatFloatSwap                              Type nominal1 nominal2 schedule1 index1 dayCount1 schedule2 index2 dayCount2 intermediateCapitalExchange finalCapitalExchange gearing1 spread1 cappedRate1 flooredRate1 gearing2 spread2 cappedRate2 flooredRate2 paymentConvention1 paymentConvention2 pricingEngine evaluationDate 
                                                 = new FloatFloatSwapModel (Type, nominal1, nominal2, schedule1, index1, dayCount1, schedule2, index2, dayCount2, intermediateCapitalExchange, finalCapitalExchange, gearing1, spread1, cappedRate1, flooredRate1, gearing2, spread2, cappedRate2, flooredRate2, paymentConvention1, paymentConvention2, pricingEngine, evaluationDate)
 let FloatFloatSwap1                             Type nominal1 nominal2 schedule1 index1 dayCount1 schedule2 index2 dayCount2 intermediateCapitalExchange finalCapitalExchange gearing1 spread1 cappedRate1 flooredRate1 gearing2 spread2 cappedRate2 flooredRate2 paymentConvention1 paymentConvention2 pricingEngine evaluationDate 
@@ -1416,16 +1416,16 @@ let ForwardFlat                                 ()
                                                 = new ForwardFlatModel ()
 let ForwardFlatInterpolation                    xBegin size yBegin 
                                                 = new ForwardFlatInterpolationModel (xBegin, size, yBegin)
-let ForwardPerformanceVanillaEngine             Process getEngine pricingEngine evaluationDate 
-                                                = new ForwardPerformanceVanillaEngineModel (Process, getEngine)
+let ForwardPerformanceVanillaEngine             Process getEngine ed
+                                                = new ForwardPerformanceVanillaEngineModel (Process, getEngine, ed)
 let ForwardRate                                 ()
                                                 = new ForwardRateModel ()
 let ForwardRateAgreement                        valueDate maturityDate Type strikeForwardRate notionalAmount index discountCurve pricingEngine evaluationDate 
                                                 = new ForwardRateAgreementModel (valueDate, maturityDate, Type, strikeForwardRate, notionalAmount, index, discountCurve, pricingEngine, evaluationDate)
-let ForwardSpreadedTermStructure                h spread 
-                                                = new ForwardSpreadedTermStructureModel (h, spread)
-let ForwardTypePayoff                           Type strike 
-                                                = new ForwardTypePayoffModel (Type, strike)
+let ForwardSpreadedTermStructure                h spread ed
+                                                = new ForwardSpreadedTermStructureModel (h, spread, ed)
+let ForwardTypePayoff                           Type strike ed
+                                                = new ForwardTypePayoffModel (Type, strike, ed)
 let ForwardVanillaEngine                        Process getEngine pricingEngine evaluationDate 
                                                 = new ForwardVanillaEngineModel (Process, getEngine, pricingEngine, evaluationDate)
 let ForwardVanillaOption                        moneyness resetDate payoff exercise pricingEngine evaluationDate 
@@ -1436,22 +1436,22 @@ let FractionalDividend1                         rate date
                                                 = new FractionalDividendModel1 (rate, date)
 let FranceRegion                                ()
                                                 = new FranceRegionModel ()
-let FraRateHelper                               rate periodToStart iborIndex pillarChoice customPillarDate 
-                                                = new FraRateHelperModel (rate, periodToStart, iborIndex, pillarChoice, customPillarDate)
-let FraRateHelper1                              rate periodToStart iborIndex pillarChoice customPillarDate 
-                                                = new FraRateHelperModel1 (rate, periodToStart, iborIndex, pillarChoice, customPillarDate)
-let FraRateHelper2                              rate periodToStart lengthInMonths fixingDays calendar convention endOfMonth dayCounter pillarChoice customPillarDate 
-                                                = new FraRateHelperModel2 (rate, periodToStart, lengthInMonths, fixingDays, calendar, convention, endOfMonth, dayCounter, pillarChoice, customPillarDate)
-let FraRateHelper3                              rate periodToStart lengthInMonths fixingDays calendar convention endOfMonth dayCounter pillarChoice customPillarDate 
-                                                = new FraRateHelperModel3 (rate, periodToStart, lengthInMonths, fixingDays, calendar, convention, endOfMonth, dayCounter, pillarChoice, customPillarDate)
-let FraRateHelper4                              rate monthsToStart i pillarChoice customPillarDate 
-                                                = new FraRateHelperModel4 (rate, monthsToStart, i, pillarChoice, customPillarDate)
-let FraRateHelper5                              rate monthsToStart i pillarChoice customPillarDate 
-                                                = new FraRateHelperModel5 (rate, monthsToStart, i, pillarChoice, customPillarDate)
-let FraRateHelper6                              rate monthsToStart monthsToEnd fixingDays calendar convention endOfMonth dayCounter pillarChoice customPillarDate 
-                                                = new FraRateHelperModel6 (rate, monthsToStart, monthsToEnd, fixingDays, calendar, convention, endOfMonth, dayCounter, pillarChoice, customPillarDate)
-let FraRateHelper7                              rate monthsToStart monthsToEnd fixingDays calendar convention endOfMonth dayCounter pillarChoice customPillarDate 
-                                                = new FraRateHelperModel7 (rate, monthsToStart, monthsToEnd, fixingDays, calendar, convention, endOfMonth, dayCounter, pillarChoice, customPillarDate)
+let FraRateHelper                               rate periodToStart iborIndex pillarChoice customPillarDate ed
+                                                = new FraRateHelperModel (rate, periodToStart, iborIndex, pillarChoice, customPillarDate, ed)
+let FraRateHelper1                              rate periodToStart iborIndex pillarChoice customPillarDate ed
+                                                = new FraRateHelperModel1 (rate, periodToStart, iborIndex, pillarChoice, customPillarDate, ed)
+let FraRateHelper2                              rate periodToStart lengthInMonths fixingDays calendar convention endOfMonth dayCounter pillarChoice customPillarDate ed
+                                                = new FraRateHelperModel2 (rate, periodToStart, lengthInMonths, fixingDays, calendar, convention, endOfMonth, dayCounter, pillarChoice, customPillarDate, ed)
+let FraRateHelper3                              rate periodToStart lengthInMonths fixingDays calendar convention endOfMonth dayCounter pillarChoice customPillarDate ed
+                                                = new FraRateHelperModel3 (rate, periodToStart, lengthInMonths, fixingDays, calendar, convention, endOfMonth, dayCounter, pillarChoice, customPillarDate, ed)
+let FraRateHelper4                              rate monthsToStart i pillarChoice customPillarDate ed
+                                                = new FraRateHelperModel4 (rate, monthsToStart, i, pillarChoice, customPillarDate, ed)
+let FraRateHelper5                              rate monthsToStart i pillarChoice customPillarDate ed
+                                                = new FraRateHelperModel5 (rate, monthsToStart, i, pillarChoice, customPillarDate, ed)
+let FraRateHelper6                              rate monthsToStart monthsToEnd fixingDays calendar convention endOfMonth dayCounter pillarChoice customPillarDate ed
+                                                = new FraRateHelperModel6 (rate, monthsToStart, monthsToEnd, fixingDays, calendar, convention, endOfMonth, dayCounter, pillarChoice, customPillarDate, ed)
+let FraRateHelper7                              rate monthsToStart monthsToEnd fixingDays calendar convention endOfMonth dayCounter pillarChoice customPillarDate ed
+                                                = new FraRateHelperModel7 (rate, monthsToStart, monthsToEnd, fixingDays, calendar, convention, endOfMonth, dayCounter, pillarChoice, customPillarDate, ed)
 let FRFCurrency                                 ()
                                                 = new FRFCurrencyModel ()
 let FRHICP                                      interpolated ts 
@@ -1460,20 +1460,20 @@ let FRHICP1                                     interpolated
                                                 = new FRHICPModel1 (interpolated)
 let FritschButlandCubic                         xBegin size yBegin 
                                                 = new FritschButlandCubicModel (xBegin, size, yBegin)
-let FuturesRateHelper                           price iborStartDate lengthInMonths calendar convention endOfMonth dayCounter convAdj Type 
-                                                = new FuturesRateHelperModel (price, iborStartDate, lengthInMonths, calendar, convention, endOfMonth, dayCounter, convAdj, Type)
-let FuturesRateHelper1                          price iborStartDate i convAdj Type 
-                                                = new FuturesRateHelperModel1 (price, iborStartDate, i, convAdj, Type)
-let FuturesRateHelper2                          price iborStartDate i convAdj Type 
-                                                = new FuturesRateHelperModel2 (price, iborStartDate, i, convAdj, Type)
-let FuturesRateHelper3                          price iborStartDate iborEndDate dayCounter convAdj Type 
-                                                = new FuturesRateHelperModel3 (price, iborStartDate, iborEndDate, dayCounter, convAdj, Type)
-let FuturesRateHelper4                          price iborStartDate iborEndDate dayCounter convAdj Type 
-                                                = new FuturesRateHelperModel4 (price, iborStartDate, iborEndDate, dayCounter, convAdj, Type)
-let FuturesRateHelper5                          price iborStartDate lengthInMonths calendar convention endOfMonth dayCounter convexityAdjustment Type 
-                                                = new FuturesRateHelperModel5 (price, iborStartDate, lengthInMonths, calendar, convention, endOfMonth, dayCounter, convexityAdjustment, Type)
-let FxSwapRateHelper                            fwdPoint spotFx tenor fixingDays calendar convention endOfMonth isFxBaseCurrencyCollateralCurrency coll 
-                                                = new FxSwapRateHelperModel (fwdPoint, spotFx, tenor, fixingDays, calendar, convention, endOfMonth, isFxBaseCurrencyCollateralCurrency, coll)
+let FuturesRateHelper                           price iborStartDate lengthInMonths calendar convention endOfMonth dayCounter convAdj Type ed
+                                                = new FuturesRateHelperModel (price, iborStartDate, lengthInMonths, calendar, convention, endOfMonth, dayCounter, convAdj, Type, ed)
+let FuturesRateHelper1                          price iborStartDate i convAdj Type ed
+                                                = new FuturesRateHelperModel1 (price, iborStartDate, i, convAdj, Type, ed)
+let FuturesRateHelper2                          price iborStartDate i convAdj Type ed
+                                                = new FuturesRateHelperModel2 (price, iborStartDate, i, convAdj, Type, ed)
+let FuturesRateHelper3                          price iborStartDate iborEndDate dayCounter convAdj Type ed
+                                                = new FuturesRateHelperModel3 (price, iborStartDate, iborEndDate, dayCounter, convAdj, Type, ed)
+let FuturesRateHelper4                          price iborStartDate iborEndDate dayCounter convAdj Type ed
+                                                = new FuturesRateHelperModel4 (price, iborStartDate, iborEndDate, dayCounter, convAdj, Type, ed)
+let FuturesRateHelper5                          price iborStartDate lengthInMonths calendar convention endOfMonth dayCounter convexityAdjustment Type ed
+                                                = new FuturesRateHelperModel5 (price, iborStartDate, lengthInMonths, calendar, convention, endOfMonth, dayCounter, convexityAdjustment, Type, ed)
+let FxSwapRateHelper                            fwdPoint spotFx tenor fixingDays calendar convention endOfMonth isFxBaseCurrencyCollateralCurrency coll ed
+                                                = new FxSwapRateHelperModel (fwdPoint, spotFx, tenor, fixingDays, calendar, convention, endOfMonth, isFxBaseCurrencyCollateralCurrency, coll, ed)
 let G2                                          termStructure a sigma b 
                                                 = new G2Model (termStructure, a, sigma, b)
 let G21                                         termStructure 
@@ -1486,8 +1486,8 @@ let G24                                         termStructure a sigma b eta rho
                                                 = new G2Model4 (termStructure, a, sigma, b, eta, rho)
 let G25                                         termStructure a 
                                                 = new G2Model5 (termStructure, a)
-let G2SwaptionEngine                            model range intervals 
-                                                = new G2SwaptionEngineModel (model, range, intervals)
+let G2SwaptionEngine                            model range intervals ed
+                                                = new G2SwaptionEngineModel (model, range, intervals, ed)
 let GammaDistribution                           a 
                                                 = new GammaDistributionModel (a)
 let GapPayoff                                   Type strike secondStrike 
@@ -1568,8 +1568,8 @@ let GenericGaussianStatistics1<'Stat when 'Stat :> IGeneralStatistics and 'Stat 
                                                 = new GenericGaussianStatisticsModel1<'Stat> ()
 let GenericLowDiscrepancy<'URSG, 'IC when 'URSG :> IRNG and 'URSG : (new : unit -> 'URSG) and 'IC :> IValue and 'IC : (new : unit -> 'IC)> ()
                                                 = new GenericLowDiscrepancyModel<'URSG, 'IC> ()
-let GenericModelEngine<'ModelType, 'ArgumentsType, 'ResultsType when 'ModelType :> IObservable and 'ArgumentsType :> IPricingEngineArguments and 'ArgumentsType : (new : unit -> 'ArgumentsType) and 'ResultsType :> IPricingEngineResults and 'ResultsType : (new : unit -> 'ResultsType)>                          
-                                                = new GenericModelEngineModel<'ModelType, 'ArgumentsType, 'ResultsType> ()
+let GenericModelEngine<'ModelType, 'ArgumentsType, 'ResultsType when 'ModelType :> IObservable and 'ArgumentsType :> IPricingEngineArguments and 'ArgumentsType : (new : unit -> 'ArgumentsType) and 'ResultsType :> IPricingEngineResults and 'ResultsType : (new : unit -> 'ResultsType)>                          ed
+                                                = new GenericModelEngineModel<'ModelType, 'ArgumentsType, 'ResultsType> (ed)
 let GenericModelEngine1                         model 
                                                 = new GenericModelEngineModel1<'ModelType, 'ArgumentsType, 'ResultsType> (model)
 let GenericModelEngine2                         model 
@@ -1618,8 +1618,8 @@ let Helper                                      i xMin dx discountBondPrice tree
                                                 = new HelperModel (i, xMin, dx, discountBondPrice, tree)
 let HestonBlackVolSurface                       hestonModel 
                                                 = new HestonBlackVolSurfaceModel (hestonModel)
-let HestonExpansionEngine                       model formula 
-                                                = new HestonExpansionEngineModel (model, formula)
+let HestonExpansionEngine                       model formula ed
+                                                = new HestonExpansionEngineModel (model, formula, ed)
 let HestonHullWhitePathPricer                   exerciseTime payoff Process 
                                                 = new HestonHullWhitePathPricerModel (exerciseTime, payoff, Process)
 let HestonModel                                 Process 
@@ -1654,16 +1654,16 @@ let Hungary                                     ()
                                                 = new HungaryModel ()
 let HybridHestonHullWhiteProcess                hestonProcess hullWhiteProcess corrEquityShortRate discretization 
                                                 = new HybridHestonHullWhiteProcessModel (hestonProcess, hullWhiteProcess, corrEquityShortRate, discretization)
-let IborCoupon                                  paymentDate nominal startDate endDate fixingDays iborIndex gearing spread refPeriodStart refPeriodEnd dayCounter isInArrears 
-                                                = new IborCouponModel (paymentDate, nominal, startDate, endDate, fixingDays, iborIndex, gearing, spread, refPeriodStart, refPeriodEnd, dayCounter, isInArrears)
-let IborCoupon1                                 ()
-                                                = new IborCouponModel1 ()
+let IborCoupon                                  paymentDate nominal startDate endDate fixingDays iborIndex gearing spread refPeriodStart refPeriodEnd dayCounter isInArrears ed
+                                                = new IborCouponModel (paymentDate, nominal, startDate, endDate, fixingDays, iborIndex, gearing, spread, refPeriodStart, refPeriodEnd, dayCounter, isInArrears, ed)
+let IborCoupon1                                 ed
+                                                = new IborCouponModel1 (ed)
 let IborIndex                                   ()
                                                 = new IborIndexModel ()
 let IborIndex1                                  familyName tenor settlementDays currency fixingCalendar convention endOfMonth dayCounter h 
                                                 = new IborIndexModel1 (familyName, tenor, settlementDays, currency, fixingCalendar, convention, endOfMonth, dayCounter, h)
-let IborLeg                                     schedule index 
-                                                = new IborLegModel (schedule, index)
+let IborLeg                                     schedule index ed
+                                                = new IborLegModel (schedule, index, ed)
 let Iceland                                     ()
                                                 = new IcelandModel ()
 let IDRCurrency                                 ()
@@ -1680,18 +1680,18 @@ let ImplicitEulerScheme                         map bcSet relTol solverType
                                                 = new ImplicitEulerSchemeModel (map, bcSet, relTol, solverType)
 let ImplicitEulerScheme1                        ()
                                                 = new ImplicitEulerSchemeModel1 ()
-let ImpliedTermStructure                        h referenceDate 
-                                                = new ImpliedTermStructureModel (h, referenceDate)
-let ImpliedVolHelper                            cap discountCurve targetValue displacement Type 
-                                                = new ImpliedVolHelperModel (cap, discountCurve, targetValue, displacement, Type)
+let ImpliedTermStructure                        h referenceDate ed
+                                                = new ImpliedTermStructureModel (h, referenceDate, ed)
+let ImpliedVolHelper                            cap discountCurve targetValue displacement Type ed
+                                                = new ImpliedVolHelperModel (cap, discountCurve, targetValue, displacement, Type, ed)
 let ImpliedVolHelper_                           swaption discountCurve targetValue displacement Type 
                                                 = new ImpliedVolHelper_Model (swaption, discountCurve, targetValue, displacement, Type)
-let ImpliedVolTermStructure                     originalTS referenceDate 
-                                                = new ImpliedVolTermStructureModel (originalTS, referenceDate)
+let ImpliedVolTermStructure                     originalTS referenceDate ed
+                                                = new ImpliedVolTermStructureModel (originalTS, referenceDate, ed)
 let IncrementalStatistics                       ()
                                                 = new IncrementalStatisticsModel ()
-let IndexedCashFlow                             notional index baseDate fixingDate paymentDate growthOnly 
-                                                = new IndexedCashFlowModel (notional, index, baseDate, fixingDate, paymentDate, growthOnly)
+let IndexedCashFlow                             notional index baseDate fixingDate paymentDate growthOnly ed
+                                                = new IndexedCashFlowModel (notional, index, baseDate, fixingDate, paymentDate, growthOnly, ed)
 let India                                       ()
                                                 = new IndiaModel ()
 let Indonesia                                   m 
@@ -1702,16 +1702,16 @@ let InflationCoupon                             paymentDate nominal startDate en
                                                 = new InflationCouponModel (paymentDate, nominal, startDate, endDate, fixingDays, index, observationLag, dayCounter, refPeriodStart, refPeriodEnd, exCouponDate)
 let InflationCouponPricer                       ()
                                                 = new InflationCouponPricerModel ()
-let InflationIndex                              familyName region revised interpolated frequency availabilitiyLag currency 
-                                                = new InflationIndexModel (familyName, region, revised, interpolated, frequency, availabilitiyLag, currency)
+let InflationIndex                              familyName region revised interpolated frequency availabilitiyLag currency ed
+                                                = new InflationIndexModel (familyName, region, revised, interpolated, frequency, availabilitiyLag, currency, ed)
 let INRCurrency                                 ()
                                                 = new INRCurrencyModel ()
 let Instrument                                  pricingEngine evaluationDate
                                                 = new InstrumentModel (pricingEngine, evaluationDate)
-let IntegralCdsEngine                           step probability recoveryRate discountCurve includeSettlementDateFlows 
-                                                = new IntegralCdsEngineModel (step, probability, recoveryRate, discountCurve, includeSettlementDateFlows)
-let IntegralEngine                              Process 
-                                                = new IntegralEngineModel (Process)
+let IntegralCdsEngine                           step probability recoveryRate discountCurve includeSettlementDateFlows ed
+                                                = new IntegralCdsEngineModel (step, probability, recoveryRate, discountCurve, includeSettlementDateFlows, ed)
+let IntegralEngine                              Process ed
+                                                = new IntegralEngineModel (Process, ed)
 let Integrand                                   payoff s0 drift variance 
                                                 = new IntegrandModel (payoff, s0, drift, variance)
 let InterestRate                                r dc comp freq 
@@ -1754,16 +1754,16 @@ let InterpolatedHazardRateCurve1                dates hazardRates dayCounter cal
                                                 = new InterpolatedHazardRateCurveModel1<'Interpolator> (dates, hazardRates, dayCounter, calendar, interpolator)
 let InterpolatedHazardRateCurve2                dates hazardRates dayCounter interpolator 
                                                 = new InterpolatedHazardRateCurveModel2<'Interpolator> (dates, hazardRates, dayCounter, interpolator)
-let InterpolatedPiecewiseZeroSpreadedTermStructure  h spreads dates compounding frequency dc factory 
-                                                = new InterpolatedPiecewiseZeroSpreadedTermStructureModel<'Interpolator> (h, spreads, dates, compounding, frequency, dc, factory)
-let InterpolatedSmileSection                    d strikes stdDevs atmLevel dc interpolator referenceDate shift 
-                                                = new InterpolatedSmileSectionModel<'Interpolator> (d, strikes, stdDevs, atmLevel, dc, interpolator, referenceDate, shift)
-let InterpolatedSmileSection1                   d strikes stdDevHandles atmLevel dc interpolator referenceDate Type shift 
-                                                = new InterpolatedSmileSectionModel1<'Interpolator> (d, strikes, stdDevHandles, atmLevel, dc, interpolator, referenceDate, Type, shift)
-let InterpolatedSmileSection2                   timeToExpiry strikes stdDevs atmLevel interpolator dc Type shift 
-                                                = new InterpolatedSmileSectionModel2<'Interpolator> (timeToExpiry, strikes, stdDevs, atmLevel, interpolator, dc, Type, shift)
-let InterpolatedSmileSection3                   timeToExpiry strikes stdDevHandles atmLevel interpolator dc Type shift 
-                                                = new InterpolatedSmileSectionModel3<'Interpolator> (timeToExpiry, strikes, stdDevHandles, atmLevel, interpolator, dc, Type, shift)
+let InterpolatedPiecewiseZeroSpreadedTermStructure  h spreads dates compounding frequency dc factory ed
+                                                = new InterpolatedPiecewiseZeroSpreadedTermStructureModel<'Interpolator> (h, spreads, dates, compounding, frequency, dc, factory, ed)
+let InterpolatedSmileSection                    d strikes stdDevs atmLevel dc interpolator referenceDate shift ed
+                                                = new InterpolatedSmileSectionModel<'Interpolator> (d, strikes, stdDevs, atmLevel, dc, interpolator, referenceDate, shift, ed)
+let InterpolatedSmileSection1                   d strikes stdDevHandles atmLevel dc interpolator referenceDate Type shift ed
+                                                = new InterpolatedSmileSectionModel1<'Interpolator> (d, strikes, stdDevHandles, atmLevel, dc, interpolator, referenceDate, Type, shift, ed)
+let InterpolatedSmileSection2                   timeToExpiry strikes stdDevs atmLevel interpolator dc Type shift ed
+                                                = new InterpolatedSmileSectionModel2<'Interpolator> (timeToExpiry, strikes, stdDevs, atmLevel, interpolator, dc, Type, shift, ed)
+let InterpolatedSmileSection3                   timeToExpiry strikes stdDevHandles atmLevel interpolator dc Type shift ed
+                                                = new InterpolatedSmileSectionModel3<'Interpolator> (timeToExpiry, strikes, stdDevHandles, atmLevel, interpolator, dc, Type, shift, ed)
 let InterpolatedSurvivalProbabilityCurve        dates probabilities dayCounter calendar jumps jumpDates interpolator 
                                                 = new InterpolatedSurvivalProbabilityCurveModel<'Interpolator> (dates, probabilities, dayCounter, calendar, jumps, jumpDates, interpolator)
 let InterpolatedYoYInflationCurve               referenceDate calendar dayCounter lag frequency indexIsInterpolated yTS dates rates interpolator 
@@ -1784,8 +1784,8 @@ let InterpolatedZeroCurve5                      referenceDate dayCounter jumps j
                                                 = new InterpolatedZeroCurveModel5<'Interpolator> (referenceDate, dayCounter, jumps, jumpDates, interpolator)
 let InterpolatedZeroInflationCurve              referenceDate calendar dayCounter lag frequency indexIsInterpolated yTS dates rates interpolator 
                                                 = new InterpolatedZeroInflationCurveModel<'Interpolator> (referenceDate, calendar, dayCounter, lag, frequency, indexIsInterpolated, yTS, dates, rates, interpolator)
-let InterpolatingCPICapFloorEngine              priceSurf 
-                                                = new InterpolatingCPICapFloorEngineModel (priceSurf)
+let InterpolatingCPICapFloorEngine              priceSurf ed
+                                                = new InterpolatingCPICapFloorEngineModel (priceSurf, ed)
 let InvalidPriceSignException                   ()
                                                 = new InvalidPriceSignExceptionModel ()
 let InvalidPriceSignException1                  message 
@@ -1818,8 +1818,8 @@ let IQDCurrency                                 ()
                                                 = new IQDCurrencyModel ()
 let IRRCurrency                                 ()
                                                 = new IRRCurrencyModel ()
-let IsdaCdsEngine                               probability recoveryRate discountCurve includeSettlementDateFlows numericalFix accrualBias forwardsInCouponPeriod 
-                                                = new IsdaCdsEngineModel (probability, recoveryRate, discountCurve, includeSettlementDateFlows, numericalFix, accrualBias, forwardsInCouponPeriod)
+let IsdaCdsEngine                               probability recoveryRate discountCurve includeSettlementDateFlows numericalFix accrualBias forwardsInCouponPeriod ed
+                                                = new IsdaCdsEngineModel (probability, recoveryRate, discountCurve, includeSettlementDateFlows, numericalFix, accrualBias, forwardsInCouponPeriod, ed)
 let ISKCurrency                                 ()
                                                 = new ISKCurrencyModel ()
 let Israel                                      m 
@@ -1832,10 +1832,10 @@ let IterativeBootstrap<'T, 'U when 'T :> Curve<'U> and 'T : (new : unit -> 'T) a
                                                 = new IterativeBootstrapModel<'T, 'U> ()
 let ITLCurrency                                 ()
                                                 = new ITLCurrencyModel ()
-let JamshidianSwaptionEngine                    model 
-                                                = new JamshidianSwaptionEngineModel (model)
-let JamshidianSwaptionEngine1                   model termStructure 
-                                                = new JamshidianSwaptionEngineModel1 (model, termStructure)
+let JamshidianSwaptionEngine                    model ed
+                                                = new JamshidianSwaptionEngineModel (model, ed)
+let JamshidianSwaptionEngine1                   model termStructure ed
+                                                = new JamshidianSwaptionEngineModel1 (model, termStructure, ed)
 let Japan                                       ()
                                                 = new JapanModel ()
 let JarrowRudd                                  ()
@@ -1876,28 +1876,28 @@ let JpyLiborSwapIsdaFixPm                       tenor h
                                                 = new JpyLiborSwapIsdaFixPmModel (tenor, h)
 let JpyLiborSwapIsdaFixPm1                      tenor 
                                                 = new JpyLiborSwapIsdaFixPmModel1 (tenor)
-let JuQuadraticApproximationEngine              Process 
-                                                = new JuQuadraticApproximationEngineModel (Process)
+let JuQuadraticApproximationEngine              Process ed
+                                                = new JuQuadraticApproximationEngineModel (Process, ed)
 let KerkhofSeasonality                          seasonalityBaseDate seasonalityFactors 
                                                 = new KerkhofSeasonalityModel (seasonalityBaseDate, seasonalityFactors)
 let KernelInterpolation                         xBegin size yBegin kernel 
                                                 = new KernelInterpolationModel (xBegin, size, yBegin, kernel)
 let KernelInterpolation2D                       xBegin size yBegin ySize zData kernel 
                                                 = new KernelInterpolation2DModel (xBegin, size, yBegin, ySize, zData, kernel)
-let KirkEngine                                  process1 process2 correlation 
-                                                = new KirkEngineModel (process1, process2, correlation)
-let KirkSpreadOptionEngine                      process1 process2 correlation 
-                                                = new KirkSpreadOptionEngineModel (process1, process2, correlation)
+let KirkEngine                                  process1 process2 correlation ed
+                                                = new KirkEngineModel (process1, process2, correlation, ed)
+let KirkSpreadOptionEngine                      process1 process2 correlation ed
+                                                = new KirkSpreadOptionEngineModel (process1, process2, correlation, ed)
 let KrugerCubic                                 xBegin size yBegin 
                                                 = new KrugerCubicModel (xBegin, size, yBegin)
 let KRWCurrency                                 ()
                                                 = new KRWCurrencyModel ()
 let KWDCurrency                                 ()
                                                 = new KWDCurrencyModel ()
-let LatticeShortRateModelEngine                 model timeGrid 
-                                                = new LatticeShortRateModelEngineModel<'ArgumentsType, 'ResultsType> (model, timeGrid)
-let LatticeShortRateModelEngine1                model timeSteps 
-                                                = new LatticeShortRateModelEngineModel1<'ArgumentsType, 'ResultsType> (model, timeSteps)
+let LatticeShortRateModelEngine                 model timeGrid ed
+                                                = new LatticeShortRateModelEngineModel<'ArgumentsType, 'ResultsType> (model, timeGrid, ed)
+let LatticeShortRateModelEngine1                model timeSteps ed
+                                                = new LatticeShortRateModelEngineModel1<'ArgumentsType, 'ResultsType> (model, timeSteps, ed)
 let LeastSquareFunction                         lsp 
                                                 = new LeastSquareFunctionModel (lsp)
 let LeisenReimer                                Process End steps strike 
@@ -1914,16 +1914,16 @@ let LfmHullWhiteParameterization                Process capletVol correlation fa
                                                 = new LfmHullWhiteParameterizationModel (Process, capletVol, correlation, factors)
 let LfmHullWhiteParameterization1               Process capletVol 
                                                 = new LfmHullWhiteParameterizationModel1 (Process, capletVol)
-let LfmSwaptionEngine                           model discountCurve 
-                                                = new LfmSwaptionEngineModel (model, discountCurve)
+let LfmSwaptionEngine                           model discountCurve ed
+                                                = new LfmSwaptionEngineModel (model, discountCurve, ed)
 let Libor                                       familyName tenor settlementDays currency financialCenterCalendar dayCounter h 
                                                 = new LiborModel (familyName, tenor, settlementDays, currency, financialCenterCalendar, dayCounter, h)
-let LiborForwardModel                           Process volaModel corrModel 
-                                                = new LiborForwardModelModel (Process, volaModel, corrModel)
-let LiborForwardModelProcess                    size index disc 
-                                                = new LiborForwardModelProcessModel (size, index, disc)
-let LiborForwardModelProcess1                   size index 
-                                                = new LiborForwardModelProcessModel1 (size, index)
+let LiborForwardModel                           Process volaModel corrModel ed
+                                                = new LiborForwardModelModel (Process, volaModel, corrModel, ed)
+let LiborForwardModelProcess                    size index disc ed
+                                                = new LiborForwardModelProcessModel (size, index, disc, ed)
+let LiborForwardModelProcess1                   size index ed
+                                                = new LiborForwardModelProcessModel1 (size, index, ed)
 let Linear                                      ()
                                                 = new LinearModel ()
 let LinearInterpolation                         xBegin size yBegin 
@@ -1934,8 +1934,8 @@ let LinearRegression                            x y
                                                 = new LinearRegressionModel (x, y)
 let LinearRegression1                           x y 
                                                 = new LinearRegressionModel1 (x, y)
-let LinearTsrPricer                             swaptionVol meanReversion couponDiscountCurve settings integrator 
-                                                = new LinearTsrPricerModel (swaptionVol, meanReversion, couponDiscountCurve, settings, integrator)
+let LinearTsrPricer                             swaptionVol meanReversion couponDiscountCurve settings integrator ed
+                                                = new LinearTsrPricerModel (swaptionVol, meanReversion, couponDiscountCurve, settings, integrator, ed)
 let LineSearchBasedMethod                       lineSearch 
                                                 = new LineSearchBasedMethodModel (lineSearch)
 let LmConstWrapperCorrelationModel              corrModel 
@@ -2014,24 +2014,24 @@ let MaxNumberFuncEvalExceeded2                  ()
                                                 = new MaxNumberFuncEvalExceededModel2 ()
 let MBSFixedRateBond                            settlementDays calendar faceAmount startDate bondTenor originalLength sinkingFrequency WACRate PassThroughRate accrualDayCounter prepayModel paymentConvention issueDate pricingEngine evaluationDate 
                                                 = new MBSFixedRateBondModel (settlementDays, calendar, faceAmount, startDate, bondTenor, originalLength, sinkingFrequency, WACRate, PassThroughRate, accrualDayCounter, prepayModel, paymentConvention, issueDate, pricingEngine, evaluationDate)
-let MCAmericanEngine                            Process timeSteps timeStepsPerYear antitheticVariate controlVariate requiredSamples requiredTolerance maxSamples seed polynomOrder polynomType nCalibrationSamples 
-                                                = new MCAmericanEngineModel<'RNG, 'S> (Process, timeSteps, timeStepsPerYear, antitheticVariate, controlVariate, requiredSamples, requiredTolerance, maxSamples, seed, polynomOrder, polynomType, nCalibrationSamples)
-let MCBarrierEngine                             Process timeSteps timeStepsPerYear brownianBridge antitheticVariate requiredSamples requiredTolerance maxSamples isBiased seed 
-                                                = new MCBarrierEngineModel<'RNG, 'S> (Process, timeSteps, timeStepsPerYear, brownianBridge, antitheticVariate, requiredSamples, requiredTolerance, maxSamples, isBiased, seed)
-let MCDiscreteArithmeticAPEngine                Process maxTimeStepPerYear brownianBridge antitheticVariate controlVariate requiredSamples requiredTolerance maxSamples seed 
-                                                = new MCDiscreteArithmeticAPEngineModel<'RNG, 'S> (Process, maxTimeStepPerYear, brownianBridge, antitheticVariate, controlVariate, requiredSamples, requiredTolerance, maxSamples, seed)
-let MCDiscreteArithmeticASEngine                Process brownianBridge antitheticVariate requiredSamples requiredTolerance maxSamples seed 
-                                                = new MCDiscreteArithmeticASEngineModel<'RNG, 'S> (Process, brownianBridge, antitheticVariate, requiredSamples, requiredTolerance, maxSamples, seed)
-let MCDiscreteAveragingAsianEngine              Process maxTimeStepsPerYear brownianBridge antitheticVariate controlVariate requiredSamples requiredTolerance maxSamples seed 
-                                                = new MCDiscreteAveragingAsianEngineModel<'RNG, 'S> (Process, maxTimeStepsPerYear, brownianBridge, antitheticVariate, controlVariate, requiredSamples, requiredTolerance, maxSamples, seed)
-let MCDiscreteGeometricAPEngine                 Process maxTimeStepPerYear brownianBridge antitheticVariate controlVariate requiredSamples requiredTolerance maxSamples seed 
-                                                = new MCDiscreteGeometricAPEngineModel<'RNG, 'S> (Process, maxTimeStepPerYear, brownianBridge, antitheticVariate, controlVariate, requiredSamples, requiredTolerance, maxSamples, seed)
-let MCEuropeanEngine                            Process timeSteps timeStepsPerYear brownianBridge antitheticVariate requiredSamples requiredTolerance maxSamples seed 
-                                                = new MCEuropeanEngineModel<'RNG, 'S> (Process, timeSteps, timeStepsPerYear, brownianBridge, antitheticVariate, requiredSamples, requiredTolerance, maxSamples, seed)
-let MCEuropeanHestonEngine                      Process timeSteps timeStepsPerYear antitheticVariate requiredSamples requiredTolerance maxSamples seed 
-                                                = new MCEuropeanHestonEngineModel<'RNG, 'S> (Process, timeSteps, timeStepsPerYear, antitheticVariate, requiredSamples, requiredTolerance, maxSamples, seed)
-let MCHestonHullWhiteEngine                     Process timeSteps timeStepsPerYear antitheticVariate controlVariate requiredSamples requiredTolerance maxSamples seed 
-                                                = new MCHestonHullWhiteEngineModel<'RNG, 'S> (Process, timeSteps, timeStepsPerYear, antitheticVariate, controlVariate, requiredSamples, requiredTolerance, maxSamples, seed)
+let MCAmericanEngine                            Process timeSteps timeStepsPerYear antitheticVariate controlVariate requiredSamples requiredTolerance maxSamples seed polynomOrder polynomType nCalibrationSamples ed
+                                                = new MCAmericanEngineModel<'RNG, 'S> (Process, timeSteps, timeStepsPerYear, antitheticVariate, controlVariate, requiredSamples, requiredTolerance, maxSamples, seed, polynomOrder, polynomType, nCalibrationSamples, ed)
+let MCBarrierEngine                             Process timeSteps timeStepsPerYear brownianBridge antitheticVariate requiredSamples requiredTolerance maxSamples isBiased seed ed
+                                                = new MCBarrierEngineModel<'RNG, 'S> (Process, timeSteps, timeStepsPerYear, brownianBridge, antitheticVariate, requiredSamples, requiredTolerance, maxSamples, isBiased, seed, ed)
+let MCDiscreteArithmeticAPEngine                Process maxTimeStepPerYear brownianBridge antitheticVariate controlVariate requiredSamples requiredTolerance maxSamples seed ed
+                                                = new MCDiscreteArithmeticAPEngineModel<'RNG, 'S> (Process, maxTimeStepPerYear, brownianBridge, antitheticVariate, controlVariate, requiredSamples, requiredTolerance, maxSamples, seed, ed)
+let MCDiscreteArithmeticASEngine                Process brownianBridge antitheticVariate requiredSamples requiredTolerance maxSamples seed ed
+                                                = new MCDiscreteArithmeticASEngineModel<'RNG, 'S> (Process, brownianBridge, antitheticVariate, requiredSamples, requiredTolerance, maxSamples, seed, ed)
+let MCDiscreteAveragingAsianEngine              Process maxTimeStepsPerYear brownianBridge antitheticVariate controlVariate requiredSamples requiredTolerance maxSamples seed ed
+                                                = new MCDiscreteAveragingAsianEngineModel<'RNG, 'S> (Process, maxTimeStepsPerYear, brownianBridge, antitheticVariate, controlVariate, requiredSamples, requiredTolerance, maxSamples, seed, ed)
+let MCDiscreteGeometricAPEngine                 Process maxTimeStepPerYear brownianBridge antitheticVariate controlVariate requiredSamples requiredTolerance maxSamples seed ed
+                                                = new MCDiscreteGeometricAPEngineModel<'RNG, 'S> (Process, maxTimeStepPerYear, brownianBridge, antitheticVariate, controlVariate, requiredSamples, requiredTolerance, maxSamples, seed, ed)
+let MCEuropeanEngine                            Process timeSteps timeStepsPerYear brownianBridge antitheticVariate requiredSamples requiredTolerance maxSamples seed ed
+                                                = new MCEuropeanEngineModel<'RNG, 'S> (Process, timeSteps, timeStepsPerYear, brownianBridge, antitheticVariate, requiredSamples, requiredTolerance, maxSamples, seed, ed)
+let MCEuropeanHestonEngine                      Process timeSteps timeStepsPerYear antitheticVariate requiredSamples requiredTolerance maxSamples seed ed
+                                                = new MCEuropeanHestonEngineModel<'RNG, 'S> (Process, timeSteps, timeStepsPerYear, antitheticVariate, requiredSamples, requiredTolerance, maxSamples, seed, ed)
+let MCHestonHullWhiteEngine                     Process timeSteps timeStepsPerYear antitheticVariate controlVariate requiredSamples requiredTolerance maxSamples seed ed
+                                                = new MCHestonHullWhiteEngineModel<'RNG, 'S> (Process, timeSteps, timeStepsPerYear, antitheticVariate, controlVariate, requiredSamples, requiredTolerance, maxSamples, seed, ed)
 let MersenneTwisterUniformRng                   seed 
                                                 = new MersenneTwisterUniformRngModel (seed)
 let MersenneTwisterUniformRng1                  ()
@@ -2046,8 +2046,8 @@ let Mexico                                      ()
                                                 = new MexicoModel ()
 let MidPoint                                    ()
                                                 = new MidPointModel ()
-let MidPointCdsEngine                           probability recoveryRate discountCurve includeSettlementDateFlows 
-                                                = new MidPointCdsEngineModel (probability, recoveryRate, discountCurve, includeSettlementDateFlows)
+let MidPointCdsEngine                           probability recoveryRate discountCurve includeSettlementDateFlows ed
+                                                = new MidPointCdsEngineModel (probability, recoveryRate, discountCurve, includeSettlementDateFlows, ed)
 let MinBasketPayoff                             p 
                                                 = new MinBasketPayoffModel (p)
 let MixedLinearCubic                            n behavior da monotonic leftCondition leftConditionValue rightCondition rightConditionValue 
@@ -2086,8 +2086,8 @@ let MonotonicCubicNaturalSpline                 xBegin size yBegin
                                                 = new MonotonicCubicNaturalSplineModel (xBegin, size, yBegin)
 let MonotonicParabolic                          xBegin size yBegin 
                                                 = new MonotonicParabolicModel (xBegin, size, yBegin)
-let MonteCarloCatBondEngine                     catRisk discountCurve includeSettlementDateFlows 
-                                                = new MonteCarloCatBondEngineModel (catRisk, discountCurve, includeSettlementDateFlows)
+let MonteCarloCatBondEngine                     catRisk discountCurve includeSettlementDateFlows ed
+                                                = new MonteCarloCatBondEngineModel (catRisk, discountCurve, includeSettlementDateFlows, ed)
 let MonteCarloModel                             pathGenerator pathPricer sampleAccumulator antitheticVariate cvPathPricer cvOptionValue cvPathGenerator 
                                                 = new MonteCarloModelModel<'MC, 'RNG, 'S> (pathGenerator, pathPricer, sampleAccumulator, antitheticVariate, cvPathPricer, cvOptionValue, cvPathGenerator)
 let MonthlyYieldFinder                          faceAmount cashflows settlement 
@@ -2190,8 +2190,8 @@ let NumericalDifferentiation                    f orderOfDerivative stepSize ste
                                                 = new NumericalDifferentiationModel (f, orderOfDerivative, stepSize, steps, scheme)
 let NumericalDifferentiation1                   f orderOfDerivative x_offsets 
                                                 = new NumericalDifferentiationModel1 (f, orderOfDerivative, x_offsets)
-let NumericHaganPricer                          swaptionVol modelOfYieldCurve meanReversion lowerLimit upperLimit precision hardUpperLimit 
-                                                = new NumericHaganPricerModel (swaptionVol, modelOfYieldCurve, meanReversion, lowerLimit, upperLimit, precision, hardUpperLimit)
+let NumericHaganPricer                          swaptionVol modelOfYieldCurve meanReversion lowerLimit upperLimit precision hardUpperLimit ed
+                                                = new NumericHaganPricerModel (swaptionVol, modelOfYieldCurve, meanReversion, lowerLimit, upperLimit, precision, hardUpperLimit, ed)
 let NZDCurrency                                 ()
                                                 = new NZDCurrencyModel ()
 let NZDLibor                                    tenor h 
@@ -2216,8 +2216,8 @@ let OrnsteinUhlenbeckProcess                    speed vol x0 level
                                                 = new OrnsteinUhlenbeckProcessModel (speed, vol, x0, level)
 let OvernightIndex                              familyName settlementDays currency fixingCalendar dayCounter h 
                                                 = new OvernightIndexModel (familyName, settlementDays, currency, fixingCalendar, dayCounter, h)
-let OvernightIndexedCoupon                      paymentDate nominal startDate endDate overnightIndex gearing spread refPeriodStart refPeriodEnd dayCounter 
-                                                = new OvernightIndexedCouponModel (paymentDate, nominal, startDate, endDate, overnightIndex, gearing, spread, refPeriodStart, refPeriodEnd, dayCounter)
+let OvernightIndexedCoupon                      paymentDate nominal startDate endDate overnightIndex gearing spread refPeriodStart refPeriodEnd dayCounter ed
+                                                = new OvernightIndexedCouponModel (paymentDate, nominal, startDate, endDate, overnightIndex, gearing, spread, refPeriodStart, refPeriodEnd, dayCounter, ed)
 let OvernightIndexedCouponPricer                ()
                                                 = new OvernightIndexedCouponPricerModel ()
 let OvernightIndexedSwap                        Type fixedNominal fixedSchedule fixedRate fixedDC overnightNominal overnightSchedule overnightIndex spread pricingEngine evaluationDate 
@@ -2226,8 +2226,8 @@ let OvernightIndexedSwap1                       Type nominal schedule fixedRate 
                                                 = new OvernightIndexedSwapModel1 (Type, nominal, schedule, fixedRate, fixedDC, overnightIndex, spread, pricingEngine, evaluationDate)
 let OvernightIndexedSwapIndex                   familyName tenor settlementDays currency overnightIndex 
                                                 = new OvernightIndexedSwapIndexModel (familyName, tenor, settlementDays, currency, overnightIndex)
-let OvernightLeg                                schedule overnightIndex 
-                                                = new OvernightLegModel (schedule, overnightIndex)
+let OvernightLeg                                schedule overnightIndex ed
+                                                = new OvernightLegModel (schedule, overnightIndex, ed)
 let Pair                                        first second 
                                                 = new PairModel<'TFirst, 'TSecond> (first, second)
 let pair_double                                 first second 
@@ -2282,8 +2282,8 @@ let PiecewiseConstantParameter                  times Constraint
                                                 = new PiecewiseConstantParameterModel (times, Constraint)
 let PiecewiseTimeDependentHestonModel           riskFreeRate dividendYield s0 v0 theta kappa sigma rho timeGrid 
                                                 = new PiecewiseTimeDependentHestonModelModel (riskFreeRate, dividendYield, s0, v0, theta, kappa, sigma, rho, timeGrid)
-let PiecewiseYieldCurve                         traints referenceDate instruments dayCounter jumps jumpDates accurancy i
-                                                = new PiecewiseYieldCurveModel (traints, referenceDate, instruments, dayCounter, jumps, jumpDates, accurancy, i)
+let PiecewiseYieldCurve                         traints referenceDate instruments dayCounter jumps jumpDates accurancy i ed
+                                                = new PiecewiseYieldCurveModel (traints, referenceDate, instruments, dayCounter, jumps, jumpDates, accurancy, i, ed) 
 let PiecewiseYoYInflationCurve                  dayCounter baseZeroRate observationLag frequency indexIsInterpolated yTS 
                                                 = new PiecewiseYoYInflationCurveModel (dayCounter, baseZeroRate, observationLag, frequency, indexIsInterpolated, yTS)
 let PiecewiseYoYInflationCurve1                 referenceDate calendar dayCounter baseZeroRate observationLag frequency indexIsInterpolated yTS 
@@ -2300,8 +2300,8 @@ let PiecewiseZeroInflationCurve2                dayCounter baseZeroRate observat
                                                 = new PiecewiseZeroInflationCurveModel2 (dayCounter, baseZeroRate, observationLag, frequency, indexIsInterpolated, yTS)
 let PiecewiseZeroInflationCurve3                ()
                                                 = new PiecewiseZeroInflationCurveModel3 ()
-let PiecewiseZeroSpreadedTermStructure          h spreads dates compounding frequency dc 
-                                                = new PiecewiseZeroSpreadedTermStructureModel (h, spreads, dates, compounding, frequency, dc)
+let PiecewiseZeroSpreadedTermStructure          h spreads dates compounding frequency dc ed
+                                                = new PiecewiseZeroSpreadedTermStructureModel (h, spreads, dates, compounding, frequency, dc, ed)
 let PKRCurrency                                 ()
                                                 = new PKRCurrencyModel ()
 let PlainVanillaPayoff                          Type strike 
@@ -2316,8 +2316,8 @@ let PositiveConstraint                          ()
                                                 = new PositiveConstraintModel ()
 let PriceError                                  engine vol targetValue 
                                                 = new PriceErrorModel (engine, vol, targetValue)
-let PricerSetter                                pricer 
-                                                = new PricerSetterModel (pricer)
+let PricerSetter                                pricer ed
+                                                = new PricerSetterModel (pricer, ed)
 let PricipalLeg                                 schedule paymentDayCounter 
                                                 = new PricipalLegModel (schedule, paymentDayCounter)
 let Principal                                   ()
@@ -2346,8 +2346,8 @@ let QuadraticHelper                             xPrev xNext fPrev fNext fAverage
                                                 = new QuadraticHelperModel (xPrev, xNext, fPrev, fNext, fAverage, prevPrimitive)
 let QuadraticMinHelper                          xPrev xNext fPrev fNext fAverage prevPrimitive 
                                                 = new QuadraticMinHelperModel (xPrev, xNext, fPrev, fNext, fAverage, prevPrimitive)
-let QuantoTermStructure                         underlyingDividendTS riskFreeTS foreignRiskFreeTS underlyingBlackVolTS strike exchRateBlackVolTS exchRateATMlevel underlyingExchRateCorrelation 
-                                                = new QuantoTermStructureModel (underlyingDividendTS, riskFreeTS, foreignRiskFreeTS, underlyingBlackVolTS, strike, exchRateBlackVolTS, exchRateATMlevel, underlyingExchRateCorrelation)
+let QuantoTermStructure                         underlyingDividendTS riskFreeTS foreignRiskFreeTS underlyingBlackVolTS strike exchRateBlackVolTS exchRateATMlevel underlyingExchRateCorrelation ed
+                                                = new QuantoTermStructureModel (underlyingDividendTS, riskFreeTS, foreignRiskFreeTS, underlyingBlackVolTS, strike, exchRateBlackVolTS, exchRateATMlevel, underlyingExchRateCorrelation, ed)
 let Quote                                       ()
                                                 = new QuoteModel ()
 let RandomSequenceGenerator                     dimensionality seed 
@@ -2416,16 +2416,16 @@ let Russia1                                     ()
                                                 = new RussiaModel1 ()
 let SABR                                        t forward alpha beta nu rho alphaIsFixed betaIsFixed nuIsFixed rhoIsFixed vegaWeighted endCriteria optMethod errorAccept useMaxError maxGuesses shift volatilityType approximationModel 
                                                 = new SABRModel (t, forward, alpha, beta, nu, rho, alphaIsFixed, betaIsFixed, nuIsFixed, rhoIsFixed, vegaWeighted, endCriteria, optMethod, errorAccept, useMaxError, maxGuesses, shift, volatilityType, approximationModel)
-let SabrInterpolatedSmileSection                optionDate forward strikes hasFloatingStrikes atmVolatility volHandles alpha beta nu rho isAlphaFixed isBetaFixed isNuFixed isRhoFixed vegaWeighted endCriteria Method dc shift 
-                                                = new SabrInterpolatedSmileSectionModel (optionDate, forward, strikes, hasFloatingStrikes, atmVolatility, volHandles, alpha, beta, nu, rho, isAlphaFixed, isBetaFixed, isNuFixed, isRhoFixed, vegaWeighted, endCriteria, Method, dc, shift)
-let SabrInterpolatedSmileSection1               optionDate forward strikes hasFloatingStrikes atmVolatility volHandles alpha beta nu rho isAlphaFixed isBetaFixed isNuFixed isRhoFixed vegaWeighted endCriteria Method dc shift 
-                                                = new SabrInterpolatedSmileSectionModel1 (optionDate, forward, strikes, hasFloatingStrikes, atmVolatility, volHandles, alpha, beta, nu, rho, isAlphaFixed, isBetaFixed, isNuFixed, isRhoFixed, vegaWeighted, endCriteria, Method, dc, shift)
+let SabrInterpolatedSmileSection                optionDate forward strikes hasFloatingStrikes atmVolatility volHandles alpha beta nu rho isAlphaFixed isBetaFixed isNuFixed isRhoFixed vegaWeighted endCriteria Method dc shift ed
+                                                = new SabrInterpolatedSmileSectionModel (optionDate, forward, strikes, hasFloatingStrikes, atmVolatility, volHandles, alpha, beta, nu, rho, isAlphaFixed, isBetaFixed, isNuFixed, isRhoFixed, vegaWeighted, endCriteria, Method, dc, shift, ed)
+let SabrInterpolatedSmileSection1               optionDate forward strikes hasFloatingStrikes atmVolatility volHandles alpha beta nu rho isAlphaFixed isBetaFixed isNuFixed isRhoFixed vegaWeighted endCriteria Method dc shift ed
+                                                = new SabrInterpolatedSmileSectionModel1 (optionDate, forward, strikes, hasFloatingStrikes, atmVolatility, volHandles, alpha, beta, nu, rho, isAlphaFixed, isBetaFixed, isNuFixed, isRhoFixed, vegaWeighted, endCriteria, Method, dc, shift, ed)
 let SABRInterpolation                           xBegin xEnd yBegin t forward alpha beta nu rho alphaIsFixed betaIsFixed nuIsFixed rhoIsFixed vegaWeighted endCriteria optMethod errorAccept useMaxError maxGuesses shift volatilityType approximationModel 
                                                 = new SABRInterpolationModel (xBegin, xEnd, yBegin, t, forward, alpha, beta, nu, rho, alphaIsFixed, betaIsFixed, nuIsFixed, rhoIsFixed, vegaWeighted, endCriteria, optMethod, errorAccept, useMaxError, maxGuesses, shift, volatilityType, approximationModel)
-let SabrSmileSection                            d forward sabrParams dc volatilityType shift 
-                                                = new SabrSmileSectionModel (d, forward, sabrParams, dc, volatilityType, shift)
-let SabrSmileSection1                           timeToExpiry forward sabrParams volatilityType shift 
-                                                = new SabrSmileSectionModel1 (timeToExpiry, forward, sabrParams, volatilityType, shift)
+let SabrSmileSection                            d forward sabrParams dc volatilityType shift ed
+                                                = new SabrSmileSectionModel (d, forward, sabrParams, dc, volatilityType, shift, ed)
+let SabrSmileSection1                           timeToExpiry forward sabrParams volatilityType shift ed
+                                                = new SabrSmileSectionModel1 (timeToExpiry, forward, sabrParams, volatilityType, shift, ed)
 let SABRSpecs                                   ()
                                                 = new SABRSpecsModel ()
 let SABRWrapper                                 t forward param addParams 
@@ -2442,12 +2442,12 @@ let SaudiArabia                                 ()
                                                 = new SaudiArabiaModel ()
 let SavedSettings                               ()
                                                 = new SavedSettingsModel ()
-let Schedule                                    effectiveDate terminationDate tenor calendar convention terminationDateConvention rule endOfMonth firstDate nextToLastDate 
-                                                = new ScheduleModel (effectiveDate, terminationDate, tenor, calendar, convention, terminationDateConvention, rule, endOfMonth, firstDate, nextToLastDate)
-let Schedule1                                   dates calendar convention terminationDateConvention tenor rule endOfMonth isRegular 
-                                                = new ScheduleModel1 (dates, calendar, convention, terminationDateConvention, tenor, rule, endOfMonth, isRegular)
-let Schedule2                                   ()
-                                                = new ScheduleModel2 ()
+let Schedule                                    effectiveDate terminationDate tenor calendar convention terminationDateConvention rule endOfMonth firstDate nextToLastDate ed
+                                                = new ScheduleModel (effectiveDate, terminationDate, tenor, calendar, convention, terminationDateConvention, rule, endOfMonth, firstDate, nextToLastDate, ed)
+let Schedule1                                   dates calendar convention terminationDateConvention tenor rule endOfMonth isRegular ed
+                                                = new ScheduleModel1 (dates, calendar, convention, terminationDateConvention, tenor, rule, endOfMonth, isRegular, ed)
+let Schedule2                                   ed
+                                                = new ScheduleModel2 (ed)
 let Seasonality                                 ()
                                                 = new SeasonalityModel ()
 let SecondDerivativeOp                          direction mesher 
@@ -2472,16 +2472,16 @@ let Shibor                                      tenor h
                                                 = new ShiborModel (tenor, h)
 let Shibor1                                     tenor 
                                                 = new ShiborModel1 (tenor)
-let ShiftedBlackVolTermStructure                varianceOffset volTS 
-                                                = new ShiftedBlackVolTermStructureModel (varianceOffset, volTS)
+let ShiftedBlackVolTermStructure                varianceOffset volTS ed
+                                                = new ShiftedBlackVolTermStructureModel (varianceOffset, volTS, ed)
 let ShoutCondition                              Type strike resTime rate 
                                                 = new ShoutConditionModel (Type, strike, resTime, rate)
 let ShoutCondition1                             intrinsicValues resTime rate 
                                                 = new ShoutConditionModel1 (intrinsicValues, resTime, rate)
-let simple_event                                date 
-                                                = new simple_eventModel (date)
-let SimpleCashFlow                              amount date 
-                                                = new SimpleCashFlowModel (amount, date)
+let simple_event                                date ed
+                                                = new simple_eventModel (date, ed)
+let SimpleCashFlow                              amount date ed
+                                                = new SimpleCashFlowModel (amount, date, ed)
 let SimpleDayCounter                            ()
                                                 = new SimpleDayCounterModel ()
 let SimplePolynomialFitting                     degree constrainAtZero weights optimizationMethod 
@@ -2540,8 +2540,8 @@ let SpreadBasketPayoff                          p
                                                 = new SpreadBasketPayoffModel (p)
 let SpreadedOptionletVolatility                 baseVol spread 
                                                 = new SpreadedOptionletVolatilityModel (baseVol, spread)
-let SpreadedSmileSection                        underlyingSection spread 
-                                                = new SpreadedSmileSectionModel (underlyingSection, spread)
+let SpreadedSmileSection                        underlyingSection spread ed
+                                                = new SpreadedSmileSectionModel (underlyingSection, spread, ed)
 let SpreadedSwaptionVolatility                  baseVol spread 
                                                 = new SpreadedSwaptionVolatilityModel (baseVol, spread)
 let SpreadFittingMethod                         Method discountCurve 
@@ -2572,8 +2572,8 @@ let StrikedTypePayoff1                          Type strike
                                                 = new StrikedTypePayoffModel1 (Type, strike)
 let StrippedOptionletAdapter                    s 
                                                 = new StrippedOptionletAdapterModel (s)
-let StulzEngine                                 process1 process2 correlation 
-                                                = new StulzEngineModel (process1, process2, correlation)
+let StulzEngine                                 process1 process2 correlation ed
+                                                = new StulzEngineModel (process1, process2, correlation, ed)
 let SuperFundPayoff                             strike secondStrike 
                                                 = new SuperFundPayoffModel (strike, secondStrike)
 let SuperSharePayoff                            strike secondStrike cashPayoff 
@@ -2586,16 +2586,16 @@ let SvenssonFitting                             weights optimizationMethod
                                                 = new SvenssonFittingModel (weights, optimizationMethod)
 let SVI                                         t forward a b sigma rho m aIsFixed bIsFixed sigmaIsFixed rhoIsFixed mIsFixed vegaWeighted endCriteria optMethod errorAccept useMaxError maxGuesses addParams 
                                                 = new SVIModel (t, forward, a, b, sigma, rho, m, aIsFixed, bIsFixed, sigmaIsFixed, rhoIsFixed, mIsFixed, vegaWeighted, endCriteria, optMethod, errorAccept, useMaxError, maxGuesses, addParams)
-let SviInterpolatedSmileSection                 optionDate forward strikes hasFloatingStrikes atmVolatility volHandles a b sigma rho m isAFixed isBFixed isSigmaFixed isRhoFixed isMFixed vegaWeighted endCriteria Method dc 
-                                                = new SviInterpolatedSmileSectionModel (optionDate, forward, strikes, hasFloatingStrikes, atmVolatility, volHandles, a, b, sigma, rho, m, isAFixed, isBFixed, isSigmaFixed, isRhoFixed, isMFixed, vegaWeighted, endCriteria, Method, dc)
-let SviInterpolatedSmileSection1                optionDate forward strikes hasFloatingStrikes atmVolatility volHandles a b sigma rho m isAFixed isBFixed isSigmaFixed isRhoFixed isMFixed vegaWeighted endCriteria Method dc 
-                                                = new SviInterpolatedSmileSectionModel1 (optionDate, forward, strikes, hasFloatingStrikes, atmVolatility, volHandles, a, b, sigma, rho, m, isAFixed, isBFixed, isSigmaFixed, isRhoFixed, isMFixed, vegaWeighted, endCriteria, Method, dc)
+let SviInterpolatedSmileSection                 optionDate forward strikes hasFloatingStrikes atmVolatility volHandles a b sigma rho m isAFixed isBFixed isSigmaFixed isRhoFixed isMFixed vegaWeighted endCriteria Method dc ed
+                                                = new SviInterpolatedSmileSectionModel (optionDate, forward, strikes, hasFloatingStrikes, atmVolatility, volHandles, a, b, sigma, rho, m, isAFixed, isBFixed, isSigmaFixed, isRhoFixed, isMFixed, vegaWeighted, endCriteria, Method, dc, ed)
+let SviInterpolatedSmileSection1                optionDate forward strikes hasFloatingStrikes atmVolatility volHandles a b sigma rho m isAFixed isBFixed isSigmaFixed isRhoFixed isMFixed vegaWeighted endCriteria Method dc ed
+                                                = new SviInterpolatedSmileSectionModel1 (optionDate, forward, strikes, hasFloatingStrikes, atmVolatility, volHandles, a, b, sigma, rho, m, isAFixed, isBFixed, isSigmaFixed, isRhoFixed, isMFixed, vegaWeighted, endCriteria, Method, dc, ed)
 let SviInterpolation                            xBegin size yBegin t forward a b sigma rho m aIsFixed bIsFixed sigmaIsFixed rhoIsFixed mIsFixed vegaWeighted endCriteria optMethod errorAccept useMaxError maxGuesses addParams 
                                                 = new SviInterpolationModel (xBegin, size, yBegin, t, forward, a, b, sigma, rho, m, aIsFixed, bIsFixed, sigmaIsFixed, rhoIsFixed, mIsFixed, vegaWeighted, endCriteria, optMethod, errorAccept, useMaxError, maxGuesses, addParams)
-let SviSmileSection                             timeToExpiry forward sviParameters 
-                                                = new SviSmileSectionModel (timeToExpiry, forward, sviParameters)
-let SviSmileSection1                            d forward sviParameters dc 
-                                                = new SviSmileSectionModel1 (d, forward, sviParameters, dc)
+let SviSmileSection                             timeToExpiry forward sviParameters ed
+                                                = new SviSmileSectionModel (timeToExpiry, forward, sviParameters, ed)
+let SviSmileSection1                            d forward sviParameters dc ed
+                                                = new SviSmileSectionModel1 (d, forward, sviParameters, dc, ed)
 let SVISpecs                                    ()
                                                 = new SVISpecsModel ()
 let SVIWrapper                                  t forward param addParams 
@@ -2610,14 +2610,14 @@ let SwapIndex1                                  familyName tenor settlementDays 
                                                 = new SwapIndexModel1 (familyName, tenor, settlementDays, currency, calendar, fixedLegTenor, fixedLegConvention, fixedLegDayCounter, iborIndex)
 let SwapIndex2                                  ()
                                                 = new SwapIndexModel2 ()
-let SwapRateHelper                              rate tenor calendar fixedFrequency fixedConvention fixedDayCount iborIndex spread fwdStart discount settlementDays pillarChoice customPillarDate 
-                                                = new SwapRateHelperModel (rate, tenor, calendar, fixedFrequency, fixedConvention, fixedDayCount, iborIndex, spread, fwdStart, discount, settlementDays, pillarChoice, customPillarDate)
-let SwapRateHelper1                             rate swapIndex spread fwdStart discount pillarChoice customPillarDate 
-                                                = new SwapRateHelperModel1 (rate, swapIndex, spread, fwdStart, discount, pillarChoice, customPillarDate)
-let SwapRateHelper2                             rate tenor calendar fixedFrequency fixedConvention fixedDayCount iborIndex spread fwdStart discount settlementDays pillarChoice customPillarDate 
-                                                = new SwapRateHelperModel2 (rate, tenor, calendar, fixedFrequency, fixedConvention, fixedDayCount, iborIndex, spread, fwdStart, discount, settlementDays, pillarChoice, customPillarDate)
-let SwapRateHelper3                             rate swapIndex spread fwdStart discount pillarChoice customPillarDate 
-                                                = new SwapRateHelperModel3 (rate, swapIndex, spread, fwdStart, discount, pillarChoice, customPillarDate)
+let SwapRateHelper                              rate tenor calendar fixedFrequency fixedConvention fixedDayCount iborIndex spread fwdStart discount settlementDays pillarChoice customPillarDate ed
+                                                = new SwapRateHelperModel (rate, tenor, calendar, fixedFrequency, fixedConvention, fixedDayCount, iborIndex, spread, fwdStart, discount, settlementDays, pillarChoice, customPillarDate, ed)
+let SwapRateHelper1                             rate swapIndex spread fwdStart discount pillarChoice customPillarDate ed
+                                                = new SwapRateHelperModel1 (rate, swapIndex, spread, fwdStart, discount, pillarChoice, customPillarDate, ed)
+let SwapRateHelper2                             rate tenor calendar fixedFrequency fixedConvention fixedDayCount iborIndex spread fwdStart discount settlementDays pillarChoice customPillarDate ed
+                                                = new SwapRateHelperModel2 (rate, tenor, calendar, fixedFrequency, fixedConvention, fixedDayCount, iborIndex, spread, fwdStart, discount, settlementDays, pillarChoice, customPillarDate, ed)
+let SwapRateHelper3                             rate swapIndex spread fwdStart discount pillarChoice customPillarDate ed
+                                                = new SwapRateHelperModel3 (rate, swapIndex, spread, fwdStart, discount, pillarChoice, customPillarDate, ed)
 let SwapSpreadIndex                             familyName swapIndex1 swapIndex2 gearing1 gearing2 
                                                 = new SwapSpreadIndexModel (familyName, swapIndex1, swapIndex2, gearing1, gearing2)
 let SwapSpreadIndex1                            ()
@@ -2710,28 +2710,28 @@ let Tree                                        columns
                                                 = new TreeModel<'T> (columns)
 let Tree1<'T>                                   ()    
                                                 = new TreeModel1<'T> ()
-let TreeCallableFixedRateBondEngine             model timeSteps termStructure 
-                                                = new TreeCallableFixedRateBondEngineModel (model, timeSteps, termStructure)
-let TreeCallableFixedRateBondEngine1            model timeGrid termStructure 
-                                                = new TreeCallableFixedRateBondEngineModel1 (model, timeGrid, termStructure)
+let TreeCallableFixedRateBondEngine             model timeSteps termStructure ed
+                                                = new TreeCallableFixedRateBondEngineModel (model, timeSteps, termStructure, ed)
+let TreeCallableFixedRateBondEngine1            model timeGrid termStructure ed
+                                                = new TreeCallableFixedRateBondEngineModel1 (model, timeGrid, termStructure, ed)
 let TreeLattice                                 timeGrid n 
                                                 = new TreeLatticeModel<'T> (timeGrid, n)
 let TreeLattice1D                               timeGrid n 
                                                 = new TreeLattice1DModel<'T> (timeGrid, n)
 let TreeLattice2D                               tree1 tree2 correlation 
                                                 = new TreeLattice2DModel<'T, 'Tl> (tree1, tree2, correlation)
-let TreeSwaptionEngine                          model timeGrid termStructure 
-                                                = new TreeSwaptionEngineModel (model, timeGrid, termStructure)
-let TreeSwaptionEngine1                         model timeGrid 
-                                                = new TreeSwaptionEngineModel1 (model, timeGrid)
-let TreeSwaptionEngine2                         model timeSteps termStructure 
-                                                = new TreeSwaptionEngineModel2 (model, timeSteps, termStructure)
-let TreeSwaptionEngine3                         model timeSteps 
-                                                = new TreeSwaptionEngineModel3 (model, timeSteps)
-let TreeVanillaSwapEngine                       model timeSteps termStructure 
-                                                = new TreeVanillaSwapEngineModel (model, timeSteps, termStructure)
-let TreeVanillaSwapEngine1                      model timeGrid termStructure 
-                                                = new TreeVanillaSwapEngineModel1 (model, timeGrid, termStructure)
+let TreeSwaptionEngine                          model timeGrid termStructure ed
+                                                = new TreeSwaptionEngineModel (model, timeGrid, termStructure, ed)
+let TreeSwaptionEngine1                         model timeGrid ed
+                                                = new TreeSwaptionEngineModel1 (model, timeGrid, ed)
+let TreeSwaptionEngine2                         model timeSteps termStructure ed
+                                                = new TreeSwaptionEngineModel2 (model, timeSteps, termStructure, ed)
+let TreeSwaptionEngine3                         model timeSteps ed
+                                                = new TreeSwaptionEngineModel3 (model, timeSteps, ed)
+let TreeVanillaSwapEngine                       model timeSteps termStructure ed
+                                                = new TreeVanillaSwapEngineModel (model, timeSteps, termStructure, ed)
+let TreeVanillaSwapEngine1                      model timeGrid termStructure ed
+                                                = new TreeVanillaSwapEngineModel1 (model, timeGrid, termStructure, ed)
 let TridiagonalOperator                         ()
                                                 = new TridiagonalOperatorModel ()
 let TridiagonalOperator1                        low mid high 
@@ -2782,8 +2782,8 @@ let Uniform1dMesher                             start End size
                                                 = new Uniform1dMesherModel (start, End, size)
 let UniformGridMesher                           layout boundaries 
                                                 = new UniformGridMesherModel (layout, boundaries)
-let UnitDisplacedBlackYoYInflationCouponPricer  capletVol 
-                                                = new UnitDisplacedBlackYoYInflationCouponPricerModel (capletVol)
+let UnitDisplacedBlackYoYInflationCouponPricer  capletVol ed
+                                                = new UnitDisplacedBlackYoYInflationCouponPricerModel (capletVol, ed)
 let UnitedKingdom                               ()
                                                 = new UnitedKingdomModel ()
 let UnitedKingdom1                              m 
@@ -2826,8 +2826,8 @@ let VanillaSwap                                 Type nominal fixedSchedule fixed
                                                 = new VanillaSwapModel (Type, nominal, fixedSchedule, fixedRate, fixedDayCount, floatSchedule, iborIndex, spread, floatingDayCount, paymentConvention, pricingEngine, evaluationDate)
 let VannaVolga                                  spot dDiscount fDiscount T 
                                                 = new VannaVolgaModel (spot, dDiscount, fDiscount, T)
-let VannaVolgaBarrierEngine                     atmVol vol25Put vol25Call spotFX domesticTS foreignTS adaptVanDelta bsPriceWithSmile 
-                                                = new VannaVolgaBarrierEngineModel (atmVol, vol25Put, vol25Call, spotFX, domesticTS, foreignTS, adaptVanDelta, bsPriceWithSmile)
+let VannaVolgaBarrierEngine                     atmVol vol25Put vol25Call spotFX domesticTS foreignTS adaptVanDelta bsPriceWithSmile ed
+                                                = new VannaVolgaBarrierEngineModel (atmVol, vol25Put, vol25Call, spotFX, domesticTS, foreignTS, adaptVanDelta, bsPriceWithSmile, ed)
 let VannaVolgaDoubleBarrierEngine               atmVol vol25Put vol25Call spotFX domesticTS foreignTS getEngine adaptVanDelta bsPriceWithSmile series pricingEngine evaluationDate 
                                                 = new VannaVolgaDoubleBarrierEngineModel (atmVol, vol25Put, vol25Call, spotFX, domesticTS, foreignTS, getEngine, adaptVanDelta, bsPriceWithSmile, series, pricingEngine, evaluationDate)
 let VannaVolgaInterpolation                     xBegin size yBegin spot dDiscount fDiscount T 
@@ -2858,8 +2858,8 @@ let WeakEventSource                             ()
                                                 = new WeakEventSourceModel ()
 let WeekendsOnly                                ()
                                                 = new WeekendsOnlyModel ()
-let WulinYongDoubleBarrierEngine                Process series 
-                                                = new WulinYongDoubleBarrierEngineModel (Process, series)
+let WulinYongDoubleBarrierEngine                Process series ed
+                                                = new WulinYongDoubleBarrierEngineModel (Process, series, ed)
 let XABRCoeffHolder                             t forward _params paramIsFixed addParams 
                                                 = new XABRCoeffHolderModel<'Model> (t, forward, _params, paramIsFixed, addParams)
 let XABRConstraint                              impl 
@@ -2868,36 +2868,36 @@ let XABRConstraint1                             ()
                                                 = new XABRConstraintModel1 ()
 let YearOnYearInflationSwap                     Type nominal fixedSchedule fixedRate fixedDayCount yoySchedule yoyIndex observationLag spread yoyDayCount paymentCalendar paymentConvention pricingEngine evaluationDate 
                                                 = new YearOnYearInflationSwapModel (Type, nominal, fixedSchedule, fixedRate, fixedDayCount, yoySchedule, yoyIndex, observationLag, spread, yoyDayCount, paymentCalendar, paymentConvention, pricingEngine, evaluationDate)
-let YearOnYearInflationSwapHelper               quote swapObsLag maturity calendar paymentConvention dayCounter yii 
-                                                = new YearOnYearInflationSwapHelperModel (quote, swapObsLag, maturity, calendar, paymentConvention, dayCounter, yii)
-let YoYInflationBachelierCapFloorEngine         index vol 
-                                                = new YoYInflationBachelierCapFloorEngineModel (index, vol)
-let YoYInflationBlackCapFloorEngine             index volatility 
-                                                = new YoYInflationBlackCapFloorEngineModel (index, volatility)
+let YearOnYearInflationSwapHelper               quote swapObsLag maturity calendar paymentConvention dayCounter yii ed
+                                                = new YearOnYearInflationSwapHelperModel (quote, swapObsLag, maturity, calendar, paymentConvention, dayCounter, yii, ed)
+let YoYInflationBachelierCapFloorEngine         index vol ed
+                                                = new YoYInflationBachelierCapFloorEngineModel (index, vol, ed)
+let YoYInflationBlackCapFloorEngine             index volatility ed
+                                                = new YoYInflationBlackCapFloorEngineModel (index, volatility, ed)
 let YoYInflationCap                             yoyLeg exerciseRates pricingEngine evaluationDate 
                                                 = new YoYInflationCapModel (yoyLeg, exerciseRates, pricingEngine, evaluationDate)
 let YoYInflationCapFloor                        Type yoyLeg strikes pricingEngine evaluationDate 
                                                 = new YoYInflationCapFloorModel (Type, yoyLeg, strikes, pricingEngine, evaluationDate)
 let YoYInflationCapFloor1                       Type yoyLeg capRates floorRates pricingEngine evaluationDate 
                                                 = new YoYInflationCapFloorModel1 (Type, yoyLeg, capRates, floorRates, pricingEngine, evaluationDate)
-let YoYInflationCapFloorEngine                  index vol 
-                                                = new YoYInflationCapFloorEngineModel (index, vol)
+let YoYInflationCapFloorEngine                  index vol ed
+                                                = new YoYInflationCapFloorEngineModel (index, vol, ed)
 let YoYInflationCollar                          yoyLeg capRates floorRates pricingEngine evaluationDate 
                                                 = new YoYInflationCollarModel (yoyLeg, capRates, floorRates, pricingEngine, evaluationDate)
 let YoYInflationCoupon                          paymentDate nominal startDate endDate fixingDays yoyIndex observationLag dayCounter gearing spread refPeriodStart refPeriodEnd 
                                                 = new YoYInflationCouponModel (paymentDate, nominal, startDate, endDate, fixingDays, yoyIndex, observationLag, dayCounter, gearing, spread, refPeriodStart, refPeriodEnd)
-let YoYInflationCouponPricer                    capletVol 
-                                                = new YoYInflationCouponPricerModel (capletVol)
+let YoYInflationCouponPricer                    capletVol ed
+                                                = new YoYInflationCouponPricerModel (capletVol, ed)
 let YoYInflationFloor                           yoyLeg exerciseRates pricingEngine evaluationDate 
                                                 = new YoYInflationFloorModel (yoyLeg, exerciseRates, pricingEngine, evaluationDate)
-let YoYInflationIndex                           familyName region revised interpolated ratio frequency availabilityLag currency yoyInflation 
-                                                = new YoYInflationIndexModel (familyName, region, revised, interpolated, ratio, frequency, availabilityLag, currency, yoyInflation)
+let YoYInflationIndex                           familyName region revised interpolated ratio frequency availabilityLag currency yoyInflation ed
+                                                = new YoYInflationIndexModel (familyName, region, revised, interpolated, ratio, frequency, availabilityLag, currency, yoyInflation, ed)
 let yoyInflationLeg                             schedule cal index observationLag 
                                                 = new yoyInflationLegModel (schedule, cal, index, observationLag)
 let YoYInflationTraits                          ()
                                                 = new YoYInflationTraitsModel ()
-let YoYInflationUnitDisplacedBlackCapFloorEngine  index vol 
-                                                = new YoYInflationUnitDisplacedBlackCapFloorEngineModel (index, vol)
+let YoYInflationUnitDisplacedBlackCapFloorEngine  index vol ed
+                                                = new YoYInflationUnitDisplacedBlackCapFloorEngineModel (index, vol, ed)
 let YYAUCPI                                     frequency revised interpolated 
                                                 = new YYAUCPIModel (frequency, revised, interpolated)
 let YYAUCPI1                                    frequency revised interpolated ts 
@@ -2960,14 +2960,14 @@ let ZeroCouponBond                              settlementDays calendar faceAmou
                                                 = new ZeroCouponBondModel (settlementDays, calendar, faceAmount, maturityDate, paymentConvention, redemption, issueDate, pricingEngine, evaluationDate)
 let ZeroCouponInflationSwap                     Type nominal startDate maturity fixCalendar fixConvention dayCounter fixedRate infIndex observationLag adjustInfObsDates infCalendar infConvention pricingEngine evaluationDate 
                                                 = new ZeroCouponInflationSwapModel (Type, nominal, startDate, maturity, fixCalendar, fixConvention, dayCounter, fixedRate, infIndex, observationLag, adjustInfObsDates, infCalendar, infConvention, pricingEngine, evaluationDate)
-let ZeroCouponInflationSwapHelper               quote swapObsLag maturity calendar paymentConvention dayCounter zii 
-                                                = new ZeroCouponInflationSwapHelperModel (quote, swapObsLag, maturity, calendar, paymentConvention, dayCounter, zii)
-let ZeroInflationIndex                          familyName region revised interpolated frequency availabilityLag currency ts 
-                                                = new ZeroInflationIndexModel (familyName, region, revised, interpolated, frequency, availabilityLag, currency, ts)
+let ZeroCouponInflationSwapHelper               quote swapObsLag maturity calendar paymentConvention dayCounter zii ed
+                                                = new ZeroCouponInflationSwapHelperModel (quote, swapObsLag, maturity, calendar, paymentConvention, dayCounter, zii, ed)
+let ZeroInflationIndex                          familyName region revised interpolated frequency availabilityLag currency ts ed
+                                                = new ZeroInflationIndexModel (familyName, region, revised, interpolated, frequency, availabilityLag, currency, ts, ed)
 let ZeroInflationTraits                         ()
                                                 = new ZeroInflationTraitsModel ()
-let ZeroSpreadedTermStructure                   h spread comp freq dc 
-                                                = new ZeroSpreadedTermStructureModel (h, spread, comp, freq, dc)
+let ZeroSpreadedTermStructure                   h spread comp freq dc ed
+                                                = new ZeroSpreadedTermStructureModel (h, spread, comp, freq, dc, ed)
 let ZeroYield                                   ()
                                                 = new ZeroYieldModel ()
 let Zibor                                       tenor h 

@@ -74,7 +74,7 @@ type ZeroCouponInflationSwapModel
     Functions
 *)
     let mutable
-        _ZeroCouponInflationSwap                   = cell (fun () -> withEngine pricingEngine (new ZeroCouponInflationSwap (Type.Value, nominal.Value, startDate.Value, maturity.Value, fixCalendar.Value, fixConvention.Value, dayCounter.Value, fixedRate.Value, infIndex.Value, observationLag.Value, adjustInfObsDates.Value, infCalendar.Value, infConvention.Value)))
+        _ZeroCouponInflationSwap                   = cell (fun () -> withEngine pricingEngine evaluationDate (new ZeroCouponInflationSwap (Type.Value, nominal.Value, startDate.Value, maturity.Value, fixCalendar.Value, fixConvention.Value, dayCounter.Value, fixedRate.Value, infIndex.Value, observationLag.Value, adjustInfObsDates.Value, infCalendar.Value, infConvention.Value)))
     let _adjustObservationDates                    = triv (fun () -> (withEvaluationDate _evaluationDate _ZeroCouponInflationSwap).adjustObservationDates())
     let _dayCounter                                = triv (fun () -> (withEvaluationDate _evaluationDate _ZeroCouponInflationSwap).dayCounter())
     let _fairRate                                  = triv (fun () -> (withEvaluationDate _evaluationDate _ZeroCouponInflationSwap).fairRate())

@@ -46,6 +46,8 @@ module HestonExpansionEngineFunction =
          model : obj)
         ([<ExcelArgument(Name="formula",Description = "HestonExpansionEngine.HestonExpansionFormula: LPP2, LPP3, Forde")>] 
          formula : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -53,19 +55,23 @@ module HestonExpansionEngineFunction =
 
                 let _model = Helper.toCell<HestonModel> model "model" 
                 let _formula = Helper.toCell<HestonExpansionEngine.HestonExpansionFormula> formula "formula" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.HestonExpansionEngine 
                                                             _model.cell 
                                                             _formula.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<HestonExpansionEngine>) l
 
                 let source () = Helper.sourceFold "Fun.HestonExpansionEngine" 
                                                [| _model.source
                                                ;  _formula.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _model.cell
                                 ;  _formula.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -294,16 +300,16 @@ module HestonExpansionEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<HestonExpansionEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<HestonExpansionEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<HestonExpansionEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<HestonExpansionEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<HestonExpansionEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<HestonExpansionEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

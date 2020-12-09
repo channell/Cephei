@@ -58,7 +58,7 @@ type CCTEUModel
     Functions
 *)
     let mutable
-        _CCTEU                                     = cell (fun () -> withEngine pricingEngine (new CCTEU (maturityDate.Value, spread.Value, fwdCurve.Value, startDate.Value, issueDate.Value)))
+        _CCTEU                                     = cell (fun () -> withEngine pricingEngine evaluationDate (new CCTEU (maturityDate.Value, spread.Value, fwdCurve.Value, startDate.Value, issueDate.Value)))
     let _accruedAmount                             (d : ICell<Date>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _CCTEU).accruedAmount(d.Value))
     let _calendar                                  = triv (fun () -> (withEvaluationDate _evaluationDate _CCTEU).calendar())

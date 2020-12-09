@@ -37,12 +37,15 @@ type MidPointCdsEngineModel
     , recoveryRate                                 : ICell<double>
     , discountCurve                                : ICell<Handle<YieldTermStructure>>
     , includeSettlementDateFlows                   : ICell<Nullable<bool>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<MidPointCdsEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _probability                               = probability
     let _recoveryRate                              = recoveryRate
     let _discountCurve                             = discountCurve
@@ -51,12 +54,15 @@ type MidPointCdsEngineModel
     Functions
 *)
     let mutable
-        _MidPointCdsEngine                         = cell (fun () -> new MidPointCdsEngine (probability.Value, recoveryRate.Value, discountCurve.Value, includeSettlementDateFlows.Value))
+        _MidPointCdsEngine                         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new MidPointCdsEngine (probability.Value, recoveryRate.Value, discountCurve.Value, includeSettlementDateFlows.Value))))
     do this.Bind(_MidPointCdsEngine)
 (* 
     casting 
 *)
-    internal new () = new MidPointCdsEngineModel(null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new MidPointCdsEngineModel(null,null,null,null,null)
     member internal this.Inject v = _MidPointCdsEngine <- v
     static member Cast (p : ICell<MidPointCdsEngine>) = 
         if p :? MidPointCdsEngineModel then 
@@ -64,6 +70,7 @@ type MidPointCdsEngineModel
         else
             let o = new MidPointCdsEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

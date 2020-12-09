@@ -36,12 +36,15 @@ type LiborForwardModelModel
     ( Process                                      : ICell<LiborForwardModelProcess>
     , volaModel                                    : ICell<LmVolatilityModel>
     , corrModel                                    : ICell<LmCorrelationModel>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<LiborForwardModel> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
     let _volaModel                                 = volaModel
     let _corrModel                                 = corrModel
@@ -49,44 +52,47 @@ type LiborForwardModelModel
     Functions
 *)
     let mutable
-        _LiborForwardModel                         = cell (fun () -> new LiborForwardModel (Process.Value, volaModel.Value, corrModel.Value))
+        _LiborForwardModel                         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new LiborForwardModel (Process.Value, volaModel.Value, corrModel.Value))))
     let _discount                                  (t : ICell<double>)   
-                                                   = triv (fun () -> _LiborForwardModel.Value.discount(t.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModel).Value.discount(t.Value))
     let _discountBond                              (t : ICell<double>) (maturity : ICell<double>) (v : ICell<Vector>)   
-                                                   = triv (fun () -> _LiborForwardModel.Value.discountBond(t.Value, maturity.Value, v.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModel).Value.discountBond(t.Value, maturity.Value, v.Value))
     let _discountBondOption                        (Type : ICell<Option.Type>) (strike : ICell<double>) (maturity : ICell<double>) (bondMaturity : ICell<double>)   
-                                                   = triv (fun () -> _LiborForwardModel.Value.discountBondOption(Type.Value, strike.Value, maturity.Value, bondMaturity.Value))
-    let _getSwaptionVolatilityMatrix               = triv (fun () -> _LiborForwardModel.Value.getSwaptionVolatilityMatrix())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModel).Value.discountBondOption(Type.Value, strike.Value, maturity.Value, bondMaturity.Value))
+    let _getSwaptionVolatilityMatrix               = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModel).Value.getSwaptionVolatilityMatrix())
     let _S_0                                       (alpha : ICell<int>) (beta : ICell<int>)   
-                                                   = triv (fun () -> _LiborForwardModel.Value.S_0(alpha.Value, beta.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModel).Value.S_0(alpha.Value, beta.Value))
     let _setParams                                 (parameters : ICell<Vector>)   
-                                                   = triv (fun () -> _LiborForwardModel.Value.setParams(parameters.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModel).Value.setParams(parameters.Value)
                                                                      _LiborForwardModel.Value)
     let _w_0                                       (alpha : ICell<int>) (beta : ICell<int>)   
-                                                   = triv (fun () -> _LiborForwardModel.Value.w_0(alpha.Value, beta.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModel).Value.w_0(alpha.Value, beta.Value))
     let _calibrate                                 (instruments : ICell<Generic.List<CalibrationHelper>>) (Method : ICell<OptimizationMethod>) (endCriteria : ICell<EndCriteria>) (additionalConstraint : ICell<Constraint>) (weights : ICell<Generic.List<double>>) (fixParameters : ICell<Generic.List<bool>>)   
-                                                   = triv (fun () -> _LiborForwardModel.Value.calibrate(instruments.Value, Method.Value, endCriteria.Value, additionalConstraint.Value, weights.Value, fixParameters.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModel).Value.calibrate(instruments.Value, Method.Value, endCriteria.Value, additionalConstraint.Value, weights.Value, fixParameters.Value)
                                                                      _LiborForwardModel.Value)
-    let _constraint                                = triv (fun () -> _LiborForwardModel.Value.CONSTRAINT())
-    let _endCriteria                               = triv (fun () -> _LiborForwardModel.Value.endCriteria())
-    let _notifyObservers                           = triv (fun () -> _LiborForwardModel.Value.notifyObservers()
+    let _constraint                                = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModel).Value.CONSTRAINT())
+    let _endCriteria                               = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModel).Value.endCriteria())
+    let _notifyObservers                           = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModel).Value.notifyObservers()
                                                                      _LiborForwardModel.Value)
-    let _parameters                                = triv (fun () -> _LiborForwardModel.Value.parameters())
+    let _parameters                                = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModel).Value.parameters())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _LiborForwardModel.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModel).Value.registerWith(handler.Value)
                                                                      _LiborForwardModel.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _LiborForwardModel.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModel).Value.unregisterWith(handler.Value)
                                                                      _LiborForwardModel.Value)
-    let _update                                    = triv (fun () -> _LiborForwardModel.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModel).Value.update()
                                                                      _LiborForwardModel.Value)
     let _value                                     (parameters : ICell<Vector>) (instruments : ICell<Generic.List<CalibrationHelper>>)   
-                                                   = triv (fun () -> _LiborForwardModel.Value.value(parameters.Value, instruments.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LiborForwardModel).Value.value(parameters.Value, instruments.Value))
     do this.Bind(_LiborForwardModel)
 (* 
     casting 
 *)
-    internal new () = new LiborForwardModelModel(null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new LiborForwardModelModel(null,null,null,null)
     member internal this.Inject v = _LiborForwardModel <- v
     static member Cast (p : ICell<LiborForwardModel>) = 
         if p :? LiborForwardModelModel then 
@@ -94,6 +100,7 @@ type LiborForwardModelModel
         else
             let o = new LiborForwardModelModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

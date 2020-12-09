@@ -10,7 +10,7 @@
       "Cephei.QLNetHelper/1.0.0": {
         "dependencies": {
           "Cephei.Cell": "3.0.3",
-          "QLNetCephei": "1.11.4"
+          "QLNet": "1.11.4"
         },
         "runtime": {
           "Cephei.QLNetHelper.dll": {}
@@ -158,12 +158,12 @@
           "Cephei.Cell.dll": {}
         }
       },
-      "QLNetCephei/1.11.4": {
+      "QLNet/1.11.4": {
         "dependencies": {
           "System.Reflection.Emit.Lightweight": "4.7.0"
         },
         "runtime": {
-          "QLNetCephei.dll": {}
+          "QLNet.dll": {}
         }
       }
     }
@@ -249,7 +249,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "QLNetCephei/1.11.4": {
+    "QLNet/1.11.4": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

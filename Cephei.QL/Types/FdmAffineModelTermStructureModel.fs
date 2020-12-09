@@ -39,12 +39,15 @@ type FdmAffineModelTermStructureModel
     , referenceDate                                : ICell<Date>
     , modelReferenceDate                           : ICell<Date>
     , model                                        : ICell<IAffineModel>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FdmAffineModelTermStructure> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _r                                         = r
     let _cal                                       = cal
     let _dayCounter                                = dayCounter
@@ -55,49 +58,52 @@ type FdmAffineModelTermStructureModel
     Functions
 *)
     let mutable
-        _FdmAffineModelTermStructure               = cell (fun () -> new FdmAffineModelTermStructure (r.Value, cal.Value, dayCounter.Value, referenceDate.Value, modelReferenceDate.Value, model.Value))
-    let _maxDate                                   = triv (fun () -> _FdmAffineModelTermStructure.Value.maxDate())
+        _FdmAffineModelTermStructure               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FdmAffineModelTermStructure (r.Value, cal.Value, dayCounter.Value, referenceDate.Value, modelReferenceDate.Value, model.Value))))
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FdmAffineModelTermStructure).Value.maxDate())
     let _setVariable                               (r : ICell<Vector>)   
-                                                   = triv (fun () -> _FdmAffineModelTermStructure.Value.setVariable(r.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FdmAffineModelTermStructure).Value.setVariable(r.Value)
                                                                      _FdmAffineModelTermStructure.Value)
     let _discount                                  (t : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FdmAffineModelTermStructure.Value.discount(t.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FdmAffineModelTermStructure).Value.discount(t.Value, extrapolate.Value))
     let _discount1                                 (d : ICell<Date>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FdmAffineModelTermStructure.Value.discount(d.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FdmAffineModelTermStructure).Value.discount(d.Value, extrapolate.Value))
     let _forwardRate                               (d : ICell<Date>) (p : ICell<Period>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FdmAffineModelTermStructure.Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FdmAffineModelTermStructure).Value.forwardRate(d.Value, p.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate1                              (d1 : ICell<Date>) (d2 : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FdmAffineModelTermStructure.Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FdmAffineModelTermStructure).Value.forwardRate(d1.Value, d2.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
     let _forwardRate2                              (t1 : ICell<double>) (t2 : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FdmAffineModelTermStructure.Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _jumpDates                                 = triv (fun () -> _FdmAffineModelTermStructure.Value.jumpDates())
-    let _jumpTimes                                 = triv (fun () -> _FdmAffineModelTermStructure.Value.jumpTimes())
-    let _update                                    = triv (fun () -> _FdmAffineModelTermStructure.Value.update()
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FdmAffineModelTermStructure).Value.forwardRate(t1.Value, t2.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _jumpDates                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FdmAffineModelTermStructure).Value.jumpDates())
+    let _jumpTimes                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _FdmAffineModelTermStructure).Value.jumpTimes())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FdmAffineModelTermStructure).Value.update()
                                                                      _FdmAffineModelTermStructure.Value)
     let _zeroRate                                  (t : ICell<double>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FdmAffineModelTermStructure.Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FdmAffineModelTermStructure).Value.zeroRate(t.Value, comp.Value, freq.Value, extrapolate.Value))
     let _zeroRate1                                 (d : ICell<Date>) (dayCounter : ICell<DayCounter>) (comp : ICell<Compounding>) (freq : ICell<Frequency>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _FdmAffineModelTermStructure.Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
-    let _calendar                                  = triv (fun () -> _FdmAffineModelTermStructure.Value.calendar())
-    let _dayCounter                                = triv (fun () -> _FdmAffineModelTermStructure.Value.dayCounter())
-    let _maxTime                                   = triv (fun () -> _FdmAffineModelTermStructure.Value.maxTime())
-    let _referenceDate                             = triv (fun () -> _FdmAffineModelTermStructure.Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> _FdmAffineModelTermStructure.Value.settlementDays())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FdmAffineModelTermStructure).Value.zeroRate(d.Value, dayCounter.Value, comp.Value, freq.Value, extrapolate.Value))
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _FdmAffineModelTermStructure).Value.calendar())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FdmAffineModelTermStructure).Value.dayCounter())
+    let _maxTime                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FdmAffineModelTermStructure).Value.maxTime())
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _FdmAffineModelTermStructure).Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _FdmAffineModelTermStructure).Value.settlementDays())
     let _timeFromReference                         (date : ICell<Date>)   
-                                                   = triv (fun () -> _FdmAffineModelTermStructure.Value.timeFromReference(date.Value))
-    let _allowsExtrapolation                       = triv (fun () -> _FdmAffineModelTermStructure.Value.allowsExtrapolation())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FdmAffineModelTermStructure).Value.timeFromReference(date.Value))
+    let _allowsExtrapolation                       = triv (fun () -> (curryEvaluationDate _evaluationDate _FdmAffineModelTermStructure).Value.allowsExtrapolation())
     let _disableExtrapolation                      (b : ICell<bool>)   
-                                                   = triv (fun () -> _FdmAffineModelTermStructure.Value.disableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FdmAffineModelTermStructure).Value.disableExtrapolation(b.Value)
                                                                      _FdmAffineModelTermStructure.Value)
     let _enableExtrapolation                       (b : ICell<bool>)   
-                                                   = triv (fun () -> _FdmAffineModelTermStructure.Value.enableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FdmAffineModelTermStructure).Value.enableExtrapolation(b.Value)
                                                                      _FdmAffineModelTermStructure.Value)
-    let _extrapolate                               = triv (fun () -> _FdmAffineModelTermStructure.Value.extrapolate)
+    let _extrapolate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _FdmAffineModelTermStructure).Value.extrapolate)
     do this.Bind(_FdmAffineModelTermStructure)
 (* 
     casting 
 *)
-    internal new () = new FdmAffineModelTermStructureModel(null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FdmAffineModelTermStructureModel(null,null,null,null,null,null,null)
     member internal this.Inject v = _FdmAffineModelTermStructure <- v
     static member Cast (p : ICell<FdmAffineModelTermStructure>) = 
         if p :? FdmAffineModelTermStructureModel then 
@@ -105,6 +111,7 @@ type FdmAffineModelTermStructureModel
         else
             let o = new FdmAffineModelTermStructureModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

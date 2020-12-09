@@ -81,6 +81,8 @@ module AtmSmileSectionFunction =
          source : obj)
         ([<ExcelArgument(Name="atm",Description = "double")>] 
          atm : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -88,19 +90,23 @@ module AtmSmileSectionFunction =
 
                 let _source = Helper.toCell<SmileSection> source "source" 
                 let _atm = Helper.toNullable<double> atm "atm"
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.AtmSmileSection 
                                                             _source.cell 
                                                             _atm.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AtmSmileSection>) l
 
                 let source () = Helper.sourceFold "Fun.AtmSmileSection" 
                                                [| _source.source
                                                ;  _atm.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _source.cell
                                 ;  _atm.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -808,16 +814,16 @@ module AtmSmileSectionFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<AtmSmileSection> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<AtmSmileSection> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<AtmSmileSection> (c)) :> ICell
                 let format (i : Generic.List<ICell<AtmSmileSection>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<AtmSmileSection>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<AtmSmileSection>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

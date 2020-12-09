@@ -52,7 +52,17 @@ namespace Cephei.Cell.Generic
             }
         }
 
-        public event CellChange Change;
+        public event CellChange Change
+        {
+            add
+            {
+
+            }   
+            remove
+            {
+
+            }
+        }
 
         public void Dispose()
         {
@@ -60,8 +70,6 @@ namespace Cephei.Cell.Generic
 
         public virtual void OnChange(CellEvent eventType, ICellEvent root,  ICellEvent sender,  DateTime epoch, ISession session)
         {
-            if (Change != null)
-                Change(eventType, root, this, epoch, session);
         }
 
         /// <see cref="ICell.HasFunction"/>
@@ -85,22 +93,12 @@ namespace Cephei.Cell.Generic
             return _func;
         }
 
+
         public IEnumerable<ICellEvent> Dependants
         {
             get
             {
-                if (Change != null)
-                {
-                    var l = Change.GetInvocationList();
-                    var r = new ICell[l.Length];
-                    for (int c = 0; c < l.Length; ++c)
-                    {
-                        r[c] = l[c].Target as ICell;
-                    }
-                    return r;
-                }
-                else
-                    return new ICell[0];
+                return new ICell[0];
             }
         }
         public FSharpFunc<Unit, T> Function
@@ -170,14 +168,26 @@ namespace Cephei.Cell.Generic
             return Cell.CreateFast<T>(_func, Mnemonic);
         }
         #endregion
+
+
+        private ICell[] _references = null;
+        private ICell[] References
+        {
+            get
+            {
+                if (_references == null)
+                    _references = Cell.Profile<T>(_func);
+                return _references;
+            }
+        }
+
         public void Notify(ICell listener)
         {
-            if (listener == this) return;
-            foreach (var v in Dependants)
-                if (v == listener)
-                    return;
-            if (listener != null)
-                Change += listener.OnChange;
+            if (listener == this ||  listener == null) return;
+            if (_references == null)
+                _references = Cell.Profile<T>(_func);
+            foreach (var c in _references)
+                c.Notify(listener);
         }
 
         public void UnNotify(ICell listener)
@@ -189,5 +199,7 @@ namespace Cephei.Cell.Generic
             return typeof(Base).IsAssignableFrom(typeof(T)) ||
                    typeof(T).IsSubclassOf(typeof(Base));
         }
+        public CellState State => CellState.Clean;
+        public Exception Error => null;
     }
 }

@@ -45,6 +45,8 @@ module DigitalIborLegFunction =
          schedule : obj)
         ([<ExcelArgument(Name="index",Description = "IborIndex")>] 
          index : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -52,19 +54,23 @@ module DigitalIborLegFunction =
 
                 let _schedule = Helper.toCell<Schedule> schedule "schedule" 
                 let _index = Helper.toCell<IborIndex> index "index" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.DigitalIborLeg 
                                                             _schedule.cell 
                                                             _index.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborLeg>) l
 
                 let source () = Helper.sourceFold "Fun.DigitalIborLeg" 
                                                [| _schedule.source
                                                ;  _index.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _schedule.cell
                                 ;  _index.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -1282,16 +1288,16 @@ module DigitalIborLegFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<DigitalIborLeg> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<DigitalIborLeg> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<DigitalIborLeg> (c)) :> ICell
                 let format (i : Generic.List<ICell<DigitalIborLeg>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<DigitalIborLeg>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<DigitalIborLeg>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

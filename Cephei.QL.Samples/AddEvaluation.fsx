@@ -5,56 +5,71 @@ open System.Text.RegularExpressions
 
 let rec allFiles directory pattern classes = 
 
-    let filelines (s : string) = 
+    let filelines (name : string) = 
 
         let mutable inConstructor = false
         let mutable needsEvaluationDate = true
-
+        let mutable inBody = false
+        let mutable needNew = false
+        let mutable typeName = ""
 
         let edit (s : string) = 
 
             if s.StartsWith("type") then 
                 inConstructor <- true
                 needsEvaluationDate <- true
+                inBody <- true
+                needNew <- false
+                typeName <- s.Split(' ').[1]
             if s.Contains("evaluationDate") && inConstructor then needsEvaluationDate <- false
             if s.Contains("as this =") then
                 inConstructor <- false
 
-            if s.StartsWith("*)")  && needsEvaluationDate then
+            if s.StartsWith("*)")  && needsEvaluationDate && inBody then
+                inBody <- false
+                Console.WriteLine ("Adding eval date to {0}", name)
                 s + "\n" +
                 "    let mutable\n" +
                 "        _evaluationDate                            = evaluationDate"
 
             elif s.Contains("() as this =") && needsEvaluationDate then
+                needNew <- true
                 "    ( evaluationDate                               : ICell<Date>\n" +
                 "    ) as this ="
 
             elif s.Contains(") as this =") && needsEvaluationDate then
-                "    ( evaluationDate                               : ICell<Date>\n" +
+                "    , evaluationDate                               : ICell<Date>\n" +
                 s
 
             elif s.Contains("= cell") && s.Contains("new ") && needsEvaluationDate then
-                s.Replace("-> ", "-> (withEvaluationDate _evaluationDate ") + ")"
+                s.Replace("-> ", "-> (curryEvaluationDate _evaluationDate (") + "))"
 
-            elif s.Contains("= cell") && s.Contains("= triv") && needsEvaluationDate then
-                s.Replace("-> ", "-> (withEvaluationDate _evaluationDate ").Replace(".Value.", ").")
+            elif (s.Contains("= cell") || s.Contains("= triv")) && needsEvaluationDate then
+                s.Replace("-> ", "-> (curryEvaluationDate _evaluationDate ").Replace(".Value.", ").Value.")
 
             elif s.Contains("internal new ()") && needsEvaluationDate then
-                "   interface IDateDependant with\n" +
-                "        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d\n" +
+                needNew <- false
+                "    interface IDateDependant with\n" +
+                "        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d\n\n" +
+                s.Replace("null)","null,null)")
+
+            elif s.Contains("member internal this.Inject") && needNew && needsEvaluationDate then
+                "    interface IDateDependant with\n" +
+                "        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d\n\n" +
+                "    internal new () = new " + typeName + "(null)\n" +
                 s
 
-            elif s.Contains("o.Inject") then
-                s + "\m" +
+            elif s.Contains("o.Inject") && needsEvaluationDate then
+                s + "\n" +
                 "            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate"
 
             else
                 s
             
         let lines = 
-            File.ReadAllLines s
+            File.ReadAllLines name
             |> Array.map edit 
-        File.WriteAllLines (s, lines, Encoding.UTF8)  
+        File.WriteAllLines (name, lines, Encoding.UTF8)  
 
     let inClass (f : string) =
         let l =

@@ -43,12 +43,15 @@ type DigitalCouponModel
     , isPutATMIncluded                             : ICell<bool>
     , putDigitalPayoff                             : ICell<Nullable<double>>
     , replication                                  : ICell<DigitalReplication>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<DigitalCoupon> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _underlying                                = underlying
     let _callStrike                                = callStrike
     let _callPosition                              = callPosition
@@ -63,78 +66,81 @@ type DigitalCouponModel
     Functions
 *)
     let mutable
-        _DigitalCoupon                             = cell (fun () -> new DigitalCoupon (underlying.Value, callStrike.Value, callPosition.Value, isCallATMIncluded.Value, callDigitalPayoff.Value, putStrike.Value, putPosition.Value, isPutATMIncluded.Value, putDigitalPayoff.Value, replication.Value))
-    let _callDigitalPayoff                         = triv (fun () -> _DigitalCoupon.Value.callDigitalPayoff())
-    let _callOptionRate                            = triv (fun () -> _DigitalCoupon.Value.callOptionRate())
-    let _callStrike                                = triv (fun () -> _DigitalCoupon.Value.callStrike())
-    let _convexityAdjustment                       = triv (fun () -> _DigitalCoupon.Value.convexityAdjustment())
+        _DigitalCoupon                             = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new DigitalCoupon (underlying.Value, callStrike.Value, callPosition.Value, isCallATMIncluded.Value, callDigitalPayoff.Value, putStrike.Value, putPosition.Value, isPutATMIncluded.Value, putDigitalPayoff.Value, replication.Value))))
+    let _callDigitalPayoff                         = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.callDigitalPayoff())
+    let _callOptionRate                            = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.callOptionRate())
+    let _callStrike                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.callStrike())
+    let _convexityAdjustment                       = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.convexityAdjustment())
     let _factory                                   (underlying : ICell<FloatingRateCoupon>) (callStrike : ICell<Nullable<double>>) (callPosition : ICell<Position.Type>) (isCallATMIncluded : ICell<bool>) (callDigitalPayoff : ICell<Nullable<double>>) (putStrike : ICell<Nullable<double>>) (putPosition : ICell<Position.Type>) (isPutATMIncluded : ICell<bool>) (putDigitalPayoff : ICell<Nullable<double>>) (replication : ICell<DigitalReplication>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.factory(underlying.Value, callStrike.Value, callPosition.Value, isCallATMIncluded.Value, callDigitalPayoff.Value, putStrike.Value, putPosition.Value, isPutATMIncluded.Value, putDigitalPayoff.Value, replication.Value))
-    let _hasCall                                   = triv (fun () -> _DigitalCoupon.Value.hasCall())
-    let _hasCollar                                 = triv (fun () -> _DigitalCoupon.Value.hasCollar())
-    let _hasPut                                    = triv (fun () -> _DigitalCoupon.Value.hasPut())
-    let _isLongCall                                = triv (fun () -> _DigitalCoupon.Value.isLongCall())
-    let _isLongPut                                 = triv (fun () -> _DigitalCoupon.Value.isLongPut())
-    let _putDigitalPayoff                          = triv (fun () -> _DigitalCoupon.Value.putDigitalPayoff())
-    let _putOptionRate                             = triv (fun () -> _DigitalCoupon.Value.putOptionRate())
-    let _putStrike                                 = triv (fun () -> _DigitalCoupon.Value.putStrike())
-    let _rate                                      = triv (fun () -> _DigitalCoupon.Value.rate())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.factory(underlying.Value, callStrike.Value, callPosition.Value, isCallATMIncluded.Value, callDigitalPayoff.Value, putStrike.Value, putPosition.Value, isPutATMIncluded.Value, putDigitalPayoff.Value, replication.Value))
+    let _hasCall                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.hasCall())
+    let _hasCollar                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.hasCollar())
+    let _hasPut                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.hasPut())
+    let _isLongCall                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.isLongCall())
+    let _isLongPut                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.isLongPut())
+    let _putDigitalPayoff                          = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.putDigitalPayoff())
+    let _putOptionRate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.putOptionRate())
+    let _putStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.putStrike())
+    let _rate                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.rate())
     let _setPricer                                 (pricer : ICell<FloatingRateCouponPricer>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.setPricer(pricer.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.setPricer(pricer.Value)
                                                                      _DigitalCoupon.Value)
-    let _underlying                                = triv (fun () -> _DigitalCoupon.Value.underlying())
+    let _underlying                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.underlying())
     let _accruedAmount                             (d : ICell<Date>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.accruedAmount(d.Value))
-    let _adjustedFixing                            = triv (fun () -> _DigitalCoupon.Value.adjustedFixing)
-    let _amount                                    = triv (fun () -> _DigitalCoupon.Value.amount())
-    let _dayCounter                                = triv (fun () -> _DigitalCoupon.Value.dayCounter())
-    let _fixingDate                                = triv (fun () -> _DigitalCoupon.Value.fixingDate())
-    let _fixingDays                                = triv (fun () -> _DigitalCoupon.Value.fixingDays)
-    let _gearing                                   = triv (fun () -> _DigitalCoupon.Value.gearing())
-    let _index                                     = triv (fun () -> _DigitalCoupon.Value.index())
-    let _indexFixing                               = triv (fun () -> _DigitalCoupon.Value.indexFixing())
-    let _isInArrears                               = triv (fun () -> _DigitalCoupon.Value.isInArrears())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.accruedAmount(d.Value))
+    let _adjustedFixing                            = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.adjustedFixing)
+    let _amount                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.amount())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.dayCounter())
+    let _fixingDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.fixingDate())
+    let _fixingDays                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.fixingDays)
+    let _gearing                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.gearing())
+    let _index                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.index())
+    let _indexFixing                               = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.indexFixing())
+    let _isInArrears                               = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.isInArrears())
     let _price                                     (yts : ICell<YieldTermStructure>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.price(yts.Value))
-    let _pricer                                    = triv (fun () -> _DigitalCoupon.Value.pricer())
-    let _spread                                    = triv (fun () -> _DigitalCoupon.Value.spread())
-    let _update                                    = triv (fun () -> _DigitalCoupon.Value.update()
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.price(yts.Value))
+    let _pricer                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.pricer())
+    let _spread                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.spread())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.update()
                                                                      _DigitalCoupon.Value)
-    let _accrualDays                               = triv (fun () -> _DigitalCoupon.Value.accrualDays())
-    let _accrualEndDate                            = triv (fun () -> _DigitalCoupon.Value.accrualEndDate())
-    let _accrualPeriod                             = triv (fun () -> _DigitalCoupon.Value.accrualPeriod())
-    let _accrualStartDate                          = triv (fun () -> _DigitalCoupon.Value.accrualStartDate())
+    let _accrualDays                               = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.accrualDays())
+    let _accrualEndDate                            = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.accrualEndDate())
+    let _accrualPeriod                             = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.accrualPeriod())
+    let _accrualStartDate                          = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.accrualStartDate())
     let _accruedDays                               (d : ICell<Date>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.accruedDays(d.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.accruedDays(d.Value))
     let _accruedPeriod                             (d : ICell<Date>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.accruedPeriod(d.Value))
-    let _date                                      = triv (fun () -> _DigitalCoupon.Value.date())
-    let _exCouponDate                              = triv (fun () -> _DigitalCoupon.Value.exCouponDate())
-    let _nominal                                   = triv (fun () -> _DigitalCoupon.Value.nominal())
-    let _referencePeriodEnd                        = triv (fun () -> _DigitalCoupon.Value.referencePeriodEnd)
-    let _referencePeriodStart                      = triv (fun () -> _DigitalCoupon.Value.referencePeriodStart)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.accruedPeriod(d.Value))
+    let _date                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.date())
+    let _exCouponDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.exCouponDate())
+    let _nominal                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.nominal())
+    let _referencePeriodEnd                        = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.referencePeriodEnd)
+    let _referencePeriodStart                      = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.referencePeriodStart)
     let _CompareTo                                 (cf : ICell<CashFlow>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.CompareTo(cf.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.CompareTo(cf.Value))
     let _Equals                                    (cf : ICell<Object>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.Equals(cf.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.Equals(cf.Value))
     let _hasOccurred                               (refDate : ICell<Date>) (includeRefDate : ICell<Nullable<bool>>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.hasOccurred(refDate.Value, includeRefDate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.hasOccurred(refDate.Value, includeRefDate.Value))
     let _tradingExCoupon                           (refDate : ICell<Date>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.tradingExCoupon(refDate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.tradingExCoupon(refDate.Value))
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.accept(v.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.accept(v.Value)
                                                                      _DigitalCoupon.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.registerWith(handler.Value)
                                                                      _DigitalCoupon.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.unregisterWith(handler.Value)
                                                                      _DigitalCoupon.Value)
     do this.Bind(_DigitalCoupon)
 (* 
     casting 
 *)
-    internal new () = new DigitalCouponModel(null,null,null,null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new DigitalCouponModel(null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _DigitalCoupon <- v
     static member Cast (p : ICell<DigitalCoupon>) = 
         if p :? DigitalCouponModel then 
@@ -142,6 +148,7 @@ type DigitalCouponModel
         else
             let o = new DigitalCouponModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -226,87 +233,94 @@ need by CashFlowVectors
   </summary> *)
 [<AutoSerializable(true)>]
 type DigitalCouponModel1
-    () as this =
+    ( evaluationDate                               : ICell<Date>
+    ) as this =
     inherit Model<DigitalCoupon> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
 (*
     Functions
 *)
     let mutable
-        _DigitalCoupon                             = cell (fun () -> new DigitalCoupon ())
-    let _callDigitalPayoff                         = triv (fun () -> _DigitalCoupon.Value.callDigitalPayoff())
-    let _callOptionRate                            = triv (fun () -> _DigitalCoupon.Value.callOptionRate())
-    let _callStrike                                = triv (fun () -> _DigitalCoupon.Value.callStrike())
-    let _convexityAdjustment                       = triv (fun () -> _DigitalCoupon.Value.convexityAdjustment())
+        _DigitalCoupon                             = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new DigitalCoupon ())))
+    let _callDigitalPayoff                         = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.callDigitalPayoff())
+    let _callOptionRate                            = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.callOptionRate())
+    let _callStrike                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.callStrike())
+    let _convexityAdjustment                       = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.convexityAdjustment())
     let _factory                                   (underlying : ICell<FloatingRateCoupon>) (callStrike : ICell<Nullable<double>>) (callPosition : ICell<Position.Type>) (isCallATMIncluded : ICell<bool>) (callDigitalPayoff : ICell<Nullable<double>>) (putStrike : ICell<Nullable<double>>) (putPosition : ICell<Position.Type>) (isPutATMIncluded : ICell<bool>) (putDigitalPayoff : ICell<Nullable<double>>) (replication : ICell<DigitalReplication>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.factory(underlying.Value, callStrike.Value, callPosition.Value, isCallATMIncluded.Value, callDigitalPayoff.Value, putStrike.Value, putPosition.Value, isPutATMIncluded.Value, putDigitalPayoff.Value, replication.Value))
-    let _hasCall                                   = triv (fun () -> _DigitalCoupon.Value.hasCall())
-    let _hasCollar                                 = triv (fun () -> _DigitalCoupon.Value.hasCollar())
-    let _hasPut                                    = triv (fun () -> _DigitalCoupon.Value.hasPut())
-    let _isLongCall                                = triv (fun () -> _DigitalCoupon.Value.isLongCall())
-    let _isLongPut                                 = triv (fun () -> _DigitalCoupon.Value.isLongPut())
-    let _putDigitalPayoff                          = triv (fun () -> _DigitalCoupon.Value.putDigitalPayoff())
-    let _putOptionRate                             = triv (fun () -> _DigitalCoupon.Value.putOptionRate())
-    let _putStrike                                 = triv (fun () -> _DigitalCoupon.Value.putStrike())
-    let _rate                                      = triv (fun () -> _DigitalCoupon.Value.rate())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.factory(underlying.Value, callStrike.Value, callPosition.Value, isCallATMIncluded.Value, callDigitalPayoff.Value, putStrike.Value, putPosition.Value, isPutATMIncluded.Value, putDigitalPayoff.Value, replication.Value))
+    let _hasCall                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.hasCall())
+    let _hasCollar                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.hasCollar())
+    let _hasPut                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.hasPut())
+    let _isLongCall                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.isLongCall())
+    let _isLongPut                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.isLongPut())
+    let _putDigitalPayoff                          = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.putDigitalPayoff())
+    let _putOptionRate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.putOptionRate())
+    let _putStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.putStrike())
+    let _rate                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.rate())
     let _setPricer                                 (pricer : ICell<FloatingRateCouponPricer>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.setPricer(pricer.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.setPricer(pricer.Value)
                                                                      _DigitalCoupon.Value)
-    let _underlying                                = triv (fun () -> _DigitalCoupon.Value.underlying())
+    let _underlying                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.underlying())
     let _accruedAmount                             (d : ICell<Date>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.accruedAmount(d.Value))
-    let _adjustedFixing                            = triv (fun () -> _DigitalCoupon.Value.adjustedFixing)
-    let _amount                                    = triv (fun () -> _DigitalCoupon.Value.amount())
-    let _dayCounter                                = triv (fun () -> _DigitalCoupon.Value.dayCounter())
-    let _fixingDate                                = triv (fun () -> _DigitalCoupon.Value.fixingDate())
-    let _fixingDays                                = triv (fun () -> _DigitalCoupon.Value.fixingDays)
-    let _gearing                                   = triv (fun () -> _DigitalCoupon.Value.gearing())
-    let _index                                     = triv (fun () -> _DigitalCoupon.Value.index())
-    let _indexFixing                               = triv (fun () -> _DigitalCoupon.Value.indexFixing())
-    let _isInArrears                               = triv (fun () -> _DigitalCoupon.Value.isInArrears())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.accruedAmount(d.Value))
+    let _adjustedFixing                            = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.adjustedFixing)
+    let _amount                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.amount())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.dayCounter())
+    let _fixingDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.fixingDate())
+    let _fixingDays                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.fixingDays)
+    let _gearing                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.gearing())
+    let _index                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.index())
+    let _indexFixing                               = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.indexFixing())
+    let _isInArrears                               = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.isInArrears())
     let _price                                     (yts : ICell<YieldTermStructure>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.price(yts.Value))
-    let _pricer                                    = triv (fun () -> _DigitalCoupon.Value.pricer())
-    let _spread                                    = triv (fun () -> _DigitalCoupon.Value.spread())
-    let _update                                    = triv (fun () -> _DigitalCoupon.Value.update()
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.price(yts.Value))
+    let _pricer                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.pricer())
+    let _spread                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.spread())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.update()
                                                                      _DigitalCoupon.Value)
-    let _accrualDays                               = triv (fun () -> _DigitalCoupon.Value.accrualDays())
-    let _accrualEndDate                            = triv (fun () -> _DigitalCoupon.Value.accrualEndDate())
-    let _accrualPeriod                             = triv (fun () -> _DigitalCoupon.Value.accrualPeriod())
-    let _accrualStartDate                          = triv (fun () -> _DigitalCoupon.Value.accrualStartDate())
+    let _accrualDays                               = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.accrualDays())
+    let _accrualEndDate                            = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.accrualEndDate())
+    let _accrualPeriod                             = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.accrualPeriod())
+    let _accrualStartDate                          = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.accrualStartDate())
     let _accruedDays                               (d : ICell<Date>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.accruedDays(d.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.accruedDays(d.Value))
     let _accruedPeriod                             (d : ICell<Date>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.accruedPeriod(d.Value))
-    let _date                                      = triv (fun () -> _DigitalCoupon.Value.date())
-    let _exCouponDate                              = triv (fun () -> _DigitalCoupon.Value.exCouponDate())
-    let _nominal                                   = triv (fun () -> _DigitalCoupon.Value.nominal())
-    let _referencePeriodEnd                        = triv (fun () -> _DigitalCoupon.Value.referencePeriodEnd)
-    let _referencePeriodStart                      = triv (fun () -> _DigitalCoupon.Value.referencePeriodStart)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.accruedPeriod(d.Value))
+    let _date                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.date())
+    let _exCouponDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.exCouponDate())
+    let _nominal                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.nominal())
+    let _referencePeriodEnd                        = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.referencePeriodEnd)
+    let _referencePeriodStart                      = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.referencePeriodStart)
     let _CompareTo                                 (cf : ICell<CashFlow>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.CompareTo(cf.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.CompareTo(cf.Value))
     let _Equals                                    (cf : ICell<Object>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.Equals(cf.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.Equals(cf.Value))
     let _hasOccurred                               (refDate : ICell<Date>) (includeRefDate : ICell<Nullable<bool>>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.hasOccurred(refDate.Value, includeRefDate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.hasOccurred(refDate.Value, includeRefDate.Value))
     let _tradingExCoupon                           (refDate : ICell<Date>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.tradingExCoupon(refDate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.tradingExCoupon(refDate.Value))
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.accept(v.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.accept(v.Value)
                                                                      _DigitalCoupon.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.registerWith(handler.Value)
                                                                      _DigitalCoupon.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _DigitalCoupon.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalCoupon).Value.unregisterWith(handler.Value)
                                                                      _DigitalCoupon.Value)
     do this.Bind(_DigitalCoupon)
 (* 
     casting 
 *)
     
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new DigitalCouponModel1(null)
     member internal this.Inject v = _DigitalCoupon <- v
     static member Cast (p : ICell<DigitalCoupon>) = 
         if p :? DigitalCouponModel1 then 
@@ -314,6 +328,7 @@ type DigitalCouponModel1
         else
             let o = new DigitalCouponModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

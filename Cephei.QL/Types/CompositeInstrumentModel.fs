@@ -46,7 +46,7 @@ type CompositeInstrumentModel
     Functions
 *)
     let mutable
-        _CompositeInstrument                       = cell (fun () -> withEngine pricingEngine (new CompositeInstrument ()))
+        _CompositeInstrument                       = cell (fun () -> withEngine pricingEngine evaluationDate (new CompositeInstrument ()))
     let _add                                       (instrument : ICell<Instrument>) (multiplier : ICell<double>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _CompositeInstrument).add(instrument.Value, multiplier.Value)
                                                                      _CompositeInstrument.Value)

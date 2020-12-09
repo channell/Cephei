@@ -56,7 +56,7 @@ type CashModel
     Functions
 *)
     let mutable
-        _Cash                                      = cell (fun () -> withEngine pricingEngine (new Cash (Type.Value, nominal.Value, principalSchedule.Value, paymentConvention.Value)))
+        _Cash                                      = cell (fun () -> withEngine pricingEngine evaluationDate (new Cash (Type.Value, nominal.Value, principalSchedule.Value, paymentConvention.Value)))
     let _principalLeg                              = triv (fun () -> (withEvaluationDate _evaluationDate _Cash).principalLeg())
     let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _Cash).isExpired())
     let _CASH                                      = cell (fun () -> (withEvaluationDate _evaluationDate _Cash).CASH())

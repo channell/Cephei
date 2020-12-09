@@ -56,7 +56,7 @@ type CapFloorModel
     Functions
 *)
     let mutable
-        _CapFloor                                  = cell (fun () -> withEngine pricingEngine (new CapFloor (Type.Value, floatingLeg.Value, capRates.Value, floorRates.Value)))
+        _CapFloor                                  = cell (fun () -> withEngine pricingEngine evaluationDate (new CapFloor (Type.Value, floatingLeg.Value, capRates.Value, floorRates.Value)))
     let _atmRate                                   (discountCurve : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _CapFloor).atmRate(discountCurve.Value))
     let _capRates                                  = triv (fun () -> (withEvaluationDate _evaluationDate _CapFloor).capRates())
@@ -162,7 +162,7 @@ type CapFloorModel1
     Functions
 *)
     let mutable
-        _CapFloor                                  = cell (fun () -> withEngine pricingEngine (new CapFloor (Type.Value, floatingLeg.Value, strikes.Value)))
+        _CapFloor                                  = cell (fun () -> withEngine pricingEngine evaluationDate (new CapFloor (Type.Value, floatingLeg.Value, strikes.Value)))
     let _atmRate                                   (discountCurve : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _CapFloor).atmRate(discountCurve.Value))
     let _capRates                                  = triv (fun () -> (withEvaluationDate _evaluationDate _CapFloor).capRates())

@@ -35,24 +35,30 @@ open Cephei.QLNetHelper
 type BlackCallableFixedRateBondEngineModel
     ( fwdYieldVol                                  : ICell<Handle<Quote>>
     , discountCurve                                : ICell<Handle<YieldTermStructure>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BlackCallableFixedRateBondEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _fwdYieldVol                               = fwdYieldVol
     let _discountCurve                             = discountCurve
 (*
     Functions
 *)
     let mutable
-        _BlackCallableFixedRateBondEngine          = cell (fun () -> new BlackCallableFixedRateBondEngine (fwdYieldVol.Value, discountCurve.Value))
+        _BlackCallableFixedRateBondEngine          = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackCallableFixedRateBondEngine (fwdYieldVol.Value, discountCurve.Value))))
     do this.Bind(_BlackCallableFixedRateBondEngine)
 (* 
     casting 
 *)
-    internal new () = new BlackCallableFixedRateBondEngineModel(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new BlackCallableFixedRateBondEngineModel(null,null,null)
     member internal this.Inject v = _BlackCallableFixedRateBondEngine <- v
     static member Cast (p : ICell<BlackCallableFixedRateBondEngine>) = 
         if p :? BlackCallableFixedRateBondEngineModel then 
@@ -60,6 +66,7 @@ type BlackCallableFixedRateBondEngineModel
         else
             let o = new BlackCallableFixedRateBondEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -77,24 +84,30 @@ type BlackCallableFixedRateBondEngineModel
 type BlackCallableFixedRateBondEngineModel1
     ( yieldVolStructure                            : ICell<Handle<CallableBondVolatilityStructure>>
     , discountCurve                                : ICell<Handle<YieldTermStructure>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BlackCallableFixedRateBondEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _yieldVolStructure                         = yieldVolStructure
     let _discountCurve                             = discountCurve
 (*
     Functions
 *)
     let mutable
-        _BlackCallableFixedRateBondEngine          = cell (fun () -> new BlackCallableFixedRateBondEngine (yieldVolStructure.Value, discountCurve.Value))
+        _BlackCallableFixedRateBondEngine          = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackCallableFixedRateBondEngine (yieldVolStructure.Value, discountCurve.Value))))
     do this.Bind(_BlackCallableFixedRateBondEngine)
 (* 
     casting 
 *)
-    internal new () = new BlackCallableFixedRateBondEngineModel1(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new BlackCallableFixedRateBondEngineModel1(null,null,null)
     member internal this.Inject v = _BlackCallableFixedRateBondEngine <- v
     static member Cast (p : ICell<BlackCallableFixedRateBondEngine>) = 
         if p :? BlackCallableFixedRateBondEngineModel1 then 
@@ -102,6 +115,7 @@ type BlackCallableFixedRateBondEngineModel1
         else
             let o = new BlackCallableFixedRateBondEngineModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

@@ -42,12 +42,15 @@ type MCDiscreteGeometricAPEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (new
     , requiredTolerance                            : ICell<double>
     , maxSamples                                   : ICell<int>
     , seed                                         : ICell<uint64>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<MCDiscreteGeometricAPEngine<'RNG,'S>> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
     let _maxTimeStepPerYear                        = maxTimeStepPerYear
     let _brownianBridge                            = brownianBridge
@@ -61,23 +64,23 @@ type MCDiscreteGeometricAPEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (new
     Functions
 *)
     let mutable
-        _MCDiscreteGeometricAPEngine               = cell (fun () -> new MCDiscreteGeometricAPEngine<'RNG,'S> (Process.Value, maxTimeStepPerYear.Value, brownianBridge.Value, antitheticVariate.Value, controlVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))
+        _MCDiscreteGeometricAPEngine               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new MCDiscreteGeometricAPEngine<'RNG,'S> (Process.Value, maxTimeStepPerYear.Value, brownianBridge.Value, antitheticVariate.Value, controlVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _MCDiscreteGeometricAPEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteGeometricAPEngine).Value.registerWith(handler.Value)
                                                                      _MCDiscreteGeometricAPEngine.Value)
-    let _reset                                     = triv (fun () -> _MCDiscreteGeometricAPEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteGeometricAPEngine).Value.reset()
                                                                      _MCDiscreteGeometricAPEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _MCDiscreteGeometricAPEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteGeometricAPEngine).Value.unregisterWith(handler.Value)
                                                                      _MCDiscreteGeometricAPEngine.Value)
-    let _update                                    = triv (fun () -> _MCDiscreteGeometricAPEngine.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteGeometricAPEngine).Value.update()
                                                                      _MCDiscreteGeometricAPEngine.Value)
-    let _errorEstimate                             = triv (fun () -> _MCDiscreteGeometricAPEngine.Value.errorEstimate())
-    let _sampleAccumulator                         = triv (fun () -> _MCDiscreteGeometricAPEngine.Value.sampleAccumulator())
+    let _errorEstimate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteGeometricAPEngine).Value.errorEstimate())
+    let _sampleAccumulator                         = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteGeometricAPEngine).Value.sampleAccumulator())
     let _value                                     (tolerance : ICell<double>) (maxSamples : ICell<int>) (minSamples : ICell<int>)   
-                                                   = triv (fun () -> _MCDiscreteGeometricAPEngine.Value.value(tolerance.Value, maxSamples.Value, minSamples.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteGeometricAPEngine).Value.value(tolerance.Value, maxSamples.Value, minSamples.Value))
     let _valueWithSamples                          (samples : ICell<int>)   
-                                                   = triv (fun () -> _MCDiscreteGeometricAPEngine.Value.valueWithSamples(samples.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteGeometricAPEngine).Value.valueWithSamples(samples.Value))
     do this.Bind(_MCDiscreteGeometricAPEngine)
 
 (* 

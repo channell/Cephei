@@ -35,37 +35,43 @@ open Cephei.QLNetHelper
 type LfmSwaptionEngineModel
     ( model                                        : ICell<LiborForwardModel>
     , discountCurve                                : ICell<Handle<YieldTermStructure>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<LfmSwaptionEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _model                                     = model
     let _discountCurve                             = discountCurve
 (*
     Functions
 *)
     let mutable
-        _LfmSwaptionEngine                         = cell (fun () -> new LfmSwaptionEngine (model.Value, discountCurve.Value))
+        _LfmSwaptionEngine                         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new LfmSwaptionEngine (model.Value, discountCurve.Value))))
     let _setModel                                  (model : ICell<Handle<LiborForwardModel>>)   
-                                                   = triv (fun () -> _LfmSwaptionEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LfmSwaptionEngine).Value.setModel(model.Value)
                                                                      _LfmSwaptionEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _LfmSwaptionEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LfmSwaptionEngine).Value.registerWith(handler.Value)
                                                                      _LfmSwaptionEngine.Value)
-    let _reset                                     = triv (fun () -> _LfmSwaptionEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _LfmSwaptionEngine).Value.reset()
                                                                      _LfmSwaptionEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _LfmSwaptionEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LfmSwaptionEngine).Value.unregisterWith(handler.Value)
                                                                      _LfmSwaptionEngine.Value)
-    let _update                                    = triv (fun () -> _LfmSwaptionEngine.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _LfmSwaptionEngine).Value.update()
                                                                      _LfmSwaptionEngine.Value)
     do this.Bind(_LfmSwaptionEngine)
 (* 
     casting 
 *)
-    internal new () = new LfmSwaptionEngineModel(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new LfmSwaptionEngineModel(null,null,null)
     member internal this.Inject v = _LfmSwaptionEngine <- v
     static member Cast (p : ICell<LfmSwaptionEngine>) = 
         if p :? LfmSwaptionEngineModel then 
@@ -73,6 +79,7 @@ type LfmSwaptionEngineModel
         else
             let o = new LfmSwaptionEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

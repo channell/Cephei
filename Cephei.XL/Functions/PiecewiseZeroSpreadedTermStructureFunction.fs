@@ -53,6 +53,8 @@ module PiecewiseZeroSpreadedTermStructureFunction =
          frequency : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter")>] 
          dc : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -64,6 +66,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
                 let _compounding = Helper.toDefault<Compounding> compounding "compounding" Compounding.Continuous
                 let _frequency = Helper.toDefault<Frequency> frequency "frequency" Frequency.NoFrequency
                 let _dc = Helper.toCell<DayCounter> dc "dc" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.PiecewiseZeroSpreadedTermStructure 
                                                             _h.cell 
                                                             _spreads.cell 
@@ -71,6 +74,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
                                                             _compounding.cell 
                                                             _frequency.cell 
                                                             _dc.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<PiecewiseZeroSpreadedTermStructure>) l
 
@@ -81,6 +85,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
                                                ;  _compounding.source
                                                ;  _frequency.source
                                                ;  _dc.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _h.cell
@@ -89,6 +94,7 @@ module PiecewiseZeroSpreadedTermStructureFunction =
                                 ;  _compounding.cell
                                 ;  _frequency.cell
                                 ;  _dc.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -298,16 +304,16 @@ module PiecewiseZeroSpreadedTermStructureFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<PiecewiseZeroSpreadedTermStructure> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<PiecewiseZeroSpreadedTermStructure> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<PiecewiseZeroSpreadedTermStructure> (c)) :> ICell
                 let format (i : Generic.List<ICell<PiecewiseZeroSpreadedTermStructure>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<PiecewiseZeroSpreadedTermStructure>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<PiecewiseZeroSpreadedTermStructure>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

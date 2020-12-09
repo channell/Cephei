@@ -52,7 +52,7 @@ type FloorModel
     Functions
 *)
     let mutable
-        _Floor                                     = cell (fun () -> withEngine pricingEngine (new Floor (floatingLeg.Value, exerciseRates.Value)))
+        _Floor                                     = cell (fun () -> withEngine pricingEngine evaluationDate (new Floor (floatingLeg.Value, exerciseRates.Value)))
     let _atmRate                                   (discountCurve : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _Floor).atmRate(discountCurve.Value))
     let _capRates                                  = triv (fun () -> (withEvaluationDate _evaluationDate _Floor).capRates())

@@ -38,12 +38,15 @@ type BinomialDoubleBarrierEngineModel
     , Process                                      : ICell<GeneralizedBlackScholesProcess>
     , timeSteps                                    : ICell<int>
     , maxTimeSteps                                 : ICell<int>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BinomialDoubleBarrierEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _getTree                                   = getTree
     let _getAsset                                  = getAsset
     let _Process                                   = Process
@@ -53,12 +56,15 @@ type BinomialDoubleBarrierEngineModel
     Functions
 *)
     let mutable
-        _BinomialDoubleBarrierEngine               = cell (fun () -> new BinomialDoubleBarrierEngine (getTree.Value, getAsset.Value, Process.Value, timeSteps.Value, maxTimeSteps.Value))
+        _BinomialDoubleBarrierEngine               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BinomialDoubleBarrierEngine (getTree.Value, getAsset.Value, Process.Value, timeSteps.Value, maxTimeSteps.Value))))
     do this.Bind(_BinomialDoubleBarrierEngine)
 (* 
     casting 
 *)
-    internal new () = new BinomialDoubleBarrierEngineModel(null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new BinomialDoubleBarrierEngineModel(null,null,null,null,null,null)
     member internal this.Inject v = _BinomialDoubleBarrierEngine <- v
     static member Cast (p : ICell<BinomialDoubleBarrierEngine>) = 
         if p :? BinomialDoubleBarrierEngineModel then 
@@ -66,6 +72,7 @@ type BinomialDoubleBarrierEngineModel
         else
             let o = new BinomialDoubleBarrierEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

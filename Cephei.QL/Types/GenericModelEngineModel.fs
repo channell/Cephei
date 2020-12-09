@@ -33,28 +33,31 @@ open Cephei.QLNetHelper
   </summary> *)
 [<AutoSerializable(true)>]
 type GenericModelEngineModel<'ModelType, 'ArgumentsType, 'ResultsType when 'ModelType :> IObservable and 'ArgumentsType :> IPricingEngineArguments and 'ArgumentsType : (new : unit -> 'ArgumentsType) and 'ResultsType :> IPricingEngineResults and 'ResultsType : (new : unit -> 'ResultsType)>
-    () as this =
+    ( evaluationDate                               : ICell<Date>
+    ) as this =
     inherit Model<GenericModelEngine<'ModelType,'ArgumentsType,'ResultsType>> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
 (*
     Functions
 *)
     let mutable
-        _GenericModelEngine                        = cell (fun () -> new GenericModelEngine<'ModelType,'ArgumentsType,'ResultsType> ())
+        _GenericModelEngine                        = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new GenericModelEngine<'ModelType,'ArgumentsType,'ResultsType> ())))
     let _setModel                                  (model : ICell<Handle<'ModelType>>)   
-                                                   = triv (fun () -> _GenericModelEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _GenericModelEngine).Value.setModel(model.Value)
                                                                      _GenericModelEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _GenericModelEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _GenericModelEngine).Value.registerWith(handler.Value)
                                                                      _GenericModelEngine.Value)
-    let _reset                                     = triv (fun () -> _GenericModelEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _GenericModelEngine).Value.reset()
                                                                      _GenericModelEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _GenericModelEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _GenericModelEngine).Value.unregisterWith(handler.Value)
                                                                      _GenericModelEngine.Value)
-    let _update                                    = triv (fun () -> _GenericModelEngine.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _GenericModelEngine).Value.update()
                                                                      _GenericModelEngine.Value)
     do this.Bind(_GenericModelEngine)
 
@@ -76,30 +79,33 @@ type GenericModelEngineModel<'ModelType, 'ArgumentsType, 'ResultsType when 'Mode
 [<AutoSerializable(true)>]
 type GenericModelEngineModel1<'ModelType, 'ArgumentsType, 'ResultsType when 'ModelType :> IObservable and 'ArgumentsType :> IPricingEngineArguments and 'ArgumentsType : (new : unit -> 'ArgumentsType) and 'ResultsType :> IPricingEngineResults and 'ResultsType : (new : unit -> 'ResultsType)>
     ( model                                        : ICell<'ModelType>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<GenericModelEngine<'ModelType,'ArgumentsType,'ResultsType>> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _model                                     = model
 (*
     Functions
 *)
     let mutable
-        _GenericModelEngine                        = cell (fun () -> new GenericModelEngine<'ModelType,'ArgumentsType,'ResultsType> (model.Value))
+        _GenericModelEngine                        = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new GenericModelEngine<'ModelType,'ArgumentsType,'ResultsType> (model.Value))))
     let _setModel                                  (model : ICell<Handle<'ModelType>>)   
-                                                   = triv (fun () -> _GenericModelEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _GenericModelEngine).Value.setModel(model.Value)
                                                                      _GenericModelEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _GenericModelEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _GenericModelEngine).Value.registerWith(handler.Value)
                                                                      _GenericModelEngine.Value)
-    let _reset                                     = triv (fun () -> _GenericModelEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _GenericModelEngine).Value.reset()
                                                                      _GenericModelEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _GenericModelEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _GenericModelEngine).Value.unregisterWith(handler.Value)
                                                                      _GenericModelEngine.Value)
-    let _update                                    = triv (fun () -> _GenericModelEngine.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _GenericModelEngine).Value.update()
                                                                      _GenericModelEngine.Value)
     do this.Bind(_GenericModelEngine)
 
@@ -122,30 +128,33 @@ type GenericModelEngineModel1<'ModelType, 'ArgumentsType, 'ResultsType when 'Mod
 [<AutoSerializable(true)>]
 type GenericModelEngineModel2<'ModelType, 'ArgumentsType, 'ResultsType when 'ModelType :> IObservable and 'ArgumentsType :> IPricingEngineArguments and 'ArgumentsType : (new : unit -> 'ArgumentsType) and 'ResultsType :> IPricingEngineResults and 'ResultsType : (new : unit -> 'ResultsType)>
     ( model                                        : ICell<Handle<'ModelType>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<GenericModelEngine<'ModelType,'ArgumentsType,'ResultsType>> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _model                                     = model
 (*
     Functions
 *)
     let mutable
-        _GenericModelEngine                        = cell (fun () -> new GenericModelEngine<'ModelType,'ArgumentsType,'ResultsType> (model.Value))
+        _GenericModelEngine                        = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new GenericModelEngine<'ModelType,'ArgumentsType,'ResultsType> (model.Value))))
     let _setModel                                  (model : ICell<Handle<'ModelType>>)   
-                                                   = triv (fun () -> _GenericModelEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _GenericModelEngine).Value.setModel(model.Value)
                                                                      _GenericModelEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _GenericModelEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _GenericModelEngine).Value.registerWith(handler.Value)
                                                                      _GenericModelEngine.Value)
-    let _reset                                     = triv (fun () -> _GenericModelEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _GenericModelEngine).Value.reset()
                                                                      _GenericModelEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _GenericModelEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _GenericModelEngine).Value.unregisterWith(handler.Value)
                                                                      _GenericModelEngine.Value)
-    let _update                                    = triv (fun () -> _GenericModelEngine.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _GenericModelEngine).Value.update()
                                                                      _GenericModelEngine.Value)
     do this.Bind(_GenericModelEngine)
 

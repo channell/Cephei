@@ -52,7 +52,7 @@ type MultiAssetOptionModel
     Functions
 *)
     let mutable
-        _MultiAssetOption                          = cell (fun () -> withEngine pricingEngine (new MultiAssetOption (payoff.Value, exercise.Value)))
+        _MultiAssetOption                          = cell (fun () -> withEngine pricingEngine evaluationDate (new MultiAssetOption (payoff.Value, exercise.Value)))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _MultiAssetOption).delta())
     let _dividendRho                               = triv (fun () -> (withEvaluationDate _evaluationDate _MultiAssetOption).dividendRho())
     let _gamma                                     = triv (fun () -> (withEvaluationDate _evaluationDate _MultiAssetOption).gamma())

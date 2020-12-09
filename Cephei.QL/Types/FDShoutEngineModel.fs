@@ -37,12 +37,15 @@ type FDShoutEngineModel
     , timeSteps                                    : ICell<int>
     , gridPoints                                   : ICell<int>
     , timeDependent                                : ICell<bool>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FDShoutEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
     let _timeSteps                                 = timeSteps
     let _gridPoints                                = gridPoints
@@ -51,29 +54,32 @@ type FDShoutEngineModel
     Functions
 *)
     let mutable
-        _FDShoutEngine                             = cell (fun () -> new FDShoutEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+        _FDShoutEngine                             = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FDShoutEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>)   
-                                                   = triv (fun () -> _FDShoutEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDShoutEngine).Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FDShoutEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDShoutEngine).Value.registerWith(handler.Value)
                                                                      _FDShoutEngine.Value)
-    let _reset                                     = triv (fun () -> _FDShoutEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _FDShoutEngine).Value.reset()
                                                                      _FDShoutEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FDShoutEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDShoutEngine).Value.unregisterWith(handler.Value)
                                                                      _FDShoutEngine.Value)
-    let _update                                    = triv (fun () -> _FDShoutEngine.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FDShoutEngine).Value.update()
                                                                      _FDShoutEngine.Value)
-    let _ensureStrikeInGrid                        = triv (fun () -> _FDShoutEngine.Value.ensureStrikeInGrid()
+    let _ensureStrikeInGrid                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FDShoutEngine).Value.ensureStrikeInGrid()
                                                                      _FDShoutEngine.Value)
-    let _getResidualTime                           = triv (fun () -> _FDShoutEngine.Value.getResidualTime())
-    let _grid                                      = triv (fun () -> _FDShoutEngine.Value.grid())
-    let _intrinsicValues_                          = triv (fun () -> _FDShoutEngine.Value.intrinsicValues_)
+    let _getResidualTime                           = triv (fun () -> (curryEvaluationDate _evaluationDate _FDShoutEngine).Value.getResidualTime())
+    let _grid                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _FDShoutEngine).Value.grid())
+    let _intrinsicValues_                          = triv (fun () -> (curryEvaluationDate _evaluationDate _FDShoutEngine).Value.intrinsicValues_)
     do this.Bind(_FDShoutEngine)
 (* 
     casting 
 *)
-    internal new () = new FDShoutEngineModel(null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FDShoutEngineModel(null,null,null,null,null)
     member internal this.Inject v = _FDShoutEngine <- v
     static member Cast (p : ICell<FDShoutEngine>) = 
         if p :? FDShoutEngineModel then 
@@ -81,6 +87,7 @@ type FDShoutEngineModel
         else
             let o = new FDShoutEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -110,38 +117,45 @@ required for generics
   </summary> *)
 [<AutoSerializable(true)>]
 type FDShoutEngineModel1
-    () as this =
+    ( evaluationDate                               : ICell<Date>
+    ) as this =
     inherit Model<FDShoutEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
 (*
     Functions
 *)
     let mutable
-        _FDShoutEngine                             = cell (fun () -> new FDShoutEngine ())
+        _FDShoutEngine                             = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FDShoutEngine ())))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>)   
-                                                   = triv (fun () -> _FDShoutEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDShoutEngine).Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FDShoutEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDShoutEngine).Value.registerWith(handler.Value)
                                                                      _FDShoutEngine.Value)
-    let _reset                                     = triv (fun () -> _FDShoutEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _FDShoutEngine).Value.reset()
                                                                      _FDShoutEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FDShoutEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDShoutEngine).Value.unregisterWith(handler.Value)
                                                                      _FDShoutEngine.Value)
-    let _update                                    = triv (fun () -> _FDShoutEngine.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FDShoutEngine).Value.update()
                                                                      _FDShoutEngine.Value)
-    let _ensureStrikeInGrid                        = triv (fun () -> _FDShoutEngine.Value.ensureStrikeInGrid()
+    let _ensureStrikeInGrid                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FDShoutEngine).Value.ensureStrikeInGrid()
                                                                      _FDShoutEngine.Value)
-    let _getResidualTime                           = triv (fun () -> _FDShoutEngine.Value.getResidualTime())
-    let _grid                                      = triv (fun () -> _FDShoutEngine.Value.grid())
-    let _intrinsicValues_                          = triv (fun () -> _FDShoutEngine.Value.intrinsicValues_)
+    let _getResidualTime                           = triv (fun () -> (curryEvaluationDate _evaluationDate _FDShoutEngine).Value.getResidualTime())
+    let _grid                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _FDShoutEngine).Value.grid())
+    let _intrinsicValues_                          = triv (fun () -> (curryEvaluationDate _evaluationDate _FDShoutEngine).Value.intrinsicValues_)
     do this.Bind(_FDShoutEngine)
 (* 
     casting 
 *)
     
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FDShoutEngineModel1(null)
     member internal this.Inject v = _FDShoutEngine <- v
     static member Cast (p : ICell<FDShoutEngine>) = 
         if p :? FDShoutEngineModel1 then 
@@ -149,6 +163,7 @@ type FDShoutEngineModel1
         else
             let o = new FDShoutEngineModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

@@ -173,6 +173,8 @@ module IborCouponFunction =
          dayCounter : obj)
         ([<ExcelArgument(Name="isInArrears",Description = "bool or empty")>] 
          isInArrears : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -190,6 +192,7 @@ module IborCouponFunction =
                 let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
                 let _dayCounter = Helper.toDefault<DayCounter> dayCounter "dayCounter" null
                 let _isInArrears = Helper.toDefault<bool> isInArrears "isInArrears" false
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.IborCoupon 
                                                             _paymentDate.cell 
                                                             _nominal.cell 
@@ -203,6 +206,7 @@ module IborCouponFunction =
                                                             _refPeriodEnd.cell 
                                                             _dayCounter.cell 
                                                             _isInArrears.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborCoupon>) l
 
@@ -219,6 +223,7 @@ module IborCouponFunction =
                                                ;  _refPeriodEnd.source
                                                ;  _dayCounter.source
                                                ;  _isInArrears.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _paymentDate.cell
@@ -233,6 +238,7 @@ module IborCouponFunction =
                                 ;  _refPeriodEnd.cell
                                 ;  _dayCounter.cell
                                 ;  _isInArrears.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -252,19 +258,25 @@ module IborCouponFunction =
     let IborCoupon_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.IborCoupon1 ()
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.IborCoupon1 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IborCoupon>) l
 
                 let source () = Helper.sourceFold "Fun.IborCoupon1" 
-                                               [||]
+                                               [| _evaluationDate.source
+                                               |]
                 let hash = Helper.hashFold 
-                                [||]
+                                [|  _evaluationDate.cell
+                                |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
@@ -1667,16 +1679,16 @@ module IborCouponFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<IborCoupon> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<IborCoupon> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<IborCoupon> (c)) :> ICell
                 let format (i : Generic.List<ICell<IborCoupon>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<IborCoupon>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<IborCoupon>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

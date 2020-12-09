@@ -49,6 +49,8 @@ module BlackVanillaOptionPricerFunction =
          swapTenor : obj)
         ([<ExcelArgument(Name="volatilityStructure",Description = "SwaptionVolatilityStructure")>] 
          volatilityStructure : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -58,11 +60,13 @@ module BlackVanillaOptionPricerFunction =
                 let _expiryDate = Helper.toCell<Date> expiryDate "expiryDate" 
                 let _swapTenor = Helper.toCell<Period> swapTenor "swapTenor" 
                 let _volatilityStructure = Helper.toCell<SwaptionVolatilityStructure> volatilityStructure "volatilityStructure" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackVanillaOptionPricer 
                                                             _forwardValue.cell 
                                                             _expiryDate.cell 
                                                             _swapTenor.cell 
                                                             _volatilityStructure.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackVanillaOptionPricer>) l
 
@@ -71,12 +75,14 @@ module BlackVanillaOptionPricerFunction =
                                                ;  _expiryDate.source
                                                ;  _swapTenor.source
                                                ;  _volatilityStructure.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _forwardValue.cell
                                 ;  _expiryDate.cell
                                 ;  _swapTenor.cell
                                 ;  _volatilityStructure.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -160,16 +166,16 @@ module BlackVanillaOptionPricerFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<BlackVanillaOptionPricer> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<BlackVanillaOptionPricer> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<BlackVanillaOptionPricer> (c)) :> ICell
                 let format (i : Generic.List<ICell<BlackVanillaOptionPricer>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<BlackVanillaOptionPricer>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<BlackVanillaOptionPricer>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

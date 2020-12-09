@@ -34,7 +34,7 @@ open Cephei.QLNetHelper
 [<AutoSerializable(true)>]
 type UniformGridMesherModel
     ( layout                                       : ICell<FdmLinearOpLayout>
-    , boundaries                                   : ICell<List<Pair<Nullable<double>,Nullable<double>>>>
+    , boundaries                                   : ICell<Generic.List<Pair<Nullable<double>,Nullable<double>>>>
     ) as this =
 
     inherit Model<UniformGridMesher> ()

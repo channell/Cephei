@@ -87,6 +87,8 @@ module FuturesRateHelperFunction =
          convAdj : obj)
         ([<ExcelArgument(Name="Type",Description = "Futures.Type: IMM, ASX")>] 
          Type : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -97,12 +99,14 @@ module FuturesRateHelperFunction =
                 let _i = Helper.toCell<IborIndex> i "i" 
                 let _convAdj = Helper.toDefault<double> convAdj "convAdj" 0.0
                 let _Type = Helper.toCell<Futures.Type> Type "Type" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FuturesRateHelper1 
                                                             _price.cell 
                                                             _iborStartDate.cell 
                                                             _i.cell 
                                                             _convAdj.cell 
                                                             _Type.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FuturesRateHelper>) l
 
@@ -112,6 +116,7 @@ module FuturesRateHelperFunction =
                                                ;  _i.source
                                                ;  _convAdj.source
                                                ;  _Type.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _price.cell
@@ -119,6 +124,7 @@ module FuturesRateHelperFunction =
                                 ;  _i.cell
                                 ;  _convAdj.cell
                                 ;  _Type.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -148,6 +154,8 @@ module FuturesRateHelperFunction =
          convAdj : obj)
         ([<ExcelArgument(Name="Type",Description = "Futures.Type: IMM, ASX")>] 
          Type : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -158,12 +166,14 @@ module FuturesRateHelperFunction =
                 let _i = Helper.toCell<IborIndex> i "i" 
                 let _convAdj = Helper.toHandle<Quote> convAdj "convAdj" 
                 let _Type = Helper.toCell<Futures.Type> Type "Type" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FuturesRateHelper2
                                                             _price.cell 
                                                             _iborStartDate.cell 
                                                             _i.cell 
                                                             _convAdj.cell 
                                                             _Type.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FuturesRateHelper>) l
 
@@ -173,6 +183,7 @@ module FuturesRateHelperFunction =
                                                ;  _i.source
                                                ;  _convAdj.source
                                                ;  _Type.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _price.cell
@@ -180,6 +191,7 @@ module FuturesRateHelperFunction =
                                 ;  _i.cell
                                 ;  _convAdj.cell
                                 ;  _Type.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -211,6 +223,8 @@ module FuturesRateHelperFunction =
          convAdj : obj)
         ([<ExcelArgument(Name="Type",Description = "Futures.Type: IMM, ASX")>] 
          Type : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -222,6 +236,7 @@ module FuturesRateHelperFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _convAdj = Helper.toDefault<double> convAdj "convAdj" 0.0
                 let _Type = Helper.toCell<Futures.Type> Type "Type" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FuturesRateHelper3
                                                             _price.cell 
                                                             _iborStartDate.cell 
@@ -229,6 +244,7 @@ module FuturesRateHelperFunction =
                                                             _dayCounter.cell 
                                                             _convAdj.cell 
                                                             _Type.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FuturesRateHelper>) l
 
@@ -239,6 +255,7 @@ module FuturesRateHelperFunction =
                                                ;  _dayCounter.source
                                                ;  _convAdj.source
                                                ;  _Type.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _price.cell
@@ -247,6 +264,7 @@ module FuturesRateHelperFunction =
                                 ;  _dayCounter.cell
                                 ;  _convAdj.cell
                                 ;  _Type.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -278,6 +296,8 @@ module FuturesRateHelperFunction =
          convAdj : obj)
         ([<ExcelArgument(Name="Type",Description = "Futures.Type: IMM, ASX")>] 
          Type : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -289,6 +309,7 @@ module FuturesRateHelperFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _convAdj = Helper.toHandle<Quote> convAdj "convAdj" 
                 let _Type = Helper.toCell<Futures.Type> Type "Type" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FuturesRateHelper4
                                                             _price.cell 
                                                             _iborStartDate.cell 
@@ -296,6 +317,7 @@ module FuturesRateHelperFunction =
                                                             _dayCounter.cell 
                                                             _convAdj.cell 
                                                             _Type.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FuturesRateHelper>) l
 
@@ -306,6 +328,7 @@ module FuturesRateHelperFunction =
                                                ;  _dayCounter.source
                                                ;  _convAdj.source
                                                ;  _Type.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _price.cell
@@ -314,6 +337,7 @@ module FuturesRateHelperFunction =
                                 ;  _dayCounter.cell
                                 ;  _convAdj.cell
                                 ;  _Type.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -351,6 +375,8 @@ module FuturesRateHelperFunction =
          convexityAdjustment : obj)
         ([<ExcelArgument(Name="Type",Description = "Futures.Type: IMM, ASX")>] 
          Type : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -365,6 +391,7 @@ module FuturesRateHelperFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _convexityAdjustment = Helper.toDefault<double> convexityAdjustment "convexityAdjustment" 0.0
                 let _Type = Helper.toCell<Futures.Type> Type "Type" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FuturesRateHelper5 
                                                             _price.cell 
                                                             _iborStartDate.cell 
@@ -375,6 +402,7 @@ module FuturesRateHelperFunction =
                                                             _dayCounter.cell 
                                                             _convexityAdjustment.cell 
                                                             _Type.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FuturesRateHelper>) l
 
@@ -388,6 +416,7 @@ module FuturesRateHelperFunction =
                                                ;  _dayCounter.source
                                                ;  _convexityAdjustment.source
                                                ;  _Type.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _price.cell
@@ -399,6 +428,7 @@ module FuturesRateHelperFunction =
                                 ;  _dayCounter.cell
                                 ;  _convexityAdjustment.cell
                                 ;  _Type.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -436,6 +466,8 @@ module FuturesRateHelperFunction =
          convAdj : obj)
         ([<ExcelArgument(Name="Type",Description = "Futures.Type: IMM, ASX")>] 
          Type : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -450,6 +482,7 @@ module FuturesRateHelperFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _convAdj = Helper.toHandle<Quote> convAdj "convAdj" 
                 let _Type = Helper.toCell<Futures.Type> Type "Type" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FuturesRateHelper
                                                             _price.cell 
                                                             _iborStartDate.cell 
@@ -460,6 +493,7 @@ module FuturesRateHelperFunction =
                                                             _dayCounter.cell 
                                                             _convAdj.cell 
                                                             _Type.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FuturesRateHelper>) l
 
@@ -473,6 +507,7 @@ module FuturesRateHelperFunction =
                                                ;  _dayCounter.source
                                                ;  _convAdj.source
                                                ;  _Type.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _price.cell
@@ -484,6 +519,7 @@ module FuturesRateHelperFunction =
                                 ;  _dayCounter.cell
                                 ;  _convAdj.cell
                                 ;  _Type.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -1037,16 +1073,16 @@ module FuturesRateHelperFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<FuturesRateHelper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<FuturesRateHelper> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<FuturesRateHelper> (c)) :> ICell
                 let format (i : Generic.List<ICell<FuturesRateHelper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<FuturesRateHelper>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<FuturesRateHelper>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

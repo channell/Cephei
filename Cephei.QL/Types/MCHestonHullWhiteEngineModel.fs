@@ -42,12 +42,15 @@ type MCHestonHullWhiteEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (new : u
     , requiredTolerance                            : ICell<Nullable<double>>
     , maxSamples                                   : ICell<Nullable<int>>
     , seed                                         : ICell<uint64>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<MCHestonHullWhiteEngine<'RNG,'S>> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
     let _timeSteps                                 = timeSteps
     let _timeStepsPerYear                          = timeStepsPerYear
@@ -61,7 +64,7 @@ type MCHestonHullWhiteEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (new : u
     Functions
 *)
     let mutable
-        _MCHestonHullWhiteEngine                   = cell (fun () -> new MCHestonHullWhiteEngine<'RNG,'S> (Process.Value, timeSteps.Value, timeStepsPerYear.Value, antitheticVariate.Value, controlVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))
+        _MCHestonHullWhiteEngine                   = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new MCHestonHullWhiteEngine<'RNG,'S> (Process.Value, timeSteps.Value, timeStepsPerYear.Value, antitheticVariate.Value, controlVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))))
     do this.Bind(_MCHestonHullWhiteEngine)
 
 (* 

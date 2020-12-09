@@ -40,12 +40,15 @@ type NumericHaganPricerModel
     , upperLimit                                   : ICell<double>
     , precision                                    : ICell<double>
     , hardUpperLimit                               : ICell<double>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<NumericHaganPricer> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _swaptionVol                               = swaptionVol
     let _modelOfYieldCurve                         = modelOfYieldCurve
     let _meanReversion                             = meanReversion
@@ -57,49 +60,52 @@ type NumericHaganPricerModel
     Functions
 *)
     let mutable
-        _NumericHaganPricer                        = cell (fun () -> new NumericHaganPricer (swaptionVol.Value, modelOfYieldCurve.Value, meanReversion.Value, lowerLimit.Value, upperLimit.Value, precision.Value, hardUpperLimit.Value))
+        _NumericHaganPricer                        = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new NumericHaganPricer (swaptionVol.Value, modelOfYieldCurve.Value, meanReversion.Value, lowerLimit.Value, upperLimit.Value, precision.Value, hardUpperLimit.Value))))
     let _integrate                                 (a : ICell<double>) (b : ICell<double>) (integrand : ICell<NumericHaganPricer.ConundrumIntegrand>)   
-                                                   = triv (fun () -> _NumericHaganPricer.Value.integrate(a.Value, b.Value, integrand.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _NumericHaganPricer).Value.integrate(a.Value, b.Value, integrand.Value))
     let _refineIntegration                         (integralValue : ICell<double>) (integrand : ICell<NumericHaganPricer.ConundrumIntegrand>)   
-                                                   = triv (fun () -> _NumericHaganPricer.Value.refineIntegration(integralValue.Value, integrand.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _NumericHaganPricer).Value.refineIntegration(integralValue.Value, integrand.Value))
     let _resetUpperLimit                           (stdDeviationsForUpperLimit : ICell<double>)   
-                                                   = triv (fun () -> _NumericHaganPricer.Value.resetUpperLimit(stdDeviationsForUpperLimit.Value))
-    let _stdDeviations                             = triv (fun () -> _NumericHaganPricer.Value.stdDeviations())
-    let _swapletPrice                              = triv (fun () -> _NumericHaganPricer.Value.swapletPrice())
-    let _upperLimit                                = triv (fun () -> _NumericHaganPricer.Value.upperLimit())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _NumericHaganPricer).Value.resetUpperLimit(stdDeviationsForUpperLimit.Value))
+    let _stdDeviations                             = triv (fun () -> (curryEvaluationDate _evaluationDate _NumericHaganPricer).Value.stdDeviations())
+    let _swapletPrice                              = triv (fun () -> (curryEvaluationDate _evaluationDate _NumericHaganPricer).Value.swapletPrice())
+    let _upperLimit                                = triv (fun () -> (curryEvaluationDate _evaluationDate _NumericHaganPricer).Value.upperLimit())
     let _capletPrice                               (effectiveCap : ICell<double>)   
-                                                   = triv (fun () -> _NumericHaganPricer.Value.capletPrice(effectiveCap.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _NumericHaganPricer).Value.capletPrice(effectiveCap.Value))
     let _capletRate                                (effectiveCap : ICell<double>)   
-                                                   = triv (fun () -> _NumericHaganPricer.Value.capletRate(effectiveCap.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _NumericHaganPricer).Value.capletRate(effectiveCap.Value))
     let _floorletPrice                             (effectiveFloor : ICell<double>)   
-                                                   = triv (fun () -> _NumericHaganPricer.Value.floorletPrice(effectiveFloor.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _NumericHaganPricer).Value.floorletPrice(effectiveFloor.Value))
     let _floorletRate                              (effectiveFloor : ICell<double>)   
-                                                   = triv (fun () -> _NumericHaganPricer.Value.floorletRate(effectiveFloor.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _NumericHaganPricer).Value.floorletRate(effectiveFloor.Value))
     let _initialize                                (coupon : ICell<FloatingRateCoupon>)   
-                                                   = triv (fun () -> _NumericHaganPricer.Value.initialize(coupon.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _NumericHaganPricer).Value.initialize(coupon.Value)
                                                                      _NumericHaganPricer.Value)
-    let _meanReversion                             = triv (fun () -> _NumericHaganPricer.Value.meanReversion())
+    let _meanReversion                             = triv (fun () -> (curryEvaluationDate _evaluationDate _NumericHaganPricer).Value.meanReversion())
     let _setMeanReversion                          (meanReversion : ICell<Handle<Quote>>)   
-                                                   = triv (fun () -> _NumericHaganPricer.Value.setMeanReversion(meanReversion.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _NumericHaganPricer).Value.setMeanReversion(meanReversion.Value)
                                                                      _NumericHaganPricer.Value)
-    let _swapletRate                               = triv (fun () -> _NumericHaganPricer.Value.swapletRate())
+    let _swapletRate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _NumericHaganPricer).Value.swapletRate())
     let _setSwaptionVolatility                     (v : ICell<Handle<SwaptionVolatilityStructure>>)   
-                                                   = triv (fun () -> _NumericHaganPricer.Value.setSwaptionVolatility(v.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _NumericHaganPricer).Value.setSwaptionVolatility(v.Value)
                                                                      _NumericHaganPricer.Value)
-    let _swaptionVolatility                        = triv (fun () -> _NumericHaganPricer.Value.swaptionVolatility())
+    let _swaptionVolatility                        = triv (fun () -> (curryEvaluationDate _evaluationDate _NumericHaganPricer).Value.swaptionVolatility())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _NumericHaganPricer.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _NumericHaganPricer).Value.registerWith(handler.Value)
                                                                      _NumericHaganPricer.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _NumericHaganPricer.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _NumericHaganPricer).Value.unregisterWith(handler.Value)
                                                                      _NumericHaganPricer.Value)
-    let _update                                    = triv (fun () -> _NumericHaganPricer.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _NumericHaganPricer).Value.update()
                                                                      _NumericHaganPricer.Value)
     do this.Bind(_NumericHaganPricer)
 (* 
     casting 
 *)
-    internal new () = new NumericHaganPricerModel(null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new NumericHaganPricerModel(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _NumericHaganPricer <- v
     static member Cast (p : ICell<NumericHaganPricer>) = 
         if p :? NumericHaganPricerModel then 
@@ -107,6 +113,7 @@ type NumericHaganPricerModel
         else
             let o = new NumericHaganPricerModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

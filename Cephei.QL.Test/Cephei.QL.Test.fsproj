@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Zero.fs" />
     <Compile Include="TestBond.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>

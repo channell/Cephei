@@ -963,6 +963,9 @@ module LiborForwardModelProcessFunction =
          size : obj)
         ([<ExcelArgument(Name="index",Description = "IborIndex")>] 
          index : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+         evaluationDate : obj)
+
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -970,19 +973,23 @@ module LiborForwardModelProcessFunction =
 
                 let _size = Helper.toCell<int> size "size" 
                 let _index = Helper.toCell<IborIndex> index "index" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.LiborForwardModelProcess1
                                                             _size.cell 
                                                             _index.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LiborForwardModelProcess>) l
 
                 let source () = Helper.sourceFold "Fun.LiborForwardModelProcess1" 
                                                [| _size.source
                                                ;  _index.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _size.cell
                                 ;  _index.cell
+                                ; _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -1008,6 +1015,8 @@ module LiborForwardModelProcessFunction =
          index : obj)
         ([<ExcelArgument(Name="disc",Description = "IDiscretization")>] 
          disc : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -1016,10 +1025,12 @@ module LiborForwardModelProcessFunction =
                 let _size = Helper.toCell<int> size "size" 
                 let _index = Helper.toCell<IborIndex> index "index" 
                 let _disc = Helper.toCell<IDiscretization> disc "disc" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.LiborForwardModelProcess
                                                             _size.cell 
                                                             _index.cell 
                                                             _disc.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LiborForwardModelProcess>) l
 
@@ -1027,11 +1038,13 @@ module LiborForwardModelProcessFunction =
                                                [| _size.source
                                                ;  _index.source
                                                ;  _disc.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _size.cell
                                 ;  _index.cell
                                 ;  _disc.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -1487,16 +1500,16 @@ module LiborForwardModelProcessFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<LiborForwardModelProcess> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<LiborForwardModelProcess> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<LiborForwardModelProcess> (c)) :> ICell
                 let format (i : Generic.List<ICell<LiborForwardModelProcess>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<LiborForwardModelProcess>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<LiborForwardModelProcess>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

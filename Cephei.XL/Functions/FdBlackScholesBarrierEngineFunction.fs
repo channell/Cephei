@@ -56,6 +56,8 @@ module FdBlackScholesBarrierEngineFunction =
          localVol : obj)
         ([<ExcelArgument(Name="illegalLocalVolOverwrite",Description = "double")>] 
          illegalLocalVolOverwrite : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -68,6 +70,7 @@ module FdBlackScholesBarrierEngineFunction =
                 let _schemeDesc = Helper.toDefault<FdmSchemeDesc> schemeDesc "schemeDesc" null
                 let _localVol = Helper.toDefault<bool> localVol "localVol" false
                 let _illegalLocalVolOverwrite = Helper.toNullable<double> illegalLocalVolOverwrite "illegalLocalVolOverwrite"
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FdBlackScholesBarrierEngine 
                                                             _Process.cell 
                                                             _tGrid.cell 
@@ -76,6 +79,7 @@ module FdBlackScholesBarrierEngineFunction =
                                                             _schemeDesc.cell 
                                                             _localVol.cell 
                                                             _illegalLocalVolOverwrite.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FdBlackScholesBarrierEngine>) l
 
@@ -87,6 +91,7 @@ module FdBlackScholesBarrierEngineFunction =
                                                ;  _schemeDesc.source
                                                ;  _localVol.source
                                                ;  _illegalLocalVolOverwrite.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Process.cell
@@ -96,6 +101,7 @@ module FdBlackScholesBarrierEngineFunction =
                                 ;  _schemeDesc.cell
                                 ;  _localVol.cell
                                 ;  _illegalLocalVolOverwrite.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -125,16 +131,16 @@ module FdBlackScholesBarrierEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<FdBlackScholesBarrierEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<FdBlackScholesBarrierEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<FdBlackScholesBarrierEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<FdBlackScholesBarrierEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<FdBlackScholesBarrierEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<FdBlackScholesBarrierEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

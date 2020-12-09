@@ -34,23 +34,29 @@ open Cephei.QLNetHelper
 [<AutoSerializable(true)>]
 type AnalyticDoubleBarrierBinaryEngineModel
     ( Process                                      : ICell<GeneralizedBlackScholesProcess>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<AnalyticDoubleBarrierBinaryEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
 (*
     Functions
 *)
     let mutable
-        _AnalyticDoubleBarrierBinaryEngine         = cell (fun () -> new AnalyticDoubleBarrierBinaryEngine (Process.Value))
+        _AnalyticDoubleBarrierBinaryEngine         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticDoubleBarrierBinaryEngine (Process.Value))))
     do this.Bind(_AnalyticDoubleBarrierBinaryEngine)
 (* 
     casting 
 *)
-    internal new () = new AnalyticDoubleBarrierBinaryEngineModel(null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new AnalyticDoubleBarrierBinaryEngineModel(null,null)
     member internal this.Inject v = _AnalyticDoubleBarrierBinaryEngine <- v
     static member Cast (p : ICell<AnalyticDoubleBarrierBinaryEngine>) = 
         if p :? AnalyticDoubleBarrierBinaryEngineModel then 
@@ -58,6 +64,7 @@ type AnalyticDoubleBarrierBinaryEngineModel
         else
             let o = new AnalyticDoubleBarrierBinaryEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

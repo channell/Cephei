@@ -118,6 +118,13 @@ namespace Cephei.Cell
         /// <typeparam name="Base"></typeparam>
         /// <returns></returns>
         bool ValueIs<Base>();
+
+        /// <summary>
+        /// Get the status of the cell
+        /// </summary>
+        CellState State { get; }
+
+        Exception Error { get; }
     }
 
     /// <summary>
@@ -450,6 +457,14 @@ namespace Cephei.Cell
                 }
             }
             return changed;
+        }
+
+        public static void Dispatch (Action a)
+        {
+            if (Parellel)
+                System.Threading.Tasks.Task.Run(a);
+            else
+                a();
         }
     }
 }

@@ -33,42 +33,49 @@ Missing Constructor
   </summary> *)
 [<AutoSerializable(true)>]
 type InflationCouponPricerModel
-    () as this =
+    ( evaluationDate                               : ICell<Date>
+    ) as this =
     inherit Model<InflationCouponPricer> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
 (*
     Functions
 *)
     let mutable
-        _InflationCouponPricer                     = cell (fun () -> new InflationCouponPricer ())
+        _InflationCouponPricer                     = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new InflationCouponPricer ())))
     let _capletPrice                               (effectiveCap : ICell<double>)   
-                                                   = triv (fun () -> _InflationCouponPricer.Value.capletPrice(effectiveCap.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InflationCouponPricer).Value.capletPrice(effectiveCap.Value))
     let _capletRate                                (effectiveCap : ICell<double>)   
-                                                   = triv (fun () -> _InflationCouponPricer.Value.capletRate(effectiveCap.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InflationCouponPricer).Value.capletRate(effectiveCap.Value))
     let _floorletPrice                             (effectiveFloor : ICell<double>)   
-                                                   = triv (fun () -> _InflationCouponPricer.Value.floorletPrice(effectiveFloor.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InflationCouponPricer).Value.floorletPrice(effectiveFloor.Value))
     let _floorletRate                              (effectiveFloor : ICell<double>)   
-                                                   = triv (fun () -> _InflationCouponPricer.Value.floorletRate(effectiveFloor.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InflationCouponPricer).Value.floorletRate(effectiveFloor.Value))
     let _initialize                                (i : ICell<InflationCoupon>)   
-                                                   = triv (fun () -> _InflationCouponPricer.Value.initialize(i.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InflationCouponPricer).Value.initialize(i.Value)
                                                                      _InflationCouponPricer.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _InflationCouponPricer.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InflationCouponPricer).Value.registerWith(handler.Value)
                                                                      _InflationCouponPricer.Value)
-    let _swapletPrice                              = triv (fun () -> _InflationCouponPricer.Value.swapletPrice())
-    let _swapletRate                               = triv (fun () -> _InflationCouponPricer.Value.swapletRate())
+    let _swapletPrice                              = triv (fun () -> (curryEvaluationDate _evaluationDate _InflationCouponPricer).Value.swapletPrice())
+    let _swapletRate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _InflationCouponPricer).Value.swapletRate())
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _InflationCouponPricer.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InflationCouponPricer).Value.unregisterWith(handler.Value)
                                                                      _InflationCouponPricer.Value)
-    let _update                                    = triv (fun () -> _InflationCouponPricer.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _InflationCouponPricer).Value.update()
                                                                      _InflationCouponPricer.Value)
     do this.Bind(_InflationCouponPricer)
 (* 
     casting 
 *)
     
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new InflationCouponPricerModel(null)
     member internal this.Inject v = _InflationCouponPricer <- v
     static member Cast (p : ICell<InflationCouponPricer>) = 
         if p :? InflationCouponPricerModel then 
@@ -76,6 +83,7 @@ type InflationCouponPricerModel
         else
             let o = new InflationCouponPricerModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

@@ -51,6 +51,8 @@ module BinomialBarrierEngineFunction =
          timeSteps : obj)
         ([<ExcelArgument(Name="maxTimeSteps",Description = "int or empty")>] 
          maxTimeSteps : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -61,12 +63,14 @@ module BinomialBarrierEngineFunction =
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _maxTimeSteps = Helper.toDefault<int> maxTimeSteps "maxTimeSteps" 0
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.BinomialBarrierEngine 
                                                             _getTree.cell 
                                                             _getAsset.cell 
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _maxTimeSteps.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BinomialBarrierEngine>) l
 
@@ -76,6 +80,7 @@ module BinomialBarrierEngineFunction =
                                                ;  _Process.source
                                                ;  _timeSteps.source
                                                ;  _maxTimeSteps.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _getTree.cell
@@ -83,6 +88,7 @@ module BinomialBarrierEngineFunction =
                                 ;  _Process.cell
                                 ;  _timeSteps.cell
                                 ;  _maxTimeSteps.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -231,16 +237,16 @@ module BinomialBarrierEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<BinomialBarrierEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<BinomialBarrierEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<BinomialBarrierEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<BinomialBarrierEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<BinomialBarrierEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<BinomialBarrierEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

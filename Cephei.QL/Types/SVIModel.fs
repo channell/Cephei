@@ -51,7 +51,7 @@ type SVIModel
     , errorAccept                                  : ICell<double>
     , useMaxError                                  : ICell<bool>
     , maxGuesses                                   : ICell<int>
-    , addParams                                    : ICell<List<Nullable<double>>>
+    , addParams                                    : ICell<Generic.List<Nullable<double>>>
     ) as this =
 
     inherit Model<SVI> ()

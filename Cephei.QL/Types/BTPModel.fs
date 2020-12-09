@@ -58,7 +58,7 @@ type BTPModel
     Functions
 *)
     let mutable
-        _BTP                                       = cell (fun () -> withEngine pricingEngine (new BTP (maturityDate.Value, fixedRate.Value, redemption.Value, startDate.Value, issueDate.Value)))
+        _BTP                                       = cell (fun () -> withEngine pricingEngine evaluationDate (new BTP (maturityDate.Value, fixedRate.Value, redemption.Value, startDate.Value, issueDate.Value)))
     let _accruedAmount                             (d : ICell<Date>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _BTP).accruedAmount(d.Value))
     let _yield                                     (cleanPrice : ICell<double>) (settlementDate : ICell<Date>) (accuracy : ICell<double>) (maxEvaluations : ICell<int>)   
@@ -213,7 +213,7 @@ type BTPModel1
     Functions
 *)
     let mutable
-        _BTP                                       = cell (fun () -> withEngine pricingEngine (new BTP (maturityDate.Value, fixedRate.Value, startDate.Value, issueDate.Value)))
+        _BTP                                       = cell (fun () -> withEngine pricingEngine evaluationDate (new BTP (maturityDate.Value, fixedRate.Value, startDate.Value, issueDate.Value)))
     let _accruedAmount                             (d : ICell<Date>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _BTP).accruedAmount(d.Value))
     let _yield                                     (cleanPrice : ICell<double>) (settlementDate : ICell<Date>) (accuracy : ICell<double>) (maxEvaluations : ICell<int>)   

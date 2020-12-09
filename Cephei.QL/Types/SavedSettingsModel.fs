@@ -33,23 +33,30 @@ helper class to temporarily and safely change the settings
   </summary> *)
 [<AutoSerializable(true)>]
 type SavedSettingsModel
-    () as this =
+    ( evaluationDate                               : ICell<Date>
+    ) as this =
     inherit Model<SavedSettings> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
 (*
     Functions
 *)
     let mutable
-        _SavedSettings                             = cell (fun () -> new SavedSettings ())
-    let _Dispose                                   = triv (fun () -> _SavedSettings.Value.Dispose()
+        _SavedSettings                             = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new SavedSettings ())))
+    let _Dispose                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SavedSettings).Value.Dispose()
                                                                      _SavedSettings.Value)
     do this.Bind(_SavedSettings)
 (* 
     casting 
 *)
     
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new SavedSettingsModel(null)
     member internal this.Inject v = _SavedSettings <- v
     static member Cast (p : ICell<SavedSettings>) = 
         if p :? SavedSettingsModel then 
@@ -57,6 +64,7 @@ type SavedSettingsModel
         else
             let o = new SavedSettingsModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

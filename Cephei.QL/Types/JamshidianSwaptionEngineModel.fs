@@ -34,36 +34,42 @@ open Cephei.QLNetHelper
 [<AutoSerializable(true)>]
 type JamshidianSwaptionEngineModel
     ( model                                        : ICell<OneFactorAffineModel>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<JamshidianSwaptionEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _model                                     = model
 (*
     Functions
 *)
     let mutable
-        _JamshidianSwaptionEngine                  = cell (fun () -> new JamshidianSwaptionEngine (model.Value))
+        _JamshidianSwaptionEngine                  = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new JamshidianSwaptionEngine (model.Value))))
     let _setModel                                  (model : ICell<Handle<OneFactorAffineModel>>)   
-                                                   = triv (fun () -> _JamshidianSwaptionEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _JamshidianSwaptionEngine).Value.setModel(model.Value)
                                                                      _JamshidianSwaptionEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _JamshidianSwaptionEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _JamshidianSwaptionEngine).Value.registerWith(handler.Value)
                                                                      _JamshidianSwaptionEngine.Value)
-    let _reset                                     = triv (fun () -> _JamshidianSwaptionEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _JamshidianSwaptionEngine).Value.reset()
                                                                      _JamshidianSwaptionEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _JamshidianSwaptionEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _JamshidianSwaptionEngine).Value.unregisterWith(handler.Value)
                                                                      _JamshidianSwaptionEngine.Value)
-    let _update                                    = triv (fun () -> _JamshidianSwaptionEngine.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _JamshidianSwaptionEngine).Value.update()
                                                                      _JamshidianSwaptionEngine.Value)
     do this.Bind(_JamshidianSwaptionEngine)
 (* 
     casting 
 *)
-    internal new () = new JamshidianSwaptionEngineModel(null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new JamshidianSwaptionEngineModel(null,null)
     member internal this.Inject v = _JamshidianSwaptionEngine <- v
     static member Cast (p : ICell<JamshidianSwaptionEngine>) = 
         if p :? JamshidianSwaptionEngineModel then 
@@ -71,6 +77,7 @@ type JamshidianSwaptionEngineModel
         else
             let o = new JamshidianSwaptionEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -95,37 +102,43 @@ type JamshidianSwaptionEngineModel
 type JamshidianSwaptionEngineModel1
     ( model                                        : ICell<OneFactorAffineModel>
     , termStructure                                : ICell<Handle<YieldTermStructure>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<JamshidianSwaptionEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _model                                     = model
     let _termStructure                             = termStructure
 (*
     Functions
 *)
     let mutable
-        _JamshidianSwaptionEngine                  = cell (fun () -> new JamshidianSwaptionEngine (model.Value, termStructure.Value))
+        _JamshidianSwaptionEngine                  = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new JamshidianSwaptionEngine (model.Value, termStructure.Value))))
     let _setModel                                  (model : ICell<Handle<OneFactorAffineModel>>)   
-                                                   = triv (fun () -> _JamshidianSwaptionEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _JamshidianSwaptionEngine).Value.setModel(model.Value)
                                                                      _JamshidianSwaptionEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _JamshidianSwaptionEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _JamshidianSwaptionEngine).Value.registerWith(handler.Value)
                                                                      _JamshidianSwaptionEngine.Value)
-    let _reset                                     = triv (fun () -> _JamshidianSwaptionEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _JamshidianSwaptionEngine).Value.reset()
                                                                      _JamshidianSwaptionEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _JamshidianSwaptionEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _JamshidianSwaptionEngine).Value.unregisterWith(handler.Value)
                                                                      _JamshidianSwaptionEngine.Value)
-    let _update                                    = triv (fun () -> _JamshidianSwaptionEngine.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _JamshidianSwaptionEngine).Value.update()
                                                                      _JamshidianSwaptionEngine.Value)
     do this.Bind(_JamshidianSwaptionEngine)
 (* 
     casting 
 *)
-    internal new () = new JamshidianSwaptionEngineModel1(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new JamshidianSwaptionEngineModel1(null,null,null)
     member internal this.Inject v = _JamshidianSwaptionEngine <- v
     static member Cast (p : ICell<JamshidianSwaptionEngine>) = 
         if p :? JamshidianSwaptionEngineModel1 then 
@@ -133,6 +146,7 @@ type JamshidianSwaptionEngineModel1
         else
             let o = new JamshidianSwaptionEngineModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

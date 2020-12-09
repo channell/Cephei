@@ -35,24 +35,30 @@ open Cephei.QLNetHelper
 type DiscountingBasisSwapEngineModel
     ( discountCurve1                               : ICell<Handle<YieldTermStructure>>
     , discountCurve2                               : ICell<Handle<YieldTermStructure>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<DiscountingBasisSwapEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _discountCurve1                            = discountCurve1
     let _discountCurve2                            = discountCurve2
 (*
     Functions
 *)
     let mutable
-        _DiscountingBasisSwapEngine                = cell (fun () -> new DiscountingBasisSwapEngine (discountCurve1.Value, discountCurve2.Value))
+        _DiscountingBasisSwapEngine                = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new DiscountingBasisSwapEngine (discountCurve1.Value, discountCurve2.Value))))
     do this.Bind(_DiscountingBasisSwapEngine)
 (* 
     casting 
 *)
-    internal new () = new DiscountingBasisSwapEngineModel(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new DiscountingBasisSwapEngineModel(null,null,null)
     member internal this.Inject v = _DiscountingBasisSwapEngine <- v
     static member Cast (p : ICell<DiscountingBasisSwapEngine>) = 
         if p :? DiscountingBasisSwapEngineModel then 
@@ -60,6 +66,7 @@ type DiscountingBasisSwapEngineModel
         else
             let o = new DiscountingBasisSwapEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

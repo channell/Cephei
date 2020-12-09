@@ -36,12 +36,15 @@ type SviSmileSectionModel
     ( timeToExpiry                                 : ICell<double>
     , forward                                      : ICell<double>
     , sviParameters                                : ICell<Generic.List<double>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<SviSmileSection> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _timeToExpiry                              = timeToExpiry
     let _forward                                   = forward
     let _sviParameters                             = sviParameters
@@ -49,39 +52,42 @@ type SviSmileSectionModel
     Functions
 *)
     let mutable
-        _SviSmileSection                           = cell (fun () -> new SviSmileSection (timeToExpiry.Value, forward.Value, sviParameters.Value))
-    let _atmLevel                                  = triv (fun () -> _SviSmileSection.Value.atmLevel())
-    let _init                                      = triv (fun () -> _SviSmileSection.Value.init()
+        _SviSmileSection                           = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new SviSmileSection (timeToExpiry.Value, forward.Value, sviParameters.Value))))
+    let _atmLevel                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.atmLevel())
+    let _init                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.init()
                                                                      _SviSmileSection.Value)
-    let _maxStrike                                 = triv (fun () -> _SviSmileSection.Value.maxStrike())
-    let _minStrike                                 = triv (fun () -> _SviSmileSection.Value.minStrike())
-    let _dayCounter                                = triv (fun () -> _SviSmileSection.Value.dayCounter())
+    let _maxStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.maxStrike())
+    let _minStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.minStrike())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.dayCounter())
     let _density                                   (strike : ICell<double>) (discount : ICell<double>) (gap : ICell<double>)   
-                                                   = triv (fun () -> _SviSmileSection.Value.density(strike.Value, discount.Value, gap.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.density(strike.Value, discount.Value, gap.Value))
     let _digitalOptionPrice                        (strike : ICell<double>) (Type : ICell<Option.Type>) (discount : ICell<double>) (gap : ICell<double>)   
-                                                   = triv (fun () -> _SviSmileSection.Value.digitalOptionPrice(strike.Value, Type.Value, discount.Value, gap.Value))
-    let _exerciseDate                              = triv (fun () -> _SviSmileSection.Value.exerciseDate())
-    let _exerciseTime                              = triv (fun () -> _SviSmileSection.Value.exerciseTime())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.digitalOptionPrice(strike.Value, Type.Value, discount.Value, gap.Value))
+    let _exerciseDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.exerciseDate())
+    let _exerciseTime                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.exerciseTime())
     let _optionPrice                               (strike : ICell<double>) (Type : ICell<Option.Type>) (discount : ICell<double>)   
-                                                   = triv (fun () -> _SviSmileSection.Value.optionPrice(strike.Value, Type.Value, discount.Value))
-    let _referenceDate                             = triv (fun () -> _SviSmileSection.Value.referenceDate())
-    let _shift                                     = triv (fun () -> _SviSmileSection.Value.shift())
-    let _update                                    = triv (fun () -> _SviSmileSection.Value.update()
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.optionPrice(strike.Value, Type.Value, discount.Value))
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.referenceDate())
+    let _shift                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.shift())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.update()
                                                                      _SviSmileSection.Value)
     let _variance                                  (strike : ICell<double>)   
-                                                   = triv (fun () -> _SviSmileSection.Value.variance(strike.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.variance(strike.Value))
     let _vega                                      (strike : ICell<double>) (discount : ICell<double>)   
-                                                   = triv (fun () -> _SviSmileSection.Value.vega(strike.Value, discount.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.vega(strike.Value, discount.Value))
     let _volatility                                (strike : ICell<double>) (volatilityType : ICell<VolatilityType>) (shift : ICell<double>)   
-                                                   = triv (fun () -> _SviSmileSection.Value.volatility(strike.Value, volatilityType.Value, shift.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.volatility(strike.Value, volatilityType.Value, shift.Value))
     let _volatility1                               (strike : ICell<double>)   
-                                                   = triv (fun () -> _SviSmileSection.Value.volatility(strike.Value))
-    let _volatilityType                            = triv (fun () -> _SviSmileSection.Value.volatilityType())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.volatility(strike.Value))
+    let _volatilityType                            = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.volatilityType())
     do this.Bind(_SviSmileSection)
 (* 
     casting 
 *)
-    internal new () = new SviSmileSectionModel(null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new SviSmileSectionModel(null,null,null,null)
     member internal this.Inject v = _SviSmileSection <- v
     static member Cast (p : ICell<SviSmileSection>) = 
         if p :? SviSmileSectionModel then 
@@ -89,6 +95,7 @@ type SviSmileSectionModel
         else
             let o = new SviSmileSectionModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -134,12 +141,15 @@ type SviSmileSectionModel1
     , forward                                      : ICell<double>
     , sviParameters                                : ICell<Generic.List<double>>
     , dc                                           : ICell<DayCounter>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<SviSmileSection> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _d                                         = d
     let _forward                                   = forward
     let _sviParameters                             = sviParameters
@@ -148,39 +158,42 @@ type SviSmileSectionModel1
     Functions
 *)
     let mutable
-        _SviSmileSection                           = cell (fun () -> new SviSmileSection (d.Value, forward.Value, sviParameters.Value, dc.Value))
-    let _atmLevel                                  = triv (fun () -> _SviSmileSection.Value.atmLevel())
-    let _init                                      = triv (fun () -> _SviSmileSection.Value.init()
+        _SviSmileSection                           = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new SviSmileSection (d.Value, forward.Value, sviParameters.Value, dc.Value))))
+    let _atmLevel                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.atmLevel())
+    let _init                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.init()
                                                                      _SviSmileSection.Value)
-    let _maxStrike                                 = triv (fun () -> _SviSmileSection.Value.maxStrike())
-    let _minStrike                                 = triv (fun () -> _SviSmileSection.Value.minStrike())
-    let _dayCounter                                = triv (fun () -> _SviSmileSection.Value.dayCounter())
+    let _maxStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.maxStrike())
+    let _minStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.minStrike())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.dayCounter())
     let _density                                   (strike : ICell<double>) (discount : ICell<double>) (gap : ICell<double>)   
-                                                   = triv (fun () -> _SviSmileSection.Value.density(strike.Value, discount.Value, gap.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.density(strike.Value, discount.Value, gap.Value))
     let _digitalOptionPrice                        (strike : ICell<double>) (Type : ICell<Option.Type>) (discount : ICell<double>) (gap : ICell<double>)   
-                                                   = triv (fun () -> _SviSmileSection.Value.digitalOptionPrice(strike.Value, Type.Value, discount.Value, gap.Value))
-    let _exerciseDate                              = triv (fun () -> _SviSmileSection.Value.exerciseDate())
-    let _exerciseTime                              = triv (fun () -> _SviSmileSection.Value.exerciseTime())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.digitalOptionPrice(strike.Value, Type.Value, discount.Value, gap.Value))
+    let _exerciseDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.exerciseDate())
+    let _exerciseTime                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.exerciseTime())
     let _optionPrice                               (strike : ICell<double>) (Type : ICell<Option.Type>) (discount : ICell<double>)   
-                                                   = triv (fun () -> _SviSmileSection.Value.optionPrice(strike.Value, Type.Value, discount.Value))
-    let _referenceDate                             = triv (fun () -> _SviSmileSection.Value.referenceDate())
-    let _shift                                     = triv (fun () -> _SviSmileSection.Value.shift())
-    let _update                                    = triv (fun () -> _SviSmileSection.Value.update()
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.optionPrice(strike.Value, Type.Value, discount.Value))
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.referenceDate())
+    let _shift                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.shift())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.update()
                                                                      _SviSmileSection.Value)
     let _variance                                  (strike : ICell<double>)   
-                                                   = triv (fun () -> _SviSmileSection.Value.variance(strike.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.variance(strike.Value))
     let _vega                                      (strike : ICell<double>) (discount : ICell<double>)   
-                                                   = triv (fun () -> _SviSmileSection.Value.vega(strike.Value, discount.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.vega(strike.Value, discount.Value))
     let _volatility                                (strike : ICell<double>) (volatilityType : ICell<VolatilityType>) (shift : ICell<double>)   
-                                                   = triv (fun () -> _SviSmileSection.Value.volatility(strike.Value, volatilityType.Value, shift.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.volatility(strike.Value, volatilityType.Value, shift.Value))
     let _volatility1                               (strike : ICell<double>)   
-                                                   = triv (fun () -> _SviSmileSection.Value.volatility(strike.Value))
-    let _volatilityType                            = triv (fun () -> _SviSmileSection.Value.volatilityType())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.volatility(strike.Value))
+    let _volatilityType                            = triv (fun () -> (curryEvaluationDate _evaluationDate _SviSmileSection).Value.volatilityType())
     do this.Bind(_SviSmileSection)
 (* 
     casting 
 *)
-    internal new () = new SviSmileSectionModel1(null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new SviSmileSectionModel1(null,null,null,null,null)
     member internal this.Inject v = _SviSmileSection <- v
     static member Cast (p : ICell<SviSmileSection>) = 
         if p :? SviSmileSectionModel1 then 
@@ -188,6 +201,7 @@ type SviSmileSectionModel1
         else
             let o = new SviSmileSectionModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

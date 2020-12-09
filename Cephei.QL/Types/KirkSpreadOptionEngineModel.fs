@@ -36,12 +36,15 @@ type KirkSpreadOptionEngineModel
     ( process1                                     : ICell<BlackProcess>
     , process2                                     : ICell<BlackProcess>
     , correlation                                  : ICell<Handle<Quote>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<KirkSpreadOptionEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _process1                                  = process1
     let _process2                                  = process2
     let _correlation                               = correlation
@@ -49,12 +52,15 @@ type KirkSpreadOptionEngineModel
     Functions
 *)
     let mutable
-        _KirkSpreadOptionEngine                    = cell (fun () -> new KirkSpreadOptionEngine (process1.Value, process2.Value, correlation.Value))
+        _KirkSpreadOptionEngine                    = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new KirkSpreadOptionEngine (process1.Value, process2.Value, correlation.Value))))
     do this.Bind(_KirkSpreadOptionEngine)
 (* 
     casting 
 *)
-    internal new () = new KirkSpreadOptionEngineModel(null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new KirkSpreadOptionEngineModel(null,null,null,null)
     member internal this.Inject v = _KirkSpreadOptionEngine <- v
     static member Cast (p : ICell<KirkSpreadOptionEngine>) = 
         if p :? KirkSpreadOptionEngineModel then 
@@ -62,6 +68,7 @@ type KirkSpreadOptionEngineModel
         else
             let o = new KirkSpreadOptionEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

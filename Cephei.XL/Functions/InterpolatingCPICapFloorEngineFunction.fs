@@ -44,22 +44,28 @@ module InterpolatingCPICapFloorEngineFunction =
          mnemonic : string)
         ([<ExcelArgument(Name="priceSurf",Description = "CPICapFloorTermPriceSurface")>] 
          priceSurf : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
             try
 
                 let _priceSurf = Helper.toHandle<CPICapFloorTermPriceSurface> priceSurf "priceSurf" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatingCPICapFloorEngine 
                                                             _priceSurf.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterpolatingCPICapFloorEngine>) l
 
                 let source () = Helper.sourceFold "Fun.InterpolatingCPICapFloorEngine" 
                                                [| _priceSurf.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _priceSurf.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -125,16 +131,16 @@ module InterpolatingCPICapFloorEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<InterpolatingCPICapFloorEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<InterpolatingCPICapFloorEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<InterpolatingCPICapFloorEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<InterpolatingCPICapFloorEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<InterpolatingCPICapFloorEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<InterpolatingCPICapFloorEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

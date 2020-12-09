@@ -309,6 +309,8 @@ module InterpolatedSmileSectionFunction =
          Type : obj)
         ([<ExcelArgument(Name="shift",Description = "double or empty")>] 
          shift : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -322,6 +324,7 @@ module InterpolatedSmileSectionFunction =
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedSmileSection 
                                                             _timeToExpiry.cell 
                                                             _strikes.cell 
@@ -331,6 +334,7 @@ module InterpolatedSmileSectionFunction =
                                                             _dc.cell 
                                                             _Type.cell 
                                                             _shift.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterpolatedSmileSection>) l
 
@@ -343,6 +347,7 @@ module InterpolatedSmileSectionFunction =
                                                ;  _dc.source
                                                ;  _Type.source
                                                ;  _shift.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _timeToExpiry.cell
@@ -353,6 +358,7 @@ module InterpolatedSmileSectionFunction =
                                 ;  _dc.cell
                                 ;  _Type.cell
                                 ;  _shift.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -388,6 +394,8 @@ module InterpolatedSmileSectionFunction =
          Type : obj)
         ([<ExcelArgument(Name="shift",Description = "double or empty")>] 
          shift : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -401,6 +409,7 @@ module InterpolatedSmileSectionFunction =
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedSmileSection1 
                                                             _timeToExpiry.cell 
                                                             _strikes.cell 
@@ -410,6 +419,7 @@ module InterpolatedSmileSectionFunction =
                                                             _dc.cell 
                                                             _Type.cell 
                                                             _shift.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterpolatedSmileSection>) l
 
@@ -422,6 +432,7 @@ module InterpolatedSmileSectionFunction =
                                                ;  _dc.source
                                                ;  _Type.source
                                                ;  _shift.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _timeToExpiry.cell
@@ -432,6 +443,7 @@ module InterpolatedSmileSectionFunction =
                                 ;  _dc.cell
                                 ;  _Type.cell
                                 ;  _shift.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -469,6 +481,8 @@ module InterpolatedSmileSectionFunction =
          Type : obj)
         ([<ExcelArgument(Name="shift",Description = "double or empty")>] 
          shift : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -483,6 +497,7 @@ module InterpolatedSmileSectionFunction =
                 let _referenceDate = Helper.toDefault<Date> referenceDate "referenceDate" null
                 let _Type = Helper.toCell<VolatilityType> Type "Type" 
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedSmileSection2 
                                                             _d.cell 
                                                             _strikes.cell 
@@ -493,6 +508,7 @@ module InterpolatedSmileSectionFunction =
                                                             _referenceDate.cell 
                                                             _Type.cell 
                                                             _shift.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterpolatedSmileSection>) l
 
@@ -506,6 +522,7 @@ module InterpolatedSmileSectionFunction =
                                                ;  _referenceDate.source
                                                ;  _Type.source
                                                ;  _shift.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _d.cell
@@ -517,6 +534,7 @@ module InterpolatedSmileSectionFunction =
                                 ;  _referenceDate.cell
                                 ;  _Type.cell
                                 ;  _shift.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -552,6 +570,8 @@ module InterpolatedSmileSectionFunction =
          referenceDate : obj)
         ([<ExcelArgument(Name="shift",Description = "double or empty")>] 
          shift : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -565,6 +585,7 @@ module InterpolatedSmileSectionFunction =
                 let _interpolator = Helper.toDefault<'Interpolator> interpolator "interpolator" default(Interpolator)
                 let _referenceDate = Helper.toDefault<Date> referenceDate "referenceDate" null
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedSmileSection3 
                                                             _d.cell 
                                                             _strikes.cell 
@@ -574,6 +595,7 @@ module InterpolatedSmileSectionFunction =
                                                             _interpolator.cell 
                                                             _referenceDate.cell 
                                                             _shift.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterpolatedSmileSection>) l
 
@@ -586,6 +608,7 @@ module InterpolatedSmileSectionFunction =
                                                ;  _interpolator.source
                                                ;  _referenceDate.source
                                                ;  _shift.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _d.cell
@@ -596,6 +619,7 @@ module InterpolatedSmileSectionFunction =
                                 ;  _interpolator.cell
                                 ;  _referenceDate.cell
                                 ;  _shift.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -1591,16 +1615,16 @@ module InterpolatedSmileSectionFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<InterpolatedSmileSection> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<InterpolatedSmileSection> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<InterpolatedSmileSection> (c)) :> ICell
                 let format (i : Generic.List<ICell<InterpolatedSmileSection>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<InterpolatedSmileSection>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<InterpolatedSmileSection>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

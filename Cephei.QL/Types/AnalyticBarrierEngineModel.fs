@@ -34,23 +34,29 @@ open Cephei.QLNetHelper
 [<AutoSerializable(true)>]
 type AnalyticBarrierEngineModel
     ( Process                                      : ICell<GeneralizedBlackScholesProcess>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<AnalyticBarrierEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
 (*
     Functions
 *)
     let mutable
-        _AnalyticBarrierEngine                     = cell (fun () -> new AnalyticBarrierEngine (Process.Value))
+        _AnalyticBarrierEngine                     = cell (fun () -> (createEvaluationDate _evaluationDate (fun () -> (new AnalyticBarrierEngine (Process.Value)))))
     do this.Bind(_AnalyticBarrierEngine)
 (* 
     casting 
 *)
-    internal new () = new AnalyticBarrierEngineModel(null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new AnalyticBarrierEngineModel(null,null)
     member internal this.Inject v = _AnalyticBarrierEngine <- v
     static member Cast (p : ICell<AnalyticBarrierEngine>) = 
         if p :? AnalyticBarrierEngineModel then 
@@ -58,6 +64,7 @@ type AnalyticBarrierEngineModel
         else
             let o = new AnalyticBarrierEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

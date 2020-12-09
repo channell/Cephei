@@ -123,6 +123,8 @@ module ImpliedVolTermStructureFunction =
          originalTS : obj)
         ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -130,19 +132,23 @@ module ImpliedVolTermStructureFunction =
 
                 let _originalTS = Helper.toHandle<BlackVolTermStructure> originalTS "originalTS" 
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.ImpliedVolTermStructure 
                                                             _originalTS.cell 
                                                             _referenceDate.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ImpliedVolTermStructure>) l
 
                 let source () = Helper.sourceFold "Fun.ImpliedVolTermStructure" 
                                                [| _originalTS.source
                                                ;  _referenceDate.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _originalTS.cell
                                 ;  _referenceDate.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -280,16 +286,16 @@ module ImpliedVolTermStructureFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<ImpliedVolTermStructure> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<ImpliedVolTermStructure> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<ImpliedVolTermStructure> (c)) :> ICell
                 let format (i : Generic.List<ICell<ImpliedVolTermStructure>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<ImpliedVolTermStructure>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<ImpliedVolTermStructure>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

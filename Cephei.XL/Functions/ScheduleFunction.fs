@@ -595,6 +595,8 @@ module ScheduleFunction =
          firstDate : obj)
         ([<ExcelArgument(Name="nextToLastDate",Description = "Date or empty")>] 
          nextToLastDate : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -610,6 +612,7 @@ module ScheduleFunction =
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth"
                 let _firstDate = Helper.toDefault<Date> firstDate "firstDate" null
                 let _nextToLastDate = Helper.toDefault<Date> nextToLastDate "nextToLastDate" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.Schedule 
                                                             _effectiveDate.cell 
                                                             _terminationDate.cell 
@@ -621,6 +624,7 @@ module ScheduleFunction =
                                                             _endOfMonth.cell 
                                                             _firstDate.cell 
                                                             _nextToLastDate.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
 
@@ -635,6 +639,7 @@ module ScheduleFunction =
                                                ;  _endOfMonth.source
                                                ;  _firstDate.source
                                                ;  _nextToLastDate.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _effectiveDate.cell
@@ -647,6 +652,7 @@ module ScheduleFunction =
                                 ;  _endOfMonth.cell
                                 ;  _firstDate.cell
                                 ;  _nextToLastDate.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -666,19 +672,25 @@ module ScheduleFunction =
     let Schedule_create2
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.Schedule2 ()
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.Schedule2 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
 
                 let source () = Helper.sourceFold "Fun.Schedule2" 
-                                               [||]
+                                               [| _evaluationDate.source
+                                               |]
                 let hash = Helper.hashFold 
-                                [||]
+                                [|  _evaluationDate.cell
+                                |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
@@ -713,6 +725,8 @@ module ScheduleFunction =
          endOfMonth : obj)
         ([<ExcelArgument(Name="isRegular",Description = "bool or empty")>] 
          isRegular : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -726,6 +740,7 @@ module ScheduleFunction =
                 let _rule = Helper.toNullable<DateGeneration.Rule> rule "rule"
                 let _endOfMonth = Helper.toNullable<bool> endOfMonth "endOfMonth"
                 let _isRegular = Helper.toDefault<Generic.IList<bool>> isRegular "isRegular" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.Schedule1
                                                             _dates.cell 
                                                             _calendar.cell 
@@ -735,6 +750,7 @@ module ScheduleFunction =
                                                             _rule.cell 
                                                             _endOfMonth.cell 
                                                             _isRegular.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<Schedule>) l
 
@@ -747,6 +763,7 @@ module ScheduleFunction =
                                                ;  _rule.source
                                                ;  _endOfMonth.source
                                                ;  _isRegular.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _dates.cell
@@ -757,6 +774,7 @@ module ScheduleFunction =
                                 ;  _rule.cell
                                 ;  _endOfMonth.cell
                                 ;  _isRegular.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -1014,16 +1032,16 @@ module ScheduleFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<Schedule> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<Schedule> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<Schedule> (c)) :> ICell
                 let format (i : Generic.List<ICell<Schedule>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<Schedule>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<Schedule>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

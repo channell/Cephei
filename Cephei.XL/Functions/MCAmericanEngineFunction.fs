@@ -66,6 +66,8 @@ module MCAmericanEngineFunction =
          polynomType : obj)
         ([<ExcelArgument(Name="nCalibrationSamples",Description = "int")>] 
          nCalibrationSamples : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -83,6 +85,7 @@ module MCAmericanEngineFunction =
                 let _polynomOrder = Helper.toCell<int> polynomOrder "polynomOrder" 
                 let _polynomType = Helper.toCell<LsmBasisSystem.PolynomType> polynomType "polynomType" 
                 let _nCalibrationSamples = Helper.toCell<int> nCalibrationSamples "nCalibrationSamples" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.MCAmericanEngine 
                                                             _Process.cell 
                                                             _timeSteps.cell 
@@ -96,6 +99,7 @@ module MCAmericanEngineFunction =
                                                             _polynomOrder.cell 
                                                             _polynomType.cell 
                                                             _nCalibrationSamples.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MCAmericanEngine>) l
 
@@ -112,6 +116,7 @@ module MCAmericanEngineFunction =
                                                ;  _polynomOrder.source
                                                ;  _polynomType.source
                                                ;  _nCalibrationSamples.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Process.cell
@@ -126,6 +131,7 @@ module MCAmericanEngineFunction =
                                 ;  _polynomOrder.cell
                                 ;  _polynomType.cell
                                 ;  _nCalibrationSamples.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -155,16 +161,16 @@ module MCAmericanEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<MCAmericanEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<MCAmericanEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<MCAmericanEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<MCAmericanEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<MCAmericanEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<MCAmericanEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

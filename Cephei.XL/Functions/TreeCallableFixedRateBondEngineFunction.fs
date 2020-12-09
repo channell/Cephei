@@ -48,6 +48,8 @@ module TreeCallableFixedRateBondEngineFunction =
          timeSteps : obj)
         ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -56,10 +58,12 @@ module TreeCallableFixedRateBondEngineFunction =
                 let _model = Helper.toCell<ShortRateModel> model "model" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.TreeCallableFixedRateBondEngine 
                                                             _model.cell 
                                                             _timeSteps.cell 
                                                             _termStructure.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TreeCallableFixedRateBondEngine>) l
 
@@ -67,11 +71,13 @@ module TreeCallableFixedRateBondEngineFunction =
                                                [| _model.source
                                                ;  _timeSteps.source
                                                ;  _termStructure.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _model.cell
                                 ;  _timeSteps.cell
                                 ;  _termStructure.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -97,6 +103,8 @@ module TreeCallableFixedRateBondEngineFunction =
          timeGrid : obj)
         ([<ExcelArgument(Name="termStructure",Description = "YieldTermStructure")>] 
          termStructure : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -105,10 +113,12 @@ module TreeCallableFixedRateBondEngineFunction =
                 let _model = Helper.toCell<ShortRateModel> model "model" 
                 let _timeGrid = Helper.toCell<TimeGrid> timeGrid "timeGrid" 
                 let _termStructure = Helper.toHandle<YieldTermStructure> termStructure "termStructure" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.TreeCallableFixedRateBondEngine1 
                                                             _model.cell 
                                                             _timeGrid.cell 
                                                             _termStructure.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<TreeCallableFixedRateBondEngine>) l
 
@@ -116,11 +126,13 @@ module TreeCallableFixedRateBondEngineFunction =
                                                [| _model.source
                                                ;  _timeGrid.source
                                                ;  _termStructure.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _model.cell
                                 ;  _timeGrid.cell
                                 ;  _termStructure.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -350,16 +362,16 @@ module TreeCallableFixedRateBondEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<TreeCallableFixedRateBondEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<TreeCallableFixedRateBondEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<TreeCallableFixedRateBondEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<TreeCallableFixedRateBondEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<TreeCallableFixedRateBondEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<TreeCallableFixedRateBondEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

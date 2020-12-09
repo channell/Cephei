@@ -338,6 +338,8 @@ module InflationIndexFunction =
          availabilitiyLag : obj)
         ([<ExcelArgument(Name="currency",Description = "Currency")>] 
          currency : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -350,6 +352,7 @@ module InflationIndexFunction =
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
                 let _availabilitiyLag = Helper.toCell<Period> availabilitiyLag "availabilitiyLag" 
                 let _currency = Helper.toCell<Currency> currency "currency" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.InflationIndex 
                                                             _familyName.cell 
                                                             _region.cell 
@@ -358,6 +361,7 @@ module InflationIndexFunction =
                                                             _frequency.cell 
                                                             _availabilitiyLag.cell 
                                                             _currency.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InflationIndex>) l
 
@@ -369,6 +373,7 @@ module InflationIndexFunction =
                                                ;  _frequency.source
                                                ;  _availabilitiyLag.source
                                                ;  _currency.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _familyName.cell
@@ -378,6 +383,7 @@ module InflationIndexFunction =
                                 ;  _frequency.cell
                                 ;  _availabilitiyLag.cell
                                 ;  _currency.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -923,16 +929,16 @@ module InflationIndexFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<InflationIndex> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<InflationIndex> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<InflationIndex> (c)) :> ICell
                 let format (i : Generic.List<ICell<InflationIndex>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<InflationIndex>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<InflationIndex>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

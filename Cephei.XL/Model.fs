@@ -229,8 +229,9 @@ module public  Model =
                 cell.Dependants |> 
                 Seq.filter (fun i -> i :? ICell) |>
                 Seq.map (fun i -> i :?> ICell) |>
-                Seq.map (fun i -> (i, i.Box)) |>
-                Seq.fold (fun a (y,x) -> a + 1 + (depth y)) 0
+//                Seq.map (fun i -> (i, i.Box)) |>
+ //               Seq.fold (fun a (y,x) -> a + 1 + (depth y)) 0
+                Seq.fold (fun a y -> a + 1 + (depth y)) 0
 
             model |>
             Seq.map (fun i -> if i.Value :? ICellModel then new KeyValuePair<string, ICell>(i.Key, (i.Value :?> ICellModel).Cell) else i) |>

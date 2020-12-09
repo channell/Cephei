@@ -35,29 +35,35 @@ open Cephei.QLNetHelper
 type YoYInflationUnitDisplacedBlackCapFloorEngineModel
     ( index                                        : ICell<YoYInflationIndex>
     , vol                                          : ICell<Handle<YoYOptionletVolatilitySurface>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<YoYInflationUnitDisplacedBlackCapFloorEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _index                                     = index
     let _vol                                       = vol
 (*
     Functions
 *)
     let mutable
-        _YoYInflationUnitDisplacedBlackCapFloorEngine = cell (fun () -> new YoYInflationUnitDisplacedBlackCapFloorEngine (index.Value, vol.Value))
-    let _index                                     = triv (fun () -> _YoYInflationUnitDisplacedBlackCapFloorEngine.Value.index())
+        _YoYInflationUnitDisplacedBlackCapFloorEngine = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new YoYInflationUnitDisplacedBlackCapFloorEngine (index.Value, vol.Value))))
+    let _index                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationUnitDisplacedBlackCapFloorEngine).Value.index())
     let _setVolatility                             (vol : ICell<Handle<YoYOptionletVolatilitySurface>>)   
-                                                   = triv (fun () -> _YoYInflationUnitDisplacedBlackCapFloorEngine.Value.setVolatility(vol.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationUnitDisplacedBlackCapFloorEngine).Value.setVolatility(vol.Value)
                                                                      _YoYInflationUnitDisplacedBlackCapFloorEngine.Value)
-    let _volatility                                = triv (fun () -> _YoYInflationUnitDisplacedBlackCapFloorEngine.Value.volatility())
+    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationUnitDisplacedBlackCapFloorEngine).Value.volatility())
     do this.Bind(_YoYInflationUnitDisplacedBlackCapFloorEngine)
 (* 
     casting 
 *)
-    internal new () = new YoYInflationUnitDisplacedBlackCapFloorEngineModel(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new YoYInflationUnitDisplacedBlackCapFloorEngineModel(null,null,null)
     member internal this.Inject v = _YoYInflationUnitDisplacedBlackCapFloorEngine <- v
     static member Cast (p : ICell<YoYInflationUnitDisplacedBlackCapFloorEngine>) = 
         if p :? YoYInflationUnitDisplacedBlackCapFloorEngineModel then 
@@ -65,6 +71,7 @@ type YoYInflationUnitDisplacedBlackCapFloorEngineModel
         else
             let o = new YoYInflationUnitDisplacedBlackCapFloorEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

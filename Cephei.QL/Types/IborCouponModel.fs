@@ -45,12 +45,15 @@ type IborCouponModel
     , refPeriodEnd                                 : ICell<Date>
     , dayCounter                                   : ICell<DayCounter>
     , isInArrears                                  : ICell<bool>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<IborCoupon> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _paymentDate                               = paymentDate
     let _nominal                                   = nominal
     let _startDate                                 = startDate
@@ -67,67 +70,70 @@ type IborCouponModel
     Functions
 *)
     let mutable
-        _IborCoupon                                = cell (fun () -> new IborCoupon (paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, fixingDays.Value, iborIndex.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
+        _IborCoupon                                = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new IborCoupon (paymentDate.Value, nominal.Value, startDate.Value, endDate.Value, fixingDays.Value, iborIndex.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))))
     let _factory                                   (nominal : ICell<double>) (paymentDate : ICell<Date>) (startDate : ICell<Date>) (endDate : ICell<Date>) (fixingDays : ICell<int>) (index : ICell<InterestRateIndex>) (gearing : ICell<double>) (spread : ICell<double>) (refPeriodStart : ICell<Date>) (refPeriodEnd : ICell<Date>) (dayCounter : ICell<DayCounter>) (isInArrears : ICell<bool>)   
-                                                   = triv (fun () -> _IborCoupon.Value.factory(nominal.Value, paymentDate.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
-    let _iborIndex                                 = triv (fun () -> _IborCoupon.Value.iborIndex())
-    let _indexFixing                               = triv (fun () -> _IborCoupon.Value.indexFixing())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.factory(nominal.Value, paymentDate.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
+    let _iborIndex                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.iborIndex())
+    let _indexFixing                               = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.indexFixing())
     let _accruedAmount                             (d : ICell<Date>)   
-                                                   = triv (fun () -> _IborCoupon.Value.accruedAmount(d.Value))
-    let _adjustedFixing                            = triv (fun () -> _IborCoupon.Value.adjustedFixing)
-    let _amount                                    = triv (fun () -> _IborCoupon.Value.amount())
-    let _convexityAdjustment                       = triv (fun () -> _IborCoupon.Value.convexityAdjustment())
-    let _dayCounter                                = triv (fun () -> _IborCoupon.Value.dayCounter())
-    let _fixingDate                                = triv (fun () -> _IborCoupon.Value.fixingDate())
-    let _fixingDays                                = triv (fun () -> _IborCoupon.Value.fixingDays)
-    let _gearing                                   = triv (fun () -> _IborCoupon.Value.gearing())
-    let _index                                     = triv (fun () -> _IborCoupon.Value.index())
-    let _isInArrears                               = triv (fun () -> _IborCoupon.Value.isInArrears())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.accruedAmount(d.Value))
+    let _adjustedFixing                            = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.adjustedFixing)
+    let _amount                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.amount())
+    let _convexityAdjustment                       = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.convexityAdjustment())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.dayCounter())
+    let _fixingDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.fixingDate())
+    let _fixingDays                                = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.fixingDays)
+    let _gearing                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.gearing())
+    let _index                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.index())
+    let _isInArrears                               = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.isInArrears())
     let _price                                     (yts : ICell<YieldTermStructure>)   
-                                                   = triv (fun () -> _IborCoupon.Value.price(yts.Value))
-    let _pricer                                    = triv (fun () -> _IborCoupon.Value.pricer())
-    let _rate                                      = triv (fun () -> _IborCoupon.Value.rate())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.price(yts.Value))
+    let _pricer                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.pricer())
+    let _rate                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.rate())
     let _setPricer                                 (pricer : ICell<FloatingRateCouponPricer>)   
-                                                   = triv (fun () -> _IborCoupon.Value.setPricer(pricer.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.setPricer(pricer.Value)
                                                                      _IborCoupon.Value)
-    let _spread                                    = triv (fun () -> _IborCoupon.Value.spread())
-    let _update                                    = triv (fun () -> _IborCoupon.Value.update()
+    let _spread                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.spread())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.update()
                                                                      _IborCoupon.Value)
-    let _accrualDays                               = triv (fun () -> _IborCoupon.Value.accrualDays())
-    let _accrualEndDate                            = triv (fun () -> _IborCoupon.Value.accrualEndDate())
-    let _accrualPeriod                             = triv (fun () -> _IborCoupon.Value.accrualPeriod())
-    let _accrualStartDate                          = triv (fun () -> _IborCoupon.Value.accrualStartDate())
+    let _accrualDays                               = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.accrualDays())
+    let _accrualEndDate                            = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.accrualEndDate())
+    let _accrualPeriod                             = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.accrualPeriod())
+    let _accrualStartDate                          = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.accrualStartDate())
     let _accruedDays                               (d : ICell<Date>)   
-                                                   = triv (fun () -> _IborCoupon.Value.accruedDays(d.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.accruedDays(d.Value))
     let _accruedPeriod                             (d : ICell<Date>)   
-                                                   = triv (fun () -> _IborCoupon.Value.accruedPeriod(d.Value))
-    let _date                                      = triv (fun () -> _IborCoupon.Value.date())
-    let _exCouponDate                              = triv (fun () -> _IborCoupon.Value.exCouponDate())
-    let _nominal                                   = triv (fun () -> _IborCoupon.Value.nominal())
-    let _referencePeriodEnd                        = triv (fun () -> _IborCoupon.Value.referencePeriodEnd)
-    let _referencePeriodStart                      = triv (fun () -> _IborCoupon.Value.referencePeriodStart)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.accruedPeriod(d.Value))
+    let _date                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.date())
+    let _exCouponDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.exCouponDate())
+    let _nominal                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.nominal())
+    let _referencePeriodEnd                        = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.referencePeriodEnd)
+    let _referencePeriodStart                      = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.referencePeriodStart)
     let _CompareTo                                 (cf : ICell<CashFlow>)   
-                                                   = triv (fun () -> _IborCoupon.Value.CompareTo(cf.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.CompareTo(cf.Value))
     let _Equals                                    (cf : ICell<Object>)   
-                                                   = triv (fun () -> _IborCoupon.Value.Equals(cf.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.Equals(cf.Value))
     let _hasOccurred                               (refDate : ICell<Date>) (includeRefDate : ICell<Nullable<bool>>)   
-                                                   = triv (fun () -> _IborCoupon.Value.hasOccurred(refDate.Value, includeRefDate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.hasOccurred(refDate.Value, includeRefDate.Value))
     let _tradingExCoupon                           (refDate : ICell<Date>)   
-                                                   = triv (fun () -> _IborCoupon.Value.tradingExCoupon(refDate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.tradingExCoupon(refDate.Value))
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> _IborCoupon.Value.accept(v.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.accept(v.Value)
                                                                      _IborCoupon.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _IborCoupon.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.registerWith(handler.Value)
                                                                      _IborCoupon.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _IborCoupon.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.unregisterWith(handler.Value)
                                                                      _IborCoupon.Value)
     do this.Bind(_IborCoupon)
 (* 
     casting 
 *)
-    internal new () = new IborCouponModel(null,null,null,null,null,null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new IborCouponModel(null,null,null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _IborCoupon <- v
     static member Cast (p : ICell<IborCoupon>) = 
         if p :? IborCouponModel then 
@@ -135,6 +141,7 @@ type IborCouponModel
         else
             let o = new IborCouponModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -210,76 +217,83 @@ Coupon paying a Libor-type index
   </summary> *)
 [<AutoSerializable(true)>]
 type IborCouponModel1
-    () as this =
+    ( evaluationDate                               : ICell<Date>
+    ) as this =
     inherit Model<IborCoupon> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
 (*
     Functions
 *)
     let mutable
-        _IborCoupon                                = cell (fun () -> new IborCoupon ())
+        _IborCoupon                                = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new IborCoupon ())))
     let _factory                                   (nominal : ICell<double>) (paymentDate : ICell<Date>) (startDate : ICell<Date>) (endDate : ICell<Date>) (fixingDays : ICell<int>) (index : ICell<InterestRateIndex>) (gearing : ICell<double>) (spread : ICell<double>) (refPeriodStart : ICell<Date>) (refPeriodEnd : ICell<Date>) (dayCounter : ICell<DayCounter>) (isInArrears : ICell<bool>)   
-                                                   = triv (fun () -> _IborCoupon.Value.factory(nominal.Value, paymentDate.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
-    let _iborIndex                                 = triv (fun () -> _IborCoupon.Value.iborIndex())
-    let _indexFixing                               = triv (fun () -> _IborCoupon.Value.indexFixing())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.factory(nominal.Value, paymentDate.Value, startDate.Value, endDate.Value, fixingDays.Value, index.Value, gearing.Value, spread.Value, refPeriodStart.Value, refPeriodEnd.Value, dayCounter.Value, isInArrears.Value))
+    let _iborIndex                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.iborIndex())
+    let _indexFixing                               = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.indexFixing())
     let _accruedAmount                             (d : ICell<Date>)   
-                                                   = triv (fun () -> _IborCoupon.Value.accruedAmount(d.Value))
-    let _adjustedFixing                            = triv (fun () -> _IborCoupon.Value.adjustedFixing)
-    let _amount                                    = triv (fun () -> _IborCoupon.Value.amount())
-    let _convexityAdjustment                       = triv (fun () -> _IborCoupon.Value.convexityAdjustment())
-    let _dayCounter                                = triv (fun () -> _IborCoupon.Value.dayCounter())
-    let _fixingDate                                = triv (fun () -> _IborCoupon.Value.fixingDate())
-    let _fixingDays                                = triv (fun () -> _IborCoupon.Value.fixingDays)
-    let _gearing                                   = triv (fun () -> _IborCoupon.Value.gearing())
-    let _index                                     = triv (fun () -> _IborCoupon.Value.index())
-    let _isInArrears                               = triv (fun () -> _IborCoupon.Value.isInArrears())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.accruedAmount(d.Value))
+    let _adjustedFixing                            = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.adjustedFixing)
+    let _amount                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.amount())
+    let _convexityAdjustment                       = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.convexityAdjustment())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.dayCounter())
+    let _fixingDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.fixingDate())
+    let _fixingDays                                = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.fixingDays)
+    let _gearing                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.gearing())
+    let _index                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.index())
+    let _isInArrears                               = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.isInArrears())
     let _price                                     (yts : ICell<YieldTermStructure>)   
-                                                   = triv (fun () -> _IborCoupon.Value.price(yts.Value))
-    let _pricer                                    = triv (fun () -> _IborCoupon.Value.pricer())
-    let _rate                                      = triv (fun () -> _IborCoupon.Value.rate())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.price(yts.Value))
+    let _pricer                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.pricer())
+    let _rate                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.rate())
     let _setPricer                                 (pricer : ICell<FloatingRateCouponPricer>)   
-                                                   = triv (fun () -> _IborCoupon.Value.setPricer(pricer.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.setPricer(pricer.Value)
                                                                      _IborCoupon.Value)
-    let _spread                                    = triv (fun () -> _IborCoupon.Value.spread())
-    let _update                                    = triv (fun () -> _IborCoupon.Value.update()
+    let _spread                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.spread())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.update()
                                                                      _IborCoupon.Value)
-    let _accrualDays                               = triv (fun () -> _IborCoupon.Value.accrualDays())
-    let _accrualEndDate                            = triv (fun () -> _IborCoupon.Value.accrualEndDate())
-    let _accrualPeriod                             = triv (fun () -> _IborCoupon.Value.accrualPeriod())
-    let _accrualStartDate                          = triv (fun () -> _IborCoupon.Value.accrualStartDate())
+    let _accrualDays                               = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.accrualDays())
+    let _accrualEndDate                            = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.accrualEndDate())
+    let _accrualPeriod                             = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.accrualPeriod())
+    let _accrualStartDate                          = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.accrualStartDate())
     let _accruedDays                               (d : ICell<Date>)   
-                                                   = triv (fun () -> _IborCoupon.Value.accruedDays(d.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.accruedDays(d.Value))
     let _accruedPeriod                             (d : ICell<Date>)   
-                                                   = triv (fun () -> _IborCoupon.Value.accruedPeriod(d.Value))
-    let _date                                      = triv (fun () -> _IborCoupon.Value.date())
-    let _exCouponDate                              = triv (fun () -> _IborCoupon.Value.exCouponDate())
-    let _nominal                                   = triv (fun () -> _IborCoupon.Value.nominal())
-    let _referencePeriodEnd                        = triv (fun () -> _IborCoupon.Value.referencePeriodEnd)
-    let _referencePeriodStart                      = triv (fun () -> _IborCoupon.Value.referencePeriodStart)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.accruedPeriod(d.Value))
+    let _date                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.date())
+    let _exCouponDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.exCouponDate())
+    let _nominal                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.nominal())
+    let _referencePeriodEnd                        = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.referencePeriodEnd)
+    let _referencePeriodStart                      = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.referencePeriodStart)
     let _CompareTo                                 (cf : ICell<CashFlow>)   
-                                                   = triv (fun () -> _IborCoupon.Value.CompareTo(cf.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.CompareTo(cf.Value))
     let _Equals                                    (cf : ICell<Object>)   
-                                                   = triv (fun () -> _IborCoupon.Value.Equals(cf.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.Equals(cf.Value))
     let _hasOccurred                               (refDate : ICell<Date>) (includeRefDate : ICell<Nullable<bool>>)   
-                                                   = triv (fun () -> _IborCoupon.Value.hasOccurred(refDate.Value, includeRefDate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.hasOccurred(refDate.Value, includeRefDate.Value))
     let _tradingExCoupon                           (refDate : ICell<Date>)   
-                                                   = triv (fun () -> _IborCoupon.Value.tradingExCoupon(refDate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.tradingExCoupon(refDate.Value))
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> _IborCoupon.Value.accept(v.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.accept(v.Value)
                                                                      _IborCoupon.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _IborCoupon.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.registerWith(handler.Value)
                                                                      _IborCoupon.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _IborCoupon.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborCoupon).Value.unregisterWith(handler.Value)
                                                                      _IborCoupon.Value)
     do this.Bind(_IborCoupon)
 (* 
     casting 
 *)
     
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new IborCouponModel1(null)
     member internal this.Inject v = _IborCoupon <- v
     static member Cast (p : ICell<IborCoupon>) = 
         if p :? IborCouponModel1 then 
@@ -287,6 +301,7 @@ type IborCouponModel1
         else
             let o = new IborCouponModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

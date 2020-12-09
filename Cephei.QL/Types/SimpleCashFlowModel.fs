@@ -35,44 +35,50 @@ open Cephei.QLNetHelper
 type SimpleCashFlowModel
     ( amount                                       : ICell<double>
     , date                                         : ICell<Date>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<SimpleCashFlow> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _amount                                    = amount
     let _date                                      = date
 (*
     Functions
 *)
     let mutable
-        _SimpleCashFlow                            = cell (fun () -> new SimpleCashFlow (amount.Value, date.Value))
-    let _amount                                    = triv (fun () -> _SimpleCashFlow.Value.amount())
-    let _date                                      = triv (fun () -> _SimpleCashFlow.Value.date())
+        _SimpleCashFlow                            = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new SimpleCashFlow (amount.Value, date.Value))))
+    let _amount                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _SimpleCashFlow).Value.amount())
+    let _date                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _SimpleCashFlow).Value.date())
     let _CompareTo                                 (cf : ICell<CashFlow>)   
-                                                   = triv (fun () -> _SimpleCashFlow.Value.CompareTo(cf.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SimpleCashFlow).Value.CompareTo(cf.Value))
     let _Equals                                    (cf : ICell<Object>)   
-                                                   = triv (fun () -> _SimpleCashFlow.Value.Equals(cf.Value))
-    let _exCouponDate                              = triv (fun () -> _SimpleCashFlow.Value.exCouponDate())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SimpleCashFlow).Value.Equals(cf.Value))
+    let _exCouponDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _SimpleCashFlow).Value.exCouponDate())
     let _hasOccurred                               (refDate : ICell<Date>) (includeRefDate : ICell<Nullable<bool>>)   
-                                                   = triv (fun () -> _SimpleCashFlow.Value.hasOccurred(refDate.Value, includeRefDate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SimpleCashFlow).Value.hasOccurred(refDate.Value, includeRefDate.Value))
     let _tradingExCoupon                           (refDate : ICell<Date>)   
-                                                   = triv (fun () -> _SimpleCashFlow.Value.tradingExCoupon(refDate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SimpleCashFlow).Value.tradingExCoupon(refDate.Value))
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> _SimpleCashFlow.Value.accept(v.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SimpleCashFlow).Value.accept(v.Value)
                                                                      _SimpleCashFlow.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _SimpleCashFlow.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SimpleCashFlow).Value.registerWith(handler.Value)
                                                                      _SimpleCashFlow.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _SimpleCashFlow.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SimpleCashFlow).Value.unregisterWith(handler.Value)
                                                                      _SimpleCashFlow.Value)
     do this.Bind(_SimpleCashFlow)
 (* 
     casting 
 *)
-    internal new () = new SimpleCashFlowModel(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new SimpleCashFlowModel(null,null,null)
     member internal this.Inject v = _SimpleCashFlow <- v
     static member Cast (p : ICell<SimpleCashFlow>) = 
         if p :? SimpleCashFlowModel then 
@@ -80,6 +86,7 @@ type SimpleCashFlowModel
         else
             let o = new SimpleCashFlowModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

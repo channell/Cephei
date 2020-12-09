@@ -36,12 +36,15 @@ type TreeCallableFixedRateBondEngineModel
     ( model                                        : ICell<ShortRateModel>
     , timeSteps                                    : ICell<int>
     , termStructure                                : ICell<Handle<YieldTermStructure>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<TreeCallableFixedRateBondEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _model                                     = model
     let _timeSteps                                 = timeSteps
     let _termStructure                             = termStructure
@@ -49,25 +52,28 @@ type TreeCallableFixedRateBondEngineModel
     Functions
 *)
     let mutable
-        _TreeCallableFixedRateBondEngine           = cell (fun () -> new TreeCallableFixedRateBondEngine (model.Value, timeSteps.Value, termStructure.Value))
-    let _update                                    = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.update()
+        _TreeCallableFixedRateBondEngine           = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new TreeCallableFixedRateBondEngine (model.Value, timeSteps.Value, termStructure.Value))))
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeCallableFixedRateBondEngine).Value.update()
                                                                      _TreeCallableFixedRateBondEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   
-                                                   = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeCallableFixedRateBondEngine).Value.setModel(model.Value)
                                                                      _TreeCallableFixedRateBondEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeCallableFixedRateBondEngine).Value.registerWith(handler.Value)
                                                                      _TreeCallableFixedRateBondEngine.Value)
-    let _reset                                     = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeCallableFixedRateBondEngine).Value.reset()
                                                                      _TreeCallableFixedRateBondEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeCallableFixedRateBondEngine).Value.unregisterWith(handler.Value)
                                                                      _TreeCallableFixedRateBondEngine.Value)
     do this.Bind(_TreeCallableFixedRateBondEngine)
 (* 
     casting 
 *)
-    internal new () = new TreeCallableFixedRateBondEngineModel(null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new TreeCallableFixedRateBondEngineModel(null,null,null,null)
     member internal this.Inject v = _TreeCallableFixedRateBondEngine <- v
     static member Cast (p : ICell<TreeCallableFixedRateBondEngine>) = 
         if p :? TreeCallableFixedRateBondEngineModel then 
@@ -75,6 +81,7 @@ type TreeCallableFixedRateBondEngineModel
         else
             let o = new TreeCallableFixedRateBondEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -102,12 +109,15 @@ type TreeCallableFixedRateBondEngineModel1
     ( model                                        : ICell<ShortRateModel>
     , timeGrid                                     : ICell<TimeGrid>
     , termStructure                                : ICell<Handle<YieldTermStructure>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<TreeCallableFixedRateBondEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _model                                     = model
     let _timeGrid                                  = timeGrid
     let _termStructure                             = termStructure
@@ -115,25 +125,28 @@ type TreeCallableFixedRateBondEngineModel1
     Functions
 *)
     let mutable
-        _TreeCallableFixedRateBondEngine           = cell (fun () -> new TreeCallableFixedRateBondEngine (model.Value, timeGrid.Value, termStructure.Value))
-    let _update                                    = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.update()
+        _TreeCallableFixedRateBondEngine           = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new TreeCallableFixedRateBondEngine (model.Value, timeGrid.Value, termStructure.Value))))
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeCallableFixedRateBondEngine).Value.update()
                                                                      _TreeCallableFixedRateBondEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   
-                                                   = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeCallableFixedRateBondEngine).Value.setModel(model.Value)
                                                                      _TreeCallableFixedRateBondEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeCallableFixedRateBondEngine).Value.registerWith(handler.Value)
                                                                      _TreeCallableFixedRateBondEngine.Value)
-    let _reset                                     = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeCallableFixedRateBondEngine).Value.reset()
                                                                      _TreeCallableFixedRateBondEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _TreeCallableFixedRateBondEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _TreeCallableFixedRateBondEngine).Value.unregisterWith(handler.Value)
                                                                      _TreeCallableFixedRateBondEngine.Value)
     do this.Bind(_TreeCallableFixedRateBondEngine)
 (* 
     casting 
 *)
-    internal new () = new TreeCallableFixedRateBondEngineModel1(null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new TreeCallableFixedRateBondEngineModel1(null,null,null,null)
     member internal this.Inject v = _TreeCallableFixedRateBondEngine <- v
     static member Cast (p : ICell<TreeCallableFixedRateBondEngine>) = 
         if p :? TreeCallableFixedRateBondEngineModel1 then 
@@ -141,6 +154,7 @@ type TreeCallableFixedRateBondEngineModel1
         else
             let o = new TreeCallableFixedRateBondEngineModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

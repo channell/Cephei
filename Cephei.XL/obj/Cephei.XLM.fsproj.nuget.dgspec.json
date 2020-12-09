@@ -8,7 +8,7 @@
       "version": "1.11.4",
       "restore": {
         "projectUniqueName": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj",
-        "projectName": "QLNetCephei",
+        "projectName": "QLNet",
         "projectPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\QLNet.csproj",
         "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\steve\\source\\repos\\amaggiulli\\QLNet\\src\\QLNet\\obj\\",

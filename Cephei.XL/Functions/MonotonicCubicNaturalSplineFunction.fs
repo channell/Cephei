@@ -742,16 +742,16 @@ module MonotonicCubicNaturalSplineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<MonotonicCubicNaturalSpline> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<MonotonicCubicNaturalSpline> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<MonotonicCubicNaturalSpline> (c)) :> ICell
                 let format (i : Generic.List<ICell<MonotonicCubicNaturalSpline>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<MonotonicCubicNaturalSpline>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<MonotonicCubicNaturalSpline>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

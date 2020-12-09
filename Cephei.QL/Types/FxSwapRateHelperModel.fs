@@ -42,12 +42,15 @@ type FxSwapRateHelperModel
     , endOfMonth                                   : ICell<bool>
     , isFxBaseCurrencyCollateralCurrency           : ICell<bool>
     , coll                                         : ICell<Handle<YieldTermStructure>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FxSwapRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _fwdPoint                                  = fwdPoint
     let _spotFx                                    = spotFx
     let _tenor                                     = tenor
@@ -61,40 +64,43 @@ type FxSwapRateHelperModel
     Functions
 *)
     let mutable
-        _FxSwapRateHelper                          = cell (fun () -> new FxSwapRateHelper (fwdPoint.Value, spotFx.Value, tenor.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, isFxBaseCurrencyCollateralCurrency.Value, coll.Value))
-    let _businessDayConvention                     = triv (fun () -> _FxSwapRateHelper.Value.businessDayConvention())
-    let _calendar                                  = triv (fun () -> _FxSwapRateHelper.Value.calendar())
-    let _endOfMonth                                = triv (fun () -> _FxSwapRateHelper.Value.endOfMonth())
-    let _fixingDays                                = triv (fun () -> _FxSwapRateHelper.Value.fixingDays())
-    let _impliedQuote                              = triv (fun () -> _FxSwapRateHelper.Value.impliedQuote())
-    let _isFxBaseCurrencyCollateralCurrency        = triv (fun () -> _FxSwapRateHelper.Value.isFxBaseCurrencyCollateralCurrency())
+        _FxSwapRateHelper                          = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FxSwapRateHelper (fwdPoint.Value, spotFx.Value, tenor.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, isFxBaseCurrencyCollateralCurrency.Value, coll.Value))))
+    let _businessDayConvention                     = triv (fun () -> (curryEvaluationDate _evaluationDate _FxSwapRateHelper).Value.businessDayConvention())
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _FxSwapRateHelper).Value.calendar())
+    let _endOfMonth                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FxSwapRateHelper).Value.endOfMonth())
+    let _fixingDays                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FxSwapRateHelper).Value.fixingDays())
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FxSwapRateHelper).Value.impliedQuote())
+    let _isFxBaseCurrencyCollateralCurrency        = triv (fun () -> (curryEvaluationDate _evaluationDate _FxSwapRateHelper).Value.isFxBaseCurrencyCollateralCurrency())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
-                                                   = triv (fun () -> _FxSwapRateHelper.Value.setTermStructure(t.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FxSwapRateHelper).Value.setTermStructure(t.Value)
                                                                      _FxSwapRateHelper.Value)
-    let _spot                                      = triv (fun () -> _FxSwapRateHelper.Value.spot())
-    let _tenor                                     = triv (fun () -> _FxSwapRateHelper.Value.tenor())
-    let _update                                    = triv (fun () -> _FxSwapRateHelper.Value.update()
+    let _spot                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _FxSwapRateHelper).Value.spot())
+    let _tenor                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _FxSwapRateHelper).Value.tenor())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FxSwapRateHelper).Value.update()
                                                                      _FxSwapRateHelper.Value)
-    let _earliestDate                              = triv (fun () -> _FxSwapRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _FxSwapRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _FxSwapRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _FxSwapRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _FxSwapRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _FxSwapRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _FxSwapRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _FxSwapRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _FxSwapRateHelper.Value.quoteValue())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FxSwapRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FxSwapRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FxSwapRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FxSwapRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FxSwapRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _FxSwapRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FxSwapRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _FxSwapRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _FxSwapRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FxSwapRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FxSwapRateHelper).Value.registerWith(handler.Value)
                                                                      _FxSwapRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FxSwapRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FxSwapRateHelper).Value.unregisterWith(handler.Value)
                                                                      _FxSwapRateHelper.Value)
     do this.Bind(_FxSwapRateHelper)
 (* 
     casting 
 *)
-    internal new () = new FxSwapRateHelperModel(null,null,null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FxSwapRateHelperModel(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FxSwapRateHelper <- v
     static member Cast (p : ICell<FxSwapRateHelper>) = 
         if p :? FxSwapRateHelperModel then 
@@ -102,6 +108,7 @@ type FxSwapRateHelperModel
         else
             let o = new FxSwapRateHelperModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

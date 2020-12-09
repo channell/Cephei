@@ -16,6 +16,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT
 ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 FOR A PARTICULAR PURPOSE.  See the license for more details.
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
 namespace Cephei.QL
 
 open System
@@ -34,24 +36,33 @@ open Cephei.QLNetHelper
 [<AutoSerializable(true)>]
 type SpyModel
     ( f                                            : ICell<Func<double,double>>
+    ( evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<Spy> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _f                                         = f
 (*
     Functions
 *)
     let mutable
-        _Spy                                       = cell (fun () -> new Spy (f.Value))
+        _evaluationDate                            = evaluationDate
+    let mutable
+        _Spy                                       = cell (fun () -> (withEvaluationDate _evaluationDate new Spy (f.Value)))
     let _value                                     (x : ICell<double>)   
                                                    = cell (fun () -> _Spy.Value.value(x.Value))
     do this.Bind(_Spy)
 (* 
     casting 
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
+   interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
     internal new () = SpyModel(null)
     member internal this.Inject v = _Spy <- v
     static member Cast (p : ICell<Spy>) = 
@@ -59,13 +70,25 @@ type SpyModel
             p :?> SpyModel
         else
             let o = new SpyModel ()
-            o.Inject p
+            o.Inject p\m            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
 (* 
     casting 
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
+   interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
     internal new () = SpyModel(null)
     static member Cast (p : ICell<Spy>) = 
         if p :? SpyModel then 
@@ -79,6 +102,8 @@ type SpyModel
 (* 
     Externally visible/bindable properties
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     member this.f                                  = _f 
     member this.Value                              x   
                                                    = _value x 

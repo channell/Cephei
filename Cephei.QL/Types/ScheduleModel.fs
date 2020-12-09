@@ -43,12 +43,15 @@ type ScheduleModel
     , endOfMonth                                   : ICell<bool>
     , firstDate                                    : ICell<Date>
     , nextToLastDate                               : ICell<Date>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<Schedule> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _effectiveDate                             = effectiveDate
     let _terminationDate                           = terminationDate
     let _tenor                                     = tenor
@@ -63,39 +66,42 @@ type ScheduleModel
     Functions
 *)
     let mutable
-        _Schedule                                  = cell (fun () -> new Schedule (effectiveDate.Value, terminationDate.Value, tenor.Value, calendar.Value, convention.Value, terminationDateConvention.Value, rule.Value, endOfMonth.Value, firstDate.Value, nextToLastDate.Value))
+        _Schedule                                  = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new Schedule (effectiveDate.Value, terminationDate.Value, tenor.Value, calendar.Value, convention.Value, terminationDateConvention.Value, rule.Value, endOfMonth.Value, firstDate.Value, nextToLastDate.Value))))
     let _at                                        (i : ICell<int>)   
-                                                   = triv (fun () -> _Schedule.Value.at(i.Value))
-    let _businessDayConvention                     = triv (fun () -> _Schedule.Value.businessDayConvention())
-    let _calendar                                  = triv (fun () -> _Schedule.Value.calendar())
-    let _Count                                     = triv (fun () -> _Schedule.Value.Count)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.at(i.Value))
+    let _businessDayConvention                     = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.businessDayConvention())
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.calendar())
+    let _Count                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.Count)
     let _date                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _Schedule.Value.date(i.Value))
-    let _dates                                     = triv (fun () -> _Schedule.Value.dates())
-    let _empty                                     = triv (fun () -> _Schedule.Value.empty())
-    let _endDate                                   = triv (fun () -> _Schedule.Value.endDate())
-    let _endOfMonth                                = triv (fun () -> _Schedule.Value.endOfMonth())
-    let _isRegular                                 = triv (fun () -> _Schedule.Value.isRegular())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.date(i.Value))
+    let _dates                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.dates())
+    let _empty                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.empty())
+    let _endDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.endDate())
+    let _endOfMonth                                = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.endOfMonth())
+    let _isRegular                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.isRegular())
     let _isRegular1                                (i : ICell<int>)   
-                                                   = triv (fun () -> _Schedule.Value.isRegular(i.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.isRegular(i.Value))
     let _nextDate                                  (d : ICell<Date>)   
-                                                   = triv (fun () -> _Schedule.Value.nextDate(d.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.nextDate(d.Value))
     let _previousDate                              (d : ICell<Date>)   
-                                                   = triv (fun () -> _Schedule.Value.previousDate(d.Value))
-    let _rule                                      = triv (fun () -> _Schedule.Value.rule())
-    let _size                                      = triv (fun () -> _Schedule.Value.size())
-    let _startDate                                 = triv (fun () -> _Schedule.Value.startDate())
-    let _tenor                                     = triv (fun () -> _Schedule.Value.tenor())
-    let _terminationDateBusinessDayConvention      = triv (fun () -> _Schedule.Value.terminationDateBusinessDayConvention())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.previousDate(d.Value))
+    let _rule                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.rule())
+    let _size                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.size())
+    let _startDate                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.startDate())
+    let _tenor                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.tenor())
+    let _terminationDateBusinessDayConvention      = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.terminationDateBusinessDayConvention())
     let _this                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _Schedule.Value.[i.Value])
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.[i.Value])
     let _until                                     (truncationDate : ICell<Date>)   
-                                                   = triv (fun () -> _Schedule.Value.until(truncationDate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.until(truncationDate.Value))
     do this.Bind(_Schedule)
 (* 
     casting 
 *)
-    internal new () = new ScheduleModel(null,null,null,null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new ScheduleModel(null,null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _Schedule <- v
     static member Cast (p : ICell<Schedule>) = 
         if p :? ScheduleModel then 
@@ -103,6 +109,7 @@ type ScheduleModel
         else
             let o = new ScheduleModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -161,12 +168,15 @@ type ScheduleModel1
     , rule                                         : ICell<Nullable<DateGeneration.Rule>>
     , endOfMonth                                   : ICell<Nullable<bool>>
     , isRegular                                    : ICell<Generic.IList<bool>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<Schedule> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _dates                                     = dates
     let _calendar                                  = calendar
     let _convention                                = convention
@@ -179,39 +189,42 @@ type ScheduleModel1
     Functions
 *)
     let mutable
-        _Schedule                                  = cell (fun () -> new Schedule (dates.Value, calendar.Value, convention.Value, terminationDateConvention.Value, tenor.Value, rule.Value, endOfMonth.Value, isRegular.Value))
+        _Schedule                                  = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new Schedule (dates.Value, calendar.Value, convention.Value, terminationDateConvention.Value, tenor.Value, rule.Value, endOfMonth.Value, isRegular.Value))))
     let _at                                        (i : ICell<int>)   
-                                                   = triv (fun () -> _Schedule.Value.at(i.Value))
-    let _businessDayConvention                     = triv (fun () -> _Schedule.Value.businessDayConvention())
-    let _calendar                                  = triv (fun () -> _Schedule.Value.calendar())
-    let _Count                                     = triv (fun () -> _Schedule.Value.Count)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.at(i.Value))
+    let _businessDayConvention                     = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.businessDayConvention())
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.calendar())
+    let _Count                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.Count)
     let _date                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _Schedule.Value.date(i.Value))
-    let _dates                                     = triv (fun () -> _Schedule.Value.dates())
-    let _empty                                     = triv (fun () -> _Schedule.Value.empty())
-    let _endDate                                   = triv (fun () -> _Schedule.Value.endDate())
-    let _endOfMonth                                = triv (fun () -> _Schedule.Value.endOfMonth())
-    let _isRegular                                 = triv (fun () -> _Schedule.Value.isRegular())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.date(i.Value))
+    let _dates                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.dates())
+    let _empty                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.empty())
+    let _endDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.endDate())
+    let _endOfMonth                                = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.endOfMonth())
+    let _isRegular                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.isRegular())
     let _isRegular1                                (i : ICell<int>)   
-                                                   = triv (fun () -> _Schedule.Value.isRegular(i.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.isRegular(i.Value))
     let _nextDate                                  (d : ICell<Date>)   
-                                                   = triv (fun () -> _Schedule.Value.nextDate(d.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.nextDate(d.Value))
     let _previousDate                              (d : ICell<Date>)   
-                                                   = triv (fun () -> _Schedule.Value.previousDate(d.Value))
-    let _rule                                      = triv (fun () -> _Schedule.Value.rule())
-    let _size                                      = triv (fun () -> _Schedule.Value.size())
-    let _startDate                                 = triv (fun () -> _Schedule.Value.startDate())
-    let _tenor                                     = triv (fun () -> _Schedule.Value.tenor())
-    let _terminationDateBusinessDayConvention      = triv (fun () -> _Schedule.Value.terminationDateBusinessDayConvention())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.previousDate(d.Value))
+    let _rule                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.rule())
+    let _size                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.size())
+    let _startDate                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.startDate())
+    let _tenor                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.tenor())
+    let _terminationDateBusinessDayConvention      = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.terminationDateBusinessDayConvention())
     let _this                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _Schedule.Value.[i.Value])
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.[i.Value])
     let _until                                     (truncationDate : ICell<Date>)   
-                                                   = triv (fun () -> _Schedule.Value.until(truncationDate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.until(truncationDate.Value))
     do this.Bind(_Schedule)
 (* 
     casting 
 *)
-    internal new () = new ScheduleModel1(null,null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new ScheduleModel1(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _Schedule <- v
     static member Cast (p : ICell<Schedule>) = 
         if p :? ScheduleModel1 then 
@@ -219,6 +232,7 @@ type ScheduleModel1
         else
             let o = new ScheduleModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -267,48 +281,55 @@ type ScheduleModel1
   </summary> *)
 [<AutoSerializable(true)>]
 type ScheduleModel2
-    () as this =
+    ( evaluationDate                               : ICell<Date>
+    ) as this =
     inherit Model<Schedule> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
 (*
     Functions
 *)
     let mutable
-        _Schedule                                  = cell (fun () -> new Schedule ())
+        _Schedule                                  = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new Schedule ())))
     let _at                                        (i : ICell<int>)   
-                                                   = triv (fun () -> _Schedule.Value.at(i.Value))
-    let _businessDayConvention                     = triv (fun () -> _Schedule.Value.businessDayConvention())
-    let _calendar                                  = triv (fun () -> _Schedule.Value.calendar())
-    let _Count                                     = triv (fun () -> _Schedule.Value.Count)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.at(i.Value))
+    let _businessDayConvention                     = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.businessDayConvention())
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.calendar())
+    let _Count                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.Count)
     let _date                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _Schedule.Value.date(i.Value))
-    let _dates                                     = triv (fun () -> _Schedule.Value.dates())
-    let _empty                                     = triv (fun () -> _Schedule.Value.empty())
-    let _endDate                                   = triv (fun () -> _Schedule.Value.endDate())
-    let _endOfMonth                                = triv (fun () -> _Schedule.Value.endOfMonth())
-    let _isRegular                                 = triv (fun () -> _Schedule.Value.isRegular())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.date(i.Value))
+    let _dates                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.dates())
+    let _empty                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.empty())
+    let _endDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.endDate())
+    let _endOfMonth                                = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.endOfMonth())
+    let _isRegular                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.isRegular())
     let _isRegular1                                (i : ICell<int>)   
-                                                   = triv (fun () -> _Schedule.Value.isRegular(i.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.isRegular(i.Value))
     let _nextDate                                  (d : ICell<Date>)   
-                                                   = triv (fun () -> _Schedule.Value.nextDate(d.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.nextDate(d.Value))
     let _previousDate                              (d : ICell<Date>)   
-                                                   = triv (fun () -> _Schedule.Value.previousDate(d.Value))
-    let _rule                                      = triv (fun () -> _Schedule.Value.rule())
-    let _size                                      = triv (fun () -> _Schedule.Value.size())
-    let _startDate                                 = triv (fun () -> _Schedule.Value.startDate())
-    let _tenor                                     = triv (fun () -> _Schedule.Value.tenor())
-    let _terminationDateBusinessDayConvention      = triv (fun () -> _Schedule.Value.terminationDateBusinessDayConvention())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.previousDate(d.Value))
+    let _rule                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.rule())
+    let _size                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.size())
+    let _startDate                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.startDate())
+    let _tenor                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.tenor())
+    let _terminationDateBusinessDayConvention      = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.terminationDateBusinessDayConvention())
     let _this                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _Schedule.Value.[i.Value])
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.[i.Value])
     let _until                                     (truncationDate : ICell<Date>)   
-                                                   = triv (fun () -> _Schedule.Value.until(truncationDate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _Schedule).Value.until(truncationDate.Value))
     do this.Bind(_Schedule)
 (* 
     casting 
 *)
     
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new ScheduleModel2(null)
     member internal this.Inject v = _Schedule <- v
     static member Cast (p : ICell<Schedule>) = 
         if p :? ScheduleModel2 then 
@@ -316,6 +337,7 @@ type ScheduleModel2
         else
             let o = new ScheduleModel2 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

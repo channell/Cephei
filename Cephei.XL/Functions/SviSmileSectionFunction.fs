@@ -191,6 +191,8 @@ module SviSmileSectionFunction =
          forward : obj)
         ([<ExcelArgument(Name="sviParameters",Description = "double range")>] 
          sviParameters : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -199,10 +201,12 @@ module SviSmileSectionFunction =
                 let _timeToExpiry = Helper.toCell<double> timeToExpiry "timeToExpiry" 
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _sviParameters = Helper.toCell<Generic.List<double>> sviParameters "sviParameters" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.SviSmileSection 
                                                             _timeToExpiry.cell 
                                                             _forward.cell 
                                                             _sviParameters.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SviSmileSection>) l
 
@@ -210,11 +214,13 @@ module SviSmileSectionFunction =
                                                [| _timeToExpiry.source
                                                ;  _forward.source
                                                ;  _sviParameters.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _timeToExpiry.cell
                                 ;  _forward.cell
                                 ;  _sviParameters.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -242,6 +248,8 @@ module SviSmileSectionFunction =
          sviParameters : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter or empty")>] 
          dc : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -251,11 +259,13 @@ module SviSmileSectionFunction =
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _sviParameters = Helper.toCell<Generic.List<double>> sviParameters "sviParameters" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.SviSmileSection1 
                                                             _d.cell 
                                                             _forward.cell 
                                                             _sviParameters.cell 
                                                             _dc.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SviSmileSection>) l
 
@@ -264,12 +274,14 @@ module SviSmileSectionFunction =
                                                ;  _forward.source
                                                ;  _sviParameters.source
                                                ;  _dc.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _d.cell
                                 ;  _forward.cell
                                 ;  _sviParameters.cell
                                 ;  _dc.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -905,16 +917,16 @@ module SviSmileSectionFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<SviSmileSection> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<SviSmileSection> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<SviSmileSection> (c)) :> ICell
                 let format (i : Generic.List<ICell<SviSmileSection>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<SviSmileSection>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<SviSmileSection>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

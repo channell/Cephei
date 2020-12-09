@@ -103,6 +103,8 @@ module FDDividendAmericanEngineFunction =
          gridPoints : obj)
         ([<ExcelArgument(Name="timeDependent",Description = "bool or empty")>] 
          timeDependent : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -112,11 +114,13 @@ module FDDividendAmericanEngineFunction =
                 let _timeSteps = Helper.toDefault<int> timeSteps "timeSteps" 100
                 let _gridPoints = Helper.toDefault<int> gridPoints "gridPoints" 100
                 let _timeDependent = Helper.toDefault<bool> timeDependent "timeDependent" false
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FDDividendAmericanEngine 
                                                             _Process.cell 
                                                             _timeSteps.cell 
                                                             _gridPoints.cell 
                                                             _timeDependent.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDDividendAmericanEngine>) l
 
@@ -125,12 +129,14 @@ module FDDividendAmericanEngineFunction =
                                                ;  _timeSteps.source
                                                ;  _gridPoints.source
                                                ;  _timeDependent.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Process.cell
                                 ;  _timeSteps.cell
                                 ;  _gridPoints.cell
                                 ;  _timeDependent.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -150,19 +156,25 @@ module FDDividendAmericanEngineFunction =
     let FDDividendAmericanEngine_create1
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.FDDividendAmericanEngine1 ()
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.FDDividendAmericanEngine1
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FDDividendAmericanEngine>) l
 
                 let source () = Helper.sourceFold "Fun.FDDividendAmericanEngine1" 
-                                               [||]
+                                               [|  _evaluationDate.source
+                                               |]
                 let hash = Helper.hashFold 
-                                [||]
+                                [|  _evaluationDate.cell
+                                |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
@@ -492,16 +504,16 @@ module FDDividendAmericanEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<FDDividendAmericanEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<FDDividendAmericanEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<FDDividendAmericanEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<FDDividendAmericanEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<FDDividendAmericanEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<FDDividendAmericanEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -36,12 +36,15 @@ type MonteCarloCatBondEngineModel
     ( catRisk                                      : ICell<CatRisk>
     , discountCurve                                : ICell<Handle<YieldTermStructure>>
     , includeSettlementDateFlows                   : ICell<Nullable<bool>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<MonteCarloCatBondEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _catRisk                                   = catRisk
     let _discountCurve                             = discountCurve
     let _includeSettlementDateFlows                = includeSettlementDateFlows
@@ -49,13 +52,16 @@ type MonteCarloCatBondEngineModel
     Functions
 *)
     let mutable
-        _MonteCarloCatBondEngine                   = cell (fun () -> new MonteCarloCatBondEngine (catRisk.Value, discountCurve.Value, includeSettlementDateFlows.Value))
-    let _discountCurve                             = triv (fun () -> _MonteCarloCatBondEngine.Value.discountCurve())
+        _MonteCarloCatBondEngine                   = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new MonteCarloCatBondEngine (catRisk.Value, discountCurve.Value, includeSettlementDateFlows.Value))))
+    let _discountCurve                             = triv (fun () -> (curryEvaluationDate _evaluationDate _MonteCarloCatBondEngine).Value.discountCurve())
     do this.Bind(_MonteCarloCatBondEngine)
 (* 
     casting 
 *)
-    internal new () = new MonteCarloCatBondEngineModel(null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new MonteCarloCatBondEngineModel(null,null,null,null)
     member internal this.Inject v = _MonteCarloCatBondEngine <- v
     static member Cast (p : ICell<MonteCarloCatBondEngine>) = 
         if p :? MonteCarloCatBondEngineModel then 
@@ -63,6 +69,7 @@ type MonteCarloCatBondEngineModel
         else
             let o = new MonteCarloCatBondEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

@@ -66,6 +66,8 @@ module MCBarrierEngineFunction =
          isBiased : obj)
         ([<ExcelArgument(Name="seed",Description = "uint64")>] 
          seed : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -81,6 +83,7 @@ module MCBarrierEngineFunction =
                 let _maxSamples = Helper.toNullable<int> maxSamples "maxSamples"
                 let _isBiased = Helper.toCell<bool> isBiased "isBiased" 
                 let _seed = Helper.toCell<uint64> seed "seed" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.MCBarrierEngine 
                                                             _Process.cell 
                                                             _timeSteps.cell 
@@ -92,6 +95,7 @@ module MCBarrierEngineFunction =
                                                             _maxSamples.cell 
                                                             _isBiased.cell 
                                                             _seed.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MCBarrierEngine>) l
 
@@ -106,6 +110,7 @@ module MCBarrierEngineFunction =
                                                ;  _maxSamples.source
                                                ;  _isBiased.source
                                                ;  _seed.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Process.cell
@@ -118,6 +123,7 @@ module MCBarrierEngineFunction =
                                 ;  _maxSamples.cell
                                 ;  _isBiased.cell
                                 ;  _seed.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -471,16 +477,16 @@ module MCBarrierEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<MCBarrierEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<MCBarrierEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<MCBarrierEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<MCBarrierEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<MCBarrierEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<MCBarrierEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

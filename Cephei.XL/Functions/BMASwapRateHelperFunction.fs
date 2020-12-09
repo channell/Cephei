@@ -59,6 +59,8 @@ module BMASwapRateHelperFunction =
          bmaIndex : obj)
         ([<ExcelArgument(Name="iborIndex",Description = "IborIndex")>] 
          iborIndex : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -73,6 +75,7 @@ module BMASwapRateHelperFunction =
                 let _bmaDayCount = Helper.toCell<DayCounter> bmaDayCount "bmaDayCount" 
                 let _bmaIndex = Helper.toCell<BMAIndex> bmaIndex "bmaIndex" 
                 let _iborIndex = Helper.toCell<IborIndex> iborIndex "iborIndex" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.BMASwapRateHelper 
                                                             _liborFraction.cell 
                                                             _tenor.cell 
@@ -83,6 +86,7 @@ module BMASwapRateHelperFunction =
                                                             _bmaDayCount.cell 
                                                             _bmaIndex.cell 
                                                             _iborIndex.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BMASwapRateHelper>) l
 
@@ -96,6 +100,7 @@ module BMASwapRateHelperFunction =
                                                ;  _bmaDayCount.source
                                                ;  _bmaIndex.source
                                                ;  _iborIndex.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _liborFraction.cell
@@ -107,6 +112,7 @@ module BMASwapRateHelperFunction =
                                 ;  _bmaDayCount.cell
                                 ;  _bmaIndex.cell
                                 ;  _iborIndex.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -658,16 +664,16 @@ module BMASwapRateHelperFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<BMASwapRateHelper> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<BMASwapRateHelper> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<BMASwapRateHelper> (c)) :> ICell
                 let format (i : Generic.List<ICell<BMASwapRateHelper>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<BMASwapRateHelper>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<BMASwapRateHelper>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -47,12 +47,15 @@ type MCBarrierEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (new : unit -> '
     , maxSamples                                   : ICell<Nullable<int>>
     , isBiased                                     : ICell<bool>
     , seed                                         : ICell<uint64>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<MCBarrierEngine<'RNG,'S>> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
     let _timeSteps                                 = timeSteps
     let _timeStepsPerYear                          = timeStepsPerYear
@@ -67,23 +70,23 @@ type MCBarrierEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (new : unit -> '
     Functions
 *)
     let mutable
-        _MCBarrierEngine                           = cell (fun () -> new MCBarrierEngine<'RNG,'S> (Process.Value, timeSteps.Value, timeStepsPerYear.Value, brownianBridge.Value, antitheticVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, isBiased.Value, seed.Value))
+        _MCBarrierEngine                           = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new MCBarrierEngine<'RNG,'S> (Process.Value, timeSteps.Value, timeStepsPerYear.Value, brownianBridge.Value, antitheticVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, isBiased.Value, seed.Value))))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _MCBarrierEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _MCBarrierEngine).Value.registerWith(handler.Value)
                                                                      _MCBarrierEngine.Value)
-    let _reset                                     = triv (fun () -> _MCBarrierEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _MCBarrierEngine).Value.reset()
                                                                      _MCBarrierEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _MCBarrierEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _MCBarrierEngine).Value.unregisterWith(handler.Value)
                                                                      _MCBarrierEngine.Value)
-    let _update                                    = triv (fun () -> _MCBarrierEngine.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _MCBarrierEngine).Value.update()
                                                                      _MCBarrierEngine.Value)
-    let _errorEstimate                             = triv (fun () -> _MCBarrierEngine.Value.errorEstimate())
-    let _sampleAccumulator                         = triv (fun () -> _MCBarrierEngine.Value.sampleAccumulator())
+    let _errorEstimate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _MCBarrierEngine).Value.errorEstimate())
+    let _sampleAccumulator                         = triv (fun () -> (curryEvaluationDate _evaluationDate _MCBarrierEngine).Value.sampleAccumulator())
     let _value                                     (tolerance : ICell<double>) (maxSamples : ICell<int>) (minSamples : ICell<int>)   
-                                                   = triv (fun () -> _MCBarrierEngine.Value.value(tolerance.Value, maxSamples.Value, minSamples.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _MCBarrierEngine).Value.value(tolerance.Value, maxSamples.Value, minSamples.Value))
     let _valueWithSamples                          (samples : ICell<int>)   
-                                                   = triv (fun () -> _MCBarrierEngine.Value.valueWithSamples(samples.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _MCBarrierEngine).Value.valueWithSamples(samples.Value))
     do this.Bind(_MCBarrierEngine)
 
 (* 

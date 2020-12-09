@@ -16,6 +16,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT
 ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 FOR A PARTICULAR PURPOSE.  See the license for more details.
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
 namespace Cephei.QL
 
 open System
@@ -33,16 +35,21 @@ open Cephei.QLNetHelper
   </summary> *)
 [<AutoSerializable(true)>]
 type SettingsModel
-    () as this =
+    ( evaluationDate                               : ICell<Date>
+    ) as this =
     inherit Model<Settings> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
 (*
     Functions
 *)
     let mutable
-        _Settings                                  = cell (fun () -> new Settings ())
+        _evaluationDate                            = evaluationDate
+    let mutable
+        _Settings                                  = cell (fun () -> (withEvaluationDate _evaluationDate new Settings ()))
     let _lowerRateBound_                           = cell (fun () -> _Settings.Value.lowerRateBound_)
     let _priceThreshold_                           = cell (fun () -> _Settings.Value.priceThreshold_)
     let _stdDevs_                                  = cell (fun () -> _Settings.Value.stdDevs_)
@@ -61,6 +68,8 @@ type SettingsModel
 (* 
     casting 
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     
     member internal this.Inject v = _Settings <- v
     static member Cast (p : ICell<Settings>) = 
@@ -68,13 +77,23 @@ type SettingsModel
             p :?> SettingsModel
         else
             let o = new SettingsModel ()
-            o.Inject p
+            o.Inject p\m            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
 (* 
     casting 
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     
     static member Cast (p : ICell<Settings>) = 
         if p :? SettingsModel then 
@@ -88,6 +107,8 @@ type SettingsModel
 (* 
     Externally visible/bindable properties
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     member this.LowerRateBound_                    = _lowerRateBound_
     member this.PriceThreshold_                    = _priceThreshold_
     member this.StdDevs_                           = _stdDevs_

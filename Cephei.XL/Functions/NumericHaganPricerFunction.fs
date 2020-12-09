@@ -110,6 +110,8 @@ module NumericHaganPricerFunction =
          precision : obj)
         ([<ExcelArgument(Name="hardUpperLimit",Description = "double or empty")>] 
          hardUpperLimit : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -122,6 +124,7 @@ module NumericHaganPricerFunction =
                 let _upperLimit = Helper.toDefault<double> upperLimit "upperLimit" 1.0
                 let _precision = Helper.toDefault<double> precision "precision" 1.0e-6
                 let _hardUpperLimit = Helper.toDefault<double> hardUpperLimit "hardUpperLimit" Double.MaxValue
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.NumericHaganPricer 
                                                             _swaptionVol.cell 
                                                             _modelOfYieldCurve.cell 
@@ -130,6 +133,7 @@ module NumericHaganPricerFunction =
                                                             _upperLimit.cell 
                                                             _precision.cell 
                                                             _hardUpperLimit.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<NumericHaganPricer>) l
 
@@ -141,6 +145,7 @@ module NumericHaganPricerFunction =
                                                ;  _upperLimit.source
                                                ;  _precision.source
                                                ;  _hardUpperLimit.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _swaptionVol.cell
@@ -150,6 +155,7 @@ module NumericHaganPricerFunction =
                                 ;  _upperLimit.cell
                                 ;  _precision.cell
                                 ;  _hardUpperLimit.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -899,16 +905,16 @@ module NumericHaganPricerFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<NumericHaganPricer> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<NumericHaganPricer> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<NumericHaganPricer> (c)) :> ICell
                 let format (i : Generic.List<ICell<NumericHaganPricer>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<NumericHaganPricer>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<NumericHaganPricer>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

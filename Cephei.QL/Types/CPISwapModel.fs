@@ -84,7 +84,7 @@ type CPISwapModel
     Functions
 *)
     let mutable
-        _CPISwap                                   = cell (fun () -> withEngine pricingEngine (new CPISwap (Type.Value, nominal.Value, subtractInflationNominal.Value, spread.Value, floatDayCount.Value, floatSchedule.Value, floatPaymentRoll.Value, fixingDays.Value, floatIndex.Value, fixedRate.Value, baseCPI.Value, fixedDayCount.Value, fixedSchedule.Value, fixedPaymentRoll.Value, observationLag.Value, fixedIndex.Value, observationInterpolation.Value, inflationNominal.Value)))
+        _CPISwap                                   = cell (fun () -> withEngine pricingEngine evaluationDate (new CPISwap (Type.Value, nominal.Value, subtractInflationNominal.Value, spread.Value, floatDayCount.Value, floatSchedule.Value, floatPaymentRoll.Value, fixingDays.Value, floatIndex.Value, fixedRate.Value, baseCPI.Value, fixedDayCount.Value, fixedSchedule.Value, fixedPaymentRoll.Value, observationLag.Value, fixedIndex.Value, observationInterpolation.Value, inflationNominal.Value)))
     let _baseCPI                                   = triv (fun () -> (withEvaluationDate _evaluationDate _CPISwap).baseCPI())
     let _cpiLeg                                    = triv (fun () -> (withEvaluationDate _evaluationDate _CPISwap).cpiLeg())
     let _fairRate                                  = triv (fun () -> (withEvaluationDate _evaluationDate _CPISwap).fairRate())

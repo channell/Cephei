@@ -55,6 +55,8 @@ module MCDiscreteArithmeticASEngineFunction =
          maxSamples : obj)
         ([<ExcelArgument(Name="seed",Description = "uint64")>] 
          seed : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -67,6 +69,7 @@ module MCDiscreteArithmeticASEngineFunction =
                 let _requiredTolerance = Helper.toCell<double> requiredTolerance "requiredTolerance" 
                 let _maxSamples = Helper.toCell<int> maxSamples "maxSamples" 
                 let _seed = Helper.toCell<uint64> seed "seed" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.MCDiscreteArithmeticASEngine 
                                                             _Process.cell 
                                                             _brownianBridge.cell 
@@ -75,6 +78,7 @@ module MCDiscreteArithmeticASEngineFunction =
                                                             _requiredTolerance.cell 
                                                             _maxSamples.cell 
                                                             _seed.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MCDiscreteArithmeticASEngine>) l
 
@@ -86,6 +90,7 @@ module MCDiscreteArithmeticASEngineFunction =
                                                ;  _requiredTolerance.source
                                                ;  _maxSamples.source
                                                ;  _seed.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Process.cell
@@ -95,6 +100,7 @@ module MCDiscreteArithmeticASEngineFunction =
                                 ;  _requiredTolerance.cell
                                 ;  _maxSamples.cell
                                 ;  _seed.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -449,16 +455,16 @@ module MCDiscreteArithmeticASEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<MCDiscreteArithmeticASEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<MCDiscreteArithmeticASEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<MCDiscreteArithmeticASEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<MCDiscreteArithmeticASEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<MCDiscreteArithmeticASEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<MCDiscreteArithmeticASEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

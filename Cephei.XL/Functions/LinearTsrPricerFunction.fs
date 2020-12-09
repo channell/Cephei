@@ -261,6 +261,8 @@ module LinearTsrPricerFunction =
          settings : obj)
         ([<ExcelArgument(Name="integrator",Description = "Integrator or empty")>] 
          integrator : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -271,12 +273,14 @@ module LinearTsrPricerFunction =
                 let _couponDiscountCurve = Helper.toHandle<YieldTermStructure> couponDiscountCurve "couponDiscountCurve" 
                 let _settings = Helper.toDefault<LinearTsrPricer.Settings> settings "settings" null
                 let _integrator = Helper.toDefault<Integrator> integrator "integrator" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.LinearTsrPricer 
                                                             _swaptionVol.cell 
                                                             _meanReversion.cell 
                                                             _couponDiscountCurve.cell 
                                                             _settings.cell 
                                                             _integrator.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LinearTsrPricer>) l
 
@@ -286,6 +290,7 @@ module LinearTsrPricerFunction =
                                                ;  _couponDiscountCurve.source
                                                ;  _settings.source
                                                ;  _integrator.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _swaptionVol.cell
@@ -293,6 +298,7 @@ module LinearTsrPricerFunction =
                                 ;  _couponDiscountCurve.cell
                                 ;  _settings.cell
                                 ;  _integrator.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -670,16 +676,16 @@ module LinearTsrPricerFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<LinearTsrPricer> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<LinearTsrPricer> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<LinearTsrPricer> (c)) :> ICell
                 let format (i : Generic.List<ICell<LinearTsrPricer>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<LinearTsrPricer>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<LinearTsrPricer>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

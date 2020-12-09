@@ -41,12 +41,15 @@ type FdBlackScholesVanillaEngineModel
     , localVol                                     : ICell<bool>
     , illegalLocalVolOverwrite                     : ICell<Nullable<double>>
     , cashDividendModel                            : ICell<FdBlackScholesVanillaEngine.CashDividendModel>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FdBlackScholesVanillaEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
     let _tGrid                                     = tGrid
     let _xGrid                                     = xGrid
@@ -59,12 +62,15 @@ type FdBlackScholesVanillaEngineModel
     Functions
 *)
     let mutable
-        _FdBlackScholesVanillaEngine               = cell (fun () -> new FdBlackScholesVanillaEngine (Process.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value, cashDividendModel.Value))
+        _FdBlackScholesVanillaEngine               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FdBlackScholesVanillaEngine (Process.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value, cashDividendModel.Value))))
     do this.Bind(_FdBlackScholesVanillaEngine)
 (* 
     casting 
 *)
-    internal new () = new FdBlackScholesVanillaEngineModel(null,null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FdBlackScholesVanillaEngineModel(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FdBlackScholesVanillaEngine <- v
     static member Cast (p : ICell<FdBlackScholesVanillaEngine>) = 
         if p :? FdBlackScholesVanillaEngineModel then 
@@ -72,6 +78,7 @@ type FdBlackScholesVanillaEngineModel
         else
             let o = new FdBlackScholesVanillaEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -102,12 +109,15 @@ type FdBlackScholesVanillaEngineModel1
     , localVol                                     : ICell<bool>
     , illegalLocalVolOverwrite                     : ICell<Nullable<double>>
     , cashDividendModel                            : ICell<FdBlackScholesVanillaEngine.CashDividendModel>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FdBlackScholesVanillaEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
     let _quantoHelper                              = quantoHelper
     let _tGrid                                     = tGrid
@@ -121,12 +131,15 @@ type FdBlackScholesVanillaEngineModel1
     Functions
 *)
     let mutable
-        _FdBlackScholesVanillaEngine               = cell (fun () -> new FdBlackScholesVanillaEngine (Process.Value, quantoHelper.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value, cashDividendModel.Value))
+        _FdBlackScholesVanillaEngine               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FdBlackScholesVanillaEngine (Process.Value, quantoHelper.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value, cashDividendModel.Value))))
     do this.Bind(_FdBlackScholesVanillaEngine)
 (* 
     casting 
 *)
-    internal new () = new FdBlackScholesVanillaEngineModel1(null,null,null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FdBlackScholesVanillaEngineModel1(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _FdBlackScholesVanillaEngine <- v
     static member Cast (p : ICell<FdBlackScholesVanillaEngine>) = 
         if p :? FdBlackScholesVanillaEngineModel1 then 
@@ -134,6 +147,7 @@ type FdBlackScholesVanillaEngineModel1
         else
             let o = new FdBlackScholesVanillaEngineModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

@@ -19,7 +19,7 @@ namespace Cephei.Gen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+    #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class Class : ClassBase
     {
@@ -30,7 +30,7 @@ namespace Cephei.Gen
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
 /* 
 Name:           Interface.cst
 Author:         Stephen Channell
@@ -41,7 +41,7 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("\r\n");
             
-            #line 17 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 17 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
 
     
     Context.ElementName = ElementName; 
@@ -69,7 +69,7 @@ Description:    Generate a single Interface for the Class
             this.Write("/////////////////////////////////////////////////////////////////////////////////" +
                     "/////////////////////////////////////////\r\n// Class ");
             
-            #line 39 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 39 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -78,7 +78,7 @@ Description:    Generate a single Interface for the Class
                     "////////////////////////////////////////////////////////////////////////////////" +
                     "//\r\n \r\n");
             
-            #line 42 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 42 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
 
 //        return "";
     }
@@ -91,35 +91,35 @@ Description:    Generate a single Interface for the Class
                     "stem.Runtime.InteropServices;\r\nusing ExcelDna.Integration;\r\nusing Cephei.Core;\r\n" +
                     "using Cephei.");
             
-            #line 53 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 53 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace (Context.ClassDelimiter)));
             
             #line default
             #line hidden
             this.Write(";\r\n\r\nnamespace ");
             
-            #line 55 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 55 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    ");
             
-            #line 57 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 57 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.Comment(Context.CurrentClass.Notes,"\t")));
             
             #line default
             #line hidden
             this.Write("\r\n    [Guid (\"");
             
-            #line 58 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 58 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Guid2.Substring(1, Context.CurrentClass.Guid2.Length -2)));
             
             #line default
             #line hidden
             this.Write("\"),ComVisible(true)]\r\n\tpublic static class ");
             
-            #line 59 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 59 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -131,7 +131,7 @@ Description:    Generate a single Interface for the Class
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ");
             
-            #line 64 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 64 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
 
     Parameter pricerParameter = Context.CurrentClass.PricingParameter ();
 
@@ -157,21 +157,21 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        ");
             
-            #line 84 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 84 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.Comment(method.Notes, "\t\t")));
             
             #line default
             #line hidden
             this.Write("\r\n        /// <param name=\"Mnemonic\">Mnemonic for the ");
             
-            #line 85 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 85 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.XLClassName));
             
             #line default
             #line hidden
             this.Write("</param>\r\n");
             
-            #line 86 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 86 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
 
             if (Context.CurrentClass.Name != method.Name)
             {
@@ -181,28 +181,28 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("        /// <param name=\"");
             
-            #line 90 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 90 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Mnemonic\">Mnemonic for the ");
             
-            #line 90 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 90 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("<see cref=\"");
             
-            #line 90 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 90 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace (Context.ClassDelimiter).Replace ("::", ".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("\"/></param>\r\n");
             
-            #line 91 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 91 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
                     
             }
             foreach (KeyValuePair<int, Parameter> pair in method.Parameters)
@@ -213,28 +213,28 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("            \r\n        /// <param name=\"");
             
-            #line 96 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 96 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("\">");
             
-            #line 96 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 96 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Notes ?? ""));
             
             #line default
             #line hidden
             this.Write("<see cref=\"");
             
-            #line 96 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 96 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.ParameterType.GetQualifiedTypeWithoutOption (false, ".", "I", "")));
             
             #line default
             #line hidden
             this.Write("\"/></param>\r\n");
             
-            #line 97 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 97 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
 
             }
             if (pricerParameter != null && method.Name == Context.CurrentClass.Name)
@@ -245,21 +245,21 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("            \r\n        /// <param name=\"QL_Pricer\">Pricing object for ");
             
-            #line 102 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 102 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("<see cref=\"");
             
-            #line 102 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 102 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.PricingParameter().GetQualifiedType (true, ".", "I", "")));
             
             #line default
             #line hidden
             this.Write("\"/></param>\r\n");
             
-            #line 103 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 103 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
 
             }
 
@@ -270,49 +270,49 @@ Description:    Generate a single Interface for the Class
                     "cref=\"Cephei.XL.Session._Session\"/></param>\r\n        /// <returns>Mnemonic for t" +
                     "he ");
             
-            #line 107 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 107 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.XLClassName));
             
             #line default
             #line hidden
             this.Write("</returns>\r\n        [ExcelFunction (Description = \"");
             
-            #line 108 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 108 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.Notes));
             
             #line default
             #line hidden
             this.Write("\", Category = \"");
             
-            #line 108 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 108 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Namespace));
             
             #line default
             #line hidden
             this.Write("\", Name = \"_");
             
-            #line 108 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 108 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(xlName));
             
             #line default
             #line hidden
             this.Write("\", IsExceptionSafe=false, IsMacroType=true)]\r\n        public static string _");
             
-            #line 109 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 109 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(xlName));
             
             #line default
             #line hidden
             this.Write("\r\n            ( [ExcelArgument (\"Mnemonic for the ");
             
-            #line 110 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 110 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.XLClassName));
             
             #line default
             #line hidden
             this.Write("\")] string Mnemonic\r\n");
             
-            #line 111 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 111 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
 
             if (Context.CurrentClass.Name != method.Name)
             {
@@ -322,21 +322,21 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("            , [ExcelArgument (\"Mnemonic for the ");
             
-            #line 115 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 115 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("\")] string ");
             
-            #line 115 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 115 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Mnemonic\r\n");
             
-            #line 116 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 116 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
                     
             }
             foreach (KeyValuePair<int, Parameter> pair in method.Parameters)
@@ -347,21 +347,21 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("            \r\n            , [ExcelArgument (\"");
             
-            #line 121 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 121 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Notes ?? ""));
             
             #line default
             #line hidden
             this.Write("\")] object ");
             
-            #line 121 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 121 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 122 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 122 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
 
             }
             if (pricerParameter != null && method.Name == Context.CurrentClass.Name)
@@ -373,7 +373,7 @@ Description:    Generate a single Interface for the Class
             this.Write("            \r\n            , [ExcelArgument (\"Pricing object for instrument\")] obj" +
                     "ect QL_Pricer\r\n");
             
-            #line 128 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 128 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
 
             }
 
@@ -391,14 +391,14 @@ Description:    Generate a single Interface for the Class
                 Tuple<Type, Object[]> __pam = new Tuple<Type, object[]>
                     ( typeof (");
             
-            #line 139 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 139 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Namespace.Replace (".XL", ".Data") + "." + Context.CurrentClass.Name + "." + method.XLClassName));
             
             #line default
             #line hidden
             this.Write("Cell)\r\n");
             
-            #line 140 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 140 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
 
             if (Context.CurrentClass.Name != method.Name)
             {
@@ -409,28 +409,28 @@ Description:    Generate a single Interface for the Class
             this.Write("                    , new object[]\r\n                        { Mnemonic\r\n         " +
                     "               , XLHelper.Validate<");
             
-            #line 146 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 146 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.GetNamespace (".") + ".I" + Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write(">(");
             
-            #line 146 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 146 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Mnemonic, true, \"");
             
-            #line 146 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 146 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Mnemonic\")\r\n");
             
-            #line 147 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 147 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
 
             }
             else
@@ -441,7 +441,7 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("                    , new object[]\r\n                        { Mnemonic\r\n");
             
-            #line 154 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 154 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
                     
             }
 
@@ -450,14 +450,14 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("                        ");
             
-            #line 157 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 157 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((method.Parameters.Count == 0 ? "" : ",")));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 157 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 157 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.GetParamCallStringXL("", "", "\n\t\t\t\t\t\t, ")));
             
             #line default
@@ -466,7 +466,7 @@ Description:    Generate a single Interface for the Class
                     "  }\r\n                    );\r\n                CepheiModel.Instance.WriteLog \r\n   " +
                     "                 ( LogType.Information\r\n                    , ");
             
-            #line 163 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 163 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((method.Id * 10) + 20000000 + 1));
             
             #line default
@@ -474,7 +474,7 @@ Description:    Generate a single Interface for the Class
             this.Write("\r\n                    , \"Cephei.XL\"\r\n                    , \"Create\"\r\n            " +
                     "        , \"");
             
-            #line 166 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 166 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.XLClassName));
             
             #line default
@@ -489,7 +489,7 @@ Description:    Generate a single Interface for the Class
                     ( LogType.Error
                     , ");
             
-            #line 174 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 174 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((method.Id * 10) + 20000000 + 2));
             
             #line default
@@ -497,7 +497,7 @@ Description:    Generate a single Interface for the Class
             this.Write("\r\n                    , \"Cephei.XL\"\r\n                    , \"Create\"\r\n            " +
                     "        , \"");
             
-            #line 177 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 177 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.XLClassName));
             
             #line default
@@ -505,7 +505,7 @@ Description:    Generate a single Interface for the Class
             this.Write(":\" + e.Message\r\n                    );\r\n                return \"#\" + e.Message;\r\n" +
                     "            }\r\n        }\r\n");
             
-            #line 182 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 182 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
 
             if (Context.CurrentClass.Name == method.Name)
             {
@@ -516,14 +516,14 @@ Description:    Generate a single Interface for the Class
             this.Write("  \r\n        /// <summary>\r\n        /// Create an object from VBA\r\n        /// </s" +
                     "ummary>\r\n        public static ICell Create");
             
-            #line 189 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 189 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.XLClassName));
             
             #line default
             #line hidden
             this.Write("\r\n            ( string Mnemonic\r\n");
             
-            #line 191 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 191 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
 
             if (Context.CurrentClass.Name != method.Name)
             {
@@ -533,14 +533,14 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("            , string ");
             
-            #line 195 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 195 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Mnemonic\r\n");
             
-            #line 196 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 196 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
                     
             }
             foreach (KeyValuePair<int, Parameter> pair in method.Parameters)
@@ -551,14 +551,14 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("            \r\n            , object ");
             
-            #line 201 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 201 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 202 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 202 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
 
             }
             if (pricerParameter != null && method.Name == Context.CurrentClass.Name)
@@ -569,7 +569,7 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("            \r\n            , object QL_Pricer\r\n            \r\n");
             
-            #line 209 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 209 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
 
             }
 
@@ -580,7 +580,7 @@ Description:    Generate a single Interface for the Class
                     "  try\r\n            {\r\n                object[] __pam = new object[]\r\n           " +
                     "         { Mnemonic\r\n");
             
-            #line 219 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 219 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
 
             if (Context.CurrentClass.Name != method.Name)
             {
@@ -590,14 +590,14 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("                    , ");
             
-            #line 223 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 223 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("Mnemonic\r\n");
             
-            #line 224 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 224 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
                     
             }
 
@@ -606,14 +606,14 @@ Description:    Generate a single Interface for the Class
             #line hidden
             this.Write("                    ");
             
-            #line 227 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 227 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((method.Parameters.Count == 0 ? "" : ",")));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 227 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 227 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.GetParamCallStringXL("", "", "\n\t\t\t\t\t, ")));
             
             #line default
@@ -622,7 +622,7 @@ Description:    Generate a single Interface for the Class
                     "\n\r\n                CepheiModel.Instance.WriteLog \r\n                    ( LogType" +
                     ".Information\r\n                    , ");
             
-            #line 233 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 233 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((method.Id * 10) + 20000000 + 3));
             
             #line default
@@ -630,14 +630,14 @@ Description:    Generate a single Interface for the Class
             this.Write("\r\n                    , \"Cephei.XL\"\r\n                    , \"Create\"\r\n            " +
                     "        , \"");
             
-            #line 236 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 236 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.XLClassName));
             
             #line default
             #line hidden
             this.Write("\"\r\n                    );\r\n        \r\n                var _r= new ");
             
-            #line 239 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 239 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Namespace.Replace (".XL", ".Data") + "." + Context.CurrentClass.Name + "." + method.XLClassName));
             
             #line default
@@ -652,7 +652,7 @@ Description:    Generate a single Interface for the Class
                     ( LogType.Error
                     , ");
             
-            #line 247 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 247 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((method.Id * 10) + 20000000 + 4));
             
             #line default
@@ -660,14 +660,14 @@ Description:    Generate a single Interface for the Class
             this.Write("\r\n                    , \"Cephei.XL\"\r\n                    , \"Create\"\r\n            " +
                     "        , \"");
             
-            #line 250 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 250 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.XLClassName));
             
             #line default
             #line hidden
             this.Write("\"\r\n                    );\r\n                throw e;\r\n            }\r\n        }\r\n");
             
-            #line 255 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 255 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
 
             }
         }
@@ -683,14 +683,14 @@ Description:    Generate a single Interface for the Class
                     "y>\r\n        [ExcelFunction (Description = \"Create a reference to a list of refer" +
                     "ences to ");
             
-            #line 266 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 266 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("\", Category = \"Cephei.XL\", Name = \"_");
             
-            #line 266 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 266 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(xl_Name));
             
             #line default
@@ -698,7 +698,7 @@ Description:    Generate a single Interface for the Class
             this.Write("_Vector\", IsExceptionSafe=false, IsMacroType=true)]\r\n        public static object" +
                     " _");
             
-            #line 267 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 267 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(xl_Name));
             
             #line default
@@ -706,7 +706,7 @@ Description:    Generate a single Interface for the Class
             this.Write("_Vector\r\n            ([ExcelArgument (\"Mnemonic\")] string Mnemonic\r\n           , " +
                     "[ExcelArgument (\"vector of Mnemonic for the ");
             
-            #line 269 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 269 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -721,7 +721,7 @@ Description:    Generate a single Interface for the Class
                 Tuple<Type, Object[]> __pam = new Tuple<Type, object[]>
                     ( typeof (");
             
-            #line 277 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 277 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Namespace.Replace (".XL", ".Data") + "." + Context.CurrentClass.Name));
             
             #line default
@@ -736,7 +736,7 @@ Description:    Generate a single Interface for the Class
                     ( LogType.Information
                     , ");
             
-            #line 285 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 285 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.Id * 10) + 20000000 + 5));
             
             #line default
@@ -744,7 +744,7 @@ Description:    Generate a single Interface for the Class
             this.Write("\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateVector\"\r\n      " +
                     "              , \"");
             
-            #line 288 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 288 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -759,7 +759,7 @@ Description:    Generate a single Interface for the Class
                     (LogType.Error
                     , ");
             
-            #line 296 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 296 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.Id * 10) + 20000000 + 5));
             
             #line default
@@ -767,7 +767,7 @@ Description:    Generate a single Interface for the Class
             this.Write("\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateVector\"\r\n      " +
                     "              , \"");
             
-            #line 299 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 299 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -783,14 +783,14 @@ Description:    Generate a single Interface for the Class
         /// </summary>
         [ExcelFunction (Description = ""Create a reference to a table of references to ");
             
-            #line 308 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 308 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("\", Category = \"Cephei.XL\", Name = \"_");
             
-            #line 308 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 308 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(xl_Name));
             
             #line default
@@ -798,7 +798,7 @@ Description:    Generate a single Interface for the Class
             this.Write("_Matrix\", IsExceptionSafe=false, IsMacroType=true)]\r\n        public static object" +
                     " _");
             
-            #line 309 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 309 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(xl_Name));
             
             #line default
@@ -806,7 +806,7 @@ Description:    Generate a single Interface for the Class
             this.Write("_Matrix\r\n            ([ExcelArgument (\"Mnemonic\")] string Mnemonic\r\n           , " +
                     "[ExcelArgument (\"matrix of Mnemonic for the ");
             
-            #line 311 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 311 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -821,7 +821,7 @@ Description:    Generate a single Interface for the Class
                 Tuple<Type, Object[]> __pam = new Tuple<Type, object[]>
                     ( typeof (");
             
-            #line 319 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 319 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Namespace.Replace (".XL", ".Data") + "." + Context.CurrentClass.Name));
             
             #line default
@@ -836,7 +836,7 @@ Description:    Generate a single Interface for the Class
                     ( LogType.Information
                     , ");
             
-            #line 327 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 327 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.Id * 10) + 20000000 + 6));
             
             #line default
@@ -844,7 +844,7 @@ Description:    Generate a single Interface for the Class
             this.Write("\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateMatrix\"\r\n      " +
                     "              , \"");
             
-            #line 330 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 330 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -859,7 +859,7 @@ Description:    Generate a single Interface for the Class
                     (LogType.Error
                     , ");
             
-            #line 338 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 338 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.Id * 10) + 20000000 + 6));
             
             #line default
@@ -867,7 +867,7 @@ Description:    Generate a single Interface for the Class
             this.Write("\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateMatrix\"\r\n      " +
                     "              , \"");
             
-            #line 341 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 341 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -883,14 +883,14 @@ Description:    Generate a single Interface for the Class
         /// </summary>
         [ExcelFunction (Description = ""Create a reference to a cube of references to ");
             
-            #line 350 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 350 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("\", Category = \"Cephei.XL\", Name = \"_");
             
-            #line 350 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 350 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(xl_Name));
             
             #line default
@@ -898,7 +898,7 @@ Description:    Generate a single Interface for the Class
             this.Write("_Cube\", IsExceptionSafe=false, IsMacroType=true)]\r\n        public static object _" +
                     "");
             
-            #line 351 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 351 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(xl_Name));
             
             #line default
@@ -906,7 +906,7 @@ Description:    Generate a single Interface for the Class
             this.Write("_Cube\r\n            ([ExcelArgument (\"Mnemonic\")] string Mnemonic\r\n           , [E" +
                     "xcelArgument (\"Cube of Mnemonic for the ");
             
-            #line 353 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 353 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -921,7 +921,7 @@ Description:    Generate a single Interface for the Class
                 Tuple<Type, Object[]> __pam = new Tuple<Type, object[]>
                     ( typeof (");
             
-            #line 361 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 361 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Namespace.Replace (".XL", ".Data") + "." + Context.CurrentClass.Name));
             
             #line default
@@ -936,7 +936,7 @@ Description:    Generate a single Interface for the Class
                     ( LogType.Information
                     , ");
             
-            #line 369 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 369 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.Id * 10) + 20000000 + 7));
             
             #line default
@@ -944,7 +944,7 @@ Description:    Generate a single Interface for the Class
             this.Write("\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateCube\"\r\n        " +
                     "            , \"");
             
-            #line 372 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 372 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -959,7 +959,7 @@ Description:    Generate a single Interface for the Class
                     (LogType.Error
                     , ");
             
-            #line 380 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 380 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.Id * 10) + 20000000 + 7));
             
             #line default
@@ -967,7 +967,7 @@ Description:    Generate a single Interface for the Class
             this.Write("\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateCube\"\r\n        " +
                     "            , \"");
             
-            #line 383 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 383 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -996,7 +996,7 @@ Description:    Generate a single Interface for the Class
                     ( LogType.Information
                     , ");
             
-            #line 405 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 405 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.Id * 10) + 20000000 + 5));
             
             #line default
@@ -1004,14 +1004,14 @@ Description:    Generate a single Interface for the Class
             this.Write("\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateVector\"\r\n      " +
                     "              , \"");
             
-            #line 408 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 408 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("\"\r\n                    );\r\n                var _r = new ");
             
-            #line 410 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 410 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Namespace.Replace (".XL", ".Data") + "." + Context.CurrentClass.Name));
             
             #line default
@@ -1026,7 +1026,7 @@ Description:    Generate a single Interface for the Class
                     (LogType.Error
                     , ");
             
-            #line 418 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 418 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.Id * 10) + 20000000 + 5));
             
             #line default
@@ -1034,7 +1034,7 @@ Description:    Generate a single Interface for the Class
             this.Write("\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateVector\"\r\n      " +
                     "              , \"");
             
-            #line 421 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 421 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -1064,7 +1064,7 @@ Description:    Generate a single Interface for the Class
                     ( LogType.Information
                     , ");
             
-            #line 444 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 444 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.Id * 10) + 20000000 + 6));
             
             #line default
@@ -1072,14 +1072,14 @@ Description:    Generate a single Interface for the Class
             this.Write("\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateMatrix\"\r\n      " +
                     "              , \"");
             
-            #line 447 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 447 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("\"\r\n                    );\r\n                var _r = new ");
             
-            #line 449 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 449 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Namespace.Replace (".XL", ".Data") + "." + Context.CurrentClass.Name));
             
             #line default
@@ -1094,7 +1094,7 @@ Description:    Generate a single Interface for the Class
                     (LogType.Error
                     , ");
             
-            #line 457 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 457 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.Id * 10) + 20000000 + 6));
             
             #line default
@@ -1102,7 +1102,7 @@ Description:    Generate a single Interface for the Class
             this.Write("\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateMatrix\"\r\n      " +
                     "              , \"");
             
-            #line 460 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 460 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -1131,7 +1131,7 @@ Description:    Generate a single Interface for the Class
                     ( LogType.Information
                     , ");
             
-            #line 482 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 482 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.Id * 10) + 20000000 + 7));
             
             #line default
@@ -1139,14 +1139,14 @@ Description:    Generate a single Interface for the Class
             this.Write("\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateCube\"\r\n        " +
                     "            , \"");
             
-            #line 485 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 485 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
             #line hidden
             this.Write("\"\r\n                    );\r\n                var _r = new ");
             
-            #line 487 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 487 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Namespace.Replace (".XL", ".Data") + "." + Context.CurrentClass.Name));
             
             #line default
@@ -1161,7 +1161,7 @@ Description:    Generate a single Interface for the Class
                     (LogType.Error
                     , ");
             
-            #line 495 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 495 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.CurrentClass.Id * 10) + 20000000 + 7));
             
             #line default
@@ -1169,7 +1169,7 @@ Description:    Generate a single Interface for the Class
             this.Write("\r\n                    , \"Cephei.XL\"\r\n                    , \"CreateCube\"\r\n        " +
                     "            , \"");
             
-            #line 498 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 498 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Context.CurrentClass.Name));
             
             #line default
@@ -1177,7 +1177,7 @@ Description:    Generate a single Interface for the Class
             this.Write(":\" + e.Message\r\n                    );\r\n                throw e;\r\n            }\r\n" +
                     "        }\r\n        */\r\n    }\r\n}\r\n");
             
-            #line 506 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+            #line 506 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
   
             
             #line default
@@ -1185,7 +1185,7 @@ Description:    Generate a single Interface for the Class
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 507 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+        #line 507 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
 
 		public Context Context = new Context();
 
@@ -1202,7 +1202,7 @@ Description:    Generate a single Interface for the Class
         #line default
         #line hidden
         
-        #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Class.tt"
+        #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Class.tt"
 
 private string _ElementNameField;
 

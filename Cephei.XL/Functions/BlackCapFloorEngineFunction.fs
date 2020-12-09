@@ -47,6 +47,8 @@ module BlackCapFloorEngineFunction =
          vol : obj)
         ([<ExcelArgument(Name="displacement",Description = "double or empty")>] 
          displacement : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -55,10 +57,12 @@ module BlackCapFloorEngineFunction =
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toHandle<OptionletVolatilityStructure> vol "vol" 
                 let _displacement = Helper.toDefault<double> displacement "displacement" 0.0
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackCapFloorEngine1 
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _displacement.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackCapFloorEngine>) l
 
@@ -66,11 +70,13 @@ module BlackCapFloorEngineFunction =
                                                [| _discountCurve.source
                                                ;  _vol.source
                                                ;  _displacement.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _discountCurve.cell
                                 ;  _vol.cell
                                 ;  _displacement.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -98,6 +104,8 @@ module BlackCapFloorEngineFunction =
          dc : obj)
         ([<ExcelArgument(Name="displacement",Description = "double or empty")>] 
          displacement : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -107,11 +115,13 @@ module BlackCapFloorEngineFunction =
                 let _vol = Helper.toHandle<Quote> vol "vol" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _displacement = Helper.toDefault<double> displacement "displacement" 0.0
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackCapFloorEngine2
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _dc.cell 
                                                             _displacement.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackCapFloorEngine>) l
 
@@ -120,12 +130,14 @@ module BlackCapFloorEngineFunction =
                                                ;  _vol.source
                                                ;  _dc.source
                                                ;  _displacement.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _discountCurve.cell
                                 ;  _vol.cell
                                 ;  _dc.cell
                                 ;  _displacement.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -153,6 +165,8 @@ module BlackCapFloorEngineFunction =
          dc : obj)
         ([<ExcelArgument(Name="displacement",Description = "double or empty")>] 
          displacement : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -162,11 +176,13 @@ module BlackCapFloorEngineFunction =
                 let _vol = Helper.toCell<double> vol "vol" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _displacement = Helper.toDefault<double> displacement "displacement" 0.0
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackCapFloorEngine
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _dc.cell 
                                                             _displacement.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackCapFloorEngine>) l
 
@@ -175,12 +191,14 @@ module BlackCapFloorEngineFunction =
                                                ;  _vol.source
                                                ;  _dc.source
                                                ;  _displacement.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _discountCurve.cell
                                 ;  _vol.cell
                                 ;  _dc.cell
                                 ;  _displacement.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -319,16 +337,16 @@ module BlackCapFloorEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<BlackCapFloorEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<BlackCapFloorEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<BlackCapFloorEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<BlackCapFloorEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<BlackCapFloorEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<BlackCapFloorEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

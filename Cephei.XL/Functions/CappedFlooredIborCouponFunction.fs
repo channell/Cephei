@@ -41,19 +41,25 @@ module CappedFlooredIborCouponFunction =
     let CappedFlooredIborCoupon_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.CappedFlooredIborCoupon ()
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.CappedFlooredIborCoupon 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CappedFlooredIborCoupon>) l
 
                 let source () = Helper.sourceFold "Fun.CappedFlooredIborCoupon" 
-                                               [||]
+                                               [|  _evaluationDate.source
+                                               |]
                 let hash = Helper.hashFold 
-                                [||]
+                                [|  _evaluationDate.cell
+                                |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
@@ -100,6 +106,8 @@ module CappedFlooredIborCouponFunction =
          dayCounter : obj)
         ([<ExcelArgument(Name="isInArrears",Description = "bool or empty")>] 
          isInArrears : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -119,6 +127,7 @@ module CappedFlooredIborCouponFunction =
                 let _refPeriodEnd = Helper.toDefault<Date> refPeriodEnd "refPeriodEnd" null
                 let _dayCounter = Helper.toDefault<DayCounter> dayCounter "dayCounter" null
                 let _isInArrears = Helper.toDefault<bool> isInArrears "isInArrears" false
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.CappedFlooredIborCoupon1 
                                                             _paymentDate.cell 
                                                             _nominal.cell 
@@ -134,6 +143,7 @@ module CappedFlooredIborCouponFunction =
                                                             _refPeriodEnd.cell 
                                                             _dayCounter.cell 
                                                             _isInArrears.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CappedFlooredIborCoupon>) l
 
@@ -152,6 +162,7 @@ module CappedFlooredIborCouponFunction =
                                                ;  _refPeriodEnd.source
                                                ;  _dayCounter.source
                                                ;  _isInArrears.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _paymentDate.cell
@@ -168,6 +179,7 @@ module CappedFlooredIborCouponFunction =
                                 ;  _refPeriodEnd.cell
                                 ;  _dayCounter.cell
                                 ;  _isInArrears.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -1871,16 +1883,16 @@ module CappedFlooredIborCouponFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<CappedFlooredIborCoupon> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<CappedFlooredIborCoupon> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<CappedFlooredIborCoupon> (c)) :> ICell
                 let format (i : Generic.List<ICell<CappedFlooredIborCoupon>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<CappedFlooredIborCoupon>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<CappedFlooredIborCoupon>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

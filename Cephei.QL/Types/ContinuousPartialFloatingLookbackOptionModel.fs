@@ -58,7 +58,7 @@ type ContinuousPartialFloatingLookbackOptionModel
     Functions
 *)
     let mutable
-        _ContinuousPartialFloatingLookbackOption   = cell (fun () -> withEngine pricingEngine (new ContinuousPartialFloatingLookbackOption (minmax.Value, lambda.Value, lookbackPeriodEnd.Value, payoff.Value, exercise.Value)))
+        _ContinuousPartialFloatingLookbackOption   = cell (fun () -> withEngine pricingEngine evaluationDate (new ContinuousPartialFloatingLookbackOption (minmax.Value, lambda.Value, lookbackPeriodEnd.Value, payoff.Value, exercise.Value)))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _ContinuousPartialFloatingLookbackOption).delta())
     let _deltaForward                              = triv (fun () -> (withEvaluationDate _evaluationDate _ContinuousPartialFloatingLookbackOption).deltaForward())
     let _dividendRho                               = triv (fun () -> (withEvaluationDate _evaluationDate _ContinuousPartialFloatingLookbackOption).dividendRho())

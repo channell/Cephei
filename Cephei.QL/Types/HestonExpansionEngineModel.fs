@@ -35,37 +35,43 @@ open Cephei.QLNetHelper
 type HestonExpansionEngineModel
     ( model                                        : ICell<HestonModel>
     , formula                                      : ICell<HestonExpansionEngine.HestonExpansionFormula>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<HestonExpansionEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _model                                     = model
     let _formula                                   = formula
 (*
     Functions
 *)
     let mutable
-        _HestonExpansionEngine                     = cell (fun () -> new HestonExpansionEngine (model.Value, formula.Value))
+        _HestonExpansionEngine                     = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new HestonExpansionEngine (model.Value, formula.Value))))
     let _setModel                                  (model : ICell<Handle<HestonModel>>)   
-                                                   = triv (fun () -> _HestonExpansionEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _HestonExpansionEngine).Value.setModel(model.Value)
                                                                      _HestonExpansionEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _HestonExpansionEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _HestonExpansionEngine).Value.registerWith(handler.Value)
                                                                      _HestonExpansionEngine.Value)
-    let _reset                                     = triv (fun () -> _HestonExpansionEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _HestonExpansionEngine).Value.reset()
                                                                      _HestonExpansionEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _HestonExpansionEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _HestonExpansionEngine).Value.unregisterWith(handler.Value)
                                                                      _HestonExpansionEngine.Value)
-    let _update                                    = triv (fun () -> _HestonExpansionEngine.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _HestonExpansionEngine).Value.update()
                                                                      _HestonExpansionEngine.Value)
     do this.Bind(_HestonExpansionEngine)
 (* 
     casting 
 *)
-    internal new () = new HestonExpansionEngineModel(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new HestonExpansionEngineModel(null,null,null)
     member internal this.Inject v = _HestonExpansionEngine <- v
     static member Cast (p : ICell<HestonExpansionEngine>) = 
         if p :? HestonExpansionEngineModel then 
@@ -73,6 +79,7 @@ type HestonExpansionEngineModel
         else
             let o = new HestonExpansionEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

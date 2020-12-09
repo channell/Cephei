@@ -49,6 +49,8 @@ module BlackStyleSwaptionEngineFunction =
          displacement : obj)
         ([<ExcelArgument(Name="model",Description = "CashAnnuityModel or empty")>] 
          model : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -58,11 +60,13 @@ module BlackStyleSwaptionEngineFunction =
                 let _volatility = Helper.toHandle<SwaptionVolatilityStructure> volatility "volatility" 
                 let _displacement = Helper.toNullable<Nullable<double> displacement "displacement"
                 let _model = Helper.toDefault<CashAnnuityModel> model "model" CashAnnuityModel.DiscountCurve
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackStyleSwaptionEngine 
                                                             _discountCurve.cell 
                                                             _volatility.cell 
                                                             _displacement.cell 
                                                             _model.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackStyleSwaptionEngine>) l
 
@@ -71,12 +75,14 @@ module BlackStyleSwaptionEngineFunction =
                                                ;  _volatility.source
                                                ;  _displacement.source
                                                ;  _model.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _discountCurve.cell
                                 ;  _volatility.cell
                                 ;  _displacement.cell
                                 ;  _model.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -106,6 +112,8 @@ module BlackStyleSwaptionEngineFunction =
          displacement : obj)
         ([<ExcelArgument(Name="model",Description = "CashAnnuityModel or empty")>] 
          model : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -116,12 +124,14 @@ module BlackStyleSwaptionEngineFunction =
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _displacement = Helper.toNullable<double> displacement "displacement"
                 let _model = Helper.toDefault<CashAnnuityModel> model "model" CashAnnuityModel.DiscountCurve
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackStyleSwaptionEngine1 
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _dc.cell 
                                                             _displacement.cell 
                                                             _model.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackStyleSwaptionEngine>) l
 
@@ -131,6 +141,7 @@ module BlackStyleSwaptionEngineFunction =
                                                ;  _dc.source
                                                ;  _displacement.source
                                                ;  _model.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _discountCurve.cell
@@ -138,6 +149,7 @@ module BlackStyleSwaptionEngineFunction =
                                 ;  _dc.cell
                                 ;  _displacement.cell
                                 ;  _model.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -167,6 +179,8 @@ module BlackStyleSwaptionEngineFunction =
          displacement : obj)
         ([<ExcelArgument(Name="model",Description = "CashAnnuityModel or empty")>] 
          model : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -177,12 +191,14 @@ module BlackStyleSwaptionEngineFunction =
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _displacement = Helper.toNullable<double> displacement "displacement"
                 let _model = Helper.toDefault<CashAnnuityModel> model "model" CashAnnuityModel.DiscountCurve
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.BlackStyleSwaptionEngine2 
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _dc.cell 
                                                             _displacement.cell 
                                                             _model.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BlackStyleSwaptionEngine>) l
 
@@ -192,6 +208,7 @@ module BlackStyleSwaptionEngineFunction =
                                                ;  _dc.source
                                                ;  _displacement.source
                                                ;  _model.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _discountCurve.cell
@@ -199,6 +216,7 @@ module BlackStyleSwaptionEngineFunction =
                                 ;  _dc.cell
                                 ;  _displacement.cell
                                 ;  _model.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -301,16 +319,16 @@ module BlackStyleSwaptionEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<BlackStyleSwaptionEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<BlackStyleSwaptionEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<BlackStyleSwaptionEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<BlackStyleSwaptionEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<BlackStyleSwaptionEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<BlackStyleSwaptionEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

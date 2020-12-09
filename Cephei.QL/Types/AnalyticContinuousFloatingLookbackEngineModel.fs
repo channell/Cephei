@@ -34,23 +34,29 @@ open Cephei.QLNetHelper
 [<AutoSerializable(true)>]
 type AnalyticContinuousFloatingLookbackEngineModel
     ( Process                                      : ICell<GeneralizedBlackScholesProcess>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<AnalyticContinuousFloatingLookbackEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
 (*
     Functions
 *)
     let mutable
-        _AnalyticContinuousFloatingLookbackEngine  = cell (fun () -> new AnalyticContinuousFloatingLookbackEngine (Process.Value))
+        _AnalyticContinuousFloatingLookbackEngine  = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticContinuousFloatingLookbackEngine (Process.Value))))
     do this.Bind(_AnalyticContinuousFloatingLookbackEngine)
 (* 
     casting 
 *)
-    internal new () = new AnalyticContinuousFloatingLookbackEngineModel(null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new AnalyticContinuousFloatingLookbackEngineModel(null,null)
     member internal this.Inject v = _AnalyticContinuousFloatingLookbackEngine <- v
     static member Cast (p : ICell<AnalyticContinuousFloatingLookbackEngine>) = 
         if p :? AnalyticContinuousFloatingLookbackEngineModel then 
@@ -58,6 +64,7 @@ type AnalyticContinuousFloatingLookbackEngineModel
         else
             let o = new AnalyticContinuousFloatingLookbackEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

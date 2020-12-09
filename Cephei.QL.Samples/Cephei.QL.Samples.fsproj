@@ -5,6 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Zero.fs" />
+    <None Include="MoveList.fsx" />
+    <None Include="AddEvaluation2.fsx" />
     <None Include="AddEvaluation.fsx" />
     <Compile Include="ChnageEvalDate.fsx" />
     <None Include="codegen.fsx" />

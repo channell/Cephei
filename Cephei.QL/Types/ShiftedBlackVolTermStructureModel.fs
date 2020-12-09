@@ -35,63 +35,69 @@ open Cephei.QLNetHelper
 type ShiftedBlackVolTermStructureModel
     ( varianceOffset                               : ICell<double>
     , volTS                                        : ICell<Handle<BlackVolTermStructure>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<ShiftedBlackVolTermStructure> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _varianceOffset                            = varianceOffset
     let _volTS                                     = volTS
 (*
     Functions
 *)
     let mutable
-        _ShiftedBlackVolTermStructure              = cell (fun () -> new ShiftedBlackVolTermStructure (varianceOffset.Value, volTS.Value))
-    let _maxDate                                   = triv (fun () -> _ShiftedBlackVolTermStructure.Value.maxDate())
-    let _maxStrike                                 = triv (fun () -> _ShiftedBlackVolTermStructure.Value.maxStrike())
-    let _minStrike                                 = triv (fun () -> _ShiftedBlackVolTermStructure.Value.minStrike())
+        _ShiftedBlackVolTermStructure              = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new ShiftedBlackVolTermStructure (varianceOffset.Value, volTS.Value))))
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.maxDate())
+    let _maxStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.maxStrike())
+    let _minStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.minStrike())
     let _blackForwardVariance                      (time1 : ICell<double>) (time2 : ICell<double>) (strike : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _ShiftedBlackVolTermStructure.Value.blackForwardVariance(time1.Value, time2.Value, strike.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.blackForwardVariance(time1.Value, time2.Value, strike.Value, extrapolate.Value))
     let _blackForwardVariance1                     (date1 : ICell<Date>) (date2 : ICell<Date>) (strike : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _ShiftedBlackVolTermStructure.Value.blackForwardVariance(date1.Value, date2.Value, strike.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.blackForwardVariance(date1.Value, date2.Value, strike.Value, extrapolate.Value))
     let _blackForwardVol                           (time1 : ICell<double>) (time2 : ICell<double>) (strike : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _ShiftedBlackVolTermStructure.Value.blackForwardVol(time1.Value, time2.Value, strike.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.blackForwardVol(time1.Value, time2.Value, strike.Value, extrapolate.Value))
     let _blackForwardVol1                          (date1 : ICell<Date>) (date2 : ICell<Date>) (strike : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _ShiftedBlackVolTermStructure.Value.blackForwardVol(date1.Value, date2.Value, strike.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.blackForwardVol(date1.Value, date2.Value, strike.Value, extrapolate.Value))
     let _blackVariance                             (maturity : ICell<Date>) (strike : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _ShiftedBlackVolTermStructure.Value.blackVariance(maturity.Value, strike.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.blackVariance(maturity.Value, strike.Value, extrapolate.Value))
     let _blackVariance1                            (maturity : ICell<double>) (strike : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _ShiftedBlackVolTermStructure.Value.blackVariance(maturity.Value, strike.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.blackVariance(maturity.Value, strike.Value, extrapolate.Value))
     let _blackVol                                  (maturity : ICell<Date>) (strike : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _ShiftedBlackVolTermStructure.Value.blackVol(maturity.Value, strike.Value, extrapolate.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.blackVol(maturity.Value, strike.Value, extrapolate.Value))
     let _blackVol1                                 (maturity : ICell<double>) (strike : ICell<double>) (extrapolate : ICell<bool>)   
-                                                   = triv (fun () -> _ShiftedBlackVolTermStructure.Value.blackVol(maturity.Value, strike.Value, extrapolate.Value))
-    let _businessDayConvention                     = triv (fun () -> _ShiftedBlackVolTermStructure.Value.businessDayConvention())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.blackVol(maturity.Value, strike.Value, extrapolate.Value))
+    let _businessDayConvention                     = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.businessDayConvention())
     let _optionDateFromTenor                       (p : ICell<Period>)   
-                                                   = triv (fun () -> _ShiftedBlackVolTermStructure.Value.optionDateFromTenor(p.Value))
-    let _calendar                                  = triv (fun () -> _ShiftedBlackVolTermStructure.Value.calendar())
-    let _dayCounter                                = triv (fun () -> _ShiftedBlackVolTermStructure.Value.dayCounter())
-    let _maxTime                                   = triv (fun () -> _ShiftedBlackVolTermStructure.Value.maxTime())
-    let _referenceDate                             = triv (fun () -> _ShiftedBlackVolTermStructure.Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> _ShiftedBlackVolTermStructure.Value.settlementDays())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.optionDateFromTenor(p.Value))
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.calendar())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.dayCounter())
+    let _maxTime                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.maxTime())
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.settlementDays())
     let _timeFromReference                         (date : ICell<Date>)   
-                                                   = triv (fun () -> _ShiftedBlackVolTermStructure.Value.timeFromReference(date.Value))
-    let _update                                    = triv (fun () -> _ShiftedBlackVolTermStructure.Value.update()
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.timeFromReference(date.Value))
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.update()
                                                                      _ShiftedBlackVolTermStructure.Value)
-    let _allowsExtrapolation                       = triv (fun () -> _ShiftedBlackVolTermStructure.Value.allowsExtrapolation())
+    let _allowsExtrapolation                       = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.allowsExtrapolation())
     let _disableExtrapolation                      (b : ICell<bool>)   
-                                                   = triv (fun () -> _ShiftedBlackVolTermStructure.Value.disableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.disableExtrapolation(b.Value)
                                                                      _ShiftedBlackVolTermStructure.Value)
     let _enableExtrapolation                       (b : ICell<bool>)   
-                                                   = triv (fun () -> _ShiftedBlackVolTermStructure.Value.enableExtrapolation(b.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.enableExtrapolation(b.Value)
                                                                      _ShiftedBlackVolTermStructure.Value)
-    let _extrapolate                               = triv (fun () -> _ShiftedBlackVolTermStructure.Value.extrapolate)
+    let _extrapolate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _ShiftedBlackVolTermStructure).Value.extrapolate)
     do this.Bind(_ShiftedBlackVolTermStructure)
 (* 
     casting 
 *)
-    internal new () = new ShiftedBlackVolTermStructureModel(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new ShiftedBlackVolTermStructureModel(null,null,null)
     member internal this.Inject v = _ShiftedBlackVolTermStructure <- v
     static member Cast (p : ICell<ShiftedBlackVolTermStructure>) = 
         if p :? ShiftedBlackVolTermStructureModel then 
@@ -99,6 +105,7 @@ type ShiftedBlackVolTermStructureModel
         else
             let o = new ShiftedBlackVolTermStructureModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

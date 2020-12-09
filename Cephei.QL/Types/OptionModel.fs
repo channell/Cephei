@@ -52,7 +52,7 @@ type OptionModel
     Functions
 *)
     let mutable
-        _Option                                    = cell (fun () -> withEngine pricingEngine (new Option (payoff.Value, exercise.Value)))
+        _Option                                    = cell (fun () -> withEngine pricingEngine evaluationDate (new Option (payoff.Value, exercise.Value)))
     let _exercise                                  = cell (fun () -> (withEvaluationDate _evaluationDate _Option).exercise())
     let _payoff                                    = cell (fun () -> (withEvaluationDate _evaluationDate _Option).payoff())
     let _CASH                                      = cell (fun () -> (withEvaluationDate _evaluationDate _Option).CASH())

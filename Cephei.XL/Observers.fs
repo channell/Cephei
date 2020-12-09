@@ -19,13 +19,13 @@ type RTDObserver<'T> (rtd : IValueRTD, cell : ICell<'T>, format : 'T -> string -
     let _holder = cell.Subscribe(this)
     let _format = format
     let _layout = layout
-    do Task.Run (fun () -> 
+    do Cell.Dispatch (new Action(fun () -> 
         try
             _rtd.UpdateValue _mnemonic _layout (_format cell.Value layout)
         with 
         | e -> (_rtd.UpdateValue _mnemonic _layout ("#" + e.Message))
                Serilog.Log.Error(e, e.Message)
-        ) |> ignore
+        ))
 
     interface IObserver<'T> with
         member this.OnCompleted () : unit =
@@ -50,7 +50,7 @@ type RTDRangeObserver<'T> (rtd : IValueRTD, cell : ICell<Generic.List<'T>>, form
     let _holder = cell.Subscribe(this)
     let _format = format
     let _layout = layout
-    do Task.Run (fun () -> _rtd.UpdateRange _mnemonic _layout (_format cell.Value _layout)) |> ignore
+    do Cell.Dispatch (new Action(fun () -> _rtd.UpdateRange _mnemonic _layout (_format cell.Value _layout))) 
 
     interface IObserver<System.Collections.Generic.List<'T>> with
         member this.OnCompleted () : unit =
@@ -75,7 +75,7 @@ type RTDModelObserver<'t> (rtd : IValueRTD, model : ICell<'t>, format : ICell<'t
     let _holder = (model :?> Model).Subscribe(this)
     let _format = format
     let _layout = layout
-    do Task.Run (fun () -> _rtd.UpdateRange _mnemonic _layout (_format _model layout)) |> ignore
+    do Cell.Dispatch (new Action(fun () -> _rtd.UpdateRange _mnemonic _layout (_format _model layout)))
 
     interface IObserver<ICell> with
         member this.OnCompleted () : unit =
@@ -99,7 +99,7 @@ type RTDModelRangeObserver<'t> (rtd : IValueRTD, models : ICell<Generic.List<ICe
     let _holders = Seq.map (fun (i : ICell<'t>) -> (i :?> Model).Subscribe(this)) _models |> Seq.toArray
     let _format = format
     let _layout = layout
-    do Task.Run (fun () -> _rtd.UpdateValue _mnemonic _layout (_format _models layout)) |> ignore
+    do Cell.Dispatch (new Action(fun () -> _rtd.UpdateValue _mnemonic _layout (_format _models layout)))
 
     interface IObserver<ICell> with
         member this.OnCompleted () : unit =

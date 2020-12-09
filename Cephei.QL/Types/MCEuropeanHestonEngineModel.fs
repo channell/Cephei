@@ -41,12 +41,15 @@ type MCEuropeanHestonEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (new : un
     , requiredTolerance                            : ICell<Nullable<double>>
     , maxSamples                                   : ICell<Nullable<int>>
     , seed                                         : ICell<uint64>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<MCEuropeanHestonEngine<'RNG,'S>> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
     let _timeSteps                                 = timeSteps
     let _timeStepsPerYear                          = timeStepsPerYear
@@ -59,7 +62,7 @@ type MCEuropeanHestonEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (new : un
     Functions
 *)
     let mutable
-        _MCEuropeanHestonEngine                    = cell (fun () -> new MCEuropeanHestonEngine<'RNG,'S> (Process.Value, timeSteps.Value, timeStepsPerYear.Value, antitheticVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))
+        _MCEuropeanHestonEngine                    = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new MCEuropeanHestonEngine<'RNG,'S> (Process.Value, timeSteps.Value, timeStepsPerYear.Value, antitheticVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))))
     do this.Bind(_MCEuropeanHestonEngine)
 
 (* 

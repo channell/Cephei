@@ -34,23 +34,29 @@ open Cephei.QLNetHelper
 [<AutoSerializable(true)>]
 type BaroneAdesiWhaleyApproximationEngineModel
     ( Process                                      : ICell<GeneralizedBlackScholesProcess>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BaroneAdesiWhaleyApproximationEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
 (*
     Functions
 *)
     let mutable
-        _BaroneAdesiWhaleyApproximationEngine      = cell (fun () -> new BaroneAdesiWhaleyApproximationEngine (Process.Value))
+        _BaroneAdesiWhaleyApproximationEngine      = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BaroneAdesiWhaleyApproximationEngine (Process.Value))))
     do this.Bind(_BaroneAdesiWhaleyApproximationEngine)
 (* 
     casting 
 *)
-    internal new () = new BaroneAdesiWhaleyApproximationEngineModel(null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new BaroneAdesiWhaleyApproximationEngineModel(null,null)
     member internal this.Inject v = _BaroneAdesiWhaleyApproximationEngine <- v
     static member Cast (p : ICell<BaroneAdesiWhaleyApproximationEngine>) = 
         if p :? BaroneAdesiWhaleyApproximationEngineModel then 
@@ -58,6 +64,7 @@ type BaroneAdesiWhaleyApproximationEngineModel
         else
             let o = new BaroneAdesiWhaleyApproximationEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

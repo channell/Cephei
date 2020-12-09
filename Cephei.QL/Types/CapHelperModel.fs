@@ -64,7 +64,7 @@ type CapHelperModel
     Functions
 *)
     let mutable
-        _CapHelper                                 = cell (fun () -> withEngine pricingEngine (new CapHelper (length.Value, volatility.Value, index.Value, fixedLegFrequency.Value, fixedLegDayCounter.Value, includeFirstSwaplet.Value, termStructure.Value, errorType.Value)))
+        _CapHelper                                 = cell (fun () -> withEngine pricingEngine evaluationDate (new CapHelper (length.Value, volatility.Value, index.Value, fixedLegFrequency.Value, fixedLegDayCounter.Value, includeFirstSwaplet.Value, termStructure.Value, errorType.Value)))
     let _addTimesTo                                (times : ICell<Generic.List<double>>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _CapHelper).addTimesTo(times.Value)
                                                                      _CapHelper.Value)

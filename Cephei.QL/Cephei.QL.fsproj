@@ -1058,7 +1058,7 @@ The source types can be used as-is or as recipes for domain specific implementat
   </ItemGroup>
 
   <ItemGroup>
-	  <None Include="$(OutDir)QLNetCephei.dll">
+	  <None Include="$(OutDir)QLNet.dll">
 		  <Pack>True</Pack>
 		  <PackagePath>lib/netstandard2.0</PackagePath>
 	  </None>

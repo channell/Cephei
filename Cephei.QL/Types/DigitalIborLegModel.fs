@@ -35,77 +35,83 @@ open Cephei.QLNetHelper
 type DigitalIborLegModel
     ( schedule                                     : ICell<Schedule>
     , index                                        : ICell<IborIndex>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<DigitalIborLeg> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _schedule                                  = schedule
     let _index                                     = index
 (*
     Functions
 *)
     let mutable
-        _DigitalIborLeg                            = cell (fun () -> new DigitalIborLeg (schedule.Value, index.Value))
-    let _inArrears                                 = triv (fun () -> _DigitalIborLeg.Value.inArrears())
+        _DigitalIborLeg                            = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new DigitalIborLeg (schedule.Value, index.Value))))
+    let _inArrears                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.inArrears())
     let _inArrears1                                (flag : ICell<bool>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.inArrears(flag.Value))
-    let _value                                     = triv (fun () -> _DigitalIborLeg.Value.value())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.inArrears(flag.Value))
+    let _value                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.value())
     let _withCallATM                               (flag : ICell<bool>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.withCallATM(flag.Value))
-    let _withCallATM1                              = triv (fun () -> _DigitalIborLeg.Value.withCallATM())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withCallATM(flag.Value))
+    let _withCallATM1                              = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withCallATM())
     let _withCallPayoffs                           (payoffs : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.withCallPayoffs(payoffs.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withCallPayoffs(payoffs.Value))
     let _withCallPayoffs1                          (payoff : ICell<double>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.withCallPayoffs(payoff.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withCallPayoffs(payoff.Value))
     let _withCallStrikes                           (strikes : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.withCallStrikes(strikes.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withCallStrikes(strikes.Value))
     let _withCallStrikes1                          (strike : ICell<double>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.withCallStrikes(strike.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withCallStrikes(strike.Value))
     let _withFixingDays                            (fixingDays : ICell<Generic.List<int>>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.withFixingDays(fixingDays.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withFixingDays(fixingDays.Value))
     let _withFixingDays1                           (fixingDays : ICell<int>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.withFixingDays(fixingDays.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withFixingDays(fixingDays.Value))
     let _withGearings                              (gearings : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.withGearings(gearings.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withGearings(gearings.Value))
     let _withGearings1                             (gearing : ICell<double>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.withGearings(gearing.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withGearings(gearing.Value))
     let _withLongCallOption                        (Type : ICell<Position.Type>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.withLongCallOption(Type.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withLongCallOption(Type.Value))
     let _withLongPutOption                         (Type : ICell<Position.Type>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.withLongPutOption(Type.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withLongPutOption(Type.Value))
     let _withNotionals                             (notionals : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.withNotionals(notionals.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withNotionals(notionals.Value))
     let _withNotionals1                            (notional : ICell<double>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.withNotionals(notional.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withNotionals(notional.Value))
     let _withPaymentAdjustment                     (convention : ICell<BusinessDayConvention>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.withPaymentAdjustment(convention.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withPaymentAdjustment(convention.Value))
     let _withPaymentDayCounter                     (dayCounter : ICell<DayCounter>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.withPaymentDayCounter(dayCounter.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withPaymentDayCounter(dayCounter.Value))
     let _withPutATM                                (flag : ICell<bool>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.withPutATM(flag.Value))
-    let _withPutATM1                               = triv (fun () -> _DigitalIborLeg.Value.withPutATM())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withPutATM(flag.Value))
+    let _withPutATM1                               = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withPutATM())
     let _withPutPayoffs                            (payoffs : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.withPutPayoffs(payoffs.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withPutPayoffs(payoffs.Value))
     let _withPutPayoffs1                           (payoff : ICell<double>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.withPutPayoffs(payoff.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withPutPayoffs(payoff.Value))
     let _withPutStrikes                            (strike : ICell<double>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.withPutStrikes(strike.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withPutStrikes(strike.Value))
     let _withPutStrikes1                           (strikes : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.withPutStrikes(strikes.Value))
-    let _withReplication                           = triv (fun () -> _DigitalIborLeg.Value.withReplication())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withPutStrikes(strikes.Value))
+    let _withReplication                           = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withReplication())
     let _withReplication1                          (replication : ICell<DigitalReplication>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.withReplication(replication.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withReplication(replication.Value))
     let _withSpreads                               (spreads : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.withSpreads(spreads.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withSpreads(spreads.Value))
     let _withSpreads1                              (spread : ICell<double>)   
-                                                   = triv (fun () -> _DigitalIborLeg.Value.withSpreads(spread.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DigitalIborLeg).Value.withSpreads(spread.Value))
     do this.Bind(_DigitalIborLeg)
 (* 
     casting 
 *)
-    internal new () = new DigitalIborLegModel(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new DigitalIborLegModel(null,null,null)
     member internal this.Inject v = _DigitalIborLeg <- v
     static member Cast (p : ICell<DigitalIborLeg>) = 
         if p :? DigitalIborLegModel then 
@@ -113,6 +119,7 @@ type DigitalIborLegModel
         else
             let o = new DigitalIborLegModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

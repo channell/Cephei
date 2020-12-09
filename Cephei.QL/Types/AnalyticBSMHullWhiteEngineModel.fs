@@ -36,12 +36,15 @@ type AnalyticBSMHullWhiteEngineModel
     ( equityShortRateCorrelation                   : ICell<double>
     , Process                                      : ICell<GeneralizedBlackScholesProcess>
     , model                                        : ICell<HullWhite>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<AnalyticBSMHullWhiteEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _equityShortRateCorrelation                = equityShortRateCorrelation
     let _Process                                   = Process
     let _model                                     = model
@@ -49,25 +52,28 @@ type AnalyticBSMHullWhiteEngineModel
     Functions
 *)
     let mutable
-        _AnalyticBSMHullWhiteEngine                = cell (fun () -> new AnalyticBSMHullWhiteEngine (equityShortRateCorrelation.Value, Process.Value, model.Value))
+        _AnalyticBSMHullWhiteEngine                = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticBSMHullWhiteEngine (equityShortRateCorrelation.Value, Process.Value, model.Value))))
     let _setModel                                  (model : ICell<Handle<HullWhite>>)   
-                                                   = triv (fun () -> _AnalyticBSMHullWhiteEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticBSMHullWhiteEngine).Value.setModel(model.Value)
                                                                      _AnalyticBSMHullWhiteEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _AnalyticBSMHullWhiteEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticBSMHullWhiteEngine).Value.registerWith(handler.Value)
                                                                      _AnalyticBSMHullWhiteEngine.Value)
-    let _reset                                     = triv (fun () -> _AnalyticBSMHullWhiteEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticBSMHullWhiteEngine).Value.reset()
                                                                      _AnalyticBSMHullWhiteEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _AnalyticBSMHullWhiteEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticBSMHullWhiteEngine).Value.unregisterWith(handler.Value)
                                                                      _AnalyticBSMHullWhiteEngine.Value)
-    let _update                                    = triv (fun () -> _AnalyticBSMHullWhiteEngine.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticBSMHullWhiteEngine).Value.update()
                                                                      _AnalyticBSMHullWhiteEngine.Value)
     do this.Bind(_AnalyticBSMHullWhiteEngine)
 (* 
     casting 
 *)
-    internal new () = new AnalyticBSMHullWhiteEngineModel(null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new AnalyticBSMHullWhiteEngineModel(null,null,null,null)
     member internal this.Inject v = _AnalyticBSMHullWhiteEngine <- v
     static member Cast (p : ICell<AnalyticBSMHullWhiteEngine>) = 
         if p :? AnalyticBSMHullWhiteEngineModel then 
@@ -75,6 +81,7 @@ type AnalyticBSMHullWhiteEngineModel
         else
             let o = new AnalyticBSMHullWhiteEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

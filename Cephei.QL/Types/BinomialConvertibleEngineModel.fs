@@ -35,19 +35,22 @@ open Cephei.QLNetHelper
 type BinomialConvertibleEngineModel<'T when 'T :> ITree and 'T :> ITreeFactory<'T> and 'T : (new : unit -> 'T)>
     ( Process                                      : ICell<GeneralizedBlackScholesProcess>
     , timeSteps                                    : ICell<int>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BinomialConvertibleEngine<'T>> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
     let _timeSteps                                 = timeSteps
 (*
     Functions
 *)
     let mutable
-        _BinomialConvertibleEngine                 = cell (fun () -> new BinomialConvertibleEngine<'T> (Process.Value, timeSteps.Value))
+        _BinomialConvertibleEngine                 = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BinomialConvertibleEngine<'T> (Process.Value, timeSteps.Value))))
     do this.Bind(_BinomialConvertibleEngine)
 
 (* 

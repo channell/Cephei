@@ -540,5 +540,7 @@ namespace Cephei.Cell
         {
             return typeof(Model) == typeof(Base);
         }
+        public virtual CellState State => CellState.Clean;
+        public virtual Exception Error => null;
     }
 }

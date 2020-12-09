@@ -84,6 +84,8 @@ module MonteCarloCatBondEngineFunction =
          discountCurve : obj)
         ([<ExcelArgument(Name="includeSettlementDateFlows",Description = "bool")>] 
          includeSettlementDateFlows : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -92,10 +94,12 @@ module MonteCarloCatBondEngineFunction =
                 let _catRisk = Helper.toCell<CatRisk> catRisk "catRisk" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _includeSettlementDateFlows = Helper.toNullable<bool> includeSettlementDateFlows "includeSettlementDateFlows"
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.MonteCarloCatBondEngine 
                                                             _catRisk.cell 
                                                             _discountCurve.cell 
                                                             _includeSettlementDateFlows.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MonteCarloCatBondEngine>) l
 
@@ -103,11 +107,13 @@ module MonteCarloCatBondEngineFunction =
                                                [| _catRisk.source
                                                ;  _discountCurve.source
                                                ;  _includeSettlementDateFlows.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _catRisk.cell
                                 ;  _discountCurve.cell
                                 ;  _includeSettlementDateFlows.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -137,16 +143,16 @@ module MonteCarloCatBondEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<MonteCarloCatBondEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<MonteCarloCatBondEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<MonteCarloCatBondEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<MonteCarloCatBondEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<MonteCarloCatBondEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<MonteCarloCatBondEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

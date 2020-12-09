@@ -111,9 +111,9 @@ type BondPortfolio
         let dated = triv (fun () -> today)      // don't reset on valuation date
         let nullDate = value (null :> Date)
         let maturity = marketCondition.Calendar.Advance1 dated length years standards.PaymentConvention eom 
-        let schedule = Fun.Schedule dated maturity frequency calendar standards.AccrualConvention standards.AccrualConvention dateGenerationRule eom nullDate nullDate
+        let schedule = Fun.Schedule dated maturity frequency calendar standards.AccrualConvention standards.AccrualConvention dateGenerationRule eom nullDate nullDate marketCondition.Today
         let yieldCurve = triv (fun () -> (makeYield yieldVal))
-        let engine = Fun.DiscountingBondEngine yieldCurve standards.IncludeSettlement 
+        let engine = Fun.DiscountingBondEngine yieldCurve standards.IncludeSettlement marketCondition.Today
         let castEgnine = triv (fun () -> engine.Value :> IPricingEngine)
         let exCouponPeriod = value (null :> Period)
         let b = Fun.FixedRateBond standards.SettlementDays faceAmount schedule coupon bondDayCount standards.PaymentConvention redemption issue calendar exCouponPeriod calendar convention eom castEgnine marketCondition.Today

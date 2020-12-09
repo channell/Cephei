@@ -38,12 +38,15 @@ type LinearTsrPricerModel
     , couponDiscountCurve                          : ICell<Handle<YieldTermStructure>>
     , settings                                     : ICell<LinearTsrPricer.Settings>
     , integrator                                   : ICell<Integrator>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<LinearTsrPricer> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _swaptionVol                               = swaptionVol
     let _meanReversion                             = meanReversion
     let _couponDiscountCurve                       = couponDiscountCurve
@@ -53,41 +56,44 @@ type LinearTsrPricerModel
     Functions
 *)
     let mutable
-        _LinearTsrPricer                           = cell (fun () -> new LinearTsrPricer (swaptionVol.Value, meanReversion.Value, couponDiscountCurve.Value, settings.Value, integrator.Value))
+        _LinearTsrPricer                           = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new LinearTsrPricer (swaptionVol.Value, meanReversion.Value, couponDiscountCurve.Value, settings.Value, integrator.Value))))
     let _capletPrice                               (effectiveCap : ICell<double>)   
-                                                   = triv (fun () -> _LinearTsrPricer.Value.capletPrice(effectiveCap.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LinearTsrPricer).Value.capletPrice(effectiveCap.Value))
     let _capletRate                                (effectiveCap : ICell<double>)   
-                                                   = triv (fun () -> _LinearTsrPricer.Value.capletRate(effectiveCap.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LinearTsrPricer).Value.capletRate(effectiveCap.Value))
     let _floorletPrice                             (effectiveFloor : ICell<double>)   
-                                                   = triv (fun () -> _LinearTsrPricer.Value.floorletPrice(effectiveFloor.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LinearTsrPricer).Value.floorletPrice(effectiveFloor.Value))
     let _floorletRate                              (effectiveFloor : ICell<double>)   
-                                                   = triv (fun () -> _LinearTsrPricer.Value.floorletRate(effectiveFloor.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LinearTsrPricer).Value.floorletRate(effectiveFloor.Value))
     let _initialize                                (coupon : ICell<FloatingRateCoupon>)   
-                                                   = triv (fun () -> _LinearTsrPricer.Value.initialize(coupon.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LinearTsrPricer).Value.initialize(coupon.Value)
                                                                      _LinearTsrPricer.Value)
-    let _meanReversion                             = triv (fun () -> _LinearTsrPricer.Value.meanReversion())
+    let _meanReversion                             = triv (fun () -> (curryEvaluationDate _evaluationDate _LinearTsrPricer).Value.meanReversion())
     let _setMeanReversion                          (meanReversion : ICell<Handle<Quote>>)   
-                                                   = triv (fun () -> _LinearTsrPricer.Value.setMeanReversion(meanReversion.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LinearTsrPricer).Value.setMeanReversion(meanReversion.Value)
                                                                      _LinearTsrPricer.Value)
-    let _swapletPrice                              = triv (fun () -> _LinearTsrPricer.Value.swapletPrice())
-    let _swapletRate                               = triv (fun () -> _LinearTsrPricer.Value.swapletRate())
+    let _swapletPrice                              = triv (fun () -> (curryEvaluationDate _evaluationDate _LinearTsrPricer).Value.swapletPrice())
+    let _swapletRate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _LinearTsrPricer).Value.swapletRate())
     let _setSwaptionVolatility                     (v : ICell<Handle<SwaptionVolatilityStructure>>)   
-                                                   = triv (fun () -> _LinearTsrPricer.Value.setSwaptionVolatility(v.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LinearTsrPricer).Value.setSwaptionVolatility(v.Value)
                                                                      _LinearTsrPricer.Value)
-    let _swaptionVolatility                        = triv (fun () -> _LinearTsrPricer.Value.swaptionVolatility())
+    let _swaptionVolatility                        = triv (fun () -> (curryEvaluationDate _evaluationDate _LinearTsrPricer).Value.swaptionVolatility())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _LinearTsrPricer.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LinearTsrPricer).Value.registerWith(handler.Value)
                                                                      _LinearTsrPricer.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _LinearTsrPricer.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LinearTsrPricer).Value.unregisterWith(handler.Value)
                                                                      _LinearTsrPricer.Value)
-    let _update                                    = triv (fun () -> _LinearTsrPricer.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _LinearTsrPricer).Value.update()
                                                                      _LinearTsrPricer.Value)
     do this.Bind(_LinearTsrPricer)
 (* 
     casting 
 *)
-    internal new () = new LinearTsrPricerModel(null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new LinearTsrPricerModel(null,null,null,null,null,null)
     member internal this.Inject v = _LinearTsrPricer <- v
     static member Cast (p : ICell<LinearTsrPricer>) = 
         if p :? LinearTsrPricerModel then 
@@ -95,6 +101,7 @@ type LinearTsrPricerModel
         else
             let o = new LinearTsrPricerModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

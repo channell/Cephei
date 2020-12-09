@@ -40,12 +40,15 @@ type DepositRateHelperModel
     , convention                                   : ICell<BusinessDayConvention>
     , endOfMonth                                   : ICell<bool>
     , dayCounter                                   : ICell<DayCounter>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<DepositRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _rate                                      = rate
     let _tenor                                     = tenor
     let _fixingDays                                = fixingDays
@@ -57,33 +60,36 @@ type DepositRateHelperModel
     Functions
 *)
     let mutable
-        _DepositRateHelper                         = cell (fun () -> new DepositRateHelper (rate.Value, tenor.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value))
-    let _impliedQuote                              = triv (fun () -> _DepositRateHelper.Value.impliedQuote())
+        _DepositRateHelper                         = cell (fun () -> (createEvaluationDate  _evaluationDate (fun () -> new DepositRateHelper (rate.Value, tenor.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value))))
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
-                                                   = triv (fun () -> _DepositRateHelper.Value.setTermStructure(t.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.setTermStructure(t.Value)
                                                                      _DepositRateHelper.Value)
-    let _update                                    = triv (fun () -> _DepositRateHelper.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.update()
                                                                      _DepositRateHelper.Value)
-    let _earliestDate                              = triv (fun () -> _DepositRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _DepositRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _DepositRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _DepositRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _DepositRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _DepositRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _DepositRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _DepositRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _DepositRateHelper.Value.quoteValue())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _DepositRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.registerWith(handler.Value)
                                                                      _DepositRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _DepositRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.unregisterWith(handler.Value)
                                                                      _DepositRateHelper.Value)
     do this.Bind(_DepositRateHelper)
 (* 
     casting 
 *)
-    internal new () = new DepositRateHelperModel(null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new DepositRateHelperModel(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _DepositRateHelper <- v
     static member Cast (p : ICell<DepositRateHelper>) = 
         if p :? DepositRateHelperModel then 
@@ -91,6 +97,7 @@ type DepositRateHelperModel
         else
             let o = new DepositRateHelperModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -130,45 +137,51 @@ Rate helper for bootstrapping over deposit rates
 type DepositRateHelperModel1
     ( rate                                         : ICell<double>
     , i                                            : ICell<IborIndex>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<DepositRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _rate                                      = rate
     let _i                                         = i
 (*
     Functions
 *)
     let mutable
-        _DepositRateHelper                         = cell (fun () -> new DepositRateHelper (rate.Value, i.Value))
-    let _impliedQuote                              = triv (fun () -> _DepositRateHelper.Value.impliedQuote())
+        _DepositRateHelper                         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new DepositRateHelper (rate.Value, i.Value))))
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
-                                                   = triv (fun () -> _DepositRateHelper.Value.setTermStructure(t.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.setTermStructure(t.Value)
                                                                      _DepositRateHelper.Value)
-    let _update                                    = triv (fun () -> _DepositRateHelper.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.update()
                                                                      _DepositRateHelper.Value)
-    let _earliestDate                              = triv (fun () -> _DepositRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _DepositRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _DepositRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _DepositRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _DepositRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _DepositRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _DepositRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _DepositRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _DepositRateHelper.Value.quoteValue())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _DepositRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.registerWith(handler.Value)
                                                                      _DepositRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _DepositRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.unregisterWith(handler.Value)
                                                                      _DepositRateHelper.Value)
     do this.Bind(_DepositRateHelper)
 (* 
     casting 
 *)
-    internal new () = new DepositRateHelperModel1(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new DepositRateHelperModel1(null,null,null)
     member internal this.Inject v = _DepositRateHelper <- v
     static member Cast (p : ICell<DepositRateHelper>) = 
         if p :? DepositRateHelperModel1 then 
@@ -176,6 +189,7 @@ type DepositRateHelperModel1
         else
             let o = new DepositRateHelperModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -210,45 +224,51 @@ Rate helper for bootstrapping over deposit rates
 type DepositRateHelperModel2
     ( rate                                         : ICell<Handle<Quote>>
     , i                                            : ICell<IborIndex>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<DepositRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _rate                                      = rate
     let _i                                         = i
 (*
     Functions
 *)
     let mutable
-        _DepositRateHelper                         = cell (fun () -> new DepositRateHelper (rate.Value, i.Value))
-    let _impliedQuote                              = triv (fun () -> _DepositRateHelper.Value.impliedQuote())
+        _DepositRateHelper                         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new DepositRateHelper (rate.Value, i.Value))))
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
-                                                   = triv (fun () -> _DepositRateHelper.Value.setTermStructure(t.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.setTermStructure(t.Value)
                                                                      _DepositRateHelper.Value)
-    let _update                                    = triv (fun () -> _DepositRateHelper.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.update()
                                                                      _DepositRateHelper.Value)
-    let _earliestDate                              = triv (fun () -> _DepositRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _DepositRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _DepositRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _DepositRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _DepositRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _DepositRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _DepositRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _DepositRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _DepositRateHelper.Value.quoteValue())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _DepositRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.registerWith(handler.Value)
                                                                      _DepositRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _DepositRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.unregisterWith(handler.Value)
                                                                      _DepositRateHelper.Value)
     do this.Bind(_DepositRateHelper)
 (* 
     casting 
 *)
-    internal new () = new DepositRateHelperModel2(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new DepositRateHelperModel2(null,null,null)
     member internal this.Inject v = _DepositRateHelper <- v
     static member Cast (p : ICell<DepositRateHelper>) = 
         if p :? DepositRateHelperModel2 then 
@@ -256,6 +276,7 @@ type DepositRateHelperModel2
         else
             let o = new DepositRateHelperModel2 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -295,12 +316,15 @@ type DepositRateHelperModel3
     , convention                                   : ICell<BusinessDayConvention>
     , endOfMonth                                   : ICell<bool>
     , dayCounter                                   : ICell<DayCounter>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<DepositRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _rate                                      = rate
     let _tenor                                     = tenor
     let _fixingDays                                = fixingDays
@@ -312,33 +336,36 @@ type DepositRateHelperModel3
     Functions
 *)
     let mutable
-        _DepositRateHelper                         = cell (fun () -> new DepositRateHelper (rate.Value, tenor.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value))
-    let _impliedQuote                              = triv (fun () -> _DepositRateHelper.Value.impliedQuote())
+        _DepositRateHelper                         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new DepositRateHelper (rate.Value, tenor.Value, fixingDays.Value, calendar.Value, convention.Value, endOfMonth.Value, dayCounter.Value))))
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
-                                                   = triv (fun () -> _DepositRateHelper.Value.setTermStructure(t.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.setTermStructure(t.Value)
                                                                      _DepositRateHelper.Value)
-    let _update                                    = triv (fun () -> _DepositRateHelper.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.update()
                                                                      _DepositRateHelper.Value)
-    let _earliestDate                              = triv (fun () -> _DepositRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _DepositRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _DepositRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _DepositRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _DepositRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _DepositRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _DepositRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _DepositRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _DepositRateHelper.Value.quoteValue())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _DepositRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.registerWith(handler.Value)
                                                                      _DepositRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _DepositRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _DepositRateHelper).Value.unregisterWith(handler.Value)
                                                                      _DepositRateHelper.Value)
     do this.Bind(_DepositRateHelper)
 (* 
     casting 
 *)
-    internal new () = new DepositRateHelperModel3(null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new DepositRateHelperModel3(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _DepositRateHelper <- v
     static member Cast (p : ICell<DepositRateHelper>) = 
         if p :? DepositRateHelperModel3 then 
@@ -346,6 +373,7 @@ type DepositRateHelperModel3
         else
             let o = new DepositRateHelperModel3 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

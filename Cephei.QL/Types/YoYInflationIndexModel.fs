@@ -42,12 +42,15 @@ type YoYInflationIndexModel
     , availabilityLag                              : ICell<Period>
     , currency                                     : ICell<Currency>
     , yoyInflation                                 : ICell<Handle<YoYInflationTermStructure>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<YoYInflationIndex> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _familyName                                = familyName
     let _region                                    = region
     let _revised                                   = revised
@@ -61,50 +64,53 @@ type YoYInflationIndexModel
     Functions
 *)
     let mutable
-        _YoYInflationIndex                         = cell (fun () -> new YoYInflationIndex (familyName.Value, region.Value, revised.Value, interpolated.Value, ratio.Value, frequency.Value, availabilityLag.Value, currency.Value, yoyInflation.Value))
+        _YoYInflationIndex                         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new YoYInflationIndex (familyName.Value, region.Value, revised.Value, interpolated.Value, ratio.Value, frequency.Value, availabilityLag.Value, currency.Value, yoyInflation.Value))))
     let _clone                                     (h : ICell<Handle<YoYInflationTermStructure>>)   
-                                                   = triv (fun () -> _YoYInflationIndex.Value.clone(h.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationIndex).Value.clone(h.Value))
     let _fixing                                    (fixingDate : ICell<Date>) (forecastTodaysFixing : ICell<bool>)   
-                                                   = triv (fun () -> _YoYInflationIndex.Value.fixing(fixingDate.Value, forecastTodaysFixing.Value))
-    let _ratio                                     = triv (fun () -> _YoYInflationIndex.Value.ratio())
-    let _yoyInflationTermStructure                 = triv (fun () -> _YoYInflationIndex.Value.yoyInflationTermStructure())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationIndex).Value.fixing(fixingDate.Value, forecastTodaysFixing.Value))
+    let _ratio                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationIndex).Value.ratio())
+    let _yoyInflationTermStructure                 = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationIndex).Value.yoyInflationTermStructure())
     let _addFixing                                 (fixingDate : ICell<Date>) (fixing : ICell<double>) (forceOverwrite : ICell<bool>)   
-                                                   = triv (fun () -> _YoYInflationIndex.Value.addFixing(fixingDate.Value, fixing.Value, forceOverwrite.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationIndex).Value.addFixing(fixingDate.Value, fixing.Value, forceOverwrite.Value)
                                                                      _YoYInflationIndex.Value)
-    let _availabilityLag                           = triv (fun () -> _YoYInflationIndex.Value.availabilityLag())
-    let _currency                                  = triv (fun () -> _YoYInflationIndex.Value.currency())
-    let _familyName                                = triv (fun () -> _YoYInflationIndex.Value.familyName())
-    let _fixingCalendar                            = triv (fun () -> _YoYInflationIndex.Value.fixingCalendar())
-    let _frequency                                 = triv (fun () -> _YoYInflationIndex.Value.frequency())
-    let _interpolated                              = triv (fun () -> _YoYInflationIndex.Value.interpolated())
+    let _availabilityLag                           = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationIndex).Value.availabilityLag())
+    let _currency                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationIndex).Value.currency())
+    let _familyName                                = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationIndex).Value.familyName())
+    let _fixingCalendar                            = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationIndex).Value.fixingCalendar())
+    let _frequency                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationIndex).Value.frequency())
+    let _interpolated                              = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationIndex).Value.interpolated())
     let _isValidFixingDate                         (fixingDate : ICell<Date>)   
-                                                   = triv (fun () -> _YoYInflationIndex.Value.isValidFixingDate(fixingDate.Value))
-    let _name                                      = triv (fun () -> _YoYInflationIndex.Value.name())
-    let _region                                    = triv (fun () -> _YoYInflationIndex.Value.region())
-    let _revised                                   = triv (fun () -> _YoYInflationIndex.Value.revised())
-    let _update                                    = triv (fun () -> _YoYInflationIndex.Value.update()
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationIndex).Value.isValidFixingDate(fixingDate.Value))
+    let _name                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationIndex).Value.name())
+    let _region                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationIndex).Value.region())
+    let _revised                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationIndex).Value.revised())
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationIndex).Value.update()
                                                                      _YoYInflationIndex.Value)
     let _addFixings                                (d : ICell<Generic.List<Date>>) (v : ICell<Generic.List<double>>) (forceOverwrite : ICell<bool>)   
-                                                   = triv (fun () -> _YoYInflationIndex.Value.addFixings(d.Value, v.Value, forceOverwrite.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationIndex).Value.addFixings(d.Value, v.Value, forceOverwrite.Value)
                                                                      _YoYInflationIndex.Value)
     let _addFixings1                               (source : ICell<TimeSeries<Nullable<double>>>) (forceOverwrite : ICell<bool>)   
-                                                   = triv (fun () -> _YoYInflationIndex.Value.addFixings(source.Value, forceOverwrite.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationIndex).Value.addFixings(source.Value, forceOverwrite.Value)
                                                                      _YoYInflationIndex.Value)
-    let _allowsNativeFixings                       = triv (fun () -> _YoYInflationIndex.Value.allowsNativeFixings())
-    let _clearFixings                              = triv (fun () -> _YoYInflationIndex.Value.clearFixings()
+    let _allowsNativeFixings                       = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationIndex).Value.allowsNativeFixings())
+    let _clearFixings                              = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationIndex).Value.clearFixings()
                                                                      _YoYInflationIndex.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _YoYInflationIndex.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationIndex).Value.registerWith(handler.Value)
                                                                      _YoYInflationIndex.Value)
-    let _timeSeries                                = triv (fun () -> _YoYInflationIndex.Value.timeSeries())
+    let _timeSeries                                = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationIndex).Value.timeSeries())
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _YoYInflationIndex.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationIndex).Value.unregisterWith(handler.Value)
                                                                      _YoYInflationIndex.Value)
     do this.Bind(_YoYInflationIndex)
 (* 
     casting 
 *)
-    internal new () = new YoYInflationIndexModel(null,null,null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new YoYInflationIndexModel(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _YoYInflationIndex <- v
     static member Cast (p : ICell<YoYInflationIndex>) = 
         if p :? YoYInflationIndexModel then 
@@ -112,6 +118,7 @@ type YoYInflationIndexModel
         else
             let o = new YoYInflationIndexModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

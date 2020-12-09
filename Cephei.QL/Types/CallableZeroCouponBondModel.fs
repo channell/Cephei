@@ -66,7 +66,7 @@ type CallableZeroCouponBondModel
     Functions
 *)
     let mutable
-        _CallableZeroCouponBond                    = cell (fun () -> withEngine pricingEngine (new CallableZeroCouponBond (settlementDays.Value, faceAmount.Value, calendar.Value, maturityDate.Value, dayCounter.Value, paymentConvention.Value, redemption.Value, issueDate.Value, putCallSchedule.Value)))
+        _CallableZeroCouponBond                    = cell (fun () -> withEngine pricingEngine evaluationDate (new CallableZeroCouponBond (settlementDays.Value, faceAmount.Value, calendar.Value, maturityDate.Value, dayCounter.Value, paymentConvention.Value, redemption.Value, issueDate.Value, putCallSchedule.Value)))
     let _callability                               = triv (fun () -> (withEvaluationDate _evaluationDate _CallableZeroCouponBond).callability())
     let _cleanPriceOAS                             (oas : ICell<double>) (engineTS : ICell<Handle<YieldTermStructure>>) (dayCounter : ICell<DayCounter>) (compounding : ICell<Compounding>) (frequency : ICell<Frequency>) (settlement : ICell<Date>)   
                                                    = cell (fun () -> (withEvaluationDate _evaluationDate _CallableZeroCouponBond).cleanPriceOAS(oas.Value, engineTS.Value, dayCounter.Value, compounding.Value, frequency.Value, settlement.Value))

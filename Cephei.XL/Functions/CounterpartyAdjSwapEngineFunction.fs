@@ -60,6 +60,8 @@ module CounterpartyAdjSwapEngineFunction =
          invstDTS : obj)
         ([<ExcelArgument(Name="invstRecoveryRate",Description = "double or empty")>] 
          invstRecoveryRate : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -71,6 +73,7 @@ module CounterpartyAdjSwapEngineFunction =
                 let _ctptyRecoveryRate = Helper.toCell<double> ctptyRecoveryRate "ctptyRecoveryRate" 
                 let _invstDTS = Helper.toHandle<DefaultProbabilityTermStructure> invstDTS "invstDTS" 
                 let _invstRecoveryRate = Helper.toDefault<double> invstRecoveryRate "invstRecoveryRate" 0.999
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.CounterpartyAdjSwapEngine 
                                                             _discountCurve.cell 
                                                             _blackVol.cell 
@@ -78,6 +81,7 @@ module CounterpartyAdjSwapEngineFunction =
                                                             _ctptyRecoveryRate.cell 
                                                             _invstDTS.cell 
                                                             _invstRecoveryRate.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CounterpartyAdjSwapEngine>) l
 
@@ -88,6 +92,7 @@ module CounterpartyAdjSwapEngineFunction =
                                                ;  _ctptyRecoveryRate.source
                                                ;  _invstDTS.source
                                                ;  _invstRecoveryRate.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _discountCurve.cell
@@ -96,6 +101,7 @@ module CounterpartyAdjSwapEngineFunction =
                                 ;  _ctptyRecoveryRate.cell
                                 ;  _invstDTS.cell
                                 ;  _invstRecoveryRate.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -133,6 +139,8 @@ module CounterpartyAdjSwapEngineFunction =
          invstDTS : obj)
         ([<ExcelArgument(Name="invstRecoveryRate",Description = "double or empty")>] 
          invstRecoveryRate : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -144,6 +152,7 @@ module CounterpartyAdjSwapEngineFunction =
                 let _ctptyRecoveryRate = Helper.toCell<double> ctptyRecoveryRate "ctptyRecoveryRate" 
                 let _invstDTS = Helper.toHandle<DefaultProbabilityTermStructure> invstDTS "invstDTS" 
                 let _invstRecoveryRate = Helper.toDefault<double> invstRecoveryRate "invstRecoveryRate" 0.999
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.CounterpartyAdjSwapEngine1 
                                                             _discountCurve.cell 
                                                             _blackVol.cell 
@@ -151,6 +160,7 @@ module CounterpartyAdjSwapEngineFunction =
                                                             _ctptyRecoveryRate.cell 
                                                             _invstDTS.cell 
                                                             _invstRecoveryRate.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CounterpartyAdjSwapEngine>) l
 
@@ -161,6 +171,7 @@ module CounterpartyAdjSwapEngineFunction =
                                                ;  _ctptyRecoveryRate.source
                                                ;  _invstDTS.source
                                                ;  _invstRecoveryRate.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _discountCurve.cell
@@ -169,6 +180,7 @@ module CounterpartyAdjSwapEngineFunction =
                                 ;  _ctptyRecoveryRate.cell
                                 ;  _invstDTS.cell
                                 ;  _invstRecoveryRate.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -206,6 +218,8 @@ module CounterpartyAdjSwapEngineFunction =
          invstDTS : obj)
         ([<ExcelArgument(Name="invstRecoveryRate",Description = "double or empty")>] 
          invstRecoveryRate : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -217,6 +231,7 @@ module CounterpartyAdjSwapEngineFunction =
                 let _ctptyRecoveryRate = Helper.toCell<double> ctptyRecoveryRate "ctptyRecoveryRate" 
                 let _invstDTS = Helper.toHandle<DefaultProbabilityTermStructure> invstDTS "invstDTS" 
                 let _invstRecoveryRate = Helper.toDefault<double> invstRecoveryRate "invstRecoveryRate" 0.999
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.CounterpartyAdjSwapEngine2 
                                                             _discountCurve.cell 
                                                             _swaptionEngine.cell 
@@ -224,6 +239,7 @@ module CounterpartyAdjSwapEngineFunction =
                                                             _ctptyRecoveryRate.cell 
                                                             _invstDTS.cell 
                                                             _invstRecoveryRate.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<CounterpartyAdjSwapEngine>) l
 
@@ -234,6 +250,7 @@ module CounterpartyAdjSwapEngineFunction =
                                                ;  _ctptyRecoveryRate.source
                                                ;  _invstDTS.source
                                                ;  _invstRecoveryRate.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _discountCurve.cell
@@ -242,6 +259,7 @@ module CounterpartyAdjSwapEngineFunction =
                                 ;  _ctptyRecoveryRate.cell
                                 ;  _invstDTS.cell
                                 ;  _invstRecoveryRate.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -271,16 +289,16 @@ module CounterpartyAdjSwapEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<CounterpartyAdjSwapEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<CounterpartyAdjSwapEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<CounterpartyAdjSwapEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<CounterpartyAdjSwapEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<CounterpartyAdjSwapEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<CounterpartyAdjSwapEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

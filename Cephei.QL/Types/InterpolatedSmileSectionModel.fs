@@ -41,12 +41,15 @@ type InterpolatedSmileSectionModel<'Interpolator when 'Interpolator :> IInterpol
     , interpolator                                 : ICell<'Interpolator>
     , referenceDate                                : ICell<Date>
     , shift                                        : ICell<double>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<InterpolatedSmileSection<'Interpolator>> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _d                                         = d
     let _strikes                                   = strikes
     let _stdDevs                                   = stdDevs
@@ -59,47 +62,47 @@ type InterpolatedSmileSectionModel<'Interpolator when 'Interpolator :> IInterpol
     Functions
 *)
     let mutable
-        _InterpolatedSmileSection                  = cell (fun () -> new InterpolatedSmileSection<'Interpolator> (d.Value, strikes.Value, stdDevs.Value, atmLevel.Value, dc.Value, interpolator.Value, referenceDate.Value, shift.Value))
-    let _atmLevel                                  = triv (fun () -> _InterpolatedSmileSection.Value.atmLevel())
-    let _Clone                                     = triv (fun () -> _InterpolatedSmileSection.Value.Clone())
-    let _data                                      = triv (fun () -> _InterpolatedSmileSection.Value.data())
-    let _data_                                     = triv (fun () -> _InterpolatedSmileSection.Value.data_)
-    let _dates                                     = triv (fun () -> _InterpolatedSmileSection.Value.dates())
-    let _dates_                                    = triv (fun () -> _InterpolatedSmileSection.Value.dates_)
-    let _discounts                                 = triv (fun () -> _InterpolatedSmileSection.Value.discounts())
-    let _interpolation_                            = triv (fun () -> _InterpolatedSmileSection.Value.interpolation_)
-    let _interpolator_                             = triv (fun () -> _InterpolatedSmileSection.Value.interpolator_)
-    let _maxDate                                   = triv (fun () -> _InterpolatedSmileSection.Value.maxDate())
-    let _maxDate_                                  = triv (fun () -> _InterpolatedSmileSection.Value.maxDate_)
-    let _maxStrike                                 = triv (fun () -> _InterpolatedSmileSection.Value.maxStrike())
-    let _minStrike                                 = triv (fun () -> _InterpolatedSmileSection.Value.minStrike())
-    let _nodes                                     = triv (fun () -> _InterpolatedSmileSection.Value.nodes())
-    let _setupInterpolation                        = triv (fun () -> _InterpolatedSmileSection.Value.setupInterpolation()
+        _InterpolatedSmileSection                  = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new InterpolatedSmileSection<'Interpolator> (d.Value, strikes.Value, stdDevs.Value, atmLevel.Value, dc.Value, interpolator.Value, referenceDate.Value, shift.Value))))
+    let _atmLevel                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.atmLevel())
+    let _Clone                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.Clone())
+    let _data                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.data())
+    let _data_                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.data_)
+    let _dates                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.dates())
+    let _dates_                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.dates_)
+    let _discounts                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.discounts())
+    let _interpolation_                            = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.interpolation_)
+    let _interpolator_                             = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.interpolator_)
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.maxDate())
+    let _maxDate_                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.maxDate_)
+    let _maxStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.maxStrike())
+    let _minStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.minStrike())
+    let _nodes                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.nodes())
+    let _setupInterpolation                        = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.setupInterpolation()
                                                                      _InterpolatedSmileSection.Value)
-    let _times                                     = triv (fun () -> _InterpolatedSmileSection.Value.times())
-    let _times_                                    = triv (fun () -> _InterpolatedSmileSection.Value.times_)
-    let _update                                    = triv (fun () -> _InterpolatedSmileSection.Value.update()
+    let _times                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.times())
+    let _times_                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.times_)
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.update()
                                                                      _InterpolatedSmileSection.Value)
-    let _dayCounter                                = triv (fun () -> _InterpolatedSmileSection.Value.dayCounter())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.dayCounter())
     let _density                                   (strike : ICell<double>) (discount : ICell<double>) (gap : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.density(strike.Value, discount.Value, gap.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.density(strike.Value, discount.Value, gap.Value))
     let _digitalOptionPrice                        (strike : ICell<double>) (Type : ICell<Option.Type>) (discount : ICell<double>) (gap : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.digitalOptionPrice(strike.Value, Type.Value, discount.Value, gap.Value))
-    let _exerciseDate                              = triv (fun () -> _InterpolatedSmileSection.Value.exerciseDate())
-    let _exerciseTime                              = triv (fun () -> _InterpolatedSmileSection.Value.exerciseTime())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.digitalOptionPrice(strike.Value, Type.Value, discount.Value, gap.Value))
+    let _exerciseDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.exerciseDate())
+    let _exerciseTime                              = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.exerciseTime())
     let _optionPrice                               (strike : ICell<double>) (Type : ICell<Option.Type>) (discount : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.optionPrice(strike.Value, Type.Value, discount.Value))
-    let _referenceDate                             = triv (fun () -> _InterpolatedSmileSection.Value.referenceDate())
-    let _shift                                     = triv (fun () -> _InterpolatedSmileSection.Value.shift())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.optionPrice(strike.Value, Type.Value, discount.Value))
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.referenceDate())
+    let _shift                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.shift())
     let _variance                                  (strike : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.variance(strike.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.variance(strike.Value))
     let _vega                                      (strike : ICell<double>) (discount : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.vega(strike.Value, discount.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.vega(strike.Value, discount.Value))
     let _volatility                                (strike : ICell<double>) (volatilityType : ICell<VolatilityType>) (shift : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.volatility(strike.Value, volatilityType.Value, shift.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.volatility(strike.Value, volatilityType.Value, shift.Value))
     let _volatility1                               (strike : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.volatility(strike.Value))
-    let _volatilityType                            = triv (fun () -> _InterpolatedSmileSection.Value.volatilityType())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.volatility(strike.Value))
+    let _volatilityType                            = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.volatilityType())
     do this.Bind(_InterpolatedSmileSection)
 
 (* 
@@ -166,12 +169,15 @@ type InterpolatedSmileSectionModel1<'Interpolator when 'Interpolator :> IInterpo
     , referenceDate                                : ICell<Date>
     , Type                                         : ICell<VolatilityType>
     , shift                                        : ICell<double>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<InterpolatedSmileSection<'Interpolator>> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _d                                         = d
     let _strikes                                   = strikes
     let _stdDevHandles                             = stdDevHandles
@@ -185,47 +191,47 @@ type InterpolatedSmileSectionModel1<'Interpolator when 'Interpolator :> IInterpo
     Functions
 *)
     let mutable
-        _InterpolatedSmileSection                  = cell (fun () -> new InterpolatedSmileSection<'Interpolator> (d.Value, strikes.Value, stdDevHandles.Value, atmLevel.Value, dc.Value, interpolator.Value, referenceDate.Value, Type.Value, shift.Value))
-    let _atmLevel                                  = triv (fun () -> _InterpolatedSmileSection.Value.atmLevel())
-    let _Clone                                     = triv (fun () -> _InterpolatedSmileSection.Value.Clone())
-    let _data                                      = triv (fun () -> _InterpolatedSmileSection.Value.data())
-    let _data_                                     = triv (fun () -> _InterpolatedSmileSection.Value.data_)
-    let _dates                                     = triv (fun () -> _InterpolatedSmileSection.Value.dates())
-    let _dates_                                    = triv (fun () -> _InterpolatedSmileSection.Value.dates_)
-    let _discounts                                 = triv (fun () -> _InterpolatedSmileSection.Value.discounts())
-    let _interpolation_                            = triv (fun () -> _InterpolatedSmileSection.Value.interpolation_)
-    let _interpolator_                             = triv (fun () -> _InterpolatedSmileSection.Value.interpolator_)
-    let _maxDate                                   = triv (fun () -> _InterpolatedSmileSection.Value.maxDate())
-    let _maxDate_                                  = triv (fun () -> _InterpolatedSmileSection.Value.maxDate_)
-    let _maxStrike                                 = triv (fun () -> _InterpolatedSmileSection.Value.maxStrike())
-    let _minStrike                                 = triv (fun () -> _InterpolatedSmileSection.Value.minStrike())
-    let _nodes                                     = triv (fun () -> _InterpolatedSmileSection.Value.nodes())
-    let _setupInterpolation                        = triv (fun () -> _InterpolatedSmileSection.Value.setupInterpolation()
+        _InterpolatedSmileSection                  = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new InterpolatedSmileSection<'Interpolator> (d.Value, strikes.Value, stdDevHandles.Value, atmLevel.Value, dc.Value, interpolator.Value, referenceDate.Value, Type.Value, shift.Value))))
+    let _atmLevel                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.atmLevel())
+    let _Clone                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.Clone())
+    let _data                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.data())
+    let _data_                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.data_)
+    let _dates                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.dates())
+    let _dates_                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.dates_)
+    let _discounts                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.discounts())
+    let _interpolation_                            = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.interpolation_)
+    let _interpolator_                             = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.interpolator_)
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.maxDate())
+    let _maxDate_                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.maxDate_)
+    let _maxStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.maxStrike())
+    let _minStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.minStrike())
+    let _nodes                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.nodes())
+    let _setupInterpolation                        = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.setupInterpolation()
                                                                      _InterpolatedSmileSection.Value)
-    let _times                                     = triv (fun () -> _InterpolatedSmileSection.Value.times())
-    let _times_                                    = triv (fun () -> _InterpolatedSmileSection.Value.times_)
-    let _update                                    = triv (fun () -> _InterpolatedSmileSection.Value.update()
+    let _times                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.times())
+    let _times_                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.times_)
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.update()
                                                                      _InterpolatedSmileSection.Value)
-    let _dayCounter                                = triv (fun () -> _InterpolatedSmileSection.Value.dayCounter())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.dayCounter())
     let _density                                   (strike : ICell<double>) (discount : ICell<double>) (gap : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.density(strike.Value, discount.Value, gap.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.density(strike.Value, discount.Value, gap.Value))
     let _digitalOptionPrice                        (strike : ICell<double>) (Type : ICell<Option.Type>) (discount : ICell<double>) (gap : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.digitalOptionPrice(strike.Value, Type.Value, discount.Value, gap.Value))
-    let _exerciseDate                              = triv (fun () -> _InterpolatedSmileSection.Value.exerciseDate())
-    let _exerciseTime                              = triv (fun () -> _InterpolatedSmileSection.Value.exerciseTime())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.digitalOptionPrice(strike.Value, Type.Value, discount.Value, gap.Value))
+    let _exerciseDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.exerciseDate())
+    let _exerciseTime                              = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.exerciseTime())
     let _optionPrice                               (strike : ICell<double>) (Type : ICell<Option.Type>) (discount : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.optionPrice(strike.Value, Type.Value, discount.Value))
-    let _referenceDate                             = triv (fun () -> _InterpolatedSmileSection.Value.referenceDate())
-    let _shift                                     = triv (fun () -> _InterpolatedSmileSection.Value.shift())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.optionPrice(strike.Value, Type.Value, discount.Value))
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.referenceDate())
+    let _shift                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.shift())
     let _variance                                  (strike : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.variance(strike.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.variance(strike.Value))
     let _vega                                      (strike : ICell<double>) (discount : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.vega(strike.Value, discount.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.vega(strike.Value, discount.Value))
     let _volatility                                (strike : ICell<double>) (volatilityType : ICell<VolatilityType>) (shift : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.volatility(strike.Value, volatilityType.Value, shift.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.volatility(strike.Value, volatilityType.Value, shift.Value))
     let _volatility1                               (strike : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.volatility(strike.Value))
-    let _volatilityType                            = triv (fun () -> _InterpolatedSmileSection.Value.volatilityType())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.volatility(strike.Value))
+    let _volatilityType                            = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.volatilityType())
     do this.Bind(_InterpolatedSmileSection)
 
 (* 
@@ -292,12 +298,15 @@ type InterpolatedSmileSectionModel2<'Interpolator when 'Interpolator :> IInterpo
     , dc                                           : ICell<DayCounter>
     , Type                                         : ICell<VolatilityType>
     , shift                                        : ICell<double>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<InterpolatedSmileSection<'Interpolator>> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _timeToExpiry                              = timeToExpiry
     let _strikes                                   = strikes
     let _stdDevs                                   = stdDevs
@@ -310,47 +319,47 @@ type InterpolatedSmileSectionModel2<'Interpolator when 'Interpolator :> IInterpo
     Functions
 *)
     let mutable
-        _InterpolatedSmileSection                  = cell (fun () -> new InterpolatedSmileSection<'Interpolator> (timeToExpiry.Value, strikes.Value, stdDevs.Value, atmLevel.Value, interpolator.Value, dc.Value, Type.Value, shift.Value))
-    let _atmLevel                                  = triv (fun () -> _InterpolatedSmileSection.Value.atmLevel())
-    let _Clone                                     = triv (fun () -> _InterpolatedSmileSection.Value.Clone())
-    let _data                                      = triv (fun () -> _InterpolatedSmileSection.Value.data())
-    let _data_                                     = triv (fun () -> _InterpolatedSmileSection.Value.data_)
-    let _dates                                     = triv (fun () -> _InterpolatedSmileSection.Value.dates())
-    let _dates_                                    = triv (fun () -> _InterpolatedSmileSection.Value.dates_)
-    let _discounts                                 = triv (fun () -> _InterpolatedSmileSection.Value.discounts())
-    let _interpolation_                            = triv (fun () -> _InterpolatedSmileSection.Value.interpolation_)
-    let _interpolator_                             = triv (fun () -> _InterpolatedSmileSection.Value.interpolator_)
-    let _maxDate                                   = triv (fun () -> _InterpolatedSmileSection.Value.maxDate())
-    let _maxDate_                                  = triv (fun () -> _InterpolatedSmileSection.Value.maxDate_)
-    let _maxStrike                                 = triv (fun () -> _InterpolatedSmileSection.Value.maxStrike())
-    let _minStrike                                 = triv (fun () -> _InterpolatedSmileSection.Value.minStrike())
-    let _nodes                                     = triv (fun () -> _InterpolatedSmileSection.Value.nodes())
-    let _setupInterpolation                        = triv (fun () -> _InterpolatedSmileSection.Value.setupInterpolation()
+        _InterpolatedSmileSection                  = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new InterpolatedSmileSection<'Interpolator> (timeToExpiry.Value, strikes.Value, stdDevs.Value, atmLevel.Value, interpolator.Value, dc.Value, Type.Value, shift.Value))))
+    let _atmLevel                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.atmLevel())
+    let _Clone                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.Clone())
+    let _data                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.data())
+    let _data_                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.data_)
+    let _dates                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.dates())
+    let _dates_                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.dates_)
+    let _discounts                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.discounts())
+    let _interpolation_                            = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.interpolation_)
+    let _interpolator_                             = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.interpolator_)
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.maxDate())
+    let _maxDate_                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.maxDate_)
+    let _maxStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.maxStrike())
+    let _minStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.minStrike())
+    let _nodes                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.nodes())
+    let _setupInterpolation                        = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.setupInterpolation()
                                                                      _InterpolatedSmileSection.Value)
-    let _times                                     = triv (fun () -> _InterpolatedSmileSection.Value.times())
-    let _times_                                    = triv (fun () -> _InterpolatedSmileSection.Value.times_)
-    let _update                                    = triv (fun () -> _InterpolatedSmileSection.Value.update()
+    let _times                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.times())
+    let _times_                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.times_)
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.update()
                                                                      _InterpolatedSmileSection.Value)
-    let _dayCounter                                = triv (fun () -> _InterpolatedSmileSection.Value.dayCounter())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.dayCounter())
     let _density                                   (strike : ICell<double>) (discount : ICell<double>) (gap : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.density(strike.Value, discount.Value, gap.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.density(strike.Value, discount.Value, gap.Value))
     let _digitalOptionPrice                        (strike : ICell<double>) (Type : ICell<Option.Type>) (discount : ICell<double>) (gap : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.digitalOptionPrice(strike.Value, Type.Value, discount.Value, gap.Value))
-    let _exerciseDate                              = triv (fun () -> _InterpolatedSmileSection.Value.exerciseDate())
-    let _exerciseTime                              = triv (fun () -> _InterpolatedSmileSection.Value.exerciseTime())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.digitalOptionPrice(strike.Value, Type.Value, discount.Value, gap.Value))
+    let _exerciseDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.exerciseDate())
+    let _exerciseTime                              = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.exerciseTime())
     let _optionPrice                               (strike : ICell<double>) (Type : ICell<Option.Type>) (discount : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.optionPrice(strike.Value, Type.Value, discount.Value))
-    let _referenceDate                             = triv (fun () -> _InterpolatedSmileSection.Value.referenceDate())
-    let _shift                                     = triv (fun () -> _InterpolatedSmileSection.Value.shift())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.optionPrice(strike.Value, Type.Value, discount.Value))
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.referenceDate())
+    let _shift                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.shift())
     let _variance                                  (strike : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.variance(strike.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.variance(strike.Value))
     let _vega                                      (strike : ICell<double>) (discount : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.vega(strike.Value, discount.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.vega(strike.Value, discount.Value))
     let _volatility                                (strike : ICell<double>) (volatilityType : ICell<VolatilityType>) (shift : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.volatility(strike.Value, volatilityType.Value, shift.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.volatility(strike.Value, volatilityType.Value, shift.Value))
     let _volatility1                               (strike : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.volatility(strike.Value))
-    let _volatilityType                            = triv (fun () -> _InterpolatedSmileSection.Value.volatilityType())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.volatility(strike.Value))
+    let _volatilityType                            = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.volatilityType())
     do this.Bind(_InterpolatedSmileSection)
 
 (* 
@@ -416,12 +425,15 @@ type InterpolatedSmileSectionModel3<'Interpolator when 'Interpolator :> IInterpo
     , dc                                           : ICell<DayCounter>
     , Type                                         : ICell<VolatilityType>
     , shift                                        : ICell<double>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<InterpolatedSmileSection<'Interpolator>> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _timeToExpiry                              = timeToExpiry
     let _strikes                                   = strikes
     let _stdDevHandles                             = stdDevHandles
@@ -434,47 +446,47 @@ type InterpolatedSmileSectionModel3<'Interpolator when 'Interpolator :> IInterpo
     Functions
 *)
     let mutable
-        _InterpolatedSmileSection                  = cell (fun () -> new InterpolatedSmileSection<'Interpolator> (timeToExpiry.Value, strikes.Value, stdDevHandles.Value, atmLevel.Value, interpolator.Value, dc.Value, Type.Value, shift.Value))
-    let _atmLevel                                  = triv (fun () -> _InterpolatedSmileSection.Value.atmLevel())
-    let _Clone                                     = triv (fun () -> _InterpolatedSmileSection.Value.Clone())
-    let _data                                      = triv (fun () -> _InterpolatedSmileSection.Value.data())
-    let _data_                                     = triv (fun () -> _InterpolatedSmileSection.Value.data_)
-    let _dates                                     = triv (fun () -> _InterpolatedSmileSection.Value.dates())
-    let _dates_                                    = triv (fun () -> _InterpolatedSmileSection.Value.dates_)
-    let _discounts                                 = triv (fun () -> _InterpolatedSmileSection.Value.discounts())
-    let _interpolation_                            = triv (fun () -> _InterpolatedSmileSection.Value.interpolation_)
-    let _interpolator_                             = triv (fun () -> _InterpolatedSmileSection.Value.interpolator_)
-    let _maxDate                                   = triv (fun () -> _InterpolatedSmileSection.Value.maxDate())
-    let _maxDate_                                  = triv (fun () -> _InterpolatedSmileSection.Value.maxDate_)
-    let _maxStrike                                 = triv (fun () -> _InterpolatedSmileSection.Value.maxStrike())
-    let _minStrike                                 = triv (fun () -> _InterpolatedSmileSection.Value.minStrike())
-    let _nodes                                     = triv (fun () -> _InterpolatedSmileSection.Value.nodes())
-    let _setupInterpolation                        = triv (fun () -> _InterpolatedSmileSection.Value.setupInterpolation()
+        _InterpolatedSmileSection                  = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new InterpolatedSmileSection<'Interpolator> (timeToExpiry.Value, strikes.Value, stdDevHandles.Value, atmLevel.Value, interpolator.Value, dc.Value, Type.Value, shift.Value))))
+    let _atmLevel                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.atmLevel())
+    let _Clone                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.Clone())
+    let _data                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.data())
+    let _data_                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.data_)
+    let _dates                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.dates())
+    let _dates_                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.dates_)
+    let _discounts                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.discounts())
+    let _interpolation_                            = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.interpolation_)
+    let _interpolator_                             = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.interpolator_)
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.maxDate())
+    let _maxDate_                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.maxDate_)
+    let _maxStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.maxStrike())
+    let _minStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.minStrike())
+    let _nodes                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.nodes())
+    let _setupInterpolation                        = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.setupInterpolation()
                                                                      _InterpolatedSmileSection.Value)
-    let _times                                     = triv (fun () -> _InterpolatedSmileSection.Value.times())
-    let _times_                                    = triv (fun () -> _InterpolatedSmileSection.Value.times_)
-    let _update                                    = triv (fun () -> _InterpolatedSmileSection.Value.update()
+    let _times                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.times())
+    let _times_                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.times_)
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.update()
                                                                      _InterpolatedSmileSection.Value)
-    let _dayCounter                                = triv (fun () -> _InterpolatedSmileSection.Value.dayCounter())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.dayCounter())
     let _density                                   (strike : ICell<double>) (discount : ICell<double>) (gap : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.density(strike.Value, discount.Value, gap.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.density(strike.Value, discount.Value, gap.Value))
     let _digitalOptionPrice                        (strike : ICell<double>) (Type : ICell<Option.Type>) (discount : ICell<double>) (gap : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.digitalOptionPrice(strike.Value, Type.Value, discount.Value, gap.Value))
-    let _exerciseDate                              = triv (fun () -> _InterpolatedSmileSection.Value.exerciseDate())
-    let _exerciseTime                              = triv (fun () -> _InterpolatedSmileSection.Value.exerciseTime())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.digitalOptionPrice(strike.Value, Type.Value, discount.Value, gap.Value))
+    let _exerciseDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.exerciseDate())
+    let _exerciseTime                              = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.exerciseTime())
     let _optionPrice                               (strike : ICell<double>) (Type : ICell<Option.Type>) (discount : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.optionPrice(strike.Value, Type.Value, discount.Value))
-    let _referenceDate                             = triv (fun () -> _InterpolatedSmileSection.Value.referenceDate())
-    let _shift                                     = triv (fun () -> _InterpolatedSmileSection.Value.shift())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.optionPrice(strike.Value, Type.Value, discount.Value))
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.referenceDate())
+    let _shift                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.shift())
     let _variance                                  (strike : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.variance(strike.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.variance(strike.Value))
     let _vega                                      (strike : ICell<double>) (discount : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.vega(strike.Value, discount.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.vega(strike.Value, discount.Value))
     let _volatility                                (strike : ICell<double>) (volatilityType : ICell<VolatilityType>) (shift : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.volatility(strike.Value, volatilityType.Value, shift.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.volatility(strike.Value, volatilityType.Value, shift.Value))
     let _volatility1                               (strike : ICell<double>)   
-                                                   = triv (fun () -> _InterpolatedSmileSection.Value.volatility(strike.Value))
-    let _volatilityType                            = triv (fun () -> _InterpolatedSmileSection.Value.volatilityType())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.volatility(strike.Value))
+    let _volatilityType                            = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedSmileSection).Value.volatilityType())
     do this.Bind(_InterpolatedSmileSection)
 
 (* 

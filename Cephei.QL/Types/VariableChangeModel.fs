@@ -16,6 +16,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT
 ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 FOR A PARTICULAR PURPOSE.  See the license for more details.
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
 namespace Cephei.QL
 
 open System
@@ -37,12 +39,15 @@ type VariableChangeModel
     , a                                            : ICell<double>
     , b                                            : ICell<double>
     , k                                            : ICell<int>
+    ( evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<VariableChange> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _f                                         = f
     let _a                                         = a
     let _b                                         = b
@@ -51,13 +56,19 @@ type VariableChangeModel
     Functions
 *)
     let mutable
-        _VariableChange                            = cell (fun () -> new VariableChange (f.Value, a.Value, b.Value, k.Value))
+        _evaluationDate                            = evaluationDate
+    let mutable
+        _VariableChange                            = cell (fun () -> (withEvaluationDate _evaluationDate new VariableChange (f.Value, a.Value, b.Value, k.Value)))
     let _value                                     (x : ICell<double>)   
                                                    = cell (fun () -> _VariableChange.Value.value(x.Value))
     do this.Bind(_VariableChange)
 (* 
     casting 
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
+   interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
     internal new () = VariableChangeModel(null,null,null,null)
     member internal this.Inject v = _VariableChange <- v
     static member Cast (p : ICell<VariableChange>) = 
@@ -65,13 +76,25 @@ type VariableChangeModel
             p :?> VariableChangeModel
         else
             let o = new VariableChangeModel ()
-            o.Inject p
+            o.Inject p\m            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
 (* 
     casting 
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
+   interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
     internal new () = VariableChangeModel(null,null,null,null)
     static member Cast (p : ICell<VariableChange>) = 
         if p :? VariableChangeModel then 
@@ -85,6 +108,8 @@ type VariableChangeModel
 (* 
     Externally visible/bindable properties
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     member this.f                                  = _f 
     member this.a                                  = _a 
     member this.b                                  = _b 

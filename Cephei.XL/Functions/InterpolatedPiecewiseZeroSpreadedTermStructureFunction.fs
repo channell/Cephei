@@ -127,6 +127,8 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
          dc : obj)
         ([<ExcelArgument(Name="factory",Description = "'Interpolator or empty")>] 
          factory : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -139,6 +141,7 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
                 let _frequency = Helper.toDefault<Frequency> frequency "frequency" Frequency.NoFrequency
                 let _dc = Helper.toDefault<DayCounter> dc "dc" default(DayCounter)
                 let _factory = Helper.toDefault<'Interpolator> factory "factory" default(Interpolator)
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.InterpolatedPiecewiseZeroSpreadedTermStructure 
                                                             _h.cell 
                                                             _spreads.cell 
@@ -147,6 +150,7 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
                                                             _frequency.cell 
                                                             _dc.cell 
                                                             _factory.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<InterpolatedPiecewiseZeroSpreadedTermStructure>) l
 
@@ -158,6 +162,7 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
                                                ;  _frequency.source
                                                ;  _dc.source
                                                ;  _factory.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _h.cell
@@ -167,6 +172,7 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
                                 ;  _frequency.cell
                                 ;  _dc.cell
                                 ;  _factory.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -304,16 +310,16 @@ module InterpolatedPiecewiseZeroSpreadedTermStructureFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<InterpolatedPiecewiseZeroSpreadedTermStructure> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<InterpolatedPiecewiseZeroSpreadedTermStructure> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<InterpolatedPiecewiseZeroSpreadedTermStructure> (c)) :> ICell
                 let format (i : Generic.List<ICell<InterpolatedPiecewiseZeroSpreadedTermStructure>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<InterpolatedPiecewiseZeroSpreadedTermStructure>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<InterpolatedPiecewiseZeroSpreadedTermStructure>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

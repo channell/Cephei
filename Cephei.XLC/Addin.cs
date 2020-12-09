@@ -19,7 +19,6 @@ using Serilog.Events;
 using Serilog.Sinks.ApplicationInsights.Sinks.ApplicationInsights.Formatters;
 using Cephei.Cell;
 using System.IO;
-using QLNet;
 using System.Collections.Concurrent;
 
 namespace Cephei.XL
@@ -41,6 +40,7 @@ namespace Cephei.XL
             _timer.Enabled = true;
             _timer.Start();
             Cell.Cell.Parellel = true;
+            Cell.Cell.Lazy = true;
         }
 
         ~Addin ()

@@ -34,23 +34,29 @@ open Cephei.QLNetHelper
 [<AutoSerializable(true)>]
 type IntegralEngineModel
     ( Process                                      : ICell<GeneralizedBlackScholesProcess>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<IntegralEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
 (*
     Functions
 *)
     let mutable
-        _IntegralEngine                            = cell (fun () -> new IntegralEngine (Process.Value))
+        _IntegralEngine                            = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new IntegralEngine (Process.Value))))
     do this.Bind(_IntegralEngine)
 (* 
     casting 
 *)
-    internal new () = new IntegralEngineModel(null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new IntegralEngineModel(null,null)
     member internal this.Inject v = _IntegralEngine <- v
     static member Cast (p : ICell<IntegralEngine>) = 
         if p :? IntegralEngineModel then 
@@ -58,6 +64,7 @@ type IntegralEngineModel
         else
             let o = new IntegralEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

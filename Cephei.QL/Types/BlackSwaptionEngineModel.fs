@@ -37,12 +37,15 @@ type BlackSwaptionEngineModel
     , vol                                          : ICell<Handle<SwaptionVolatilityStructure>>
     , displacement                                 : ICell<Nullable<double>>
     , model                                        : ICell<BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BlackSwaptionEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _discountCurve                             = discountCurve
     let _vol                                       = vol
     let _displacement                              = displacement
@@ -51,14 +54,17 @@ type BlackSwaptionEngineModel
     Functions
 *)
     let mutable
-        _BlackSwaptionEngine                       = cell (fun () -> new BlackSwaptionEngine (discountCurve.Value, vol.Value, displacement.Value, model.Value))
-    let _termStructure                             = triv (fun () -> _BlackSwaptionEngine.Value.termStructure())
-    let _volatility                                = triv (fun () -> _BlackSwaptionEngine.Value.volatility())
+        _BlackSwaptionEngine                       = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackSwaptionEngine (discountCurve.Value, vol.Value, displacement.Value, model.Value))))
+    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackSwaptionEngine).Value.termStructure())
+    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackSwaptionEngine).Value.volatility())
     do this.Bind(_BlackSwaptionEngine)
 (* 
     casting 
 *)
-    internal new () = new BlackSwaptionEngineModel(null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new BlackSwaptionEngineModel(null,null,null,null,null)
     member internal this.Inject v = _BlackSwaptionEngine <- v
     static member Cast (p : ICell<BlackSwaptionEngine>) = 
         if p :? BlackSwaptionEngineModel then 
@@ -66,6 +72,7 @@ type BlackSwaptionEngineModel
         else
             let o = new BlackSwaptionEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -90,12 +97,15 @@ type BlackSwaptionEngineModel1
     , dc                                           : ICell<DayCounter>
     , displacement                                 : ICell<Nullable<double>>
     , model                                        : ICell<BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BlackSwaptionEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _discountCurve                             = discountCurve
     let _vol                                       = vol
     let _dc                                        = dc
@@ -105,14 +115,17 @@ type BlackSwaptionEngineModel1
     Functions
 *)
     let mutable
-        _BlackSwaptionEngine                       = cell (fun () -> new BlackSwaptionEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))
-    let _termStructure                             = triv (fun () -> _BlackSwaptionEngine.Value.termStructure())
-    let _volatility                                = triv (fun () -> _BlackSwaptionEngine.Value.volatility())
+        _BlackSwaptionEngine                       = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackSwaptionEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))))
+    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackSwaptionEngine).Value.termStructure())
+    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackSwaptionEngine).Value.volatility())
     do this.Bind(_BlackSwaptionEngine)
 (* 
     casting 
 *)
-    internal new () = new BlackSwaptionEngineModel1(null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new BlackSwaptionEngineModel1(null,null,null,null,null,null)
     member internal this.Inject v = _BlackSwaptionEngine <- v
     static member Cast (p : ICell<BlackSwaptionEngine>) = 
         if p :? BlackSwaptionEngineModel1 then 
@@ -120,6 +133,7 @@ type BlackSwaptionEngineModel1
         else
             let o = new BlackSwaptionEngineModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -145,12 +159,15 @@ type BlackSwaptionEngineModel2
     , dc                                           : ICell<DayCounter>
     , displacement                                 : ICell<Nullable<double>>
     , model                                        : ICell<BlackStyleSwaptionEngine<Black76Spec>.CashAnnuityModel>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BlackSwaptionEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _discountCurve                             = discountCurve
     let _vol                                       = vol
     let _dc                                        = dc
@@ -160,14 +177,17 @@ type BlackSwaptionEngineModel2
     Functions
 *)
     let mutable
-        _BlackSwaptionEngine                       = cell (fun () -> new BlackSwaptionEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))
-    let _termStructure                             = triv (fun () -> _BlackSwaptionEngine.Value.termStructure())
-    let _volatility                                = triv (fun () -> _BlackSwaptionEngine.Value.volatility())
+        _BlackSwaptionEngine                       = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackSwaptionEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))))
+    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackSwaptionEngine).Value.termStructure())
+    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackSwaptionEngine).Value.volatility())
     do this.Bind(_BlackSwaptionEngine)
 (* 
     casting 
 *)
-    internal new () = new BlackSwaptionEngineModel2(null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new BlackSwaptionEngineModel2(null,null,null,null,null,null)
     member internal this.Inject v = _BlackSwaptionEngine <- v
     static member Cast (p : ICell<BlackSwaptionEngine>) = 
         if p :? BlackSwaptionEngineModel2 then 
@@ -175,6 +195,7 @@ type BlackSwaptionEngineModel2
         else
             let o = new BlackSwaptionEngineModel2 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

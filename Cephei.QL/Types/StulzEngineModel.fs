@@ -36,12 +36,15 @@ type StulzEngineModel
     ( process1                                     : ICell<GeneralizedBlackScholesProcess>
     , process2                                     : ICell<GeneralizedBlackScholesProcess>
     , correlation                                  : ICell<double>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<StulzEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _process1                                  = process1
     let _process2                                  = process2
     let _correlation                               = correlation
@@ -49,12 +52,15 @@ type StulzEngineModel
     Functions
 *)
     let mutable
-        _StulzEngine                               = cell (fun () -> new StulzEngine (process1.Value, process2.Value, correlation.Value))
+        _StulzEngine                               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new StulzEngine (process1.Value, process2.Value, correlation.Value))))
     do this.Bind(_StulzEngine)
 (* 
     casting 
 *)
-    internal new () = new StulzEngineModel(null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new StulzEngineModel(null,null,null,null)
     member internal this.Inject v = _StulzEngine <- v
     static member Cast (p : ICell<StulzEngine>) = 
         if p :? StulzEngineModel then 
@@ -62,6 +68,7 @@ type StulzEngineModel
         else
             let o = new StulzEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

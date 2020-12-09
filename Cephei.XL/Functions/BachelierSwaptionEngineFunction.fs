@@ -49,6 +49,8 @@ module BachelierSwaptionEngineFunction =
          dc : obj)
         ([<ExcelArgument(Name="model",Description = ".CashAnnuityModel or empty")>] 
          model : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -58,11 +60,13 @@ module BachelierSwaptionEngineFunction =
                 let _vol = Helper.toCell<double> vol "vol" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _model = Helper.toDefault<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel> model "model" BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel.DiscountCurve
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.BachelierSwaptionEngine 
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _dc.cell 
                                                             _model.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BachelierSwaptionEngine>) l
 
@@ -71,12 +75,14 @@ module BachelierSwaptionEngineFunction =
                                                ;  _vol.source
                                                ;  _dc.source
                                                ;  _model.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _discountCurve.cell
                                 ;  _vol.cell
                                 ;  _dc.cell
                                 ;  _model.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -104,6 +110,8 @@ module BachelierSwaptionEngineFunction =
          dc : obj)
         ([<ExcelArgument(Name="model",Description = ".CashAnnuityModel or empty")>] 
          model : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -113,11 +121,13 @@ module BachelierSwaptionEngineFunction =
                 let _vol = Helper.toHandle<Quote> vol "vol" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _model = Helper.toDefault<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel> model "model" BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel.DiscountCurve
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.BachelierSwaptionEngine2 
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _dc.cell 
                                                             _model.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BachelierSwaptionEngine>) l
 
@@ -126,12 +136,14 @@ module BachelierSwaptionEngineFunction =
                                                ;  _vol.source
                                                ;  _dc.source
                                                ;  _model.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _discountCurve.cell
                                 ;  _vol.cell
                                 ;  _dc.cell
                                 ;  _model.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -157,6 +169,8 @@ module BachelierSwaptionEngineFunction =
          vol : obj)
         ([<ExcelArgument(Name="model",Description = ".CashAnnuityModel or empty")>] 
          model : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -165,10 +179,12 @@ module BachelierSwaptionEngineFunction =
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _vol = Helper.toHandle<SwaptionVolatilityStructure> vol "vol" 
                 let _model = Helper.toDefault<BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel> model "model" BlackStyleSwaptionEngine<BachelierSpec>.CashAnnuityModel.DiscountCurve
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.BachelierSwaptionEngine1
                                                             _discountCurve.cell 
                                                             _vol.cell 
                                                             _model.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BachelierSwaptionEngine>) l
 
@@ -176,11 +192,13 @@ module BachelierSwaptionEngineFunction =
                                                [| _discountCurve.source
                                                ;  _vol.source
                                                ;  _model.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _discountCurve.cell
                                 ;  _vol.cell
                                 ;  _model.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -283,16 +301,16 @@ module BachelierSwaptionEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<BachelierSwaptionEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<BachelierSwaptionEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<BachelierSwaptionEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<BachelierSwaptionEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<BachelierSwaptionEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<BachelierSwaptionEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

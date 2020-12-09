@@ -35,59 +35,65 @@ constructor
 type IborLegModel
     ( schedule                                     : ICell<Schedule>
     , index                                        : ICell<IborIndex>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<IborLeg> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _schedule                                  = schedule
     let _index                                     = index
 (*
     Functions
 *)
     let mutable
-        _IborLeg                                   = cell (fun () -> new IborLeg (schedule.Value, index.Value))
-    let _value                                     = triv (fun () -> _IborLeg.Value.value())
-    let _inArrears                                 = triv (fun () -> _IborLeg.Value.inArrears())
+        _IborLeg                                   = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new IborLeg (schedule.Value, index.Value))))
+    let _value                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _IborLeg).Value.value())
+    let _inArrears                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _IborLeg).Value.inArrears())
     let _inArrears1                                (flag : ICell<bool>)   
-                                                   = triv (fun () -> _IborLeg.Value.inArrears(flag.Value))
-    let _withCaps                                  (caps : ICell<List<Nullable<double>>>)   
-                                                   = triv (fun () -> _IborLeg.Value.withCaps(caps.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborLeg).Value.inArrears(flag.Value))
+    let _withCaps                                  (caps : ICell<Generic.List<Nullable<double>>>)   
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborLeg).Value.withCaps(caps.Value))
     let _withCaps1                                 (cap : ICell<Nullable<double>>)   
-                                                   = triv (fun () -> _IborLeg.Value.withCaps(cap.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborLeg).Value.withCaps(cap.Value))
     let _withFixingDays                            (fixingDays : ICell<int>)   
-                                                   = triv (fun () -> _IborLeg.Value.withFixingDays(fixingDays.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborLeg).Value.withFixingDays(fixingDays.Value))
     let _withFixingDays1                           (fixingDays : ICell<Generic.List<int>>)   
-                                                   = triv (fun () -> _IborLeg.Value.withFixingDays(fixingDays.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborLeg).Value.withFixingDays(fixingDays.Value))
     let _withFloors                                (floor : ICell<Nullable<double>>)   
-                                                   = triv (fun () -> _IborLeg.Value.withFloors(floor.Value))
-    let _withFloors1                               (floors : ICell<List<Nullable<double>>>)   
-                                                   = triv (fun () -> _IborLeg.Value.withFloors(floors.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborLeg).Value.withFloors(floor.Value))
+    let _withFloors1                               (floors : ICell<Generic.List<Nullable<double>>>)   
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborLeg).Value.withFloors(floors.Value))
     let _withGearings                              (gearing : ICell<double>)   
-                                                   = triv (fun () -> _IborLeg.Value.withGearings(gearing.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborLeg).Value.withGearings(gearing.Value))
     let _withGearings1                             (gearings : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _IborLeg.Value.withGearings(gearings.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborLeg).Value.withGearings(gearings.Value))
     let _withPaymentDayCounter                     (dayCounter : ICell<DayCounter>)   
-                                                   = triv (fun () -> _IborLeg.Value.withPaymentDayCounter(dayCounter.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborLeg).Value.withPaymentDayCounter(dayCounter.Value))
     let _withSpreads                               (spread : ICell<double>)   
-                                                   = triv (fun () -> _IborLeg.Value.withSpreads(spread.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborLeg).Value.withSpreads(spread.Value))
     let _withSpreads1                              (spreads : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _IborLeg.Value.withSpreads(spreads.Value))
-    let _withZeroPayments                          = triv (fun () -> _IborLeg.Value.withZeroPayments())
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborLeg).Value.withSpreads(spreads.Value))
+    let _withZeroPayments                          = triv (fun () -> (curryEvaluationDate _evaluationDate _IborLeg).Value.withZeroPayments())
     let _withZeroPayments1                         (flag : ICell<bool>)   
-                                                   = triv (fun () -> _IborLeg.Value.withZeroPayments(flag.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborLeg).Value.withZeroPayments(flag.Value))
     let _withNotionals                             (notional : ICell<double>)   
-                                                   = triv (fun () -> _IborLeg.Value.withNotionals(notional.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborLeg).Value.withNotionals(notional.Value))
     let _withNotionals1                            (notionals : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _IborLeg.Value.withNotionals(notionals.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborLeg).Value.withNotionals(notionals.Value))
     let _withPaymentAdjustment                     (convention : ICell<BusinessDayConvention>)   
-                                                   = triv (fun () -> _IborLeg.Value.withPaymentAdjustment(convention.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _IborLeg).Value.withPaymentAdjustment(convention.Value))
     do this.Bind(_IborLeg)
 (* 
     casting 
 *)
-    internal new () = new IborLegModel(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new IborLegModel(null,null,null)
     member internal this.Inject v = _IborLeg <- v
     static member Cast (p : ICell<IborLeg>) = 
         if p :? IborLegModel then 
@@ -95,6 +101,7 @@ type IborLegModel
         else
             let o = new IborLegModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

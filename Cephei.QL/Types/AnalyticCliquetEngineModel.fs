@@ -34,23 +34,29 @@ open Cephei.QLNetHelper
 [<AutoSerializable(true)>]
 type AnalyticCliquetEngineModel
     ( Process                                      : ICell<GeneralizedBlackScholesProcess>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<AnalyticCliquetEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
 (*
     Functions
 *)
     let mutable
-        _AnalyticCliquetEngine                     = cell (fun () -> new AnalyticCliquetEngine (Process.Value))
+        _AnalyticCliquetEngine                     = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticCliquetEngine (Process.Value))))
     do this.Bind(_AnalyticCliquetEngine)
 (* 
     casting 
 *)
-    internal new () = new AnalyticCliquetEngineModel(null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new AnalyticCliquetEngineModel(null,null)
     member internal this.Inject v = _AnalyticCliquetEngine <- v
     static member Cast (p : ICell<AnalyticCliquetEngine>) = 
         if p :? AnalyticCliquetEngineModel then 
@@ -58,6 +64,7 @@ type AnalyticCliquetEngineModel
         else
             let o = new AnalyticCliquetEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

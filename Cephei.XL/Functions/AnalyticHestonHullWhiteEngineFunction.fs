@@ -47,6 +47,8 @@ module AnalyticHestonHullWhiteEngineFunction =
          hullWhiteModel : obj)
         ([<ExcelArgument(Name="integrationOrder",Description = "int or empty")>] 
          integrationOrder : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -55,10 +57,12 @@ module AnalyticHestonHullWhiteEngineFunction =
                 let _hestonModel = Helper.toCell<HestonModel> hestonModel "hestonModel" 
                 let _hullWhiteModel = Helper.toCell<HullWhite> hullWhiteModel "hullWhiteModel" 
                 let _integrationOrder = Helper.toDefault<int> integrationOrder "integrationOrder" 144
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticHestonHullWhiteEngine1 
                                                             _hestonModel.cell 
                                                             _hullWhiteModel.cell 
                                                             _integrationOrder.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AnalyticHestonHullWhiteEngine>) l
 
@@ -66,11 +70,13 @@ module AnalyticHestonHullWhiteEngineFunction =
                                                [| _hestonModel.source
                                                ;  _hullWhiteModel.source
                                                ;  _integrationOrder.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _hestonModel.cell
                                 ;  _hullWhiteModel.cell
                                 ;  _integrationOrder.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -98,6 +104,8 @@ module AnalyticHestonHullWhiteEngineFunction =
          relTolerance : obj)
         ([<ExcelArgument(Name="maxEvaluations",Description = "int")>] 
          maxEvaluations : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -107,11 +115,13 @@ module AnalyticHestonHullWhiteEngineFunction =
                 let _hullWhiteModel = Helper.toCell<HullWhite> hullWhiteModel "hullWhiteModel" 
                 let _relTolerance = Helper.toCell<double> relTolerance "relTolerance" 
                 let _maxEvaluations = Helper.toCell<int> maxEvaluations "maxEvaluations" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticHestonHullWhiteEngine
                                                             _hestonModel.cell 
                                                             _hullWhiteModel.cell 
                                                             _relTolerance.cell 
                                                             _maxEvaluations.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AnalyticHestonHullWhiteEngine>) l
 
@@ -120,12 +130,14 @@ module AnalyticHestonHullWhiteEngineFunction =
                                                ;  _hullWhiteModel.source
                                                ;  _relTolerance.source
                                                ;  _maxEvaluations.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _hestonModel.cell
                                 ;  _hullWhiteModel.cell
                                 ;  _relTolerance.cell
                                 ;  _maxEvaluations.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -391,16 +403,16 @@ module AnalyticHestonHullWhiteEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<AnalyticHestonHullWhiteEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<AnalyticHestonHullWhiteEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<AnalyticHestonHullWhiteEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<AnalyticHestonHullWhiteEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<AnalyticHestonHullWhiteEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<AnalyticHestonHullWhiteEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

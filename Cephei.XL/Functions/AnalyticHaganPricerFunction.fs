@@ -47,6 +47,8 @@ module AnalyticHaganPricerFunction =
          modelOfYieldCurve : obj)
         ([<ExcelArgument(Name="meanReversion",Description = "Quote")>] 
          meanReversion : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -55,10 +57,12 @@ module AnalyticHaganPricerFunction =
                 let _swaptionVol = Helper.toHandle<SwaptionVolatilityStructure> swaptionVol "swaptionVol" 
                 let _modelOfYieldCurve = Helper.toCell<GFunctionFactory.YieldCurveModel> modelOfYieldCurve "modelOfYieldCurve" 
                 let _meanReversion = Helper.toHandle<Quote> meanReversion "meanReversion" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticHaganPricer 
                                                             _swaptionVol.cell 
                                                             _modelOfYieldCurve.cell 
                                                             _meanReversion.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AnalyticHaganPricer>) l
 
@@ -66,11 +70,13 @@ module AnalyticHaganPricerFunction =
                                                [| _swaptionVol.source
                                                ;  _modelOfYieldCurve.source
                                                ;  _meanReversion.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _swaptionVol.cell
                                 ;  _modelOfYieldCurve.cell
                                 ;  _meanReversion.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -658,16 +664,16 @@ module AnalyticHaganPricerFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<AnalyticHaganPricer> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<AnalyticHaganPricer> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<AnalyticHaganPricer> (c)) :> ICell
                 let format (i : Generic.List<ICell<AnalyticHaganPricer>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<AnalyticHaganPricer>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<AnalyticHaganPricer>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

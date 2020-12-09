@@ -35,31 +35,34 @@ open Cephei.QLNetHelper
 type LatticeShortRateModelEngineModel<'ArgumentsType, 'ResultsType when 'ArgumentsType :> IPricingEngineArguments and 'ArgumentsType : (new : unit -> 'ArgumentsType) and 'ResultsType :> IPricingEngineResults and 'ResultsType : (new : unit -> 'ResultsType)>
     ( model                                        : ICell<ShortRateModel>
     , timeGrid                                     : ICell<TimeGrid>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<LatticeShortRateModelEngine<'ArgumentsType,'ResultsType>> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _model                                     = model
     let _timeGrid                                  = timeGrid
 (*
     Functions
 *)
     let mutable
-        _LatticeShortRateModelEngine               = cell (fun () -> new LatticeShortRateModelEngine<'ArgumentsType,'ResultsType> (model.Value, timeGrid.Value))
-    let _update                                    = triv (fun () -> _LatticeShortRateModelEngine.Value.update()
+        _LatticeShortRateModelEngine               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new LatticeShortRateModelEngine<'ArgumentsType,'ResultsType> (model.Value, timeGrid.Value))))
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _LatticeShortRateModelEngine).Value.update()
                                                                      _LatticeShortRateModelEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   
-                                                   = triv (fun () -> _LatticeShortRateModelEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LatticeShortRateModelEngine).Value.setModel(model.Value)
                                                                      _LatticeShortRateModelEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _LatticeShortRateModelEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LatticeShortRateModelEngine).Value.registerWith(handler.Value)
                                                                      _LatticeShortRateModelEngine.Value)
-    let _reset                                     = triv (fun () -> _LatticeShortRateModelEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _LatticeShortRateModelEngine).Value.reset()
                                                                      _LatticeShortRateModelEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _LatticeShortRateModelEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LatticeShortRateModelEngine).Value.unregisterWith(handler.Value)
                                                                      _LatticeShortRateModelEngine.Value)
     do this.Bind(_LatticeShortRateModelEngine)
 
@@ -84,31 +87,34 @@ type LatticeShortRateModelEngineModel<'ArgumentsType, 'ResultsType when 'Argumen
 type LatticeShortRateModelEngineModel1<'ArgumentsType, 'ResultsType when 'ArgumentsType :> IPricingEngineArguments and 'ArgumentsType : (new : unit -> 'ArgumentsType) and 'ResultsType :> IPricingEngineResults and 'ResultsType : (new : unit -> 'ResultsType)>
     ( model                                        : ICell<ShortRateModel>
     , timeSteps                                    : ICell<int>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<LatticeShortRateModelEngine<'ArgumentsType,'ResultsType>> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _model                                     = model
     let _timeSteps                                 = timeSteps
 (*
     Functions
 *)
     let mutable
-        _LatticeShortRateModelEngine               = cell (fun () -> new LatticeShortRateModelEngine<'ArgumentsType,'ResultsType> (model.Value, timeSteps.Value))
-    let _update                                    = triv (fun () -> _LatticeShortRateModelEngine.Value.update()
+        _LatticeShortRateModelEngine               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new LatticeShortRateModelEngine<'ArgumentsType,'ResultsType> (model.Value, timeSteps.Value))))
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _LatticeShortRateModelEngine).Value.update()
                                                                      _LatticeShortRateModelEngine.Value)
     let _setModel                                  (model : ICell<Handle<ShortRateModel>>)   
-                                                   = triv (fun () -> _LatticeShortRateModelEngine.Value.setModel(model.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LatticeShortRateModelEngine).Value.setModel(model.Value)
                                                                      _LatticeShortRateModelEngine.Value)
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _LatticeShortRateModelEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LatticeShortRateModelEngine).Value.registerWith(handler.Value)
                                                                      _LatticeShortRateModelEngine.Value)
-    let _reset                                     = triv (fun () -> _LatticeShortRateModelEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _LatticeShortRateModelEngine).Value.reset()
                                                                      _LatticeShortRateModelEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _LatticeShortRateModelEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _LatticeShortRateModelEngine).Value.unregisterWith(handler.Value)
                                                                      _LatticeShortRateModelEngine.Value)
     do this.Bind(_LatticeShortRateModelEngine)
 

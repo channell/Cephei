@@ -54,7 +54,7 @@ type YoYInflationCollarModel
     Functions
 *)
     let mutable
-        _YoYInflationCollar                        = cell (fun () -> withEngine pricingEngine (new YoYInflationCollar (yoyLeg.Value, capRates.Value, floorRates.Value)))
+        _YoYInflationCollar                        = cell (fun () -> withEngine pricingEngine evaluationDate (new YoYInflationCollar (yoyLeg.Value, capRates.Value, floorRates.Value)))
     let _atmRate                                   (discountCurve : ICell<YieldTermStructure>)   
                                                    = triv (fun () -> (withEvaluationDate _evaluationDate _YoYInflationCollar).atmRate(discountCurve.Value))
     let _capRates                                  = triv (fun () -> (withEvaluationDate _evaluationDate _YoYInflationCollar).capRates())

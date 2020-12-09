@@ -56,7 +56,7 @@ type ForwardVanillaOptionModel
     Functions
 *)
     let mutable
-        _ForwardVanillaOption                      = cell (fun () -> withEngine pricingEngine (new ForwardVanillaOption (moneyness.Value, resetDate.Value, payoff.Value, exercise.Value)))
+        _ForwardVanillaOption                      = cell (fun () -> withEngine pricingEngine evaluationDate (new ForwardVanillaOption (moneyness.Value, resetDate.Value, payoff.Value, exercise.Value)))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _ForwardVanillaOption).delta())
     let _deltaForward                              = triv (fun () -> (withEvaluationDate _evaluationDate _ForwardVanillaOption).deltaForward())
     let _dividendRho                               = triv (fun () -> (withEvaluationDate _evaluationDate _ForwardVanillaOption).dividendRho())

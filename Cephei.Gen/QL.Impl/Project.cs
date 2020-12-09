@@ -19,7 +19,7 @@ namespace Cephei.Gen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Project.tt"
+    #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL.Impl\Project.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class Project : ProjectBase
     {
@@ -30,7 +30,7 @@ namespace Cephei.Gen
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Project.tt"
+            #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL.Impl\Project.tt"
 /*
 Name:           Project.cst
 Author:         Stephen Channell
@@ -41,7 +41,7 @@ Description:    Generate all the interfaces and factories for CepheiFace
             #line hidden
             this.Write("\r\n");
             
-            #line 20 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Project.tt"
+            #line 20 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL.Impl\Project.tt"
 
     
     Context.RootName = RootPackageName;
@@ -378,7 +378,7 @@ Description:    Generate all the interfaces and factories for CepheiFace
                     ".h\" />\r\n    <ClInclude Include=\"ValueCollections.h\" />\r\n    <ClInclude Include=\"" +
                     "ValueHelpers.h\" />\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    ");
             
-            #line 469 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Project.tt"
+            #line 469 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL.Impl\Project.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetPackage (Context.RootTree, RootPackageName, "\t")));
             
             #line default
@@ -400,7 +400,7 @@ Description:    Generate all the interfaces and factories for CepheiFace
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 482 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Project.tt"
+        #line 482 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL.Impl\Project.tt"
 
 
 string GetPackage(Package rootPackage,  string nameSpace, string tabs)
@@ -506,7 +506,7 @@ string GetPackage2(Package package, Package rootPackage,  string nameSpace, stri
         #line default
         #line hidden
         
-        #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Project.tt"
+        #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL.Impl\Project.tt"
 
 private string _RootPackageNameField;
 

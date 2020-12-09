@@ -49,6 +49,8 @@ module FlatForwardFunction =
          forward : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -58,11 +60,13 @@ module FlatForwardFunction =
                 let _calendar = Helper.toCell<Calendar> calendar "calendar" 
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward4 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _forward.cell 
                                                             _dayCounter.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
@@ -71,12 +75,14 @@ module FlatForwardFunction =
                                                ;  _calendar.source
                                                ;  _forward.source
                                                ;  _dayCounter.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _settlementDays.cell
                                 ;  _calendar.cell
                                 ;  _forward.cell
                                 ;  _dayCounter.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -106,6 +112,8 @@ module FlatForwardFunction =
          compounding : obj)
         ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          frequency : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -116,12 +124,14 @@ module FlatForwardFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward10
                                                             _referenceDate.cell 
                                                             _forward.cell 
                                                             _dayCounter.cell 
                                                             _compounding.cell 
                                                             _frequency.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
@@ -131,6 +141,7 @@ module FlatForwardFunction =
                                                ;  _dayCounter.source
                                                ;  _compounding.source
                                                ;  _frequency.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _referenceDate.cell
@@ -138,6 +149,7 @@ module FlatForwardFunction =
                                 ;  _dayCounter.cell
                                 ;  _compounding.cell
                                 ;  _frequency.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -163,6 +175,8 @@ module FlatForwardFunction =
          forward : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -171,10 +185,12 @@ module FlatForwardFunction =
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward9
                                                             _referenceDate.cell 
                                                             _forward.cell 
                                                             _dayCounter.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
@@ -182,11 +198,13 @@ module FlatForwardFunction =
                                                [| _referenceDate.source
                                                ;  _forward.source
                                                ;  _dayCounter.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _referenceDate.cell
                                 ;  _forward.cell
                                 ;  _dayCounter.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -214,6 +232,8 @@ module FlatForwardFunction =
          dayCounter : obj)
         ([<ExcelArgument(Name="compounding",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          compounding : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -223,11 +243,13 @@ module FlatForwardFunction =
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward8
                                                             _referenceDate.cell 
                                                             _forward.cell 
                                                             _dayCounter.cell 
                                                             _compounding.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
@@ -236,12 +258,14 @@ module FlatForwardFunction =
                                                ;  _forward.source
                                                ;  _dayCounter.source
                                                ;  _compounding.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _referenceDate.cell
                                 ;  _forward.cell
                                 ;  _dayCounter.cell
                                 ;  _compounding.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -271,6 +295,8 @@ module FlatForwardFunction =
          compounding : obj)
         ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          frequency : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -281,12 +307,14 @@ module FlatForwardFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward7
                                                             _referenceDate.cell 
                                                             _forward.cell 
                                                             _dayCounter.cell 
                                                             _compounding.cell 
                                                             _frequency.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
@@ -296,6 +324,7 @@ module FlatForwardFunction =
                                                ;  _dayCounter.source
                                                ;  _compounding.source
                                                ;  _frequency.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _referenceDate.cell
@@ -303,6 +332,7 @@ module FlatForwardFunction =
                                 ;  _dayCounter.cell
                                 ;  _compounding.cell
                                 ;  _frequency.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -330,6 +360,8 @@ module FlatForwardFunction =
          forward : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -339,11 +371,13 @@ module FlatForwardFunction =
                 let _calendar = Helper.toCell<Calendar> calendar "calendar" 
                 let _forward = Helper.toCell<Quote> forward "forward" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward1
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _forward.cell 
                                                             _dayCounter.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
@@ -352,12 +386,14 @@ module FlatForwardFunction =
                                                ;  _calendar.source
                                                ;  _forward.source
                                                ;  _dayCounter.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _settlementDays.cell
                                 ;  _calendar.cell
                                 ;  _forward.cell
                                 ;  _dayCounter.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -385,6 +421,8 @@ module FlatForwardFunction =
          dayCounter : obj)
         ([<ExcelArgument(Name="compounding",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          compounding : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -394,11 +432,13 @@ module FlatForwardFunction =
                 let _forward = Helper.toCell<Quote> forward "forward" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward11 
                                                             _referenceDate.cell 
                                                             _forward.cell 
                                                             _dayCounter.cell 
                                                             _compounding.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
@@ -407,12 +447,14 @@ module FlatForwardFunction =
                                                ;  _forward.source
                                                ;  _dayCounter.source
                                                ;  _compounding.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _referenceDate.cell
                                 ;  _forward.cell
                                 ;  _dayCounter.cell
                                 ;  _compounding.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -444,6 +486,8 @@ module FlatForwardFunction =
          compounding : obj)
         ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          frequency : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -455,6 +499,7 @@ module FlatForwardFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward5
                                                             _settlementDays.cell 
                                                             _calendar.cell 
@@ -462,6 +507,7 @@ module FlatForwardFunction =
                                                             _dayCounter.cell 
                                                             _compounding.cell 
                                                             _frequency.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
@@ -472,6 +518,7 @@ module FlatForwardFunction =
                                                ;  _dayCounter.source
                                                ;  _compounding.source
                                                ;  _frequency.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _settlementDays.cell
@@ -480,6 +527,7 @@ module FlatForwardFunction =
                                 ;  _dayCounter.cell
                                 ;  _compounding.cell
                                 ;  _frequency.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -505,6 +553,8 @@ module FlatForwardFunction =
          forward : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -513,10 +563,12 @@ module FlatForwardFunction =
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
                 let _forward = Helper.toCell<Quote> forward "forward" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward
                                                             _referenceDate.cell 
                                                             _forward.cell 
                                                             _dayCounter.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
@@ -524,11 +576,13 @@ module FlatForwardFunction =
                                                [| _referenceDate.source
                                                ;  _forward.source
                                                ;  _dayCounter.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _referenceDate.cell
                                 ;  _forward.cell
                                 ;  _dayCounter.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -558,6 +612,8 @@ module FlatForwardFunction =
          dayCounter : obj)
         ([<ExcelArgument(Name="compounding",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          compounding : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -568,12 +624,14 @@ module FlatForwardFunction =
                 let _forward = Helper.toCell<double> forward "forward" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward3 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _forward.cell 
                                                             _dayCounter.cell 
                                                             _compounding.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
@@ -583,6 +641,7 @@ module FlatForwardFunction =
                                                ;  _forward.source
                                                ;  _dayCounter.source
                                                ;  _compounding.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _settlementDays.cell
@@ -590,6 +649,7 @@ module FlatForwardFunction =
                                 ;  _forward.cell
                                 ;  _dayCounter.cell
                                 ;  _compounding.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -621,6 +681,8 @@ module FlatForwardFunction =
          compounding : obj)
         ([<ExcelArgument(Name="frequency",Description = "Frequency: NoFrequency, Once, Annual, Semiannual, EveryFourthMonth, Quarterly, Bimonthly, Monthly, EveryFourthWeek, Biweekly, Weekly, Daily, OtherFrequency")>] 
          frequency : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -632,6 +694,7 @@ module FlatForwardFunction =
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
                 let _frequency = Helper.toCell<Frequency> frequency "frequency" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward2
                                                             _settlementDays.cell 
                                                             _calendar.cell 
@@ -639,6 +702,7 @@ module FlatForwardFunction =
                                                             _dayCounter.cell 
                                                             _compounding.cell 
                                                             _frequency.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
@@ -649,6 +713,7 @@ module FlatForwardFunction =
                                                ;  _dayCounter.source
                                                ;  _compounding.source
                                                ;  _frequency.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _settlementDays.cell
@@ -657,6 +722,7 @@ module FlatForwardFunction =
                                 ;  _dayCounter.cell
                                 ;  _compounding.cell
                                 ;  _frequency.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -686,6 +752,8 @@ module FlatForwardFunction =
          dayCounter : obj)
         ([<ExcelArgument(Name="compounding",Description = "Compounding: Simple, Compounded, Continuous, SimpleThenCompounded")>] 
          compounding : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -696,12 +764,14 @@ module FlatForwardFunction =
                 let _forward = Helper.toCell<Quote> forward "forward" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
                 let _compounding = Helper.toCell<Compounding> compounding "compounding" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FlatForward6 
                                                             _settlementDays.cell 
                                                             _calendar.cell 
                                                             _forward.cell 
                                                             _dayCounter.cell 
                                                             _compounding.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FlatForward>) l
 
@@ -711,6 +781,7 @@ module FlatForwardFunction =
                                                ;  _forward.source
                                                ;  _dayCounter.source
                                                ;  _compounding.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _settlementDays.cell
@@ -718,6 +789,7 @@ module FlatForwardFunction =
                                 ;  _forward.cell
                                 ;  _dayCounter.cell
                                 ;  _compounding.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -1701,16 +1773,16 @@ module FlatForwardFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<FlatForward> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<FlatForward> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<FlatForward> (c)) :> ICell
                 let format (i : Generic.List<ICell<FlatForward>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<FlatForward>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<FlatForward>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

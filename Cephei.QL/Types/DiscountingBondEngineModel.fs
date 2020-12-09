@@ -35,25 +35,31 @@ open Cephei.QLNetHelper
 type DiscountingBondEngineModel
     ( discountCurve                                : ICell<Handle<YieldTermStructure>>
     , includeSettlementDateFlows                   : ICell<Nullable<bool>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<DiscountingBondEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _discountCurve                             = discountCurve
     let _includeSettlementDateFlows                = includeSettlementDateFlows
 (*
     Functions
 *)
     let mutable
-        _DiscountingBondEngine                     = cell (fun () -> new DiscountingBondEngine (discountCurve.Value, includeSettlementDateFlows.Value))
-    let _discountCurve                             = triv (fun () -> _DiscountingBondEngine.Value.discountCurve())
+        _DiscountingBondEngine                     = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new DiscountingBondEngine (discountCurve.Value, includeSettlementDateFlows.Value))))
+    let _discountCurve                             = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscountingBondEngine).Value.discountCurve())
     do this.Bind(_DiscountingBondEngine)
 (* 
     casting 
 *)
-    internal new () = new DiscountingBondEngineModel(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new DiscountingBondEngineModel(null,null,null)
     member internal this.Inject v = _DiscountingBondEngine <- v
     static member Cast (p : ICell<DiscountingBondEngine>) = 
         if p :? DiscountingBondEngineModel then 
@@ -61,6 +67,7 @@ type DiscountingBondEngineModel
         else
             let o = new DiscountingBondEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

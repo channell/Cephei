@@ -439,6 +439,8 @@ module SabrInterpolatedSmileSectionFunction =
          dc : obj)
         ([<ExcelArgument(Name="shift",Description = "double or empty")>] 
          shift : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -463,6 +465,7 @@ module SabrInterpolatedSmileSectionFunction =
                 let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.SabrInterpolatedSmileSection1 
                                                             _optionDate.cell 
                                                             _forward.cell 
@@ -483,6 +486,7 @@ module SabrInterpolatedSmileSectionFunction =
                                                             _Method.cell 
                                                             _dc.cell 
                                                             _shift.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SabrInterpolatedSmileSection>) l
 
@@ -506,6 +510,7 @@ module SabrInterpolatedSmileSectionFunction =
                                                ;  _Method.source
                                                ;  _dc.source
                                                ;  _shift.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _optionDate.cell
@@ -527,6 +532,7 @@ module SabrInterpolatedSmileSectionFunction =
                                 ;  _Method.cell
                                 ;  _dc.cell
                                 ;  _shift.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -585,6 +591,8 @@ module SabrInterpolatedSmileSectionFunction =
          dc : obj)
         ([<ExcelArgument(Name="shift",Description = "double or empty")>] 
          shift : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -609,6 +617,7 @@ module SabrInterpolatedSmileSectionFunction =
                 let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
                 let _shift = Helper.toDefault<double> shift "shift" 0.0
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.SabrInterpolatedSmileSection
                                                             _optionDate.cell 
                                                             _forward.cell 
@@ -629,6 +638,7 @@ module SabrInterpolatedSmileSectionFunction =
                                                             _Method.cell 
                                                             _dc.cell 
                                                             _shift.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SabrInterpolatedSmileSection>) l
 
@@ -652,6 +662,7 @@ module SabrInterpolatedSmileSectionFunction =
                                                ;  _Method.source
                                                ;  _dc.source
                                                ;  _shift.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _optionDate.cell
@@ -673,6 +684,7 @@ module SabrInterpolatedSmileSectionFunction =
                                 ;  _Method.cell
                                 ;  _dc.cell
                                 ;  _shift.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -1308,16 +1320,16 @@ module SabrInterpolatedSmileSectionFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<SabrInterpolatedSmileSection> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<SabrInterpolatedSmileSection> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<SabrInterpolatedSmileSection> (c)) :> ICell
                 let format (i : Generic.List<ICell<SabrInterpolatedSmileSection>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<SabrInterpolatedSmileSection>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<SabrInterpolatedSmileSection>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

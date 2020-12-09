@@ -52,7 +52,7 @@ type BasketOptionModel
     Functions
 *)
     let mutable
-        _BasketOption                              = cell (fun () -> withEngine pricingEngine (new BasketOption (payoff.Value, exercise.Value)))
+        _BasketOption                              = cell (fun () -> withEngine pricingEngine evaluationDate (new BasketOption (payoff.Value, exercise.Value)))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _BasketOption).delta())
     let _dividendRho                               = triv (fun () -> (withEvaluationDate _evaluationDate _BasketOption).dividendRho())
     let _gamma                                     = triv (fun () -> (withEvaluationDate _evaluationDate _BasketOption).gamma())

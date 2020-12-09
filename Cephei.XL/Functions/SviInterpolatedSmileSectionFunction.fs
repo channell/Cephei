@@ -477,6 +477,8 @@ module SviInterpolatedSmileSectionFunction =
          Method : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter or empty")>] 
          dc : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -502,6 +504,7 @@ module SviInterpolatedSmileSectionFunction =
                 let _endCriteria = Helper.toDefault<EndCriteria> endCriteria "endCriteria" null
                 let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.SviInterpolatedSmileSection 
                                                             _optionDate.cell 
                                                             _forward.cell 
@@ -523,6 +526,7 @@ module SviInterpolatedSmileSectionFunction =
                                                             _endCriteria.cell 
                                                             _Method.cell 
                                                             _dc.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SviInterpolatedSmileSection>) l
 
@@ -547,6 +551,7 @@ module SviInterpolatedSmileSectionFunction =
                                                ;  _endCriteria.source
                                                ;  _Method.source
                                                ;  _dc.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _optionDate.cell
@@ -569,6 +574,7 @@ module SviInterpolatedSmileSectionFunction =
                                 ;  _endCriteria.cell
                                 ;  _Method.cell
                                 ;  _dc.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -629,6 +635,8 @@ module SviInterpolatedSmileSectionFunction =
          Method : obj)
         ([<ExcelArgument(Name="dc",Description = "DayCounter or empty")>] 
          dc : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -654,6 +662,7 @@ module SviInterpolatedSmileSectionFunction =
                 let _endCriteria = Helper.toDefault<EndCriteria> endCriteria "endCriteria" null
                 let _Method = Helper.toCell<OptimizationMethod> Method "Method" 
                 let _dc = Helper.toDefault<DayCounter> dc "dc" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.SviInterpolatedSmileSection1 
                                                             _optionDate.cell 
                                                             _forward.cell 
@@ -675,6 +684,7 @@ module SviInterpolatedSmileSectionFunction =
                                                             _endCriteria.cell 
                                                             _Method.cell 
                                                             _dc.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<SviInterpolatedSmileSection>) l
 
@@ -699,6 +709,7 @@ module SviInterpolatedSmileSectionFunction =
                                                ;  _endCriteria.source
                                                ;  _Method.source
                                                ;  _dc.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _optionDate.cell
@@ -721,6 +732,7 @@ module SviInterpolatedSmileSectionFunction =
                                 ;  _endCriteria.cell
                                 ;  _Method.cell
                                 ;  _dc.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -1356,16 +1368,16 @@ module SviInterpolatedSmileSectionFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<SviInterpolatedSmileSection> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<SviInterpolatedSmileSection> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<SviInterpolatedSmileSection> (c)) :> ICell
                 let format (i : Generic.List<ICell<SviInterpolatedSmileSection>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<SviInterpolatedSmileSection>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<SviInterpolatedSmileSection>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

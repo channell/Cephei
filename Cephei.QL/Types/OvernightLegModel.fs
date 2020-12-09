@@ -35,41 +35,47 @@ open Cephei.QLNetHelper
 type OvernightLegModel
     ( schedule                                     : ICell<Schedule>
     , overnightIndex                               : ICell<OvernightIndex>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<OvernightLeg> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _schedule                                  = schedule
     let _overnightIndex                            = overnightIndex
 (*
     Functions
 *)
     let mutable
-        _OvernightLeg                              = cell (fun () -> new OvernightLeg (schedule.Value, overnightIndex.Value))
-    let _value                                     = triv (fun () -> _OvernightLeg.Value.value())
+        _OvernightLeg                              = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new OvernightLeg (schedule.Value, overnightIndex.Value))))
+    let _value                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightLeg).Value.value())
     let _withGearings                              (gearings : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _OvernightLeg.Value.withGearings(gearings.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightLeg).Value.withGearings(gearings.Value))
     let _withGearings1                             (gearing : ICell<double>)   
-                                                   = triv (fun () -> _OvernightLeg.Value.withGearings(gearing.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightLeg).Value.withGearings(gearing.Value))
     let _withNotionals                             (notionals : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _OvernightLeg.Value.withNotionals(notionals.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightLeg).Value.withNotionals(notionals.Value))
     let _withNotionals1                            (notional : ICell<double>)   
-                                                   = triv (fun () -> _OvernightLeg.Value.withNotionals(notional.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightLeg).Value.withNotionals(notional.Value))
     let _withPaymentAdjustment                     (convention : ICell<BusinessDayConvention>)   
-                                                   = triv (fun () -> _OvernightLeg.Value.withPaymentAdjustment(convention.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightLeg).Value.withPaymentAdjustment(convention.Value))
     let _withPaymentDayCounter                     (dayCounter : ICell<DayCounter>)   
-                                                   = triv (fun () -> _OvernightLeg.Value.withPaymentDayCounter(dayCounter.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightLeg).Value.withPaymentDayCounter(dayCounter.Value))
     let _withSpreads                               (spread : ICell<double>)   
-                                                   = triv (fun () -> _OvernightLeg.Value.withSpreads(spread.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightLeg).Value.withSpreads(spread.Value))
     let _withSpreads1                              (spreads : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _OvernightLeg.Value.withSpreads(spreads.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightLeg).Value.withSpreads(spreads.Value))
     do this.Bind(_OvernightLeg)
 (* 
     casting 
 *)
-    internal new () = new OvernightLegModel(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new OvernightLegModel(null,null,null)
     member internal this.Inject v = _OvernightLeg <- v
     static member Cast (p : ICell<OvernightLeg>) = 
         if p :? OvernightLegModel then 
@@ -77,6 +83,7 @@ type OvernightLegModel
         else
             let o = new OvernightLegModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

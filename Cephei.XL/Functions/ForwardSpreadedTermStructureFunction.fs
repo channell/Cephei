@@ -117,6 +117,8 @@ module ForwardSpreadedTermStructureFunction =
          h : obj)
         ([<ExcelArgument(Name="spread",Description = "Quote")>] 
          spread : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -124,19 +126,23 @@ module ForwardSpreadedTermStructureFunction =
 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
                 let _spread = Helper.toHandle<Quote> spread "spread" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.ForwardSpreadedTermStructure 
                                                             _h.cell 
                                                             _spread.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ForwardSpreadedTermStructure>) l
 
                 let source () = Helper.sourceFold "Fun.ForwardSpreadedTermStructure" 
                                                [| _h.source
                                                ;  _spread.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _h.cell
                                 ;  _spread.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -310,16 +316,16 @@ module ForwardSpreadedTermStructureFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<ForwardSpreadedTermStructure> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<ForwardSpreadedTermStructure> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<ForwardSpreadedTermStructure> (c)) :> ICell
                 let format (i : Generic.List<ICell<ForwardSpreadedTermStructure>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<ForwardSpreadedTermStructure>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<ForwardSpreadedTermStructure>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

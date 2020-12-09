@@ -60,6 +60,8 @@ module MCHestonHullWhiteEngineFunction =
          maxSamples : obj)
         ([<ExcelArgument(Name="seed",Description = "uint64")>] 
          seed : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -74,6 +76,7 @@ module MCHestonHullWhiteEngineFunction =
                 let _requiredTolerance = Helper.toNullable<double> requiredTolerance "requiredTolerance"
                 let _maxSamples = Helper.toNullable<int> maxSamples "maxSamples"
                 let _seed = Helper.toCell<uint64> seed "seed" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.MCHestonHullWhiteEngine 
                                                             _Process.cell 
                                                             _timeSteps.cell 
@@ -84,6 +87,7 @@ module MCHestonHullWhiteEngineFunction =
                                                             _requiredTolerance.cell 
                                                             _maxSamples.cell 
                                                             _seed.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MCHestonHullWhiteEngine>) l
 
@@ -97,6 +101,7 @@ module MCHestonHullWhiteEngineFunction =
                                                ;  _requiredTolerance.source
                                                ;  _maxSamples.source
                                                ;  _seed.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Process.cell
@@ -108,6 +113,7 @@ module MCHestonHullWhiteEngineFunction =
                                 ;  _requiredTolerance.cell
                                 ;  _maxSamples.cell
                                 ;  _seed.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -137,16 +143,16 @@ module MCHestonHullWhiteEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<MCHestonHullWhiteEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<MCHestonHullWhiteEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<MCHestonHullWhiteEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<MCHestonHullWhiteEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<MCHestonHullWhiteEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<MCHestonHullWhiteEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

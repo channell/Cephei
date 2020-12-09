@@ -16,6 +16,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT
 ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 FOR A PARTICULAR PURPOSE.  See the license for more details.
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
 namespace Cephei.QL
 
 open System
@@ -42,12 +44,15 @@ type ConundrumIntegrandModel
     , forwardValue                                 : ICell<double>
     , strike                                       : ICell<double>
     , optionType                                   : ICell<Option.Type>
+    ( evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<ConundrumIntegrand> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _o                                         = o
     let _curve                                     = curve
     let _gFunction                                 = gFunction
@@ -61,7 +66,9 @@ type ConundrumIntegrandModel
     Functions
 *)
     let mutable
-        _ConundrumIntegrand                        = cell (fun () -> new ConundrumIntegrand (o.Value, curve.Value, gFunction.Value, fixingDate.Value, paymentDate.Value, annuity.Value, forwardValue.Value, strike.Value, optionType.Value))
+        _evaluationDate                            = evaluationDate
+    let mutable
+        _ConundrumIntegrand                        = cell (fun () -> (withEvaluationDate _evaluationDate new ConundrumIntegrand (o.Value, curve.Value, gFunction.Value, fixingDate.Value, paymentDate.Value, annuity.Value, forwardValue.Value, strike.Value, optionType.Value)))
     let _firstDerivativeOfF                        (x : ICell<double>)   
                                                    = cell (fun () -> _ConundrumIntegrand.Value.firstDerivativeOfF(x.Value))
     let _secondDerivativeOfF                       (x : ICell<double>)   
@@ -72,6 +79,10 @@ type ConundrumIntegrandModel
 (* 
     casting 
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
+   interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
     internal new () = ConundrumIntegrandModel(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _ConundrumIntegrand <- v
     static member Cast (p : ICell<ConundrumIntegrand>) = 
@@ -79,13 +90,25 @@ type ConundrumIntegrandModel
             p :?> ConundrumIntegrandModel
         else
             let o = new ConundrumIntegrandModel ()
-            o.Inject p
+            o.Inject p\m            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
 (* 
     casting 
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
+   interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
     internal new () = ConundrumIntegrandModel(null,null,null,null,null,null,null,null,null)
     static member Cast (p : ICell<ConundrumIntegrand>) = 
         if p :? ConundrumIntegrandModel then 
@@ -99,6 +122,8 @@ type ConundrumIntegrandModel
 (* 
     Externally visible/bindable properties
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     member this.o                                  = _o 
     member this.curve                              = _curve 
     member this.gFunction                          = _gFunction 

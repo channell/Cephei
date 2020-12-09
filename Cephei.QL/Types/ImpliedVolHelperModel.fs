@@ -38,12 +38,15 @@ type ImpliedVolHelperModel
     , targetValue                                  : ICell<double>
     , displacement                                 : ICell<double>
     , Type                                         : ICell<VolatilityType>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<ImpliedVolHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _cap                                       = cap
     let _discountCurve                             = discountCurve
     let _targetValue                               = targetValue
@@ -53,16 +56,19 @@ type ImpliedVolHelperModel
     Functions
 *)
     let mutable
-        _ImpliedVolHelper                          = cell (fun () -> new ImpliedVolHelper (cap.Value, discountCurve.Value, targetValue.Value, displacement.Value, Type.Value))
+        _ImpliedVolHelper                          = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new ImpliedVolHelper (cap.Value, discountCurve.Value, targetValue.Value, displacement.Value, Type.Value))))
     let _derivative                                (x : ICell<double>)   
-                                                   = triv (fun () -> _ImpliedVolHelper.Value.derivative(x.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ImpliedVolHelper).Value.derivative(x.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _ImpliedVolHelper.Value.value(x.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ImpliedVolHelper).Value.value(x.Value))
     do this.Bind(_ImpliedVolHelper)
 (* 
     casting 
 *)
-    internal new () = new ImpliedVolHelperModel(null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new ImpliedVolHelperModel(null,null,null,null,null,null)
     member internal this.Inject v = _ImpliedVolHelper <- v
     static member Cast (p : ICell<ImpliedVolHelper>) = 
         if p :? ImpliedVolHelperModel then 
@@ -70,6 +76,7 @@ type ImpliedVolHelperModel
         else
             let o = new ImpliedVolHelperModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

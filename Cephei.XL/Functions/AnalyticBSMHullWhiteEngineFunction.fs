@@ -47,6 +47,8 @@ module AnalyticBSMHullWhiteEngineFunction =
          Process : obj)
         ([<ExcelArgument(Name="model",Description = "HullWhite")>] 
          model : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -55,10 +57,12 @@ module AnalyticBSMHullWhiteEngineFunction =
                 let _equityShortRateCorrelation = Helper.toCell<double> equityShortRateCorrelation "equityShortRateCorrelation" 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _model = Helper.toCell<HullWhite> model "model" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.AnalyticBSMHullWhiteEngine 
                                                             _equityShortRateCorrelation.cell 
                                                             _Process.cell 
                                                             _model.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<AnalyticBSMHullWhiteEngine>) l
 
@@ -66,11 +70,13 @@ module AnalyticBSMHullWhiteEngineFunction =
                                                [| _equityShortRateCorrelation.source
                                                ;  _Process.source
                                                ;  _model.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _equityShortRateCorrelation.cell
                                 ;  _Process.cell
                                 ;  _model.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -298,16 +304,16 @@ module AnalyticBSMHullWhiteEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<AnalyticBSMHullWhiteEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<AnalyticBSMHullWhiteEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<AnalyticBSMHullWhiteEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<AnalyticBSMHullWhiteEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<AnalyticBSMHullWhiteEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<AnalyticBSMHullWhiteEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

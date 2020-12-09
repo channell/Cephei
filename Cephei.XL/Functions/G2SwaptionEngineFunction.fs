@@ -48,6 +48,8 @@ module G2SwaptionEngineFunction =
          range : obj)
         ([<ExcelArgument(Name="intervals",Description = "int")>] 
          intervals : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -56,10 +58,12 @@ module G2SwaptionEngineFunction =
                 let _model = Helper.toCell<G2> model "model" 
                 let _range = Helper.toCell<double> range "range" 
                 let _intervals = Helper.toCell<int> intervals "intervals" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.G2SwaptionEngine 
                                                             _model.cell 
                                                             _range.cell 
                                                             _intervals.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<G2SwaptionEngine>) l
 
@@ -67,11 +71,13 @@ module G2SwaptionEngineFunction =
                                                [| _model.source
                                                ;  _range.source
                                                ;  _intervals.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _model.cell
                                 ;  _range.cell
                                 ;  _intervals.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -301,16 +307,16 @@ module G2SwaptionEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<G2SwaptionEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<G2SwaptionEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<G2SwaptionEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<G2SwaptionEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<G2SwaptionEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<G2SwaptionEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -52,7 +52,7 @@ type OneAssetOptionModel
     Functions
 *)
     let mutable
-        _OneAssetOption                            = cell (fun () -> withEngine pricingEngine (new OneAssetOption (payoff.Value, exercise.Value)))
+        _OneAssetOption                            = cell (fun () -> withEngine pricingEngine evaluationDate (new OneAssetOption (payoff.Value, exercise.Value)))
     let _delta                                     = triv (fun () -> (withEvaluationDate _evaluationDate _OneAssetOption).delta())
     let _deltaForward                              = triv (fun () -> (withEvaluationDate _evaluationDate _OneAssetOption).deltaForward())
     let _dividendRho                               = triv (fun () -> (withEvaluationDate _evaluationDate _OneAssetOption).dividendRho())

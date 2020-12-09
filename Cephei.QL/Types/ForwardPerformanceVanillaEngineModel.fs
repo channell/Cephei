@@ -35,34 +35,40 @@ open Cephei.QLNetHelper
 type ForwardPerformanceVanillaEngineModel
     ( Process                                      : ICell<GeneralizedBlackScholesProcess>
     , getEngine                                    : ICell< ForwardVanillaEngine.GetOriginalEngine>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<ForwardPerformanceVanillaEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
     let _getEngine                                 = getEngine
 (*
     Functions
 *)
     let mutable
-        _ForwardPerformanceVanillaEngine           = cell (fun () -> new ForwardPerformanceVanillaEngine (Process.Value, getEngine.Value))
+        _ForwardPerformanceVanillaEngine           = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new ForwardPerformanceVanillaEngine (Process.Value, getEngine.Value))))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _ForwardPerformanceVanillaEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardPerformanceVanillaEngine).Value.registerWith(handler.Value)
                                                                      _ForwardPerformanceVanillaEngine.Value)
-    let _reset                                     = triv (fun () -> _ForwardPerformanceVanillaEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardPerformanceVanillaEngine).Value.reset()
                                                                      _ForwardPerformanceVanillaEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _ForwardPerformanceVanillaEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardPerformanceVanillaEngine).Value.unregisterWith(handler.Value)
                                                                      _ForwardPerformanceVanillaEngine.Value)
-    let _update                                    = triv (fun () -> _ForwardPerformanceVanillaEngine.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardPerformanceVanillaEngine).Value.update()
                                                                      _ForwardPerformanceVanillaEngine.Value)
     do this.Bind(_ForwardPerformanceVanillaEngine)
 (* 
     casting 
 *)
-    internal new () = new ForwardPerformanceVanillaEngineModel(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new ForwardPerformanceVanillaEngineModel(null,null,null)
     member internal this.Inject v = _ForwardPerformanceVanillaEngine <- v
     static member Cast (p : ICell<ForwardPerformanceVanillaEngine>) = 
         if p :? ForwardPerformanceVanillaEngineModel then 
@@ -70,6 +76,7 @@ type ForwardPerformanceVanillaEngineModel
         else
             let o = new ForwardPerformanceVanillaEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

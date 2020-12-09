@@ -47,6 +47,8 @@ module DiscretizedSwapFunction =
          referenceDate : obj)
         ([<ExcelArgument(Name="dayCounter",Description = "DayCounter")>] 
          dayCounter : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -55,10 +57,12 @@ module DiscretizedSwapFunction =
                 let _args = Helper.toCell<VanillaSwap.Arguments> args "args" 
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
                 let _dayCounter = Helper.toCell<DayCounter> dayCounter "dayCounter" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.DiscretizedSwap 
                                                             _args.cell 
                                                             _referenceDate.cell 
                                                             _dayCounter.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DiscretizedSwap>) l
 
@@ -66,11 +70,13 @@ module DiscretizedSwapFunction =
                                                [| _args.source
                                                ;  _referenceDate.source
                                                ;  _dayCounter.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _args.cell
                                 ;  _referenceDate.cell
                                 ;  _dayCounter.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -646,16 +652,16 @@ module DiscretizedSwapFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<DiscretizedSwap> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<DiscretizedSwap> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<DiscretizedSwap> (c)) :> ICell
                 let format (i : Generic.List<ICell<DiscretizedSwap>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<DiscretizedSwap>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<DiscretizedSwap>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

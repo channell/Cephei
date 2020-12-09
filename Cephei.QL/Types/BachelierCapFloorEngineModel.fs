@@ -35,26 +35,32 @@ open Cephei.QLNetHelper
 type BachelierCapFloorEngineModel
     ( discountCurve                                : ICell<Handle<YieldTermStructure>>
     , vol                                          : ICell<Handle<OptionletVolatilityStructure>>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BachelierCapFloorEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _discountCurve                             = discountCurve
     let _vol                                       = vol
 (*
     Functions
 *)
     let mutable
-        _BachelierCapFloorEngine                   = cell (fun () -> new BachelierCapFloorEngine (discountCurve.Value, vol.Value))
-    let _termStructure                             = triv (fun () -> _BachelierCapFloorEngine.Value.termStructure())
-    let _volatility                                = triv (fun () -> _BachelierCapFloorEngine.Value.volatility())
+        _BachelierCapFloorEngine                   = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BachelierCapFloorEngine (discountCurve.Value, vol.Value))))
+    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierCapFloorEngine).Value.termStructure())
+    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierCapFloorEngine).Value.volatility())
     do this.Bind(_BachelierCapFloorEngine)
 (* 
     casting 
 *)
-    internal new () = new BachelierCapFloorEngineModel(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new BachelierCapFloorEngineModel(null,null,null)
     member internal this.Inject v = _BachelierCapFloorEngine <- v
     static member Cast (p : ICell<BachelierCapFloorEngine>) = 
         if p :? BachelierCapFloorEngineModel then 
@@ -62,6 +68,7 @@ type BachelierCapFloorEngineModel
         else
             let o = new BachelierCapFloorEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -82,12 +89,15 @@ type BachelierCapFloorEngineModel1
     ( discountCurve                                : ICell<Handle<YieldTermStructure>>
     , vol                                          : ICell<Handle<Quote>>
     , dc                                           : ICell<DayCounter>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BachelierCapFloorEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _discountCurve                             = discountCurve
     let _vol                                       = vol
     let _dc                                        = dc
@@ -95,14 +105,17 @@ type BachelierCapFloorEngineModel1
     Functions
 *)
     let mutable
-        _BachelierCapFloorEngine                   = cell (fun () -> new BachelierCapFloorEngine (discountCurve.Value, vol.Value, dc.Value))
-    let _termStructure                             = triv (fun () -> _BachelierCapFloorEngine.Value.termStructure())
-    let _volatility                                = triv (fun () -> _BachelierCapFloorEngine.Value.volatility())
+        _BachelierCapFloorEngine                   = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BachelierCapFloorEngine (discountCurve.Value, vol.Value, dc.Value))))
+    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierCapFloorEngine).Value.termStructure())
+    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierCapFloorEngine).Value.volatility())
     do this.Bind(_BachelierCapFloorEngine)
 (* 
     casting 
 *)
-    internal new () = new BachelierCapFloorEngineModel1(null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new BachelierCapFloorEngineModel1(null,null,null,null)
     member internal this.Inject v = _BachelierCapFloorEngine <- v
     static member Cast (p : ICell<BachelierCapFloorEngine>) = 
         if p :? BachelierCapFloorEngineModel1 then 
@@ -110,6 +123,7 @@ type BachelierCapFloorEngineModel1
         else
             let o = new BachelierCapFloorEngineModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -131,12 +145,15 @@ type BachelierCapFloorEngineModel2
     ( discountCurve                                : ICell<Handle<YieldTermStructure>>
     , vol                                          : ICell<double>
     , dc                                           : ICell<DayCounter>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BachelierCapFloorEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _discountCurve                             = discountCurve
     let _vol                                       = vol
     let _dc                                        = dc
@@ -144,14 +161,17 @@ type BachelierCapFloorEngineModel2
     Functions
 *)
     let mutable
-        _BachelierCapFloorEngine                   = cell (fun () -> new BachelierCapFloorEngine (discountCurve.Value, vol.Value, dc.Value))
-    let _termStructure                             = triv (fun () -> _BachelierCapFloorEngine.Value.termStructure())
-    let _volatility                                = triv (fun () -> _BachelierCapFloorEngine.Value.volatility())
+        _BachelierCapFloorEngine                   = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BachelierCapFloorEngine (discountCurve.Value, vol.Value, dc.Value))))
+    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierCapFloorEngine).Value.termStructure())
+    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierCapFloorEngine).Value.volatility())
     do this.Bind(_BachelierCapFloorEngine)
 (* 
     casting 
 *)
-    internal new () = new BachelierCapFloorEngineModel2(null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new BachelierCapFloorEngineModel2(null,null,null,null)
     member internal this.Inject v = _BachelierCapFloorEngine <- v
     static member Cast (p : ICell<BachelierCapFloorEngine>) = 
         if p :? BachelierCapFloorEngineModel2 then 
@@ -159,6 +179,7 @@ type BachelierCapFloorEngineModel2
         else
             let o = new BachelierCapFloorEngineModel2 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

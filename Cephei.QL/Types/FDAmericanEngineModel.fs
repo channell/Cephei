@@ -33,38 +33,45 @@ required for generics
   </summary> *)
 [<AutoSerializable(true)>]
 type FDAmericanEngineModel
-    () as this =
+    ( evaluationDate                               : ICell<Date>
+    ) as this =
     inherit Model<FDAmericanEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
 (*
     Functions
 *)
     let mutable
-        _FDAmericanEngine                          = cell (fun () -> new FDAmericanEngine ())
+        _FDAmericanEngine                          = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FDAmericanEngine ())))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>)   
-                                                   = triv (fun () -> _FDAmericanEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDAmericanEngine).Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FDAmericanEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDAmericanEngine).Value.registerWith(handler.Value)
                                                                      _FDAmericanEngine.Value)
-    let _reset                                     = triv (fun () -> _FDAmericanEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _FDAmericanEngine).Value.reset()
                                                                      _FDAmericanEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FDAmericanEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDAmericanEngine).Value.unregisterWith(handler.Value)
                                                                      _FDAmericanEngine.Value)
-    let _update                                    = triv (fun () -> _FDAmericanEngine.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FDAmericanEngine).Value.update()
                                                                      _FDAmericanEngine.Value)
-    let _ensureStrikeInGrid                        = triv (fun () -> _FDAmericanEngine.Value.ensureStrikeInGrid()
+    let _ensureStrikeInGrid                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FDAmericanEngine).Value.ensureStrikeInGrid()
                                                                      _FDAmericanEngine.Value)
-    let _getResidualTime                           = triv (fun () -> _FDAmericanEngine.Value.getResidualTime())
-    let _grid                                      = triv (fun () -> _FDAmericanEngine.Value.grid())
-    let _intrinsicValues_                          = triv (fun () -> _FDAmericanEngine.Value.intrinsicValues_)
+    let _getResidualTime                           = triv (fun () -> (curryEvaluationDate _evaluationDate _FDAmericanEngine).Value.getResidualTime())
+    let _grid                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _FDAmericanEngine).Value.grid())
+    let _intrinsicValues_                          = triv (fun () -> (curryEvaluationDate _evaluationDate _FDAmericanEngine).Value.intrinsicValues_)
     do this.Bind(_FDAmericanEngine)
 (* 
     casting 
 *)
     
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FDAmericanEngineModel(null)
     member internal this.Inject v = _FDAmericanEngine <- v
     static member Cast (p : ICell<FDAmericanEngine>) = 
         if p :? FDAmericanEngineModel then 
@@ -72,6 +79,7 @@ type FDAmericanEngineModel
         else
             let o = new FDAmericanEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
@@ -101,12 +109,15 @@ type FDAmericanEngineModel1
     , timeSteps                                    : ICell<int>
     , gridPoints                                   : ICell<int>
     , timeDependent                                : ICell<bool>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<FDAmericanEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
     let _timeSteps                                 = timeSteps
     let _gridPoints                                = gridPoints
@@ -115,29 +126,32 @@ type FDAmericanEngineModel1
     Functions
 *)
     let mutable
-        _FDAmericanEngine                          = cell (fun () -> new FDAmericanEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+        _FDAmericanEngine                          = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FDAmericanEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>)   
-                                                   = triv (fun () -> _FDAmericanEngine.Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDAmericanEngine).Value.factory(Process.Value, timeSteps.Value, gridPoints.Value))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FDAmericanEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDAmericanEngine).Value.registerWith(handler.Value)
                                                                      _FDAmericanEngine.Value)
-    let _reset                                     = triv (fun () -> _FDAmericanEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _FDAmericanEngine).Value.reset()
                                                                      _FDAmericanEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FDAmericanEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDAmericanEngine).Value.unregisterWith(handler.Value)
                                                                      _FDAmericanEngine.Value)
-    let _update                                    = triv (fun () -> _FDAmericanEngine.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _FDAmericanEngine).Value.update()
                                                                      _FDAmericanEngine.Value)
-    let _ensureStrikeInGrid                        = triv (fun () -> _FDAmericanEngine.Value.ensureStrikeInGrid()
+    let _ensureStrikeInGrid                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FDAmericanEngine).Value.ensureStrikeInGrid()
                                                                      _FDAmericanEngine.Value)
-    let _getResidualTime                           = triv (fun () -> _FDAmericanEngine.Value.getResidualTime())
-    let _grid                                      = triv (fun () -> _FDAmericanEngine.Value.grid())
-    let _intrinsicValues_                          = triv (fun () -> _FDAmericanEngine.Value.intrinsicValues_)
+    let _getResidualTime                           = triv (fun () -> (curryEvaluationDate _evaluationDate _FDAmericanEngine).Value.getResidualTime())
+    let _grid                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _FDAmericanEngine).Value.grid())
+    let _intrinsicValues_                          = triv (fun () -> (curryEvaluationDate _evaluationDate _FDAmericanEngine).Value.intrinsicValues_)
     do this.Bind(_FDAmericanEngine)
 (* 
     casting 
 *)
-    internal new () = new FDAmericanEngineModel1(null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new FDAmericanEngineModel1(null,null,null,null,null)
     member internal this.Inject v = _FDAmericanEngine <- v
     static member Cast (p : ICell<FDAmericanEngine>) = 
         if p :? FDAmericanEngineModel1 then 
@@ -145,6 +159,7 @@ type FDAmericanEngineModel1
         else
             let o = new FDAmericanEngineModel1 ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

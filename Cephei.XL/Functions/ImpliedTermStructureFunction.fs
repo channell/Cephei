@@ -117,6 +117,8 @@ module ImpliedTermStructureFunction =
          h : obj)
         ([<ExcelArgument(Name="referenceDate",Description = "Date")>] 
          referenceDate : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -124,19 +126,23 @@ module ImpliedTermStructureFunction =
 
                 let _h = Helper.toHandle<YieldTermStructure> h "h" 
                 let _referenceDate = Helper.toCell<Date> referenceDate "referenceDate" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.ImpliedTermStructure 
                                                             _h.cell 
                                                             _referenceDate.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ImpliedTermStructure>) l
 
                 let source () = Helper.sourceFold "Fun.ImpliedTermStructure" 
                                                [| _h.source
                                                ;  _referenceDate.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _h.cell
                                 ;  _referenceDate.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -1048,16 +1054,16 @@ module ImpliedTermStructureFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<ImpliedTermStructure> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<ImpliedTermStructure> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<ImpliedTermStructure> (c)) :> ICell
                 let format (i : Generic.List<ICell<ImpliedTermStructure>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<ImpliedTermStructure>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<ImpliedTermStructure>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

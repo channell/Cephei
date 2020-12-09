@@ -49,7 +49,7 @@ module LogLinearFunction =
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.LogLinear ()) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<LogLinear>) l
 
-                let source () = "Fun.Discount ()"
+                let source () = "Fun.LogLinear ()"
                 let hash = 0
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -206,16 +206,16 @@ module LogLinearFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<LogLinear> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<LogLinear> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<LogLinear> (c)) :> ICell
                 let format (i : Generic.List<ICell<LogLinear>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<LogLinear>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<LogLinear>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

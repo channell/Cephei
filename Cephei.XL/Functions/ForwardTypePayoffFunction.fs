@@ -117,6 +117,8 @@ module ForwardTypePayoffFunction =
          Type : obj)
         ([<ExcelArgument(Name="strike",Description = "double")>] 
          strike : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -124,19 +126,23 @@ module ForwardTypePayoffFunction =
 
                 let _Type = Helper.toCell<Position.Type> Type "Type" 
                 let _strike = Helper.toCell<double> strike "strike" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.ForwardTypePayoff 
                                                             _Type.cell 
                                                             _strike.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ForwardTypePayoff>) l
 
                 let source () = Helper.sourceFold "Fun.ForwardTypePayoff" 
                                                [| _Type.source
                                                ;  _strike.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Type.cell
                                 ;  _strike.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -322,16 +328,16 @@ module ForwardTypePayoffFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<ForwardTypePayoff> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<ForwardTypePayoff> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<ForwardTypePayoff> (c)) :> ICell
                 let format (i : Generic.List<ICell<ForwardTypePayoff>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<ForwardTypePayoff>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<ForwardTypePayoff>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

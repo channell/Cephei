@@ -40,12 +40,15 @@ type ZeroCouponInflationSwapHelperModel
     , paymentConvention                            : ICell<BusinessDayConvention>
     , dayCounter                                   : ICell<DayCounter>
     , zii                                          : ICell<ZeroInflationIndex>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<ZeroCouponInflationSwapHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _quote                                     = quote
     let _swapObsLag                                = swapObsLag
     let _maturity                                  = maturity
@@ -57,33 +60,36 @@ type ZeroCouponInflationSwapHelperModel
     Functions
 *)
     let mutable
-        _ZeroCouponInflationSwapHelper             = cell (fun () -> new ZeroCouponInflationSwapHelper (quote.Value, swapObsLag.Value, maturity.Value, calendar.Value, paymentConvention.Value, dayCounter.Value, zii.Value))
-    let _impliedQuote                              = triv (fun () -> _ZeroCouponInflationSwapHelper.Value.impliedQuote())
+        _ZeroCouponInflationSwapHelper             = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new ZeroCouponInflationSwapHelper (quote.Value, swapObsLag.Value, maturity.Value, calendar.Value, paymentConvention.Value, dayCounter.Value, zii.Value))))
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroCouponInflationSwapHelper).Value.impliedQuote())
     let _setTermStructure                          (z : ICell<ZeroInflationTermStructure>)   
-                                                   = triv (fun () -> _ZeroCouponInflationSwapHelper.Value.setTermStructure(z.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroCouponInflationSwapHelper).Value.setTermStructure(z.Value)
                                                                      _ZeroCouponInflationSwapHelper.Value)
-    let _earliestDate                              = triv (fun () -> _ZeroCouponInflationSwapHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _ZeroCouponInflationSwapHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _ZeroCouponInflationSwapHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _ZeroCouponInflationSwapHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _ZeroCouponInflationSwapHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _ZeroCouponInflationSwapHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _ZeroCouponInflationSwapHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _ZeroCouponInflationSwapHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _ZeroCouponInflationSwapHelper.Value.quoteValue())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroCouponInflationSwapHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroCouponInflationSwapHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroCouponInflationSwapHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroCouponInflationSwapHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroCouponInflationSwapHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroCouponInflationSwapHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroCouponInflationSwapHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroCouponInflationSwapHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroCouponInflationSwapHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _ZeroCouponInflationSwapHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroCouponInflationSwapHelper).Value.registerWith(handler.Value)
                                                                      _ZeroCouponInflationSwapHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _ZeroCouponInflationSwapHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroCouponInflationSwapHelper).Value.unregisterWith(handler.Value)
                                                                      _ZeroCouponInflationSwapHelper.Value)
-    let _update                                    = triv (fun () -> _ZeroCouponInflationSwapHelper.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroCouponInflationSwapHelper).Value.update()
                                                                      _ZeroCouponInflationSwapHelper.Value)
     do this.Bind(_ZeroCouponInflationSwapHelper)
 (* 
     casting 
 *)
-    internal new () = new ZeroCouponInflationSwapHelperModel(null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new ZeroCouponInflationSwapHelperModel(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _ZeroCouponInflationSwapHelper <- v
     static member Cast (p : ICell<ZeroCouponInflationSwapHelper>) = 
         if p :? ZeroCouponInflationSwapHelperModel then 
@@ -91,6 +97,7 @@ type ZeroCouponInflationSwapHelperModel
         else
             let o = new ZeroCouponInflationSwapHelperModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

@@ -10,6 +10,18 @@ open QLNet
 
 module Helper = 
 
+    let rec genericTypeString (t : Type) =
+        if t.IsGenericType then
+            let p  = 
+                t.GetGenericArguments()
+                |> Array.fold (fun a y -> a + "," + (genericTypeString y)) ""
+            let q = 
+                t.ToString().Split('`').[0]
+            q + "<" + p.Substring(1) + ">"
+        else
+            t.ToString()
+
+
     // Summary: add mnemonc to cell
     let withMnemonic<'t> m (c : ICell<'t>) =
         c.Mnemonic <- (Model.formatMnemonic m)
@@ -61,11 +73,11 @@ module Helper =
                 elif cv.ValueIs<'T>() then 
                     if cv :? IDateDependant then
                         { cell = withMnemonic cv.Mnemonic (trivDate (fun () -> (cv.Box :?> 'T)) (cv :?> IDateDependant))
-                        ; source = "(trivDate (fun () -> _" + s + ".Value :> " + typeof<'T>.Name + ") " + s + " :?> IDateDependant)"
+                        ; source = "(trivDate (fun () -> _" + s + ".Value :> " + (genericTypeString typeof<'T>) + ") (_" + s + " :> IDateDependant))"
                         }
                     else
                         { cell = withMnemonic cv.Mnemonic (triv (fun () -> (cv.Box :?> 'T)))
-                        ; source = "(triv (fun () -> _" + s + ".Value :> " + typeof<'T>.Name + "))"
+                        ; source = "(triv (fun () -> _" + s + ".Value :> " + (genericTypeString typeof<'T>) + "))"
                         }
                 elif typeof<'T> = typeof<Date> then 
                     if o :? ICell<double> then
@@ -103,13 +115,13 @@ module Helper =
                     ; source =  "(value " + typeof<'T>.Name + "." + en.ToString() + ")"
                     }
                 else
-                    invalidArg (o.ToString()) ("Invalid " + attribute)
+                    invalidArg (o.ToString()) ("Invalid " + attribute + " ")
             elif o :? 'T then
                 { cell = triv (fun () -> o :?> 'T)
-                ; source =  "(triv (fun () -> _" + s + " :?> " + typeof<'T>.Name + "))"
+                ; source =  "(triv (fun () -> _" + s + " :?> " + (genericTypeString typeof<'T>) + "))"
                 }
             else
-                invalidArg (o.ToString()) ("Invalid " + attribute)
+                invalidArg (o.ToString()) ("Invalid " + attribute + " ")
         elif typeof<'T> = typeof<Date> &&  o :? double then
             if o :? double then
                 let d = o :?> double
@@ -123,7 +135,7 @@ module Helper =
                 }
             else
                 { cell = value (o :?> 'T)
-                ; source =  "(value (" + o.ToString() + " :?> " + typeof<'T>.Name + "))"
+                ; source =  "(value (" + o.ToString() + " :?> " + (genericTypeString typeof<'T>) + "))"
                 }
         elif typeof<'T> = typeof<bool>  && o :? bool then
             { cell = (value (o :?> 'T))
@@ -131,7 +143,7 @@ module Helper =
             }
         elif o :? 'T then 
             { cell = (value (o :?> 'T))
-            ; source =  "(value (" + o.ToString() + " :?> " + typeof<'T>.Name + "))"
+            ; source =  "(value (" + o.ToString() + " :?> " + (genericTypeString typeof<'T>) + "))"
             }
         else
             try
@@ -156,17 +168,20 @@ module Helper =
                     ; source =  "(value \"" + o.ToString() + "\")"
                     }
                 else 
-                    invalidArg (o.ToString()) ("Invalid " + attribute)
-            with | _ -> invalidArg (o.ToString()) ("Invalid " + attribute)
+                    invalidArg (o.ToString()) ("Invalid " + attribute + " ")
+            with | _ -> invalidArg (o.ToString()) ("Invalid " + attribute + " ")
 
     // Summary: convert value or use default
     let toDefault<'T> (o : obj) (attribute : string) (defaultValue : 'T) : CellSource<'T> = 
         if o = null || o :? ExcelDna.Integration.ExcelMissing then 
             let s = 
                 try
-                    defaultValue.ToString()
+                    if typeof<'T> = typeof<bool> then
+                        defaultValue.ToString().ToLower()
+                    else
+                        defaultValue.ToString()
                 with 
-                | _ -> "(null :> " + typeof<'T>.Name + ")"
+                | _ -> "(null :> " + (genericTypeString typeof<'T>) + ")"
 
             { cell = withMnemonic attribute (value defaultValue)
             ; source =  "(value " + s + ")"
@@ -187,18 +202,23 @@ module Helper =
                     { cell = withMnemonic c.Mnemonic (triv (fun () -> Util.toHandle (c.Value)))
                     ; source =  "(triv (fun () -> toHandle (_" + c.Mnemonic + ".Value)))"
                     }
+                elif c.ValueIs<'T>() then 
+                    { cell = withMnemonic c.Mnemonic (triv (fun () -> Util.toHandle<'T> (c.Box :?> 'T)))
+                    ; source = "(triv (fun () -> toHandle (_" + s + ".Value :> " + (genericTypeString typeof<'T>) + ")))"
+                    }
+
                 else
                     { cell = withMnemonic c.Mnemonic (triv (fun () -> Util.toHandle<'T> (c.Box :?> 'T)))
-                    ; source =  "(triv (fun () -> toHandle<" + typeof<'T>.Name + "> (_" + c.Mnemonic + ".Value)))"
+                    ; source =  "(triv (fun () -> toHandle<" + (genericTypeString typeof<'T>) + "> (_" + c.Mnemonic + ".Value)))"
                     }
             else
-                invalidArg (o.ToString()) ("Invalid " + attribute)
+                invalidArg (o.ToString()) ("Invalid " + attribute + " ")
         elif o :? 'T then 
             { cell =  withMnemonic (Model.formatMnemonic (o.ToString())) (triv (fun () -> Util.toHandle (o :?> 'T)))
             ; source = "(triv (fun () -> toHandle (" + o.ToString() + ")))"
             }
         else 
-            invalidArg (o.ToString()) ("Invalid " + attribute)
+            invalidArg (o.ToString()) ("Invalid " + attribute + " ")
 
     // Summary: Convert the list to a cell handle for QL legacy handle class
     let toHandleList<'T when 'T :> IObservable> (o : obj) (attribute : string) : CellSource<Generic.List<Handle<'T>>> = 
@@ -218,14 +238,14 @@ module Helper =
                     let accu = 
                         l.Value |> Seq.fold folder ({cell = (value (new Generic.List<Handle<'T>> ())); source = "[|"})
                     { cell = accu.cell
-                    ; source = "(new Generic.List<Handle<" + typeof<'T>.Name + ">(" + accu.source.Replace("[|;", "[|") + "|]))" 
+                    ; source = "(new Generic.List<Handle<" + (genericTypeString typeof<'T>) + ">(" + accu.source.Replace("[|;", "[|") + "|]))" 
                     }
                 else
-                    invalidArg (o.ToString()) ("Invalid " + attribute)
+                    invalidArg (o.ToString()) ("Invalid " + attribute + " ")
             else
-                invalidArg (o.ToString()) ("Invalid " + attribute)
+                invalidArg (o.ToString()) ("Invalid " + attribute + " ")
         else 
-            invalidArg (o.ToString()) ("Invalid " + attribute)
+            invalidArg (o.ToString()) ("Invalid " + attribute + " ")
 
     // Summary: convert value or use default
     let toDefaultHandle<'T when 'T :> IObservable> (o : obj) (attribute : string) (defaultValue : Handle<'T>) : CellSource<Handle<'T>> = 
@@ -234,7 +254,7 @@ module Helper =
                 try
                     defaultValue.ToString()
                 with 
-                | _ -> "(null :> " + typeof<'T>.Name + ")"
+                | _ -> "(null :> " + (genericTypeString typeof<'T>) + ")"
 
             { cell = withMnemonic attribute (value defaultValue)
             ; source =  "(value " + s + ")"
@@ -249,10 +269,10 @@ module Helper =
                 try
                     defaultValue.ToString()
                 with 
-                | _ -> "(null :> " + typeof<'T>.Name + ")"
+                | _ -> "(null :> " + (genericTypeString typeof<'T>) + ")"
 
             { cell = withMnemonic attribute (value defaultValue)
-            ; source =  "(value " + s + ")"
+            ; source =  "(value (new " + s + "()))"
             }
         else
             toHandleList<'T> o attribute
@@ -269,7 +289,7 @@ module Helper =
                 }
             else
                 { cell = triv (fun () -> Util.nullableNull<'T> ())
-                ; source =  "(triv (fun () -> nullableNull<" + typeof<'T>.Name + "> ()))"
+                ; source =  "(triv (fun () -> nullableNull<" + (genericTypeString typeof<'T>) + "> ()))"
                 }
 
         elif o :? 'T then 
@@ -277,7 +297,7 @@ module Helper =
             ; source =  "(triv (fun () -> toNullable (" + o.ToString() + ")))"
             }
         else 
-            invalidArg (o.ToString()) ("Invalid " + attribute)
+            invalidArg (o.ToString()) ("Invalid " + attribute + " ")
 
 
     // Summary: Convert the list to a cell handle for QL legacy handle class
@@ -298,17 +318,17 @@ module Helper =
                     let accu = 
                         l.Value |> Seq.fold folder ({cell = (value (new Generic.List<Nullable<'T>> ())); source = "[|"})
                     { cell = accu.cell
-                    ; source = "(new Generic.List<Handle<" + typeof<'T>.Name + ">(" + accu.source.Replace("[|;", "[|") + "|]))" 
+                    ; source = "(new Generic.List<Handle<" + (genericTypeString typeof<'T>) + ">(" + accu.source.Replace("[|;", "[|") + "|]))" 
                     }
                 else
-                    invalidArg (o.ToString()) ("Invalid " + attribute)
+                    invalidArg (o.ToString()) ("Invalid " + attribute + " " )
             else
                 { cell = value (new Generic.List<Nullable<'T>>())
-                ; source = "(new Generic.List<Nullable<" + typeof<'T>.Name + ">())" 
+                ; source = "(new Generic.List<Nullable<" + (genericTypeString typeof<'T>) + ">())" 
                 }
         else 
             { cell = value (new Generic.List<Nullable<'T>>())
-            ; source = "(new Generic.List<Nullable<" + typeof<'T>.Name + ">())" 
+            ; source = "(new Generic.List<Nullable<" + (genericTypeString typeof<'T>) + ">())" 
             }
            
     let isNumeric (o : obj) : bool = 

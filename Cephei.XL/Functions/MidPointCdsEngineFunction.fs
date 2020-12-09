@@ -50,6 +50,8 @@ module MidPointCdsEngineFunction =
          discountCurve : obj)
         ([<ExcelArgument(Name="includeSettlementDateFlows",Description = "bool")>] 
          includeSettlementDateFlows : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -59,11 +61,13 @@ module MidPointCdsEngineFunction =
                 let _recoveryRate = Helper.toCell<double> recoveryRate "recoveryRate" 
                 let _discountCurve = Helper.toHandle<YieldTermStructure> discountCurve "discountCurve" 
                 let _includeSettlementDateFlows = Helper.toNullable<bool> includeSettlementDateFlows "includeSettlementDateFlows"
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.MidPointCdsEngine 
                                                             _probability.cell 
                                                             _recoveryRate.cell 
                                                             _discountCurve.cell 
                                                             _includeSettlementDateFlows.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<MidPointCdsEngine>) l
 
@@ -72,12 +76,14 @@ module MidPointCdsEngineFunction =
                                                ;  _recoveryRate.source
                                                ;  _discountCurve.source
                                                ;  _includeSettlementDateFlows.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _probability.cell
                                 ;  _recoveryRate.cell
                                 ;  _discountCurve.cell
                                 ;  _includeSettlementDateFlows.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -107,16 +113,16 @@ module MidPointCdsEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<MidPointCdsEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<MidPointCdsEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<MidPointCdsEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<MidPointCdsEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<MidPointCdsEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<MidPointCdsEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

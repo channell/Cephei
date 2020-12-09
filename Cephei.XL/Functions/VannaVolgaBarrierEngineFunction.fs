@@ -58,6 +58,8 @@ module VannaVolgaBarrierEngineFunction =
          adaptVanDelta : obj)
         ([<ExcelArgument(Name="bsPriceWithSmile",Description = "double or empty")>] 
          bsPriceWithSmile : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -71,6 +73,7 @@ module VannaVolgaBarrierEngineFunction =
                 let _foreignTS = Helper.toHandle<YieldTermStructure> foreignTS "foreignTS" 
                 let _adaptVanDelta = Helper.toDefault<bool> adaptVanDelta "adaptVanDelta" false
                 let _bsPriceWithSmile = Helper.toDefault<double> bsPriceWithSmile "bsPriceWithSmile" 0.0
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.VannaVolgaBarrierEngine 
                                                             _atmVol.cell 
                                                             _vol25Put.cell 
@@ -80,6 +83,7 @@ module VannaVolgaBarrierEngineFunction =
                                                             _foreignTS.cell 
                                                             _adaptVanDelta.cell 
                                                             _bsPriceWithSmile.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<VannaVolgaBarrierEngine>) l
 
@@ -92,6 +96,7 @@ module VannaVolgaBarrierEngineFunction =
                                                ;  _foreignTS.source
                                                ;  _adaptVanDelta.source
                                                ;  _bsPriceWithSmile.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _atmVol.cell
@@ -102,6 +107,7 @@ module VannaVolgaBarrierEngineFunction =
                                 ;  _foreignTS.cell
                                 ;  _adaptVanDelta.cell
                                 ;  _bsPriceWithSmile.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -287,16 +293,16 @@ module VannaVolgaBarrierEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<VannaVolgaBarrierEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<VannaVolgaBarrierEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<VannaVolgaBarrierEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<VannaVolgaBarrierEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<VannaVolgaBarrierEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<VannaVolgaBarrierEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

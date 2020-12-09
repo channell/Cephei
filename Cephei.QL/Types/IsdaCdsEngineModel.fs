@@ -40,12 +40,15 @@ type IsdaCdsEngineModel
     , numericalFix                                 : ICell<IsdaCdsEngine.NumericalFix>
     , accrualBias                                  : ICell<IsdaCdsEngine.AccrualBias>
     , forwardsInCouponPeriod                       : ICell<IsdaCdsEngine.ForwardsInCouponPeriod>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<IsdaCdsEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _probability                               = probability
     let _recoveryRate                              = recoveryRate
     let _discountCurve                             = discountCurve
@@ -57,14 +60,17 @@ type IsdaCdsEngineModel
     Functions
 *)
     let mutable
-        _IsdaCdsEngine                             = cell (fun () -> new IsdaCdsEngine (probability.Value, recoveryRate.Value, discountCurve.Value, includeSettlementDateFlows.Value, numericalFix.Value, accrualBias.Value, forwardsInCouponPeriod.Value))
-    let _isdaCreditCurve                           = triv (fun () -> _IsdaCdsEngine.Value.isdaCreditCurve())
-    let _isdaRateCurve                             = triv (fun () -> _IsdaCdsEngine.Value.isdaRateCurve())
+        _IsdaCdsEngine                             = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new IsdaCdsEngine (probability.Value, recoveryRate.Value, discountCurve.Value, includeSettlementDateFlows.Value, numericalFix.Value, accrualBias.Value, forwardsInCouponPeriod.Value))))
+    let _isdaCreditCurve                           = triv (fun () -> (curryEvaluationDate _evaluationDate _IsdaCdsEngine).Value.isdaCreditCurve())
+    let _isdaRateCurve                             = triv (fun () -> (curryEvaluationDate _evaluationDate _IsdaCdsEngine).Value.isdaRateCurve())
     do this.Bind(_IsdaCdsEngine)
 (* 
     casting 
 *)
-    internal new () = new IsdaCdsEngineModel(null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new IsdaCdsEngineModel(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _IsdaCdsEngine <- v
     static member Cast (p : ICell<IsdaCdsEngine>) = 
         if p :? IsdaCdsEngineModel then 
@@ -72,6 +78,7 @@ type IsdaCdsEngineModel
         else
             let o = new IsdaCdsEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

@@ -16,6 +16,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT
 ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 FOR A PARTICULAR PURPOSE.  See the license for more details.
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
 namespace Cephei.QL
 
 open System
@@ -41,12 +43,15 @@ type IrrFinderModel
     , includeSettlementDateFlows                   : ICell<bool>
     , settlementDate                               : ICell<Date>
     , npvDate                                      : ICell<Date>
+    ( evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<IrrFinder> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _leg                                       = leg
     let _npv                                       = npv
     let _dayCounter                                = dayCounter
@@ -59,7 +64,9 @@ type IrrFinderModel
     Functions
 *)
     let mutable
-        _IrrFinder                                 = cell (fun () -> new IrrFinder (leg.Value, npv.Value, dayCounter.Value, comp.Value, freq.Value, includeSettlementDateFlows.Value, settlementDate.Value, npvDate.Value))
+        _evaluationDate                            = evaluationDate
+    let mutable
+        _IrrFinder                                 = cell (fun () -> (withEvaluationDate _evaluationDate new IrrFinder (leg.Value, npv.Value, dayCounter.Value, comp.Value, freq.Value, includeSettlementDateFlows.Value, settlementDate.Value, npvDate.Value)))
     let _derivative                                (y : ICell<double>)   
                                                    = cell (fun () -> _IrrFinder.Value.derivative(y.Value))
     let _value                                     (y : ICell<double>)   
@@ -68,6 +75,10 @@ type IrrFinderModel
 (* 
     casting 
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
+   interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
     internal new () = IrrFinderModel(null,null,null,null,null,null,null,null)
     member internal this.Inject v = _IrrFinder <- v
     static member Cast (p : ICell<IrrFinder>) = 
@@ -75,13 +86,25 @@ type IrrFinderModel
             p :?> IrrFinderModel
         else
             let o = new IrrFinderModel ()
-            o.Inject p
+            o.Inject p\m            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             
 (* 
     casting 
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
+   interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
     internal new () = IrrFinderModel(null,null,null,null,null,null,null,null)
     static member Cast (p : ICell<IrrFinder>) = 
         if p :? IrrFinderModel then 
@@ -95,6 +118,8 @@ type IrrFinderModel
 (* 
     Externally visible/bindable properties
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     member this.leg                                = _leg 
     member this.npv                                = _npv 
     member this.dayCounter                         = _dayCounter 

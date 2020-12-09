@@ -61,6 +61,8 @@ module DigitalIborCouponFunction =
          putDigitalPayoff : obj)
         ([<ExcelArgument(Name="replication",Description = "DigitalReplication or empty")>] 
          replication : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -76,6 +78,7 @@ module DigitalIborCouponFunction =
                 let _isPutATMIncluded = Helper.toDefault<bool> isPutATMIncluded "isPutATMIncluded" false
                 let _putDigitalPayoff = Helper.toNullable<double> putDigitalPayoff "putDigitalPayoff"
                 let _replication = Helper.toDefault<DigitalReplication> replication "replication" null
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.DigitalIborCoupon1 
                                                             _underlying.cell 
                                                             _callStrike.cell 
@@ -87,6 +90,7 @@ module DigitalIborCouponFunction =
                                                             _isPutATMIncluded.cell 
                                                             _putDigitalPayoff.cell 
                                                             _replication.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborCoupon>) l
 
@@ -101,6 +105,7 @@ module DigitalIborCouponFunction =
                                                ;  _isPutATMIncluded.source
                                                ;  _putDigitalPayoff.source
                                                ;  _replication.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _underlying.cell
@@ -113,6 +118,7 @@ module DigitalIborCouponFunction =
                                 ;  _isPutATMIncluded.cell
                                 ;  _putDigitalPayoff.cell
                                 ;  _replication.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -132,19 +138,25 @@ module DigitalIborCouponFunction =
     let DigitalIborCoupon_create
         ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
          mnemonic : string)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
             try
 
-                let builder (current : ICell) = withMnemonic mnemonic (Fun.DigitalIborCoupon ()
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
+                let builder (current : ICell) = withMnemonic mnemonic (Fun.DigitalIborCoupon 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<DigitalIborCoupon>) l
 
                 let source () = Helper.sourceFold "Fun.DigitalIborCoupon" 
-                                               [||]
+                                               [|_evaluationDate.source
+                                               |]
                 let hash = Helper.hashFold 
-                                [||]
+                                [|  _evaluationDate.cell
+                                |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
@@ -2039,16 +2051,16 @@ module DigitalIborCouponFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<DigitalIborCoupon> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<DigitalIborCoupon> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<DigitalIborCoupon> (c)) :> ICell
                 let format (i : Generic.List<ICell<DigitalIborCoupon>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<DigitalIborCoupon>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<DigitalIborCoupon>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

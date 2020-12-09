@@ -40,12 +40,15 @@ type MCDiscreteArithmeticASEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (ne
     , requiredTolerance                            : ICell<double>
     , maxSamples                                   : ICell<int>
     , seed                                         : ICell<uint64>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<MCDiscreteArithmeticASEngine<'RNG,'S>> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
     let _brownianBridge                            = brownianBridge
     let _antitheticVariate                         = antitheticVariate
@@ -57,23 +60,23 @@ type MCDiscreteArithmeticASEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (ne
     Functions
 *)
     let mutable
-        _MCDiscreteArithmeticASEngine              = cell (fun () -> new MCDiscreteArithmeticASEngine<'RNG,'S> (Process.Value, brownianBridge.Value, antitheticVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))
+        _MCDiscreteArithmeticASEngine              = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new MCDiscreteArithmeticASEngine<'RNG,'S> (Process.Value, brownianBridge.Value, antitheticVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _MCDiscreteArithmeticASEngine.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteArithmeticASEngine).Value.registerWith(handler.Value)
                                                                      _MCDiscreteArithmeticASEngine.Value)
-    let _reset                                     = triv (fun () -> _MCDiscreteArithmeticASEngine.Value.reset()
+    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteArithmeticASEngine).Value.reset()
                                                                      _MCDiscreteArithmeticASEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _MCDiscreteArithmeticASEngine.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteArithmeticASEngine).Value.unregisterWith(handler.Value)
                                                                      _MCDiscreteArithmeticASEngine.Value)
-    let _update                                    = triv (fun () -> _MCDiscreteArithmeticASEngine.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteArithmeticASEngine).Value.update()
                                                                      _MCDiscreteArithmeticASEngine.Value)
-    let _errorEstimate                             = triv (fun () -> _MCDiscreteArithmeticASEngine.Value.errorEstimate())
-    let _sampleAccumulator                         = triv (fun () -> _MCDiscreteArithmeticASEngine.Value.sampleAccumulator())
+    let _errorEstimate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteArithmeticASEngine).Value.errorEstimate())
+    let _sampleAccumulator                         = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteArithmeticASEngine).Value.sampleAccumulator())
     let _value                                     (tolerance : ICell<double>) (maxSamples : ICell<int>) (minSamples : ICell<int>)   
-                                                   = triv (fun () -> _MCDiscreteArithmeticASEngine.Value.value(tolerance.Value, maxSamples.Value, minSamples.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteArithmeticASEngine).Value.value(tolerance.Value, maxSamples.Value, minSamples.Value))
     let _valueWithSamples                          (samples : ICell<int>)   
-                                                   = triv (fun () -> _MCDiscreteArithmeticASEngine.Value.valueWithSamples(samples.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _MCDiscreteArithmeticASEngine).Value.valueWithSamples(samples.Value))
     do this.Bind(_MCDiscreteArithmeticASEngine)
 
 (* 

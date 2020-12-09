@@ -45,6 +45,8 @@ module BinomialConvertibleEngineFunction =
          Process : obj)
         ([<ExcelArgument(Name="timeSteps",Description = "int")>] 
          timeSteps : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -52,19 +54,23 @@ module BinomialConvertibleEngineFunction =
 
                 let _Process = Helper.toCell<GeneralizedBlackScholesProcess> Process "Process" 
                 let _timeSteps = Helper.toCell<int> timeSteps "timeSteps" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.BinomialConvertibleEngine 
                                                             _Process.cell 
                                                             _timeSteps.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<BinomialConvertibleEngine>) l
 
                 let source () = Helper.sourceFold "Fun.BinomialConvertibleEngine" 
                                                [| _Process.source
                                                ;  _timeSteps.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _Process.cell
                                 ;  _timeSteps.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -95,16 +101,16 @@ module BinomialConvertibleEngineFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<BinomialConvertibleEngine> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<BinomialConvertibleEngine> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<BinomialConvertibleEngine> (c)) :> ICell
                 let format (i : Generic.List<ICell<BinomialConvertibleEngine>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<BinomialConvertibleEngine>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<BinomialConvertibleEngine>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

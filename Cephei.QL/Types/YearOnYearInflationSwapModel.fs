@@ -72,7 +72,7 @@ type YearOnYearInflationSwapModel
     Functions
 *)
     let mutable
-        _YearOnYearInflationSwap                   = cell (fun () -> withEngine pricingEngine (new YearOnYearInflationSwap (Type.Value, nominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDayCount.Value, yoySchedule.Value, yoyIndex.Value, observationLag.Value, spread.Value, yoyDayCount.Value, paymentCalendar.Value, paymentConvention.Value)))
+        _YearOnYearInflationSwap                   = cell (fun () -> withEngine pricingEngine evaluationDate (new YearOnYearInflationSwap (Type.Value, nominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDayCount.Value, yoySchedule.Value, yoyIndex.Value, observationLag.Value, spread.Value, yoyDayCount.Value, paymentCalendar.Value, paymentConvention.Value)))
     let _fairRate                                  = triv (fun () -> (withEvaluationDate _evaluationDate _YearOnYearInflationSwap).fairRate())
     let _fairSpread                                = triv (fun () -> (withEvaluationDate _evaluationDate _YearOnYearInflationSwap).fairSpread())
     let _fixedDayCount                             = triv (fun () -> (withEvaluationDate _evaluationDate _YearOnYearInflationSwap).fixedDayCount())

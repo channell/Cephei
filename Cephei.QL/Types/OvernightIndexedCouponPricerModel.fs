@@ -33,42 +33,49 @@ Missing Constructor
   </summary> *)
 [<AutoSerializable(true)>]
 type OvernightIndexedCouponPricerModel
-    () as this =
+    ( evaluationDate                               : ICell<Date>
+    ) as this =
     inherit Model<OvernightIndexedCouponPricer> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
 (*
     Functions
 *)
     let mutable
-        _OvernightIndexedCouponPricer              = cell (fun () -> new OvernightIndexedCouponPricer ())
+        _OvernightIndexedCouponPricer              = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new OvernightIndexedCouponPricer ())))
     let _capletPrice                               (d : ICell<double>)   
-                                                   = triv (fun () -> _OvernightIndexedCouponPricer.Value.capletPrice(d.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCouponPricer).Value.capletPrice(d.Value))
     let _capletRate                                (d : ICell<double>)   
-                                                   = triv (fun () -> _OvernightIndexedCouponPricer.Value.capletRate(d.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCouponPricer).Value.capletRate(d.Value))
     let _floorletPrice                             (d : ICell<double>)   
-                                                   = triv (fun () -> _OvernightIndexedCouponPricer.Value.floorletPrice(d.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCouponPricer).Value.floorletPrice(d.Value))
     let _floorletRate                              (d : ICell<double>)   
-                                                   = triv (fun () -> _OvernightIndexedCouponPricer.Value.floorletRate(d.Value))
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCouponPricer).Value.floorletRate(d.Value))
     let _initialize                                (coupon : ICell<FloatingRateCoupon>)   
-                                                   = triv (fun () -> _OvernightIndexedCouponPricer.Value.initialize(coupon.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCouponPricer).Value.initialize(coupon.Value)
                                                                      _OvernightIndexedCouponPricer.Value)
-    let _swapletPrice                              = triv (fun () -> _OvernightIndexedCouponPricer.Value.swapletPrice())
-    let _swapletRate                               = triv (fun () -> _OvernightIndexedCouponPricer.Value.swapletRate())
+    let _swapletPrice                              = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCouponPricer).Value.swapletPrice())
+    let _swapletRate                               = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCouponPricer).Value.swapletRate())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _OvernightIndexedCouponPricer.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCouponPricer).Value.registerWith(handler.Value)
                                                                      _OvernightIndexedCouponPricer.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _OvernightIndexedCouponPricer.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCouponPricer).Value.unregisterWith(handler.Value)
                                                                      _OvernightIndexedCouponPricer.Value)
-    let _update                                    = triv (fun () -> _OvernightIndexedCouponPricer.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _OvernightIndexedCouponPricer).Value.update()
                                                                      _OvernightIndexedCouponPricer.Value)
     do this.Bind(_OvernightIndexedCouponPricer)
 (* 
     casting 
 *)
     
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new OvernightIndexedCouponPricerModel(null)
     member internal this.Inject v = _OvernightIndexedCouponPricer <- v
     static member Cast (p : ICell<OvernightIndexedCouponPricer>) = 
         if p :? OvernightIndexedCouponPricerModel then 
@@ -76,6 +83,7 @@ type OvernightIndexedCouponPricerModel
         else
             let o = new OvernightIndexedCouponPricerModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

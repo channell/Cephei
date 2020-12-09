@@ -35,9 +35,9 @@ open Cephei.QLNetHelper
 type XABRCoeffHolderModel<'Model when 'Model :> IModel and 'Model : (new : unit -> 'Model)>
     ( t                                            : ICell<double>
     , forward                                      : ICell<double>
-    , _params                                      : ICell<List<Nullable<double>>>
+    , _params                                      : ICell<Generic.List<Nullable<double>>>
     , paramIsFixed                                 : ICell<Generic.List<bool>>
-    , addParams                                    : ICell<List<Nullable<double>>>
+    , addParams                                    : ICell<Generic.List<Nullable<double>>>
     ) as this =
 
     inherit Model<XABRCoeffHolder<'Model>> ()

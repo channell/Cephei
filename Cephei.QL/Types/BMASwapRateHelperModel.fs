@@ -42,12 +42,15 @@ type BMASwapRateHelperModel
     , bmaDayCount                                  : ICell<DayCounter>
     , bmaIndex                                     : ICell<BMAIndex>
     , iborIndex                                    : ICell<IborIndex>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<BMASwapRateHelper> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _liborFraction                             = liborFraction
     let _tenor                                     = tenor
     let _settlementDays                            = settlementDays
@@ -61,33 +64,36 @@ type BMASwapRateHelperModel
     Functions
 *)
     let mutable
-        _BMASwapRateHelper                         = cell (fun () -> new BMASwapRateHelper (liborFraction.Value, tenor.Value, settlementDays.Value, calendar.Value, bmaPeriod.Value, bmaConvention.Value, bmaDayCount.Value, bmaIndex.Value, iborIndex.Value))
-    let _impliedQuote                              = triv (fun () -> _BMASwapRateHelper.Value.impliedQuote())
+        _BMASwapRateHelper                         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BMASwapRateHelper (liborFraction.Value, tenor.Value, settlementDays.Value, calendar.Value, bmaPeriod.Value, bmaConvention.Value, bmaDayCount.Value, bmaIndex.Value, iborIndex.Value))))
+    let _impliedQuote                              = triv (fun () -> (curryEvaluationDate _evaluationDate _BMASwapRateHelper).Value.impliedQuote())
     let _setTermStructure                          (t : ICell<YieldTermStructure>)   
-                                                   = triv (fun () -> _BMASwapRateHelper.Value.setTermStructure(t.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _BMASwapRateHelper).Value.setTermStructure(t.Value)
                                                                      _BMASwapRateHelper.Value)
-    let _update                                    = triv (fun () -> _BMASwapRateHelper.Value.update()
+    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _BMASwapRateHelper).Value.update()
                                                                      _BMASwapRateHelper.Value)
-    let _earliestDate                              = triv (fun () -> _BMASwapRateHelper.Value.earliestDate())
-    let _latestDate                                = triv (fun () -> _BMASwapRateHelper.Value.latestDate())
-    let _latestRelevantDate                        = triv (fun () -> _BMASwapRateHelper.Value.latestRelevantDate())
-    let _maturityDate                              = triv (fun () -> _BMASwapRateHelper.Value.maturityDate())
-    let _pillarDate                                = triv (fun () -> _BMASwapRateHelper.Value.pillarDate())
-    let _quote                                     = triv (fun () -> _BMASwapRateHelper.Value.quote())
-    let _quoteError                                = triv (fun () -> _BMASwapRateHelper.Value.quoteError())
-    let _quoteIsValid                              = triv (fun () -> _BMASwapRateHelper.Value.quoteIsValid())
-    let _quoteValue                                = triv (fun () -> _BMASwapRateHelper.Value.quoteValue())
+    let _earliestDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _BMASwapRateHelper).Value.earliestDate())
+    let _latestDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BMASwapRateHelper).Value.latestDate())
+    let _latestRelevantDate                        = triv (fun () -> (curryEvaluationDate _evaluationDate _BMASwapRateHelper).Value.latestRelevantDate())
+    let _maturityDate                              = triv (fun () -> (curryEvaluationDate _evaluationDate _BMASwapRateHelper).Value.maturityDate())
+    let _pillarDate                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BMASwapRateHelper).Value.pillarDate())
+    let _quote                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _BMASwapRateHelper).Value.quote())
+    let _quoteError                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BMASwapRateHelper).Value.quoteError())
+    let _quoteIsValid                              = triv (fun () -> (curryEvaluationDate _evaluationDate _BMASwapRateHelper).Value.quoteIsValid())
+    let _quoteValue                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BMASwapRateHelper).Value.quoteValue())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _BMASwapRateHelper.Value.registerWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _BMASwapRateHelper).Value.registerWith(handler.Value)
                                                                      _BMASwapRateHelper.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _BMASwapRateHelper.Value.unregisterWith(handler.Value)
+                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _BMASwapRateHelper).Value.unregisterWith(handler.Value)
                                                                      _BMASwapRateHelper.Value)
     do this.Bind(_BMASwapRateHelper)
 (* 
     casting 
 *)
-    internal new () = new BMASwapRateHelperModel(null,null,null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new BMASwapRateHelperModel(null,null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _BMASwapRateHelper <- v
     static member Cast (p : ICell<BMASwapRateHelper>) = 
         if p :? BMASwapRateHelperModel then 
@@ -95,6 +101,7 @@ type BMASwapRateHelperModel
         else
             let o = new BMASwapRateHelperModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

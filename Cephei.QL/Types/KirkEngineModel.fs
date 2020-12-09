@@ -36,12 +36,15 @@ type KirkEngineModel
     ( process1                                     : ICell<BlackProcess>
     , process2                                     : ICell<BlackProcess>
     , correlation                                  : ICell<double>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<KirkEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _process1                                  = process1
     let _process2                                  = process2
     let _correlation                               = correlation
@@ -49,12 +52,15 @@ type KirkEngineModel
     Functions
 *)
     let mutable
-        _KirkEngine                                = cell (fun () -> new KirkEngine (process1.Value, process2.Value, correlation.Value))
+        _KirkEngine                                = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new KirkEngine (process1.Value, process2.Value, correlation.Value))))
     do this.Bind(_KirkEngine)
 (* 
     casting 
 *)
-    internal new () = new KirkEngineModel(null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new KirkEngineModel(null,null,null,null)
     member internal this.Inject v = _KirkEngine <- v
     static member Cast (p : ICell<KirkEngine>) = 
         if p :? KirkEngineModel then 
@@ -62,6 +68,7 @@ type KirkEngineModel
         else
             let o = new KirkEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

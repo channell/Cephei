@@ -34,23 +34,29 @@ open Cephei.QLNetHelper
 [<AutoSerializable(true)>]
 type AnalyticEuropeanEngineModel
     ( Process                                      : ICell<GeneralizedBlackScholesProcess>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<AnalyticEuropeanEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
 (*
     Functions
 *)
     let mutable
-        _AnalyticEuropeanEngine                    = cell (fun () -> new AnalyticEuropeanEngine (Process.Value))
+        _AnalyticEuropeanEngine                    = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticEuropeanEngine (Process.Value))))
     do this.Bind(_AnalyticEuropeanEngine)
 (* 
     casting 
 *)
-    internal new () = new AnalyticEuropeanEngineModel(null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new AnalyticEuropeanEngineModel(null,null)
     member internal this.Inject v = _AnalyticEuropeanEngine <- v
     static member Cast (p : ICell<AnalyticEuropeanEngine>) = 
         if p :? AnalyticEuropeanEngineModel then 
@@ -58,6 +64,7 @@ type AnalyticEuropeanEngineModel
         else
             let o = new AnalyticEuropeanEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

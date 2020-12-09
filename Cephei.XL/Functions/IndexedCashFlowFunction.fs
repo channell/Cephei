@@ -269,6 +269,8 @@ module IndexedCashFlowFunction =
          paymentDate : obj)
         ([<ExcelArgument(Name="growthOnly",Description = "bool or empty")>] 
          growthOnly : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -280,6 +282,7 @@ module IndexedCashFlowFunction =
                 let _fixingDate = Helper.toCell<Date> fixingDate "fixingDate" 
                 let _paymentDate = Helper.toCell<Date> paymentDate "paymentDate" 
                 let _growthOnly = Helper.toDefault<bool> growthOnly "growthOnly" false
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.IndexedCashFlow 
                                                             _notional.cell 
                                                             _index.cell 
@@ -287,6 +290,7 @@ module IndexedCashFlowFunction =
                                                             _fixingDate.cell 
                                                             _paymentDate.cell 
                                                             _growthOnly.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<IndexedCashFlow>) l
 
@@ -297,6 +301,7 @@ module IndexedCashFlowFunction =
                                                ;  _fixingDate.source
                                                ;  _paymentDate.source
                                                ;  _growthOnly.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _notional.cell
@@ -305,6 +310,7 @@ module IndexedCashFlowFunction =
                                 ;  _fixingDate.cell
                                 ;  _paymentDate.cell
                                 ;  _growthOnly.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -706,16 +712,16 @@ module IndexedCashFlowFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<IndexedCashFlow> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<IndexedCashFlow> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<IndexedCashFlow> (c)) :> ICell
                 let format (i : Generic.List<ICell<IndexedCashFlow>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<IndexedCashFlow>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<IndexedCashFlow>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with

@@ -18,7 +18,7 @@ namespace Cephei.Gen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+    #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class DataCollection : DataCollectionBase
     {
@@ -30,7 +30,7 @@ namespace Cephei.Gen
         {
             this.Write("\r\n\r\n");
             
-            #line 6 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 6 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
 /*
 Name:
 Author: 
@@ -43,7 +43,7 @@ Description:
                     "hei.Core;\r\nusing Cephei.Core.Generic;\r\nusing Cephei.Kernel;\r\nusing System.Collec" +
                     "tions;\r\nusing System;\r\n\r\nnamespace Cephei.Data\r\n{\r\n    [DataContract (Name = \"");
             
-            #line 26 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 26 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -51,70 +51,70 @@ Description:
             this.Write("\", Namespace = Declarations.SchemaVersion)]\r\n    [ShowWith (typeof (ShowableValue" +
                     "))]\r\n    [CellProxy (typeof(CellProxy<");
             
-            #line 28 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 28 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">))]\r\n    public class ");
             
-            #line 29 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 29 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Cell : Cell<");
             
-            #line 29 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 29 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write("> \r\n    {\r\n        public ");
             
-            #line 31 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 31 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Cell () : base () { }\r\n        public ");
             
-            #line 32 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 32 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Cell (");
             
-            #line 32 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 32 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(" v) : base (v) { }\r\n        public ");
             
-            #line 33 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 33 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Cell (");
             
-            #line 33 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 33 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(" v, string Mnemonic) : base (v, Mnemonic) { }\r\n        public ");
             
-            #line 34 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 34 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Cell (");
             
-            #line 34 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 34 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
@@ -122,7 +122,7 @@ Description:
             this.Write(" v, string Mnemonic, IModel model) : base (v, Mnemonic, model) { }\r\n        publi" +
                     "c ");
             
-            #line 35 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 35 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -130,7 +130,7 @@ Description:
             this.Write("Cell (IModel model, object[] objects)\r\n        {\r\n            _parent = model;\r\n " +
                     "           _mnemonic = (string) objects.GetValue (0);\r\n            Content = (");
             
-            #line 39 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 39 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
@@ -138,7 +138,7 @@ Description:
             this.Write(") objects.GetValue (1);\r\n        }\r\n    }\r\n\r\n    [CollectionDataContract (Name = " +
                     "\"");
             
-            #line 43 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 43 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -146,42 +146,42 @@ Description:
             this.Write("Vector\", Namespace = Declarations.SchemaVersion)]\r\n    [ShowWith (typeof (Showabl" +
                     "eVector<");
             
-            #line 44 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 44 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">))]\r\n    [CellProxy (typeof(CellProxy<IVector<");
             
-            #line 45 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 45 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">>))]\r\n    public class ");
             
-            #line 46 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 46 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Vector : CoVector<");
             
-            #line 46 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 46 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">\r\n    {\r\n        public ");
             
-            #line 48 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 48 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Vector () : base () { }\r\n        public ");
             
-            #line 49 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 49 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -189,28 +189,28 @@ Description:
             this.Write("Vector (IModel parent, string Mnemonic) : base (parent, Mnemonic) { }\r\n        pu" +
                     "blic ");
             
-            #line 50 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 50 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Vector (IModel parent, string Mnemonic, IEnumerable<");
             
-            #line 50 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 50 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write("> e) : base (parent, Mnemonic, e) { }\r\n        public ");
             
-            #line 51 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 51 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Vector (IModel parent, IEnumerable<");
             
-            #line 51 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 51 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
@@ -218,14 +218,14 @@ Description:
             this.Write("> e)\r\n            : base (e)\r\n        {\r\n            _parent = parent;\r\n        }" +
                     "\r\n        public ");
             
-            #line 56 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 56 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Vector (IModel parent, INativeVector<");
             
-            #line 56 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 56 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
@@ -233,7 +233,7 @@ Description:
             this.Write("> n)\r\n            : base (n)\r\n        {\r\n            _parent = parent;\r\n        }" +
                     "\r\n        // XL creation interface\r\n        public ");
             
-            #line 62 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 62 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -242,14 +242,14 @@ Description:
                     "      _parent = model;\r\n            _mnemonic = (string) objects.GetValue (0);\r\n" +
                     "            ");
             
-            #line 67 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 67 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write("[] arr = (");
             
-            #line 67 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 67 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
@@ -265,7 +265,7 @@ Description:
     }
     [CollectionDataContract (Name = """);
             
-            #line 76 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 76 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -273,42 +273,42 @@ Description:
             this.Write("CellVector\", ItemName=\"i\", Namespace = Declarations.SchemaVersion)]\r\n    [ShowWit" +
                     "h (typeof (ShowableVector<");
             
-            #line 77 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 77 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">))]\r\n    [CellProxy (typeof(CellProxy<IVector<");
             
-            #line 78 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 78 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">>))]\r\n    public class ");
             
-            #line 79 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 79 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("CellVector : CoCellVector<");
             
-            #line 79 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 79 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">\r\n    {\r\n        public ");
             
-            #line 81 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 81 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("CellVector () : base () { }\r\n        public ");
             
-            #line 82 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 82 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -316,28 +316,28 @@ Description:
             this.Write("CellVector (IModel parent, string Mnemonic) : base (parent, Mnemonic) { }\r\n      " +
                     "  public ");
             
-            #line 83 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 83 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("CellVector (IModel parent, string Mnemonic, IEnumerable<ICoCell<");
             
-            #line 83 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 83 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">> e) : base (parent, Mnemonic, e) { }\r\n        public ");
             
-            #line 84 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 84 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("CellVector (IModel parent, IEnumerable<ICoCell<");
             
-            #line 84 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 84 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
@@ -345,14 +345,14 @@ Description:
             this.Write(">> e)\r\n            : base (e)\r\n        {\r\n            _parent = parent;\r\n        " +
                     "}\r\n        public ");
             
-            #line 89 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 89 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("CellVector (IModel parent, INativeVector<ICoCell<");
             
-            #line 89 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 89 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
@@ -360,7 +360,7 @@ Description:
             this.Write(">> n)\r\n            : base (n)\r\n        {\r\n            _parent = parent;\r\n        " +
                     "}\r\n        // XL creation interface\r\n        public ");
             
-            #line 95 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 95 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -376,14 +376,14 @@ Description:
             {
                 var v = CellHelper.CellObject<");
             
-            #line 104 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 104 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write("> (model, o, p => new ");
             
-            #line 104 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 104 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -401,7 +401,7 @@ Description:
 
     [CollectionDataContract (Name = ""Cephei.Data.");
             
-            #line 115 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 115 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -409,42 +409,42 @@ Description:
             this.Write("Matrix\", Namespace = Declarations.SchemaVersion)]\r\n    [ShowWith (typeof (Showabl" +
                     "eMatrix<");
             
-            #line 116 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 116 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">))]\r\n    [CellProxy(typeof(CellProxy<IMatrix<");
             
-            #line 117 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 117 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">>))]\r\n    public class ");
             
-            #line 118 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 118 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Matrix : CoMatrix<");
             
-            #line 118 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 118 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">\r\n    {\r\n        public ");
             
-            #line 120 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 120 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Matrix () : base () { }\r\n        public ");
             
-            #line 121 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 121 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -452,14 +452,14 @@ Description:
             this.Write("Matrix (IModel parent, string Mnemonic) : base (parent, Mnemonic) { }\r\n        pu" +
                     "blic ");
             
-            #line 122 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 122 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Matrix (IModel parent, string Mnemonic, IEnumerable<IEnumerable<");
             
-            #line 122 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 122 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
@@ -467,7 +467,7 @@ Description:
             this.Write(">> e) : base (parent, Mnemonic, e) { }\r\n        // XL creation infterface\r\n      " +
                     "  public ");
             
-            #line 124 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 124 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -483,14 +483,14 @@ Description:
             {
                 if (o is IVector<");
             
-            #line 133 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 133 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">)\r\n                {\r\n                    Add ((IVector<");
             
-            #line 135 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 135 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
@@ -498,28 +498,28 @@ Description:
             this.Write(">) o);\r\n                }\r\n                else\r\n                {\r\n             " +
                     "       Add (new ");
             
-            #line 139 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 139 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Vector (model, (IEnumerable<");
             
-            #line 139 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 139 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">) o));\r\n                }\r\n            }\r\n        }\r\n        public ");
             
-            #line 143 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 143 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Matrix (IModel parent, IEnumerable<IEnumerable<");
             
-            #line 143 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 143 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
@@ -527,14 +527,14 @@ Description:
             this.Write(">> e)\r\n            : base (e)\r\n        {\r\n            _parent = parent;\r\n        " +
                     "}\r\n        public ");
             
-            #line 148 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 148 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Matrix (IModel parent, INativeMatrix<");
             
-            #line 148 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 148 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
@@ -542,56 +542,56 @@ Description:
             this.Write("> nv)\r\n            : base (nv)\r\n        {\r\n            _parent = parent;\r\n       " +
                     " }\r\n\r\n        protected override CoVector<");
             
-            #line 154 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 154 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write("> CreateVector (IEnumerable<");
             
-            #line 154 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 154 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write("> source)\r\n        {\r\n            return new ");
             
-            #line 156 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 156 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Vector (_parent, source);\r\n        }\r\n        protected override CoVector<");
             
-            #line 158 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 158 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write("> CreateVector (INativeVector<");
             
-            #line 158 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 158 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write("> nv)\r\n        {\r\n            return new  ");
             
-            #line 160 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 160 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Vector (_parent, nv);\r\n        }\r\n        protected override CoVector<");
             
-            #line 162 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 162 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write("> CreateVector ()\r\n        {\r\n            return new ");
             
-            #line 164 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 164 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -600,7 +600,7 @@ Description:
                     "         return Generator.EnumerationSource (this);\r\n        }\r\n    }\r\n    [Coll" +
                     "ectionDataContract (Name = \"");
             
-            #line 171 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 171 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -608,42 +608,42 @@ Description:
             this.Write("CellMatrix\", Namespace = Declarations.SchemaVersion)]\r\n    [ShowWith (typeof (Sho" +
                     "wableMatrix<");
             
-            #line 172 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 172 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">))]\r\n    [CellProxy(typeof(CellProxy<IMatrix<");
             
-            #line 173 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 173 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">>))]\r\n    public class ");
             
-            #line 174 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 174 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("CellMatrix : CoCellMatrix<");
             
-            #line 174 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 174 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">\r\n    {\r\n        public ");
             
-            #line 176 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 176 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("CellMatrix () : base () { }\r\n        public ");
             
-            #line 177 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 177 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -651,14 +651,14 @@ Description:
             this.Write("CellMatrix (IModel parent, string Mnemonic) : base (parent, Mnemonic) { }\r\n      " +
                     "  public ");
             
-            #line 178 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 178 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("CellMatrix (IModel parent, string Mnemonic, IEnumerable<IEnumerable<ICoCell<");
             
-            #line 178 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 178 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
@@ -666,7 +666,7 @@ Description:
             this.Write(">>> e) : base (parent, Mnemonic, e) { }\r\n        // XL creation infterface\r\n     " +
                     "   public ");
             
-            #line 180 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 180 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -682,7 +682,7 @@ Description:
             {
                 var v = CellHelper.CellVector<");
             
-            #line 189 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 189 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
@@ -690,14 +690,14 @@ Description:
             this.Write(">(model, o);\r\n                Add (v);\r\n                v.Change += OnChange;\r\n  " +
                     "          }\r\n        }\r\n        public ");
             
-            #line 194 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 194 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("CellMatrix (IModel parent, IEnumerable<IEnumerable<ICoCell<");
             
-            #line 194 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 194 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
@@ -705,14 +705,14 @@ Description:
             this.Write(">>> e)\r\n            : base (e)\r\n        {\r\n            _parent = parent;\r\n       " +
                     " }\r\n        public ");
             
-            #line 199 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 199 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("CellMatrix (IModel parent, INativeMatrix<ICoCell<");
             
-            #line 199 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 199 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
@@ -720,21 +720,21 @@ Description:
             this.Write(">> nv)\r\n            : base (nv)\r\n        {\r\n            _parent = parent;\r\n      " +
                     "  }\r\n\r\n        protected override CoCellVector<");
             
-            #line 205 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 205 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write("> CreateCellVector (IEnumerable<ICoCell<");
             
-            #line 205 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 205 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">> source)\r\n        {\r\n            return new ");
             
-            #line 207 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 207 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -742,35 +742,35 @@ Description:
             this.Write("CellVector (_parent, source);\r\n        }\r\n        protected override CoCellVector" +
                     "<");
             
-            #line 209 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 209 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write("> CreateCellVector (INativeVector<ICoCell<");
             
-            #line 209 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 209 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">> nv)\r\n        {\r\n            return new  ");
             
-            #line 211 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 211 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("CellVector (_parent, nv);\r\n        }\r\n        protected override CoCellVector<");
             
-            #line 213 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 213 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write("> CreateCellVector ()\r\n        {\r\n            return new ");
             
-            #line 215 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 215 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -779,7 +779,7 @@ Description:
                     "\n            return Generator.EnumerationSource (this);\r\n        }\r\n    }\r\n\r\n   " +
                     " [CollectionDataContract (Name = \"");
             
-            #line 223 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 223 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -787,35 +787,35 @@ Description:
             this.Write("Cube\", Namespace = Declarations.SchemaVersion)]\r\n    [ShowWith (typeof (ShowableC" +
                     "ube<");
             
-            #line 224 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 224 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">))]\r\n    [CellProxy(typeof(CellProxy<ICube<double>>))]\r\n    public class ");
             
-            #line 226 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 226 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Cube : CoCube<");
             
-            #line 226 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 226 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">\r\n    {\r\n        public ");
             
-            #line 228 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 228 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Cube () : base () { }\r\n        public ");
             
-            #line 229 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 229 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -823,14 +823,14 @@ Description:
             this.Write("Cube (IModel parent, string Mnemonic) : base (parent, Mnemonic) { }\r\n        publ" +
                     "ic ");
             
-            #line 230 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 230 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Cube (IModel parent, string Mnemonic, IEnumerable<IEnumerable<IEnumerable<");
             
-            #line 230 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 230 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
@@ -838,7 +838,7 @@ Description:
             this.Write(">>> e) : base (parent, Mnemonic, e) { }\r\n        // XL creation infterface\r\n     " +
                     "   public ");
             
-            #line 232 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 232 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -854,84 +854,84 @@ Description:
             {
                 Add ((IMatrix<");
             
-            #line 241 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 241 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">)CellHelper.CellMatrix<");
             
-            #line 241 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 241 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">(model, o));\r\n            }\r\n        }\r\n        protected override CoMatrix<");
             
-            #line 244 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 244 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write("> CreateMatrix (IEnumerable<IEnumerable<");
             
-            #line 244 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 244 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">> source)\r\n        {\r\n            return new ");
             
-            #line 246 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 246 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Matrix (_parent, source);\r\n        }\r\n        protected override CoMatrix<");
             
-            #line 248 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 248 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write("> CreateMatrix (INativeMatrix<");
             
-            #line 248 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 248 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write("> nv)\r\n        {\r\n            return new ");
             
-            #line 250 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 250 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Matrix (_parent, nv);\r\n        }\r\n        protected override CoMatrix<");
             
-            #line 252 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 252 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write("> CreateMatrix ()\r\n        {\r\n            return new ");
             
-            #line 254 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 254 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("Matrix ();\r\n        }\r\n        protected override CoVector<");
             
-            #line 256 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 256 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write("> CreateVector ()\r\n        {\r\n            return new ");
             
-            #line 258 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 258 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -940,7 +940,7 @@ Description:
                     "         return Generator.EnumerationSource (this);\r\n        }\r\n    }\r\n    [Coll" +
                     "ectionDataContract (Name = \"Cephei.Data.");
             
-            #line 265 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 265 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -948,42 +948,42 @@ Description:
             this.Write("CellCube\", Namespace = Declarations.SchemaVersion)]\r\n    [ShowWith (typeof (Showa" +
                     "bleCube<");
             
-            #line 266 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 266 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">))]\r\n    [CellProxy(typeof(CellProxy<ICube<");
             
-            #line 267 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 267 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">>))]\r\n    public class ");
             
-            #line 268 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 268 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("CellCube : CoCellCube<");
             
-            #line 268 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 268 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">\r\n    {\r\n        public ");
             
-            #line 270 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 270 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("CellCube () : base () { }\r\n        public ");
             
-            #line 271 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 271 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -991,7 +991,7 @@ Description:
             this.Write("CellCube (IModel parent, string Mnemonic) : base (parent, Mnemonic) { }\r\n        " +
                     "public ");
             
-            #line 272 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 272 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -999,7 +999,7 @@ Description:
             this.Write("CellCube (IModel parent, string Mnemonic, IEnumerable<IEnumerable<IEnumerable<ICo" +
                     "Cell<");
             
-            #line 272 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 272 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
@@ -1007,7 +1007,7 @@ Description:
             this.Write(">>>> e) : base (parent, Mnemonic, e) { }\r\n        // XL creation infterface\r\n    " +
                     "    public ");
             
-            #line 274 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 274 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -1023,7 +1023,7 @@ Description:
             {
                 var v = CellHelper.CellMatrix<");
             
-            #line 283 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 283 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
@@ -1031,14 +1031,14 @@ Description:
             this.Write(">(model, o);\r\n                Add(v);\r\n                v.Change += OnChange;\r\n   " +
                     "         }\r\n        }\r\n        public ");
             
-            #line 288 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 288 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("CellCube (IModel parent, IEnumerable<IEnumerable<IEnumerable<ICoCell<");
             
-            #line 288 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 288 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
@@ -1046,14 +1046,14 @@ Description:
             this.Write(">>>> e)\r\n            : base (e)\r\n        {\r\n            _parent = parent;\r\n      " +
                     "  }\r\n        public ");
             
-            #line 293 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 293 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("CellCube (IModel parent, INativeCube<ICoCell<");
             
-            #line 293 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 293 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
@@ -1061,21 +1061,21 @@ Description:
             this.Write(">> nv)\r\n            : base (nv)\r\n        {\r\n            _parent = parent;\r\n      " +
                     "  }\r\n        protected override CoCellMatrix<");
             
-            #line 298 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 298 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write("> CreateCellMatrix (IEnumerable<IEnumerable<ICoCell<");
             
-            #line 298 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 298 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">>> source)\r\n        {\r\n            return new ");
             
-            #line 300 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 300 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -1083,49 +1083,49 @@ Description:
             this.Write("CellMatrix (_parent, source);\r\n        }\r\n        protected override CoCellMatrix" +
                     "<");
             
-            #line 302 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 302 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write("> CreateCellMatrix (INativeMatrix<ICoCell<");
             
-            #line 302 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 302 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write(">> nv)\r\n        {\r\n            return new ");
             
-            #line 304 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 304 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("CellMatrix (_parent, nv);\r\n        }\r\n        protected override CoCellMatrix<");
             
-            #line 306 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 306 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write("> CreateCellMatrix ()\r\n        {\r\n            return new ");
             
-            #line 308 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 308 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
             #line hidden
             this.Write("CellMatrix ();\r\n        }\r\n        protected override CoCellVector<");
             
-            #line 310 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 310 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TypeCode));
             
             #line default
             #line hidden
             this.Write("> CreateCellVector ()\r\n        {\r\n            return new ");
             
-            #line 312 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+            #line 312 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Mnemonic));
             
             #line default
@@ -1135,7 +1135,7 @@ Description:
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 320 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+        #line 320 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
 
 	public DataCollection 
 		( string Mnemonic 
@@ -1153,7 +1153,7 @@ Description:
         #line default
         #line hidden
         
-        #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
+        #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\Data\DataCollection.tt"
 
 private string _MnemonicField;
 

@@ -68,7 +68,7 @@ type VanillaSwapModel
     Functions
 *)
     let mutable
-        _VanillaSwap                               = cell (fun () -> withEngine pricingEngine (new VanillaSwap (Type.Value, nominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDayCount.Value, floatSchedule.Value, iborIndex.Value, spread.Value, floatingDayCount.Value, paymentConvention.Value)))
+        _VanillaSwap                               = cell (fun () -> withEngine pricingEngine evaluationDate (new VanillaSwap (Type.Value, nominal.Value, fixedSchedule.Value, fixedRate.Value, fixedDayCount.Value, floatSchedule.Value, iborIndex.Value, spread.Value, floatingDayCount.Value, paymentConvention.Value)))
     let _fairRate                                  = triv (fun () -> (withEvaluationDate _evaluationDate _VanillaSwap).fairRate())
     let _fairSpread                                = triv (fun () -> (withEvaluationDate _evaluationDate _VanillaSwap).fairSpread())
     let _fixedDayCount                             = triv (fun () -> (withEvaluationDate _evaluationDate _VanillaSwap).fixedDayCount())

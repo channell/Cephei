@@ -41,12 +41,15 @@ type QuantoTermStructureModel
     , exchRateBlackVolTS                           : ICell<Handle<BlackVolTermStructure>>
     , exchRateATMlevel                             : ICell<double>
     , underlyingExchRateCorrelation                : ICell<double>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<QuantoTermStructure> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _underlyingDividendTS                      = underlyingDividendTS
     let _riskFreeTS                                = riskFreeTS
     let _foreignRiskFreeTS                         = foreignRiskFreeTS
@@ -59,17 +62,20 @@ type QuantoTermStructureModel
     Functions
 *)
     let mutable
-        _QuantoTermStructure                       = cell (fun () -> new QuantoTermStructure (underlyingDividendTS.Value, riskFreeTS.Value, foreignRiskFreeTS.Value, underlyingBlackVolTS.Value, strike.Value, exchRateBlackVolTS.Value, exchRateATMlevel.Value, underlyingExchRateCorrelation.Value))
-    let _calendar                                  = triv (fun () -> _QuantoTermStructure.Value.calendar())
-    let _dayCounter                                = triv (fun () -> _QuantoTermStructure.Value.dayCounter())
-    let _maxDate                                   = triv (fun () -> _QuantoTermStructure.Value.maxDate())
-    let _referenceDate                             = triv (fun () -> _QuantoTermStructure.Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> _QuantoTermStructure.Value.settlementDays())
+        _QuantoTermStructure                       = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new QuantoTermStructure (underlyingDividendTS.Value, riskFreeTS.Value, foreignRiskFreeTS.Value, underlyingBlackVolTS.Value, strike.Value, exchRateBlackVolTS.Value, exchRateATMlevel.Value, underlyingExchRateCorrelation.Value))))
+    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _QuantoTermStructure).Value.calendar())
+    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _QuantoTermStructure).Value.dayCounter())
+    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _QuantoTermStructure).Value.maxDate())
+    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _QuantoTermStructure).Value.referenceDate())
+    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _QuantoTermStructure).Value.settlementDays())
     do this.Bind(_QuantoTermStructure)
 (* 
     casting 
 *)
-    internal new () = new QuantoTermStructureModel(null,null,null,null,null,null,null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new QuantoTermStructureModel(null,null,null,null,null,null,null,null,null)
     member internal this.Inject v = _QuantoTermStructure <- v
     static member Cast (p : ICell<QuantoTermStructure>) = 
         if p :? QuantoTermStructureModel then 
@@ -77,6 +83,7 @@ type QuantoTermStructureModel
         else
             let o = new QuantoTermStructureModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

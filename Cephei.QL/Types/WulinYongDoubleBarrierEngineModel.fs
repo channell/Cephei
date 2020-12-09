@@ -35,24 +35,30 @@ open Cephei.QLNetHelper
 type WulinYongDoubleBarrierEngineModel
     ( Process                                      : ICell<GeneralizedBlackScholesProcess>
     , series                                       : ICell<int>
+    , evaluationDate                               : ICell<Date>
     ) as this =
 
     inherit Model<WulinYongDoubleBarrierEngine> ()
 (*
     Parameters
 *)
+    let mutable
+        _evaluationDate                            = evaluationDate
     let _Process                                   = Process
     let _series                                    = series
 (*
     Functions
 *)
     let mutable
-        _WulinYongDoubleBarrierEngine              = cell (fun () -> new WulinYongDoubleBarrierEngine (Process.Value, series.Value))
+        _WulinYongDoubleBarrierEngine              = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new WulinYongDoubleBarrierEngine (Process.Value, series.Value))))
     do this.Bind(_WulinYongDoubleBarrierEngine)
 (* 
     casting 
 *)
-    internal new () = new WulinYongDoubleBarrierEngineModel(null,null)
+    interface IDateDependant with
+        member this.EvaluationDate with get () = _evaluationDate and set d = _evaluationDate <- d
+
+    internal new () = new WulinYongDoubleBarrierEngineModel(null,null,null)
     member internal this.Inject v = _WulinYongDoubleBarrierEngine <- v
     static member Cast (p : ICell<WulinYongDoubleBarrierEngine>) = 
         if p :? WulinYongDoubleBarrierEngineModel then 
@@ -60,6 +66,7 @@ type WulinYongDoubleBarrierEngineModel
         else
             let o = new WulinYongDoubleBarrierEngineModel ()
             o.Inject p
+            if p :? IDateDependant then (o :> IDateDependant).EvaluationDate <- (p :?> IDateDependant).EvaluationDate
             o.Bind p
             o
                             

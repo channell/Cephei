@@ -147,6 +147,8 @@ module ZeroInflationIndexFunction =
          currency : obj)
         ([<ExcelArgument(Name="ts",Description = "ZeroInflationTermStructure")>] 
          ts : obj)
+        ([<ExcelArgument(Name="evaluationDate",Description = "Date")>]
+        evaluationDate : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
 
@@ -160,6 +162,7 @@ module ZeroInflationIndexFunction =
                 let _availabilityLag = Helper.toCell<Period> availabilityLag "availabilityLag" 
                 let _currency = Helper.toCell<Currency> currency "currency" 
                 let _ts = Helper.toHandle<ZeroInflationTermStructure> ts "ts" 
+                let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.ZeroInflationIndex 
                                                             _familyName.cell 
                                                             _region.cell 
@@ -169,6 +172,7 @@ module ZeroInflationIndexFunction =
                                                             _availabilityLag.cell 
                                                             _currency.cell 
                                                             _ts.cell 
+                                                            _evaluationDate.cell
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<ZeroInflationIndex>) l
 
@@ -181,6 +185,7 @@ module ZeroInflationIndexFunction =
                                                ;  _availabilityLag.source
                                                ;  _currency.source
                                                ;  _ts.source
+                                               ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
                                 [| _familyName.cell
@@ -191,6 +196,7 @@ module ZeroInflationIndexFunction =
                                 ;  _availabilityLag.cell
                                 ;  _currency.cell
                                 ;  _ts.cell
+                                ;  _evaluationDate.cell
                                 |]
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
@@ -1007,16 +1013,16 @@ module ZeroInflationIndexFunction =
                         Seq.map (fun (i : obj) -> Helper.toCell<ZeroInflationIndex> i "value" ) |>
                         Seq.toArray
                 let c = a |> Array.map (fun i -> i.cell)
-                let l = new Cephei.Cell.List<ZeroInflationIndex> (c)
+
                 let s = a |> Array.map (fun i -> i.source)
-                let builder (current : ICell) = l :> ICell
+                let builder (current : ICell) = (new Cephei.Cell.List<ZeroInflationIndex> (c)) :> ICell
                 let format (i : Generic.List<ICell<ZeroInflationIndex>>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
                     ; subscriber = Helper.subscriberModelRange format
-                    ; source =  (fun () -> "cell Generic.List<ZeroInflationIndex>(" + (Helper.sourceFoldArray (s) + ")"))
+                    ; source =  (fun () -> "(new Cephei.Cell.List<ZeroInflationIndex>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string
             with
