@@ -61,6 +61,8 @@ module FloatingRateBondFunction =
          spreads : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
+        ([<ExcelArgument(Name="CouponPricer",Description="FloatingRateCouponPricer")>]
+         couponPricer : obj)
         ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
@@ -79,6 +81,7 @@ module FloatingRateBondFunction =
                 let _spreads = Helper.toCell<Generic.List<double>> spreads "spreads" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
+                let _couponPricer = Helper.toCell<FloatingRateCouponPricer> couponPricer "couponPricer"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FloatingRateBond1 
                                                             _settlementDays.cell 
                                                             _faceAmount.cell 
@@ -90,6 +93,7 @@ module FloatingRateBondFunction =
                                                             _gearings.cell 
                                                             _spreads.cell 
                                                             _pricingEngine.cell 
+                                                            _couponPricer.cell
                                                             _evaluationDate.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateBond>) l
@@ -105,6 +109,7 @@ module FloatingRateBondFunction =
                                                ;  _gearings.source
                                                ;  _spreads.source
                                                ;  _pricingEngine.source
+                                               ;  _couponPricer.source
                                                ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -118,6 +123,7 @@ module FloatingRateBondFunction =
                                 ;  _gearings.cell
                                 ;  _spreads.cell
                                 ;  _pricingEngine.cell
+                                ;  _couponPricer.cell
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
@@ -150,6 +156,8 @@ module FloatingRateBondFunction =
          paymentDayCounter : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
+        ([<ExcelArgument(Name="CouponPricer",Description="FloatingRateCouponPricer")>]
+         couponPricer : obj)
         ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
@@ -164,6 +172,7 @@ module FloatingRateBondFunction =
                 let _paymentDayCounter = Helper.toCell<DayCounter> paymentDayCounter "paymentDayCounter" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
+                let _couponPricer = Helper.toCell<FloatingRateCouponPricer> couponPricer "couponPricer"
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FloatingRateBond
                                                             _settlementDays.cell 
                                                             _faceAmount.cell 
@@ -171,6 +180,7 @@ module FloatingRateBondFunction =
                                                             _index.cell 
                                                             _paymentDayCounter.cell 
                                                             _pricingEngine.cell 
+                                                            _couponPricer.cell
                                                             _evaluationDate.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateBond>) l
@@ -182,6 +192,7 @@ module FloatingRateBondFunction =
                                                ;  _index.source
                                                ;  _paymentDayCounter.source
                                                ;  _pricingEngine.source
+                                               ;  _couponPricer.source
                                                ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -191,6 +202,7 @@ module FloatingRateBondFunction =
                                 ;  _index.cell
                                 ;  _paymentDayCounter.cell
                                 ;  _pricingEngine.cell
+                                ;  _couponPricer.cell
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
@@ -241,6 +253,8 @@ module FloatingRateBondFunction =
          issueDate : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
+        ([<ExcelArgument(Name="CouponPricer",Description="FloatingRateCouponPricer")>]
+         couponPricer : obj)
         ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
@@ -263,6 +277,7 @@ module FloatingRateBondFunction =
                 let _redemption = Helper.toCell<double> redemption "redemption" 
                 let _issueDate = Helper.toCell<Date> issueDate "issueDate" 
                 let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _couponPricer = Helper.toCell<FloatingRateCouponPricer> couponPricer "couponPricer"
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FloatingRateBond2 
                                                             _settlementDays.cell 
@@ -280,6 +295,7 @@ module FloatingRateBondFunction =
                                                             _redemption.cell 
                                                             _issueDate.cell 
                                                             _pricingEngine.cell 
+                                                            _couponPricer.cell
                                                             _evaluationDate.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateBond>) l
@@ -300,6 +316,7 @@ module FloatingRateBondFunction =
                                                ;  _redemption.source
                                                ;  _issueDate.source
                                                ;  _pricingEngine.source
+                                               ;  _couponPricer.source
                                                ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -318,6 +335,7 @@ module FloatingRateBondFunction =
                                 ;  _redemption.cell
                                 ;  _issueDate.cell
                                 ;  _pricingEngine.cell
+                                ;  _couponPricer.cell
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
@@ -382,6 +400,8 @@ module FloatingRateBondFunction =
          endOfMonth : obj)
         ([<ExcelArgument(Name="pricingEngine",Description = "IPricingEngine")>] 
          pricingEngine : obj)
+        ([<ExcelArgument(Name="CouponPricer",Description="FloatingRateCouponPricer")>]
+        couponPricer : obj)
         ([<ExcelArgument(Name="evaluationDate",Description = "Date")>] 
          evaluationDate : obj)
         = 
@@ -410,7 +430,8 @@ module FloatingRateBondFunction =
                 let _stubDate = Helper.toCell<Date> stubDate "stubDate" 
                 let _rule = Helper.toCell<DateGeneration.Rule> rule "rule" 
                 let _endOfMonth = Helper.toCell<bool> endOfMonth "endOfMonth" 
-                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine"  
+                let _pricingEngine = Helper.toCell<IPricingEngine> pricingEngine "pricingEngine" 
+                let _couponPricer = Helper.toCell<FloatingRateCouponPricer> couponPricer "couponPricer"
                 let _evaluationDate = Helper.toCell<Date> evaluationDate "evaluationDate"  
                 let builder (current : ICell) = withMnemonic mnemonic (Fun.FloatingRateBond3 
                                                             _settlementDays.cell 
@@ -435,6 +456,7 @@ module FloatingRateBondFunction =
                                                             _rule.cell 
                                                             _endOfMonth.cell 
                                                             _pricingEngine.cell 
+                                                            _couponPricer.cell
                                                             _evaluationDate.cell 
                                                        ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> ICell<FloatingRateBond>) l
@@ -462,6 +484,7 @@ module FloatingRateBondFunction =
                                                ;  _rule.source
                                                ;  _endOfMonth.source
                                                ;  _pricingEngine.source
+                                               ;  _couponPricer.source
                                                ;  _evaluationDate.source
                                                |]
                 let hash = Helper.hashFold 
@@ -487,6 +510,7 @@ module FloatingRateBondFunction =
                                 ;  _rule.cell
                                 ;  _endOfMonth.cell
                                 ;  _pricingEngine.cell
+                                ;  _couponPricer.cell
                                 ;  _evaluationDate.cell
                                 |]
                 Model.specify 
@@ -1850,50 +1874,6 @@ module FloatingRateBondFunction =
             | _ as e ->  "#" + e.Message
         else
             "<WIZ>"
-
-    (*
-        ! returns the date the net present value refers to.
-    *)
-    [<ExcelFunction(Name="_FloatingRateBond_SetCouponPricer", Description="Set a coupon pricer",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
-    let FloatingRateBond_SetCouponPricer
-        ([<ExcelArgument(Name="Mnemonic",Description = "Identifier for Cell")>] 
-         mnemonic : string)
-        ([<ExcelArgument(Name="FloatingRateBond",Description = "FloatingRateBond")>] 
-         floatingratebond : obj)
-        ([<ExcelArgument(Name="Pricer",Description = "FloatingRateCouponPricer")>] 
-         pricer : obj)
-
-        = 
-        if not (Model.IsInFunctionWizard()) then
-
-            try
-
-                let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
-                let _pricer = Helper.toCell<FloatingRateCouponPricer> pricer "FloatingRateCouponPricer"
-                let builder (current : ICell) = withMnemonic mnemonic ((FloatingRateBondModel.Cast _FloatingRateBond.cell).SetCouponPricer
-                                                                        _pricer.cell
-                                                                      ) :> ICell
-                let format (d : Date) (l:string) = d.serialNumber() :> obj
-
-                let source () = Helper.sourceFold (_FloatingRateBond.source + ".SetCouponPricer") 
-                                               [| _pricer.source
-                                               |]
-                let hash = Helper.hashFold 
-                                [| _FloatingRateBond.cell
-                                ;  _pricer.cell
-                                |]
-                Model.specify 
-                    { mnemonic = Model.formatMnemonic mnemonic
-                    ; creator = builder
-                    ; subscriber = Helper.subscriber format
-                    ; source = source 
-                    ; hash = hash
-                    } :?> string
-            with
-            | _ as e ->  "#" + e.Message
-        else
-            "<WIZ>"
-
 
     [<ExcelFunction(Name="_FloatingRateBond_Range", Description="Create a range of FloatingRateBond",Category="Cephei", IsThreadSafe = false, IsExceptionSafe=true)>]
     let FloatingRateBond_Range 

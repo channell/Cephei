@@ -632,9 +632,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XL2.fsproj",
-      "projectName": "Cephei.XL2",
-      "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XL2.fsproj",
+      "projectUniqueName": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XL1.fsproj",
+      "projectName": "Cephei.XL1",
+      "projectPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\Cephei.XL1.fsproj",
       "packagesPath": "C:\\Users\\steve\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.XL\\obj\\",
       "projectStyle": "PackageReference",

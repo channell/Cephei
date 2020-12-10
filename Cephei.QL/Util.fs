@@ -43,12 +43,7 @@ module Util =
     let value v = Cell.CreateFastValue (v)
 
     // Summary: run calcualtions within in the background
-    let cell (f : unit -> 'f) = 
-        let r = Cell.CreateFast (f)
-        if typeof<'f> .IsSubclassOf(typeof<LazyObject>) then
-            let l = (r.Value :> obj) :?> LazyObject
-            l.update()
-        r
+    let cell (f : unit -> 'f) = Cell.CreateFast (f)
 
     // cretate a trivial cell
     let triv (f : unit -> 'f) = Cell.CreateTrivial (f)
@@ -65,12 +60,12 @@ module Util =
     let withEngine (e : ICell<IPricingEngine>) (d : ICell<Date>) (priced : 'priced when 'priced :> LazyObject) = 
         let lo = priced :> LazyObject
         if not (d = null) then Settings.setEvaluationDate (d.Value)
-        if e = null then raise (new Exception ("Pricing Engine is null"))
-        match lo with 
-        | :? Instrument as i         -> i.setPricingEngine e.Value
-                                        i.recalculate()
-        | :? CalibrationHelper  as c -> c.setPricingEngine e.Value
-        | _                          -> e |> ignore
+        if not (e = null) then 
+            match lo with 
+            | :? Instrument as i         -> i.setPricingEngine e.Value
+//                                            i.recalculate()
+            | :? CalibrationHelper  as c -> c.setPricingEngine e.Value
+            | _                          -> e |> ignore
         priced
 
     let withEvaluationDate<'i when 'i :> LazyObject> (d : ICell<Date>) (i : ICell<'i>) = 

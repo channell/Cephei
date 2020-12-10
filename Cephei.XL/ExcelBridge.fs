@@ -109,13 +109,13 @@ type ValueRTD () as this =
     let kvp (k : 'k) (v : 'v) = new KeyValuePair<'k,'v>(k,v)
 
     let updateValue (topic : ExcelRtdServer.Topic) mnemonic (value : obj) = 
-(* not needed after change too post event notifcation
+(* not needed after change too post event notifcation *)
         if value :? string && (value :?> string).StartsWith("#") then 
             let c = Model.cell mnemonic
             if c.IsSome then
                 c.Value.OnChange(Cephei.Cell.CellEvent.Link, c.Value, c.Value, DateTime.Now, null);
                 _RTDModel.UpdateValue mnemonic ""  (mnemonic)
-*)
+
         topic.UpdateValue value
 
     let subscribe (kv : KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic>) = 

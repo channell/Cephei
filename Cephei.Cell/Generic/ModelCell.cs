@@ -15,9 +15,24 @@ namespace Cephei.Cell.Generic
 
         public void Bind (ICell<T> cell)
         {
-            _cell = cell;
-            _cell.Parent = this;
-            Bind();
+            if (_cell != null)
+            {
+                _cell = cell;
+                _cell.Parent = this;
+                foreach (var c in this)
+                {
+                    if (!(c.Value is ITrivial))
+                    {
+                        c.Value.OnChange(CellEvent.Link, this, this, DateTime.Now, null);
+                    }
+                }
+            }
+            else
+            {
+                _cell = cell;
+                _cell.Parent = this;
+                Bind();
+            }
         }
 
         public override IEnumerable<ICellEvent> Dependants
