@@ -247,7 +247,7 @@ module GaussGegenbauerIntegrationFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<GaussGegenbauerIntegration> (c)) :> ICell
-                let format (i : Generic.List<ICell<GaussGegenbauerIntegration>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<GaussGegenbauerIntegration>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

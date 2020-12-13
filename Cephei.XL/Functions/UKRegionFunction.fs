@@ -199,7 +199,7 @@ module UKRegionFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<UKRegion> (c)) :> ICell
-                let format (i : Generic.List<ICell<UKRegion>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<UKRegion>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

@@ -865,7 +865,7 @@ module DiscreteAveragingAsianOptionFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<DiscreteAveragingAsianOption> (c)) :> ICell
-                let format (i : Generic.List<ICell<DiscreteAveragingAsianOption>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<DiscreteAveragingAsianOption>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

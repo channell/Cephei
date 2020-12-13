@@ -103,7 +103,7 @@ module HongKongFunction =
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
                 let builder (current : ICell) = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).AddedHolidays
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_HongKong.source + ".AddedHolidays") 
 
@@ -114,7 +114,7 @@ module HongKongFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -777,7 +777,7 @@ module HongKongFunction =
                 let _HongKong = Helper.toCell<HongKong> hongkong "HongKong"  
                 let builder (current : ICell) = withMnemonic mnemonic ((HongKongModel.Cast _HongKong.cell).RemovedHolidays
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_HongKong.source + ".RemovedHolidays") 
 
@@ -788,7 +788,7 @@ module HongKongFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -858,7 +858,7 @@ module HongKongFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<HongKong> (c)) :> ICell
-                let format (i : Generic.List<ICell<HongKong>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<HongKong>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

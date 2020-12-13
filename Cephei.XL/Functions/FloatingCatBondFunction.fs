@@ -545,7 +545,7 @@ module FloatingCatBondFunction =
                 let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder (current : ICell) = withMnemonic mnemonic ((FloatingCatBondModel.Cast _FloatingCatBond.cell).Cashflows
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_FloatingCatBond.source + ".Cashflows") 
 
@@ -556,7 +556,7 @@ module FloatingCatBondFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1217,7 +1217,7 @@ module FloatingCatBondFunction =
                 let _FloatingCatBond = Helper.toCell<FloatingCatBond> floatingcatbond "FloatingCatBond"  
                 let builder (current : ICell) = withMnemonic mnemonic ((FloatingCatBondModel.Cast _FloatingCatBond.cell).Redemptions
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_FloatingCatBond.source + ".Redemptions") 
 
@@ -1228,7 +1228,7 @@ module FloatingCatBondFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1820,7 +1820,7 @@ module FloatingCatBondFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<FloatingCatBond> (c)) :> ICell
-                let format (i : Generic.List<ICell<FloatingCatBond>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<FloatingCatBond>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

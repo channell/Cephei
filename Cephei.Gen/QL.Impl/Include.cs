@@ -19,7 +19,7 @@ namespace Cephei.Gen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL.Impl\Include.tt"
+    #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Include.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class Include : IncludeBase
     {
@@ -30,7 +30,7 @@ namespace Cephei.Gen
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL.Impl\Include.tt"
+            #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Include.tt"
 /* 
 Name:           Cpp.tt
 Author:         Stephen Channell
@@ -41,7 +41,7 @@ Description:    Generate Cpp files to include the actual C++ code into smaller c
             #line hidden
             this.Write("\r\n");
             
-            #line 16 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL.Impl\Include.tt"
+            #line 16 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Include.tt"
 
     
     Context.RootName = RootPackageName;
@@ -68,14 +68,14 @@ Description:    Generate Cpp files to include the actual C++ code into smaller c
             #line hidden
             this.Write(" \r\n#include \"");
             
-            #line 37 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL.Impl\Include.tt"
+            #line 37 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Include.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pair.Value.Name));
             
             #line default
             #line hidden
             this.Write(".hpp\"\r\n");
             
-            #line 38 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL.Impl\Include.tt"
+            #line 38 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Include.tt"
 
         }
     }
@@ -84,7 +84,7 @@ Description:    Generate Cpp files to include the actual C++ code into smaller c
             #line default
             #line hidden
             
-            #line 42 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL.Impl\Include.tt"
+            #line 42 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Include.tt"
   
             
             #line default
@@ -92,7 +92,7 @@ Description:    Generate Cpp files to include the actual C++ code into smaller c
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 43 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL.Impl\Include.tt"
+        #line 43 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Include.tt"
 
 		public Context Context = new Context();
 
@@ -108,7 +108,7 @@ Description:    Generate Cpp files to include the actual C++ code into smaller c
         #line default
         #line hidden
         
-        #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL.Impl\Include.tt"
+        #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL.Impl\Include.tt"
 
 private string _RootPackageNameField;
 

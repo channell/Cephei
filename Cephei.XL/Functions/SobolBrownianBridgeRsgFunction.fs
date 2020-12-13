@@ -275,7 +275,7 @@ module SobolBrownianBridgeRsgFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<SobolBrownianBridgeRsg> (c)) :> ICell
-                let format (i : Generic.List<ICell<SobolBrownianBridgeRsg>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<SobolBrownianBridgeRsg>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

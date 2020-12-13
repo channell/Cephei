@@ -214,7 +214,7 @@ module ZeroCouponBondFunction =
                 let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let builder (current : ICell) = withMnemonic mnemonic ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).Cashflows
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_ZeroCouponBond.source + ".Cashflows") 
 
@@ -225,7 +225,7 @@ module ZeroCouponBondFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -886,7 +886,7 @@ module ZeroCouponBondFunction =
                 let _ZeroCouponBond = Helper.toCell<ZeroCouponBond> zerocouponbond "ZeroCouponBond"  
                 let builder (current : ICell) = withMnemonic mnemonic ((ZeroCouponBondModel.Cast _ZeroCouponBond.cell).Redemptions
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_ZeroCouponBond.source + ".Redemptions") 
 
@@ -897,7 +897,7 @@ module ZeroCouponBondFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1489,7 +1489,7 @@ module ZeroCouponBondFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<ZeroCouponBond> (c)) :> ICell
-                let format (i : Generic.List<ICell<ZeroCouponBond>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<ZeroCouponBond>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

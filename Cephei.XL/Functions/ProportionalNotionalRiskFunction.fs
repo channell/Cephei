@@ -151,7 +151,7 @@ module ProportionalNotionalRiskFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<ProportionalNotionalRisk> (c)) :> ICell
-                let format (i : Generic.List<ICell<ProportionalNotionalRisk>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<ProportionalNotionalRisk>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

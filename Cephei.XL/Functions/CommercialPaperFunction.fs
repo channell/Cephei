@@ -136,7 +136,7 @@ module CommercialPaperFunction =
                 let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
                 let builder (current : ICell) = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).FixedLeg
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_CommercialPaper.source + ".FixedLeg") 
 
@@ -147,7 +147,7 @@ module CommercialPaperFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -172,7 +172,7 @@ module CommercialPaperFunction =
                 let _CommercialPaper = Helper.toCell<CommercialPaper> commercialpaper "CommercialPaper"  
                 let builder (current : ICell) = withMnemonic mnemonic ((CommercialPaperModel.Cast _CommercialPaper.cell).PrincipalLeg
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_CommercialPaper.source + ".PrincipalLeg") 
 
@@ -183,7 +183,7 @@ module CommercialPaperFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -475,7 +475,7 @@ module CommercialPaperFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<CommercialPaper> (c)) :> ICell
-                let format (i : Generic.List<ICell<CommercialPaper>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<CommercialPaper>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

@@ -219,7 +219,7 @@ module CreditDefaultSwapFunction =
                 let _CreditDefaultSwap = Helper.toCell<CreditDefaultSwap> creditdefaultswap "CreditDefaultSwap"  
                 let builder (current : ICell) = withMnemonic mnemonic ((CreditDefaultSwapModel.Cast _CreditDefaultSwap.cell).Coupons
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_CreditDefaultSwap.source + ".Coupons") 
 
@@ -230,7 +230,7 @@ module CreditDefaultSwapFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1342,7 +1342,7 @@ module CreditDefaultSwapFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<CreditDefaultSwap> (c)) :> ICell
-                let format (i : Generic.List<ICell<CreditDefaultSwap>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<CreditDefaultSwap>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

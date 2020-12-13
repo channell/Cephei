@@ -123,7 +123,7 @@ module RangeAccrualFloatersCouponFunction =
                 let _RangeAccrualFloatersCoupon = Helper.toCell<RangeAccrualFloatersCoupon> rangeaccrualfloaterscoupon "RangeAccrualFloatersCoupon"  
                 let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualFloatersCouponModel.Cast _RangeAccrualFloatersCoupon.cell).ObservationDates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<Date>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_RangeAccrualFloatersCoupon.source + ".ObservationDates") 
 
@@ -1945,7 +1945,7 @@ module RangeAccrualFloatersCouponFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<RangeAccrualFloatersCoupon> (c)) :> ICell
-                let format (i : Generic.List<ICell<RangeAccrualFloatersCoupon>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<RangeAccrualFloatersCoupon>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

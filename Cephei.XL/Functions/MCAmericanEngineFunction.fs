@@ -164,7 +164,7 @@ module MCAmericanEngineFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<MCAmericanEngine> (c)) :> ICell
-                let format (i : Generic.List<ICell<MCAmericanEngine>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<MCAmericanEngine>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

@@ -523,7 +523,7 @@ module RONCurrencyFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<RONCurrency> (c)) :> ICell
-                let format (i : Generic.List<ICell<RONCurrency>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<RONCurrency>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

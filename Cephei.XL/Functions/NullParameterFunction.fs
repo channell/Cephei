@@ -361,7 +361,7 @@ module NullParameterFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<NullParameter> (c)) :> ICell
-                let format (i : Generic.List<ICell<NullParameter>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<NullParameter>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

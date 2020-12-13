@@ -434,7 +434,7 @@ module JarrowRuddFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<JarrowRudd> (c)) :> ICell
-                let format (i : Generic.List<ICell<JarrowRudd>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<JarrowRudd>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

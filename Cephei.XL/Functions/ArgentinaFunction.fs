@@ -98,7 +98,7 @@ module ArgentinaFunction =
                 let _Argentina = Helper.toCell<Argentina> argentina "Argentina"  
                 let builder (current : ICell) = withMnemonic mnemonic ((ArgentinaModel.Cast _Argentina.cell).AddedHolidays
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<Date>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_Argentina.source + ".AddedHolidays") 
 
@@ -772,7 +772,7 @@ module ArgentinaFunction =
                 let _Argentina = Helper.toCell<Argentina> argentina "Argentina"  
                 let builder (current : ICell) = withMnemonic mnemonic ((ArgentinaModel.Cast _Argentina.cell).RemovedHolidays
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<Date>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_Argentina.source + ".RemovedHolidays") 
 
@@ -853,7 +853,7 @@ module ArgentinaFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<Argentina> (c)) :> ICell
-                let format (i : Generic.List<ICell<Argentina>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<Argentina>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

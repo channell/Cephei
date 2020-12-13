@@ -1076,7 +1076,7 @@ module FuturesRateHelperFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<FuturesRateHelper> (c)) :> ICell
-                let format (i : Generic.List<ICell<FuturesRateHelper>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<FuturesRateHelper>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

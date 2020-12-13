@@ -169,7 +169,7 @@ module SwapFunction =
                 let builder (current : ICell) = withMnemonic mnemonic ((SwapModel.Cast _Swap.cell).Leg
                                                             _j.cell 
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_Swap.source + ".Leg") 
 
@@ -182,7 +182,7 @@ module SwapFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -824,7 +824,7 @@ module SwapFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<Swap> (c)) :> ICell
-                let format (i : Generic.List<ICell<Swap>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<Swap>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

@@ -766,7 +766,7 @@ module MatrixFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<Matrix> (c)) :> ICell
-                let format (i : Generic.List<ICell<Matrix>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<Matrix>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

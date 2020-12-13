@@ -593,7 +593,7 @@ module YoYInflationCapFloorFunction =
                 let _YoYInflationCapFloor = Helper.toCell<YoYInflationCapFloor> yoyinflationcapfloor "YoYInflationCapFloor"  
                 let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCapFloorModel.Cast _YoYInflationCapFloor.cell).YoyLeg
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_YoYInflationCapFloor.source + ".YoyLeg") 
 
@@ -604,7 +604,7 @@ module YoYInflationCapFloorFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -860,7 +860,7 @@ module YoYInflationCapFloorFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<YoYInflationCapFloor> (c)) :> ICell
-                let format (i : Generic.List<ICell<YoYInflationCapFloor>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<YoYInflationCapFloor>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

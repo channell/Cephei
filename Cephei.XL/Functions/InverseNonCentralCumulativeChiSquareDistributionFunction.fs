@@ -151,7 +151,7 @@ module InverseNonCentralCumulativeChiSquareDistributionFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<InverseNonCentralCumulativeChiSquareDistribution> (c)) :> ICell
-                let format (i : Generic.List<ICell<InverseNonCentralCumulativeChiSquareDistribution>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<InverseNonCentralCumulativeChiSquareDistribution>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

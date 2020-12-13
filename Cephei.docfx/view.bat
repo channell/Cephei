@@ -1,1 +1,1 @@
-..\packages\docfx.console.2.56.2\tools\docfx serve _site 
+..\packages\docfx.console.2.56.5\tools\docfx serve _site 

@@ -88,7 +88,7 @@ module FixedRateLegFunction =
                 let _FixedRateLeg = Helper.toCell<FixedRateLeg> fixedrateleg "FixedRateLeg"  
                 let builder (current : ICell) = withMnemonic mnemonic ((FixedRateLegModel.Cast _FixedRateLeg.cell).Value
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_FixedRateLeg.source + ".Value") 
 
@@ -99,7 +99,7 @@ module FixedRateLegFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -847,7 +847,7 @@ module FixedRateLegFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<FixedRateLeg> (c)) :> ICell
-                let format (i : Generic.List<ICell<FixedRateLeg>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<FixedRateLeg>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

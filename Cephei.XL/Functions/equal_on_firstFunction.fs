@@ -104,7 +104,7 @@ module equal_on_firstFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<equal_on_first> (c)) :> ICell
-                let format (i : Generic.List<ICell<equal_on_first>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<equal_on_first>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

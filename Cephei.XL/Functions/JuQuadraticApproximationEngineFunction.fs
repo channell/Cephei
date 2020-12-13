@@ -98,7 +98,7 @@ module JuQuadraticApproximationEngineFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<JuQuadraticApproximationEngine> (c)) :> ICell
-                let format (i : Generic.List<ICell<JuQuadraticApproximationEngine>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<JuQuadraticApproximationEngine>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

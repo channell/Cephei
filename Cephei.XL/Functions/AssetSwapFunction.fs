@@ -281,7 +281,7 @@ module AssetSwapFunction =
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).BondLeg
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".BondLeg") 
 
@@ -292,7 +292,7 @@ module AssetSwapFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -461,7 +461,7 @@ module AssetSwapFunction =
                 let _AssetSwap = Helper.toCell<AssetSwap> assetswap "AssetSwap"  
                 let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).FloatingLeg
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".FloatingLeg") 
 
@@ -472,7 +472,7 @@ module AssetSwapFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -833,7 +833,7 @@ module AssetSwapFunction =
                 let builder (current : ICell) = withMnemonic mnemonic ((AssetSwapModel.Cast _AssetSwap.cell).Leg
                                                             _j.cell 
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_AssetSwap.source + ".Leg") 
 
@@ -846,7 +846,7 @@ module AssetSwapFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1378,7 +1378,7 @@ module AssetSwapFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<AssetSwap> (c)) :> ICell
-                let format (i : Generic.List<ICell<AssetSwap>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<AssetSwap>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

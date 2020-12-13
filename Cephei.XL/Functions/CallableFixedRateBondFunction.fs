@@ -640,7 +640,7 @@ module CallableFixedRateBondFunction =
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
                 let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).Cashflows
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".Cashflows") 
 
@@ -651,7 +651,7 @@ module CallableFixedRateBondFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1312,7 +1312,7 @@ module CallableFixedRateBondFunction =
                 let _CallableFixedRateBond = Helper.toCell<CallableFixedRateBond> callablefixedratebond "CallableFixedRateBond"  
                 let builder (current : ICell) = withMnemonic mnemonic ((CallableFixedRateBondModel.Cast _CallableFixedRateBond.cell).Redemptions
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_CallableFixedRateBond.source + ".Redemptions") 
 
@@ -1323,7 +1323,7 @@ module CallableFixedRateBondFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1915,7 +1915,7 @@ module CallableFixedRateBondFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<CallableFixedRateBond> (c)) :> ICell
-                let format (i : Generic.List<ICell<CallableFixedRateBond>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<CallableFixedRateBond>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

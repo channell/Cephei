@@ -23,6 +23,7 @@ open Cephei.Cell.Generic
 open System.Collections
 open QLNet
 open System
+open System.Runtime.CompilerServices
 
 // Summary : Date dependant models need to have the evaluation date injected
 type IDateDependant =

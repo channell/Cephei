@@ -147,7 +147,7 @@ module ItalyFunction =
                 let _Italy = Helper.toCell<Italy> italy "Italy"  
                 let builder (current : ICell) = withMnemonic mnemonic ((ItalyModel.Cast _Italy.cell).AddedHolidays
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_Italy.source + ".AddedHolidays") 
 
@@ -158,7 +158,7 @@ module ItalyFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -821,7 +821,7 @@ module ItalyFunction =
                 let _Italy = Helper.toCell<Italy> italy "Italy"  
                 let builder (current : ICell) = withMnemonic mnemonic ((ItalyModel.Cast _Italy.cell).RemovedHolidays
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_Italy.source + ".RemovedHolidays") 
 
@@ -832,7 +832,7 @@ module ItalyFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -902,7 +902,7 @@ module ItalyFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<Italy> (c)) :> ICell
-                let format (i : Generic.List<ICell<Italy>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<Italy>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

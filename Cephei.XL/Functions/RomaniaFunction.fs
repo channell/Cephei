@@ -97,7 +97,7 @@ module RomaniaFunction =
                 let _Romania = Helper.toCell<Romania> romania "Romania"  
                 let builder (current : ICell) = withMnemonic mnemonic ((RomaniaModel.Cast _Romania.cell).AddedHolidays
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_Romania.source + ".AddedHolidays") 
 
@@ -108,7 +108,7 @@ module RomaniaFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -771,7 +771,7 @@ module RomaniaFunction =
                 let _Romania = Helper.toCell<Romania> romania "Romania"  
                 let builder (current : ICell) = withMnemonic mnemonic ((RomaniaModel.Cast _Romania.cell).RemovedHolidays
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_Romania.source + ".RemovedHolidays") 
 
@@ -782,7 +782,7 @@ module RomaniaFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -852,7 +852,7 @@ module RomaniaFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<Romania> (c)) :> ICell
-                let format (i : Generic.List<ICell<Romania>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<Romania>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

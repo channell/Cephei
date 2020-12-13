@@ -51,7 +51,7 @@ module yoyInflationLegFunction =
                 let _yoyInflationLeg = Helper.toCell<yoyInflationLeg> yoyinflationleg "yoyInflationLeg"  
                 let builder (current : ICell) = withMnemonic mnemonic ((yoyInflationLegModel.Cast _yoyInflationLeg.cell).Value
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_yoyInflationLeg.source + ".Value") 
 
@@ -62,7 +62,7 @@ module yoyInflationLegFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -733,7 +733,7 @@ module yoyInflationLegFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<yoyInflationLeg> (c)) :> ICell
-                let format (i : Generic.List<ICell<yoyInflationLeg>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<yoyInflationLeg>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

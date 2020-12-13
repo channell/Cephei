@@ -82,7 +82,7 @@ module WeekendsOnlyFunction =
                 let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let builder (current : ICell) = withMnemonic mnemonic ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).AddedHolidays
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_WeekendsOnly.source + ".AddedHolidays") 
 
@@ -93,7 +93,7 @@ module WeekendsOnlyFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -756,7 +756,7 @@ module WeekendsOnlyFunction =
                 let _WeekendsOnly = Helper.toCell<WeekendsOnly> weekendsonly "WeekendsOnly"  
                 let builder (current : ICell) = withMnemonic mnemonic ((WeekendsOnlyModel.Cast _WeekendsOnly.cell).RemovedHolidays
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_WeekendsOnly.source + ".RemovedHolidays") 
 
@@ -767,7 +767,7 @@ module WeekendsOnlyFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -837,7 +837,7 @@ module WeekendsOnlyFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<WeekendsOnly> (c)) :> ICell
-                let format (i : Generic.List<ICell<WeekendsOnly>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<WeekendsOnly>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

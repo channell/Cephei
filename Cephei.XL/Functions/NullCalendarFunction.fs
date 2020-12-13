@@ -82,7 +82,7 @@ module NullCalendarFunction =
                 let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
                 let builder (current : ICell) = withMnemonic mnemonic ((NullCalendarModel.Cast _NullCalendar.cell).AddedHolidays
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_NullCalendar.source + ".AddedHolidays") 
 
@@ -93,7 +93,7 @@ module NullCalendarFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -756,7 +756,7 @@ module NullCalendarFunction =
                 let _NullCalendar = Helper.toCell<NullCalendar> nullcalendar "NullCalendar"  
                 let builder (current : ICell) = withMnemonic mnemonic ((NullCalendarModel.Cast _NullCalendar.cell).RemovedHolidays
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_NullCalendar.source + ".RemovedHolidays") 
 
@@ -767,7 +767,7 @@ module NullCalendarFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -837,7 +837,7 @@ module NullCalendarFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<NullCalendar> (c)) :> ICell
-                let format (i : Generic.List<ICell<NullCalendar>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<NullCalendar>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

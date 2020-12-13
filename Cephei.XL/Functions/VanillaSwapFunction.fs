@@ -159,7 +159,7 @@ module VanillaSwapFunction =
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
                 let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).FixedLeg
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_VanillaSwap.source + ".FixedLeg") 
 
@@ -170,7 +170,7 @@ module VanillaSwapFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -375,7 +375,7 @@ module VanillaSwapFunction =
                 let _VanillaSwap = Helper.toCell<VanillaSwap> vanillaswap "VanillaSwap"  
                 let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).FloatingLeg
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_VanillaSwap.source + ".FloatingLeg") 
 
@@ -386,7 +386,7 @@ module VanillaSwapFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -886,7 +886,7 @@ module VanillaSwapFunction =
                 let builder (current : ICell) = withMnemonic mnemonic ((VanillaSwapModel.Cast _VanillaSwap.cell).Leg
                                                             _j.cell 
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_VanillaSwap.source + ".Leg") 
 
@@ -899,7 +899,7 @@ module VanillaSwapFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1431,7 +1431,7 @@ module VanillaSwapFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<VanillaSwap> (c)) :> ICell
-                let format (i : Generic.List<ICell<VanillaSwap>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<VanillaSwap>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

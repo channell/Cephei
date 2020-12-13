@@ -230,7 +230,7 @@ module ConstantDefaultIntensityFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<ConstantDefaultIntensity> (c)) :> ICell
-                let format (i : Generic.List<ICell<ConstantDefaultIntensity>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<ConstantDefaultIntensity>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

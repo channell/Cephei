@@ -161,7 +161,7 @@ module BlackVarianceSurfaceFunction =
                 let _BlackVarianceSurface = Helper.toCell<BlackVarianceSurface> blackvariancesurface "BlackVarianceSurface"  
                 let builder (current : ICell) = withMnemonic mnemonic ((BlackVarianceSurfaceModel.Cast _BlackVarianceSurface.cell).Dates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_BlackVarianceSurface.source + ".Dates") 
 
@@ -172,7 +172,7 @@ module BlackVarianceSurfaceFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -570,7 +570,7 @@ module BlackVarianceSurfaceFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<BlackVarianceSurface> (c)) :> ICell
-                let format (i : Generic.List<ICell<BlackVarianceSurface>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<BlackVarianceSurface>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

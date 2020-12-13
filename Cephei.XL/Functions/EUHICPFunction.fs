@@ -1011,7 +1011,7 @@ module EUHICPFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<EUHICP> (c)) :> ICell
-                let format (i : Generic.List<ICell<EUHICP>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<EUHICP>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

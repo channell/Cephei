@@ -231,7 +231,7 @@ module ZeroCouponInflationSwapFunction =
                 let _ZeroCouponInflationSwap = Helper.toCell<ZeroCouponInflationSwap> zerocouponinflationswap "ZeroCouponInflationSwap"  
                 let builder (current : ICell) = withMnemonic mnemonic ((ZeroCouponInflationSwapModel.Cast _ZeroCouponInflationSwap.cell).FixedLeg
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_ZeroCouponInflationSwap.source + ".FixedLeg") 
 
@@ -242,7 +242,7 @@ module ZeroCouponInflationSwapFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -447,7 +447,7 @@ module ZeroCouponInflationSwapFunction =
                 let _ZeroCouponInflationSwap = Helper.toCell<ZeroCouponInflationSwap> zerocouponinflationswap "ZeroCouponInflationSwap"  
                 let builder (current : ICell) = withMnemonic mnemonic ((ZeroCouponInflationSwapModel.Cast _ZeroCouponInflationSwap.cell).InflationLeg
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_ZeroCouponInflationSwap.source + ".InflationLeg") 
 
@@ -458,7 +458,7 @@ module ZeroCouponInflationSwapFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -940,7 +940,7 @@ module ZeroCouponInflationSwapFunction =
                 let builder (current : ICell) = withMnemonic mnemonic ((ZeroCouponInflationSwapModel.Cast _ZeroCouponInflationSwap.cell).Leg
                                                             _j.cell 
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_ZeroCouponInflationSwap.source + ".Leg") 
 
@@ -953,7 +953,7 @@ module ZeroCouponInflationSwapFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1413,7 +1413,7 @@ module ZeroCouponInflationSwapFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<ZeroCouponInflationSwap> (c)) :> ICell
-                let format (i : Generic.List<ICell<ZeroCouponInflationSwap>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<ZeroCouponInflationSwap>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

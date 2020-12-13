@@ -195,7 +195,7 @@ module InterpolatedSmileSectionFunction =
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
                 let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Dates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".Dates") 
 
@@ -206,7 +206,7 @@ module InterpolatedSmileSectionFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -231,7 +231,7 @@ module InterpolatedSmileSectionFunction =
                 let _InterpolatedSmileSection = Helper.toCell<InterpolatedSmileSection> interpolatedsmilesection "InterpolatedSmileSection"  
                 let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSmileSectionModel.Cast _InterpolatedSmileSection.cell).Dates_
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_InterpolatedSmileSection.source + ".Dates_") 
 
@@ -242,7 +242,7 @@ module InterpolatedSmileSectionFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1618,7 +1618,7 @@ module InterpolatedSmileSectionFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<InterpolatedSmileSection> (c)) :> ICell
-                let format (i : Generic.List<ICell<InterpolatedSmileSection>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<InterpolatedSmileSection>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

@@ -1300,7 +1300,7 @@ module SwaptionVolCube1xFunction =
                 let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = withMnemonic mnemonic ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).VolSpreads
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Generic.List<ICell<Handle<Quote>>>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Generic.List<ICell<Handle<Quote>>>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_SwaptionVolCube1x.source + ".VolSpreads") 
 
@@ -1311,7 +1311,7 @@ module SwaptionVolCube1xFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1378,7 +1378,7 @@ module SwaptionVolCube1xFunction =
                 let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = withMnemonic mnemonic ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).OptionDates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_SwaptionVolCube1x.source + ".OptionDates") 
 
@@ -1389,7 +1389,7 @@ module SwaptionVolCube1xFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1414,7 +1414,7 @@ module SwaptionVolCube1xFunction =
                 let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = withMnemonic mnemonic ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).OptionTenors
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Period>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Period>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_SwaptionVolCube1x.source + ".OptionTenors") 
 
@@ -1425,7 +1425,7 @@ module SwaptionVolCube1xFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1522,7 +1522,7 @@ module SwaptionVolCube1xFunction =
                 let _SwaptionVolCube1x = Helper.toCell<SwaptionVolCube1x> swaptionvolcube1x "SwaptionVolCube1x"  
                 let builder (current : ICell) = withMnemonic mnemonic ((SwaptionVolCube1xModel.Cast _SwaptionVolCube1x.cell).SwapTenors
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Period>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Period>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_SwaptionVolCube1x.source + ".SwapTenors") 
 
@@ -1533,7 +1533,7 @@ module SwaptionVolCube1xFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -3205,7 +3205,7 @@ module SwaptionVolCube1xFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<SwaptionVolCube1x> (c)) :> ICell
-                let format (i : Generic.List<ICell<SwaptionVolCube1x>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<SwaptionVolCube1x>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

@@ -120,7 +120,7 @@ module BackwardflatLinearFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<BackwardflatLinear> (c)) :> ICell
-                let format (i : Generic.List<ICell<BackwardflatLinear>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<BackwardflatLinear>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

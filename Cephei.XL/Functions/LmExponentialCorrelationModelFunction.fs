@@ -322,7 +322,7 @@ module LmExponentialCorrelationModelFunction =
                 let _LmExponentialCorrelationModel = Helper.toCell<LmExponentialCorrelationModel> lmexponentialcorrelationmodel "LmExponentialCorrelationModel"  
                 let builder (current : ICell) = withMnemonic mnemonic ((LmExponentialCorrelationModelModel.Cast _LmExponentialCorrelationModel.cell).Parameters
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Parameter>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Parameter>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_LmExponentialCorrelationModel.source + ".Parameters") 
 
@@ -333,7 +333,7 @@ module LmExponentialCorrelationModelFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -439,7 +439,7 @@ module LmExponentialCorrelationModelFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<LmExponentialCorrelationModel> (c)) :> ICell
-                let format (i : Generic.List<ICell<LmExponentialCorrelationModel>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<LmExponentialCorrelationModel>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

@@ -416,7 +416,7 @@ module AverageBasketPayoffFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<AverageBasketPayoff> (c)) :> ICell
-                let format (i : Generic.List<ICell<AverageBasketPayoff>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<AverageBasketPayoff>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

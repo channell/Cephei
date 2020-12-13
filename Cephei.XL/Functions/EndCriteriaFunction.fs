@@ -649,7 +649,7 @@ module EndCriteriaFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<EndCriteria> (c)) :> ICell
-                let format (i : Generic.List<ICell<EndCriteria>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<EndCriteria>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

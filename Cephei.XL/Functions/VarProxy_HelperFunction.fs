@@ -217,7 +217,7 @@ module VarProxy_HelperFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<VarProxy_Helper> (c)) :> ICell
-                let format (i : Generic.List<ICell<VarProxy_Helper>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<VarProxy_Helper>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

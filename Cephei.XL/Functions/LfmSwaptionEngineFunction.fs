@@ -303,7 +303,7 @@ module LfmSwaptionEngineFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<LfmSwaptionEngine> (c)) :> ICell
-                let format (i : Generic.List<ICell<LfmSwaptionEngine>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<LfmSwaptionEngine>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

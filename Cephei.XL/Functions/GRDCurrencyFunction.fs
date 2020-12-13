@@ -523,7 +523,7 @@ module GRDCurrencyFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<GRDCurrency> (c)) :> ICell
-                let format (i : Generic.List<ICell<GRDCurrency>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<GRDCurrency>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

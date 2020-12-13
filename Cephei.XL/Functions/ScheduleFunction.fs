@@ -243,7 +243,7 @@ module ScheduleFunction =
                 let _Schedule = Helper.toCell<Schedule> schedule "Schedule"  
                 let builder (current : ICell) = withMnemonic mnemonic ((ScheduleModel.Cast _Schedule.cell).Dates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<Date>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_Schedule.source + ".Dates") 
 
@@ -1035,7 +1035,7 @@ module ScheduleFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<Schedule> (c)) :> ICell
-                let format (i : Generic.List<ICell<Schedule>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<Schedule>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

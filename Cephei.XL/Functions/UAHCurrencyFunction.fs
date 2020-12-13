@@ -523,7 +523,7 @@ module UAHCurrencyFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<UAHCurrency> (c)) :> ICell
-                let format (i : Generic.List<ICell<UAHCurrency>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<UAHCurrency>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

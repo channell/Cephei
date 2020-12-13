@@ -290,7 +290,7 @@ module MethodOfLinesSchemeFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<MethodOfLinesScheme> (c)) :> ICell
-                let format (i : Generic.List<ICell<MethodOfLinesScheme>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<MethodOfLinesScheme>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

@@ -828,7 +828,7 @@ module FdmBlackScholesOpFunction =
                 let _FdmBlackScholesOp = Helper.toCell<FdmBlackScholesOp> fdmblackscholesop "FdmBlackScholesOp"  
                 let builder (current : ICell) = withMnemonic mnemonic ((FdmBlackScholesOpModel.Cast _FdmBlackScholesOp.cell).ToMatrixDecomp
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<SparseMatrix>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<SparseMatrix>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_FdmBlackScholesOp.source + ".ToMatrixDecomp") 
 
@@ -839,7 +839,7 @@ module FdmBlackScholesOpFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -903,7 +903,7 @@ module FdmBlackScholesOpFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<FdmBlackScholesOp> (c)) :> ICell
-                let format (i : Generic.List<ICell<FdmBlackScholesOp>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<FdmBlackScholesOp>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

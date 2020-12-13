@@ -218,7 +218,7 @@ module YoYInflationBachelierCapFloorEngineFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<YoYInflationBachelierCapFloorEngine> (c)) :> ICell
-                let format (i : Generic.List<ICell<YoYInflationBachelierCapFloorEngine>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<YoYInflationBachelierCapFloorEngine>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

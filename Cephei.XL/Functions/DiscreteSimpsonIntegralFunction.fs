@@ -102,7 +102,7 @@ module DiscreteSimpsonIntegralFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<DiscreteSimpsonIntegral> (c)) :> ICell
-                let format (i : Generic.List<ICell<DiscreteSimpsonIntegral>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<DiscreteSimpsonIntegral>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

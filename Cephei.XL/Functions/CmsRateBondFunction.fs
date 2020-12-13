@@ -256,7 +256,7 @@ module CmsRateBondFunction =
                 let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder (current : ICell) = withMnemonic mnemonic ((CmsRateBondModel.Cast _CmsRateBond.cell).Cashflows
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".Cashflows") 
 
@@ -267,7 +267,7 @@ module CmsRateBondFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -928,7 +928,7 @@ module CmsRateBondFunction =
                 let _CmsRateBond = Helper.toCell<CmsRateBond> cmsratebond "CmsRateBond"  
                 let builder (current : ICell) = withMnemonic mnemonic ((CmsRateBondModel.Cast _CmsRateBond.cell).Redemptions
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_CmsRateBond.source + ".Redemptions") 
 
@@ -939,7 +939,7 @@ module CmsRateBondFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1531,7 +1531,7 @@ module CmsRateBondFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<CmsRateBond> (c)) :> ICell
-                let format (i : Generic.List<ICell<CmsRateBond>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<CmsRateBond>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

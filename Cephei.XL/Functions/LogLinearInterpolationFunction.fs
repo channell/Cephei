@@ -637,7 +637,7 @@ module LogLinearInterpolationFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<LogLinearInterpolation> (c)) :> ICell
-                let format (i : Generic.List<ICell<LogLinearInterpolation>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<LogLinearInterpolation>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

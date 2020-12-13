@@ -7,6 +7,7 @@ open Cephei.Cell
 open Cephei.Cell.Generic
 open System.Collections
 open QLNet
+open System.Reflection
 
 module Helper = 
 
@@ -42,8 +43,8 @@ module Helper =
         (new RTDModelObserver<'t> (rtd, (model :?> ICell<'t>), format, layout)) :> IDisposable
 
     // Summary: Subscription helper
-    let subscriberModelRange<'t> (format : Generic.List<ICell<'t>> -> string -> obj[,]) (rtd : IValueRTD) (models : ICell) (layout : string) =
-        (new RTDModelRangeObserver<'t> (rtd, (models :?> ICell<Generic.List<ICell<'t>>>), format, layout)) :> IDisposable
+    let subscriberModelRange<'t> (format : Cephei.Cell.List<'t> -> string -> obj[,]) (rtd : IValueRTD) (models : ICell) (layout : string) =
+        (new RTDModelRangeObserver<'t> (rtd, (models :?> Cephei.Cell.List<'t>), format, layout)) :> IDisposable
 
 
     // Summary: Convert the excel value orreference to a cell
@@ -400,57 +401,72 @@ module Helper =
         let fromMatrix (o : Generic.List<Generic.List<'o>>) (layout : string) : obj[,] =
             let x = o.Count
             let y = o |> Seq.fold (fun a y -> if y.Count > a then y.Count else a) 0
+            let setter range x y o =
+                try
+                    Array2D.set range x y  (o :> obj)
+                with
+                | _ -> Array2D.set range x y ("#NA" :> obj)
             match layout with
             | "RT"
             | "R"   ->  let range = Array2D.create<obj> x y null
                         seq { for a in 0..x do
                                 for b in 0..y do
                                     (a,b)}
-                        |> Seq.iter (fun (a,b) -> Array2D.set range a b (o.[b].[a] :> obj))
+                        |> Seq.iter (fun (a,b) -> setter range a b o.[b].[a])
                         range
             | _     ->  let range = Array2D.create<obj> x y null
                         seq { for a in 0..x do
                                 for b in 0..y do
                                     (a,b)} |> 
-                        Seq.iter (fun (a,b) -> Array2D.set range a b (o.[a].[b] :> obj))
+                        Seq.iter (fun (a,b) -> setter range a b o.[a].[b])
                         range
 
         let fromCellMatrix (o : ICell<Generic.List<Generic.List<'o>>>) (layout : string) : obj[,] =
             let l = o.Value
             let x = l.Count
             let y = l |> Seq.fold (fun a y -> if y.Count > a then y.Count else a) 0
+            let setter range x y o =
+                try
+                    Array2D.set range x y  (Model.genericFormat o)
+                with
+                | _ -> Array2D.set range x y ("#NA" :> obj)
             match layout with
             | "RT"
             | "R"   ->  let range = Array2D.create<obj> x y null
                         seq { for a in 0..x do
                                 for b in 0..y do
                                     (a,b)}
-                        |> Seq.iter (fun (a,b) -> Array2D.set range a b (Model.genericFormat l.[b].[a]))
+                        |> Seq.iter (fun (a,b) -> setter range a b l.[b].[a])
                         range
             | _     ->  let range = Array2D.create<obj> x y null
                         seq { for a in 0..x do
                                 for b in 0..y do
                                     (a,b)}
-                        |> Seq.iter (fun (a,b) -> Array2D.set range a b (Model.genericFormat l.[a].[b]))
+                        |> Seq.iter (fun (a,b) -> setter range a b l.[a].[b])
                         range
 
         let fromHandleMatrix (o : ICell<Generic.List<Generic.List<Handle<'o>>>>) (layout : string) : obj[,] =
             let l = o.Value
             let x = l.Count
             let y = l |> Seq.fold (fun a y -> if y.Count > a then y.Count else a) 0
+            let setter range x y o =
+                try
+                    Array2D.set range x y  (Model.genericFormat o)
+                with
+                | _ -> Array2D.set range x y ("#NA" :> obj)
             match layout with
             | "RT"
             | "R"   ->  let range = Array2D.create<obj> x y null
                         seq { for a in 0..x do
                                 for b in 0..y do
                                     (a,b)}
-                        |> Seq.iter (fun (a,b) -> Array2D.set range a b (Model.genericFormat l.[b].[a]))
+                        |> Seq.iter (fun (a,b) -> setter range a b l.[b].[a])
                         range
             | _     ->  let range = Array2D.create<obj> x y null
                         seq { for a in 0..x do
                                 for b in 0..y do
                                     (a,b)}
-                        |> Seq.iter (fun (a,b) -> Array2D.set range a b (Model.genericFormat l.[a].[b]))
+                        |> Seq.iter (fun (a,b) -> setter range a b l.[a].[b])
                         range
 
 
@@ -470,20 +486,25 @@ module Helper =
 
         let fromCellArray (cells : ICell<'t> array) (layout : string) : obj[,] =
             let len = cells.Length
+            let setter range x y  (c : ICell<'t>)  =
+                try
+                    Array2D.set range x y  (Model.genericFormat c.Value)
+                with
+                | _ -> Array2D.set range x y ("#NA" :> obj)
             match layout with 
             | "CT"  ->  let range = Array2D.create<obj> len 2 null
                         seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range x 0 (cells.[x].Mnemonic:> obj))
-                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range x 1 (Model.genericFormat cells.[x].Value))
+                        seq {0..len-1} |> Seq.iter (fun x -> setter range x 1 cells.[x])
                         range
             | "RT"  ->  let range = Array2D.create<obj> 2 len null
                         seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range 0 x (cells.[x].Mnemonic:> obj))
-                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range 1 x (Model.genericFormat cells.[x].Value))
+                        seq {0..len-1} |> Seq.iter (fun x -> setter range 1 x cells.[x])
                         range
             | "C"   ->  let range = Array2D.create<obj> len 1 null
-                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range x 0 (Model.genericFormat cells.[x].Value))
+                        seq {0..len-1} |> Seq.iter (fun x -> setter range x 0 cells.[x])
                         range
             | _     ->  let range = Array2D.create<obj> 1 len null
-                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range 0 x (Model.genericFormat cells.[x].Value))
+                        seq {0..len-1} |> Seq.iter (fun x -> setter range 0 x cells.[x])
                         range
 
         let fromModel (m : ICell<'t>) (layout : string) : obj[,] =
@@ -493,23 +514,28 @@ module Helper =
                 Seq.map (fun i -> i.Value) |>
                 Seq.toArray
             let len = cells.Length
+            let setter range x y  (c : ICell)  =
+                try
+                    Array2D.set range x y  (Model.genericFormat c.Box)
+                with
+                | _ -> Array2D.set range x y ("#NA" :> obj)
             match layout with 
             | "CT"  ->  let range = Array2D.create<obj> len 2 null
                         seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range x 0 (cells.[x].Mnemonic:> obj))
-                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range x 1 (Model.genericFormat cells.[x].Box))
+                        seq {0..len-1} |> Seq.iter (fun x -> setter range 1 x cells.[x])
                         range
             | "RT"  ->  let range = Array2D.create<obj> 2 len null
                         seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range 0 x (cells.[x].Mnemonic:> obj))
-                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range 1 x (Model.genericFormat cells.[x].Box))
+                        seq {0..len-1} |> Seq.iter (fun x -> setter range 1 x cells.[x])
                         range
             | "C"   ->  let range = Array2D.create<obj> len 1 null
-                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range x 0 (Model.genericFormat cells.[x].Box))
+                        seq {0..len-1} |> Seq.iter (fun x -> setter range x 0 cells.[x])
                         range
             | _     ->  let range = Array2D.create<obj> 1 len null
-                        seq {0..len-1} |> Seq.iter (fun x -> Array2D.set range 0 x (Model.genericFormat cells.[x].Box))
+                        seq {0..len-1} |> Seq.iter (fun x -> setter range 0 x cells.[x])
                         range
 
-        let fromModelList<'t> (m : Generic.List<ICell<'t>>) (layout : string) : obj[,] =
+        let fromModelList<'t> (m : Cephei.Cell.List<'t>) (layout : string) : obj[,] =
             let models = m |> Seq.map (fun i -> i :?> Model) |> Seq.toArray 
             let len = models.Length 
             if len = 0 then
@@ -535,16 +561,75 @@ module Helper =
                     | _     ->  Array2D.create<obj> cols.Length len null
 
                 let splice (o : Model) (pos : int) =
-                    let setter (c : Model) (s : string) : obj =
+                    
+                    let setter x y (c : Model) (s : string) =
                         try
-                            Model.genericFormat c.[s].Box
+                            Array2D.set range x y (Model.genericFormat c.[s].Box)
                         with
-                        | _ -> null
+                        | e -> Array2D.set range x y ("#NA" :> obj)
                     match layout with
-                    | "CT"  ->  seq {0 ..(cols.Length - 1)} |> Seq.iter (fun x -> Array2D.set range x (pos + 1) (setter o cols.[x]))
-                    | "RT"  ->  seq {0 ..(cols.Length - 1)} |> Seq.iter (fun x -> Array2D.set range (pos + 1) x (setter o cols.[x]))
-                    | "C"   ->  seq {0 ..(cols.Length - 1)} |> Seq.iter (fun x -> Array2D.set range x pos (setter o cols.[x]))
-                    | _     ->  seq {0 ..(cols.Length - 1)} |> Seq.iter (fun x -> Array2D.set range pos x (setter o cols.[x]))
+                    | "CT"  ->  seq {0 ..len-1} |> Seq.iter (fun x -> setter (pos + 1) x o cols.[x])
+                    | "RT"  ->  seq {0 ..len-1} |> Seq.iter (fun x -> setter x (pos + 1) o cols.[x])
+                    | "C"   ->  seq {0 ..len-1} |> Seq.iter (fun x -> setter pos x o cols.[x])
+                    | _     ->  seq {0 ..len-1} |> Seq.iter (fun x -> setter x pos o cols.[x])
 
                 seq {0 .. len - 1} |> Seq.iter (fun x -> splice models.[x] x)
+                range
+
+        let fromList<'t> (l : Generic.List<'t>) (layout : string) : obj[,] =
+            let obs  = l |> Seq.toArray 
+            let len = obs.Length 
+            if len = 0 then
+                Array2D.create<obj> 0 0 null
+            else
+                let typ  = typeof<'t>
+                let methods = 
+                    //typ.GetMethods (BindingFlags.Public ||| BindingFlags.Instance ||| BindingFlags.DeclaredOnly)
+                    typ.GetMethods ()
+                    |> Array.filter (fun i ->  not (i.Name = "GetHashCode" || i.Name = "GetType" || i.Name = "ToString"))
+                    |> Array.filter (fun i -> i.GetParameters().Length = 0)
+                    |> Array.map (fun i -> (i.Name , (fun o -> i.Invoke(o, null))))
+                    |> Array.toList
+                let properties = 
+                    typ.GetProperties()
+                    |> Array.map (fun i -> (i.Name ,(fun o -> i.GetValue(o))))
+                    |> Array.toList
+                let both = 
+                    methods @ properties
+                    |> List.sortBy (fun  (n,f) -> n)
+                    |> List.toArray
+                let cols = 
+                    both 
+                    |> Array.map (fun (n,f) -> n)
+                let frm = 
+                    both 
+                    |> Array.map (fun (n,f) -> f)
+
+                let range = 
+                    match layout with
+                    | "CT"  ->  let r = Array2D.create<obj> (len + 1) cols.Length null
+                                seq {0 .. (cols.Length - 1)} |> Seq.iter (fun x -> Array2D.set r 0 x (Model.genericFormat cols.[x]))
+                                r
+                                
+                    | "RT"  ->  let r =Array2D.create<obj> cols.Length (len + 1) null
+                                seq {0 .. (cols.Length - 1)} |> Seq.iter (fun x -> Array2D.set r x 0 (Model.genericFormat cols.[x]))
+                                r 
+
+                    | "C"   ->  Array2D.create<obj> len cols.Length null
+                    | _     ->  Array2D.create<obj> cols.Length len null
+
+                let splice (o : obj) (pos : int) =
+                    let setter x y  (c : obj) (n : int) =
+                        try
+                            Array2D.set range x y  (Model.genericFormat (frm.[n] c))
+                        with
+                        | _ -> Array2D.set range x y ("#NA" :> obj)
+                    if not (o = null) then 
+                        match layout with
+                        | "CT"  ->  seq {0 ..(cols.Length - 1)} |> Seq.iter (fun x -> setter (pos + 1) x o x)
+                        | "RT"  ->  seq {0 ..(cols.Length - 1)} |> Seq.iter (fun x -> setter x (pos + 1) o x)
+                        | "C"   ->  seq {0 ..(cols.Length - 1)} |> Seq.iter (fun x -> setter pos x o x)
+                        | _     ->  seq {0 ..(cols.Length - 1)} |> Seq.iter (fun x -> setter x pos o x)
+
+                seq {0 .. len - 1} |> Seq.iter (fun x -> splice obs.[x] x)
                 range

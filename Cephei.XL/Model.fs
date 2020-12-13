@@ -32,6 +32,7 @@ module public  Model =
                 else
                     s.Substring(0,min s.Length 255)
             match o with
+            | :? double -> o :> obj
             | :? string -> trim o :> obj
             | :? DateTime as d -> d.ToOADate() :> obj
             | :? QLNet.Date as d -> d.serialNumber() :> obj
@@ -140,12 +141,16 @@ module public  Model =
 
     // Register and get the value of a single obj
     let value (mnemonic : string) : obj =
-        let xlv = xlInterface.ValueRTD mnemonic ""
-        if xlv = null then 
-            add mnemonic |> ignore
-            genericFormat (_state.Value.Model.[mnemonic].Box)
+        if not (mnemonic.StartsWith("#")) then
+            let xlv = xlInterface.ValueRTD mnemonic ""
+            if xlv = null then 
+                add mnemonic |> ignore
+                genericFormat (_state.Value.Model.[mnemonic].Box)
+            else
+                xlv
         else
-            xlv
+            "#+" + mnemonic :> obj
+            
 
     // Register and get the value from a range
     let range (mnemonic : string) (layout : string) : obj[,] =
@@ -249,23 +254,22 @@ module public  Model =
             else    
                 s
 
-        let typeString (o : obj)  =
-            let t = o.GetType().Name
-            if t.Contains("`") then
-                let parse (s,f) y = 
-                    if y = '`' then 
-                        (s,false) 
-                    elif y = '[' then 
-                        (s + "<", true) 
-                    elif y = ']' then 
-                        (s + ">", true) 
-                    elif f then 
-                        (s + (string y),true) 
-                    else 
-                        (s,false)
-                fst (t.ToCharArray() |> Array.fold parse ("",true))
+        let typeString (c : ICell) =
+            let rec genericTypeString (t : Type) =
+                if t.IsGenericType then
+                    let p  = 
+                        t.GetGenericArguments()
+                        |> Array.fold (fun a y -> a + "," + (genericTypeString y)) ""
+                    let q = 
+                        t.ToString().Split('`').[0]
+                    q + "<" + p.Substring(1) + ">"
+                else
+                    t.ToString()
+            let t = c.GetType()
+            if t.IsGenericType then
+                genericTypeString (t.GetGenericArguments().[0])
             else
-                t
+                genericTypeString (t.GetGenericArguments().[0])
 
         let cells = 
             tiers |>
@@ -276,7 +280,7 @@ module public  Model =
             fst (
                 cells |>
                 Array.filter (fun (c,s) -> c.Mnemonic.StartsWith("+")) |>
-                Array.map (fun (c,s) -> sprintf "%s : ICell<%s>\n" (strip c.Mnemonic) (typeString c.Box)) |>
+                Array.map (fun (c,s) -> sprintf "%s : ICell<%s>\n" (strip c.Mnemonic) (typeString c)) |>
                 Array.fold (fun (s,d) y -> (s + "    " + d + y,", ")) ("", "( ") 
                 )
 
@@ -294,13 +298,13 @@ module public  Model =
         let excelParameters = 
             cells |>
             Array.filter (fun (c,s) -> c.Mnemonic.StartsWith("+")) |>
-            Array.map (fun (c,s) -> sprintf "        ([<ExcelArgument(Name=\"__%s\",Description = \"reference to %s\")>]\n        %s : obj)\n" (strip c.Mnemonic) (typeString c.Box) (strip c.Mnemonic)) |>
+            Array.map (fun (c,s) -> sprintf "        ([<ExcelArgument(Name=\"__%s\",Description = \"reference to %s\")>]\n        %s : obj)\n" (strip c.Mnemonic) (typeString c) (strip c.Mnemonic)) |>
             Array.fold (fun a y -> a + y) ""
 
         let excelCasts = 
             cells |>
             Array.filter (fun (c,s) -> c.Mnemonic.StartsWith("+")) |>
-            Array.map (fun (c,s) -> sprintf "                let _%s = Helper.toCell<%s> %s \"%s\"\n" (strip c.Mnemonic) (typeString c.Box) (strip c.Mnemonic) (strip c.Mnemonic)) |>
+            Array.map (fun (c,s) -> sprintf "                let _%s = Helper.toCell<%s> %s \"%s\"\n" (strip c.Mnemonic) (typeString c) (strip c.Mnemonic) (strip c.Mnemonic)) |>
             Array.fold (fun a y -> a + y) ""
 
         let excelBuilder = 
@@ -369,7 +373,7 @@ module public  Model =
         let excelProperties = 
             cells |>
             Array.filter (fun (c,s) -> not (c.Mnemonic.StartsWith("-") || c.Mnemonic.StartsWith("+"))) |>
-            Array.map (fun (c,s) -> formatProperty name c.Mnemonic (c.Box.GetType().ToString())) |>
+            Array.map (fun (c,s) -> formatProperty name c.Mnemonic (typeString c)) |>
             Array.fold (fun a y -> a + y) ""
 
 

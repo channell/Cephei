@@ -159,7 +159,7 @@ module InterpolatedZeroCurveFunction =
                 let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Dates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_InterpolatedZeroCurve.source + ".Dates") 
 
@@ -170,7 +170,7 @@ module InterpolatedZeroCurveFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -195,7 +195,7 @@ module InterpolatedZeroCurveFunction =
                 let _InterpolatedZeroCurve = Helper.toCell<InterpolatedZeroCurve> interpolatedzerocurve "InterpolatedZeroCurve"  
                 let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedZeroCurveModel.Cast _InterpolatedZeroCurve.cell).Dates_
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_InterpolatedZeroCurve.source + ".Dates_") 
 
@@ -206,7 +206,7 @@ module InterpolatedZeroCurveFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -972,7 +972,7 @@ module InterpolatedZeroCurveFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<InterpolatedZeroCurve> (c)) :> ICell
-                let format (i : Generic.List<ICell<InterpolatedZeroCurve>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<InterpolatedZeroCurve>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

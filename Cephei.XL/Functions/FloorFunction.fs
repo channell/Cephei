@@ -184,7 +184,7 @@ module FloorFunction =
                 let _Floor = Helper.toCell<Floor> floor "Floor"  
                 let builder (current : ICell) = withMnemonic mnemonic ((FloorModel.Cast _Floor.cell).FloatingLeg
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_Floor.source + ".FloatingLeg") 
 
@@ -195,7 +195,7 @@ module FloorFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -865,7 +865,7 @@ module FloorFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<Floor> (c)) :> ICell
-                let format (i : Generic.List<ICell<Floor>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<Floor>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

@@ -401,7 +401,7 @@ module BTPFunction =
                 let _BTP = Helper.toCell<BTP> btp "BTP"  
                 let builder (current : ICell) = withMnemonic mnemonic ((BTPModel.Cast _BTP.cell).Cashflows
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_BTP.source + ".Cashflows") 
 
@@ -412,7 +412,7 @@ module BTPFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1073,7 +1073,7 @@ module BTPFunction =
                 let _BTP = Helper.toCell<BTP> btp "BTP"  
                 let builder (current : ICell) = withMnemonic mnemonic ((BTPModel.Cast _BTP.cell).Redemptions
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_BTP.source + ".Redemptions") 
 
@@ -1084,7 +1084,7 @@ module BTPFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1532,7 +1532,7 @@ module BTPFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<BTP> (c)) :> ICell
-                let format (i : Generic.List<ICell<BTP>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<BTP>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

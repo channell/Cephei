@@ -98,7 +98,7 @@ module AnalyticContinuousGeometricAveragePriceAsianEngineFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<AnalyticContinuousGeometricAveragePriceAsianEngine> (c)) :> ICell
-                let format (i : Generic.List<ICell<AnalyticContinuousGeometricAveragePriceAsianEngine>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<AnalyticContinuousGeometricAveragePriceAsianEngine>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

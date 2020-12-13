@@ -841,7 +841,7 @@ module CPICashFlowFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<CPICashFlow> (c)) :> ICell
-                let format (i : Generic.List<ICell<CPICashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<CPICashFlow>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

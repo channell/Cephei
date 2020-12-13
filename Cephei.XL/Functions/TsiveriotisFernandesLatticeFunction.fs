@@ -301,7 +301,7 @@ module TsiveriotisFernandesLatticeFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<TsiveriotisFernandesLattice> (c)) :> ICell
-                let format (i : Generic.List<ICell<TsiveriotisFernandesLattice>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<TsiveriotisFernandesLattice>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

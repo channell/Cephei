@@ -190,7 +190,7 @@ module CollarFunction =
                 let _Collar = Helper.toCell<Collar> collar "Collar"  
                 let builder (current : ICell) = withMnemonic mnemonic ((CollarModel.Cast _Collar.cell).FloatingLeg
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_Collar.source + ".FloatingLeg") 
 
@@ -201,7 +201,7 @@ module CollarFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -871,7 +871,7 @@ module CollarFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<Collar> (c)) :> ICell
-                let format (i : Generic.List<ICell<Collar>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<Collar>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

@@ -1076,7 +1076,7 @@ module BlackScholesMertonProcessFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<BlackScholesMertonProcess> (c)) :> ICell
-                let format (i : Generic.List<ICell<BlackScholesMertonProcess>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<BlackScholesMertonProcess>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

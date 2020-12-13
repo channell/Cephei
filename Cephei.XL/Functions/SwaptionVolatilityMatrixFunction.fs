@@ -800,7 +800,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
                 let builder (current : ICell) = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).OptionDates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_SwaptionVolatilityMatrix.source + ".OptionDates") 
 
@@ -811,7 +811,7 @@ module SwaptionVolatilityMatrixFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -836,7 +836,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
                 let builder (current : ICell) = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).OptionTenors
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Period>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Period>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_SwaptionVolatilityMatrix.source + ".OptionTenors") 
 
@@ -847,7 +847,7 @@ module SwaptionVolatilityMatrixFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -944,7 +944,7 @@ module SwaptionVolatilityMatrixFunction =
                 let _SwaptionVolatilityMatrix = Helper.toCell<SwaptionVolatilityMatrix> swaptionvolatilitymatrix "SwaptionVolatilityMatrix"  
                 let builder (current : ICell) = withMnemonic mnemonic ((SwaptionVolatilityMatrixModel.Cast _SwaptionVolatilityMatrix.cell).SwapTenors
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Period>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Period>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_SwaptionVolatilityMatrix.source + ".SwapTenors") 
 
@@ -955,7 +955,7 @@ module SwaptionVolatilityMatrixFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -2807,7 +2807,7 @@ module SwaptionVolatilityMatrixFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<SwaptionVolatilityMatrix> (c)) :> ICell
-                let format (i : Generic.List<ICell<SwaptionVolatilityMatrix>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<SwaptionVolatilityMatrix>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

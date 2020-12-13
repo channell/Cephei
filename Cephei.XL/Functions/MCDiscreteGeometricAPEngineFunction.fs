@@ -470,7 +470,7 @@ module MCDiscreteGeometricAPEngineFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<MCDiscreteGeometricAPEngine> (c)) :> ICell
-                let format (i : Generic.List<ICell<MCDiscreteGeometricAPEngine>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<MCDiscreteGeometricAPEngine>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

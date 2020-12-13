@@ -172,7 +172,7 @@ module DigitalCmsLegFunction =
                 let _DigitalCmsLeg = Helper.toCell<DigitalCmsLeg> digitalcmsleg "DigitalCmsLeg"  
                 let builder (current : ICell) = withMnemonic mnemonic ((DigitalCmsLegModel.Cast _DigitalCmsLeg.cell).Value
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_DigitalCmsLeg.source + ".Value") 
 
@@ -183,7 +183,7 @@ module DigitalCmsLegFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1285,7 +1285,7 @@ module DigitalCmsLegFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<DigitalCmsLeg> (c)) :> ICell
-                let format (i : Generic.List<ICell<DigitalCmsLeg>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<DigitalCmsLeg>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

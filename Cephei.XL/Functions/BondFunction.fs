@@ -275,7 +275,7 @@ module BondFunction =
                 let _Bond = Helper.toCell<Bond> bond "Bond"  
                 let builder (current : ICell) = withMnemonic mnemonic ((BondModel.Cast _Bond.cell).Cashflows
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_Bond.source + ".Cashflows") 
 
@@ -286,7 +286,7 @@ module BondFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -947,7 +947,7 @@ module BondFunction =
                 let _Bond = Helper.toCell<Bond> bond "Bond"  
                 let builder (current : ICell) = withMnemonic mnemonic ((BondModel.Cast _Bond.cell).Redemptions
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<CashFlow>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_Bond.source + ".Redemptions") 
 
@@ -1550,7 +1550,7 @@ module BondFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<Bond> (c)) :> ICell
-                let format (i : Generic.List<ICell<Bond>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<Bond>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

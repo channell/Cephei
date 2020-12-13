@@ -172,7 +172,7 @@ module EarlyExerciseFunction =
                 let _EarlyExercise = Helper.toCell<EarlyExercise> earlyexercise "EarlyExercise"  
                 let builder (current : ICell) = withMnemonic mnemonic ((EarlyExerciseModel.Cast _EarlyExercise.cell).Dates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_EarlyExercise.source + ".Dates") 
 
@@ -183,7 +183,7 @@ module EarlyExerciseFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -283,7 +283,7 @@ module EarlyExerciseFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<EarlyExercise> (c)) :> ICell
-                let format (i : Generic.List<ICell<EarlyExercise>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<EarlyExercise>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

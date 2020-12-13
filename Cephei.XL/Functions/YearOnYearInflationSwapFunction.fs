@@ -159,7 +159,7 @@ module YearOnYearInflationSwapFunction =
                 let _YearOnYearInflationSwap = Helper.toCell<YearOnYearInflationSwap> yearonyearinflationswap "YearOnYearInflationSwap"  
                 let builder (current : ICell) = withMnemonic mnemonic ((YearOnYearInflationSwapModel.Cast _YearOnYearInflationSwap.cell).FixedLeg
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_YearOnYearInflationSwap.source + ".FixedLeg") 
 
@@ -170,7 +170,7 @@ module YearOnYearInflationSwapFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -706,7 +706,7 @@ module YearOnYearInflationSwapFunction =
                 let _YearOnYearInflationSwap = Helper.toCell<YearOnYearInflationSwap> yearonyearinflationswap "YearOnYearInflationSwap"  
                 let builder (current : ICell) = withMnemonic mnemonic ((YearOnYearInflationSwapModel.Cast _YearOnYearInflationSwap.cell).YoyLeg
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_YearOnYearInflationSwap.source + ".YoyLeg") 
 
@@ -717,7 +717,7 @@ module YearOnYearInflationSwapFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -934,7 +934,7 @@ module YearOnYearInflationSwapFunction =
                 let builder (current : ICell) = withMnemonic mnemonic ((YearOnYearInflationSwapModel.Cast _YearOnYearInflationSwap.cell).Leg
                                                             _j.cell 
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_YearOnYearInflationSwap.source + ".Leg") 
 
@@ -947,7 +947,7 @@ module YearOnYearInflationSwapFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1479,7 +1479,7 @@ module YearOnYearInflationSwapFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<YearOnYearInflationSwap> (c)) :> ICell
-                let format (i : Generic.List<ICell<YearOnYearInflationSwap>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<YearOnYearInflationSwap>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

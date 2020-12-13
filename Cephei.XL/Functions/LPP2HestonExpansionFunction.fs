@@ -169,7 +169,7 @@ module LPP2HestonExpansionFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<LPP2HestonExpansion> (c)) :> ICell
-                let format (i : Generic.List<ICell<LPP2HestonExpansion>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<LPP2HestonExpansion>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vzd1yi87BMDVfDouriZO2mHWDJMc3WObJpfrOXZE0NIqYQJxYYoPUOEhSF27AeWy/HQ1fcJZ0ZfFte4y04qsLw==",
+  "dgSpecHash": "VgNLobvebO4/tAtNeMu7pJ6QmfxOgmHAaLaVMJ6L/bT6xKILzHqU1scrvguWb90n5Cdfp/G6u37iYHfbaKrWZw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QL.Samples\\Cephei.QL.Samples.fsproj",
+  "projectFilePath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QL.Samples\\Cephei.QL.Samples.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\steve\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\ilgpu\\0.9.1\\ilgpu.0.9.1.nupkg.sha512",

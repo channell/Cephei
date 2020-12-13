@@ -247,7 +247,7 @@ module LiborForwardModelProcessFunction =
                 let builder (current : ICell) = withMnemonic mnemonic ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).CashFlows
                                                             _amount.cell 
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_LiborForwardModelProcess.source + ".CashFlows") 
 
@@ -260,7 +260,7 @@ module LiborForwardModelProcessFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -285,7 +285,7 @@ module LiborForwardModelProcessFunction =
                 let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let builder (current : ICell) = withMnemonic mnemonic ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).CashFlows1
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_LiborForwardModelProcess.source + ".CashFlows1") 
 
@@ -296,7 +296,7 @@ module LiborForwardModelProcessFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -645,7 +645,7 @@ module LiborForwardModelProcessFunction =
                 let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let builder (current : ICell) = withMnemonic mnemonic ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).FixingDates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_LiborForwardModelProcess.source + ".FixingDates") 
 
@@ -656,7 +656,7 @@ module LiborForwardModelProcessFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -681,7 +681,7 @@ module LiborForwardModelProcessFunction =
                 let _LiborForwardModelProcess = Helper.toCell<LiborForwardModelProcess> liborforwardmodelprocess "LiborForwardModelProcess"  
                 let builder (current : ICell) = withMnemonic mnemonic ((LiborForwardModelProcessModel.Cast _LiborForwardModelProcess.cell).FixingDates_
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_LiborForwardModelProcess.source + ".FixingDates_") 
 
@@ -692,7 +692,7 @@ module LiborForwardModelProcessFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1503,7 +1503,7 @@ module LiborForwardModelProcessFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<LiborForwardModelProcess> (c)) :> ICell
-                let format (i : Generic.List<ICell<LiborForwardModelProcess>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<LiborForwardModelProcess>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

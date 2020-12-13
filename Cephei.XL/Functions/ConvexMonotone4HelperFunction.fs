@@ -247,7 +247,7 @@ module ConvexMonotone4HelperFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<ConvexMonotone4Helper> (c)) :> ICell
-                let format (i : Generic.List<ICell<ConvexMonotone4Helper>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<ConvexMonotone4Helper>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

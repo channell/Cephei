@@ -214,7 +214,7 @@ module AverageBMACouponFunction =
                 let _AverageBMACoupon = Helper.toCell<AverageBMACoupon> averagebmacoupon "AverageBMACoupon"  
                 let builder (current : ICell) = withMnemonic mnemonic ((AverageBMACouponModel.Cast _AverageBMACoupon.cell).FixingDates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_AverageBMACoupon.source + ".FixingDates") 
 
@@ -225,7 +225,7 @@ module AverageBMACouponFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1663,7 +1663,7 @@ module AverageBMACouponFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<AverageBMACoupon> (c)) :> ICell
-                let format (i : Generic.List<ICell<AverageBMACoupon>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<AverageBMACoupon>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

@@ -133,7 +133,7 @@ module GammaDistributionFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<GammaDistribution> (c)) :> ICell
-                let format (i : Generic.List<ICell<GammaDistribution>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<GammaDistribution>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

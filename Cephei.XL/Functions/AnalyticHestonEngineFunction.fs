@@ -449,7 +449,7 @@ module AnalyticHestonEngineFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<AnalyticHestonEngine> (c)) :> ICell
-                let format (i : Generic.List<ICell<AnalyticHestonEngine>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<AnalyticHestonEngine>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

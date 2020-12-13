@@ -1046,7 +1046,7 @@ module AbcdInterpolationFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<AbcdInterpolation> (c)) :> ICell
-                let format (i : Generic.List<ICell<AbcdInterpolation>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<AbcdInterpolation>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

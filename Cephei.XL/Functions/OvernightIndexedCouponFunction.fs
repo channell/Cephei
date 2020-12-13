@@ -87,7 +87,7 @@ module OvernightIndexedCouponFunction =
                 let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = withMnemonic mnemonic ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).FixingDates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_OvernightIndexedCoupon.source + ".FixingDates") 
 
@@ -98,7 +98,7 @@ module OvernightIndexedCouponFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -256,7 +256,7 @@ module OvernightIndexedCouponFunction =
                 let _OvernightIndexedCoupon = Helper.toCell<OvernightIndexedCoupon> overnightindexedcoupon "OvernightIndexedCoupon"  
                 let builder (current : ICell) = withMnemonic mnemonic ((OvernightIndexedCouponModel.Cast _OvernightIndexedCoupon.cell).ValueDates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_OvernightIndexedCoupon.source + ".ValueDates") 
 
@@ -267,7 +267,7 @@ module OvernightIndexedCouponFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1741,7 +1741,7 @@ module OvernightIndexedCouponFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<OvernightIndexedCoupon> (c)) :> ICell
-                let format (i : Generic.List<ICell<OvernightIndexedCoupon>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<OvernightIndexedCoupon>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

@@ -619,7 +619,7 @@ module FloatingRateBondFunction =
                 let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let builder (current : ICell) = withMnemonic mnemonic ((FloatingRateBondModel.Cast _FloatingRateBond.cell).Cashflows
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<CashFlow>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_FloatingRateBond.source + ".Cashflows") 
 
@@ -1291,7 +1291,7 @@ module FloatingRateBondFunction =
                 let _FloatingRateBond = Helper.toCell<FloatingRateBond> floatingratebond "FloatingRateBond"  
                 let builder (current : ICell) = withMnemonic mnemonic ((FloatingRateBondModel.Cast _FloatingRateBond.cell).Redemptions
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<CashFlow>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_FloatingRateBond.source + ".Redemptions") 
 
@@ -1895,7 +1895,7 @@ module FloatingRateBondFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<FloatingRateBond> (c)) :> ICell
-                let format (i : Generic.List<ICell<FloatingRateBond>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<FloatingRateBond>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

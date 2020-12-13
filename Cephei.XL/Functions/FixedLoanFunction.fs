@@ -51,7 +51,7 @@ module FixedLoanFunction =
                 let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
                 let builder (current : ICell) = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).FixedLeg
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_FixedLoan.source + ".FixedLeg") 
 
@@ -62,7 +62,7 @@ module FixedLoanFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -172,7 +172,7 @@ module FixedLoanFunction =
                 let _FixedLoan = Helper.toCell<FixedLoan> fixedloan "FixedLoan"  
                 let builder (current : ICell) = withMnemonic mnemonic ((FixedLoanModel.Cast _FixedLoan.cell).PrincipalLeg
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_FixedLoan.source + ".PrincipalLeg") 
 
@@ -183,7 +183,7 @@ module FixedLoanFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -475,7 +475,7 @@ module FixedLoanFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<FixedLoan> (c)) :> ICell
-                let format (i : Generic.List<ICell<FixedLoan>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<FixedLoan>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

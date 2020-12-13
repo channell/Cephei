@@ -517,7 +517,7 @@ module CalibratedModelFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<CalibratedModel> (c)) :> ICell
-                let format (i : Generic.List<ICell<CalibratedModel>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<CalibratedModel>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

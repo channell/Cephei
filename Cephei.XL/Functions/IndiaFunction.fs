@@ -110,7 +110,7 @@ module IndiaFunction =
                 let _India = Helper.toCell<India> india "India"  
                 let builder (current : ICell) = withMnemonic mnemonic ((IndiaModel.Cast _India.cell).AddedHolidays
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_India.source + ".AddedHolidays") 
 
@@ -121,7 +121,7 @@ module IndiaFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -784,7 +784,7 @@ module IndiaFunction =
                 let _India = Helper.toCell<India> india "India"  
                 let builder (current : ICell) = withMnemonic mnemonic ((IndiaModel.Cast _India.cell).RemovedHolidays
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_India.source + ".RemovedHolidays") 
 
@@ -795,7 +795,7 @@ module IndiaFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -865,7 +865,7 @@ module IndiaFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<India> (c)) :> ICell
-                let format (i : Generic.List<ICell<India>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<India>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

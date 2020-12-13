@@ -368,7 +368,7 @@ module EqualJumpsBinomialTreeFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<EqualJumpsBinomialTree> (c)) :> ICell
-                let format (i : Generic.List<ICell<EqualJumpsBinomialTree>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<EqualJumpsBinomialTree>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

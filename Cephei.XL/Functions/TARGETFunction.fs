@@ -93,7 +93,7 @@ module TARGETFunction =
                 let _TARGET = Helper.toCell<TARGET> target "TARGET"  
                 let builder (current : ICell) = withMnemonic mnemonic ((TARGETModel.Cast _TARGET.cell).AddedHolidays
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_TARGET.source + ".AddedHolidays") 
 
@@ -104,7 +104,7 @@ module TARGETFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -767,7 +767,7 @@ module TARGETFunction =
                 let _TARGET = Helper.toCell<TARGET> target "TARGET"  
                 let builder (current : ICell) = withMnemonic mnemonic ((TARGETModel.Cast _TARGET.cell).RemovedHolidays
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_TARGET.source + ".RemovedHolidays") 
 
@@ -778,7 +778,7 @@ module TARGETFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -848,7 +848,7 @@ module TARGETFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<TARGET> (c)) :> ICell
-                let format (i : Generic.List<ICell<TARGET>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<TARGET>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

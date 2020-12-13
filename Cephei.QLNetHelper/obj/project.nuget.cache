@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nslOh09/k0l56Zgkpsf7NKgD2HyF2RtJme2buBzcCA/us9MaBb8GKFOvckeamgXzh9hxnGNIJVOCZM+ujs6m2A==",
+  "dgSpecHash": "snaKnNYLx/i+obEYnly/T6WGFupZ6dHvursc44m70QurM8Sa/xJ6e9jUBtq9F6iUqk/zS3RgHS43BxjMR/ISyw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj",
+  "projectFilePath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\steve\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\ilgpu\\0.9.1\\ilgpu.0.9.1.nupkg.sha512",

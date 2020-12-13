@@ -474,7 +474,7 @@ module AmortizingFixedRateBondFunction =
                 let _AmortizingFixedRateBond = Helper.toCell<AmortizingFixedRateBond> amortizingfixedratebond "AmortizingFixedRateBond"  
                 let builder (current : ICell) = withMnemonic mnemonic ((AmortizingFixedRateBondModel.Cast _AmortizingFixedRateBond.cell).Cashflows
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_AmortizingFixedRateBond.source + ".Cashflows") 
 
@@ -485,7 +485,7 @@ module AmortizingFixedRateBondFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1146,7 +1146,7 @@ module AmortizingFixedRateBondFunction =
                 let _AmortizingFixedRateBond = Helper.toCell<AmortizingFixedRateBond> amortizingfixedratebond "AmortizingFixedRateBond"  
                 let builder (current : ICell) = withMnemonic mnemonic ((AmortizingFixedRateBondModel.Cast _AmortizingFixedRateBond.cell).Redemptions
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_AmortizingFixedRateBond.source + ".Redemptions") 
 
@@ -1157,7 +1157,7 @@ module AmortizingFixedRateBondFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1749,7 +1749,7 @@ module AmortizingFixedRateBondFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<AmortizingFixedRateBond> (c)) :> ICell
-                let format (i : Generic.List<ICell<AmortizingFixedRateBond>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<AmortizingFixedRateBond>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

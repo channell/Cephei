@@ -197,7 +197,7 @@ module BespokeCalendarFunction =
                 let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let builder (current : ICell) = withMnemonic mnemonic ((BespokeCalendarModel.Cast _BespokeCalendar.cell).AddedHolidays
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_BespokeCalendar.source + ".AddedHolidays") 
 
@@ -208,7 +208,7 @@ module BespokeCalendarFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -833,7 +833,7 @@ module BespokeCalendarFunction =
                 let _BespokeCalendar = Helper.toCell<BespokeCalendar> bespokecalendar "BespokeCalendar"  
                 let builder (current : ICell) = withMnemonic mnemonic ((BespokeCalendarModel.Cast _BespokeCalendar.cell).RemovedHolidays
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_BespokeCalendar.source + ".RemovedHolidays") 
 
@@ -844,7 +844,7 @@ module BespokeCalendarFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -914,7 +914,7 @@ module BespokeCalendarFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<BespokeCalendar> (c)) :> ICell
-                let format (i : Generic.List<ICell<BespokeCalendar>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<BespokeCalendar>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

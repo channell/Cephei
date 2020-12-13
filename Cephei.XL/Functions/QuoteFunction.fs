@@ -210,7 +210,7 @@ module QuoteFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<Quote> (c)) :> ICell
-                let format (i : Generic.List<ICell<Quote>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<Quote>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

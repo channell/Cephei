@@ -1460,7 +1460,7 @@ module UsdLiborSwapIsdaFixAmFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<UsdLiborSwapIsdaFixAm> (c)) :> ICell
-                let format (i : Generic.List<ICell<UsdLiborSwapIsdaFixAm>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<UsdLiborSwapIsdaFixAm>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

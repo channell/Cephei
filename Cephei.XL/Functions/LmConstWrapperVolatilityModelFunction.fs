@@ -250,7 +250,7 @@ module LmConstWrapperVolatilityModelFunction =
                 let _LmConstWrapperVolatilityModel = Helper.toCell<LmConstWrapperVolatilityModel> lmconstwrappervolatilitymodel "LmConstWrapperVolatilityModel"  
                 let builder (current : ICell) = withMnemonic mnemonic ((LmConstWrapperVolatilityModelModel.Cast _LmConstWrapperVolatilityModel.cell).Parameters
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Parameter>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Parameter>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_LmConstWrapperVolatilityModel.source + ".Parameters") 
 
@@ -261,7 +261,7 @@ module LmConstWrapperVolatilityModelFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -367,7 +367,7 @@ module LmConstWrapperVolatilityModelFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<LmConstWrapperVolatilityModel> (c)) :> ICell
-                let format (i : Generic.List<ICell<LmConstWrapperVolatilityModel>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<LmConstWrapperVolatilityModel>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

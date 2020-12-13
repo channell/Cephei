@@ -106,7 +106,7 @@ module CPILegFunction =
                 let _CPILeg = Helper.toCell<CPILeg> cpileg "CPILeg"  
                 let builder (current : ICell) = withMnemonic mnemonic ((CPILegModel.Cast _CPILeg.cell).Value
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_CPILeg.source + ".Value") 
 
@@ -117,7 +117,7 @@ module CPILegFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -919,7 +919,7 @@ module CPILegFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<CPILeg> (c)) :> ICell
-                let format (i : Generic.List<ICell<CPILeg>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<CPILeg>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

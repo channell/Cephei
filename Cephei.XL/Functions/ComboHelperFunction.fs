@@ -223,7 +223,7 @@ module ComboHelperFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<ComboHelper> (c)) :> ICell
-                let format (i : Generic.List<ICell<ComboHelper>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<ComboHelper>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

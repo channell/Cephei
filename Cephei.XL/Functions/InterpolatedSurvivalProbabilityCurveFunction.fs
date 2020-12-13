@@ -159,7 +159,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
                 let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).Dates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_InterpolatedSurvivalProbabilityCurve.source + ".Dates") 
 
@@ -170,7 +170,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -195,7 +195,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
                 let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).Dates_
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_InterpolatedSurvivalProbabilityCurve.source + ".Dates_") 
 
@@ -206,7 +206,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1060,7 +1060,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
                 let _InterpolatedSurvivalProbabilityCurve = Helper.toCell<InterpolatedSurvivalProbabilityCurve> interpolatedsurvivalprobabilitycurve "InterpolatedSurvivalProbabilityCurve"  
                 let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedSurvivalProbabilityCurveModel.Cast _InterpolatedSurvivalProbabilityCurve.cell).JumpDates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_InterpolatedSurvivalProbabilityCurve.source + ".JumpDates") 
 
@@ -1071,7 +1071,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1645,7 +1645,7 @@ module InterpolatedSurvivalProbabilityCurveFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<InterpolatedSurvivalProbabilityCurve> (c)) :> ICell
-                let format (i : Generic.List<ICell<InterpolatedSurvivalProbabilityCurve>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<InterpolatedSurvivalProbabilityCurve>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

@@ -53,6 +53,11 @@
             value
             </summary>
         </member>
+        <member name="F:Cephei.Cell.CellEvent.CyclicCheck">
+            <summary>
+            Check for cyclic dependancy
+            </summary>
+        </member>
         <member name="T:Cephei.Cell.CellState">
             <summary>
             The State vector of the cell
@@ -92,6 +97,11 @@
             Blocking State is entered whenever a value is required, but another thread is
             already in the process of calculating a value or a task needs to calculate a
             value for a session
+            </summary>
+        </member>
+        <member name="T:Cephei.Cell.CalculationException">
+            <summary>
+            Exception with source summary
             </summary>
         </member>
         <member name="T:Cephei.Cell.Generic.Cell`1">
@@ -220,7 +230,7 @@
             </summary>
             <param name="t"></param>
         </member>
-        <member name="M:Cephei.Cell.Generic.Cell`1.Calculate(System.DateTime,System.Int32,Cephei.Cell.ISession,System.Boolean)">
+        <member name="M:Cephei.Cell.Generic.Cell`1.Calculate(System.DateTime,System.Int32,Cephei.Cell.ISession)">
             <summary>
             Internal calculation function, that is triggered either by:
             <ol>
@@ -372,16 +382,16 @@
             <param name="session">reference to the session that the eventi was originally
             source in</param>
         </member>
-        <member name="T:Cephei.Cell.ICell">
-            <summary>
-            ICell provides a base interface with the common behavior of all Cells
-            </summary>
-        </member>
-        <member name="P:Cephei.Cell.ICell.Parent">
+        <member name="P:Cephei.Cell.ICellEvent.Parent">
             <summary>
             Reference to the parent of this cell - usually the model the cell is defined in.
             
             Parents get notifications for all changes to their childen
+            </summary>
+        </member>
+        <member name="T:Cephei.Cell.ICell">
+            <summary>
+            ICell provides a base interface with the common behavior of all Cells
             </summary>
         </member>
         <member name="P:Cephei.Cell.ICell.Dependants">
@@ -442,6 +452,18 @@
             enable passthrough profiling of trivial funtions
             </summary>
             <returns>_func</returns>
+        </member>
+        <member name="M:Cephei.Cell.ICell.ValueIs``1">
+            <summary>
+            Can this cell be cast to to the Base class
+            </summary>
+            <typeparam name="Base"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="P:Cephei.Cell.ICell.State">
+            <summary>
+            Get the status of the cell
+            </summary>
         </member>
         <member name="T:Cephei.Cell.ITrivial">
             <summary>
@@ -735,20 +757,11 @@
             Notification that the calculation has completed
             </summary>
         </member>
-        <member name="P:Cephei.Cell.List`1.HasFunction">
-            <see cref="P:Cephei.Cell.ICell.HasFunction"/>
-        </member>
-        <member name="P:Cephei.Cell.List`1.HasValue">
-            <see cref="P:Cephei.Cell.ICell.HasValue"/>
-        </member>
-        <member name="P:Cephei.Cell.List`1.Box">
-            <see cref="P:Cephei.Cell.ICell.Box"/>
-        </member>
-        <member name="M:Cephei.Cell.List`1.GetEnumerator">
+        <member name="T:Cephei.Cell.List`1">
             <summary>
-            before eunumerating, add this list the dependants insetad of the content of the list
+            Lust that combines the view of the a list of Cells with a list of Cells
             </summary>
-            <returns></returns>
+            <typeparam name="T"></typeparam>
         </member>
         <member name="M:Cephei.Cell.Model.As``1(System.String)">
             <summary>

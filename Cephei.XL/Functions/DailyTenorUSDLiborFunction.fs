@@ -1274,7 +1274,7 @@ module DailyTenorUSDLiborFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<DailyTenorUSDLibor> (c)) :> ICell
-                let format (i : Generic.List<ICell<DailyTenorUSDLibor>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<DailyTenorUSDLibor>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

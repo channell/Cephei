@@ -15,7 +15,7 @@ module Values =
     let Value 
         ([<ExcelArgument(Name="Mnemonic", Description="Identifier")>] mnemonic : string) 
         =
-        if mnemonic = null || mnemonic = "" then
+        if mnemonic = null || mnemonic = "" || mnemonic.StartsWith("#")  then
             "#NA" :> obj
         else
             Model.value mnemonic
@@ -28,7 +28,7 @@ module Values =
         =
         let layout = layout.ToUpper()
 
-        if mnemonic = null || mnemonic = "" || layout = null || layout = "" then
+        if mnemonic = null || mnemonic = "" || layout = null || layout = "" || mnemonic.StartsWith("#") then
             Array2D.create<obj> 0 1 "#NA"
         elif not (("CT, RT, C ,R").Contains(layout.ToUpper())) then 
             Model.range mnemonic ("C")

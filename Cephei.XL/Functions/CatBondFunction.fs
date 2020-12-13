@@ -304,7 +304,7 @@ module CatBondFunction =
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
                 let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).Cashflows
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_CatBond.source + ".Cashflows") 
 
@@ -315,7 +315,7 @@ module CatBondFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -976,7 +976,7 @@ module CatBondFunction =
                 let _CatBond = Helper.toCell<CatBond> catbond "CatBond"  
                 let builder (current : ICell) = withMnemonic mnemonic ((CatBondModel.Cast _CatBond.cell).Redemptions
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_CatBond.source + ".Redemptions") 
 
@@ -987,7 +987,7 @@ module CatBondFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1579,7 +1579,7 @@ module CatBondFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<CatBond> (c)) :> ICell
-                let format (i : Generic.List<ICell<CatBond>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<CatBond>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

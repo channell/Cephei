@@ -547,7 +547,7 @@ module FixedDividendFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<FixedDividend> (c)) :> ICell
-                let format (i : Generic.List<ICell<FixedDividend>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<FixedDividend>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

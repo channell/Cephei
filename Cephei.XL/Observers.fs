@@ -92,10 +92,10 @@ type RTDModelObserver<'t> (rtd : IValueRTD, model : ICell<'t>, format : ICell<'t
             _holder.Dispose ()
 
 // Summary: bridge to convert observable events to am model update
-type RTDModelRangeObserver<'t> (rtd : IValueRTD, models : ICell<Generic.List<ICell<'t>>>, format : Generic.List<ICell<'t>> -> string -> obj[,], layout : string) as this =
+type RTDModelRangeObserver<'t> (rtd : IValueRTD, models : Cephei.Cell.List<'t>, format : Cephei.Cell.List<'t> -> string -> obj[,], layout : string) as this =
     let _rtd = rtd
     let _mnemonic = models.Mnemonic
-    let _models = models.Value
+    let _models = models
     let _holders = Seq.map (fun (i : ICell<'t>) -> (i :?> Model).Subscribe(this)) _models |> Seq.toArray
     let _format = format
     let _layout = layout

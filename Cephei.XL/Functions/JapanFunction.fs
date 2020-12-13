@@ -106,7 +106,7 @@ module JapanFunction =
                 let _Japan = Helper.toCell<Japan> japan "Japan"  
                 let builder (current : ICell) = withMnemonic mnemonic ((JapanModel.Cast _Japan.cell).AddedHolidays
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_Japan.source + ".AddedHolidays") 
 
@@ -117,7 +117,7 @@ module JapanFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -780,7 +780,7 @@ module JapanFunction =
                 let _Japan = Helper.toCell<Japan> japan "Japan"  
                 let builder (current : ICell) = withMnemonic mnemonic ((JapanModel.Cast _Japan.cell).RemovedHolidays
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_Japan.source + ".RemovedHolidays") 
 
@@ -791,7 +791,7 @@ module JapanFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -861,7 +861,7 @@ module JapanFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<Japan> (c)) :> ICell
-                let format (i : Generic.List<ICell<Japan>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<Japan>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

@@ -274,7 +274,7 @@ module LmExtLinearExponentialVolModelFunction =
                 let _LmExtLinearExponentialVolModel = Helper.toCell<LmExtLinearExponentialVolModel> lmextlinearexponentialvolmodel "LmExtLinearExponentialVolModel"  
                 let builder (current : ICell) = withMnemonic mnemonic ((LmExtLinearExponentialVolModelModel.Cast _LmExtLinearExponentialVolModel.cell).Parameters
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Parameter>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Parameter>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_LmExtLinearExponentialVolModel.source + ".Parameters") 
 
@@ -285,7 +285,7 @@ module LmExtLinearExponentialVolModelFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -391,7 +391,7 @@ module LmExtLinearExponentialVolModelFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<LmExtLinearExponentialVolModel> (c)) :> ICell
-                let format (i : Generic.List<ICell<LmExtLinearExponentialVolModel>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<LmExtLinearExponentialVolModel>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

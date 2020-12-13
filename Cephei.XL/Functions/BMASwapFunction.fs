@@ -51,7 +51,7 @@ module BMASwapFunction =
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
                 let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).BmaLeg
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_BMASwap.source + ".BmaLeg") 
 
@@ -62,7 +62,7 @@ module BMASwapFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -370,7 +370,7 @@ module BMASwapFunction =
                 let _BMASwap = Helper.toCell<BMASwap> bmaswap "BMASwap"  
                 let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).LiborLeg
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_BMASwap.source + ".LiborLeg") 
 
@@ -381,7 +381,7 @@ module BMASwapFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -706,7 +706,7 @@ module BMASwapFunction =
                 let builder (current : ICell) = withMnemonic mnemonic ((BMASwapModel.Cast _BMASwap.cell).Leg
                                                             _j.cell 
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_BMASwap.source + ".Leg") 
 
@@ -719,7 +719,7 @@ module BMASwapFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1251,7 +1251,7 @@ module BMASwapFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<BMASwap> (c)) :> ICell
-                let format (i : Generic.List<ICell<BMASwap>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<BMASwap>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

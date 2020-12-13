@@ -101,7 +101,7 @@ type ValueRTD () as this =
     let _subscriptions          = new ConcurrentDictionary<Generic.KeyValuePair<string, string>, IDisposable> ()
     let _value                  = new ConcurrentDictionary<string, obj> ()
     let _retry                  = new ConcurrentQueue<KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic>> ()
-    let _relink                 = new ConcurrentQueue<KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic>> ()
+//    let _relink                 = new ConcurrentQueue<KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic>> ()
     let _timer                  = new System.Timers.Timer (2000.0);
 
     let _RTDModel               = AppDomain.CurrentDomain.GetData("RTDServer") :?> IValueRTD
@@ -126,26 +126,46 @@ type ValueRTD () as this =
                 kv.Value.UpdateValue kv.Key
                 false
             elif _value.ContainsKey(kv.Key.Key) then
-                kv.Value.UpdateValue _value.[kv.Key.Key]
+                let v = _value.[kv.Key.Key]
+                kv.Value.UpdateValue v
                 false
             else
                 let c = Model.cell kv.Key.Key
                 if c.IsSome then
                     c.Value.OnChange(Cephei.Cell.CellEvent.Link, c.Value, c.Value, DateTime.Now, null);
-//                    _RTDModel.UpdateValue kv.Key.Key ""  kv.Key.Key
-                true
+                    _RTDModel.UpdateValue kv.Key.Key ""  kv.Key.Key
+                    false
+                else
+                    true
         else
             true
     
     let tick (e : System.Timers.ElapsedEventArgs) : unit = 
         let mutable v : KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic> = new KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic> (KeyValuePair<string, string>(null,null), null)
-        while _retry.TryDequeue(ref v) do
-            if not (v.Key.Key = null) && (v.Value.Value :? string) then
-                if subscribe v then
-                    _retry.Enqueue v
+        if _retry.IsEmpty then
+            _value
+            |> Seq.filter (fun x -> (x.Value :? string) && (x.Value :?> string).StartsWith("#") && not ((x.Value :?> string) = "#NA" ))
+            |> Seq.map (fun i -> kvp i.Key "")
+            |> Seq.filter (fun i -> _topicIndex.ContainsKey(i))
+            |> Seq.fold (fun a i -> (List.map (fun t -> kvp i t) _topicIndex.[i]) @ a) []
+            |> List.iter (fun i -> _retry.Enqueue i)
+
+        if _retry.IsEmpty then
+            _timer.Interval <- _timer.Interval + 2000.0
+        else
+            _timer.Interval <- 2000.0
+
+        if not (_retry.IsEmpty) then 
+            let requeue = new Generic.Queue<KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic>> ()
+            while _retry.TryDequeue(&v) do
+                if not (v.Key.Key = null) && (v.Value.Value :? string) then
+                    if subscribe v then
+                        requeue.Enqueue v
+            requeue |> Seq.iter (fun i -> _retry.Enqueue i)
+        _timer.Enabled <- true
 
     do  _timer.Elapsed.Add tick
-        _timer.AutoReset <- true
+        _timer.AutoReset <- false
         _timer.Enabled <- true
         _timer.Start ()
 
@@ -158,6 +178,7 @@ type ValueRTD () as this =
 
         let dispatch () : unit = 
             let kv = new KeyValuePair<string,string>(mnemonic, layout);
+            let retry = kvp kv topic 
             try
                 if _topicIndex.ContainsKey (kv) then 
                    _topics.[topic] <- kv
@@ -167,9 +188,9 @@ type ValueRTD () as this =
                    else
                        topic.UpdateValue mnemonic 
                 else
+                    _value.[mnemonic] <- ("#..." + mnemonic :> obj)
                     _topics.[topic] <- kv
                     _topicIndex.[kv] <- [topic]
-                    let retry = kvp kv topic 
                     if subscribe retry then 
                         _retry.Enqueue(retry)
             with
@@ -207,6 +228,7 @@ type ValueRTD () as this =
             let kv = new KeyValuePair<string,string> (mnemonic, layout)
             if _topicIndex.ContainsKey (kv) then
                 Model.setRange  mnemonic layout value
+                _value.TryRemove (mnemonic) |> ignore
                 let topics = _topicIndex.[kv]
                 let apply (t : ExcelRtdServer.Topic) = t.UpdateValue (mnemonic)
                 List.iter apply topics

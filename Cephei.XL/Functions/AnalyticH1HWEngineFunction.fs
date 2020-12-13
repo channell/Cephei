@@ -417,7 +417,7 @@ module AnalyticH1HWEngineFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<AnalyticH1HWEngine> (c)) :> ICell
-                let format (i : Generic.List<ICell<AnalyticH1HWEngine>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<AnalyticH1HWEngine>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

@@ -523,7 +523,7 @@ module DKKCurrencyFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<DKKCurrency> (c)) :> ICell
-                let format (i : Generic.List<ICell<DKKCurrency>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<DKKCurrency>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

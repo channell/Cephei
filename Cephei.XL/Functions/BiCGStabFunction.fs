@@ -201,7 +201,7 @@ module BiCGStabFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<BiCGStab> (c)) :> ICell
-                let format (i : Generic.List<ICell<BiCGStab>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<BiCGStab>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

@@ -523,7 +523,7 @@ module PEICurrencyFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<PEICurrency> (c)) :> ICell
-                let format (i : Generic.List<ICell<PEICurrency>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<PEICurrency>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

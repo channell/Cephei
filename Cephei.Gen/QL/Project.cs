@@ -19,7 +19,7 @@ namespace Cephei.Gen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Project.tt"
+    #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Project.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class Project : ProjectBase
     {
@@ -30,7 +30,7 @@ namespace Cephei.Gen
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Project.tt"
+            #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Project.tt"
 /*
 Name:           project.tt
 Author:         Stephen Channell
@@ -40,7 +40,7 @@ Description:    Generate the project file for the interface package
             #line default
             #line hidden
             
-            #line 17 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Project.tt"
+            #line 17 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Project.tt"
 
     
     Context.RootName = PackageName;
@@ -92,7 +92,7 @@ Description:    Generate the project file for the interface package
                     "\"System.Data\" />\r\n    <Reference Include=\"System.Xml\" />\r\n  </ItemGroup>\r\n  <Ite" +
                     "mGroup>\r\n");
             
-            #line 95 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Project.tt"
+            #line 95 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Project.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetPackage (Context.RootTree, PackageName, "\t")));
             
             #line default
@@ -140,7 +140,7 @@ Description:    Generate the project file for the interface package
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 134 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Project.tt"
+        #line 134 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Project.tt"
 
 private string _outputDirectory = String.Empty;
 
@@ -208,7 +208,7 @@ string GetPackage2(Package package, Package rootPackage,  string nameSpace, stri
         #line default
         #line hidden
         
-        #line 197 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Project.tt"
+        #line 197 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Project.tt"
 
 		public Context Context;
 
@@ -232,7 +232,7 @@ string GetPackage2(Package package, Package rootPackage,  string nameSpace, stri
         #line default
         #line hidden
         
-        #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\QL\Project.tt"
+        #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\QL\Project.tt"
 
 private string _PackageNameField;
 

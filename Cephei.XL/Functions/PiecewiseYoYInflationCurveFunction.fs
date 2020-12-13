@@ -231,7 +231,7 @@ module PiecewiseYoYInflationCurveFunction =
                 let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYoYInflationCurveModel.Cast _PiecewiseYoYInflationCurve.cell).Dates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Dates") 
 
@@ -242,7 +242,7 @@ module PiecewiseYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -267,7 +267,7 @@ module PiecewiseYoYInflationCurveFunction =
                 let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYoYInflationCurveModel.Cast _PiecewiseYoYInflationCurve.cell).Dates_
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Dates_") 
 
@@ -278,7 +278,7 @@ module PiecewiseYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -651,7 +651,7 @@ module PiecewiseYoYInflationCurveFunction =
                 let _PiecewiseYoYInflationCurve = Helper.toCell<PiecewiseYoYInflationCurve> piecewiseyoyinflationcurve "PiecewiseYoYInflationCurve"  
                 let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYoYInflationCurveModel.Cast _PiecewiseYoYInflationCurve.cell).Instruments_
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<BootstrapHelper<YoYInflationTermStructure>>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<BootstrapHelper<YoYInflationTermStructure>>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_PiecewiseYoYInflationCurve.source + ".Instruments_") 
 
@@ -662,7 +662,7 @@ module PiecewiseYoYInflationCurveFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -2596,7 +2596,7 @@ module PiecewiseYoYInflationCurveFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<PiecewiseYoYInflationCurve> (c)) :> ICell
-                let format (i : Generic.List<ICell<PiecewiseYoYInflationCurve>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<PiecewiseYoYInflationCurve>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

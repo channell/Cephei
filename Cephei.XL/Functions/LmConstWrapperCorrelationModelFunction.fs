@@ -316,7 +316,7 @@ module LmConstWrapperCorrelationModelFunction =
                 let _LmConstWrapperCorrelationModel = Helper.toCell<LmConstWrapperCorrelationModel> lmconstwrappercorrelationmodel "LmConstWrapperCorrelationModel"  
                 let builder (current : ICell) = withMnemonic mnemonic ((LmConstWrapperCorrelationModelModel.Cast _LmConstWrapperCorrelationModel.cell).Parameters
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Parameter>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Parameter>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_LmConstWrapperCorrelationModel.source + ".Parameters") 
 
@@ -327,7 +327,7 @@ module LmConstWrapperCorrelationModelFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -433,7 +433,7 @@ module LmConstWrapperCorrelationModelFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<LmConstWrapperCorrelationModel> (c)) :> ICell
-                let format (i : Generic.List<ICell<LmConstWrapperCorrelationModel>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<LmConstWrapperCorrelationModel>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

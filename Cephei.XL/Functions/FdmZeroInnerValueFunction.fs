@@ -150,7 +150,7 @@ module FdmZeroInnerValueFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<FdmZeroInnerValue> (c)) :> ICell
-                let format (i : Generic.List<ICell<FdmZeroInnerValue>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<FdmZeroInnerValue>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

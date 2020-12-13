@@ -606,7 +606,7 @@ module FittedBondDiscountCurveFunction =
                 let _FittedBondDiscountCurve = Helper.toCell<FittedBondDiscountCurve> fittedbonddiscountcurve "FittedBondDiscountCurve"  
                 let builder (current : ICell) = withMnemonic mnemonic ((FittedBondDiscountCurveModel.Cast _FittedBondDiscountCurve.cell).JumpDates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_FittedBondDiscountCurve.source + ".JumpDates") 
 
@@ -617,7 +617,7 @@ module FittedBondDiscountCurveFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1221,7 +1221,7 @@ module FittedBondDiscountCurveFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<FittedBondDiscountCurve> (c)) :> ICell
-                let format (i : Generic.List<ICell<FittedBondDiscountCurve>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<FittedBondDiscountCurve>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

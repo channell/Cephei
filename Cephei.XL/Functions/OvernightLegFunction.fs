@@ -100,7 +100,7 @@ module OvernightLegFunction =
                 let _OvernightLeg = Helper.toCell<OvernightLeg> overnightleg "OvernightLeg"  
                 let builder (current : ICell) = withMnemonic mnemonic ((OvernightLegModel.Cast _OvernightLeg.cell).Value
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_OvernightLeg.source + ".Value") 
 
@@ -111,7 +111,7 @@ module OvernightLegFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -475,7 +475,7 @@ module OvernightLegFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<OvernightLeg> (c)) :> ICell
-                let format (i : Generic.List<ICell<OvernightLeg>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<OvernightLeg>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

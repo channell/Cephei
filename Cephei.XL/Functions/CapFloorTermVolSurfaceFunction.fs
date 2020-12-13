@@ -477,7 +477,7 @@ module CapFloorTermVolSurfaceFunction =
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
                 let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).OptionDates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".OptionDates") 
 
@@ -488,7 +488,7 @@ module CapFloorTermVolSurfaceFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -513,7 +513,7 @@ module CapFloorTermVolSurfaceFunction =
                 let _CapFloorTermVolSurface = Helper.toCell<CapFloorTermVolSurface> capfloortermvolsurface "CapFloorTermVolSurface"  
                 let builder (current : ICell) = withMnemonic mnemonic ((CapFloorTermVolSurfaceModel.Cast _CapFloorTermVolSurface.cell).OptionTenors
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Period>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Period>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_CapFloorTermVolSurface.source + ".OptionTenors") 
 
@@ -524,7 +524,7 @@ module CapFloorTermVolSurfaceFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1278,7 +1278,7 @@ module CapFloorTermVolSurfaceFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<CapFloorTermVolSurface> (c)) :> ICell
-                let format (i : Generic.List<ICell<CapFloorTermVolSurface>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<CapFloorTermVolSurface>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

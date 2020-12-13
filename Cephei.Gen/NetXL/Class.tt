@@ -174,7 +174,7 @@ module <#= NetClass.Name #>Function =
             if (m.ReturnType.Contains("List<"))
             {
 #>
-                let format (i : <#= m.ReturnType.Replace("List<", "Generic.Cephei.Cell.List<") #>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : <#= m.ReturnType.Replace("List<", "Generic.Cephei.Cell.List<") #>) (l : string) = Helper.Range.fromList i l
 <#
             }
             else
@@ -348,12 +348,12 @@ module <#= NetClass.Name #>Function =
                 let l = new Generic.Cephei.Cell.List<<#= NetClass.Name #>> (c)
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = l :> ICell
-                let format (i : Generic.Cephei.Cell.List<<#= NetClass.Name #>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.Cephei.Cell.List<<#= NetClass.Name #>>) (l : string) = Helper.Range.fromList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source =  (fun () -> "(new Cephei.Cell.List<<#= NetClass.Name #>>(" + (Helper.sourceFoldArray (s) + "))"))
                     ; hash = Helper.hashFold2 c
                     } :?> string

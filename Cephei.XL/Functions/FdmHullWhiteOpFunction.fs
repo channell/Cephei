@@ -804,7 +804,7 @@ module FdmHullWhiteOpFunction =
                 let _FdmHullWhiteOp = Helper.toCell<FdmHullWhiteOp> fdmhullwhiteop "FdmHullWhiteOp"  
                 let builder (current : ICell) = withMnemonic mnemonic ((FdmHullWhiteOpModel.Cast _FdmHullWhiteOp.cell).ToMatrixDecomp
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<SparseMatrix>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<SparseMatrix>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_FdmHullWhiteOp.source + ".ToMatrixDecomp") 
 
@@ -815,7 +815,7 @@ module FdmHullWhiteOpFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -879,7 +879,7 @@ module FdmHullWhiteOpFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<FdmHullWhiteOp> (c)) :> ICell
-                let format (i : Generic.List<ICell<FdmHullWhiteOp>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<FdmHullWhiteOp>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

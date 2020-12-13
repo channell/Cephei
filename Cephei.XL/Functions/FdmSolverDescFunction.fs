@@ -306,7 +306,7 @@ module FdmSolverDescFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<FdmSolverDesc> (c)) :> ICell
-                let format (i : Generic.List<ICell<FdmSolverDesc>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<FdmSolverDesc>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

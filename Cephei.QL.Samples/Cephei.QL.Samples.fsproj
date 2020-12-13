@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="ModelList.fsx" />
     <Compile Include="Zero.fs" />
     <None Include="MoveList.fsx" />
     <None Include="AddEvaluation2.fsx" />

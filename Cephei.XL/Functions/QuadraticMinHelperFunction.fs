@@ -241,7 +241,7 @@ module QuadraticMinHelperFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<QuadraticMinHelper> (c)) :> ICell
-                let format (i : Generic.List<ICell<QuadraticMinHelper>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<QuadraticMinHelper>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

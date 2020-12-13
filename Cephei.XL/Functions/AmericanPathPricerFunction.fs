@@ -235,7 +235,7 @@ module AmericanPathPricerFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<AmericanPathPricer> (c)) :> ICell
-                let format (i : Generic.List<ICell<AmericanPathPricer>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<AmericanPathPricer>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

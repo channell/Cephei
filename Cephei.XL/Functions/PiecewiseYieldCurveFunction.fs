@@ -196,7 +196,7 @@ module PiecewiseYieldCurveFunction =
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
                 let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Dates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<Date>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".Dates") 
 
@@ -232,7 +232,7 @@ module PiecewiseYieldCurveFunction =
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
                 let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Dates_
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<Date>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".Dates_") 
 
@@ -580,7 +580,7 @@ module PiecewiseYieldCurveFunction =
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
                 let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).Instruments_
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<BootstrapHelper<YieldTermStructure>>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<BootstrapHelper<YieldTermStructure>>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".Instruments_") 
 
@@ -1707,7 +1707,7 @@ module PiecewiseYieldCurveFunction =
                 let _PiecewiseYieldCurve = Helper.toCell<QLNetHelper.PiecewiseYieldCurve> piecewiseyieldcurve "PiecewiseYieldCurve"  
                 let builder (current : ICell) = withMnemonic mnemonic ((PiecewiseYieldCurveModel.Cast _PiecewiseYieldCurve.cell).JumpDates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<Date>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_PiecewiseYieldCurve.source + ".JumpDates") 
 
@@ -2322,7 +2322,7 @@ module PiecewiseYieldCurveFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<QLNetHelper.PiecewiseYieldCurve> (c)) :> ICell
-                let format (i : Generic.List<ICell<QLNetHelper.PiecewiseYieldCurve>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<QLNetHelper.PiecewiseYieldCurve>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

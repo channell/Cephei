@@ -526,7 +526,7 @@ module YoYInflationCollarFunction =
                 let _YoYInflationCollar = Helper.toCell<YoYInflationCollar> yoyinflationcollar "YoYInflationCollar"  
                 let builder (current : ICell) = withMnemonic mnemonic ((YoYInflationCollarModel.Cast _YoYInflationCollar.cell).YoyLeg
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_YoYInflationCollar.source + ".YoyLeg") 
 
@@ -537,7 +537,7 @@ module YoYInflationCollarFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -793,7 +793,7 @@ module YoYInflationCollarFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<YoYInflationCollar> (c)) :> ICell
-                let format (i : Generic.List<ICell<YoYInflationCollar>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<YoYInflationCollar>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

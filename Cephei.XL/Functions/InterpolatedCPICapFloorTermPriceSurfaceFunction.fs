@@ -598,7 +598,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                 let _InterpolatedCPICapFloorTermPriceSurface = Helper.toCell<InterpolatedCPICapFloorTermPriceSurface> interpolatedcpicapfloortermpricesurface "InterpolatedCPICapFloorTermPriceSurface"  
                 let builder (current : ICell) = withMnemonic mnemonic ((InterpolatedCPICapFloorTermPriceSurfaceModel.Cast _InterpolatedCPICapFloorTermPriceSurface.cell).Maturities
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Period>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Period>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_InterpolatedCPICapFloorTermPriceSurface.source + ".Maturities") 
 
@@ -609,7 +609,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1561,7 +1561,7 @@ module InterpolatedCPICapFloorTermPriceSurfaceFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<InterpolatedCPICapFloorTermPriceSurface> (c)) :> ICell
-                let format (i : Generic.List<ICell<InterpolatedCPICapFloorTermPriceSurface>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<InterpolatedCPICapFloorTermPriceSurface>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

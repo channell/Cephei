@@ -94,7 +94,7 @@ module CmsLegFunction =
                 let _CmsLeg = Helper.toCell<CmsLeg> cmsleg "CmsLeg"  
                 let builder (current : ICell) = withMnemonic mnemonic ((CmsLegModel.Cast _CmsLeg.cell).Value
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_CmsLeg.source + ".Value") 
 
@@ -105,7 +105,7 @@ module CmsLegFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -877,7 +877,7 @@ module CmsLegFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<CmsLeg> (c)) :> ICell
-                let format (i : Generic.List<ICell<CmsLeg>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<CmsLeg>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

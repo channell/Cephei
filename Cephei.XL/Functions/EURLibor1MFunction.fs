@@ -1262,7 +1262,7 @@ module EURLibor1MFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<EURLibor1M> (c)) :> ICell
-                let format (i : Generic.List<ICell<EURLibor1M>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<EURLibor1M>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

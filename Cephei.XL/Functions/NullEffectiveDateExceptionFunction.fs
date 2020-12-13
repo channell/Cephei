@@ -165,7 +165,7 @@ module NullEffectiveDateExceptionFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<NullEffectiveDateException> (c)) :> ICell
-                let format (i : Generic.List<ICell<NullEffectiveDateException>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<NullEffectiveDateException>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

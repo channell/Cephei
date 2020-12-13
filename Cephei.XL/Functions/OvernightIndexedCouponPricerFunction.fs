@@ -456,7 +456,7 @@ module OvernightIndexedCouponPricerFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<OvernightIndexedCouponPricer> (c)) :> ICell
-                let format (i : Generic.List<ICell<OvernightIndexedCouponPricer>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<OvernightIndexedCouponPricer>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

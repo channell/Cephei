@@ -823,7 +823,7 @@ module CoxIngersollRossFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<CoxIngersollRoss> (c)) :> ICell
-                let format (i : Generic.List<ICell<CoxIngersollRoss>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<CoxIngersollRoss>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

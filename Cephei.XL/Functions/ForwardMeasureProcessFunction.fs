@@ -768,7 +768,7 @@ module ForwardMeasureProcessFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<ForwardMeasureProcess> (c)) :> ICell
-                let format (i : Generic.List<ICell<ForwardMeasureProcess>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<ForwardMeasureProcess>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

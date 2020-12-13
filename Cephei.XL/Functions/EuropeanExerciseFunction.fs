@@ -130,7 +130,7 @@ module EuropeanExerciseFunction =
                 let _EuropeanExercise = Helper.toCell<EuropeanExercise> europeanexercise "EuropeanExercise"  
                 let builder (current : ICell) = withMnemonic mnemonic ((EuropeanExerciseModel.Cast _EuropeanExercise.cell).Dates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_EuropeanExercise.source + ".Dates") 
 
@@ -141,7 +141,7 @@ module EuropeanExerciseFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -241,7 +241,7 @@ module EuropeanExerciseFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<EuropeanExercise> (c)) :> ICell
-                let format (i : Generic.List<ICell<EuropeanExercise>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<EuropeanExercise>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

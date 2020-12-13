@@ -932,7 +932,7 @@ module PdeOperatorFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<PdeOperator> (c)) :> ICell
-                let format (i : Generic.List<ICell<PdeOperator>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<PdeOperator>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

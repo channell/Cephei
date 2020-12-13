@@ -1039,7 +1039,7 @@ open Cephei.XL.Helper
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source =  (fun () -> ""cell Generic.List<");
             
             #line 357 "C:\Users\steve\source\repos\Cephei\Cephei.Gen\NetXL\Class.tt"

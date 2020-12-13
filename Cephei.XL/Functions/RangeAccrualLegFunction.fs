@@ -51,7 +51,7 @@ module RangeAccrualLegFunction =
                 let _RangeAccrualLeg = Helper.toCell<RangeAccrualLeg> rangeaccrualleg "RangeAccrualLeg"  
                 let builder (current : ICell) = withMnemonic mnemonic ((RangeAccrualLegModel.Cast _RangeAccrualLeg.cell).Leg
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<CashFlow>) (l : string) = Helper.Range.fromModelList i l
 
                 let source () = Helper.sourceFold (_RangeAccrualLeg.source + ".Leg") 
 
@@ -805,7 +805,7 @@ module RangeAccrualLegFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<RangeAccrualLeg> (c)) :> ICell
-                let format (i : Generic.List<ICell<RangeAccrualLeg>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<RangeAccrualLeg>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

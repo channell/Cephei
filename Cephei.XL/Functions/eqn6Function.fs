@@ -157,7 +157,7 @@ module eqn6Function =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<eqn6> (c)) :> ICell
-                let format (i : Generic.List<ICell<eqn6>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<eqn6>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

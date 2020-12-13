@@ -145,7 +145,7 @@ module GenericTimeSetterFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<GenericTimeSetter> (c)) :> ICell
-                let format (i : Generic.List<ICell<GenericTimeSetter>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<GenericTimeSetter>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

@@ -88,7 +88,7 @@ module BulletPricipalLegFunction =
                 let _BulletPricipalLeg = Helper.toCell<BulletPricipalLeg> bulletpricipalleg "BulletPricipalLeg"  
                 let builder (current : ICell) = withMnemonic mnemonic ((BulletPricipalLegModel.Cast _BulletPricipalLeg.cell).Value
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<CashFlow>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<CashFlow>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_BulletPricipalLeg.source + ".Value") 
 
@@ -99,7 +99,7 @@ module BulletPricipalLegFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -337,7 +337,7 @@ module BulletPricipalLegFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<BulletPricipalLeg> (c)) :> ICell
-                let format (i : Generic.List<ICell<BulletPricipalLeg>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<BulletPricipalLeg>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

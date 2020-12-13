@@ -209,7 +209,7 @@ module BermudanExerciseFunction =
                 let _BermudanExercise = Helper.toCell<BermudanExercise> bermudanexercise "BermudanExercise"  
                 let builder (current : ICell) = withMnemonic mnemonic ((BermudanExerciseModel.Cast _BermudanExercise.cell).Dates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_BermudanExercise.source + ".Dates") 
 
@@ -220,7 +220,7 @@ module BermudanExerciseFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -320,7 +320,7 @@ module BermudanExerciseFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<BermudanExercise> (c)) :> ICell
-                let format (i : Generic.List<ICell<BermudanExercise>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<BermudanExercise>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

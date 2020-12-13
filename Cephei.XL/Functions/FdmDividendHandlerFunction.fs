@@ -99,7 +99,7 @@ module FdmDividendHandlerFunction =
                 let _FdmDividendHandler = Helper.toCell<FdmDividendHandler> fdmdividendhandler "FdmDividendHandler"  
                 let builder (current : ICell) = withMnemonic mnemonic ((FdmDividendHandlerModel.Cast _FdmDividendHandler.cell).DividendDates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_FdmDividendHandler.source + ".DividendDates") 
 
@@ -110,7 +110,7 @@ module FdmDividendHandlerFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -271,7 +271,7 @@ module FdmDividendHandlerFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<FdmDividendHandler> (c)) :> ICell
-                let format (i : Generic.List<ICell<FdmDividendHandler>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<FdmDividendHandler>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

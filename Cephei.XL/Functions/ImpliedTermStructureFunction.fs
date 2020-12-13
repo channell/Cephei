@@ -550,7 +550,7 @@ module ImpliedTermStructureFunction =
                 let _ImpliedTermStructure = Helper.toCell<ImpliedTermStructure> impliedtermstructure "ImpliedTermStructure"  
                 let builder (current : ICell) = withMnemonic mnemonic ((ImpliedTermStructureModel.Cast _ImpliedTermStructure.cell).JumpDates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_ImpliedTermStructure.source + ".JumpDates") 
 
@@ -561,7 +561,7 @@ module ImpliedTermStructureFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -1057,7 +1057,7 @@ module ImpliedTermStructureFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<ImpliedTermStructure> (c)) :> ICell
-                let format (i : Generic.List<ICell<ImpliedTermStructure>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<ImpliedTermStructure>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

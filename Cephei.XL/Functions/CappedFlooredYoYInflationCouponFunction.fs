@@ -1772,7 +1772,7 @@ module CappedFlooredYoYInflationCouponFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<CappedFlooredYoYInflationCoupon> (c)) :> ICell
-                let format (i : Generic.List<ICell<CappedFlooredYoYInflationCoupon>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<CappedFlooredYoYInflationCoupon>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

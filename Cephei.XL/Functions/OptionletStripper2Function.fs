@@ -454,7 +454,7 @@ module OptionletStripper2Function =
                 let _OptionletStripper2 = Helper.toCell<OptionletStripper2> optionletstripper2 "OptionletStripper2"  
                 let builder (current : ICell) = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).OptionletFixingDates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_OptionletStripper2.source + ".OptionletFixingDates") 
 
@@ -465,7 +465,7 @@ module OptionletStripper2Function =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -490,7 +490,7 @@ module OptionletStripper2Function =
                 let _OptionletStripper2 = Helper.toCell<OptionletStripper2> optionletstripper2 "OptionletStripper2"  
                 let builder (current : ICell) = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).OptionletFixingTenors
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Period>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Period>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_OptionletStripper2.source + ".OptionletFixingTenors") 
 
@@ -501,7 +501,7 @@ module OptionletStripper2Function =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -598,7 +598,7 @@ module OptionletStripper2Function =
                 let _OptionletStripper2 = Helper.toCell<OptionletStripper2> optionletstripper2 "OptionletStripper2"  
                 let builder (current : ICell) = withMnemonic mnemonic ((OptionletStripper2Model.Cast _OptionletStripper2.cell).OptionletPaymentDates
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_OptionletStripper2.source + ".OptionletPaymentDates") 
 
@@ -609,7 +609,7 @@ module OptionletStripper2Function =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -829,7 +829,7 @@ module OptionletStripper2Function =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<OptionletStripper2> (c)) :> ICell
-                let format (i : Generic.List<ICell<OptionletStripper2>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<OptionletStripper2>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

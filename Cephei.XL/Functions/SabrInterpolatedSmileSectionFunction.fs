@@ -1323,7 +1323,7 @@ module SabrInterpolatedSmileSectionFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<SabrInterpolatedSmileSection> (c)) :> ICell
-                let format (i : Generic.List<ICell<SabrInterpolatedSmileSection>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<SabrInterpolatedSmileSection>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

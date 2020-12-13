@@ -102,7 +102,7 @@ module ChinaFunction =
                 let _China = Helper.toCell<China> china "China"  
                 let builder (current : ICell) = withMnemonic mnemonic ((ChinaModel.Cast _China.cell).AddedHolidays
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_China.source + ".AddedHolidays") 
 
@@ -113,7 +113,7 @@ module ChinaFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -776,7 +776,7 @@ module ChinaFunction =
                 let _China = Helper.toCell<China> china "China"  
                 let builder (current : ICell) = withMnemonic mnemonic ((ChinaModel.Cast _China.cell).RemovedHolidays
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<Date>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<Date>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_China.source + ".RemovedHolidays") 
 
@@ -787,7 +787,7 @@ module ChinaFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -857,7 +857,7 @@ module ChinaFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<China> (c)) :> ICell
-                let format (i : Generic.List<ICell<China>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<China>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

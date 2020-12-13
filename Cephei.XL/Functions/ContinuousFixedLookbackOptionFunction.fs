@@ -847,7 +847,7 @@ module ContinuousFixedLookbackOptionFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<ContinuousFixedLookbackOption> (c)) :> ICell
-                let format (i : Generic.List<ICell<ContinuousFixedLookbackOption>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<ContinuousFixedLookbackOption>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic

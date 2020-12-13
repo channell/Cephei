@@ -99,7 +99,7 @@ module FdmStepConditionCompositeFunction =
                 let _FdmStepConditionComposite = Helper.toCell<FdmStepConditionComposite> fdmstepconditioncomposite "FdmStepConditionComposite"  
                 let builder (current : ICell) = withMnemonic mnemonic ((FdmStepConditionCompositeModel.Cast _FdmStepConditionComposite.cell).Conditions
                                                        ) :> ICell
-                let format (i : Generic.List<ICell<IStepCondition<Vector>>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Generic.List<IStepCondition<Vector>>) (l : string) = Helper.Range.fromList i l
 
                 let source () = Helper.sourceFold (_FdmStepConditionComposite.source + ".Conditions") 
 
@@ -110,7 +110,7 @@ module FdmStepConditionCompositeFunction =
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
                     ; creator = builder
-                    ; subscriber = Helper.subscriberModelRange format
+                    ; subscriber = Helper.subscriberRange format
                     ; source = source 
                     ; hash = hash
                     } :?> string
@@ -248,7 +248,7 @@ module FdmStepConditionCompositeFunction =
 
                 let s = a |> Array.map (fun i -> i.source)
                 let builder (current : ICell) = (new Cephei.Cell.List<FdmStepConditionComposite> (c)) :> ICell
-                let format (i : Generic.List<ICell<FdmStepConditionComposite>>) (l : string) = Helper.Range.fromModelList i l
+                let format (i : Cephei.Cell.List<FdmStepConditionComposite>) (l : string) = Helper.Range.fromModelList i l
 
                 Model.specify 
                     { mnemonic = Model.formatMnemonic mnemonic
