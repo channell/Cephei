@@ -48,7 +48,19 @@ namespace Cephei.Cell.Generic
         volatile int _pending;
 
         public string Mnemonic { get; set; }
-        public ICell Parent { get; set; }
+        private ICell _parent;
+        public ICell Parent
+        {
+            get
+            {
+                return _parent;
+            }
+            set
+            {
+                if (_parent == null || _parent.Parent != value)
+                    _parent = value;
+            }
+        }
 
         public CellFast(FSharpFunc<Unit, T> func, ICell[] dependencies)
         {

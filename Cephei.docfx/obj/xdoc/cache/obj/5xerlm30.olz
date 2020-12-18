@@ -1,0 +1,10 @@
+id: Cephei.docfx
+language: CSharp
+name:
+  Default: Cephei.docfx
+qualifiedName:
+  Default: Cephei.docfx
+type: Assembly
+modifiers: {}
+items: []
+references: {}

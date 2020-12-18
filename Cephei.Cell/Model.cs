@@ -21,22 +21,29 @@ namespace Cephei.Cell
                          IObservable<KeyValuePair<string, int>>,
                          IObservable<KeyValuePair<string, Decimal>>
     {
-        protected ICell _Parent;
         #region ICell
-        public ICell Parent 
+        private ICell _parent;
+        public ICell Parent
         {
             get
             {
-                return _Parent;
+                return _parent;
             }
             set
             {
-                _Parent = value;
+                if (_parent == null || _parent.Parent != value)
+                _parent = value;
             }
         }
 
-
         public virtual IEnumerable<ICellEvent> Dependants
+        {
+            get
+            {
+                return ModelDependants;
+            }
+        }
+        protected IEnumerable<ICellEvent> ModelDependants
         {
             get
             {
@@ -55,7 +62,18 @@ namespace Cephei.Cell
             }
         }
 
-        public virtual string Mnemonic { get; set; }
+        protected string _Mnemonic;
+        public virtual string Mnemonic 
+        { 
+            get
+            {
+                return _Mnemonic;
+            }
+            set
+            {
+                _Mnemonic = value;
+            }
+        }
 
         public event CellChange Change;
 
@@ -523,14 +541,26 @@ namespace Cephei.Cell
                 Change += d.OnChange;
             }
         }
-        public virtual void Notify(ICell listener)
+        public void ModelNotify(ICell listener)
         {
+            if (listener == this) return;
+            foreach (var v in Dependants)
+                if (v == listener)
+                    return;
             Change += listener.OnChange;
         }
+        public virtual void Notify(ICell listener)
+        {
+            ModelNotify(listener);
+        }
 
-        public virtual void UnNotify(ICell listener)
+        public void ModelUnNotify(ICell listener)
         {
             Change -= listener.OnChange;
+        }
+        public virtual void UnNotify(ICell listener)
+        {
+            ModelUnNotify(listener);
         }
         public virtual object GetFunction()
         {

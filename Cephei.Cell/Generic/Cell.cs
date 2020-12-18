@@ -97,7 +97,19 @@ namespace Cephei.Cell.Generic
         private bool _disposd = false;
 
         public string Mnemonic { get; set; }
-        public ICell Parent { get; set; }
+        private ICell _parent;
+        public ICell Parent
+        {
+            get
+            {
+                return _parent;
+            }
+            set
+            {
+                if (_parent == null || _parent.Parent != value)
+                    _parent = value;
+            }
+        }
 
         /// <summary>
         /// Create the cell with the F# function.  If used from C#, the Func<> formula can

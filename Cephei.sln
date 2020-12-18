@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cephei.XL", "Cephei.XLC\Cep
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cephei.docfx", "Cephei.docfx\Cephei.docfx.csproj", "{481C3546-6129-4206-A1C4-2E92EBC3358B}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Cephei.Models", "Cephei.Models\Cephei.Models.fsproj", "{03B71E27-EDFC-4458-B32F-D4D926A3F84D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -206,6 +208,18 @@ Global
 		{481C3546-6129-4206-A1C4-2E92EBC3358B}.Release|x64.Build.0 = Release|Any CPU
 		{481C3546-6129-4206-A1C4-2E92EBC3358B}.Release|x86.ActiveCfg = Release|Any CPU
 		{481C3546-6129-4206-A1C4-2E92EBC3358B}.Release|x86.Build.0 = Release|Any CPU
+		{03B71E27-EDFC-4458-B32F-D4D926A3F84D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03B71E27-EDFC-4458-B32F-D4D926A3F84D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03B71E27-EDFC-4458-B32F-D4D926A3F84D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{03B71E27-EDFC-4458-B32F-D4D926A3F84D}.Debug|x64.Build.0 = Debug|Any CPU
+		{03B71E27-EDFC-4458-B32F-D4D926A3F84D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{03B71E27-EDFC-4458-B32F-D4D926A3F84D}.Debug|x86.Build.0 = Debug|Any CPU
+		{03B71E27-EDFC-4458-B32F-D4D926A3F84D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03B71E27-EDFC-4458-B32F-D4D926A3F84D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03B71E27-EDFC-4458-B32F-D4D926A3F84D}.Release|x64.ActiveCfg = Release|Any CPU
+		{03B71E27-EDFC-4458-B32F-D4D926A3F84D}.Release|x64.Build.0 = Release|Any CPU
+		{03B71E27-EDFC-4458-B32F-D4D926A3F84D}.Release|x86.ActiveCfg = Release|Any CPU
+		{03B71E27-EDFC-4458-B32F-D4D926A3F84D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

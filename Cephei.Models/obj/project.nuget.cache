@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "dgSpecHash": "IH2d2lYhpEpbjy+xbMLlMHIYohS7HGEq5t1RUmYrNbHuFgY9CZhHhaeGiHBTpLPfHYDZGSpg+oE4hRsBhY07zA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Models\\Cephei.Models.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\steve\\.nuget\\packages\\exceldna.integration\\1.1.0\\exceldna.integration.1.1.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\cephei.ql\\3.0.0\\cephei.ql.3.0.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\qlnet\\1.11.4\\qlnet.1.11.4.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'ExcelDna.Integration 1.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "ExcelDna.Integration",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
+}

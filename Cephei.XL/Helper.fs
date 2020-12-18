@@ -332,6 +332,21 @@ module Helper =
             ; source = "(new Generic.List<Nullable<" + (genericTypeString typeof<'T>) + ">())" 
             }
            
+    let toModel<'T,'t when 'T :> Model<'t>> (o : obj) (attribute : string)  =
+        if o :? string then 
+            let s =  o :?> string
+            let c = Model.cell s
+            if c.IsSome && (c.Value :? 'T) then 
+                let v = c.Value :?> 'T
+                { cell = v
+                ; source = c.Value.Mnemonic
+                }
+            else
+                invalidArg (o.ToString()) ("Invalid " + attribute + " " )
+        else
+            invalidArg (o.ToString()) ("Invalid " + attribute + " " )
+                
+
     let isNumeric (o : obj) : bool = 
         o.ToString().ToCharArray() |> Array.fold (fun a y -> if a && (Char.IsDigit(y) || y = '-' || y = '+' || y = '.' || y = 'e') then true else false) true
 

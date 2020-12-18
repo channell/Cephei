@@ -142,30 +142,38 @@ namespace Cephei.XL
         /// </summary>
         private void LoadModels ()
         {
-            var dir = ExcelDnaUtil.XllPath;
-            dir = dir.Substring(0, dir.LastIndexOf('\\'));
-            foreach (var f in Directory.EnumerateFiles(dir))
+            try
             {
-                if (f.ToLower().EndsWith("model.dll"))
+                var dir = ExcelDnaUtil.XllPath;
+                dir = dir.Substring(0, dir.LastIndexOf('\\'));
+                foreach (var f in Directory.EnumerateFiles(dir))
                 {
-                    var methods = new System.Collections.Generic.List<MethodInfo>();
-                    var ass = Assembly.LoadFile(f);
-                    foreach (var ty in ass.GetTypes())
+                    if (f.ToLower().EndsWith("model.dll"))
                     {
-                        foreach (var me in ty.GetMethods())
+                        var methods = new System.Collections.Generic.List<MethodInfo>();
+                        var ass = Assembly.LoadFile(f);
+                        foreach (var ty in ass.GetTypes())
                         {
-                            foreach (var att in me.GetCustomAttributes())
+                            foreach (var me in ty.GetMethods())
                             {
-                                if (att.GetType().Name == "ExcelFunction")
+                                foreach (var att in me.GetCustomAttributes())
                                 {
-                                    methods.Add(me);
-                                    break;
+                                    if (att.GetType().Name == "ExcelFunctionAttribute")
+                                    {
+                                        methods.Add(me);
+                                        break;
+                                    }
                                 }
                             }
                         }
+                        if (methods.Count > 0)
+                            ExcelIntegration.RegisterMethods(methods);
                     }
-                    ExcelIntegration.RegisterMethods(methods);
                 }
+            }
+            catch (Exception e)
+            {
+                Log.Error(e, e.Message);
             }
         }
     }

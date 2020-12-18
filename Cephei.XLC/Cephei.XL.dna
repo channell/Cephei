@@ -4,6 +4,7 @@
 	<Reference AssemblyPath="Microsoft.Extensions.Configuration.Abstractions.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />
 	<Reference AssemblyPath="Microsoft.Extensions.Logging.Abstractions.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />
 	<Reference AssemblyPath="Microsoft.Extensions.Primitives.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />
+	<Reference AssemblyPath="ExcelDna.Integration.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />
 	<Reference AssemblyPath="Serilog.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />
 	<Reference AssemblyPath="Serilog.Enrichers.Environment.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />
 	<Reference AssemblyPath="Serilog.Enrichers.Process.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />
@@ -11,6 +12,8 @@
 	<Reference AssemblyPath="Serilog.Extensions.Logging.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />
 	<Reference AssemblyPath="Serilog.Formatting.Compact.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />
 	<Reference AssemblyPath="Serilog.Sinks.ApplicationInsights.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />
+	<Reference AssemblyPath="Serilog.Sinks.RollingFile.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />
+	<Reference AssemblyPath="Serilog.Sinks.File.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />
 	<Reference AssemblyPath="System.Buffers.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />
 	<Reference AssemblyPath="System.Collections.Immutable.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />
 	<Reference AssemblyPath="System.Diagnostics.DiagnosticSource.dll" LoadFromBytes="true" Pack="true" IncludePdb="false" />

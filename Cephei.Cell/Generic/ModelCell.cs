@@ -11,11 +11,11 @@ namespace Cephei.Cell.Generic
     /// <typeparam name="T"></typeparam>
     public class Model<T> : Model , ICell<T>, ICellModel
     {
-        private ICell<T> _cell;
+        private ICell<T> _cell = null;
 
         public void Bind (ICell<T> cell)
         {
-            if (_cell != null)
+            if (_cell != null && cell != this)
             {
                 _cell = cell;
                 _cell.Parent = this;
@@ -29,8 +29,11 @@ namespace Cephei.Cell.Generic
             }
             else
             {
-                _cell = cell;
-                _cell.Parent = this;
+                if (cell != null && cell != this)
+                {
+                    _cell = cell;
+                    _cell.Parent = this;
+                }
                 Bind();
             }
         }
@@ -39,7 +42,10 @@ namespace Cephei.Cell.Generic
         {
             get
             {
-                return _cell.Dependants;
+                if (_cell == null || _cell == this)
+                    return ModelDependants;
+                else
+                    return _cell.Dependants;
             }
         }
 
@@ -47,122 +53,204 @@ namespace Cephei.Cell.Generic
         {
             get
             {
-                return _cell.Box;
+                if (_cell == null || _cell == this)
+                    return this;
+                else
+                    return _cell.Box;
             }
         }
 
         public override bool ValueIs<Base>()
         {
-            return _cell.ValueIs<Base>();
+            if (_cell == null || _cell == this)
+                return (typeof(Base) is T);
+            else
+                return _cell.ValueIs<Base>();
         }
 
         public override string Mnemonic 
         {
             get
             {
-                return _cell.Mnemonic;
+                if (_cell == null || _cell == this)
+                    return _Mnemonic;
+                else
+                    return _cell.Mnemonic;
             }
             set 
             {
-                _cell.Mnemonic = value;
+                if (_cell == null || _cell == this)
+                    _Mnemonic = value;
+                else
+                    _cell.Mnemonic = value;
             }
         }
 
-        public T Value { get => _cell.Value; set => _cell.Value = value; }
+        public T Value 
+        {
+            get
+            {
+                if (_cell == null || _cell == this)
+                    return default(T);
+                else
+                    return _cell.Value;
+            }
+            set
+            {
+                if (_cell == null || _cell == this)
+                    throw new NotImplementedException();
+                else
+                    _cell.Value = value;
+            }
+        }
 
         public void OnCompleted()
         {
-            _cell.OnCompleted();    
+            if (_cell != null && _cell != this)
+                _cell.OnCompleted();    
         }
 
         public void OnError(Exception error)
         {
-            _cell.OnError(error);
+            if (_cell != null && _cell != this)
+                _cell.OnError(error);
         }
 
         public void OnNext(T value)
         {
-            _cell.OnNext(value);
+            if (_cell != null && _cell != this)
+               _cell.OnNext(value);
         }
 
         public IDisposable Subscribe(IObserver<T> observer)
         {
-            return _cell.Subscribe(observer);
+            if (_cell == null || _cell == this)
+                return null;
+            else
+                return _cell.Subscribe(observer);
         }
 
         public IDisposable Subscribe(IObserver<KeyValuePair<ISession, KeyValuePair<string, T>>> observer)
         {
-            return _cell.Subscribe(observer);
+            if (_cell == null || _cell == this)
+                return null;
+            else
+                return _cell.Subscribe(observer);
         }
 
         public IDisposable Subscribe(IObserver<Tuple<ISession, ICell<T>, CellEvent, ICell, DateTime>> observer)
         {
-            return _cell.Subscribe(observer);
+            if (_cell == null || _cell == this)
+                return null;
+            else
+                return _cell.Subscribe(observer);
         }
         public FSharpFunc<Unit, T> Function
         {
             get
             {
-                return _cell.Function;
+                if (_cell == null || _cell == this)
+                    return null;
+                else
+                    return _cell.Function;
             }
             set
             {
-                _cell.Function = value;
+                if (_cell != null && _cell != this)
+                    _cell.Function = value;
             }
         }
         public override object GetFunction()
         {
-            return _cell.GetFunction();
+            if (_cell == null || _cell == this)
+                return null;
+            else
+                return _cell.GetFunction();
         }
 
-
-        public ICell Cell => _cell;
+        public ICell Cell
+        {
+            get
+            {
+                if (_cell == null)
+                    return this;
+                else
+                    return _cell;
+            }
+        }
 
         public override void Merge(ICell source, Model model)
         {
-            if (source != this)
+            if (_cell != null && _cell != this)
             {
-                Parent = model.Parent;
-                if (source is ICellModel sm)
+                if (source != this)
                 {
-                    _cell.Merge(sm.Cell, model);
-                    _cell.Parent = this;
+                    Parent = model.Parent;
+                    if (source is ICellModel sm)
+                    {
+                        _cell.Merge(sm.Cell, model);
+                        _cell.Parent = this;
+                    }
+                    else
+                    {
+                        _cell.Merge(source, model);
+                        _cell.Parent = this;
+                    }
                 }
-                else
-                {
-                    _cell.Merge(source, model);
-                    _cell.Parent = this;
-                }
-            }
                 // handle update of current while this cell is being constructed
-            if (Parent is Model mod)
-            {
-                var cur = mod[this.Mnemonic];
-                if (cur != this && cur != null && cur.GetType() == this.GetType())
-                    cur.Merge(this, model);
+                if (Parent is Model mod)
+                {
+                    var cur = mod[this.Mnemonic];
+                    if (cur != this && cur != null && cur.GetType() == this.GetType())
+                        cur.Merge(this, model);
+                }
             }
         }
         public override void Notify(ICell listener)
         {
             // _cell is null if one of the members being profiled tries to link to it
-            if (_cell != null) _cell.Notify(listener);
+            if (_cell != null && _cell != this)
+                _cell.Notify(listener);
+            else
+                ModelNotify(listener);
         }
 
         public override void UnNotify(ICell listener)
         {
-            _cell.UnNotify(listener);
+            if (_cell != null && _cell != this)
+                _cell.UnNotify(listener);
+            else
+                ModelUnNotify(listener);
         }
         public override void OnChange(CellEvent eventType, ICellEvent root,  ICellEvent sender,  DateTime epoch, ISession session)
         {            
             if (sender == Parent) 
                 return; 
-            if (root != this && sender.Parent != this)
+            if (root != this && sender.Parent != this && _cell != null)
                 _cell.OnChange(eventType, root,  this, epoch, session);
             if (Parent != null)
                 Parent.OnChange(eventType, root, this, epoch, session);
         }
-        public override CellState State => _cell.State;
-        public override Exception Error => _cell.Error;
+        public override CellState State
+        {
+            get
+            {
+                if (_cell == null || _cell == this)
+                    return CellState.Clean;
+                else
+                    return _cell.State;
+            }
+        }
 
+        public override Exception Error
+        {
+            get
+            {
+                if (_cell == null || _cell == this)
+                    return null;
+                else
+                    return _cell.Error;
+            }
+        }
     }
 }

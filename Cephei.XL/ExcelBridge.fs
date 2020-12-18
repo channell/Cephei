@@ -20,6 +20,8 @@ type ModelRTD () as this =
 
     let _subscription           = Model._state.Value.Model.Subscribe(this :> IObserver<ICell>)
 
+    let mutable _lastMnemonic   = ""
+
     do AppDomain.CurrentDomain.SetData("RTDServer", this)
 
     override this.ConnectData (topic : ExcelRtdServer.Topic, topicInfo : IList<string>, newValues : bool byref) =
@@ -41,7 +43,9 @@ type ModelRTD () as this =
                 topic.UpdateValue mnemonic
             with 
             | e -> topic.UpdateValue ("#" + e.Message)
-        Cephei.Cell.Cell.Dispatch (Action(dispatch)) 
+        if not (mnemonic = _lastMnemonic) then 
+            _lastMnemonic <- mnemonic
+            Cephei.Cell.Cell.Dispatch (Action(dispatch)) 
             
         mnemonic :> obj
 
@@ -49,6 +53,7 @@ type ModelRTD () as this =
 
         if  _topics.ContainsKey(topic) then 
             let mnemonic = _topics.[topic]
+            if mnemonic = _lastMnemonic then _lastMnemonic <- ""
             System.Diagnostics.Debug.Print ("ModelRTD DisconnectData " + mnemonic );
             let dispatch () : unit = 
                 try

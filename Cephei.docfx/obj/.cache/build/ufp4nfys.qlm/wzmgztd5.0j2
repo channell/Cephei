@@ -1,0 +1,1351 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Model
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Model
+   ">
+    <meta name="generator" content="docfx 2.56.5.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Cephei.Cell.Model">
+  
+  
+  <h1 id="Cephei_Cell_Model" data-uid="Cephei.Cell.Model" class="text-break">Class Model
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Model</span></div>
+      <div class="level2"><a class="xref" href="Cephei.Cell.Generic.Model-1.html">Model&lt;T&gt;</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Cephei.Cell.ICell.html">ICell</a></div>
+    <div><a class="xref" href="Cephei.Cell.ICellEvent.html">ICellEvent</a></div>
+    <div><span class="xref">IObservable</span>&lt;<a class="xref" href="Cephei.Cell.ICell.html">ICell</a>&gt;</div>
+    <div><span class="xref">IObservable</span>&lt;<span class="xref">KeyValuePair</span>&lt;<a class="xref" href="Cephei.Cell.ISession.html">ISession</a>, <span class="xref">KeyValuePair</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="Cephei.Cell.ICell.html">ICell</a>&gt;&gt;&gt;</div>
+    <div><span class="xref">IObservable</span>&lt;<span class="xref">Tuple</span>&lt;<a class="xref" href="Cephei.Cell.ISession.html">ISession</a>, <a class="xref" href="Cephei.Cell.Model.html">Model</a>, <a class="xref" href="Cephei.Cell.CellEvent.html">CellEvent</a>, <a class="xref" href="Cephei.Cell.ICell.html">ICell</a>, <span class="xref">DateTime</span>&gt;&gt;</div>
+    <div><span class="xref">IObservable</span>&lt;<span class="xref">KeyValuePair</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Double</span>&gt;&gt;</div>
+    <div><span class="xref">IObservable</span>&lt;<span class="xref">KeyValuePair</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Int32</span>&gt;&gt;</div>
+    <div><span class="xref">IObservable</span>&lt;<span class="xref">KeyValuePair</span>&lt;<span class="xref">System.String</span>, <span class="xref">Decimal</span>&gt;&gt;</div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Cephei.Cell.html">Cephei.Cell</a></h6>
+  <h6><strong>Assembly</strong>: Cephei - Backup.Cell.dll</h6>
+  <h5 id="Cephei_Cell_Model_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Model : ConcurrentDictionary&lt;string, ICell&gt;, ICell, ICellEvent, IObservable&lt;ICell&gt;, IObservable&lt;KeyValuePair&lt;ISession, KeyValuePair&lt;string, ICell&gt;&gt;&gt;, IObservable&lt;Tuple&lt;ISession, Model, CellEvent, ICell, DateTime&gt;&gt;, IObservable&lt;KeyValuePair&lt;string, double&gt;&gt;, IObservable&lt;KeyValuePair&lt;string, int&gt;&gt;, IObservable&lt;KeyValuePair&lt;string, Decimal&gt;&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model__ctor.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L134">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model__ctor_" data-uid="Cephei.Cell.Model.#ctor*"></a>
+  <h4 id="Cephei_Cell_Model__ctor" data-uid="Cephei.Cell.Model.#ctor">Model()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Model()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model__ctor_IDictionary_System_String_Cephei_Cell_ICell__.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.%23ctor(IDictionary%7BSystem.String%2CCephei.Cell.ICell%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L154">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model__ctor_" data-uid="Cephei.Cell.Model.#ctor*"></a>
+  <h4 id="Cephei_Cell_Model__ctor_IDictionary_System_String_Cephei_Cell_ICell__" data-uid="Cephei.Cell.Model.#ctor(IDictionary{System.String,Cephei.Cell.ICell})">Model(IDictionary&lt;String, ICell&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Model(IDictionary&lt;string, ICell&gt; dictionary)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IDictionary</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="Cephei.Cell.ICell.html">ICell</a>&gt;</td>
+        <td><span class="parametername">dictionary</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model__ctor_IDictionary_System_String_Cephei_Cell_ICell__IEqualityComparer_System_String__.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.%23ctor(IDictionary%7BSystem.String%2CCephei.Cell.ICell%7D%2CIEqualityComparer%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L193">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model__ctor_" data-uid="Cephei.Cell.Model.#ctor*"></a>
+  <h4 id="Cephei_Cell_Model__ctor_IDictionary_System_String_Cephei_Cell_ICell__IEqualityComparer_System_String__" data-uid="Cephei.Cell.Model.#ctor(IDictionary{System.String,Cephei.Cell.ICell},IEqualityComparer{System.String})">Model(IDictionary&lt;String, ICell&gt;, IEqualityComparer&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Model(IDictionary&lt;string, ICell&gt; dictionary, IEqualityComparer&lt;string&gt; comparer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IDictionary</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="Cephei.Cell.ICell.html">ICell</a>&gt;</td>
+        <td><span class="parametername">dictionary</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">IEqualityComparer</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">comparer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model__ctor_IEqualityComparer_System_String__.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.%23ctor(IEqualityComparer%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L167">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model__ctor_" data-uid="Cephei.Cell.Model.#ctor*"></a>
+  <h4 id="Cephei_Cell_Model__ctor_IEqualityComparer_System_String__" data-uid="Cephei.Cell.Model.#ctor(IEqualityComparer{System.String})">Model(IEqualityComparer&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Model(IEqualityComparer&lt;string&gt; comparer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEqualityComparer</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">comparer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model__ctor_System_String_.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L122">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model__ctor_" data-uid="Cephei.Cell.Model.#ctor*"></a>
+  <h4 id="Cephei_Cell_Model__ctor_System_String_" data-uid="Cephei.Cell.Model.#ctor(System.String)">Model(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Model(string mnemonic)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">mnemonic</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_Box.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.Box%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L458">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model_Box_" data-uid="Cephei.Cell.Model.Box*"></a>
+  <h4 id="Cephei_Cell_Model_Box" data-uid="Cephei.Cell.Model.Box">Box</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object Box { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_Dependants.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.Dependants%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L28">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model_Dependants_" data-uid="Cephei.Cell.Model.Dependants*"></a>
+  <h4 id="Cephei_Cell_Model_Dependants" data-uid="Cephei.Cell.Model.Dependants">Dependants</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;ICellEvent&gt; Dependants { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span>&lt;<a class="xref" href="Cephei.Cell.ICellEvent.html">ICellEvent</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_HasFunction.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.HasFunction%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L453">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model_HasFunction_" data-uid="Cephei.Cell.Model.HasFunction*"></a>
+  <h4 id="Cephei_Cell_Model_HasFunction" data-uid="Cephei.Cell.Model.HasFunction">HasFunction</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasFunction { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_HasValue.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.HasValue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L455">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model_HasValue_" data-uid="Cephei.Cell.Model.HasValue*"></a>
+  <h4 id="Cephei_Cell_Model_HasValue" data-uid="Cephei.Cell.Model.HasValue">HasValue</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasValue { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_Item_System_String_.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.Item(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L340">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model_Item_" data-uid="Cephei.Cell.Model.Item*"></a>
+  <h4 id="Cephei_Cell_Model_Item_System_String_" data-uid="Cephei.Cell.Model.Item(System.String)">Item[String]</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICell this[string key] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.ICell.html">ICell</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_Mnemonic.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.Mnemonic%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L47">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model_Mnemonic_" data-uid="Cephei.Cell.Model.Mnemonic*"></a>
+  <h4 id="Cephei_Cell_Model_Mnemonic" data-uid="Cephei.Cell.Model.Mnemonic">Mnemonic</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Mnemonic { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_Parent.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.Parent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L26">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model_Parent_" data-uid="Cephei.Cell.Model.Parent*"></a>
+  <h4 id="Cephei_Cell_Model_Parent" data-uid="Cephei.Cell.Model.Parent">Parent</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICell Parent { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.ICell.html">ICell</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_As__1_System_String_.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.As%60%601(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L405">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model_As_" data-uid="Cephei.Cell.Model.As*"></a>
+  <h4 id="Cephei_Cell_Model_As__1_System_String_" data-uid="Cephei.Cell.Model.As``1(System.String)">As&lt;T&gt;(String)</h4>
+  <div class="markdown level1 summary"><p>Get the value of this[key] with a typecast</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICell&lt;T&gt; As&lt;T&gt;(string key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>mnemonic</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.Generic.ICell-1.html">ICell</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>type expected</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_Bind.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.Bind%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L428">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model_Bind_" data-uid="Cephei.Cell.Model.Bind*"></a>
+  <h4 id="Cephei_Cell_Model_Bind" data-uid="Cephei.Cell.Model.Bind">Bind()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Bind()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_Create__1_Microsoft_FSharp_Core_FSharpFunc_Microsoft_FSharp_Core_Unit___0__System_String_.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.Create%60%601(Microsoft.FSharp.Core.FSharpFunc%7BMicrosoft.FSharp.Core.Unit%2C%60%600%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L63">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model_Create_" data-uid="Cephei.Cell.Model.Create*"></a>
+  <h4 id="Cephei_Cell_Model_Create__1_Microsoft_FSharp_Core_FSharpFunc_Microsoft_FSharp_Core_Unit___0__System_String_" data-uid="Cephei.Cell.Model.Create``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},System.String)">Create&lt;T&gt;(FSharpFunc&lt;Unit, T&gt;, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Cell&lt;T&gt; Create&lt;T&gt;(FSharpFunc&lt;Unit, T&gt; func, string mnemonic)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.FSharp.Core.FSharpFunc</span>&lt;<span class="xref">Microsoft.FSharp.Core.Unit</span>, T&gt;</td>
+        <td><span class="parametername">func</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">mnemonic</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.Generic.Cell-1.html">Cell</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_CreateValue__1___0_System_String_.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.CreateValue%60%601(%60%600%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L87">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model_CreateValue_" data-uid="Cephei.Cell.Model.CreateValue*"></a>
+  <h4 id="Cephei_Cell_Model_CreateValue__1___0_System_String_" data-uid="Cephei.Cell.Model.CreateValue``1(``0,System.String)">CreateValue&lt;T&gt;(T, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Cell&lt;T&gt; CreateValue&lt;T&gt;(T value, string mnemonic)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">mnemonic</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.Generic.Cell-1.html">Cell</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_Dispose.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L51">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model_Dispose_" data-uid="Cephei.Cell.Model.Dispose*"></a>
+  <h4 id="Cephei_Cell_Model_Dispose" data-uid="Cephei.Cell.Model.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_GetOrAdd_System_String_Cephei_Cell_ICell_.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.GetOrAdd(System.String%2CCephei.Cell.ICell)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L220">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model_GetOrAdd_" data-uid="Cephei.Cell.Model.GetOrAdd*"></a>
+  <h4 id="Cephei_Cell_Model_GetOrAdd_System_String_Cephei_Cell_ICell_" data-uid="Cephei.Cell.Model.GetOrAdd(System.String,Cephei.Cell.ICell)">GetOrAdd(String, ICell)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICell GetOrAdd(string key, ICell value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.ICell.html">ICell</a></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.ICell.html">ICell</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_OnChange_Cephei_Cell_CellEvent_Cephei_Cell_ICellEvent_DateTime_Cephei_Cell_ISession_.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent%2CCephei.Cell.ICellEvent%2CDateTime%2CCephei.Cell.ISession)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L56">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model_OnChange_" data-uid="Cephei.Cell.Model.OnChange*"></a>
+  <h4 id="Cephei_Cell_Model_OnChange_Cephei_Cell_CellEvent_Cephei_Cell_ICellEvent_DateTime_Cephei_Cell_ISession_" data-uid="Cephei.Cell.Model.OnChange(Cephei.Cell.CellEvent,Cephei.Cell.ICellEvent,DateTime,Cephei.Cell.ISession)">OnChange(CellEvent, ICellEvent, DateTime, ISession)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OnChange(CellEvent eventType, ICellEvent root, DateTime epoch, ISession session)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.CellEvent.html">CellEvent</a></td>
+        <td><span class="parametername">eventType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.ICellEvent.html">ICellEvent</a></td>
+        <td><span class="parametername">root</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">DateTime</span></td>
+        <td><span class="parametername">epoch</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.ISession.html">ISession</a></td>
+        <td><span class="parametername">session</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_Subscribe_IObserver_Cephei_Cell_ICell__.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.Subscribe(IObserver%7BCephei.Cell.ICell%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L473">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model_Subscribe_" data-uid="Cephei.Cell.Model.Subscribe*"></a>
+  <h4 id="Cephei_Cell_Model_Subscribe_IObserver_Cephei_Cell_ICell__" data-uid="Cephei.Cell.Model.Subscribe(IObserver{Cephei.Cell.ICell})">Subscribe(IObserver&lt;ICell&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDisposable Subscribe(IObserver&lt;ICell&gt; observer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IObserver</span>&lt;<a class="xref" href="Cephei.Cell.ICell.html">ICell</a>&gt;</td>
+        <td><span class="parametername">observer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IDisposable</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_Subscribe_IObserver_KeyValuePair_Cephei_Cell_ISession_KeyValuePair_System_String_Cephei_Cell_ICell____.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.Subscribe(IObserver%7BKeyValuePair%7BCephei.Cell.ISession%2CKeyValuePair%7BSystem.String%2CCephei.Cell.ICell%7D%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L478">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model_Subscribe_" data-uid="Cephei.Cell.Model.Subscribe*"></a>
+  <h4 id="Cephei_Cell_Model_Subscribe_IObserver_KeyValuePair_Cephei_Cell_ISession_KeyValuePair_System_String_Cephei_Cell_ICell____" data-uid="Cephei.Cell.Model.Subscribe(IObserver{KeyValuePair{Cephei.Cell.ISession,KeyValuePair{System.String,Cephei.Cell.ICell}}})">Subscribe(IObserver&lt;KeyValuePair&lt;ISession, KeyValuePair&lt;String, ICell&gt;&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDisposable Subscribe(IObserver&lt;KeyValuePair&lt;ISession, KeyValuePair&lt;string, ICell&gt;&gt;&gt; observer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IObserver</span>&lt;<span class="xref">KeyValuePair</span>&lt;<a class="xref" href="Cephei.Cell.ISession.html">ISession</a>, <span class="xref">KeyValuePair</span>&lt;<span class="xref">System.String</span>, <a class="xref" href="Cephei.Cell.ICell.html">ICell</a>&gt;&gt;&gt;</td>
+        <td><span class="parametername">observer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IDisposable</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_Subscribe_IObserver_KeyValuePair_System_String_System_Decimal___.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.Subscribe(IObserver%7BKeyValuePair%7BSystem.String%2CSystem.Decimal%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L498">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model_Subscribe_" data-uid="Cephei.Cell.Model.Subscribe*"></a>
+  <h4 id="Cephei_Cell_Model_Subscribe_IObserver_KeyValuePair_System_String_System_Decimal___" data-uid="Cephei.Cell.Model.Subscribe(IObserver{KeyValuePair{System.String,System.Decimal}})">Subscribe(IObserver&lt;KeyValuePair&lt;String, Decimal&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDisposable Subscribe(IObserver&lt;KeyValuePair&lt;string, decimal&gt;&gt; observer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IObserver</span>&lt;<span class="xref">KeyValuePair</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Decimal</span>&gt;&gt;</td>
+        <td><span class="parametername">observer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IDisposable</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_Subscribe_IObserver_KeyValuePair_System_String_System_Double___.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.Subscribe(IObserver%7BKeyValuePair%7BSystem.String%2CSystem.Double%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L488">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model_Subscribe_" data-uid="Cephei.Cell.Model.Subscribe*"></a>
+  <h4 id="Cephei_Cell_Model_Subscribe_IObserver_KeyValuePair_System_String_System_Double___" data-uid="Cephei.Cell.Model.Subscribe(IObserver{KeyValuePair{System.String,System.Double}})">Subscribe(IObserver&lt;KeyValuePair&lt;String, Double&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDisposable Subscribe(IObserver&lt;KeyValuePair&lt;string, double&gt;&gt; observer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IObserver</span>&lt;<span class="xref">KeyValuePair</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Double</span>&gt;&gt;</td>
+        <td><span class="parametername">observer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IDisposable</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_Subscribe_IObserver_KeyValuePair_System_String_System_Int32___.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.Subscribe(IObserver%7BKeyValuePair%7BSystem.String%2CSystem.Int32%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L493">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model_Subscribe_" data-uid="Cephei.Cell.Model.Subscribe*"></a>
+  <h4 id="Cephei_Cell_Model_Subscribe_IObserver_KeyValuePair_System_String_System_Int32___" data-uid="Cephei.Cell.Model.Subscribe(IObserver{KeyValuePair{System.String,System.Int32}})">Subscribe(IObserver&lt;KeyValuePair&lt;String, Int32&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDisposable Subscribe(IObserver&lt;KeyValuePair&lt;string, int&gt;&gt; observer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IObserver</span>&lt;<span class="xref">KeyValuePair</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.Int32</span>&gt;&gt;</td>
+        <td><span class="parametername">observer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IDisposable</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_Subscribe_IObserver_Tuple_Cephei_Cell_ISession_Cephei_Cell_Model_Cephei_Cell_CellEvent_Cephei_Cell_ICell_DateTime___.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.Subscribe(IObserver%7BTuple%7BCephei.Cell.ISession%2CCephei.Cell.Model%2CCephei.Cell.CellEvent%2CCephei.Cell.ICell%2CDateTime%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L483">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model_Subscribe_" data-uid="Cephei.Cell.Model.Subscribe*"></a>
+  <h4 id="Cephei_Cell_Model_Subscribe_IObserver_Tuple_Cephei_Cell_ISession_Cephei_Cell_Model_Cephei_Cell_CellEvent_Cephei_Cell_ICell_DateTime___" data-uid="Cephei.Cell.Model.Subscribe(IObserver{Tuple{Cephei.Cell.ISession,Cephei.Cell.Model,Cephei.Cell.CellEvent,Cephei.Cell.ICell,DateTime}})">Subscribe(IObserver&lt;Tuple&lt;ISession, Model, CellEvent, ICell, DateTime&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDisposable Subscribe(IObserver&lt;Tuple&lt;ISession, Model, CellEvent, ICell, DateTime&gt;&gt; observer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IObserver</span>&lt;<span class="xref">Tuple</span>&lt;<a class="xref" href="Cephei.Cell.ISession.html">ISession</a>, <a class="xref" href="Cephei.Cell.Model.html">Model</a>, <a class="xref" href="Cephei.Cell.CellEvent.html">CellEvent</a>, <a class="xref" href="Cephei.Cell.ICell.html">ICell</a>, <span class="xref">DateTime</span>&gt;&gt;</td>
+        <td><span class="parametername">observer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IDisposable</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_TryAdd_System_String_Cephei_Cell_ICell_.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.TryAdd(System.String%2CCephei.Cell.ICell)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L247">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model_TryAdd_" data-uid="Cephei.Cell.Model.TryAdd*"></a>
+  <h4 id="Cephei_Cell_Model_TryAdd_System_String_Cephei_Cell_ICell_" data-uid="Cephei.Cell.Model.TryAdd(System.String,Cephei.Cell.ICell)">TryAdd(String, ICell)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryAdd(string key, ICell value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.ICell.html">ICell</a></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_TryRemove_System_String_Cephei_Cell_ICell__.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.TryRemove(System.String%2CCephei.Cell.ICell%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L270">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model_TryRemove_" data-uid="Cephei.Cell.Model.TryRemove*"></a>
+  <h4 id="Cephei_Cell_Model_TryRemove_System_String_Cephei_Cell_ICell__" data-uid="Cephei.Cell.Model.TryRemove(System.String,Cephei.Cell.ICell@)">TryRemove(String, out ICell)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryRemove(string key, out ICell value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.ICell.html">ICell</a></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_TryUpdate_System_String_Cephei_Cell_ICell_Cephei_Cell_ICell_.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.TryUpdate(System.String%2CCephei.Cell.ICell%2CCephei.Cell.ICell)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L306">View Source</a>
+  </span>
+  <a id="Cephei_Cell_Model_TryUpdate_" data-uid="Cephei.Cell.Model.TryUpdate*"></a>
+  <h4 id="Cephei_Cell_Model_TryUpdate_System_String_Cephei_Cell_ICell_Cephei_Cell_ICell_" data-uid="Cephei.Cell.Model.TryUpdate(System.String,Cephei.Cell.ICell,Cephei.Cell.ICell)">TryUpdate(String, ICell, ICell)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryUpdate(string key, ICell newValue, ICell comparisonValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.ICell.html">ICell</a></td>
+        <td><span class="parametername">newValue</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.ICell.html">ICell</a></td>
+        <td><span class="parametername">comparisonValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model_Change.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model.Change%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L49">View Source</a>
+  </span>
+  <h4 id="Cephei_Cell_Model_Change" data-uid="Cephei.Cell.Model.Change">Change</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event CellChange Change</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Cephei.Cell.CellChange.html">CellChange</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Cephei.Cell.ICell.html">ICell</a>
+  </div>
+  <div>
+      <a class="xref" href="Cephei.Cell.ICellEvent.html">ICellEvent</a>
+  </div>
+  <div>
+      <span class="xref">IObservable&lt;&gt;</span>
+  </div>
+  <div>
+      <span class="xref">IObservable&lt;&gt;</span>
+  </div>
+  <div>
+      <span class="xref">IObservable&lt;&gt;</span>
+  </div>
+  <div>
+      <span class="xref">IObservable&lt;&gt;</span>
+  </div>
+  <div>
+      <span class="xref">IObservable&lt;&gt;</span>
+  </div>
+  <div>
+      <span class="xref">IObservable&lt;&gt;</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/channell/Cephei/new/master/apiSpec/new?filename=Cephei_Cell_Model.md&amp;value=---%0Auid%3A%20Cephei.Cell.Model%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/channell/Cephei/blob/master/Cephei.Cell/Model.cs/#L15" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

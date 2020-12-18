@@ -32,7 +32,8 @@ module public  Model =
                 else
                     s.Substring(0,min s.Length 255)
             match o with
-            | :? double -> o :> obj
+            | :? double -> o 
+            | :? int -> o
             | :? string -> trim o :> obj
             | :? DateTime as d -> d.ToOADate() :> obj
             | :? QLNet.Date as d -> d.serialNumber() :> obj
@@ -227,16 +228,14 @@ module public  Model =
         range
 
     let sourcecode (name : string) = 
+        let name = if name.ToLower().EndsWith("model") then name else name + "Model"
         let tieredCells (model : Model) =
 
             let rec depth (cell : ICell) = 
-                let max a b = if a > b then a else b
-                cell.Dependants |> 
-                Seq.filter (fun i -> i :? ICell) |>
-                Seq.map (fun i -> i :?> ICell) |>
-//                Seq.map (fun i -> (i, i.Box)) |>
- //               Seq.fold (fun a (y,x) -> a + 1 + (depth y)) 0
-                Seq.fold (fun a y -> a + 1 + (depth y)) 0
+                cell.Dependants 
+                |> Seq.filter (fun i -> i :? ICell) 
+                |> Seq.map (fun i -> i :?> ICell) 
+                |> Seq.fold (fun a y -> a + 1 + (if y :? Model then (y :?> Model).Count + depth y else depth y)) 0
 
             model |>
             Seq.map (fun i -> if i.Value :? ICellModel then new KeyValuePair<string, ICell>(i.Key, (i.Value :?> ICellModel).Cell) else i) |>
@@ -269,7 +268,7 @@ module public  Model =
             if t.IsGenericType then
                 genericTypeString (t.GetGenericArguments().[0])
             else
-                genericTypeString (t.GetGenericArguments().[0])
+                t.ToString();
 
         let cells = 
             tiers |>
@@ -277,12 +276,14 @@ module public  Model =
             Array.map (fun (c,d) -> (c, _state.Value.Source.[c.Mnemonic]))
 
         let constructors = 
-            fst (
-                cells |>
-                Array.filter (fun (c,s) -> c.Mnemonic.StartsWith("+")) |>
-                Array.map (fun (c,s) -> sprintf "%s : ICell<%s>\n" (strip c.Mnemonic) (typeString c)) |>
-                Array.fold (fun (s,d) y -> (s + "    " + d + y,", ")) ("", "( ") 
-                )
+            match fst   (
+                        cells |>
+                        Array.filter (fun (c,s) -> c.Mnemonic.StartsWith("+")) |>
+                        Array.map (fun (c,s) -> sprintf "%s : ICell<%s>\n" (strip c.Mnemonic) (typeString c)) |>
+                        Array.fold (fun (s,d) y -> (s + "    " + d + y,", ")) ("", "( ") 
+                        ) with
+            | "" -> "    ("
+            | s -> s
 
         let functions =
             cells |> 
@@ -308,11 +309,21 @@ module public  Model =
             Array.fold (fun a y -> a + y) ""
 
         let excelBuilder = 
-            cells |>
-            Array.filter (fun (c,s) -> (c.Mnemonic.StartsWith("+"))) |>
-            Array.map (fun (c,s) -> sprintf "                                                            _%s.cell\n" (strip c.Mnemonic)) |>
-            Array.fold (fun a y -> a + y) ""
-
+            let mutable delim = "("
+            let apply (c : ICell,s)  = 
+                let r = sprintf "                                                                        %s _%s.cell\n" delim (strip c.Mnemonic)
+                delim <- ","
+                r
+            let s = 
+                cells |>
+                Array.filter (fun (c,s) -> (c.Mnemonic.StartsWith("+"))) |>
+                Array.map apply |>
+                Array.fold (fun a y -> a + y) ""
+            if s = "" then 
+                "                                                            ()\n" 
+            else
+                s
+                
         let excelsource : string = 
             let buff = 
                 fst (
@@ -352,9 +363,9 @@ module public  Model =
 
             try
 
-            let _{0} = Helper.toCell<{0}> {0} \"{0}\"  
-            let builder (current : ICell) = withMnemonic mnemonic (_{0}.cell :> {0}).{1}) :> ICell
-            let format (o : {2}) (l:string) = o.Helper.Range.fromModel (i :?> {1}) l
+            let _{0} = Helper.toModel<{0}, obj> {0} \"{0}\"  
+            let builder (current : ICell) = withMnemonic mnemonic (_{0}.cell :?> {0}).{1} :> ICell
+            let format (o : {2}) (l:string) = Model.genericFormat o
             let source () = (_{0}.source + \".{1}\")
             let hash = Helper.hashFold [| _{0}.cell |]
             Model.specify 
@@ -390,12 +401,17 @@ open System.Collections
 
 type {0} 
 {1}    ) as this =
-    inherit Model ()
+    inherit Model<obj> ()
 {2}
-    do this.Bind ()
+    do this.Bind (null)
 {3}
 
 #if EXCEL
+
+open ExcelDna.Integration
+open Cephei.XL
+open Cephei.XL.Helper
+
 module {0}Function =
 
     [<ExcelFunction(Name=\"__{0}\", Description=\"Create a {0}\",Category=\"Cephei Models\", IsThreadSafe = false, IsExceptionSafe=true)>]
@@ -410,7 +426,7 @@ module {0}Function =
 {5}
                 let builder (current : ICell) = withMnemonic mnemonic (new {0}
 {6}
-                                                       ) :> ICell
+                                                                      ) :> ICell
                 let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> {0}) l
                 let source () = Helper.sourceFold \"new {0}\"
 {7}                                               |]
