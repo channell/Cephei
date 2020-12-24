@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.1": {},
     ".NETStandard,Version=v2.1/": {
-      "Cephei.Cell/3.0.3": {
+      "Cephei.Cell/3.1.3": {
         "dependencies": {
           "FSharp.Core": "5.0.0",
           "ILGPU": "0.9.1",
@@ -151,7 +151,7 @@
     }
   },
   "libraries": {
-    "Cephei.Cell/3.0.3": {
+    "Cephei.Cell/3.1.3": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

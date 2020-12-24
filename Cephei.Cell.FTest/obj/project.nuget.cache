@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RiYgxEn3fpfYA4MADDDftJB69bxl4IJV38XwiRH5cSTPSFlOIq/huk44DdjwM3VzkwmXBDKEA8moCF9QlEyHZA==",
+  "dgSpecHash": "StpqstjzIOJz4+g/MQCp/rE5ky5TWQ+QkIj5/iQL5cm6f00+lUPbQQVP+ccxW9RLClgzmAP9XxIQfCU2L4eDDw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Cell.FTest\\Cephei.Cell.Test.fsproj",
+  "projectFilePath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Cell.FTest\\Cephei.Cell.Test.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\steve\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512",
@@ -129,7 +129,8 @@
     "C:\\Users\\steve\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\steve\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\steve\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\cephei.cell\\3.1.3\\cephei.cell.3.1.3.nupkg.sha512"
   ],
   "logs": []
 }

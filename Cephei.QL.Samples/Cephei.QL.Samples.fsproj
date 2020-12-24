@@ -33,7 +33,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Cephei.Cell\Cephei.Cell.csproj" />
     <ProjectReference Include="..\Cephei.QL\Cephei.QL.fsproj" />
   </ItemGroup>
 

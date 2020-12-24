@@ -3,8 +3,8 @@
 
   <PropertyGroup>
     <TargetFrameworks>net48;netstandard2.1;net5.0</TargetFrameworks>
-    <AssemblyVersion>3.0.0.0</AssemblyVersion>
-    <Version>3.0.0</Version>
+    <AssemblyVersion>3.1.1.0</AssemblyVersion>
+    <Version>3.1.1</Version>
     <Company>Cepheis Ltd</Company>
     <Authors>Steve Channell</Authors>
     <PackageProjectUrl>https://github.com/channell/Cephei</PackageProjectUrl>
@@ -24,7 +24,7 @@ The source types can be used as-is or as recipes for domain specific implementat
 </Description>
     <Copyright>Cepheis Ltd</Copyright>
     <PackageReleaseNotes>Conversion from C++ Quantlib to QLNet</PackageReleaseNotes>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
@@ -1058,13 +1058,29 @@ The source types can be used as-is or as recipes for domain specific implementat
   </ItemGroup>
 
   <ItemGroup>
-	  <None Include="$(OutDir)QLNet.dll">
+	  <None Include="$(OutDir)../bin/Release/netstandard2.1/QLNet.dll">
 		  <Pack>True</Pack>
-		  <PackagePath>lib/netstandard2.0</PackagePath>
+		  <PackagePath>lib/netstandard2.1</PackagePath>
 	  </None>
-	  <None Include="$(OutDir)Cephei.QLNetHelper.dll">
+	  <None Include="$(OutDir)../bin/Release/net48/QLNet.dll">
 		  <Pack>True</Pack>
-		  <PackagePath>lib/netstandard2.0</PackagePath>
+		  <PackagePath>lib/net48</PackagePath>
+	  </None>
+	  <None Include="$(OutDir)../bin/Release/net5.0/QLNet.dll">
+		  <Pack>True</Pack>
+		  <PackagePath>lib/net5.0</PackagePath>
+	  </None>
+	  <None Include="$(OutDir)../bin/Release/netstandard2.1/Cephei.QLNetHelper.dll">
+		  <Pack>True</Pack>
+		  <PackagePath>lib/netstandard2.1</PackagePath>
+	  </None>
+	  <None Include="$(OutDir)../bin/Release/net48/Cephei.QLNetHelper.dll">
+		  <Pack>True</Pack>
+		  <PackagePath>lib/net48</PackagePath>
+	  </None>
+	  <None Include="$(OutDir)../bin/Release/net5.0/Cephei.QLNetHelper.dll">
+		  <Pack>True</Pack>
+		  <PackagePath>lib/net5.0</PackagePath>
 	  </None>
 	  <None Include="..\Cephei.Cell\Licence.txt">
       <Pack>True</Pack>

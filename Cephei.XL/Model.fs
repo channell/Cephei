@@ -32,6 +32,7 @@ module public  Model =
                 else
                     s.Substring(0,min s.Length 255)
             match o with
+            | null -> null
             | :? double -> o 
             | :? int -> o
             | :? string -> trim o :> obj
@@ -228,14 +229,17 @@ module public  Model =
         range
 
     let sourcecode (name : string) = 
-        let name = if name.ToLower().EndsWith("model") then name else name + "Model"
+        let modelName = if name.ToLower().EndsWith("model") then name else name + "Model"
         let tieredCells (model : Model) =
 
             let rec depth (cell : ICell) = 
+                let modelDepth (m : Model) = 
+                    m |> Seq.fold (fun a i -> a + (depth i.Value)) 0
                 cell.Dependants 
                 |> Seq.filter (fun i -> i :? ICell) 
                 |> Seq.map (fun i -> i :?> ICell) 
-                |> Seq.fold (fun a y -> a + 1 + (if y :? Model then (y :?> Model).Count + depth y else depth y)) 0
+                |> Seq.fold (fun a y -> a + 1 + (if y :? Model then (modelDepth (y :?> Model)) + depth y else depth y)) 0
+                |> (fun t -> if cell :? Model then (modelDepth (cell :?> Model)) + t else t) 
 
             model |>
             Seq.map (fun i -> if i.Value :? ICellModel then new KeyValuePair<string, ICell>(i.Key, (i.Value :?> ICellModel).Cell) else i) |>
@@ -299,7 +303,7 @@ module public  Model =
         let excelParameters = 
             cells |>
             Array.filter (fun (c,s) -> c.Mnemonic.StartsWith("+")) |>
-            Array.map (fun (c,s) -> sprintf "        ([<ExcelArgument(Name=\"__%s\",Description = \"reference to %s\")>]\n        %s : obj)\n" (strip c.Mnemonic) (typeString c) (strip c.Mnemonic)) |>
+            Array.map (fun (c,s) -> sprintf "        ([<ExcelArgument(Name=\"%s\",Description = \"reference to %s\")>]\n        %s : obj)\n" (strip c.Mnemonic) (typeString c) (strip c.Mnemonic)) |>
             Array.fold (fun a y -> a + y) ""
 
         let excelCasts = 
@@ -313,7 +317,7 @@ module public  Model =
             let apply (c : ICell,s)  = 
                 let r = sprintf "                                                                        %s _%s.cell\n" delim (strip c.Mnemonic)
                 delim <- ","
-                r
+                r 
             let s = 
                 cells |>
                 Array.filter (fun (c,s) -> (c.Mnemonic.StartsWith("+"))) |>
@@ -322,7 +326,7 @@ module public  Model =
             if s = "" then 
                 "                                                            ()\n" 
             else
-                s
+                s + ")"
                 
         let excelsource : string = 
             let buff = 
@@ -350,7 +354,7 @@ module public  Model =
             else
                 buff
 
-        let formatProperty (n : string) (p : string) (t : string) = 
+        let formatProperty (n : string) (p : string) (t : string) (m : string)= 
             String.Format ("
     [<ExcelFunction(Name=\"__{0}_{1}\", Description=\"Create a {2}\",Category=\"Cephei Models\", IsThreadSafe = false, IsExceptionSafe=true)>]
     let {0}_{1}
@@ -363,8 +367,8 @@ module public  Model =
 
             try
 
-            let _{0} = Helper.toModel<{0}, obj> {0} \"{0}\"  
-            let builder (current : ICell) = withMnemonic mnemonic (_{0}.cell :?> {0}).{1} :> ICell
+            let _{0} = Helper.toModel<{3}, obj> {0} \"{0}\"  
+            let builder (current : ICell) = withMnemonic mnemonic (_{0}.cell :?> {3}).{1} :> ICell
             let format (o : {2}) (l:string) = Model.genericFormat o
             let source () = (_{0}.source + \".{1}\")
             let hash = Helper.hashFold [| _{0}.cell |]
@@ -379,12 +383,12 @@ module public  Model =
             | _ as e ->  \"#\" + e.Message
         else
             \"<WIZ>\"
-                            ", n, p, t)
+                            ", n, p, t, m)
 
         let excelProperties = 
             cells |>
             Array.filter (fun (c,s) -> not (c.Mnemonic.StartsWith("-") || c.Mnemonic.StartsWith("+"))) |>
-            Array.map (fun (c,s) -> formatProperty name c.Mnemonic (typeString c)) |>
+            Array.map (fun (c,s) -> formatProperty name c.Mnemonic (typeString c) modelName) |>
             Array.fold (fun a y -> a + y) ""
 
 
@@ -399,7 +403,7 @@ open Cephei.Cell.Generic
 open System
 open System.Collections
 
-type {0} 
+type {10} 
 {1}    ) as this =
     inherit Model<obj> ()
 {2}
@@ -412,7 +416,7 @@ open ExcelDna.Integration
 open Cephei.XL
 open Cephei.XL.Helper
 
-module {0}Function =
+module {10}Function =
 
     [<ExcelFunction(Name=\"__{0}\", Description=\"Create a {0}\",Category=\"Cephei Models\", IsThreadSafe = false, IsExceptionSafe=true)>]
     let {0}_create
@@ -424,10 +428,10 @@ module {0}Function =
 
             try
 {5}
-                let builder (current : ICell) = withMnemonic mnemonic (new {0}
+                let builder (current : ICell) = withMnemonic mnemonic (new {10}
 {6}
                                                                       ) :> ICell
-                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> {0}) l
+                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?> {10}) l
                 let source () = Helper.sourceFold \"new {0}\"
 {7}                                               |]
 
@@ -446,4 +450,4 @@ module {0}Function =
             \"<WIZ>\"
 {9}
 #endif
-", name, constructors, functions, members, excelParameters, excelCasts, excelBuilder, excelsource, excelhash, excelProperties )
+", (*0*)name, (*1*)constructors, (*2*)functions, (*3*)members, (*4*)excelParameters, (*5*)excelCasts, (*6*)excelBuilder, (*7*)excelsource, (*8*)excelhash, (*9*)excelProperties, (*10*)modelName )

@@ -1,35 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Cephei.Model</AssemblyName>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>TRACE;EXCEL</DefineConstants>
-    <NoWarn>49</NoWarn>
-    <OutputPath>..\bin\Debug\</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>..\bin\release</OutputPath>
-    <DefineConstants>TRACE;EXCEL</DefineConstants>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Include="Standards.fs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="ExcelDna.Integration" Version="1.1.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\amaggiulli\QLNet\src\QLNet\QLNet.csproj" />
-    <ProjectReference Include="..\Cephei.Cell\Cephei.Cell.csproj" />
-    <ProjectReference Include="..\Cephei.QLNetHelper\Cephei.QLNetHelper.csproj" />
-    <ProjectReference Include="..\Cephei.QL\Cephei.QL.fsproj" />
-    <ProjectReference Include="..\Cephei.XL\Cephei.XLM.fsproj" />
-  </ItemGroup>
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
 </Project>

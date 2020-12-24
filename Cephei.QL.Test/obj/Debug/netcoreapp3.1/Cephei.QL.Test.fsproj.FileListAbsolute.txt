@@ -115,8 +115,8 @@ C:\Users\steve\source\repos\Cephei2\Cephei.QL.Test\obj\Debug\netcoreapp3.1\Cephe
 C:\Users\steve\Source\Repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\ILGPU.dll
 C:\Users\steve\Source\Repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\steve\Source\Repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\steve\Source\Repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Cephei.Cell.pdb
 C:\Users\steve\source\repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Cephei.QLNetHelper.pdb
 C:\Users\steve\source\repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Cephei.QL.pdb
 C:\Users\steve\source\repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\QLNet.dll
 C:\Users\steve\source\repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\QLNet.pdb
+C:\Users\steve\source\repos\Cephei2\Cephei.QL.Test\bin\Debug\netcoreapp3.1\Cephei.Cell.pdb

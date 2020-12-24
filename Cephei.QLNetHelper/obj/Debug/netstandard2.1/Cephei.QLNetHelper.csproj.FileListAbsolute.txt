@@ -1,8 +1,6 @@
 C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\bin\Debug\netstandard2.1\Cephei.QLNetHelper.deps.json
 C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\bin\Debug\netstandard2.1\Cephei.QLNetHelper.dll
 C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\bin\Debug\netstandard2.1\Cephei.QLNetHelper.pdb
-C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\bin\Debug\netstandard2.1\Cephei.Cell.dll
-C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\bin\Debug\netstandard2.1\Cephei.Cell.pdb
 C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\obj\Debug\netstandard2.1\Cephei.QLNetHelper.csprojAssemblyReference.cache
 C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\obj\Debug\netstandard2.1\Cephei.QLNetHelper.AssemblyInfoInputs.cache
 C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\obj\Debug\netstandard2.1\Cephei.QLNetHelper.AssemblyInfo.cs

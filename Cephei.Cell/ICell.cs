@@ -376,7 +376,7 @@ namespace Cephei.Cell
                 fd.Add(f.Name, o);
                 if (o is ICell c)
                 {
-                    if (c is ICellModel m && m.Cell != null)
+                    if (c is ICellModel m && m.Cell != null && !(m.Cell is ICellEmpty))  // exclude forward referneces
                         l.AddLast(m.Cell);
                     else if (c is ITrivial t)
                     {

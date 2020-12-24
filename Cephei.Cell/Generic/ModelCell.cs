@@ -13,17 +13,35 @@ namespace Cephei.Cell.Generic
     {
         private ICell<T> _cell = null;
 
+        public Model () : base ()
+        {
+            _cell = new CellEmpty<T>();     // for forward references to this model that need to be migrated to during bind
+        }
+
         public void Bind (ICell<T> cell)
         {
             if (_cell != null && cell != this)
             {
-                _cell = cell;
-                _cell.Parent = this;
-                foreach (var c in this)
+                foreach (var c in _cell.Dependants)
                 {
-                    if (!(c.Value is ITrivial))
+                    if (c is ICell)
+                        cell.Notify((ICell)c);
+                }
+                if (_cell is ICellEmpty)
+                {
+                    _cell = cell;
+                    _cell.Parent = this;
+                }
+                else
+                {
+                    _cell = cell;
+                    _cell.Parent = this;
+                    foreach (var c in this)
                     {
-                        c.Value.OnChange(CellEvent.Link, this, this, DateTime.Now, null);
+                        if (!(c.Value is ITrivial))
+                        {
+                            c.Value.OnChange(CellEvent.Link, this, this, DateTime.Now, null);
+                        }
                     }
                 }
             }

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>net48;netstandard2.1;net5.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>3.0.3</Version>
+    <Version>3.1.3</Version>
     <UserSecretsId>6cae7644-0aae-4e42-b92c-f948aa487a5c</UserSecretsId>
     <Authors>Steve Channell</Authors>
     <Company>Cepheis Ltd</Company>
@@ -18,12 +18,12 @@ Cells can be grouped into a Model to encapsulate the implementation of the model
     <RepositoryUrl>https://github.com/channell/Cephei</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>Cephei Quantlib</PackageTags>
-    <PackageReleaseNotes>This is the first open-source implementation of the library, that has been used by two investment banks for Montecarlo simulation for CVA pricing and Liquidity Risk</PackageReleaseNotes>
+    <PackageReleaseNotes>Enhanced CellFast to use ILGPU for dependency mapping and added CellKernel to use GPGPU kernel functions for evaluation.  CellKernel takes a factory function as a parameter – the factory function prepares a function that executes a GPGPU kernel to return results</PackageReleaseNotes>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>Licence.txt</PackageLicenseFile>
-    <AssemblyVersion>3.0.0.3</AssemblyVersion>
-    <FileVersion>3.0.0.3</FileVersion>
+    <AssemblyVersion>3.1.0.3</AssemblyVersion>
+    <FileVersion>3.1.0.3</FileVersion>
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
 

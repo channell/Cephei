@@ -74,11 +74,11 @@ module Helper =
                 elif cv.ValueIs<'T>() then 
                     if cv :? IDateDependant then
                         { cell = withMnemonic cv.Mnemonic (trivDate (fun () -> (cv.Box :?> 'T)) (cv :?> IDateDependant))
-                        ; source = "(trivDate (fun () -> _" + s + ".Value :> " + (genericTypeString typeof<'T>) + ") (_" + s + " :> IDateDependant))"
+                        ; source = "_" + s
                         }
                     else
                         { cell = withMnemonic cv.Mnemonic (triv (fun () -> (cv.Box :?> 'T)))
-                        ; source = "(triv (fun () -> _" + s + ".Value :> " + (genericTypeString typeof<'T>) + "))"
+                        ; source = "_" + s
                         }
                 elif typeof<'T> = typeof<Date> then 
                     if o :? ICell<double> then
@@ -190,13 +190,13 @@ module Helper =
         else
             toCell<'T> o attribute
 
-
     // Summary: Convert the reference to a cell handle for QL legacy handle class
     let toHandle<'T when 'T :> IObservable> (o : obj) (attribute : string) : CellSource<Handle<'T>> = 
         if o :? string then
             let s = o :?> string
             let c = Model.cell s
             if c.IsSome then 
+                let s = if s.StartsWith("+") || s.StartsWith("-") then s.Substring(1) else s
                 let c = c.Value
                 if c:? ICell<'T> then 
                     let c = c :?> ICell<'T>
@@ -339,7 +339,7 @@ module Helper =
             if c.IsSome && (c.Value :? 'T) then 
                 let v = c.Value :?> 'T
                 { cell = v
-                ; source = c.Value.Mnemonic
+                ; source = "_" + c.Value.Mnemonic
                 }
             else
                 invalidArg (o.ToString()) ("Invalid " + attribute + " " )

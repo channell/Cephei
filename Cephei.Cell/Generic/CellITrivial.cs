@@ -184,10 +184,11 @@ namespace Cephei.Cell.Generic
         public void Notify(ICell listener)
         {
             if (listener == this ||  listener == null) return;
-            if (_references == null)
-                _references = Cell.Profile<T>(_func);
-            foreach (var c in _references)
-                c.Notify(listener);
+            foreach (var c in References)
+                if (c != this)
+                    c.Notify(listener);
+                else
+                    continue;
         }
 
         public void UnNotify(ICell listener)

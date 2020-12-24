@@ -33,16 +33,17 @@ type ModelRTD () as this =
 
         let dispatch () : unit = 
             try
-                _topics.[topic] <- mnemonic
-                if _topicIndex.ContainsKey (mnemonic) then 
-                    _topicIndex.[mnemonic] <- [topic] @ _topicIndex.[mnemonic]
-                else
-                    _topicIndex.[mnemonic] <- [topic]
-
                 Model.add mnemonic 
                 topic.UpdateValue mnemonic
             with 
             | e -> topic.UpdateValue ("#" + e.Message)
+
+        _topics.[topic] <- mnemonic
+        if _topicIndex.ContainsKey (mnemonic) then 
+            _topicIndex.[mnemonic] <- [topic] @ _topicIndex.[mnemonic]
+        else
+            _topicIndex.[mnemonic] <- [topic]
+
         if not (mnemonic = _lastMnemonic) then 
             _lastMnemonic <- mnemonic
             Cephei.Cell.Cell.Dispatch (Action(dispatch)) 
@@ -132,8 +133,11 @@ type ValueRTD () as this =
                 false
             elif _value.ContainsKey(kv.Key.Key) then
                 let v = _value.[kv.Key.Key]
-                kv.Value.UpdateValue v
-                false
+                if v :? string && (v :?> string).StartsWith("#") then 
+                    true
+                else
+                    kv.Value.UpdateValue v
+                    false
             else
                 let c = Model.cell kv.Key.Key
                 if c.IsSome then

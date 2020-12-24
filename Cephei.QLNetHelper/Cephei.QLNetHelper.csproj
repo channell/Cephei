@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\amaggiulli\QLNet\src\QLNet\QLNet.csproj" />
-    <ProjectReference Include="..\Cephei.Cell\Cephei.Cell.csproj" />
   </ItemGroup>
 
 </Project>

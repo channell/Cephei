@@ -124,14 +124,22 @@ namespace Cephei.XL
                     var p = t.GenericTypeArguments[0];
                     if (p.IsClass)
                     {
-                        _metric[p.Name] += 1;
+                        long c;
+                        if (_metric.TryGetValue(t.Name, out c))
+                            _metric[t.Name] = c + 1;
+                        else
+                            _metric.TryAdd(t.Name, 1);
                     }
                 }
                 else
                 {
                     if (t.IsClass)
                     {
-                        _metric[t.Name] += 1;
+                        long c;
+                        if (_metric.TryGetValue(t.Name, out c))
+                            _metric[t.Name] = c + 1;
+                        else
+                            _metric.TryAdd(t.Name, 1);
                     }
                 }
             }

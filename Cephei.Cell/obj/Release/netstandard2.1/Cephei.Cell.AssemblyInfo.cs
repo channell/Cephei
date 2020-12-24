@@ -18,11 +18,11 @@ using System.Reflection;
 The Cell framework is designed for complex financial calculations that depend on ticking market data for pricing and real-time risk – where you can not determine which value is going to change for second to second.
 Cells can be grouped into a Model to encapsulate the implementation of the model in an obj that is IObserver<> for upstream values and IObservable<> for downstream values
 ")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("3.0.0.3")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("3.0.3")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("3.1.0.3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("3.1.3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cephei.Cell")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cephei.Cell")]
-[assembly: System.Reflection.AssemblyVersionAttribute("3.0.0.3")]
+[assembly: System.Reflection.AssemblyVersionAttribute("3.1.0.3")]
 [assembly: System.Reflection.AssemblyMetadataAttribute("RepositoryUrl", "https://github.com/channell/Cephei")]
 [assembly: System.Resources.NeutralResourcesLanguageAttribute("en")]
 
