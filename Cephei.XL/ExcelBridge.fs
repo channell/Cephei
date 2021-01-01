@@ -19,10 +19,31 @@ type ModelRTD () as this =
     let _topicIndex             = new ConcurrentDictionary<string, ExcelRtdServer.Topic list>()
 
     let _subscription           = Model._state.Value.Model.Subscribe(this :> IObserver<ICell>)
+    let _timer                  = new System.Timers.Timer (2000.0);
+    let _retry                  = new ConcurrentQueue<string> ()
 
-    let mutable _lastMnemonic   = ""
+    let mutable _lastMnemonic   = ("","")
+
+    let tick (e : System.Timers.ElapsedEventArgs) : unit = 
+        try
+            let mutable v : string = ""
+            if not (_retry.IsEmpty) then 
+                while _retry.TryDequeue(&v) do
+                    if not (v = null) then
+                        let c = Model.cell v
+                        if c.IsSome then 
+                            try
+                                c.Value.OnChange(CellEvent.Link, c.Value, c.Value, DateTime.Now, null);
+                            with
+                            | e -> Log.Error(e, e.Message)
+        finally
+            _timer.Enabled <- true
 
     do AppDomain.CurrentDomain.SetData("RTDServer", this)
+       _timer.Elapsed.Add tick
+       _timer.AutoReset <- false
+       _timer.Enabled <- true
+       _timer.Start ()
 
     override this.ConnectData (topic : ExcelRtdServer.Topic, topicInfo : IList<string>, newValues : bool byref) =
 
@@ -44,8 +65,8 @@ type ModelRTD () as this =
         else
             _topicIndex.[mnemonic] <- [topic]
 
-        if not (mnemonic = _lastMnemonic) then 
-            _lastMnemonic <- mnemonic
+        if not ((mnemonic,hc) = _lastMnemonic) then 
+            _lastMnemonic <- (mnemonic,hc)
             Cephei.Cell.Cell.Dispatch (Action(dispatch)) 
             
         mnemonic :> obj
@@ -54,7 +75,7 @@ type ModelRTD () as this =
 
         if  _topics.ContainsKey(topic) then 
             let mnemonic = _topics.[topic]
-            if mnemonic = _lastMnemonic then _lastMnemonic <- ""
+            if mnemonic = fst _lastMnemonic then _lastMnemonic <- ("","")
             System.Diagnostics.Debug.Print ("ModelRTD DisconnectData " + mnemonic );
             let dispatch () : unit = 
                 try
@@ -82,12 +103,16 @@ type ModelRTD () as this =
 
         member this.OnNext (c : ICell) = 
             if c.State = CellState.Error && not (c.Error = null) && _topicIndex.ContainsKey(c.Mnemonic) then
+                _retry.Enqueue c.Mnemonic
                 if c.Error :? CalculationException then
                     _topicIndex.[c.Mnemonic]
                     |> List.iter (fun i -> i.UpdateValue ("#" + c.Error.Message))
                 else
                     _topicIndex.[c.Mnemonic]
                     |> List.iter (fun i -> i.UpdateValue ("#" + (new CalculationException(c.Error)).Message))
+            elif _topicIndex.ContainsKey(c.Mnemonic) then 
+                _topicIndex.[c.Mnemonic]
+                |> List.iter (fun i -> i.UpdateValue c.Mnemonic)
             
     interface IValueRTD with 
         member this.UpdateValue (mnemonic : string) (layout : string) (value : obj) = 
@@ -107,7 +132,6 @@ type ValueRTD () as this =
     let _subscriptions          = new ConcurrentDictionary<Generic.KeyValuePair<string, string>, IDisposable> ()
     let _value                  = new ConcurrentDictionary<string, obj> ()
     let _retry                  = new ConcurrentQueue<KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic>> ()
-//    let _relink                 = new ConcurrentQueue<KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic>> ()
     let _timer                  = new System.Timers.Timer (2000.0);
 
     let _RTDModel               = AppDomain.CurrentDomain.GetData("RTDServer") :?> IValueRTD
@@ -115,7 +139,6 @@ type ValueRTD () as this =
     let kvp (k : 'k) (v : 'v) = new KeyValuePair<'k,'v>(k,v)
 
     let updateValue (topic : ExcelRtdServer.Topic) mnemonic (value : obj) = 
-(* not needed after change too post event notifcation *)
         if value :? string && (value :?> string).StartsWith("#") then 
             let c = Model.cell mnemonic
             if c.IsSome then
@@ -150,28 +173,25 @@ type ValueRTD () as this =
             true
     
     let tick (e : System.Timers.ElapsedEventArgs) : unit = 
-        let mutable v : KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic> = new KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic> (KeyValuePair<string, string>(null,null), null)
-        if _retry.IsEmpty then
-            _value
-            |> Seq.filter (fun x -> (x.Value :? string) && (x.Value :?> string).StartsWith("#") && not ((x.Value :?> string) = "#NA" ))
-            |> Seq.map (fun i -> kvp i.Key "")
-            |> Seq.filter (fun i -> _topicIndex.ContainsKey(i))
-            |> Seq.fold (fun a i -> (List.map (fun t -> kvp i t) _topicIndex.[i]) @ a) []
-            |> List.iter (fun i -> _retry.Enqueue i)
+        try
+            let mutable v : KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic> = new KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic> (KeyValuePair<string, string>(null,null), null)
+            if _retry.IsEmpty then
+                _value
+                |> Seq.filter (fun x -> (x.Value :? string) && (x.Value :?> string).StartsWith("#") && not ((x.Value :?> string) = "#NA" ))
+                |> Seq.map (fun i -> kvp i.Key "")
+                |> Seq.filter (fun i -> _topicIndex.ContainsKey(i))
+                |> Seq.fold (fun a i -> (List.map (fun t -> kvp i t) _topicIndex.[i]) @ a) []
+                |> List.iter (fun i -> _retry.Enqueue i)
 
-        if _retry.IsEmpty then
-            _timer.Interval <- _timer.Interval + 2000.0
-        else
-            _timer.Interval <- 2000.0
-
-        if not (_retry.IsEmpty) then 
-            let requeue = new Generic.Queue<KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic>> ()
-            while _retry.TryDequeue(&v) do
-                if not (v.Key.Key = null) && (v.Value.Value :? string) then
-                    if subscribe v then
-                        requeue.Enqueue v
-            requeue |> Seq.iter (fun i -> _retry.Enqueue i)
-        _timer.Enabled <- true
+            if not (_retry.IsEmpty) then 
+                let requeue = new Generic.Queue<KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic>> ()
+                while _retry.TryDequeue(&v) do
+                    if not (v.Key.Key = null) && (v.Value.Value :? string) then
+                        if subscribe v then
+                            requeue.Enqueue v
+                requeue |> Seq.iter (fun i -> _retry.Enqueue i)
+        finally
+            _timer.Enabled <- true
 
     do  _timer.Elapsed.Add tick
         _timer.AutoReset <- false

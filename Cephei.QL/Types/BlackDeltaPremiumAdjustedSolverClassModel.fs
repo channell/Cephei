@@ -57,11 +57,11 @@ type BlackDeltaPremiumAdjustedSolverClassModel
     Functions
 *)
     let mutable
-        _BlackDeltaPremiumAdjustedSolverClass      = cell (fun () -> new BlackDeltaPremiumAdjustedSolverClass (ot.Value, dt.Value, spot.Value, dDiscount.Value, fDiscount.Value, stdDev.Value, delta.Value))
+        _BlackDeltaPremiumAdjustedSolverClass      = make (fun () -> new BlackDeltaPremiumAdjustedSolverClass (ot.Value, dt.Value, spot.Value, dDiscount.Value, fDiscount.Value, stdDev.Value, delta.Value))
     let _value                                     (strike : ICell<double>)   
-                                                   = triv (fun () -> _BlackDeltaPremiumAdjustedSolverClass.Value.value(strike.Value))
+                                                   = triv _BlackDeltaPremiumAdjustedSolverClass (fun () -> _BlackDeltaPremiumAdjustedSolverClass.Value.value(strike.Value))
     let _derivative                                (x : ICell<double>)   
-                                                   = triv (fun () -> _BlackDeltaPremiumAdjustedSolverClass.Value.derivative(x.Value))
+                                                   = triv _BlackDeltaPremiumAdjustedSolverClass (fun () -> _BlackDeltaPremiumAdjustedSolverClass.Value.derivative(x.Value))
     do this.Bind(_BlackDeltaPremiumAdjustedSolverClass)
 (* 
     casting 

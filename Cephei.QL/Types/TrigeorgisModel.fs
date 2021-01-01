@@ -42,18 +42,18 @@ type TrigeorgisModel
     Functions
 *)
     let mutable
-        _Trigeorgis                                = cell (fun () -> new Trigeorgis ())
+        _Trigeorgis                                = make (fun () -> new Trigeorgis ())
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
-                                                   = triv (fun () -> _Trigeorgis.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
+                                                   = triv _Trigeorgis (fun () -> _Trigeorgis.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (x : ICell<int>) (y : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _Trigeorgis.Value.probability(x.Value, y.Value, branch.Value))
+                                                   = triv _Trigeorgis (fun () -> _Trigeorgis.Value.probability(x.Value, y.Value, branch.Value))
     let _underlying                                (i : ICell<int>) (index : ICell<int>)   
-                                                   = triv (fun () -> _Trigeorgis.Value.underlying(i.Value, index.Value))
+                                                   = triv _Trigeorgis (fun () -> _Trigeorgis.Value.underlying(i.Value, index.Value))
     let _descendant                                (x : ICell<int>) (index : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _Trigeorgis.Value.descendant(x.Value, index.Value, branch.Value))
+                                                   = triv _Trigeorgis (fun () -> _Trigeorgis.Value.descendant(x.Value, index.Value, branch.Value))
     let _size                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _Trigeorgis.Value.size(i.Value))
-    let _columns                                   = triv (fun () -> _Trigeorgis.Value.columns())
+                                                   = triv _Trigeorgis (fun () -> _Trigeorgis.Value.size(i.Value))
+    let _columns                                   = triv _Trigeorgis (fun () -> _Trigeorgis.Value.columns())
     do this.Bind(_Trigeorgis)
 (* 
     casting 
@@ -108,18 +108,18 @@ type TrigeorgisModel1
     Functions
 *)
     let mutable
-        _Trigeorgis                                = cell (fun () -> new Trigeorgis (Process.Value, End.Value, steps.Value, strike.Value))
+        _Trigeorgis                                = make (fun () -> new Trigeorgis (Process.Value, End.Value, steps.Value, strike.Value))
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
-                                                   = triv (fun () -> _Trigeorgis.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
+                                                   = triv _Trigeorgis (fun () -> _Trigeorgis.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (x : ICell<int>) (y : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _Trigeorgis.Value.probability(x.Value, y.Value, branch.Value))
+                                                   = triv _Trigeorgis (fun () -> _Trigeorgis.Value.probability(x.Value, y.Value, branch.Value))
     let _underlying                                (i : ICell<int>) (index : ICell<int>)   
-                                                   = triv (fun () -> _Trigeorgis.Value.underlying(i.Value, index.Value))
+                                                   = triv _Trigeorgis (fun () -> _Trigeorgis.Value.underlying(i.Value, index.Value))
     let _descendant                                (x : ICell<int>) (index : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _Trigeorgis.Value.descendant(x.Value, index.Value, branch.Value))
+                                                   = triv _Trigeorgis (fun () -> _Trigeorgis.Value.descendant(x.Value, index.Value, branch.Value))
     let _size                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _Trigeorgis.Value.size(i.Value))
-    let _columns                                   = triv (fun () -> _Trigeorgis.Value.columns())
+                                                   = triv _Trigeorgis (fun () -> _Trigeorgis.Value.size(i.Value))
+    let _columns                                   = triv _Trigeorgis (fun () -> _Trigeorgis.Value.columns())
     do this.Bind(_Trigeorgis)
 (* 
     casting 

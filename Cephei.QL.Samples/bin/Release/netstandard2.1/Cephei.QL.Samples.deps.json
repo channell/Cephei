@@ -9,8 +9,7 @@
     ".NETStandard,Version=v2.1/": {
       "Cephei.QL.Samples/1.0.0": {
         "dependencies": {
-          "Cephei.Cell": "3.1.3",
-          "Cephei.QL": "3.1.1",
+          "Cephei.QL": "3.1.2",
           "FSharp.Core": "5.0.0",
           "ILGPU": "0.9.1",
           "System.Collections.Immutable": "5.0.0",
@@ -151,7 +150,7 @@
           }
         }
       },
-      "Cephei.Cell/3.1.3": {
+      "Cephei.Cell/3.1.4": {
         "dependencies": {
           "FSharp.Core": "5.0.0",
           "ILGPU": "0.9.1",
@@ -162,9 +161,9 @@
           "Cephei.Cell.dll": {}
         }
       },
-      "Cephei.QL/3.1.1": {
+      "Cephei.QL/3.1.2": {
         "dependencies": {
-          "Cephei.Cell": "3.1.3",
+          "Cephei.Cell": "3.1.4",
           "Cephei.QLNetHelper": "1.0.0",
           "FSharp.Core": "5.0.0",
           "ILGPU": "0.9.1",
@@ -177,7 +176,6 @@
       },
       "Cephei.QLNetHelper/1.0.0": {
         "dependencies": {
-          "Cephei.Cell": "3.1.3",
           "QLNet": "1.11.4"
         },
         "runtime": {
@@ -270,12 +268,12 @@
       "path": "system.runtime.compilerservices.unsafe/4.7.1",
       "hashPath": "system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512"
     },
-    "Cephei.Cell/3.1.3": {
+    "Cephei.Cell/3.1.4": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Cephei.QL/3.1.1": {
+    "Cephei.QL/3.1.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

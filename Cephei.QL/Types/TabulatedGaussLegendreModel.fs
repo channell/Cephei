@@ -45,13 +45,13 @@ type TabulatedGaussLegendreModel
     Functions
 *)
     let mutable
-        _TabulatedGaussLegendre                    = cell (fun () -> new TabulatedGaussLegendre (n.Value))
-    let _order                                     = triv (fun () -> _TabulatedGaussLegendre.Value.order())
+        _TabulatedGaussLegendre                    = make (fun () -> new TabulatedGaussLegendre (n.Value))
+    let _order                                     = triv _TabulatedGaussLegendre (fun () -> _TabulatedGaussLegendre.Value.order())
     let _order1                                    (order : ICell<int>)   
-                                                   = triv (fun () -> _TabulatedGaussLegendre.Value.order(order.Value)
-                                                                     _TabulatedGaussLegendre.Value)
+                                                   = triv _TabulatedGaussLegendre (fun () -> _TabulatedGaussLegendre.Value.order(order.Value)
+                                                                                             _TabulatedGaussLegendre.Value)
     let _value                                     (f : ICell<Func<double,double>>)   
-                                                   = triv (fun () -> _TabulatedGaussLegendre.Value.value(f.Value))
+                                                   = triv _TabulatedGaussLegendre (fun () -> _TabulatedGaussLegendre.Value.value(f.Value))
     do this.Bind(_TabulatedGaussLegendre)
 (* 
     casting 

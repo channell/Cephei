@@ -65,10 +65,10 @@ type AbcdModel
     Functions
 *)
     let mutable
-        _Abcd                                      = cell (fun () -> new Abcd (a.Value, b.Value, c.Value, d.Value, aIsFixed.Value, bIsFixed.Value, cIsFixed.Value, dIsFixed.Value, vegaWeighted.Value, endCriteria.Value, optMethod.Value))
-    let _global                                    = triv (fun () -> _Abcd.Value.GLOBAL)
+        _Abcd                                      = make (fun () -> new Abcd (a.Value, b.Value, c.Value, d.Value, aIsFixed.Value, bIsFixed.Value, cIsFixed.Value, dIsFixed.Value, vegaWeighted.Value, endCriteria.Value, optMethod.Value))
+    let _global                                    = triv _Abcd (fun () -> _Abcd.Value.GLOBAL)
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _Abcd.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
+                                                   = triv _Abcd (fun () -> _Abcd.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
     do this.Bind(_Abcd)
 (* 
     casting 

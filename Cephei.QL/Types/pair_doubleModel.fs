@@ -47,14 +47,14 @@ type pair_doubleModel
     Functions
 *)
     let mutable
-        _pair_double                               = cell (fun () -> new pair_double (first.Value, second.Value))
+        _pair_double                               = make (fun () -> new pair_double (first.Value, second.Value))
     let _CompareTo                                 (other : ICell<Pair<double,double>>)   
-                                                   = triv (fun () -> _pair_double.Value.CompareTo(other.Value))
-    let _first                                     = triv (fun () -> _pair_double.Value.first)
-    let _second                                    = triv (fun () -> _pair_double.Value.second)
+                                                   = triv _pair_double (fun () -> _pair_double.Value.CompareTo(other.Value))
+    let _first                                     = triv _pair_double (fun () -> _pair_double.Value.first)
+    let _second                                    = triv _pair_double (fun () -> _pair_double.Value.second)
     let _set                                       (first : ICell<double>) (second : ICell<double>)   
-                                                   = triv (fun () -> _pair_double.Value.set(first.Value, second.Value)
-                                                                     _pair_double.Value)
+                                                   = triv _pair_double (fun () -> _pair_double.Value.set(first.Value, second.Value)
+                                                                                  _pair_double.Value)
     do this.Bind(_pair_double)
 (* 
     casting 

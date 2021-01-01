@@ -51,15 +51,15 @@ type MethodOfLinesSchemeModel
     Functions
 *)
     let mutable
-        _MethodOfLinesScheme                       = cell (fun () -> new MethodOfLinesScheme (eps.Value, relInitStepSize.Value, map.Value, bcSet.Value))
+        _MethodOfLinesScheme                       = make (fun () -> new MethodOfLinesScheme (eps.Value, relInitStepSize.Value, map.Value, bcSet.Value))
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
-                                                   = triv (fun () -> _MethodOfLinesScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
+                                                   = triv _MethodOfLinesScheme (fun () -> _MethodOfLinesScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _MethodOfLinesScheme.Value.setStep(dt.Value)
-                                                                     _MethodOfLinesScheme.Value)
+                                                   = triv _MethodOfLinesScheme (fun () -> _MethodOfLinesScheme.Value.setStep(dt.Value)
+                                                                                          _MethodOfLinesScheme.Value)
     let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _MethodOfLinesScheme.Value.step(ref a.Value, t.Value, theta.Value)
-                                                                     _MethodOfLinesScheme.Value)
+                                                   = triv _MethodOfLinesScheme (fun () -> _MethodOfLinesScheme.Value.step(ref a.Value, t.Value, theta.Value)
+                                                                                          _MethodOfLinesScheme.Value)
     do this.Bind(_MethodOfLinesScheme)
 (* 
     casting 
@@ -104,15 +104,15 @@ type MethodOfLinesSchemeModel1
     Functions
 *)
     let mutable
-        _MethodOfLinesScheme                       = cell (fun () -> new MethodOfLinesScheme ())
+        _MethodOfLinesScheme                       = make (fun () -> new MethodOfLinesScheme ())
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
-                                                   = triv (fun () -> _MethodOfLinesScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
+                                                   = triv _MethodOfLinesScheme (fun () -> _MethodOfLinesScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _MethodOfLinesScheme.Value.setStep(dt.Value)
-                                                                     _MethodOfLinesScheme.Value)
+                                                   = triv _MethodOfLinesScheme (fun () -> _MethodOfLinesScheme.Value.setStep(dt.Value)
+                                                                                          _MethodOfLinesScheme.Value)
     let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _MethodOfLinesScheme.Value.step(ref a.Value, t.Value, theta.Value)
-                                                                     _MethodOfLinesScheme.Value)
+                                                   = triv _MethodOfLinesScheme (fun () -> _MethodOfLinesScheme.Value.step(ref a.Value, t.Value, theta.Value)
+                                                                                          _MethodOfLinesScheme.Value)
     do this.Bind(_MethodOfLinesScheme)
 (* 
     casting 

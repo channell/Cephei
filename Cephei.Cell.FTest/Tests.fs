@@ -55,7 +55,10 @@ type Sample () =
     let bins n = 
         [for r in 0I..n -> string (binomial n r)]
 
-    let modelValue (m : Model) (v : 'a) s = m.CreateValue (v,s)
+    let modelValue (m : Model) (v : 'a) s = 
+        let t = Cell.CreateValue (v)
+        t.Mnemonic <- s
+        t
 
     let modelCell (m : Model) (v : unit -> 'a) s = m.Create (v, s)
 

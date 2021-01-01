@@ -45,19 +45,19 @@ type MinBasketPayoffModel
     Functions
 *)
     let mutable
-        _MinBasketPayoff                           = cell (fun () -> new MinBasketPayoff (p.Value))
+        _MinBasketPayoff                           = make (fun () -> new MinBasketPayoff (p.Value))
     let _accumulate                                (a : ICell<Vector>)   
-                                                   = triv (fun () -> _MinBasketPayoff.Value.accumulate(a.Value))
-    let _basePayoff                                = triv (fun () -> _MinBasketPayoff.Value.basePayoff())
-    let _description                               = triv (fun () -> _MinBasketPayoff.Value.description())
-    let _name                                      = triv (fun () -> _MinBasketPayoff.Value.name())
+                                                   = triv _MinBasketPayoff (fun () -> _MinBasketPayoff.Value.accumulate(a.Value))
+    let _basePayoff                                = triv _MinBasketPayoff (fun () -> _MinBasketPayoff.Value.basePayoff())
+    let _description                               = triv _MinBasketPayoff (fun () -> _MinBasketPayoff.Value.description())
+    let _name                                      = triv _MinBasketPayoff (fun () -> _MinBasketPayoff.Value.name())
     let _value                                     (price : ICell<double>)   
-                                                   = triv (fun () -> _MinBasketPayoff.Value.value(price.Value))
+                                                   = triv _MinBasketPayoff (fun () -> _MinBasketPayoff.Value.value(price.Value))
     let _value1                                    (a : ICell<Vector>)   
-                                                   = triv (fun () -> _MinBasketPayoff.Value.value(a.Value))
+                                                   = triv _MinBasketPayoff (fun () -> _MinBasketPayoff.Value.value(a.Value))
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> _MinBasketPayoff.Value.accept(v.Value)
-                                                                     _MinBasketPayoff.Value)
+                                                   = triv _MinBasketPayoff (fun () -> _MinBasketPayoff.Value.accept(v.Value)
+                                                                                      _MinBasketPayoff.Value)
     do this.Bind(_MinBasketPayoff)
 (* 
     casting 

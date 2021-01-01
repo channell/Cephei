@@ -49,9 +49,9 @@ type SobolBrownianGeneratorFactoryModel
     Functions
 *)
     let mutable
-        _SobolBrownianGeneratorFactory             = cell (fun () -> new SobolBrownianGeneratorFactory (ordering.Value, seed.Value, integers.Value))
+        _SobolBrownianGeneratorFactory             = make (fun () -> new SobolBrownianGeneratorFactory (ordering.Value, seed.Value, integers.Value))
     let _create                                    (factors : ICell<int>) (steps : ICell<int>)   
-                                                   = triv (fun () -> _SobolBrownianGeneratorFactory.Value.create(factors.Value, steps.Value))
+                                                   = triv _SobolBrownianGeneratorFactory (fun () -> _SobolBrownianGeneratorFactory.Value.create(factors.Value, steps.Value))
     do this.Bind(_SobolBrownianGeneratorFactory)
 (* 
     casting 

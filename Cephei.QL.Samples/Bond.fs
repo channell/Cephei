@@ -76,7 +76,7 @@ type BondPortfolio
     ) as this =
     inherit Model ()
 
-    let calendar                    = triv (fun () -> marketCondition.Calendar.Value :> Calendar)
+    let calendar                    = triv null (fun () -> marketCondition.Calendar.Value :> Calendar)
     let convention                  = value BusinessDayConvention.Following
 
     let faceAmount                  = value 1000000.0;
@@ -108,13 +108,13 @@ type BondPortfolio
     
     let makeBond issue length coupon  (frequency : ICell<Period>) yieldVal = 
         let today = marketCondition.Today.Value
-        let dated = triv (fun () -> today)      // don't reset on valuation date
+        let dated = triv null (fun () -> today)      // don't reset on valuation date
         let nullDate = value (null :> Date)
         let maturity = marketCondition.Calendar.Advance1 dated length years standards.PaymentConvention eom 
         let schedule = Fun.Schedule dated maturity frequency calendar standards.AccrualConvention standards.AccrualConvention dateGenerationRule eom nullDate nullDate marketCondition.Today
-        let yieldCurve = triv (fun () -> (makeYield yieldVal))
+        let yieldCurve = triv null (fun () -> (makeYield yieldVal))
         let engine = Fun.DiscountingBondEngine yieldCurve standards.IncludeSettlement marketCondition.Today
-        let castEgnine = triv (fun () -> engine.Value :> IPricingEngine)
+        let castEgnine = triv null (fun () -> engine.Value :> IPricingEngine)
         let exCouponPeriod = value (null :> Period)
         let b = Fun.FixedRateBond standards.SettlementDays faceAmount schedule coupon bondDayCount standards.PaymentConvention redemption issue calendar exCouponPeriod calendar convention eom castEgnine marketCondition.Today
         b.Mnemonic <- "B" + id.ToString()
@@ -132,7 +132,7 @@ type BondPortfolio
 
     let cleanPrices                 = bonds |> Array.map (fun i -> i.CleanPrice) 
 
-    let cleanPrice                  = cell (fun () -> cleanPrices |> Seq.fold (fun a y -> a + y.Value * quantity.Value) 0.0)
+    let cleanPrice                  = cell null (fun () -> cleanPrices |> Seq.fold (fun a y -> a + y.Value * quantity.Value) 0.0)
         
     do this.Bind ()
 

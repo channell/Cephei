@@ -47,16 +47,16 @@ type NonhomogeneousBoundaryConstraintModel
     Functions
 *)
     let mutable
-        _NonhomogeneousBoundaryConstraint          = cell (fun () -> new NonhomogeneousBoundaryConstraint (low.Value, high.Value))
-    let _empty                                     = triv (fun () -> _NonhomogeneousBoundaryConstraint.Value.empty())
+        _NonhomogeneousBoundaryConstraint          = make (fun () -> new NonhomogeneousBoundaryConstraint (low.Value, high.Value))
+    let _empty                                     = triv _NonhomogeneousBoundaryConstraint (fun () -> _NonhomogeneousBoundaryConstraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
-                                                   = triv (fun () -> _NonhomogeneousBoundaryConstraint.Value.lowerBound(parameters.Value))
+                                                   = triv _NonhomogeneousBoundaryConstraint (fun () -> _NonhomogeneousBoundaryConstraint.Value.lowerBound(parameters.Value))
     let _test                                      (p : ICell<Vector>)   
-                                                   = triv (fun () -> _NonhomogeneousBoundaryConstraint.Value.test(p.Value))
+                                                   = triv _NonhomogeneousBoundaryConstraint (fun () -> _NonhomogeneousBoundaryConstraint.Value.test(p.Value))
     let _update                                    (p : ICell<Vector>) (direction : ICell<Vector>) (beta : ICell<double>)   
-                                                   = triv (fun () -> _NonhomogeneousBoundaryConstraint.Value.update(ref p.Value, direction.Value, beta.Value))
+                                                   = triv _NonhomogeneousBoundaryConstraint (fun () -> _NonhomogeneousBoundaryConstraint.Value.update(ref p.Value, direction.Value, beta.Value))
     let _upperBound                                (parameters : ICell<Vector>)   
-                                                   = triv (fun () -> _NonhomogeneousBoundaryConstraint.Value.upperBound(parameters.Value))
+                                                   = triv _NonhomogeneousBoundaryConstraint (fun () -> _NonhomogeneousBoundaryConstraint.Value.upperBound(parameters.Value))
     do this.Bind(_NonhomogeneousBoundaryConstraint)
 (* 
     casting 

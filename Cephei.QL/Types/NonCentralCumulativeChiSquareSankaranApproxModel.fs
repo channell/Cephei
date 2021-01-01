@@ -47,7 +47,7 @@ type NonCentralCumulativeChiSquareSankaranApproxModel
     Functions
 *)
     let mutable
-        _NonCentralCumulativeChiSquareSankaranApprox = cell (fun () -> new NonCentralCumulativeChiSquareSankaranApprox (df.Value, ncp.Value))
+        _NonCentralCumulativeChiSquareSankaranApprox = make (fun () -> new NonCentralCumulativeChiSquareSankaranApprox (df.Value, ncp.Value))
     do this.Bind(_NonCentralCumulativeChiSquareSankaranApprox)
 (* 
     casting 

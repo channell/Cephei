@@ -47,16 +47,16 @@ type CompositeConstraintModel
     Functions
 *)
     let mutable
-        _CompositeConstraint                       = cell (fun () -> new CompositeConstraint (c1.Value, c2.Value))
-    let _empty                                     = triv (fun () -> _CompositeConstraint.Value.empty())
+        _CompositeConstraint                       = make (fun () -> new CompositeConstraint (c1.Value, c2.Value))
+    let _empty                                     = triv _CompositeConstraint (fun () -> _CompositeConstraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
-                                                   = triv (fun () -> _CompositeConstraint.Value.lowerBound(parameters.Value))
+                                                   = triv _CompositeConstraint (fun () -> _CompositeConstraint.Value.lowerBound(parameters.Value))
     let _test                                      (p : ICell<Vector>)   
-                                                   = triv (fun () -> _CompositeConstraint.Value.test(p.Value))
+                                                   = triv _CompositeConstraint (fun () -> _CompositeConstraint.Value.test(p.Value))
     let _update                                    (p : ICell<Vector>) (direction : ICell<Vector>) (beta : ICell<double>)   
-                                                   = triv (fun () -> _CompositeConstraint.Value.update(ref p.Value, direction.Value, beta.Value))
+                                                   = triv _CompositeConstraint (fun () -> _CompositeConstraint.Value.update(ref p.Value, direction.Value, beta.Value))
     let _upperBound                                (parameters : ICell<Vector>)   
-                                                   = triv (fun () -> _CompositeConstraint.Value.upperBound(parameters.Value))
+                                                   = triv _CompositeConstraint (fun () -> _CompositeConstraint.Value.upperBound(parameters.Value))
     do this.Bind(_CompositeConstraint)
 (* 
     casting 

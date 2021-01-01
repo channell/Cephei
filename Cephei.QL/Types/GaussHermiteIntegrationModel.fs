@@ -47,12 +47,12 @@ type GaussHermiteIntegrationModel
     Functions
 *)
     let mutable
-        _GaussHermiteIntegration                   = cell (fun () -> new GaussHermiteIntegration (n.Value, mu.Value))
-    let _order                                     = triv (fun () -> _GaussHermiteIntegration.Value.order())
+        _GaussHermiteIntegration                   = make (fun () -> new GaussHermiteIntegration (n.Value, mu.Value))
+    let _order                                     = triv _GaussHermiteIntegration (fun () -> _GaussHermiteIntegration.Value.order())
     let _value                                     (f : ICell<Func<double,double>>)   
-                                                   = triv (fun () -> _GaussHermiteIntegration.Value.value(f.Value))
-    let _weights                                   = triv (fun () -> _GaussHermiteIntegration.Value.weights())
-    let _x                                         = triv (fun () -> _GaussHermiteIntegration.Value.x())
+                                                   = triv _GaussHermiteIntegration (fun () -> _GaussHermiteIntegration.Value.value(f.Value))
+    let _weights                                   = triv _GaussHermiteIntegration (fun () -> _GaussHermiteIntegration.Value.weights())
+    let _x                                         = triv _GaussHermiteIntegration (fun () -> _GaussHermiteIntegration.Value.x())
     do this.Bind(_GaussHermiteIntegration)
 (* 
     casting 

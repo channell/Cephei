@@ -64,7 +64,7 @@ type MCEuropeanEngineModel<'RNG, 'S when 'RNG :> IRSG and 'RNG : (new : unit -> 
     Functions
 *)
     let mutable
-        _MCEuropeanEngine                          = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new MCEuropeanEngine<'RNG,'S> (Process.Value, timeSteps.Value, timeStepsPerYear.Value, brownianBridge.Value, antitheticVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))))
+        _MCEuropeanEngine                          = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new MCEuropeanEngine<'RNG,'S> (Process.Value, timeSteps.Value, timeStepsPerYear.Value, brownianBridge.Value, antitheticVariate.Value, requiredSamples.Value, requiredTolerance.Value, maxSamples.Value, seed.Value))))
     do this.Bind(_MCEuropeanEngine)
 
 (* 

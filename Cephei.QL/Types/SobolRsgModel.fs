@@ -45,16 +45,16 @@ type SobolRsgModel
     Functions
 *)
     let mutable
-        _SobolRsg                                  = cell (fun () -> new SobolRsg (dimensionality.Value))
-    let _dimension                                 = triv (fun () -> _SobolRsg.Value.dimension())
+        _SobolRsg                                  = make (fun () -> new SobolRsg (dimensionality.Value))
+    let _dimension                                 = triv _SobolRsg (fun () -> _SobolRsg.Value.dimension())
     let _factory                                   (dimensionality : ICell<int>) (seed : ICell<uint64>)   
-                                                   = triv (fun () -> _SobolRsg.Value.factory(dimensionality.Value, seed.Value))
-    let _lastSequence                              = triv (fun () -> _SobolRsg.Value.lastSequence())
-    let _nextInt32Sequence                         = triv (fun () -> _SobolRsg.Value.nextInt32Sequence())
-    let _nextSequence                              = triv (fun () -> _SobolRsg.Value.nextSequence())
+                                                   = triv _SobolRsg (fun () -> _SobolRsg.Value.factory(dimensionality.Value, seed.Value))
+    let _lastSequence                              = triv _SobolRsg (fun () -> _SobolRsg.Value.lastSequence())
+    let _nextInt32Sequence                         = triv _SobolRsg (fun () -> _SobolRsg.Value.nextInt32Sequence())
+    let _nextSequence                              = triv _SobolRsg (fun () -> _SobolRsg.Value.nextSequence())
     let _skipTo                                    (skip : ICell<uint64>)   
-                                                   = triv (fun () -> _SobolRsg.Value.skipTo(skip.Value)
-                                                                     _SobolRsg.Value)
+                                                   = triv _SobolRsg (fun () -> _SobolRsg.Value.skipTo(skip.Value)
+                                                                               _SobolRsg.Value)
     do this.Bind(_SobolRsg)
 (* 
     casting 
@@ -98,16 +98,16 @@ type SobolRsgModel1
     Functions
 *)
     let mutable
-        _SobolRsg                                  = cell (fun () -> new SobolRsg ())
-    let _dimension                                 = triv (fun () -> _SobolRsg.Value.dimension())
+        _SobolRsg                                  = make (fun () -> new SobolRsg ())
+    let _dimension                                 = triv _SobolRsg (fun () -> _SobolRsg.Value.dimension())
     let _factory                                   (dimensionality : ICell<int>) (seed : ICell<uint64>)   
-                                                   = triv (fun () -> _SobolRsg.Value.factory(dimensionality.Value, seed.Value))
-    let _lastSequence                              = triv (fun () -> _SobolRsg.Value.lastSequence())
-    let _nextInt32Sequence                         = triv (fun () -> _SobolRsg.Value.nextInt32Sequence())
-    let _nextSequence                              = triv (fun () -> _SobolRsg.Value.nextSequence())
+                                                   = triv _SobolRsg (fun () -> _SobolRsg.Value.factory(dimensionality.Value, seed.Value))
+    let _lastSequence                              = triv _SobolRsg (fun () -> _SobolRsg.Value.lastSequence())
+    let _nextInt32Sequence                         = triv _SobolRsg (fun () -> _SobolRsg.Value.nextInt32Sequence())
+    let _nextSequence                              = triv _SobolRsg (fun () -> _SobolRsg.Value.nextSequence())
     let _skipTo                                    (skip : ICell<uint64>)   
-                                                   = triv (fun () -> _SobolRsg.Value.skipTo(skip.Value)
-                                                                     _SobolRsg.Value)
+                                                   = triv _SobolRsg (fun () -> _SobolRsg.Value.skipTo(skip.Value)
+                                                                               _SobolRsg.Value)
     do this.Bind(_SobolRsg)
 (* 
     casting 
@@ -157,16 +157,16 @@ type SobolRsgModel2
     Functions
 *)
     let mutable
-        _SobolRsg                                  = cell (fun () -> new SobolRsg (dimensionality.Value, seed.Value, directionIntegers.Value))
-    let _dimension                                 = triv (fun () -> _SobolRsg.Value.dimension())
+        _SobolRsg                                  = make (fun () -> new SobolRsg (dimensionality.Value, seed.Value, directionIntegers.Value))
+    let _dimension                                 = triv _SobolRsg (fun () -> _SobolRsg.Value.dimension())
     let _factory                                   (dimensionality : ICell<int>) (seed : ICell<uint64>)   
-                                                   = triv (fun () -> _SobolRsg.Value.factory(dimensionality.Value, seed.Value))
-    let _lastSequence                              = triv (fun () -> _SobolRsg.Value.lastSequence())
-    let _nextInt32Sequence                         = triv (fun () -> _SobolRsg.Value.nextInt32Sequence())
-    let _nextSequence                              = triv (fun () -> _SobolRsg.Value.nextSequence())
+                                                   = triv _SobolRsg (fun () -> _SobolRsg.Value.factory(dimensionality.Value, seed.Value))
+    let _lastSequence                              = triv _SobolRsg (fun () -> _SobolRsg.Value.lastSequence())
+    let _nextInt32Sequence                         = triv _SobolRsg (fun () -> _SobolRsg.Value.nextInt32Sequence())
+    let _nextSequence                              = triv _SobolRsg (fun () -> _SobolRsg.Value.nextSequence())
     let _skipTo                                    (skip : ICell<uint64>)   
-                                                   = triv (fun () -> _SobolRsg.Value.skipTo(skip.Value)
-                                                                     _SobolRsg.Value)
+                                                   = triv _SobolRsg (fun () -> _SobolRsg.Value.skipTo(skip.Value)
+                                                                               _SobolRsg.Value)
     do this.Bind(_SobolRsg)
 (* 
     casting 
@@ -217,16 +217,16 @@ type SobolRsgModel3
     Functions
 *)
     let mutable
-        _SobolRsg                                  = cell (fun () -> new SobolRsg (dimensionality.Value, seed.Value))
-    let _dimension                                 = triv (fun () -> _SobolRsg.Value.dimension())
+        _SobolRsg                                  = make (fun () -> new SobolRsg (dimensionality.Value, seed.Value))
+    let _dimension                                 = triv _SobolRsg (fun () -> _SobolRsg.Value.dimension())
     let _factory                                   (dimensionality : ICell<int>) (seed : ICell<uint64>)   
-                                                   = triv (fun () -> _SobolRsg.Value.factory(dimensionality.Value, seed.Value))
-    let _lastSequence                              = triv (fun () -> _SobolRsg.Value.lastSequence())
-    let _nextInt32Sequence                         = triv (fun () -> _SobolRsg.Value.nextInt32Sequence())
-    let _nextSequence                              = triv (fun () -> _SobolRsg.Value.nextSequence())
+                                                   = triv _SobolRsg (fun () -> _SobolRsg.Value.factory(dimensionality.Value, seed.Value))
+    let _lastSequence                              = triv _SobolRsg (fun () -> _SobolRsg.Value.lastSequence())
+    let _nextInt32Sequence                         = triv _SobolRsg (fun () -> _SobolRsg.Value.nextInt32Sequence())
+    let _nextSequence                              = triv _SobolRsg (fun () -> _SobolRsg.Value.nextSequence())
     let _skipTo                                    (skip : ICell<uint64>)   
-                                                   = triv (fun () -> _SobolRsg.Value.skipTo(skip.Value)
-                                                                     _SobolRsg.Value)
+                                                   = triv _SobolRsg (fun () -> _SobolRsg.Value.skipTo(skip.Value)
+                                                                               _SobolRsg.Value)
     do this.Bind(_SobolRsg)
 (* 
     casting 

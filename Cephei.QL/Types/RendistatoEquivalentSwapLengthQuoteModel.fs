@@ -45,15 +45,15 @@ type RendistatoEquivalentSwapLengthQuoteModel
     Functions
 *)
     let mutable
-        _RendistatoEquivalentSwapLengthQuote       = cell (fun () -> new RendistatoEquivalentSwapLengthQuote (r.Value))
-    let _isValid                                   = triv (fun () -> _RendistatoEquivalentSwapLengthQuote.Value.isValid())
-    let _value                                     = triv (fun () -> _RendistatoEquivalentSwapLengthQuote.Value.value())
+        _RendistatoEquivalentSwapLengthQuote       = make (fun () -> new RendistatoEquivalentSwapLengthQuote (r.Value))
+    let _isValid                                   = triv _RendistatoEquivalentSwapLengthQuote (fun () -> _RendistatoEquivalentSwapLengthQuote.Value.isValid())
+    let _value                                     = triv _RendistatoEquivalentSwapLengthQuote (fun () -> _RendistatoEquivalentSwapLengthQuote.Value.value())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _RendistatoEquivalentSwapLengthQuote.Value.registerWith(handler.Value)
-                                                                     _RendistatoEquivalentSwapLengthQuote.Value)
+                                                   = triv _RendistatoEquivalentSwapLengthQuote (fun () -> _RendistatoEquivalentSwapLengthQuote.Value.registerWith(handler.Value)
+                                                                                                          _RendistatoEquivalentSwapLengthQuote.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _RendistatoEquivalentSwapLengthQuote.Value.unregisterWith(handler.Value)
-                                                                     _RendistatoEquivalentSwapLengthQuote.Value)
+                                                   = triv _RendistatoEquivalentSwapLengthQuote (fun () -> _RendistatoEquivalentSwapLengthQuote.Value.unregisterWith(handler.Value)
+                                                                                                          _RendistatoEquivalentSwapLengthQuote.Value)
     do this.Bind(_RendistatoEquivalentSwapLengthQuote)
 (* 
     casting 

@@ -45,14 +45,14 @@ type FdmLinearOpIteratorModel
     Functions
 *)
     let mutable
-        _FdmLinearOpIterator                       = cell (fun () -> new FdmLinearOpIterator (index.Value))
-    let _coordinates                               = triv (fun () -> _FdmLinearOpIterator.Value.coordinates())
+        _FdmLinearOpIterator                       = make (fun () -> new FdmLinearOpIterator (index.Value))
+    let _coordinates                               = triv _FdmLinearOpIterator (fun () -> _FdmLinearOpIterator.Value.coordinates())
     let _Equals                                    (obj : ICell<Object>)   
-                                                   = triv (fun () -> _FdmLinearOpIterator.Value.Equals(obj.Value))
-    let _index                                     = triv (fun () -> _FdmLinearOpIterator.Value.index())
+                                                   = triv _FdmLinearOpIterator (fun () -> _FdmLinearOpIterator.Value.Equals(obj.Value))
+    let _index                                     = triv _FdmLinearOpIterator (fun () -> _FdmLinearOpIterator.Value.index())
     let _swap                                      (iter : ICell<FdmLinearOpIterator>)   
-                                                   = triv (fun () -> _FdmLinearOpIterator.Value.swap(iter.Value)
-                                                                     _FdmLinearOpIterator.Value)
+                                                   = triv _FdmLinearOpIterator (fun () -> _FdmLinearOpIterator.Value.swap(iter.Value)
+                                                                                          _FdmLinearOpIterator.Value)
     do this.Bind(_FdmLinearOpIterator)
 (* 
     casting 
@@ -97,14 +97,14 @@ type FdmLinearOpIteratorModel1
     Functions
 *)
     let mutable
-        _FdmLinearOpIterator                       = cell (fun () -> new FdmLinearOpIterator (dim.Value))
-    let _coordinates                               = triv (fun () -> _FdmLinearOpIterator.Value.coordinates())
+        _FdmLinearOpIterator                       = make (fun () -> new FdmLinearOpIterator (dim.Value))
+    let _coordinates                               = triv _FdmLinearOpIterator (fun () -> _FdmLinearOpIterator.Value.coordinates())
     let _Equals                                    (obj : ICell<Object>)   
-                                                   = triv (fun () -> _FdmLinearOpIterator.Value.Equals(obj.Value))
-    let _index                                     = triv (fun () -> _FdmLinearOpIterator.Value.index())
+                                                   = triv _FdmLinearOpIterator (fun () -> _FdmLinearOpIterator.Value.Equals(obj.Value))
+    let _index                                     = triv _FdmLinearOpIterator (fun () -> _FdmLinearOpIterator.Value.index())
     let _swap                                      (iter : ICell<FdmLinearOpIterator>)   
-                                                   = triv (fun () -> _FdmLinearOpIterator.Value.swap(iter.Value)
-                                                                     _FdmLinearOpIterator.Value)
+                                                   = triv _FdmLinearOpIterator (fun () -> _FdmLinearOpIterator.Value.swap(iter.Value)
+                                                                                          _FdmLinearOpIterator.Value)
     do this.Bind(_FdmLinearOpIterator)
 (* 
     casting 
@@ -153,14 +153,14 @@ type FdmLinearOpIteratorModel2
     Functions
 *)
     let mutable
-        _FdmLinearOpIterator                       = cell (fun () -> new FdmLinearOpIterator (dim.Value, coordinates.Value, index.Value))
-    let _coordinates                               = triv (fun () -> _FdmLinearOpIterator.Value.coordinates())
+        _FdmLinearOpIterator                       = make (fun () -> new FdmLinearOpIterator (dim.Value, coordinates.Value, index.Value))
+    let _coordinates                               = triv _FdmLinearOpIterator (fun () -> _FdmLinearOpIterator.Value.coordinates())
     let _Equals                                    (obj : ICell<Object>)   
-                                                   = triv (fun () -> _FdmLinearOpIterator.Value.Equals(obj.Value))
-    let _index                                     = triv (fun () -> _FdmLinearOpIterator.Value.index())
+                                                   = triv _FdmLinearOpIterator (fun () -> _FdmLinearOpIterator.Value.Equals(obj.Value))
+    let _index                                     = triv _FdmLinearOpIterator (fun () -> _FdmLinearOpIterator.Value.index())
     let _swap                                      (iter : ICell<FdmLinearOpIterator>)   
-                                                   = triv (fun () -> _FdmLinearOpIterator.Value.swap(iter.Value)
-                                                                     _FdmLinearOpIterator.Value)
+                                                   = triv _FdmLinearOpIterator (fun () -> _FdmLinearOpIterator.Value.swap(iter.Value)
+                                                                                          _FdmLinearOpIterator.Value)
     do this.Bind(_FdmLinearOpIterator)
 (* 
     casting 
@@ -207,14 +207,14 @@ type FdmLinearOpIteratorModel3
     Functions
 *)
     let mutable
-        _FdmLinearOpIterator                       = cell (fun () -> new FdmLinearOpIterator (iter.Value))
-    let _coordinates                               = triv (fun () -> _FdmLinearOpIterator.Value.coordinates())
+        _FdmLinearOpIterator                       = make (fun () -> new FdmLinearOpIterator (iter.Value))
+    let _coordinates                               = triv _FdmLinearOpIterator (fun () -> _FdmLinearOpIterator.Value.coordinates())
     let _Equals                                    (obj : ICell<Object>)   
-                                                   = triv (fun () -> _FdmLinearOpIterator.Value.Equals(obj.Value))
-    let _index                                     = triv (fun () -> _FdmLinearOpIterator.Value.index())
+                                                   = triv _FdmLinearOpIterator (fun () -> _FdmLinearOpIterator.Value.Equals(obj.Value))
+    let _index                                     = triv _FdmLinearOpIterator (fun () -> _FdmLinearOpIterator.Value.index())
     let _swap                                      (iter : ICell<FdmLinearOpIterator>)   
-                                                   = triv (fun () -> _FdmLinearOpIterator.Value.swap(iter.Value)
-                                                                     _FdmLinearOpIterator.Value)
+                                                   = triv _FdmLinearOpIterator (fun () -> _FdmLinearOpIterator.Value.swap(iter.Value)
+                                                                                          _FdmLinearOpIterator.Value)
     do this.Bind(_FdmLinearOpIterator)
 (* 
     casting 

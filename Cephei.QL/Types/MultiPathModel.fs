@@ -47,13 +47,13 @@ type MultiPathModel
     Functions
 *)
     let mutable
-        _MultiPath                                 = cell (fun () -> new MultiPath (nAsset.Value, timeGrid.Value))
-    let _assetNumber                               = triv (fun () -> _MultiPath.Value.assetNumber())
-    let _Clone                                     = triv (fun () -> _MultiPath.Value.Clone())
-    let _length                                    = triv (fun () -> _MultiPath.Value.length())
-    let _pathSize                                  = triv (fun () -> _MultiPath.Value.pathSize())
+        _MultiPath                                 = make (fun () -> new MultiPath (nAsset.Value, timeGrid.Value))
+    let _assetNumber                               = triv _MultiPath (fun () -> _MultiPath.Value.assetNumber())
+    let _Clone                                     = triv _MultiPath (fun () -> _MultiPath.Value.Clone())
+    let _length                                    = triv _MultiPath (fun () -> _MultiPath.Value.length())
+    let _pathSize                                  = triv _MultiPath (fun () -> _MultiPath.Value.pathSize())
     let _this                                      (j : ICell<int>)   
-                                                   = triv (fun () -> _MultiPath.Value.[j.Value])
+                                                   = triv _MultiPath (fun () -> _MultiPath.Value.[j.Value])
     do this.Bind(_MultiPath)
 (* 
     casting 
@@ -96,13 +96,13 @@ type MultiPathModel1
     Functions
 *)
     let mutable
-        _MultiPath                                 = cell (fun () -> new MultiPath ())
-    let _assetNumber                               = triv (fun () -> _MultiPath.Value.assetNumber())
-    let _Clone                                     = triv (fun () -> _MultiPath.Value.Clone())
-    let _length                                    = triv (fun () -> _MultiPath.Value.length())
-    let _pathSize                                  = triv (fun () -> _MultiPath.Value.pathSize())
+        _MultiPath                                 = make (fun () -> new MultiPath ())
+    let _assetNumber                               = triv _MultiPath (fun () -> _MultiPath.Value.assetNumber())
+    let _Clone                                     = triv _MultiPath (fun () -> _MultiPath.Value.Clone())
+    let _length                                    = triv _MultiPath (fun () -> _MultiPath.Value.length())
+    let _pathSize                                  = triv _MultiPath (fun () -> _MultiPath.Value.pathSize())
     let _this                                      (j : ICell<int>)   
-                                                   = triv (fun () -> _MultiPath.Value.[j.Value])
+                                                   = triv _MultiPath (fun () -> _MultiPath.Value.[j.Value])
     do this.Bind(_MultiPath)
 (* 
     casting 
@@ -146,13 +146,13 @@ type MultiPathModel2
     Functions
 *)
     let mutable
-        _MultiPath                                 = cell (fun () -> new MultiPath (multiPath.Value))
-    let _assetNumber                               = triv (fun () -> _MultiPath.Value.assetNumber())
-    let _Clone                                     = triv (fun () -> _MultiPath.Value.Clone())
-    let _length                                    = triv (fun () -> _MultiPath.Value.length())
-    let _pathSize                                  = triv (fun () -> _MultiPath.Value.pathSize())
+        _MultiPath                                 = make (fun () -> new MultiPath (multiPath.Value))
+    let _assetNumber                               = triv _MultiPath (fun () -> _MultiPath.Value.assetNumber())
+    let _Clone                                     = triv _MultiPath (fun () -> _MultiPath.Value.Clone())
+    let _length                                    = triv _MultiPath (fun () -> _MultiPath.Value.length())
+    let _pathSize                                  = triv _MultiPath (fun () -> _MultiPath.Value.pathSize())
     let _this                                      (j : ICell<int>)   
-                                                   = triv (fun () -> _MultiPath.Value.[j.Value])
+                                                   = triv _MultiPath (fun () -> _MultiPath.Value.[j.Value])
     do this.Bind(_MultiPath)
 (* 
     casting 

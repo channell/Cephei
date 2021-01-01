@@ -45,16 +45,16 @@ type StrikedTypePayoffModel
     Functions
 *)
     let mutable
-        _StrikedTypePayoff                         = cell (fun () -> new StrikedTypePayoff (p.Value))
-    let _description                               = triv (fun () -> _StrikedTypePayoff.Value.description())
-    let _strike                                    = triv (fun () -> _StrikedTypePayoff.Value.strike())
-    let _optionType                                = triv (fun () -> _StrikedTypePayoff.Value.optionType())
+        _StrikedTypePayoff                         = make (fun () -> new StrikedTypePayoff (p.Value))
+    let _description                               = triv _StrikedTypePayoff (fun () -> _StrikedTypePayoff.Value.description())
+    let _strike                                    = triv _StrikedTypePayoff (fun () -> _StrikedTypePayoff.Value.strike())
+    let _optionType                                = triv _StrikedTypePayoff (fun () -> _StrikedTypePayoff.Value.optionType())
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> _StrikedTypePayoff.Value.accept(v.Value)
-                                                                     _StrikedTypePayoff.Value)
-    let _name                                      = triv (fun () -> _StrikedTypePayoff.Value.name())
+                                                   = triv _StrikedTypePayoff (fun () -> _StrikedTypePayoff.Value.accept(v.Value)
+                                                                                        _StrikedTypePayoff.Value)
+    let _name                                      = triv _StrikedTypePayoff (fun () -> _StrikedTypePayoff.Value.name())
     let _value                                     (price : ICell<double>)   
-                                                   = triv (fun () -> _StrikedTypePayoff.Value.value(price.Value))
+                                                   = triv _StrikedTypePayoff (fun () -> _StrikedTypePayoff.Value.value(price.Value))
     do this.Bind(_StrikedTypePayoff)
 (* 
     casting 
@@ -103,16 +103,16 @@ type StrikedTypePayoffModel1
     Functions
 *)
     let mutable
-        _StrikedTypePayoff                         = cell (fun () -> new StrikedTypePayoff (Type.Value, strike.Value))
-    let _description                               = triv (fun () -> _StrikedTypePayoff.Value.description())
-    let _strike                                    = triv (fun () -> _StrikedTypePayoff.Value.strike())
-    let _optionType                                = triv (fun () -> _StrikedTypePayoff.Value.optionType())
+        _StrikedTypePayoff                         = make (fun () -> new StrikedTypePayoff (Type.Value, strike.Value))
+    let _description                               = triv _StrikedTypePayoff (fun () -> _StrikedTypePayoff.Value.description())
+    let _strike                                    = triv _StrikedTypePayoff (fun () -> _StrikedTypePayoff.Value.strike())
+    let _optionType                                = triv _StrikedTypePayoff (fun () -> _StrikedTypePayoff.Value.optionType())
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> _StrikedTypePayoff.Value.accept(v.Value)
-                                                                     _StrikedTypePayoff.Value)
-    let _name                                      = triv (fun () -> _StrikedTypePayoff.Value.name())
+                                                   = triv _StrikedTypePayoff (fun () -> _StrikedTypePayoff.Value.accept(v.Value)
+                                                                                        _StrikedTypePayoff.Value)
+    let _name                                      = triv _StrikedTypePayoff (fun () -> _StrikedTypePayoff.Value.name())
     let _value                                     (price : ICell<double>)   
-                                                   = triv (fun () -> _StrikedTypePayoff.Value.value(price.Value))
+                                                   = triv _StrikedTypePayoff (fun () -> _StrikedTypePayoff.Value.value(price.Value))
     do this.Bind(_StrikedTypePayoff)
 (* 
     casting 

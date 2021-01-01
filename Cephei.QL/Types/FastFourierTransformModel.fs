@@ -46,14 +46,14 @@ type FastFourierTransformModel
     Functions
 *)
     let mutable
-        _FastFourierTransform                      = cell (fun () -> new FastFourierTransform (order.Value))
+        _FastFourierTransform                      = make (fun () -> new FastFourierTransform (order.Value))
     let _inverse_transform                         (input : ICell<Generic.List<Complex>>) (inputBeg : ICell<int>) (inputEnd : ICell<int>) (output : ICell<Generic.List<Complex>>)   
-                                                   = triv (fun () -> _FastFourierTransform.Value.inverse_transform(input.Value, inputBeg.Value, inputEnd.Value, output.Value)
-                                                                     _FastFourierTransform.Value)
-    let _output_size                               = triv (fun () -> _FastFourierTransform.Value.output_size())
+                                                   = triv _FastFourierTransform (fun () -> _FastFourierTransform.Value.inverse_transform(input.Value, inputBeg.Value, inputEnd.Value, output.Value)
+                                                                                           _FastFourierTransform.Value)
+    let _output_size                               = triv _FastFourierTransform (fun () -> _FastFourierTransform.Value.output_size())
     let _transform                                 (input : ICell<Generic.List<Complex>>) (inputBeg : ICell<int>) (inputEnd : ICell<int>) (output : ICell<Generic.List<Complex>>)   
-                                                   = triv (fun () -> _FastFourierTransform.Value.transform(input.Value, inputBeg.Value, inputEnd.Value, output.Value)
-                                                                     _FastFourierTransform.Value)
+                                                   = triv _FastFourierTransform (fun () -> _FastFourierTransform.Value.transform(input.Value, inputBeg.Value, inputEnd.Value, output.Value)
+                                                                                           _FastFourierTransform.Value)
     do this.Bind(_FastFourierTransform)
 (* 
     casting 

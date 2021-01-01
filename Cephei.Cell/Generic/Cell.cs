@@ -96,6 +96,11 @@ namespace Cephei.Cell.Generic
         /// </summary>
         private bool _disposd = false;
 
+        /// <summary>
+        /// object that need to be locked during evaluation of func
+        /// </summary>
+        public ICell Mutex { get; set; }
+
         public string Mnemonic { get; set; }
         private ICell _parent;
         public ICell Parent
@@ -138,9 +143,9 @@ namespace Cephei.Cell.Generic
         /// </summary>
         /// <param name="func"></param>
         /// <param name="mnemonic"></param>
-        public Cell(FSharpFunc<Unit, T> func, string mnemonic) : this(func)
+        public Cell(FSharpFunc<Unit, T> func, ICell mutex) : this(func)
         {
-            Mnemonic = mnemonic;
+            Mutex = mutex;
         }
         /// <summary>
         /// Cretate a cell with a a mutable value
@@ -150,15 +155,6 @@ namespace Cephei.Cell.Generic
         {
             _value = value;
             _state = (int)CellState.Clean;
-        }
-        /// <summary>
-        /// Create a Cell with a value and a memonic reference
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="mnemonic"></param>
-        public Cell(T value, string mnemonic) : this(value)
-        {
-            Mnemonic = mnemonic;
         }
         /// <summary>
         /// Link return allows for dependent cells visited during a calculation to be
@@ -228,7 +224,22 @@ namespace Cephei.Cell.Generic
                         pushed = true;
                     }
 
-                    var t = (_func != null ? _func.Invoke(null) : _value);
+                    T t;
+                    if (_func != null)
+                    {
+                        if (Mutex == null)
+                            t = _func.Invoke(null);
+                        else
+                        {
+                            lock (Mutex)
+                            {
+                                t = _func.Invoke(null);
+                            }
+                        }
+                    }
+                    else
+                        t = _value;
+
                     if (session != null)
                         session.SetValue<T>(this, t);
 

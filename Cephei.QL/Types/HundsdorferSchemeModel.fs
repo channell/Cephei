@@ -51,15 +51,15 @@ type HundsdorferSchemeModel
     Functions
 *)
     let mutable
-        _HundsdorferScheme                         = cell (fun () -> new HundsdorferScheme (theta.Value, mu.Value, map.Value, bcSet.Value))
+        _HundsdorferScheme                         = make (fun () -> new HundsdorferScheme (theta.Value, mu.Value, map.Value, bcSet.Value))
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
-                                                   = triv (fun () -> _HundsdorferScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
+                                                   = triv _HundsdorferScheme (fun () -> _HundsdorferScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _HundsdorferScheme.Value.setStep(dt.Value)
-                                                                     _HundsdorferScheme.Value)
+                                                   = triv _HundsdorferScheme (fun () -> _HundsdorferScheme.Value.setStep(dt.Value)
+                                                                                        _HundsdorferScheme.Value)
     let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _HundsdorferScheme.Value.step(ref a.Value, t.Value, theta.Value)
-                                                                     _HundsdorferScheme.Value)
+                                                   = triv _HundsdorferScheme (fun () -> _HundsdorferScheme.Value.step(ref a.Value, t.Value, theta.Value)
+                                                                                        _HundsdorferScheme.Value)
     do this.Bind(_HundsdorferScheme)
 (* 
     casting 
@@ -104,15 +104,15 @@ type HundsdorferSchemeModel1
     Functions
 *)
     let mutable
-        _HundsdorferScheme                         = cell (fun () -> new HundsdorferScheme ())
+        _HundsdorferScheme                         = make (fun () -> new HundsdorferScheme ())
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
-                                                   = triv (fun () -> _HundsdorferScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
+                                                   = triv _HundsdorferScheme (fun () -> _HundsdorferScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _HundsdorferScheme.Value.setStep(dt.Value)
-                                                                     _HundsdorferScheme.Value)
+                                                   = triv _HundsdorferScheme (fun () -> _HundsdorferScheme.Value.setStep(dt.Value)
+                                                                                        _HundsdorferScheme.Value)
     let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _HundsdorferScheme.Value.step(ref a.Value, t.Value, theta.Value)
-                                                                     _HundsdorferScheme.Value)
+                                                   = triv _HundsdorferScheme (fun () -> _HundsdorferScheme.Value.step(ref a.Value, t.Value, theta.Value)
+                                                                                        _HundsdorferScheme.Value)
     do this.Bind(_HundsdorferScheme)
 (* 
     casting 

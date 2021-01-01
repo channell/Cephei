@@ -42,19 +42,19 @@ type Actual365NoLeapModel
     Functions
 *)
     let mutable
-        _Actual365NoLeap                           = cell (fun () -> new Actual365NoLeap ())
+        _Actual365NoLeap                           = make (fun () -> new Actual365NoLeap ())
     let _dayCount                                  (d1 : ICell<Date>) (d2 : ICell<Date>)   
-                                                   = triv (fun () -> _Actual365NoLeap.Value.dayCount(d1.Value, d2.Value))
-    let _dayCounter                                = triv (fun () -> _Actual365NoLeap.Value.dayCounter)
-    let _empty                                     = triv (fun () -> _Actual365NoLeap.Value.empty())
+                                                   = triv _Actual365NoLeap (fun () -> _Actual365NoLeap.Value.dayCount(d1.Value, d2.Value))
+    let _dayCounter                                = triv _Actual365NoLeap (fun () -> _Actual365NoLeap.Value.dayCounter)
+    let _empty                                     = triv _Actual365NoLeap (fun () -> _Actual365NoLeap.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
-                                                   = triv (fun () -> _Actual365NoLeap.Value.Equals(o.Value))
-    let _name                                      = triv (fun () -> _Actual365NoLeap.Value.name())
-    let _ToString                                  = triv (fun () -> _Actual365NoLeap.Value.ToString())
+                                                   = triv _Actual365NoLeap (fun () -> _Actual365NoLeap.Value.Equals(o.Value))
+    let _name                                      = triv _Actual365NoLeap (fun () -> _Actual365NoLeap.Value.name())
+    let _ToString                                  = triv _Actual365NoLeap (fun () -> _Actual365NoLeap.Value.ToString())
     let _yearFraction                              (d1 : ICell<Date>) (d2 : ICell<Date>) (refPeriodStart : ICell<Date>) (refPeriodEnd : ICell<Date>)   
-                                                   = triv (fun () -> _Actual365NoLeap.Value.yearFraction(d1.Value, d2.Value, refPeriodStart.Value, refPeriodEnd.Value))
+                                                   = triv _Actual365NoLeap (fun () -> _Actual365NoLeap.Value.yearFraction(d1.Value, d2.Value, refPeriodStart.Value, refPeriodEnd.Value))
     let _yearFraction1                             (d1 : ICell<Date>) (d2 : ICell<Date>)   
-                                                   = triv (fun () -> _Actual365NoLeap.Value.yearFraction(d1.Value, d2.Value))
+                                                   = triv _Actual365NoLeap (fun () -> _Actual365NoLeap.Value.yearFraction(d1.Value, d2.Value))
     do this.Bind(_Actual365NoLeap)
 (* 
     casting 

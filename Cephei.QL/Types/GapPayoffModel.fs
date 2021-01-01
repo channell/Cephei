@@ -49,17 +49,17 @@ type GapPayoffModel
     Functions
 *)
     let mutable
-        _GapPayoff                                 = cell (fun () -> new GapPayoff (Type.Value, strike.Value, secondStrike.Value))
-    let _description                               = triv (fun () -> _GapPayoff.Value.description())
-    let _name                                      = triv (fun () -> _GapPayoff.Value.name())
-    let _secondStrike                              = triv (fun () -> _GapPayoff.Value.secondStrike())
+        _GapPayoff                                 = make (fun () -> new GapPayoff (Type.Value, strike.Value, secondStrike.Value))
+    let _description                               = triv _GapPayoff (fun () -> _GapPayoff.Value.description())
+    let _name                                      = triv _GapPayoff (fun () -> _GapPayoff.Value.name())
+    let _secondStrike                              = triv _GapPayoff (fun () -> _GapPayoff.Value.secondStrike())
     let _value                                     (price : ICell<double>)   
-                                                   = triv (fun () -> _GapPayoff.Value.value(price.Value))
-    let _strike                                    = triv (fun () -> _GapPayoff.Value.strike())
-    let _optionType                                = triv (fun () -> _GapPayoff.Value.optionType())
+                                                   = triv _GapPayoff (fun () -> _GapPayoff.Value.value(price.Value))
+    let _strike                                    = triv _GapPayoff (fun () -> _GapPayoff.Value.strike())
+    let _optionType                                = triv _GapPayoff (fun () -> _GapPayoff.Value.optionType())
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> _GapPayoff.Value.accept(v.Value)
-                                                                     _GapPayoff.Value)
+                                                   = triv _GapPayoff (fun () -> _GapPayoff.Value.accept(v.Value)
+                                                                                _GapPayoff.Value)
     do this.Bind(_GapPayoff)
 (* 
     casting 

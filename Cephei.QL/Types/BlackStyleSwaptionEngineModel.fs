@@ -54,9 +54,9 @@ type BlackStyleSwaptionEngineModel<'Spec when 'Spec :> ISwaptionEngineSpec and '
     Functions
 *)
     let mutable
-        _BlackStyleSwaptionEngine                  = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackStyleSwaptionEngine<'Spec> (discountCurve.Value, volatility.Value, displacement.Value, model.Value))))
-    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackStyleSwaptionEngine).Value.termStructure())
-    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackStyleSwaptionEngine).Value.volatility())
+        _BlackStyleSwaptionEngine                  = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackStyleSwaptionEngine<'Spec> (discountCurve.Value, volatility.Value, displacement.Value, model.Value))))
+    let _termStructure                             = triv _BlackStyleSwaptionEngine (fun () -> (curryEvaluationDate _evaluationDate _BlackStyleSwaptionEngine).Value.termStructure())
+    let _volatility                                = triv _BlackStyleSwaptionEngine (fun () -> (curryEvaluationDate _evaluationDate _BlackStyleSwaptionEngine).Value.volatility())
     do this.Bind(_BlackStyleSwaptionEngine)
 
 (* 
@@ -97,9 +97,9 @@ type BlackStyleSwaptionEngineModel1<'Spec when 'Spec :> ISwaptionEngineSpec and 
     Functions
 *)
     let mutable
-        _BlackStyleSwaptionEngine                  = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackStyleSwaptionEngine<'Spec> (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))))
-    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackStyleSwaptionEngine).Value.termStructure())
-    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackStyleSwaptionEngine).Value.volatility())
+        _BlackStyleSwaptionEngine                  = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackStyleSwaptionEngine<'Spec> (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))))
+    let _termStructure                             = triv _BlackStyleSwaptionEngine (fun () -> (curryEvaluationDate _evaluationDate _BlackStyleSwaptionEngine).Value.termStructure())
+    let _volatility                                = triv _BlackStyleSwaptionEngine (fun () -> (curryEvaluationDate _evaluationDate _BlackStyleSwaptionEngine).Value.volatility())
     do this.Bind(_BlackStyleSwaptionEngine)
 
 (* 
@@ -141,9 +141,9 @@ type BlackStyleSwaptionEngineModel2<'Spec when 'Spec :> ISwaptionEngineSpec and 
     Functions
 *)
     let mutable
-        _BlackStyleSwaptionEngine                  = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackStyleSwaptionEngine<'Spec> (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))))
-    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackStyleSwaptionEngine).Value.termStructure())
-    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackStyleSwaptionEngine).Value.volatility())
+        _BlackStyleSwaptionEngine                  = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackStyleSwaptionEngine<'Spec> (discountCurve.Value, vol.Value, dc.Value, displacement.Value, model.Value))))
+    let _termStructure                             = triv _BlackStyleSwaptionEngine (fun () -> (curryEvaluationDate _evaluationDate _BlackStyleSwaptionEngine).Value.termStructure())
+    let _volatility                                = triv _BlackStyleSwaptionEngine (fun () -> (curryEvaluationDate _evaluationDate _BlackStyleSwaptionEngine).Value.volatility())
     do this.Bind(_BlackStyleSwaptionEngine)
 
 (* 

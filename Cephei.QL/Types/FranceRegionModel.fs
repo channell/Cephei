@@ -42,11 +42,11 @@ type FranceRegionModel
     Functions
 *)
     let mutable
-        _FranceRegion                              = cell (fun () -> new FranceRegion ())
-    let _code                                      = triv (fun () -> _FranceRegion.Value.code())
+        _FranceRegion                              = make (fun () -> new FranceRegion ())
+    let _code                                      = triv _FranceRegion (fun () -> _FranceRegion.Value.code())
     let _Equals                                    (o : ICell<Object>)   
-                                                   = triv (fun () -> _FranceRegion.Value.Equals(o.Value))
-    let _name                                      = triv (fun () -> _FranceRegion.Value.name())
+                                                   = triv _FranceRegion (fun () -> _FranceRegion.Value.Equals(o.Value))
+    let _name                                      = triv _FranceRegion (fun () -> _FranceRegion.Value.name())
     do this.Bind(_FranceRegion)
 (* 
     casting 

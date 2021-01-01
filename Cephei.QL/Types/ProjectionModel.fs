@@ -47,11 +47,11 @@ type ProjectionModel
     Functions
 *)
     let mutable
-        _Projection                                = cell (fun () -> new Projection (parameterValues.Value, fixParameters.Value))
+        _Projection                                = make (fun () -> new Projection (parameterValues.Value, fixParameters.Value))
     let _include                                   (projectedParameters : ICell<Vector>)   
-                                                   = triv (fun () -> _Projection.Value.INCLUDE(projectedParameters.Value))
+                                                   = triv _Projection (fun () -> _Projection.Value.INCLUDE(projectedParameters.Value))
     let _project                                   (parameters : ICell<Vector>)   
-                                                   = triv (fun () -> _Projection.Value.project(parameters.Value))
+                                                   = triv _Projection (fun () -> _Projection.Value.project(parameters.Value))
     do this.Bind(_Projection)
 (* 
     casting 

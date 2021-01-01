@@ -45,9 +45,9 @@ type LineSearchBasedMethodModel
     Functions
 *)
     let mutable
-        _LineSearchBasedMethod                     = cell (fun () -> new LineSearchBasedMethod (lineSearch.Value))
+        _LineSearchBasedMethod                     = make (fun () -> new LineSearchBasedMethod (lineSearch.Value))
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
-                                                   = triv (fun () -> _LineSearchBasedMethod.Value.minimize(P.Value, endCriteria.Value))
+                                                   = triv _LineSearchBasedMethod (fun () -> _LineSearchBasedMethod.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_LineSearchBasedMethod)
 (* 
     casting 

@@ -42,10 +42,10 @@ type ZeroConditionModel<'array_type when 'array_type :> Vector>
     Functions
 *)
     let mutable
-        _ZeroCondition                             = cell (fun () -> new ZeroCondition<'array_type> ())
+        _ZeroCondition                             = make (fun () -> new ZeroCondition<'array_type> ())
     let _applyTo                                   (a : ICell<Object>) (t : ICell<double>)   
-                                                   = triv (fun () -> _ZeroCondition.Value.applyTo(a.Value, t.Value)
-                                                                     _ZeroCondition.Value)
+                                                   = triv _ZeroCondition (fun () -> _ZeroCondition.Value.applyTo(a.Value, t.Value)
+                                                                                    _ZeroCondition.Value)
     do this.Bind(_ZeroCondition)
 
 (* 

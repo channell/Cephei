@@ -42,18 +42,18 @@ type JarrowRuddModel
     Functions
 *)
     let mutable
-        _JarrowRudd                                = cell (fun () -> new JarrowRudd ())
+        _JarrowRudd                                = make (fun () -> new JarrowRudd ())
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
-                                                   = triv (fun () -> _JarrowRudd.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
+                                                   = triv _JarrowRudd (fun () -> _JarrowRudd.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (x : ICell<int>) (y : ICell<int>) (z : ICell<int>)   
-                                                   = triv (fun () -> _JarrowRudd.Value.probability(x.Value, y.Value, z.Value))
+                                                   = triv _JarrowRudd (fun () -> _JarrowRudd.Value.probability(x.Value, y.Value, z.Value))
     let _underlying                                (i : ICell<int>) (index : ICell<int>)   
-                                                   = triv (fun () -> _JarrowRudd.Value.underlying(i.Value, index.Value))
+                                                   = triv _JarrowRudd (fun () -> _JarrowRudd.Value.underlying(i.Value, index.Value))
     let _descendant                                (x : ICell<int>) (index : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _JarrowRudd.Value.descendant(x.Value, index.Value, branch.Value))
+                                                   = triv _JarrowRudd (fun () -> _JarrowRudd.Value.descendant(x.Value, index.Value, branch.Value))
     let _size                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _JarrowRudd.Value.size(i.Value))
-    let _columns                                   = triv (fun () -> _JarrowRudd.Value.columns())
+                                                   = triv _JarrowRudd (fun () -> _JarrowRudd.Value.size(i.Value))
+    let _columns                                   = triv _JarrowRudd (fun () -> _JarrowRudd.Value.columns())
     do this.Bind(_JarrowRudd)
 (* 
     casting 
@@ -108,18 +108,18 @@ type JarrowRuddModel1
     Functions
 *)
     let mutable
-        _JarrowRudd                                = cell (fun () -> new JarrowRudd (Process.Value, End.Value, steps.Value, strike.Value))
+        _JarrowRudd                                = make (fun () -> new JarrowRudd (Process.Value, End.Value, steps.Value, strike.Value))
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
-                                                   = triv (fun () -> _JarrowRudd.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
+                                                   = triv _JarrowRudd (fun () -> _JarrowRudd.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (x : ICell<int>) (y : ICell<int>) (z : ICell<int>)   
-                                                   = triv (fun () -> _JarrowRudd.Value.probability(x.Value, y.Value, z.Value))
+                                                   = triv _JarrowRudd (fun () -> _JarrowRudd.Value.probability(x.Value, y.Value, z.Value))
     let _underlying                                (i : ICell<int>) (index : ICell<int>)   
-                                                   = triv (fun () -> _JarrowRudd.Value.underlying(i.Value, index.Value))
+                                                   = triv _JarrowRudd (fun () -> _JarrowRudd.Value.underlying(i.Value, index.Value))
     let _descendant                                (x : ICell<int>) (index : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _JarrowRudd.Value.descendant(x.Value, index.Value, branch.Value))
+                                                   = triv _JarrowRudd (fun () -> _JarrowRudd.Value.descendant(x.Value, index.Value, branch.Value))
     let _size                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _JarrowRudd.Value.size(i.Value))
-    let _columns                                   = triv (fun () -> _JarrowRudd.Value.columns())
+                                                   = triv _JarrowRudd (fun () -> _JarrowRudd.Value.size(i.Value))
+    let _columns                                   = triv _JarrowRudd (fun () -> _JarrowRudd.Value.columns())
     do this.Bind(_JarrowRudd)
 (* 
     casting 

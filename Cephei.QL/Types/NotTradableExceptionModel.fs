@@ -47,7 +47,7 @@ type NotTradableExceptionModel
     Functions
 *)
     let mutable
-        _NotTradableException                      = cell (fun () -> new NotTradableException (message.Value, inner.Value))
+        _NotTradableException                      = make (fun () -> new NotTradableException (message.Value, inner.Value))
     do this.Bind(_NotTradableException)
 (* 
     casting 
@@ -87,7 +87,7 @@ type NotTradableExceptionModel1
     Functions
 *)
     let mutable
-        _NotTradableException                      = cell (fun () -> new NotTradableException (message.Value))
+        _NotTradableException                      = make (fun () -> new NotTradableException (message.Value))
     do this.Bind(_NotTradableException)
 (* 
     casting 
@@ -123,7 +123,7 @@ type NotTradableExceptionModel2
     Functions
 *)
     let mutable
-        _NotTradableException                      = cell (fun () -> new NotTradableException ())
+        _NotTradableException                      = make (fun () -> new NotTradableException ())
     do this.Bind(_NotTradableException)
 (* 
     casting 

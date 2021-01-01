@@ -55,9 +55,9 @@ type BiasedBarrierPathPricerModel
     Functions
 *)
     let mutable
-        _BiasedBarrierPathPricer                   = cell (fun () -> new BiasedBarrierPathPricer (barrierType.Value, barrier.Value, rebate.Value, Type.Value, strike.Value, discounts.Value))
+        _BiasedBarrierPathPricer                   = make (fun () -> new BiasedBarrierPathPricer (barrierType.Value, barrier.Value, rebate.Value, Type.Value, strike.Value, discounts.Value))
     let _value                                     (path : ICell<IPath>)   
-                                                   = triv (fun () -> _BiasedBarrierPathPricer.Value.value(path.Value))
+                                                   = triv _BiasedBarrierPathPricer (fun () -> _BiasedBarrierPathPricer.Value.value(path.Value))
     do this.Bind(_BiasedBarrierPathPricer)
 (* 
     casting 

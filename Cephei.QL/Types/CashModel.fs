@@ -56,18 +56,18 @@ type CashModel
     Functions
 *)
     let mutable
-        _Cash                                      = cell (fun () -> withEngine pricingEngine evaluationDate (new Cash (Type.Value, nominal.Value, principalSchedule.Value, paymentConvention.Value)))
-    let _principalLeg                              = triv (fun () -> (withEvaluationDate _evaluationDate _Cash).principalLeg())
-    let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _Cash).isExpired())
-    let _CASH                                      = cell (fun () -> (withEvaluationDate _evaluationDate _Cash).CASH())
-    let _errorEstimate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Cash).errorEstimate())
-    let _NPV                                       = cell (fun () -> (withEvaluationDate _evaluationDate _Cash).NPV())
+        _Cash                                      = make (fun () -> withEngine pricingEngine evaluationDate (new Cash (Type.Value, nominal.Value, principalSchedule.Value, paymentConvention.Value)))
+    let _principalLeg                              = triv _Cash (fun () -> (withEvaluationDate _evaluationDate _Cash).principalLeg())
+    let _isExpired                                 = triv _Cash (fun () -> (withEvaluationDate _evaluationDate _Cash).isExpired())
+    let _CASH                                      = cell _Cash (fun () -> (withEvaluationDate _evaluationDate _Cash).CASH())
+    let _errorEstimate                             = triv _Cash (fun () -> (withEvaluationDate _evaluationDate _Cash).errorEstimate())
+    let _NPV                                       = cell _Cash (fun () -> (withEvaluationDate _evaluationDate _Cash).NPV())
     let _result                                    (tag : ICell<string>)   
-                                                   = triv (fun () -> (withEvaluationDate _evaluationDate _Cash).result(tag.Value))
+                                                   = triv _Cash (fun () -> (withEvaluationDate _evaluationDate _Cash).result(tag.Value))
     let _setPricingEngine                          (e : ICell<IPricingEngine>)   
-                                                   = triv (fun () -> (withEvaluationDate _evaluationDate _Cash).setPricingEngine(e.Value)
-                                                                     _Cash.Value)
-    let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Cash).valuationDate())
+                                                   = triv _Cash (fun () -> (withEvaluationDate _evaluationDate _Cash).setPricingEngine(e.Value)
+                                                                           _Cash.Value)
+    let _valuationDate                             = triv _Cash (fun () -> (withEvaluationDate _evaluationDate _Cash).valuationDate())
     do this.Bind(_Cash)
 (* 
     casting 

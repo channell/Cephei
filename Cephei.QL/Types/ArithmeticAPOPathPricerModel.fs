@@ -49,11 +49,11 @@ type ArithmeticAPOPathPricerModel
     Functions
 *)
     let mutable
-        _ArithmeticAPOPathPricer                   = cell (fun () -> new ArithmeticAPOPathPricer (Type.Value, strike.Value, discount.Value))
+        _ArithmeticAPOPathPricer                   = make (fun () -> new ArithmeticAPOPathPricer (Type.Value, strike.Value, discount.Value))
     let _value                                     (path : ICell<IPath>)   
-                                                   = triv (fun () -> _ArithmeticAPOPathPricer.Value.value(path.Value))
+                                                   = triv _ArithmeticAPOPathPricer (fun () -> _ArithmeticAPOPathPricer.Value.value(path.Value))
     let _value1                                    (path : ICell<Path>)   
-                                                   = triv (fun () -> _ArithmeticAPOPathPricer.Value.value(path.Value))
+                                                   = triv _ArithmeticAPOPathPricer (fun () -> _ArithmeticAPOPathPricer.Value.value(path.Value))
     do this.Bind(_ArithmeticAPOPathPricer)
 (* 
     casting 
@@ -104,11 +104,11 @@ type ArithmeticAPOPathPricerModel1
     Functions
 *)
     let mutable
-        _ArithmeticAPOPathPricer                   = cell (fun () -> new ArithmeticAPOPathPricer (Type.Value, strike.Value, discount.Value, runningSum.Value))
+        _ArithmeticAPOPathPricer                   = make (fun () -> new ArithmeticAPOPathPricer (Type.Value, strike.Value, discount.Value, runningSum.Value))
     let _value                                     (path : ICell<IPath>)   
-                                                   = triv (fun () -> _ArithmeticAPOPathPricer.Value.value(path.Value))
+                                                   = triv _ArithmeticAPOPathPricer (fun () -> _ArithmeticAPOPathPricer.Value.value(path.Value))
     let _value1                                    (path : ICell<Path>)   
-                                                   = triv (fun () -> _ArithmeticAPOPathPricer.Value.value(path.Value))
+                                                   = triv _ArithmeticAPOPathPricer (fun () -> _ArithmeticAPOPathPricer.Value.value(path.Value))
     do this.Bind(_ArithmeticAPOPathPricer)
 (* 
     casting 
@@ -162,11 +162,11 @@ type ArithmeticAPOPathPricerModel2
     Functions
 *)
     let mutable
-        _ArithmeticAPOPathPricer                   = cell (fun () -> new ArithmeticAPOPathPricer (Type.Value, strike.Value, discount.Value, runningSum.Value, pastFixings.Value))
+        _ArithmeticAPOPathPricer                   = make (fun () -> new ArithmeticAPOPathPricer (Type.Value, strike.Value, discount.Value, runningSum.Value, pastFixings.Value))
     let _value                                     (path : ICell<IPath>)   
-                                                   = triv (fun () -> _ArithmeticAPOPathPricer.Value.value(path.Value))
+                                                   = triv _ArithmeticAPOPathPricer (fun () -> _ArithmeticAPOPathPricer.Value.value(path.Value))
     let _value1                                    (path : ICell<Path>)   
-                                                   = triv (fun () -> _ArithmeticAPOPathPricer.Value.value(path.Value))
+                                                   = triv _ArithmeticAPOPathPricer (fun () -> _ArithmeticAPOPathPricer.Value.value(path.Value))
     do this.Bind(_ArithmeticAPOPathPricer)
 (* 
     casting 

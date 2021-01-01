@@ -49,15 +49,15 @@ type DouglasSchemeModel
     Functions
 *)
     let mutable
-        _DouglasScheme                             = cell (fun () -> new DouglasScheme (theta.Value, map.Value, bcSet.Value))
+        _DouglasScheme                             = make (fun () -> new DouglasScheme (theta.Value, map.Value, bcSet.Value))
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
-                                                   = triv (fun () -> _DouglasScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
+                                                   = triv _DouglasScheme (fun () -> _DouglasScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _DouglasScheme.Value.setStep(dt.Value)
-                                                                     _DouglasScheme.Value)
+                                                   = triv _DouglasScheme (fun () -> _DouglasScheme.Value.setStep(dt.Value)
+                                                                                    _DouglasScheme.Value)
     let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _DouglasScheme.Value.step(ref a.Value, t.Value, theta.Value)
-                                                                     _DouglasScheme.Value)
+                                                   = triv _DouglasScheme (fun () -> _DouglasScheme.Value.step(ref a.Value, t.Value, theta.Value)
+                                                                                    _DouglasScheme.Value)
     do this.Bind(_DouglasScheme)
 (* 
     casting 
@@ -101,15 +101,15 @@ type DouglasSchemeModel1
     Functions
 *)
     let mutable
-        _DouglasScheme                             = cell (fun () -> new DouglasScheme ())
+        _DouglasScheme                             = make (fun () -> new DouglasScheme ())
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
-                                                   = triv (fun () -> _DouglasScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
+                                                   = triv _DouglasScheme (fun () -> _DouglasScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _DouglasScheme.Value.setStep(dt.Value)
-                                                                     _DouglasScheme.Value)
+                                                   = triv _DouglasScheme (fun () -> _DouglasScheme.Value.setStep(dt.Value)
+                                                                                    _DouglasScheme.Value)
     let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _DouglasScheme.Value.step(ref a.Value, t.Value, theta.Value)
-                                                                     _DouglasScheme.Value)
+                                                   = triv _DouglasScheme (fun () -> _DouglasScheme.Value.step(ref a.Value, t.Value, theta.Value)
+                                                                                    _DouglasScheme.Value)
     do this.Bind(_DouglasScheme)
 (* 
     casting 

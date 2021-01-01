@@ -47,12 +47,12 @@ type PairModel<'TFirst, 'TSecond>
 (*
     Functions
 *)
-    let _Pair                                      = cell (fun () -> new Pair<'TFirst,'TSecond> (first.Value, second.Value))
-    let _first                                     = triv (fun () -> _Pair.Value.first)
-    let _second                                    = triv (fun () -> _Pair.Value.second)
+    let _Pair                                      = make (fun () -> new Pair<'TFirst,'TSecond> (first.Value, second.Value))
+    let _first                                     = triv _Pair (fun () -> _Pair.Value.first)
+    let _second                                    = triv _Pair (fun () -> _Pair.Value.second)
     let _set                                       (first : ICell<'TFirst>) (second : ICell<'TSecond>)   
-                                                   = triv (fun () -> _Pair.Value.set(first.Value, second.Value)
-                                                                     _Pair.Value)
+                                                   = triv _Pair (fun () -> _Pair.Value.set(first.Value, second.Value)
+                                                                           _Pair.Value)
     do this.Bind(_Pair)
 
 (* 
@@ -78,12 +78,12 @@ type PairModel1<'TFirst, 'TSecond>
 (*
     Functions
 *)
-    let _Pair                                      = cell (fun () -> new Pair<'TFirst,'TSecond> ())
-    let _first                                     = triv (fun () -> _Pair.Value.first)
-    let _second                                    = triv (fun () -> _Pair.Value.second)
+    let _Pair                                      = make (fun () -> new Pair<'TFirst,'TSecond> ())
+    let _first                                     = triv _Pair (fun () -> _Pair.Value.first)
+    let _second                                    = triv _Pair (fun () -> _Pair.Value.second)
     let _set                                       (first : ICell<'TFirst>) (second : ICell<'TSecond>)   
-                                                   = triv (fun () -> _Pair.Value.set(first.Value, second.Value)
-                                                                     _Pair.Value)
+                                                   = triv _Pair (fun () -> _Pair.Value.set(first.Value, second.Value)
+                                                                           _Pair.Value)
     do this.Bind(_Pair)
 
 (* 

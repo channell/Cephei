@@ -42,15 +42,15 @@ type ParallelEvolverModel<'Evolver when 'Evolver :> IMixedScheme and 'Evolver :>
     Functions
 *)
     let mutable
-        _ParallelEvolver                           = cell (fun () -> new ParallelEvolver<'Evolver> ())
+        _ParallelEvolver                           = make (fun () -> new ParallelEvolver<'Evolver> ())
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalFields : ICell<Object[]>)   
-                                                   = triv (fun () -> _ParallelEvolver.Value.factory(L.Value, bcs.Value, additionalFields.Value))
+                                                   = triv _ParallelEvolver (fun () -> _ParallelEvolver.Value.factory(L.Value, bcs.Value, additionalFields.Value))
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _ParallelEvolver.Value.setStep(dt.Value)
-                                                                     _ParallelEvolver.Value)
+                                                   = triv _ParallelEvolver (fun () -> _ParallelEvolver.Value.setStep(dt.Value)
+                                                                                      _ParallelEvolver.Value)
     let _step                                      (o : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _ParallelEvolver.Value.step(ref o.Value, t.Value, theta.Value)
-                                                                     _ParallelEvolver.Value)
+                                                   = triv _ParallelEvolver (fun () -> _ParallelEvolver.Value.step(ref o.Value, t.Value, theta.Value)
+                                                                                      _ParallelEvolver.Value)
     do this.Bind(_ParallelEvolver)
 
 (* 
@@ -82,15 +82,15 @@ type ParallelEvolverModel1<'Evolver when 'Evolver :> IMixedScheme and 'Evolver :
     Functions
 *)
     let mutable
-        _ParallelEvolver                           = cell (fun () -> new ParallelEvolver<'Evolver> (L.Value, bcs.Value))
+        _ParallelEvolver                           = make (fun () -> new ParallelEvolver<'Evolver> (L.Value, bcs.Value))
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalFields : ICell<Object[]>)   
-                                                   = triv (fun () -> _ParallelEvolver.Value.factory(L.Value, bcs.Value, additionalFields.Value))
+                                                   = triv _ParallelEvolver (fun () -> _ParallelEvolver.Value.factory(L.Value, bcs.Value, additionalFields.Value))
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _ParallelEvolver.Value.setStep(dt.Value)
-                                                                     _ParallelEvolver.Value)
+                                                   = triv _ParallelEvolver (fun () -> _ParallelEvolver.Value.setStep(dt.Value)
+                                                                                      _ParallelEvolver.Value)
     let _step                                      (o : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _ParallelEvolver.Value.step(ref o.Value, t.Value, theta.Value)
-                                                                     _ParallelEvolver.Value)
+                                                   = triv _ParallelEvolver (fun () -> _ParallelEvolver.Value.step(ref o.Value, t.Value, theta.Value)
+                                                                                      _ParallelEvolver.Value)
     do this.Bind(_ParallelEvolver)
 
 (* 

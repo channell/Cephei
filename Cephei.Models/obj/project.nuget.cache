@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OshR+XP0OKZZ9f9VPcfXnTWDytJIqh2axnftGWsu3CKJj6OuYrO9g/tcubTUC35+x0CQpzQ7J7/5iS7Ldv4TTQ==",
+  "dgSpecHash": "cdWNTJanrjLaSC27TKZL+nMN5UUMC7VUAEWbNi7a0r3k60NedAncIZyhK1JtmrGjpsG6NMtviWPv6GOMiQAzsg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.Models\\Cephei.Model.fsproj",
+  "projectFilePath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Models\\Cephei.Model.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\steve\\.nuget\\packages\\exceldna.integration\\1.1.0\\exceldna.integration.1.1.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512",
@@ -15,7 +15,6 @@
     "C:\\Users\\steve\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.reflection.metadata\\1.8.0\\system.reflection.metadata.1.8.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.7.1\\system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512",
-    "C:\\Users\\steve\\.nuget\\packages\\cephei.cell\\3.1.3\\cephei.cell.3.1.3.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\qlnet\\1.11.4\\qlnet.1.11.4.nupkg.sha512"
   ],
   "logs": []

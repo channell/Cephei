@@ -47,13 +47,13 @@ type Trbdf2Model<'Operator when 'Operator :> IOperator>
     Functions
 *)
     let mutable
-        _Trbdf2                                    = cell (fun () -> new Trbdf2<'Operator> (L.Value, bcs.Value))
+        _Trbdf2                                    = make (fun () -> new Trbdf2<'Operator> (L.Value, bcs.Value))
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _Trbdf2.Value.setStep(dt.Value)
-                                                                     _Trbdf2.Value)
+                                                   = triv _Trbdf2 (fun () -> _Trbdf2.Value.setStep(dt.Value)
+                                                                             _Trbdf2.Value)
     let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _Trbdf2.Value.step(ref a.Value, t.Value, theta.Value)
-                                                                     _Trbdf2.Value)
+                                                   = triv _Trbdf2 (fun () -> _Trbdf2.Value.step(ref a.Value, t.Value, theta.Value)
+                                                                             _Trbdf2.Value)
     do this.Bind(_Trbdf2)
 
 (* 
@@ -80,13 +80,13 @@ type Trbdf2Model1<'Operator when 'Operator :> IOperator>
     Functions
 *)
     let mutable
-        _Trbdf2                                    = cell (fun () -> new Trbdf2<'Operator> ())
+        _Trbdf2                                    = make (fun () -> new Trbdf2<'Operator> ())
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _Trbdf2.Value.setStep(dt.Value)
-                                                                     _Trbdf2.Value)
+                                                   = triv _Trbdf2 (fun () -> _Trbdf2.Value.setStep(dt.Value)
+                                                                             _Trbdf2.Value)
     let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _Trbdf2.Value.step(ref a.Value, t.Value, theta.Value)
-                                                                     _Trbdf2.Value)
+                                                   = triv _Trbdf2 (fun () -> _Trbdf2.Value.step(ref a.Value, t.Value, theta.Value)
+                                                                             _Trbdf2.Value)
     do this.Bind(_Trbdf2)
 
 (* 

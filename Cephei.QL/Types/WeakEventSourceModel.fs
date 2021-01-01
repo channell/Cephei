@@ -42,17 +42,17 @@ type WeakEventSourceModel
     Functions
 *)
     let mutable
-        _WeakEventSource                           = cell (fun () -> new WeakEventSource ())
-    let _Clear                                     = triv (fun () -> _WeakEventSource.Value.Clear()
-                                                                     _WeakEventSource.Value)
-    let _Raise                                     = triv (fun () -> _WeakEventSource.Value.Raise()
-                                                                     _WeakEventSource.Value)
+        _WeakEventSource                           = make (fun () -> new WeakEventSource ())
+    let _Clear                                     = triv _WeakEventSource (fun () -> _WeakEventSource.Value.Clear()
+                                                                                      _WeakEventSource.Value)
+    let _Raise                                     = triv _WeakEventSource (fun () -> _WeakEventSource.Value.Raise()
+                                                                                      _WeakEventSource.Value)
     let _Subscribe                                 (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _WeakEventSource.Value.Subscribe(handler.Value)
-                                                                     _WeakEventSource.Value)
+                                                   = triv _WeakEventSource (fun () -> _WeakEventSource.Value.Subscribe(handler.Value)
+                                                                                      _WeakEventSource.Value)
     let _Unsubscribe                               (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _WeakEventSource.Value.Unsubscribe(handler.Value)
-                                                                     _WeakEventSource.Value)
+                                                   = triv _WeakEventSource (fun () -> _WeakEventSource.Value.Unsubscribe(handler.Value)
+                                                                                      _WeakEventSource.Value)
     do this.Bind(_WeakEventSource)
 (* 
     casting 

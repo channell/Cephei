@@ -47,7 +47,7 @@ type RootNotBracketExceptionModel
     Functions
 *)
     let mutable
-        _RootNotBracketException                   = cell (fun () -> new RootNotBracketException (message.Value, inner.Value))
+        _RootNotBracketException                   = make (fun () -> new RootNotBracketException (message.Value, inner.Value))
     do this.Bind(_RootNotBracketException)
 (* 
     casting 
@@ -87,7 +87,7 @@ type RootNotBracketExceptionModel1
     Functions
 *)
     let mutable
-        _RootNotBracketException                   = cell (fun () -> new RootNotBracketException (message.Value))
+        _RootNotBracketException                   = make (fun () -> new RootNotBracketException (message.Value))
     do this.Bind(_RootNotBracketException)
 (* 
     casting 
@@ -123,7 +123,7 @@ type RootNotBracketExceptionModel2
     Functions
 *)
     let mutable
-        _RootNotBracketException                   = cell (fun () -> new RootNotBracketException ())
+        _RootNotBracketException                   = make (fun () -> new RootNotBracketException ())
     do this.Bind(_RootNotBracketException)
 (* 
     casting 

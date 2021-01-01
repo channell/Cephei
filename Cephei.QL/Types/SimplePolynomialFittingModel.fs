@@ -51,17 +51,17 @@ type SimplePolynomialFittingModel
     Functions
 *)
     let mutable
-        _SimplePolynomialFitting                   = cell (fun () -> new SimplePolynomialFitting (degree.Value, constrainAtZero.Value, weights.Value, optimizationMethod.Value))
-    let _clone                                     = triv (fun () -> _SimplePolynomialFitting.Value.clone())
-    let _size                                      = triv (fun () -> _SimplePolynomialFitting.Value.size())
-    let _constrainAtZero                           = triv (fun () -> _SimplePolynomialFitting.Value.constrainAtZero())
+        _SimplePolynomialFitting                   = make (fun () -> new SimplePolynomialFitting (degree.Value, constrainAtZero.Value, weights.Value, optimizationMethod.Value))
+    let _clone                                     = triv _SimplePolynomialFitting (fun () -> _SimplePolynomialFitting.Value.clone())
+    let _size                                      = triv _SimplePolynomialFitting (fun () -> _SimplePolynomialFitting.Value.size())
+    let _constrainAtZero                           = triv _SimplePolynomialFitting (fun () -> _SimplePolynomialFitting.Value.constrainAtZero())
     let _discount                                  (x : ICell<Vector>) (t : ICell<double>)   
-                                                   = triv (fun () -> _SimplePolynomialFitting.Value.discount(x.Value, t.Value))
-    let _minimumCostValue                          = triv (fun () -> _SimplePolynomialFitting.Value.minimumCostValue())
-    let _numberOfIterations                        = triv (fun () -> _SimplePolynomialFitting.Value.numberOfIterations())
-    let _optimizationMethod                        = triv (fun () -> _SimplePolynomialFitting.Value.optimizationMethod())
-    let _solution                                  = triv (fun () -> _SimplePolynomialFitting.Value.solution())
-    let _weights                                   = triv (fun () -> _SimplePolynomialFitting.Value.weights())
+                                                   = triv _SimplePolynomialFitting (fun () -> _SimplePolynomialFitting.Value.discount(x.Value, t.Value))
+    let _minimumCostValue                          = triv _SimplePolynomialFitting (fun () -> _SimplePolynomialFitting.Value.minimumCostValue())
+    let _numberOfIterations                        = triv _SimplePolynomialFitting (fun () -> _SimplePolynomialFitting.Value.numberOfIterations())
+    let _optimizationMethod                        = triv _SimplePolynomialFitting (fun () -> _SimplePolynomialFitting.Value.optimizationMethod())
+    let _solution                                  = triv _SimplePolynomialFitting (fun () -> _SimplePolynomialFitting.Value.solution())
+    let _weights                                   = triv _SimplePolynomialFitting (fun () -> _SimplePolynomialFitting.Value.weights())
     do this.Bind(_SimplePolynomialFitting)
 (* 
     casting 

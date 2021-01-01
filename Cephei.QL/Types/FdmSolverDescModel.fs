@@ -42,14 +42,14 @@ type FdmSolverDescModel
     Functions
 *)
     let mutable
-        _FdmSolverDesc                             = cell (fun () -> new FdmSolverDesc ())
-    let _bcSet                                     = triv (fun () -> _FdmSolverDesc.Value.bcSet)
-    let _calculator                                = triv (fun () -> _FdmSolverDesc.Value.calculator)
-    let _condition                                 = triv (fun () -> _FdmSolverDesc.Value.condition)
-    let _dampingSteps                              = triv (fun () -> _FdmSolverDesc.Value.dampingSteps)
-    let _maturity                                  = triv (fun () -> _FdmSolverDesc.Value.maturity)
-    let _mesher                                    = triv (fun () -> _FdmSolverDesc.Value.mesher)
-    let _timeSteps                                 = triv (fun () -> _FdmSolverDesc.Value.timeSteps)
+        _FdmSolverDesc                             = make (fun () -> new FdmSolverDesc ())
+    let _bcSet                                     = triv _FdmSolverDesc (fun () -> _FdmSolverDesc.Value.bcSet)
+    let _calculator                                = triv _FdmSolverDesc (fun () -> _FdmSolverDesc.Value.calculator)
+    let _condition                                 = triv _FdmSolverDesc (fun () -> _FdmSolverDesc.Value.condition)
+    let _dampingSteps                              = triv _FdmSolverDesc (fun () -> _FdmSolverDesc.Value.dampingSteps)
+    let _maturity                                  = triv _FdmSolverDesc (fun () -> _FdmSolverDesc.Value.maturity)
+    let _mesher                                    = triv _FdmSolverDesc (fun () -> _FdmSolverDesc.Value.mesher)
+    let _timeSteps                                 = triv _FdmSolverDesc (fun () -> _FdmSolverDesc.Value.timeSteps)
     do this.Bind(_FdmSolverDesc)
 (* 
     casting 

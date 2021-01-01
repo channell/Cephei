@@ -47,17 +47,17 @@ type SpreadFittingMethodModel
     Functions
 *)
     let mutable
-        _SpreadFittingMethod                       = cell (fun () -> new SpreadFittingMethod (Method.Value, discountCurve.Value))
-    let _clone                                     = triv (fun () -> _SpreadFittingMethod.Value.clone())
-    let _size                                      = triv (fun () -> _SpreadFittingMethod.Value.size())
-    let _constrainAtZero                           = triv (fun () -> _SpreadFittingMethod.Value.constrainAtZero())
+        _SpreadFittingMethod                       = make (fun () -> new SpreadFittingMethod (Method.Value, discountCurve.Value))
+    let _clone                                     = triv _SpreadFittingMethod (fun () -> _SpreadFittingMethod.Value.clone())
+    let _size                                      = triv _SpreadFittingMethod (fun () -> _SpreadFittingMethod.Value.size())
+    let _constrainAtZero                           = triv _SpreadFittingMethod (fun () -> _SpreadFittingMethod.Value.constrainAtZero())
     let _discount                                  (x : ICell<Vector>) (t : ICell<double>)   
-                                                   = triv (fun () -> _SpreadFittingMethod.Value.discount(x.Value, t.Value))
-    let _minimumCostValue                          = triv (fun () -> _SpreadFittingMethod.Value.minimumCostValue())
-    let _numberOfIterations                        = triv (fun () -> _SpreadFittingMethod.Value.numberOfIterations())
-    let _optimizationMethod                        = triv (fun () -> _SpreadFittingMethod.Value.optimizationMethod())
-    let _solution                                  = triv (fun () -> _SpreadFittingMethod.Value.solution())
-    let _weights                                   = triv (fun () -> _SpreadFittingMethod.Value.weights())
+                                                   = triv _SpreadFittingMethod (fun () -> _SpreadFittingMethod.Value.discount(x.Value, t.Value))
+    let _minimumCostValue                          = triv _SpreadFittingMethod (fun () -> _SpreadFittingMethod.Value.minimumCostValue())
+    let _numberOfIterations                        = triv _SpreadFittingMethod (fun () -> _SpreadFittingMethod.Value.numberOfIterations())
+    let _optimizationMethod                        = triv _SpreadFittingMethod (fun () -> _SpreadFittingMethod.Value.optimizationMethod())
+    let _solution                                  = triv _SpreadFittingMethod (fun () -> _SpreadFittingMethod.Value.solution())
+    let _weights                                   = triv _SpreadFittingMethod (fun () -> _SpreadFittingMethod.Value.weights())
     do this.Bind(_SpreadFittingMethod)
 (* 
     casting 

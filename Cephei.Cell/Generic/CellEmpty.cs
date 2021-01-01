@@ -18,9 +18,9 @@ namespace Cephei.Cell.Generic
 
         }
 
-        public CellEmpty(string mnemonic) : base (default(T), mnemonic)
+        public CellEmpty(string mnemonic) : base (default(T))
         {
-
+            Mnemonic = mnemonic;
         }
 
         public new T Value { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

@@ -50,14 +50,14 @@ type ImpliedVolTermStructureModel
     Functions
 *)
     let mutable
-        _ImpliedVolTermStructure                   = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new ImpliedVolTermStructure (originalTS.Value, referenceDate.Value))))
+        _ImpliedVolTermStructure                   = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new ImpliedVolTermStructure (originalTS.Value, referenceDate.Value))))
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ImpliedVolTermStructure).Value.accept(v.Value)
-                                                                     _ImpliedVolTermStructure.Value)
-    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _ImpliedVolTermStructure).Value.dayCounter())
-    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ImpliedVolTermStructure).Value.maxDate())
-    let _maxStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _ImpliedVolTermStructure).Value.maxStrike())
-    let _minStrike                                 = triv (fun () -> (curryEvaluationDate _evaluationDate _ImpliedVolTermStructure).Value.minStrike())
+                                                   = triv _ImpliedVolTermStructure (fun () -> (curryEvaluationDate _evaluationDate _ImpliedVolTermStructure).Value.accept(v.Value)
+                                                                                              _ImpliedVolTermStructure.Value)
+    let _dayCounter                                = triv _ImpliedVolTermStructure (fun () -> (curryEvaluationDate _evaluationDate _ImpliedVolTermStructure).Value.dayCounter())
+    let _maxDate                                   = triv _ImpliedVolTermStructure (fun () -> (curryEvaluationDate _evaluationDate _ImpliedVolTermStructure).Value.maxDate())
+    let _maxStrike                                 = triv _ImpliedVolTermStructure (fun () -> (curryEvaluationDate _evaluationDate _ImpliedVolTermStructure).Value.maxStrike())
+    let _minStrike                                 = triv _ImpliedVolTermStructure (fun () -> (curryEvaluationDate _evaluationDate _ImpliedVolTermStructure).Value.minStrike())
     do this.Bind(_ImpliedVolTermStructure)
 (* 
     casting 

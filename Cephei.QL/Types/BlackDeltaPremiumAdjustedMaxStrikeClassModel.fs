@@ -55,11 +55,11 @@ type BlackDeltaPremiumAdjustedMaxStrikeClassModel
     Functions
 *)
     let mutable
-        _BlackDeltaPremiumAdjustedMaxStrikeClass   = cell (fun () -> new BlackDeltaPremiumAdjustedMaxStrikeClass (ot.Value, dt.Value, spot.Value, dDiscount.Value, fDiscount.Value, stdDev.Value))
+        _BlackDeltaPremiumAdjustedMaxStrikeClass   = make (fun () -> new BlackDeltaPremiumAdjustedMaxStrikeClass (ot.Value, dt.Value, spot.Value, dDiscount.Value, fDiscount.Value, stdDev.Value))
     let _value                                     (strike : ICell<double>)   
-                                                   = triv (fun () -> _BlackDeltaPremiumAdjustedMaxStrikeClass.Value.value(strike.Value))
+                                                   = triv _BlackDeltaPremiumAdjustedMaxStrikeClass (fun () -> _BlackDeltaPremiumAdjustedMaxStrikeClass.Value.value(strike.Value))
     let _derivative                                (x : ICell<double>)   
-                                                   = triv (fun () -> _BlackDeltaPremiumAdjustedMaxStrikeClass.Value.derivative(x.Value))
+                                                   = triv _BlackDeltaPremiumAdjustedMaxStrikeClass (fun () -> _BlackDeltaPremiumAdjustedMaxStrikeClass.Value.derivative(x.Value))
     do this.Bind(_BlackDeltaPremiumAdjustedMaxStrikeClass)
 (* 
     casting 

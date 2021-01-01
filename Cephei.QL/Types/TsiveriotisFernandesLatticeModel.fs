@@ -57,16 +57,16 @@ type TsiveriotisFernandesLatticeModel<'T when 'T :> ITree>
     Functions
 *)
     let mutable
-        _TsiveriotisFernandesLattice               = cell (fun () -> new TsiveriotisFernandesLattice<'T> (tree.Value, riskFreeRate.Value, End.Value, steps.Value, creditSpread.Value, sigma.Value, divYield.Value))
+        _TsiveriotisFernandesLattice               = make (fun () -> new TsiveriotisFernandesLattice<'T> (tree.Value, riskFreeRate.Value, End.Value, steps.Value, creditSpread.Value, sigma.Value, divYield.Value))
     let _partialRollback                           (asset : ICell<DiscretizedAsset>) (To : ICell<double>)   
-                                                   = triv (fun () -> _TsiveriotisFernandesLattice.Value.partialRollback(asset.Value, To.Value)
-                                                                     _TsiveriotisFernandesLattice.Value)
+                                                   = triv _TsiveriotisFernandesLattice (fun () -> _TsiveriotisFernandesLattice.Value.partialRollback(asset.Value, To.Value)
+                                                                                                  _TsiveriotisFernandesLattice.Value)
     let _rollback                                  (asset : ICell<DiscretizedAsset>) (To : ICell<double>)   
-                                                   = triv (fun () -> _TsiveriotisFernandesLattice.Value.rollback(asset.Value, To.Value)
-                                                                     _TsiveriotisFernandesLattice.Value)
+                                                   = triv _TsiveriotisFernandesLattice (fun () -> _TsiveriotisFernandesLattice.Value.rollback(asset.Value, To.Value)
+                                                                                                  _TsiveriotisFernandesLattice.Value)
     let _stepback                                  (i : ICell<int>) (values : ICell<Vector>) (conversionProbability : ICell<Vector>) (spreadAdjustedRate : ICell<Vector>) (newValues : ICell<Vector>) (newConversionProbability : ICell<Vector>) (newSpreadAdjustedRate : ICell<Vector>)   
-                                                   = triv (fun () -> _TsiveriotisFernandesLattice.Value.stepback(i.Value, values.Value, conversionProbability.Value, spreadAdjustedRate.Value, newValues.Value, newConversionProbability.Value, newSpreadAdjustedRate.Value)
-                                                                     _TsiveriotisFernandesLattice.Value)
+                                                   = triv _TsiveriotisFernandesLattice (fun () -> _TsiveriotisFernandesLattice.Value.stepback(i.Value, values.Value, conversionProbability.Value, spreadAdjustedRate.Value, newValues.Value, newConversionProbability.Value, newSpreadAdjustedRate.Value)
+                                                                                                  _TsiveriotisFernandesLattice.Value)
     do this.Bind(_TsiveriotisFernandesLattice)
 
 (* 

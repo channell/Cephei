@@ -51,8 +51,8 @@ type FlatHazardRateModel
     Functions
 *)
     let mutable
-        _FlatHazardRate                            = cell (fun () -> new FlatHazardRate (settlementDays.Value, calendar.Value, hazardRate.Value, dc.Value))
-    let _maxDate                                   = triv (fun () -> _FlatHazardRate.Value.maxDate())
+        _FlatHazardRate                            = make (fun () -> new FlatHazardRate (settlementDays.Value, calendar.Value, hazardRate.Value, dc.Value))
+    let _maxDate                                   = triv _FlatHazardRate (fun () -> _FlatHazardRate.Value.maxDate())
     do this.Bind(_FlatHazardRate)
 (* 
     casting 
@@ -99,8 +99,8 @@ type FlatHazardRateModel1
     Functions
 *)
     let mutable
-        _FlatHazardRate                            = cell (fun () -> new FlatHazardRate (referenceDate.Value, hazardRate.Value, dc.Value))
-    let _maxDate                                   = triv (fun () -> _FlatHazardRate.Value.maxDate())
+        _FlatHazardRate                            = make (fun () -> new FlatHazardRate (referenceDate.Value, hazardRate.Value, dc.Value))
+    let _maxDate                                   = triv _FlatHazardRate (fun () -> _FlatHazardRate.Value.maxDate())
     do this.Bind(_FlatHazardRate)
 (* 
     casting 
@@ -146,8 +146,8 @@ type FlatHazardRateModel2
     Functions
 *)
     let mutable
-        _FlatHazardRate                            = cell (fun () -> new FlatHazardRate (referenceDate.Value, hazardRate.Value, dc.Value))
-    let _maxDate                                   = triv (fun () -> _FlatHazardRate.Value.maxDate())
+        _FlatHazardRate                            = make (fun () -> new FlatHazardRate (referenceDate.Value, hazardRate.Value, dc.Value))
+    let _maxDate                                   = triv _FlatHazardRate (fun () -> _FlatHazardRate.Value.maxDate())
     do this.Bind(_FlatHazardRate)
 (* 
     casting 
@@ -195,8 +195,8 @@ type FlatHazardRateModel3
     Functions
 *)
     let mutable
-        _FlatHazardRate                            = cell (fun () -> new FlatHazardRate (settlementDays.Value, calendar.Value, hazardRate.Value, dc.Value))
-    let _maxDate                                   = triv (fun () -> _FlatHazardRate.Value.maxDate())
+        _FlatHazardRate                            = make (fun () -> new FlatHazardRate (settlementDays.Value, calendar.Value, hazardRate.Value, dc.Value))
+    let _maxDate                                   = triv _FlatHazardRate (fun () -> _FlatHazardRate.Value.maxDate())
     do this.Bind(_FlatHazardRate)
 (* 
     casting 

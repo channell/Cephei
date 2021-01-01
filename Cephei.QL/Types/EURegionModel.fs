@@ -42,11 +42,11 @@ type EURegionModel
     Functions
 *)
     let mutable
-        _EURegion                                  = cell (fun () -> new EURegion ())
-    let _code                                      = triv (fun () -> _EURegion.Value.code())
+        _EURegion                                  = make (fun () -> new EURegion ())
+    let _code                                      = triv _EURegion (fun () -> _EURegion.Value.code())
     let _Equals                                    (o : ICell<Object>)   
-                                                   = triv (fun () -> _EURegion.Value.Equals(o.Value))
-    let _name                                      = triv (fun () -> _EURegion.Value.name())
+                                                   = triv _EURegion (fun () -> _EURegion.Value.Equals(o.Value))
+    let _name                                      = triv _EURegion (fun () -> _EURegion.Value.name())
     do this.Bind(_EURegion)
 (* 
     casting 

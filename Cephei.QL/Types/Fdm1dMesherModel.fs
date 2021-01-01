@@ -45,15 +45,15 @@ type Fdm1dMesherModel
     Functions
 *)
     let mutable
-        _Fdm1dMesher                               = cell (fun () -> new Fdm1dMesher (size.Value))
+        _Fdm1dMesher                               = make (fun () -> new Fdm1dMesher (size.Value))
     let _dminus                                    (index : ICell<int>)   
-                                                   = triv (fun () -> _Fdm1dMesher.Value.dminus(index.Value))
+                                                   = triv _Fdm1dMesher (fun () -> _Fdm1dMesher.Value.dminus(index.Value))
     let _dplus                                     (index : ICell<int>)   
-                                                   = triv (fun () -> _Fdm1dMesher.Value.dplus(index.Value))
+                                                   = triv _Fdm1dMesher (fun () -> _Fdm1dMesher.Value.dplus(index.Value))
     let _location                                  (index : ICell<int>)   
-                                                   = triv (fun () -> _Fdm1dMesher.Value.location(index.Value))
-    let _locations                                 = triv (fun () -> _Fdm1dMesher.Value.locations())
-    let _size                                      = triv (fun () -> _Fdm1dMesher.Value.size())
+                                                   = triv _Fdm1dMesher (fun () -> _Fdm1dMesher.Value.location(index.Value))
+    let _locations                                 = triv _Fdm1dMesher (fun () -> _Fdm1dMesher.Value.locations())
+    let _size                                      = triv _Fdm1dMesher (fun () -> _Fdm1dMesher.Value.size())
     do this.Bind(_Fdm1dMesher)
 (* 
     casting 

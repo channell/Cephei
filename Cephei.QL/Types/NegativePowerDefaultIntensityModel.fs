@@ -47,11 +47,11 @@ type NegativePowerDefaultIntensityModel
     Functions
 *)
     let mutable
-        _NegativePowerDefaultIntensity             = cell (fun () -> new NegativePowerDefaultIntensity (alpha.Value, p.Value))
+        _NegativePowerDefaultIntensity             = make (fun () -> new NegativePowerDefaultIntensity (alpha.Value, p.Value))
     let _defaultRecovery                           (t : ICell<double>) (s : ICell<double>)   
-                                                   = triv (fun () -> _NegativePowerDefaultIntensity.Value.defaultRecovery(t.Value, s.Value))
+                                                   = triv _NegativePowerDefaultIntensity (fun () -> _NegativePowerDefaultIntensity.Value.defaultRecovery(t.Value, s.Value))
     let _hazardRate                                (t : ICell<double>) (s : ICell<double>)   
-                                                   = triv (fun () -> _NegativePowerDefaultIntensity.Value.hazardRate(t.Value, s.Value))
+                                                   = triv _NegativePowerDefaultIntensity (fun () -> _NegativePowerDefaultIntensity.Value.hazardRate(t.Value, s.Value))
     do this.Bind(_NegativePowerDefaultIntensity)
 (* 
     casting 
@@ -99,11 +99,11 @@ type NegativePowerDefaultIntensityModel1
     Functions
 *)
     let mutable
-        _NegativePowerDefaultIntensity             = cell (fun () -> new NegativePowerDefaultIntensity (alpha.Value, p.Value, recovery.Value))
+        _NegativePowerDefaultIntensity             = make (fun () -> new NegativePowerDefaultIntensity (alpha.Value, p.Value, recovery.Value))
     let _defaultRecovery                           (t : ICell<double>) (s : ICell<double>)   
-                                                   = triv (fun () -> _NegativePowerDefaultIntensity.Value.defaultRecovery(t.Value, s.Value))
+                                                   = triv _NegativePowerDefaultIntensity (fun () -> _NegativePowerDefaultIntensity.Value.defaultRecovery(t.Value, s.Value))
     let _hazardRate                                (t : ICell<double>) (s : ICell<double>)   
-                                                   = triv (fun () -> _NegativePowerDefaultIntensity.Value.hazardRate(t.Value, s.Value))
+                                                   = triv _NegativePowerDefaultIntensity (fun () -> _NegativePowerDefaultIntensity.Value.hazardRate(t.Value, s.Value))
     do this.Bind(_NegativePowerDefaultIntensity)
 (* 
     casting 

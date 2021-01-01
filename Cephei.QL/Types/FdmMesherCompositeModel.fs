@@ -47,17 +47,17 @@ type FdmMesherCompositeModel
     Functions
 *)
     let mutable
-        _FdmMesherComposite                        = cell (fun () -> new FdmMesherComposite (layout.Value, mesher.Value))
+        _FdmMesherComposite                        = make (fun () -> new FdmMesherComposite (layout.Value, mesher.Value))
     let _dminus                                    (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.dminus(iter.Value, direction.Value))
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.dminus(iter.Value, direction.Value))
     let _dplus                                     (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.dplus(iter.Value, direction.Value))
-    let _getFdm1dMeshers                           = triv (fun () -> _FdmMesherComposite.Value.getFdm1dMeshers())
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.dplus(iter.Value, direction.Value))
+    let _getFdm1dMeshers                           = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.getFdm1dMeshers())
     let _location                                  (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.location(iter.Value, direction.Value))
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.location(iter.Value, direction.Value))
     let _locations                                 (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.locations(direction.Value))
-    let _layout                                    = triv (fun () -> _FdmMesherComposite.Value.layout())
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.locations(direction.Value))
+    let _layout                                    = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.layout())
     do this.Bind(_FdmMesherComposite)
 (* 
     casting 
@@ -107,17 +107,17 @@ type FdmMesherCompositeModel1
     Functions
 *)
     let mutable
-        _FdmMesherComposite                        = cell (fun () -> new FdmMesherComposite (mesher.Value))
+        _FdmMesherComposite                        = make (fun () -> new FdmMesherComposite (mesher.Value))
     let _dminus                                    (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.dminus(iter.Value, direction.Value))
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.dminus(iter.Value, direction.Value))
     let _dplus                                     (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.dplus(iter.Value, direction.Value))
-    let _getFdm1dMeshers                           = triv (fun () -> _FdmMesherComposite.Value.getFdm1dMeshers())
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.dplus(iter.Value, direction.Value))
+    let _getFdm1dMeshers                           = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.getFdm1dMeshers())
     let _location                                  (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.location(iter.Value, direction.Value))
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.location(iter.Value, direction.Value))
     let _locations                                 (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.locations(direction.Value))
-    let _layout                                    = triv (fun () -> _FdmMesherComposite.Value.layout())
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.locations(direction.Value))
+    let _layout                                    = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.layout())
     do this.Bind(_FdmMesherComposite)
 (* 
     casting 
@@ -172,17 +172,17 @@ type FdmMesherCompositeModel2
     Functions
 *)
     let mutable
-        _FdmMesherComposite                        = cell (fun () -> new FdmMesherComposite (m1.Value, m2.Value, m3.Value, m4.Value))
+        _FdmMesherComposite                        = make (fun () -> new FdmMesherComposite (m1.Value, m2.Value, m3.Value, m4.Value))
     let _dminus                                    (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.dminus(iter.Value, direction.Value))
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.dminus(iter.Value, direction.Value))
     let _dplus                                     (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.dplus(iter.Value, direction.Value))
-    let _getFdm1dMeshers                           = triv (fun () -> _FdmMesherComposite.Value.getFdm1dMeshers())
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.dplus(iter.Value, direction.Value))
+    let _getFdm1dMeshers                           = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.getFdm1dMeshers())
     let _location                                  (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.location(iter.Value, direction.Value))
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.location(iter.Value, direction.Value))
     let _locations                                 (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.locations(direction.Value))
-    let _layout                                    = triv (fun () -> _FdmMesherComposite.Value.layout())
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.locations(direction.Value))
+    let _layout                                    = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.layout())
     do this.Bind(_FdmMesherComposite)
 (* 
     casting 
@@ -234,17 +234,17 @@ type FdmMesherCompositeModel3
     Functions
 *)
     let mutable
-        _FdmMesherComposite                        = cell (fun () -> new FdmMesherComposite (mesher.Value))
+        _FdmMesherComposite                        = make (fun () -> new FdmMesherComposite (mesher.Value))
     let _dminus                                    (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.dminus(iter.Value, direction.Value))
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.dminus(iter.Value, direction.Value))
     let _dplus                                     (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.dplus(iter.Value, direction.Value))
-    let _getFdm1dMeshers                           = triv (fun () -> _FdmMesherComposite.Value.getFdm1dMeshers())
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.dplus(iter.Value, direction.Value))
+    let _getFdm1dMeshers                           = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.getFdm1dMeshers())
     let _location                                  (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.location(iter.Value, direction.Value))
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.location(iter.Value, direction.Value))
     let _locations                                 (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.locations(direction.Value))
-    let _layout                                    = triv (fun () -> _FdmMesherComposite.Value.layout())
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.locations(direction.Value))
+    let _layout                                    = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.layout())
     do this.Bind(_FdmMesherComposite)
 (* 
     casting 
@@ -295,17 +295,17 @@ type FdmMesherCompositeModel4
     Functions
 *)
     let mutable
-        _FdmMesherComposite                        = cell (fun () -> new FdmMesherComposite (m1.Value, m2.Value))
+        _FdmMesherComposite                        = make (fun () -> new FdmMesherComposite (m1.Value, m2.Value))
     let _dminus                                    (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.dminus(iter.Value, direction.Value))
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.dminus(iter.Value, direction.Value))
     let _dplus                                     (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.dplus(iter.Value, direction.Value))
-    let _getFdm1dMeshers                           = triv (fun () -> _FdmMesherComposite.Value.getFdm1dMeshers())
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.dplus(iter.Value, direction.Value))
+    let _getFdm1dMeshers                           = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.getFdm1dMeshers())
     let _location                                  (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.location(iter.Value, direction.Value))
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.location(iter.Value, direction.Value))
     let _locations                                 (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.locations(direction.Value))
-    let _layout                                    = triv (fun () -> _FdmMesherComposite.Value.layout())
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.locations(direction.Value))
+    let _layout                                    = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.layout())
     do this.Bind(_FdmMesherComposite)
 (* 
     casting 
@@ -359,17 +359,17 @@ type FdmMesherCompositeModel5
     Functions
 *)
     let mutable
-        _FdmMesherComposite                        = cell (fun () -> new FdmMesherComposite (m1.Value, m2.Value, m3.Value))
+        _FdmMesherComposite                        = make (fun () -> new FdmMesherComposite (m1.Value, m2.Value, m3.Value))
     let _dminus                                    (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.dminus(iter.Value, direction.Value))
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.dminus(iter.Value, direction.Value))
     let _dplus                                     (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.dplus(iter.Value, direction.Value))
-    let _getFdm1dMeshers                           = triv (fun () -> _FdmMesherComposite.Value.getFdm1dMeshers())
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.dplus(iter.Value, direction.Value))
+    let _getFdm1dMeshers                           = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.getFdm1dMeshers())
     let _location                                  (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.location(iter.Value, direction.Value))
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.location(iter.Value, direction.Value))
     let _locations                                 (direction : ICell<int>)   
-                                                   = triv (fun () -> _FdmMesherComposite.Value.locations(direction.Value))
-    let _layout                                    = triv (fun () -> _FdmMesherComposite.Value.layout())
+                                                   = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.locations(direction.Value))
+    let _layout                                    = triv _FdmMesherComposite (fun () -> _FdmMesherComposite.Value.layout())
     do this.Bind(_FdmMesherComposite)
 (* 
     casting 

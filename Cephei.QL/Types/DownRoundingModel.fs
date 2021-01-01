@@ -47,12 +47,12 @@ type DownRoundingModel
     Functions
 *)
     let mutable
-        _DownRounding                              = cell (fun () -> new DownRounding (precision.Value, digit.Value))
-    let _Digit                                     = triv (fun () -> _DownRounding.Value.Digit)
-    let _getType                                   = triv (fun () -> _DownRounding.Value.getType)
-    let _Precision                                 = triv (fun () -> _DownRounding.Value.Precision)
+        _DownRounding                              = make (fun () -> new DownRounding (precision.Value, digit.Value))
+    let _Digit                                     = triv _DownRounding (fun () -> _DownRounding.Value.Digit)
+    let _getType                                   = triv _DownRounding (fun () -> _DownRounding.Value.getType)
+    let _Precision                                 = triv _DownRounding (fun () -> _DownRounding.Value.Precision)
     let _Round                                     (value : ICell<double>)   
-                                                   = triv (fun () -> _DownRounding.Value.Round(value.Value))
+                                                   = triv _DownRounding (fun () -> _DownRounding.Value.Round(value.Value))
     do this.Bind(_DownRounding)
 (* 
     casting 
@@ -97,12 +97,12 @@ type DownRoundingModel1
     Functions
 *)
     let mutable
-        _DownRounding                              = cell (fun () -> new DownRounding (precision.Value))
-    let _Digit                                     = triv (fun () -> _DownRounding.Value.Digit)
-    let _getType                                   = triv (fun () -> _DownRounding.Value.getType)
-    let _Precision                                 = triv (fun () -> _DownRounding.Value.Precision)
+        _DownRounding                              = make (fun () -> new DownRounding (precision.Value))
+    let _Digit                                     = triv _DownRounding (fun () -> _DownRounding.Value.Digit)
+    let _getType                                   = triv _DownRounding (fun () -> _DownRounding.Value.getType)
+    let _Precision                                 = triv _DownRounding (fun () -> _DownRounding.Value.Precision)
     let _Round                                     (value : ICell<double>)   
-                                                   = triv (fun () -> _DownRounding.Value.Round(value.Value))
+                                                   = triv _DownRounding (fun () -> _DownRounding.Value.Round(value.Value))
     do this.Bind(_DownRounding)
 (* 
     casting 

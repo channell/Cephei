@@ -52,7 +52,7 @@ type KirkEngineModel
     Functions
 *)
     let mutable
-        _KirkEngine                                = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new KirkEngine (process1.Value, process2.Value, correlation.Value))))
+        _KirkEngine                                = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new KirkEngine (process1.Value, process2.Value, correlation.Value))))
     do this.Bind(_KirkEngine)
 (* 
     casting 

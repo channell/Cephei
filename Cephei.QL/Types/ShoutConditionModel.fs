@@ -51,10 +51,10 @@ type ShoutConditionModel
     Functions
 *)
     let mutable
-        _ShoutCondition                            = cell (fun () -> new ShoutCondition (Type.Value, strike.Value, resTime.Value, rate.Value))
+        _ShoutCondition                            = make (fun () -> new ShoutCondition (Type.Value, strike.Value, resTime.Value, rate.Value))
     let _applyTo                                   (a : ICell<Vector>) (t : ICell<double>)   
-                                                   = triv (fun () -> _ShoutCondition.Value.applyTo(a.Value, t.Value)
-                                                                     _ShoutCondition.Value)
+                                                   = triv _ShoutCondition (fun () -> _ShoutCondition.Value.applyTo(a.Value, t.Value)
+                                                                                     _ShoutCondition.Value)
     do this.Bind(_ShoutCondition)
 (* 
     casting 
@@ -102,10 +102,10 @@ type ShoutConditionModel1
     Functions
 *)
     let mutable
-        _ShoutCondition                            = cell (fun () -> new ShoutCondition (intrinsicValues.Value, resTime.Value, rate.Value))
+        _ShoutCondition                            = make (fun () -> new ShoutCondition (intrinsicValues.Value, resTime.Value, rate.Value))
     let _applyTo                                   (a : ICell<Vector>) (t : ICell<double>)   
-                                                   = triv (fun () -> _ShoutCondition.Value.applyTo(a.Value, t.Value)
-                                                                     _ShoutCondition.Value)
+                                                   = triv _ShoutCondition (fun () -> _ShoutCondition.Value.applyTo(a.Value, t.Value)
+                                                                                     _ShoutCondition.Value)
     do this.Bind(_ShoutCondition)
 (* 
     casting 

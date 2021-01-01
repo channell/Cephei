@@ -50,7 +50,7 @@ type WulinYongDoubleBarrierEngineModel
     Functions
 *)
     let mutable
-        _WulinYongDoubleBarrierEngine              = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new WulinYongDoubleBarrierEngine (Process.Value, series.Value))))
+        _WulinYongDoubleBarrierEngine              = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new WulinYongDoubleBarrierEngine (Process.Value, series.Value))))
     do this.Bind(_WulinYongDoubleBarrierEngine)
 (* 
     casting 

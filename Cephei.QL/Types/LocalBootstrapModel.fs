@@ -47,10 +47,10 @@ type LocalBootstrapModel<'T, 'U when 'T :> Curve<'U> and 'T : (new : unit -> 'T)
     Functions
 *)
     let mutable
-        _LocalBootstrap                            = cell (fun () -> new LocalBootstrap<'T,'U> (localisation.Value, forcePositive.Value))
+        _LocalBootstrap                            = make (fun () -> new LocalBootstrap<'T,'U> (localisation.Value, forcePositive.Value))
     let _setup                                     (ts : ICell<'T>)   
-                                                   = triv (fun () -> _LocalBootstrap.Value.setup(ts.Value)
-                                                                     _LocalBootstrap.Value)
+                                                   = triv _LocalBootstrap (fun () -> _LocalBootstrap.Value.setup(ts.Value)
+                                                                                     _LocalBootstrap.Value)
     do this.Bind(_LocalBootstrap)
 
 (* 
@@ -75,10 +75,10 @@ type LocalBootstrapModel1<'T, 'U when 'T :> Curve<'U> and 'T : (new : unit -> 'T
     Functions
 *)
     let mutable
-        _LocalBootstrap                            = cell (fun () -> new LocalBootstrap<'T,'U> ())
+        _LocalBootstrap                            = make (fun () -> new LocalBootstrap<'T,'U> ())
     let _setup                                     (ts : ICell<'T>)   
-                                                   = triv (fun () -> _LocalBootstrap.Value.setup(ts.Value)
-                                                                     _LocalBootstrap.Value)
+                                                   = triv _LocalBootstrap (fun () -> _LocalBootstrap.Value.setup(ts.Value)
+                                                                                     _LocalBootstrap.Value)
     do this.Bind(_LocalBootstrap)
 
 (* 

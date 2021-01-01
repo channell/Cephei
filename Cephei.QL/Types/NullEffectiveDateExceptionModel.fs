@@ -42,7 +42,7 @@ type NullEffectiveDateExceptionModel
     Functions
 *)
     let mutable
-        _NullEffectiveDateException                = cell (fun () -> new NullEffectiveDateException ())
+        _NullEffectiveDateException                = make (fun () -> new NullEffectiveDateException ())
     do this.Bind(_NullEffectiveDateException)
 (* 
     casting 
@@ -80,7 +80,7 @@ type NullEffectiveDateExceptionModel1
     Functions
 *)
     let mutable
-        _NullEffectiveDateException                = cell (fun () -> new NullEffectiveDateException (message.Value))
+        _NullEffectiveDateException                = make (fun () -> new NullEffectiveDateException (message.Value))
     do this.Bind(_NullEffectiveDateException)
 (* 
     casting 
@@ -121,7 +121,7 @@ type NullEffectiveDateExceptionModel2
     Functions
 *)
     let mutable
-        _NullEffectiveDateException                = cell (fun () -> new NullEffectiveDateException (message.Value, inner.Value))
+        _NullEffectiveDateException                = make (fun () -> new NullEffectiveDateException (message.Value, inner.Value))
     do this.Bind(_NullEffectiveDateException)
 (* 
     casting 

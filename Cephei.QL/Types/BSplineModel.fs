@@ -49,9 +49,9 @@ type BSplineModel
     Functions
 *)
     let mutable
-        _BSpline                                   = cell (fun () -> new BSpline (p.Value, n.Value, knots.Value))
+        _BSpline                                   = make (fun () -> new BSpline (p.Value, n.Value, knots.Value))
     let _value                                     (i : ICell<int>) (x : ICell<double>)   
-                                                   = triv (fun () -> _BSpline.Value.value(i.Value, x.Value))
+                                                   = triv _BSpline (fun () -> _BSpline.Value.value(i.Value, x.Value))
     do this.Bind(_BSpline)
 (* 
     casting 

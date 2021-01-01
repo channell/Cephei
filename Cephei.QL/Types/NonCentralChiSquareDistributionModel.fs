@@ -47,9 +47,9 @@ type NonCentralChiSquareDistributionModel
     Functions
 *)
     let mutable
-        _NonCentralChiSquareDistribution           = cell (fun () -> new NonCentralChiSquareDistribution (df.Value, ncp.Value))
+        _NonCentralChiSquareDistribution           = make (fun () -> new NonCentralChiSquareDistribution (df.Value, ncp.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _NonCentralChiSquareDistribution.Value.value(x.Value))
+                                                   = triv _NonCentralChiSquareDistribution (fun () -> _NonCentralChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_NonCentralChiSquareDistribution)
 (* 
     casting 

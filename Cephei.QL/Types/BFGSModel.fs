@@ -45,9 +45,9 @@ type BFGSModel
     Functions
 *)
     let mutable
-        _BFGS                                      = cell (fun () -> new BFGS (lineSearch.Value))
+        _BFGS                                      = make (fun () -> new BFGS (lineSearch.Value))
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
-                                                   = triv (fun () -> _BFGS.Value.minimize(P.Value, endCriteria.Value))
+                                                   = triv _BFGS (fun () -> _BFGS.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_BFGS)
 (* 
     casting 

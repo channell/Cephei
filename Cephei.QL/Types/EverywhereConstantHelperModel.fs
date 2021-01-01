@@ -49,12 +49,12 @@ type EverywhereConstantHelperModel
     Functions
 *)
     let mutable
-        _EverywhereConstantHelper                  = cell (fun () -> new EverywhereConstantHelper (value.Value, prevPrimitive.Value, xPrev.Value))
-    let _fNext                                     = triv (fun () -> _EverywhereConstantHelper.Value.fNext())
+        _EverywhereConstantHelper                  = make (fun () -> new EverywhereConstantHelper (value.Value, prevPrimitive.Value, xPrev.Value))
+    let _fNext                                     = triv _EverywhereConstantHelper (fun () -> _EverywhereConstantHelper.Value.fNext())
     let _primitive                                 (x : ICell<double>)   
-                                                   = triv (fun () -> _EverywhereConstantHelper.Value.primitive(x.Value))
+                                                   = triv _EverywhereConstantHelper (fun () -> _EverywhereConstantHelper.Value.primitive(x.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _EverywhereConstantHelper.Value.value(x.Value))
+                                                   = triv _EverywhereConstantHelper (fun () -> _EverywhereConstantHelper.Value.value(x.Value))
     do this.Bind(_EverywhereConstantHelper)
 (* 
     casting 

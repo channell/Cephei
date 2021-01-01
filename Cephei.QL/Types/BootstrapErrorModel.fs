@@ -49,11 +49,11 @@ type BootstrapErrorModel<'T, 'U when 'T :> Curve<'U> and 'U :> TermStructure>
     Functions
 *)
     let mutable
-        _BootstrapError                            = cell (fun () -> new BootstrapError<'T,'U> (curve.Value, helper.Value, segment.Value))
+        _BootstrapError                            = make (fun () -> new BootstrapError<'T,'U> (curve.Value, helper.Value, segment.Value))
     let _value                                     (guess : ICell<double>)   
-                                                   = triv (fun () -> _BootstrapError.Value.value(guess.Value))
+                                                   = triv _BootstrapError (fun () -> _BootstrapError.Value.value(guess.Value))
     let _derivative                                (x : ICell<double>)   
-                                                   = triv (fun () -> _BootstrapError.Value.derivative(x.Value))
+                                                   = triv _BootstrapError (fun () -> _BootstrapError.Value.derivative(x.Value))
     do this.Bind(_BootstrapError)
 
 (* 

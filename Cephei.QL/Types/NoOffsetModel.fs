@@ -42,9 +42,9 @@ type NoOffsetModel
     Functions
 *)
     let mutable
-        _NoOffset                                  = cell (fun () -> new NoOffset ())
+        _NoOffset                                  = make (fun () -> new NoOffset ())
     let _paymentDate                               (eventDate : ICell<Date>)   
-                                                   = triv (fun () -> _NoOffset.Value.paymentDate(eventDate.Value))
+                                                   = triv _NoOffset (fun () -> _NoOffset.Value.paymentDate(eventDate.Value))
     do this.Bind(_NoOffset)
 (* 
     casting 

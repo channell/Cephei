@@ -37,6 +37,7 @@ namespace Cephei.Cell.Generic
 
         // number of pending calculations
         volatile int _pending;
+        public ICell Mutex { get; set; }
 
         public string Mnemonic { get; set; }
         private ICell _parent;
@@ -72,9 +73,9 @@ namespace Cephei.Cell.Generic
             foreach (var d in dependencies)
                 d.Notify(this);
         }
-        public CellKernel(FSharpFunc<Unit, FSharpFunc<Unit, T>> kernelFunc, ICell[] dependencies, string mnemonic) : this(kernelFunc, dependencies)
+        public CellKernel(FSharpFunc<Unit, FSharpFunc<Unit, T>> kernelFunc, ICell[] dependencies, ICell mutex) : this (kernelFunc, dependencies)
         {
-            Mnemonic = mnemonic;
+            Mutex = mutex;
         }
         public CellKernel(FSharpFunc<Unit, FSharpFunc<Unit, T>> kernelFunc)
         {
@@ -96,9 +97,9 @@ namespace Cephei.Cell.Generic
             foreach (var d in dependencies)
                 d.Notify(this);
         }
-        public CellKernel(FSharpFunc<Unit, FSharpFunc<Unit, T>> kernelFunc, string mnemonic) : this(kernelFunc)
+        public CellKernel(FSharpFunc<Unit, FSharpFunc<Unit, T>> kernelFunc, ICell mutex) : this (kernelFunc)
         {
-            Mnemonic = mnemonic;
+            Mutex = mutex;
         }
 #if !DEBUG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -122,7 +123,21 @@ namespace Cephei.Cell.Generic
                     if (_func == null)
                         _func = _kernelFunc.Invoke(null);
 
-                    var t = (_func != null ? _func.Invoke(null) : _value);
+                    T t;
+                    if (_func != null)
+                    {
+                        if (Mutex == null)
+                            t = _func.Invoke(null);
+                        else
+                        {
+                            lock (Mutex)
+                            {
+                                t = _func.Invoke(null);
+                            }
+                        }
+                    }
+                    else
+                        t = _value;
 
                     if (session != null)
                         session.SetValue<T>(this, t);

@@ -49,17 +49,17 @@ type ExponentialSplinesFittingModel
     Functions
 *)
     let mutable
-        _ExponentialSplinesFitting                 = cell (fun () -> new ExponentialSplinesFitting (constrainAtZero.Value, weights.Value, optimizationMethod.Value))
-    let _clone                                     = triv (fun () -> _ExponentialSplinesFitting.Value.clone())
-    let _size                                      = triv (fun () -> _ExponentialSplinesFitting.Value.size())
-    let _constrainAtZero                           = triv (fun () -> _ExponentialSplinesFitting.Value.constrainAtZero())
+        _ExponentialSplinesFitting                 = make (fun () -> new ExponentialSplinesFitting (constrainAtZero.Value, weights.Value, optimizationMethod.Value))
+    let _clone                                     = triv _ExponentialSplinesFitting (fun () -> _ExponentialSplinesFitting.Value.clone())
+    let _size                                      = triv _ExponentialSplinesFitting (fun () -> _ExponentialSplinesFitting.Value.size())
+    let _constrainAtZero                           = triv _ExponentialSplinesFitting (fun () -> _ExponentialSplinesFitting.Value.constrainAtZero())
     let _discount                                  (x : ICell<Vector>) (t : ICell<double>)   
-                                                   = triv (fun () -> _ExponentialSplinesFitting.Value.discount(x.Value, t.Value))
-    let _minimumCostValue                          = triv (fun () -> _ExponentialSplinesFitting.Value.minimumCostValue())
-    let _numberOfIterations                        = triv (fun () -> _ExponentialSplinesFitting.Value.numberOfIterations())
-    let _optimizationMethod                        = triv (fun () -> _ExponentialSplinesFitting.Value.optimizationMethod())
-    let _solution                                  = triv (fun () -> _ExponentialSplinesFitting.Value.solution())
-    let _weights                                   = triv (fun () -> _ExponentialSplinesFitting.Value.weights())
+                                                   = triv _ExponentialSplinesFitting (fun () -> _ExponentialSplinesFitting.Value.discount(x.Value, t.Value))
+    let _minimumCostValue                          = triv _ExponentialSplinesFitting (fun () -> _ExponentialSplinesFitting.Value.minimumCostValue())
+    let _numberOfIterations                        = triv _ExponentialSplinesFitting (fun () -> _ExponentialSplinesFitting.Value.numberOfIterations())
+    let _optimizationMethod                        = triv _ExponentialSplinesFitting (fun () -> _ExponentialSplinesFitting.Value.optimizationMethod())
+    let _solution                                  = triv _ExponentialSplinesFitting (fun () -> _ExponentialSplinesFitting.Value.solution())
+    let _weights                                   = triv _ExponentialSplinesFitting (fun () -> _ExponentialSplinesFitting.Value.weights())
     do this.Bind(_ExponentialSplinesFitting)
 (* 
     casting 

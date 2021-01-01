@@ -53,16 +53,16 @@ type CrankNicolsonSchemeModel
     Functions
 *)
     let mutable
-        _CrankNicolsonScheme                       = cell (fun () -> new CrankNicolsonScheme (theta.Value, map.Value, bcSet.Value, relTol.Value, solverType.Value))
+        _CrankNicolsonScheme                       = make (fun () -> new CrankNicolsonScheme (theta.Value, map.Value, bcSet.Value, relTol.Value, solverType.Value))
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
-                                                   = triv (fun () -> _CrankNicolsonScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
-    let _numberOfIterations                        = triv (fun () -> _CrankNicolsonScheme.Value.numberOfIterations())
+                                                   = triv _CrankNicolsonScheme (fun () -> _CrankNicolsonScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
+    let _numberOfIterations                        = triv _CrankNicolsonScheme (fun () -> _CrankNicolsonScheme.Value.numberOfIterations())
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _CrankNicolsonScheme.Value.setStep(dt.Value)
-                                                                     _CrankNicolsonScheme.Value)
+                                                   = triv _CrankNicolsonScheme (fun () -> _CrankNicolsonScheme.Value.setStep(dt.Value)
+                                                                                          _CrankNicolsonScheme.Value)
     let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _CrankNicolsonScheme.Value.step(ref a.Value, t.Value, theta.Value)
-                                                                     _CrankNicolsonScheme.Value)
+                                                   = triv _CrankNicolsonScheme (fun () -> _CrankNicolsonScheme.Value.step(ref a.Value, t.Value, theta.Value)
+                                                                                          _CrankNicolsonScheme.Value)
     do this.Bind(_CrankNicolsonScheme)
 (* 
     casting 
@@ -109,16 +109,16 @@ type CrankNicolsonSchemeModel1
     Functions
 *)
     let mutable
-        _CrankNicolsonScheme                       = cell (fun () -> new CrankNicolsonScheme ())
+        _CrankNicolsonScheme                       = make (fun () -> new CrankNicolsonScheme ())
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
-                                                   = triv (fun () -> _CrankNicolsonScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
-    let _numberOfIterations                        = triv (fun () -> _CrankNicolsonScheme.Value.numberOfIterations())
+                                                   = triv _CrankNicolsonScheme (fun () -> _CrankNicolsonScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
+    let _numberOfIterations                        = triv _CrankNicolsonScheme (fun () -> _CrankNicolsonScheme.Value.numberOfIterations())
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _CrankNicolsonScheme.Value.setStep(dt.Value)
-                                                                     _CrankNicolsonScheme.Value)
+                                                   = triv _CrankNicolsonScheme (fun () -> _CrankNicolsonScheme.Value.setStep(dt.Value)
+                                                                                          _CrankNicolsonScheme.Value)
     let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _CrankNicolsonScheme.Value.step(ref a.Value, t.Value, theta.Value)
-                                                                     _CrankNicolsonScheme.Value)
+                                                   = triv _CrankNicolsonScheme (fun () -> _CrankNicolsonScheme.Value.step(ref a.Value, t.Value, theta.Value)
+                                                                                          _CrankNicolsonScheme.Value)
     do this.Bind(_CrankNicolsonScheme)
 (* 
     casting 

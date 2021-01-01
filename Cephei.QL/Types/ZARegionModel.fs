@@ -42,11 +42,11 @@ type ZARegionModel
     Functions
 *)
     let mutable
-        _ZARegion                                  = cell (fun () -> new ZARegion ())
-    let _code                                      = triv (fun () -> _ZARegion.Value.code())
+        _ZARegion                                  = make (fun () -> new ZARegion ())
+    let _code                                      = triv _ZARegion (fun () -> _ZARegion.Value.code())
     let _Equals                                    (o : ICell<Object>)   
-                                                   = triv (fun () -> _ZARegion.Value.Equals(o.Value))
-    let _name                                      = triv (fun () -> _ZARegion.Value.name())
+                                                   = triv _ZARegion (fun () -> _ZARegion.Value.Equals(o.Value))
+    let _name                                      = triv _ZARegion (fun () -> _ZARegion.Value.name())
     do this.Bind(_ZARegion)
 (* 
     casting 

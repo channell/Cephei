@@ -51,9 +51,9 @@ type IntegrandModel
     Functions
 *)
     let mutable
-        _Integrand                                 = cell (fun () -> new Integrand (payoff.Value, s0.Value, drift.Value, variance.Value))
+        _Integrand                                 = make (fun () -> new Integrand (payoff.Value, s0.Value, drift.Value, variance.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _Integrand.Value.value(x.Value))
+                                                   = triv _Integrand (fun () -> _Integrand.Value.value(x.Value))
     do this.Bind(_Integrand)
 (* 
     casting 

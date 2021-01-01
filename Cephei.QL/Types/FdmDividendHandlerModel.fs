@@ -53,13 +53,13 @@ type FdmDividendHandlerModel
     Functions
 *)
     let mutable
-        _FdmDividendHandler                        = cell (fun () -> new FdmDividendHandler (schedule.Value, mesher.Value, referenceDate.Value, dayCounter.Value, equityDirection.Value))
+        _FdmDividendHandler                        = make (fun () -> new FdmDividendHandler (schedule.Value, mesher.Value, referenceDate.Value, dayCounter.Value, equityDirection.Value))
     let _applyTo                                   (o : ICell<Object>) (t : ICell<double>)   
-                                                   = triv (fun () -> _FdmDividendHandler.Value.applyTo(o.Value, t.Value)
-                                                                     _FdmDividendHandler.Value)
-    let _dividendDates                             = triv (fun () -> _FdmDividendHandler.Value.dividendDates())
-    let _dividends                                 = triv (fun () -> _FdmDividendHandler.Value.dividends())
-    let _dividendTimes                             = triv (fun () -> _FdmDividendHandler.Value.dividendTimes())
+                                                   = triv _FdmDividendHandler (fun () -> _FdmDividendHandler.Value.applyTo(o.Value, t.Value)
+                                                                                         _FdmDividendHandler.Value)
+    let _dividendDates                             = triv _FdmDividendHandler (fun () -> _FdmDividendHandler.Value.dividendDates())
+    let _dividends                                 = triv _FdmDividendHandler (fun () -> _FdmDividendHandler.Value.dividends())
+    let _dividendTimes                             = triv _FdmDividendHandler (fun () -> _FdmDividendHandler.Value.dividendTimes())
     do this.Bind(_FdmDividendHandler)
 (* 
     casting 

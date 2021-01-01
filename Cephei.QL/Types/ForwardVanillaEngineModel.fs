@@ -51,17 +51,17 @@ type ForwardVanillaEngineModel
     Functions
 *)
     let mutable
-        _ForwardVanillaEngine                      = cell (fun () -> new ForwardVanillaEngine (Process.Value, getEngine.Value))
+        _ForwardVanillaEngine                      = make (fun () -> new ForwardVanillaEngine (Process.Value, getEngine.Value))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _ForwardVanillaEngine.Value.registerWith(handler.Value)
-                                                                     _ForwardVanillaEngine.Value)
-    let _reset                                     = triv (fun () -> _ForwardVanillaEngine.Value.reset()
-                                                                     _ForwardVanillaEngine.Value)
+                                                   = triv _ForwardVanillaEngine (fun () -> _ForwardVanillaEngine.Value.registerWith(handler.Value)
+                                                                                           _ForwardVanillaEngine.Value)
+    let _reset                                     = triv _ForwardVanillaEngine (fun () -> _ForwardVanillaEngine.Value.reset()
+                                                                                           _ForwardVanillaEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _ForwardVanillaEngine.Value.unregisterWith(handler.Value)
-                                                                     _ForwardVanillaEngine.Value)
-    let _update                                    = triv (fun () -> _ForwardVanillaEngine.Value.update()
-                                                                     _ForwardVanillaEngine.Value)
+                                                   = triv _ForwardVanillaEngine (fun () -> _ForwardVanillaEngine.Value.unregisterWith(handler.Value)
+                                                                                           _ForwardVanillaEngine.Value)
+    let _update                                    = triv _ForwardVanillaEngine (fun () -> _ForwardVanillaEngine.Value.update()
+                                                                                           _ForwardVanillaEngine.Value)
     do this.Bind(_ForwardVanillaEngine)
 (* 
     casting 

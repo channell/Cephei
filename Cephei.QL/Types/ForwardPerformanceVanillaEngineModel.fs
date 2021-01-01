@@ -50,17 +50,17 @@ type ForwardPerformanceVanillaEngineModel
     Functions
 *)
     let mutable
-        _ForwardPerformanceVanillaEngine           = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new ForwardPerformanceVanillaEngine (Process.Value, getEngine.Value))))
+        _ForwardPerformanceVanillaEngine           = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new ForwardPerformanceVanillaEngine (Process.Value, getEngine.Value))))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardPerformanceVanillaEngine).Value.registerWith(handler.Value)
-                                                                     _ForwardPerformanceVanillaEngine.Value)
-    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardPerformanceVanillaEngine).Value.reset()
-                                                                     _ForwardPerformanceVanillaEngine.Value)
+                                                   = triv _ForwardPerformanceVanillaEngine (fun () -> (curryEvaluationDate _evaluationDate _ForwardPerformanceVanillaEngine).Value.registerWith(handler.Value)
+                                                                                                      _ForwardPerformanceVanillaEngine.Value)
+    let _reset                                     = triv _ForwardPerformanceVanillaEngine (fun () -> (curryEvaluationDate _evaluationDate _ForwardPerformanceVanillaEngine).Value.reset()
+                                                                                                      _ForwardPerformanceVanillaEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardPerformanceVanillaEngine).Value.unregisterWith(handler.Value)
-                                                                     _ForwardPerformanceVanillaEngine.Value)
-    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardPerformanceVanillaEngine).Value.update()
-                                                                     _ForwardPerformanceVanillaEngine.Value)
+                                                   = triv _ForwardPerformanceVanillaEngine (fun () -> (curryEvaluationDate _evaluationDate _ForwardPerformanceVanillaEngine).Value.unregisterWith(handler.Value)
+                                                                                                      _ForwardPerformanceVanillaEngine.Value)
+    let _update                                    = triv _ForwardPerformanceVanillaEngine (fun () -> (curryEvaluationDate _evaluationDate _ForwardPerformanceVanillaEngine).Value.update()
+                                                                                                      _ForwardPerformanceVanillaEngine.Value)
     do this.Bind(_ForwardPerformanceVanillaEngine)
 (* 
     casting 

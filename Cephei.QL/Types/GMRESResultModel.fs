@@ -47,9 +47,9 @@ type GMRESResultModel
     Functions
 *)
     let mutable
-        _GMRESResult                               = cell (fun () -> new GMRESResult (e.Value, xx.Value))
-    let _Errors                                    = triv (fun () -> _GMRESResult.Value.Errors)
-    let _X                                         = triv (fun () -> _GMRESResult.Value.X)
+        _GMRESResult                               = make (fun () -> new GMRESResult (e.Value, xx.Value))
+    let _Errors                                    = triv _GMRESResult (fun () -> _GMRESResult.Value.Errors)
+    let _X                                         = triv _GMRESResult (fun () -> _GMRESResult.Value.X)
     do this.Bind(_GMRESResult)
 (* 
     casting 

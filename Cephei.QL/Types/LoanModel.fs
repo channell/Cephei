@@ -50,17 +50,17 @@ type LoanModel
     Functions
 *)
     let mutable
-        _Loan                                      = cell (fun () -> withEngine pricingEngine evaluationDate (new Loan (legs.Value)))
-    let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _Loan).isExpired())
-    let _CASH                                      = cell (fun () -> (withEvaluationDate _evaluationDate _Loan).CASH())
-    let _errorEstimate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Loan).errorEstimate())
-    let _NPV                                       = cell (fun () -> (withEvaluationDate _evaluationDate _Loan).NPV())
+        _Loan                                      = make (fun () -> withEngine pricingEngine evaluationDate (new Loan (legs.Value)))
+    let _isExpired                                 = triv _Loan (fun () -> (withEvaluationDate _evaluationDate _Loan).isExpired())
+    let _CASH                                      = cell _Loan (fun () -> (withEvaluationDate _evaluationDate _Loan).CASH())
+    let _errorEstimate                             = triv _Loan (fun () -> (withEvaluationDate _evaluationDate _Loan).errorEstimate())
+    let _NPV                                       = cell _Loan (fun () -> (withEvaluationDate _evaluationDate _Loan).NPV())
     let _result                                    (tag : ICell<string>)   
-                                                   = triv (fun () -> (withEvaluationDate _evaluationDate _Loan).result(tag.Value))
+                                                   = triv _Loan (fun () -> (withEvaluationDate _evaluationDate _Loan).result(tag.Value))
     let _setPricingEngine                          (e : ICell<IPricingEngine>)   
-                                                   = triv (fun () -> (withEvaluationDate _evaluationDate _Loan).setPricingEngine(e.Value)
-                                                                     _Loan.Value)
-    let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Loan).valuationDate())
+                                                   = triv _Loan (fun () -> (withEvaluationDate _evaluationDate _Loan).setPricingEngine(e.Value)
+                                                                           _Loan.Value)
+    let _valuationDate                             = triv _Loan (fun () -> (withEvaluationDate _evaluationDate _Loan).valuationDate())
     do this.Bind(_Loan)
 (* 
     casting 

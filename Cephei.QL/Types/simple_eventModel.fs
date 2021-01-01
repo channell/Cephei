@@ -48,19 +48,19 @@ type simple_eventModel
     Functions
 *)
     let mutable
-        _simple_event                              = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new simple_event (date.Value))))
-    let _date                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _simple_event).Value.date())
+        _simple_event                              = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new simple_event (date.Value))))
+    let _date                                      = triv _simple_event (fun () -> (curryEvaluationDate _evaluationDate _simple_event).Value.date())
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _simple_event).Value.accept(v.Value)
-                                                                     _simple_event.Value)
+                                                   = triv _simple_event (fun () -> (curryEvaluationDate _evaluationDate _simple_event).Value.accept(v.Value)
+                                                                                   _simple_event.Value)
     let _hasOccurred                               (d : ICell<Date>) (includeRefDate : ICell<Nullable<bool>>)   
-                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _simple_event).Value.hasOccurred(d.Value, includeRefDate.Value))
+                                                   = triv _simple_event (fun () -> (curryEvaluationDate _evaluationDate _simple_event).Value.hasOccurred(d.Value, includeRefDate.Value))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _simple_event).Value.registerWith(handler.Value)
-                                                                     _simple_event.Value)
+                                                   = triv _simple_event (fun () -> (curryEvaluationDate _evaluationDate _simple_event).Value.registerWith(handler.Value)
+                                                                                   _simple_event.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _simple_event).Value.unregisterWith(handler.Value)
-                                                                     _simple_event.Value)
+                                                   = triv _simple_event (fun () -> (curryEvaluationDate _evaluationDate _simple_event).Value.unregisterWith(handler.Value)
+                                                                                   _simple_event.Value)
     do this.Bind(_simple_event)
 (* 
     casting 

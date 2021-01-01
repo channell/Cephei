@@ -53,9 +53,9 @@ type eqn6Model
     Functions
 *)
     let mutable
-        _eqn6                                      = cell (fun () -> new eqn6 (a.Value, c.Value, d.Value, bs.Value, hk.Value))
+        _eqn6                                      = make (fun () -> new eqn6 (a.Value, c.Value, d.Value, bs.Value, hk.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _eqn6.Value.value(x.Value))
+                                                   = triv _eqn6 (fun () -> _eqn6.Value.value(x.Value))
     do this.Bind(_eqn6)
 (* 
     casting 

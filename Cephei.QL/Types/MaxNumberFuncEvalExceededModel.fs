@@ -47,7 +47,7 @@ type MaxNumberFuncEvalExceededModel
     Functions
 *)
     let mutable
-        _MaxNumberFuncEvalExceeded                 = cell (fun () -> new MaxNumberFuncEvalExceeded (message.Value, inner.Value))
+        _MaxNumberFuncEvalExceeded                 = make (fun () -> new MaxNumberFuncEvalExceeded (message.Value, inner.Value))
     do this.Bind(_MaxNumberFuncEvalExceeded)
 (* 
     casting 
@@ -87,7 +87,7 @@ type MaxNumberFuncEvalExceededModel1
     Functions
 *)
     let mutable
-        _MaxNumberFuncEvalExceeded                 = cell (fun () -> new MaxNumberFuncEvalExceeded (message.Value))
+        _MaxNumberFuncEvalExceeded                 = make (fun () -> new MaxNumberFuncEvalExceeded (message.Value))
     do this.Bind(_MaxNumberFuncEvalExceeded)
 (* 
     casting 
@@ -123,7 +123,7 @@ type MaxNumberFuncEvalExceededModel2
     Functions
 *)
     let mutable
-        _MaxNumberFuncEvalExceeded                 = cell (fun () -> new MaxNumberFuncEvalExceeded ())
+        _MaxNumberFuncEvalExceeded                 = make (fun () -> new MaxNumberFuncEvalExceeded ())
     do this.Bind(_MaxNumberFuncEvalExceeded)
 (* 
     casting 

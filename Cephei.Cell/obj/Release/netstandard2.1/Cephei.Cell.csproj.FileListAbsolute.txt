@@ -7,4 +7,4 @@ C:\Users\steve\source\repos\Cephei2\Cephei.Cell\bin\release\netstandard2.1\Cephe
 C:\Users\steve\source\repos\Cephei2\Cephei.Cell\bin\release\netstandard2.1\Cephei.Cell.xml
 C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\release\netstandard2.1\Cephei.Cell.dll
 C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\release\netstandard2.1\Cephei.Cell.pdb
-C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\release\netstandard2.1\Cephei.Cell.csprojAssemblyReference.cache
+C:\Users\steve\source\repos\Cephei2\Cephei.Cell\obj\Release\netstandard2.1\Cephei.Cell.csprojAssemblyReference.cache

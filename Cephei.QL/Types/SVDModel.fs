@@ -45,16 +45,16 @@ type SVDModel
     Functions
 *)
     let mutable
-        _SVD                                       = cell (fun () -> new SVD (M.Value))
-    let _cond                                      = triv (fun () -> _SVD.Value.cond())
-    let _norm2                                     = triv (fun () -> _SVD.Value.norm2())
-    let _rank                                      = triv (fun () -> _SVD.Value.rank())
-    let _S                                         = triv (fun () -> _SVD.Value.S())
-    let _singularValues                            = triv (fun () -> _SVD.Value.singularValues())
+        _SVD                                       = make (fun () -> new SVD (M.Value))
+    let _cond                                      = triv _SVD (fun () -> _SVD.Value.cond())
+    let _norm2                                     = triv _SVD (fun () -> _SVD.Value.norm2())
+    let _rank                                      = triv _SVD (fun () -> _SVD.Value.rank())
+    let _S                                         = triv _SVD (fun () -> _SVD.Value.S())
+    let _singularValues                            = triv _SVD (fun () -> _SVD.Value.singularValues())
     let _solveFor                                  (b : ICell<Vector>)   
-                                                   = triv (fun () -> _SVD.Value.solveFor(b.Value))
-    let _U                                         = triv (fun () -> _SVD.Value.U())
-    let _V                                         = triv (fun () -> _SVD.Value.V())
+                                                   = triv _SVD (fun () -> _SVD.Value.solveFor(b.Value))
+    let _U                                         = triv _SVD (fun () -> _SVD.Value.U())
+    let _V                                         = triv _SVD (fun () -> _SVD.Value.V())
     do this.Bind(_SVD)
 (* 
     casting 

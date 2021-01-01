@@ -48,8 +48,8 @@ type AnalyticDigitalAmericanKOEngineModel
     Functions
 *)
     let mutable
-        _AnalyticDigitalAmericanKOEngine           = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticDigitalAmericanKOEngine (engine.Value))))
-    let _knock_in                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _AnalyticDigitalAmericanKOEngine).Value.knock_in())
+        _AnalyticDigitalAmericanKOEngine           = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticDigitalAmericanKOEngine (engine.Value))))
+    let _knock_in                                  = triv _AnalyticDigitalAmericanKOEngine (fun () -> (curryEvaluationDate _evaluationDate _AnalyticDigitalAmericanKOEngine).Value.knock_in())
     do this.Bind(_AnalyticDigitalAmericanKOEngine)
 (* 
     casting 

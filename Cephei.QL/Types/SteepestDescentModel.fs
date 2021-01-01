@@ -45,9 +45,9 @@ type SteepestDescentModel
     Functions
 *)
     let mutable
-        _SteepestDescent                           = cell (fun () -> new SteepestDescent (lineSearch.Value))
+        _SteepestDescent                           = make (fun () -> new SteepestDescent (lineSearch.Value))
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
-                                                   = triv (fun () -> _SteepestDescent.Value.minimize(P.Value, endCriteria.Value))
+                                                   = triv _SteepestDescent (fun () -> _SteepestDescent.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_SteepestDescent)
 (* 
     casting 

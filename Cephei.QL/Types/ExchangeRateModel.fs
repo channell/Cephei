@@ -49,14 +49,14 @@ type ExchangeRateModel
     Functions
 *)
     let mutable
-        _ExchangeRate                              = cell (fun () -> new ExchangeRate (source.Value, target.Value, rate.Value))
+        _ExchangeRate                              = make (fun () -> new ExchangeRate (source.Value, target.Value, rate.Value))
     let _exchange                                  (amount : ICell<Money>)   
-                                                   = triv (fun () -> _ExchangeRate.Value.exchange(amount.Value))
-    let _HasValue                                  = triv (fun () -> _ExchangeRate.Value.HasValue)
-    let _rate                                      = triv (fun () -> _ExchangeRate.Value.rate)
-    let _source                                    = triv (fun () -> _ExchangeRate.Value.source)
-    let _target                                    = triv (fun () -> _ExchangeRate.Value.target)
-    let _type                                      = triv (fun () -> _ExchangeRate.Value.TYPE)
+                                                   = triv _ExchangeRate (fun () -> _ExchangeRate.Value.exchange(amount.Value))
+    let _HasValue                                  = triv _ExchangeRate (fun () -> _ExchangeRate.Value.HasValue)
+    let _rate                                      = triv _ExchangeRate (fun () -> _ExchangeRate.Value.rate)
+    let _source                                    = triv _ExchangeRate (fun () -> _ExchangeRate.Value.source)
+    let _target                                    = triv _ExchangeRate (fun () -> _ExchangeRate.Value.target)
+    let _type                                      = triv _ExchangeRate (fun () -> _ExchangeRate.Value.TYPE)
     do this.Bind(_ExchangeRate)
 (* 
     casting 
@@ -101,14 +101,14 @@ type ExchangeRateModel1
     Functions
 *)
     let mutable
-        _ExchangeRate                              = cell (fun () -> new ExchangeRate ())
+        _ExchangeRate                              = make (fun () -> new ExchangeRate ())
     let _exchange                                  (amount : ICell<Money>)   
-                                                   = triv (fun () -> _ExchangeRate.Value.exchange(amount.Value))
-    let _HasValue                                  = triv (fun () -> _ExchangeRate.Value.HasValue)
-    let _rate                                      = triv (fun () -> _ExchangeRate.Value.rate)
-    let _source                                    = triv (fun () -> _ExchangeRate.Value.source)
-    let _target                                    = triv (fun () -> _ExchangeRate.Value.target)
-    let _type                                      = triv (fun () -> _ExchangeRate.Value.TYPE)
+                                                   = triv _ExchangeRate (fun () -> _ExchangeRate.Value.exchange(amount.Value))
+    let _HasValue                                  = triv _ExchangeRate (fun () -> _ExchangeRate.Value.HasValue)
+    let _rate                                      = triv _ExchangeRate (fun () -> _ExchangeRate.Value.rate)
+    let _source                                    = triv _ExchangeRate (fun () -> _ExchangeRate.Value.source)
+    let _target                                    = triv _ExchangeRate (fun () -> _ExchangeRate.Value.target)
+    let _type                                      = triv _ExchangeRate (fun () -> _ExchangeRate.Value.TYPE)
     do this.Bind(_ExchangeRate)
 (* 
     casting 

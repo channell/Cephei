@@ -47,17 +47,17 @@ type SvenssonFittingModel
     Functions
 *)
     let mutable
-        _SvenssonFitting                           = cell (fun () -> new SvenssonFitting (weights.Value, optimizationMethod.Value))
-    let _clone                                     = triv (fun () -> _SvenssonFitting.Value.clone())
-    let _size                                      = triv (fun () -> _SvenssonFitting.Value.size())
-    let _constrainAtZero                           = triv (fun () -> _SvenssonFitting.Value.constrainAtZero())
+        _SvenssonFitting                           = make (fun () -> new SvenssonFitting (weights.Value, optimizationMethod.Value))
+    let _clone                                     = triv _SvenssonFitting (fun () -> _SvenssonFitting.Value.clone())
+    let _size                                      = triv _SvenssonFitting (fun () -> _SvenssonFitting.Value.size())
+    let _constrainAtZero                           = triv _SvenssonFitting (fun () -> _SvenssonFitting.Value.constrainAtZero())
     let _discount                                  (x : ICell<Vector>) (t : ICell<double>)   
-                                                   = triv (fun () -> _SvenssonFitting.Value.discount(x.Value, t.Value))
-    let _minimumCostValue                          = triv (fun () -> _SvenssonFitting.Value.minimumCostValue())
-    let _numberOfIterations                        = triv (fun () -> _SvenssonFitting.Value.numberOfIterations())
-    let _optimizationMethod                        = triv (fun () -> _SvenssonFitting.Value.optimizationMethod())
-    let _solution                                  = triv (fun () -> _SvenssonFitting.Value.solution())
-    let _weights                                   = triv (fun () -> _SvenssonFitting.Value.weights())
+                                                   = triv _SvenssonFitting (fun () -> _SvenssonFitting.Value.discount(x.Value, t.Value))
+    let _minimumCostValue                          = triv _SvenssonFitting (fun () -> _SvenssonFitting.Value.minimumCostValue())
+    let _numberOfIterations                        = triv _SvenssonFitting (fun () -> _SvenssonFitting.Value.numberOfIterations())
+    let _optimizationMethod                        = triv _SvenssonFitting (fun () -> _SvenssonFitting.Value.optimizationMethod())
+    let _solution                                  = triv _SvenssonFitting (fun () -> _SvenssonFitting.Value.solution())
+    let _weights                                   = triv _SvenssonFitting (fun () -> _SvenssonFitting.Value.weights())
     do this.Bind(_SvenssonFitting)
 (* 
     casting 

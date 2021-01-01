@@ -42,7 +42,7 @@ type InvalidPriceSignExceptionModel
     Functions
 *)
     let mutable
-        _InvalidPriceSignException                 = cell (fun () -> new InvalidPriceSignException ())
+        _InvalidPriceSignException                 = make (fun () -> new InvalidPriceSignException ())
     do this.Bind(_InvalidPriceSignException)
 (* 
     casting 
@@ -80,7 +80,7 @@ type InvalidPriceSignExceptionModel1
     Functions
 *)
     let mutable
-        _InvalidPriceSignException                 = cell (fun () -> new InvalidPriceSignException (message.Value))
+        _InvalidPriceSignException                 = make (fun () -> new InvalidPriceSignException (message.Value))
     do this.Bind(_InvalidPriceSignException)
 (* 
     casting 
@@ -121,7 +121,7 @@ type InvalidPriceSignExceptionModel2
     Functions
 *)
     let mutable
-        _InvalidPriceSignException                 = cell (fun () -> new InvalidPriceSignException (message.Value, inner.Value))
+        _InvalidPriceSignException                 = make (fun () -> new InvalidPriceSignException (message.Value, inner.Value))
     do this.Bind(_InvalidPriceSignException)
 (* 
     casting 

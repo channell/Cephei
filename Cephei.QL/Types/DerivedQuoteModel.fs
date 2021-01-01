@@ -47,17 +47,17 @@ type DerivedQuoteModel
     Functions
 *)
     let mutable
-        _DerivedQuote                              = cell (fun () -> new DerivedQuote (element.Value, f.Value))
-    let _isValid                                   = triv (fun () -> _DerivedQuote.Value.isValid())
-    let _update                                    = triv (fun () -> _DerivedQuote.Value.update()
-                                                                     _DerivedQuote.Value)
-    let _value                                     = triv (fun () -> _DerivedQuote.Value.value())
+        _DerivedQuote                              = make (fun () -> new DerivedQuote (element.Value, f.Value))
+    let _isValid                                   = triv _DerivedQuote (fun () -> _DerivedQuote.Value.isValid())
+    let _update                                    = triv _DerivedQuote (fun () -> _DerivedQuote.Value.update()
+                                                                                   _DerivedQuote.Value)
+    let _value                                     = triv _DerivedQuote (fun () -> _DerivedQuote.Value.value())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _DerivedQuote.Value.registerWith(handler.Value)
-                                                                     _DerivedQuote.Value)
+                                                   = triv _DerivedQuote (fun () -> _DerivedQuote.Value.registerWith(handler.Value)
+                                                                                   _DerivedQuote.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _DerivedQuote.Value.unregisterWith(handler.Value)
-                                                                     _DerivedQuote.Value)
+                                                   = triv _DerivedQuote (fun () -> _DerivedQuote.Value.unregisterWith(handler.Value)
+                                                                                   _DerivedQuote.Value)
     do this.Bind(_DerivedQuote)
 (* 
     casting 

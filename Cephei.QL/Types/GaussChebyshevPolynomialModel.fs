@@ -42,18 +42,18 @@ type GaussChebyshevPolynomialModel
     Functions
 *)
     let mutable
-        _GaussChebyshevPolynomial                  = cell (fun () -> new GaussChebyshevPolynomial ())
+        _GaussChebyshevPolynomial                  = make (fun () -> new GaussChebyshevPolynomial ())
     let _alpha                                     (i : ICell<int>)   
-                                                   = triv (fun () -> _GaussChebyshevPolynomial.Value.alpha(i.Value))
+                                                   = triv _GaussChebyshevPolynomial (fun () -> _GaussChebyshevPolynomial.Value.alpha(i.Value))
     let _beta                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _GaussChebyshevPolynomial.Value.beta(i.Value))
-    let _mu_0                                      = triv (fun () -> _GaussChebyshevPolynomial.Value.mu_0())
+                                                   = triv _GaussChebyshevPolynomial (fun () -> _GaussChebyshevPolynomial.Value.beta(i.Value))
+    let _mu_0                                      = triv _GaussChebyshevPolynomial (fun () -> _GaussChebyshevPolynomial.Value.mu_0())
     let _w                                         (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussChebyshevPolynomial.Value.w(x.Value))
+                                                   = triv _GaussChebyshevPolynomial (fun () -> _GaussChebyshevPolynomial.Value.w(x.Value))
     let _value                                     (n : ICell<int>) (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussChebyshevPolynomial.Value.value(n.Value, x.Value))
+                                                   = triv _GaussChebyshevPolynomial (fun () -> _GaussChebyshevPolynomial.Value.value(n.Value, x.Value))
     let _weightedValue                             (n : ICell<int>) (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussChebyshevPolynomial.Value.weightedValue(n.Value, x.Value))
+                                                   = triv _GaussChebyshevPolynomial (fun () -> _GaussChebyshevPolynomial.Value.weightedValue(n.Value, x.Value))
     do this.Bind(_GaussChebyshevPolynomial)
 (* 
     casting 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YYfh5d9Kr0WtlbIkRG2Frbs6s8ZciPRV6Gd/6ZL8cN52SIL14ox7CvO8pfftBa3wo9gs705dBbBIquTYY50jGw==",
+  "dgSpecHash": "meR8MSw0WJqHUZdyluXHEH+cr7t+D6DSUb9yutYyAWzv3a289Q9tMuSqyfLNie6XG0o8dd475ZJLCy38npmr1Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\steve\\Source\\Repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj",
+  "projectFilePath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.QLNetHelper\\Cephei.QLNetHelper.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\steve\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
     "C:\\Users\\steve\\.nuget\\packages\\qlnet\\1.11.4\\qlnet.1.11.4.nupkg.sha512"

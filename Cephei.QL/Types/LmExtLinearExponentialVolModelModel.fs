@@ -53,18 +53,18 @@ type LmExtLinearExponentialVolModelModel
     Functions
 *)
     let mutable
-        _LmExtLinearExponentialVolModel            = cell (fun () -> new LmExtLinearExponentialVolModel (fixingTimes.Value, a.Value, b.Value, c.Value, d.Value))
+        _LmExtLinearExponentialVolModel            = make (fun () -> new LmExtLinearExponentialVolModel (fixingTimes.Value, a.Value, b.Value, c.Value, d.Value))
     let _integratedVariance                        (i : ICell<int>) (j : ICell<int>) (u : ICell<double>) (x : ICell<Vector>)   
-                                                   = triv (fun () -> _LmExtLinearExponentialVolModel.Value.integratedVariance(i.Value, j.Value, u.Value, x.Value))
+                                                   = triv _LmExtLinearExponentialVolModel (fun () -> _LmExtLinearExponentialVolModel.Value.integratedVariance(i.Value, j.Value, u.Value, x.Value))
     let _volatility                                (i : ICell<int>) (t : ICell<double>) (x : ICell<Vector>)   
-                                                   = triv (fun () -> _LmExtLinearExponentialVolModel.Value.volatility(i.Value, t.Value, x.Value))
+                                                   = triv _LmExtLinearExponentialVolModel (fun () -> _LmExtLinearExponentialVolModel.Value.volatility(i.Value, t.Value, x.Value))
     let _volatility1                               (t : ICell<double>) (x : ICell<Vector>)   
-                                                   = triv (fun () -> _LmExtLinearExponentialVolModel.Value.volatility(t.Value, x.Value))
-    let _parameters                                = triv (fun () -> _LmExtLinearExponentialVolModel.Value.parameters())
+                                                   = triv _LmExtLinearExponentialVolModel (fun () -> _LmExtLinearExponentialVolModel.Value.volatility(t.Value, x.Value))
+    let _parameters                                = triv _LmExtLinearExponentialVolModel (fun () -> _LmExtLinearExponentialVolModel.Value.parameters())
     let _setParams                                 (arguments : ICell<Generic.List<Parameter>>)   
-                                                   = triv (fun () -> _LmExtLinearExponentialVolModel.Value.setParams(arguments.Value)
-                                                                     _LmExtLinearExponentialVolModel.Value)
-    let _size                                      = triv (fun () -> _LmExtLinearExponentialVolModel.Value.size())
+                                                   = triv _LmExtLinearExponentialVolModel (fun () -> _LmExtLinearExponentialVolModel.Value.setParams(arguments.Value)
+                                                                                                     _LmExtLinearExponentialVolModel.Value)
+    let _size                                      = triv _LmExtLinearExponentialVolModel (fun () -> _LmExtLinearExponentialVolModel.Value.size())
     do this.Bind(_LmExtLinearExponentialVolModel)
 (* 
     casting 

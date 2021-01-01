@@ -45,17 +45,17 @@ type FaceValueAccrualClaimModel
     Functions
 *)
     let mutable
-        _FaceValueAccrualClaim                     = cell (fun () -> new FaceValueAccrualClaim (referenceSecurity.Value))
+        _FaceValueAccrualClaim                     = make (fun () -> new FaceValueAccrualClaim (referenceSecurity.Value))
     let _amount                                    (d : ICell<Date>) (notional : ICell<double>) (recoveryRate : ICell<double>)   
-                                                   = triv (fun () -> _FaceValueAccrualClaim.Value.amount(d.Value, notional.Value, recoveryRate.Value))
+                                                   = triv _FaceValueAccrualClaim (fun () -> _FaceValueAccrualClaim.Value.amount(d.Value, notional.Value, recoveryRate.Value))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FaceValueAccrualClaim.Value.registerWith(handler.Value)
-                                                                     _FaceValueAccrualClaim.Value)
+                                                   = triv _FaceValueAccrualClaim (fun () -> _FaceValueAccrualClaim.Value.registerWith(handler.Value)
+                                                                                            _FaceValueAccrualClaim.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FaceValueAccrualClaim.Value.unregisterWith(handler.Value)
-                                                                     _FaceValueAccrualClaim.Value)
-    let _update                                    = triv (fun () -> _FaceValueAccrualClaim.Value.update()
-                                                                     _FaceValueAccrualClaim.Value)
+                                                   = triv _FaceValueAccrualClaim (fun () -> _FaceValueAccrualClaim.Value.unregisterWith(handler.Value)
+                                                                                            _FaceValueAccrualClaim.Value)
+    let _update                                    = triv _FaceValueAccrualClaim (fun () -> _FaceValueAccrualClaim.Value.update()
+                                                                                            _FaceValueAccrualClaim.Value)
     do this.Bind(_FaceValueAccrualClaim)
 (* 
     casting 

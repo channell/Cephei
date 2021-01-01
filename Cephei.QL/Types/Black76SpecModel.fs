@@ -42,12 +42,12 @@ type Black76SpecModel
     Functions
 *)
     let mutable
-        _Black76Spec                               = cell (fun () -> new Black76Spec ())
-    let _type                                      = triv (fun () -> _Black76Spec.Value.TYPE())
+        _Black76Spec                               = make (fun () -> new Black76Spec ())
+    let _type                                      = triv _Black76Spec (fun () -> _Black76Spec.Value.TYPE())
     let _value                                     (Type : ICell<Option.Type>) (strike : ICell<double>) (atmForward : ICell<double>) (stdDev : ICell<double>) (annuity : ICell<double>) (displacement : ICell<double>)   
-                                                   = triv (fun () -> _Black76Spec.Value.value(Type.Value, strike.Value, atmForward.Value, stdDev.Value, annuity.Value, displacement.Value))
+                                                   = triv _Black76Spec (fun () -> _Black76Spec.Value.value(Type.Value, strike.Value, atmForward.Value, stdDev.Value, annuity.Value, displacement.Value))
     let _vega                                      (strike : ICell<double>) (atmForward : ICell<double>) (stdDev : ICell<double>) (exerciseTime : ICell<double>) (annuity : ICell<double>) (displacement : ICell<double>)   
-                                                   = triv (fun () -> _Black76Spec.Value.vega(strike.Value, atmForward.Value, stdDev.Value, exerciseTime.Value, annuity.Value, displacement.Value))
+                                                   = triv _Black76Spec (fun () -> _Black76Spec.Value.vega(strike.Value, atmForward.Value, stdDev.Value, exerciseTime.Value, annuity.Value, displacement.Value))
     do this.Bind(_Black76Spec)
 (* 
     casting 

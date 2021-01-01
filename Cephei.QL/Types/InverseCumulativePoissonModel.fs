@@ -42,9 +42,9 @@ type InverseCumulativePoissonModel
     Functions
 *)
     let mutable
-        _InverseCumulativePoisson                  = cell (fun () -> new InverseCumulativePoisson ())
+        _InverseCumulativePoisson                  = make (fun () -> new InverseCumulativePoisson ())
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _InverseCumulativePoisson.Value.value(x.Value))
+                                                   = triv _InverseCumulativePoisson (fun () -> _InverseCumulativePoisson.Value.value(x.Value))
     do this.Bind(_InverseCumulativePoisson)
 (* 
     casting 
@@ -84,9 +84,9 @@ type InverseCumulativePoissonModel1
     Functions
 *)
     let mutable
-        _InverseCumulativePoisson                  = cell (fun () -> new InverseCumulativePoisson (lambda.Value))
+        _InverseCumulativePoisson                  = make (fun () -> new InverseCumulativePoisson (lambda.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _InverseCumulativePoisson.Value.value(x.Value))
+                                                   = triv _InverseCumulativePoisson (fun () -> _InverseCumulativePoisson.Value.value(x.Value))
     do this.Bind(_InverseCumulativePoisson)
 (* 
     casting 

@@ -47,12 +47,12 @@ type FloorTruncationModel
     Functions
 *)
     let mutable
-        _FloorTruncation                           = cell (fun () -> new FloorTruncation (precision.Value, digit.Value))
-    let _Digit                                     = triv (fun () -> _FloorTruncation.Value.Digit)
-    let _getType                                   = triv (fun () -> _FloorTruncation.Value.getType)
-    let _Precision                                 = triv (fun () -> _FloorTruncation.Value.Precision)
+        _FloorTruncation                           = make (fun () -> new FloorTruncation (precision.Value, digit.Value))
+    let _Digit                                     = triv _FloorTruncation (fun () -> _FloorTruncation.Value.Digit)
+    let _getType                                   = triv _FloorTruncation (fun () -> _FloorTruncation.Value.getType)
+    let _Precision                                 = triv _FloorTruncation (fun () -> _FloorTruncation.Value.Precision)
     let _Round                                     (value : ICell<double>)   
-                                                   = triv (fun () -> _FloorTruncation.Value.Round(value.Value))
+                                                   = triv _FloorTruncation (fun () -> _FloorTruncation.Value.Round(value.Value))
     do this.Bind(_FloorTruncation)
 (* 
     casting 
@@ -97,12 +97,12 @@ type FloorTruncationModel1
     Functions
 *)
     let mutable
-        _FloorTruncation                           = cell (fun () -> new FloorTruncation (precision.Value))
-    let _Digit                                     = triv (fun () -> _FloorTruncation.Value.Digit)
-    let _getType                                   = triv (fun () -> _FloorTruncation.Value.getType)
-    let _Precision                                 = triv (fun () -> _FloorTruncation.Value.Precision)
+        _FloorTruncation                           = make (fun () -> new FloorTruncation (precision.Value))
+    let _Digit                                     = triv _FloorTruncation (fun () -> _FloorTruncation.Value.Digit)
+    let _getType                                   = triv _FloorTruncation (fun () -> _FloorTruncation.Value.getType)
+    let _Precision                                 = triv _FloorTruncation (fun () -> _FloorTruncation.Value.Precision)
     let _Round                                     (value : ICell<double>)   
-                                                   = triv (fun () -> _FloorTruncation.Value.Round(value.Value))
+                                                   = triv _FloorTruncation (fun () -> _FloorTruncation.Value.Round(value.Value))
     do this.Bind(_FloorTruncation)
 (* 
     casting 

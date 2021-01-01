@@ -50,7 +50,7 @@ type BlackCallableFixedRateBondEngineModel
     Functions
 *)
     let mutable
-        _BlackCallableFixedRateBondEngine          = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackCallableFixedRateBondEngine (fwdYieldVol.Value, discountCurve.Value))))
+        _BlackCallableFixedRateBondEngine          = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackCallableFixedRateBondEngine (fwdYieldVol.Value, discountCurve.Value))))
     do this.Bind(_BlackCallableFixedRateBondEngine)
 (* 
     casting 
@@ -99,7 +99,7 @@ type BlackCallableFixedRateBondEngineModel1
     Functions
 *)
     let mutable
-        _BlackCallableFixedRateBondEngine          = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackCallableFixedRateBondEngine (yieldVolStructure.Value, discountCurve.Value))))
+        _BlackCallableFixedRateBondEngine          = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackCallableFixedRateBondEngine (yieldVolStructure.Value, discountCurve.Value))))
     do this.Bind(_BlackCallableFixedRateBondEngine)
 (* 
     casting 

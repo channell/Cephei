@@ -49,15 +49,15 @@ type FdmHullWhiteSolverModel
     Functions
 *)
     let mutable
-        _FdmHullWhiteSolver                        = cell (fun () -> new FdmHullWhiteSolver (model.Value, solverDesc.Value, schemeDesc.Value))
+        _FdmHullWhiteSolver                        = make (fun () -> new FdmHullWhiteSolver (model.Value, solverDesc.Value, schemeDesc.Value))
     let _deltaAt                                   (s : ICell<double>)   
-                                                   = triv (fun () -> _FdmHullWhiteSolver.Value.deltaAt(s.Value))
+                                                   = triv _FdmHullWhiteSolver (fun () -> _FdmHullWhiteSolver.Value.deltaAt(s.Value))
     let _gammaAt                                   (s : ICell<double>)   
-                                                   = triv (fun () -> _FdmHullWhiteSolver.Value.gammaAt(s.Value))
+                                                   = triv _FdmHullWhiteSolver (fun () -> _FdmHullWhiteSolver.Value.gammaAt(s.Value))
     let _thetaAt                                   (s : ICell<double>)   
-                                                   = triv (fun () -> _FdmHullWhiteSolver.Value.thetaAt(s.Value))
+                                                   = triv _FdmHullWhiteSolver (fun () -> _FdmHullWhiteSolver.Value.thetaAt(s.Value))
     let _valueAt                                   (s : ICell<double>)   
-                                                   = triv (fun () -> _FdmHullWhiteSolver.Value.valueAt(s.Value))
+                                                   = triv _FdmHullWhiteSolver (fun () -> _FdmHullWhiteSolver.Value.valueAt(s.Value))
     do this.Bind(_FdmHullWhiteSolver)
 (* 
     casting 

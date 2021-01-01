@@ -47,9 +47,9 @@ type InverseNonCentralChiSquareDistributionModel
     Functions
 *)
     let mutable
-        _InverseNonCentralChiSquareDistribution    = cell (fun () -> new InverseNonCentralChiSquareDistribution (df.Value, ncp.Value))
+        _InverseNonCentralChiSquareDistribution    = make (fun () -> new InverseNonCentralChiSquareDistribution (df.Value, ncp.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _InverseNonCentralChiSquareDistribution.Value.value(x.Value))
+                                                   = triv _InverseNonCentralChiSquareDistribution (fun () -> _InverseNonCentralChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_InverseNonCentralChiSquareDistribution)
 (* 
     casting 
@@ -95,9 +95,9 @@ type InverseNonCentralChiSquareDistributionModel1
     Functions
 *)
     let mutable
-        _InverseNonCentralChiSquareDistribution    = cell (fun () -> new InverseNonCentralChiSquareDistribution (df.Value, ncp.Value, maxEvaluations.Value))
+        _InverseNonCentralChiSquareDistribution    = make (fun () -> new InverseNonCentralChiSquareDistribution (df.Value, ncp.Value, maxEvaluations.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _InverseNonCentralChiSquareDistribution.Value.value(x.Value))
+                                                   = triv _InverseNonCentralChiSquareDistribution (fun () -> _InverseNonCentralChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_InverseNonCentralChiSquareDistribution)
 (* 
     casting 
@@ -146,9 +146,9 @@ type InverseNonCentralChiSquareDistributionModel2
     Functions
 *)
     let mutable
-        _InverseNonCentralChiSquareDistribution    = cell (fun () -> new InverseNonCentralChiSquareDistribution (df.Value, ncp.Value, maxEvaluations.Value, accuracy.Value))
+        _InverseNonCentralChiSquareDistribution    = make (fun () -> new InverseNonCentralChiSquareDistribution (df.Value, ncp.Value, maxEvaluations.Value, accuracy.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _InverseNonCentralChiSquareDistribution.Value.value(x.Value))
+                                                   = triv _InverseNonCentralChiSquareDistribution (fun () -> _InverseNonCentralChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_InverseNonCentralChiSquareDistribution)
 (* 
     casting 

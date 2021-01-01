@@ -47,13 +47,13 @@ type AmericanExerciseModel
     Functions
 *)
     let mutable
-        _AmericanExercise                          = cell (fun () -> new AmericanExercise (latest.Value, payoffAtExpiry.Value))
-    let _payoffAtExpiry                            = triv (fun () -> _AmericanExercise.Value.payoffAtExpiry())
+        _AmericanExercise                          = make (fun () -> new AmericanExercise (latest.Value, payoffAtExpiry.Value))
+    let _payoffAtExpiry                            = triv _AmericanExercise (fun () -> _AmericanExercise.Value.payoffAtExpiry())
     let _date                                      (index : ICell<int>)   
-                                                   = triv (fun () -> _AmericanExercise.Value.date(index.Value))
-    let _dates                                     = triv (fun () -> _AmericanExercise.Value.dates())
-    let _lastDate                                  = triv (fun () -> _AmericanExercise.Value.lastDate())
-    let _type                                      = triv (fun () -> _AmericanExercise.Value.TYPE())
+                                                   = triv _AmericanExercise (fun () -> _AmericanExercise.Value.date(index.Value))
+    let _dates                                     = triv _AmericanExercise (fun () -> _AmericanExercise.Value.dates())
+    let _lastDate                                  = triv _AmericanExercise (fun () -> _AmericanExercise.Value.lastDate())
+    let _type                                      = triv _AmericanExercise (fun () -> _AmericanExercise.Value.TYPE())
     do this.Bind(_AmericanExercise)
 (* 
     casting 
@@ -103,13 +103,13 @@ type AmericanExerciseModel1
     Functions
 *)
     let mutable
-        _AmericanExercise                          = cell (fun () -> new AmericanExercise (earliestDate.Value, latestDate.Value, payoffAtExpiry.Value))
-    let _payoffAtExpiry                            = triv (fun () -> _AmericanExercise.Value.payoffAtExpiry())
+        _AmericanExercise                          = make (fun () -> new AmericanExercise (earliestDate.Value, latestDate.Value, payoffAtExpiry.Value))
+    let _payoffAtExpiry                            = triv _AmericanExercise (fun () -> _AmericanExercise.Value.payoffAtExpiry())
     let _date                                      (index : ICell<int>)   
-                                                   = triv (fun () -> _AmericanExercise.Value.date(index.Value))
-    let _dates                                     = triv (fun () -> _AmericanExercise.Value.dates())
-    let _lastDate                                  = triv (fun () -> _AmericanExercise.Value.lastDate())
-    let _type                                      = triv (fun () -> _AmericanExercise.Value.TYPE())
+                                                   = triv _AmericanExercise (fun () -> _AmericanExercise.Value.date(index.Value))
+    let _dates                                     = triv _AmericanExercise (fun () -> _AmericanExercise.Value.dates())
+    let _lastDate                                  = triv _AmericanExercise (fun () -> _AmericanExercise.Value.lastDate())
+    let _type                                      = triv _AmericanExercise (fun () -> _AmericanExercise.Value.TYPE())
     do this.Bind(_AmericanExercise)
 (* 
     casting 

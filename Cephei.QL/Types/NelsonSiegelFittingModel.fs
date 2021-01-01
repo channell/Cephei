@@ -47,17 +47,17 @@ type NelsonSiegelFittingModel
     Functions
 *)
     let mutable
-        _NelsonSiegelFitting                       = cell (fun () -> new NelsonSiegelFitting (weights.Value, optimizationMethod.Value))
-    let _clone                                     = triv (fun () -> _NelsonSiegelFitting.Value.clone())
-    let _size                                      = triv (fun () -> _NelsonSiegelFitting.Value.size())
-    let _constrainAtZero                           = triv (fun () -> _NelsonSiegelFitting.Value.constrainAtZero())
+        _NelsonSiegelFitting                       = make (fun () -> new NelsonSiegelFitting (weights.Value, optimizationMethod.Value))
+    let _clone                                     = triv _NelsonSiegelFitting (fun () -> _NelsonSiegelFitting.Value.clone())
+    let _size                                      = triv _NelsonSiegelFitting (fun () -> _NelsonSiegelFitting.Value.size())
+    let _constrainAtZero                           = triv _NelsonSiegelFitting (fun () -> _NelsonSiegelFitting.Value.constrainAtZero())
     let _discount                                  (x : ICell<Vector>) (t : ICell<double>)   
-                                                   = triv (fun () -> _NelsonSiegelFitting.Value.discount(x.Value, t.Value))
-    let _minimumCostValue                          = triv (fun () -> _NelsonSiegelFitting.Value.minimumCostValue())
-    let _numberOfIterations                        = triv (fun () -> _NelsonSiegelFitting.Value.numberOfIterations())
-    let _optimizationMethod                        = triv (fun () -> _NelsonSiegelFitting.Value.optimizationMethod())
-    let _solution                                  = triv (fun () -> _NelsonSiegelFitting.Value.solution())
-    let _weights                                   = triv (fun () -> _NelsonSiegelFitting.Value.weights())
+                                                   = triv _NelsonSiegelFitting (fun () -> _NelsonSiegelFitting.Value.discount(x.Value, t.Value))
+    let _minimumCostValue                          = triv _NelsonSiegelFitting (fun () -> _NelsonSiegelFitting.Value.minimumCostValue())
+    let _numberOfIterations                        = triv _NelsonSiegelFitting (fun () -> _NelsonSiegelFitting.Value.numberOfIterations())
+    let _optimizationMethod                        = triv _NelsonSiegelFitting (fun () -> _NelsonSiegelFitting.Value.optimizationMethod())
+    let _solution                                  = triv _NelsonSiegelFitting (fun () -> _NelsonSiegelFitting.Value.solution())
+    let _weights                                   = triv _NelsonSiegelFitting (fun () -> _NelsonSiegelFitting.Value.weights())
     do this.Bind(_NelsonSiegelFitting)
 (* 
     casting 

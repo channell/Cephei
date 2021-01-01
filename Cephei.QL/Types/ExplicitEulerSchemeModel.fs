@@ -47,15 +47,15 @@ type ExplicitEulerSchemeModel
     Functions
 *)
     let mutable
-        _ExplicitEulerScheme                       = cell (fun () -> new ExplicitEulerScheme (map.Value, bcSet.Value))
+        _ExplicitEulerScheme                       = make (fun () -> new ExplicitEulerScheme (map.Value, bcSet.Value))
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
-                                                   = triv (fun () -> _ExplicitEulerScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
+                                                   = triv _ExplicitEulerScheme (fun () -> _ExplicitEulerScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _ExplicitEulerScheme.Value.setStep(dt.Value)
-                                                                     _ExplicitEulerScheme.Value)
+                                                   = triv _ExplicitEulerScheme (fun () -> _ExplicitEulerScheme.Value.setStep(dt.Value)
+                                                                                          _ExplicitEulerScheme.Value)
     let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _ExplicitEulerScheme.Value.step(ref a.Value, t.Value, theta.Value)
-                                                                     _ExplicitEulerScheme.Value)
+                                                   = triv _ExplicitEulerScheme (fun () -> _ExplicitEulerScheme.Value.step(ref a.Value, t.Value, theta.Value)
+                                                                                          _ExplicitEulerScheme.Value)
     do this.Bind(_ExplicitEulerScheme)
 (* 
     casting 
@@ -98,15 +98,15 @@ type ExplicitEulerSchemeModel1
     Functions
 *)
     let mutable
-        _ExplicitEulerScheme                       = cell (fun () -> new ExplicitEulerScheme ())
+        _ExplicitEulerScheme                       = make (fun () -> new ExplicitEulerScheme ())
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
-                                                   = triv (fun () -> _ExplicitEulerScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
+                                                   = triv _ExplicitEulerScheme (fun () -> _ExplicitEulerScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _ExplicitEulerScheme.Value.setStep(dt.Value)
-                                                                     _ExplicitEulerScheme.Value)
+                                                   = triv _ExplicitEulerScheme (fun () -> _ExplicitEulerScheme.Value.setStep(dt.Value)
+                                                                                          _ExplicitEulerScheme.Value)
     let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _ExplicitEulerScheme.Value.step(ref a.Value, t.Value, theta.Value)
-                                                                     _ExplicitEulerScheme.Value)
+                                                   = triv _ExplicitEulerScheme (fun () -> _ExplicitEulerScheme.Value.step(ref a.Value, t.Value, theta.Value)
+                                                                                          _ExplicitEulerScheme.Value)
     do this.Bind(_ExplicitEulerScheme)
 (* 
     casting 

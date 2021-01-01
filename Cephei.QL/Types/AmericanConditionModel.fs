@@ -47,10 +47,10 @@ type AmericanConditionModel
     Functions
 *)
     let mutable
-        _AmericanCondition                         = cell (fun () -> new AmericanCondition (Type.Value, strike.Value))
+        _AmericanCondition                         = make (fun () -> new AmericanCondition (Type.Value, strike.Value))
     let _applyTo                                   (o : ICell<Object>) (t : ICell<double>)   
-                                                   = triv (fun () -> _AmericanCondition.Value.applyTo(o.Value, t.Value)
-                                                                     _AmericanCondition.Value)
+                                                   = triv _AmericanCondition (fun () -> _AmericanCondition.Value.applyTo(o.Value, t.Value)
+                                                                                        _AmericanCondition.Value)
     do this.Bind(_AmericanCondition)
 (* 
     casting 
@@ -92,10 +92,10 @@ type AmericanConditionModel1
     Functions
 *)
     let mutable
-        _AmericanCondition                         = cell (fun () -> new AmericanCondition (intrinsicValues.Value))
+        _AmericanCondition                         = make (fun () -> new AmericanCondition (intrinsicValues.Value))
     let _applyTo                                   (o : ICell<Object>) (t : ICell<double>)   
-                                                   = triv (fun () -> _AmericanCondition.Value.applyTo(o.Value, t.Value)
-                                                                     _AmericanCondition.Value)
+                                                   = triv _AmericanCondition (fun () -> _AmericanCondition.Value.applyTo(o.Value, t.Value)
+                                                                                        _AmericanCondition.Value)
     do this.Bind(_AmericanCondition)
 (* 
     casting 

@@ -42,17 +42,17 @@ type FaceValueClaimModel
     Functions
 *)
     let mutable
-        _FaceValueClaim                            = cell (fun () -> new FaceValueClaim ())
+        _FaceValueClaim                            = make (fun () -> new FaceValueClaim ())
     let _amount                                    (d : ICell<Date>) (notional : ICell<double>) (recoveryRate : ICell<double>)   
-                                                   = triv (fun () -> _FaceValueClaim.Value.amount(d.Value, notional.Value, recoveryRate.Value))
+                                                   = triv _FaceValueClaim (fun () -> _FaceValueClaim.Value.amount(d.Value, notional.Value, recoveryRate.Value))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FaceValueClaim.Value.registerWith(handler.Value)
-                                                                     _FaceValueClaim.Value)
+                                                   = triv _FaceValueClaim (fun () -> _FaceValueClaim.Value.registerWith(handler.Value)
+                                                                                     _FaceValueClaim.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _FaceValueClaim.Value.unregisterWith(handler.Value)
-                                                                     _FaceValueClaim.Value)
-    let _update                                    = triv (fun () -> _FaceValueClaim.Value.update()
-                                                                     _FaceValueClaim.Value)
+                                                   = triv _FaceValueClaim (fun () -> _FaceValueClaim.Value.unregisterWith(handler.Value)
+                                                                                     _FaceValueClaim.Value)
+    let _update                                    = triv _FaceValueClaim (fun () -> _FaceValueClaim.Value.update()
+                                                                                     _FaceValueClaim.Value)
     do this.Bind(_FaceValueClaim)
 (* 
     casting 

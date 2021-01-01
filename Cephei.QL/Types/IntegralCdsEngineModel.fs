@@ -56,7 +56,7 @@ type IntegralCdsEngineModel
     Functions
 *)
     let mutable
-        _IntegralCdsEngine                         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new IntegralCdsEngine (step.Value, probability.Value, recoveryRate.Value, discountCurve.Value, includeSettlementDateFlows.Value))))
+        _IntegralCdsEngine                         = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new IntegralCdsEngine (step.Value, probability.Value, recoveryRate.Value, discountCurve.Value, includeSettlementDateFlows.Value))))
     do this.Bind(_IntegralCdsEngine)
 (* 
     casting 

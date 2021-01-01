@@ -50,12 +50,12 @@ type YoYInflationUnitDisplacedBlackCapFloorEngineModel
     Functions
 *)
     let mutable
-        _YoYInflationUnitDisplacedBlackCapFloorEngine = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new YoYInflationUnitDisplacedBlackCapFloorEngine (index.Value, vol.Value))))
-    let _index                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationUnitDisplacedBlackCapFloorEngine).Value.index())
+        _YoYInflationUnitDisplacedBlackCapFloorEngine = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new YoYInflationUnitDisplacedBlackCapFloorEngine (index.Value, vol.Value))))
+    let _index                                     = triv _YoYInflationUnitDisplacedBlackCapFloorEngine (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationUnitDisplacedBlackCapFloorEngine).Value.index())
     let _setVolatility                             (vol : ICell<Handle<YoYOptionletVolatilitySurface>>)   
-                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationUnitDisplacedBlackCapFloorEngine).Value.setVolatility(vol.Value)
-                                                                     _YoYInflationUnitDisplacedBlackCapFloorEngine.Value)
-    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationUnitDisplacedBlackCapFloorEngine).Value.volatility())
+                                                   = triv _YoYInflationUnitDisplacedBlackCapFloorEngine (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationUnitDisplacedBlackCapFloorEngine).Value.setVolatility(vol.Value)
+                                                                                                                   _YoYInflationUnitDisplacedBlackCapFloorEngine.Value)
+    let _volatility                                = triv _YoYInflationUnitDisplacedBlackCapFloorEngine (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationUnitDisplacedBlackCapFloorEngine).Value.volatility())
     do this.Bind(_YoYInflationUnitDisplacedBlackCapFloorEngine)
 (* 
     casting 

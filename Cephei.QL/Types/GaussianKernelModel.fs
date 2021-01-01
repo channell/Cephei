@@ -47,13 +47,13 @@ type GaussianKernelModel
     Functions
 *)
     let mutable
-        _GaussianKernel                            = cell (fun () -> new GaussianKernel (average.Value, sigma.Value))
+        _GaussianKernel                            = make (fun () -> new GaussianKernel (average.Value, sigma.Value))
     let _derivative                                (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussianKernel.Value.derivative(x.Value))
+                                                   = triv _GaussianKernel (fun () -> _GaussianKernel.Value.derivative(x.Value))
     let _primitive                                 (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussianKernel.Value.primitive(x.Value))
+                                                   = triv _GaussianKernel (fun () -> _GaussianKernel.Value.primitive(x.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussianKernel.Value.value(x.Value))
+                                                   = triv _GaussianKernel (fun () -> _GaussianKernel.Value.value(x.Value))
     do this.Bind(_GaussianKernel)
 (* 
     casting 

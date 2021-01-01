@@ -45,18 +45,18 @@ type BulletPricipalLegModel
     Functions
 *)
     let mutable
-        _BulletPricipalLeg                         = cell (fun () -> new BulletPricipalLeg (schedule.Value))
-    let _value                                     = triv (fun () -> _BulletPricipalLeg.Value.value())
+        _BulletPricipalLeg                         = make (fun () -> new BulletPricipalLeg (schedule.Value))
+    let _value                                     = triv _BulletPricipalLeg (fun () -> _BulletPricipalLeg.Value.value())
     let _withNotionals                             (notionals : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _BulletPricipalLeg.Value.withNotionals(notionals.Value))
+                                                   = triv _BulletPricipalLeg (fun () -> _BulletPricipalLeg.Value.withNotionals(notionals.Value))
     let _withNotionals1                            (notional : ICell<double>)   
-                                                   = triv (fun () -> _BulletPricipalLeg.Value.withNotionals(notional.Value))
+                                                   = triv _BulletPricipalLeg (fun () -> _BulletPricipalLeg.Value.withNotionals(notional.Value))
     let _withPaymentAdjustment                     (convention : ICell<BusinessDayConvention>)   
-                                                   = triv (fun () -> _BulletPricipalLeg.Value.withPaymentAdjustment(convention.Value))
+                                                   = triv _BulletPricipalLeg (fun () -> _BulletPricipalLeg.Value.withPaymentAdjustment(convention.Value))
     let _withPaymentDayCounter                     (dayCounter : ICell<DayCounter>)   
-                                                   = triv (fun () -> _BulletPricipalLeg.Value.withPaymentDayCounter(dayCounter.Value))
+                                                   = triv _BulletPricipalLeg (fun () -> _BulletPricipalLeg.Value.withPaymentDayCounter(dayCounter.Value))
     let _withSign                                  (sign : ICell<int>)   
-                                                   = triv (fun () -> _BulletPricipalLeg.Value.withSign(sign.Value))
+                                                   = triv _BulletPricipalLeg (fun () -> _BulletPricipalLeg.Value.withSign(sign.Value))
     do this.Bind(_BulletPricipalLeg)
 (* 
     casting 

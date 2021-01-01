@@ -49,9 +49,9 @@ type EventSetModel
     Functions
 *)
     let mutable
-        _EventSet                                  = cell (fun () -> new EventSet (events.Value, eventsStart.Value, eventsEnd.Value))
+        _EventSet                                  = make (fun () -> new EventSet (events.Value, eventsStart.Value, eventsEnd.Value))
     let _newSimulation                             (start : ICell<Date>) (End : ICell<Date>)   
-                                                   = triv (fun () -> _EventSet.Value.newSimulation(start.Value, End.Value))
+                                                   = triv _EventSet (fun () -> _EventSet.Value.newSimulation(start.Value, End.Value))
     do this.Bind(_EventSet)
 (* 
     casting 

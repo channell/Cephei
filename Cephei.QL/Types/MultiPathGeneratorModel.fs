@@ -51,9 +51,9 @@ type MultiPathGeneratorModel<'GSG when 'GSG :> IRNG>
     Functions
 *)
     let mutable
-        _MultiPathGenerator                        = cell (fun () -> new MultiPathGenerator<'GSG> (Process.Value, times.Value, generator.Value, brownianBridge.Value))
-    let _antithetic                                = triv (fun () -> _MultiPathGenerator.Value.antithetic())
-    let _next                                      = triv (fun () -> _MultiPathGenerator.Value.next())
+        _MultiPathGenerator                        = make (fun () -> new MultiPathGenerator<'GSG> (Process.Value, times.Value, generator.Value, brownianBridge.Value))
+    let _antithetic                                = triv _MultiPathGenerator (fun () -> _MultiPathGenerator.Value.antithetic())
+    let _next                                      = triv _MultiPathGenerator (fun () -> _MultiPathGenerator.Value.next())
     do this.Bind(_MultiPathGenerator)
 
 (* 

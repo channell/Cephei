@@ -47,9 +47,9 @@ type DigitalReplicationModel
     Functions
 *)
     let mutable
-        _DigitalReplication                        = cell (fun () -> new DigitalReplication (t.Value, gap.Value))
-    let _gap                                       = triv (fun () -> _DigitalReplication.Value.gap())
-    let _replicationType                           = triv (fun () -> _DigitalReplication.Value.replicationType())
+        _DigitalReplication                        = make (fun () -> new DigitalReplication (t.Value, gap.Value))
+    let _gap                                       = triv _DigitalReplication (fun () -> _DigitalReplication.Value.gap())
+    let _replicationType                           = triv _DigitalReplication (fun () -> _DigitalReplication.Value.replicationType())
     do this.Bind(_DigitalReplication)
 (* 
     casting 

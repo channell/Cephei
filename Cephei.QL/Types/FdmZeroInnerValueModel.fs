@@ -42,11 +42,11 @@ type FdmZeroInnerValueModel
     Functions
 *)
     let mutable
-        _FdmZeroInnerValue                         = cell (fun () -> new FdmZeroInnerValue ())
+        _FdmZeroInnerValue                         = make (fun () -> new FdmZeroInnerValue ())
     let _avgInnerValue                             (iter : ICell<FdmLinearOpIterator>) (t : ICell<double>)   
-                                                   = triv (fun () -> _FdmZeroInnerValue.Value.avgInnerValue(iter.Value, t.Value))
+                                                   = triv _FdmZeroInnerValue (fun () -> _FdmZeroInnerValue.Value.avgInnerValue(iter.Value, t.Value))
     let _innerValue                                (iter : ICell<FdmLinearOpIterator>) (t : ICell<double>)   
-                                                   = triv (fun () -> _FdmZeroInnerValue.Value.innerValue(iter.Value, t.Value))
+                                                   = triv _FdmZeroInnerValue (fun () -> _FdmZeroInnerValue.Value.innerValue(iter.Value, t.Value))
     do this.Bind(_FdmZeroInnerValue)
 (* 
     casting 

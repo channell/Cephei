@@ -48,7 +48,7 @@ type AnalyticBarrierEngineModel
     Functions
 *)
     let mutable
-        _AnalyticBarrierEngine                     = cell (fun () -> (createEvaluationDate _evaluationDate (fun () -> (new AnalyticBarrierEngine (Process.Value)))))
+        _AnalyticBarrierEngine                     = make (fun () -> (createEvaluationDate _evaluationDate (fun () -> (new AnalyticBarrierEngine (Process.Value)))))
     do this.Bind(_AnalyticBarrierEngine)
 (* 
     casting 

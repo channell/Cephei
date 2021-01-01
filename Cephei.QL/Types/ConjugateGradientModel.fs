@@ -45,9 +45,9 @@ type ConjugateGradientModel
     Functions
 *)
     let mutable
-        _ConjugateGradient                         = cell (fun () -> new ConjugateGradient (lineSearch.Value))
+        _ConjugateGradient                         = make (fun () -> new ConjugateGradient (lineSearch.Value))
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
-                                                   = triv (fun () -> _ConjugateGradient.Value.minimize(P.Value, endCriteria.Value))
+                                                   = triv _ConjugateGradient (fun () -> _ConjugateGradient.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_ConjugateGradient)
 (* 
     casting 

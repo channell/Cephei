@@ -47,9 +47,9 @@ type MoroInverseCumulativeNormalModel
     Functions
 *)
     let mutable
-        _MoroInverseCumulativeNormal               = cell (fun () -> new MoroInverseCumulativeNormal (average.Value, sigma.Value))
+        _MoroInverseCumulativeNormal               = make (fun () -> new MoroInverseCumulativeNormal (average.Value, sigma.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _MoroInverseCumulativeNormal.Value.value(x.Value))
+                                                   = triv _MoroInverseCumulativeNormal (fun () -> _MoroInverseCumulativeNormal.Value.value(x.Value))
     do this.Bind(_MoroInverseCumulativeNormal)
 (* 
     casting 

@@ -53,11 +53,11 @@ type NumericalDifferentiationModel
     Functions
 *)
     let mutable
-        _NumericalDifferentiation                  = cell (fun () -> new NumericalDifferentiation (f.Value, orderOfDerivative.Value, stepSize.Value, steps.Value, scheme.Value))
-    let _offsets                                   = triv (fun () -> _NumericalDifferentiation.Value.offsets())
+        _NumericalDifferentiation                  = make (fun () -> new NumericalDifferentiation (f.Value, orderOfDerivative.Value, stepSize.Value, steps.Value, scheme.Value))
+    let _offsets                                   = triv _NumericalDifferentiation (fun () -> _NumericalDifferentiation.Value.offsets())
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _NumericalDifferentiation.Value.value(x.Value))
-    let _weights                                   = triv (fun () -> _NumericalDifferentiation.Value.weights())
+                                                   = triv _NumericalDifferentiation (fun () -> _NumericalDifferentiation.Value.value(x.Value))
+    let _weights                                   = triv _NumericalDifferentiation (fun () -> _NumericalDifferentiation.Value.weights())
     do this.Bind(_NumericalDifferentiation)
 (* 
     casting 
@@ -108,11 +108,11 @@ type NumericalDifferentiationModel1
     Functions
 *)
     let mutable
-        _NumericalDifferentiation                  = cell (fun () -> new NumericalDifferentiation (f.Value, orderOfDerivative.Value, x_offsets.Value))
-    let _offsets                                   = triv (fun () -> _NumericalDifferentiation.Value.offsets())
+        _NumericalDifferentiation                  = make (fun () -> new NumericalDifferentiation (f.Value, orderOfDerivative.Value, x_offsets.Value))
+    let _offsets                                   = triv _NumericalDifferentiation (fun () -> _NumericalDifferentiation.Value.offsets())
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _NumericalDifferentiation.Value.value(x.Value))
-    let _weights                                   = triv (fun () -> _NumericalDifferentiation.Value.weights())
+                                                   = triv _NumericalDifferentiation (fun () -> _NumericalDifferentiation.Value.value(x.Value))
+    let _weights                                   = triv _NumericalDifferentiation (fun () -> _NumericalDifferentiation.Value.weights())
     do this.Bind(_NumericalDifferentiation)
 (* 
     casting 

@@ -56,11 +56,11 @@ type ImpliedVolHelperModel
     Functions
 *)
     let mutable
-        _ImpliedVolHelper                          = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new ImpliedVolHelper (cap.Value, discountCurve.Value, targetValue.Value, displacement.Value, Type.Value))))
+        _ImpliedVolHelper                          = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new ImpliedVolHelper (cap.Value, discountCurve.Value, targetValue.Value, displacement.Value, Type.Value))))
     let _derivative                                (x : ICell<double>)   
-                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ImpliedVolHelper).Value.derivative(x.Value))
+                                                   = triv _ImpliedVolHelper (fun () -> (curryEvaluationDate _evaluationDate _ImpliedVolHelper).Value.derivative(x.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ImpliedVolHelper).Value.value(x.Value))
+                                                   = triv _ImpliedVolHelper (fun () -> (curryEvaluationDate _evaluationDate _ImpliedVolHelper).Value.value(x.Value))
     do this.Bind(_ImpliedVolHelper)
 (* 
     casting 

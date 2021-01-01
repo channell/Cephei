@@ -47,18 +47,18 @@ type PricipalLegModel
     Functions
 *)
     let mutable
-        _PricipalLeg                               = cell (fun () -> new PricipalLeg (schedule.Value, paymentDayCounter.Value))
-    let _value                                     = triv (fun () -> _PricipalLeg.Value.value())
+        _PricipalLeg                               = make (fun () -> new PricipalLeg (schedule.Value, paymentDayCounter.Value))
+    let _value                                     = triv _PricipalLeg (fun () -> _PricipalLeg.Value.value())
     let _withNotionals                             (notionals : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _PricipalLeg.Value.withNotionals(notionals.Value))
+                                                   = triv _PricipalLeg (fun () -> _PricipalLeg.Value.withNotionals(notionals.Value))
     let _withNotionals1                            (notional : ICell<double>)   
-                                                   = triv (fun () -> _PricipalLeg.Value.withNotionals(notional.Value))
+                                                   = triv _PricipalLeg (fun () -> _PricipalLeg.Value.withNotionals(notional.Value))
     let _withPaymentAdjustment                     (convention : ICell<BusinessDayConvention>)   
-                                                   = triv (fun () -> _PricipalLeg.Value.withPaymentAdjustment(convention.Value))
+                                                   = triv _PricipalLeg (fun () -> _PricipalLeg.Value.withPaymentAdjustment(convention.Value))
     let _withPaymentDayCounter                     (dayCounter : ICell<DayCounter>)   
-                                                   = triv (fun () -> _PricipalLeg.Value.withPaymentDayCounter(dayCounter.Value))
+                                                   = triv _PricipalLeg (fun () -> _PricipalLeg.Value.withPaymentDayCounter(dayCounter.Value))
     let _withSign                                  (sign : ICell<int>)   
-                                                   = triv (fun () -> _PricipalLeg.Value.withSign(sign.Value))
+                                                   = triv _PricipalLeg (fun () -> _PricipalLeg.Value.withSign(sign.Value))
     do this.Bind(_PricipalLeg)
 (* 
     casting 

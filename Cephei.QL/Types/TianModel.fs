@@ -51,18 +51,18 @@ type TianModel
     Functions
 *)
     let mutable
-        _Tian                                      = cell (fun () -> new Tian (Process.Value, End.Value, steps.Value, strike.Value))
+        _Tian                                      = make (fun () -> new Tian (Process.Value, End.Value, steps.Value, strike.Value))
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
-                                                   = triv (fun () -> _Tian.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
+                                                   = triv _Tian (fun () -> _Tian.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (i : ICell<int>) (j : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _Tian.Value.probability(i.Value, j.Value, branch.Value))
+                                                   = triv _Tian (fun () -> _Tian.Value.probability(i.Value, j.Value, branch.Value))
     let _underlying                                (i : ICell<int>) (index : ICell<int>)   
-                                                   = triv (fun () -> _Tian.Value.underlying(i.Value, index.Value))
+                                                   = triv _Tian (fun () -> _Tian.Value.underlying(i.Value, index.Value))
     let _descendant                                (x : ICell<int>) (index : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _Tian.Value.descendant(x.Value, index.Value, branch.Value))
+                                                   = triv _Tian (fun () -> _Tian.Value.descendant(x.Value, index.Value, branch.Value))
     let _size                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _Tian.Value.size(i.Value))
-    let _columns                                   = triv (fun () -> _Tian.Value.columns())
+                                                   = triv _Tian (fun () -> _Tian.Value.size(i.Value))
+    let _columns                                   = triv _Tian (fun () -> _Tian.Value.columns())
     do this.Bind(_Tian)
 (* 
     casting 
@@ -112,18 +112,18 @@ type TianModel1
     Functions
 *)
     let mutable
-        _Tian                                      = cell (fun () -> new Tian ())
+        _Tian                                      = make (fun () -> new Tian ())
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
-                                                   = triv (fun () -> _Tian.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
+                                                   = triv _Tian (fun () -> _Tian.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (i : ICell<int>) (j : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _Tian.Value.probability(i.Value, j.Value, branch.Value))
+                                                   = triv _Tian (fun () -> _Tian.Value.probability(i.Value, j.Value, branch.Value))
     let _underlying                                (i : ICell<int>) (index : ICell<int>)   
-                                                   = triv (fun () -> _Tian.Value.underlying(i.Value, index.Value))
+                                                   = triv _Tian (fun () -> _Tian.Value.underlying(i.Value, index.Value))
     let _descendant                                (x : ICell<int>) (index : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _Tian.Value.descendant(x.Value, index.Value, branch.Value))
+                                                   = triv _Tian (fun () -> _Tian.Value.descendant(x.Value, index.Value, branch.Value))
     let _size                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _Tian.Value.size(i.Value))
-    let _columns                                   = triv (fun () -> _Tian.Value.columns())
+                                                   = triv _Tian (fun () -> _Tian.Value.size(i.Value))
+    let _columns                                   = triv _Tian (fun () -> _Tian.Value.columns())
     do this.Bind(_Tian)
 (* 
     casting 

@@ -45,17 +45,17 @@ type Business252Model
     Functions
 *)
     let mutable
-        _Business252                               = cell (fun () -> new Business252 (c.Value))
+        _Business252                               = make (fun () -> new Business252 (c.Value))
     let _dayCount                                  (d1 : ICell<Date>) (d2 : ICell<Date>)   
-                                                   = triv (fun () -> _Business252.Value.dayCount(d1.Value, d2.Value))
-    let _name                                      = triv (fun () -> _Business252.Value.name())
+                                                   = triv _Business252 (fun () -> _Business252.Value.dayCount(d1.Value, d2.Value))
+    let _name                                      = triv _Business252 (fun () -> _Business252.Value.name())
     let _yearFraction                              (d1 : ICell<Date>) (d2 : ICell<Date>) (d3 : ICell<Date>) (d4 : ICell<Date>)   
-                                                   = triv (fun () -> _Business252.Value.yearFraction(d1.Value, d2.Value, d3.Value, d4.Value))
-    let _dayCounter                                = triv (fun () -> _Business252.Value.dayCounter)
-    let _empty                                     = triv (fun () -> _Business252.Value.empty())
+                                                   = triv _Business252 (fun () -> _Business252.Value.yearFraction(d1.Value, d2.Value, d3.Value, d4.Value))
+    let _dayCounter                                = triv _Business252 (fun () -> _Business252.Value.dayCounter)
+    let _empty                                     = triv _Business252 (fun () -> _Business252.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
-                                                   = triv (fun () -> _Business252.Value.Equals(o.Value))
-    let _ToString                                  = triv (fun () -> _Business252.Value.ToString())
+                                                   = triv _Business252 (fun () -> _Business252.Value.Equals(o.Value))
+    let _ToString                                  = triv _Business252 (fun () -> _Business252.Value.ToString())
     do this.Bind(_Business252)
 (* 
     casting 

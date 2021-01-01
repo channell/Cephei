@@ -47,13 +47,13 @@ type EarlyExerciseModel
     Functions
 *)
     let mutable
-        _EarlyExercise                             = cell (fun () -> new EarlyExercise (Type.Value, payoffAtExpiry.Value))
-    let _payoffAtExpiry                            = triv (fun () -> _EarlyExercise.Value.payoffAtExpiry())
+        _EarlyExercise                             = make (fun () -> new EarlyExercise (Type.Value, payoffAtExpiry.Value))
+    let _payoffAtExpiry                            = triv _EarlyExercise (fun () -> _EarlyExercise.Value.payoffAtExpiry())
     let _date                                      (index : ICell<int>)   
-                                                   = triv (fun () -> _EarlyExercise.Value.date(index.Value))
-    let _dates                                     = triv (fun () -> _EarlyExercise.Value.dates())
-    let _lastDate                                  = triv (fun () -> _EarlyExercise.Value.lastDate())
-    let _type                                      = triv (fun () -> _EarlyExercise.Value.TYPE())
+                                                   = triv _EarlyExercise (fun () -> _EarlyExercise.Value.date(index.Value))
+    let _dates                                     = triv _EarlyExercise (fun () -> _EarlyExercise.Value.dates())
+    let _lastDate                                  = triv _EarlyExercise (fun () -> _EarlyExercise.Value.lastDate())
+    let _type                                      = triv _EarlyExercise (fun () -> _EarlyExercise.Value.TYPE())
     do this.Bind(_EarlyExercise)
 (* 
     casting 

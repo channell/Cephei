@@ -51,7 +51,7 @@ type BlackScholesLatticeModel<'T when 'T :> ITree>
     Functions
 *)
     let mutable
-        _BlackScholesLattice                       = cell (fun () -> new BlackScholesLattice<'T> (tree.Value, riskFreeRate.Value, End.Value, steps.Value))
+        _BlackScholesLattice                       = make (fun () -> new BlackScholesLattice<'T> (tree.Value, riskFreeRate.Value, End.Value, steps.Value))
     do this.Bind(_BlackScholesLattice)
 
 (* 

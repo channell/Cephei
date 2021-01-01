@@ -42,18 +42,18 @@ type NullParameterModel
     Functions
 *)
     let mutable
-        _NullParameter                             = cell (fun () -> new NullParameter ())
-    let _constraint                                = triv (fun () -> _NullParameter.Value.CONSTRAINT())
-    let _implementation                            = triv (fun () -> _NullParameter.Value.implementation())
-    let _parameters                                = triv (fun () -> _NullParameter.Value.parameters())
+        _NullParameter                             = make (fun () -> new NullParameter ())
+    let _constraint                                = triv _NullParameter (fun () -> _NullParameter.Value.CONSTRAINT())
+    let _implementation                            = triv _NullParameter (fun () -> _NullParameter.Value.implementation())
+    let _parameters                                = triv _NullParameter (fun () -> _NullParameter.Value.parameters())
     let _setParam                                  (i : ICell<int>) (x : ICell<double>)   
-                                                   = triv (fun () -> _NullParameter.Value.setParam(i.Value, x.Value)
-                                                                     _NullParameter.Value)
-    let _size                                      = triv (fun () -> _NullParameter.Value.size())
+                                                   = triv _NullParameter (fun () -> _NullParameter.Value.setParam(i.Value, x.Value)
+                                                                                    _NullParameter.Value)
+    let _size                                      = triv _NullParameter (fun () -> _NullParameter.Value.size())
     let _testParams                                (p : ICell<Vector>)   
-                                                   = triv (fun () -> _NullParameter.Value.testParams(p.Value))
+                                                   = triv _NullParameter (fun () -> _NullParameter.Value.testParams(p.Value))
     let _value                                     (t : ICell<double>)   
-                                                   = triv (fun () -> _NullParameter.Value.value(t.Value))
+                                                   = triv _NullParameter (fun () -> _NullParameter.Value.value(t.Value))
     do this.Bind(_NullParameter)
 (* 
     casting 

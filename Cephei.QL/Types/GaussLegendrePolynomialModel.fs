@@ -42,18 +42,18 @@ type GaussLegendrePolynomialModel
     Functions
 *)
     let mutable
-        _GaussLegendrePolynomial                   = cell (fun () -> new GaussLegendrePolynomial ())
+        _GaussLegendrePolynomial                   = make (fun () -> new GaussLegendrePolynomial ())
     let _alpha                                     (i : ICell<int>)   
-                                                   = triv (fun () -> _GaussLegendrePolynomial.Value.alpha(i.Value))
+                                                   = triv _GaussLegendrePolynomial (fun () -> _GaussLegendrePolynomial.Value.alpha(i.Value))
     let _beta                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _GaussLegendrePolynomial.Value.beta(i.Value))
-    let _mu_0                                      = triv (fun () -> _GaussLegendrePolynomial.Value.mu_0())
+                                                   = triv _GaussLegendrePolynomial (fun () -> _GaussLegendrePolynomial.Value.beta(i.Value))
+    let _mu_0                                      = triv _GaussLegendrePolynomial (fun () -> _GaussLegendrePolynomial.Value.mu_0())
     let _w                                         (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussLegendrePolynomial.Value.w(x.Value))
+                                                   = triv _GaussLegendrePolynomial (fun () -> _GaussLegendrePolynomial.Value.w(x.Value))
     let _value                                     (n : ICell<int>) (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussLegendrePolynomial.Value.value(n.Value, x.Value))
+                                                   = triv _GaussLegendrePolynomial (fun () -> _GaussLegendrePolynomial.Value.value(n.Value, x.Value))
     let _weightedValue                             (n : ICell<int>) (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussLegendrePolynomial.Value.weightedValue(n.Value, x.Value))
+                                                   = triv _GaussLegendrePolynomial (fun () -> _GaussLegendrePolynomial.Value.weightedValue(n.Value, x.Value))
     do this.Bind(_GaussLegendrePolynomial)
 (* 
     casting 

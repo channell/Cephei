@@ -49,9 +49,9 @@ type eqn3Model
     Functions
 *)
     let mutable
-        _eqn3                                      = cell (fun () -> new eqn3 (h.Value, k.Value, Asr.Value))
+        _eqn3                                      = make (fun () -> new eqn3 (h.Value, k.Value, Asr.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _eqn3.Value.value(x.Value))
+                                                   = triv _eqn3 (fun () -> _eqn3.Value.value(x.Value))
     do this.Bind(_eqn3)
 (* 
     casting 

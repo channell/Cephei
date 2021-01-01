@@ -45,9 +45,9 @@ type SavedSettingsModel
     Functions
 *)
     let mutable
-        _SavedSettings                             = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new SavedSettings ())))
-    let _Dispose                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _SavedSettings).Value.Dispose()
-                                                                     _SavedSettings.Value)
+        _SavedSettings                             = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new SavedSettings ())))
+    let _Dispose                                   = triv _SavedSettings (fun () -> (curryEvaluationDate _evaluationDate _SavedSettings).Value.Dispose()
+                                                                                    _SavedSettings.Value)
     do this.Bind(_SavedSettings)
 (* 
     casting 

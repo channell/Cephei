@@ -47,18 +47,18 @@ type LmFixedVolatilityModelModel
     Functions
 *)
     let mutable
-        _LmFixedVolatilityModel                    = cell (fun () -> new LmFixedVolatilityModel (volatilities.Value, startTimes.Value))
+        _LmFixedVolatilityModel                    = make (fun () -> new LmFixedVolatilityModel (volatilities.Value, startTimes.Value))
     let _volatility                                (i : ICell<int>) (t : ICell<double>) (x : ICell<Vector>)   
-                                                   = triv (fun () -> _LmFixedVolatilityModel.Value.volatility(i.Value, t.Value, x.Value))
+                                                   = triv _LmFixedVolatilityModel (fun () -> _LmFixedVolatilityModel.Value.volatility(i.Value, t.Value, x.Value))
     let _volatility1                               (t : ICell<double>) (x : ICell<Vector>)   
-                                                   = triv (fun () -> _LmFixedVolatilityModel.Value.volatility(t.Value, x.Value))
+                                                   = triv _LmFixedVolatilityModel (fun () -> _LmFixedVolatilityModel.Value.volatility(t.Value, x.Value))
     let _integratedVariance                        (i : ICell<int>) (j : ICell<int>) (u : ICell<double>) (x : ICell<Vector>)   
-                                                   = triv (fun () -> _LmFixedVolatilityModel.Value.integratedVariance(i.Value, j.Value, u.Value, x.Value))
-    let _parameters                                = triv (fun () -> _LmFixedVolatilityModel.Value.parameters())
+                                                   = triv _LmFixedVolatilityModel (fun () -> _LmFixedVolatilityModel.Value.integratedVariance(i.Value, j.Value, u.Value, x.Value))
+    let _parameters                                = triv _LmFixedVolatilityModel (fun () -> _LmFixedVolatilityModel.Value.parameters())
     let _setParams                                 (arguments : ICell<Generic.List<Parameter>>)   
-                                                   = triv (fun () -> _LmFixedVolatilityModel.Value.setParams(arguments.Value)
-                                                                     _LmFixedVolatilityModel.Value)
-    let _size                                      = triv (fun () -> _LmFixedVolatilityModel.Value.size())
+                                                   = triv _LmFixedVolatilityModel (fun () -> _LmFixedVolatilityModel.Value.setParams(arguments.Value)
+                                                                                             _LmFixedVolatilityModel.Value)
+    let _size                                      = triv _LmFixedVolatilityModel (fun () -> _LmFixedVolatilityModel.Value.size())
     do this.Bind(_LmFixedVolatilityModel)
 (* 
     casting 

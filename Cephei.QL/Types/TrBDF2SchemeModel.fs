@@ -55,18 +55,18 @@ type TrBDF2SchemeModel<'TrapezoidalScheme when 'TrapezoidalScheme : not struct a
     Functions
 *)
     let mutable
-        _TrBDF2Scheme                              = cell (fun () -> new TrBDF2Scheme<'TrapezoidalScheme> (alpha.Value, map.Value, trapezoidalScheme.Value, bcSet.Value, relTol.Value, solverType.Value))
+        _TrBDF2Scheme                              = make (fun () -> new TrBDF2Scheme<'TrapezoidalScheme> (alpha.Value, map.Value, trapezoidalScheme.Value, bcSet.Value, relTol.Value, solverType.Value))
     let _apply                                     (r : ICell<Vector>)   
-                                                   = triv (fun () -> _TrBDF2Scheme.Value.apply(r.Value))
+                                                   = triv _TrBDF2Scheme (fun () -> _TrBDF2Scheme.Value.apply(r.Value))
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
-                                                   = triv (fun () -> _TrBDF2Scheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
-    let _numberOfIterations                        = triv (fun () -> _TrBDF2Scheme.Value.numberOfIterations())
+                                                   = triv _TrBDF2Scheme (fun () -> _TrBDF2Scheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
+    let _numberOfIterations                        = triv _TrBDF2Scheme (fun () -> _TrBDF2Scheme.Value.numberOfIterations())
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _TrBDF2Scheme.Value.setStep(dt.Value)
-                                                                     _TrBDF2Scheme.Value)
+                                                   = triv _TrBDF2Scheme (fun () -> _TrBDF2Scheme.Value.setStep(dt.Value)
+                                                                                   _TrBDF2Scheme.Value)
     let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _TrBDF2Scheme.Value.step(ref a.Value, t.Value, theta.Value)
-                                                                     _TrBDF2Scheme.Value)
+                                                   = triv _TrBDF2Scheme (fun () -> _TrBDF2Scheme.Value.step(ref a.Value, t.Value, theta.Value)
+                                                                                   _TrBDF2Scheme.Value)
     do this.Bind(_TrBDF2Scheme)
 
 (* 
@@ -102,18 +102,18 @@ type TrBDF2SchemeModel1<'TrapezoidalScheme when 'TrapezoidalScheme : not struct 
     Functions
 *)
     let mutable
-        _TrBDF2Scheme                              = cell (fun () -> new TrBDF2Scheme<'TrapezoidalScheme> ())
+        _TrBDF2Scheme                              = make (fun () -> new TrBDF2Scheme<'TrapezoidalScheme> ())
     let _apply                                     (r : ICell<Vector>)   
-                                                   = triv (fun () -> _TrBDF2Scheme.Value.apply(r.Value))
+                                                   = triv _TrBDF2Scheme (fun () -> _TrBDF2Scheme.Value.apply(r.Value))
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
-                                                   = triv (fun () -> _TrBDF2Scheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
-    let _numberOfIterations                        = triv (fun () -> _TrBDF2Scheme.Value.numberOfIterations())
+                                                   = triv _TrBDF2Scheme (fun () -> _TrBDF2Scheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
+    let _numberOfIterations                        = triv _TrBDF2Scheme (fun () -> _TrBDF2Scheme.Value.numberOfIterations())
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _TrBDF2Scheme.Value.setStep(dt.Value)
-                                                                     _TrBDF2Scheme.Value)
+                                                   = triv _TrBDF2Scheme (fun () -> _TrBDF2Scheme.Value.setStep(dt.Value)
+                                                                                   _TrBDF2Scheme.Value)
     let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _TrBDF2Scheme.Value.step(ref a.Value, t.Value, theta.Value)
-                                                                     _TrBDF2Scheme.Value)
+                                                   = triv _TrBDF2Scheme (fun () -> _TrBDF2Scheme.Value.step(ref a.Value, t.Value, theta.Value)
+                                                                                   _TrBDF2Scheme.Value)
     do this.Bind(_TrBDF2Scheme)
 
 (* 

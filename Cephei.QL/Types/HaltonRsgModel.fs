@@ -51,12 +51,12 @@ type HaltonRsgModel
     Functions
 *)
     let mutable
-        _HaltonRsg                                 = cell (fun () -> new HaltonRsg (dimensionality.Value, seed.Value, randomStart.Value, randomShift.Value))
-    let _dimension                                 = triv (fun () -> _HaltonRsg.Value.dimension())
+        _HaltonRsg                                 = make (fun () -> new HaltonRsg (dimensionality.Value, seed.Value, randomStart.Value, randomShift.Value))
+    let _dimension                                 = triv _HaltonRsg (fun () -> _HaltonRsg.Value.dimension())
     let _factory                                   (dimensionality : ICell<int>) (seed : ICell<uint64>)   
-                                                   = triv (fun () -> _HaltonRsg.Value.factory(dimensionality.Value, seed.Value))
-    let _lastSequence                              = triv (fun () -> _HaltonRsg.Value.lastSequence())
-    let _nextSequence                              = triv (fun () -> _HaltonRsg.Value.nextSequence())
+                                                   = triv _HaltonRsg (fun () -> _HaltonRsg.Value.factory(dimensionality.Value, seed.Value))
+    let _lastSequence                              = triv _HaltonRsg (fun () -> _HaltonRsg.Value.lastSequence())
+    let _nextSequence                              = triv _HaltonRsg (fun () -> _HaltonRsg.Value.nextSequence())
     do this.Bind(_HaltonRsg)
 (* 
     casting 

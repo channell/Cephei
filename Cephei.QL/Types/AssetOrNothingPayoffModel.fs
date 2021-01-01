@@ -47,16 +47,16 @@ type AssetOrNothingPayoffModel
     Functions
 *)
     let mutable
-        _AssetOrNothingPayoff                      = cell (fun () -> new AssetOrNothingPayoff (Type.Value, strike.Value))
-    let _name                                      = triv (fun () -> _AssetOrNothingPayoff.Value.name())
+        _AssetOrNothingPayoff                      = make (fun () -> new AssetOrNothingPayoff (Type.Value, strike.Value))
+    let _name                                      = triv _AssetOrNothingPayoff (fun () -> _AssetOrNothingPayoff.Value.name())
     let _value                                     (price : ICell<double>)   
-                                                   = triv (fun () -> _AssetOrNothingPayoff.Value.value(price.Value))
-    let _description                               = triv (fun () -> _AssetOrNothingPayoff.Value.description())
-    let _strike                                    = triv (fun () -> _AssetOrNothingPayoff.Value.strike())
-    let _optionType                                = triv (fun () -> _AssetOrNothingPayoff.Value.optionType())
+                                                   = triv _AssetOrNothingPayoff (fun () -> _AssetOrNothingPayoff.Value.value(price.Value))
+    let _description                               = triv _AssetOrNothingPayoff (fun () -> _AssetOrNothingPayoff.Value.description())
+    let _strike                                    = triv _AssetOrNothingPayoff (fun () -> _AssetOrNothingPayoff.Value.strike())
+    let _optionType                                = triv _AssetOrNothingPayoff (fun () -> _AssetOrNothingPayoff.Value.optionType())
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> _AssetOrNothingPayoff.Value.accept(v.Value)
-                                                                     _AssetOrNothingPayoff.Value)
+                                                   = triv _AssetOrNothingPayoff (fun () -> _AssetOrNothingPayoff.Value.accept(v.Value)
+                                                                                           _AssetOrNothingPayoff.Value)
     do this.Bind(_AssetOrNothingPayoff)
 (* 
     casting 

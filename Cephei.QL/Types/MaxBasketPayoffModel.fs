@@ -45,19 +45,19 @@ type MaxBasketPayoffModel
     Functions
 *)
     let mutable
-        _MaxBasketPayoff                           = cell (fun () -> new MaxBasketPayoff (p.Value))
+        _MaxBasketPayoff                           = make (fun () -> new MaxBasketPayoff (p.Value))
     let _accumulate                                (a : ICell<Vector>)   
-                                                   = triv (fun () -> _MaxBasketPayoff.Value.accumulate(a.Value))
-    let _basePayoff                                = triv (fun () -> _MaxBasketPayoff.Value.basePayoff())
-    let _description                               = triv (fun () -> _MaxBasketPayoff.Value.description())
-    let _name                                      = triv (fun () -> _MaxBasketPayoff.Value.name())
+                                                   = triv _MaxBasketPayoff (fun () -> _MaxBasketPayoff.Value.accumulate(a.Value))
+    let _basePayoff                                = triv _MaxBasketPayoff (fun () -> _MaxBasketPayoff.Value.basePayoff())
+    let _description                               = triv _MaxBasketPayoff (fun () -> _MaxBasketPayoff.Value.description())
+    let _name                                      = triv _MaxBasketPayoff (fun () -> _MaxBasketPayoff.Value.name())
     let _value                                     (price : ICell<double>)   
-                                                   = triv (fun () -> _MaxBasketPayoff.Value.value(price.Value))
+                                                   = triv _MaxBasketPayoff (fun () -> _MaxBasketPayoff.Value.value(price.Value))
     let _value1                                    (a : ICell<Vector>)   
-                                                   = triv (fun () -> _MaxBasketPayoff.Value.value(a.Value))
+                                                   = triv _MaxBasketPayoff (fun () -> _MaxBasketPayoff.Value.value(a.Value))
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> _MaxBasketPayoff.Value.accept(v.Value)
-                                                                     _MaxBasketPayoff.Value)
+                                                   = triv _MaxBasketPayoff (fun () -> _MaxBasketPayoff.Value.accept(v.Value)
+                                                                                      _MaxBasketPayoff.Value)
     do this.Bind(_MaxBasketPayoff)
 (* 
     casting 

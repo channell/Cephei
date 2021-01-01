@@ -54,7 +54,7 @@ type MidPointCdsEngineModel
     Functions
 *)
     let mutable
-        _MidPointCdsEngine                         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new MidPointCdsEngine (probability.Value, recoveryRate.Value, discountCurve.Value, includeSettlementDateFlows.Value))))
+        _MidPointCdsEngine                         = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new MidPointCdsEngine (probability.Value, recoveryRate.Value, discountCurve.Value, includeSettlementDateFlows.Value))))
     do this.Bind(_MidPointCdsEngine)
 (* 
     casting 

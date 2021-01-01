@@ -42,15 +42,15 @@ type CrankNicolsonModel<'Operator when 'Operator :> IOperator>
     Functions
 *)
     let mutable
-        _CrankNicolson                             = cell (fun () -> new CrankNicolson<'Operator> ())
+        _CrankNicolson                             = make (fun () -> new CrankNicolson<'Operator> ())
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalFields : ICell<Object[]>)   
-                                                   = triv (fun () -> _CrankNicolson.Value.factory(L.Value, bcs.Value, additionalFields.Value))
+                                                   = triv _CrankNicolson (fun () -> _CrankNicolson.Value.factory(L.Value, bcs.Value, additionalFields.Value))
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _CrankNicolson.Value.setStep(dt.Value)
-                                                                     _CrankNicolson.Value)
+                                                   = triv _CrankNicolson (fun () -> _CrankNicolson.Value.setStep(dt.Value)
+                                                                                    _CrankNicolson.Value)
     let _step                                      (o : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _CrankNicolson.Value.step(ref o.Value, t.Value, theta.Value)
-                                                                     _CrankNicolson.Value)
+                                                   = triv _CrankNicolson (fun () -> _CrankNicolson.Value.step(ref o.Value, t.Value, theta.Value)
+                                                                                    _CrankNicolson.Value)
     do this.Bind(_CrankNicolson)
 
 (* 
@@ -82,15 +82,15 @@ type CrankNicolsonModel1<'Operator when 'Operator :> IOperator>
     Functions
 *)
     let mutable
-        _CrankNicolson                             = cell (fun () -> new CrankNicolson<'Operator> (L.Value, bcs.Value))
+        _CrankNicolson                             = make (fun () -> new CrankNicolson<'Operator> (L.Value, bcs.Value))
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalFields : ICell<Object[]>)   
-                                                   = triv (fun () -> _CrankNicolson.Value.factory(L.Value, bcs.Value, additionalFields.Value))
+                                                   = triv _CrankNicolson (fun () -> _CrankNicolson.Value.factory(L.Value, bcs.Value, additionalFields.Value))
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _CrankNicolson.Value.setStep(dt.Value)
-                                                                     _CrankNicolson.Value)
+                                                   = triv _CrankNicolson (fun () -> _CrankNicolson.Value.setStep(dt.Value)
+                                                                                    _CrankNicolson.Value)
     let _step                                      (o : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _CrankNicolson.Value.step(ref o.Value, t.Value, theta.Value)
-                                                                     _CrankNicolson.Value)
+                                                   = triv _CrankNicolson (fun () -> _CrankNicolson.Value.step(ref o.Value, t.Value, theta.Value)
+                                                                                    _CrankNicolson.Value)
     do this.Bind(_CrankNicolson)
 
 (* 

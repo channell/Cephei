@@ -49,16 +49,16 @@ type EqualJumpsBinomialTreeModel<'T>
     Functions
 *)
     let mutable
-        _EqualJumpsBinomialTree                    = cell (fun () -> new EqualJumpsBinomialTree<'T> (Process.Value, End.Value, steps.Value))
+        _EqualJumpsBinomialTree                    = make (fun () -> new EqualJumpsBinomialTree<'T> (Process.Value, End.Value, steps.Value))
     let _probability                               (x : ICell<int>) (y : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _EqualJumpsBinomialTree.Value.probability(x.Value, y.Value, branch.Value))
+                                                   = triv _EqualJumpsBinomialTree (fun () -> _EqualJumpsBinomialTree.Value.probability(x.Value, y.Value, branch.Value))
     let _underlying                                (i : ICell<int>) (index : ICell<int>)   
-                                                   = triv (fun () -> _EqualJumpsBinomialTree.Value.underlying(i.Value, index.Value))
+                                                   = triv _EqualJumpsBinomialTree (fun () -> _EqualJumpsBinomialTree.Value.underlying(i.Value, index.Value))
     let _descendant                                (x : ICell<int>) (index : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _EqualJumpsBinomialTree.Value.descendant(x.Value, index.Value, branch.Value))
+                                                   = triv _EqualJumpsBinomialTree (fun () -> _EqualJumpsBinomialTree.Value.descendant(x.Value, index.Value, branch.Value))
     let _size                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _EqualJumpsBinomialTree.Value.size(i.Value))
-    let _columns                                   = triv (fun () -> _EqualJumpsBinomialTree.Value.columns())
+                                                   = triv _EqualJumpsBinomialTree (fun () -> _EqualJumpsBinomialTree.Value.size(i.Value))
+    let _columns                                   = triv _EqualJumpsBinomialTree (fun () -> _EqualJumpsBinomialTree.Value.columns())
     do this.Bind(_EqualJumpsBinomialTree)
 
 (* 
@@ -91,16 +91,16 @@ type EqualJumpsBinomialTreeModel1<'T>
     Functions
 *)
     let mutable
-        _EqualJumpsBinomialTree                    = cell (fun () -> new EqualJumpsBinomialTree<'T> ())
+        _EqualJumpsBinomialTree                    = make (fun () -> new EqualJumpsBinomialTree<'T> ())
     let _probability                               (x : ICell<int>) (y : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _EqualJumpsBinomialTree.Value.probability(x.Value, y.Value, branch.Value))
+                                                   = triv _EqualJumpsBinomialTree (fun () -> _EqualJumpsBinomialTree.Value.probability(x.Value, y.Value, branch.Value))
     let _underlying                                (i : ICell<int>) (index : ICell<int>)   
-                                                   = triv (fun () -> _EqualJumpsBinomialTree.Value.underlying(i.Value, index.Value))
+                                                   = triv _EqualJumpsBinomialTree (fun () -> _EqualJumpsBinomialTree.Value.underlying(i.Value, index.Value))
     let _descendant                                (x : ICell<int>) (index : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _EqualJumpsBinomialTree.Value.descendant(x.Value, index.Value, branch.Value))
+                                                   = triv _EqualJumpsBinomialTree (fun () -> _EqualJumpsBinomialTree.Value.descendant(x.Value, index.Value, branch.Value))
     let _size                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _EqualJumpsBinomialTree.Value.size(i.Value))
-    let _columns                                   = triv (fun () -> _EqualJumpsBinomialTree.Value.columns())
+                                                   = triv _EqualJumpsBinomialTree (fun () -> _EqualJumpsBinomialTree.Value.size(i.Value))
+    let _columns                                   = triv _EqualJumpsBinomialTree (fun () -> _EqualJumpsBinomialTree.Value.columns())
     do this.Bind(_EqualJumpsBinomialTree)
 
 (* 

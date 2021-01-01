@@ -48,7 +48,7 @@ type BaroneAdesiWhaleyApproximationEngineModel
     Functions
 *)
     let mutable
-        _BaroneAdesiWhaleyApproximationEngine      = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BaroneAdesiWhaleyApproximationEngine (Process.Value))))
+        _BaroneAdesiWhaleyApproximationEngine      = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BaroneAdesiWhaleyApproximationEngine (Process.Value))))
     do this.Bind(_BaroneAdesiWhaleyApproximationEngine)
 (* 
     casting 

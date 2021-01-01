@@ -49,18 +49,18 @@ type SuperSharePayoffModel
     Functions
 *)
     let mutable
-        _SuperSharePayoff                          = cell (fun () -> new SuperSharePayoff (strike.Value, secondStrike.Value, cashPayoff.Value))
-    let _cashPayoff                                = triv (fun () -> _SuperSharePayoff.Value.cashPayoff())
-    let _description                               = triv (fun () -> _SuperSharePayoff.Value.description())
-    let _name                                      = triv (fun () -> _SuperSharePayoff.Value.name())
-    let _secondStrike                              = triv (fun () -> _SuperSharePayoff.Value.secondStrike())
+        _SuperSharePayoff                          = make (fun () -> new SuperSharePayoff (strike.Value, secondStrike.Value, cashPayoff.Value))
+    let _cashPayoff                                = triv _SuperSharePayoff (fun () -> _SuperSharePayoff.Value.cashPayoff())
+    let _description                               = triv _SuperSharePayoff (fun () -> _SuperSharePayoff.Value.description())
+    let _name                                      = triv _SuperSharePayoff (fun () -> _SuperSharePayoff.Value.name())
+    let _secondStrike                              = triv _SuperSharePayoff (fun () -> _SuperSharePayoff.Value.secondStrike())
     let _value                                     (price : ICell<double>)   
-                                                   = triv (fun () -> _SuperSharePayoff.Value.value(price.Value))
-    let _strike                                    = triv (fun () -> _SuperSharePayoff.Value.strike())
-    let _optionType                                = triv (fun () -> _SuperSharePayoff.Value.optionType())
+                                                   = triv _SuperSharePayoff (fun () -> _SuperSharePayoff.Value.value(price.Value))
+    let _strike                                    = triv _SuperSharePayoff (fun () -> _SuperSharePayoff.Value.strike())
+    let _optionType                                = triv _SuperSharePayoff (fun () -> _SuperSharePayoff.Value.optionType())
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> _SuperSharePayoff.Value.accept(v.Value)
-                                                                     _SuperSharePayoff.Value)
+                                                   = triv _SuperSharePayoff (fun () -> _SuperSharePayoff.Value.accept(v.Value)
+                                                                                       _SuperSharePayoff.Value)
     do this.Bind(_SuperSharePayoff)
 (* 
     casting 

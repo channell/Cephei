@@ -49,11 +49,11 @@ type PriceErrorModel
     Functions
 *)
     let mutable
-        _PriceError                                = cell (fun () -> new PriceError (engine.Value, vol.Value, targetValue.Value))
+        _PriceError                                = make (fun () -> new PriceError (engine.Value, vol.Value, targetValue.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _PriceError.Value.value(x.Value))
+                                                   = triv _PriceError (fun () -> _PriceError.Value.value(x.Value))
     let _derivative                                (x : ICell<double>)   
-                                                   = triv (fun () -> _PriceError.Value.derivative(x.Value))
+                                                   = triv _PriceError (fun () -> _PriceError.Value.derivative(x.Value))
     do this.Bind(_PriceError)
 (* 
     casting 

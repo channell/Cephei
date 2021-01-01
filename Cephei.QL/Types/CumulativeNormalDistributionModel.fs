@@ -42,11 +42,11 @@ type CumulativeNormalDistributionModel
     Functions
 *)
     let mutable
-        _CumulativeNormalDistribution              = cell (fun () -> new CumulativeNormalDistribution ())
+        _CumulativeNormalDistribution              = make (fun () -> new CumulativeNormalDistribution ())
     let _derivative                                (x : ICell<double>)   
-                                                   = triv (fun () -> _CumulativeNormalDistribution.Value.derivative(x.Value))
+                                                   = triv _CumulativeNormalDistribution (fun () -> _CumulativeNormalDistribution.Value.derivative(x.Value))
     let _value                                     (z : ICell<double>)   
-                                                   = triv (fun () -> _CumulativeNormalDistribution.Value.value(z.Value))
+                                                   = triv _CumulativeNormalDistribution (fun () -> _CumulativeNormalDistribution.Value.value(z.Value))
     do this.Bind(_CumulativeNormalDistribution)
 (* 
     casting 
@@ -90,11 +90,11 @@ type CumulativeNormalDistributionModel1
     Functions
 *)
     let mutable
-        _CumulativeNormalDistribution              = cell (fun () -> new CumulativeNormalDistribution (average.Value, sigma.Value))
+        _CumulativeNormalDistribution              = make (fun () -> new CumulativeNormalDistribution (average.Value, sigma.Value))
     let _derivative                                (x : ICell<double>)   
-                                                   = triv (fun () -> _CumulativeNormalDistribution.Value.derivative(x.Value))
+                                                   = triv _CumulativeNormalDistribution (fun () -> _CumulativeNormalDistribution.Value.derivative(x.Value))
     let _value                                     (z : ICell<double>)   
-                                                   = triv (fun () -> _CumulativeNormalDistribution.Value.value(z.Value))
+                                                   = triv _CumulativeNormalDistribution (fun () -> _CumulativeNormalDistribution.Value.value(z.Value))
     do this.Bind(_CumulativeNormalDistribution)
 (* 
     casting 

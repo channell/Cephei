@@ -51,9 +51,9 @@ type AnalyticBinaryBarrierEngine_helperModel
     Functions
 *)
     let mutable
-        _AnalyticBinaryBarrierEngine_helper        = cell (fun () -> new AnalyticBinaryBarrierEngine_helper (Process.Value, payoff.Value, exercise.Value, arguments.Value))
+        _AnalyticBinaryBarrierEngine_helper        = make (fun () -> new AnalyticBinaryBarrierEngine_helper (Process.Value, payoff.Value, exercise.Value, arguments.Value))
     let _payoffAtExpiry                            (spot : ICell<double>) (variance : ICell<double>) (discount : ICell<double>)   
-                                                   = triv (fun () -> _AnalyticBinaryBarrierEngine_helper.Value.payoffAtExpiry(spot.Value, variance.Value, discount.Value))
+                                                   = triv _AnalyticBinaryBarrierEngine_helper (fun () -> _AnalyticBinaryBarrierEngine_helper.Value.payoffAtExpiry(spot.Value, variance.Value, discount.Value))
     do this.Bind(_AnalyticBinaryBarrierEngine_helper)
 (* 
     casting 

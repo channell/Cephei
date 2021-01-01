@@ -47,12 +47,12 @@ type GaussGegenbauerIntegrationModel
     Functions
 *)
     let mutable
-        _GaussGegenbauerIntegration                = cell (fun () -> new GaussGegenbauerIntegration (n.Value, lambda.Value))
-    let _order                                     = triv (fun () -> _GaussGegenbauerIntegration.Value.order())
+        _GaussGegenbauerIntegration                = make (fun () -> new GaussGegenbauerIntegration (n.Value, lambda.Value))
+    let _order                                     = triv _GaussGegenbauerIntegration (fun () -> _GaussGegenbauerIntegration.Value.order())
     let _value                                     (f : ICell<Func<double,double>>)   
-                                                   = triv (fun () -> _GaussGegenbauerIntegration.Value.value(f.Value))
-    let _weights                                   = triv (fun () -> _GaussGegenbauerIntegration.Value.weights())
-    let _x                                         = triv (fun () -> _GaussGegenbauerIntegration.Value.x())
+                                                   = triv _GaussGegenbauerIntegration (fun () -> _GaussGegenbauerIntegration.Value.value(f.Value))
+    let _weights                                   = triv _GaussGegenbauerIntegration (fun () -> _GaussGegenbauerIntegration.Value.weights())
+    let _x                                         = triv _GaussGegenbauerIntegration (fun () -> _GaussGegenbauerIntegration.Value.x())
     do this.Bind(_GaussGegenbauerIntegration)
 (* 
     casting 

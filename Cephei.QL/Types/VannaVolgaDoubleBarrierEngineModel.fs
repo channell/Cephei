@@ -67,17 +67,17 @@ type VannaVolgaDoubleBarrierEngineModel
     Functions
 *)
     let mutable
-        _VannaVolgaDoubleBarrierEngine             = cell (fun () -> new VannaVolgaDoubleBarrierEngine (atmVol.Value, vol25Put.Value, vol25Call.Value, spotFX.Value, domesticTS.Value, foreignTS.Value, getEngine.Value, adaptVanDelta.Value, bsPriceWithSmile.Value, series.Value))
+        _VannaVolgaDoubleBarrierEngine             = make (fun () -> new VannaVolgaDoubleBarrierEngine (atmVol.Value, vol25Put.Value, vol25Call.Value, spotFX.Value, domesticTS.Value, foreignTS.Value, getEngine.Value, adaptVanDelta.Value, bsPriceWithSmile.Value, series.Value))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _VannaVolgaDoubleBarrierEngine.Value.registerWith(handler.Value)
-                                                                     _VannaVolgaDoubleBarrierEngine.Value)
-    let _reset                                     = triv (fun () -> _VannaVolgaDoubleBarrierEngine.Value.reset()
-                                                                     _VannaVolgaDoubleBarrierEngine.Value)
+                                                   = triv _VannaVolgaDoubleBarrierEngine (fun () -> _VannaVolgaDoubleBarrierEngine.Value.registerWith(handler.Value)
+                                                                                                    _VannaVolgaDoubleBarrierEngine.Value)
+    let _reset                                     = triv _VannaVolgaDoubleBarrierEngine (fun () -> _VannaVolgaDoubleBarrierEngine.Value.reset()
+                                                                                                    _VannaVolgaDoubleBarrierEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _VannaVolgaDoubleBarrierEngine.Value.unregisterWith(handler.Value)
-                                                                     _VannaVolgaDoubleBarrierEngine.Value)
-    let _update                                    = triv (fun () -> _VannaVolgaDoubleBarrierEngine.Value.update()
-                                                                     _VannaVolgaDoubleBarrierEngine.Value)
+                                                   = triv _VannaVolgaDoubleBarrierEngine (fun () -> _VannaVolgaDoubleBarrierEngine.Value.unregisterWith(handler.Value)
+                                                                                                    _VannaVolgaDoubleBarrierEngine.Value)
+    let _update                                    = triv _VannaVolgaDoubleBarrierEngine (fun () -> _VannaVolgaDoubleBarrierEngine.Value.update()
+                                                                                                    _VannaVolgaDoubleBarrierEngine.Value)
     do this.Bind(_VannaVolgaDoubleBarrierEngine)
 (* 
     casting 

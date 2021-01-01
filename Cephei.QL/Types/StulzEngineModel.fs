@@ -52,7 +52,7 @@ type StulzEngineModel
     Functions
 *)
     let mutable
-        _StulzEngine                               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new StulzEngine (process1.Value, process2.Value, correlation.Value))))
+        _StulzEngine                               = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new StulzEngine (process1.Value, process2.Value, correlation.Value))))
     do this.Bind(_StulzEngine)
 (* 
     casting 

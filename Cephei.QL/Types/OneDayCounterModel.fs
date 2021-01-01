@@ -42,19 +42,19 @@ type OneDayCounterModel
     Functions
 *)
     let mutable
-        _OneDayCounter                             = cell (fun () -> new OneDayCounter ())
+        _OneDayCounter                             = make (fun () -> new OneDayCounter ())
     let _dayCount                                  (d1 : ICell<Date>) (d2 : ICell<Date>)   
-                                                   = triv (fun () -> _OneDayCounter.Value.dayCount(d1.Value, d2.Value))
-    let _dayCounter                                = triv (fun () -> _OneDayCounter.Value.dayCounter)
-    let _empty                                     = triv (fun () -> _OneDayCounter.Value.empty())
+                                                   = triv _OneDayCounter (fun () -> _OneDayCounter.Value.dayCount(d1.Value, d2.Value))
+    let _dayCounter                                = triv _OneDayCounter (fun () -> _OneDayCounter.Value.dayCounter)
+    let _empty                                     = triv _OneDayCounter (fun () -> _OneDayCounter.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
-                                                   = triv (fun () -> _OneDayCounter.Value.Equals(o.Value))
-    let _name                                      = triv (fun () -> _OneDayCounter.Value.name())
-    let _ToString                                  = triv (fun () -> _OneDayCounter.Value.ToString())
+                                                   = triv _OneDayCounter (fun () -> _OneDayCounter.Value.Equals(o.Value))
+    let _name                                      = triv _OneDayCounter (fun () -> _OneDayCounter.Value.name())
+    let _ToString                                  = triv _OneDayCounter (fun () -> _OneDayCounter.Value.ToString())
     let _yearFraction                              (d1 : ICell<Date>) (d2 : ICell<Date>) (refPeriodStart : ICell<Date>) (refPeriodEnd : ICell<Date>)   
-                                                   = triv (fun () -> _OneDayCounter.Value.yearFraction(d1.Value, d2.Value, refPeriodStart.Value, refPeriodEnd.Value))
+                                                   = triv _OneDayCounter (fun () -> _OneDayCounter.Value.yearFraction(d1.Value, d2.Value, refPeriodStart.Value, refPeriodEnd.Value))
     let _yearFraction1                             (d1 : ICell<Date>) (d2 : ICell<Date>)   
-                                                   = triv (fun () -> _OneDayCounter.Value.yearFraction(d1.Value, d2.Value))
+                                                   = triv _OneDayCounter (fun () -> _OneDayCounter.Value.yearFraction(d1.Value, d2.Value))
     do this.Bind(_OneDayCounter)
 (* 
     casting 

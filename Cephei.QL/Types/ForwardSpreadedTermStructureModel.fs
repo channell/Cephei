@@ -50,13 +50,13 @@ type ForwardSpreadedTermStructureModel
     Functions
 *)
     let mutable
-        _ForwardSpreadedTermStructure              = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new ForwardSpreadedTermStructure (h.Value, spread.Value))))
-    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardSpreadedTermStructure).Value.calendar())
-    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardSpreadedTermStructure).Value.dayCounter())
-    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardSpreadedTermStructure).Value.maxDate())
-    let _maxTime                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardSpreadedTermStructure).Value.maxTime())
-    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardSpreadedTermStructure).Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardSpreadedTermStructure).Value.settlementDays())
+        _ForwardSpreadedTermStructure              = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new ForwardSpreadedTermStructure (h.Value, spread.Value))))
+    let _calendar                                  = triv _ForwardSpreadedTermStructure (fun () -> (curryEvaluationDate _evaluationDate _ForwardSpreadedTermStructure).Value.calendar())
+    let _dayCounter                                = triv _ForwardSpreadedTermStructure (fun () -> (curryEvaluationDate _evaluationDate _ForwardSpreadedTermStructure).Value.dayCounter())
+    let _maxDate                                   = triv _ForwardSpreadedTermStructure (fun () -> (curryEvaluationDate _evaluationDate _ForwardSpreadedTermStructure).Value.maxDate())
+    let _maxTime                                   = triv _ForwardSpreadedTermStructure (fun () -> (curryEvaluationDate _evaluationDate _ForwardSpreadedTermStructure).Value.maxTime())
+    let _referenceDate                             = triv _ForwardSpreadedTermStructure (fun () -> (curryEvaluationDate _evaluationDate _ForwardSpreadedTermStructure).Value.referenceDate())
+    let _settlementDays                            = triv _ForwardSpreadedTermStructure (fun () -> (curryEvaluationDate _evaluationDate _ForwardSpreadedTermStructure).Value.settlementDays())
     do this.Bind(_ForwardSpreadedTermStructure)
 (* 
     casting 

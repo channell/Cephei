@@ -42,11 +42,11 @@ type NormalDistributionModel
     Functions
 *)
     let mutable
-        _NormalDistribution                        = cell (fun () -> new NormalDistribution ())
+        _NormalDistribution                        = make (fun () -> new NormalDistribution ())
     let _derivative                                (x : ICell<double>)   
-                                                   = triv (fun () -> _NormalDistribution.Value.derivative(x.Value))
+                                                   = triv _NormalDistribution (fun () -> _NormalDistribution.Value.derivative(x.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _NormalDistribution.Value.value(x.Value))
+                                                   = triv _NormalDistribution (fun () -> _NormalDistribution.Value.value(x.Value))
     do this.Bind(_NormalDistribution)
 (* 
     casting 
@@ -90,11 +90,11 @@ type NormalDistributionModel1
     Functions
 *)
     let mutable
-        _NormalDistribution                        = cell (fun () -> new NormalDistribution (average.Value, sigma.Value))
+        _NormalDistribution                        = make (fun () -> new NormalDistribution (average.Value, sigma.Value))
     let _derivative                                (x : ICell<double>)   
-                                                   = triv (fun () -> _NormalDistribution.Value.derivative(x.Value))
+                                                   = triv _NormalDistribution (fun () -> _NormalDistribution.Value.derivative(x.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _NormalDistribution.Value.value(x.Value))
+                                                   = triv _NormalDistribution (fun () -> _NormalDistribution.Value.value(x.Value))
     do this.Bind(_NormalDistribution)
 (* 
     casting 

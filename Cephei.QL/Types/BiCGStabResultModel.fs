@@ -49,10 +49,10 @@ type BiCGStabResultModel
     Functions
 *)
     let mutable
-        _BiCGStabResult                            = cell (fun () -> new BiCGStabResult (i.Value, e.Value, xx.Value))
-    let _Error                                     = triv (fun () -> _BiCGStabResult.Value.Error)
-    let _Iterations                                = triv (fun () -> _BiCGStabResult.Value.Iterations)
-    let _X                                         = triv (fun () -> _BiCGStabResult.Value.X)
+        _BiCGStabResult                            = make (fun () -> new BiCGStabResult (i.Value, e.Value, xx.Value))
+    let _Error                                     = triv _BiCGStabResult (fun () -> _BiCGStabResult.Value.Error)
+    let _Iterations                                = triv _BiCGStabResult (fun () -> _BiCGStabResult.Value.Iterations)
+    let _X                                         = triv _BiCGStabResult (fun () -> _BiCGStabResult.Value.X)
     do this.Bind(_BiCGStabResult)
 (* 
     casting 

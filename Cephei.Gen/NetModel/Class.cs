@@ -366,7 +366,7 @@ namespace Cephei.Gen.NetModel
             get
             {
                 if (HasEngine)
-                    return "(withEvaluationDate _evaluationDate _" + Name + ")";
+                    return "lock _FixedRateBond (fun () -> (withEvaluationDate _evaluationDate _" + Name + "))";
                 else
                     return "_" + Name + ".Value";
 

@@ -42,18 +42,18 @@ type CoxRossRubinsteinModel
     Functions
 *)
     let mutable
-        _CoxRossRubinstein                         = cell (fun () -> new CoxRossRubinstein ())
+        _CoxRossRubinstein                         = make (fun () -> new CoxRossRubinstein ())
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
-                                                   = triv (fun () -> _CoxRossRubinstein.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
+                                                   = triv _CoxRossRubinstein (fun () -> _CoxRossRubinstein.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (x : ICell<int>) (y : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _CoxRossRubinstein.Value.probability(x.Value, y.Value, branch.Value))
+                                                   = triv _CoxRossRubinstein (fun () -> _CoxRossRubinstein.Value.probability(x.Value, y.Value, branch.Value))
     let _underlying                                (i : ICell<int>) (index : ICell<int>)   
-                                                   = triv (fun () -> _CoxRossRubinstein.Value.underlying(i.Value, index.Value))
+                                                   = triv _CoxRossRubinstein (fun () -> _CoxRossRubinstein.Value.underlying(i.Value, index.Value))
     let _descendant                                (x : ICell<int>) (index : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _CoxRossRubinstein.Value.descendant(x.Value, index.Value, branch.Value))
+                                                   = triv _CoxRossRubinstein (fun () -> _CoxRossRubinstein.Value.descendant(x.Value, index.Value, branch.Value))
     let _size                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _CoxRossRubinstein.Value.size(i.Value))
-    let _columns                                   = triv (fun () -> _CoxRossRubinstein.Value.columns())
+                                                   = triv _CoxRossRubinstein (fun () -> _CoxRossRubinstein.Value.size(i.Value))
+    let _columns                                   = triv _CoxRossRubinstein (fun () -> _CoxRossRubinstein.Value.columns())
     do this.Bind(_CoxRossRubinstein)
 (* 
     casting 
@@ -108,18 +108,18 @@ type CoxRossRubinsteinModel1
     Functions
 *)
     let mutable
-        _CoxRossRubinstein                         = cell (fun () -> new CoxRossRubinstein (Process.Value, End.Value, steps.Value, strike.Value))
+        _CoxRossRubinstein                         = make (fun () -> new CoxRossRubinstein (Process.Value, End.Value, steps.Value, strike.Value))
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
-                                                   = triv (fun () -> _CoxRossRubinstein.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
+                                                   = triv _CoxRossRubinstein (fun () -> _CoxRossRubinstein.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (x : ICell<int>) (y : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _CoxRossRubinstein.Value.probability(x.Value, y.Value, branch.Value))
+                                                   = triv _CoxRossRubinstein (fun () -> _CoxRossRubinstein.Value.probability(x.Value, y.Value, branch.Value))
     let _underlying                                (i : ICell<int>) (index : ICell<int>)   
-                                                   = triv (fun () -> _CoxRossRubinstein.Value.underlying(i.Value, index.Value))
+                                                   = triv _CoxRossRubinstein (fun () -> _CoxRossRubinstein.Value.underlying(i.Value, index.Value))
     let _descendant                                (x : ICell<int>) (index : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _CoxRossRubinstein.Value.descendant(x.Value, index.Value, branch.Value))
+                                                   = triv _CoxRossRubinstein (fun () -> _CoxRossRubinstein.Value.descendant(x.Value, index.Value, branch.Value))
     let _size                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _CoxRossRubinstein.Value.size(i.Value))
-    let _columns                                   = triv (fun () -> _CoxRossRubinstein.Value.columns())
+                                                   = triv _CoxRossRubinstein (fun () -> _CoxRossRubinstein.Value.size(i.Value))
+    let _columns                                   = triv _CoxRossRubinstein (fun () -> _CoxRossRubinstein.Value.columns())
     do this.Bind(_CoxRossRubinstein)
 (* 
     casting 

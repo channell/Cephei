@@ -45,13 +45,13 @@ type BermudanExerciseModel
     Functions
 *)
     let mutable
-        _BermudanExercise                          = cell (fun () -> new BermudanExercise (dates.Value))
-    let _payoffAtExpiry                            = triv (fun () -> _BermudanExercise.Value.payoffAtExpiry())
+        _BermudanExercise                          = make (fun () -> new BermudanExercise (dates.Value))
+    let _payoffAtExpiry                            = triv _BermudanExercise (fun () -> _BermudanExercise.Value.payoffAtExpiry())
     let _date                                      (index : ICell<int>)   
-                                                   = triv (fun () -> _BermudanExercise.Value.date(index.Value))
-    let _dates                                     = triv (fun () -> _BermudanExercise.Value.dates())
-    let _lastDate                                  = triv (fun () -> _BermudanExercise.Value.lastDate())
-    let _type                                      = triv (fun () -> _BermudanExercise.Value.TYPE())
+                                                   = triv _BermudanExercise (fun () -> _BermudanExercise.Value.date(index.Value))
+    let _dates                                     = triv _BermudanExercise (fun () -> _BermudanExercise.Value.dates())
+    let _lastDate                                  = triv _BermudanExercise (fun () -> _BermudanExercise.Value.lastDate())
+    let _type                                      = triv _BermudanExercise (fun () -> _BermudanExercise.Value.TYPE())
     do this.Bind(_BermudanExercise)
 (* 
     casting 
@@ -98,13 +98,13 @@ type BermudanExerciseModel1
     Functions
 *)
     let mutable
-        _BermudanExercise                          = cell (fun () -> new BermudanExercise (dates.Value, payoffAtExpiry.Value))
-    let _payoffAtExpiry                            = triv (fun () -> _BermudanExercise.Value.payoffAtExpiry())
+        _BermudanExercise                          = make (fun () -> new BermudanExercise (dates.Value, payoffAtExpiry.Value))
+    let _payoffAtExpiry                            = triv _BermudanExercise (fun () -> _BermudanExercise.Value.payoffAtExpiry())
     let _date                                      (index : ICell<int>)   
-                                                   = triv (fun () -> _BermudanExercise.Value.date(index.Value))
-    let _dates                                     = triv (fun () -> _BermudanExercise.Value.dates())
-    let _lastDate                                  = triv (fun () -> _BermudanExercise.Value.lastDate())
-    let _type                                      = triv (fun () -> _BermudanExercise.Value.TYPE())
+                                                   = triv _BermudanExercise (fun () -> _BermudanExercise.Value.date(index.Value))
+    let _dates                                     = triv _BermudanExercise (fun () -> _BermudanExercise.Value.dates())
+    let _lastDate                                  = triv _BermudanExercise (fun () -> _BermudanExercise.Value.lastDate())
+    let _type                                      = triv _BermudanExercise (fun () -> _BermudanExercise.Value.TYPE())
     do this.Bind(_BermudanExercise)
 (* 
     casting 

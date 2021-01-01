@@ -22,6 +22,8 @@ namespace Cephei.Cell.Generic
         public string Mnemonic { get; set; }
         public ICell Parent { get; set; }
 
+        public ICell Mutex { get; set; }
+
         /// <summary>
         /// Create the cell with the F# function.  If used from C#, the Func<> formula can
         /// be converted to an F# function for usage
@@ -37,9 +39,9 @@ namespace Cephei.Cell.Generic
         /// </summary>
         /// <param name="func"></param>
         /// <param name="mnemonic"></param>
-        public CellTrivial(FSharpFunc<Unit, T> func, string mnemonic) : this(func)
+        public CellTrivial(FSharpFunc<Unit, T> func, ICell mutex) : this(func)
         {
-            Mnemonic = mnemonic;
+            Mutex = mutex;
         }
         public T Value
         {
@@ -165,7 +167,7 @@ namespace Cephei.Cell.Generic
 
         public ICell ToCell()
         {
-            return Cell.CreateFast<T>(_func, Mnemonic);
+            return Cell.CreateFast<T>(_func, Mutex);
         }
         #endregion
 

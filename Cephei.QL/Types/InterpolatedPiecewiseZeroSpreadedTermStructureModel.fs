@@ -60,12 +60,12 @@ type InterpolatedPiecewiseZeroSpreadedTermStructureModel<'Interpolator when 'Int
     Functions
 *)
     let mutable
-        _InterpolatedPiecewiseZeroSpreadedTermStructure = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new InterpolatedPiecewiseZeroSpreadedTermStructure<'Interpolator> (h.Value, spreads.Value, dates.Value, compounding.Value, frequency.Value, dc.Value, factory.Value))))
-    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedPiecewiseZeroSpreadedTermStructure).Value.calendar())
-    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedPiecewiseZeroSpreadedTermStructure).Value.dayCounter())
-    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedPiecewiseZeroSpreadedTermStructure).Value.maxDate())
-    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedPiecewiseZeroSpreadedTermStructure).Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedPiecewiseZeroSpreadedTermStructure).Value.settlementDays())
+        _InterpolatedPiecewiseZeroSpreadedTermStructure = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new InterpolatedPiecewiseZeroSpreadedTermStructure<'Interpolator> (h.Value, spreads.Value, dates.Value, compounding.Value, frequency.Value, dc.Value, factory.Value))))
+    let _calendar                                  = triv _InterpolatedPiecewiseZeroSpreadedTermStructure (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedPiecewiseZeroSpreadedTermStructure).Value.calendar())
+    let _dayCounter                                = triv _InterpolatedPiecewiseZeroSpreadedTermStructure (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedPiecewiseZeroSpreadedTermStructure).Value.dayCounter())
+    let _maxDate                                   = triv _InterpolatedPiecewiseZeroSpreadedTermStructure (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedPiecewiseZeroSpreadedTermStructure).Value.maxDate())
+    let _referenceDate                             = triv _InterpolatedPiecewiseZeroSpreadedTermStructure (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedPiecewiseZeroSpreadedTermStructure).Value.referenceDate())
+    let _settlementDays                            = triv _InterpolatedPiecewiseZeroSpreadedTermStructure (fun () -> (curryEvaluationDate _evaluationDate _InterpolatedPiecewiseZeroSpreadedTermStructure).Value.settlementDays())
     do this.Bind(_InterpolatedPiecewiseZeroSpreadedTermStructure)
 
 (* 

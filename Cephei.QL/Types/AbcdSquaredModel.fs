@@ -55,9 +55,9 @@ type AbcdSquaredModel
     Functions
 *)
     let mutable
-        _AbcdSquared                               = cell (fun () -> new AbcdSquared (a.Value, b.Value, c.Value, d.Value, T.Value, S.Value))
+        _AbcdSquared                               = make (fun () -> new AbcdSquared (a.Value, b.Value, c.Value, d.Value, T.Value, S.Value))
     let _value                                     (t : ICell<double>)   
-                                                   = triv (fun () -> _AbcdSquared.Value.value(t.Value))
+                                                   = triv _AbcdSquared (fun () -> _AbcdSquared.Value.value(t.Value))
     do this.Bind(_AbcdSquared)
 (* 
     casting 

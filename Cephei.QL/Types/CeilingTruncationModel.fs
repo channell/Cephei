@@ -49,12 +49,12 @@ type CeilingTruncationModel
     Functions
 *)
     let mutable
-        _CeilingTruncation                         = cell (fun () -> new CeilingTruncation (precision.Value, digit.Value))
-    let _Digit                                     = triv (fun () -> _CeilingTruncation.Value.Digit)
-    let _getType                                   = triv (fun () -> _CeilingTruncation.Value.getType)
-    let _Precision                                 = triv (fun () -> _CeilingTruncation.Value.Precision)
+        _CeilingTruncation                         = make (fun () -> new CeilingTruncation (precision.Value, digit.Value))
+    let _Digit                                     = triv _CeilingTruncation (fun () -> _CeilingTruncation.Value.Digit)
+    let _getType                                   = triv _CeilingTruncation (fun () -> _CeilingTruncation.Value.getType)
+    let _Precision                                 = triv _CeilingTruncation (fun () -> _CeilingTruncation.Value.Precision)
     let _Round                                     (value : ICell<double>)   
-                                                   = triv (fun () -> _CeilingTruncation.Value.Round(value.Value))
+                                                   = triv _CeilingTruncation (fun () -> _CeilingTruncation.Value.Round(value.Value))
     do this.Bind(_CeilingTruncation)
 (* 
     casting 
@@ -101,12 +101,12 @@ type CeilingTruncationModel1
     Functions
 *)
     let mutable
-        _CeilingTruncation                         = cell (fun () -> new CeilingTruncation (precision.Value))
-    let _Digit                                     = triv (fun () -> _CeilingTruncation.Value.Digit)
-    let _getType                                   = triv (fun () -> _CeilingTruncation.Value.getType)
-    let _Precision                                 = triv (fun () -> _CeilingTruncation.Value.Precision)
+        _CeilingTruncation                         = make (fun () -> new CeilingTruncation (precision.Value))
+    let _Digit                                     = triv _CeilingTruncation (fun () -> _CeilingTruncation.Value.Digit)
+    let _getType                                   = triv _CeilingTruncation (fun () -> _CeilingTruncation.Value.getType)
+    let _Precision                                 = triv _CeilingTruncation (fun () -> _CeilingTruncation.Value.Precision)
     let _Round                                     (value : ICell<double>)   
-                                                   = triv (fun () -> _CeilingTruncation.Value.Round(value.Value))
+                                                   = triv _CeilingTruncation (fun () -> _CeilingTruncation.Value.Round(value.Value))
     do this.Bind(_CeilingTruncation)
 (* 
     casting 

@@ -54,10 +54,10 @@ type BlackCapFloorEngineModel
     Functions
 *)
     let mutable
-        _BlackCapFloorEngine                       = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackCapFloorEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value))))
-    let _displacement                              = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.displacement())
-    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.termStructure())
-    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.volatility())
+        _BlackCapFloorEngine                       = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackCapFloorEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value))))
+    let _displacement                              = triv _BlackCapFloorEngine (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.displacement())
+    let _termStructure                             = triv _BlackCapFloorEngine (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.termStructure())
+    let _volatility                                = triv _BlackCapFloorEngine (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.volatility())
     do this.Bind(_BlackCapFloorEngine)
 (* 
     casting 
@@ -113,10 +113,10 @@ type BlackCapFloorEngineModel1
     Functions
 *)
     let mutable
-        _BlackCapFloorEngine                       = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackCapFloorEngine (discountCurve.Value, vol.Value, displacement.Value))))
-    let _displacement                              = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.displacement())
-    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.termStructure())
-    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.volatility())
+        _BlackCapFloorEngine                       = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackCapFloorEngine (discountCurve.Value, vol.Value, displacement.Value))))
+    let _displacement                              = triv _BlackCapFloorEngine (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.displacement())
+    let _termStructure                             = triv _BlackCapFloorEngine (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.termStructure())
+    let _volatility                                = triv _BlackCapFloorEngine (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.volatility())
     do this.Bind(_BlackCapFloorEngine)
 (* 
     casting 
@@ -173,10 +173,10 @@ type BlackCapFloorEngineModel2
     Functions
 *)
     let mutable
-        _BlackCapFloorEngine                       = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackCapFloorEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value))))
-    let _displacement                              = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.displacement())
-    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.termStructure())
-    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.volatility())
+        _BlackCapFloorEngine                       = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackCapFloorEngine (discountCurve.Value, vol.Value, dc.Value, displacement.Value))))
+    let _displacement                              = triv _BlackCapFloorEngine (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.displacement())
+    let _termStructure                             = triv _BlackCapFloorEngine (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.termStructure())
+    let _volatility                                = triv _BlackCapFloorEngine (fun () -> (curryEvaluationDate _evaluationDate _BlackCapFloorEngine).Value.volatility())
     do this.Bind(_BlackCapFloorEngine)
 (* 
     casting 

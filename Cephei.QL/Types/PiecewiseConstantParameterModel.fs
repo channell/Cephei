@@ -47,18 +47,18 @@ type PiecewiseConstantParameterModel
     Functions
 *)
     let mutable
-        _PiecewiseConstantParameter                = cell (fun () -> new PiecewiseConstantParameter (times.Value, Constraint.Value))
-    let _constraint                                = triv (fun () -> _PiecewiseConstantParameter.Value.CONSTRAINT())
-    let _implementation                            = triv (fun () -> _PiecewiseConstantParameter.Value.implementation())
-    let _parameters                                = triv (fun () -> _PiecewiseConstantParameter.Value.parameters())
+        _PiecewiseConstantParameter                = make (fun () -> new PiecewiseConstantParameter (times.Value, Constraint.Value))
+    let _constraint                                = triv _PiecewiseConstantParameter (fun () -> _PiecewiseConstantParameter.Value.CONSTRAINT())
+    let _implementation                            = triv _PiecewiseConstantParameter (fun () -> _PiecewiseConstantParameter.Value.implementation())
+    let _parameters                                = triv _PiecewiseConstantParameter (fun () -> _PiecewiseConstantParameter.Value.parameters())
     let _setParam                                  (i : ICell<int>) (x : ICell<double>)   
-                                                   = triv (fun () -> _PiecewiseConstantParameter.Value.setParam(i.Value, x.Value)
-                                                                     _PiecewiseConstantParameter.Value)
-    let _size                                      = triv (fun () -> _PiecewiseConstantParameter.Value.size())
+                                                   = triv _PiecewiseConstantParameter (fun () -> _PiecewiseConstantParameter.Value.setParam(i.Value, x.Value)
+                                                                                                 _PiecewiseConstantParameter.Value)
+    let _size                                      = triv _PiecewiseConstantParameter (fun () -> _PiecewiseConstantParameter.Value.size())
     let _testParams                                (p : ICell<Vector>)   
-                                                   = triv (fun () -> _PiecewiseConstantParameter.Value.testParams(p.Value))
+                                                   = triv _PiecewiseConstantParameter (fun () -> _PiecewiseConstantParameter.Value.testParams(p.Value))
     let _value                                     (t : ICell<double>)   
-                                                   = triv (fun () -> _PiecewiseConstantParameter.Value.value(t.Value))
+                                                   = triv _PiecewiseConstantParameter (fun () -> _PiecewiseConstantParameter.Value.value(t.Value))
     do this.Bind(_PiecewiseConstantParameter)
 (* 
     casting 

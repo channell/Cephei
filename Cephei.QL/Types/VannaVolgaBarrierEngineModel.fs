@@ -62,17 +62,17 @@ type VannaVolgaBarrierEngineModel
     Functions
 *)
     let mutable
-        _VannaVolgaBarrierEngine                   = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new VannaVolgaBarrierEngine (atmVol.Value, vol25Put.Value, vol25Call.Value, spotFX.Value, domesticTS.Value, foreignTS.Value, adaptVanDelta.Value, bsPriceWithSmile.Value))))
+        _VannaVolgaBarrierEngine                   = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new VannaVolgaBarrierEngine (atmVol.Value, vol25Put.Value, vol25Call.Value, spotFX.Value, domesticTS.Value, foreignTS.Value, adaptVanDelta.Value, bsPriceWithSmile.Value))))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _VannaVolgaBarrierEngine).Value.registerWith(handler.Value)
-                                                                     _VannaVolgaBarrierEngine.Value)
-    let _reset                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _VannaVolgaBarrierEngine).Value.reset()
-                                                                     _VannaVolgaBarrierEngine.Value)
+                                                   = triv _VannaVolgaBarrierEngine (fun () -> (curryEvaluationDate _evaluationDate _VannaVolgaBarrierEngine).Value.registerWith(handler.Value)
+                                                                                              _VannaVolgaBarrierEngine.Value)
+    let _reset                                     = triv _VannaVolgaBarrierEngine (fun () -> (curryEvaluationDate _evaluationDate _VannaVolgaBarrierEngine).Value.reset()
+                                                                                              _VannaVolgaBarrierEngine.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _VannaVolgaBarrierEngine).Value.unregisterWith(handler.Value)
-                                                                     _VannaVolgaBarrierEngine.Value)
-    let _update                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _VannaVolgaBarrierEngine).Value.update()
-                                                                     _VannaVolgaBarrierEngine.Value)
+                                                   = triv _VannaVolgaBarrierEngine (fun () -> (curryEvaluationDate _evaluationDate _VannaVolgaBarrierEngine).Value.unregisterWith(handler.Value)
+                                                                                              _VannaVolgaBarrierEngine.Value)
+    let _update                                    = triv _VannaVolgaBarrierEngine (fun () -> (curryEvaluationDate _evaluationDate _VannaVolgaBarrierEngine).Value.update()
+                                                                                              _VannaVolgaBarrierEngine.Value)
     do this.Bind(_VannaVolgaBarrierEngine)
 (* 
     casting 

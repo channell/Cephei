@@ -51,9 +51,9 @@ type VannaVolgaModel
     Functions
 *)
     let mutable
-        _VannaVolga                                = cell (fun () -> new VannaVolga (spot.Value, dDiscount.Value, fDiscount.Value, T.Value))
+        _VannaVolga                                = make (fun () -> new VannaVolga (spot.Value, dDiscount.Value, fDiscount.Value, T.Value))
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _VannaVolga.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
+                                                   = triv _VannaVolga (fun () -> _VannaVolga.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
     do this.Bind(_VannaVolga)
 (* 
     casting 

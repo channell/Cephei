@@ -48,7 +48,7 @@ type AnalyticContinuousFloatingLookbackEngineModel
     Functions
 *)
     let mutable
-        _AnalyticContinuousFloatingLookbackEngine  = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticContinuousFloatingLookbackEngine (Process.Value))))
+        _AnalyticContinuousFloatingLookbackEngine  = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticContinuousFloatingLookbackEngine (Process.Value))))
     do this.Bind(_AnalyticContinuousFloatingLookbackEngine)
 (* 
     casting 

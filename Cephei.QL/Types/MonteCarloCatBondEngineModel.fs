@@ -52,8 +52,8 @@ type MonteCarloCatBondEngineModel
     Functions
 *)
     let mutable
-        _MonteCarloCatBondEngine                   = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new MonteCarloCatBondEngine (catRisk.Value, discountCurve.Value, includeSettlementDateFlows.Value))))
-    let _discountCurve                             = triv (fun () -> (curryEvaluationDate _evaluationDate _MonteCarloCatBondEngine).Value.discountCurve())
+        _MonteCarloCatBondEngine                   = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new MonteCarloCatBondEngine (catRisk.Value, discountCurve.Value, includeSettlementDateFlows.Value))))
+    let _discountCurve                             = triv _MonteCarloCatBondEngine (fun () -> (curryEvaluationDate _evaluationDate _MonteCarloCatBondEngine).Value.discountCurve())
     do this.Bind(_MonteCarloCatBondEngine)
 (* 
     casting 

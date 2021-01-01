@@ -54,7 +54,7 @@ type DiscountingSwapEngineModel
     Functions
 *)
     let mutable
-        _DiscountingSwapEngine                     = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new DiscountingSwapEngine (discountCurve.Value, includeSettlementDateFlows.Value, settlementDate.Value, npvDate.Value))))
+        _DiscountingSwapEngine                     = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new DiscountingSwapEngine (discountCurve.Value, includeSettlementDateFlows.Value, settlementDate.Value, npvDate.Value))))
     do this.Bind(_DiscountingSwapEngine)
 (* 
     casting 

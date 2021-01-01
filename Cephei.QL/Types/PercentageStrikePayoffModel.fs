@@ -47,16 +47,16 @@ type PercentageStrikePayoffModel
     Functions
 *)
     let mutable
-        _PercentageStrikePayoff                    = cell (fun () -> new PercentageStrikePayoff (Type.Value, moneyness.Value))
-    let _name                                      = triv (fun () -> _PercentageStrikePayoff.Value.name())
+        _PercentageStrikePayoff                    = make (fun () -> new PercentageStrikePayoff (Type.Value, moneyness.Value))
+    let _name                                      = triv _PercentageStrikePayoff (fun () -> _PercentageStrikePayoff.Value.name())
     let _value                                     (price : ICell<double>)   
-                                                   = triv (fun () -> _PercentageStrikePayoff.Value.value(price.Value))
-    let _description                               = triv (fun () -> _PercentageStrikePayoff.Value.description())
-    let _strike                                    = triv (fun () -> _PercentageStrikePayoff.Value.strike())
-    let _optionType                                = triv (fun () -> _PercentageStrikePayoff.Value.optionType())
+                                                   = triv _PercentageStrikePayoff (fun () -> _PercentageStrikePayoff.Value.value(price.Value))
+    let _description                               = triv _PercentageStrikePayoff (fun () -> _PercentageStrikePayoff.Value.description())
+    let _strike                                    = triv _PercentageStrikePayoff (fun () -> _PercentageStrikePayoff.Value.strike())
+    let _optionType                                = triv _PercentageStrikePayoff (fun () -> _PercentageStrikePayoff.Value.optionType())
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> _PercentageStrikePayoff.Value.accept(v.Value)
-                                                                     _PercentageStrikePayoff.Value)
+                                                   = triv _PercentageStrikePayoff (fun () -> _PercentageStrikePayoff.Value.accept(v.Value)
+                                                                                             _PercentageStrikePayoff.Value)
     do this.Bind(_PercentageStrikePayoff)
 (* 
     casting 

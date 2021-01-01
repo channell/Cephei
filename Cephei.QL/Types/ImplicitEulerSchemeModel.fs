@@ -51,16 +51,16 @@ type ImplicitEulerSchemeModel
     Functions
 *)
     let mutable
-        _ImplicitEulerScheme                       = cell (fun () -> new ImplicitEulerScheme (map.Value, bcSet.Value, relTol.Value, solverType.Value))
+        _ImplicitEulerScheme                       = make (fun () -> new ImplicitEulerScheme (map.Value, bcSet.Value, relTol.Value, solverType.Value))
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalFields : ICell<Object[]>)   
-                                                   = triv (fun () -> _ImplicitEulerScheme.Value.factory(L.Value, bcs.Value, additionalFields.Value))
-    let _numberOfIterations                        = triv (fun () -> _ImplicitEulerScheme.Value.numberOfIterations())
+                                                   = triv _ImplicitEulerScheme (fun () -> _ImplicitEulerScheme.Value.factory(L.Value, bcs.Value, additionalFields.Value))
+    let _numberOfIterations                        = triv _ImplicitEulerScheme (fun () -> _ImplicitEulerScheme.Value.numberOfIterations())
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _ImplicitEulerScheme.Value.setStep(dt.Value)
-                                                                     _ImplicitEulerScheme.Value)
+                                                   = triv _ImplicitEulerScheme (fun () -> _ImplicitEulerScheme.Value.setStep(dt.Value)
+                                                                                          _ImplicitEulerScheme.Value)
     let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _ImplicitEulerScheme.Value.step(ref a.Value, t.Value, theta.Value)
-                                                                     _ImplicitEulerScheme.Value)
+                                                   = triv _ImplicitEulerScheme (fun () -> _ImplicitEulerScheme.Value.step(ref a.Value, t.Value, theta.Value)
+                                                                                          _ImplicitEulerScheme.Value)
     do this.Bind(_ImplicitEulerScheme)
 (* 
     casting 
@@ -106,16 +106,16 @@ type ImplicitEulerSchemeModel1
     Functions
 *)
     let mutable
-        _ImplicitEulerScheme                       = cell (fun () -> new ImplicitEulerScheme ())
+        _ImplicitEulerScheme                       = make (fun () -> new ImplicitEulerScheme ())
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalFields : ICell<Object[]>)   
-                                                   = triv (fun () -> _ImplicitEulerScheme.Value.factory(L.Value, bcs.Value, additionalFields.Value))
-    let _numberOfIterations                        = triv (fun () -> _ImplicitEulerScheme.Value.numberOfIterations())
+                                                   = triv _ImplicitEulerScheme (fun () -> _ImplicitEulerScheme.Value.factory(L.Value, bcs.Value, additionalFields.Value))
+    let _numberOfIterations                        = triv _ImplicitEulerScheme (fun () -> _ImplicitEulerScheme.Value.numberOfIterations())
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _ImplicitEulerScheme.Value.setStep(dt.Value)
-                                                                     _ImplicitEulerScheme.Value)
+                                                   = triv _ImplicitEulerScheme (fun () -> _ImplicitEulerScheme.Value.setStep(dt.Value)
+                                                                                          _ImplicitEulerScheme.Value)
     let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _ImplicitEulerScheme.Value.step(ref a.Value, t.Value, theta.Value)
-                                                                     _ImplicitEulerScheme.Value)
+                                                   = triv _ImplicitEulerScheme (fun () -> _ImplicitEulerScheme.Value.step(ref a.Value, t.Value, theta.Value)
+                                                                                          _ImplicitEulerScheme.Value)
     do this.Bind(_ImplicitEulerScheme)
 (* 
     casting 

@@ -42,10 +42,10 @@ type MidPointModel
     Functions
 *)
     let mutable
-        _MidPoint                                  = cell (fun () -> new MidPoint ())
+        _MidPoint                                  = make (fun () -> new MidPoint ())
     let _integrate                                 (f : ICell<Func<double,double>>) (a : ICell<double>) (b : ICell<double>) (I : ICell<double>) (N : ICell<int>)   
-                                                   = triv (fun () -> _MidPoint.Value.integrate(f.Value, a.Value, b.Value, I.Value, N.Value))
-    let _nbEvalutions                              = triv (fun () -> _MidPoint.Value.nbEvalutions())
+                                                   = triv _MidPoint (fun () -> _MidPoint.Value.integrate(f.Value, a.Value, b.Value, I.Value, N.Value))
+    let _nbEvalutions                              = triv _MidPoint (fun () -> _MidPoint.Value.nbEvalutions())
     do this.Bind(_MidPoint)
 (* 
     casting 

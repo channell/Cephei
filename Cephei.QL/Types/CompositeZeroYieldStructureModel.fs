@@ -53,15 +53,15 @@ type CompositeZeroYieldStructureModel
     Functions
 *)
     let mutable
-        _CompositeZeroYieldStructure               = cell (fun () -> new CompositeZeroYieldStructure (h1.Value, h2.Value, f.Value, comp.Value, freq.Value))
-    let _calendar                                  = triv (fun () -> _CompositeZeroYieldStructure.Value.calendar())
-    let _dayCounter                                = triv (fun () -> _CompositeZeroYieldStructure.Value.dayCounter())
-    let _maxDate                                   = triv (fun () -> _CompositeZeroYieldStructure.Value.maxDate())
-    let _maxTime                                   = triv (fun () -> _CompositeZeroYieldStructure.Value.maxTime())
-    let _referenceDate                             = triv (fun () -> _CompositeZeroYieldStructure.Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> _CompositeZeroYieldStructure.Value.settlementDays())
-    let _update                                    = triv (fun () -> _CompositeZeroYieldStructure.Value.update()
-                                                                     _CompositeZeroYieldStructure.Value)
+        _CompositeZeroYieldStructure               = make (fun () -> new CompositeZeroYieldStructure (h1.Value, h2.Value, f.Value, comp.Value, freq.Value))
+    let _calendar                                  = triv _CompositeZeroYieldStructure (fun () -> _CompositeZeroYieldStructure.Value.calendar())
+    let _dayCounter                                = triv _CompositeZeroYieldStructure (fun () -> _CompositeZeroYieldStructure.Value.dayCounter())
+    let _maxDate                                   = triv _CompositeZeroYieldStructure (fun () -> _CompositeZeroYieldStructure.Value.maxDate())
+    let _maxTime                                   = triv _CompositeZeroYieldStructure (fun () -> _CompositeZeroYieldStructure.Value.maxTime())
+    let _referenceDate                             = triv _CompositeZeroYieldStructure (fun () -> _CompositeZeroYieldStructure.Value.referenceDate())
+    let _settlementDays                            = triv _CompositeZeroYieldStructure (fun () -> _CompositeZeroYieldStructure.Value.settlementDays())
+    let _update                                    = triv _CompositeZeroYieldStructure (fun () -> _CompositeZeroYieldStructure.Value.update()
+                                                                                                  _CompositeZeroYieldStructure.Value)
     do this.Bind(_CompositeZeroYieldStructure)
 (* 
     casting 

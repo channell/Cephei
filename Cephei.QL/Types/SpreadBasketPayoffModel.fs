@@ -45,19 +45,19 @@ type SpreadBasketPayoffModel
     Functions
 *)
     let mutable
-        _SpreadBasketPayoff                        = cell (fun () -> new SpreadBasketPayoff (p.Value))
+        _SpreadBasketPayoff                        = make (fun () -> new SpreadBasketPayoff (p.Value))
     let _accumulate                                (a : ICell<Vector>)   
-                                                   = triv (fun () -> _SpreadBasketPayoff.Value.accumulate(a.Value))
-    let _basePayoff                                = triv (fun () -> _SpreadBasketPayoff.Value.basePayoff())
-    let _description                               = triv (fun () -> _SpreadBasketPayoff.Value.description())
-    let _name                                      = triv (fun () -> _SpreadBasketPayoff.Value.name())
+                                                   = triv _SpreadBasketPayoff (fun () -> _SpreadBasketPayoff.Value.accumulate(a.Value))
+    let _basePayoff                                = triv _SpreadBasketPayoff (fun () -> _SpreadBasketPayoff.Value.basePayoff())
+    let _description                               = triv _SpreadBasketPayoff (fun () -> _SpreadBasketPayoff.Value.description())
+    let _name                                      = triv _SpreadBasketPayoff (fun () -> _SpreadBasketPayoff.Value.name())
     let _value                                     (price : ICell<double>)   
-                                                   = triv (fun () -> _SpreadBasketPayoff.Value.value(price.Value))
+                                                   = triv _SpreadBasketPayoff (fun () -> _SpreadBasketPayoff.Value.value(price.Value))
     let _value1                                    (a : ICell<Vector>)   
-                                                   = triv (fun () -> _SpreadBasketPayoff.Value.value(a.Value))
+                                                   = triv _SpreadBasketPayoff (fun () -> _SpreadBasketPayoff.Value.value(a.Value))
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> _SpreadBasketPayoff.Value.accept(v.Value)
-                                                                     _SpreadBasketPayoff.Value)
+                                                   = triv _SpreadBasketPayoff (fun () -> _SpreadBasketPayoff.Value.accept(v.Value)
+                                                                                         _SpreadBasketPayoff.Value)
     do this.Bind(_SpreadBasketPayoff)
 (* 
     casting 

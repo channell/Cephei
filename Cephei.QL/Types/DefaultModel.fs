@@ -42,10 +42,10 @@ type DefaultModel
     Functions
 *)
     let mutable
-        _Default                                   = cell (fun () -> new Default ())
+        _Default                                   = make (fun () -> new Default ())
     let _integrate                                 (f : ICell<Func<double,double>>) (a : ICell<double>) (b : ICell<double>) (I : ICell<double>) (N : ICell<int>)   
-                                                   = triv (fun () -> _Default.Value.integrate(f.Value, a.Value, b.Value, I.Value, N.Value))
-    let _nbEvalutions                              = triv (fun () -> _Default.Value.nbEvalutions())
+                                                   = triv _Default (fun () -> _Default.Value.integrate(f.Value, a.Value, b.Value, I.Value, N.Value))
+    let _nbEvalutions                              = triv _Default (fun () -> _Default.Value.nbEvalutions())
     do this.Bind(_Default)
 (* 
     casting 

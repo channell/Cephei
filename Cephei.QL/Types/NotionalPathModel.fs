@@ -42,15 +42,15 @@ type NotionalPathModel
     Functions
 *)
     let mutable
-        _NotionalPath                              = cell (fun () -> new NotionalPath ())
+        _NotionalPath                              = make (fun () -> new NotionalPath ())
     let _addReduction                              (date : ICell<Date>) (newRate : ICell<double>)   
-                                                   = triv (fun () -> _NotionalPath.Value.addReduction(date.Value, newRate.Value)
-                                                                     _NotionalPath.Value)
-    let _loss                                      = triv (fun () -> _NotionalPath.Value.loss())
+                                                   = triv _NotionalPath (fun () -> _NotionalPath.Value.addReduction(date.Value, newRate.Value)
+                                                                                   _NotionalPath.Value)
+    let _loss                                      = triv _NotionalPath (fun () -> _NotionalPath.Value.loss())
     let _notionalRate                              (date : ICell<Date>)   
-                                                   = triv (fun () -> _NotionalPath.Value.notionalRate(date.Value))
-    let _reset                                     = triv (fun () -> _NotionalPath.Value.reset()
-                                                                     _NotionalPath.Value)
+                                                   = triv _NotionalPath (fun () -> _NotionalPath.Value.notionalRate(date.Value))
+    let _reset                                     = triv _NotionalPath (fun () -> _NotionalPath.Value.reset()
+                                                                                   _NotionalPath.Value)
     do this.Bind(_NotionalPath)
 (* 
     casting 

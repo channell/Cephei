@@ -53,11 +53,11 @@ type ImpliedVolHelper_Model
     Functions
 *)
     let mutable
-        _ImpliedVolHelper_                         = cell (fun () -> new ImpliedVolHelper_ (swaption.Value, discountCurve.Value, targetValue.Value, displacement.Value, Type.Value))
+        _ImpliedVolHelper_                         = make (fun () -> new ImpliedVolHelper_ (swaption.Value, discountCurve.Value, targetValue.Value, displacement.Value, Type.Value))
     let _derivative                                (x : ICell<double>)   
-                                                   = triv (fun () -> _ImpliedVolHelper_.Value.derivative(x.Value))
+                                                   = triv _ImpliedVolHelper_ (fun () -> _ImpliedVolHelper_.Value.derivative(x.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _ImpliedVolHelper_.Value.value(x.Value))
+                                                   = triv _ImpliedVolHelper_ (fun () -> _ImpliedVolHelper_.Value.value(x.Value))
     do this.Bind(_ImpliedVolHelper_)
 (* 
     casting 

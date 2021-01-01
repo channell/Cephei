@@ -45,9 +45,9 @@ type GammaDistributionModel
     Functions
 *)
     let mutable
-        _GammaDistribution                         = cell (fun () -> new GammaDistribution (a.Value))
+        _GammaDistribution                         = make (fun () -> new GammaDistribution (a.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _GammaDistribution.Value.value(x.Value))
+                                                   = triv _GammaDistribution (fun () -> _GammaDistribution.Value.value(x.Value))
     do this.Bind(_GammaDistribution)
 (* 
     casting 

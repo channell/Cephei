@@ -47,18 +47,18 @@ type GaussJacobiPolynomialModel
     Functions
 *)
     let mutable
-        _GaussJacobiPolynomial                     = cell (fun () -> new GaussJacobiPolynomial (alpha.Value, beta.Value))
+        _GaussJacobiPolynomial                     = make (fun () -> new GaussJacobiPolynomial (alpha.Value, beta.Value))
     let _alpha                                     (i : ICell<int>)   
-                                                   = triv (fun () -> _GaussJacobiPolynomial.Value.alpha(i.Value))
+                                                   = triv _GaussJacobiPolynomial (fun () -> _GaussJacobiPolynomial.Value.alpha(i.Value))
     let _beta                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _GaussJacobiPolynomial.Value.beta(i.Value))
-    let _mu_0                                      = triv (fun () -> _GaussJacobiPolynomial.Value.mu_0())
+                                                   = triv _GaussJacobiPolynomial (fun () -> _GaussJacobiPolynomial.Value.beta(i.Value))
+    let _mu_0                                      = triv _GaussJacobiPolynomial (fun () -> _GaussJacobiPolynomial.Value.mu_0())
     let _w                                         (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussJacobiPolynomial.Value.w(x.Value))
+                                                   = triv _GaussJacobiPolynomial (fun () -> _GaussJacobiPolynomial.Value.w(x.Value))
     let _value                                     (n : ICell<int>) (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussJacobiPolynomial.Value.value(n.Value, x.Value))
+                                                   = triv _GaussJacobiPolynomial (fun () -> _GaussJacobiPolynomial.Value.value(n.Value, x.Value))
     let _weightedValue                             (n : ICell<int>) (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussJacobiPolynomial.Value.weightedValue(n.Value, x.Value))
+                                                   = triv _GaussJacobiPolynomial (fun () -> _GaussJacobiPolynomial.Value.weightedValue(n.Value, x.Value))
     do this.Bind(_GaussJacobiPolynomial)
 (* 
     casting 

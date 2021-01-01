@@ -51,10 +51,10 @@ type FdmBackwardSolverModel
     Functions
 *)
     let mutable
-        _FdmBackwardSolver                         = cell (fun () -> new FdmBackwardSolver (map.Value, bcSet.Value, condition.Value, schemeDesc.Value))
+        _FdmBackwardSolver                         = make (fun () -> new FdmBackwardSolver (map.Value, bcSet.Value, condition.Value, schemeDesc.Value))
     let _rollback                                  (a : ICell<Object>) (from : ICell<double>) (To : ICell<double>) (steps : ICell<int>) (dampingSteps : ICell<int>)   
-                                                   = triv (fun () -> _FdmBackwardSolver.Value.rollback(ref a.Value, from.Value, To.Value, steps.Value, dampingSteps.Value)
-                                                                     _FdmBackwardSolver.Value)
+                                                   = triv _FdmBackwardSolver (fun () -> _FdmBackwardSolver.Value.rollback(ref a.Value, from.Value, To.Value, steps.Value, dampingSteps.Value)
+                                                                                        _FdmBackwardSolver.Value)
     do this.Bind(_FdmBackwardSolver)
 (* 
     casting 

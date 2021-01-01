@@ -42,18 +42,18 @@ type ParameterModel
     Functions
 *)
     let mutable
-        _Parameter                                 = cell (fun () -> new Parameter ())
-    let _constraint                                = triv (fun () -> _Parameter.Value.CONSTRAINT())
-    let _implementation                            = triv (fun () -> _Parameter.Value.implementation())
-    let _parameters                                = triv (fun () -> _Parameter.Value.parameters())
+        _Parameter                                 = make (fun () -> new Parameter ())
+    let _constraint                                = triv _Parameter (fun () -> _Parameter.Value.CONSTRAINT())
+    let _implementation                            = triv _Parameter (fun () -> _Parameter.Value.implementation())
+    let _parameters                                = triv _Parameter (fun () -> _Parameter.Value.parameters())
     let _setParam                                  (i : ICell<int>) (x : ICell<double>)   
-                                                   = triv (fun () -> _Parameter.Value.setParam(i.Value, x.Value)
-                                                                     _Parameter.Value)
-    let _size                                      = triv (fun () -> _Parameter.Value.size())
+                                                   = triv _Parameter (fun () -> _Parameter.Value.setParam(i.Value, x.Value)
+                                                                                _Parameter.Value)
+    let _size                                      = triv _Parameter (fun () -> _Parameter.Value.size())
     let _testParams                                (p : ICell<Vector>)   
-                                                   = triv (fun () -> _Parameter.Value.testParams(p.Value))
+                                                   = triv _Parameter (fun () -> _Parameter.Value.testParams(p.Value))
     let _value                                     (t : ICell<double>)   
-                                                   = triv (fun () -> _Parameter.Value.value(t.Value))
+                                                   = triv _Parameter (fun () -> _Parameter.Value.value(t.Value))
     do this.Bind(_Parameter)
 (* 
     casting 

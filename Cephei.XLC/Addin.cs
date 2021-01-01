@@ -97,12 +97,14 @@ namespace Cephei.XL
             Log.Logger = cfg.CreateLogger();
 #endif
             _modelListener = Model.getState().Model.Subscribe(this);
-            
-            _email = UserPrincipal.Current.EmailAddress;
-            var version = Assembly.GetExecutingAssembly().GetName().Version;
-            LoadModels();
 
-            Log.Information("OPEN {1} {0}", _email, version);
+            Task.Run(() =>
+            {
+                _email = UserPrincipal.Current.EmailAddress;
+                var version = Assembly.GetExecutingAssembly().GetName().Version;
+                Log.Information("OPEN {1} {0}", _email, version);
+            });
+            LoadModels();
         }
 
         public void OnCompleted()

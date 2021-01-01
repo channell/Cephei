@@ -60,7 +60,7 @@ type FdBlackScholesRebateEngineModel
     Functions
 *)
     let mutable
-        _FdBlackScholesRebateEngine                = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FdBlackScholesRebateEngine (Process.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value))))
+        _FdBlackScholesRebateEngine                = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FdBlackScholesRebateEngine (Process.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value))))
     do this.Bind(_FdBlackScholesRebateEngine)
 (* 
     casting 

@@ -47,13 +47,13 @@ type RandomSequenceGeneratorModel<'RNG when 'RNG :> IRNGTraits and 'RNG : (new :
     Functions
 *)
     let mutable
-        _RandomSequenceGenerator                   = cell (fun () -> new RandomSequenceGenerator<'RNG> (dimensionality.Value, seed.Value))
-    let _dimension                                 = triv (fun () -> _RandomSequenceGenerator.Value.dimension())
+        _RandomSequenceGenerator                   = make (fun () -> new RandomSequenceGenerator<'RNG> (dimensionality.Value, seed.Value))
+    let _dimension                                 = triv _RandomSequenceGenerator (fun () -> _RandomSequenceGenerator.Value.dimension())
     let _factory                                   (dimensionality : ICell<int>) (seed : ICell<uint64>)   
-                                                   = triv (fun () -> _RandomSequenceGenerator.Value.factory(dimensionality.Value, seed.Value))
-    let _lastSequence                              = triv (fun () -> _RandomSequenceGenerator.Value.lastSequence())
-    let _nextInt32Sequence                         = triv (fun () -> _RandomSequenceGenerator.Value.nextInt32Sequence())
-    let _nextSequence                              = triv (fun () -> _RandomSequenceGenerator.Value.nextSequence())
+                                                   = triv _RandomSequenceGenerator (fun () -> _RandomSequenceGenerator.Value.factory(dimensionality.Value, seed.Value))
+    let _lastSequence                              = triv _RandomSequenceGenerator (fun () -> _RandomSequenceGenerator.Value.lastSequence())
+    let _nextInt32Sequence                         = triv _RandomSequenceGenerator (fun () -> _RandomSequenceGenerator.Value.nextInt32Sequence())
+    let _nextSequence                              = triv _RandomSequenceGenerator (fun () -> _RandomSequenceGenerator.Value.nextSequence())
     do this.Bind(_RandomSequenceGenerator)
 
 (* 
@@ -87,13 +87,13 @@ type RandomSequenceGeneratorModel1<'RNG when 'RNG :> IRNGTraits and 'RNG : (new 
     Functions
 *)
     let mutable
-        _RandomSequenceGenerator                   = cell (fun () -> new RandomSequenceGenerator<'RNG> (dimensionality.Value, rng.Value))
-    let _dimension                                 = triv (fun () -> _RandomSequenceGenerator.Value.dimension())
+        _RandomSequenceGenerator                   = make (fun () -> new RandomSequenceGenerator<'RNG> (dimensionality.Value, rng.Value))
+    let _dimension                                 = triv _RandomSequenceGenerator (fun () -> _RandomSequenceGenerator.Value.dimension())
     let _factory                                   (dimensionality : ICell<int>) (seed : ICell<uint64>)   
-                                                   = triv (fun () -> _RandomSequenceGenerator.Value.factory(dimensionality.Value, seed.Value))
-    let _lastSequence                              = triv (fun () -> _RandomSequenceGenerator.Value.lastSequence())
-    let _nextInt32Sequence                         = triv (fun () -> _RandomSequenceGenerator.Value.nextInt32Sequence())
-    let _nextSequence                              = triv (fun () -> _RandomSequenceGenerator.Value.nextSequence())
+                                                   = triv _RandomSequenceGenerator (fun () -> _RandomSequenceGenerator.Value.factory(dimensionality.Value, seed.Value))
+    let _lastSequence                              = triv _RandomSequenceGenerator (fun () -> _RandomSequenceGenerator.Value.lastSequence())
+    let _nextInt32Sequence                         = triv _RandomSequenceGenerator (fun () -> _RandomSequenceGenerator.Value.nextInt32Sequence())
+    let _nextSequence                              = triv _RandomSequenceGenerator (fun () -> _RandomSequenceGenerator.Value.nextSequence())
     do this.Bind(_RandomSequenceGenerator)
 
 (* 

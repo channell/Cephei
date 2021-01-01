@@ -47,16 +47,16 @@ type BoundaryConstraintModel
     Functions
 *)
     let mutable
-        _BoundaryConstraint                        = cell (fun () -> new BoundaryConstraint (low.Value, high.Value))
-    let _empty                                     = triv (fun () -> _BoundaryConstraint.Value.empty())
+        _BoundaryConstraint                        = make (fun () -> new BoundaryConstraint (low.Value, high.Value))
+    let _empty                                     = triv _BoundaryConstraint (fun () -> _BoundaryConstraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
-                                                   = triv (fun () -> _BoundaryConstraint.Value.lowerBound(parameters.Value))
+                                                   = triv _BoundaryConstraint (fun () -> _BoundaryConstraint.Value.lowerBound(parameters.Value))
     let _test                                      (p : ICell<Vector>)   
-                                                   = triv (fun () -> _BoundaryConstraint.Value.test(p.Value))
+                                                   = triv _BoundaryConstraint (fun () -> _BoundaryConstraint.Value.test(p.Value))
     let _update                                    (p : ICell<Vector>) (direction : ICell<Vector>) (beta : ICell<double>)   
-                                                   = triv (fun () -> _BoundaryConstraint.Value.update(ref p.Value, direction.Value, beta.Value))
+                                                   = triv _BoundaryConstraint (fun () -> _BoundaryConstraint.Value.update(ref p.Value, direction.Value, beta.Value))
     let _upperBound                                (parameters : ICell<Vector>)   
-                                                   = triv (fun () -> _BoundaryConstraint.Value.upperBound(parameters.Value))
+                                                   = triv _BoundaryConstraint (fun () -> _BoundaryConstraint.Value.upperBound(parameters.Value))
     do this.Bind(_BoundaryConstraint)
 (* 
     casting 

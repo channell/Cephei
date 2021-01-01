@@ -48,7 +48,7 @@ type AnalyticCliquetEngineModel
     Functions
 *)
     let mutable
-        _AnalyticCliquetEngine                     = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticCliquetEngine (Process.Value))))
+        _AnalyticCliquetEngine                     = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticCliquetEngine (Process.Value))))
     do this.Bind(_AnalyticCliquetEngine)
 (* 
     casting 

@@ -43,14 +43,14 @@ type LevenbergMarquardtModel
     Functions
 *)
     let mutable
-        _LevenbergMarquardt                        = cell (fun () -> new LevenbergMarquardt ())
+        _LevenbergMarquardt                        = make (fun () -> new LevenbergMarquardt ())
     let _fcn                                       (m : ICell<int>) (n : ICell<int>) (x : ICell<Vector>) (iflag : ICell<int>)   
-                                                   = triv (fun () -> _LevenbergMarquardt.Value.fcn(m.Value, n.Value, x.Value, iflag.Value))
-    let _getInfo                                   = triv (fun () -> _LevenbergMarquardt.Value.getInfo())
+                                                   = triv _LevenbergMarquardt (fun () -> _LevenbergMarquardt.Value.fcn(m.Value, n.Value, x.Value, iflag.Value))
+    let _getInfo                                   = triv _LevenbergMarquardt (fun () -> _LevenbergMarquardt.Value.getInfo())
     let _jacFcn                                    (m : ICell<int>) (n : ICell<int>) (x : ICell<Vector>) (iflag : ICell<int>)   
-                                                   = triv (fun () -> _LevenbergMarquardt.Value.jacFcn(m.Value, n.Value, x.Value, iflag.Value))
+                                                   = triv _LevenbergMarquardt (fun () -> _LevenbergMarquardt.Value.jacFcn(m.Value, n.Value, x.Value, iflag.Value))
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
-                                                   = triv (fun () -> _LevenbergMarquardt.Value.minimize(P.Value, endCriteria.Value))
+                                                   = triv _LevenbergMarquardt (fun () -> _LevenbergMarquardt.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_LevenbergMarquardt)
 (* 
     casting 
@@ -102,14 +102,14 @@ type LevenbergMarquardtModel1
     Functions
 *)
     let mutable
-        _LevenbergMarquardt                        = cell (fun () -> new LevenbergMarquardt (epsfcn.Value, xtol.Value, gtol.Value, useCostFunctionsJacobian.Value))
+        _LevenbergMarquardt                        = make (fun () -> new LevenbergMarquardt (epsfcn.Value, xtol.Value, gtol.Value, useCostFunctionsJacobian.Value))
     let _fcn                                       (m : ICell<int>) (n : ICell<int>) (x : ICell<Vector>) (iflag : ICell<int>)   
-                                                   = triv (fun () -> _LevenbergMarquardt.Value.fcn(m.Value, n.Value, x.Value, iflag.Value))
-    let _getInfo                                   = triv (fun () -> _LevenbergMarquardt.Value.getInfo())
+                                                   = triv _LevenbergMarquardt (fun () -> _LevenbergMarquardt.Value.fcn(m.Value, n.Value, x.Value, iflag.Value))
+    let _getInfo                                   = triv _LevenbergMarquardt (fun () -> _LevenbergMarquardt.Value.getInfo())
     let _jacFcn                                    (m : ICell<int>) (n : ICell<int>) (x : ICell<Vector>) (iflag : ICell<int>)   
-                                                   = triv (fun () -> _LevenbergMarquardt.Value.jacFcn(m.Value, n.Value, x.Value, iflag.Value))
+                                                   = triv _LevenbergMarquardt (fun () -> _LevenbergMarquardt.Value.jacFcn(m.Value, n.Value, x.Value, iflag.Value))
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
-                                                   = triv (fun () -> _LevenbergMarquardt.Value.minimize(P.Value, endCriteria.Value))
+                                                   = triv _LevenbergMarquardt (fun () -> _LevenbergMarquardt.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_LevenbergMarquardt)
 (* 
     casting 

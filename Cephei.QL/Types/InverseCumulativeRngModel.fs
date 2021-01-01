@@ -45,8 +45,8 @@ type InverseCumulativeRngModel<'RNG, 'IC when 'RNG :> IRNGTraits and 'IC :> IVal
     Functions
 *)
     let mutable
-        _InverseCumulativeRng                      = cell (fun () -> new InverseCumulativeRng<'RNG,'IC> (uniformGenerator.Value))
-    let _next                                      = triv (fun () -> _InverseCumulativeRng.Value.next())
+        _InverseCumulativeRng                      = make (fun () -> new InverseCumulativeRng<'RNG,'IC> (uniformGenerator.Value))
+    let _next                                      = triv _InverseCumulativeRng (fun () -> _InverseCumulativeRng.Value.next())
     do this.Bind(_InverseCumulativeRng)
 
 (* 

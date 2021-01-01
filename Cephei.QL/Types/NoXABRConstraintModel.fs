@@ -42,19 +42,19 @@ type NoXABRConstraintModel
     Functions
 *)
     let mutable
-        _NoXABRConstraint                          = cell (fun () -> new NoXABRConstraint ())
+        _NoXABRConstraint                          = make (fun () -> new NoXABRConstraint ())
     let _config                                    (costFunction : ICell<ProjectedCostFunction>) (coeff : ICell<XABRCoeffHolder<'Model>>) (forward : ICell<double>)   
-                                                   = triv (fun () -> _NoXABRConstraint.Value.config(costFunction.Value, coeff.Value, forward.Value)
-                                                                     _NoXABRConstraint.Value)
-    let _empty                                     = triv (fun () -> _NoXABRConstraint.Value.empty())
+                                                   = triv _NoXABRConstraint (fun () -> _NoXABRConstraint.Value.config(costFunction.Value, coeff.Value, forward.Value)
+                                                                                       _NoXABRConstraint.Value)
+    let _empty                                     = triv _NoXABRConstraint (fun () -> _NoXABRConstraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
-                                                   = triv (fun () -> _NoXABRConstraint.Value.lowerBound(parameters.Value))
+                                                   = triv _NoXABRConstraint (fun () -> _NoXABRConstraint.Value.lowerBound(parameters.Value))
     let _test                                      (p : ICell<Vector>)   
-                                                   = triv (fun () -> _NoXABRConstraint.Value.test(p.Value))
+                                                   = triv _NoXABRConstraint (fun () -> _NoXABRConstraint.Value.test(p.Value))
     let _update                                    (p : ICell<Vector>) (direction : ICell<Vector>) (beta : ICell<double>)   
-                                                   = triv (fun () -> _NoXABRConstraint.Value.update(ref p.Value, direction.Value, beta.Value))
+                                                   = triv _NoXABRConstraint (fun () -> _NoXABRConstraint.Value.update(ref p.Value, direction.Value, beta.Value))
     let _upperBound                                (parameters : ICell<Vector>)   
-                                                   = triv (fun () -> _NoXABRConstraint.Value.upperBound(parameters.Value))
+                                                   = triv _NoXABRConstraint (fun () -> _NoXABRConstraint.Value.upperBound(parameters.Value))
     do this.Bind(_NoXABRConstraint)
 (* 
     casting 

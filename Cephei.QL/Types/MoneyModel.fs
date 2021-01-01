@@ -42,13 +42,13 @@ type MoneyModel
     Functions
 *)
     let mutable
-        _Money                                     = cell (fun () -> new Money ())
-    let _currency                                  = triv (fun () -> _Money.Value.currency)
+        _Money                                     = make (fun () -> new Money ())
+    let _currency                                  = triv _Money (fun () -> _Money.Value.currency)
     let _Equals                                    (o : ICell<Object>)   
-                                                   = triv (fun () -> _Money.Value.Equals(o.Value))
-    let _rounded                                   = triv (fun () -> _Money.Value.rounded())
-    let _ToString                                  = triv (fun () -> _Money.Value.ToString())
-    let _value                                     = triv (fun () -> _Money.Value.value)
+                                                   = triv _Money (fun () -> _Money.Value.Equals(o.Value))
+    let _rounded                                   = triv _Money (fun () -> _Money.Value.rounded())
+    let _ToString                                  = triv _Money (fun () -> _Money.Value.ToString())
+    let _value                                     = triv _Money (fun () -> _Money.Value.value)
     do this.Bind(_Money)
 (* 
     casting 
@@ -94,13 +94,13 @@ type MoneyModel1
     Functions
 *)
     let mutable
-        _Money                                     = cell (fun () -> new Money (currency.Value, value.Value))
-    let _currency                                  = triv (fun () -> _Money.Value.currency)
+        _Money                                     = make (fun () -> new Money (currency.Value, value.Value))
+    let _currency                                  = triv _Money (fun () -> _Money.Value.currency)
     let _Equals                                    (o : ICell<Object>)   
-                                                   = triv (fun () -> _Money.Value.Equals(o.Value))
-    let _rounded                                   = triv (fun () -> _Money.Value.rounded())
-    let _ToString                                  = triv (fun () -> _Money.Value.ToString())
-    let _value                                     = triv (fun () -> _Money.Value.value)
+                                                   = triv _Money (fun () -> _Money.Value.Equals(o.Value))
+    let _rounded                                   = triv _Money (fun () -> _Money.Value.rounded())
+    let _ToString                                  = triv _Money (fun () -> _Money.Value.ToString())
+    let _value                                     = triv _Money (fun () -> _Money.Value.value)
     do this.Bind(_Money)
 (* 
     casting 
@@ -148,13 +148,13 @@ type MoneyModel2
     Functions
 *)
     let mutable
-        _Money                                     = cell (fun () -> new Money (value.Value, currency.Value))
-    let _currency                                  = triv (fun () -> _Money.Value.currency)
+        _Money                                     = make (fun () -> new Money (value.Value, currency.Value))
+    let _currency                                  = triv _Money (fun () -> _Money.Value.currency)
     let _Equals                                    (o : ICell<Object>)   
-                                                   = triv (fun () -> _Money.Value.Equals(o.Value))
-    let _rounded                                   = triv (fun () -> _Money.Value.rounded())
-    let _ToString                                  = triv (fun () -> _Money.Value.ToString())
-    let _value                                     = triv (fun () -> _Money.Value.value)
+                                                   = triv _Money (fun () -> _Money.Value.Equals(o.Value))
+    let _rounded                                   = triv _Money (fun () -> _Money.Value.rounded())
+    let _ToString                                  = triv _Money (fun () -> _Money.Value.ToString())
+    let _value                                     = triv _Money (fun () -> _Money.Value.value)
     do this.Bind(_Money)
 (* 
     casting 

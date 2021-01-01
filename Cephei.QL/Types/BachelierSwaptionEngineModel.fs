@@ -54,9 +54,9 @@ type BachelierSwaptionEngineModel
     Functions
 *)
     let mutable
-        _BachelierSwaptionEngine                   = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BachelierSwaptionEngine (discountCurve.Value, vol.Value, dc.Value, model.Value))))
-    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierSwaptionEngine).Value.termStructure())
-    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierSwaptionEngine).Value.volatility())
+        _BachelierSwaptionEngine                   = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BachelierSwaptionEngine (discountCurve.Value, vol.Value, dc.Value, model.Value))))
+    let _termStructure                             = triv _BachelierSwaptionEngine (fun () -> (curryEvaluationDate _evaluationDate _BachelierSwaptionEngine).Value.termStructure())
+    let _volatility                                = triv _BachelierSwaptionEngine (fun () -> (curryEvaluationDate _evaluationDate _BachelierSwaptionEngine).Value.volatility())
     do this.Bind(_BachelierSwaptionEngine)
 (* 
     casting 
@@ -111,9 +111,9 @@ type BachelierSwaptionEngineModel1
     Functions
 *)
     let mutable
-        _BachelierSwaptionEngine                   = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BachelierSwaptionEngine (discountCurve.Value, vol.Value, model.Value))))
-    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierSwaptionEngine).Value.termStructure())
-    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierSwaptionEngine).Value.volatility())
+        _BachelierSwaptionEngine                   = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BachelierSwaptionEngine (discountCurve.Value, vol.Value, model.Value))))
+    let _termStructure                             = triv _BachelierSwaptionEngine (fun () -> (curryEvaluationDate _evaluationDate _BachelierSwaptionEngine).Value.termStructure())
+    let _volatility                                = triv _BachelierSwaptionEngine (fun () -> (curryEvaluationDate _evaluationDate _BachelierSwaptionEngine).Value.volatility())
     do this.Bind(_BachelierSwaptionEngine)
 (* 
     casting 
@@ -169,9 +169,9 @@ type BachelierSwaptionEngineModel2
     Functions
 *)
     let mutable
-        _BachelierSwaptionEngine                   = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BachelierSwaptionEngine (discountCurve.Value, vol.Value, dc.Value, model.Value))))
-    let _termStructure                             = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierSwaptionEngine).Value.termStructure())
-    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _BachelierSwaptionEngine).Value.volatility())
+        _BachelierSwaptionEngine                   = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BachelierSwaptionEngine (discountCurve.Value, vol.Value, dc.Value, model.Value))))
+    let _termStructure                             = triv _BachelierSwaptionEngine (fun () -> (curryEvaluationDate _evaluationDate _BachelierSwaptionEngine).Value.termStructure())
+    let _volatility                                = triv _BachelierSwaptionEngine (fun () -> (curryEvaluationDate _evaluationDate _BachelierSwaptionEngine).Value.volatility())
     do this.Bind(_BachelierSwaptionEngine)
 (* 
     casting 

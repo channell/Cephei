@@ -49,9 +49,9 @@ type EuropeanPathPricerModel
     Functions
 *)
     let mutable
-        _EuropeanPathPricer                        = cell (fun () -> new EuropeanPathPricer (Type.Value, strike.Value, discount.Value))
+        _EuropeanPathPricer                        = make (fun () -> new EuropeanPathPricer (Type.Value, strike.Value, discount.Value))
     let _value                                     (path : ICell<IPath>)   
-                                                   = triv (fun () -> _EuropeanPathPricer.Value.value(path.Value))
+                                                   = triv _EuropeanPathPricer (fun () -> _EuropeanPathPricer.Value.value(path.Value))
     do this.Bind(_EuropeanPathPricer)
 (* 
     casting 

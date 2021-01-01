@@ -45,12 +45,12 @@ type GaussLegendreIntegrationModel
     Functions
 *)
     let mutable
-        _GaussLegendreIntegration                  = cell (fun () -> new GaussLegendreIntegration (n.Value))
-    let _order                                     = triv (fun () -> _GaussLegendreIntegration.Value.order())
+        _GaussLegendreIntegration                  = make (fun () -> new GaussLegendreIntegration (n.Value))
+    let _order                                     = triv _GaussLegendreIntegration (fun () -> _GaussLegendreIntegration.Value.order())
     let _value                                     (f : ICell<Func<double,double>>)   
-                                                   = triv (fun () -> _GaussLegendreIntegration.Value.value(f.Value))
-    let _weights                                   = triv (fun () -> _GaussLegendreIntegration.Value.weights())
-    let _x                                         = triv (fun () -> _GaussLegendreIntegration.Value.x())
+                                                   = triv _GaussLegendreIntegration (fun () -> _GaussLegendreIntegration.Value.value(f.Value))
+    let _weights                                   = triv _GaussLegendreIntegration (fun () -> _GaussLegendreIntegration.Value.weights())
+    let _x                                         = triv _GaussLegendreIntegration (fun () -> _GaussLegendreIntegration.Value.x())
     do this.Bind(_GaussLegendreIntegration)
 (* 
     casting 

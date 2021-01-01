@@ -55,15 +55,15 @@ type FdmSimpleProcess1DMesherModel
     Functions
 *)
     let mutable
-        _FdmSimpleProcess1DMesher                  = cell (fun () -> new FdmSimpleProcess1DMesher (size.Value, Process.Value, maturity.Value, tAvgSteps.Value, epsilon.Value, mandatoryPoint.Value))
+        _FdmSimpleProcess1DMesher                  = make (fun () -> new FdmSimpleProcess1DMesher (size.Value, Process.Value, maturity.Value, tAvgSteps.Value, epsilon.Value, mandatoryPoint.Value))
     let _dminus                                    (index : ICell<int>)   
-                                                   = triv (fun () -> _FdmSimpleProcess1DMesher.Value.dminus(index.Value))
+                                                   = triv _FdmSimpleProcess1DMesher (fun () -> _FdmSimpleProcess1DMesher.Value.dminus(index.Value))
     let _dplus                                     (index : ICell<int>)   
-                                                   = triv (fun () -> _FdmSimpleProcess1DMesher.Value.dplus(index.Value))
+                                                   = triv _FdmSimpleProcess1DMesher (fun () -> _FdmSimpleProcess1DMesher.Value.dplus(index.Value))
     let _location                                  (index : ICell<int>)   
-                                                   = triv (fun () -> _FdmSimpleProcess1DMesher.Value.location(index.Value))
-    let _locations                                 = triv (fun () -> _FdmSimpleProcess1DMesher.Value.locations())
-    let _size                                      = triv (fun () -> _FdmSimpleProcess1DMesher.Value.size())
+                                                   = triv _FdmSimpleProcess1DMesher (fun () -> _FdmSimpleProcess1DMesher.Value.location(index.Value))
+    let _locations                                 = triv _FdmSimpleProcess1DMesher (fun () -> _FdmSimpleProcess1DMesher.Value.locations())
+    let _size                                      = triv _FdmSimpleProcess1DMesher (fun () -> _FdmSimpleProcess1DMesher.Value.size())
     do this.Bind(_FdmSimpleProcess1DMesher)
 (* 
     casting 

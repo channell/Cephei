@@ -45,12 +45,12 @@ type GaussChebyshevIntegrationModel
     Functions
 *)
     let mutable
-        _GaussChebyshevIntegration                 = cell (fun () -> new GaussChebyshevIntegration (n.Value))
-    let _order                                     = triv (fun () -> _GaussChebyshevIntegration.Value.order())
+        _GaussChebyshevIntegration                 = make (fun () -> new GaussChebyshevIntegration (n.Value))
+    let _order                                     = triv _GaussChebyshevIntegration (fun () -> _GaussChebyshevIntegration.Value.order())
     let _value                                     (f : ICell<Func<double,double>>)   
-                                                   = triv (fun () -> _GaussChebyshevIntegration.Value.value(f.Value))
-    let _weights                                   = triv (fun () -> _GaussChebyshevIntegration.Value.weights())
-    let _x                                         = triv (fun () -> _GaussChebyshevIntegration.Value.x())
+                                                   = triv _GaussChebyshevIntegration (fun () -> _GaussChebyshevIntegration.Value.value(f.Value))
+    let _weights                                   = triv _GaussChebyshevIntegration (fun () -> _GaussChebyshevIntegration.Value.weights())
+    let _x                                         = triv _GaussChebyshevIntegration (fun () -> _GaussChebyshevIntegration.Value.x())
     do this.Bind(_GaussChebyshevIntegration)
 (* 
     casting 

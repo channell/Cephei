@@ -42,18 +42,18 @@ type PdeBSMModel
     Functions
 *)
     let mutable
-        _PdeBSM                                    = cell (fun () -> new PdeBSM ())
+        _PdeBSM                                    = make (fun () -> new PdeBSM ())
     let _diffusion                                 (t : ICell<double>) (x : ICell<double>)   
-                                                   = triv (fun () -> _PdeBSM.Value.diffusion(t.Value, x.Value))
+                                                   = triv _PdeBSM (fun () -> _PdeBSM.Value.diffusion(t.Value, x.Value))
     let _discount                                  (t : ICell<double>) (x : ICell<double>)   
-                                                   = triv (fun () -> _PdeBSM.Value.discount(t.Value, x.Value))
+                                                   = triv _PdeBSM (fun () -> _PdeBSM.Value.discount(t.Value, x.Value))
     let _drift                                     (t : ICell<double>) (x : ICell<double>)   
-                                                   = triv (fun () -> _PdeBSM.Value.drift(t.Value, x.Value))
+                                                   = triv _PdeBSM (fun () -> _PdeBSM.Value.drift(t.Value, x.Value))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>)   
-                                                   = triv (fun () -> _PdeBSM.Value.factory(Process.Value))
+                                                   = triv _PdeBSM (fun () -> _PdeBSM.Value.factory(Process.Value))
     let _generateOperator                          (t : ICell<double>) (tg : ICell<TransformedGrid>) (L : ICell<TridiagonalOperator>)   
-                                                   = triv (fun () -> _PdeBSM.Value.generateOperator(t.Value, tg.Value, L.Value)
-                                                                     _PdeBSM.Value)
+                                                   = triv _PdeBSM (fun () -> _PdeBSM.Value.generateOperator(t.Value, tg.Value, L.Value)
+                                                                             _PdeBSM.Value)
     do this.Bind(_PdeBSM)
 (* 
     casting 
@@ -101,18 +101,18 @@ type PdeBSMModel1
     Functions
 *)
     let mutable
-        _PdeBSM                                    = cell (fun () -> new PdeBSM (Process.Value))
+        _PdeBSM                                    = make (fun () -> new PdeBSM (Process.Value))
     let _diffusion                                 (t : ICell<double>) (x : ICell<double>)   
-                                                   = triv (fun () -> _PdeBSM.Value.diffusion(t.Value, x.Value))
+                                                   = triv _PdeBSM (fun () -> _PdeBSM.Value.diffusion(t.Value, x.Value))
     let _discount                                  (t : ICell<double>) (x : ICell<double>)   
-                                                   = triv (fun () -> _PdeBSM.Value.discount(t.Value, x.Value))
+                                                   = triv _PdeBSM (fun () -> _PdeBSM.Value.discount(t.Value, x.Value))
     let _drift                                     (t : ICell<double>) (x : ICell<double>)   
-                                                   = triv (fun () -> _PdeBSM.Value.drift(t.Value, x.Value))
+                                                   = triv _PdeBSM (fun () -> _PdeBSM.Value.drift(t.Value, x.Value))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>)   
-                                                   = triv (fun () -> _PdeBSM.Value.factory(Process.Value))
+                                                   = triv _PdeBSM (fun () -> _PdeBSM.Value.factory(Process.Value))
     let _generateOperator                          (t : ICell<double>) (tg : ICell<TransformedGrid>) (L : ICell<TridiagonalOperator>)   
-                                                   = triv (fun () -> _PdeBSM.Value.generateOperator(t.Value, tg.Value, L.Value)
-                                                                     _PdeBSM.Value)
+                                                   = triv _PdeBSM (fun () -> _PdeBSM.Value.generateOperator(t.Value, tg.Value, L.Value)
+                                                                             _PdeBSM.Value)
     do this.Bind(_PdeBSM)
 (* 
     casting 

@@ -16,8 +16,7 @@ namespace Cephei.Cell
     {
         Generic.ICell<T> _source;
         IObserver<T> _target;
-        int _retry = 0;
-        internal CellObserver(Generic.ICell<T> source, IObserver<T> target)
+            internal CellObserver(Generic.ICell<T> source, IObserver<T> target)
         {
             _source = source;
             _target = target;
@@ -27,6 +26,7 @@ namespace Cephei.Cell
             {
                 try
                 {
+                    Thread.Sleep(100);
                     _target.OnNext(_source.Value);
                 }
                 catch (Exception e)
@@ -43,7 +43,6 @@ namespace Cephei.Cell
             {
                 case CellEvent.Calculate:
                     _target.OnNext(_source.Value);
-                    _retry = 0;
                     break;
 
                 case CellEvent.Delete:
@@ -51,19 +50,8 @@ namespace Cephei.Cell
                     break;
 
                 case CellEvent.Error:
-                    try
-                    {
-                        _target.OnNext(_source.Value);
-                    }
-                    catch (Exception e)
-                    {
-                        _target.OnError(e);
-                        if (root is ICell c && _retry++ < Cell.ErrorRetry)
-                        {
-                            Thread.Sleep(_retry * Cell.ErrorRetry * 100);
-                            c.OnChange(CellEvent.Calculate, this, this, DateTime.Now, session);
-                        }
-                    }
+                    if (root is ICell)
+                        _target.OnError(((ICell)root).Error);
                     break;
                 case CellEvent.Link:
                         if (_source.Parent != null && _source.Parent is Model)
@@ -103,7 +91,6 @@ namespace Cephei.Cell
     {
         Generic.ICell<T> _source;
         IObserver<KeyValuePair<ISession, KeyValuePair<string,T>>> _target;
-        int _retry = 0;
         internal SessionObserver(Generic.ICell<T> source, IObserver<KeyValuePair<ISession, KeyValuePair<string,T>>> target)
         {
             _source = source;
@@ -133,7 +120,6 @@ namespace Cephei.Cell
                     Session.Current = session;
                     _target.OnNext(new KeyValuePair<ISession, KeyValuePair<string,T>>(session, new KeyValuePair<string,T>(_source.Mnemonic, _source.Value)));
                     Session.Current = lastsession;
-                    _retry = 0;
                     break;
 
                 case CellEvent.Delete:
@@ -141,19 +127,8 @@ namespace Cephei.Cell
                     break;
 
                 case CellEvent.Error:
-                    try
-                    {
-                        _target.OnNext(new KeyValuePair<ISession, KeyValuePair<string, T>>(session, new KeyValuePair<string, T>(_source.Mnemonic, _source.Value)));
-                    }
-                    catch (Exception e)
-                    {
-                        _target.OnError(e);
-                        if (root is ICell c && _retry++ < Cell.ErrorRetry)
-                        {
-                            Thread.Sleep(_retry * Cell.ErrorRetry * 100);
-                            c.OnChange(CellEvent.Calculate, this, this, DateTime.Now, session);
-                        }
-                    }
+                    if (root is ICell)
+                        _target.OnError(((ICell)root).Error);
                     break;
                 default:
                     break;
@@ -182,7 +157,6 @@ namespace Cephei.Cell
     {
         Generic.ICell<T> _source;
         IObserver<Tuple<ISession, Generic.ICell<T>, CellEvent, ICell, DateTime>> _target;
-        int _retry = 0;
         internal TraceObserver(Generic.ICell<T> source, IObserver<Tuple<ISession, Generic.ICell<T>, CellEvent, ICell, DateTime>> target)
         {
             _source = source;
@@ -213,23 +187,11 @@ namespace Cephei.Cell
                 case CellEvent.Link:
                 case CellEvent.Calculate:
                     _target.OnNext(new Tuple<ISession, Generic.ICell<T>, CellEvent, ICell, DateTime>(session, _source, eventType, ((ICell)sender), epoch));
-                    _retry = 0;
                     break;
 
                 case CellEvent.Error:
-                    try
-                    {
-                        _target.OnNext(new Tuple<ISession, Generic.ICell<T>, CellEvent, ICell, DateTime>(session, _source, eventType, (ICell)sender, epoch));
-                    }
-                    catch (Exception e)
-                    {
-                        _target.OnError(e);
-                        if (root is ICell c && _retry++ < Cell.ErrorRetry)
-                        {
-                            Thread.Sleep(_retry * Cell.ErrorRetry * 100);
-                            c.OnChange(CellEvent.Calculate, this, this, DateTime.Now, session);
-                        }
-                    }
+                    if (root is ICell)
+                        _target.OnError(((ICell)root).Error);
                     break;
                 default:
                     break;

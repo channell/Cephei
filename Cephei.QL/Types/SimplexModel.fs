@@ -45,9 +45,9 @@ type SimplexModel
     Functions
 *)
     let mutable
-        _Simplex                                   = cell (fun () -> new Simplex (lambda.Value))
+        _Simplex                                   = make (fun () -> new Simplex (lambda.Value))
     let _minimize                                  (P : ICell<Problem>) (endCriteria : ICell<EndCriteria>)   
-                                                   = triv (fun () -> _Simplex.Value.minimize(P.Value, endCriteria.Value))
+                                                   = triv _Simplex (fun () -> _Simplex.Value.minimize(P.Value, endCriteria.Value))
     do this.Bind(_Simplex)
 (* 
     casting 

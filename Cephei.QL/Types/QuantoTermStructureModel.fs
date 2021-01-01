@@ -62,12 +62,12 @@ type QuantoTermStructureModel
     Functions
 *)
     let mutable
-        _QuantoTermStructure                       = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new QuantoTermStructure (underlyingDividendTS.Value, riskFreeTS.Value, foreignRiskFreeTS.Value, underlyingBlackVolTS.Value, strike.Value, exchRateBlackVolTS.Value, exchRateATMlevel.Value, underlyingExchRateCorrelation.Value))))
-    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _QuantoTermStructure).Value.calendar())
-    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _QuantoTermStructure).Value.dayCounter())
-    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _QuantoTermStructure).Value.maxDate())
-    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _QuantoTermStructure).Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _QuantoTermStructure).Value.settlementDays())
+        _QuantoTermStructure                       = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new QuantoTermStructure (underlyingDividendTS.Value, riskFreeTS.Value, foreignRiskFreeTS.Value, underlyingBlackVolTS.Value, strike.Value, exchRateBlackVolTS.Value, exchRateATMlevel.Value, underlyingExchRateCorrelation.Value))))
+    let _calendar                                  = triv _QuantoTermStructure (fun () -> (curryEvaluationDate _evaluationDate _QuantoTermStructure).Value.calendar())
+    let _dayCounter                                = triv _QuantoTermStructure (fun () -> (curryEvaluationDate _evaluationDate _QuantoTermStructure).Value.dayCounter())
+    let _maxDate                                   = triv _QuantoTermStructure (fun () -> (curryEvaluationDate _evaluationDate _QuantoTermStructure).Value.maxDate())
+    let _referenceDate                             = triv _QuantoTermStructure (fun () -> (curryEvaluationDate _evaluationDate _QuantoTermStructure).Value.referenceDate())
+    let _settlementDays                            = triv _QuantoTermStructure (fun () -> (curryEvaluationDate _evaluationDate _QuantoTermStructure).Value.settlementDays())
     do this.Bind(_QuantoTermStructure)
 (* 
     casting 

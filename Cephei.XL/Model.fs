@@ -46,21 +46,26 @@ module public  Model =
         | e -> "#" + e.Message :> obj
 
     let formatMnemonic (s : string) =
-        if s = null || s = "" then 
-            "NA"
-        else
-            let filter = 
-                s.ToCharArray() |>
-                Array.filter (fun i -> Char.IsLetterOrDigit (i) && not (i = '.'))
-            if Char.IsDigit( filter.[0]) then
-                "N" + new string (filter);
+        let str = 
+            if s = null || s = "" then 
+                let reference = ExcelDna.Integration.XlCall.Excel(ExcelDna.Integration.XlCall.xlfCaller) :?> ExcelDna.Integration.ExcelReference
+                let cellReference = ExcelDna.Integration.XlCall.Excel(ExcelDna.Integration.XlCall.xlfAddress, 1+reference.RowFirst, 1+reference.ColumnFirst).ToString()
+                let sheetName = ExcelDna.Integration.XlCall.Excel(ExcelDna.Integration.XlCall.xlSheetNm, reference).ToString()
+                sheetName + cellReference 
             else
-                if s.StartsWith("+") then 
-                    "+" + (new string (filter))
-                elif s.StartsWith("-") then
-                    "-" + (new string (filter))
-                else
-                    new string (filter)
+                s
+        let filter = 
+            s.ToCharArray() |>
+            Array.filter (fun i -> Char.IsLetterOrDigit (i) && not (i = '.'))
+        if Char.IsDigit( filter.[0]) then
+            "N" + new string (filter);
+        else
+            if s.StartsWith("+") then 
+                "+" + (new string (filter))
+            elif s.StartsWith("-") then
+                "-" + (new string (filter))
+            else
+                new string (filter)
 
     let getState () = 
         let modelName = "ModelState"
@@ -131,13 +136,14 @@ module public  Model =
     // Register a functor to create a cell if requried
     let specify (spec : spec) : obj =
         _state.Value.Rtd.[spec.mnemonic] <- spec
-        let xlv = xlInterface.ModelRTD spec.mnemonic (spec.hash.ToString()) 
+        let xlv = 
+            if _state.Value.Model.ContainsKey(spec.mnemonic) && _state.Value.Model.[spec.mnemonic].State = CellState.Error then
+                xlInterface.ModelRTD spec.mnemonic (spec.hash.ToString() + "#") // + DateTime.Now.Ticks.ToString()) // force recalc if there is an error
+            else
+                xlInterface.ModelRTD spec.mnemonic (spec.hash.ToString()) 
         if xlv = null then 
             add spec.mnemonic |> ignore
             spec.mnemonic :> obj
-        elif xlv :? string && (xlv :?> string).StartsWith("#") then
-            // trigger reeval, and re-schedule of RTD call 
-            (xlInterface.ModelRTD spec.mnemonic (spec.hash.ToString() + "/"))
         else
             xlv
 
@@ -364,21 +370,19 @@ module public  Model =
          {0} : obj)
         = 
         if not (Model.IsInFunctionWizard()) then
-
             try
-
-            let _{0} = Helper.toModel<{3}, obj> {0} \"{0}\"  
-            let builder (current : ICell) = withMnemonic mnemonic (_{0}.cell :?> {3}).{1} :> ICell
-            let format (o : {2}) (l:string) = Model.genericFormat o
-            let source () = (_{0}.source + \".{1}\")
-            let hash = Helper.hashFold [| _{0}.cell |]
-            Model.specify 
-                {{ mnemonic = Model.formatMnemonic mnemonic
-                ; creator = builder
-                ; subscriber = Helper.subscriber format
-                ; source = source 
-                ; hash = hash
-                }} :?> string
+                let _{0} = Helper.toModel<{3}, obj> {0} \"{0}\"  
+                let builder (current : ICell) = withMnemonic mnemonic (_{0}.cell :?> {3}).{1} :> ICell
+                let format (o : {2}) (l:string) = Model.genericFormat o
+                let source () = (_{0}.source + \".{1}\")
+                let hash = Helper.hashFold [| _{0}.cell |]
+                Model.specify 
+                    {{ mnemonic = Model.formatMnemonic mnemonic
+                    ; creator = builder
+                    ; subscriber = Helper.subscriber format
+                    ; source = source 
+                    ; hash = hash
+                    }} :?> string
             with
             | _ as e ->  \"#\" + e.Message
         else
@@ -425,7 +429,6 @@ module {10}Function =
 {4}
         = 
         if not (Model.IsInFunctionWizard()) then
-
             try
 {5}
                 let builder (current : ICell) = withMnemonic mnemonic (new {10}

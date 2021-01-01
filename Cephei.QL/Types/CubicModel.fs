@@ -55,11 +55,11 @@ type CubicModel
     Functions
 *)
     let mutable
-        _Cubic                                     = cell (fun () -> new Cubic (da.Value, monotonic.Value, leftCondition.Value, leftConditionValue.Value, rightCondition.Value, rightConditionValue.Value))
-    let _global                                    = triv (fun () -> _Cubic.Value.GLOBAL())
+        _Cubic                                     = make (fun () -> new Cubic (da.Value, monotonic.Value, leftCondition.Value, leftConditionValue.Value, rightCondition.Value, rightConditionValue.Value))
+    let _global                                    = triv _Cubic (fun () -> _Cubic.Value.GLOBAL())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _Cubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
-    let _requiredPoints                            = triv (fun () -> _Cubic.Value.requiredPoints)
+                                                   = triv _Cubic (fun () -> _Cubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
+    let _requiredPoints                            = triv _Cubic (fun () -> _Cubic.Value.requiredPoints)
     do this.Bind(_Cubic)
 (* 
     casting 
@@ -104,11 +104,11 @@ type CubicModel1
     Functions
 *)
     let mutable
-        _Cubic                                     = cell (fun () -> new Cubic ())
-    let _global                                    = triv (fun () -> _Cubic.Value.GLOBAL())
+        _Cubic                                     = make (fun () -> new Cubic ())
+    let _global                                    = triv _Cubic (fun () -> _Cubic.Value.GLOBAL())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _Cubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
-    let _requiredPoints                            = triv (fun () -> _Cubic.Value.requiredPoints)
+                                                   = triv _Cubic (fun () -> _Cubic.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
+    let _requiredPoints                            = triv _Cubic (fun () -> _Cubic.Value.requiredPoints)
     do this.Bind(_Cubic)
 (* 
     casting 

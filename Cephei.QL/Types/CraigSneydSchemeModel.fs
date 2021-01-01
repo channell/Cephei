@@ -51,15 +51,15 @@ type CraigSneydSchemeModel
     Functions
 *)
     let mutable
-        _CraigSneydScheme                          = cell (fun () -> new CraigSneydScheme (theta.Value, mu.Value, map.Value, bcSet.Value))
+        _CraigSneydScheme                          = make (fun () -> new CraigSneydScheme (theta.Value, mu.Value, map.Value, bcSet.Value))
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
-                                                   = triv (fun () -> _CraigSneydScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
+                                                   = triv _CraigSneydScheme (fun () -> _CraigSneydScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _CraigSneydScheme.Value.setStep(dt.Value)
-                                                                     _CraigSneydScheme.Value)
+                                                   = triv _CraigSneydScheme (fun () -> _CraigSneydScheme.Value.setStep(dt.Value)
+                                                                                       _CraigSneydScheme.Value)
     let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _CraigSneydScheme.Value.step(ref a.Value, t.Value, theta.Value)
-                                                                     _CraigSneydScheme.Value)
+                                                   = triv _CraigSneydScheme (fun () -> _CraigSneydScheme.Value.step(ref a.Value, t.Value, theta.Value)
+                                                                                       _CraigSneydScheme.Value)
     do this.Bind(_CraigSneydScheme)
 (* 
     casting 
@@ -104,15 +104,15 @@ type CraigSneydSchemeModel1
     Functions
 *)
     let mutable
-        _CraigSneydScheme                          = cell (fun () -> new CraigSneydScheme ())
+        _CraigSneydScheme                          = make (fun () -> new CraigSneydScheme ())
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
-                                                   = triv (fun () -> _CraigSneydScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
+                                                   = triv _CraigSneydScheme (fun () -> _CraigSneydScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _CraigSneydScheme.Value.setStep(dt.Value)
-                                                                     _CraigSneydScheme.Value)
+                                                   = triv _CraigSneydScheme (fun () -> _CraigSneydScheme.Value.setStep(dt.Value)
+                                                                                       _CraigSneydScheme.Value)
     let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _CraigSneydScheme.Value.step(ref a.Value, t.Value, theta.Value)
-                                                                     _CraigSneydScheme.Value)
+                                                   = triv _CraigSneydScheme (fun () -> _CraigSneydScheme.Value.step(ref a.Value, t.Value, theta.Value)
+                                                                                       _CraigSneydScheme.Value)
     do this.Bind(_CraigSneydScheme)
 (* 
     casting 

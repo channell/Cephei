@@ -45,18 +45,18 @@ type LmConstWrapperVolatilityModelModel
     Functions
 *)
     let mutable
-        _LmConstWrapperVolatilityModel             = cell (fun () -> new LmConstWrapperVolatilityModel (volaModel.Value))
+        _LmConstWrapperVolatilityModel             = make (fun () -> new LmConstWrapperVolatilityModel (volaModel.Value))
     let _integratedVariance                        (i : ICell<int>) (j : ICell<int>) (u : ICell<double>) (x : ICell<Vector>)   
-                                                   = triv (fun () -> _LmConstWrapperVolatilityModel.Value.integratedVariance(i.Value, j.Value, u.Value, x.Value))
+                                                   = triv _LmConstWrapperVolatilityModel (fun () -> _LmConstWrapperVolatilityModel.Value.integratedVariance(i.Value, j.Value, u.Value, x.Value))
     let _volatility                                (i : ICell<int>) (t : ICell<double>) (x : ICell<Vector>)   
-                                                   = triv (fun () -> _LmConstWrapperVolatilityModel.Value.volatility(i.Value, t.Value, x.Value))
+                                                   = triv _LmConstWrapperVolatilityModel (fun () -> _LmConstWrapperVolatilityModel.Value.volatility(i.Value, t.Value, x.Value))
     let _volatility1                               (t : ICell<double>) (x : ICell<Vector>)   
-                                                   = triv (fun () -> _LmConstWrapperVolatilityModel.Value.volatility(t.Value, x.Value))
-    let _parameters                                = triv (fun () -> _LmConstWrapperVolatilityModel.Value.parameters())
+                                                   = triv _LmConstWrapperVolatilityModel (fun () -> _LmConstWrapperVolatilityModel.Value.volatility(t.Value, x.Value))
+    let _parameters                                = triv _LmConstWrapperVolatilityModel (fun () -> _LmConstWrapperVolatilityModel.Value.parameters())
     let _setParams                                 (arguments : ICell<Generic.List<Parameter>>)   
-                                                   = triv (fun () -> _LmConstWrapperVolatilityModel.Value.setParams(arguments.Value)
-                                                                     _LmConstWrapperVolatilityModel.Value)
-    let _size                                      = triv (fun () -> _LmConstWrapperVolatilityModel.Value.size())
+                                                   = triv _LmConstWrapperVolatilityModel (fun () -> _LmConstWrapperVolatilityModel.Value.setParams(arguments.Value)
+                                                                                                    _LmConstWrapperVolatilityModel.Value)
+    let _size                                      = triv _LmConstWrapperVolatilityModel (fun () -> _LmConstWrapperVolatilityModel.Value.size())
     do this.Bind(_LmConstWrapperVolatilityModel)
 (* 
     casting 

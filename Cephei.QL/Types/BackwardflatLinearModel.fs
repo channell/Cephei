@@ -42,9 +42,9 @@ type BackwardflatLinearModel
     Functions
 *)
     let mutable
-        _BackwardflatLinear                        = cell (fun () -> new BackwardflatLinear ())
+        _BackwardflatLinear                        = make (fun () -> new BackwardflatLinear ())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (xEnd : ICell<int>) (yBegin : ICell<Generic.List<double>>) (yEnd : ICell<int>) (z : ICell<Matrix>)   
-                                                   = triv (fun () -> _BackwardflatLinear.Value.interpolate(xBegin.Value, xEnd.Value, yBegin.Value, yEnd.Value, z.Value))
+                                                   = triv _BackwardflatLinear (fun () -> _BackwardflatLinear.Value.interpolate(xBegin.Value, xEnd.Value, yBegin.Value, yEnd.Value, z.Value))
     do this.Bind(_BackwardflatLinear)
 (* 
     casting 

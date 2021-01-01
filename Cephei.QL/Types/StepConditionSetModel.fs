@@ -42,10 +42,10 @@ type StepConditionSetModel<'array_type when 'array_type :> Vector>
     Functions
 *)
     let mutable
-        _StepConditionSet                          = cell (fun () -> new StepConditionSet<'array_type> ())
+        _StepConditionSet                          = make (fun () -> new StepConditionSet<'array_type> ())
     let _applyTo                                   (o : ICell<Object>) (t : ICell<double>)   
-                                                   = triv (fun () -> _StepConditionSet.Value.applyTo(o.Value, t.Value)
-                                                                     _StepConditionSet.Value)
+                                                   = triv _StepConditionSet (fun () -> _StepConditionSet.Value.applyTo(o.Value, t.Value)
+                                                                                       _StepConditionSet.Value)
     do this.Bind(_StepConditionSet)
 
 (* 

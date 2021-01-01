@@ -48,7 +48,7 @@ type AnalyticContinuousGeometricAveragePriceAsianEngineModel
     Functions
 *)
     let mutable
-        _AnalyticContinuousGeometricAveragePriceAsianEngine = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticContinuousGeometricAveragePriceAsianEngine (Process.Value))))
+        _AnalyticContinuousGeometricAveragePriceAsianEngine = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticContinuousGeometricAveragePriceAsianEngine (Process.Value))))
     do this.Bind(_AnalyticContinuousGeometricAveragePriceAsianEngine)
 (* 
     casting 

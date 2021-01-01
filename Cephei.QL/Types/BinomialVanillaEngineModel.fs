@@ -50,7 +50,7 @@ type BinomialVanillaEngineModel<'T when 'T :> ITreeFactory<'T> and 'T :> ITree a
     Functions
 *)
     let mutable
-        _BinomialVanillaEngine                     = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BinomialVanillaEngine<'T> (Process.Value, timeSteps.Value))))
+        _BinomialVanillaEngine                     = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BinomialVanillaEngine<'T> (Process.Value, timeSteps.Value))))
     do this.Bind(_BinomialVanillaEngine)
 
 (* 

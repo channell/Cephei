@@ -48,7 +48,7 @@ type AnalyticContinuousFixedLookbackEngineModel
     Functions
 *)
     let mutable
-        _AnalyticContinuousFixedLookbackEngine     = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticContinuousFixedLookbackEngine (Process.Value))))
+        _AnalyticContinuousFixedLookbackEngine     = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticContinuousFixedLookbackEngine (Process.Value))))
     do this.Bind(_AnalyticContinuousFixedLookbackEngine)
 (* 
     casting 

@@ -53,11 +53,11 @@ type HelperModel
     Functions
 *)
     let mutable
-        _Helper                                    = cell (fun () -> new Helper (i.Value, xMin.Value, dx.Value, discountBondPrice.Value, tree.Value))
+        _Helper                                    = make (fun () -> new Helper (i.Value, xMin.Value, dx.Value, discountBondPrice.Value, tree.Value))
     let _value                                     (theta : ICell<double>)   
-                                                   = triv (fun () -> _Helper.Value.value(theta.Value))
+                                                   = triv _Helper (fun () -> _Helper.Value.value(theta.Value))
     let _derivative                                (x : ICell<double>)   
-                                                   = triv (fun () -> _Helper.Value.derivative(x.Value))
+                                                   = triv _Helper (fun () -> _Helper.Value.derivative(x.Value))
     do this.Bind(_Helper)
 (* 
     casting 

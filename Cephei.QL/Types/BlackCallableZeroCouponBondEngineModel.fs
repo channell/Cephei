@@ -50,7 +50,7 @@ type BlackCallableZeroCouponBondEngineModel
     Functions
 *)
     let mutable
-        _BlackCallableZeroCouponBondEngine         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackCallableZeroCouponBondEngine (yieldVolStructure.Value, discountCurve.Value))))
+        _BlackCallableZeroCouponBondEngine         = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackCallableZeroCouponBondEngine (yieldVolStructure.Value, discountCurve.Value))))
     do this.Bind(_BlackCallableZeroCouponBondEngine)
 (* 
     casting 
@@ -99,7 +99,7 @@ type BlackCallableZeroCouponBondEngineModel1
     Functions
 *)
     let mutable
-        _BlackCallableZeroCouponBondEngine         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackCallableZeroCouponBondEngine (fwdYieldVol.Value, discountCurve.Value))))
+        _BlackCallableZeroCouponBondEngine         = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackCallableZeroCouponBondEngine (fwdYieldVol.Value, discountCurve.Value))))
     do this.Bind(_BlackCallableZeroCouponBondEngine)
 (* 
     casting 

@@ -54,17 +54,17 @@ type FDVanillaEngineModel
     Functions
 *)
     let mutable
-        _FDVanillaEngine                           = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FDVanillaEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))))
+        _FDVanillaEngine                           = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FDVanillaEngine (Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))))
     let _calculate                                 (r : ICell<IPricingEngineResults>)   
-                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.calculate(r.Value)
-                                                                     _FDVanillaEngine.Value)
-    let _ensureStrikeInGrid                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.ensureStrikeInGrid()
-                                                                     _FDVanillaEngine.Value)
+                                                   = triv _FDVanillaEngine (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.calculate(r.Value)
+                                                                                      _FDVanillaEngine.Value)
+    let _ensureStrikeInGrid                        = triv _FDVanillaEngine (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.ensureStrikeInGrid()
+                                                                                      _FDVanillaEngine.Value)
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
-                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
-    let _getResidualTime                           = triv (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.getResidualTime())
-    let _grid                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.grid())
-    let _intrinsicValues_                          = triv (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.intrinsicValues_)
+                                                   = triv _FDVanillaEngine (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+    let _getResidualTime                           = triv _FDVanillaEngine (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.getResidualTime())
+    let _grid                                      = triv _FDVanillaEngine (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.grid())
+    let _intrinsicValues_                          = triv _FDVanillaEngine (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.intrinsicValues_)
     do this.Bind(_FDVanillaEngine)
 (* 
     casting 
@@ -118,17 +118,17 @@ type FDVanillaEngineModel1
     Functions
 *)
     let mutable
-        _FDVanillaEngine                           = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FDVanillaEngine ())))
+        _FDVanillaEngine                           = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FDVanillaEngine ())))
     let _calculate                                 (r : ICell<IPricingEngineResults>)   
-                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.calculate(r.Value)
-                                                                     _FDVanillaEngine.Value)
-    let _ensureStrikeInGrid                        = triv (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.ensureStrikeInGrid()
-                                                                     _FDVanillaEngine.Value)
+                                                   = triv _FDVanillaEngine (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.calculate(r.Value)
+                                                                                      _FDVanillaEngine.Value)
+    let _ensureStrikeInGrid                        = triv _FDVanillaEngine (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.ensureStrikeInGrid()
+                                                                                      _FDVanillaEngine.Value)
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>) (timeSteps : ICell<int>) (gridPoints : ICell<int>) (timeDependent : ICell<bool>)   
-                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
-    let _getResidualTime                           = triv (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.getResidualTime())
-    let _grid                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.grid())
-    let _intrinsicValues_                          = triv (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.intrinsicValues_)
+                                                   = triv _FDVanillaEngine (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.factory(Process.Value, timeSteps.Value, gridPoints.Value, timeDependent.Value))
+    let _getResidualTime                           = triv _FDVanillaEngine (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.getResidualTime())
+    let _grid                                      = triv _FDVanillaEngine (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.grid())
+    let _intrinsicValues_                          = triv _FDVanillaEngine (fun () -> (curryEvaluationDate _evaluationDate _FDVanillaEngine).Value.intrinsicValues_)
     do this.Bind(_FDVanillaEngine)
 (* 
     casting 

@@ -56,7 +56,7 @@ type BinomialBarrierEngineModel
     Functions
 *)
     let mutable
-        _BinomialBarrierEngine                     = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BinomialBarrierEngine (getTree.Value, getAsset.Value, Process.Value, timeSteps.Value, maxTimeSteps.Value))))
+        _BinomialBarrierEngine                     = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BinomialBarrierEngine (getTree.Value, getAsset.Value, Process.Value, timeSteps.Value, maxTimeSteps.Value))))
     do this.Bind(_BinomialBarrierEngine)
 (* 
     casting 

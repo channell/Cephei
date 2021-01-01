@@ -47,10 +47,10 @@ type LinearRegressionModel
     Functions
 *)
     let mutable
-        _LinearRegression                          = cell (fun () -> new LinearRegression (x.Value, y.Value))
-    let _coefficients                              = triv (fun () -> _LinearRegression.Value.coefficients())
-    let _residuals                                 = triv (fun () -> _LinearRegression.Value.residuals())
-    let _standardErrors                            = triv (fun () -> _LinearRegression.Value.standardErrors())
+        _LinearRegression                          = make (fun () -> new LinearRegression (x.Value, y.Value))
+    let _coefficients                              = triv _LinearRegression (fun () -> _LinearRegression.Value.coefficients())
+    let _residuals                                 = triv _LinearRegression (fun () -> _LinearRegression.Value.residuals())
+    let _standardErrors                            = triv _LinearRegression (fun () -> _LinearRegression.Value.standardErrors())
     do this.Bind(_LinearRegression)
 (* 
     casting 
@@ -95,10 +95,10 @@ type LinearRegressionModel1
     Functions
 *)
     let mutable
-        _LinearRegression                          = cell (fun () -> new LinearRegression (x.Value, y.Value))
-    let _coefficients                              = triv (fun () -> _LinearRegression.Value.coefficients())
-    let _residuals                                 = triv (fun () -> _LinearRegression.Value.residuals())
-    let _standardErrors                            = triv (fun () -> _LinearRegression.Value.standardErrors())
+        _LinearRegression                          = make (fun () -> new LinearRegression (x.Value, y.Value))
+    let _coefficients                              = triv _LinearRegression (fun () -> _LinearRegression.Value.coefficients())
+    let _residuals                                 = triv _LinearRegression (fun () -> _LinearRegression.Value.residuals())
+    let _standardErrors                            = triv _LinearRegression (fun () -> _LinearRegression.Value.standardErrors())
     do this.Bind(_LinearRegression)
 (* 
     casting 

@@ -51,15 +51,15 @@ type NonLinearLeastSquareModel
     Functions
 *)
     let mutable
-        _NonLinearLeastSquare                      = cell (fun () -> new NonLinearLeastSquare (c.Value, accuracy.Value, maxiter.Value, om.Value))
-    let _exitFlag                                  = triv (fun () -> _NonLinearLeastSquare.Value.exitFlag())
-    let _lastValue                                 = triv (fun () -> _NonLinearLeastSquare.Value.lastValue())
+        _NonLinearLeastSquare                      = make (fun () -> new NonLinearLeastSquare (c.Value, accuracy.Value, maxiter.Value, om.Value))
+    let _exitFlag                                  = triv _NonLinearLeastSquare (fun () -> _NonLinearLeastSquare.Value.exitFlag())
+    let _lastValue                                 = triv _NonLinearLeastSquare (fun () -> _NonLinearLeastSquare.Value.lastValue())
     let _perform                                   (lsProblem : ICell<LeastSquareProblem>)   
-                                                   = triv (fun () -> _NonLinearLeastSquare.Value.perform(ref lsProblem.Value))
-    let _residualNorm                              = triv (fun () -> _NonLinearLeastSquare.Value.residualNorm())
+                                                   = triv _NonLinearLeastSquare (fun () -> _NonLinearLeastSquare.Value.perform(ref lsProblem.Value))
+    let _residualNorm                              = triv _NonLinearLeastSquare (fun () -> _NonLinearLeastSquare.Value.residualNorm())
     let _setInitialValue                           (initialValue : ICell<Vector>)   
-                                                   = triv (fun () -> _NonLinearLeastSquare.Value.setInitialValue(initialValue.Value)
-                                                                     _NonLinearLeastSquare.Value)
+                                                   = triv _NonLinearLeastSquare (fun () -> _NonLinearLeastSquare.Value.setInitialValue(initialValue.Value)
+                                                                                           _NonLinearLeastSquare.Value)
     do this.Bind(_NonLinearLeastSquare)
 (* 
     casting 
@@ -110,15 +110,15 @@ type NonLinearLeastSquareModel1
     Functions
 *)
     let mutable
-        _NonLinearLeastSquare                      = cell (fun () -> new NonLinearLeastSquare (c.Value, accuracy.Value))
-    let _exitFlag                                  = triv (fun () -> _NonLinearLeastSquare.Value.exitFlag())
-    let _lastValue                                 = triv (fun () -> _NonLinearLeastSquare.Value.lastValue())
+        _NonLinearLeastSquare                      = make (fun () -> new NonLinearLeastSquare (c.Value, accuracy.Value))
+    let _exitFlag                                  = triv _NonLinearLeastSquare (fun () -> _NonLinearLeastSquare.Value.exitFlag())
+    let _lastValue                                 = triv _NonLinearLeastSquare (fun () -> _NonLinearLeastSquare.Value.lastValue())
     let _perform                                   (lsProblem : ICell<LeastSquareProblem>)   
-                                                   = triv (fun () -> _NonLinearLeastSquare.Value.perform(ref lsProblem.Value))
-    let _residualNorm                              = triv (fun () -> _NonLinearLeastSquare.Value.residualNorm())
+                                                   = triv _NonLinearLeastSquare (fun () -> _NonLinearLeastSquare.Value.perform(ref lsProblem.Value))
+    let _residualNorm                              = triv _NonLinearLeastSquare (fun () -> _NonLinearLeastSquare.Value.residualNorm())
     let _setInitialValue                           (initialValue : ICell<Vector>)   
-                                                   = triv (fun () -> _NonLinearLeastSquare.Value.setInitialValue(initialValue.Value)
-                                                                     _NonLinearLeastSquare.Value)
+                                                   = triv _NonLinearLeastSquare (fun () -> _NonLinearLeastSquare.Value.setInitialValue(initialValue.Value)
+                                                                                           _NonLinearLeastSquare.Value)
     do this.Bind(_NonLinearLeastSquare)
 (* 
     casting 
@@ -169,15 +169,15 @@ type NonLinearLeastSquareModel2
     Functions
 *)
     let mutable
-        _NonLinearLeastSquare                      = cell (fun () -> new NonLinearLeastSquare (c.Value, accuracy.Value, maxiter.Value))
-    let _exitFlag                                  = triv (fun () -> _NonLinearLeastSquare.Value.exitFlag())
-    let _lastValue                                 = triv (fun () -> _NonLinearLeastSquare.Value.lastValue())
+        _NonLinearLeastSquare                      = make (fun () -> new NonLinearLeastSquare (c.Value, accuracy.Value, maxiter.Value))
+    let _exitFlag                                  = triv _NonLinearLeastSquare (fun () -> _NonLinearLeastSquare.Value.exitFlag())
+    let _lastValue                                 = triv _NonLinearLeastSquare (fun () -> _NonLinearLeastSquare.Value.lastValue())
     let _perform                                   (lsProblem : ICell<LeastSquareProblem>)   
-                                                   = triv (fun () -> _NonLinearLeastSquare.Value.perform(ref lsProblem.Value))
-    let _residualNorm                              = triv (fun () -> _NonLinearLeastSquare.Value.residualNorm())
+                                                   = triv _NonLinearLeastSquare (fun () -> _NonLinearLeastSquare.Value.perform(ref lsProblem.Value))
+    let _residualNorm                              = triv _NonLinearLeastSquare (fun () -> _NonLinearLeastSquare.Value.residualNorm())
     let _setInitialValue                           (initialValue : ICell<Vector>)   
-                                                   = triv (fun () -> _NonLinearLeastSquare.Value.setInitialValue(initialValue.Value)
-                                                                     _NonLinearLeastSquare.Value)
+                                                   = triv _NonLinearLeastSquare (fun () -> _NonLinearLeastSquare.Value.setInitialValue(initialValue.Value)
+                                                                                           _NonLinearLeastSquare.Value)
     do this.Bind(_NonLinearLeastSquare)
 (* 
     casting 
@@ -225,15 +225,15 @@ type NonLinearLeastSquareModel3
     Functions
 *)
     let mutable
-        _NonLinearLeastSquare                      = cell (fun () -> new NonLinearLeastSquare (c.Value))
-    let _exitFlag                                  = triv (fun () -> _NonLinearLeastSquare.Value.exitFlag())
-    let _lastValue                                 = triv (fun () -> _NonLinearLeastSquare.Value.lastValue())
+        _NonLinearLeastSquare                      = make (fun () -> new NonLinearLeastSquare (c.Value))
+    let _exitFlag                                  = triv _NonLinearLeastSquare (fun () -> _NonLinearLeastSquare.Value.exitFlag())
+    let _lastValue                                 = triv _NonLinearLeastSquare (fun () -> _NonLinearLeastSquare.Value.lastValue())
     let _perform                                   (lsProblem : ICell<LeastSquareProblem>)   
-                                                   = triv (fun () -> _NonLinearLeastSquare.Value.perform(ref lsProblem.Value))
-    let _residualNorm                              = triv (fun () -> _NonLinearLeastSquare.Value.residualNorm())
+                                                   = triv _NonLinearLeastSquare (fun () -> _NonLinearLeastSquare.Value.perform(ref lsProblem.Value))
+    let _residualNorm                              = triv _NonLinearLeastSquare (fun () -> _NonLinearLeastSquare.Value.residualNorm())
     let _setInitialValue                           (initialValue : ICell<Vector>)   
-                                                   = triv (fun () -> _NonLinearLeastSquare.Value.setInitialValue(initialValue.Value)
-                                                                     _NonLinearLeastSquare.Value)
+                                                   = triv _NonLinearLeastSquare (fun () -> _NonLinearLeastSquare.Value.setInitialValue(initialValue.Value)
+                                                                                           _NonLinearLeastSquare.Value)
     do this.Bind(_NonLinearLeastSquare)
 (* 
     casting 

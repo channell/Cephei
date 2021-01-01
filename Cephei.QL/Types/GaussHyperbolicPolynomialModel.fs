@@ -42,18 +42,18 @@ type GaussHyperbolicPolynomialModel
     Functions
 *)
     let mutable
-        _GaussHyperbolicPolynomial                 = cell (fun () -> new GaussHyperbolicPolynomial ())
+        _GaussHyperbolicPolynomial                 = make (fun () -> new GaussHyperbolicPolynomial ())
     let _alpha                                     (i : ICell<int>)   
-                                                   = triv (fun () -> _GaussHyperbolicPolynomial.Value.alpha(i.Value))
+                                                   = triv _GaussHyperbolicPolynomial (fun () -> _GaussHyperbolicPolynomial.Value.alpha(i.Value))
     let _beta                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _GaussHyperbolicPolynomial.Value.beta(i.Value))
-    let _mu_0                                      = triv (fun () -> _GaussHyperbolicPolynomial.Value.mu_0())
+                                                   = triv _GaussHyperbolicPolynomial (fun () -> _GaussHyperbolicPolynomial.Value.beta(i.Value))
+    let _mu_0                                      = triv _GaussHyperbolicPolynomial (fun () -> _GaussHyperbolicPolynomial.Value.mu_0())
     let _w                                         (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussHyperbolicPolynomial.Value.w(x.Value))
+                                                   = triv _GaussHyperbolicPolynomial (fun () -> _GaussHyperbolicPolynomial.Value.w(x.Value))
     let _value                                     (n : ICell<int>) (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussHyperbolicPolynomial.Value.value(n.Value, x.Value))
+                                                   = triv _GaussHyperbolicPolynomial (fun () -> _GaussHyperbolicPolynomial.Value.value(n.Value, x.Value))
     let _weightedValue                             (n : ICell<int>) (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussHyperbolicPolynomial.Value.weightedValue(n.Value, x.Value))
+                                                   = triv _GaussHyperbolicPolynomial (fun () -> _GaussHyperbolicPolynomial.Value.weightedValue(n.Value, x.Value))
     do this.Bind(_GaussHyperbolicPolynomial)
 (* 
     casting 

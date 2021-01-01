@@ -48,7 +48,7 @@ type JuQuadraticApproximationEngineModel
     Functions
 *)
     let mutable
-        _JuQuadraticApproximationEngine            = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new JuQuadraticApproximationEngine (Process.Value))))
+        _JuQuadraticApproximationEngine            = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new JuQuadraticApproximationEngine (Process.Value))))
     do this.Bind(_JuQuadraticApproximationEngine)
 (* 
     casting 

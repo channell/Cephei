@@ -50,7 +50,7 @@ type BinomialConvertibleEngineModel<'T when 'T :> ITree and 'T :> ITreeFactory<'
     Functions
 *)
     let mutable
-        _BinomialConvertibleEngine                 = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BinomialConvertibleEngine<'T> (Process.Value, timeSteps.Value))))
+        _BinomialConvertibleEngine                 = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BinomialConvertibleEngine<'T> (Process.Value, timeSteps.Value))))
     do this.Bind(_BinomialConvertibleEngine)
 
 (* 

@@ -52,7 +52,7 @@ type KirkSpreadOptionEngineModel
     Functions
 *)
     let mutable
-        _KirkSpreadOptionEngine                    = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new KirkSpreadOptionEngine (process1.Value, process2.Value, correlation.Value))))
+        _KirkSpreadOptionEngine                    = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new KirkSpreadOptionEngine (process1.Value, process2.Value, correlation.Value))))
     do this.Bind(_KirkSpreadOptionEngine)
 (* 
     casting 

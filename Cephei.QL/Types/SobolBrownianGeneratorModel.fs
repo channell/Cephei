@@ -53,15 +53,15 @@ type SobolBrownianGeneratorModel
     Functions
 *)
     let mutable
-        _SobolBrownianGenerator                    = cell (fun () -> new SobolBrownianGenerator (factors.Value, steps.Value, ordering.Value, seed.Value, directionIntegers.Value))
-    let _nextPath                                  = triv (fun () -> _SobolBrownianGenerator.Value.nextPath())
+        _SobolBrownianGenerator                    = make (fun () -> new SobolBrownianGenerator (factors.Value, steps.Value, ordering.Value, seed.Value, directionIntegers.Value))
+    let _nextPath                                  = triv _SobolBrownianGenerator (fun () -> _SobolBrownianGenerator.Value.nextPath())
     let _nextStep                                  (output : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _SobolBrownianGenerator.Value.nextStep(output.Value))
-    let _numberOfFactors                           = triv (fun () -> _SobolBrownianGenerator.Value.numberOfFactors())
-    let _numberOfSteps                             = triv (fun () -> _SobolBrownianGenerator.Value.numberOfSteps())
-    let _orderedIndices                            = triv (fun () -> _SobolBrownianGenerator.Value.orderedIndices())
+                                                   = triv _SobolBrownianGenerator (fun () -> _SobolBrownianGenerator.Value.nextStep(output.Value))
+    let _numberOfFactors                           = triv _SobolBrownianGenerator (fun () -> _SobolBrownianGenerator.Value.numberOfFactors())
+    let _numberOfSteps                             = triv _SobolBrownianGenerator (fun () -> _SobolBrownianGenerator.Value.numberOfSteps())
+    let _orderedIndices                            = triv _SobolBrownianGenerator (fun () -> _SobolBrownianGenerator.Value.orderedIndices())
     let _transform                                 (variates : ICell<Generic.List<Generic.List<double>>>)   
-                                                   = triv (fun () -> _SobolBrownianGenerator.Value.transform(variates.Value))
+                                                   = triv _SobolBrownianGenerator (fun () -> _SobolBrownianGenerator.Value.transform(variates.Value))
     do this.Bind(_SobolBrownianGenerator)
 (* 
     casting 

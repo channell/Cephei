@@ -45,18 +45,18 @@ type PdeShortRateModel
     Functions
 *)
     let mutable
-        _PdeShortRate                              = cell (fun () -> new PdeShortRate (d.Value))
+        _PdeShortRate                              = make (fun () -> new PdeShortRate (d.Value))
     let _diffusion                                 (t : ICell<double>) (x : ICell<double>)   
-                                                   = triv (fun () -> _PdeShortRate.Value.diffusion(t.Value, x.Value))
+                                                   = triv _PdeShortRate (fun () -> _PdeShortRate.Value.diffusion(t.Value, x.Value))
     let _discount                                  (t : ICell<double>) (x : ICell<double>)   
-                                                   = triv (fun () -> _PdeShortRate.Value.discount(t.Value, x.Value))
+                                                   = triv _PdeShortRate (fun () -> _PdeShortRate.Value.discount(t.Value, x.Value))
     let _drift                                     (t : ICell<double>) (x : ICell<double>)   
-                                                   = triv (fun () -> _PdeShortRate.Value.drift(t.Value, x.Value))
+                                                   = triv _PdeShortRate (fun () -> _PdeShortRate.Value.drift(t.Value, x.Value))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>)   
-                                                   = triv (fun () -> _PdeShortRate.Value.factory(Process.Value))
+                                                   = triv _PdeShortRate (fun () -> _PdeShortRate.Value.factory(Process.Value))
     let _generateOperator                          (t : ICell<double>) (tg : ICell<TransformedGrid>) (L : ICell<TridiagonalOperator>)   
-                                                   = triv (fun () -> _PdeShortRate.Value.generateOperator(t.Value, tg.Value, L.Value)
-                                                                     _PdeShortRate.Value)
+                                                   = triv _PdeShortRate (fun () -> _PdeShortRate.Value.generateOperator(t.Value, tg.Value, L.Value)
+                                                                                   _PdeShortRate.Value)
     do this.Bind(_PdeShortRate)
 (* 
     casting 
@@ -102,18 +102,18 @@ type PdeShortRateModel1
     Functions
 *)
     let mutable
-        _PdeShortRate                              = cell (fun () -> new PdeShortRate ())
+        _PdeShortRate                              = make (fun () -> new PdeShortRate ())
     let _diffusion                                 (t : ICell<double>) (x : ICell<double>)   
-                                                   = triv (fun () -> _PdeShortRate.Value.diffusion(t.Value, x.Value))
+                                                   = triv _PdeShortRate (fun () -> _PdeShortRate.Value.diffusion(t.Value, x.Value))
     let _discount                                  (t : ICell<double>) (x : ICell<double>)   
-                                                   = triv (fun () -> _PdeShortRate.Value.discount(t.Value, x.Value))
+                                                   = triv _PdeShortRate (fun () -> _PdeShortRate.Value.discount(t.Value, x.Value))
     let _drift                                     (t : ICell<double>) (x : ICell<double>)   
-                                                   = triv (fun () -> _PdeShortRate.Value.drift(t.Value, x.Value))
+                                                   = triv _PdeShortRate (fun () -> _PdeShortRate.Value.drift(t.Value, x.Value))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>)   
-                                                   = triv (fun () -> _PdeShortRate.Value.factory(Process.Value))
+                                                   = triv _PdeShortRate (fun () -> _PdeShortRate.Value.factory(Process.Value))
     let _generateOperator                          (t : ICell<double>) (tg : ICell<TransformedGrid>) (L : ICell<TridiagonalOperator>)   
-                                                   = triv (fun () -> _PdeShortRate.Value.generateOperator(t.Value, tg.Value, L.Value)
-                                                                     _PdeShortRate.Value)
+                                                   = triv _PdeShortRate (fun () -> _PdeShortRate.Value.generateOperator(t.Value, tg.Value, L.Value)
+                                                                                   _PdeShortRate.Value)
     do this.Bind(_PdeShortRate)
 (* 
     casting 

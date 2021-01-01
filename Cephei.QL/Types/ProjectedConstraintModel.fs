@@ -47,16 +47,16 @@ type ProjectedConstraintModel
     Functions
 *)
     let mutable
-        _ProjectedConstraint                       = cell (fun () -> new ProjectedConstraint (Constraint.Value, projection.Value))
-    let _empty                                     = triv (fun () -> _ProjectedConstraint.Value.empty())
+        _ProjectedConstraint                       = make (fun () -> new ProjectedConstraint (Constraint.Value, projection.Value))
+    let _empty                                     = triv _ProjectedConstraint (fun () -> _ProjectedConstraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
-                                                   = triv (fun () -> _ProjectedConstraint.Value.lowerBound(parameters.Value))
+                                                   = triv _ProjectedConstraint (fun () -> _ProjectedConstraint.Value.lowerBound(parameters.Value))
     let _test                                      (p : ICell<Vector>)   
-                                                   = triv (fun () -> _ProjectedConstraint.Value.test(p.Value))
+                                                   = triv _ProjectedConstraint (fun () -> _ProjectedConstraint.Value.test(p.Value))
     let _update                                    (p : ICell<Vector>) (direction : ICell<Vector>) (beta : ICell<double>)   
-                                                   = triv (fun () -> _ProjectedConstraint.Value.update(ref p.Value, direction.Value, beta.Value))
+                                                   = triv _ProjectedConstraint (fun () -> _ProjectedConstraint.Value.update(ref p.Value, direction.Value, beta.Value))
     let _upperBound                                (parameters : ICell<Vector>)   
-                                                   = triv (fun () -> _ProjectedConstraint.Value.upperBound(parameters.Value))
+                                                   = triv _ProjectedConstraint (fun () -> _ProjectedConstraint.Value.upperBound(parameters.Value))
     do this.Bind(_ProjectedConstraint)
 (* 
     casting 
@@ -109,16 +109,16 @@ type ProjectedConstraintModel1
     Functions
 *)
     let mutable
-        _ProjectedConstraint                       = cell (fun () -> new ProjectedConstraint (Constraint.Value, parameterValues.Value, fixParameters.Value))
-    let _empty                                     = triv (fun () -> _ProjectedConstraint.Value.empty())
+        _ProjectedConstraint                       = make (fun () -> new ProjectedConstraint (Constraint.Value, parameterValues.Value, fixParameters.Value))
+    let _empty                                     = triv _ProjectedConstraint (fun () -> _ProjectedConstraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
-                                                   = triv (fun () -> _ProjectedConstraint.Value.lowerBound(parameters.Value))
+                                                   = triv _ProjectedConstraint (fun () -> _ProjectedConstraint.Value.lowerBound(parameters.Value))
     let _test                                      (p : ICell<Vector>)   
-                                                   = triv (fun () -> _ProjectedConstraint.Value.test(p.Value))
+                                                   = triv _ProjectedConstraint (fun () -> _ProjectedConstraint.Value.test(p.Value))
     let _update                                    (p : ICell<Vector>) (direction : ICell<Vector>) (beta : ICell<double>)   
-                                                   = triv (fun () -> _ProjectedConstraint.Value.update(ref p.Value, direction.Value, beta.Value))
+                                                   = triv _ProjectedConstraint (fun () -> _ProjectedConstraint.Value.update(ref p.Value, direction.Value, beta.Value))
     let _upperBound                                (parameters : ICell<Vector>)   
-                                                   = triv (fun () -> _ProjectedConstraint.Value.upperBound(parameters.Value))
+                                                   = triv _ProjectedConstraint (fun () -> _ProjectedConstraint.Value.upperBound(parameters.Value))
     do this.Bind(_ProjectedConstraint)
 (* 
     casting 

@@ -67,15 +67,15 @@ type FdmBlackScholesMesherModel
     Functions
 *)
     let mutable
-        _FdmBlackScholesMesher                     = cell (fun () -> new FdmBlackScholesMesher (size.Value, Process.Value, maturity.Value, strike.Value, xMinConstraint.Value, xMaxConstraint.Value, eps.Value, scaleFactor.Value, cPoint.Value, dividendSchedule.Value, fdmQuantoHelper.Value, spotAdjustment.Value))
+        _FdmBlackScholesMesher                     = make (fun () -> new FdmBlackScholesMesher (size.Value, Process.Value, maturity.Value, strike.Value, xMinConstraint.Value, xMaxConstraint.Value, eps.Value, scaleFactor.Value, cPoint.Value, dividendSchedule.Value, fdmQuantoHelper.Value, spotAdjustment.Value))
     let _dminus                                    (index : ICell<int>)   
-                                                   = triv (fun () -> _FdmBlackScholesMesher.Value.dminus(index.Value))
+                                                   = triv _FdmBlackScholesMesher (fun () -> _FdmBlackScholesMesher.Value.dminus(index.Value))
     let _dplus                                     (index : ICell<int>)   
-                                                   = triv (fun () -> _FdmBlackScholesMesher.Value.dplus(index.Value))
+                                                   = triv _FdmBlackScholesMesher (fun () -> _FdmBlackScholesMesher.Value.dplus(index.Value))
     let _location                                  (index : ICell<int>)   
-                                                   = triv (fun () -> _FdmBlackScholesMesher.Value.location(index.Value))
-    let _locations                                 = triv (fun () -> _FdmBlackScholesMesher.Value.locations())
-    let _size                                      = triv (fun () -> _FdmBlackScholesMesher.Value.size())
+                                                   = triv _FdmBlackScholesMesher (fun () -> _FdmBlackScholesMesher.Value.location(index.Value))
+    let _locations                                 = triv _FdmBlackScholesMesher (fun () -> _FdmBlackScholesMesher.Value.locations())
+    let _size                                      = triv _FdmBlackScholesMesher (fun () -> _FdmBlackScholesMesher.Value.size())
     do this.Bind(_FdmBlackScholesMesher)
 (* 
     casting 

@@ -49,18 +49,18 @@ type PdeConstantCoeffModel<'PdeClass when 'PdeClass :> PdeSecondOrderParabolic a
     Functions
 *)
     let mutable
-        _PdeConstantCoeff                          = cell (fun () -> new PdeConstantCoeff<'PdeClass> (Process.Value, t.Value, x.Value))
+        _PdeConstantCoeff                          = make (fun () -> new PdeConstantCoeff<'PdeClass> (Process.Value, t.Value, x.Value))
     let _diffusion                                 (x : ICell<double>) (y : ICell<double>)   
-                                                   = triv (fun () -> _PdeConstantCoeff.Value.diffusion(x.Value, y.Value))
+                                                   = triv _PdeConstantCoeff (fun () -> _PdeConstantCoeff.Value.diffusion(x.Value, y.Value))
     let _discount                                  (x : ICell<double>) (y : ICell<double>)   
-                                                   = triv (fun () -> _PdeConstantCoeff.Value.discount(x.Value, y.Value))
+                                                   = triv _PdeConstantCoeff (fun () -> _PdeConstantCoeff.Value.discount(x.Value, y.Value))
     let _drift                                     (x : ICell<double>) (y : ICell<double>)   
-                                                   = triv (fun () -> _PdeConstantCoeff.Value.drift(x.Value, y.Value))
+                                                   = triv _PdeConstantCoeff (fun () -> _PdeConstantCoeff.Value.drift(x.Value, y.Value))
     let _factory                                   (Process : ICell<GeneralizedBlackScholesProcess>)   
-                                                   = triv (fun () -> _PdeConstantCoeff.Value.factory(Process.Value))
+                                                   = triv _PdeConstantCoeff (fun () -> _PdeConstantCoeff.Value.factory(Process.Value))
     let _generateOperator                          (t : ICell<double>) (tg : ICell<TransformedGrid>) (L : ICell<TridiagonalOperator>)   
-                                                   = triv (fun () -> _PdeConstantCoeff.Value.generateOperator(t.Value, tg.Value, L.Value)
-                                                                     _PdeConstantCoeff.Value)
+                                                   = triv _PdeConstantCoeff (fun () -> _PdeConstantCoeff.Value.generateOperator(t.Value, tg.Value, L.Value)
+                                                                                       _PdeConstantCoeff.Value)
     do this.Bind(_PdeConstantCoeff)
 
 (* 

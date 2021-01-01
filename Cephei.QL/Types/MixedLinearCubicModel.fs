@@ -59,11 +59,11 @@ type MixedLinearCubicModel
     Functions
 *)
     let mutable
-        _MixedLinearCubic                          = cell (fun () -> new MixedLinearCubic (n.Value, behavior.Value, da.Value, monotonic.Value, leftCondition.Value, leftConditionValue.Value, rightCondition.Value, rightConditionValue.Value))
-    let _global                                    = triv (fun () -> _MixedLinearCubic.Value.GLOBAL)
+        _MixedLinearCubic                          = make (fun () -> new MixedLinearCubic (n.Value, behavior.Value, da.Value, monotonic.Value, leftCondition.Value, leftConditionValue.Value, rightCondition.Value, rightConditionValue.Value))
+    let _global                                    = triv _MixedLinearCubic (fun () -> _MixedLinearCubic.Value.GLOBAL)
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (xEnd : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _MixedLinearCubic.Value.interpolate(xBegin.Value, xEnd.Value, yBegin.Value))
-    let _requiredPoints                            = triv (fun () -> _MixedLinearCubic.Value.requiredPoints)
+                                                   = triv _MixedLinearCubic (fun () -> _MixedLinearCubic.Value.interpolate(xBegin.Value, xEnd.Value, yBegin.Value))
+    let _requiredPoints                            = triv _MixedLinearCubic (fun () -> _MixedLinearCubic.Value.requiredPoints)
     do this.Bind(_MixedLinearCubic)
 (* 
     casting 

@@ -45,15 +45,15 @@ type FloatingTypePayoffModel
     Functions
 *)
     let mutable
-        _FloatingTypePayoff                        = cell (fun () -> new FloatingTypePayoff (Type.Value))
-    let _name                                      = triv (fun () -> _FloatingTypePayoff.Value.name())
+        _FloatingTypePayoff                        = make (fun () -> new FloatingTypePayoff (Type.Value))
+    let _name                                      = triv _FloatingTypePayoff (fun () -> _FloatingTypePayoff.Value.name())
     let _value                                     (k : ICell<double>)   
-                                                   = triv (fun () -> _FloatingTypePayoff.Value.value(k.Value))
-    let _description                               = triv (fun () -> _FloatingTypePayoff.Value.description())
-    let _optionType                                = triv (fun () -> _FloatingTypePayoff.Value.optionType())
+                                                   = triv _FloatingTypePayoff (fun () -> _FloatingTypePayoff.Value.value(k.Value))
+    let _description                               = triv _FloatingTypePayoff (fun () -> _FloatingTypePayoff.Value.description())
+    let _optionType                                = triv _FloatingTypePayoff (fun () -> _FloatingTypePayoff.Value.optionType())
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> _FloatingTypePayoff.Value.accept(v.Value)
-                                                                     _FloatingTypePayoff.Value)
+                                                   = triv _FloatingTypePayoff (fun () -> _FloatingTypePayoff.Value.accept(v.Value)
+                                                                                         _FloatingTypePayoff.Value)
     do this.Bind(_FloatingTypePayoff)
 (* 
     casting 

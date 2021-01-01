@@ -45,9 +45,9 @@ type BivariateCumulativeNormalDistributionDr78Model
     Functions
 *)
     let mutable
-        _BivariateCumulativeNormalDistributionDr78 = cell (fun () -> new BivariateCumulativeNormalDistributionDr78 (rho.Value))
+        _BivariateCumulativeNormalDistributionDr78 = make (fun () -> new BivariateCumulativeNormalDistributionDr78 (rho.Value))
     let _value                                     (a : ICell<double>) (b : ICell<double>)   
-                                                   = triv (fun () -> _BivariateCumulativeNormalDistributionDr78.Value.value(a.Value, b.Value))
+                                                   = triv _BivariateCumulativeNormalDistributionDr78 (fun () -> _BivariateCumulativeNormalDistributionDr78.Value.value(a.Value, b.Value))
     do this.Bind(_BivariateCumulativeNormalDistributionDr78)
 (* 
     casting 

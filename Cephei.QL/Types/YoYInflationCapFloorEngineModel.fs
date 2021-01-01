@@ -50,12 +50,12 @@ type YoYInflationCapFloorEngineModel
     Functions
 *)
     let mutable
-        _YoYInflationCapFloorEngine                = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new YoYInflationCapFloorEngine (index.Value, vol.Value))))
-    let _index                                     = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationCapFloorEngine).Value.index())
+        _YoYInflationCapFloorEngine                = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new YoYInflationCapFloorEngine (index.Value, vol.Value))))
+    let _index                                     = triv _YoYInflationCapFloorEngine (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationCapFloorEngine).Value.index())
     let _setVolatility                             (vol : ICell<Handle<YoYOptionletVolatilitySurface>>)   
-                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationCapFloorEngine).Value.setVolatility(vol.Value)
-                                                                     _YoYInflationCapFloorEngine.Value)
-    let _volatility                                = triv (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationCapFloorEngine).Value.volatility())
+                                                   = triv _YoYInflationCapFloorEngine (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationCapFloorEngine).Value.setVolatility(vol.Value)
+                                                                                                 _YoYInflationCapFloorEngine.Value)
+    let _volatility                                = triv _YoYInflationCapFloorEngine (fun () -> (curryEvaluationDate _evaluationDate _YoYInflationCapFloorEngine).Value.volatility())
     do this.Bind(_YoYInflationCapFloorEngine)
 (* 
     casting 

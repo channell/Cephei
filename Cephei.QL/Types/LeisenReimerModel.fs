@@ -51,18 +51,18 @@ type LeisenReimerModel
     Functions
 *)
     let mutable
-        _LeisenReimer                              = cell (fun () -> new LeisenReimer (Process.Value, End.Value, steps.Value, strike.Value))
+        _LeisenReimer                              = make (fun () -> new LeisenReimer (Process.Value, End.Value, steps.Value, strike.Value))
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
-                                                   = triv (fun () -> _LeisenReimer.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
+                                                   = triv _LeisenReimer (fun () -> _LeisenReimer.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (i : ICell<int>) (j : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _LeisenReimer.Value.probability(i.Value, j.Value, branch.Value))
+                                                   = triv _LeisenReimer (fun () -> _LeisenReimer.Value.probability(i.Value, j.Value, branch.Value))
     let _underlying                                (i : ICell<int>) (index : ICell<int>)   
-                                                   = triv (fun () -> _LeisenReimer.Value.underlying(i.Value, index.Value))
+                                                   = triv _LeisenReimer (fun () -> _LeisenReimer.Value.underlying(i.Value, index.Value))
     let _descendant                                (x : ICell<int>) (index : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _LeisenReimer.Value.descendant(x.Value, index.Value, branch.Value))
+                                                   = triv _LeisenReimer (fun () -> _LeisenReimer.Value.descendant(x.Value, index.Value, branch.Value))
     let _size                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _LeisenReimer.Value.size(i.Value))
-    let _columns                                   = triv (fun () -> _LeisenReimer.Value.columns())
+                                                   = triv _LeisenReimer (fun () -> _LeisenReimer.Value.size(i.Value))
+    let _columns                                   = triv _LeisenReimer (fun () -> _LeisenReimer.Value.columns())
     do this.Bind(_LeisenReimer)
 (* 
     casting 
@@ -112,18 +112,18 @@ type LeisenReimerModel1
     Functions
 *)
     let mutable
-        _LeisenReimer                              = cell (fun () -> new LeisenReimer ())
+        _LeisenReimer                              = make (fun () -> new LeisenReimer ())
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
-                                                   = triv (fun () -> _LeisenReimer.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
+                                                   = triv _LeisenReimer (fun () -> _LeisenReimer.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (i : ICell<int>) (j : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _LeisenReimer.Value.probability(i.Value, j.Value, branch.Value))
+                                                   = triv _LeisenReimer (fun () -> _LeisenReimer.Value.probability(i.Value, j.Value, branch.Value))
     let _underlying                                (i : ICell<int>) (index : ICell<int>)   
-                                                   = triv (fun () -> _LeisenReimer.Value.underlying(i.Value, index.Value))
+                                                   = triv _LeisenReimer (fun () -> _LeisenReimer.Value.underlying(i.Value, index.Value))
     let _descendant                                (x : ICell<int>) (index : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _LeisenReimer.Value.descendant(x.Value, index.Value, branch.Value))
+                                                   = triv _LeisenReimer (fun () -> _LeisenReimer.Value.descendant(x.Value, index.Value, branch.Value))
     let _size                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _LeisenReimer.Value.size(i.Value))
-    let _columns                                   = triv (fun () -> _LeisenReimer.Value.columns())
+                                                   = triv _LeisenReimer (fun () -> _LeisenReimer.Value.size(i.Value))
+    let _columns                                   = triv _LeisenReimer (fun () -> _LeisenReimer.Value.columns())
     do this.Bind(_LeisenReimer)
 (* 
     casting 

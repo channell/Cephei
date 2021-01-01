@@ -43,9 +43,9 @@ namespace Cephei.Cell.Generic
         private Exception _lastException = null;
         private DateTime _epoch;
         private bool _disposd = false;
-
         // number of pending calculations
         volatile int _pending;
+        public ICell Mutex { get; set; }
 
         public string Mnemonic { get; set; }
         private ICell _parent;
@@ -81,10 +81,11 @@ namespace Cephei.Cell.Generic
             foreach (var d in dependencies)
                 d.Notify(this);
         }
-        public CellFast(FSharpFunc<Unit, T> func, ICell[] dependencies, string mnemonic) : this(func, dependencies)
+        public CellFast(FSharpFunc<Unit, T> func, ICell[] dependencies, ICell mutex) : this (func, dependencies)
         {
-            Mnemonic = mnemonic;
+            Mutex = mutex;
         }
+
         public CellFast(FSharpFunc<Unit, T> func)
         {
             var dependencies = Cell.Profile(func);
@@ -105,18 +106,15 @@ namespace Cephei.Cell.Generic
             foreach (var d in dependencies)
                 d.Notify(this);
         }
-        public CellFast(FSharpFunc<Unit, T> func, string mnemonic) : this(func)
+        public CellFast(FSharpFunc<Unit, T> func, ICell mutex) : this(func)
         {
-            Mnemonic = mnemonic;
+            Mutex = mutex;
         }
+
         public CellFast(T value)
         {
             _value = value;
             _state = (int)CellState.Clean;
-        }
-        public CellFast(T value, string mnemonic) : this(value)
-        {
-            Mnemonic = mnemonic;
         }
 #if !DEBUG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -136,7 +134,21 @@ namespace Cephei.Cell.Generic
                     _spinLock.Exit(true);
                     taken = false;
 
-                    var t = (_func != null ? _func.Invoke(null) : _value);
+                    T t;
+                    if (_func != null)
+                    {
+                        if (Mutex == null)
+                            t = _func.Invoke(null);
+                        else
+                        {
+                            lock (Mutex)
+                            {
+                                t = _func.Invoke(null);
+                            }
+                        }
+                    }
+                    else
+                        t = _value;
 
                     if (session != null)
                         session.SetValue<T>(this, t);

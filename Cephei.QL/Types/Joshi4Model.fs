@@ -51,18 +51,18 @@ type Joshi4Model
     Functions
 *)
     let mutable
-        _Joshi4                                    = cell (fun () -> new Joshi4 (Process.Value, End.Value, steps.Value, strike.Value))
+        _Joshi4                                    = make (fun () -> new Joshi4 (Process.Value, End.Value, steps.Value, strike.Value))
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
-                                                   = triv (fun () -> _Joshi4.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
+                                                   = triv _Joshi4 (fun () -> _Joshi4.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (x : ICell<int>) (y : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _Joshi4.Value.probability(x.Value, y.Value, branch.Value))
+                                                   = triv _Joshi4 (fun () -> _Joshi4.Value.probability(x.Value, y.Value, branch.Value))
     let _underlying                                (i : ICell<int>) (index : ICell<int>)   
-                                                   = triv (fun () -> _Joshi4.Value.underlying(i.Value, index.Value))
+                                                   = triv _Joshi4 (fun () -> _Joshi4.Value.underlying(i.Value, index.Value))
     let _descendant                                (x : ICell<int>) (index : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _Joshi4.Value.descendant(x.Value, index.Value, branch.Value))
+                                                   = triv _Joshi4 (fun () -> _Joshi4.Value.descendant(x.Value, index.Value, branch.Value))
     let _size                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _Joshi4.Value.size(i.Value))
-    let _columns                                   = triv (fun () -> _Joshi4.Value.columns())
+                                                   = triv _Joshi4 (fun () -> _Joshi4.Value.size(i.Value))
+    let _columns                                   = triv _Joshi4 (fun () -> _Joshi4.Value.columns())
     do this.Bind(_Joshi4)
 (* 
     casting 
@@ -112,18 +112,18 @@ type Joshi4Model1
     Functions
 *)
     let mutable
-        _Joshi4                                    = cell (fun () -> new Joshi4 ())
+        _Joshi4                                    = make (fun () -> new Joshi4 ())
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
-                                                   = triv (fun () -> _Joshi4.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
+                                                   = triv _Joshi4 (fun () -> _Joshi4.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (x : ICell<int>) (y : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _Joshi4.Value.probability(x.Value, y.Value, branch.Value))
+                                                   = triv _Joshi4 (fun () -> _Joshi4.Value.probability(x.Value, y.Value, branch.Value))
     let _underlying                                (i : ICell<int>) (index : ICell<int>)   
-                                                   = triv (fun () -> _Joshi4.Value.underlying(i.Value, index.Value))
+                                                   = triv _Joshi4 (fun () -> _Joshi4.Value.underlying(i.Value, index.Value))
     let _descendant                                (x : ICell<int>) (index : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _Joshi4.Value.descendant(x.Value, index.Value, branch.Value))
+                                                   = triv _Joshi4 (fun () -> _Joshi4.Value.descendant(x.Value, index.Value, branch.Value))
     let _size                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _Joshi4.Value.size(i.Value))
-    let _columns                                   = triv (fun () -> _Joshi4.Value.columns())
+                                                   = triv _Joshi4 (fun () -> _Joshi4.Value.size(i.Value))
+    let _columns                                   = triv _Joshi4 (fun () -> _Joshi4.Value.columns())
     do this.Bind(_Joshi4)
 (* 
     casting 

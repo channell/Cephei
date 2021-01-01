@@ -47,17 +47,17 @@ type SuperFundPayoffModel
     Functions
 *)
     let mutable
-        _SuperFundPayoff                           = cell (fun () -> new SuperFundPayoff (strike.Value, secondStrike.Value))
-    let _name                                      = triv (fun () -> _SuperFundPayoff.Value.name())
-    let _secondStrike                              = triv (fun () -> _SuperFundPayoff.Value.secondStrike())
+        _SuperFundPayoff                           = make (fun () -> new SuperFundPayoff (strike.Value, secondStrike.Value))
+    let _name                                      = triv _SuperFundPayoff (fun () -> _SuperFundPayoff.Value.name())
+    let _secondStrike                              = triv _SuperFundPayoff (fun () -> _SuperFundPayoff.Value.secondStrike())
     let _value                                     (price : ICell<double>)   
-                                                   = triv (fun () -> _SuperFundPayoff.Value.value(price.Value))
-    let _description                               = triv (fun () -> _SuperFundPayoff.Value.description())
-    let _strike                                    = triv (fun () -> _SuperFundPayoff.Value.strike())
-    let _optionType                                = triv (fun () -> _SuperFundPayoff.Value.optionType())
+                                                   = triv _SuperFundPayoff (fun () -> _SuperFundPayoff.Value.value(price.Value))
+    let _description                               = triv _SuperFundPayoff (fun () -> _SuperFundPayoff.Value.description())
+    let _strike                                    = triv _SuperFundPayoff (fun () -> _SuperFundPayoff.Value.strike())
+    let _optionType                                = triv _SuperFundPayoff (fun () -> _SuperFundPayoff.Value.optionType())
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> _SuperFundPayoff.Value.accept(v.Value)
-                                                                     _SuperFundPayoff.Value)
+                                                   = triv _SuperFundPayoff (fun () -> _SuperFundPayoff.Value.accept(v.Value)
+                                                                                      _SuperFundPayoff.Value)
     do this.Bind(_SuperFundPayoff)
 (* 
     casting 

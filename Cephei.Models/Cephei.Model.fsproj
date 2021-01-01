@@ -33,4 +33,8 @@
     <ProjectReference Include="..\Cephei.XL\Cephei.XLM.fsproj" />
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="echo copy $(TargetPath) $(OutDir)..&#xD;&#xA;copy $(TargetPath) $(OutDir)..&#xD;&#xA;" />
+  </Target>
+
 </Project>

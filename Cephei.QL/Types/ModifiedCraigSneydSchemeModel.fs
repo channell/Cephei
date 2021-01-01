@@ -42,15 +42,15 @@ type ModifiedCraigSneydSchemeModel
     Functions
 *)
     let mutable
-        _ModifiedCraigSneydScheme                  = cell (fun () -> new ModifiedCraigSneydScheme ())
+        _ModifiedCraigSneydScheme                  = make (fun () -> new ModifiedCraigSneydScheme ())
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
-                                                   = triv (fun () -> _ModifiedCraigSneydScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
+                                                   = triv _ModifiedCraigSneydScheme (fun () -> _ModifiedCraigSneydScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _ModifiedCraigSneydScheme.Value.setStep(dt.Value)
-                                                                     _ModifiedCraigSneydScheme.Value)
+                                                   = triv _ModifiedCraigSneydScheme (fun () -> _ModifiedCraigSneydScheme.Value.setStep(dt.Value)
+                                                                                               _ModifiedCraigSneydScheme.Value)
     let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _ModifiedCraigSneydScheme.Value.step(ref a.Value, t.Value, theta.Value)
-                                                                     _ModifiedCraigSneydScheme.Value)
+                                                   = triv _ModifiedCraigSneydScheme (fun () -> _ModifiedCraigSneydScheme.Value.step(ref a.Value, t.Value, theta.Value)
+                                                                                               _ModifiedCraigSneydScheme.Value)
     do this.Bind(_ModifiedCraigSneydScheme)
 (* 
     casting 
@@ -100,15 +100,15 @@ type ModifiedCraigSneydSchemeModel1
     Functions
 *)
     let mutable
-        _ModifiedCraigSneydScheme                  = cell (fun () -> new ModifiedCraigSneydScheme (theta.Value, mu.Value, map.Value, bcSet.Value))
+        _ModifiedCraigSneydScheme                  = make (fun () -> new ModifiedCraigSneydScheme (theta.Value, mu.Value, map.Value, bcSet.Value))
     let _factory                                   (L : ICell<Object>) (bcs : ICell<Object>) (additionalInputs : ICell<Object[]>)   
-                                                   = triv (fun () -> _ModifiedCraigSneydScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
+                                                   = triv _ModifiedCraigSneydScheme (fun () -> _ModifiedCraigSneydScheme.Value.factory(L.Value, bcs.Value, additionalInputs.Value))
     let _setStep                                   (dt : ICell<double>)   
-                                                   = triv (fun () -> _ModifiedCraigSneydScheme.Value.setStep(dt.Value)
-                                                                     _ModifiedCraigSneydScheme.Value)
+                                                   = triv _ModifiedCraigSneydScheme (fun () -> _ModifiedCraigSneydScheme.Value.setStep(dt.Value)
+                                                                                               _ModifiedCraigSneydScheme.Value)
     let _step                                      (a : ICell<Object>) (t : ICell<double>) (theta : ICell<double>)   
-                                                   = triv (fun () -> _ModifiedCraigSneydScheme.Value.step(ref a.Value, t.Value, theta.Value)
-                                                                     _ModifiedCraigSneydScheme.Value)
+                                                   = triv _ModifiedCraigSneydScheme (fun () -> _ModifiedCraigSneydScheme.Value.step(ref a.Value, t.Value, theta.Value)
+                                                                                               _ModifiedCraigSneydScheme.Value)
     do this.Bind(_ModifiedCraigSneydScheme)
 (* 
     casting 

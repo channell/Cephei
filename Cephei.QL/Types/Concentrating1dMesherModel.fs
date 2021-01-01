@@ -53,15 +53,15 @@ type Concentrating1dMesherModel
     Functions
 *)
     let mutable
-        _Concentrating1dMesher                     = cell (fun () -> new Concentrating1dMesher (start.Value, End.Value, size.Value, cPoints.Value, tol.Value))
+        _Concentrating1dMesher                     = make (fun () -> new Concentrating1dMesher (start.Value, End.Value, size.Value, cPoints.Value, tol.Value))
     let _dminus                                    (index : ICell<int>)   
-                                                   = triv (fun () -> _Concentrating1dMesher.Value.dminus(index.Value))
+                                                   = triv _Concentrating1dMesher (fun () -> _Concentrating1dMesher.Value.dminus(index.Value))
     let _dplus                                     (index : ICell<int>)   
-                                                   = triv (fun () -> _Concentrating1dMesher.Value.dplus(index.Value))
+                                                   = triv _Concentrating1dMesher (fun () -> _Concentrating1dMesher.Value.dplus(index.Value))
     let _location                                  (index : ICell<int>)   
-                                                   = triv (fun () -> _Concentrating1dMesher.Value.location(index.Value))
-    let _locations                                 = triv (fun () -> _Concentrating1dMesher.Value.locations())
-    let _size                                      = triv (fun () -> _Concentrating1dMesher.Value.size())
+                                                   = triv _Concentrating1dMesher (fun () -> _Concentrating1dMesher.Value.location(index.Value))
+    let _locations                                 = triv _Concentrating1dMesher (fun () -> _Concentrating1dMesher.Value.locations())
+    let _size                                      = triv _Concentrating1dMesher (fun () -> _Concentrating1dMesher.Value.size())
     do this.Bind(_Concentrating1dMesher)
 (* 
     casting 
@@ -120,15 +120,15 @@ type Concentrating1dMesherModel1
     Functions
 *)
     let mutable
-        _Concentrating1dMesher                     = cell (fun () -> new Concentrating1dMesher (start.Value, End.Value, size.Value, cPoints.Value, requireCPoint.Value))
+        _Concentrating1dMesher                     = make (fun () -> new Concentrating1dMesher (start.Value, End.Value, size.Value, cPoints.Value, requireCPoint.Value))
     let _dminus                                    (index : ICell<int>)   
-                                                   = triv (fun () -> _Concentrating1dMesher.Value.dminus(index.Value))
+                                                   = triv _Concentrating1dMesher (fun () -> _Concentrating1dMesher.Value.dminus(index.Value))
     let _dplus                                     (index : ICell<int>)   
-                                                   = triv (fun () -> _Concentrating1dMesher.Value.dplus(index.Value))
+                                                   = triv _Concentrating1dMesher (fun () -> _Concentrating1dMesher.Value.dplus(index.Value))
     let _location                                  (index : ICell<int>)   
-                                                   = triv (fun () -> _Concentrating1dMesher.Value.location(index.Value))
-    let _locations                                 = triv (fun () -> _Concentrating1dMesher.Value.locations())
-    let _size                                      = triv (fun () -> _Concentrating1dMesher.Value.size())
+                                                   = triv _Concentrating1dMesher (fun () -> _Concentrating1dMesher.Value.location(index.Value))
+    let _locations                                 = triv _Concentrating1dMesher (fun () -> _Concentrating1dMesher.Value.locations())
+    let _size                                      = triv _Concentrating1dMesher (fun () -> _Concentrating1dMesher.Value.size())
     do this.Bind(_Concentrating1dMesher)
 (* 
     casting 

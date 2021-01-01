@@ -49,7 +49,7 @@ type LinearLeastSquaresRegressionModel
     Functions
 *)
     let mutable
-        _LinearLeastSquaresRegression              = cell (fun () -> new LinearLeastSquaresRegression (x.Value, y.Value, v.Value))
+        _LinearLeastSquaresRegression              = make (fun () -> new LinearLeastSquaresRegression (x.Value, y.Value, v.Value))
     do this.Bind(_LinearLeastSquaresRegression)
 (* 
     casting 

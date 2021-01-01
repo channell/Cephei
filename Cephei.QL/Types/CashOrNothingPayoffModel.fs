@@ -49,17 +49,17 @@ type CashOrNothingPayoffModel
     Functions
 *)
     let mutable
-        _CashOrNothingPayoff                       = cell (fun () -> new CashOrNothingPayoff (Type.Value, strike.Value, cashPayoff.Value))
-    let _cashPayoff                                = triv (fun () -> _CashOrNothingPayoff.Value.cashPayoff())
-    let _description                               = triv (fun () -> _CashOrNothingPayoff.Value.description())
-    let _name                                      = triv (fun () -> _CashOrNothingPayoff.Value.name())
+        _CashOrNothingPayoff                       = make (fun () -> new CashOrNothingPayoff (Type.Value, strike.Value, cashPayoff.Value))
+    let _cashPayoff                                = triv _CashOrNothingPayoff (fun () -> _CashOrNothingPayoff.Value.cashPayoff())
+    let _description                               = triv _CashOrNothingPayoff (fun () -> _CashOrNothingPayoff.Value.description())
+    let _name                                      = triv _CashOrNothingPayoff (fun () -> _CashOrNothingPayoff.Value.name())
     let _value                                     (price : ICell<double>)   
-                                                   = triv (fun () -> _CashOrNothingPayoff.Value.value(price.Value))
-    let _strike                                    = triv (fun () -> _CashOrNothingPayoff.Value.strike())
-    let _optionType                                = triv (fun () -> _CashOrNothingPayoff.Value.optionType())
+                                                   = triv _CashOrNothingPayoff (fun () -> _CashOrNothingPayoff.Value.value(price.Value))
+    let _strike                                    = triv _CashOrNothingPayoff (fun () -> _CashOrNothingPayoff.Value.strike())
+    let _optionType                                = triv _CashOrNothingPayoff (fun () -> _CashOrNothingPayoff.Value.optionType())
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> _CashOrNothingPayoff.Value.accept(v.Value)
-                                                                     _CashOrNothingPayoff.Value)
+                                                   = triv _CashOrNothingPayoff (fun () -> _CashOrNothingPayoff.Value.accept(v.Value)
+                                                                                          _CashOrNothingPayoff.Value)
     do this.Bind(_CashOrNothingPayoff)
 (* 
     casting 

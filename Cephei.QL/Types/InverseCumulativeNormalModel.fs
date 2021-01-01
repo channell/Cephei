@@ -42,9 +42,9 @@ type InverseCumulativeNormalModel
     Functions
 *)
     let mutable
-        _InverseCumulativeNormal                   = cell (fun () -> new InverseCumulativeNormal ())
+        _InverseCumulativeNormal                   = make (fun () -> new InverseCumulativeNormal ())
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _InverseCumulativeNormal.Value.value(x.Value))
+                                                   = triv _InverseCumulativeNormal (fun () -> _InverseCumulativeNormal.Value.value(x.Value))
     do this.Bind(_InverseCumulativeNormal)
 (* 
     casting 
@@ -86,9 +86,9 @@ type InverseCumulativeNormalModel1
     Functions
 *)
     let mutable
-        _InverseCumulativeNormal                   = cell (fun () -> new InverseCumulativeNormal (average.Value, sigma.Value))
+        _InverseCumulativeNormal                   = make (fun () -> new InverseCumulativeNormal (average.Value, sigma.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _InverseCumulativeNormal.Value.value(x.Value))
+                                                   = triv _InverseCumulativeNormal (fun () -> _InverseCumulativeNormal.Value.value(x.Value))
     do this.Bind(_InverseCumulativeNormal)
 (* 
     casting 

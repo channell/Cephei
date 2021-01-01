@@ -24,6 +24,7 @@ open System.Collections
 open QLNet
 open System
 open System.Runtime.CompilerServices
+open System.Threading
 
 // Summary : Date dependant models need to have the evaluation date injected
 type IDateDependant =
@@ -41,16 +42,24 @@ type DateDependantTrivial<'T> (f : unit -> 'T, d : ICell<Date>) =
 
 module Util = 
     // Summary: create a value that notifies other cells when the value changes
+    [<MethodImpl(MethodImplOptions.AggressiveInlining)>]
     let value v = Cell.CreateFastValue (v)
 
     // Summary: run calcualtions within in the background
-    let cell (f : unit -> 'f) = Cell.CreateFast (f)
+    [<MethodImpl(MethodImplOptions.AggressiveInlining)>]
+    let make (f : unit -> 'f) = Cell.CreateFast (f) 
+
+    // Summary: run calcualtions within in the background
+    [<MethodImpl(MethodImplOptions.AggressiveInlining)>]
+    let cell (mutex : ICell) (f : unit -> 'f) = Cell.CreateFast (f, mutex) 
 
     // cretate a trivial cell
-    let triv (f : unit -> 'f) = Cell.CreateTrivial (f)
+    [<MethodImpl(MethodImplOptions.AggressiveInlining)>]
+    let triv (mutex : ICell) (f : unit -> 'f) = Cell.CreateTrivial (f, mutex)
 
     let trivDate (f : unit -> 'f) (d : IDateDependant) = 
         new DateDependantTrivial<'f> (f, d.EvaluationDate) :> ICell<'f>
+
 
     // Summary: variant of lazy evaluation where the value is claculated on a background thread
     let future (f : unit -> 'f) = 
@@ -113,7 +122,7 @@ type Delay<'t> (reference : ICell<'t>, lapse : ICell<double>) as this =
 
     let mutable _reference = reference
     let mutable _lapse = lapse
-    let mutable _span = Util.cell (fun () -> TimeSpan.FromSeconds(_lapse.Value))
+    let mutable _span = Util.cell null (fun () -> TimeSpan.FromSeconds(_lapse.Value))
 
     let at (span : TimeSpan) (now : DateTime) (current : 't) = 
         System.Threading.Monitor.Enter _queue
@@ -132,7 +141,7 @@ type Delay<'t> (reference : ICell<'t>, lapse : ICell<double>) as this =
         finally
             System.Threading.Monitor.Exit _queue
 
-    let _value = Util.cell (fun () -> at _span.Value DateTime.Now _reference.Value)
+    let _value = Util.cell null (fun () -> at _span.Value DateTime.Now _reference.Value)
 
 
     do this.Bind(_value)

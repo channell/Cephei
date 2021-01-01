@@ -49,9 +49,9 @@ type EuropeanHestonPathPricerModel
     Functions
 *)
     let mutable
-        _EuropeanHestonPathPricer                  = cell (fun () -> new EuropeanHestonPathPricer (Type.Value, strike.Value, discount.Value))
+        _EuropeanHestonPathPricer                  = make (fun () -> new EuropeanHestonPathPricer (Type.Value, strike.Value, discount.Value))
     let _value                                     (multiPath : ICell<IPath>)   
-                                                   = triv (fun () -> _EuropeanHestonPathPricer.Value.value(multiPath.Value))
+                                                   = triv _EuropeanHestonPathPricer (fun () -> _EuropeanHestonPathPricer.Value.value(multiPath.Value))
     do this.Bind(_EuropeanHestonPathPricer)
 (* 
     casting 

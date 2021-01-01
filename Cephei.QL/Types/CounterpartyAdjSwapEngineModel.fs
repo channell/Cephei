@@ -64,7 +64,7 @@ type CounterpartyAdjSwapEngineModel
     Functions
 *)
     let mutable
-        _CounterpartyAdjSwapEngine                 = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new CounterpartyAdjSwapEngine (discountCurve.Value, blackVol.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))))
+        _CounterpartyAdjSwapEngine                 = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new CounterpartyAdjSwapEngine (discountCurve.Value, blackVol.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))))
     do this.Bind(_CounterpartyAdjSwapEngine)
 (* 
     casting 
@@ -131,7 +131,7 @@ type CounterpartyAdjSwapEngineModel1
     Functions
 *)
     let mutable
-        _CounterpartyAdjSwapEngine                 = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new CounterpartyAdjSwapEngine (discountCurve.Value, blackVol.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))))
+        _CounterpartyAdjSwapEngine                 = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new CounterpartyAdjSwapEngine (discountCurve.Value, blackVol.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))))
     do this.Bind(_CounterpartyAdjSwapEngine)
 (* 
     casting 
@@ -198,7 +198,7 @@ type CounterpartyAdjSwapEngineModel2
     Functions
 *)
     let mutable
-        _CounterpartyAdjSwapEngine                 = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new CounterpartyAdjSwapEngine (discountCurve.Value, swaptionEngine.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))))
+        _CounterpartyAdjSwapEngine                 = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new CounterpartyAdjSwapEngine (discountCurve.Value, swaptionEngine.Value, ctptyDTS.Value, ctptyRecoveryRate.Value, invstDTS.Value, invstRecoveryRate.Value))))
     do this.Bind(_CounterpartyAdjSwapEngine)
 (* 
     casting 

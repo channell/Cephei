@@ -88,36 +88,25 @@ namespace Cephei.Cell
                 return;
             RaiseChange(eventType, root, this, epoch, session);
         }
+        private ICell _mutex;
+        public virtual ICell Mutex 
+        { 
+            get
+            {
+                return _mutex;
+            }
+            set
+            {
+                _mutex = value;
+            }
+        }
+
         #endregion
 
         #region factory
         public Cell<T> Create<T>(FSharpFunc<Unit, T> func, string mnemonic)
         {
-            var c = new Cell<T>(func, mnemonic);
-            c.Parent = this;
-            if (TryAdd(mnemonic, c))
-                return c;
-            else
-            {
-                ICell cur;
-                if (TryGetValue(mnemonic, out cur))
-                {
-                    var t = cur as Cell<T>;
-                    if (t != null)
-                        return t;
-                    else
-                    {
-                        TryUpdate(mnemonic, c, t);
-                        return c;
-                    }
-                }
-                else
-                    return c;
-            }
-        }
-        public Cell<T> CreateValue<T>(T value, string mnemonic)
-        {
-            var c = new Cell<T>(value, mnemonic);
+            var c = new Cell<T>(func);
             c.Parent = this;
             if (TryAdd(mnemonic, c))
                 return c;

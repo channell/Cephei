@@ -45,14 +45,14 @@ type TermStructureConsistentModelModel
     Functions
 *)
     let mutable
-        _TermStructureConsistentModel              = cell (fun () -> new TermStructureConsistentModel (termStructure.Value))
+        _TermStructureConsistentModel              = make (fun () -> new TermStructureConsistentModel (termStructure.Value))
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _TermStructureConsistentModel.Value.registerWith(handler.Value)
-                                                                     _TermStructureConsistentModel.Value)
-    let _termStructure                             = triv (fun () -> _TermStructureConsistentModel.Value.termStructure())
+                                                   = triv _TermStructureConsistentModel (fun () -> _TermStructureConsistentModel.Value.registerWith(handler.Value)
+                                                                                                   _TermStructureConsistentModel.Value)
+    let _termStructure                             = triv _TermStructureConsistentModel (fun () -> _TermStructureConsistentModel.Value.termStructure())
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _TermStructureConsistentModel.Value.unregisterWith(handler.Value)
-                                                                     _TermStructureConsistentModel.Value)
+                                                   = triv _TermStructureConsistentModel (fun () -> _TermStructureConsistentModel.Value.unregisterWith(handler.Value)
+                                                                                                   _TermStructureConsistentModel.Value)
     do this.Bind(_TermStructureConsistentModel)
 (* 
     casting 

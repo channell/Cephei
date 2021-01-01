@@ -42,18 +42,18 @@ type AdditiveEQPBinomialTreeModel
     Functions
 *)
     let mutable
-        _AdditiveEQPBinomialTree                   = cell (fun () -> new AdditiveEQPBinomialTree ())
+        _AdditiveEQPBinomialTree                   = make (fun () -> new AdditiveEQPBinomialTree ())
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
-                                                   = triv (fun () -> _AdditiveEQPBinomialTree.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
+                                                   = triv _AdditiveEQPBinomialTree (fun () -> _AdditiveEQPBinomialTree.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (x : ICell<int>) (y : ICell<int>) (z : ICell<int>)   
-                                                   = triv (fun () -> _AdditiveEQPBinomialTree.Value.probability(x.Value, y.Value, z.Value))
+                                                   = triv _AdditiveEQPBinomialTree (fun () -> _AdditiveEQPBinomialTree.Value.probability(x.Value, y.Value, z.Value))
     let _underlying                                (i : ICell<int>) (index : ICell<int>)   
-                                                   = triv (fun () -> _AdditiveEQPBinomialTree.Value.underlying(i.Value, index.Value))
+                                                   = triv _AdditiveEQPBinomialTree (fun () -> _AdditiveEQPBinomialTree.Value.underlying(i.Value, index.Value))
     let _descendant                                (x : ICell<int>) (index : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _AdditiveEQPBinomialTree.Value.descendant(x.Value, index.Value, branch.Value))
+                                                   = triv _AdditiveEQPBinomialTree (fun () -> _AdditiveEQPBinomialTree.Value.descendant(x.Value, index.Value, branch.Value))
     let _size                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _AdditiveEQPBinomialTree.Value.size(i.Value))
-    let _columns                                   = triv (fun () -> _AdditiveEQPBinomialTree.Value.columns())
+                                                   = triv _AdditiveEQPBinomialTree (fun () -> _AdditiveEQPBinomialTree.Value.size(i.Value))
+    let _columns                                   = triv _AdditiveEQPBinomialTree (fun () -> _AdditiveEQPBinomialTree.Value.columns())
     do this.Bind(_AdditiveEQPBinomialTree)
 (* 
     casting 
@@ -108,18 +108,18 @@ type AdditiveEQPBinomialTreeModel1
     Functions
 *)
     let mutable
-        _AdditiveEQPBinomialTree                   = cell (fun () -> new AdditiveEQPBinomialTree (Process.Value, End.Value, steps.Value, strike.Value))
+        _AdditiveEQPBinomialTree                   = make (fun () -> new AdditiveEQPBinomialTree (Process.Value, End.Value, steps.Value, strike.Value))
     let _factory                                   (Process : ICell<StochasticProcess1D>) (End : ICell<double>) (steps : ICell<int>) (strike : ICell<double>)   
-                                                   = triv (fun () -> _AdditiveEQPBinomialTree.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
+                                                   = triv _AdditiveEQPBinomialTree (fun () -> _AdditiveEQPBinomialTree.Value.factory(Process.Value, End.Value, steps.Value, strike.Value))
     let _probability                               (x : ICell<int>) (y : ICell<int>) (z : ICell<int>)   
-                                                   = triv (fun () -> _AdditiveEQPBinomialTree.Value.probability(x.Value, y.Value, z.Value))
+                                                   = triv _AdditiveEQPBinomialTree (fun () -> _AdditiveEQPBinomialTree.Value.probability(x.Value, y.Value, z.Value))
     let _underlying                                (i : ICell<int>) (index : ICell<int>)   
-                                                   = triv (fun () -> _AdditiveEQPBinomialTree.Value.underlying(i.Value, index.Value))
+                                                   = triv _AdditiveEQPBinomialTree (fun () -> _AdditiveEQPBinomialTree.Value.underlying(i.Value, index.Value))
     let _descendant                                (x : ICell<int>) (index : ICell<int>) (branch : ICell<int>)   
-                                                   = triv (fun () -> _AdditiveEQPBinomialTree.Value.descendant(x.Value, index.Value, branch.Value))
+                                                   = triv _AdditiveEQPBinomialTree (fun () -> _AdditiveEQPBinomialTree.Value.descendant(x.Value, index.Value, branch.Value))
     let _size                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _AdditiveEQPBinomialTree.Value.size(i.Value))
-    let _columns                                   = triv (fun () -> _AdditiveEQPBinomialTree.Value.columns())
+                                                   = triv _AdditiveEQPBinomialTree (fun () -> _AdditiveEQPBinomialTree.Value.size(i.Value))
+    let _columns                                   = triv _AdditiveEQPBinomialTree (fun () -> _AdditiveEQPBinomialTree.Value.columns())
     do this.Bind(_AdditiveEQPBinomialTree)
 (* 
     casting 

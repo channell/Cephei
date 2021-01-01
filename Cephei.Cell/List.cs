@@ -328,7 +328,10 @@ namespace Cephei.Cell
                 foreach (var v in s)
                     _list.Add(v);
                 if (ll.Count == 0 || s.Count > 0)
+                {
+                    _cache = null;
                     RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+                }
             }
         }
 
@@ -383,6 +386,8 @@ namespace Cephei.Cell
             if (cellChange != null)
                 Change -= cellChange;
         }
+        public ICell Mutex { get; set; }
+
         #endregion
 
         #region IList<T>
@@ -396,6 +401,7 @@ namespace Cephei.Cell
             set
             {
                 Value[index] = value;
+                _cache = null;
             }
         }
 
@@ -441,11 +447,13 @@ namespace Cephei.Cell
         {
             _list.Insert(index, withNotify(Cell.CreateValue(item)));
             Value.Insert(index, item);
+            _cache = null;
             RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
         }
         bool ICollection<T>.Remove(T item)
         {
             _list.RemoveAt(Value.IndexOf(item));
+            _cache = null;
             return Value.Remove(item);
         }
 
@@ -453,6 +461,7 @@ namespace Cephei.Cell
         {
             _list.RemoveAt(index);
             Value.RemoveAt(index);
+            _cache = null;
         }
         #endregion
 

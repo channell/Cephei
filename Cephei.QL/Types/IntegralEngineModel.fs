@@ -48,7 +48,7 @@ type IntegralEngineModel
     Functions
 *)
     let mutable
-        _IntegralEngine                            = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new IntegralEngine (Process.Value))))
+        _IntegralEngine                            = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new IntegralEngine (Process.Value))))
     do this.Bind(_IntegralEngine)
 (* 
     casting 

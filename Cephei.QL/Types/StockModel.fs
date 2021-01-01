@@ -50,17 +50,17 @@ type StockModel
     Functions
 *)
     let mutable
-        _Stock                                     = cell (fun () -> withEngine pricingEngine evaluationDate (new Stock (quote.Value)))
-    let _isExpired                                 = triv (fun () -> (withEvaluationDate _evaluationDate _Stock).isExpired())
-    let _CASH                                      = cell (fun () -> (withEvaluationDate _evaluationDate _Stock).CASH())
-    let _errorEstimate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Stock).errorEstimate())
-    let _NPV                                       = cell (fun () -> (withEvaluationDate _evaluationDate _Stock).NPV())
+        _Stock                                     = make (fun () -> withEngine pricingEngine evaluationDate (new Stock (quote.Value)))
+    let _isExpired                                 = triv _Stock (fun () -> (withEvaluationDate _evaluationDate _Stock).isExpired())
+    let _CASH                                      = cell _Stock (fun () -> (withEvaluationDate _evaluationDate _Stock).CASH())
+    let _errorEstimate                             = triv _Stock (fun () -> (withEvaluationDate _evaluationDate _Stock).errorEstimate())
+    let _NPV                                       = cell _Stock (fun () -> (withEvaluationDate _evaluationDate _Stock).NPV())
     let _result                                    (tag : ICell<string>)   
-                                                   = triv (fun () -> (withEvaluationDate _evaluationDate _Stock).result(tag.Value))
+                                                   = triv _Stock (fun () -> (withEvaluationDate _evaluationDate _Stock).result(tag.Value))
     let _setPricingEngine                          (e : ICell<IPricingEngine>)   
-                                                   = triv (fun () -> (withEvaluationDate _evaluationDate _Stock).setPricingEngine(e.Value)
-                                                                     _Stock.Value)
-    let _valuationDate                             = triv (fun () -> (withEvaluationDate _evaluationDate _Stock).valuationDate())
+                                                   = triv _Stock (fun () -> (withEvaluationDate _evaluationDate _Stock).setPricingEngine(e.Value)
+                                                                            _Stock.Value)
+    let _valuationDate                             = triv _Stock (fun () -> (withEvaluationDate _evaluationDate _Stock).valuationDate())
     do this.Bind(_Stock)
 (* 
     casting 

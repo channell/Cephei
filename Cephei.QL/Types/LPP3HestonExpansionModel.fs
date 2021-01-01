@@ -55,9 +55,9 @@ type LPP3HestonExpansionModel
     Functions
 *)
     let mutable
-        _LPP3HestonExpansion                       = cell (fun () -> new LPP3HestonExpansion (kappa.Value, theta.Value, sigma.Value, v0.Value, rho.Value, term.Value))
+        _LPP3HestonExpansion                       = make (fun () -> new LPP3HestonExpansion (kappa.Value, theta.Value, sigma.Value, v0.Value, rho.Value, term.Value))
     let _impliedVolatility                         (strike : ICell<double>) (forward : ICell<double>)   
-                                                   = triv (fun () -> _LPP3HestonExpansion.Value.impliedVolatility(strike.Value, forward.Value))
+                                                   = triv _LPP3HestonExpansion (fun () -> _LPP3HestonExpansion.Value.impliedVolatility(strike.Value, forward.Value))
     do this.Bind(_LPP3HestonExpansion)
 (* 
     casting 

@@ -49,8 +49,8 @@ type FdmIndicesOnBoundaryModel
     Functions
 *)
     let mutable
-        _FdmIndicesOnBoundary                      = cell (fun () -> new FdmIndicesOnBoundary (layout.Value, direction.Value, side.Value))
-    let _getIndices                                = triv (fun () -> _FdmIndicesOnBoundary.Value.getIndices())
+        _FdmIndicesOnBoundary                      = make (fun () -> new FdmIndicesOnBoundary (layout.Value, direction.Value, side.Value))
+    let _getIndices                                = triv _FdmIndicesOnBoundary (fun () -> _FdmIndicesOnBoundary.Value.getIndices())
     do this.Bind(_FdmIndicesOnBoundary)
 (* 
     casting 

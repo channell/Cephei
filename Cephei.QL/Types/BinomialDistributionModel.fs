@@ -47,9 +47,9 @@ type BinomialDistributionModel
     Functions
 *)
     let mutable
-        _BinomialDistribution                      = cell (fun () -> new BinomialDistribution (p.Value, n.Value))
+        _BinomialDistribution                      = make (fun () -> new BinomialDistribution (p.Value, n.Value))
     let _value                                     (k : ICell<int>)   
-                                                   = triv (fun () -> _BinomialDistribution.Value.value(k.Value))
+                                                   = triv _BinomialDistribution (fun () -> _BinomialDistribution.Value.value(k.Value))
     do this.Bind(_BinomialDistribution)
 (* 
     casting 

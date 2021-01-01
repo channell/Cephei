@@ -47,16 +47,16 @@ type UniformGridMesherModel
     Functions
 *)
     let mutable
-        _UniformGridMesher                         = cell (fun () -> new UniformGridMesher (layout.Value, boundaries.Value))
+        _UniformGridMesher                         = make (fun () -> new UniformGridMesher (layout.Value, boundaries.Value))
     let _dminus                                    (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
-                                                   = triv (fun () -> _UniformGridMesher.Value.dminus(iter.Value, direction.Value))
+                                                   = triv _UniformGridMesher (fun () -> _UniformGridMesher.Value.dminus(iter.Value, direction.Value))
     let _dplus                                     (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
-                                                   = triv (fun () -> _UniformGridMesher.Value.dplus(iter.Value, direction.Value))
+                                                   = triv _UniformGridMesher (fun () -> _UniformGridMesher.Value.dplus(iter.Value, direction.Value))
     let _location                                  (iter : ICell<FdmLinearOpIterator>) (direction : ICell<int>)   
-                                                   = triv (fun () -> _UniformGridMesher.Value.location(iter.Value, direction.Value))
+                                                   = triv _UniformGridMesher (fun () -> _UniformGridMesher.Value.location(iter.Value, direction.Value))
     let _locations                                 (direction : ICell<int>)   
-                                                   = triv (fun () -> _UniformGridMesher.Value.locations(direction.Value))
-    let _layout                                    = triv (fun () -> _UniformGridMesher.Value.layout())
+                                                   = triv _UniformGridMesher (fun () -> _UniformGridMesher.Value.locations(direction.Value))
+    let _layout                                    = triv _UniformGridMesher (fun () -> _UniformGridMesher.Value.layout())
     do this.Bind(_UniformGridMesher)
 (* 
     casting 

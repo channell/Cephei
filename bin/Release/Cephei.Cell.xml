@@ -197,8 +197,13 @@
             Has this cell been disposed, buy wating for references to be cleared
             </summary>
         </member>
+        <member name="P:Cephei.Cell.Generic.Cell`1.Mutex">
+            <summary>
+            object that need to be locked during evaluation of func
+            </summary>
+        </member>
         <!-- Badly formed XML comment ignored for member "M:Cephei.Cell.Generic.Cell`1.#ctor(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,`0})" -->
-        <member name="M:Cephei.Cell.Generic.Cell`1.#ctor(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,`0},System.String)">
+        <member name="M:Cephei.Cell.Generic.Cell`1.#ctor(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,`0},Cephei.Cell.ICell)">
             <summary>
             Create a cell with a mnemonic reference
             </summary>
@@ -210,13 +215,6 @@
             Cretate a cell with a a mutable value
             </summary>
             <param name="value"></param>
-        </member>
-        <member name="M:Cephei.Cell.Generic.Cell`1.#ctor(`0,System.String)">
-            <summary>
-            Create a Cell with a value and a memonic reference
-            </summary>
-            <param name="value"></param>
-            <param name="mnemonic"></param>
         </member>
         <member name="M:Cephei.Cell.Generic.Cell`1.LinkReturn(`0)">
             <summary>
@@ -290,7 +288,7 @@
         </member>
         <!-- Badly formed XML comment ignored for member "P:Cephei.Cell.Generic.CellTrivial`1.Mnemonic" -->
         <!-- Badly formed XML comment ignored for member "M:Cephei.Cell.Generic.CellTrivial`1.#ctor(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,`0})" -->
-        <member name="M:Cephei.Cell.Generic.CellTrivial`1.#ctor(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,`0},System.String)">
+        <member name="M:Cephei.Cell.Generic.CellTrivial`1.#ctor(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,`0},Cephei.Cell.ICell)">
             <summary>
             Create a cell with a mnemonic reference
             </summary>
@@ -465,6 +463,16 @@
             Get the status of the cell
             </summary>
         </member>
+        <member name="P:Cephei.Cell.ICell.Error">
+            <summary>
+            Last Error object form async calcualtion
+            </summary>
+        </member>
+        <member name="P:Cephei.Cell.ICell.Mutex">
+            <summary>
+            Reference to a parent cell whose dependants need to lock because the algorith is not thread safe
+            </summary>
+        </member>
         <member name="T:Cephei.Cell.ITrivial">
             <summary>
             Trivial Cells are executed inline with their calling function
@@ -523,14 +531,14 @@
             </summary>
             <param name="func"></param>
         </member>
-        <member name="M:Cephei.Cell.Cell.Create``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},System.String)">
+        <member name="M:Cephei.Cell.Cell.Create``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},Cephei.Cell.ICell)">
             <summary>
             Crreate a cell with an F# function and name like
             let cell = Cell.Create (fun i -> other_cell.Value.NPV(tenor.Value) "other_cell
             NPV"
             </summary>
             <param name="func"></param>
-            <param name="mnemonic"></param>
+            <param name="mutex"></param>
         </member>
         <member name="M:Cephei.Cell.Cell.CreateTrivial``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})">
             <summary>
@@ -539,7 +547,15 @@
             NPV"
             </summary>
             <param name="func"></param>
-            <param name="mnemonic"></param>
+        </member>
+        <member name="M:Cephei.Cell.Cell.CreateTrivial``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},Cephei.Cell.ICell)">
+            <summary>
+            Crreate a trivial cell with an F# function and name like
+            let cell = Cell.CreateTrivial (fun i -> other_cell :> expected) "other_cell
+            NPV"
+            </summary>
+            <param name="func"></param>
+            <param name="mutex"></param>
         </member>
         <member name="M:Cephei.Cell.Cell.CreateValue``1(``0)">
             <summary>
@@ -547,20 +563,13 @@
             </summary>
             <param name="value"></param>
         </member>
-        <member name="M:Cephei.Cell.Cell.CreateValue``1(``0,System.String)">
-            <summary>
-            Create a cell with a mutable value and mnemonic
-            </summary>
-            <param name="value"></param>
-            <param name="mnemonic"></param>
-        </member>
         <!-- Badly formed XML comment ignored for member "M:Cephei.Cell.Cell.CreateFast``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})" -->
-        <member name="M:Cephei.Cell.Cell.CreateFast``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},System.String)">
+        <member name="M:Cephei.Cell.Cell.CreateFast``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},Cephei.Cell.ICell)">
             <summary>
             Create a fast cell with a mnemonic
             </summary>
             <param name="func"></param>
-            <param name="mnemonic"></param>
+            <param name="mutex"></param>
         </member>
         <member name="M:Cephei.Cell.Cell.CreateFastValue``1(``0)">
             <summary>
@@ -570,15 +579,6 @@
             </summary>
             <param name="value"></param>
         </member>
-        <member name="M:Cephei.Cell.Cell.CreateFastValue``1(``0,System.String)">
-            <summary>
-            Create a cell value with a mnemonic where it is known at define-time that all
-            the dependants will use fast cells for evaluation.
-            This creates a cell that does not check for dependants needing profiling
-            </summary>
-            <param name="value"></param>
-            <param name="mnemonic"></param>
-        </member>
         <member name="M:Cephei.Cell.Cell.CreateSpot``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})">
             <summary>
             Create a Fast Cell that does not participate in sessions.  All calls to Value
@@ -586,13 +586,13 @@
             </summary>
             <param name="func"></param>
         </member>
-        <member name="M:Cephei.Cell.Cell.CreateSpot``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},System.String)">
+        <member name="M:Cephei.Cell.Cell.CreateSpot``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},Cephei.Cell.ICell)">
             <summary>
             Create a Fast Cell with an mnemonic that does not participate in sessions.  All
             calls to Value will use the latest spot value of the cell
             </summary>
             <param name="func"></param>
-            <param name="mnemonic"></param>
+            <param name="mutex"></param>
         </member>
         <member name="M:Cephei.Cell.Cell.CreateSpotValue``1(``0)">
             <summary>
@@ -602,17 +602,6 @@
             current sessions
             </summary>
             <param name="value"></param>
-        </member>
-        <member name="M:Cephei.Cell.Cell.CreateSpotValue``1(``0,System.String)">
-            <summary>
-            Create a cell value with mnemonic where it is known at define-time that all the
-            dependants will use fast cells for evaluation and will not participate in
-            sessions
-            This creates a cell that does not check for dependants needing profiling or
-            current sessions
-            </summary>
-            <param name="value"></param>
-            <param name="mnemonic"></param>
         </member>
         <member name="M:Cephei.Cell.Cell.Profile``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})">
             <summary>
@@ -632,12 +621,13 @@
             </summary>
             <param name="func"></param>
         </member>
-        <member name="M:Cephei.Cell.Cell.Relink(System.Object,Cephei.Cell.Model)">
+        <member name="M:Cephei.Cell.Cell.Relink(System.Object,Cephei.Cell.Model,System.Boolean)">
             <summary>
-            Remink the formula of a cell to use current value
+            Relink the formula of a cell to use current value
             </summary>
             <param name="func">function within cell</param>
             <param name="model">model that the functions cell is within </param>
+            <param name="recursive">should this be a recursive relink </param>
         </member>
         <member name="T:Cephei.Cell.SessionState">
             <summary>

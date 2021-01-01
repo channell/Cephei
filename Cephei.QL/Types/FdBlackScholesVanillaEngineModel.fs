@@ -62,7 +62,7 @@ type FdBlackScholesVanillaEngineModel
     Functions
 *)
     let mutable
-        _FdBlackScholesVanillaEngine               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FdBlackScholesVanillaEngine (Process.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value, cashDividendModel.Value))))
+        _FdBlackScholesVanillaEngine               = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FdBlackScholesVanillaEngine (Process.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value, cashDividendModel.Value))))
     do this.Bind(_FdBlackScholesVanillaEngine)
 (* 
     casting 
@@ -131,7 +131,7 @@ type FdBlackScholesVanillaEngineModel1
     Functions
 *)
     let mutable
-        _FdBlackScholesVanillaEngine               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FdBlackScholesVanillaEngine (Process.Value, quantoHelper.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value, cashDividendModel.Value))))
+        _FdBlackScholesVanillaEngine               = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FdBlackScholesVanillaEngine (Process.Value, quantoHelper.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value, cashDividendModel.Value))))
     do this.Bind(_FdBlackScholesVanillaEngine)
 (* 
     casting 

@@ -124,7 +124,15 @@ namespace Cephei.Cell
         /// </summary>
         CellState State { get; }
 
+        /// <summary>
+        /// Last Error object form async calcualtion
+        /// </summary>
         Exception Error { get; }
+
+        /// <summary>
+        /// Reference to a parent cell whose dependants need to lock because the algorith is not thread safe
+        /// </summary>
+        ICell Mutex { get; set; }
     }
 
     /// <summary>
@@ -185,11 +193,12 @@ namespace Cephei.Cell
         /// </summary>
         public static System.Threading.ThreadLocal<Stack<ICell>> Current = new System.Threading.ThreadLocal<Stack<ICell>>(() => { var s = new Stack<ICell>(); s.Push(null); return s; });
 
-		/// <summary>
-		/// Crreate a cell with an F# function like
-		/// let cell = Cell.Create (fun i -> other_cell.Value.NPV(tenor.Value)
-		/// </summary>
-		/// <param name="func"></param>
+        /// <summary>
+        /// Crreate a cell with an F# function like
+        /// let cell = Cell.Create (fun i -> other_cell.Value.NPV(tenor.Value)
+        /// </summary>
+        /// <param name="func"></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Generic.ICell<T> Create<T>(FSharpFunc<Unit, T> func)
         {
             return new Cell<T>(func);
@@ -200,10 +209,11 @@ namespace Cephei.Cell
         /// NPV"
         /// </summary>
         /// <param name="func"></param>
-        /// <param name="mnemonic"></param>
-        public static Generic.ICell<T> Create<T>(FSharpFunc<Unit, T> func, string mnemonic)
+        /// <param name="mutex"></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Generic.ICell<T> Create<T>(FSharpFunc<Unit, T> func, ICell mutex)
         {
-            return new Cell<T>(func, mnemonic);
+            return new Cell<T>(func, mutex);
         }
         /// <summary>
         /// Crreate a trivial cell with an F# function and name like
@@ -211,43 +221,49 @@ namespace Cephei.Cell
         /// NPV"
         /// </summary>
         /// <param name="func"></param>
-        /// <param name="mnemonic"></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Generic.ICell<T> CreateTrivial<T>(FSharpFunc<Unit, T> func)
         {
             return new CellTrivial<T>(func);
         }
 
         /// <summary>
+        /// Crreate a trivial cell with an F# function and name like
+        /// let cell = Cell.CreateTrivial (fun i -> other_cell :> expected) "other_cell
+        /// NPV"
+        /// </summary>
+        /// <param name="func"></param>
+        /// <param name="mutex"></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Generic.ICell<T> CreateTrivial<T>(FSharpFunc<Unit, T> func, ICell mutex)
+        {
+            return new CellTrivial<T>(func, mutex);
+        }
+
+        /// <summary>
         /// Create a cell with a mutable value
         /// </summary>
         /// <param name="value"></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Cell<T> CreateValue<T>(T value)
         {
             return new Cell<T>(value);
         }
-		/// <summary>
-		/// Create a cell with a mutable value and mnemonic
-		/// </summary>
-		/// <param name="value"></param>
-		/// <param name="mnemonic"></param>
-        public static Cell<T> CreateValue<T>(T value, string mnemonic)
-        {
-            return new Cell<T>(value, mnemonic);
-        }
-		/// <summary>
-		/// Create a cell with a function, taking advantage of the fact the funcion passed
-		/// should be a closure that captures the value used in the calculation.an
-		/// For functions like let x = Cell.CreateFast (fun x -> NPV y.["z"]) will result
-		/// in a normal cell being created because the closure does not resolve to
-		/// ICell<'t> because <i>y</i> is captured rather then the result of the expression.
-		/// 
-		/// coding it as closure builder allows the cell to be profiled at creation
-		/// let x =
-		///  let build z =
-		///    Cell.Fast (fun x -> NPV z)
-		///  build y.["z"]
-		/// </summary>
-		/// <param name="func"></param>
+        /// <summary>
+        /// Create a cell with a function, taking advantage of the fact the funcion passed
+        /// should be a closure that captures the value used in the calculation.an
+        /// For functions like let x = Cell.CreateFast (fun x -> NPV y.["z"]) will result
+        /// in a normal cell being created because the closure does not resolve to
+        /// ICell<'t> because <i>y</i> is captured rather then the result of the expression.
+        /// 
+        /// coding it as closure builder allows the cell to be profiled at creation
+        /// let x =
+        ///  let build z =
+        ///    Cell.Fast (fun x -> NPV z)
+        ///  build y.["z"]
+        /// </summary>
+        /// <param name="func"></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Generic.ICell<T> CreateFast<T>(FSharpFunc<Unit, T> func)
         {
             var p = Profile(func);
@@ -260,41 +276,33 @@ namespace Cephei.Cell
         /// Create a fast cell with a mnemonic
         /// </summary>
         /// <param name="func"></param>
-        /// <param name="mnemonic"></param>
-        public static Generic.ICell<T> CreateFast<T>(FSharpFunc<Unit, T> func, string mnemonic)
+        /// <param name="mutex"></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Generic.ICell<T> CreateFast<T>(FSharpFunc<Unit, T> func, ICell mutex)
         {
             var profile = Profile(func);
             if (profile.Length > 0)
-                return new CellFast<T>(func, profile, mnemonic);
+                return new CellFast<T>(func, profile, mutex);
             else
-                return new CellFast<T>(func, new ICell[0], mnemonic);
+                return new CellFast<T>(func, new ICell[0], mutex);
         }
-		/// <summary>
-		/// Create a cell value where it is known at define-time that all the dependants
-		/// will use fast cells for evaluation.
-		/// This creates a cell that does not check for dependants needing profiling
-		/// </summary>
-		/// <param name="value"></param>
+        /// <summary>
+        /// Create a cell value where it is known at define-time that all the dependants
+        /// will use fast cells for evaluation.
+        /// This creates a cell that does not check for dependants needing profiling
+        /// </summary>
+        /// <param name="value"></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Generic.ICell<T> CreateFastValue<T>(T value)
         {
             return new CellFast<T>(value);
         }
-		/// <summary>
-		/// Create a cell value with a mnemonic where it is known at define-time that all
-		/// the dependants will use fast cells for evaluation.
-		/// This creates a cell that does not check for dependants needing profiling
-		/// </summary>
-		/// <param name="value"></param>
-		/// <param name="mnemonic"></param>
-        public static Generic.ICell<T> CreateFastValue<T>(T value, string mnemonic)
-        {
-            return new CellFast<T>(value, mnemonic);
-        }
-		/// <summary>
-		/// Create a Fast Cell that does not participate in sessions.  All calls to Value
-		/// will use the latest spot value of the cell
-		/// </summary>
-		/// <param name="func"></param>
+        /// <summary>
+        /// Create a Fast Cell that does not participate in sessions.  All calls to Value
+        /// will use the latest spot value of the cell
+        /// </summary>
+        /// <param name="func"></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Generic.ICell<T> CreateSpot<T>(FSharpFunc<Unit, T> func)
         {
             var p = Profile(func);
@@ -303,49 +311,39 @@ namespace Cephei.Cell
             else
                 return new Cell<T>(func);
         }
-		/// <summary>
-		/// Create a Fast Cell with an mnemonic that does not participate in sessions.  All
-		/// calls to Value will use the latest spot value of the cell
-		/// </summary>
-		/// <param name="func"></param>
-		/// <param name="mnemonic"></param>
-        public static Generic.ICell<T> CreateSpot<T>(FSharpFunc<Unit, T> func, string mnemonic)
+        /// <summary>
+        /// Create a Fast Cell with an mnemonic that does not participate in sessions.  All
+        /// calls to Value will use the latest spot value of the cell
+        /// </summary>
+        /// <param name="func"></param>
+        /// <param name="mutex"></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Generic.ICell<T> CreateSpot<T>(FSharpFunc<Unit, T> func, ICell mutex)
         {
             var profile = Profile(func);
             if (profile.Length > 0)
-                return new CellSpot<T>(func, profile, mnemonic);
+                return new CellSpot<T>(func, profile, mutex);
             else
-                return new Cell<T>(func, mnemonic);
+                return new Cell<T>(func, mutex);
         }
-		/// <summary>
-		/// Create a cell value where it is known at define-time that all the dependants
-		/// will use fast cells for evaluation and will not participate in sessions
-		/// This creates a cell that does not check for dependants needing profiling or
-		/// current sessions
-		/// </summary>
-		/// <param name="value"></param>
+        /// <summary>
+        /// Create a cell value where it is known at define-time that all the dependants
+        /// will use fast cells for evaluation and will not participate in sessions
+        /// This creates a cell that does not check for dependants needing profiling or
+        /// current sessions
+        /// </summary>
+        /// <param name="value"></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Generic.ICell<T> CreateSpotValue<T>(T value)
         {
             return new CellSpot<T>(value);
-        }
-		/// <summary>
-		/// Create a cell value with mnemonic where it is known at define-time that all the
-		/// dependants will use fast cells for evaluation and will not participate in
-		/// sessions
-		/// This creates a cell that does not check for dependants needing profiling or
-		/// current sessions
-		/// </summary>
-		/// <param name="value"></param>
-		/// <param name="mnemonic"></param>
-        public static Generic.ICell<T> CreateSpotValue<T>(T value, string mnemonic)
-        {
-            return new CellSpot<T>(value, mnemonic);
         }
 
         /// <summary>
         /// profile the closure to extract a list of the cells referenced
         /// </summary>
         /// <param name="func"></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ICell[] Profile<T>(FSharpFunc<Unit, T> func)
         {
             return ProfileObject(func);
@@ -355,6 +353,7 @@ namespace Cephei.Cell
         /// profile the kernel bootstrap closure to extract a list of the cells referenced
         /// </summary>
         /// <param name="func"></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ICell[] Profile<T>(FSharpFunc<Unit, FSharpFunc<Unit, T>> func)
         {
             return ProfileObject(func);
@@ -431,11 +430,12 @@ namespace Cephei.Cell
         }
     
         /// <summary>
-        /// Remink the formula of a cell to use current value
+        /// Relink the formula of a cell to use current value
         /// </summary>
         /// <param name="func">function within cell</param>
         /// <param name="model">model that the functions cell is within </param>
-        public static bool Relink(object func, Model model)
+        /// <param name="recursive">should this be a recursive relink </param>
+        public static bool Relink(object func, Model model, bool recursive = false)
         {
             var changed = false;
             var fields = func.GetType().GetFields();
@@ -447,6 +447,8 @@ namespace Cephei.Cell
                 {
                     if (c.Mnemonic != null && model.ContainsKey(c.Mnemonic))
                     {
+                        if (recursive)
+                            Relink(c.GetFunction(), model, recursive);
                         var n = model[c.Mnemonic];
                         if (n != null && n != c && c.GetType().IsSubclassOf (n.GetType()))
                         {

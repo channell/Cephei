@@ -45,19 +45,19 @@ type Actual360Model
     Functions
 *)
     let mutable
-        _Actual360                                 = cell (fun () -> new Actual360 (c.Value))
+        _Actual360                                 = make (fun () -> new Actual360 (c.Value))
     let _dayCount                                  (d1 : ICell<Date>) (d2 : ICell<Date>)   
-                                                   = triv (fun () -> _Actual360.Value.dayCount(d1.Value, d2.Value))
-    let _dayCounter                                = triv (fun () -> _Actual360.Value.dayCounter)
-    let _empty                                     = triv (fun () -> _Actual360.Value.empty())
+                                                   = triv _Actual360 (fun () -> _Actual360.Value.dayCount(d1.Value, d2.Value))
+    let _dayCounter                                = triv _Actual360 (fun () -> _Actual360.Value.dayCounter)
+    let _empty                                     = triv _Actual360 (fun () -> _Actual360.Value.empty())
     let _Equals                                    (o : ICell<Object>)   
-                                                   = triv (fun () -> _Actual360.Value.Equals(o.Value))
-    let _name                                      = triv (fun () -> _Actual360.Value.name())
-    let _ToString                                  = triv (fun () -> _Actual360.Value.ToString())
+                                                   = triv _Actual360 (fun () -> _Actual360.Value.Equals(o.Value))
+    let _name                                      = triv _Actual360 (fun () -> _Actual360.Value.name())
+    let _ToString                                  = triv _Actual360 (fun () -> _Actual360.Value.ToString())
     let _yearFraction                              (d1 : ICell<Date>) (d2 : ICell<Date>) (refPeriodStart : ICell<Date>) (refPeriodEnd : ICell<Date>)   
-                                                   = triv (fun () -> _Actual360.Value.yearFraction(d1.Value, d2.Value, refPeriodStart.Value, refPeriodEnd.Value))
+                                                   = triv _Actual360 (fun () -> _Actual360.Value.yearFraction(d1.Value, d2.Value, refPeriodStart.Value, refPeriodEnd.Value))
     let _yearFraction1                             (d1 : ICell<Date>) (d2 : ICell<Date>)   
-                                                   = triv (fun () -> _Actual360.Value.yearFraction(d1.Value, d2.Value))
+                                                   = triv _Actual360 (fun () -> _Actual360.Value.yearFraction(d1.Value, d2.Value))
     do this.Bind(_Actual360)
 (* 
     casting 

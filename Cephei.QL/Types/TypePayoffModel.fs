@@ -45,15 +45,15 @@ type TypePayoffModel
     Functions
 *)
     let mutable
-        _TypePayoff                                = cell (fun () -> new TypePayoff (Type.Value))
-    let _description                               = triv (fun () -> _TypePayoff.Value.description())
-    let _optionType                                = triv (fun () -> _TypePayoff.Value.optionType())
+        _TypePayoff                                = make (fun () -> new TypePayoff (Type.Value))
+    let _description                               = triv _TypePayoff (fun () -> _TypePayoff.Value.description())
+    let _optionType                                = triv _TypePayoff (fun () -> _TypePayoff.Value.optionType())
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> _TypePayoff.Value.accept(v.Value)
-                                                                     _TypePayoff.Value)
-    let _name                                      = triv (fun () -> _TypePayoff.Value.name())
+                                                   = triv _TypePayoff (fun () -> _TypePayoff.Value.accept(v.Value)
+                                                                                 _TypePayoff.Value)
+    let _name                                      = triv _TypePayoff (fun () -> _TypePayoff.Value.name())
     let _value                                     (price : ICell<double>)   
-                                                   = triv (fun () -> _TypePayoff.Value.value(price.Value))
+                                                   = triv _TypePayoff (fun () -> _TypePayoff.Value.value(price.Value))
     do this.Bind(_TypePayoff)
 (* 
     casting 

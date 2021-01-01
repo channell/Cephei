@@ -53,11 +53,11 @@ type RichardsonEqnModel
     Functions
 *)
     let mutable
-        _RichardsonEqn                             = cell (fun () -> new RichardsonEqn (fh.Value, ft.Value, fs.Value, t.Value, s.Value))
+        _RichardsonEqn                             = make (fun () -> new RichardsonEqn (fh.Value, ft.Value, fs.Value, t.Value, s.Value))
     let _value                                     (k : ICell<double>)   
-                                                   = triv (fun () -> _RichardsonEqn.Value.value(k.Value))
+                                                   = triv _RichardsonEqn (fun () -> _RichardsonEqn.Value.value(k.Value))
     let _derivative                                (x : ICell<double>)   
-                                                   = triv (fun () -> _RichardsonEqn.Value.derivative(x.Value))
+                                                   = triv _RichardsonEqn (fun () -> _RichardsonEqn.Value.derivative(x.Value))
     do this.Bind(_RichardsonEqn)
 (* 
     casting 

@@ -81,9 +81,9 @@ type SVIModel
     Functions
 *)
     let mutable
-        _SVI                                       = cell (fun () -> new SVI (t.Value, forward.Value, a.Value, b.Value, sigma.Value, rho.Value, m.Value, aIsFixed.Value, bIsFixed.Value, sigmaIsFixed.Value, rhoIsFixed.Value, mIsFixed.Value, vegaWeighted.Value, endCriteria.Value, optMethod.Value, errorAccept.Value, useMaxError.Value, maxGuesses.Value, addParams.Value))
+        _SVI                                       = make (fun () -> new SVI (t.Value, forward.Value, a.Value, b.Value, sigma.Value, rho.Value, m.Value, aIsFixed.Value, bIsFixed.Value, sigmaIsFixed.Value, rhoIsFixed.Value, mIsFixed.Value, vegaWeighted.Value, endCriteria.Value, optMethod.Value, errorAccept.Value, useMaxError.Value, maxGuesses.Value, addParams.Value))
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (xEnd : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _SVI.Value.interpolate(xBegin.Value, xEnd.Value, yBegin.Value))
+                                                   = triv _SVI (fun () -> _SVI.Value.interpolate(xBegin.Value, xEnd.Value, yBegin.Value))
     do this.Bind(_SVI)
 (* 
     casting 

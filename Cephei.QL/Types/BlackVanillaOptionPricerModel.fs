@@ -54,9 +54,9 @@ type BlackVanillaOptionPricerModel
     Functions
 *)
     let mutable
-        _BlackVanillaOptionPricer                  = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackVanillaOptionPricer (forwardValue.Value, expiryDate.Value, swapTenor.Value, volatilityStructure.Value))))
+        _BlackVanillaOptionPricer                  = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BlackVanillaOptionPricer (forwardValue.Value, expiryDate.Value, swapTenor.Value, volatilityStructure.Value))))
     let _value                                     (strike : ICell<double>) (optionType : ICell<Option.Type>) (deflator : ICell<double>)   
-                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _BlackVanillaOptionPricer).Value.value(strike.Value, optionType.Value, deflator.Value))
+                                                   = triv _BlackVanillaOptionPricer (fun () -> (curryEvaluationDate _evaluationDate _BlackVanillaOptionPricer).Value.value(strike.Value, optionType.Value, deflator.Value))
     do this.Bind(_BlackVanillaOptionPricer)
 (* 
     casting 

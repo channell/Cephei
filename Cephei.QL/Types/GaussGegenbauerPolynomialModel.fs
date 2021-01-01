@@ -45,18 +45,18 @@ type GaussGegenbauerPolynomialModel
     Functions
 *)
     let mutable
-        _GaussGegenbauerPolynomial                 = cell (fun () -> new GaussGegenbauerPolynomial (lambda.Value))
+        _GaussGegenbauerPolynomial                 = make (fun () -> new GaussGegenbauerPolynomial (lambda.Value))
     let _alpha                                     (i : ICell<int>)   
-                                                   = triv (fun () -> _GaussGegenbauerPolynomial.Value.alpha(i.Value))
+                                                   = triv _GaussGegenbauerPolynomial (fun () -> _GaussGegenbauerPolynomial.Value.alpha(i.Value))
     let _beta                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _GaussGegenbauerPolynomial.Value.beta(i.Value))
-    let _mu_0                                      = triv (fun () -> _GaussGegenbauerPolynomial.Value.mu_0())
+                                                   = triv _GaussGegenbauerPolynomial (fun () -> _GaussGegenbauerPolynomial.Value.beta(i.Value))
+    let _mu_0                                      = triv _GaussGegenbauerPolynomial (fun () -> _GaussGegenbauerPolynomial.Value.mu_0())
     let _w                                         (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussGegenbauerPolynomial.Value.w(x.Value))
+                                                   = triv _GaussGegenbauerPolynomial (fun () -> _GaussGegenbauerPolynomial.Value.w(x.Value))
     let _value                                     (n : ICell<int>) (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussGegenbauerPolynomial.Value.value(n.Value, x.Value))
+                                                   = triv _GaussGegenbauerPolynomial (fun () -> _GaussGegenbauerPolynomial.Value.value(n.Value, x.Value))
     let _weightedValue                             (n : ICell<int>) (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussGegenbauerPolynomial.Value.weightedValue(n.Value, x.Value))
+                                                   = triv _GaussGegenbauerPolynomial (fun () -> _GaussGegenbauerPolynomial.Value.weightedValue(n.Value, x.Value))
     do this.Bind(_GaussGegenbauerPolynomial)
 (* 
     casting 

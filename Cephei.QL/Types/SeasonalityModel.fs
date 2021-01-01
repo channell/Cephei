@@ -42,13 +42,13 @@ type SeasonalityModel
     Functions
 *)
     let mutable
-        _Seasonality                               = cell (fun () -> new Seasonality ())
+        _Seasonality                               = make (fun () -> new Seasonality ())
     let _correctYoYRate                            (d : ICell<Date>) (r : ICell<double>) (iTS : ICell<InflationTermStructure>)   
-                                                   = triv (fun () -> _Seasonality.Value.correctYoYRate(d.Value, r.Value, iTS.Value))
+                                                   = triv _Seasonality (fun () -> _Seasonality.Value.correctYoYRate(d.Value, r.Value, iTS.Value))
     let _correctZeroRate                           (d : ICell<Date>) (r : ICell<double>) (iTS : ICell<InflationTermStructure>)   
-                                                   = triv (fun () -> _Seasonality.Value.correctZeroRate(d.Value, r.Value, iTS.Value))
+                                                   = triv _Seasonality (fun () -> _Seasonality.Value.correctZeroRate(d.Value, r.Value, iTS.Value))
     let _isConsistent                              (iTS : ICell<InflationTermStructure>)   
-                                                   = triv (fun () -> _Seasonality.Value.isConsistent(iTS.Value))
+                                                   = triv _Seasonality (fun () -> _Seasonality.Value.isConsistent(iTS.Value))
     do this.Bind(_Seasonality)
 (* 
     casting 

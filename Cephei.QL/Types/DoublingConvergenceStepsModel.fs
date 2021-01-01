@@ -42,10 +42,10 @@ type DoublingConvergenceStepsModel
     Functions
 *)
     let mutable
-        _DoublingConvergenceSteps                  = cell (fun () -> new DoublingConvergenceSteps ())
-    let _initialSamples                            = triv (fun () -> _DoublingConvergenceSteps.Value.initialSamples())
+        _DoublingConvergenceSteps                  = make (fun () -> new DoublingConvergenceSteps ())
+    let _initialSamples                            = triv _DoublingConvergenceSteps (fun () -> _DoublingConvergenceSteps.Value.initialSamples())
     let _nextSamples                               (current : ICell<int>)   
-                                                   = triv (fun () -> _DoublingConvergenceSteps.Value.nextSamples(current.Value))
+                                                   = triv _DoublingConvergenceSteps (fun () -> _DoublingConvergenceSteps.Value.nextSamples(current.Value))
     do this.Bind(_DoublingConvergenceSteps)
 (* 
     casting 

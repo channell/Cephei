@@ -48,7 +48,7 @@ type AnalyticDividendEuropeanEngineModel
     Functions
 *)
     let mutable
-        _AnalyticDividendEuropeanEngine            = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticDividendEuropeanEngine (Process.Value))))
+        _AnalyticDividendEuropeanEngine            = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new AnalyticDividendEuropeanEngine (Process.Value))))
     do this.Bind(_AnalyticDividendEuropeanEngine)
 (* 
     casting 

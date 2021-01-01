@@ -55,9 +55,9 @@ type FordeHestonExpansionModel
     Functions
 *)
     let mutable
-        _FordeHestonExpansion                      = cell (fun () -> new FordeHestonExpansion (kappa.Value, theta.Value, sigma.Value, v0.Value, rho.Value, term.Value))
+        _FordeHestonExpansion                      = make (fun () -> new FordeHestonExpansion (kappa.Value, theta.Value, sigma.Value, v0.Value, rho.Value, term.Value))
     let _impliedVolatility                         (strike : ICell<double>) (forward : ICell<double>)   
-                                                   = triv (fun () -> _FordeHestonExpansion.Value.impliedVolatility(strike.Value, forward.Value))
+                                                   = triv _FordeHestonExpansion (fun () -> _FordeHestonExpansion.Value.impliedVolatility(strike.Value, forward.Value))
     do this.Bind(_FordeHestonExpansion)
 (* 
     casting 

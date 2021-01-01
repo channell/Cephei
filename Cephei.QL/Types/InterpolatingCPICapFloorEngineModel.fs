@@ -48,8 +48,8 @@ type InterpolatingCPICapFloorEngineModel
     Functions
 *)
     let mutable
-        _InterpolatingCPICapFloorEngine            = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new InterpolatingCPICapFloorEngine (priceSurf.Value))))
-    let _name                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _InterpolatingCPICapFloorEngine).Value.name())
+        _InterpolatingCPICapFloorEngine            = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new InterpolatingCPICapFloorEngine (priceSurf.Value))))
+    let _name                                      = triv _InterpolatingCPICapFloorEngine (fun () -> (curryEvaluationDate _evaluationDate _InterpolatingCPICapFloorEngine).Value.name())
     do this.Bind(_InterpolatingCPICapFloorEngine)
 (* 
     casting 

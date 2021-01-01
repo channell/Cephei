@@ -45,9 +45,9 @@ type ChiSquareDistributionModel
     Functions
 *)
     let mutable
-        _ChiSquareDistribution                     = cell (fun () -> new ChiSquareDistribution (df.Value))
+        _ChiSquareDistribution                     = make (fun () -> new ChiSquareDistribution (df.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _ChiSquareDistribution.Value.value(x.Value))
+                                                   = triv _ChiSquareDistribution (fun () -> _ChiSquareDistribution.Value.value(x.Value))
     do this.Bind(_ChiSquareDistribution)
 (* 
     casting 

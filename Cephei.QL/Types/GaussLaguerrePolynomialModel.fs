@@ -42,18 +42,18 @@ type GaussLaguerrePolynomialModel
     Functions
 *)
     let mutable
-        _GaussLaguerrePolynomial                   = cell (fun () -> new GaussLaguerrePolynomial ())
+        _GaussLaguerrePolynomial                   = make (fun () -> new GaussLaguerrePolynomial ())
     let _alpha                                     (i : ICell<int>)   
-                                                   = triv (fun () -> _GaussLaguerrePolynomial.Value.alpha(i.Value))
+                                                   = triv _GaussLaguerrePolynomial (fun () -> _GaussLaguerrePolynomial.Value.alpha(i.Value))
     let _beta                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _GaussLaguerrePolynomial.Value.beta(i.Value))
-    let _mu_0                                      = triv (fun () -> _GaussLaguerrePolynomial.Value.mu_0())
+                                                   = triv _GaussLaguerrePolynomial (fun () -> _GaussLaguerrePolynomial.Value.beta(i.Value))
+    let _mu_0                                      = triv _GaussLaguerrePolynomial (fun () -> _GaussLaguerrePolynomial.Value.mu_0())
     let _w                                         (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussLaguerrePolynomial.Value.w(x.Value))
+                                                   = triv _GaussLaguerrePolynomial (fun () -> _GaussLaguerrePolynomial.Value.w(x.Value))
     let _value                                     (n : ICell<int>) (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussLaguerrePolynomial.Value.value(n.Value, x.Value))
+                                                   = triv _GaussLaguerrePolynomial (fun () -> _GaussLaguerrePolynomial.Value.value(n.Value, x.Value))
     let _weightedValue                             (n : ICell<int>) (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussLaguerrePolynomial.Value.weightedValue(n.Value, x.Value))
+                                                   = triv _GaussLaguerrePolynomial (fun () -> _GaussLaguerrePolynomial.Value.weightedValue(n.Value, x.Value))
     do this.Bind(_GaussLaguerrePolynomial)
 (* 
     casting 
@@ -102,18 +102,18 @@ type GaussLaguerrePolynomialModel1
     Functions
 *)
     let mutable
-        _GaussLaguerrePolynomial                   = cell (fun () -> new GaussLaguerrePolynomial (s.Value))
+        _GaussLaguerrePolynomial                   = make (fun () -> new GaussLaguerrePolynomial (s.Value))
     let _alpha                                     (i : ICell<int>)   
-                                                   = triv (fun () -> _GaussLaguerrePolynomial.Value.alpha(i.Value))
+                                                   = triv _GaussLaguerrePolynomial (fun () -> _GaussLaguerrePolynomial.Value.alpha(i.Value))
     let _beta                                      (i : ICell<int>)   
-                                                   = triv (fun () -> _GaussLaguerrePolynomial.Value.beta(i.Value))
-    let _mu_0                                      = triv (fun () -> _GaussLaguerrePolynomial.Value.mu_0())
+                                                   = triv _GaussLaguerrePolynomial (fun () -> _GaussLaguerrePolynomial.Value.beta(i.Value))
+    let _mu_0                                      = triv _GaussLaguerrePolynomial (fun () -> _GaussLaguerrePolynomial.Value.mu_0())
     let _w                                         (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussLaguerrePolynomial.Value.w(x.Value))
+                                                   = triv _GaussLaguerrePolynomial (fun () -> _GaussLaguerrePolynomial.Value.w(x.Value))
     let _value                                     (n : ICell<int>) (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussLaguerrePolynomial.Value.value(n.Value, x.Value))
+                                                   = triv _GaussLaguerrePolynomial (fun () -> _GaussLaguerrePolynomial.Value.value(n.Value, x.Value))
     let _weightedValue                             (n : ICell<int>) (x : ICell<double>)   
-                                                   = triv (fun () -> _GaussLaguerrePolynomial.Value.weightedValue(n.Value, x.Value))
+                                                   = triv _GaussLaguerrePolynomial (fun () -> _GaussLaguerrePolynomial.Value.weightedValue(n.Value, x.Value))
     do this.Bind(_GaussLaguerrePolynomial)
 (* 
     casting 

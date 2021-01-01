@@ -50,8 +50,8 @@ type DiscountingBondEngineModel
     Functions
 *)
     let mutable
-        _DiscountingBondEngine                     = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new DiscountingBondEngine (discountCurve.Value, includeSettlementDateFlows.Value))))
-    let _discountCurve                             = triv (fun () -> (curryEvaluationDate _evaluationDate _DiscountingBondEngine).Value.discountCurve())
+        _DiscountingBondEngine                     = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new DiscountingBondEngine (discountCurve.Value, includeSettlementDateFlows.Value))))
+    let _discountCurve                             = triv _DiscountingBondEngine (fun () -> (curryEvaluationDate _evaluationDate _DiscountingBondEngine).Value.discountCurve())
     do this.Bind(_DiscountingBondEngine)
 (* 
     casting 

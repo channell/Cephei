@@ -45,12 +45,12 @@ type EuropeanExerciseModel
     Functions
 *)
     let mutable
-        _EuropeanExercise                          = cell (fun () -> new EuropeanExercise (date.Value))
+        _EuropeanExercise                          = make (fun () -> new EuropeanExercise (date.Value))
     let _date                                      (index : ICell<int>)   
-                                                   = triv (fun () -> _EuropeanExercise.Value.date(index.Value))
-    let _dates                                     = triv (fun () -> _EuropeanExercise.Value.dates())
-    let _lastDate                                  = triv (fun () -> _EuropeanExercise.Value.lastDate())
-    let _type                                      = triv (fun () -> _EuropeanExercise.Value.TYPE())
+                                                   = triv _EuropeanExercise (fun () -> _EuropeanExercise.Value.date(index.Value))
+    let _dates                                     = triv _EuropeanExercise (fun () -> _EuropeanExercise.Value.dates())
+    let _lastDate                                  = triv _EuropeanExercise (fun () -> _EuropeanExercise.Value.lastDate())
+    let _type                                      = triv _EuropeanExercise (fun () -> _EuropeanExercise.Value.TYPE())
     do this.Bind(_EuropeanExercise)
 (* 
     casting 

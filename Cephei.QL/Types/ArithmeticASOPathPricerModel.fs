@@ -49,9 +49,9 @@ type ArithmeticASOPathPricerModel
     Functions
 *)
     let mutable
-        _ArithmeticASOPathPricer                   = cell (fun () -> new ArithmeticASOPathPricer (Type.Value, discount.Value, runningSum.Value))
+        _ArithmeticASOPathPricer                   = make (fun () -> new ArithmeticASOPathPricer (Type.Value, discount.Value, runningSum.Value))
     let _value                                     (path : ICell<Path>)   
-                                                   = triv (fun () -> _ArithmeticASOPathPricer.Value.value(path.Value))
+                                                   = triv _ArithmeticASOPathPricer (fun () -> _ArithmeticASOPathPricer.Value.value(path.Value))
     do this.Bind(_ArithmeticASOPathPricer)
 (* 
     casting 
@@ -100,9 +100,9 @@ type ArithmeticASOPathPricerModel1
     Functions
 *)
     let mutable
-        _ArithmeticASOPathPricer                   = cell (fun () -> new ArithmeticASOPathPricer (Type.Value, discount.Value, runningSum.Value, pastFixings.Value))
+        _ArithmeticASOPathPricer                   = make (fun () -> new ArithmeticASOPathPricer (Type.Value, discount.Value, runningSum.Value, pastFixings.Value))
     let _value                                     (path : ICell<Path>)   
-                                                   = triv (fun () -> _ArithmeticASOPathPricer.Value.value(path.Value))
+                                                   = triv _ArithmeticASOPathPricer (fun () -> _ArithmeticASOPathPricer.Value.value(path.Value))
     do this.Bind(_ArithmeticASOPathPricer)
 (* 
     casting 
@@ -148,9 +148,9 @@ type ArithmeticASOPathPricerModel2
     Functions
 *)
     let mutable
-        _ArithmeticASOPathPricer                   = cell (fun () -> new ArithmeticASOPathPricer (Type.Value, discount.Value))
+        _ArithmeticASOPathPricer                   = make (fun () -> new ArithmeticASOPathPricer (Type.Value, discount.Value))
     let _value                                     (path : ICell<Path>)   
-                                                   = triv (fun () -> _ArithmeticASOPathPricer.Value.value(path.Value))
+                                                   = triv _ArithmeticASOPathPricer (fun () -> _ArithmeticASOPathPricer.Value.value(path.Value))
     do this.Bind(_ArithmeticASOPathPricer)
 (* 
     casting 

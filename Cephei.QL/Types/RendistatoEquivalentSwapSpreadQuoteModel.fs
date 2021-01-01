@@ -45,15 +45,15 @@ type RendistatoEquivalentSwapSpreadQuoteModel
     Functions
 *)
     let mutable
-        _RendistatoEquivalentSwapSpreadQuote       = cell (fun () -> new RendistatoEquivalentSwapSpreadQuote (r.Value))
-    let _isValid                                   = triv (fun () -> _RendistatoEquivalentSwapSpreadQuote.Value.isValid())
-    let _value                                     = triv (fun () -> _RendistatoEquivalentSwapSpreadQuote.Value.value())
+        _RendistatoEquivalentSwapSpreadQuote       = make (fun () -> new RendistatoEquivalentSwapSpreadQuote (r.Value))
+    let _isValid                                   = triv _RendistatoEquivalentSwapSpreadQuote (fun () -> _RendistatoEquivalentSwapSpreadQuote.Value.isValid())
+    let _value                                     = triv _RendistatoEquivalentSwapSpreadQuote (fun () -> _RendistatoEquivalentSwapSpreadQuote.Value.value())
     let _registerWith                              (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _RendistatoEquivalentSwapSpreadQuote.Value.registerWith(handler.Value)
-                                                                     _RendistatoEquivalentSwapSpreadQuote.Value)
+                                                   = triv _RendistatoEquivalentSwapSpreadQuote (fun () -> _RendistatoEquivalentSwapSpreadQuote.Value.registerWith(handler.Value)
+                                                                                                          _RendistatoEquivalentSwapSpreadQuote.Value)
     let _unregisterWith                            (handler : ICell<Callback>)   
-                                                   = triv (fun () -> _RendistatoEquivalentSwapSpreadQuote.Value.unregisterWith(handler.Value)
-                                                                     _RendistatoEquivalentSwapSpreadQuote.Value)
+                                                   = triv _RendistatoEquivalentSwapSpreadQuote (fun () -> _RendistatoEquivalentSwapSpreadQuote.Value.unregisterWith(handler.Value)
+                                                                                                          _RendistatoEquivalentSwapSpreadQuote.Value)
     do this.Bind(_RendistatoEquivalentSwapSpreadQuote)
 (* 
     casting 

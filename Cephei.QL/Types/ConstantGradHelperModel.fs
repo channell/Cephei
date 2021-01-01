@@ -53,12 +53,12 @@ type ConstantGradHelperModel
     Functions
 *)
     let mutable
-        _ConstantGradHelper                        = cell (fun () -> new ConstantGradHelper (fPrev.Value, prevPrimitive.Value, xPrev.Value, xNext.Value, fNext.Value))
-    let _fNext                                     = triv (fun () -> _ConstantGradHelper.Value.fNext())
+        _ConstantGradHelper                        = make (fun () -> new ConstantGradHelper (fPrev.Value, prevPrimitive.Value, xPrev.Value, xNext.Value, fNext.Value))
+    let _fNext                                     = triv _ConstantGradHelper (fun () -> _ConstantGradHelper.Value.fNext())
     let _primitive                                 (x : ICell<double>)   
-                                                   = triv (fun () -> _ConstantGradHelper.Value.primitive(x.Value))
+                                                   = triv _ConstantGradHelper (fun () -> _ConstantGradHelper.Value.primitive(x.Value))
     let _value                                     (x : ICell<double>)   
-                                                   = triv (fun () -> _ConstantGradHelper.Value.value(x.Value))
+                                                   = triv _ConstantGradHelper (fun () -> _ConstantGradHelper.Value.value(x.Value))
     do this.Bind(_ConstantGradHelper)
 (* 
     casting 

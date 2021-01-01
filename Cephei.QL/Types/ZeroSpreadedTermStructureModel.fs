@@ -56,13 +56,13 @@ type ZeroSpreadedTermStructureModel
     Functions
 *)
     let mutable
-        _ZeroSpreadedTermStructure                 = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new ZeroSpreadedTermStructure (h.Value, spread.Value, comp.Value, freq.Value, dc.Value))))
-    let _calendar                                  = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroSpreadedTermStructure).Value.calendar())
-    let _dayCounter                                = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroSpreadedTermStructure).Value.dayCounter())
-    let _maxDate                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroSpreadedTermStructure).Value.maxDate())
-    let _maxTime                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroSpreadedTermStructure).Value.maxTime())
-    let _referenceDate                             = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroSpreadedTermStructure).Value.referenceDate())
-    let _settlementDays                            = triv (fun () -> (curryEvaluationDate _evaluationDate _ZeroSpreadedTermStructure).Value.settlementDays())
+        _ZeroSpreadedTermStructure                 = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new ZeroSpreadedTermStructure (h.Value, spread.Value, comp.Value, freq.Value, dc.Value))))
+    let _calendar                                  = triv _ZeroSpreadedTermStructure (fun () -> (curryEvaluationDate _evaluationDate _ZeroSpreadedTermStructure).Value.calendar())
+    let _dayCounter                                = triv _ZeroSpreadedTermStructure (fun () -> (curryEvaluationDate _evaluationDate _ZeroSpreadedTermStructure).Value.dayCounter())
+    let _maxDate                                   = triv _ZeroSpreadedTermStructure (fun () -> (curryEvaluationDate _evaluationDate _ZeroSpreadedTermStructure).Value.maxDate())
+    let _maxTime                                   = triv _ZeroSpreadedTermStructure (fun () -> (curryEvaluationDate _evaluationDate _ZeroSpreadedTermStructure).Value.maxTime())
+    let _referenceDate                             = triv _ZeroSpreadedTermStructure (fun () -> (curryEvaluationDate _evaluationDate _ZeroSpreadedTermStructure).Value.referenceDate())
+    let _settlementDays                            = triv _ZeroSpreadedTermStructure (fun () -> (curryEvaluationDate _evaluationDate _ZeroSpreadedTermStructure).Value.settlementDays())
     do this.Bind(_ZeroSpreadedTermStructure)
 (* 
     casting 

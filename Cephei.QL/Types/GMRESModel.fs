@@ -51,11 +51,11 @@ type GMRESModel
     Functions
 *)
     let mutable
-        _GMRES                                     = cell (fun () -> new GMRES (A.Value, maxIter.Value, relTol.Value, preConditioner.Value))
+        _GMRES                                     = make (fun () -> new GMRES (A.Value, maxIter.Value, relTol.Value, preConditioner.Value))
     let _solve                                     (b : ICell<Vector>) (x0 : ICell<Vector>)   
-                                                   = triv (fun () -> _GMRES.Value.solve(b.Value, x0.Value))
+                                                   = triv _GMRES (fun () -> _GMRES.Value.solve(b.Value, x0.Value))
     let _solveWithRestart                          (restart : ICell<int>) (b : ICell<Vector>) (x0 : ICell<Vector>)   
-                                                   = triv (fun () -> _GMRES.Value.solveWithRestart(restart.Value, b.Value, x0.Value))
+                                                   = triv _GMRES (fun () -> _GMRES.Value.solveWithRestart(restart.Value, b.Value, x0.Value))
     do this.Bind(_GMRES)
 (* 
     casting 

@@ -60,7 +60,7 @@ type FdBlackScholesBarrierEngineModel
     Functions
 *)
     let mutable
-        _FdBlackScholesBarrierEngine               = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FdBlackScholesBarrierEngine (Process.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value))))
+        _FdBlackScholesBarrierEngine               = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new FdBlackScholesBarrierEngine (Process.Value, tGrid.Value, xGrid.Value, dampingSteps.Value, schemeDesc.Value, localVol.Value, illegalLocalVolOverwrite.Value))))
     do this.Bind(_FdBlackScholesBarrierEngine)
 (* 
     casting 

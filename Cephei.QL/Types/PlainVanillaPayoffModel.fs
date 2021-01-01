@@ -47,16 +47,16 @@ type PlainVanillaPayoffModel
     Functions
 *)
     let mutable
-        _PlainVanillaPayoff                        = cell (fun () -> new PlainVanillaPayoff (Type.Value, strike.Value))
-    let _name                                      = triv (fun () -> _PlainVanillaPayoff.Value.name())
+        _PlainVanillaPayoff                        = make (fun () -> new PlainVanillaPayoff (Type.Value, strike.Value))
+    let _name                                      = triv _PlainVanillaPayoff (fun () -> _PlainVanillaPayoff.Value.name())
     let _value                                     (price : ICell<double>)   
-                                                   = triv (fun () -> _PlainVanillaPayoff.Value.value(price.Value))
-    let _description                               = triv (fun () -> _PlainVanillaPayoff.Value.description())
-    let _strike                                    = triv (fun () -> _PlainVanillaPayoff.Value.strike())
-    let _optionType                                = triv (fun () -> _PlainVanillaPayoff.Value.optionType())
+                                                   = triv _PlainVanillaPayoff (fun () -> _PlainVanillaPayoff.Value.value(price.Value))
+    let _description                               = triv _PlainVanillaPayoff (fun () -> _PlainVanillaPayoff.Value.description())
+    let _strike                                    = triv _PlainVanillaPayoff (fun () -> _PlainVanillaPayoff.Value.strike())
+    let _optionType                                = triv _PlainVanillaPayoff (fun () -> _PlainVanillaPayoff.Value.optionType())
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> _PlainVanillaPayoff.Value.accept(v.Value)
-                                                                     _PlainVanillaPayoff.Value)
+                                                   = triv _PlainVanillaPayoff (fun () -> _PlainVanillaPayoff.Value.accept(v.Value)
+                                                                                         _PlainVanillaPayoff.Value)
     do this.Bind(_PlainVanillaPayoff)
 (* 
     casting 

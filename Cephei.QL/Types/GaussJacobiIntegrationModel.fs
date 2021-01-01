@@ -49,12 +49,12 @@ type GaussJacobiIntegrationModel
     Functions
 *)
     let mutable
-        _GaussJacobiIntegration                    = cell (fun () -> new GaussJacobiIntegration (n.Value, alpha.Value, beta.Value))
-    let _order                                     = triv (fun () -> _GaussJacobiIntegration.Value.order())
+        _GaussJacobiIntegration                    = make (fun () -> new GaussJacobiIntegration (n.Value, alpha.Value, beta.Value))
+    let _order                                     = triv _GaussJacobiIntegration (fun () -> _GaussJacobiIntegration.Value.order())
     let _value                                     (f : ICell<Func<double,double>>)   
-                                                   = triv (fun () -> _GaussJacobiIntegration.Value.value(f.Value))
-    let _weights                                   = triv (fun () -> _GaussJacobiIntegration.Value.weights())
-    let _x                                         = triv (fun () -> _GaussJacobiIntegration.Value.x())
+                                                   = triv _GaussJacobiIntegration (fun () -> _GaussJacobiIntegration.Value.value(f.Value))
+    let _weights                                   = triv _GaussJacobiIntegration (fun () -> _GaussJacobiIntegration.Value.weights())
+    let _x                                         = triv _GaussJacobiIntegration (fun () -> _GaussJacobiIntegration.Value.x())
     do this.Bind(_GaussJacobiIntegration)
 (* 
     casting 

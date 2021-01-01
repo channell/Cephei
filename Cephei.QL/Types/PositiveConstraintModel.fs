@@ -42,16 +42,16 @@ type PositiveConstraintModel
     Functions
 *)
     let mutable
-        _PositiveConstraint                        = cell (fun () -> new PositiveConstraint ())
-    let _empty                                     = triv (fun () -> _PositiveConstraint.Value.empty())
+        _PositiveConstraint                        = make (fun () -> new PositiveConstraint ())
+    let _empty                                     = triv _PositiveConstraint (fun () -> _PositiveConstraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
-                                                   = triv (fun () -> _PositiveConstraint.Value.lowerBound(parameters.Value))
+                                                   = triv _PositiveConstraint (fun () -> _PositiveConstraint.Value.lowerBound(parameters.Value))
     let _test                                      (p : ICell<Vector>)   
-                                                   = triv (fun () -> _PositiveConstraint.Value.test(p.Value))
+                                                   = triv _PositiveConstraint (fun () -> _PositiveConstraint.Value.test(p.Value))
     let _update                                    (p : ICell<Vector>) (direction : ICell<Vector>) (beta : ICell<double>)   
-                                                   = triv (fun () -> _PositiveConstraint.Value.update(ref p.Value, direction.Value, beta.Value))
+                                                   = triv _PositiveConstraint (fun () -> _PositiveConstraint.Value.update(ref p.Value, direction.Value, beta.Value))
     let _upperBound                                (parameters : ICell<Vector>)   
-                                                   = triv (fun () -> _PositiveConstraint.Value.upperBound(parameters.Value))
+                                                   = triv _PositiveConstraint (fun () -> _PositiveConstraint.Value.upperBound(parameters.Value))
     do this.Bind(_PositiveConstraint)
 (* 
     casting 

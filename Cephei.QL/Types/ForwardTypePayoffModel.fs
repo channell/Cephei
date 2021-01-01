@@ -50,16 +50,16 @@ type ForwardTypePayoffModel
     Functions
 *)
     let mutable
-        _ForwardTypePayoff                         = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new ForwardTypePayoff (Type.Value, strike.Value))))
-    let _description                               = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardTypePayoff).Value.description())
-    let _forwardType                               = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardTypePayoff).Value.forwardType())
-    let _name                                      = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardTypePayoff).Value.name())
-    let _strike                                    = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardTypePayoff).Value.strike())
+        _ForwardTypePayoff                         = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new ForwardTypePayoff (Type.Value, strike.Value))))
+    let _description                               = triv _ForwardTypePayoff (fun () -> (curryEvaluationDate _evaluationDate _ForwardTypePayoff).Value.description())
+    let _forwardType                               = triv _ForwardTypePayoff (fun () -> (curryEvaluationDate _evaluationDate _ForwardTypePayoff).Value.forwardType())
+    let _name                                      = triv _ForwardTypePayoff (fun () -> (curryEvaluationDate _evaluationDate _ForwardTypePayoff).Value.name())
+    let _strike                                    = triv _ForwardTypePayoff (fun () -> (curryEvaluationDate _evaluationDate _ForwardTypePayoff).Value.strike())
     let _value                                     (price : ICell<double>)   
-                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardTypePayoff).Value.value(price.Value))
+                                                   = triv _ForwardTypePayoff (fun () -> (curryEvaluationDate _evaluationDate _ForwardTypePayoff).Value.value(price.Value))
     let _accept                                    (v : ICell<IAcyclicVisitor>)   
-                                                   = triv (fun () -> (curryEvaluationDate _evaluationDate _ForwardTypePayoff).Value.accept(v.Value)
-                                                                     _ForwardTypePayoff.Value)
+                                                   = triv _ForwardTypePayoff (fun () -> (curryEvaluationDate _evaluationDate _ForwardTypePayoff).Value.accept(v.Value)
+                                                                                        _ForwardTypePayoff.Value)
     do this.Bind(_ForwardTypePayoff)
 (* 
     casting 

@@ -47,10 +47,10 @@ type FdmAmericanStepConditionModel
     Functions
 *)
     let mutable
-        _FdmAmericanStepCondition                  = cell (fun () -> new FdmAmericanStepCondition (mesher.Value, calculator.Value))
+        _FdmAmericanStepCondition                  = make (fun () -> new FdmAmericanStepCondition (mesher.Value, calculator.Value))
     let _applyTo                                   (o : ICell<Object>) (t : ICell<double>)   
-                                                   = triv (fun () -> _FdmAmericanStepCondition.Value.applyTo(o.Value, t.Value)
-                                                                     _FdmAmericanStepCondition.Value)
+                                                   = triv _FdmAmericanStepCondition (fun () -> _FdmAmericanStepCondition.Value.applyTo(o.Value, t.Value)
+                                                                                               _FdmAmericanStepCondition.Value)
     do this.Bind(_FdmAmericanStepCondition)
 (* 
     casting 

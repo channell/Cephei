@@ -60,9 +60,9 @@ type IsdaCdsEngineModel
     Functions
 *)
     let mutable
-        _IsdaCdsEngine                             = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new IsdaCdsEngine (probability.Value, recoveryRate.Value, discountCurve.Value, includeSettlementDateFlows.Value, numericalFix.Value, accrualBias.Value, forwardsInCouponPeriod.Value))))
-    let _isdaCreditCurve                           = triv (fun () -> (curryEvaluationDate _evaluationDate _IsdaCdsEngine).Value.isdaCreditCurve())
-    let _isdaRateCurve                             = triv (fun () -> (curryEvaluationDate _evaluationDate _IsdaCdsEngine).Value.isdaRateCurve())
+        _IsdaCdsEngine                             = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new IsdaCdsEngine (probability.Value, recoveryRate.Value, discountCurve.Value, includeSettlementDateFlows.Value, numericalFix.Value, accrualBias.Value, forwardsInCouponPeriod.Value))))
+    let _isdaCreditCurve                           = triv _IsdaCdsEngine (fun () -> (curryEvaluationDate _evaluationDate _IsdaCdsEngine).Value.isdaCreditCurve())
+    let _isdaRateCurve                             = triv _IsdaCdsEngine (fun () -> (curryEvaluationDate _evaluationDate _IsdaCdsEngine).Value.isdaRateCurve())
     do this.Bind(_IsdaCdsEngine)
 (* 
     casting 

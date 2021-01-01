@@ -42,11 +42,11 @@ type LinearModel
     Functions
 *)
     let mutable
-        _Linear                                    = cell (fun () -> new Linear ())
-    let _global                                    = triv (fun () -> _Linear.Value.GLOBAL())
+        _Linear                                    = make (fun () -> new Linear ())
+    let _global                                    = triv _Linear (fun () -> _Linear.Value.GLOBAL())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _Linear.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
-    let _requiredPoints                            = triv (fun () -> _Linear.Value.requiredPoints)
+                                                   = triv _Linear (fun () -> _Linear.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
+    let _requiredPoints                            = triv _Linear (fun () -> _Linear.Value.requiredPoints)
     do this.Bind(_Linear)
 (* 
     casting 

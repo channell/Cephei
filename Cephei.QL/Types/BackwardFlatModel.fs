@@ -42,11 +42,11 @@ type BackwardFlatModel
     Functions
 *)
     let mutable
-        _BackwardFlat                              = cell (fun () -> new BackwardFlat ())
-    let _global                                    = triv (fun () -> _BackwardFlat.Value.GLOBAL())
+        _BackwardFlat                              = make (fun () -> new BackwardFlat ())
+    let _global                                    = triv _BackwardFlat (fun () -> _BackwardFlat.Value.GLOBAL())
     let _interpolate                               (xBegin : ICell<Generic.List<double>>) (size : ICell<int>) (yBegin : ICell<Generic.List<double>>)   
-                                                   = triv (fun () -> _BackwardFlat.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
-    let _requiredPoints                            = triv (fun () -> _BackwardFlat.Value.requiredPoints)
+                                                   = triv _BackwardFlat (fun () -> _BackwardFlat.Value.interpolate(xBegin.Value, size.Value, yBegin.Value))
+    let _requiredPoints                            = triv _BackwardFlat (fun () -> _BackwardFlat.Value.requiredPoints)
     do this.Bind(_BackwardFlat)
 (* 
     casting 

@@ -48,7 +48,7 @@ type BjerksundStenslandApproximationEngineModel
     Functions
 *)
     let mutable
-        _BjerksundStenslandApproximationEngine     = cell (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BjerksundStenslandApproximationEngine (Process.Value))))
+        _BjerksundStenslandApproximationEngine     = make (fun () -> (createEvaluationDate _evaluationDate (fun () ->new BjerksundStenslandApproximationEngine (Process.Value))))
     do this.Bind(_BjerksundStenslandApproximationEngine)
 (* 
     casting 

@@ -45,16 +45,16 @@ type ConstraintModel
     Functions
 *)
     let mutable
-        _Constraint                                = cell (fun () -> new Constraint (impl.Value))
-    let _empty                                     = triv (fun () -> _Constraint.Value.empty())
+        _Constraint                                = make (fun () -> new Constraint (impl.Value))
+    let _empty                                     = triv _Constraint (fun () -> _Constraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
-                                                   = triv (fun () -> _Constraint.Value.lowerBound(parameters.Value))
+                                                   = triv _Constraint (fun () -> _Constraint.Value.lowerBound(parameters.Value))
     let _test                                      (p : ICell<Vector>)   
-                                                   = triv (fun () -> _Constraint.Value.test(p.Value))
+                                                   = triv _Constraint (fun () -> _Constraint.Value.test(p.Value))
     let _update                                    (p : ICell<Vector>) (direction : ICell<Vector>) (beta : ICell<double>)   
-                                                   = triv (fun () -> _Constraint.Value.update(ref p.Value, direction.Value, beta.Value))
+                                                   = triv _Constraint (fun () -> _Constraint.Value.update(ref p.Value, direction.Value, beta.Value))
     let _upperBound                                (parameters : ICell<Vector>)   
-                                                   = triv (fun () -> _Constraint.Value.upperBound(parameters.Value))
+                                                   = triv _Constraint (fun () -> _Constraint.Value.upperBound(parameters.Value))
     do this.Bind(_Constraint)
 (* 
     casting 
@@ -99,16 +99,16 @@ type ConstraintModel1
     Functions
 *)
     let mutable
-        _Constraint                                = cell (fun () -> new Constraint ())
-    let _empty                                     = triv (fun () -> _Constraint.Value.empty())
+        _Constraint                                = make (fun () -> new Constraint ())
+    let _empty                                     = triv _Constraint (fun () -> _Constraint.Value.empty())
     let _lowerBound                                (parameters : ICell<Vector>)   
-                                                   = triv (fun () -> _Constraint.Value.lowerBound(parameters.Value))
+                                                   = triv _Constraint (fun () -> _Constraint.Value.lowerBound(parameters.Value))
     let _test                                      (p : ICell<Vector>)   
-                                                   = triv (fun () -> _Constraint.Value.test(p.Value))
+                                                   = triv _Constraint (fun () -> _Constraint.Value.test(p.Value))
     let _update                                    (p : ICell<Vector>) (direction : ICell<Vector>) (beta : ICell<double>)   
-                                                   = triv (fun () -> _Constraint.Value.update(ref p.Value, direction.Value, beta.Value))
+                                                   = triv _Constraint (fun () -> _Constraint.Value.update(ref p.Value, direction.Value, beta.Value))
     let _upperBound                                (parameters : ICell<Vector>)   
-                                                   = triv (fun () -> _Constraint.Value.upperBound(parameters.Value))
+                                                   = triv _Constraint (fun () -> _Constraint.Value.upperBound(parameters.Value))
     do this.Bind(_Constraint)
 (* 
     casting 

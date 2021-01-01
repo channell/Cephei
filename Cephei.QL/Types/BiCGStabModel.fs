@@ -51,9 +51,9 @@ type BiCGStabModel
     Functions
 *)
     let mutable
-        _BiCGStab                                  = cell (fun () -> new BiCGStab (A.Value, maxIter.Value, relTol.Value, preConditioner.Value))
+        _BiCGStab                                  = make (fun () -> new BiCGStab (A.Value, maxIter.Value, relTol.Value, preConditioner.Value))
     let _solve                                     (b : ICell<Vector>) (x0 : ICell<Vector>)   
-                                                   = triv (fun () -> _BiCGStab.Value.solve(b.Value, x0.Value))
+                                                   = triv _BiCGStab (fun () -> _BiCGStab.Value.solve(b.Value, x0.Value))
     do this.Bind(_BiCGStab)
 (* 
     casting 

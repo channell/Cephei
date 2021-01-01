@@ -47,10 +47,10 @@ type CouponConversionModel
     Functions
 *)
     let mutable
-        _CouponConversion                          = cell (fun () -> new CouponConversion (date.Value, rate.Value))
-    let _Date                                      = triv (fun () -> _CouponConversion.Value.Date)
-    let _Rate                                      = triv (fun () -> _CouponConversion.Value.Rate)
-    let _ToString                                  = triv (fun () -> _CouponConversion.Value.ToString())
+        _CouponConversion                          = make (fun () -> new CouponConversion (date.Value, rate.Value))
+    let _Date                                      = triv _CouponConversion (fun () -> _CouponConversion.Value.Date)
+    let _Rate                                      = triv _CouponConversion (fun () -> _CouponConversion.Value.Rate)
+    let _ToString                                  = triv _CouponConversion (fun () -> _CouponConversion.Value.ToString())
     do this.Bind(_CouponConversion)
 (* 
     casting 

@@ -47,11 +47,11 @@ type ConstantDefaultIntensityModel
     Functions
 *)
     let mutable
-        _ConstantDefaultIntensity                  = cell (fun () -> new ConstantDefaultIntensity (constant.Value, recovery.Value))
+        _ConstantDefaultIntensity                  = make (fun () -> new ConstantDefaultIntensity (constant.Value, recovery.Value))
     let _defaultRecovery                           (t : ICell<double>) (s : ICell<double>)   
-                                                   = triv (fun () -> _ConstantDefaultIntensity.Value.defaultRecovery(t.Value, s.Value))
+                                                   = triv _ConstantDefaultIntensity (fun () -> _ConstantDefaultIntensity.Value.defaultRecovery(t.Value, s.Value))
     let _hazardRate                                (t : ICell<double>) (s : ICell<double>)   
-                                                   = triv (fun () -> _ConstantDefaultIntensity.Value.hazardRate(t.Value, s.Value))
+                                                   = triv _ConstantDefaultIntensity (fun () -> _ConstantDefaultIntensity.Value.hazardRate(t.Value, s.Value))
     do this.Bind(_ConstantDefaultIntensity)
 (* 
     casting 
@@ -95,11 +95,11 @@ type ConstantDefaultIntensityModel1
     Functions
 *)
     let mutable
-        _ConstantDefaultIntensity                  = cell (fun () -> new ConstantDefaultIntensity (constant.Value))
+        _ConstantDefaultIntensity                  = make (fun () -> new ConstantDefaultIntensity (constant.Value))
     let _defaultRecovery                           (t : ICell<double>) (s : ICell<double>)   
-                                                   = triv (fun () -> _ConstantDefaultIntensity.Value.defaultRecovery(t.Value, s.Value))
+                                                   = triv _ConstantDefaultIntensity (fun () -> _ConstantDefaultIntensity.Value.defaultRecovery(t.Value, s.Value))
     let _hazardRate                                (t : ICell<double>) (s : ICell<double>)   
-                                                   = triv (fun () -> _ConstantDefaultIntensity.Value.hazardRate(t.Value, s.Value))
+                                                   = triv _ConstantDefaultIntensity (fun () -> _ConstantDefaultIntensity.Value.hazardRate(t.Value, s.Value))
     do this.Bind(_ConstantDefaultIntensity)
 (* 
     casting 
