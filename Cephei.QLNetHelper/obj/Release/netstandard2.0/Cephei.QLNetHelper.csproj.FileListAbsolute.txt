@@ -1,0 +1,15 @@
+C:\Users\steve\Source\Repos\Cephei2\Cephei.QLNetHelper\bin\Release\netstandard2.0\Cephei.QLNetHelper.deps.json
+C:\Users\steve\Source\Repos\Cephei2\Cephei.QLNetHelper\bin\Release\netstandard2.0\Cephei.QLNetHelper.dll
+C:\Users\steve\Source\Repos\Cephei2\Cephei.QLNetHelper\bin\Release\netstandard2.0\Cephei.QLNetHelper.pdb
+C:\Users\steve\Source\Repos\Cephei2\Cephei.QLNetHelper\obj\Release\netstandard2.0\Cephei.QLNetHelper.csprojAssemblyReference.cache
+C:\Users\steve\Source\Repos\Cephei2\Cephei.QLNetHelper\obj\Release\netstandard2.0\Cephei.QLNetHelper.AssemblyInfoInputs.cache
+C:\Users\steve\Source\Repos\Cephei2\Cephei.QLNetHelper\obj\Release\netstandard2.0\Cephei.QLNetHelper.AssemblyInfo.cs
+C:\Users\steve\Source\Repos\Cephei2\Cephei.QLNetHelper\obj\Release\netstandard2.0\Cephei.QLNetHelper.csproj.CoreCompileInputs.cache
+C:\Users\steve\Source\Repos\Cephei2\Cephei.QLNetHelper\obj\Release\netstandard2.0\Cephei.QLNetHelper.dll
+C:\Users\steve\Source\Repos\Cephei2\Cephei.QLNetHelper\obj\Release\netstandard2.0\Cephei.QLNetHelper.pdb
+C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\bin\Release\netstandard2.0\Cephei.Cell.dll
+C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\bin\Release\netstandard2.0\QLNetCephei.dll
+C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\bin\Release\netstandard2.0\QLNetCephei.pdb
+C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\bin\Release\netstandard2.0\Cephei.Cell.pdb
+C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\bin\Release\netstandard2.0\Cephei.Cell.xml
+C:\Users\steve\source\repos\Cephei2\Cephei.QLNetHelper\obj\Release\netstandard2.0\Cephei.QLNetHelper.csproj.CopyComplete

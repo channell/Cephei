@@ -1,2 +1,6 @@
 
 .vs/Cephei/v16/TestStore/1/001.testlog
+/bin
+bin
+/Cephei.Cell/obj
+/Cephei.docfx/obj

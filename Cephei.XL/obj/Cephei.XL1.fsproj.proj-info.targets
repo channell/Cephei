@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+        <Target Name="_Inspect_FscArgs"
+          Condition=" '$(IsCrossTargetingBuild)' != 'true' "
+          DependsOnTargets="ResolveReferences;CoreCompile">
+    <Message Text="%(FscCommandLineArgs.Identity)" Importance="High" />
+    <WriteLinesToFile
+            Condition=" '$(_Inspect_FscArgs_OutFile)' != '' "
+            File="$(_Inspect_FscArgs_OutFile)"
+            Lines="@(FscCommandLineArgs -> '%(Identity)')"
+            Overwrite="true" 
+            Encoding="UTF-8"/>
+    <!-- WriteLinesToFile doesnt create the file if @(FscCommandLineArgs) is empty -->
+    <Touch
+        Condition=" '$(_Inspect_FscArgs_OutFile)' != '' "
+        Files="$(_Inspect_FscArgs_OutFile)"
+        AlwaysCreate="True" />
+  </Target>
+</Project>

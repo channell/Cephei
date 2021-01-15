@@ -133,13 +133,14 @@ namespace Cephei.Cell
                             value.Change += c.OnChange;
                         foreach (var c in dependants)
                             value.OnChange(CellEvent.Calculate, this, this, DateTime.Now, null);
-                        _cache = null;
+                        if (_cache != null) _cache[index] = value.Value;
                     }
                 }
                 else
                 {
                     value.Notify(this);
                     _list[index] = value;
+                    if (_cache != null) _cache[index] = value.Value;
                 }
             }
         }
@@ -313,25 +314,16 @@ namespace Cephei.Cell
             lock (_list)
             {
                 var l = source as IList<Generic.ICell<T>>;
-                var s = l.ToHashSet();
-                var ll = new System.Collections.Generic.LinkedList<Generic.ICell<T>>();
-
-                foreach (var v in _list)
-                {
-                    if (s.Contains(v))
-                        s.Remove(v);
-                    else
-                        ll.AddLast(v);
-                }
-                foreach (var v in ll)
-                    _list.Remove(v);
-                foreach (var v in s)
+                _list.Clear();
+                foreach (var v in l)
                     _list.Add(v);
-                if (ll.Count == 0 || s.Count > 0)
+                if (_cache != null)
                 {
-                    _cache = null;
-                    RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+                    _cache.Clear();
+                    foreach (var v in l)
+                        _cache.Add(v.Value);
                 }
+                RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
             }
         }
 
@@ -447,20 +439,20 @@ namespace Cephei.Cell
         {
             _list.Insert(index, withNotify(Cell.CreateValue(item)));
             Value.Insert(index, item);
-            _cache = null;
+            if (_cache != null) _cache.Insert(index, item);
             RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
         }
         bool ICollection<T>.Remove(T item)
         {
             _list.RemoveAt(Value.IndexOf(item));
-            _cache = null;
+            if (_cache != null) _cache.RemoveAt(Value.IndexOf(item));
             return Value.Remove(item);
         }
 
         void IList<T>.RemoveAt(int index)
         {
             _list.RemoveAt(index);
-            Value.RemoveAt(index);
+            if (_cache != null) _cache.RemoveAt(index);
             _cache = null;
         }
         #endregion

@@ -182,10 +182,9 @@ namespace Cephei.Cell
         public static bool Lazy = true;
 
         /// <summary>
-        /// Number of time to retry an error recieved by an observer.
-        /// Needed for complex dependancy update through Excel
+        /// Are IO operations used, causing lock cancellatrion to be disabled
         /// </summary>
-        public static int ErrorRetry = 3;
+        public static bool IO = false;
 
         /// <summary>
         /// The current stack of cell being profiled. normally this stack will be empty.
@@ -266,11 +265,14 @@ namespace Cephei.Cell
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Generic.ICell<T> CreateFast<T>(FSharpFunc<Unit, T> func)
         {
+            return new CellFast<T>(func);
+/*
             var p = Profile(func);
             if (p.Length > 0)
                 return new CellFast<T>(func, p);
             else
                 return new CellFast<T>(func, new ICell[0]);
+*/
         }
         /// <summary>
         /// Create a fast cell with a mnemonic
@@ -280,11 +282,14 @@ namespace Cephei.Cell
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Generic.ICell<T> CreateFast<T>(FSharpFunc<Unit, T> func, ICell mutex)
         {
+            return new CellFast<T>(func, mutex);
+/*
             var profile = Profile(func);
             if (profile.Length > 0)
                 return new CellFast<T>(func, profile, mutex);
             else
                 return new CellFast<T>(func, new ICell[0], mutex);
+*/
         }
         /// <summary>
         /// Create a cell value where it is known at define-time that all the dependants
@@ -373,56 +378,43 @@ namespace Cephei.Cell
             {
                 var o = f.GetValue(func);
                 fd.Add(f.Name, o);
-                if (o is ICell c)
-                {
-                    if (c is ICellModel m && m.Cell != null && !(m.Cell is ICellEmpty))  // exclude forward referneces
-                        l.AddLast(m.Cell);
-                    else if (c is ITrivial t)
-                    {
-                        foreach (var x in ProfileObject(c.GetFunction()))
-                            l.AddLast(x);
-                    }
-                    else if (!(c is Model))
-                        l.AddLast(c);
-                }
             }
 
             var method = func.GetType().GetMethod("Invoke");
             var disasembler = new Disassembler(method, SequencePointEnumerator.Empty);
             var code = disasembler.Disassemble();
+            object lastLoad = null;
+            Lazy<Dictionary<string, FieldInfo>> lastFields = null;
 
             foreach (var il in code.Instructions)
             {
                 if (il.InstructionType == ILInstructionType.Ldfld)
                 {
                     var fi = il.Argument as FieldInfo;
-                    if (!fd.ContainsKey(fi.Name))
+                    if (fd.ContainsKey(fi.Name))
                     {
-                        foreach (var o in fd)
+                        lastLoad = fd[fi.Name];
+                    }
+                    else
+                    {
+                        if (lastFields.Value.ContainsKey(fi.Name))
                         {
-                            try
-                            {
-                                var p = fi.GetValue(o.Value);
-                                if (p != null)
-                                {
-                                    fd.Add(fi.Name, p);
-                                    if (p is ICell c)
-                                    {
-                                        if (c is ICellModel m && m.Cell != null)
-                                            l.AddLast(m.Cell);
-                                        else if (p is ITrivial t)
-                                        {
-                                            foreach (var x in ProfileObject(c.GetFunction()))
-                                                l.AddLast(x);
-                                        }
-                                        else if (!(c is Model))
-                                            l.AddLast(c);
-                                    }
-                                }
-                                break;
-                            }
-                            catch { }
+                            var fi2 = lastFields.Value[fi.Name];
+                            var o = fi2.GetValue(lastLoad);
+                            lastLoad = o;
                         }
+                    }
+
+                    lastFields = new Lazy<Dictionary<string, FieldInfo>>(() => lastLoad.GetType().GetFields(BindingFlags.Public | BindingFlags.NonPublic| BindingFlags.Instance).ToDictionary(af => af.Name));
+                    if (lastLoad is ICell c)
+                    {
+                        if (c is ITrivial)
+                        {
+                            foreach (var x in ProfileObject(c.GetFunction()))
+                                l.AddLast(x);
+                        }
+                        else
+                            l.AddLast(c);
                     }
                 }
             }
@@ -435,7 +427,7 @@ namespace Cephei.Cell
         /// <param name="func">function within cell</param>
         /// <param name="model">model that the functions cell is within </param>
         /// <param name="recursive">should this be a recursive relink </param>
-        public static bool Relink(object func, Model model, bool recursive = false)
+        public static bool Relink(object func, Model model)
         {
             var changed = false;
             var fields = func.GetType().GetFields();
@@ -447,8 +439,6 @@ namespace Cephei.Cell
                 {
                     if (c.Mnemonic != null && model.ContainsKey(c.Mnemonic))
                     {
-                        if (recursive)
-                            Relink(c.GetFunction(), model, recursive);
                         var n = model[c.Mnemonic];
                         if (n != null && n != c && c.GetType().IsSubclassOf (n.GetType()))
                         {

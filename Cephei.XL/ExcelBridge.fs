@@ -67,7 +67,8 @@ type ModelRTD () as this =
 
         if not ((mnemonic,hc) = _lastMnemonic) then 
             _lastMnemonic <- (mnemonic,hc)
-            Cephei.Cell.Cell.Dispatch (Action(dispatch)) 
+            //Cephei.Cell.Cell.Dispatch (Action(dispatch)) 
+            dispatch ()
             
         mnemonic :> obj
 
@@ -92,7 +93,8 @@ type ModelRTD () as this =
                 with 
                 | e -> Log.Error (e, e.Message)
 
-            Cephei.Cell.Cell.Dispatch (Action(dispatch)) 
+            //Cephei.Cell.Cell.Dispatch (Action(dispatch)) 
+            dispatch()
 
     interface IObserver<ICell> with
 
@@ -175,21 +177,13 @@ type ValueRTD () as this =
     let tick (e : System.Timers.ElapsedEventArgs) : unit = 
         try
             let mutable v : KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic> = new KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic> (KeyValuePair<string, string>(null,null), null)
-            if _retry.IsEmpty then
-                _value
-                |> Seq.filter (fun x -> (x.Value :? string) && (x.Value :?> string).StartsWith("#") && not ((x.Value :?> string) = "#NA" ))
-                |> Seq.map (fun i -> kvp i.Key "")
-                |> Seq.filter (fun i -> _topicIndex.ContainsKey(i))
-                |> Seq.fold (fun a i -> (List.map (fun t -> kvp i t) _topicIndex.[i]) @ a) []
-                |> List.iter (fun i -> _retry.Enqueue i)
-
             if not (_retry.IsEmpty) then 
-                let requeue = new Generic.Queue<KeyValuePair<KeyValuePair<string, string>,ExcelRtdServer.Topic>> ()
                 while _retry.TryDequeue(&v) do
                     if not (v.Key.Key = null) && (v.Value.Value :? string) then
-                        if subscribe v then
-                            requeue.Enqueue v
-                requeue |> Seq.iter (fun i -> _retry.Enqueue i)
+                        match (Model.cell v.Key.Key) with
+                        | Some c    -> c.OnChange(CellEvent.Link, c, c, DateTime.Now, null)
+                                       ignore (subscribe v)
+                        | None      -> ignore 1
         finally
             _timer.Enabled <- true
 

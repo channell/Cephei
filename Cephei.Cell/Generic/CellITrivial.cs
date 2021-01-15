@@ -187,7 +187,7 @@ namespace Cephei.Cell.Generic
         {
             if (listener == this ||  listener == null) return;
             foreach (var c in References)
-                if (c != this)
+                if (c != this && c != this.Parent)
                     c.Notify(listener);
                 else
                     continue;

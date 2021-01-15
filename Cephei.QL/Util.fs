@@ -51,11 +51,20 @@ module Util =
 
     // Summary: run calcualtions within in the background
     [<MethodImpl(MethodImplOptions.AggressiveInlining)>]
-    let cell (mutex : ICell) (f : unit -> 'f) = Cell.CreateFast (f, mutex) 
+    let cell (mutex : ICell) (f : unit -> 'f) = Cell.CreateFast (f, null) 
+
+    // Summary: run calcualtions within in the background with a mutex
+    [<MethodImpl(MethodImplOptions.AggressiveInlining)>]
+    let lcel (mutex : ICell) (f : unit -> 'f) = Cell.CreateFast (f, mutex) 
 
     // cretate a trivial cell
     [<MethodImpl(MethodImplOptions.AggressiveInlining)>]
-    let triv (mutex : ICell) (f : unit -> 'f) = Cell.CreateTrivial (f, mutex)
+    let triv (mutex : ICell) (f : unit -> 'f) = Cell.CreateTrivial (f, null)
+    //let triv (mutex : ICell) (f : unit -> 'f) = Cell.CreateTrivial (f, mutex)
+
+    // cretate a trivial cell using mutex lock
+    [<MethodImpl(MethodImplOptions.AggressiveInlining)>]
+    let ltrv (mutex : ICell) (f : unit -> 'f) = Cell.CreateTrivial (f, mutex)
 
     let trivDate (f : unit -> 'f) (d : IDateDependant) = 
         new DateDependantTrivial<'f> (f, d.EvaluationDate) :> ICell<'f>

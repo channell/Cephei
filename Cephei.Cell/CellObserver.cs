@@ -42,7 +42,10 @@ namespace Cephei.Cell
             switch (eventType)
             {
                 case CellEvent.Calculate:
-                    _target.OnNext(_source.Value);
+                    if (root is ICell c && c.State == CellState.Error)
+                        _target.OnError(((ICell)root).Error);
+                    else
+                        _target.OnNext(_source.Value);
                     break;
 
                 case CellEvent.Delete:

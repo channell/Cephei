@@ -17,7 +17,7 @@ namespace Cephei.Cell.Generic
     {
         private FSharpFunc<Unit, T> _func;
         private SpinLock _spinLock = new SpinLock(true);
-        private volatile ManualResetEvent _event = new ManualResetEvent(false);
+        private Lazy<ManualResetEvent> _event = new Lazy<ManualResetEvent>(() => new ManualResetEvent(false));
 
         private volatile int _state = (int)CellState.Dirty;
         private Thread _lockHolder = null;
@@ -27,8 +27,6 @@ namespace Cephei.Cell.Generic
         private DateTime _epoch;
         private bool _disposd = false;
 
-        // number of pending calculations
-        volatile int _pending;
         public ICell Mutex { get; set; }
 
         public string Mnemonic { get; set; }
@@ -71,10 +69,14 @@ namespace Cephei.Cell.Generic
         }
         public CellSpot(FSharpFunc<Unit, T> func)
         {
-            var dependencies = Cell.Profile(func);
             _func = func;
-            if (!Cell.Lazy)
-                Cell.Dispatch(() =>
+            Task.Run(() =>
+            {
+                var dependencies = Cell.Profile(func);
+                foreach (var d in dependencies)
+                    if (d != this)
+                        d.Notify(this);
+                if (!Cell.Lazy)
                 {
                     try
                     {
@@ -84,10 +86,8 @@ namespace Cephei.Cell.Generic
                     {
                         Serilog.Log.Error(e, e.Message);
                     }
-                });
-
-            foreach (var d in dependencies)
-                d.Notify(this);
+                }
+            });
         }
         public CellSpot(FSharpFunc<Unit, T> func, ICell mutex) : this (func)
         {
@@ -112,7 +112,7 @@ namespace Cephei.Cell.Generic
                 {
                     if (_state == (int)CellState.Clean && session == null || (_epoch > epoch && session == null))
                         return _value;      // don't recalculate for read
-                    SetState(CellState.Calculating);
+                    SetState(CellState.Calculating, ref taken);
                     _spinLock.Exit(true);
                     taken = false;
 
@@ -147,7 +147,7 @@ namespace Cephei.Cell.Generic
                         _epoch = epoch;
                         _value = t;
                     }
-                    SetState(CellState.Clean);
+                    SetState(CellState.Clean, ref taken);
                     return t;
                 }
                 else
@@ -160,7 +160,8 @@ namespace Cephei.Cell.Generic
             {
                 Serilog.Log.Error(e, "Calculation failed for {0} with error {1}", Mnemonic, e.Message);
                 _lastException = new CalculationException(e);
-                SetState(CellState.Error);
+                if (!taken) _spinLock.Enter(ref taken);
+                SetState(CellState.Error, ref taken);
                 RaiseChange(CellEvent.Error, this, this, epoch, null);
 
                 throw;
@@ -182,10 +183,6 @@ namespace Cephei.Cell.Generic
                     Thread.Sleep(recurse * 100);
                     return GetValue(recurse + 1);                   // edge case lock failed
                 }
-                if (_pending > 0)
-                    if (Interlocked.Exchange(ref _state, (int)CellState.Dirty) == (int)CellState.Blocking)
-                        if (Interlocked.Exchange(ref _state, (int)CellState.Blocking) == (int)CellState.Clean)
-                            SetState(CellState.Dirty);
 
                 switch (_state)
                 {
@@ -195,7 +192,7 @@ namespace Cephei.Cell.Generic
                         taken = false;
                         if (v == null && _lastException == null)
                         {
-                            SetState(CellState.Dirty);
+                            SetState(CellState.Dirty, ref taken);
                             return GetValue(recurse + 1);
                         }
                         var ses = Session.Current;
@@ -204,22 +201,7 @@ namespace Cephei.Cell.Generic
 
                     case (int)CellState.Calculating:
                     case (int)CellState.Blocking:
-                        Interlocked.Exchange(ref _state, (int)CellState.Blocking);
-                        _spinLock.Exit(true);
-                        taken = false;
-                        for (int c = 0; c < 60000; c += 100)
-                        {
-                            //                            if (_event == null) _event = new ManualResetEvent(false);
-                            if (_event.WaitOne(c) || _state != (int)CellState.Blocking || _lockHolder == null || !_lockHolder.IsAlive || _lockHolder == Thread.CurrentThread)
-                                break;
-                        }
-                        if (_state != (int)CellState.Clean)
-                            return Calculate(DateTime.Now, recurse + 1);
-                        else
-                            return GetValue(recurse + 1);           // re-read through lock
-
                     case (int)CellState.Dirty:
-                        SetState(CellState.Calculating);
                         _spinLock.Exit(true);
                         taken = false;
                         return Calculate(DateTime.Now, recurse + 1);
@@ -228,6 +210,8 @@ namespace Cephei.Cell.Generic
                         throw _lastException;
 
                     default:
+                        _spinLock.Exit(true);
+                        taken = false;
                         return GetValue(recurse + 1);           // edge case
                 }
             }
@@ -250,14 +234,12 @@ namespace Cephei.Cell.Generic
                     _spinLock.Enter(ref taken);
                     if (taken)
                     {
-                        SetState(CellState.Clean);
                         _value = value;
                         _epoch = DateTime.Now;
-                        _state = (int)CellState.Clean;
+                        SetState(CellState.Clean, ref taken);
                         _spinLock.Exit(true);
                         taken = false;
                         RaiseChange(CellEvent.Calculate, this, this, _epoch, null);
-
                     }
                 }
                 finally
@@ -331,92 +313,213 @@ namespace Cephei.Cell.Generic
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private Cephei.Cell.CellState SetState(CellState value)
+        private Cephei.Cell.CellState SetState(CellState value, ref bool taken)
         {
-            if (value == CellState.Calculating)
+        retry: // used to enable AggressiveInlining
+            var was = (CellState)Interlocked.Exchange(ref _state, (int)value);
+            switch (was)
             {
-                _lockHolder = Thread.CurrentThread;
+                case CellState.Blocking:
+                    switch (value)
+                    {
+                        case CellState.Clean:
+                        case CellState.Error:
+                            _lockHolder = null;
+                            _event.Value.Set();
+                            _event.Value.Reset();
+                            break;
+                        case CellState.Dirty:
+                        case CellState.DirtyIfClean:
+                        case CellState.Calculating:
+                        case CellState.Blocking:
+                            Interlocked.Exchange(ref _state, (int)CellState.Blocking);
+                            int cnt = 0;
+                            if (taken)
+                            {
+                                _spinLock.Exit();
+                                taken = false;
+                            }
+                            while (_lockHolder != null && _lockHolder != Thread.CurrentThread && _lockHolder.IsAlive && _state == (int)CellState.Blocking)
+                            {
+                                _event.Value.WaitOne(2000);
+                                if (!Cell.IO && ++cnt > 5 && _lockHolder.ThreadState == System.Threading.ThreadState.WaitSleepJoin)
+                                    _lockHolder.Interrupt();
+                                else
+                                    cnt = 0;
+                            }
+                            if (_lockHolder != null)
+                                goto retry; // used to enable AggressiveInlining
+                            break;
+                    }
+                    break;
+                case CellState.Calculating:
+                    switch (value)
+                    {
+                        case CellState.Clean:
+                        case CellState.Error:
+                        case CellState.Dirty:
+                            _lockHolder = null;
+                            break;
+                        case CellState.DirtyIfClean:
+                        case CellState.Calculating:
+                        case CellState.Blocking:
+                            Interlocked.Exchange(ref _state, (int)CellState.Blocking);
+                            int cnt = 0;
+                            if (taken)
+                            {
+                                _spinLock.Exit();
+                                taken = false;
+                            }
+                            while (_lockHolder != null && _lockHolder != Thread.CurrentThread && _lockHolder.IsAlive && _state == (int)CellState.Blocking)
+                            {
+                                _event.Value.WaitOne(2000);
+                                if (!Cell.IO && ++cnt > 5 && _lockHolder.ThreadState == System.Threading.ThreadState.WaitSleepJoin)
+                                    _lockHolder.Interrupt();
+                                else
+                                    cnt = 0;
+                            }
+                            if (_lockHolder != null)
+                                goto retry; // used to enable AggressiveInlining
+                            break;
+                    }
+                    break;
+                case CellState.Clean:
+                    switch (value)
+                    {
+                        case CellState.Clean:
+                        case CellState.Error:
+                        case CellState.Dirty:
+                        case CellState.DirtyIfClean:
+                            _lockHolder = null;
+                            break;
+                        case CellState.Calculating:
+                        case CellState.Blocking:
+                            _lockHolder = Thread.CurrentThread;
+                            break;
+                    }
+                    break;
+
+                case CellState.Dirty:
+                    switch (value)
+                    {
+                        case CellState.Clean:
+                        case CellState.Error:
+                        case CellState.Dirty:
+                            _lockHolder = null;
+                            break;
+                        case CellState.DirtyIfClean:
+                            Interlocked.Exchange(ref _state, (int)CellState.Dirty);
+                            break;
+
+                        case CellState.Calculating:
+                        case CellState.Blocking:
+                            _lockHolder = Thread.CurrentThread;
+                            break;
+                    }
+                    break;
+
+                case CellState.Error:
+                    switch (value)
+                    {
+                        case CellState.Clean:
+                        case CellState.Error:
+                        case CellState.Dirty:
+                        case CellState.DirtyIfClean:
+                            _lockHolder = null;
+                            break;
+
+                        case CellState.Calculating:
+                        case CellState.Blocking:
+                            _lockHolder = Thread.CurrentThread;
+                            break;
+                    }
+                    break;
             }
-            else if (value == CellState.Clean)
+            if (taken)
             {
-                _lockHolder = null;
+                taken = false;
+                _spinLock.Exit();
             }
-            var s = (CellState)Interlocked.Exchange(ref _state, (int)value);
-            if (s == CellState.Blocking)
-            {
-                _event.Set();
-                _event.Reset();
-            }
-            return s;
+            return was;
         }
 
         public virtual void OnChange(CellEvent eventType, ICellEvent root,  ICellEvent sender,  DateTime epoch, ISession session)
         {
             if (_disposd && root != this && eventType != CellEvent.Delete) sender.OnChange(CellEvent.Delete, this, this, epoch, session);
-            switch (eventType)
+            bool taken = false;
+            try
             {
-                case CellEvent.Calculate:
-                    if (session != null && session.State == SessionState.Open)
-                        _pending++;
-                    else if (epoch > _epoch)
+                _spinLock.Enter(ref taken);
+                if (!taken)
+                {
+                    Thread.Sleep(100);
+                    Task.Run(() => this.OnChange(eventType, root, sender, epoch, session));
+                }
+                else
+                {
+                    switch (eventType)
                     {
-                        _epoch = epoch;
-                        OnChange(CellEvent.Invalidate, root, this, epoch, session);
-                        Cell.Dispatch(() =>
+                        case CellEvent.Calculate:
+                            if (epoch > _epoch)
                             {
-                                try
+                                SetState(CellState.Dirty, ref taken);
+                                _epoch = epoch;
+                                OnChange(CellEvent.Invalidate, root, this, epoch, session);
+                                Cell.Dispatch(() =>
                                 {
-                                    PoolCalculate(epoch, session);
-                                }
-                                catch (Exception e)
-                                {
-                                    Serilog.Log.Error(e, e.Message);
-                                }
-                            });
-                    }
-                    break;
-                case CellEvent.Delete:
-                    Change -= sender.OnChange;
-                    break;
-                case CellEvent.Invalidate:
-                    var lastState = (CellState)Interlocked.Exchange(ref _state, (int)CellState.Dirty);
-                    if (lastState == CellState.Calculating || lastState == CellState.Blocking)
-                        lastState = (CellState)Interlocked.Exchange(ref _state, (int)lastState);
-                    else
-                        RaiseChange(eventType, root, this, epoch, session);
-                    break;
+                                    try
+                                    {
+                                        PoolCalculate(epoch, session);
+                                    }
+                                    catch (Exception e)
+                                    {
+                                        Serilog.Log.Error(e, e.Message);
+                                    }
+                                });
+                            }
+                            break;
+                        case CellEvent.Delete:
+                            Change -= sender.OnChange;
+                            break;
+                        case CellEvent.Invalidate:
+                            SetState(CellState.Dirty, ref taken);
+                            RaiseChange(eventType, root, this, epoch, session);
+                            break;
 
-                case CellEvent.JoinSession:
-                    session.Join(this);
-                    RaiseChange(eventType, root, this, epoch, session);
-                    break;
+                        case CellEvent.JoinSession:
+                            break;
 
-                case CellEvent.Error:
-                    bool taken = false;
-                    _spinLock.Enter(ref taken);
-                    while (!taken)
-                    {
-                        Thread.Yield();
-                        _spinLock.Enter(ref taken);
+                        case CellEvent.Error:
+                            SetState(CellState.Error, ref taken);
+                            break;
+
+                        case CellEvent.Link:
+                            var changed = false;
+                            if (Parent != null && Parent is Model m)
+                                if (Cell.Relink(_func, m))
+                                    changed = true;
+                            SetState(CellState.Dirty, ref taken);
+                            if (changed)
+                                RaiseChange(eventType, root, this, epoch, session);
+                            break;
+
+                        case CellEvent.CyclicCheck:
+                            _spinLock.Exit();
+                            taken = false;
+                            if (root == this)
+                                throw new CyclicDependencyException();
+                            else
+                                RaiseChange(eventType, root, this, epoch, session);
+                            break;
+                        default:
+                            break;
                     }
-                    SetState(CellState.Error);
+                }
+            }
+            finally
+            {
+                if (taken)
                     _spinLock.Exit();
-                    break;
-
-                case CellEvent.Link:
-                    if (Parent != null && Parent is Model m)
-                        if (Cell.Relink(_func, m))
-                            SetState(CellState.Dirty);
-                    RaiseChange(eventType, root, this, epoch, session);
-                    break;
-                case CellEvent.CyclicCheck:
-                    if (root == this)
-                        throw new CyclicDependencyException();
-                    else
-                        RaiseChange(eventType, root, this, epoch, session);
-                    break;
-                default:
-                    break;
             }
         }
         /// <see cref="ICell.HasFunction"/>
@@ -451,25 +554,45 @@ namespace Cephei.Cell.Generic
 
         public void Merge(ICell source, Model model)
         {
-            if (source != this)
+            bool isCurrent = true;
+            bool taken = false;
+            try
             {
-                var c = (ICell<T>)source;
-                var f = _func;
-                _func = c.Function;
-                c.Function = f;
-                Parent = c.Parent;
-                _state = (int)CellState.Dirty;
-            }
+                _spinLock.Enter(ref taken);
+                if (source != this)
+                {
+                    var c = (ICell<T>)source;
+                    var f = _func;
+                    _func = c.Function;
+                    c.Function = f;
+                    Parent = c.Parent;
+                    SetState(CellState.Dirty, ref taken);
+                }
 
-            // handle update of current while this cell is being constructed
-            if (Parent is Model m)
-            {
-                var cur = m[this.Mnemonic];
-                if (cur != this && cur != null && cur.GetType() == this.GetType())
-                    cur.Merge(this, model);
+                // handle update of current while this cell is being constructed
+                if (Parent is Model m)
+                {
+                    ICell cur;
+                    if (m.TryGetValue(this.Mnemonic, out cur))
+                    {
+                        if (cur != this && cur != null && cur.GetType() == this.GetType())
+                        {
+                            isCurrent = false;
+                            cur.Merge(this, model);
+                        }
+                    }
+                }
             }
-            RaiseChange(CellEvent.CyclicCheck, this, this, DateTime.Now, null);
-            RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null);
+            finally
+            {
+                if (taken)
+                    _spinLock.Exit();
+            }
+            if (isCurrent)
+            {
+                RaiseChange(CellEvent.CyclicCheck, this, this, DateTime.Now, null);
+                Task.Run(() => RaiseChange(CellEvent.Calculate, this, this, DateTime.Now, null));
+            }
         }
 
         #region observable
@@ -496,7 +619,8 @@ namespace Cephei.Cell.Generic
         public void OnError(Exception error)
         {
             _lastException = error;
-            SetState(CellState.Error);
+            bool taken = false;
+            SetState(CellState.Error, ref taken);
         }
 
         public void OnNext(T value)
@@ -511,12 +635,33 @@ namespace Cephei.Cell.Generic
             foreach (var v in Dependants)
                 if (v == listener)
                     return;
-            Change += listener.OnChange;
+
+            bool taken = false;
+            try
+            {
+                _spinLock.Enter(ref taken);
+                if (listener != null)
+                    Change += listener.OnChange;
+            }
+            finally
+            {
+                _spinLock.Exit();
+            }
         }
 
         public void UnNotify(ICell listener)
         {
-            Change -= listener.OnChange;
+            bool taken = false;
+            try
+            {
+                _spinLock.Enter(ref taken);
+                if (listener != null)
+                    Change -= listener.OnChange;
+            }
+            finally
+            {
+                if (taken) _spinLock.Exit();
+            }
         }
         public object GetFunction()
         {

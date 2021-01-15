@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "s6YHNf4jVOwaNNkYVuD01G/xGZKbPSGLAUzni5jAdX5RepEsiC+A/7+VhauqPYiVuB4zNE2Me9UDxrCuxQPh4w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\steve\\source\\repos\\Cephei2\\Cephei.Provider\\Cephei.Provider.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\steve\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\steve\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

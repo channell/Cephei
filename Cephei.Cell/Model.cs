@@ -43,7 +43,7 @@ namespace Cephei.Cell
                 return ModelDependants;
             }
         }
-        protected IEnumerable<ICellEvent> ModelDependants
+        public IEnumerable<ICellEvent> ModelDependants
         {
             get
             {
@@ -240,6 +240,7 @@ namespace Cephei.Cell
         public new ICell GetOrAdd(string key, ICell value)
         {
             value.Parent = this;
+            value.OnChange(CellEvent.Delete, this, this, DateTime.Now, null);
             return base.GetOrAdd(key, value);
         }
 
@@ -267,6 +268,7 @@ namespace Cephei.Cell
         public new bool TryAdd(string key, ICell value)
         {
             value.Parent = this;
+            value.OnChange(CellEvent.Delete, this, this, DateTime.Now, null);
             return base.TryAdd(key, value);
         }
         //
@@ -395,7 +397,7 @@ namespace Cephei.Cell
                         LinkedList<ICellEvent> dependants = new LinkedList<ICellEvent>(current.Dependants);
                         foreach (var c in dependants)
                         {
-                            if (c != null )
+                            if (c != null && c != this)
                                 value.Change += c.OnChange;
                         }
                         foreach (var c in dependants)
@@ -415,7 +417,10 @@ namespace Cephei.Cell
                     }
                 }
                 else
+                {
+                    value.OnChange(CellEvent.Delete, this, this, DateTime.Now, null);
                     base[key] = value;
+                }
             }
         }
         #endregion

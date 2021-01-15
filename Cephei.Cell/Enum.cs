@@ -93,7 +93,12 @@ namespace Cephei.Cell
 		/// already in the process of calculating a value or a task needs to calculate a
 		/// value for a session
 		/// </summary>
-		Blocking = 8 + 4 + 2
+		Blocking = 8 + 4 + 2,
+
+		/// <summary>
+		/// psudo state to set as dirty if clean
+		/// </summary>
+		DirtyIfClean = 16 + 2
 	}
 
 	public class CyclicDependencyException : Exception

@@ -1,0 +1,8 @@
+C:\Users\steve\Source\Repos\Cephei2\bin\Debug\net48\Cephei.Model.dll
+C:\Users\steve\Source\Repos\Cephei2\bin\Debug\net48\Cephei.Model.pdb
+C:\Users\steve\Source\Repos\Cephei2\Cephei.Models\obj\Debug\net48\Cephei.Model.fsprojAssemblyReference.cache
+C:\Users\steve\Source\Repos\Cephei2\Cephei.Models\obj\Debug\net48\Cephei.Model.AssemblyInfoInputs.cache
+C:\Users\steve\Source\Repos\Cephei2\Cephei.Models\obj\Debug\net48\Cephei.Model.AssemblyInfo.fs
+C:\Users\steve\Source\Repos\Cephei2\Cephei.Models\obj\Debug\net48\Cephei.Model.fsproj.CopyComplete
+C:\Users\steve\Source\Repos\Cephei2\Cephei.Models\obj\Debug\net48\Cephei.Model.dll
+C:\Users\steve\Source\Repos\Cephei2\Cephei.Models\obj\Debug\net48\Cephei.Model.pdb

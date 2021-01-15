@@ -55,14 +55,14 @@ module public  Model =
             else
                 s
         let filter = 
-            s.ToCharArray() |>
+            str.ToCharArray() |>
             Array.filter (fun i -> Char.IsLetterOrDigit (i) && not (i = '.'))
         if Char.IsDigit( filter.[0]) then
             "N" + new string (filter);
         else
-            if s.StartsWith("+") then 
+            if str.StartsWith("+") then 
                 "+" + (new string (filter))
-            elif s.StartsWith("-") then
+            elif str.StartsWith("-") then
                 "-" + (new string (filter))
             else
                 new string (filter)
@@ -131,7 +131,6 @@ module public  Model =
                 _state.Value.Source.[sub.mnemonic] <- sub.source()
                 _state.Value.Subscriber.[sub.mnemonic] <- sub.subscriber
                 if not (current = null) then current.Dispose() 
-            cell.Parent <- _state.Value.Model;
 
     // Register a functor to create a cell if requried
     let specify (spec : spec) : obj =
@@ -175,7 +174,7 @@ module public  Model =
             let mutable cell2 = cell
             if _state.Value.Model.TryRemove (s, ref cell2) then
                 if not (cell = null) then
-                    cell.Dependants|> Seq.iter (fun d -> if not (d = null) then d.OnChange (CellEvent.Link, cell, cell, DateTime.Now, null ))
+                    cell.Dependants|> Seq.iter (fun d -> if not (d = null) then d.OnChange (CellEvent.Delete, cell, cell, DateTime.Now, null ))
                     cell.Dispose ()
                 _state.Value.Source.TryRemove s |> ignore
                 _state.Value.Subscriber.TryRemove s |> ignore
@@ -238,21 +237,33 @@ module public  Model =
         let modelName = if name.ToLower().EndsWith("model") then name else name + "Model"
         let tieredCells (model : Model) =
 
+
             let rec depth (cell : ICell) = 
-                let modelDepth (m : Model) = 
-                    m |> Seq.fold (fun a i -> a + (depth i.Value)) 0
+                let rec modelDepth (model : Model) =
+                    model.ModelDependants
+                    |> Seq.filter (fun i -> i :? Model) 
+                    |> Seq.map (fun i -> i :?> Model) 
+                    |> Seq.filter (fun i -> not (i.Mnemonic = null))
+                    |> Seq.filter (fun i -> _state.Value.Source.ContainsKey i.Mnemonic)
+                    |> Seq.fold (fun a y -> a + 1 + modelDepth y) 0
+                let isSubject = 
+                    not (cell.Parent = null) &&
+                    cell.Parent :? ICellModel &&
+                    (cell.Parent :?> ICellModel).Cell = cell
                 cell.Dependants 
                 |> Seq.filter (fun i -> i :? ICell) 
                 |> Seq.map (fun i -> i :?> ICell) 
-                |> Seq.fold (fun a y -> a + 1 + (if y :? Model then (modelDepth (y :?> Model)) + depth y else depth y)) 0
-                |> (fun t -> if cell :? Model then (modelDepth (cell :?> Model)) + t else t) 
+                |> Seq.filter (fun i -> not (i = cell.Parent || i.Mnemonic = null))
+                |> Seq.filter (fun i -> _state.Value.Source.ContainsKey i.Mnemonic)
+                |> Seq.fold (fun a y -> a + 1 + depth y) 0
+                |> (fun t ->  if isSubject then (modelDepth (cell.Parent :?> Model)) + t else t) 
 
-            model |>
-            Seq.map (fun i -> if i.Value :? ICellModel then new KeyValuePair<string, ICell>(i.Key, (i.Value :?> ICellModel).Cell) else i) |>
-            Seq.map (fun i -> (i.Value, depth i.Value)) |>
-            Seq.toArray |>
-            Array.sortBy (fun (c,d) -> d ) |>
-            Array.rev
+            model 
+            |> Seq.map (fun i -> if i.Value :? ICellModel then new KeyValuePair<string, ICell>(i.Key, (i.Value :?> ICellModel).Cell) else i) 
+            |> Seq.map (fun i -> (i.Value, depth i.Value)) 
+            |> Seq.toArray 
+            |> Array.sortBy (fun (c,d) -> (d,c.Mnemonic))
+            |> Array.rev
 
         let tiers = 
             tieredCells _state.Value.Model
@@ -282,7 +293,7 @@ module public  Model =
 
         let cells = 
             tiers |>
-            Array.filter (fun (c,d) -> _state.Value.Source.ContainsKey c.Mnemonic) |>
+            Array.filter (fun (c,d) -> not(c.Mnemonic = null) && _state.Value.Source.ContainsKey c.Mnemonic) |>
             Array.map (fun (c,d) -> (c, _state.Value.Source.[c.Mnemonic]))
 
         let constructors = 

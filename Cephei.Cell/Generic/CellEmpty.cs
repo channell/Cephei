@@ -22,8 +22,5 @@ namespace Cephei.Cell.Generic
         {
             Mnemonic = mnemonic;
         }
-
-        public new T Value { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
     }
 }
