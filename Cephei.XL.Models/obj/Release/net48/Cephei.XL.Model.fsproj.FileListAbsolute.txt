@@ -1,3 +1,0 @@
-C:\Users\steve\source\repos\Cephei2\Cephei.XL.Models\obj\Release\net48\Cephei.XL.Model.fsprojAssemblyReference.cache
-C:\Users\steve\source\repos\Cephei2\Cephei.XL.Models\obj\Release\net48\Cephei.XL.Model.AssemblyInfoInputs.cache
-C:\Users\steve\source\repos\Cephei2\Cephei.XL.Models\obj\Release\net48\Cephei.XL.Model.AssemblyInfo.fs

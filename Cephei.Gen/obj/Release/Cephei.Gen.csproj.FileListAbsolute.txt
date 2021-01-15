@@ -1,8 +1,0 @@
-C:\Users\steve\Source\Repos\Release\Cephei.Gen.exe.config
-C:\Users\steve\Source\Repos\Release\Cephei.Gen.exe
-C:\Users\steve\Source\Repos\Release\Cephei.Gen.pdb
-C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\obj\Release\Cephei.Gen.csproj.CoreCompileInputs.cache
-C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\obj\Release\Cephei.Gen.csproj.CopyComplete
-C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\obj\Release\Cephei.Gen.exe
-C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\obj\Release\Cephei.Gen.pdb
-C:\Users\steve\source\repos\Cephei2\Cephei.Gen\obj\Release\Cephei.Gen.csprojAssemblyReference.cache

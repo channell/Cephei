@@ -1,4 +1,0 @@
-C:\Users\steve\source\repos\Cephei\Cephei.NanoService\bin\Debug\netstandard2.0\Cephei.NanoService.deps.json
-C:\Users\steve\source\repos\Cephei\Cephei.NanoService\bin\Debug\netstandard2.0\Cephei.NanoService.dll
-C:\Users\steve\source\repos\Cephei\Cephei.NanoService\obj\Debug\netstandard2.0\Cephei.NanoService.AssemblyInfoInputs.cache
-C:\Users\steve\source\repos\Cephei\Cephei.NanoService\obj\Debug\netstandard2.0\Cephei.NanoService.AssemblyInfo.cs
