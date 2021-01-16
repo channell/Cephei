@@ -132,6 +132,9 @@ namespace Cephei.Cell
         /// <summary>
         /// Reference to a parent cell whose dependants need to lock because the algorith is not thread safe
         /// </summary>
+        /// <remarks>
+        /// Needs to be a ICell for code generation
+        /// </remarks>
         ICell Mutex { get; set; }
     }
 
@@ -266,13 +269,6 @@ namespace Cephei.Cell
         public static Generic.ICell<T> CreateFast<T>(FSharpFunc<Unit, T> func)
         {
             return new CellFast<T>(func);
-/*
-            var p = Profile(func);
-            if (p.Length > 0)
-                return new CellFast<T>(func, p);
-            else
-                return new CellFast<T>(func, new ICell[0]);
-*/
         }
         /// <summary>
         /// Create a fast cell with a mnemonic
@@ -283,13 +279,6 @@ namespace Cephei.Cell
         public static Generic.ICell<T> CreateFast<T>(FSharpFunc<Unit, T> func, ICell mutex)
         {
             return new CellFast<T>(func, mutex);
-/*
-            var profile = Profile(func);
-            if (profile.Length > 0)
-                return new CellFast<T>(func, profile, mutex);
-            else
-                return new CellFast<T>(func, new ICell[0], mutex);
-*/
         }
         /// <summary>
         /// Create a cell value where it is known at define-time that all the dependants
@@ -325,11 +314,7 @@ namespace Cephei.Cell
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Generic.ICell<T> CreateSpot<T>(FSharpFunc<Unit, T> func, ICell mutex)
         {
-            var profile = Profile(func);
-            if (profile.Length > 0)
-                return new CellSpot<T>(func, profile, mutex);
-            else
-                return new Cell<T>(func, mutex);
+            return new CellSpot<T>(func, mutex);
         }
         /// <summary>
         /// Create a cell value where it is known at define-time that all the dependants
@@ -342,6 +327,28 @@ namespace Cephei.Cell
         public static Generic.ICell<T> CreateSpotValue<T>(T value)
         {
             return new CellSpot<T>(value);
+        }
+
+        /// <summary>
+        /// Create a Fast Cell that does not participate in sessions.  All calls to Value
+        /// will use the latest spot value of the cell
+        /// </summary>
+        /// <param name="func"></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Generic.ICell<T> CreateLazy<T>(FSharpFunc<Unit, T> func)
+        {
+            return new CellLazy<T>(func);
+        }
+        /// <summary>
+        /// Create a Fast Cell with an mnemonic that does not participate in sessions.  All
+        /// calls to Value will use the latest spot value of the cell
+        /// </summary>
+        /// <param name="func"></param>
+        /// <param name="mutex"></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Generic.ICell<T> CreateLazy<T>(FSharpFunc<Unit, T> func, ICell mutex)
+        {
+            return new CellLazy<T>(func, mutex);
         }
 
         /// <summary>

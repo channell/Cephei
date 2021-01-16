@@ -98,6 +98,18 @@ namespace Cephei.Cell.Generic
             _value = value;
             _state = (int)CellState.Clean;
         }
+        /// <summary>
+        /// Create a cell from C# function
+        /// </summary>
+        /// <param name="func">C# function</param>
+        public CellSpot(Func<T> func) : this(FuncConvert.FromFunc<T>(func))
+        { }
+        /// <summary>
+        /// Create a cell from C# function
+        /// </summary>
+        /// <param name="func">C# function</param>
+        public CellSpot(Func<T> func, ICell mutex) : this(FuncConvert.FromFunc<T>(func), mutex)
+        { }
 #if !DEBUG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif

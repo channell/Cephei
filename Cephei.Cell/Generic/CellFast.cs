@@ -13,17 +13,6 @@ namespace Cephei.Cell.Generic
     /// known in advance, or the Formula is captured from a closure that only contains
     /// references to the dependencies used for a calculation.
     /// 
-    /// Specific closures can be created by using builder functions such as
-    ///    <font color="#0000ff">let</font> sc = Cell.CreateValue 1I
-    ///    <font color="#0000ff">let</font> ts =
-    ///        <font color="#0000ff">let</font> build (r : ICell<'t>) =
-    ///            Cell.CreateFast (<font color="#0000ff">fun</font> () <font
-    /// color="#0000ff">-></font> fac r.Value)
-    ///        build sc
-    /// In this example the closure to build <i>ts</i> is bound to <i>sc</i>.  For
-    /// these scenarios the factory function can infer the dependencies by reflecting
-    /// over the closure to deduce the values referenced.
-    /// 
     /// This version of cell avoids additional logic to check for profiling or to
     /// rebind when a dependency changes.
     /// 
@@ -62,31 +51,6 @@ namespace Cephei.Cell.Generic
             }
         }
 
-        public CellFast(FSharpFunc<Unit, T> func, ICell[] dependencies)
-        {
-            _func = func;
-            if (!Cell.Lazy)
-                Cell.Dispatch(() =>
-                {
-                    try
-                    {
-                        Calculate(DateTime.Now, 0);
-                    }
-                    catch (Exception e)
-                    {
-                        Serilog.Log.Error(e, e.Message);
-                    }
-                });
-
-            foreach (var d in dependencies)
-                if (d != this)
-                    d.Notify(this);
-        }
-        public CellFast(FSharpFunc<Unit, T> func, ICell[] dependencies, ICell mutex) : this (func, dependencies)
-        {
-            Mutex = mutex;
-        }
-
         public CellFast(FSharpFunc<Unit, T> func)
         {
             _func = func;
@@ -119,6 +83,18 @@ namespace Cephei.Cell.Generic
             _value = value;
             _state = (int)CellState.Clean;
         }
+        /// <summary>
+        /// Create a cell from C# function
+        /// </summary>
+        /// <param name="func">C# function</param>
+        public CellFast(Func<T> func) : this(FuncConvert.FromFunc<T>(func))
+        { }
+        /// <summary>
+        /// Create a cell from C# function
+        /// </summary>
+        /// <param name="func">C# function</param>
+        public CellFast(Func<T> func, ICell mutex) : this(FuncConvert.FromFunc<T>(func), mutex)
+        { }
 #if !DEBUG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif

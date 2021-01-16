@@ -55,20 +55,26 @@ module Util =
 
     // Summary: run calcualtions within in the background with a mutex
     [<MethodImpl(MethodImplOptions.AggressiveInlining)>]
-    let lcel (mutex : ICell) (f : unit -> 'f) = Cell.CreateFast (f, mutex) 
+    let celm (mutex : ICell) (f : unit -> 'f) = Cell.CreateFast (f, mutex) 
 
     // cretate a trivial cell
     [<MethodImpl(MethodImplOptions.AggressiveInlining)>]
     let triv (mutex : ICell) (f : unit -> 'f) = Cell.CreateTrivial (f, null)
-    //let triv (mutex : ICell) (f : unit -> 'f) = Cell.CreateTrivial (f, mutex)
 
     // cretate a trivial cell using mutex lock
     [<MethodImpl(MethodImplOptions.AggressiveInlining)>]
-    let ltrv (mutex : ICell) (f : unit -> 'f) = Cell.CreateTrivial (f, mutex)
+    let trvm (mutex : ICell) (f : unit -> 'f) = Cell.CreateTrivial (f, mutex)
+
+    // cretate a lazy cell
+    [<MethodImpl(MethodImplOptions.AggressiveInlining)>]
+    let lcel (mutex : ICell) (f : unit -> 'f) = Cell.CreateLazy (f, null)
+
+    // cretate a lazy cell using mutex lock
+    [<MethodImpl(MethodImplOptions.AggressiveInlining)>]
+    let lclm (mutex : ICell) (f : unit -> 'f) = Cell.CreateLazy (f, mutex)
 
     let trivDate (f : unit -> 'f) (d : IDateDependant) = 
         new DateDependantTrivial<'f> (f, d.EvaluationDate) :> ICell<'f>
-
 
     // Summary: variant of lazy evaluation where the value is claculated on a background thread
     let future (f : unit -> 'f) = 

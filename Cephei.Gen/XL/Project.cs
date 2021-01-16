@@ -19,7 +19,7 @@ namespace Cephei.Gen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Project.tt"
+    #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Project.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class Project : ProjectBase
     {
@@ -30,7 +30,7 @@ namespace Cephei.Gen
         public virtual string TransformText()
         {
             
-            #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Project.tt"
+            #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Project.tt"
 /* 
 Name:           Project.tt
 Author:         Stephen Channell
@@ -40,7 +40,7 @@ Description:    Generate the project file for the XL interface
             #line default
             #line hidden
             
-            #line 17 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Project.tt"
+            #line 17 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Project.tt"
 
     Context.RootName = RootPackageName;
     Context.Prefix = "I";
@@ -63,14 +63,14 @@ Description:    Generate the project file for the XL interface
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>");
             
-            #line 33 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Project.tt"
+            #line 33 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Project.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ProjectName));
             
             #line default
             #line hidden
             this.Write("</RootNamespace>\r\n    <AssemblyName>");
             
-            #line 34 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Project.tt"
+            #line 34 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Project.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ProjectName));
             
             #line default
@@ -127,7 +127,7 @@ Description:    Generate the project file for the XL interface
                     "de=\"Now.cs\" />\r\n    <Compile Include=\"Value.cs\" />\r\n    <Compile Include=\"Sessio" +
                     "n.cs\" />\r\n    <Compile Include=\"XLInterface.cs\" />\r\n");
             
-            #line 127 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Project.tt"
+            #line 127 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Project.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetPackage (Context.RootTree, RootPackageName, "\t")));
             
             #line default
@@ -202,7 +202,7 @@ Description:    Generate the project file for the XL interface
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 260 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Project.tt"
+        #line 260 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Project.tt"
 
 
 string GetPackage(Package rootPackage,  string nameSpace, string tabs)
@@ -276,7 +276,7 @@ string GetPackage2(Package package, Package rootPackage,  string nameSpace, stri
         #line default
         #line hidden
         
-        #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\XL\Project.tt"
+        #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\XL\Project.tt"
 
 private string _RootPackageNameField;
 

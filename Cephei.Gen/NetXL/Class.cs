@@ -19,7 +19,7 @@ namespace Cephei.Gen
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+    #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class Class : ClassBase
     {
@@ -62,21 +62,21 @@ open Cephei.XL.Helper
 (* <summary>
 ");
             
-            #line 39 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 39 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((NetClass.Notes != null ? NetClass.Notes : "")));
             
             #line default
             #line hidden
             this.Write("\r\n  </summary> *)\r\n[<AutoSerializable(true)>]\r\nmodule ");
             
-            #line 42 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 42 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
             this.Write("Function =\r\n\r\n");
             
-            #line 44 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 44 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
     int version = -1;
     foreach(var m in NetClass.MethodAndConstructors)
@@ -90,41 +90,41 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("    (*\r\n        ");
             
-            #line 53 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 53 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((m.Notes != null ? m.Notes : "")));
             
             #line default
             #line hidden
             this.Write("\r\n    *)\r\n    [<ExcelFunction(Name=\"_");
             
-            #line 55 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 55 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
             
-            #line 55 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 55 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((version > 0 ? version.ToString() : "")));
             
             #line default
             #line hidden
             this.Write("\", Description=\"Create a ");
             
-            #line 55 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 55 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
             this.Write("\",Category=\"Cephei\", IsThreadSafe = false, IsExceptionSafe=true)>]\r\n    let ");
             
-            #line 56 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 56 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
             this.Write("_create");
             
-            #line 56 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 56 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((version > 0 ? version.ToString() : "")));
             
             #line default
@@ -132,7 +132,7 @@ open Cephei.XL.Helper
             this.Write("\r\n        ([<ExcelArgument(Name=\"Mnemonic\",Description = \"Identifier for Cell\")>]" +
                     " \r\n         mnemonic : string)\r\n");
             
-            #line 59 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 59 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         }
         else
@@ -143,42 +143,42 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("    (*\r\n        ");
             
-            #line 65 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 65 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((m.Notes != null ? m.Notes : "")));
             
             #line default
             #line hidden
             this.Write("\r\n    *)\r\n    [<ExcelFunction(Name=\"_");
             
-            #line 67 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 67 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
             this.Write("_");
             
-            #line 67 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 67 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(m.Name));
             
             #line default
             #line hidden
             this.Write("\", Description=\"Create a ");
             
-            #line 67 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 67 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
             this.Write("\",Category=\"Cephei\", IsThreadSafe = false, IsExceptionSafe=true)>]\r\n    let ");
             
-            #line 68 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 68 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
             this.Write("_");
             
-            #line 68 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 68 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(m.Name));
             
             #line default
@@ -186,7 +186,7 @@ open Cephei.XL.Helper
             this.Write("\r\n        ([<ExcelArgument(Name=\"Mnemonic\",Description = \"Identifier for Cell\")>]" +
                     " \r\n         mnemonic : string)\r\n");
             
-            #line 71 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 71 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         }
         if (m.Name != NetClass.Name)
@@ -197,28 +197,28 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("        ([<ExcelArgument(Name=\"");
             
-            #line 76 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 76 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
             this.Write("\",Description = \"Reference to ");
             
-            #line 76 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 76 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
             this.Write("\")>] \r\n         ");
             
-            #line 77 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 77 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name.ToLower()));
             
             #line default
             #line hidden
             this.Write(" : obj)\r\n");
             
-            #line 78 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 78 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         }
         foreach (var pam in m.Parameters)
@@ -229,28 +229,28 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("        ([<ExcelArgument(Name=\"");
             
-            #line 83 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 83 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name)));
             
             #line default
             #line hidden
             this.Write("\",Description = \"Reference to ");
             
-            #line 83 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 83 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name)));
             
             #line default
             #line hidden
             this.Write("\")>] \r\n         ");
             
-            #line 84 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 84 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name)));
             
             #line default
             #line hidden
             this.Write(" : obj)\r\n");
             
-            #line 85 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 85 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         }
         if (m.Name == NetClass.Name && NetClass.HasEngine)
@@ -265,7 +265,7 @@ open Cephei.XL.Helper
          evaluationDate : obj)
 ");
             
-            #line 94 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 94 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         }
 
@@ -275,7 +275,7 @@ open Cephei.XL.Helper
             this.Write("        = \r\n        if not (Model.IsInFunctionWizard()) then\r\n\r\n            try\r\n" +
                     "\r\n");
             
-            #line 102 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 102 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         if (m.Name != NetClass.Name)
         {
@@ -285,35 +285,35 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                let _");
             
-            #line 106 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 106 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
             this.Write(" = Helper.toCell<");
             
-            #line 106 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 106 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
             this.Write("> ");
             
-            #line 106 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 106 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name.ToLower()));
             
             #line default
             #line hidden
             this.Write(" \"");
             
-            #line 106 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 106 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
             this.Write("\"  \r\n");
             
-            #line 107 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 107 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         }
 
@@ -327,35 +327,35 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                let _");
             
-            #line 115 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 115 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name)));
             
             #line default
             #line hidden
             this.Write(" = Helper.toHandle<");
             
-            #line 115 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 115 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pam.Value.ParameterType));
             
             #line default
             #line hidden
             this.Write("> ");
             
-            #line 115 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 115 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name)));
             
             #line default
             #line hidden
             this.Write(" \"");
             
-            #line 115 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 115 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pam.Value.Name));
             
             #line default
             #line hidden
             this.Write("\" \r\n");
             
-            #line 116 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 116 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
             }
             else if (pam.Value.ParameterType.StartsWith("Nullable"))
@@ -366,35 +366,35 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                let _");
             
-            #line 121 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 121 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name)));
             
             #line default
             #line hidden
             this.Write(" = Helper.toNullable<");
             
-            #line 121 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 121 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pam.Value.ParameterType));
             
             #line default
             #line hidden
             this.Write("> ");
             
-            #line 121 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 121 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name)));
             
             #line default
             #line hidden
             this.Write(" \"");
             
-            #line 121 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 121 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pam.Value.Name));
             
             #line default
             #line hidden
             this.Write("\"\r\n");
             
-            #line 122 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 122 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
             }
             else
@@ -405,35 +405,35 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                let _");
             
-            #line 127 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 127 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name)));
             
             #line default
             #line hidden
             this.Write(" = Helper.toCell<");
             
-            #line 127 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 127 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(pam.Value.ParameterType));
             
             #line default
             #line hidden
             this.Write("> ");
             
-            #line 127 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 127 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name)));
             
             #line default
             #line hidden
             this.Write(" \"");
             
-            #line 127 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 127 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name)));
             
             #line default
             #line hidden
             this.Write("\" \r\n");
             
-            #line 128 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 128 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
             }
         }
@@ -447,7 +447,7 @@ open Cephei.XL.Helper
                     "\"pricingEngine\"  \r\n                let _evaluationDate = Helper.toCell<Date> eva" +
                     "luationDate \"evaluationDate\"  \r\n");
             
-            #line 136 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 136 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         }
         if (m.Name == NetClass.Name)
@@ -458,14 +458,14 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                let builder (current : ICell) = withMnemonic mnemonic (Fun.");
             
-            #line 141 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 141 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name + (version > 0 ? version.ToString() : "")));
             
             #line default
             #line hidden
             this.Write(" \r\n");
             
-            #line 142 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 142 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         }
         else
@@ -476,28 +476,28 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                let builder (current : ICell) = withMnemonic mnemonic ((_");
             
-            #line 147 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 147 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
             this.Write(".cell :?> ");
             
-            #line 147 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 147 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
             this.Write("Model).");
             
-            #line 147 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 147 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(m.CapFSName));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 148 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 148 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         }
         foreach (var pam in m.Parameters)
@@ -508,14 +508,14 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                                                            _");
             
-            #line 153 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 153 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name)));
             
             #line default
             #line hidden
             this.Write(".cell \r\n");
             
-            #line 154 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 154 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         }
         if (m.Name == NetClass.Name && NetClass.HasEngine)
@@ -528,7 +528,7 @@ open Cephei.XL.Helper
                     "\n                                                            _evaluationDate.cel" +
                     "l \r\n");
             
-            #line 161 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 161 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         }
 
@@ -537,7 +537,7 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                                                       ) :> ICell\r\n");
             
-            #line 165 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 165 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         if (m.Name == NetClass.Name)
         {
@@ -548,14 +548,14 @@ open Cephei.XL.Helper
             this.Write("                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?>" +
                     " ICell<");
             
-            #line 169 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 169 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
             this.Write(">) l\r\n");
             
-            #line 170 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 170 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         }
         else if (m.ReturnType != "Date" && m.IsReturnTypeObject)
@@ -568,14 +568,14 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                let format (i : ");
             
-            #line 177 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 177 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(m.ReturnType.Replace("List<", "Generic.Cephei.Cell.List<")));
             
             #line default
             #line hidden
             this.Write(") (l : string) = Helper.Range.fromList i l\r\n");
             
-            #line 178 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 178 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
             }
             else
@@ -587,14 +587,14 @@ open Cephei.XL.Helper
             this.Write("                let format (i : ICell) (l:string) = Helper.Range.fromModel (i :?>" +
                     " ICell<");
             
-            #line 183 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 183 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(m.ReturnType));
             
             #line default
             #line hidden
             this.Write(">) l\r\n");
             
-            #line 184 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 184 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
             }
         }
@@ -606,14 +606,14 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                let format (i : ");
             
-            #line 190 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 190 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(m.ReturnType.Replace("List<", "Generic.List<")));
             
             #line default
             #line hidden
             this.Write(") (l : string) = (Helper.Range.fromArray (i.ToArray()) l)\r\n");
             
-            #line 191 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 191 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         }
         else
@@ -626,7 +626,7 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                let format (d : Date) (l:string) = d.serialNumber() :> obj\r\n");
             
-            #line 199 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 199 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
             }
             else if (m.ReturnType == "DateTime")
@@ -637,7 +637,7 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                let format (d : Date) (l:string) = d.ToOADate() :> obj\r\n");
             
-            #line 205 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 205 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
             }
             else if ("double,float,int,Int32,long,Int64".Contains (m.ReturnType))
@@ -648,14 +648,14 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                let format (o : ");
             
-            #line 210 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 210 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((m.ReturnType == "void" ? NetClass.Name : m.ReturnType)));
             
             #line default
             #line hidden
             this.Write(") (l:string) = o :> obj\r\n");
             
-            #line 211 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 211 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
             }
             else 
@@ -666,14 +666,14 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                let format (o : ");
             
-            #line 216 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 216 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((m.ReturnType == "void" ? NetClass.Name : m.ReturnType)));
             
             #line default
             #line hidden
             this.Write(") (l:string) = o.ToString() :> obj\r\n");
             
-            #line 217 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 217 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
             }
         }
@@ -683,7 +683,7 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("\r\n");
             
-            #line 222 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 222 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         if (m.Name == NetClass.Name)
         {
@@ -693,14 +693,14 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                let source () = Helper.sourceFold \"Fun.");
             
-            #line 226 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 226 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name + (version > 0 ? version.ToString() : "")));
             
             #line default
             #line hidden
             this.Write("\" \r\n");
             
-            #line 227 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 227 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         }
         else
@@ -711,21 +711,21 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                let source () = Helper.sourceFold (_");
             
-            #line 232 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 232 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
             this.Write(".source + \".");
             
-            #line 232 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 232 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.Keywords.Contains(m.Name) ? m.Name.ToUpper() : m.CapFSName)));
             
             #line default
             #line hidden
             this.Write("\") \r\n");
             
-            #line 233 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 233 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         }
         var delim = "[|";
@@ -737,21 +737,21 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                                               ");
             
-            #line 239 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 239 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(delim));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 239 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 239 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
             this.Write(".source\r\n");
             
-            #line 240 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 240 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
             delim = "; ";
         }
@@ -763,21 +763,21 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                                               ");
             
-            #line 246 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 246 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(delim));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 246 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 246 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name)));
             
             #line default
             #line hidden
             this.Write(".source\r\n");
             
-            #line 247 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 247 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
             delim = "; ";
         }
@@ -789,21 +789,21 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                                               ");
             
-            #line 253 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 253 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(delim));
             
             #line default
             #line hidden
             this.Write(" _pricingEngine.source\r\n                                               ");
             
-            #line 254 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 254 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(delim));
             
             #line default
             #line hidden
             this.Write(" _evaluationDate.source\r\n");
             
-            #line 255 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 255 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         }
         if (delim == "; ")
@@ -814,7 +814,7 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                                               |]\r\n");
             
-            #line 261 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 261 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         }
         else
@@ -825,7 +825,7 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                                               [||]\r\n");
             
-            #line 267 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 267 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         }
 
@@ -834,7 +834,7 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                let hash = Helper.hashFold \r\n");
             
-            #line 271 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 271 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         delim = "[|";
         if (m.Name != NetClass.Name)
@@ -845,21 +845,21 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                                ");
             
-            #line 276 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 276 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(delim));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 276 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 276 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
             this.Write(".cell\r\n");
             
-            #line 277 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 277 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
             delim = "; ";
         }
@@ -871,21 +871,21 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                                ");
             
-            #line 283 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 283 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(delim));
             
             #line default
             #line hidden
             this.Write(" _");
             
-            #line 283 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 283 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((Context.Keywords.Contains(pam.Value.Name) ? pam.Value.Name.ToUpper() : pam.Value.Name)));
             
             #line default
             #line hidden
             this.Write(".cell\r\n");
             
-            #line 284 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 284 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
             delim = "; ";
         }
@@ -897,21 +897,21 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                                ");
             
-            #line 290 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 290 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(delim));
             
             #line default
             #line hidden
             this.Write(" _pricingEngine.cell\r\n                                ");
             
-            #line 291 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 291 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(delim));
             
             #line default
             #line hidden
             this.Write(" _evaluationDate.cell\r\n");
             
-            #line 292 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 292 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         }
         if (delim == "; ")
@@ -922,7 +922,7 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                                |]\r\n");
             
-            #line 298 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 298 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         }
         else
@@ -933,7 +933,7 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("                                [||]\r\n");
             
-            #line 304 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 304 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
         }
         var subscriber = "subscriber";
@@ -954,7 +954,7 @@ open Cephei.XL.Helper
                     "onic mnemonic\r\n                    ; creator = builder\r\n                    ; su" +
                     "bscriber = Helper.");
             
-            #line 320 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 320 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(subscriber));
             
             #line default
@@ -963,7 +963,7 @@ open Cephei.XL.Helper
                     "h\r\n                    } :?> string\r\n            with\r\n            | _ as e ->  " +
                     "\"#\" + e.Message\r\n        else\r\n            \"<WIZ>\"\r\n");
             
-            #line 328 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 328 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
     }
 
@@ -972,21 +972,21 @@ open Cephei.XL.Helper
             #line hidden
             this.Write("    [<ExcelFunction(Name=\"_");
             
-            #line 331 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 331 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
             this.Write("_Range\", Description=\"Create a range of ");
             
-            #line 331 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 331 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
             #line hidden
             this.Write("\",Category=\"Cephei\", IsThreadSafe = false, IsExceptionSafe=true)>]\r\n    let ");
             
-            #line 332 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 332 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
@@ -995,7 +995,7 @@ open Cephei.XL.Helper
                     "ell\")>] \r\n         mnemonic : string)\r\n        ([<ExcelArgument(Name=\"Objects\",D" +
                     "escription = \"Identifer for the ");
             
-            #line 335 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 335 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
@@ -1012,7 +1012,7 @@ open Cephei.XL.Helper
                         Seq.cast<obj> |>
                         Seq.map (fun (i : obj) -> Helper.toCell<");
             
-            #line 345 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 345 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
@@ -1021,7 +1021,7 @@ open Cephei.XL.Helper
                     "|> Array.map (fun i -> i.cell)\r\n                let l = new Generic.Cephei.Cell." +
                     "List<");
             
-            #line 348 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 348 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
@@ -1030,7 +1030,7 @@ open Cephei.XL.Helper
                     "  let builder (current : ICell) = l :> ICell\r\n                let format (i : Ge" +
                     "neric.Cephei.Cell.List<");
             
-            #line 351 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 351 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
@@ -1043,7 +1043,7 @@ open Cephei.XL.Helper
                     ; subscriber = Helper.subscriberRange format
                     ; source =  (fun () -> ""(new Cephei.Cell.List<");
             
-            #line 357 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+            #line 357 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NetClass.Name));
             
             #line default
@@ -1054,7 +1054,7 @@ open Cephei.XL.Helper
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 364 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+        #line 364 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
 		public Class
 			( NetModel.Class @class
@@ -1067,7 +1067,7 @@ open Cephei.XL.Helper
         #line default
         #line hidden
         
-        #line 1 "C:\Users\steve\Source\Repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
+        #line 1 "C:\Users\steve\source\repos\Cephei2\Cephei.Gen\NetXL\Class.tt"
 
 private global::Cephei.Gen.NetModel.Class _NetClassField;
 

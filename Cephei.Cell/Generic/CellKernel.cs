@@ -54,30 +54,6 @@ namespace Cephei.Cell.Generic
             }
         }
 
-        public CellKernel(FSharpFunc<Unit, FSharpFunc<Unit, T>> kernelFunc, ICell[] dependencies)
-        {
-            _kernelFunc = kernelFunc;
-            if (!Cell.Lazy)
-                Cell.Dispatch(() =>
-                {
-                    try
-                    {
-                        Calculate(DateTime.Now, 0);
-                    }
-                    catch (Exception e)
-                    {
-                        Serilog.Log.Error(e, e.Message);
-                    }
-                });
-
-            foreach (var d in dependencies)
-                if (d != this)
-                    d.Notify(this);
-        }
-        public CellKernel(FSharpFunc<Unit, FSharpFunc<Unit, T>> kernelFunc, ICell[] dependencies, ICell mutex) : this (kernelFunc, dependencies)
-        {
-            Mutex = mutex;
-        }
         public CellKernel(FSharpFunc<Unit, FSharpFunc<Unit, T>> kernelFunc)
         {
             _kernelFunc = kernelFunc;
@@ -104,6 +80,19 @@ namespace Cephei.Cell.Generic
         {
             Mutex = mutex;
         }
+        /// <summary>
+        /// Create a cell from C# function
+        /// </summary>
+        /// <param name="func">C# function</param>
+        public CellKernel(Func<Func<T>> func) : this(FuncConvert.FromFunc<FSharpFunc<Unit, T>>(() => FuncConvert.FromFunc<T>(func())))
+        { }
+        /// <summary>
+        /// Create a cell from C# function
+        /// </summary>
+        /// <param name="func">C# function</param>
+        public CellKernel(Func<Func<T>> func, ICell mutex) : this(FuncConvert.FromFunc<FSharpFunc<Unit, T>>(() => FuncConvert.FromFunc<T>(func())), mutex)
+        { }
+
 #if !DEBUG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
